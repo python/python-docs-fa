@@ -2,13 +2,12 @@
 """
 scripts/check_markup.py
 
-Verify that Sphinx roles, inline literals, and format placeholders match
-exactly between the English msgid and the Persian msgstr — nothing missing,
-and nothing extra. Catches both the common review slip (translating or
-dropping `:class:`int``-style markup, ``code`` spans, %s/{0} placeholders,
-|substitution| refs) and the subtler mistake of adding a reference that
-doesn't exist in the original (which Sphinx's own build treats as a hard
-error under -W, e.g. "inconsistent term references in translated message").
+Verify Sphinx markup consistency between msgid and msgstr:
+  - Roles like :term:`text <target>` — the *target* (or the whole role, if
+    it has no explicit target) must match; the display text is expected to
+    be translated, matching Sphinx's own translation convention.
+  - Literal/code spans (``...``), substitution refs (|...|), and %s/{name}
+    placeholders — these must match verbatim, since they're not prose.
 
 Requires: pip install polib
 
@@ -24,13 +23,26 @@ from pathlib import Path
 
 import polib
 
-PATTERNS = [
-    ("sphinx role", re.compile(r":(?:\w+:)?[\w.-]+:`.*?`")),
+ROLE_PATTERN = re.compile(r":(?:\w+:)?[\w.-]+:`([^`]+)`")
+TARGET_PATTERN = re.compile(r"^(.*)\s<([^<>]+)>$")
+
+LITERAL_PATTERNS = [
     ("literal/code span", re.compile(r"``.*?``")),
     ("substitution ref", re.compile(r"\|[\w.-]+\|")),
     ("percent placeholder", re.compile(r"%\(\w+\)[a-zA-Z]|%[a-zA-Z]")),
     ("brace placeholder", re.compile(r"\{[^{}\s]*\}")),
 ]
+
+
+def extract_role_targets(text: str):
+    """For each Sphinx role, return its target: the <target> anchor if
+    present, otherwise the role's full display text (which IS the target
+    when there's no explicit anchor)."""
+    targets = []
+    for body in ROLE_PATTERN.findall(text):
+        m = TARGET_PATTERN.match(body)
+        targets.append(m.group(2).strip() if m else body.strip())
+    return targets
 
 
 def check_file(path: Path) -> int:
@@ -39,23 +51,35 @@ def check_file(path: Path) -> int:
     for entry in po:
         if entry.obsolete or not entry.msgid or not entry.msgstr:
             continue  # obsolete entry, header, or still untranslated
-        for label, pattern in PATTERNS:
+
+        findings = []
+
+        expected_targets = Counter(extract_role_targets(entry.msgid))
+        found_targets = Counter(extract_role_targets(entry.msgstr))
+        if expected_targets != found_targets:
+            missing = list((expected_targets - found_targets).elements())
+            extra = list((found_targets - expected_targets).elements())
+            if missing:
+                findings.append(f"missing role target(s): {missing}")
+            if extra:
+                findings.append(f"role target(s) not in source: {extra}")
+
+        for label, pattern in LITERAL_PATTERNS:
             expected = Counter(pattern.findall(entry.msgid))
             found = Counter(pattern.findall(entry.msgstr))
-            if expected == found:
-                continue
+            if expected != found:
+                missing = list((expected - found).elements())
+                extra = list((found - expected).elements())
+                if missing:
+                    findings.append(f"missing {label}: {missing}")
+                if extra:
+                    findings.append(f"extra {label} not in source: {extra}")
 
-            missing = list((expected - found).elements())
-            extra = list((found - expected).elements())
+        if findings:
             problems += 1
             loc = f" ({entry.occurrences[0][0]}:{entry.occurrences[0][1]})" if entry.occurrences else ""
             tag = " [fuzzy]" if entry.fuzzy else ""
-            parts = []
-            if missing:
-                parts.append(f"missing {label}: {missing}")
-            if extra:
-                parts.append(f"extra {label} not in source: {extra}")
-            print(f"{path}{loc}{tag}: {'; '.join(parts)}")
+            print(f"{path}{loc}{tag}: {'; '.join(findings)}")
             print(f"    msgid : {entry.msgid[:100]}")
             print(f"    msgstr: {entry.msgstr[:100]}")
     return problems
