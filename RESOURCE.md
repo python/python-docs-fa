@@ -1,12 +1,12 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-07-25)
+(به‌روزرسانی: 2026-07-27)
 
 | File | Translated | Fuzzy |
 |:-----|:-----------:|:-----------:|
 | about.po | 100.0% | 0.0% |
 | c-api/abstract.po | 100.0% | 0.0% |
-| tutorial/appendix.po | 96.4% | 3.6% |
+| tutorial/appendix.po | 100.0% | 0.0% |
 | bugs.po | 93.5% | 3.2% |
 | tutorial/index.po | 66.7% | 11.1% |
 | library/functions.po | 22.9% | 0.6% |
