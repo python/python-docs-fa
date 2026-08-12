@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-25 12:59+0330\n"
-"PO-Revision-Date: 2021-06-28 01:50+0000\n"
+"PO-Revision-Date: 2026-08-12 19:03+0330\n"
 "Last-Translator: Alireza Shabani (Revisto) <theRevisto@gmail.com>, 2025\n"
 "Language-Team: Persian (https://app.transifex.com/python-doc/teams/5390/"
 "fa/)\n"
@@ -21,10 +21,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.6\n"
 
 #: ../../tutorial/modules.rst:5
 msgid "Modules"
-msgstr ""
+msgstr "ماژول‌ها"
 
 #: ../../tutorial/modules.rst:7
 msgid ""
@@ -37,6 +38,14 @@ msgid ""
 "You may also want to use a handy function that you've written in several "
 "programs without copying its definition into each program."
 msgstr ""
+"اگر از مفسر پایتون خارج شوید و دوباره وارد آن شوید، تعریف‌هایی که ایجاد "
+"کرده‌اید (تابع‌ها و متغیرها) از بین می‌روند. بنابراین، اگر می‌خواهید برنامه‌ای "
+"نسبتاً طولانی‌تر بنویسید، بهتر است به‌جای آن از یک ویرایشگر متن برای آماده‌سازی "
+"ورودی مفسر استفاده کنید و آن را با استفاده از آن فایل به‌عنوان ورودی اجرا "
+"کنید. این کار با نام ایجاد یک *اسکریپت* شناخته می‌شود. هرچه برنامهٔ شما "
+"طولانی‌تر شود، ممکن است بخواهید آن را برای نگهداری آسان‌تر به چندین فایل تقسیم "
+"کنید. همچنین ممکن است بخواهید از یک تابع کاربردی که در چندین برنامه "
+"نوشته‌اید، بدون کپی کردن تعریف آن در هر برنامه استفاده کنید."
 
 #: ../../tutorial/modules.rst:16
 msgid ""
@@ -46,6 +55,12 @@ msgid ""
 "modules or into the *main* module (the collection of variables that you have "
 "access to in a script executed at the top level and in calculator mode)."
 msgstr ""
+"برای پشتیبانی از این کار، پایتون روشی دارد که به شما اجازه می‌دهد تعریف‌ها را "
+"در یک فایل قرار دهید و از آن‌ها در یک اسکریپت یا در یک نمونهٔ تعاملی از مفسر "
+"استفاده کنید. چنین فایلی یک *ماژول* نامیده می‌شود؛ تعریف‌های یک ماژول را "
+"می‌توان به ماژول‌های دیگر یا به ماژول *اصلی* (*main*) (مجموعه‌ای از متغیرهایی "
+"که در یک اسکریپت اجراشده در سطح بالا و در حالت ماشین‌حساب به آن‌ها دسترسی "
+"دارید) *وارد* کرد."
 
 #: ../../tutorial/modules.rst:22
 msgid ""
@@ -56,6 +71,11 @@ msgid ""
 "to create a file called :file:`fibo.py` in the current directory with the "
 "following contents::"
 msgstr ""
+"یک ماژول فایلی است که شامل تعریف‌ها و دستورهای پایتون است. نام فایل، نام "
+"ماژول به‌همراه پسوند \\:file:`.py` است. درون یک ماژول، نام ماژول (به‌صورت یک "
+"رشته) به‌عنوان مقدار متغیر سراسری ``__name__`` در دسترس است. برای نمونه، با "
+"استفاده از ویرایشگر متن دلخواه خود فایلی با نام \\:file:`fibo.py` را در پوشهٔ "
+"جاری ایجاد کنید که محتوای زیر را داشته باشد::"
 
 #: ../../tutorial/modules.rst:28
 msgid ""
@@ -78,16 +98,34 @@ msgid ""
 "        a, b = b, a+b\n"
 "    return result"
 msgstr ""
+"# Fibonacci numbers module\n"
+"\n"
+"def fib(n):\n"
+"    \"\"\"Write Fibonacci series up to n.\"\"\"\n"
+"    a, b = 0, 1\n"
+"    while a < n:\n"
+"        print(a, end=' ')\n"
+"        a, b = b, a+b\n"
+"    print()\n"
+"\n"
+"def fib2(n):\n"
+"    \"\"\"Return Fibonacci series up to n.\"\"\"\n"
+"    result = []\n"
+"    a, b = 0, 1\n"
+"    while a < n:\n"
+"        result.append(a)\n"
+"        a, b = b, a+b\n"
+"    return result"
 
 #: ../../tutorial/modules.rst:47
 msgid ""
 "Now enter the Python interpreter and import this module with the following "
 "command::"
-msgstr ""
+msgstr "اکنون وارد مفسر پایتون شوید و این ماژول را با دستور زیر وارد کنید::"
 
 #: ../../tutorial/modules.rst:50
 msgid ">>> import fibo"
-msgstr ""
+msgstr ">>> import fibo"
 
 #: ../../tutorial/modules.rst:52
 msgid ""
@@ -96,6 +134,10 @@ msgid ""
 "it only adds the module name ``fibo`` there. Using the module name you can "
 "access the functions::"
 msgstr ""
+"این کار نام تابع‌هایی را که در ``fibo`` تعریف شده‌اند، مستقیماً به :term:`فضای "
+"نام <namespace>` فعلی اضافه نمی‌کند (برای جزئیات بیشتر به :ref:`tut-scopes` مراجعه کنید)؛ "
+"بلکه فقط نام ماژول ``fibo`` را به آن اضافه می‌کند. با استفاده از نام ماژول "
+"می‌توانید به تابع‌ها دسترسی پیدا کنید::"
 
 #: ../../tutorial/modules.rst:57
 msgid ""
@@ -106,11 +148,19 @@ msgid ""
 ">>> fibo.__name__\n"
 "'fibo'"
 msgstr ""
+">>> fibo.fib(1000)\n"
+"0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987\n"
+">>> fibo.fib2(100)\n"
+"[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]\n"
+">>> fibo.__name__\n"
+"'fibo'"
 
 #: ../../tutorial/modules.rst:64
 msgid ""
 "If you intend to use a function often you can assign it to a local name::"
 msgstr ""
+"اگر قصد دارید از یک تابع به‌طور مکرر استفاده کنید، می‌توانید آن را به یک نام "
+"محلی اختصاص دهید::"
 
 #: ../../tutorial/modules.rst:66
 msgid ""
@@ -118,10 +168,13 @@ msgid ""
 ">>> fib(500)\n"
 "0 1 1 2 3 5 8 13 21 34 55 89 144 233 377"
 msgstr ""
+">>> fib = fibo.fib\n"
+">>> fib(500)\n"
+"0 1 1 2 3 5 8 13 21 34 55 89 144 233 377"
 
 #: ../../tutorial/modules.rst:74
 msgid "More on Modules"
-msgstr ""
+msgstr "بیشتر درباره‌ی ماژول‌ها"
 
 #: ../../tutorial/modules.rst:76
 msgid ""
@@ -130,6 +183,10 @@ msgid ""
 "only the *first* time the module name is encountered in an import statement. "
 "[#]_ (They are also run if the file is executed as a script.)"
 msgstr ""
+"یک ماژول می‌تواند علاوه بر تعریف تابع‌ها، شامل دستورهای اجرایی نیز باشد. هدف "
+"از این دستورها مقداردهی اولیهٔ ماژول است. این دستورها فقط در *اولین* باری که "
+"نام ماژول در یک دستور import دیده می‌شود اجرا می‌شوند. [#]_ (همچنین اگر فایل "
+"به‌عنوان یک اسکریپت اجرا شود، این دستورها اجرا خواهند شد.)"
 
 #: ../../tutorial/modules.rst:81
 msgid ""
@@ -140,6 +197,12 @@ msgid ""
 "know what you are doing you can touch a module's global variables with the "
 "same notation used to refer to its functions, ``modname.itemname``."
 msgstr ""
+"هر ماژول فضای نام خصوصی خود را دارد که توسط تمام تابع‌های تعریف‌شده در ماژول، "
+"به‌عنوان فضای نام سراسری استفاده می‌شود. بنابراین، نویسندهٔ یک ماژول می‌تواند "
+"بدون نگرانی از تداخل تصادفی با متغیرهای سراسری کاربر، از متغیرهای سراسری "
+"درون ماژول استفاده کند. از طرف دیگر، اگر بدانید چه کاری انجام می‌دهید، "
+"می‌توانید با همان نگارشی که برای ارجاع به تابع‌های ماژول استفاده می‌کنید، به "
+"متغیرهای سراسری ماژول دسترسی پیدا کنید: ``modname.itemname``."
 
 #: ../../tutorial/modules.rst:88
 msgid ""
@@ -149,12 +212,18 @@ msgid ""
 "a module (outside any functions or classes), are added to the module's "
 "global namespace."
 msgstr ""
+"ماژول‌ها می‌توانند ماژول‌های دیگری را وارد کنند. معمول است، اما اجباری نیست، که "
+"تمام دستورهای :keyword:`import` در ابتدای یک ماژول (یا به‌طور کلی یک اسکریپت) "
+"قرار داده شوند. نام ماژول‌های واردشده، اگر در سطح بالای یک ماژول (خارج از هر "
+"تابع یا کلاس) قرار گرفته باشند، به فضای نام سراسری ماژول اضافه می‌شوند."
 
 #: ../../tutorial/modules.rst:93
 msgid ""
 "There is a variant of the :keyword:`import` statement that imports names "
 "from a module directly into the importing module's namespace.  For example::"
 msgstr ""
+"گونه‌ای از دستور :keyword:`import` وجود دارد که نام‌ها را از یک ماژول مستقیماً "
+"به فضای نام ماژولی که عمل وارد کردن را انجام می‌دهد وارد می‌کند. برای مثال::"
 
 #: ../../tutorial/modules.rst:96
 msgid ""
@@ -162,16 +231,23 @@ msgid ""
 ">>> fib(500)\n"
 "0 1 1 2 3 5 8 13 21 34 55 89 144 233 377"
 msgstr ""
+">>> from fibo import fib, fib2\n"
+">>> fib(500)\n"
+"0 1 1 2 3 5 8 13 21 34 55 89 144 233 377"
 
 #: ../../tutorial/modules.rst:100
 msgid ""
 "This does not introduce the module name from which the imports are taken in "
 "the local namespace (so in the example, ``fibo`` is not defined)."
 msgstr ""
+"این کار نام ماژولی را که وارد کردن از آن انجام شده است، به فضای نام محلی "
+"اضافه نمی‌کند (بنابراین در مثال، ``fibo`` تعریف نشده است)."
 
 #: ../../tutorial/modules.rst:103
 msgid "There is even a variant to import all names that a module defines::"
 msgstr ""
+"همچنین گونه‌ای وجود دارد که تمام نام‌هایی را که یک ماژول تعریف می‌کند وارد "
+"می‌کند::"
 
 #: ../../tutorial/modules.rst:105
 msgid ""
@@ -179,6 +255,9 @@ msgid ""
 ">>> fib(500)\n"
 "0 1 1 2 3 5 8 13 21 34 55 89 144 233 377"
 msgstr ""
+">>> from fibo import *\n"
+">>> fib(500)\n"
+"0 1 1 2 3 5 8 13 21 34 55 89 144 233 377"
 
 #: ../../tutorial/modules.rst:109
 msgid ""
@@ -187,6 +266,10 @@ msgid ""
 "an unknown set of names into the interpreter, possibly hiding some things "
 "you have already defined."
 msgstr ""
+"این دستور تمام نام‌ها را به‌جز نام‌هایی که با یک زیرخط (``_``) شروع می‌شوند وارد "
+"می‌کند. در بیشتر موارد، برنامه‌نویسان پایتون از این قابلیت استفاده نمی‌کنند، "
+"زیرا مجموعه‌ای نامشخص از نام‌ها را وارد مفسر می‌کند و ممکن است برخی مواردی را "
+"که قبلاً تعریف کرده‌اید پنهان کند."
 
 #: ../../tutorial/modules.rst:114
 msgid ""
@@ -194,12 +277,17 @@ msgid ""
 "package is frowned upon, since it often causes poorly readable code. "
 "However, it is okay to use it to save typing in interactive sessions."
 msgstr ""
+"توجه داشته باشید که به‌طور کلی، وارد کردن ``*`` از یک ماژول یا بسته عملی "
+"نامطلوب محسوب می‌شود، زیرا اغلب باعث ایجاد کدی با خوانایی ضعیف می‌شود. "
+"بااین‌حال، استفاده از آن برای کاهش تایپ در نشست‌های تعاملی اشکالی ندارد."
 
 #: ../../tutorial/modules.rst:118
 msgid ""
 "If the module name is followed by :keyword:`!as`, then the name "
 "following :keyword:`!as` is bound directly to the imported module."
 msgstr ""
+"اگر نام ماژول پس از \\:keyword:`!as` قرار گیرد، نامی که پس از \\:keyword:`!"
+"as` می‌آید مستقیماً به ماژول واردشده متصل می‌شود."
 
 #: ../../tutorial/modules.rst:123
 msgid ""
@@ -207,17 +295,24 @@ msgid ""
 ">>> fib.fib(500)\n"
 "0 1 1 2 3 5 8 13 21 34 55 89 144 233 377"
 msgstr ""
+">>> import fibo as fib\n"
+">>> fib.fib(500)\n"
+"0 1 1 2 3 5 8 13 21 34 55 89 144 233 377"
 
 #: ../../tutorial/modules.rst:127
 msgid ""
 "This is effectively importing the module in the same way that ``import "
 "fibo`` will do, with the only difference of it being available as ``fib``."
 msgstr ""
+"این کار در عمل همانند وارد کردن ماژول به روشی که ``import fibo`` انجام می‌دهد "
+"است، با این تفاوت که ماژول به‌صورت ``fib`` در دسترس خواهد بود."
 
 #: ../../tutorial/modules.rst:130
 msgid ""
 "It can also be used when utilising :keyword:`from` with similar effects::"
 msgstr ""
+"همچنین می‌توان هنگام استفاده از :keyword:`from` از آن با اثر مشابهی استفاده "
+"کرد::"
 
 #: ../../tutorial/modules.rst:132
 msgid ""
@@ -225,6 +320,9 @@ msgid ""
 ">>> fibonacci(500)\n"
 "0 1 1 2 3 5 8 13 21 34 55 89 144 233 377"
 msgstr ""
+">>> from fibo import fib as fibonacci\n"
+">>> fibonacci(500)\n"
+"0 1 1 2 3 5 8 13 21 34 55 89 144 233 377"
 
 #: ../../tutorial/modules.rst:139
 msgid ""
@@ -234,18 +332,23 @@ msgid ""
 "use :func:`importlib.reload`, e.g. ``import importlib; "
 "importlib.reload(modulename)``."
 msgstr ""
+"به دلایل کارایی، هر ماژول در هر نشست مفسر فقط یک بار وارد می‌شود. بنابراین، "
+"اگر ماژول‌های خود را تغییر دهید، باید مفسر را دوباره راه‌اندازی کنید؛ یا اگر "
+"فقط یک ماژول را می‌خواهید به‌صورت تعاملی آزمایش کنید، "
+"از :func:`importlib.reload` استفاده کنید، برای مثال: ``import importlib; "
+"importlib.reload(modulename)``."
 
 #: ../../tutorial/modules.rst:149
 msgid "Executing modules as scripts"
-msgstr ""
+msgstr "اجرای ماژول‌ها به‌عنوان اسکریپت"
 
 #: ../../tutorial/modules.rst:151
 msgid "When you run a Python module with ::"
-msgstr ""
+msgstr "وقتی یک ماژول پایتون را با استفاده از این دستور اجرا می‌کنید ::"
 
 #: ../../tutorial/modules.rst:153
 msgid "python fibo.py <arguments>"
-msgstr ""
+msgstr "python fibo.py <arguments>"
 
 #: ../../tutorial/modules.rst:155
 msgid ""
@@ -253,6 +356,9 @@ msgid ""
 "with the ``__name__`` set to ``\"__main__\"``.  That means that by adding "
 "this code at the end of your module::"
 msgstr ""
+"کد موجود در ماژول اجرا خواهد شد، درست همانند زمانی که آن را وارد کرده‌اید، "
+"اما مقدار ``__name__`` برابر با ``\"__main__\"`` تنظیم می‌شود. این یعنی با افزودن "
+"کد زیر در انتهای ماژول خود::"
 
 #: ../../tutorial/modules.rst:159
 msgid ""
@@ -260,6 +366,9 @@ msgid ""
 "    import sys\n"
 "    fib(int(sys.argv[1]))"
 msgstr ""
+"if __name__ == \"__main__\":\n"
+"    import sys\n"
+"    fib(int(sys.argv[1]))"
 
 #: ../../tutorial/modules.rst:163
 msgid ""
@@ -267,22 +376,29 @@ msgid ""
 "because the code that parses the command line only runs if the module is "
 "executed as the \"main\" file:"
 msgstr ""
+"می‌توانید فایل را هم به‌عنوان یک اسکریپت و هم به‌عنوان یک ماژول قابل وارد کردن "
+"استفاده کنید، زیرا کدی که خط فرمان را تجزیه می‌کند فقط زمانی اجرا می‌شود که "
+"ماژول به‌عنوان فایل «اصلی» اجرا شود:"
 
 #: ../../tutorial/modules.rst:167
 msgid ""
 "$ python fibo.py 50\n"
 "0 1 1 2 3 5 8 13 21 34"
 msgstr ""
+"$ python fibo.py 50\n"
+"0 1 1 2 3 5 8 13 21 34"
 
 #: ../../tutorial/modules.rst:172
 msgid "If the module is imported, the code is not run::"
-msgstr ""
+msgstr "اگر ماژول وارد شود، کد اجرا نمی‌شود::"
 
 #: ../../tutorial/modules.rst:174
 msgid ""
 ">>> import fibo\n"
 ">>>"
 msgstr ""
+">>> import fibo\n"
+">>>"
 
 #: ../../tutorial/modules.rst:177
 msgid ""
@@ -290,10 +406,13 @@ msgid ""
 "module, or for testing purposes (running the module as a script executes a "
 "test suite)."
 msgstr ""
+"این روش اغلب برای فراهم کردن یک رابط کاربری مناسب برای یک ماژول یا برای "
+"اهداف آزمایشی استفاده می‌شود (اجرای ماژول به‌عنوان یک اسکریپت باعث اجرای یک "
+"مجموعهٔ آزمون می‌شود)."
 
 #: ../../tutorial/modules.rst:184
 msgid "The Module Search Path"
-msgstr ""
+msgstr "مسیر جستجوی ماژول‌ها"
 
 #: ../../tutorial/modules.rst:188
 msgid ""
@@ -304,28 +423,40 @@ msgid ""
 "variable :data:`sys.path`.  :data:`sys.path` is initialized from these "
 "locations:"
 msgstr ""
+"هنگامی که یک ماژول با نام \\:mod:`!spam` وارد می‌شود، مفسر ابتدا به دنبال یک "
+"ماژول داخلی با همان نام می‌گردد. نام این ماژول‌ها در "
+"\\:data:`sys.builtin_module_names` فهرست شده‌اند. اگر یافت نشود، سپس به دنبال "
+"فایلی با نام \\:file:`spam.py` در فهرستی از پوشه‌ها می‌گردد که توسط متغیر "
+"\\:data:`sys.path` مشخص شده‌اند. \\:data:`sys.path` از این مکان‌ها مقداردهی "
+"اولیه می‌شود:"
 
 #: ../../tutorial/modules.rst:194
 msgid ""
 "The directory containing the input script (or the current directory when no "
 "file is specified)."
 msgstr ""
+"پوشه‌ای که اسکریپت ورودی در آن قرار دارد (یا پوشهٔ جاری، زمانی که هیچ فایلی "
+"مشخص نشده باشد)."
 
 #: ../../tutorial/modules.rst:196
 msgid ""
 ":envvar:`PYTHONPATH` (a list of directory names, with the same syntax as the "
 "shell variable :envvar:`PATH`)."
 msgstr ""
+"\\:envvar:`PYTHONPATH` (فهرستی از نام پوشه‌ها با همان نحوی که متغیر پوستهٔ "
+"\\:envvar:`PATH` دارد)."
 
 #: ../../tutorial/modules.rst:198
 msgid ""
 "The installation-dependent default (by convention including a ``site-"
 "packages`` directory, handled by the :mod:`site` module)."
 msgstr ""
+"مقدار پیش‌فرض وابسته به نصب (که طبق قرارداد شامل یک پوشهٔ ``site-packages`` است "
+"و توسط ماژول \\:mod:`site` مدیریت می‌شود)."
 
 #: ../../tutorial/modules.rst:201
 msgid "More details are at :ref:`sys-path-init`."
-msgstr ""
+msgstr "جزئیات بیشتر در \\:ref:`sys-path-init` موجود است."
 
 #: ../../tutorial/modules.rst:204
 msgid ""
@@ -333,6 +464,9 @@ msgid ""
 "script is calculated after the symlink is followed. In other words the "
 "directory containing the symlink is **not** added to the module search path."
 msgstr ""
+"در سیستم‌های فایلی که از پیوندهای نمادین پشتیبانی می‌کنند، پوشهٔ شامل اسکریپت "
+"ورودی پس از دنبال کردن پیوند نمادین محاسبه می‌شود. به عبارت دیگر، پوشه‌ای که "
+"پیوند نمادین در آن قرار دارد **به مسیر جستجوی ماژول‌ها اضافه نمی‌شود**."
 
 #: ../../tutorial/modules.rst:208
 msgid ""
@@ -343,10 +477,16 @@ msgid ""
 "library directory. This is an error unless the replacement is intended.  See "
 "section :ref:`tut-standardmodules` for more information."
 msgstr ""
+"پس از مقداردهی اولیه، برنامه‌های پایتون می‌توانند \\:data:`sys.path` را تغییر "
+"دهند. پوشه‌ای که اسکریپت در حال اجرا در آن قرار دارد، در ابتدای مسیر جستجو و "
+"پیش از مسیر کتابخانهٔ استاندارد قرار داده می‌شود. این بدان معناست که "
+"اسکریپت‌های موجود در آن پوشه، به‌جای ماژول‌هایی با همان نام در پوشهٔ کتابخانه "
+"بارگذاری خواهند شد. این کار یک خطا محسوب می‌شود، مگر اینکه جایگزینی موردنظر "
+"باشد. برای اطلاعات بیشتر، بخش \\:ref:`tut-standardmodules` را ببینید."
 
 #: ../../tutorial/modules.rst:221
 msgid "\"Compiled\" Python files"
-msgstr ""
+msgstr "فایل‌های پایتون «کامپایل‌شده»"
 
 #: ../../tutorial/modules.rst:223
 msgid ""
@@ -358,6 +498,13 @@ msgid ""
 "spam.cpython-33.pyc``.  This naming convention allows compiled modules from "
 "different releases and different versions of Python to coexist."
 msgstr ""
+"برای افزایش سرعت بارگذاری ماژول‌ها، پایتون نسخهٔ کامپایل‌شدهٔ هر ماژول را در "
+"پوشهٔ ``__pycache__`` و با نام \\:file:`module.{version}.pyc` ذخیره می‌کند؛ در "
+"این نام، نسخه قالب فایل کامپایل‌شده را مشخص می‌کند و معمولاً شامل شمارهٔ نسخهٔ "
+"پایتون است. برای مثال، در انتشار CPython نسخهٔ 3.3، نسخهٔ کامپایل‌شدهٔ spam.py "
+"به‌صورت ``__pycache__/spam.cpython-33.pyc`` ذخیره می‌شود. این قرارداد نام‌گذاری "
+"اجازه می‌دهد ماژول‌های کامپایل‌شده از انتشارها و نسخه‌های مختلف پایتون در کنار "
+"یکدیگر وجود داشته باشند."
 
 #: ../../tutorial/modules.rst:231
 msgid ""
@@ -367,6 +514,11 @@ msgid ""
 "independent, so the same library can be shared among systems with different "
 "architectures."
 msgstr ""
+"پایتون تاریخ تغییر فایل منبع را با نسخهٔ کامپایل‌شده بررسی می‌کند تا مشخص شود "
+"آیا قدیمی شده است و نیاز به کامپایل مجدد دارد یا خیر. این فرایند کاملاً "
+"خودکار است. همچنین، ماژول‌های کامپایل‌شده مستقل از پلتفرم هستند، بنابراین یک "
+"کتابخانهٔ یکسان می‌تواند بین سیستم‌هایی با معماری‌های متفاوت به اشتراک گذاشته "
+"شود."
 
 #: ../../tutorial/modules.rst:236
 msgid ""
@@ -377,10 +529,16 @@ msgid ""
 "distribution, the compiled module must be in the source directory, and there "
 "must not be a source module."
 msgstr ""
+"پایتون در دو حالت، حافظهٔ نهان را بررسی نمی‌کند. نخست، همیشه ماژولی را که "
+"مستقیماً از خط فرمان بارگذاری شده است دوباره کامپایل می‌کند و نتیجه را ذخیره "
+"نمی‌کند. دوم، اگر هیچ ماژول منبعی وجود نداشته باشد، حافظهٔ نهان را بررسی "
+"نمی‌کند. برای پشتیبانی از توزیع‌های بدون منبع (فقط کامپایل‌شده)، ماژول "
+"کامپایل‌شده باید در پوشهٔ منبع قرار داشته باشد و نباید ماژول منبعی وجود داشته "
+"باشد."
 
 #: ../../tutorial/modules.rst:243
 msgid "Some tips for experts:"
-msgstr ""
+msgstr "چند نکته برای متخصصان:"
 
 #: ../../tutorial/modules.rst:245
 msgid ""
@@ -392,6 +550,13 @@ msgid ""
 "have an ``opt-`` tag and are usually smaller.  Future releases may change "
 "the effects of optimization."
 msgstr ""
+"می‌توانید از گزینه‌های \\:option:`-O` یا \\:option:`-OO` در دستور پایتون برای "
+"کاهش اندازهٔ یک ماژول کامپایل‌شده استفاده کنید. گزینهٔ ``-O`` دستورهای assert را "
+"حذف می‌کند و گزینهٔ ``-OO`` هم دستورهای assert و هم رشته‌های **doc** را حذف "
+"می‌کند. از آنجا که برخی برنامه‌ها ممکن است به وجود این موارد وابسته باشند، فقط "
+"زمانی باید از این گزینه استفاده کنید که بدانید چه کاری انجام می‌دهید. "
+"ماژول‌های «بهینه‌شده» دارای برچسب ``opt-`` هستند و معمولاً کوچک‌ترند. انتشارهای "
+"آینده ممکن است اثرات بهینه‌سازی را تغییر دهند."
 
 #: ../../tutorial/modules.rst:253
 msgid ""
@@ -399,22 +564,29 @@ msgid ""
 "when it is read from a ``.py`` file; the only thing that's faster about "
 "``.pyc`` files is the speed with which they are loaded."
 msgstr ""
+"یک برنامه زمانی که از یک فایل ``.pyc`` خوانده می‌شود، سریع‌تر از زمانی که از یک "
+"فایل ``.py`` خوانده می‌شود اجرا نمی‌شود؛ تنها چیزی که در فایل‌های ``.pyc`` سریع‌تر "
+"است، سرعت بارگذاری آن‌هاست."
 
 #: ../../tutorial/modules.rst:257
 msgid ""
 "The module :mod:`compileall` can create .pyc files for all modules in a "
 "directory."
 msgstr ""
+"ماژول \\:mod:`compileall` می‌تواند برای تمام ماژول‌های موجود در یک پوشه "
+"فایل‌های .pyc ایجاد کند."
 
 #: ../../tutorial/modules.rst:260
 msgid ""
 "There is more detail on this process, including a flow chart of the "
 "decisions, in :pep:`3147`."
 msgstr ""
+"جزئیات بیشتری دربارهٔ این فرایند، از جمله نمودار جریان تصمیم‌ها، در "
+"\\:pep:`3147` آمده است."
 
 #: ../../tutorial/modules.rst:267
 msgid "Standard Modules"
-msgstr ""
+msgstr "ماژول‌های استاندارد"
 
 #: ../../tutorial/modules.rst:271
 msgid ""
@@ -430,6 +602,17 @@ msgid ""
 "into every Python interpreter.  The variables ``sys.ps1`` and ``sys.ps2`` "
 "define the strings used as primary and secondary prompts::"
 msgstr ""
+"پایتون همراه با مجموعه‌ای از ماژول‌های استاندارد ارائه می‌شود که در یک سند "
+"جداگانه، یعنی مرجع کتابخانهٔ پایتون (\"مرجع کتابخانه\" از اینجا به بعد)، "
+"توضیح داده شده‌اند. برخی ماژول‌ها در مفسر داخلی هستند؛ این ماژول‌ها دسترسی به "
+"عملیاتی را فراهم می‌کنند که بخشی از هستهٔ زبان نیستند، اما بااین‌حال، یا برای "
+"افزایش کارایی یا برای فراهم کردن دسترسی به امکانات سیستم‌عامل مانند "
+"فراخوانی‌های سیستمی، به‌صورت داخلی وجود دارند. مجموعهٔ این ماژول‌ها یک گزینهٔ "
+"پیکربندی است که به پلتفرم زیربنایی نیز وابسته است. برای مثال، ماژول "
+"\\:mod:`winreg` فقط در سیستم‌های ویندوز ارائه می‌شود. یک ماژول خاص شایستهٔ توجه "
+"بیشتر است: \\:mod:`sys` که در هر مفسر پایتون داخلی است. متغیرهای ``sys.ps1`` و "
+"``sys.ps2`` رشته‌هایی را تعریف می‌کنند که به‌عنوان اعلان‌های اصلی و ثانویه استفاده "
+"می‌شوند::"
 
 #: ../../tutorial/modules.rst:283
 msgid ""
@@ -443,12 +626,21 @@ msgid ""
 "Yuck!\n"
 "C>"
 msgstr ""
+">>> import sys\n"
+">>> sys.ps1\n"
+"'>>> '\n"
+">>> sys.ps2\n"
+"'... '\n"
+">>> sys.ps1 = 'C> '\n"
+"C> print('Yuck!')\n"
+"Yuck!\n"
+"C>"
 
 #: ../../tutorial/modules.rst:294
 msgid ""
 "These two variables are only defined if the interpreter is in interactive "
 "mode."
-msgstr ""
+msgstr "این دو متغیر فقط زمانی تعریف می‌شوند که مفسر در حالت تعاملی باشد."
 
 #: ../../tutorial/modules.rst:296
 msgid ""
@@ -458,22 +650,31 @@ msgid ""
 "default if :envvar:`PYTHONPATH` is not set.  You can modify it using "
 "standard list operations::"
 msgstr ""
+"متغیر ``sys.path`` فهرستی از رشته‌هاست که مسیر جستجوی مفسر برای ماژول‌ها را "
+"تعیین می‌کند. این متغیر از یک مسیر پیش‌فرض گرفته‌شده از متغیر محیطی "
+"\\:envvar:`PYTHONPATH` مقداردهی اولیه می‌شود، یا اگر \\:envvar:`PYTHONPATH` "
+"تنظیم نشده باشد، از یک مقدار پیش‌فرض داخلی استفاده می‌کند. می‌توانید آن را با "
+"استفاده از عملیات استاندارد فهرست‌ها تغییر دهید::"
 
 #: ../../tutorial/modules.rst:302
 msgid ""
 ">>> import sys\n"
 ">>> sys.path.append('/ufs/guido/lib/python')"
 msgstr ""
+">>> import sys\n"
+">>> sys.path.append('/ufs/guido/lib/python')"
 
 #: ../../tutorial/modules.rst:309
 msgid "The :func:`dir` Function"
-msgstr ""
+msgstr "تابع \\:func:`dir`"
 
 #: ../../tutorial/modules.rst:311
 msgid ""
 "The built-in function :func:`dir` is used to find out which names a module "
 "defines.  It returns a sorted list of strings::"
 msgstr ""
+"تابع داخلی \\:func:`dir` برای یافتن نام‌هایی که یک ماژول تعریف می‌کند استفاده "
+"می‌شود. این تابع یک فهرست مرتب‌شده از رشته‌ها برمی‌گرداند::"
 
 #: ../../tutorial/modules.rst:314
 msgid ""
@@ -510,11 +711,45 @@ msgid ""
 "'version_info',\n"
 " 'warnoptions']"
 msgstr ""
+">>> import fibo, sys\n"
+">>> dir(fibo)\n"
+"['__name__', 'fib', 'fib2']\n"
+">>> dir(sys)\n"
+"['__breakpointhook__', '__displayhook__', '__doc__', '__excepthook__',\n"
+" '__interactivehook__', '__loader__', '__name__', '__package__', "
+"'__spec__',\n"
+" '__stderr__', '__stdin__', '__stdout__', '__unraisablehook__',\n"
+" '_clear_type_cache', '_current_frames', '_debugmallocstats', '_framework',\n"
+" '_getframe', '_git', '_home', '_xoptions', 'abiflags', 'addaudithook',\n"
+" 'api_version', 'argv', 'audit', 'base_exec_prefix', 'base_prefix',\n"
+" 'breakpointhook', 'builtin_module_names', 'byteorder', 'call_tracing',\n"
+" 'callstats', 'copyright', 'displayhook', 'dont_write_bytecode', "
+"'exc_info',\n"
+" 'excepthook', 'exec_prefix', 'executable', 'exit', 'flags', 'float_info',\n"
+" 'float_repr_style', 'get_asyncgen_hooks', "
+"'get_coroutine_origin_tracking_depth',\n"
+" 'getallocatedblocks', 'getdefaultencoding', 'getdlopenflags',\n"
+" 'getfilesystemencodeerrors', 'getfilesystemencoding', 'getprofile',\n"
+" 'getrecursionlimit', 'getrefcount', 'getsizeof', 'getswitchinterval',\n"
+" 'gettrace', 'hash_info', 'hexversion', 'implementation', 'int_info',\n"
+" 'intern', 'is_finalizing', 'last_traceback', 'last_type', 'last_value',\n"
+" 'maxsize', 'maxunicode', 'meta_path', 'modules', 'path', 'path_hooks',\n"
+" 'path_importer_cache', 'platform', 'prefix', 'ps1', 'ps2', "
+"'pycache_prefix',\n"
+" 'set_asyncgen_hooks', 'set_coroutine_origin_tracking_depth', "
+"'setdlopenflags',\n"
+" 'setprofile', 'setrecursionlimit', 'setswitchinterval', 'settrace', "
+"'stderr',\n"
+" 'stdin', 'stdout', 'thread_info', 'unraisablehook', 'version', "
+"'version_info',\n"
+" 'warnoptions']"
 
 #: ../../tutorial/modules.rst:340
 msgid ""
 "Without arguments, :func:`dir` lists the names you have defined currently::"
 msgstr ""
+"بدون آرگومان، \\:func:`dir` نام‌هایی را که در حال حاضر تعریف کرده‌اید فهرست "
+"می‌کند::"
 
 #: ../../tutorial/modules.rst:342
 msgid ""
@@ -524,11 +759,18 @@ msgid ""
 ">>> dir()\n"
 "['__builtins__', '__name__', 'a', 'fib', 'fibo', 'sys']"
 msgstr ""
+">>> a = [1, 2, 3, 4, 5]\n"
+">>> import fibo\n"
+">>> fib = fibo.fib\n"
+">>> dir()\n"
+"['__builtins__', '__name__', 'a', 'fib', 'fibo', 'sys']"
 
 #: ../../tutorial/modules.rst:348
 msgid ""
 "Note that it lists all types of names: variables, modules, functions, etc."
 msgstr ""
+"توجه کنید که این تابع همهٔ انواع نام‌ها را فهرست می‌کند: متغیرها، ماژول‌ها، "
+"تابع‌ها و غیره."
 
 #: ../../tutorial/modules.rst:352
 msgid ""
@@ -536,6 +778,8 @@ msgid ""
 "you want a list of those, they are defined in the standard "
 "module :mod:`builtins`::"
 msgstr ""
+"\\:func:`dir` نام تابع‌ها و متغیرهای داخلی را فهرست نمی‌کند. اگر فهرستی از "
+"آن‌ها می‌خواهید، این موارد در ماژول استاندارد \\:mod:`builtins` تعریف شده‌اند::"
 
 #: ../../tutorial/modules.rst:356
 msgid ""
@@ -572,10 +816,42 @@ msgid ""
 " 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars',\n"
 " 'zip']"
 msgstr ""
+">>> import builtins\n"
+">>> dir(builtins)\n"
+"['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException',\n"
+" 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning',\n"
+" 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError',\n"
+" 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning',\n"
+" 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False',\n"
+" 'FileExistsError', 'FileNotFoundError', 'FloatingPointError',\n"
+" 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError',\n"
+" 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError',\n"
+" 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError',\n"
+" 'MemoryError', 'NameError', 'None', 'NotADirectoryError', "
+"'NotImplemented',\n"
+" 'NotImplementedError', 'OSError', 'OverflowError',\n"
+" 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError',\n"
+" 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning',\n"
+" 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError',\n"
+" 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError',\n"
+" 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError',\n"
+" 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning',\n"
+" 'ValueError', 'Warning', 'ZeroDivisionError', '_', '__build_class__',\n"
+" '__debug__', '__doc__', '__import__', '__name__', '__package__', 'abs',\n"
+" 'all', 'any', 'ascii', 'bin', 'bool', 'bytearray', 'bytes', 'callable',\n"
+" 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits',\n"
+" 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit',\n"
+" 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr',\n"
+" 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass',\n"
+" 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview',\n"
+" 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property',\n"
+" 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice',\n"
+" 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars',\n"
+" 'zip']"
 
 #: ../../tutorial/modules.rst:391
 msgid "Packages"
-msgstr ""
+msgstr "بسته‌ها"
 
 #: ../../tutorial/modules.rst:393
 msgid ""
@@ -587,6 +863,12 @@ msgid ""
 "saves the authors of multi-module packages like NumPy or Pillow from having "
 "to worry about each other's module names."
 msgstr ""
+"بسته‌ها روشی برای ساختاربندی فضای نام ماژول‌های پایتون با استفاده از «نام‌های "
+"نقطه‌دار ماژول» هستند. برای مثال، نام ماژول \\:mod:`!A.B` یک زیرماژول با نام "
+"``B`` در بسته‌ای با نام ``A`` را مشخص می‌کند. همان‌طور که استفاده از ماژول‌ها باعث "
+"می‌شود نویسندگان ماژول‌های مختلف نگران نام متغیرهای سراسری یکدیگر نباشند، "
+"استفاده از نام‌های نقطه‌دار ماژول نیز باعث می‌شود نویسندگان بسته‌های چندماژوله‌ای "
+"مانند NumPy یا Pillow نگران نام ماژول‌های یکدیگر نباشند."
 
 #: ../../tutorial/modules.rst:401
 msgid ""
@@ -602,6 +884,16 @@ msgid ""
 "these operations.  Here's a possible structure for your package (expressed "
 "in terms of a hierarchical filesystem):"
 msgstr ""
+"فرض کنید می‌خواهید مجموعه‌ای از ماژول‌ها (یک «بسته») را برای مدیریت یکپارچهٔ "
+"فایل‌های صوتی و داده‌های صوتی طراحی کنید. قالب‌های فایل صوتی بسیار متفاوتی وجود "
+"دارند (که معمولاً با پسوندشان شناخته می‌شوند، برای مثال: \\:file:`.wav`، "
+"\\:file:`.aiff`، \\:file:`.au`)؛ بنابراین ممکن است نیاز داشته باشید مجموعه‌ای "
+"در حال رشد از ماژول‌ها را برای تبدیل بین قالب‌های مختلف فایل ایجاد و نگهداری "
+"کنید. همچنین عملیات‌های مختلف بسیاری وجود دارند که ممکن است بخواهید روی "
+"داده‌های صوتی انجام دهید (مانند ترکیب کردن، افزودن پژواک، اعمال تابع "
+"اکولایزر، ایجاد یک اثر استریوی مصنوعی)، بنابراین علاوه بر این، جریان "
+"بی‌پایانی از ماژول‌ها برای انجام این عملیات‌ها خواهید نوشت. ساختار احتمالی زیر "
+"برای بستهٔ شما وجود دارد (که به‌صورت یک سیستم فایل سلسله‌مراتبی بیان شده است):"
 
 #: ../../tutorial/modules.rst:412
 msgid ""
@@ -629,12 +921,37 @@ msgid ""
 "              karaoke.py\n"
 "              ..."
 msgstr ""
+"sound/                          بسته‌های سطح بالا\n"
+"      __init__.py               راه‌اندازی اولیه بسته صوتی\n"
+"      formats/                  زیربسته برای تبدیل فرمت‌های فایل\n"
+"              __init__.py\n"
+"              wavread.py\n"
+"              wavwrite.py\n"
+"              aiffread.py\n"
+"              aiffwrite.py\n"
+"              auread.py\n"
+"              auwrite.py\n"
+"              ...\n"
+"      effects/                  زیربسته برای جلوه‌های صوتی\n"
+"              __init__.py\n"
+"              echo.py\n"
+"              surround.py\n"
+"              reverse.py\n"
+"              ...\n"
+"      filters/                  زیربسته برای فیلتر‌ها\n"
+"              __init__.py\n"
+"              equalizer.py\n"
+"              vocoder.py\n"
+"              karaoke.py\n"
+"              ..."
 
 #: ../../tutorial/modules.rst:438
 msgid ""
 "When importing the package, Python searches through the directories on "
 "``sys.path`` looking for the package subdirectory."
 msgstr ""
+"هنگام وارد کردن بسته، پایتون پوشه‌های موجود در ``sys.path`` را جستجو می‌کند تا "
+"زیرپوشهٔ بسته را پیدا کند."
 
 #: ../../tutorial/modules.rst:441
 msgid ""
@@ -646,64 +963,79 @@ msgid ""
 "can just be an empty file, but it can also execute initialization code for "
 "the package or set the ``__all__`` variable, described later."
 msgstr ""
+"فایل‌های \\:file:`__init__.py` لازم هستند تا پایتون پوشه‌هایی را که شامل این "
+"فایل هستند به‌عنوان بسته در نظر بگیرد (مگر اینکه از یک \\:term:`namespace "
+"package` استفاده شود که قابلیتی نسبتاً پیشرفته است). این کار از پنهان شدن "
+"ناخواستهٔ ماژول‌های معتبر که بعداً در مسیر جستجوی ماژول قرار دارند، توسط "
+"پوشه‌هایی با نام مشترک مانند ``string`` جلوگیری می‌کند. در ساده‌ترین حالت، "
+"\\:file:`__init__.py` می‌تواند فقط یک فایل خالی باشد، اما می‌تواند کد مقداردهی "
+"اولیهٔ بسته را نیز اجرا کند یا متغیر ``__all__`` را که بعداً توضیح داده می‌شود، "
+"تنظیم کند."
 
 #: ../../tutorial/modules.rst:449
 msgid ""
 "Users of the package can import individual modules from the package, for "
 "example::"
 msgstr ""
+"کاربران بسته می‌توانند ماژول‌های جداگانه‌ای را از بسته وارد کنند، برای مثال::"
 
 #: ../../tutorial/modules.rst:452
 msgid "import sound.effects.echo"
-msgstr ""
+msgstr "import sound.effects.echo"
 
 #: ../../tutorial/modules.rst:454
 msgid ""
 "This loads the submodule :mod:`!sound.effects.echo`.  It must be referenced "
 "with its full name. ::"
 msgstr ""
+"این کار زیرماژول \\:mod:`!sound.effects.echo` را بارگذاری می‌کند. این ماژول "
+"باید با نام کامل خود ارجاع داده شود. ::"
 
 #: ../../tutorial/modules.rst:457
 msgid "sound.effects.echo.echofilter(input, output, delay=0.7, atten=4)"
-msgstr ""
+msgstr "sound.effects.echo.echofilter(input, output, delay=0.7, atten=4)"
 
 #: ../../tutorial/modules.rst:459
 msgid "An alternative way of importing the submodule is::"
-msgstr ""
+msgstr "روش جایگزین برای وارد کردن زیرماژول به شکل زیر است::"
 
 #: ../../tutorial/modules.rst:461
 msgid "from sound.effects import echo"
-msgstr ""
+msgstr "from sound.effects import echo"
 
 #: ../../tutorial/modules.rst:463
 msgid ""
 "This also loads the submodule :mod:`!echo`, and makes it available without "
 "its package prefix, so it can be used as follows::"
 msgstr ""
+"این روش نیز زیرماژول \\:mod:`!echo` را بارگذاری می‌کند و آن را بدون پیشوند "
+"بسته در دسترس قرار می‌دهد، بنابراین می‌توان از آن به شکل زیر استفاده کرد::"
 
 #: ../../tutorial/modules.rst:466
 msgid "echo.echofilter(input, output, delay=0.7, atten=4)"
-msgstr ""
+msgstr "echo.echofilter(input, output, delay=0.7, atten=4)"
 
 #: ../../tutorial/modules.rst:468
 msgid ""
 "Yet another variation is to import the desired function or variable "
 "directly::"
-msgstr ""
+msgstr "یک حالت دیگر، وارد کردن مستقیم تابع یا متغیر موردنظر است::"
 
 #: ../../tutorial/modules.rst:470
 msgid "from sound.effects.echo import echofilter"
-msgstr ""
+msgstr "from sound.effects.echo import echofilter"
 
 #: ../../tutorial/modules.rst:472
 msgid ""
 "Again, this loads the submodule :mod:`!echo`, but this makes its "
 "function :func:`!echofilter` directly available::"
 msgstr ""
+"دوباره، این کار زیرماژول \\:mod:`!echo` را بارگذاری می‌کند، اما باعث می‌شود "
+"تابع آن، یعنی \\:func:`!echofilter`، مستقیماً در دسترس باشد::"
 
 #: ../../tutorial/modules.rst:475
 msgid "echofilter(input, output, delay=0.7, atten=4)"
-msgstr ""
+msgstr "echofilter(input, output, delay=0.7, atten=4)"
 
 #: ../../tutorial/modules.rst:477
 msgid ""
@@ -714,6 +1046,12 @@ msgid ""
 "module and attempts to load it.  If it fails to find it, "
 "an :exc:`ImportError` exception is raised."
 msgstr ""
+"توجه کنید که هنگام استفاده از ``from package import item``، مورد item "
+"می‌تواند یک زیرماژول (یا زیر‌بسته) از بسته باشد، یا نام دیگری باشد که در بسته "
+"تعریف شده است، مانند یک تابع، کلاس یا متغیر. دستور ``import`` ابتدا بررسی "
+"می‌کند که آیا item در بسته تعریف شده است یا خیر؛ اگر تعریف نشده باشد، فرض "
+"می‌کند که یک ماژول است و تلاش می‌کند آن را بارگذاری کند. اگر نتواند آن را پیدا "
+"کند، یک استثنای \\:exc:`ImportError` ایجاد می‌شود."
 
 #: ../../tutorial/modules.rst:484
 msgid ""
@@ -722,10 +1060,13 @@ msgid ""
 "a package but can't be a class or function or variable defined in the "
 "previous item."
 msgstr ""
+"برعکس، هنگام استفاده از نحوی مانند ``import item.subitem.subsubitem``، هر مورد "
+"به‌جز آخرین مورد باید یک بسته باشد؛ آخرین مورد می‌تواند یک ماژول یا یک بسته "
+"باشد، اما نمی‌تواند یک کلاس، تابع یا متغیر تعریف‌شده در مورد قبلی باشد."
 
 #: ../../tutorial/modules.rst:493
 msgid "Importing \\* From a Package"
-msgstr ""
+msgstr "وارد کردن \\* از یک بسته"
 
 #: ../../tutorial/modules.rst:497
 msgid ""
@@ -735,6 +1076,11 @@ msgid ""
 "could take a long time and importing sub-modules might have unwanted side-"
 "effects that should only happen when the sub-module is explicitly imported."
 msgstr ""
+"اکنون اگر کاربر بنویسد ``from sound.effects import *`` چه اتفاقی می‌افتد؟ در "
+"حالت ایده‌آل، انتظار می‌رود این دستور به‌نحوی به سیستم فایل مراجعه کند، "
+"زیرماژول‌های موجود در بسته را پیدا کند و همهٔ آن‌ها را وارد کند. این کار "
+"می‌تواند زمان زیادی طول بکشد و وارد کردن زیرماژول‌ها ممکن است عوارض جانبی "
+"ناخواسته‌ای ایجاد کند که باید فقط هنگام وارد کردن صریح زیرماژول رخ دهند."
 
 #: ../../tutorial/modules.rst:503
 msgid ""
@@ -748,16 +1094,27 @@ msgid ""
 "importing \\* from their package.  For example, the file :file:`sound/"
 "effects/__init__.py` could contain the following code::"
 msgstr ""
+"تنها راه‌حل این است که نویسندهٔ بسته یک فهرست صریح از بسته فراهم کند. دستور "
+"\\:keyword:`import` از قرارداد زیر استفاده می‌کند: اگر کد "
+"\\:file:`__init__.py` یک بسته، فهرستی با نام ``__all__`` تعریف کند، این فهرست "
+"به‌عنوان فهرست نام ماژول‌هایی در نظر گرفته می‌شود که هنگام مشاهدهٔ ``from package "
+"import *`` باید وارد شوند. این وظیفهٔ نویسندهٔ بسته است که هنگام انتشار نسخهٔ "
+"جدید بسته، این فهرست را به‌روز نگه دارد. نویسندگان بسته همچنین ممکن است تصمیم "
+"بگیرند از این قابلیت پشتیبانی نکنند، اگر کاربردی برای وارد کردن \\* از بستهٔ "
+"خود نمی‌بینند. برای مثال، فایل \\:file:`sound/effects/__init__.py` می‌تواند "
+"شامل کد زیر باشد::"
 
 #: ../../tutorial/modules.rst:513
 msgid "__all__ = [\"echo\", \"surround\", \"reverse\"]"
-msgstr ""
+msgstr "__all__ = [\"echo\", \"surround\", \"reverse\"]"
 
 #: ../../tutorial/modules.rst:515
 msgid ""
 "This would mean that ``from sound.effects import *`` would import the three "
 "named submodules of the :mod:`!sound.effects` package."
 msgstr ""
+"این یعنی ``from sound.effects import *`` سه زیرماژول نام‌بردهٔ بستهٔ \\:mod:`!"
+"sound.effects` را وارد خواهد کرد."
 
 #: ../../tutorial/modules.rst:518
 msgid ""
@@ -768,6 +1125,12 @@ msgid ""
 "submodule, because it is shadowed by the locally defined ``reverse`` "
 "function::"
 msgstr ""
+"توجه داشته باشید که زیرماژول‌ها ممکن است توسط نام‌هایی که به‌صورت محلی تعریف "
+"شده‌اند، پوشانده شوند. برای مثال، اگر یک تابع ``reverse`` به فایل "
+"\\:file:`sound/effects/__init__.py` اضافه کنید، دستور ``from sound.effects "
+"import *`` فقط دو زیرماژول ``echo`` و ``surround`` را وارد خواهد کرد، اما "
+"*زیرماژول* ``reverse`` را وارد نمی‌کند، زیرا توسط تابع ``reverse`` تعریف‌شده در "
+"همان فضا پوشانده شده است::"
 
 #: ../../tutorial/modules.rst:525
 msgid ""
@@ -780,6 +1143,14 @@ msgid ""
 "def reverse(msg: str):  # <-- this name shadows the 'reverse.py' submodule\n"
 "    return msg[::-1]    #     in the case of a 'from sound.effects import *'"
 msgstr ""
+"__all__ = [\n"
+"    \"echo\",      # refers to the 'echo.py' file\n"
+"    \"surround\",  # refers to the 'surround.py' file\n"
+"    \"reverse\",   # !!! refers to the 'reverse' function now !!!\n"
+"]\n"
+"\n"
+"def reverse(msg: str):  # <-- this name shadows the 'reverse.py' submodule\n"
+"    return msg[::-1]    #     in the case of a 'from sound.effects import *'"
 
 #: ../../tutorial/modules.rst:534
 msgid ""
@@ -793,6 +1164,14 @@ msgid ""
 "were explicitly loaded by previous :keyword:`import` statements.  Consider "
 "this code::"
 msgstr ""
+"اگر ``__all__`` تعریف نشده باشد، دستور ``from sound.effects import *`` تمام "
+"زیرماژول‌های بستهٔ \\:mod:`!sound.effects` را به فضای نام فعلی وارد *نمی‌کند*؛ "
+"این دستور فقط اطمینان حاصل می‌کند که بستهٔ \\:mod:`!sound.effects` وارد شده "
+"است (و احتمالاً هر کد مقداردهی اولیه‌ای در \\:file:`__init__.py` اجرا می‌شود) و "
+"سپس هر نامی را که در بسته تعریف شده است وارد می‌کند. این شامل هر نامی است که "
+"توسط \\:file:`__init__.py` تعریف شده (و زیرماژول‌هایی که به‌صورت صریح بارگذاری "
+"شده‌اند) نیز می‌شود. همچنین شامل هر زیرماژول بسته‌ای است که قبلاً توسط دستورهای "
+"\\:keyword:`import` به‌صورت صریح بارگذاری شده‌اند. این کد را در نظر بگیرید::"
 
 #: ../../tutorial/modules.rst:543
 msgid ""
@@ -800,6 +1179,9 @@ msgid ""
 "import sound.effects.surround\n"
 "from sound.effects import *"
 msgstr ""
+"import sound.effects.echo\n"
+"import sound.effects.surround\n"
+"from sound.effects import *"
 
 #: ../../tutorial/modules.rst:547
 msgid ""
@@ -808,6 +1190,10 @@ msgid ""
 "sound.effects` package when the ``from...import`` statement is executed.  "
 "(This also works when ``__all__`` is defined.)"
 msgstr ""
+"در این مثال، ماژول‌های \\:mod:`!echo` و \\:mod:`!surround` در فضای نام فعلی "
+"وارد می‌شوند، زیرا هنگام اجرای دستور ``from...import`` در بستهٔ \\:mod:`!"
+"sound.effects` تعریف شده‌اند. (این حالت زمانی که ``__all__`` تعریف شده باشد نیز "
+"کار می‌کند.)"
 
 #: ../../tutorial/modules.rst:552
 msgid ""
@@ -815,6 +1201,9 @@ msgid ""
 "certain patterns when you use ``import *``, it is still considered bad "
 "practice in production code."
 msgstr ""
+"اگرچه برخی ماژول‌ها طوری طراحی شده‌اند که هنگام استفاده از ``import *`` فقط "
+"نام‌هایی مطابق با الگوهای خاص صادر کنند، همچنان این کار در کدهای تولیدی روشی "
+"نامناسب محسوب می‌شود."
 
 #: ../../tutorial/modules.rst:556
 msgid ""
@@ -823,10 +1212,14 @@ msgid ""
 "importing module needs to use submodules with the same name from different "
 "packages."
 msgstr ""
+"به یاد داشته باشید که استفاده از ``from package import specific_submodule`` "
+"هیچ مشکلی ندارد! در واقع، این نشانه‌گذاری توصیه‌شده است، مگر اینکه ماژول "
+"واردکننده نیاز داشته باشد از زیرماژول‌هایی با نام یکسان از بسته‌های مختلف "
+"استفاده کند."
 
 #: ../../tutorial/modules.rst:565
 msgid "Intra-package References"
-msgstr ""
+msgstr "ارجاع‌های درون‌بسته‌ای"
 
 #: ../../tutorial/modules.rst:567
 msgid ""
@@ -836,6 +1229,11 @@ msgid ""
 "sound.filters.vocoder` needs to use the :mod:`!echo` module in the :mod:`!"
 "sound.effects` package, it can use ``from sound.effects import echo``."
 msgstr ""
+"هنگامی که بسته‌ها به زیر‌بسته‌ها ساختاربندی می‌شوند (مانند بستهٔ \\:mod:`!sound` "
+"در مثال)، می‌توانید از وارد کردن مطلق برای ارجاع به زیرماژول‌های بسته‌های هم‌سطح "
+"استفاده کنید. برای مثال، اگر ماژول \\:mod:`!sound.filters.vocoder` نیاز "
+"داشته باشد از ماژول \\:mod:`!echo` در بستهٔ \\:mod:`!sound.effects` استفاده "
+"کند، می‌تواند از ``from sound.effects import echo`` استفاده کند."
 
 #: ../../tutorial/modules.rst:573
 msgid ""
@@ -844,6 +1242,10 @@ msgid ""
 "current and parent packages involved in the relative import.  From "
 "the :mod:`!surround` module for example, you might use::"
 msgstr ""
+"همچنین می‌توانید وارد کردن نسبی بنویسید، با استفاده از شکل ``from module "
+"import name`` از دستور import. این وارد کردن‌ها از نقطه‌های ابتدایی برای نشان "
+"دادن بسته‌های فعلی و والد درگیر در وارد کردن نسبی استفاده می‌کنند. برای مثال، "
+"از ماژول \\:mod:`!surround` ممکن است از دستور زیر استفاده کنید::"
 
 #: ../../tutorial/modules.rst:578
 msgid ""
@@ -851,6 +1253,9 @@ msgid ""
 "from .. import formats\n"
 "from ..filters import equalizer"
 msgstr ""
+"from . import echo\n"
+"from .. import formats\n"
+"from ..filters import equalizer"
 
 #: ../../tutorial/modules.rst:582
 msgid ""
@@ -859,10 +1264,13 @@ msgid ""
 "use as the main module of a Python application must always use absolute "
 "imports."
 msgstr ""
+"توجه کنید که وارد کردن‌های نسبی بر اساس نام بستهٔ ماژول فعلی هستند. از آنجا که "
+"ماژول اصلی هیچ بسته‌ای ندارد، ماژول‌هایی که قرار است به‌عنوان ماژول اصلی یک "
+"برنامهٔ پایتون استفاده شوند، باید همیشه از وارد کردن‌های مطلق استفاده کنند."
 
 #: ../../tutorial/modules.rst:588
 msgid "Packages in Multiple Directories"
-msgstr ""
+msgstr "بسته‌ها در چندین پوشه"
 
 #: ../../tutorial/modules.rst:590
 msgid ""
@@ -872,16 +1280,24 @@ msgid ""
 "that file is executed.  This variable can be modified; doing so affects "
 "future searches for modules and subpackages contained in the package."
 msgstr ""
+"بسته‌ها یک ویژگی ویژهٔ دیگر را نیز پشتیبانی می‌کنند: "
+"\\:attr:`~module.__path__`. این ویژگی مقداردهی اولیه می‌شود تا پیش از اجرای "
+"کد موجود در آن فایل، یک :term:`sequence` از رشته‌ها باشد "
+"که نام پوشهٔ شامل \\:file:`__init__.py` بسته را در خود دارد. این متغیر قابل "
+"تغییر است؛ تغییر آن بر جستجوهای آینده برای ماژول‌ها و زیر‌بسته‌های موجود در "
+"بسته تأثیر می‌گذارد."
 
 #: ../../tutorial/modules.rst:597
 msgid ""
 "While this feature is not often needed, it can be used to extend the set of "
 "modules found in a package."
 msgstr ""
+"اگرچه این قابلیت معمولاً موردنیاز نیست، می‌توان از آن برای گسترش مجموعهٔ "
+"ماژول‌هایی که در یک بسته پیدا می‌شوند استفاده کرد."
 
 #: ../../tutorial/modules.rst:602
 msgid "Footnotes"
-msgstr ""
+msgstr "پانویس‌ها"
 
 #: ../../tutorial/modules.rst:603
 msgid ""
@@ -889,28 +1305,30 @@ msgid ""
 "execution of a module-level function definition adds the function name to "
 "the module's global namespace."
 msgstr ""
+"در واقع، تعریف تابع‌ها نیز «دستورهایی» هستند که «اجرا» می‌شوند؛ اجرای یک تعریف "
+"تابع در سطح ماژول، نام تابع را به فضای نام سراسری ماژول اضافه می‌کند."
 
 #: ../../tutorial/modules.rst:186 ../../tutorial/modules.rst:269
 #: ../../tutorial/modules.rst:350
 msgid "module"
-msgstr ""
+msgstr "ماژول"
 
 #: ../../tutorial/modules.rst:186
 msgid "search"
-msgstr ""
+msgstr "جست‌و‌جو"
 
 #: ../../tutorial/modules.rst:186
 msgid "path"
-msgstr ""
+msgstr "مسیر"
 
 #: ../../tutorial/modules.rst:269
 msgid "sys"
-msgstr ""
+msgstr "sys"
 
 #: ../../tutorial/modules.rst:350
 msgid "builtins"
-msgstr ""
+msgstr "builtins"
 
 #: ../../tutorial/modules.rst:495
 msgid "__all__"
-msgstr ""
+msgstr "__all__"
