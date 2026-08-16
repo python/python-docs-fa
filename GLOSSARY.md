@@ -78,3 +78,8 @@
 | list comprehension   |   درک فهرستی  |
 | directory  | پوشه  |
 | stack traceback |     ردگیری پشته  |
+| item | آیتم |
+| quotation | علامت نقل‌وقول |
+| escape | خنثی کردن |
+| unpacking | واگشایی |
+| shadowing | پوشاندن |
