@@ -1,0 +1,62 @@
+# .github/workflows/comment-docs-preview.yml
+name: Comment Docs Build Status
+
+on:
+  workflow_run:
+    workflows: ["Build Docs Preview"]
+    types:
+      - completed
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Download build result
+        uses: actions/download-artifact@v4
+        with:
+          name: build-result
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Read PR number
+        id: pr
+        run: echo "number=$(cat pr_number.txt)" >> $GITHUB_OUTPUT
+
+      - name: Read build log
+        id: log
+        run: |
+          # Grab the last 20 lines so the comment isn't massive
+          LOG=$(tail -20 build.log)
+          # GitHub Actions has a specific way to handle multiline strings
+          echo "content<<EOF" >> $GITHUB_OUTPUT
+          echo "$LOG" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Post comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const success = '${{ github.event.workflow_run.conclusion }}' === 'success';
+            const icon = success ? '✅' : '❌';
+            const status = success ? 'succeeded' : 'failed';
+
+            const body = `### ${icon} Docs build ${status}
+
+            <details>
+            <summary>Build log (last 20 lines)</summary>
+
+            \`\`\`
+            ${{ steps.log.outputs.content }}
+            \`\`\`
+
+            </details>`;
+
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ steps.pr.outputs.number }},
+              body: body
+            });

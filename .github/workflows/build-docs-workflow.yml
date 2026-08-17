@@ -1,0 +1,60 @@
+# .github/workflows/build-docs-preview.yml
+name: Build Docs Preview
+
+on:
+  pull_request:
+    paths:
+      - '**/*.po'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout CPython
+        uses: actions/checkout@v4
+        with:
+          repository: python/cpython
+          ref: v3.14.6
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Setup virtual environment
+        run: make venv
+        working-directory: ./Doc
+
+      - name: Checkout translation files (this PR's branch)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}  # <-- the PR's actual commit
+          path: Doc/locales/fa/LC_MESSAGES
+
+      - name: Install gettext
+        run: sudo apt-get install -y gettext
+
+      - name: Compile .po files to .mo
+        run: |
+          find Doc/locales/fa/LC_MESSAGES -name "*.po" | while read f; do
+            msgfmt "$f" -o "${f%.po}.mo"
+          done
+
+      - name: Build documentation
+        id: build
+        run: |
+          set +e
+          make -e SPHINXOPTS="--color -D language='fa' -D gettext_allow_fuzzy_translations=1 --keep-going" html 2>&1 | tee build.log
+          echo "exit_code=${PIPESTATUS[0]}" >> $GITHUB_OUTPUT
+        working-directory: ./Doc
+
+      - name: Save PR number
+        run: echo "${{ github.event.pull_request.number }}" > pr_number.txt
+
+      - name: Upload build result
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-result
+          path: |
+            build.log
+            pr_number.txt
