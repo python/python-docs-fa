@@ -21,9 +21,12 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           run-id: ${{ github.event.workflow_run.id }}
 
+      - name: Debug artifact contents       # <-- add this temporarily
+        run: find . -type f | head -30
+
       - name: Read PR number
         id: pr
-        run: echo "number=$(cat pr_number.txt)" >> $GITHUB_OUTPUT
+        run: echo "number=$(find . -name "pr_number.txt" | head -1 | xargs cat)" >> $GITHUB_OUTPUT
 
       - name: Read build log
         id: log
