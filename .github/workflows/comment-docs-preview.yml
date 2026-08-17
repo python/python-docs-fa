@@ -6,14 +6,44 @@ on:
     workflows: ["Build Docs Preview"]
     types:
       - completed
+  pull_request:
+    types:
+      - closed
+    paths:
+      - '**/*.po'
 
 jobs:
   comment:
+    if: github.event_name == 'workflow_run'
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
+      contents: write
+      actions: read
 
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure gh-pages branch exists
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git ls-remote --exit-code --heads origin gh-pages; then
+            echo "gh-pages branch not found, creating it..."
+            git checkout --orphan gh-pages
+            git rm -rf .
+            echo "# Doc Previews" > README.md
+            git add README.md
+            git commit -m "chore: initialize gh-pages branch"
+            git push origin gh-pages
+            git checkout -
+          else
+            echo "gh-pages branch already exists, skipping."
+          fi
+
       - name: Download build result
         uses: actions/download-artifact@v4
         with:
@@ -21,8 +51,13 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           run-id: ${{ github.event.workflow_run.id }}
 
-      - name: Debug artifact contents       # <-- add this temporarily
-        run: find . -type f | head -30
+      - name: Download HTML preview
+        uses: actions/download-artifact@v4
+        with:
+          name: docs-html
+          path: html-preview/
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
 
       - name: Read PR number
         id: pr
@@ -31,12 +66,19 @@ jobs:
       - name: Read build log
         id: log
         run: |
-          # Grab the last 20 lines so the comment isn't massive
-          LOG=$(tail -20 build.log)
-          # GitHub Actions has a specific way to handle multiline strings
+          LOG=$(find . -name "build.log" | head -1 | xargs tail -20)
           echo "content<<EOF" >> $GITHUB_OUTPUT
           echo "$LOG" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Deploy preview to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./html-preview
+          destination_dir: previews/${{ steps.pr.outputs.number }}
+          keep_files: true
+          enable_jekyll: false
 
       - name: Post comment
         uses: actions/github-script@v7
@@ -45,8 +87,14 @@ jobs:
             const success = '${{ github.event.workflow_run.conclusion }}' === 'success';
             const icon = success ? '✅' : '❌';
             const status = success ? 'succeeded' : 'failed';
+            const prNumber = ${{ steps.pr.outputs.number }};
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const previewUrl = `https://${owner}.github.io/${repo}/previews/${prNumber}/index.html`;
 
             const body = `### ${icon} Docs build ${status}
+
+            ${success ? `📖 **[Preview the docs](${previewUrl})**` : ''}
 
             <details>
             <summary>Build log (last 20 lines)</summary>
@@ -58,8 +106,44 @@ jobs:
             </details>`;
 
             github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: ${{ steps.pr.outputs.number }},
-              body: body
+              owner,
+              repo,
+              issue_number: prNumber,
+              body
             });
+
+  cleanup:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check if gh-pages exists
+        id: check
+        run: |
+          if git ls-remote --exit-code --heads https://github.com/${{ github.repository }}.git gh-pages; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Checkout gh-pages
+        if: steps.check.outputs.exists == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - name: Remove preview folder
+        if: steps.check.outputs.exists == 'true'
+        run: |
+          PR=${{ github.event.pull_request.number }}
+          if [ -d "previews/$PR" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git rm -rf "previews/$PR"
+            git commit -m "chore: remove preview for PR #$PR"
+            git push
+          else
+            echo "No preview folder found for PR #$PR, nothing to clean up."
+          fi

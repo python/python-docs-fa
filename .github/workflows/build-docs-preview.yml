@@ -28,7 +28,7 @@ jobs:
       - name: Checkout translation files (this PR's branch)
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}  # <-- the PR's actual commit
+          ref: ${{ github.event.pull_request.head.sha }}
           path: Doc/locales/fa/LC_MESSAGES
 
       - name: Install gettext
@@ -48,6 +48,22 @@ jobs:
           echo "exit_code=${PIPESTATUS[0]}" >> $GITHUB_OUTPUT
         working-directory: ./Doc
 
+      - name: Patch HTML static paths
+        # Sphinx builds _static paths as relative (e.g. ../../_static/),
+        # which breaks when served from a subdirectory like /previews/12/.
+        # We rewrite them to absolute URLs so CSS/JS load correctly
+        # regardless of which subdirectory the HTML file is in.
+        run: |
+          BASE="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/previews/${{ github.event.pull_request.number }}"
+          find Doc/build/html -name "*.html" | while read f; do
+            sed -i 's|<base href="[^"]*">||g' "$f"
+            sed -i "s|href=\"\(\.\./\)*_static/|href=\"$BASE/_static/|g" "$f"
+            sed -i "s|src=\"\(\.\./\)*_static/|src=\"$BASE/_static/|g" "$f"
+          done
+
+      - name: Move log to root
+        run: mv Doc/build.log build.log
+
       - name: Save PR number
         run: echo "${{ github.event.pull_request.number }}" > pr_number.txt
 
@@ -58,3 +74,10 @@ jobs:
           path: |
             build.log
             pr_number.txt
+
+      - name: Upload HTML preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-html
+          path: Doc/build/html/
+          retention-days: 7

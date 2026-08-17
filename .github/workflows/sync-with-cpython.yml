@@ -70,7 +70,7 @@ jobs:
             rel="${f#.pot-templates/}"
             po="${rel%.pot}.po"
             if [ -f "$po" ]; then
-              msgmerge --update --backup=off --no-location "$po" "$f"
+              msgmerge --update --backup=off --no-location --no-wrap "$po" "$f"
             fi
           done
 
@@ -149,16 +149,31 @@ jobs:
       - name: Clean up scratch files
         run: rm -rf .cpython-src .pot-templates
 
+      - name: Stage changes
+        run: git add --all
+
+      - name: Unstage POT-Creation-Date-only changes
+        run: |
+          git diff --staged --name-only | while read f; do
+            if git diff --staged -U0 -- "$f" \
+                | grep '^[+-]' \
+                | grep -v '^[+-][+-][+-]' \
+                | grep -qv 'POT-Creation-Date'; then
+              : # has real changes, keep staged
+            else
+              git restore --staged "$f"
+              git restore "$f"
+            fi
+          done
+
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add --all
-          git diff --staged -U0 \
-            | grep '^[+-]' \
-            | grep -v '^[+-][+-][+-]' \
-            | grep -qv 'POT-Creation-Date' \
-            || { echo "Only POT-Creation-Date changed, skipping commit."; exit 0; }
+          if git diff --staged --quiet; then
+            echo "Nothing to commit, skipping."
+            exit 0
+          fi
           git commit -m \
             "chore: sync msgids with CPython ${{ github.event.inputs.cpython_tag || 'v3.14.6' }}"
           git push
