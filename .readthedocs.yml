@@ -11,8 +11,7 @@ build:
     - mkdir -p venv/cpython/Doc/locales/fa/LC_MESSAGES
     - cp --parents *.po venv/cpython/Doc/locales/fa/LC_MESSAGES/
     - find */ -name "*.po" -not -path "venv/*" | xargs -I{} cp --parents {} venv/cpython/Doc/locales/fa/LC_MESSAGES/
-    - find venv/cpython/Doc/locales/fa/LC_MESSAGES -name "*.po" | xargs python3 scripts/strip_fuzzy.py
-    - find venv/cpython/Doc/locales/fa/LC_MESSAGES -name "*.po" | while read f; do python venv/cpython/Tools/i18n/msgfmt.py -o "${f%.po}.mo" "$f"; done
+    - find venv/cpython/Doc/locales/fa/LC_MESSAGES -name "*.po" | python3 scripts/compile_mo.py
     - python -m sphinx -T -j auto -b html
         -d $READTHEDOCS_OUTPUT/doctrees
         -D language=fa
