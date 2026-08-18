@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html lang="fa" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="2. استفاده از مفسر پایتون" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.python.org/3/tutorial/interpreter.html" />
+<meta property="og:site_name" content="Python documentation" />
+<meta property="og:description" content="فراخوانی مفسر: مفسر پایتون معمولاً روی سیستم‌هایی که در دسترس است، در مسیر/usr/local/bin/python3.14 نصب می‌شود. اگر مسیر/usr/local/bin را به مسیر جست‌وجوی شل یونیکس خود اضافه کنید، می‌توانید با وار..." />
+<meta property="og:image" content="_static/og-image.png" />
+<meta property="og:image:alt" content="Python documentation" />
+<meta name="description" content="فراخوانی مفسر: مفسر پایتون معمولاً روی سیستم‌هایی که در دسترس است، در مسیر/usr/local/bin/python3.14 نصب می‌شود. اگر مسیر/usr/local/bin را به مسیر جست‌وجوی شل یونیکس خود اضافه کنید، می‌توانید با وار..." />
+<meta name="theme-color" content="#3776ab">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+
+    <title>2. استفاده از مفسر پایتون &#8212; مستندات Python3.14.6</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/classic.css?v=234b1a7c" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme.css?v=4365c8fe" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments_dark.css?v=0fc419ee" />
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/documentation_options.js?v=e254dbbb"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/doctools.js?v=9bcbadda"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/translations.js?v=5df48d09"></script>
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sidebar.js"></script>
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="جستجو در مستندات Python3.14.6"
+          href="https://python.github.io/python-docs-fa/previews/42/_static/opensearch.xml"/>
+    <link rel="author" title="درباره این مستندات" href="../about.html" />
+    <link rel="index" title="فهرست" href="../genindex.html" />
+    <link rel="search" title="جستجو" href="../search.html" />
+    <link rel="copyright" title="حق چاپ" href="../copyright.html" />
+    <link rel="next" title="3. معرفی غیررسمی پایتون" href="introduction.html" />
+    <link rel="prev" title="1. برانگیختن اشتیاق شما" href="appetite.html" />
+    
+      
+      <link rel="canonical" href="https://docs.python.org/3/tutorial/interpreter.html">
+      
+    
+
+    
+    <style>
+      @media only screen {
+        table.full-width-table {
+            width: 100%;
+        }
+      }
+    </style>
+<link rel="stylesheet" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="https://python.github.io/python-docs-fa/previews/42/_static/py.svg">
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/copybutton.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/menu.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/search-focus.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/themetoggle.js"></script> 
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/rtd_switcher.js"></script>
+            <meta name="readthedocs-addons-api-version" content="1">
+
+  </head>
+<body>
+<div class="mobile-nav">
+    <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
+           aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu">
+    <nav class="nav-content" role="navigation">
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo">
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q">
+                <input type="submit" value="برو">
+            </form>
+        </span>
+    </nav>
+    <div class="menu-wrapper">
+        <nav class="menu" role="navigation" aria-label="main navigation">
+            <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">2. استفاده از مفسر پایتون</a><ul>
+<li><a class="reference internal" href="#invoking-the-interpreter">2.1. فراخوانی مفسر</a><ul>
+<li><a class="reference internal" href="#argument-passing">2.1.1. ارسال آرگومان‌ها</a></li>
+<li><a class="reference internal" href="#interactive-mode">2.1.2. حالت تعاملی</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-interpreter-and-its-environment">2.2. مفسر و محیط آن</a><ul>
+<li><a class="reference internal" href="#source-code-encoding">2.2.1. کدگذاری فایل‌های مبدأ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="appetite.html"
+                          title="فصل قبلی"><span class="section-number">1. </span>برانگیختن اشتیاق شما</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="فصل بعدی"><span class="section-number">3. </span>معرفی غیررسمی پایتون</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/interpreter.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/interpreter.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/interpreter.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </nav>
+    </div>
+</div>
+
+  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             accesskey="I">فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="3. معرفی غیررسمی پایتون"
+             accesskey="N">بعدی</a> |</li>
+        <li class="right" >
+          <a href="appetite.html" title="1. برانگیختن اشتیاق شما"
+             accesskey="P">قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">2. </span>استفاده از مفسر پایتون</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="using-the-python-interpreter">
+<span id="tut-using"></span><h1><span class="section-number">2. </span>استفاده از مفسر پایتون<a class="headerlink" href="#using-the-python-interpreter" title="Link to this heading">¶</a></h1>
+<section id="invoking-the-interpreter">
+<span id="tut-invoking"></span><h2><span class="section-number">2.1. </span>فراخوانی مفسر<a class="headerlink" href="#invoking-the-interpreter" title="Link to this heading">¶</a></h2>
+<p>مفسر پایتون معمولاً روی سیستم‌هایی که در دسترس است، در مسیر <code class="docutils literal notranslate"><span class="pre">/usr/local/bin/python3.14</span></code> نصب می‌شود. اگر مسیر <code class="file docutils literal notranslate"><span class="pre">/usr/local/bin</span></code> را به مسیر جست‌وجوی شل یونیکس خود اضافه کنید، می‌توانید با وارد کردن دستور زیر آن را اجرا کنید:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>python3.14
+</pre></div>
+</div>
+<p>در شل. <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> از آنجا که انتخاب محل نصب مفسر به تنظیمات نصب بستگی دارد، ممکن است در مسیرهای دیگری نیز قرار داشته باشد؛ در این صورت با مسئول سیستم یا فرد آشنا با پایتون در سیستم خود مشورت کنید. (برای مثال، <code class="file docutils literal notranslate"><span class="pre">/usr/local/python</span></code> نیز محل رایج دیگری برای نصب است.)</p>
+<p>در ویندوز، اگر پایتون را از <a class="reference internal" href="../using/windows.html#windows-store"><span class="std std-ref">Microsoft Store</span></a> نصب کرده باشید، دستور <code class="docutils literal notranslate"><span class="pre">python3.14</span></code> در دسترس خواهد بود. اگر <a class="reference internal" href="../using/windows.html#launcher"><span class="std std-ref">راه‌انداز py.exe</span></a> را نیز نصب کرده باشید، می‌توانید از دستور <code class="file docutils literal notranslate"><span class="pre">py</span></code> استفاده کنید. برای روش‌های دیگر اجرای پایتون، به بخش <a class="reference internal" href="../using/windows.html#setting-envvars"><span class="std std-ref">Python install manager</span></a> مراجعه کنید.</p>
+<p>با وارد کردن نویسهٔ پایان فایل (<kbd class="kbd docutils literal notranslate">Control</kbd>-<kbd class="kbd docutils literal notranslate">D</kbd> در یونیکس و <kbd class="kbd docutils literal notranslate">Control</kbd>-<kbd class="kbd docutils literal notranslate">Z</kbd> در ویندوز) در اعلان اصلی، مفسر با کد خروج صفر خاتمه می‌یابد. اگر این روش کار نکرد، می‌توانید با وارد کردن دستور <code class="docutils literal notranslate"><span class="pre">quit()</span></code> از مفسر خارج شوید.</p>
+<p>ویژگی‌های ویرایش خط فرمان مفسر در بیشتر سیستم‌ها شامل ویرایش تعاملی، جایگزینی تاریخچه و تکمیل خودکار کد است. شاید سریع‌ترین راه برای بررسی پشتیبانی از ویرایش خط فرمان این باشد که در اعلان پایتون یک کلمه تایپ کنید و سپس کلید پیکان چپ (یا <kbd class="kbd docutils literal notranslate">Control</kbd>-<kbd class="kbd docutils literal notranslate">b</kbd>) را فشار دهید. اگر مکان‌نما جابه‌جا شد، ویرایش خط فرمان پشتیبانی می‌شود؛ برای آشنایی با کلیدها به پیوست <a class="reference internal" href="interactive.html#tut-interacting"><span class="std std-ref">ویرایش ورودی تعاملی و جایگزینی تاریخچه</span></a> مراجعه کنید. اگر هیچ اتفاقی نیفتاد یا دنباله‌ای مانند <code class="docutils literal notranslate"><span class="pre">^[[D</span></code> یا <code class="docutils literal notranslate"><span class="pre">^B</span></code> نمایش داده شد، ویرایش خط فرمان در دسترس نیست و تنها می‌توانید با کلید Backspace نویسه‌های خط جاری را حذف کنید.</p>
+<p>عملکرد مفسر تا حدی شبیه شل یونیکس است: اگر ورودی استاندارد آن به یک دستگاه tty متصل باشد، دستورات را به‌صورت تعاملی می‌خواند و اجرا می‌کند؛ اما اگر نام یک فایل یا خود فایل به‌عنوان ورودی استاندارد به آن داده شود، <em>اسکریپت</em> موجود در آن فایل را می‌خواند و اجرا می‌کند.</p>
+<p>روش دیگر برای اجرای مفسر، استفاده از دستور <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-c</span> <span class="pre">command</span> <span class="pre">[arg]</span> <span class="pre">...</span></code> است که دستور(های) موجود در <em>command</em> را اجرا می‌کند؛ مشابه گزینهٔ <a class="reference internal" href="../using/cmdline.html#cmdoption-c"><code class="xref std std-option docutils literal notranslate"><span class="pre">-c</span></code></a> در شل. از آنجا که دستورات پایتون معمولاً شامل فاصله یا نویسه‌هایی هستند که برای شل معنای ویژه‌ای دارند، معمولاً توصیه می‌شود کل <em>command</em> را داخل نقل‌قول قرار دهید.</p>
+<p>برخی از ماژول‌های پایتون را نیز می‌توان به‌صورت اسکریپت اجرا کرد. این کار با استفاده از دستور <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">module</span> <span class="pre">[arg]</span> <span class="pre">...</span></code> انجام می‌شود که فایل مبدأ مربوط به <em>module</em> را طوری اجرا می‌کند که گویی نام کامل آن را در خط فرمان وارد کرده‌اید.</p>
+<p>هنگامی که یک فایل اسکریپت اجرا می‌شود، گاهی مفید است که پس از پایان اجرای اسکریپت وارد حالت تعاملی شوید. این کار با قرار دادن گزینهٔ <a class="reference internal" href="../using/cmdline.html#cmdoption-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a> پیش از نام اسکریپت امکان‌پذیر است.</p>
+<p>همهٔ گزینه‌های خط فرمان در بخش <a class="reference internal" href="../using/cmdline.html#using-on-general"><span class="std std-ref">Command line and environment</span></a> توضیح داده شده‌اند.</p>
+<section id="argument-passing">
+<span id="tut-argpassing"></span><h3><span class="section-number">2.1.1. </span>ارسال آرگومان‌ها<a class="headerlink" href="#argument-passing" title="Link to this heading">¶</a></h3>
+<p>اگر مفسر نام اسکریپت و آرگومان‌های پس از آن را دریافت کند، آن‌ها را به فهرستی از رشته‌ها تبدیل کرده و در متغیر <code class="docutils literal notranslate"><span class="pre">argv</span></code> از ماژول <code class="docutils literal notranslate"><span class="pre">sys</span></code> قرار می‌دهد. با اجرای <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sys</span></code> می‌توانید به این فهرست دسترسی داشته باشید. طول این فهرست همیشه حداقل یک است؛ اگر هیچ اسکریپت یا آرگومانی ارائه نشود، مقدار <code class="docutils literal notranslate"><span class="pre">sys.argv[0]</span></code> یک رشتهٔ خالی خواهد بود. اگر نام اسکریپت <code class="docutils literal notranslate"><span class="pre">'-'</span></code> باشد (به معنی ورودی استاندارد)، مقدار <code class="docutils literal notranslate"><span class="pre">sys.argv[0]</span></code> برابر <code class="docutils literal notranslate"><span class="pre">'-'</span></code> خواهد بود. هنگام استفاده از <a class="reference internal" href="../using/cmdline.html#cmdoption-c"><code class="xref std std-option docutils literal notranslate"><span class="pre">-c</span></code></a> <em>command</em>، مقدار <code class="docutils literal notranslate"><span class="pre">sys.argv[0]</span></code> برابر <code class="docutils literal notranslate"><span class="pre">'-c'</span></code> است. هنگام استفاده از <a class="reference internal" href="../using/cmdline.html#cmdoption-m"><code class="xref std std-option docutils literal notranslate"><span class="pre">-m</span></code></a> <em>module</em>، مقدار <code class="docutils literal notranslate"><span class="pre">sys.argv[0]</span></code> برابر نام کامل ماژول پیدا‌شده خواهد بود. گزینه‌هایی که پس از <code class="xref std std-option docutils literal notranslate"><span class="pre">-c</span></code> <em>command</em> یا <code class="xref std std-option docutils literal notranslate"><span class="pre">-m</span></code> <em>module</em> قرار می‌گیرند، توسط مفسر پایتون پردازش نمی‌شوند و بدون تغییر در <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> باقی می‌مانند تا خود دستور یا ماژول آن‌ها را پردازش کند.</p>
+</section>
+<section id="interactive-mode">
+<span id="tut-interactive"></span><h3><span class="section-number">2.1.2. </span>حالت تعاملی<a class="headerlink" href="#interactive-mode" title="Link to this heading">¶</a></h3>
+<p>وقتی دستورات از یک tty خوانده می‌شوند، گفته می‌شود که مفسر در <em>حالت تعاملی</em> قرار دارد. در این حالت، مفسر برای دریافت دستور بعدی، <em>اعلان اصلی</em> را نمایش می‌دهد که معمولاً شامل سه علامت بزرگ‌تر از (<code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>) است. برای خطوط ادامه نیز <em>اعلان ثانویه</em> را نمایش می‌دهد که به‌طور پیش‌فرض سه نقطه (<code class="docutils literal notranslate"><span class="pre">...</span></code>) است. پیش از نمایش اولین اعلان، مفسر پیام خوشامدگویی شامل شمارهٔ نسخه و اطلاعیهٔ حق نشر را چاپ می‌کند:</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3.14
+<span class="go">Python 3.14 (default, April 4 2024, 09:25:04)</span>
+<span class="go">[GCC 10.2.0] on linux</span>
+<span class="go">Type "help", "copyright", "credits" or "license" for more information.</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>خطوط ادامه زمانی لازم هستند که در حال وارد کردن یک سازهٔ چندخطی باشید. برای نمونه، به دستور <a class="reference internal" href="../reference/compound_stmts.html#if"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">if</span></code></a> زیر توجه کنید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">the_world_is_flat</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">the_world_is_flat</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Be careful not to fall off!"</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">Be careful not to fall off!</span>
+</pre></div>
+</div>
+<p>برای اطلاعات بیشتر دربارهٔ حالت تعاملی، به بخش <a class="reference internal" href="appendix.html#tut-interac"><span class="std std-ref">حالت تعاملی</span></a> مراجعه کنید.</p>
+</section>
+</section>
+<section id="the-interpreter-and-its-environment">
+<span id="tut-interp"></span><h2><span class="section-number">2.2. </span>مفسر و محیط آن<a class="headerlink" href="#the-interpreter-and-its-environment" title="Link to this heading">¶</a></h2>
+<section id="source-code-encoding">
+<span id="tut-source-encoding"></span><h3><span class="section-number">2.2.1. </span>کدگذاری فایل‌های مبدأ<a class="headerlink" href="#source-code-encoding" title="Link to this heading">¶</a></h3>
+<p>به‌طور پیش‌فرض، فایل‌های مبدأ پایتون با کدگذاری UTF-8 در نظر گرفته می‌شوند. در این کدگذاری، می‌توان نویسه‌های بیشتر زبان‌های دنیا را به‌طور هم‌زمان در رشته‌ها، شناسه‌ها و توضیحات به کار برد؛ هرچند کتابخانهٔ استاندارد فقط از نویسه‌های ASCII برای شناسه‌ها استفاده می‌کند، که این رویه برای کدهای قابل‌حمل نیز توصیه می‌شود. برای نمایش صحیح همهٔ این نویسه‌ها، ویرایشگر شما باید فایل را به‌عنوان UTF-8 تشخیص دهد و از قلمی استفاده کند که از تمام نویسه‌های موجود در فایل پشتیبانی کند.</p>
+<p>برای اعلام کدگذاری‌ای غیر از کدگذاری پیش‌فرض، باید یک خط توضیح ویژه را به‌عنوان <em>اولین</em> خط فایل اضافه کنید. قالب آن به شکل زیر است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: encoding -*-</span>
+</pre></div>
+</div>
+<p>که در آن <em>encoding</em> یکی از کدگذاری‌های معتبر پشتیبانی‌شده توسط ماژول <a class="reference internal" href="../library/codecs.html#module-codecs" title="codecs: Encode and decode data and streams."><code class="xref py py-mod docutils literal notranslate"><span class="pre">codecs</span></code></a> است.</p>
+<p>برای مثال، اگر بخواهید از کدگذاری Windows-1252 استفاده کنید، اولین خط فایل مبدأ شما باید به شکل زیر باشد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: cp1252 -*-</span>
+</pre></div>
+</div>
+<p>یک استثنا برای قانون <em>اولین خط</em> زمانی است که فایل مبدأ با یک <a class="reference internal" href="appendix.html#tut-scripts"><span class="std std-ref">خط «shebang» یونیکس</span></a> آغاز شود. در این صورت، اعلان کدگذاری باید در خط دوم فایل قرار گیرد. برای مثال:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: cp1252 -*-</span>
+</pre></div>
+</div>
+<p class="rubric">پانویس‌ها</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>در یونیکس، مفسر Python 3.x به‌طور پیش‌فرض با نام اجرایی <code class="docutils literal notranslate"><span class="pre">python</span></code> نصب نمی‌شود تا با نسخهٔ هم‌زمان نصب‌شدهٔ Python 2.x تداخلی نداشته باشد.</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">2. استفاده از مفسر پایتون</a><ul>
+<li><a class="reference internal" href="#invoking-the-interpreter">2.1. فراخوانی مفسر</a><ul>
+<li><a class="reference internal" href="#argument-passing">2.1.1. ارسال آرگومان‌ها</a></li>
+<li><a class="reference internal" href="#interactive-mode">2.1.2. حالت تعاملی</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-interpreter-and-its-environment">2.2. مفسر و محیط آن</a><ul>
+<li><a class="reference internal" href="#source-code-encoding">2.2.1. کدگذاری فایل‌های مبدأ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="appetite.html"
+                          title="فصل قبلی"><span class="section-number">1. </span>برانگیختن اشتیاق شما</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="فصل بعدی"><span class="section-number">3. </span>معرفی غیررسمی پایتون</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/interpreter.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/interpreter.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/interpreter.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </div>
+<div id="sidebarbutton" title="تا کردن نوار کناره">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             >فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="3. معرفی غیررسمی پایتون"
+             >بعدی</a> |</li>
+        <li class="right" >
+          <a href="appetite.html" title="1. برانگیختن اشتیاق شما"
+             >قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">2. </span>استفاده از مفسر پایتون</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>  
+    <div class="footer">
+    &copy; <a href="../copyright.html">حق چاپ</a> 2001 Python Software Foundation.
+    <br>
+    This page is licensed under the Python Software Foundation License Version 2.
+    <br>
+    Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
+    <br>
+    
+      See <a href="/license.html">History and License</a> for more information.<br>
+    
+    
+    <br>
+
+    The Python Software Foundation is a non-profit corporation.
+<a href="https://www.python.org/psf/donations/">Please donate.</a>
+<br>
+    <br>
+      آخرین بروز رسانی در اوت 18, 2026 (05:51 UTC) .
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
+    <br>
+
+    ایجاد شده با<a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+
+  </body>
+</html>

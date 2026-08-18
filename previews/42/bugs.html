@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html lang="fa" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="رفع مشکلات" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.python.org/3/bugs.html" />
+<meta property="og:site_name" content="Python documentation" />
+<meta property="og:description" content="پایتون زبان برنامه نویسی بالغیست که پایداریش شهرتی به هم زده. توسعه‌دهندگانش مایلند برای حفظ این شهرت از هر نقصی که در پایتون می‌یابید آگاه شوند. گاهی حل مشکل به دست خودتان و فرستادن وصله به پایتون..." />
+<meta property="og:image" content="_static/og-image.png" />
+<meta property="og:image:alt" content="Python documentation" />
+<meta name="description" content="پایتون زبان برنامه نویسی بالغیست که پایداریش شهرتی به هم زده. توسعه‌دهندگانش مایلند برای حفظ این شهرت از هر نقصی که در پایتون می‌یابید آگاه شوند. گاهی حل مشکل به دست خودتان و فرستادن وصله به پایتون..." />
+<meta name="theme-color" content="#3776ab">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+
+    <title>رفع مشکلات &#8212; مستندات Python3.14.6</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/classic.css?v=234b1a7c" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme.css?v=4365c8fe" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments_dark.css?v=0fc419ee" />
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/documentation_options.js?v=e254dbbb"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/doctools.js?v=9bcbadda"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/translations.js?v=5df48d09"></script>
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sidebar.js"></script>
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="جستجو در مستندات Python3.14.6"
+          href="https://python.github.io/python-docs-fa/previews/42/_static/opensearch.xml"/>
+    <link rel="author" title="درباره این مستندات" href="about.html" />
+    <link rel="index" title="فهرست" href="genindex.html" />
+    <link rel="search" title="جستجو" href="search.html" />
+    <link rel="copyright" title="حق چاپ" href="copyright.html" />
+    <link rel="next" title="حق چاپ" href="copyright.html" />
+    <link rel="prev" title="دربارهٔ این مستندات" href="about.html" />
+    
+      
+      <link rel="canonical" href="https://docs.python.org/3/bugs.html">
+      
+    
+
+    
+    <style>
+      @media only screen {
+        table.full-width-table {
+            width: 100%;
+        }
+      }
+    </style>
+<link rel="stylesheet" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="https://python.github.io/python-docs-fa/previews/42/_static/py.svg">
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/copybutton.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/menu.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/search-focus.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/themetoggle.js"></script> 
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/rtd_switcher.js"></script>
+            <meta name="readthedocs-addons-api-version" content="1">
+
+  </head>
+<body>
+<div class="mobile-nav">
+    <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
+           aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu">
+    <nav class="nav-content" role="navigation">
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo">
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q">
+                <input type="submit" value="برو">
+            </form>
+        </span>
+    </nav>
+    <div class="menu-wrapper">
+        <nav class="menu" role="navigation" aria-label="main navigation">
+            <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
+  <div>
+    <h3><a href="contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">رفع مشکلات</a><ul>
+<li><a class="reference internal" href="#documentation-bugs">مشکلات مستندات</a></li>
+<li><a class="reference internal" href="#using-the-python-issue-tracker">استفاده از پایگاه پیگیری مشکلات پایتون</a></li>
+<li><a class="reference internal" href="#getting-started-contributing-to-python-yourself">شروع مشارکت در توسعهٔ پایتون</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="about.html"
+                          title="فصل قبلی">دربارهٔ این مستندات</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="copyright.html"
+                          title="فصل بعدی">حق چاپ</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "bugs.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="#">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/bugs.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/bugs.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </nav>
+    </div>
+</div>
+
+  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="فهرست کلی"
+             accesskey="I">فهرست</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="copyright.html" title="حق چاپ"
+             accesskey="N">بعدی</a> |</li>
+        <li class="right" >
+          <a href="about.html" title="دربارهٔ این مستندات"
+             accesskey="P">قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+        <li class="nav-item nav-item-this"><a href="">رفع مشکلات</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="dealing-with-bugs">
+<span id="reporting-bugs"></span><h1>رفع مشکلات<a class="headerlink" href="#dealing-with-bugs" title="Link to this heading">¶</a></h1>
+<p>پایتون زبان برنامه نویسی بالغیست که پایداریش شهرتی به هم زده. توسعه‌دهندگانش مایلند برای حفظ این شهرت از هر نقصی که در پایتون می‌یابید آگاه شوند.</p>
+<p>گاهی حل مشکل به دست خودتان و فرستادن وصله به پایتون سریع‌تر است؛ زیرا فرایند را یکسره کرده و افراد کمتری را درگیر می‌کند. آموختن چگونگی مشارکت در <a class="reference internal" href="#contributing-to-python"><span class="std std-ref">contribute</span></a>.</p>
+<section id="documentation-bugs">
+<h2>مشکلات مستندات<a class="headerlink" href="#documentation-bugs" title="Link to this heading">¶</a></h2>
+<p>اگر مشکلی در این مستندات یافته یا می‌خواهید بهبودی را پیشنهاد دهید، گزارش مشکلی روی <a class="reference internal" href="#using-the-tracker"><span class="std std-ref">issue tracker</span></a>. ثبت کنید. اگر برای حلش پیشنهادی دارید، آن را هم بنویسید.</p>
+<p>اگر اشکال یا پیشنهاد بهبودی مربوط به ترجمهٔ این مستندات است، گزارش را به <a class="reference external" href="https://github.com/python/python-docs-fa">مخزن ترجمه</a> ارسال کنید.</p>
+<p>همچنین می‌توانید گفت‌وگویی در <a class="reference external" href="https://discuss.python.org/c/documentation/26">انجمن‌های گفتمان مستندات</a> بگشایید.</p>
+<p>اگر شما یک باگ در نحوه نمایش تم ها (اچ تی ام ال - سی اس اس - جاوا اسکریپت) در مستندات پیدا کردید, لطفا یک گزارش باگ بر روی <a class="reference external" href="https://github.com/python/python-docs-theme">آدرس</a> ثبت کنید.</p>
+<div class="admonition seealso">
+<p class="admonition-title">همچنین ملاحظه نمائید</p>
+<dl class="simple">
+<dt><a class="reference external" href="https://github.com/python/cpython/issues?q=is%3Aissue+is%3Aopen+label%3Adocs">اشکالات مستندات</a></dt><dd><p>فهرستی از باگ‌های مستندات که به پایگاه پیگیری مشکلات پایتون ارسال شده‌اند.</p>
+</dd>
+<dt><a class="reference external" href="https://devguide.python.org/tracker/">پیگیری مشکل</a></dt><dd><p>مروری بر فرایند ثبت پیشنهاد بهبود در پایگاه پیگیری مشکلات.</p>
+</dd>
+<dt><a class="reference external" href="https://devguide.python.org/docquality/#helping-with-documentation">کمک به مستندسازی</a></dt><dd><p>راهنمای جامع برای افرادی که علاقه‌مند به مشارکت در مستندات Python هستند.</p>
+</dd>
+<dt><a class="reference external" href="https://devguide.python.org/documentation/translating/">ترجمه های مستندات</a></dt><dd><p>فهرستی از صفحات GitHub مربوط به ترجمهٔ مستندات و راه‌های ارتباطی مسئولان هر یک.</p>
+</dd>
+</dl>
+</div>
+</section>
+<section id="using-the-python-issue-tracker">
+<span id="using-the-tracker"></span><h2>استفاده از پایگاه پیگیری مشکلات پایتون<a class="headerlink" href="#using-the-python-issue-tracker" title="Link to this heading">¶</a></h2>
+<p>گزارش‌های خطا برای پایتون باید از طریق پایگاه پیگیری مشکلات گیت‌هاب (<a class="reference external" href="https://github.com/python/cpython/issues">https://github.com/python/cpython/issues</a>) ارسال شوند. پایگاه پیگیری مشکلات گیت‌هاب یک فرم وب ارائه می‌دهد که امکان وارد کردن اطلاعات مرتبط و ارسال آن به توسعه‌دهندگان را فراهم می‌کند.</p>
+<p>اولین گام در ارائه یک گزارش این است که مشخص کنید آیا مشکل قبلاً گزارش شده است یا خیر. مزیت انجام این کار، علاوه بر صرفه جویی در وقت توسعه دهندگان، این است که می‌توانید بفهمید چه اقداماتی برای رفع آن انجام شده است؛ ممکن است مشکل برای نسخه بعدی قبلاً رفع شده باشد، یا اطلاعات بیشتری مورد نیاز باشد (در این صورت، اگر می‌توانید، خوشحال می‌شویم آن را ارائه دهید!). برای انجام این کار، در نوار جست‌وجو بالای صفحه &quot;tracker&quot; را جست‌وجو کنید.</p>
+<p>اگر مشکلی که گزارش می‌دهید در فهرست موجود نباشد، وارد GitHub شوید. اگر قبلاً حساب GitHub ندارید، با استفاده از لینک &quot;Sign up&quot; یک حساب جدید ایجاد کنید. ارسال گزارش باگ به صورت ناشناس امکان پذیر نیست.</p>
+<p>اکنون که وارد سیستم شده اید، می توانید یک مشکل ثبت کنید. برای گزارش یک مشکل جدید، روی دکمه &quot;New issue&quot; در نوار بالا کلیک کنید.</p>
+<p>فرم ارسال شامل دو فیلد است، &quot;Title&quot; و &quot;Comment&quot;.</p>
+<p>برای بخش &quot;Title&quot;, یک توضیح کوتاه از مشکل وارد کنید؛ کمتر از ده کلمه مناسب است.</p>
+<p>در قسمت &quot;Comment&quot;, مشکل را با جزئیات بیان کنید، از جمله اینکه انتظار داشتید چه اتفاقی بیفتد و چه چیزی واقعاً اتفاق افتاد. حتماً اشاره کنید که آیا ماژول‌های افزونه‌ای درگیر بودند یا خیر و از چه سخت افزار و پلتفرم نرم‌‌افزاری استفاده می‌کردید (شامل اطلاعات نسخه در صورت لزوم).</p>
+<p>هر گزارش خطا توسط یک توسعه‌دهنده بررسی خواهد شد که تصمیم می‌گیرد چه اقداماتی برای رفع مشکل نیاز است. هر بار که اقدامی روی گزارش انجام شود، به شما اطلاع‌رسانی خواهد شد.</p>
+<div class="admonition seealso">
+<p class="admonition-title">همچنین ملاحظه نمائید</p>
+<dl class="simple">
+<dt><a class="reference external" href="https://www.chiark.greenend.org.uk/~sgtatham/bugs.html">نحوه گزارش اشکالات به طور موثر</a></dt><dd><p>مقاله‌ای که به‌طور مفصل به چگونگی ایجاد یک گزارش باگ مفید می‌پردازد. این مقاله بیان می‌کند که چه نوع اطلاعاتی مفید هستند و چرا این اطلاعات مفید می‌باشند.</p>
+</dd>
+<dt><a class="reference external" href="https://bugzilla.mozilla.org/page.cgi?id=bug-writing.html">راهنمای نوشتن گزارش خطا</a></dt><dd><p>اطلاعاتی دربارهٔ نحوهٔ نگارش یک گزارش خطای خوب. بخشی از این اطلاعات به پروژهٔ موزیلا اختصاص دارد، اما اصول کلی و خوبِ گزارش‌دهی را نیز توضیح می‌دهد.</p>
+</dd>
+</dl>
+</div>
+</section>
+<section id="getting-started-contributing-to-python-yourself">
+<span id="contributing-to-python"></span><h2>شروع مشارکت در توسعهٔ پایتون<a class="headerlink" href="#getting-started-contributing-to-python-yourself" title="Link to this heading">¶</a></h2>
+<p>علاوه بر گزارش اشکالاتی که پیدا می‌کنید، می توانید وصله‌هایی برای رفع آن ها ارسال کنید. می‌توانید اطلاعات بیشتری درباره‌ی نحوه‌ی شروع به وصله زدن Python را در &quot;<a class="reference external" href="https://devguide.python.org/">Python Developer's Guide</a>&quot; پیدا کنید. اگر سوالی دارید، &quot;<a class="reference external" href="https://mail.python.org/mailman3/lists/core-mentorship.python.org/">core-mentorship mailing list</a>&quot; جای دوستانه‌ای برای دریافت پاسخ به هر سوال مربوط به فرآیند رفع اشکالات در Python است.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">رفع مشکلات</a><ul>
+<li><a class="reference internal" href="#documentation-bugs">مشکلات مستندات</a></li>
+<li><a class="reference internal" href="#using-the-python-issue-tracker">استفاده از پایگاه پیگیری مشکلات پایتون</a></li>
+<li><a class="reference internal" href="#getting-started-contributing-to-python-yourself">شروع مشارکت در توسعهٔ پایتون</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="about.html"
+                          title="فصل قبلی">دربارهٔ این مستندات</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="copyright.html"
+                          title="فصل بعدی">حق چاپ</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "bugs.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="#">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/bugs.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/bugs.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </div>
+<div id="sidebarbutton" title="تا کردن نوار کناره">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="فهرست کلی"
+             >فهرست</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="copyright.html" title="حق چاپ"
+             >بعدی</a> |</li>
+        <li class="right" >
+          <a href="about.html" title="دربارهٔ این مستندات"
+             >قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+        <li class="nav-item nav-item-this"><a href="">رفع مشکلات</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>  
+    <div class="footer">
+    &copy; <a href="copyright.html">حق چاپ</a> 2001 Python Software Foundation.
+    <br>
+    This page is licensed under the Python Software Foundation License Version 2.
+    <br>
+    Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
+    <br>
+    
+      See <a href="/license.html">History and License</a> for more information.<br>
+    
+    
+    <br>
+
+    The Python Software Foundation is a non-profit corporation.
+<a href="https://www.python.org/psf/donations/">Please donate.</a>
+<br>
+    <br>
+      آخرین بروز رسانی در اوت 18, 2026 (05:51 UTC) .
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
+    <br>
+
+    ایجاد شده با<a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html lang="fa" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="10. نگاهی کوتاه به کتابخانهٔ استاندارد" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.python.org/3/tutorial/stdlib.html" />
+<meta property="og:site_name" content="Python documentation" />
+<meta property="og:description" content="رابط سیستم‌عامل: ماژول os ده‌ها تابع برای تعامل با سیستم‌عامل فراهم می‌کند: حتماً از سبک import os به‌جای from os import * استفاده کنید. این کار باعث می‌شود os.open() روی تابع داخلی open() که عملکر..." />
+<meta property="og:image" content="_static/og-image.png" />
+<meta property="og:image:alt" content="Python documentation" />
+<meta name="description" content="رابط سیستم‌عامل: ماژول os ده‌ها تابع برای تعامل با سیستم‌عامل فراهم می‌کند: حتماً از سبک import os به‌جای from os import * استفاده کنید. این کار باعث می‌شود os.open() روی تابع داخلی open() که عملکر..." />
+<meta name="theme-color" content="#3776ab">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+
+    <title>10. نگاهی کوتاه به کتابخانهٔ استاندارد &#8212; مستندات Python3.14.6</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/classic.css?v=234b1a7c" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme.css?v=4365c8fe" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments_dark.css?v=0fc419ee" />
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/documentation_options.js?v=e254dbbb"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/doctools.js?v=9bcbadda"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/translations.js?v=5df48d09"></script>
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sidebar.js"></script>
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="جستجو در مستندات Python3.14.6"
+          href="https://python.github.io/python-docs-fa/previews/42/_static/opensearch.xml"/>
+    <link rel="author" title="درباره این مستندات" href="../about.html" />
+    <link rel="index" title="فهرست" href="../genindex.html" />
+    <link rel="search" title="جستجو" href="../search.html" />
+    <link rel="copyright" title="حق چاپ" href="../copyright.html" />
+    <link rel="next" title="11. مروری کوتاه بر کتابخانهٔ استاندارد — بخش دوم" href="stdlib2.html" />
+    <link rel="prev" title="9. کلاسها" href="classes.html" />
+    
+      
+      <link rel="canonical" href="https://docs.python.org/3/tutorial/stdlib.html">
+      
+    
+
+    
+    <style>
+      @media only screen {
+        table.full-width-table {
+            width: 100%;
+        }
+      }
+    </style>
+<link rel="stylesheet" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="https://python.github.io/python-docs-fa/previews/42/_static/py.svg">
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/copybutton.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/menu.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/search-focus.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/themetoggle.js"></script> 
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/rtd_switcher.js"></script>
+            <meta name="readthedocs-addons-api-version" content="1">
+
+  </head>
+<body>
+<div class="mobile-nav">
+    <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
+           aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu">
+    <nav class="nav-content" role="navigation">
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo">
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q">
+                <input type="submit" value="برو">
+            </form>
+        </span>
+    </nav>
+    <div class="menu-wrapper">
+        <nav class="menu" role="navigation" aria-label="main navigation">
+            <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">10. نگاهی کوتاه به کتابخانهٔ استاندارد</a><ul>
+<li><a class="reference internal" href="#operating-system-interface">10.1. رابط سیستم‌عامل</a></li>
+<li><a class="reference internal" href="#file-wildcards">10.2. الگوهای عام فایل</a></li>
+<li><a class="reference internal" href="#command-line-arguments">10.3. آرگومان‌های خط فرمان</a></li>
+<li><a class="reference internal" href="#error-output-redirection-and-program-termination">10.4. تغییر مسیر خروجی خطا و پایان دادن به برنامه</a></li>
+<li><a class="reference internal" href="#string-pattern-matching">10.5. تطبیق الگوهای رشته‌ای</a></li>
+<li><a class="reference internal" href="#mathematics">10.6. ریاضیات</a></li>
+<li><a class="reference internal" href="#internet-access">10.7. دسترسی به اینترنت</a></li>
+<li><a class="reference internal" href="#dates-and-times">10.8. تاریخ‌ها و زمان‌ها</a></li>
+<li><a class="reference internal" href="#data-compression">10.9. فشرده‌سازی داده‌ها</a></li>
+<li><a class="reference internal" href="#performance-measurement">10.10. اندازه‌گیری کارایی</a></li>
+<li><a class="reference internal" href="#quality-control">10.11. کنترل کیفیت</a></li>
+<li><a class="reference internal" href="#batteries-included">10.12. همه‌چیز آماده درون جعبه</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="classes.html"
+                          title="فصل قبلی"><span class="section-number">9. </span>کلاسها</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="stdlib2.html"
+                          title="فصل بعدی"><span class="section-number">11. </span>مروری کوتاه بر کتابخانهٔ استاندارد — بخش دوم</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/stdlib.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/stdlib.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/stdlib.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </nav>
+    </div>
+</div>
+
+  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             accesskey="I">فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="stdlib2.html" title="11. مروری کوتاه بر کتابخانهٔ استاندارد — بخش دوم"
+             accesskey="N">بعدی</a> |</li>
+        <li class="right" >
+          <a href="classes.html" title="9. کلاسها"
+             accesskey="P">قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">10. </span>نگاهی کوتاه به کتابخانهٔ استاندارد</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="brief-tour-of-the-standard-library">
+<span id="tut-brieftour"></span><h1><span class="section-number">10. </span>نگاهی کوتاه به کتابخانهٔ استاندارد<a class="headerlink" href="#brief-tour-of-the-standard-library" title="Link to this heading">¶</a></h1>
+<section id="operating-system-interface">
+<span id="tut-os-interface"></span><h2><span class="section-number">10.1. </span>رابط سیستم‌عامل<a class="headerlink" href="#operating-system-interface" title="Link to this heading">¶</a></h2>
+<p>ماژول <a class="reference internal" href="../library/os.html#module-os" title="os: Miscellaneous operating system interfaces."><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code></a> ده‌ها تابع برای تعامل با سیستم‌عامل فراهم می‌کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>      <span class="c1"># مسیر کاری فعلی را برمی‌گرداند</span>
+<span class="go">'C:\\Python314'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">'/server/accesslogs'</span><span class="p">)</span>   <span class="c1"># مسیر کاری فعلی را تغییر می‌دهد</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">'mkdir today'</span><span class="p">)</span>   <span class="c1"># دستور mkdir را در پوستهٔ سیستم اجرا می‌کند</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+<p>حتماً از سبک <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">os</span></code> به‌جای <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">os</span> <span class="pre">import</span> <span class="pre">*</span></code> استفاده کنید. این کار باعث می‌شود <a class="reference internal" href="../library/os.html#os.open" title="os.open"><code class="xref py py-func docutils literal notranslate"><span class="pre">os.open()</span></code></a> روی تابع داخلی <a class="reference internal" href="../library/functions.html#open" title="open"><code class="xref py py-func docutils literal notranslate"><span class="pre">open()</span></code></a> که عملکرد کاملاً متفاوتی دارد، نپوشاند.</p>
+<p id="index-0">توابع داخلی <a class="reference internal" href="../library/functions.html#dir" title="dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">dir()</span></code></a> و <a class="reference internal" href="../library/functions.html#help" title="help"><code class="xref py py-func docutils literal notranslate"><span class="pre">help()</span></code></a> به‌عنوان ابزارهای تعاملی برای کار با ماژول‌های بزرگی مانند <a class="reference internal" href="../library/os.html#module-os" title="os: Miscellaneous operating system interfaces."><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code></a> مفید هستند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">os</span><span class="p">)</span>
+<span class="go">&lt;returns a list of all module functions&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">os</span><span class="p">)</span>
+<span class="go">&lt;returns an extensive manual page created from the module's docstrings&gt;</span>
+</pre></div>
+</div>
+<p>برای کارهای روزمرهٔ مدیریت فایل‌ها و پوشه‌ها، ماژول <a class="reference internal" href="../library/shutil.html#module-shutil" title="shutil: High-level file operations, including copying."><code class="xref py py-mod docutils literal notranslate"><span class="pre">shutil</span></code></a> یک رابط سطح بالاتر ارائه می‌دهد که استفاده از آن ساده‌تر است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="s1">'data.db'</span><span class="p">,</span> <span class="s1">'archive.db'</span><span class="p">)</span>
+<span class="go">'archive.db'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="s1">'/build/executables'</span><span class="p">,</span> <span class="s1">'installdir'</span><span class="p">)</span>
+<span class="go">'installdir'</span>
+</pre></div>
+</div>
+</section>
+<section id="file-wildcards">
+<span id="tut-file-wildcards"></span><h2><span class="section-number">10.2. </span>الگوهای عام فایل<a class="headerlink" href="#file-wildcards" title="Link to this heading">¶</a></h2>
+<p>ماژول <a class="reference internal" href="../library/glob.html#module-glob" title="glob: Unix shell style pathname pattern expansion."><code class="xref py py-mod docutils literal notranslate"><span class="pre">glob</span></code></a> تابعی برای ساخت فهرستی از فایل‌ها با استفاده از جست‌وجوهای الگوی عام در پوشه‌ها فراهم می‌کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">'*.py'</span><span class="p">)</span>
+<span class="go">['primes.py', 'random.py', 'quote.py']</span>
+</pre></div>
+</div>
+</section>
+<section id="command-line-arguments">
+<span id="tut-command-line-arguments"></span><h2><span class="section-number">10.3. </span>آرگومان‌های خط فرمان<a class="headerlink" href="#command-line-arguments" title="Link to this heading">¶</a></h2>
+<p>اسکریپت‌های کاربردی معمولاً نیاز دارند آرگومان‌های خط فرمان را پردازش کنند. این آرگومان‌ها در ویژگی <em>argv</em> ماژول <a class="reference internal" href="../library/sys.html#module-sys" title="sys: Access system-specific parameters and functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code></a> به‌صورت یک فهرست ذخیره می‌شوند. برای مثال، فایل <code class="file docutils literal notranslate"><span class="pre">demo.py</span></code> زیر را در نظر بگیرید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># File demo.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>خروجی اجرای <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">demo.py</span> <span class="pre">one</span> <span class="pre">two</span> <span class="pre">three</span></code> در خط فرمان به شکل زیر است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">'demo.py'</span><span class="p">,</span> <span class="s1">'one'</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">,</span> <span class="s1">'three'</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>ماژول <a class="reference internal" href="../library/argparse.html#module-argparse" title="argparse: Command-line option and argument parsing library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">argparse</span></code></a> سازوکار پیشرفته‌تری برای پردازش آرگومان‌های خط فرمان فراهم می‌کند. اسکریپت زیر یک یا چند نام فایل و همچنین تعداد اختیاری خطوطی که باید نمایش داده شوند را استخراج می‌کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+    <span class="n">prog</span><span class="o">=</span><span class="s1">'top'</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">'Show top lines from each file'</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">'filenames'</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">'+'</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">'-l'</span><span class="p">,</span> <span class="s1">'--lines'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>هنگامی که این اسکریپت با دستور <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">top.py</span> <span class="pre">--lines=5</span> <span class="pre">alpha.txt</span> <span class="pre">beta.txt</span></code> در خط فرمان اجرا شود، اسکریپت مقدار <code class="docutils literal notranslate"><span class="pre">args.lines</span></code> را برابر <code class="docutils literal notranslate"><span class="pre">5</span></code> و مقدار <code class="docutils literal notranslate"><span class="pre">args.filenames</span></code> را برابر <code class="docutils literal notranslate"><span class="pre">['alpha.txt',</span> <span class="pre">'beta.txt']</span></code> قرار می‌دهد.</p>
+</section>
+<section id="error-output-redirection-and-program-termination">
+<span id="tut-stderr"></span><h2><span class="section-number">10.4. </span>تغییر مسیر خروجی خطا و پایان دادن به برنامه<a class="headerlink" href="#error-output-redirection-and-program-termination" title="Link to this heading">¶</a></h2>
+<p>ماژول <a class="reference internal" href="../library/sys.html#module-sys" title="sys: Access system-specific parameters and functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code></a> همچنین ویژگی‌هایی برای <em>stdin</em>، <em>stdout</em> و <em>stderr</em> دارد. مورد آخر برای ارسال هشدارها و پیام‌های خطا مفید است، زیرا حتی زمانی که <em>stdout</em> تغییر مسیر داده شده باشد، این پیام‌ها همچنان قابل مشاهده خواهند بود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'Warning, log file not found starting a new one</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="go">Warning, log file not found starting a new one</span>
+</pre></div>
+</div>
+<p>مستقیم‌ترین راه برای پایان دادن به یک اسکریپت استفاده از <code class="docutils literal notranslate"><span class="pre">sys.exit()</span></code> است.</p>
+</section>
+<section id="string-pattern-matching">
+<span id="tut-string-pattern-matching"></span><h2><span class="section-number">10.5. </span>تطبیق الگوهای رشته‌ای<a class="headerlink" href="#string-pattern-matching" title="Link to this heading">¶</a></h2>
+<p>ماژول <a class="reference internal" href="../library/re.html#module-re" title="re: Regular expression operations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">re</span></code></a> ابزارهای عبارت باقاعده را برای پردازش پیشرفتهٔ رشته‌ها فراهم می‌کند. برای تطبیق و تغییرات پیچیده، عبارت‌های باقاعده راه‌حل‌هایی کوتاه و بهینه ارائه می‌دهند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\bf[a-z]*'</span><span class="p">,</span> <span class="s1">'which foot or hand fell fastest'</span><span class="p">)</span>
+<span class="go">['foot', 'fell', 'fastest']</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'(\b[a-z]+) \1'</span><span class="p">,</span> <span class="sa">r</span><span class="s1">'\1'</span><span class="p">,</span> <span class="s1">'cat in the the hat'</span><span class="p">)</span>
+<span class="go">'cat in the hat'</span>
+</pre></div>
+</div>
+<p>وقتی فقط به قابلیت‌های ساده نیاز است، استفاده از متدهای رشته‌ای ترجیح داده می‌شود، زیرا خواندن و اشکال‌زدایی آن‌ها آسان‌تر است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">'tea for too'</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'too'</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">)</span>
+<span class="go">'tea for two'</span>
+</pre></div>
+</div>
+</section>
+<section id="mathematics">
+<span id="tut-mathematics"></span><h2><span class="section-number">10.6. </span>ریاضیات<a class="headerlink" href="#mathematics" title="Link to this heading">¶</a></h2>
+<p>ماژول <a class="reference internal" href="../library/math.html#module-math" title="math: Mathematical functions (sin() etc.)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">math</span></code></a> دسترسی به توابع کتابخانهٔ C زیرین برای محاسبات ممیز شناور را فراهم می‌کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span>
+<span class="go">0.70710678118654757</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">10.0</span>
+</pre></div>
+</div>
+<p>ماژول <a class="reference internal" href="../library/random.html#module-random" title="random: Generate pseudo-random numbers with various common distributions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">random</span></code></a> ابزارهایی برای انتخاب‌های تصادفی فراهم می‌کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'pear'</span><span class="p">,</span> <span class="s1">'banana'</span><span class="p">])</span>
+<span class="go">'apple'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span>   <span class="c1"># نمونه‌گیری بدون جایگذاری</span>
+<span class="go">[30, 83, 16, 4, 8, 81, 41, 50, 18, 33]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>    <span class="c1"># عدد اعشاری تصادفی از بازهٔ [0.0، 1.0)</span>
+<span class="go">0.17970987693706186</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>    <span class="c1"># عدد صحیح تصادفی انتخاب‌شده از بازهٔ range(6)</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>ماژول <a class="reference internal" href="../library/statistics.html#module-statistics" title="statistics: Mathematical statistics functions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">statistics</span></code></a> ویژگی‌های آماری پایه (مانند میانگین، میانه، واریانس و غیره) داده‌های عددی را محاسبه می‌کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">statistics</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="go">1.6071428571428572</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">statistics</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="go">1.25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">statistics</span><span class="o">.</span><span class="n">variance</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="go">1.3720238095238095</span>
+</pre></div>
+</div>
+<p>پروژهٔ SciPy &lt;<a class="reference external" href="https://scipy.org">https://scipy.org</a>&gt; ماژول‌های بسیار دیگری برای محاسبات عددی دارد.</p>
+</section>
+<section id="internet-access">
+<span id="tut-internet-access"></span><h2><span class="section-number">10.7. </span>دسترسی به اینترنت<a class="headerlink" href="#internet-access" title="Link to this heading">¶</a></h2>
+<p>تعدادی ماژول برای دسترسی به اینترنت و پردازش پروتکل‌های اینترنتی وجود دارد. دو مورد از ساده‌ترین آن‌ها <a class="reference internal" href="../library/urllib.request.html#module-urllib.request" title="urllib.request: Extensible library for opening URLs."><code class="xref py py-mod docutils literal notranslate"><span class="pre">urllib.request</span></code></a> برای دریافت داده از URLها و <a class="reference internal" href="../library/smtplib.html#module-smtplib" title="smtplib: SMTP protocol client (requires sockets)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">smtplib</span></code></a> برای ارسال ایمیل هستند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">urllib.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlopen</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="s1">'https://docs.python.org/3/'</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>             <span class="c1"># تبدیل بایت‌ها به یک رشته</span>
+<span class="gp">... </span>        <span class="k">if</span> <span class="s1">'updated'</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+<span class="gp">... </span>            <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>         <span class="c1"># حذف خط جدیدِ انتهایی</span>
+<span class="gp">...</span>
+<span class="go">      Last updated on Nov 11, 2025 (20:11 UTC).</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">smtplib</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">server</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="s1">'localhost'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">server</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="s1">'soothsayer@example.org'</span><span class="p">,</span> <span class="s1">'jcaesar@example.org'</span><span class="p">,</span>
+<span class="gp">... </span><span class="sd">"""To: jcaesar@example.org</span>
+<span class="gp">... </span><span class="sd">From: soothsayer@example.org</span>
+<span class="gp">...</span>
+<span class="gp">... </span><span class="sd">Beware the Ides of March.</span>
+<span class="gp">... </span><span class="sd">"""</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">server</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>(توجه کنید که مثال دوم به یک سرور ایمیل در حال اجرا روی localhost نیاز دارد.)</p>
+</section>
+<section id="dates-and-times">
+<span id="tut-dates-and-times"></span><h2><span class="section-number">10.8. </span>تاریخ‌ها و زمان‌ها<a class="headerlink" href="#dates-and-times" title="Link to this heading">¶</a></h2>
+<p>ماژول <a class="reference internal" href="../library/datetime.html#module-datetime" title="datetime: Basic date and time types."><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code></a> کلاس‌هایی برای کار با تاریخ‌ها و زمان‌ها به روش‌های ساده و پیچیده فراهم می‌کند. با اینکه محاسبات مربوط به تاریخ و زمان پشتیبانی می‌شوند، تمرکز اصلی پیاده‌سازی بر استخراج کارآمد اعضا برای قالب‌بندی خروجی و تغییرات است. این ماژول همچنین از اشیایی که نسبت به منطقهٔ زمانی آگاه هستند پشتیبانی می‌کند.:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># ساختن و قالب‌بندی تاریخ‌ها به‌سادگی انجام می‌شود</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">now</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">now</span>
+<span class="go">datetime.date(2003, 12, 2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%m-</span><span class="si">%d</span><span class="s2">-%y. </span><span class="si">%d</span><span class="s2"> %b %Y is a %A on the </span><span class="si">%d</span><span class="s2"> day of %B."</span><span class="p">)</span>
+<span class="go">'12-02-03. 02 Dec 2003 is a Tuesday on the 02 day of December.'</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># تاریخ‌ها از محاسبات تقویمی پشتیبانی می‌کنند</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">birthday</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">1964</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">age</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="n">birthday</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">age</span><span class="o">.</span><span class="n">days</span>
+<span class="go">14368</span>
+</pre></div>
+</div>
+</section>
+<section id="data-compression">
+<span id="tut-data-compression"></span><h2><span class="section-number">10.9. </span>فشرده‌سازی داده‌ها<a class="headerlink" href="#data-compression" title="Link to this heading">¶</a></h2>
+<p>قالب‌های رایج بایگانی و فشرده‌سازی داده مستقیماً توسط ماژول‌هایی مانند <a class="reference internal" href="../library/zlib.html#module-zlib" title="zlib: Low-level interface to compression and decompression routines compatible with gzip."><code class="xref py py-mod docutils literal notranslate"><span class="pre">zlib</span></code></a>، <a class="reference internal" href="../library/gzip.html#module-gzip" title="gzip: Interfaces for gzip compression and decompression using file objects."><code class="xref py py-mod docutils literal notranslate"><span class="pre">gzip</span></code></a>، <a class="reference internal" href="../library/bz2.html#module-bz2" title="bz2: Interfaces for bzip2 compression and decompression."><code class="xref py py-mod docutils literal notranslate"><span class="pre">bz2</span></code></a>، <a class="reference internal" href="../library/lzma.html#module-lzma" title="lzma: A Python wrapper for the liblzma compression library."><code class="xref py py-mod docutils literal notranslate"><span class="pre">lzma</span></code></a>، <a class="reference internal" href="../library/zipfile.html#module-zipfile" title="zipfile: Read and write ZIP-format archive files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">zipfile</span></code></a> و <a class="reference internal" href="../library/tarfile.html#module-tarfile" title="tarfile: Read and write tar-format archive files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">tarfile</span></code></a> پشتیبانی می‌شوند.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">zlib</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'witch which has which witches wrist watch'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">41</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">zlib</span><span class="o">.</span><span class="n">compress</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="go">37</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zlib</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="go">b'witch which has which witches wrist watch'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zlib</span><span class="o">.</span><span class="n">crc32</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">226805979</span>
+</pre></div>
+</div>
+</section>
+<section id="performance-measurement">
+<span id="tut-performance-measurement"></span><h2><span class="section-number">10.10. </span>اندازه‌گیری کارایی<a class="headerlink" href="#performance-measurement" title="Link to this heading">¶</a></h2>
+<p>برخی کاربران پایتون علاقهٔ زیادی دارند که کارایی نسبی روش‌های مختلف برای حل یک مسئلهٔ یکسان را بدانند. پایتون ابزاری برای اندازه‌گیری فراهم می‌کند که بلافاصله به این پرسش‌ها پاسخ می‌دهد.</p>
+<p>برای مثال، ممکن است وسوسه شوید که به‌جای روش سنتی جابه‌جایی آرگومان‌ها، از قابلیت بسته‌بندی و بازکردن تاپل‌ها استفاده کنید. ماژول <a class="reference internal" href="../library/timeit.html#module-timeit" title="timeit: Measure the execution time of small code snippets."><code class="xref py py-mod docutils literal notranslate"><span class="pre">timeit</span></code></a> به‌سرعت یک برتری کوچک در کارایی را نشان می‌دهد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">timeit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Timer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Timer</span><span class="p">(</span><span class="s1">'t=a; a=b; b=t'</span><span class="p">,</span> <span class="s1">'a=1; b=2'</span><span class="p">)</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
+<span class="go">0.57535828626024577</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Timer</span><span class="p">(</span><span class="s1">'a,b = b,a'</span><span class="p">,</span> <span class="s1">'a=1; b=2'</span><span class="p">)</span><span class="o">.</span><span class="n">timeit</span><span class="p">()</span>
+<span class="go">0.54962537085770791</span>
+</pre></div>
+</div>
+<p>برخلاف دقت بسیار بالای <a class="reference internal" href="../library/timeit.html#module-timeit" title="timeit: Measure the execution time of small code snippets."><code class="xref py py-mod docutils literal notranslate"><span class="pre">timeit</span></code></a> در اندازه‌گیری‌های کوچک، ماژول‌های <a class="reference internal" href="../library/profile.html#module-profile" title="profile: Python source profiler."><code class="xref py py-mod docutils literal notranslate"><span class="pre">profile</span></code></a> و <a class="reference internal" href="../library/profile.html#module-pstats" title="pstats: Statistics object for use with the profiler."><code class="xref py py-mod docutils literal notranslate"><span class="pre">pstats</span></code></a> ابزارهایی برای شناسایی بخش‌های حساس از نظر زمانی در قطعه‌کدهای بزرگ‌تر فراهم می‌کنند.</p>
+</section>
+<section id="quality-control">
+<span id="tut-quality-control"></span><h2><span class="section-number">10.11. </span>کنترل کیفیت<a class="headerlink" href="#quality-control" title="Link to this heading">¶</a></h2>
+<p>یکی از روش‌ها برای توسعهٔ نرم‌افزار با کیفیت بالا این است که برای هر تابع، هم‌زمان با توسعهٔ آن، آزمون‌هایی نوشته شود و این آزمون‌ها در طول فرایند توسعه به‌طور مکرر اجرا شوند.</p>
+<p>ماژول <a class="reference internal" href="../library/doctest.html#module-doctest" title="doctest: Test pieces of code within docstrings."><code class="xref py py-mod docutils literal notranslate"><span class="pre">doctest</span></code></a> ابزاری برای پیمایش یک ماژول و اعتبارسنجی آزمون‌هایی که در رشته‌های مستندات (docstring) برنامه قرار داده شده‌اند فراهم می‌کند. ساخت آزمون‌ها به سادگیِ کپی‌کردن یک فراخوانی معمولی به همراه نتیجهٔ آن در docstring است. این کار مستندات را بهتر می‌کند، زیرا نمونه‌ای برای کاربر فراهم می‌کند و همچنین به ماژول doctest اجازه می‌دهد اطمینان حاصل کند که کد همچنان مطابق با مستندات عمل می‌کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">average</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""میانگین حسابیِ یک فهرست از اعداد را محاسبه می‌کند.</span>
+
+<span class="sd">    &gt;&gt;&gt; print(average([20, 30, 70]))</span>
+<span class="sd">    40.0</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">doctest</span>
+<span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>   <span class="c1"># آزمون‌های تعبیه‌شده را به‌صورت خودکار اعتبارسنجی می‌کند</span>
+</pre></div>
+</div>
+<p>ماژول <a class="reference internal" href="../library/unittest.html#module-unittest" title="unittest: Unit testing framework for Python."><code class="xref py py-mod docutils literal notranslate"><span class="pre">unittest</span></code></a> به اندازهٔ <a class="reference internal" href="../library/doctest.html#module-doctest" title="doctest: Test pieces of code within docstrings."><code class="xref py py-mod docutils literal notranslate"><span class="pre">doctest</span></code></a> ساده و بدون زحمت نیست، اما اجازه می‌دهد مجموعه‌ای جامع‌تر از آزمون‌ها در یک فایل جداگانه نگهداری شود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">unittest</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TestStatisticalFunctions</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_average</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">average</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">70</span><span class="p">]),</span> <span class="mf">40.0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">average</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]),</span> <span class="mi">1</span><span class="p">),</span> <span class="mf">4.3</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">):</span>
+            <span class="n">average</span><span class="p">([])</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+            <span class="n">average</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>
+
+<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>  <span class="c1"># فراخوانی از خط فرمان، همهٔ آزمون‌ها را اجرا می‌کند</span>
+</pre></div>
+</div>
+</section>
+<section id="batteries-included">
+<span id="tut-batteries-included"></span><h2><span class="section-number">10.12. </span>همه‌چیز آماده درون جعبه<a class="headerlink" href="#batteries-included" title="Link to this heading">¶</a></h2>
+<p>پایتون از فلسفهٔ «همه‌چیز آماده درون جعبه» (batteries included) پیروی می‌کند. این موضوع را می‌توان به بهترین شکل در قابلیت‌های پیشرفته و قدرتمند بسته‌های بزرگ‌تر آن مشاهده کرد. برای مثال:</p>
+<ul class="simple">
+<li><p>ماژول‌های <a class="reference internal" href="../library/xmlrpc.client.html#module-xmlrpc.client" title="xmlrpc.client: XML-RPC client access."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.client</span></code></a> و <a class="reference internal" href="../library/xmlrpc.server.html#module-xmlrpc.server" title="xmlrpc.server: Basic XML-RPC server implementations."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xmlrpc.server</span></code></a> پیاده‌سازی فراخوانی رویه‌های راه‌دور (Remote Procedure Calls یا RPC) را به کاری تقریباً ساده و بدیهی تبدیل می‌کنند. با وجود نام این ماژول‌ها، نیازی به دانش یا کار مستقیم با XML نیست.</p></li>
+<li><p>بستهٔ <a class="reference internal" href="../library/email.html#module-email" title="email: Package supporting the parsing, manipulating, and generating email messages."><code class="xref py py-mod docutils literal notranslate"><span class="pre">email</span></code></a> کتابخانه‌ای برای مدیریت پیام‌های ایمیل است که از MIME و سایر قالب‌های پیام مبتنی بر <span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5322.html"><strong>RFC 5322</strong></a> نیز پشتیبانی می‌کند. برخلاف ماژول‌های <a class="reference internal" href="../library/smtplib.html#module-smtplib" title="smtplib: SMTP protocol client (requires sockets)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">smtplib</span></code></a> و <a class="reference internal" href="../library/poplib.html#module-poplib" title="poplib: POP3 protocol client (requires sockets)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">poplib</span></code></a> که وظیفهٔ ارسال و دریافت پیام‌ها را بر عهده دارند، بستهٔ <cite>email</cite> مجموعه‌ای کامل از ابزارها را برای ساخت یا رمزگشایی ساختارهای پیچیدهٔ پیام (از جمله پیوست‌ها) و همچنین پیاده‌سازی پروتکل‌های کدگذاری اینترنتی و سرآیندهای پیام فراهم می‌کند.</p></li>
+<li><p>بستهٔ <a class="reference internal" href="../library/json.html#module-json" title="json: Encode and decode the JSON format."><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code></a> از تجزیه و پردازش این قالب پرکاربرد تبادل داده به‌خوبی پشتیبانی می‌کند. ماژول <a class="reference internal" href="../library/csv.html#module-csv" title="csv: Write and read tabular data to and from delimited files."><code class="xref py py-mod docutils literal notranslate"><span class="pre">csv</span></code></a> امکان خواندن و نوشتن مستقیم فایل‌ها در قالب مقادیر جداشده با ویرگول (CSV) را فراهم می‌کند؛ قالبی که معمولاً توسط پایگاه‌های داده و نرم‌افزارهای صفحه‌گسترده پشتیبانی می‌شود. پردازش XML نیز توسط بسته‌های <a class="reference internal" href="../library/xml.etree.elementtree.html#module-xml.etree.ElementTree" title="xml.etree.ElementTree: Implementation of the ElementTree API."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.etree.ElementTree</span></code></a>، <a class="reference internal" href="../library/xml.dom.html#module-xml.dom" title="xml.dom: Document Object Model API for Python."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.dom</span></code></a> و <a class="reference internal" href="../library/xml.sax.html#module-xml.sax" title="xml.sax: Package containing SAX2 base classes and convenience functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">xml.sax</span></code></a> پشتیبانی می‌شود. در کنار هم، این ماژول‌ها و بسته‌ها تبادل داده میان برنامه‌های پایتون و سایر ابزارها را تا حد زیادی ساده می‌کنند.</p></li>
+<li><p>ماژول <a class="reference internal" href="../library/sqlite3.html#module-sqlite3" title="sqlite3: A DB-API 2.0 implementation using SQLite 3.x."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sqlite3</span></code></a> پوششی (wrapper) برای کتابخانهٔ پایگاه دادهٔ SQLite است و یک پایگاه دادهٔ پایدار فراهم می‌کند که با استفاده از نگارش اندکی غیراستاندارد SQL قابل به‌روزرسانی و دسترسی است.</p></li>
+<li><p>پشتیبانی از بین‌المللی‌سازی (Internationalization) توسط چندین ماژول، از جمله <a class="reference internal" href="../library/gettext.html#module-gettext" title="gettext: Multilingual internationalization services."><code class="xref py py-mod docutils literal notranslate"><span class="pre">gettext</span></code></a>، <a class="reference internal" href="../library/locale.html#module-locale" title="locale: Internationalization services."><code class="xref py py-mod docutils literal notranslate"><span class="pre">locale</span></code></a> و بستهٔ <a class="reference internal" href="../library/codecs.html#module-codecs" title="codecs: Encode and decode data and streams."><code class="xref py py-mod docutils literal notranslate"><span class="pre">codecs</span></code></a> فراهم می‌شود.</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">10. نگاهی کوتاه به کتابخانهٔ استاندارد</a><ul>
+<li><a class="reference internal" href="#operating-system-interface">10.1. رابط سیستم‌عامل</a></li>
+<li><a class="reference internal" href="#file-wildcards">10.2. الگوهای عام فایل</a></li>
+<li><a class="reference internal" href="#command-line-arguments">10.3. آرگومان‌های خط فرمان</a></li>
+<li><a class="reference internal" href="#error-output-redirection-and-program-termination">10.4. تغییر مسیر خروجی خطا و پایان دادن به برنامه</a></li>
+<li><a class="reference internal" href="#string-pattern-matching">10.5. تطبیق الگوهای رشته‌ای</a></li>
+<li><a class="reference internal" href="#mathematics">10.6. ریاضیات</a></li>
+<li><a class="reference internal" href="#internet-access">10.7. دسترسی به اینترنت</a></li>
+<li><a class="reference internal" href="#dates-and-times">10.8. تاریخ‌ها و زمان‌ها</a></li>
+<li><a class="reference internal" href="#data-compression">10.9. فشرده‌سازی داده‌ها</a></li>
+<li><a class="reference internal" href="#performance-measurement">10.10. اندازه‌گیری کارایی</a></li>
+<li><a class="reference internal" href="#quality-control">10.11. کنترل کیفیت</a></li>
+<li><a class="reference internal" href="#batteries-included">10.12. همه‌چیز آماده درون جعبه</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="classes.html"
+                          title="فصل قبلی"><span class="section-number">9. </span>کلاسها</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="stdlib2.html"
+                          title="فصل بعدی"><span class="section-number">11. </span>مروری کوتاه بر کتابخانهٔ استاندارد — بخش دوم</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/stdlib.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/stdlib.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/stdlib.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </div>
+<div id="sidebarbutton" title="تا کردن نوار کناره">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             >فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="stdlib2.html" title="11. مروری کوتاه بر کتابخانهٔ استاندارد — بخش دوم"
+             >بعدی</a> |</li>
+        <li class="right" >
+          <a href="classes.html" title="9. کلاسها"
+             >قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">10. </span>نگاهی کوتاه به کتابخانهٔ استاندارد</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>  
+    <div class="footer">
+    &copy; <a href="../copyright.html">حق چاپ</a> 2001 Python Software Foundation.
+    <br>
+    This page is licensed under the Python Software Foundation License Version 2.
+    <br>
+    Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
+    <br>
+    
+      See <a href="/license.html">History and License</a> for more information.<br>
+    
+    
+    <br>
+
+    The Python Software Foundation is a non-profit corporation.
+<a href="https://www.python.org/psf/donations/">Please donate.</a>
+<br>
+    <br>
+      آخرین بروز رسانی در اوت 18, 2026 (05:51 UTC) .
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
+    <br>
+
+    ایجاد شده با<a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+
+  </body>
+</html>

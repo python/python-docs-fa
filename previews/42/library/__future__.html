@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+
+<html lang="fa" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="__future__ --- تعاریف دستورات آینده" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.python.org/3/library/__future__.html" />
+<meta property="og:site_name" content="Python documentation" />
+<meta property="og:description" content="کد منبع: Lib/__future__.py ایمپورت‌هایی به شکل from __future__ import feature ، future statements نامیده می‌شوند. این موارد توسط کامپایلر پایتون به‌صورت ویژه درنظر گرفته می‌شوند تا امکان استفاده از..." />
+<meta property="og:image" content="_static/og-image.png" />
+<meta property="og:image:alt" content="Python documentation" />
+<meta name="description" content="کد منبع: Lib/__future__.py ایمپورت‌هایی به شکل from __future__ import feature ، future statements نامیده می‌شوند. این موارد توسط کامپایلر پایتون به‌صورت ویژه درنظر گرفته می‌شوند تا امکان استفاده از..." />
+<meta name="theme-color" content="#3776ab">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+
+    <title>__future__ --- تعاریف دستورات آینده &#8212; مستندات Python3.14.6</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/classic.css?v=234b1a7c" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme.css?v=4365c8fe" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments_dark.css?v=0fc419ee" />
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/documentation_options.js?v=e254dbbb"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/doctools.js?v=9bcbadda"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/translations.js?v=5df48d09"></script>
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sidebar.js"></script>
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="جستجو در مستندات Python3.14.6"
+          href="https://python.github.io/python-docs-fa/previews/42/_static/opensearch.xml"/>
+    <link rel="author" title="درباره این مستندات" href="../about.html" />
+    <link rel="index" title="فهرست" href="../genindex.html" />
+    <link rel="search" title="جستجو" href="../search.html" />
+    <link rel="copyright" title="حق چاپ" href="../copyright.html" />
+    <link rel="next" title="gc --- Garbage Collector interface" href="gc.html" />
+    <link rel="prev" title="traceback --- Print or retrieve a stack traceback" href="traceback.html" />
+    
+      
+      <link rel="canonical" href="https://docs.python.org/3/library/__future__.html">
+      
+    
+
+    
+    <style>
+      @media only screen {
+        table.full-width-table {
+            width: 100%;
+        }
+      }
+    </style>
+<link rel="stylesheet" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="https://python.github.io/python-docs-fa/previews/42/_static/py.svg">
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/copybutton.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/menu.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/search-focus.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/themetoggle.js"></script> 
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/rtd_switcher.js"></script>
+            <meta name="readthedocs-addons-api-version" content="1">
+
+  </head>
+<body>
+<div class="mobile-nav">
+    <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
+           aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu">
+    <nav class="nav-content" role="navigation">
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo">
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q">
+                <input type="submit" value="برو">
+            </form>
+        </span>
+    </nav>
+    <div class="menu-wrapper">
+        <nav class="menu" role="navigation" aria-label="main navigation">
+            <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">__future__</span></code> --- تعاریف دستورات آینده</a><ul>
+<li><a class="reference internal" href="#module-contents">محتویات ماژول</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="traceback.html"
+                          title="فصل قبلی"><code class="xref py py-mod docutils literal notranslate"><span class="pre">traceback</span></code> --- Print or retrieve a stack traceback</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="gc.html"
+                          title="فصل بعدی"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gc</span></code> --- Garbage Collector interface</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "library/__future__.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/__future__.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/library/__future__.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </nav>
+    </div>
+</div>
+
+  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             accesskey="I">فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="gc.html" title="gc --- Garbage Collector interface"
+             accesskey="N">بعدی</a> |</li>
+        <li class="right" >
+          <a href="traceback.html" title="traceback --- Print or retrieve a stack traceback"
+             accesskey="P">قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="python.html" accesskey="U">Python Runtime Services</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">__future__</span></code> --- تعاریف دستورات آینده</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-__future__">
+<span id="future-future-statement-definitions"></span><h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">__future__</span></code> --- تعاریف دستورات آینده<a class="headerlink" href="#module-__future__" title="Link to this heading">¶</a></h1>
+<p><strong>کد منبع:</strong> <a class="extlink-source reference external" href="https://github.com/python/cpython/tree/3.14/Lib/__future__.py">Lib/__future__.py</a></p>
+<hr class="docutils" />
+<p>ایمپورت‌هایی به شکل <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">__future__</span> <span class="pre">import</span> <span class="pre">feature</span></code>، <a class="reference internal" href="../reference/simple_stmts.html#future"><span class="std std-ref">future statements</span></a> نامیده می‌شوند. این موارد توسط کامپایلر پایتون به‌صورت ویژه درنظر گرفته می‌شوند تا امکان استفاده از ویژگیهای جدید پایتون را در ماژولهایی که شامل دستور آینده هستند، قبل از نسخه‌ای که آن ویژگی به‌صورت استاندارد درمی‌آید، فراهم کنند.</p>
+<p>اگرچه این دستورات آینده‌نگر توسط کامپایلر پایتون معنای ویژه‌ی اضافی پیدا می‌کنند، اما همچنان مانند هر دستور ایمپورت دیگری اجرا می‌شوند و <code class="xref py py-mod docutils literal notranslate"><span class="pre">__future__</span></code> وجود دارد و توسط سیستم ایمپورت به همان روشی که هر ماژول پایتون دیگری مدیریت می‌شود، مدیریت می‌گردد. این طراحی سه هدف را دنبال می‌کند:</p>
+<ul class="simple">
+<li><p>برای جلوگیری از سردرگمی ابزارهای موجود که دستورات ایمپورت را تحلیل می‌کنند و انتظار دارند که ماژول‌های مورد نظر خود را پیدا کنند.</p></li>
+<li><p>برای مستندسازی زمان معرفی تغییرات ناسازگار و زمانی که --- یا شده‌اند --- اجباری می‌شوند. این نوعی مستندسازی قابل‌اجرا است، و می‌توان آن را به‌صورت برنامه‌نویسی با ایمپورت کردن <code class="xref py py-mod docutils literal notranslate"><span class="pre">__future__</span></code> و بررسی محتویات آن مشاهده کرد.</p></li>
+<li><p>برای اطمینان از اینکه <a class="reference internal" href="../reference/simple_stmts.html#future"><span class="std std-ref">future statements</span></a> در نسخه‌های پیش از پایتون 2.1 حداقل استثناهای زمان اجرا ایجاد می‌کنند (ایمپورت کردن <code class="xref py py-mod docutils literal notranslate"><span class="pre">__future__</span></code> با شکست مواجه خواهد شد، زیرا هیچ ماژولی با آن نام پیش از نسخه‌ی ۲.۱ وجود نداشته است).</p></li>
+</ul>
+<section id="module-contents">
+<h2>محتویات ماژول<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+<p>هیچ توضیح ویژگی‌ای هرگز از <code class="xref py py-mod docutils literal notranslate"><span class="pre">__future__</span></code> حذف نخواهد شد. از زمان معرفی آن در پایتون ۲.۱، ویژگی‌های زیر راه خود را به این زبان با استفاده از این مکانیزم پیدا کرده‌اند:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>ویژگی</p></th>
+<th class="head"><p>اختیاری در</p></th>
+<th class="head"><p>اجباری در</p></th>
+<th class="head"><p>تأثیر</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><dl class="py data">
+<dt class="sig sig-object py" id="future__.nested_scopes">
+<span class="sig-prename descclassname"><span class="pre">__future__.</span></span><span class="sig-name descname"><span class="pre">nested_scopes</span></span><a class="headerlink" href="#future__.nested_scopes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</td>
+<td><p>2.1.0b1</p></td>
+<td><p>2.2</p></td>
+<td><p><span class="target" id="index-26"></span><a class="pep reference external" href="https://peps.python.org/pep-0227/"><strong>PEP 227</strong></a>: <em>محدوده‌های تو در تو ایستا</em></p></td>
+</tr>
+<tr class="row-odd"><td><dl class="py data">
+<dt class="sig sig-object py" id="future__.generators">
+<span class="sig-prename descclassname"><span class="pre">__future__.</span></span><span class="sig-name descname"><span class="pre">generators</span></span><a class="headerlink" href="#future__.generators" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</td>
+<td><p>2.2.0a1</p></td>
+<td><p>2.3</p></td>
+<td><p><span class="target" id="index-27"></span><a class="pep reference external" href="https://peps.python.org/pep-0255/"><strong>PEP 255</strong></a>: <em>تولید‌کننده‌های ساده</em></p></td>
+</tr>
+<tr class="row-even"><td><dl class="py data">
+<dt class="sig sig-object py" id="future__.division">
+<span class="sig-prename descclassname"><span class="pre">__future__.</span></span><span class="sig-name descname"><span class="pre">division</span></span><a class="headerlink" href="#future__.division" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</td>
+<td><p>2.2.0a2</p></td>
+<td><p>3.0</p></td>
+<td><p><span class="target" id="index-28"></span><a class="pep reference external" href="https://peps.python.org/pep-0238/"><strong>PEP 238</strong></a>: <em>تغییر عملگر تقسیم</em></p></td>
+</tr>
+<tr class="row-odd"><td><dl class="py data">
+<dt class="sig sig-object py" id="future__.absolute_import">
+<span class="sig-prename descclassname"><span class="pre">__future__.</span></span><span class="sig-name descname"><span class="pre">absolute_import</span></span><a class="headerlink" href="#future__.absolute_import" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</td>
+<td><p>2.5.0a1</p></td>
+<td><p>3.0</p></td>
+<td><p><span class="target" id="index-29"></span><a class="pep reference external" href="https://peps.python.org/pep-0328/"><strong>PEP 328</strong></a>: <em>ایمپورتها: چندخطی و مطلق/نسبی</em></p></td>
+</tr>
+<tr class="row-even"><td><dl class="py data">
+<dt class="sig sig-object py" id="future__.with_statement">
+<span class="sig-prename descclassname"><span class="pre">__future__.</span></span><span class="sig-name descname"><span class="pre">with_statement</span></span><a class="headerlink" href="#future__.with_statement" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</td>
+<td><p>2.5.0a1</p></td>
+<td><p>2.6</p></td>
+<td><p><span class="target" id="index-30"></span><a class="pep reference external" href="https://peps.python.org/pep-0343/"><strong>PEP 343</strong></a>: <em>دستور “with”</em></p></td>
+</tr>
+<tr class="row-odd"><td><dl class="py data">
+<dt class="sig sig-object py" id="future__.print_function">
+<span class="sig-prename descclassname"><span class="pre">__future__.</span></span><span class="sig-name descname"><span class="pre">print_function</span></span><a class="headerlink" href="#future__.print_function" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</td>
+<td><p>2.6.0a2</p></td>
+<td><p>3.0</p></td>
+<td><p><span class="target" id="index-31"></span><a class="pep reference external" href="https://peps.python.org/pep-3105/"><strong>PEP 3105</strong></a>: <em>تبدیل print به یک تابع</em></p></td>
+</tr>
+<tr class="row-even"><td><dl class="py data">
+<dt class="sig sig-object py" id="future__.unicode_literals">
+<span class="sig-prename descclassname"><span class="pre">__future__.</span></span><span class="sig-name descname"><span class="pre">unicode_literals</span></span><a class="headerlink" href="#future__.unicode_literals" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</td>
+<td><p>2.6.0a2</p></td>
+<td><p>3.0</p></td>
+<td><p><span class="target" id="index-32"></span><a class="pep reference external" href="https://peps.python.org/pep-3112/"><strong>PEP 3112</strong></a>: <em>لیترال‌های بایت در پایتون ۳۰۰۰</em></p></td>
+</tr>
+<tr class="row-odd"><td><dl class="py data">
+<dt class="sig sig-object py" id="future__.generator_stop">
+<span class="sig-prename descclassname"><span class="pre">__future__.</span></span><span class="sig-name descname"><span class="pre">generator_stop</span></span><a class="headerlink" href="#future__.generator_stop" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</td>
+<td><p>3.5.0b1</p></td>
+<td><p>3.7</p></td>
+<td><p><span class="target" id="index-33"></span><a class="pep reference external" href="https://peps.python.org/pep-0479/"><strong>PEP 479</strong></a>: <em>مدیریت StopIteration درون تولیدگرها</em></p></td>
+</tr>
+<tr class="row-even"><td><dl class="py data">
+<dt class="sig sig-object py" id="future__.annotations">
+<span class="sig-prename descclassname"><span class="pre">__future__.</span></span><span class="sig-name descname"><span class="pre">annotations</span></span><a class="headerlink" href="#future__.annotations" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</td>
+<td><p>3.7.0b1</p></td>
+<td><p>هرگز <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p><span class="target" id="index-34"></span><a class="pep reference external" href="https://peps.python.org/pep-0563/"><strong>PEP 563</strong></a>: <em>ارزیابی به‌تعویق‌افتادهٔ annotationها</em>، <span class="target" id="index-35"></span><a class="pep reference external" href="https://peps.python.org/pep-0649/"><strong>PEP 649</strong></a>: <em>ارزیابی به‌تعویق‌افتادهٔ annotationها با استفاده از توصیفگرها</em></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class" id="future-classes">
+<dt class="sig sig-object py" id="future__._Feature">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">__future__.</span></span><span class="sig-name descname"><span class="pre">_Feature</span></span><a class="headerlink" href="#future__._Feature" title="Link to this definition">¶</a></dt>
+<dd><p>هر دستور در <code class="file docutils literal notranslate"><span class="pre">__future__.py</span></code> به شکل زیر است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">FeatureName</span> <span class="o">=</span> <span class="n">_Feature</span><span class="p">(</span><span class="n">OptionalRelease</span><span class="p">,</span> <span class="n">MandatoryRelease</span><span class="p">,</span>
+                       <span class="n">CompilerFlag</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>که در آن، به‌طور معمول، <em>OptionalRelease</em> کوچک‌تر از <em>MandatoryRelease</em> است، و هر دو تاپل‌های ۵ عضوی به همان شکل <a class="reference internal" href="sys.html#sys.version_info" title="sys.version_info"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.version_info</span></code></a> هستند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">PY_MAJOR_VERSION</span><span class="p">,</span> <span class="c1"># عدد 2 در 2.1.0a3؛ یک عدد صحیح</span>
+ <span class="n">PY_MINOR_VERSION</span><span class="p">,</span> <span class="c1"># عدد 1؛ یک عدد صحیح</span>
+ <span class="n">PY_MICRO_VERSION</span><span class="p">,</span> <span class="c1"># عدد 0؛ یک عدد صحیح</span>
+ <span class="n">PY_RELEASE_LEVEL</span><span class="p">,</span> <span class="c1"># "alpha"، "beta"، "candidate" یا "final"؛ رشته</span>
+ <span class="n">PY_RELEASE_SERIAL</span> <span class="c1"># عدد 3؛ یک عدد صحیح</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="future__._Feature.getOptionalRelease">
+<span class="sig-prename descclassname"><span class="pre">_Feature.</span></span><span class="sig-name descname"><span class="pre">getOptionalRelease</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#future__._Feature.getOptionalRelease" title="Link to this definition">¶</a></dt>
+<dd><p><em>OptionalRelease</em> اولین نسخه‌ای را ثبت می‌کند که ویژگی در آن پذیرفته شده است.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="future__._Feature.getMandatoryRelease">
+<span class="sig-prename descclassname"><span class="pre">_Feature.</span></span><span class="sig-name descname"><span class="pre">getMandatoryRelease</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#future__._Feature.getMandatoryRelease" title="Link to this definition">¶</a></dt>
+<dd><p>در مورد <em>MandatoryRelease</em> که هنوز رخ نداده است، <em>MandatoryRelease</em> نسخه‌ای را پیش‌بینی می‌کند که ویژگی در آن بخشی از زبان خواهد شد.</p>
+<p>در غیر این صورت، <em>MandatoryRelease</em> زمانی را ثبت می‌کند که ویژگی به بخشی از زبان تبدیل شد؛ در نسخه‌های همان یا بعد از آن، ماژول‌ها دیگر برای استفاده از آن ویژگی نیازی به دستور future ندارند، اما می‌توانند به استفاده از چنین ایمپورت‌هایی ادامه دهند.</p>
+<p><em>MandatoryRelease</em> همچنین می‌تواند <code class="docutils literal notranslate"><span class="pre">None</span></code> باشد، به این معنی که یک ویژگی برنامه‌ریزی‌شده حذف شده است یا اینکه هنوز تصمیمی درباره‌ی آن گرفته نشده است.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="future__._Feature.compiler_flag">
+<span class="sig-prename descclassname"><span class="pre">_Feature.</span></span><span class="sig-name descname"><span class="pre">compiler_flag</span></span><a class="headerlink" href="#future__._Feature.compiler_flag" title="Link to this definition">¶</a></dt>
+<dd><p><em>CompilerFlag</em> پرچم است که باید در آرگومان چهارم به تابع داخلی <a class="reference internal" href="functions.html#compile" title="compile"><code class="xref py py-func docutils literal notranslate"><span class="pre">compile()</span></code></a> ارسال شود تا ویژگی را در کد کامپایل‌شده‌ی پویا فعال کند.  این پرچم در ویژگی <a class="reference internal" href="#future__._Feature.compiler_flag" title="__future__._Feature.compiler_flag"><code class="xref py py-attr docutils literal notranslate"><span class="pre">_Feature.compiler_flag</span></code></a> در نمونه‌های <a class="reference internal" href="#future__._Feature" title="__future__._Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">_Feature</span></code></a> ذخیره می‌شود.</p>
+</dd></dl>
+
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">__future__</span> <span class="pre">import</span> <span class="pre">annotations</span></code> قبلاً قرار بود در پایتون ۳.۱۰ اجباری شود، اما این تغییر به تعویق افتاد و در نهایت لغو شد. این ویژگی در نهایت منسوخ و حذف خواهد شد. برای اطلاعات بیشتر به <span class="target" id="index-36"></span><a class="pep reference external" href="https://peps.python.org/pep-0649/"><strong>PEP 649</strong></a> و <span class="target" id="index-37"></span><a class="pep reference external" href="https://peps.python.org/pep-0749/"><strong>PEP 749</strong></a> مراجعه کنید.</p>
+</aside>
+</aside>
+<div class="admonition seealso">
+<p class="admonition-title">همچنین ملاحظه نمائید</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../reference/simple_stmts.html#future"><span class="std std-ref">Future statements</span></a></dt><dd><p>نحوه‌ی برخورد کامپایلر با ایمپورت‌های future</p>
+</dd>
+<dt><span class="target" id="index-38"></span><a class="pep reference external" href="https://peps.python.org/pep-0236/"><strong>PEP 236</strong></a> - بازگشت به __future__</dt><dd><p>پیشنهاد اولیه برای مکانیزم __future__.</p>
+</dd>
+</dl>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">__future__</span></code> --- تعاریف دستورات آینده</a><ul>
+<li><a class="reference internal" href="#module-contents">محتویات ماژول</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="traceback.html"
+                          title="فصل قبلی"><code class="xref py py-mod docutils literal notranslate"><span class="pre">traceback</span></code> --- Print or retrieve a stack traceback</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="gc.html"
+                          title="فصل بعدی"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gc</span></code> --- Garbage Collector interface</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "library/__future__.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/library/__future__.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/library/__future__.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </div>
+<div id="sidebarbutton" title="تا کردن نوار کناره">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             >فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="gc.html" title="gc --- Garbage Collector interface"
+             >بعدی</a> |</li>
+        <li class="right" >
+          <a href="traceback.html" title="traceback --- Print or retrieve a stack traceback"
+             >قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >The Python Standard Library</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="python.html" >Python Runtime Services</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">__future__</span></code> --- تعاریف دستورات آینده</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>  
+    <div class="footer">
+    &copy; <a href="../copyright.html">حق چاپ</a> 2001 Python Software Foundation.
+    <br>
+    This page is licensed under the Python Software Foundation License Version 2.
+    <br>
+    Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
+    <br>
+    
+      See <a href="/license.html">History and License</a> for more information.<br>
+    
+    
+    <br>
+
+    The Python Software Foundation is a non-profit corporation.
+<a href="https://www.python.org/psf/donations/">Please donate.</a>
+<br>
+    <br>
+      آخرین بروز رسانی در اوت 18, 2026 (05:51 UTC) .
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
+    <br>
+
+    ایجاد شده با<a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+
+  </body>
+</html>

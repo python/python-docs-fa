@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="fa" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="14. ویرایش ورودی تعاملی و جایگزینی تاریخچه" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.python.org/3/tutorial/interactive.html" />
+<meta property="og:site_name" content="Python documentation" />
+<meta property="og:description" content="برخی نسخه‌های مفسر پایتون از ویرایش خط ورودی فعلی و جایگزینی تاریخچه پشتیبانی می‌کنند؛ قابلیتی مشابه آنچه در پوستهٔ Korn و پوستهٔ GNU Bash وجود دارد. این قابلیت با استفاده از کتابخانهٔ GNU Readline..." />
+<meta property="og:image" content="_static/og-image.png" />
+<meta property="og:image:alt" content="Python documentation" />
+<meta name="description" content="برخی نسخه‌های مفسر پایتون از ویرایش خط ورودی فعلی و جایگزینی تاریخچه پشتیبانی می‌کنند؛ قابلیتی مشابه آنچه در پوستهٔ Korn و پوستهٔ GNU Bash وجود دارد. این قابلیت با استفاده از کتابخانهٔ GNU Readline..." />
+<meta name="theme-color" content="#3776ab">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+
+    <title>14. ویرایش ورودی تعاملی و جایگزینی تاریخچه &#8212; مستندات Python3.14.6</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/classic.css?v=234b1a7c" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme.css?v=4365c8fe" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments_dark.css?v=0fc419ee" />
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/documentation_options.js?v=e254dbbb"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/doctools.js?v=9bcbadda"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/translations.js?v=5df48d09"></script>
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sidebar.js"></script>
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="جستجو در مستندات Python3.14.6"
+          href="https://python.github.io/python-docs-fa/previews/42/_static/opensearch.xml"/>
+    <link rel="author" title="درباره این مستندات" href="../about.html" />
+    <link rel="index" title="فهرست" href="../genindex.html" />
+    <link rel="search" title="جستجو" href="../search.html" />
+    <link rel="copyright" title="حق چاپ" href="../copyright.html" />
+    <link rel="next" title="15. حساب ممیز شناور: مشکلات و محدودیت‌ها" href="floatingpoint.html" />
+    <link rel="prev" title="13. حالا چی؟" href="whatnow.html" />
+    
+      
+      <link rel="canonical" href="https://docs.python.org/3/tutorial/interactive.html">
+      
+    
+
+    
+    <style>
+      @media only screen {
+        table.full-width-table {
+            width: 100%;
+        }
+      }
+    </style>
+<link rel="stylesheet" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="https://python.github.io/python-docs-fa/previews/42/_static/py.svg">
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/copybutton.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/menu.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/search-focus.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/themetoggle.js"></script> 
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/rtd_switcher.js"></script>
+            <meta name="readthedocs-addons-api-version" content="1">
+
+  </head>
+<body>
+<div class="mobile-nav">
+    <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
+           aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu">
+    <nav class="nav-content" role="navigation">
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo">
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q">
+                <input type="submit" value="برو">
+            </form>
+        </span>
+    </nav>
+    <div class="menu-wrapper">
+        <nav class="menu" role="navigation" aria-label="main navigation">
+            <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">14. ویرایش ورودی تعاملی و جایگزینی تاریخچه</a><ul>
+<li><a class="reference internal" href="#tab-completion-and-history-editing">14.1. تکمیل با کلید Tab و ویرایش تاریخچه</a></li>
+<li><a class="reference internal" href="#alternatives-to-the-interactive-interpreter">14.2. جایگزین‌هایی برای مفسر تعاملی</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="whatnow.html"
+                          title="فصل قبلی"><span class="section-number">13. </span>حالا چی؟</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="floatingpoint.html"
+                          title="فصل بعدی"><span class="section-number">15. </span>حساب ممیز شناور: مشکلات و محدودیت‌ها</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/interactive.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/interactive.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/interactive.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </nav>
+    </div>
+</div>
+
+  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             accesskey="I">فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="floatingpoint.html" title="15. حساب ممیز شناور: مشکلات و محدودیت‌ها"
+             accesskey="N">بعدی</a> |</li>
+        <li class="right" >
+          <a href="whatnow.html" title="13. حالا چی؟"
+             accesskey="P">قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">14. </span>ویرایش ورودی تعاملی و جایگزینی تاریخچه</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="interactive-input-editing-and-history-substitution">
+<span id="tut-interacting"></span><h1><span class="section-number">14. </span>ویرایش ورودی تعاملی و جایگزینی تاریخچه<a class="headerlink" href="#interactive-input-editing-and-history-substitution" title="Link to this heading">¶</a></h1>
+<p>برخی نسخه‌های مفسر پایتون از ویرایش خط ورودی فعلی و جایگزینی تاریخچه پشتیبانی می‌کنند؛ قابلیتی مشابه آنچه در پوستهٔ Korn و پوستهٔ GNU Bash وجود دارد. این قابلیت با استفاده از کتابخانهٔ <a class="reference external" href="https://tiswww.case.edu/php/chet/readline/rltop.html">GNU Readline</a> پیاده‌سازی شده است که از شیوه‌های گوناگون ویرایش پشتیبانی می‌کند. این کتابخانه مستندات اختصاصی خود را دارد که در اینجا آن‌ها را تکرار نمی‌کنیم.</p>
+<section id="tab-completion-and-history-editing">
+<span id="tut-keybindings"></span><h2><span class="section-number">14.1. </span>تکمیل با کلید Tab و ویرایش تاریخچه<a class="headerlink" href="#tab-completion-and-history-editing" title="Link to this heading">¶</a></h2>
+<p>تکمیل نام متغیرها و ماژول‌ها به‌طور <a class="reference internal" href="../library/site.html#rlcompleter-config"><span class="std std-ref">خودکار فعال می‌شود</span></a> تا هنگام راه‌اندازی مفسر، به‌گونه‌ای که با فشردن کلید <kbd class="kbd docutils literal notranslate">Tab</kbd>، تابع تکمیل فراخوانی شود. این تابع نام‌های دستورات پایتون، متغیرهای محلی فعلی و نام ماژول‌های موجود را بررسی می‌کند. برای عبارت‌های نقطه‌ای مانند <code class="docutils literal notranslate"><span class="pre">string.a</span></code>، عبارت تا پیش از آخرین <code class="docutils literal notranslate"><span class="pre">'.'</span></code> ارزیابی می‌شود و سپس پیشنهادهایی بر اساس ویژگی‌های شیء حاصل ارائه می‌گردد. توجه داشته باشید که اگر شیئی با متد <a class="reference internal" href="../reference/datamodel.html#object.__getattr__" title="object.__getattr__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getattr__()</span></code></a> بخشی از عبارت باشد، ممکن است در این فرایند کدی که توسط برنامه تعریف شده است اجرا شود. پیکربندی پیش‌فرض همچنین تاریخچهٔ شما را در فایلی با نام <code class="file docutils literal notranslate"><span class="pre">.python_history</span></code> در پوشهٔ کاربری‌تان ذخیره می‌کند. این تاریخچه در نشست تعاملی بعدی مفسر دوباره در دسترس خواهد بود.</p>
+</section>
+<section id="alternatives-to-the-interactive-interpreter">
+<span id="tut-commentary"></span><h2><span class="section-number">14.2. </span>جایگزین‌هایی برای مفسر تعاملی<a class="headerlink" href="#alternatives-to-the-interactive-interpreter" title="Link to this heading">¶</a></h2>
+<p>این قابلیت نسبت به نسخه‌های قدیمی‌تر مفسر، پیشرفت بسیار بزرگی به شمار می‌رود؛ با این حال، هنوز برخی خواسته‌ها برآورده نشده‌اند: برای نمونه، خوب بود اگر در خطوط ادامه، تورفتگی مناسب پیشنهاد می‌شد (زیرا تجزیه‌کننده می‌داند که آیا در گام بعدی به یک توکن <a class="reference internal" href="../library/token.html#token.INDENT" title="token.INDENT"><code class="xref py py-data docutils literal notranslate"><span class="pre">INDENT</span></code></a> نیاز است یا خیر). همچنین، سازوکار تکمیل می‌تواند از جدول نمادهای مفسر استفاده کند. وجود دستوری برای بررسی (یا حتی پیشنهاد) تطابق پرانتزها، گیومه‌ها و موارد مشابه نیز مفید خواهد بود.</p>
+<p>یکی از جایگزین‌های پیشرفتهٔ مفسر تعاملی که سال‌هاست وجود دارد، <a class="reference external" href="https://ipython.org/">IPython</a> است که امکاناتی مانند تکمیل با کلید Tab، کاوش اشیا و مدیریت پیشرفتهٔ تاریخچه را فراهم می‌کند. همچنین می‌توان آن را به‌طور گسترده سفارشی‌سازی کرد و در برنامه‌های دیگر به‌کار گرفت. محیط تعاملی پیشرفتهٔ مشابه دیگری نیز با نام <a class="reference external" href="https://bpython-interpreter.org/">bpython</a> وجود دارد.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">14. ویرایش ورودی تعاملی و جایگزینی تاریخچه</a><ul>
+<li><a class="reference internal" href="#tab-completion-and-history-editing">14.1. تکمیل با کلید Tab و ویرایش تاریخچه</a></li>
+<li><a class="reference internal" href="#alternatives-to-the-interactive-interpreter">14.2. جایگزین‌هایی برای مفسر تعاملی</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="whatnow.html"
+                          title="فصل قبلی"><span class="section-number">13. </span>حالا چی؟</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="floatingpoint.html"
+                          title="فصل بعدی"><span class="section-number">15. </span>حساب ممیز شناور: مشکلات و محدودیت‌ها</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/interactive.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/interactive.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/interactive.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </div>
+<div id="sidebarbutton" title="تا کردن نوار کناره">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             >فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="floatingpoint.html" title="15. حساب ممیز شناور: مشکلات و محدودیت‌ها"
+             >بعدی</a> |</li>
+        <li class="right" >
+          <a href="whatnow.html" title="13. حالا چی؟"
+             >قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">14. </span>ویرایش ورودی تعاملی و جایگزینی تاریخچه</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>  
+    <div class="footer">
+    &copy; <a href="../copyright.html">حق چاپ</a> 2001 Python Software Foundation.
+    <br>
+    This page is licensed under the Python Software Foundation License Version 2.
+    <br>
+    Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
+    <br>
+    
+      See <a href="/license.html">History and License</a> for more information.<br>
+    
+    
+    <br>
+
+    The Python Software Foundation is a non-profit corporation.
+<a href="https://www.python.org/psf/donations/">Please donate.</a>
+<br>
+    <br>
+      آخرین بروز رسانی در اوت 18, 2026 (05:51 UTC) .
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
+    <br>
+
+    ایجاد شده با<a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+
+  </body>
+</html>

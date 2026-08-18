@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="fa" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="16. پیوست" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.python.org/3/tutorial/appendix.html" />
+<meta property="og:site_name" content="Python documentation" />
+<meta property="og:description" content="حالت تعاملی: دو نوع از حالت تعاملی REPL وجود دارد. مفسر پایه‌ی کلاسیک در تمامی پلتفرم‌ها با حداقل امکانات برای ویرایش خط فرمان پشتیبانی می‌شود. از پایتون ۳٫۱۳ به بعد، به‌طور پیش‌فرض یک شل تعاملی جد..." />
+<meta property="og:image" content="_static/og-image.png" />
+<meta property="og:image:alt" content="Python documentation" />
+<meta name="description" content="حالت تعاملی: دو نوع از حالت تعاملی REPL وجود دارد. مفسر پایه‌ی کلاسیک در تمامی پلتفرم‌ها با حداقل امکانات برای ویرایش خط فرمان پشتیبانی می‌شود. از پایتون ۳٫۱۳ به بعد، به‌طور پیش‌فرض یک شل تعاملی جد..." />
+<meta name="theme-color" content="#3776ab">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+
+    <title>16. پیوست &#8212; مستندات Python3.14.6</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/classic.css?v=234b1a7c" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme.css?v=4365c8fe" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments_dark.css?v=0fc419ee" />
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/documentation_options.js?v=e254dbbb"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/doctools.js?v=9bcbadda"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/translations.js?v=5df48d09"></script>
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sidebar.js"></script>
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="جستجو در مستندات Python3.14.6"
+          href="https://python.github.io/python-docs-fa/previews/42/_static/opensearch.xml"/>
+    <link rel="author" title="درباره این مستندات" href="../about.html" />
+    <link rel="index" title="فهرست" href="../genindex.html" />
+    <link rel="search" title="جستجو" href="../search.html" />
+    <link rel="copyright" title="حق چاپ" href="../copyright.html" />
+    <link rel="next" title="Python Setup and Usage" href="../using/index.html" />
+    <link rel="prev" title="15. حساب ممیز شناور: مشکلات و محدودیت‌ها" href="floatingpoint.html" />
+    
+      
+      <link rel="canonical" href="https://docs.python.org/3/tutorial/appendix.html">
+      
+    
+
+    
+    <style>
+      @media only screen {
+        table.full-width-table {
+            width: 100%;
+        }
+      }
+    </style>
+<link rel="stylesheet" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="https://python.github.io/python-docs-fa/previews/42/_static/py.svg">
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/copybutton.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/menu.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/search-focus.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/themetoggle.js"></script> 
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/rtd_switcher.js"></script>
+            <meta name="readthedocs-addons-api-version" content="1">
+
+  </head>
+<body>
+<div class="mobile-nav">
+    <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
+           aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu">
+    <nav class="nav-content" role="navigation">
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo">
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q">
+                <input type="submit" value="برو">
+            </form>
+        </span>
+    </nav>
+    <div class="menu-wrapper">
+        <nav class="menu" role="navigation" aria-label="main navigation">
+            <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">16. پیوست</a><ul>
+<li><a class="reference internal" href="#interactive-mode">16.1. حالت تعاملی</a><ul>
+<li><a class="reference internal" href="#error-handling">16.1.1. مدیریت خطاها</a></li>
+<li><a class="reference internal" href="#executable-python-scripts">16.1.2. اسکریپتهای اجرایی پایتون</a></li>
+<li><a class="reference internal" href="#the-interactive-startup-file">16.1.3. پرونده‌ی آغازین تعاملی «The Interactive Startup File»</a></li>
+<li><a class="reference internal" href="#the-customization-modules">16.1.4. ماژول‌های سفارشی‌سازی</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="floatingpoint.html"
+                          title="فصل قبلی"><span class="section-number">15. </span>حساب ممیز شناور: مشکلات و محدودیت‌ها</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="../using/index.html"
+                          title="فصل بعدی">Python Setup and Usage</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/appendix.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/appendix.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/appendix.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </nav>
+    </div>
+</div>
+
+  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             accesskey="I">فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="../using/index.html" title="Python Setup and Usage"
+             accesskey="N">بعدی</a> |</li>
+        <li class="right" >
+          <a href="floatingpoint.html" title="15. حساب ممیز شناور: مشکلات و محدودیت‌ها"
+             accesskey="P">قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">16. </span>پیوست</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="appendix">
+<span id="tut-appendix"></span><h1><span class="section-number">16. </span>پیوست<a class="headerlink" href="#appendix" title="Link to this heading">¶</a></h1>
+<section id="interactive-mode">
+<span id="tut-interac"></span><h2><span class="section-number">16.1. </span>حالت تعاملی<a class="headerlink" href="#interactive-mode" title="Link to this heading">¶</a></h2>
+<p>دو نوع از حالت تعاملی <a class="reference internal" href="../glossary.html#term-REPL"><span class="xref std std-term">REPL</span></a> وجود دارد. مفسر پایه‌ی کلاسیک در تمامی پلتفرم‌ها با حداقل امکانات برای ویرایش خط فرمان پشتیبانی می‌شود.</p>
+<p>از پایتون ۳٫۱۳ به بعد، به‌طور پیش‌فرض یک شل تعاملی جدید استفاده می‌شود. این شل از رنگ، ویرایش چندخطی، مرور تاریخچه، و حالت چسباندن «paste mode» پشتیبانی می‌کند. برای غیرفعال کردن رنگ، جزئیات را در <a class="reference internal" href="../using/cmdline.html#using-on-controlling-color"><span class="std std-ref">Controlling color</span></a> ببینید. کلیدهای تابعی برخی از قابلیت‌های اضافی را فراهم می‌کنند. <kbd class="kbd docutils literal notranslate">F1</kbd> مرورگر تعاملی راهنما <a class="reference internal" href="../library/pydoc.html#module-pydoc" title="pydoc: Documentation generator and online help system."><code class="xref py py-mod docutils literal notranslate"><span class="pre">pydoc</span></code></a> را فعال می کند. <kbd class="kbd docutils literal notranslate">F2</kbd> اجازه می‌دهد تاریخچه خط فرمان را بدون خروجی و بدون اعلان های <a class="reference internal" href="../glossary.html#term-0"><span class="xref std std-term">&gt;&gt;&gt;</span></a> و <a class="reference internal" href="../glossary.html#term-..."><span class="xref std std-term">...</span></a> مرور کنید. <kbd class="kbd docutils literal notranslate">F3</kbd> حالت &quot;چسباندن&quot; را فعال می کند که چسباندن بلوک‌های بزرگ‌تر کد را آسان‌تر می‌سازد. برای بازگشت به اعلان معمولی، <kbd class="kbd docutils literal notranslate">F3</kbd> را فشار دهید.</p>
+<p>وقتی از پوسته‌ی تعاملی جدید استفاده می‌کنید، با تایپ <kbd class="kbd docutils literal notranslate">exit</kbd> یا <kbd class="kbd docutils literal notranslate">quit</kbd> از پوسته خارج شوید. اضافه‌کردن پرانتز پس از این دستورات ضروری نیست.</p>
+<p>اگر پوسته‌ی تعاملی جدید مطلوب نباشد، می‌توان آن را از طریق متغیر محیطی <span class="target" id="index-14"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHON_BASIC_REPL"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHON_BASIC_REPL</span></code></a> غیرفعال کرد.</p>
+<section id="error-handling">
+<span id="tut-error"></span><h3><span class="section-number">16.1.1. </span>مدیریت خطاها<a class="headerlink" href="#error-handling" title="Link to this heading">¶</a></h3>
+<p>زمان بروز خطا، مفسر یک پیام خطا و «ردگیری پشته» «stack trace» چاپ می‌کند. در حالت تعاملی، بعد از نمایش خطا، برنامه به حالت آماده‌باش برای دریافت دستورات جدید بازمی‌گردد؛ اما اگر ورودی از یک فایل آمده باشد، پس از چاپ ردگیری پشته با یک کد خروجی غیر صفر از برنامه خارج می‌شود. (استثناهایی که با بخش <a class="reference internal" href="../reference/compound_stmts.html#except"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">except</span></code></a> در یک دستور <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a> مدیریت می‌شوند، در این زمینه خطا محسوب نمی‌شوند.) بعضی خطاها به‌طور قطعی باعث خروج از برنامه می‌شوند و کد خروجی غیر صفر دارند؛ این در مورد ناسازگاری‌های داخلی یا در برخی موارد کمبود حافظه صدق می‌کند. تمام پیام‌های خطا در جریان خروجی خطا «standard error» نوشته می‌شوند؛ خروجی معمول دستورات اجراشده نیز در جریان خروجی استاندارد «standard output» نوشته می‌شود.</p>
+<p>فشردن کلید وقفه (که معمولاً <kbd class="kbd docutils literal notranslate">Control</kbd>-<kbd class="kbd docutils literal notranslate">C</kbd> یا <kbd class="kbd docutils literal notranslate">Delete</kbd> است) در اعلان اصلی یا فرعی، ورودی را لغو کرده و کاربر را به اعلان اصلی بازمی‌گرداند. <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> فشردن کلید وقفه در حین اجرای یک دستور، استثنای <a class="reference internal" href="../library/exceptions.html#KeyboardInterrupt" title="KeyboardInterrupt"><code class="xref py py-exc docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code></a> را ایجاد می‌کند که می‌توان آن را با دستور <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a> مدیریت کرد.</p>
+</section>
+<section id="executable-python-scripts">
+<span id="tut-scripts"></span><h3><span class="section-number">16.1.2. </span>اسکریپتهای اجرایی پایتون<a class="headerlink" href="#executable-python-scripts" title="Link to this heading">¶</a></h3>
+<p>در سیستم‌عامل‌های یونیکس مبتنی بر BSD، اسکریپتهای پایتون می‌توانند مانند اسکریپتهای شل به صورت مستقیم اجرایی شوند، با قرار دادن خط</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+</pre></div>
+</div>
+<p>(با فرض اینکه مفسر در <span class="target" id="index-15"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PATH</span></code> کاربر قرار دارد) در ابتدای اسکریپت باید قرار گیرد و فایل باید به حالت قابل اجرا تنظیم شود. <code class="docutils literal notranslate"><span class="pre">#!</span></code> باید نخستین دو نویسه‌ی فایل باشند. در برخی پلتفرم‌ها، این خط اول باید با پایان خط به سبک یونیکس (<code class="docutils literal notranslate"><span class="pre">'\n'</span></code>) تمام شود، نه پایان خط ویندوزی (<code class="docutils literal notranslate"><span class="pre">'\r\n'</span></code>). توجه داشته باشید که نویسه‌ی <code class="docutils literal notranslate"><span class="pre">'#'</span></code> برای آغاز یک توضیح در پایتون به کار می‌رود.</p>
+<p>با استفاده از دستور <strong class="program">chmod</strong> می‌توان به اسکریپت حالت اجرایی یا مجوز اجرا داد.</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>chmod<span class="w"> </span>+x<span class="w"> </span>myscript.py
+</pre></div>
+</div>
+<p>در سیستم‌عامل ویندوز، مفهوم «حالت اجرایی» &quot;executable mode&quot; وجود ندارد. نصب‌کننده‌ی پایتون به‌طور خودکار فایل‌های <code class="docutils literal notranslate"><span class="pre">.py</span></code> را به <code class="docutils literal notranslate"><span class="pre">python.exe</span></code> مرتبط می‌کند تا با دوبار کلیک روی فایل پایتون، به‌عنوان اسکریپت اجرا شود. پسوند فایل همچنین می‌تواند <code class="docutils literal notranslate"><span class="pre">.pyw</span></code> باشد که در این صورت پنجره کنسولی که معمولاً ظاهر می‌شود، نمایش داده نمی‌شود.</p>
+</section>
+<section id="the-interactive-startup-file">
+<span id="tut-startup"></span><h3><span class="section-number">16.1.3. </span>پرونده‌ی آغازین تعاملی «The Interactive Startup File»<a class="headerlink" href="#the-interactive-startup-file" title="Link to this heading">¶</a></h3>
+<p>هنگامی که به صورت تعاملی از پایتون استفاده می‌کنید، اجرای برخی دستورات استاندارد در هر بار شروع مفسر می‌تواند مفید باشد. شما می‌توانید این کار را با تنظیم متغیر محیطی با نام <span class="target" id="index-16"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONSTARTUP"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONSTARTUP</span></code></a> به نام فایلی که حاوی دستورات شروع شما است انجام دهید. این قابلیت شبیه به ویژگی <code class="file docutils literal notranslate"><span class="pre">.profile</span></code> در شل‌های یونیکس است.</p>
+<p>این فایل فقط در جلسات تعاملی خوانده می‌شود، نه زمانی که پایتون دستورات را از یک اسکریپت می‌خواند، و نه زمانی که <code class="file docutils literal notranslate"><span class="pre">/dev/tty</span></code> به‌عنوان منبع صریح دستورات داده می‌شود (که در غیر این صورت همچون یک جلسه‌ی تعاملی رفتار می‌کند). این فایل در همان فضای نامی که در آن دستورات تعاملی اجرا می‌شوند، اجرا می‌گردد بنابراین اشیایی که تعریف یا وارد می‌کند می‌توانند بدون مشخص شدن در جلسه تعاملی مورد استفاده قرار گیرند. شما می‌توانید درخواست‌ها <code class="docutils literal notranslate"><span class="pre">sys.ps1</span></code> و <code class="docutils literal notranslate"><span class="pre">sys.ps2</span></code> را نیز در این فایل تغییر دهید.</p>
+<p>اگر می‌خواهید یک فایل راه‌اندازی اضافی از پوشه فعلی بخوانید، می‌توانید این کار را در فایل راه‌اندازی عمومی با کدی مشابه <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">os.path.isfile('.pythonrc.py'):</span> <span class="pre">exec(open('.pythonrc.py').read())</span></code>. اگر می‌خواهید از فایل راه‌اندازی در یک اسکریپت استفاده کنید، باید این کار را به‌طور صریح در اسکریپت انجام دهید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'PYTHONSTARTUP'</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">filename</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">fobj</span><span class="p">:</span>
+        <span class="n">startup_file</span> <span class="o">=</span> <span class="n">fobj</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">exec</span><span class="p">(</span><span class="n">startup_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="the-customization-modules">
+<span id="tut-customize"></span><h3><span class="section-number">16.1.4. </span>ماژول‌های سفارشی‌سازی<a class="headerlink" href="#the-customization-modules" title="Link to this heading">¶</a></h3>
+<p>پایتون دو نقطه‌ی اتصال برای سفارشی سازی ارائه می‌دهد: <span class="target" id="index-17"></span>sitecustomize و <span class="target" id="index-18"></span>usercustomize. برای دیدن چگونگی کارکرد آن، ابتدا باید مکان پوشه user site-packages خود را پیدا کنید. پایتون را اجرا کرده و این کد را اجرا کنید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">site</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">getusersitepackages</span><span class="p">()</span>
+<span class="go">'/home/user/.local/lib/python3.x/site-packages'</span>
+</pre></div>
+</div>
+<p>حالا می‌توانید فایلی به نام <code class="file docutils literal notranslate"><span class="pre">usercustomize.py</span></code> در آن پوشه ایجاد کرده و هر چیزی که می‌خواهید در آن قرار دهید. این فایل روی هر بار اجرای پایتون تأثیر خواهد گذاشت، مگر اینکه پایتون با گزینه <a class="reference internal" href="../using/cmdline.html#cmdoption-s"><code class="xref std std-option docutils literal notranslate"><span class="pre">-s</span></code></a> اجرا شود تا وارد کردن خودکار غیرفعال گردد.</p>
+<p><span class="target" id="index-19"></span>sitecustomize به همان صورت کار می‌کند، اما به‌طور معمول توسط مدیر سیستم در پوشه global site-packages ایجاد می‌شود و قبل از <span class="target" id="index-20"></span>usercustomize وارد می‌شود. برای جزئیات بیشتر به مستندات ماژول <a class="reference internal" href="../library/site.html#module-site" title="site: Module responsible for site-specific configuration."><code class="xref py py-mod docutils literal notranslate"><span class="pre">site</span></code></a> مراجعه کنید.</p>
+<p class="rubric">پاورقی‌ها</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>یک مشکل در بسته‌ی «GNU Readline» ممکن است مانع این کار شود.</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">16. پیوست</a><ul>
+<li><a class="reference internal" href="#interactive-mode">16.1. حالت تعاملی</a><ul>
+<li><a class="reference internal" href="#error-handling">16.1.1. مدیریت خطاها</a></li>
+<li><a class="reference internal" href="#executable-python-scripts">16.1.2. اسکریپتهای اجرایی پایتون</a></li>
+<li><a class="reference internal" href="#the-interactive-startup-file">16.1.3. پرونده‌ی آغازین تعاملی «The Interactive Startup File»</a></li>
+<li><a class="reference internal" href="#the-customization-modules">16.1.4. ماژول‌های سفارشی‌سازی</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="floatingpoint.html"
+                          title="فصل قبلی"><span class="section-number">15. </span>حساب ممیز شناور: مشکلات و محدودیت‌ها</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="../using/index.html"
+                          title="فصل بعدی">Python Setup and Usage</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/appendix.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/appendix.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/appendix.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </div>
+<div id="sidebarbutton" title="تا کردن نوار کناره">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             >فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="../using/index.html" title="Python Setup and Usage"
+             >بعدی</a> |</li>
+        <li class="right" >
+          <a href="floatingpoint.html" title="15. حساب ممیز شناور: مشکلات و محدودیت‌ها"
+             >قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">16. </span>پیوست</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>  
+    <div class="footer">
+    &copy; <a href="../copyright.html">حق چاپ</a> 2001 Python Software Foundation.
+    <br>
+    This page is licensed under the Python Software Foundation License Version 2.
+    <br>
+    Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
+    <br>
+    
+      See <a href="/license.html">History and License</a> for more information.<br>
+    
+    
+    <br>
+
+    The Python Software Foundation is a non-profit corporation.
+<a href="https://www.python.org/psf/donations/">Please donate.</a>
+<br>
+    <br>
+      آخرین بروز رسانی در اوت 18, 2026 (05:51 UTC) .
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
+    <br>
+
+    ایجاد شده با<a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+
+<html lang="fa" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Python/C API reference manual" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.python.org/3/c-api/index.html" />
+<meta property="og:site_name" content="Python documentation" />
+<meta property="og:description" content="This manual documents the API used by C and C++ programmers who want to write extension modules or embed Python. It is a companion to Extending and Embedding the Python Interpreter, which describes..." />
+<meta property="og:image" content="_static/og-image.png" />
+<meta property="og:image:alt" content="Python documentation" />
+<meta name="description" content="This manual documents the API used by C and C++ programmers who want to write extension modules or embed Python. It is a companion to Extending and Embedding the Python Interpreter, which describes..." />
+<meta name="theme-color" content="#3776ab">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+
+    <title>Python/C API reference manual &#8212; مستندات Python3.14.6</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/classic.css?v=234b1a7c" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme.css?v=4365c8fe" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments_dark.css?v=0fc419ee" />
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/documentation_options.js?v=e254dbbb"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/doctools.js?v=9bcbadda"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/translations.js?v=5df48d09"></script>
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sidebar.js"></script>
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="جستجو در مستندات Python3.14.6"
+          href="https://python.github.io/python-docs-fa/previews/42/_static/opensearch.xml"/>
+    <link rel="author" title="درباره این مستندات" href="../about.html" />
+    <link rel="index" title="فهرست" href="../genindex.html" />
+    <link rel="search" title="جستجو" href="../search.html" />
+    <link rel="copyright" title="حق چاپ" href="../copyright.html" />
+    <link rel="next" title="Introduction" href="intro.html" />
+    <link rel="prev" title="1. Embedding Python in Another Application" href="../extending/embedding.html" />
+    
+      
+      <link rel="canonical" href="https://docs.python.org/3/c-api/index.html">
+      
+    
+
+    
+    <style>
+      @media only screen {
+        table.full-width-table {
+            width: 100%;
+        }
+      }
+    </style>
+<link rel="stylesheet" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="https://python.github.io/python-docs-fa/previews/42/_static/py.svg">
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/copybutton.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/menu.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/search-focus.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/themetoggle.js"></script> 
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/rtd_switcher.js"></script>
+            <meta name="readthedocs-addons-api-version" content="1">
+
+  </head>
+<body>
+<div class="mobile-nav">
+    <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
+           aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu">
+    <nav class="nav-content" role="navigation">
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo">
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q">
+                <input type="submit" value="برو">
+            </form>
+        </span>
+    </nav>
+    <div class="menu-wrapper">
+        <nav class="menu" role="navigation" aria-label="main navigation">
+            <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="../extending/embedding.html"
+                          title="فصل قبلی"><span class="section-number">1. </span>Embedding Python in Another Application</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="intro.html"
+                          title="فصل بعدی">Introduction</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "c-api/index.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/c-api/index.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/c-api/index.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </nav>
+    </div>
+</div>
+
+  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             accesskey="I">فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Introduction"
+             accesskey="N">بعدی</a> |</li>
+        <li class="right" >
+          <a href="../extending/embedding.html" title="1. Embedding Python in Another Application"
+             accesskey="P">قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+        <li class="nav-item nav-item-this"><a href="">Python/C API reference manual</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="python-c-api-reference-manual">
+<span id="c-api-index"></span><h1>Python/C API reference manual<a class="headerlink" href="#python-c-api-reference-manual" title="Link to this heading">¶</a></h1>
+<p>This manual documents the API used by C and C++ programmers who want to write
+extension modules or embed Python.  It is a companion to <a class="reference internal" href="../extending/index.html#extending-index"><span class="std std-ref">Extending and Embedding the Python Interpreter</span></a>,
+which describes the general principles of extension writing but does not
+document the API functions in detail.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#language-version-compatibility">Language version compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#coding-standards">Coding standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#include-files">Include Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#useful-macros">Useful macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#objects-types-and-reference-counts">Objects, Types and Reference Counts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#exceptions">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#embedding-python">Embedding Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#debugging-builds">Debugging Builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#recommended-third-party-tools">Recommended third party tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stable.html">C API Stability</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stable.html#unstable-c-api">Unstable C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stable.html#stable-application-binary-interface">Stable Application Binary Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stable.html#platform-considerations">Platform Considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stable.html#contents-of-limited-api">Contents of Limited API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="veryhigh.html">The Very High Level Layer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="veryhigh.html#available-start-symbols">Available start symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="veryhigh.html#stack-effects">Stack Effects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="refcounting.html">Reference Counting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">Exception Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#printing-and-clearing">Printing and clearing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#raising-exceptions">Raising exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#issuing-warnings">Issuing warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#querying-the-error-indicator">Querying the error indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#signal-handling">Signal Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#exception-classes">Exception Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#exception-objects">Exception Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#unicode-exception-objects">Unicode Exception Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#recursion-control">Recursion Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#exception-and-warning-types">Exception and warning types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html#tracebacks">Tracebacks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extension-modules.html">Defining extension modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extension-modules.html#multiple-module-instances">Multiple module instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extension-modules.html#initialization-function">Initialization function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extension-modules.html#multi-phase-initialization">Multi-phase initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extension-modules.html#legacy-single-phase-initialization">Legacy single-phase initialization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sys.html">Operating System Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sys.html#system-functions">System Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sys.html#process-control">Process Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import.html">Importing Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marshal.html">Data marshalling support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arg.html">Parsing arguments and building values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conversion.html">String conversion and formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conversion.html#character-classification-and-conversion">Character classification and conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hash.html">PyHash API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reflection.html">Reflection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codec.html">Codec registry and support functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time.html">PyTime C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perfmaps.html">Support for Perf Maps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="abstract.html">لایه اشیاء انتزاعی (Abstract Objects Layer)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="object.html">Object Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call.html">Call Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="number.html">Number Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence.html">Sequence Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mapping.html">Mapping Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iter.html">Iterator Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buffer.html">Buffer Protocol</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="concrete.html">Concrete Objects Layer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="concrete.html#fundamental-objects">Fundamental Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concrete.html#numeric-objects">Numeric Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concrete.html#sequence-objects">Sequence Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concrete.html#container-objects">Container Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concrete.html#function-objects">Function Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concrete.html#other-objects">Other Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concrete.html#c-api-for-extension-modules">C API for extension modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="interp-lifecycle.html">Interpreter initialization and finalization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interp-lifecycle.html#before-python-initialization">Before Python initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interp-lifecycle.html#global-configuration-variables">Global configuration variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interp-lifecycle.html#initializing-and-finalizing-the-interpreter">Initializing and finalizing the interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interp-lifecycle.html#cautions-regarding-runtime-finalization">Cautions regarding runtime finalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interp-lifecycle.html#process-wide-parameters">Process-wide parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="threads.html">Thread states and the global interpreter lock</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="threads.html#detaching-the-thread-state-from-extension-code">Detaching the thread state from extension code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="threads.html#non-python-created-threads">Non-Python created threads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="threads.html#legacy-api">Legacy API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="threads.html#cautions-about-fork">Cautions about fork()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="threads.html#high-level-apis">High-level APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="threads.html#gil-state-apis">GIL-state APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="threads.html#low-level-apis">Low-level APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="threads.html#asynchronous-notifications">Asynchronous notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="threads.html#operating-system-thread-apis">Operating system thread APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="synchronization.html">Synchronization primitives</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="synchronization.html#python-critical-section-api">Python critical section API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="synchronization.html#legacy-locking-apis">Legacy locking APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tls.html">Thread-local storage support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tls.html#thread-specific-storage-api">Thread-specific storage API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tls.html#dynamic-allocation">Dynamic allocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tls.html#methods">Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tls.html#legacy-apis">Legacy APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="subinterpreters.html">Multiple interpreters in a Python process</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="subinterpreters.html#a-per-interpreter-gil">A per-interpreter GIL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subinterpreters.html#bugs-and-caveats">Bugs and caveats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subinterpreters.html#high-level-apis">High-level APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subinterpreters.html#low-level-apis">Low-level APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subinterpreters.html#advanced-debugger-support">Advanced debugger support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="profiling.html">Profiling and tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profiling.html#reference-tracing">Reference tracing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="init_config.html">Python Initialization Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="init_config.html#pyinitconfig-c-api">PyInitConfig C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="init_config.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="init_config.html#runtime-python-configuration-api">Runtime Python configuration API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="init_config.html#pyconfig-c-api">PyConfig C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="init_config.html#py-getargcargv">Py_GetArgcArgv()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="init_config.html#delaying-main-module-execution">Delaying main module execution</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="memory.html">Memory Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#allocator-domains">Allocator Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#raw-memory-interface">Raw Memory Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#memory-interface">Memory Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#object-allocators">Object allocators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#default-memory-allocators">Default Memory Allocators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#customize-memory-allocators">Customize Memory Allocators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#debug-hooks-on-the-python-memory-allocators">Debug hooks on the Python memory allocators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#the-pymalloc-allocator">The pymalloc allocator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#the-mimalloc-allocator">The mimalloc allocator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#tracemalloc-c-api">tracemalloc C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="objimpl.html">Object Implementation Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="allocation.html">تخصیص اشیاء روی پشته</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lifecycle.html">Object Life Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structures.html">Common Object Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typeobj.html">Type Object Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gcsupport.html">Supporting Cyclic Garbage Collection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apiabiversion.html">نسخه‌گذاری API و ABI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="apiabiversion.html#build-time-version-constants">ثابتهای نسخه در زمان ساخت</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiabiversion.html#run-time-version">نسخه‌ی زمان اجرا</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apiabiversion.html#bit-packing-macros">ماکروهای بسته‌بندی بیتی</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring.html#generating-execution-events">Generating Execution Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring.html#managing-the-monitoring-state">Managing the Monitoring State</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="../extending/embedding.html"
+                          title="فصل قبلی"><span class="section-number">1. </span>Embedding Python in Another Application</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="intro.html"
+                          title="فصل بعدی">Introduction</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "c-api/index.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/c-api/index.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/c-api/index.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </div>
+<div id="sidebarbutton" title="تا کردن نوار کناره">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             >فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Introduction"
+             >بعدی</a> |</li>
+        <li class="right" >
+          <a href="../extending/embedding.html" title="1. Embedding Python in Another Application"
+             >قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+        <li class="nav-item nav-item-this"><a href="">Python/C API reference manual</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>  
+    <div class="footer">
+    &copy; <a href="../copyright.html">حق چاپ</a> 2001 Python Software Foundation.
+    <br>
+    This page is licensed under the Python Software Foundation License Version 2.
+    <br>
+    Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
+    <br>
+    
+      See <a href="/license.html">History and License</a> for more information.<br>
+    
+    
+    <br>
+
+    The Python Software Foundation is a non-profit corporation.
+<a href="https://www.python.org/psf/donations/">Please donate.</a>
+<br>
+    <br>
+      آخرین بروز رسانی در اوت 18, 2026 (05:51 UTC) .
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
+    <br>
+
+    ایجاد شده با<a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+
+  </body>
+</html>

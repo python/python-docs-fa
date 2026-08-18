@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+
+<html lang="fa" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="4. ابزارهای بیشتر برای کنترل جریان" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.python.org/3/tutorial/controlflow.html" />
+<meta property="og:site_name" content="Python documentation" />
+<meta property="og:description" content="علاوه بر دستور while که به‌تازگی معرفی شد، پایتون چند مورد دیگر نیز دارد که در این فصل با آن‌ها آشنا خواهیم شد. دستورهای if: شاید شناخته‌شده‌ترین نوع دستور، دستور if باشد. برای مثال: می‌تواند صفر ی..." />
+<meta property="og:image" content="_static/og-image.png" />
+<meta property="og:image:alt" content="Python documentation" />
+<meta name="description" content="علاوه بر دستور while که به‌تازگی معرفی شد، پایتون چند مورد دیگر نیز دارد که در این فصل با آن‌ها آشنا خواهیم شد. دستورهای if: شاید شناخته‌شده‌ترین نوع دستور، دستور if باشد. برای مثال: می‌تواند صفر ی..." />
+<meta name="theme-color" content="#3776ab">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+
+    <title>4. ابزارهای بیشتر برای کنترل جریان &#8212; مستندات Python3.14.6</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/classic.css?v=234b1a7c" />
+    <link rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme.css?v=4365c8fe" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="https://python.github.io/python-docs-fa/previews/42/_static/pygments_dark.css?v=0fc419ee" />
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/documentation_options.js?v=e254dbbb"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/doctools.js?v=9bcbadda"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/translations.js?v=5df48d09"></script>
+    
+    <script src="https://python.github.io/python-docs-fa/previews/42/_static/sidebar.js"></script>
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="جستجو در مستندات Python3.14.6"
+          href="https://python.github.io/python-docs-fa/previews/42/_static/opensearch.xml"/>
+    <link rel="author" title="درباره این مستندات" href="../about.html" />
+    <link rel="index" title="فهرست" href="../genindex.html" />
+    <link rel="search" title="جستجو" href="../search.html" />
+    <link rel="copyright" title="حق چاپ" href="../copyright.html" />
+    <link rel="next" title="5. ساختمان داده‌ها" href="datastructures.html" />
+    <link rel="prev" title="3. معرفی غیررسمی پایتون" href="introduction.html" />
+    
+      
+      <link rel="canonical" href="https://docs.python.org/3/tutorial/controlflow.html">
+      
+    
+
+    
+    <style>
+      @media only screen {
+        table.full-width-table {
+            width: 100%;
+        }
+      }
+    </style>
+<link rel="stylesheet" href="https://python.github.io/python-docs-fa/previews/42/_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="https://python.github.io/python-docs-fa/previews/42/_static/py.svg">
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/copybutton.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/menu.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/search-focus.js"></script>
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/themetoggle.js"></script> 
+            <script type="text/javascript" src="https://python.github.io/python-docs-fa/previews/42/_static/rtd_switcher.js"></script>
+            <meta name="readthedocs-addons-api-version" content="1">
+
+  </head>
+<body>
+<div class="mobile-nav">
+    <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
+           aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu">
+    <nav class="nav-content" role="navigation">
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo">
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q">
+                <input type="submit" value="برو">
+            </form>
+        </span>
+    </nav>
+    <div class="menu-wrapper">
+        <nav class="menu" role="navigation" aria-label="main navigation">
+            <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">4. ابزارهای بیشتر برای کنترل جریان</a><ul>
+<li><a class="reference internal" href="#if-statements">4.1. دستورهای <code class="xref std std-keyword docutils literal notranslate"><span class="pre">if</span></code></a></li>
+<li><a class="reference internal" href="#for-statements">4.2. دستورهای <code class="xref std std-keyword docutils literal notranslate"><span class="pre">for</span></code></a></li>
+<li><a class="reference internal" href="#the-range-function">4.3. تابع <code class="xref py py-func docutils literal notranslate"><span class="pre">range()</span></code></a></li>
+<li><a class="reference internal" href="#break-and-continue-statements">4.4. دستورهای <code class="xref std std-keyword docutils literal notranslate"><span class="pre">break</span></code> و <code class="xref std std-keyword docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li><a class="reference internal" href="#else-clauses-on-loops">4.5. بخش‌های <code class="xref std std-keyword docutils literal notranslate"><span class="pre">else</span></code> در حلقه‌ها</a></li>
+<li><a class="reference internal" href="#pass-statements">4.6. دستورهای <code class="xref std std-keyword docutils literal notranslate"><span class="pre">pass</span></code></a></li>
+<li><a class="reference internal" href="#match-statements">4.7. <code class="xref std std-keyword docutils literal notranslate"><span class="pre">match</span></code> دستورات</a></li>
+<li><a class="reference internal" href="#defining-functions">4.8. تعریف توابع</a></li>
+<li><a class="reference internal" href="#more-on-defining-functions">4.9. اطلاعات بیشتر دربارهٔ تعریف تابع‌ها</a><ul>
+<li><a class="reference internal" href="#default-argument-values">4.9.1. مقدارهای پیش‌فرض آرگومان‌ها</a></li>
+<li><a class="reference internal" href="#keyword-arguments">4.9.2. آرگومان‌های کلیدواژه‌ای</a></li>
+<li><a class="reference internal" href="#special-parameters">4.9.3. پارامترهای ویژه</a><ul>
+<li><a class="reference internal" href="#positional-or-keyword-arguments">4.9.3.1. آرگومان‌های موقعیتی یا کلیدواژه‌ای</a></li>
+<li><a class="reference internal" href="#positional-only-parameters">4.9.3.2. پارامترهای فقط موقعیتی</a></li>
+<li><a class="reference internal" href="#keyword-only-arguments">4.9.3.3. آرگومان‌های فقط کلیدواژه‌ای</a></li>
+<li><a class="reference internal" href="#function-examples">4.9.3.4. مثال‌های توابع</a></li>
+<li><a class="reference internal" href="#recap">4.9.3.5. خلاصه</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#arbitrary-argument-lists">4.9.4. فهرست‌های دلخواه آرگومان‌ها</a></li>
+<li><a class="reference internal" href="#unpacking-argument-lists">4.9.5. باز کردن بسته آرگومان‌ها</a></li>
+<li><a class="reference internal" href="#lambda-expressions">4.9.6. عبارت‌های لامبدا</a></li>
+<li><a class="reference internal" href="#documentation-strings">4.9.7. رشته‌های مستندسازی</a></li>
+<li><a class="reference internal" href="#function-annotations">4.9.8. حاشیه‌نویسی‌های تابع</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#intermezzo-coding-style">4.10. میان‌پرده: سبک کدنویسی</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="فصل قبلی"><span class="section-number">3. </span>معرفی غیررسمی پایتون</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="datastructures.html"
+                          title="فصل بعدی"><span class="section-number">5. </span>ساختمان داده‌ها</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/controlflow.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/controlflow.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/controlflow.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </nav>
+    </div>
+</div>
+
+  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             accesskey="I">فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="datastructures.html" title="5. ساختمان داده‌ها"
+             accesskey="N">بعدی</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="3. معرفی غیررسمی پایتون"
+             accesskey="P">قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">4. </span>ابزارهای بیشتر برای کنترل جریان</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="more-control-flow-tools">
+<span id="tut-morecontrol"></span><h1><span class="section-number">4. </span>ابزارهای بیشتر برای کنترل جریان<a class="headerlink" href="#more-control-flow-tools" title="Link to this heading">¶</a></h1>
+<p>علاوه بر دستور <a class="reference internal" href="../reference/compound_stmts.html#while"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">while</span></code></a> که به‌تازگی معرفی شد، پایتون چند مورد دیگر نیز دارد که در این فصل با آن‌ها آشنا خواهیم شد.</p>
+<section id="if-statements">
+<span id="tut-if"></span><h2><span class="section-number">4.1. </span>دستورهای <code class="xref std std-keyword docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#if-statements" title="Link to this heading">¶</a></h2>
+<p>شاید شناخته‌شده‌ترین نوع دستور، دستور <a class="reference internal" href="../reference/compound_stmts.html#if"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">if</span></code></a> باشد. برای مثال:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Please enter an integer: "</span><span class="p">))</span>
+<span class="go">Please enter an integer: 42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Negative changed to zero'</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Zero'</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Single'</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">else</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">'More'</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">More</span>
+</pre></div>
+</div>
+<p>می‌تواند صفر یا چند بخش <a class="reference internal" href="../reference/compound_stmts.html#elif"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">elif</span></code></a> وجود داشته باشد و بخش <a class="reference internal" href="../reference/compound_stmts.html#else"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">else</span></code></a> اختیاری است. کلیدواژه‌ای '<code class="xref std std-keyword docutils literal notranslate"><span class="pre">elif</span></code>' کوتاه‌شدهٔ 'else if' است و برای جلوگیری از تورفتگی بیش از حد مفید است. یک دنبالهٔ <code class="xref std std-keyword docutils literal notranslate"><span class="pre">if</span></code> ... <code class="xref std std-keyword docutils literal notranslate"><span class="pre">elif</span></code> ... <code class="xref std std-keyword docutils literal notranslate"><span class="pre">elif</span></code> ... جایگزینی برای دستورهای <code class="docutils literal notranslate"><span class="pre">switch</span></code> یا <code class="docutils literal notranslate"><span class="pre">case</span></code> موجود در زبان‌های دیگر است.</p>
+<p>اگر یک مقدار یکسان را با چندین مقدار ثابت مقایسه می‌کنید، یا نوع‌ها یا ویژگی‌های خاصی را بررسی می‌کنید، ممکن است دستور <code class="xref std std-keyword docutils literal notranslate"><span class="pre">match</span></code> نیز برایتان مفید باشد. برای جزئیات بیشتر به <a class="reference internal" href="#tut-match"><span class="std std-ref">match دستورات</span></a> مراجعه کنید.</p>
+</section>
+<section id="for-statements">
+<span id="tut-for"></span><h2><span class="section-number">4.2. </span>دستورهای <code class="xref std std-keyword docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#for-statements" title="Link to this heading">¶</a></h2>
+<p id="index-0">دستور <a class="reference internal" href="../reference/compound_stmts.html#for"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">for</span></code></a> در پایتون کمی با چیزی که ممکن است در C یا Pascal به آن عادت کرده باشید تفاوت دارد. به‌جای اینکه همیشه روی یک تصاعد حسابی از اعداد پیمایش کند (مانند Pascal)، یا به کاربر امکان تعریف هم گام پیمایش و هم شرط توقف را بدهد (مانند C)، دستور <code class="xref std std-keyword docutils literal notranslate"><span class="pre">for</span></code> پایتون روی آیتم‌های هر دنباله‌ای (یک فهرست یا یک رشته) به ترتیبی که در دنباله ظاهر شده‌اند پیمایش می‌کند. برای مثال (بدون قصد استعاره):</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># اندازه‌گیری طول چند رشته:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'cat'</span><span class="p">,</span> <span class="s1">'window'</span><span class="p">,</span> <span class="s1">'defenestrate'</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+<span class="gp">...</span>
+<span class="go">cat 3</span>
+<span class="go">window 6</span>
+<span class="go">defenestrate 12</span>
+</pre></div>
+</div>
+<p>کدی که هنگام پیمایش روی یک مجموعه، همان مجموعه را تغییر می‌دهد، ممکن است به‌درستی نوشتن دشوار باشد. در عوض، معمولاً ساده‌تر است که روی یک کپی از مجموعه پیمایش کنید یا یک مجموعهٔ جدید ایجاد کنید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ایجاد یک مجموعه‌ی نمونه</span>
+<span class="n">users</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Hans'</span><span class="p">:</span> <span class="s1">'active'</span><span class="p">,</span> <span class="s1">'Éléonore'</span><span class="p">:</span> <span class="s1">'inactive'</span><span class="p">,</span> <span class="s1">'景太郎'</span><span class="p">:</span> <span class="s1">'active'</span><span class="p">}</span>
+
+<span class="c1"># راهبرد: پیمایش روی یک کپی</span>
+<span class="k">for</span> <span class="n">user</span><span class="p">,</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">users</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s1">'inactive'</span><span class="p">:</span>
+        <span class="k">del</span> <span class="n">users</span><span class="p">[</span><span class="n">user</span><span class="p">]</span>
+
+<span class="c1"># راهبرد: ایجاد یک مجموعه‌ی جدید</span>
+<span class="n">active_users</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">user</span><span class="p">,</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">users</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s1">'active'</span><span class="p">:</span>
+        <span class="n">active_users</span><span class="p">[</span><span class="n">user</span><span class="p">]</span> <span class="o">=</span> <span class="n">status</span>
+</pre></div>
+</div>
+</section>
+<section id="the-range-function">
+<span id="tut-range"></span><h2><span class="section-number">4.3. </span>تابع <a class="reference internal" href="../library/stdtypes.html#range" title="range"><code class="xref py py-func docutils literal notranslate"><span class="pre">range()</span></code></a><a class="headerlink" href="#the-range-function" title="Link to this heading">¶</a></h2>
+<p>اگر واقعاً نیاز دارید روی یک دنباله از اعداد پیمایش کنید، تابع داخلی <a class="reference internal" href="../library/stdtypes.html#range" title="range"><code class="xref py py-func docutils literal notranslate"><span class="pre">range()</span></code></a> بسیار کاربردی است. این تابع تصاعدهای حسابی تولید می‌کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">0</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>نقطهٔ پایانی داده‌شده هرگز بخشی از دنبالهٔ تولیدشده نیست؛ <code class="docutils literal notranslate"><span class="pre">range(10)</span></code> مقدار تولید می‌کند که همان اندیس‌‌های مجاز برای آیتم‌های یک دنباله با طول ۱۰ هستند. امکان این وجود دارد که شروع بازه را از عدد دیگری تعیین کنید، یا افزایشی متفاوت (حتی منفی؛ که گاهی «گام» نامیده می‌شود) مشخص کنید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="go">[5, 6, 7, 8, 9]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="go">[0, 3, 6, 9]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">))</span>
+<span class="go">[-10, -40, -70]</span>
+</pre></div>
+</div>
+<p>برای پیمایش روی اندیس‌‌های یک دنباله، می‌توانید <a class="reference internal" href="../library/stdtypes.html#range" title="range"><code class="xref py py-func docutils literal notranslate"><span class="pre">range()</span></code></a> و <a class="reference internal" href="../library/functions.html#len" title="len"><code class="xref py py-func docutils literal notranslate"><span class="pre">len()</span></code></a> را به شکل زیر ترکیب کنید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Mary'</span><span class="p">,</span> <span class="s1">'had'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'little'</span><span class="p">,</span> <span class="s1">'lamb'</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="gp">...</span>
+<span class="go">0 Mary</span>
+<span class="go">1 had</span>
+<span class="go">2 a</span>
+<span class="go">3 little</span>
+<span class="go">4 lamb</span>
+</pre></div>
+</div>
+<p>بااین‌حال، در بیشتر چنین مواردی استفاده از تابع <a class="reference internal" href="../library/functions.html#enumerate" title="enumerate"><code class="xref py py-func docutils literal notranslate"><span class="pre">enumerate()</span></code></a> راحت‌تر است؛ به <a class="reference internal" href="datastructures.html#tut-loopidioms"><span class="std std-ref">تکنیک‌های حلقه‌زنی</span></a> مراجعه کنید.</p>
+<p>اگر فقط یک range را چاپ کنید، اتفاق عجیبی رخ می‌دهد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">range(0, 10)</span>
+</pre></div>
+</div>
+<p>از بسیاری جهات، شیئی که توسط <a class="reference internal" href="../library/stdtypes.html#range" title="range"><code class="xref py py-func docutils literal notranslate"><span class="pre">range()</span></code></a> برگردانده می‌شود طوری رفتار می‌کند که گویی یک فهرست است، اما در واقع چنین نیست. این یک شیء است که هنگام پیمایش، آیتم‌های متوالی دنبالهٔ موردنظر را برمی‌گرداند، اما واقعاً فهرست را ایجاد نمی‌کند و در نتیجه در فضا صرفه‌جویی می‌شود.</p>
+<p>می‌گوییم چنین شیئی <a class="reference internal" href="../glossary.html#term-iterable"><span class="xref std std-term">iterable</span></a> است؛ یعنی برای استفاده به‌عنوان هدف تابع‌ها و ساختارهایی مناسب است که انتظار دارند چیزی وجود داشته باشد که بتوانند از آن آیتم‌های متوالی را تا زمانی که چیزی باقی نمانده است دریافت کنند. دیدیم که دستور <a class="reference internal" href="../reference/compound_stmts.html#for"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">for</span></code></a> چنین ساختاری است، در حالی که نمونه‌ای از تابعی که یک شیء تکرارپذیر دریافت می‌کند <a class="reference internal" href="../library/functions.html#sum" title="sum"><code class="xref py py-func docutils literal notranslate"><span class="pre">sum()</span></code></a> است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>  <span class="c1"># 0 + 1 + 2 + 3</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+<p>بعداً تابع‌های بیشتری را خواهیم دید که اشیای تکرارپذیر برمی‌گردانند و اشیای تکرارپذیر را به‌عنوان آرگومان دریافت می‌کنند. در فصل <a class="reference internal" href="datastructures.html#tut-structures"><span class="std std-ref">ساختمان داده‌ها</span></a>، دربارهٔ <a class="reference internal" href="../library/stdtypes.html#list" title="list"><code class="xref py py-func docutils literal notranslate"><span class="pre">list()</span></code></a> با جزئیات بیشتری صحبت خواهیم کرد.</p>
+</section>
+<section id="break-and-continue-statements">
+<span id="tut-break"></span><h2><span class="section-number">4.4. </span>دستورهای <code class="xref std std-keyword docutils literal notranslate"><span class="pre">break</span></code> و <code class="xref std std-keyword docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#break-and-continue-statements" title="Link to this heading">¶</a></h2>
+<p>دستور <a class="reference internal" href="../reference/simple_stmts.html#break"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">break</span></code></a> از داخلی‌ترین حلقهٔ محصورکنندهٔ <a class="reference internal" href="../reference/compound_stmts.html#for"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">for</span></code></a> یا <a class="reference internal" href="../reference/compound_stmts.html#while"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">while</span></code></a> خارج می‌شود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> equals </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> * </span><span class="si">{</span><span class="n">n</span><span class="o">//</span><span class="n">x</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="gp">... </span>            <span class="k">break</span>
+<span class="gp">...</span>
+<span class="go">4 equals 2 * 2</span>
+<span class="go">6 equals 2 * 3</span>
+<span class="go">8 equals 2 * 4</span>
+<span class="go">9 equals 3 * 3</span>
+</pre></div>
+</div>
+<p>دستور <a class="reference internal" href="../reference/simple_stmts.html#continue"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">continue</span></code></a> به تکرار بعدی حلقه ادامه می‌دهد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Found an even number </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="k">continue</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Found an odd number </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">Found an even number 2</span>
+<span class="go">Found an odd number 3</span>
+<span class="go">Found an even number 4</span>
+<span class="go">Found an odd number 5</span>
+<span class="go">Found an even number 6</span>
+<span class="go">Found an odd number 7</span>
+<span class="go">Found an even number 8</span>
+<span class="go">Found an odd number 9</span>
+</pre></div>
+</div>
+</section>
+<section id="else-clauses-on-loops">
+<span id="break-and-continue-statements-and-else-clauses-on-loops"></span><span id="tut-for-else"></span><h2><span class="section-number">4.5. </span>بخش‌های <code class="xref std std-keyword docutils literal notranslate"><span class="pre">else</span></code> در حلقه‌ها<a class="headerlink" href="#else-clauses-on-loops" title="Link to this heading">¶</a></h2>
+<p>در یک حلقهٔ <code class="xref std std-keyword docutils literal notranslate"><span class="pre">for</span></code> یا <code class="xref std std-keyword docutils literal notranslate"><span class="pre">while</span></code>، دستور <code class="xref std std-keyword docutils literal notranslate"><span class="pre">break</span></code> می‌تواند با یک بخش <code class="xref std std-keyword docutils literal notranslate"><span class="pre">else</span></code> همراه شود. اگر حلقه بدون اجرای <code class="xref std std-keyword docutils literal notranslate"><span class="pre">break</span></code> به پایان برسد، بخش <code class="xref std std-keyword docutils literal notranslate"><span class="pre">else</span></code> اجرا می‌شود.</p>
+<p>در یک حلقهٔ <a class="reference internal" href="../reference/compound_stmts.html#for"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">for</span></code></a>، بخش <code class="xref std std-keyword docutils literal notranslate"><span class="pre">else</span></code> پس از پایان آخرین تکرار حلقه اجرا می‌شود؛ یعنی زمانی که هیچ breakای رخ نداده باشد.</p>
+<p>در یک حلقهٔ <a class="reference internal" href="../reference/compound_stmts.html#while"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">while</span></code></a>، این بخش پس از نادرست شدن شرط حلقه اجرا می‌شود.</p>
+<p>در هر دو نوع حلقه، بخش <code class="xref std std-keyword docutils literal notranslate"><span class="pre">else</span></code> در صورتی <strong>اجرا نمی‌شود</strong> که حلقه توسط یک <a class="reference internal" href="../reference/simple_stmts.html#break"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">break</span></code></a> خاتمه یافته باشد. البته روش‌های دیگر پایان زودهنگام حلقه، مانند یک <a class="reference internal" href="../reference/simple_stmts.html#return"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">return</span></code></a> یا ایجاد شدن یک استثنا، نیز اجرای بخش <a class="reference internal" href="../reference/compound_stmts.html#else"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">else</span></code></a> را رد می‌کنند.</p>
+<p>این موضوع در حلقهٔ <code class="xref std std-keyword docutils literal notranslate"><span class="pre">for</span></code> زیر نشان داده شده است که به دنبال اعداد اول می‌گردد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span>            <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s1">'equals'</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">'*'</span><span class="p">,</span> <span class="n">n</span><span class="o">//</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">... </span>            <span class="k">break</span>
+<span class="gp">... </span>    <span class="k">else</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="c1"># حلقه بدون پیدا کردن هیچ مقسوم‌علیهی به پایان رسید</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s1">'is a prime number'</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">2 is a prime number</span>
+<span class="go">3 is a prime number</span>
+<span class="go">4 equals 2 * 2</span>
+<span class="go">5 is a prime number</span>
+<span class="go">6 equals 2 * 3</span>
+<span class="go">7 is a prime number</span>
+<span class="go">8 equals 2 * 4</span>
+<span class="go">9 equals 3 * 3</span>
+</pre></div>
+</div>
+<p>(بله، این کد درست است. با دقت نگاه کنید: بخش <code class="docutils literal notranslate"><span class="pre">else</span></code> به حلقهٔ <code class="docutils literal notranslate"><span class="pre">for</span></code> تعلق دارد، <strong>نه</strong> به دستور <code class="docutils literal notranslate"><span class="pre">if</span></code>.)</p>
+<p>یک راه برای فکر کردن دربارهٔ بخش else این است که تصور کنید با دستور <code class="docutils literal notranslate"><span class="pre">if</span></code> داخل حلقه جفت شده است. هنگام اجرای حلقه، دنباله‌ای مانند if/if/if/else اجرا می‌شود. دستور <code class="docutils literal notranslate"><span class="pre">if</span></code> داخل حلقه قرار دارد و چندین بار بررسی می‌شود. اگر شرط هرگز درست شود، یک <code class="docutils literal notranslate"><span class="pre">break</span></code> رخ می‌دهد. اگر شرط هیچ‌گاه درست نشود، بخش <code class="docutils literal notranslate"><span class="pre">else</span></code> خارج از حلقه اجرا خواهد شد.</p>
+<p>هنگام استفاده از یک حلقه، بخش <code class="docutils literal notranslate"><span class="pre">else</span></code> شباهت بیشتری به بخش <code class="docutils literal notranslate"><span class="pre">else</span></code> دستور <a class="reference internal" href="../reference/compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a> دارد تا دستورهای <code class="docutils literal notranslate"><span class="pre">if</span></code>: بخش <code class="docutils literal notranslate"><span class="pre">else</span></code> یک دستور <code class="docutils literal notranslate"><span class="pre">try</span></code> زمانی اجرا می‌شود که هیچ استثنایی رخ ندهد، و بخش <code class="docutils literal notranslate"><span class="pre">else</span></code> یک حلقه زمانی اجرا می‌شود که هیچ <code class="docutils literal notranslate"><span class="pre">break</span></code>  ای رخ ندهد. برای اطلاعات بیشتر دربارهٔ دستور <code class="docutils literal notranslate"><span class="pre">try</span></code> و استثناها، به <a class="reference internal" href="errors.html#tut-handling"><span class="std std-ref">مدیریت استثناها</span></a> مراجعه کنید.</p>
+</section>
+<section id="pass-statements">
+<span id="tut-pass"></span><span id="index-1"></span><h2><span class="section-number">4.6. </span>دستورهای <code class="xref std std-keyword docutils literal notranslate"><span class="pre">pass</span></code><a class="headerlink" href="#pass-statements" title="Link to this heading">¶</a></h2>
+<p>دستور <a class="reference internal" href="../reference/simple_stmts.html#pass"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">pass</span></code></a> هیچ کاری انجام نمی‌دهد. زمانی می‌توان از آن استفاده کرد که از نظر نحوی وجود یک دستور لازم باشد، اما برنامه به هیچ عملی نیاز نداشته باشد. برای مثال:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">pass</span>  <span class="c1"># انتظار فعال برای وقفه‌ی صفحه‌کلید (Ctrl+C)</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p>این دستور معمولاً برای ایجاد کلاس‌های حداقلی استفاده می‌شود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">MyEmptyClass</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">pass</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p>جای دیگری که می‌توان از <a class="reference internal" href="../reference/simple_stmts.html#pass"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">pass</span></code></a> استفاده کرد، به‌عنوان جای‌نگهدار برای بدنهٔ یک تابع یا شرط در زمانی است که روی کد جدید کار می‌کنید؛ این کار به شما اجازه می‌دهد در سطح انتزاعی‌تری به فکر کردن ادامه دهید. <code class="xref std std-keyword docutils literal notranslate"><span class="pre">pass</span></code> به‌صورت بی‌صدا نادیده گرفته می‌شود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">initlog</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">pass</span>   <span class="c1"># فراموش نکنید این تابع را پیاده‌سازی کنید!</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p>برای حالت آخر، بسیاری از افراد به‌جای <code class="code docutils literal notranslate"><span class="pre">pass</span></code> از مقدار لفظی بیضی <code class="code docutils literal notranslate"><span class="pre">...</span></code> استفاده می‌کنند. این استفاده هیچ معنای ویژه‌ای برای پایتون ندارد و بخشی از تعریف زبان نیست (در اینجا می‌توانستید از هر عبارت ثابتی استفاده کنید)، اما <code class="code docutils literal notranslate"><span class="pre">...</span></code> به‌صورت قراردادی به‌عنوان بدنهٔ جای‌نگهدار نیز استفاده می‌شود. به <a class="reference internal" href="../library/stdtypes.html#bltin-ellipsis-object"><span class="std std-ref">The Ellipsis Object</span></a> مراجعه کنید.</p>
+</section>
+<section id="match-statements">
+<span id="tut-match"></span><h2><span class="section-number">4.7. </span><code class="xref std std-keyword docutils literal notranslate"><span class="pre">match</span></code> دستورات<a class="headerlink" href="#match-statements" title="Link to this heading">¶</a></h2>
+<p>یک دستور <a class="reference internal" href="../reference/compound_stmts.html#match"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">match</span></code></a> یک عبارت را دریافت می‌کند و مقدار آن را با الگوهای متوالی که در یک یا چند بلوک case ارائه شده‌اند مقایسه می‌کند. این دستور در ظاهر شبیه دستور switch در C، Java یا JavaScript (و بسیاری از زبان‌های دیگر) است، اما شباهت بیشتری به تطبیق الگو (<em>pattern matching</em>) در زبان‌هایی مانند Rust یا Haskell دارد. تنها اولین الگویی که تطبیق پیدا کند اجرا می‌شود و این دستور همچنین می‌تواند اجزا (عناصر دنباله یا ویژگی‌های شیء) را از مقدار استخراج کرده و در متغیرها قرار دهد. اگر هیچ caseای تطبیق پیدا نکند، هیچ‌یک از شاخه‌ها اجرا نمی‌شوند.</p>
+<p>ساده‌ترین شکل، یک مقدار موضوع را با یک یا چند مقدار لفظی مقایسه می‌کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">http_error</span><span class="p">(</span><span class="n">status</span><span class="p">):</span>
+    <span class="k">match</span> <span class="n">status</span><span class="p">:</span>
+        <span class="k">case</span> <span class="mi">400</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">"Bad request"</span>
+        <span class="k">case</span> <span class="mi">404</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">"Not found"</span>
+        <span class="k">case</span> <span class="mi">418</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">"I'm a teapot"</span>
+        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">"Something's wrong with the internet"</span>
+</pre></div>
+</div>
+<p>به آخرین بلوک توجه کنید: «نام متغیر» <code class="docutils literal notranslate"><span class="pre">_</span></code> به‌عنوان یک <em>wildcard</em> عمل می‌کند و هرگز در تطبیق شکست نمی‌خورد.</p>
+<p>می‌توانید چند مقدار لفظی را با استفاده از <code class="docutils literal notranslate"><span class="pre">|</span></code> («یا») در یک الگو ترکیب کنید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">case</span> <span class="mi">401</span> <span class="o">|</span> <span class="mi">403</span> <span class="o">|</span> <span class="mi">404</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s2">"Not allowed"</span>
+</pre></div>
+</div>
+<p>الگوها می‌توانند شبیه انتساب‌های واگشایی (<em>unpacking assignments</em>) باشند و برای مقداردهی به متغیرها استفاده شوند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># نقطه یک تاپل (x, y) است</span>
+<span class="k">match</span> <span class="n">point</span><span class="p">:</span>
+    <span class="k">case</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Origin"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Y=</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"X=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"X=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, Y=</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Not a point"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>این مورد را با دقت بررسی کنید! الگوی اول دو مقدار لفظی دارد و می‌توان آن را گسترشی از الگوی لفظی نشان‌داده‌شده در بالا در نظر گرفت. اما دو الگوی بعدی یک مقدار لفظی و یک متغیر را ترکیب می‌کنند، و متغیر یک مقدار را از موضوع (<code class="docutils literal notranslate"><span class="pre">point</span></code>) <em>دریافت</em> می‌کند. الگوی چهارم دو مقدار را دریافت می‌کند، که از نظر مفهومی شبیه به انتساب واگشاییٔ <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span> <span class="pre">=</span> <span class="pre">point</span></code> است.</p>
+<p>اگر برای ساختاربندی داده‌های خود از کلاس‌ها استفاده می‌کنید، می‌توانید نام کلاس را به‌همراه فهرستی از آرگومان‌ها که شبیه سازنده است استفاده کنید، اما با قابلیت دریافت ویژگی‌ها در متغیرها:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">where_is</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+    <span class="k">match</span> <span class="n">point</span><span class="p">:</span>
+        <span class="k">case</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Origin"</span><span class="p">)</span>
+        <span class="k">case</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Y=</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">case</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"X=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">case</span> <span class="n">Point</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Somewhere else"</span><span class="p">)</span>
+        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Not a point"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>می‌توانید از پارامترهای موقعیتی با برخی کلاس‌های داخلی که برای ویژگی‌های خود ترتیب مشخصی ارائه می‌کنند (برای مثال dataclassها) استفاده کنید. همچنین می‌توانید با تنظیم ویژگی ویژهٔ <code class="docutils literal notranslate"><span class="pre">__match_args__</span></code> در کلاس‌های خود، موقعیت مشخصی برای ویژگی‌ها در الگوها تعریف کنید. اگر این ویژگی روی (&quot;x&quot;, &quot;y&quot;) تنظیم شده باشد، الگوهای زیر همگی معادل هستند (و همگی ویژگی <code class="docutils literal notranslate"><span class="pre">y</span></code> را در متغیر <code class="docutils literal notranslate"><span class="pre">var</span></code> قرار می‌دهند):</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">var</span><span class="p">)</span>
+<span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">var</span><span class="p">)</span>
+<span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">var</span><span class="p">)</span>
+<span class="n">Point</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">var</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>روش پیشنهادی برای خواندن الگوها این است که آن‌ها را شکل گسترش‌یافته‌ای از چیزی در نظر بگیرید که در سمت چپ یک انتساب قرار می‌دهید، تا متوجه شوید چه متغیرهایی با چه مقادیری تنظیم خواهند شد. تنها نام‌های مستقل (مانند <code class="docutils literal notranslate"><span class="pre">var</span></code> در بالا) توسط دستور match مقداردهی می‌شوند. نام‌های نقطه‌ای (مانند <code class="docutils literal notranslate"><span class="pre">foo.bar</span></code>)، نام ویژگی‌ها (مانند <code class="docutils literal notranslate"><span class="pre">x=</span></code> و <code class="docutils literal notranslate"><span class="pre">y=</span></code> در بالا) یا نام کلاس‌ها (که با (...) کنار آن‌ها، مانند <code class="docutils literal notranslate"><span class="pre">Point</span></code> در بالا، شناخته می‌شوند) هرگز مقداردهی نمی‌شوند.</p>
+<p>الگوها می‌توانند به‌صورت دلخواه تو‌در‌تو باشند. برای مثال، اگر یک فهرست کوتاه از Pointها داشته باشیم و <code class="docutils literal notranslate"><span class="pre">__match_args__</span></code> را به آن‌ها اضافه کرده باشیم، می‌توانیم آن را به این شکل تطبیق دهیم:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">:</span>
+    <span class="n">__match_args__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'x'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+<span class="k">match</span> <span class="n">points</span><span class="p">:</span>
+    <span class="k">case</span> <span class="p">[]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"No points"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="p">[</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"The origin"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="p">[</span><span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Single point </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="p">[</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y2</span><span class="p">)]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Two on the Y axis at </span><span class="si">{</span><span class="n">y1</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y2</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Something else"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>می‌توانیم یک بخش <code class="docutils literal notranslate"><span class="pre">if</span></code> به یک الگو اضافه کنیم که به آن «نگهبان» (<em>guard</em>) گفته می‌شود. اگر نگهبان نادرست باشد، <code class="docutils literal notranslate"><span class="pre">match</span></code> به تلاش برای بلوک case بعدی ادامه می‌دهد. توجه کنید که دریافت مقدار پیش از ارزیابی نگهبان انجام می‌شود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">match</span> <span class="n">point</span><span class="p">:</span>
+    <span class="k">case</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Y=X at </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Not on the diagonal"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>چند ویژگی کلیدی دیگر این دستور:</p>
+<ul>
+<li><p>مانند انتساب‌های واگشایی، الگوهای تاپل و فهرست دقیقاً معنای یکسانی دارند و در واقع با دنباله‌های دلخواه تطبیق پیدا می‌کنند. یک استثنای مهم این است که آن‌ها با تکرارگرها یا رشته‌ها تطبیق پیدا نمی‌کنند.</p></li>
+<li><p>الگوهای دنباله‌ای از واگشاییٔ گسترده پشتیبانی می‌کنند: <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">*rest]</span></code> و <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">*rest)</span></code> مشابه انتساب‌های واگشایی عمل می‌کنند. نام پس از <code class="docutils literal notranslate"><span class="pre">*</span></code> نیز می‌تواند <code class="docutils literal notranslate"><span class="pre">_</span></code> باشد، بنابراین <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">*_)</span></code> با دنباله‌ای دارای حداقل دو آیتم تطبیق پیدا می‌کند، بدون اینکه آیتم‌های باقی‌مانده را در متغیری قرار دهد.</p></li>
+<li><p>الگوهای نگاشتی: <code class="docutils literal notranslate"><span class="pre">{&quot;bandwidth&quot;:</span> <span class="pre">b,</span> <span class="pre">&quot;latency&quot;:</span> <span class="pre">l}</span></code> مقادیر <code class="docutils literal notranslate"><span class="pre">&quot;bandwidth&quot;</span></code> و <code class="docutils literal notranslate"><span class="pre">&quot;latency&quot;</span></code> را از یک دیکشنری دریافت می‌کند. برخلاف الگوهای دنباله‌ای، کلیدهای اضافی نادیده گرفته می‌شوند. واگشایی‌ای مانند <code class="docutils literal notranslate"><span class="pre">**rest</span></code> نیز پشتیبانی می‌شود. (اما <code class="docutils literal notranslate"><span class="pre">**_</span></code> اضافی است، بنابراین مجاز نیست.)</p></li>
+<li><p>زیرالگوها را می‌توان با استفاده از کلیدواژهٔ <code class="docutils literal notranslate"><span class="pre">as</span></code> دریافت کرد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">case</span> <span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span> <span class="k">as</span> <span class="n">p2</span><span class="p">):</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>عنصر دوم ورودی را به‌عنوان <code class="docutils literal notranslate"><span class="pre">p2</span></code> دریافت می‌کند (تا زمانی که ورودی یک دنبالهٔ دو عضوی از نقاط باشد)</p>
+</li>
+<li><p>بیشتر مقادیر لفظی با استفاده از برابری مقایسه می‌شوند، اما تک‌نمونه‌های <code class="docutils literal notranslate"><span class="pre">True</span></code>، <code class="docutils literal notranslate"><span class="pre">False</span></code> و <code class="docutils literal notranslate"><span class="pre">None</span></code> با استفاده از هویت مقایسه می‌شوند.</p></li>
+<li><p>الگوها می‌توانند از ثابت‌های نام‌گذاری‌شده استفاده کنند. این‌ها باید نام‌های نقطه‌ای باشند تا از تفسیر شدن آن‌ها به‌عنوان متغیرهای دریافت‌کننده جلوگیری شود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Color</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">RED</span> <span class="o">=</span> <span class="s1">'red'</span>
+    <span class="n">GREEN</span> <span class="o">=</span> <span class="s1">'green'</span>
+    <span class="n">BLUE</span> <span class="o">=</span> <span class="s1">'blue'</span>
+
+<span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your choice of 'red', 'blue' or 'green': "</span><span class="p">))</span>
+
+<span class="k">match</span> <span class="n">color</span><span class="p">:</span>
+    <span class="k">case</span> <span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"I see red!"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="n">Color</span><span class="o">.</span><span class="n">GREEN</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Grass is green"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="n">Color</span><span class="o">.</span><span class="n">BLUE</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"I'm feeling the blues :("</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>برای توضیح دقیق‌تر و نمونه‌های بیشتر، می‌توانید به <span class="target" id="index-16"></span><a class="pep reference external" href="https://peps.python.org/pep-0636/"><strong>PEP 636</strong></a> مراجعه کنید که با قالب یک آموزش نوشته شده است.</p>
+</section>
+<section id="defining-functions">
+<span id="tut-functions"></span><h2><span class="section-number">4.8. </span>تعریف توابع<a class="headerlink" href="#defining-functions" title="Link to this heading">¶</a></h2>
+<p>می‌توانیم تابعی ایجاد کنیم که سری فیبوناچی را تا یک کران دلخواه بنویسد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>    <span class="c1"># نوشتن دنباله‌ی فیبوناچی کوچک‌تر از n</span>
+<span class="gp">... </span><span class="w">    </span><span class="sd">"""Print a Fibonacci series less than n."""</span>
+<span class="gp">... </span>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<span class="gp">... </span>    <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">()</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># اکنون تابعی را که تعریف کردیم فراخوانی می‌کنیم:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fib</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+<span class="go">0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597</span>
+</pre></div>
+</div>
+<p id="index-3">کلیدواژهٔ <a class="reference internal" href="../reference/compound_stmts.html#def"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">def</span></code></a> یک <em>تعریف تابع</em> را معرفی می‌کند. این کلیدواژه باید پس از خود نام تابع و فهرست پارامترهای رسمی درون پرانتز بیاید. دستورهایی که بدنهٔ تابع را تشکیل می‌دهند از خط بعدی شروع می‌شوند و باید تورفتگی داشته باشند.</p>
+<p>اولین دستور بدنهٔ تابع می‌تواند به‌صورت اختیاری یک رشتهٔ لفظی باشد؛ این رشتهٔ لفظی، رشتهٔ مستندات تابع یا <em class="dfn">docstring</em> است. (اطلاعات بیشتر دربارهٔ رشته‌های مستندات را می‌توانید در بخش <a class="reference internal" href="#tut-docstrings"><span class="std std-ref">رشته‌های مستندسازی</span></a> پیدا کنید.) ابزارهایی وجود دارند که از docstringها برای تولید خودکار مستندات آنلاین یا چاپی، یا برای اجازه دادن به کاربر جهت مرور تعاملی کد استفاده می‌کنند؛ بهتر است در کدی که می‌نویسید docstringها را قرار دهید، بنابراین آن را به یک عادت تبدیل کنید.</p>
+<p><em>اجرای</em> یک تابع، یک جدول نماد جدید ایجاد می‌کند که برای متغیرهای محلی تابع استفاده می‌شود. به‌طور دقیق‌تر، تمام انتساب‌های متغیر در یک تابع، مقدار را در جدول نماد محلی ذخیره می‌کنند؛ در حالی که ارجاع‌های متغیر ابتدا در جدول نماد محلی، سپس در جدول‌های نماد محلی تابع‌های دربرگیرنده، سپس در جدول نماد سراسری، و در نهایت در جدول نام‌های داخلی جست‌وجو می‌شوند. بنابراین، متغیرهای سراسری و متغیرهای تابع‌های دربرگیرنده نمی‌توانند مستقیماً درون یک تابع مقداردهی شوند (مگر اینکه برای متغیرهای سراسری با یک دستور <a class="reference internal" href="../reference/simple_stmts.html#global"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">global</span></code></a>، یا برای متغیرهای تابع‌های دربرگیرنده با یک دستور <a class="reference internal" href="../reference/simple_stmts.html#nonlocal"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">nonlocal</span></code></a> نام‌گذاری شده باشند)، اگرچه می‌توان به آن‌ها ارجاع داد.</p>
+<p>پارامترهای واقعی (آرگومان‌ها) در یک فراخوانی تابع، هنگام فراخوانی تابع در جدول نماد محلی تابع فراخوانی‌شده قرار می‌گیرند؛ بنابراین، آرگومان‌ها با استفاده از <em>انتقال با مقدار</em> (<em>call by value</em>) ارسال می‌شوند (که در آن <em>مقدار</em> همیشه یک ارجاع به شیء است، نه مقدار خود شیء). <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> هنگامی که یک تابع، تابع دیگری را فراخوانی می‌کند یا به‌صورت بازگشتی خودش را فراخوانی می‌کند، یک جدول نماد محلی جدید برای آن فراخوانی ایجاد می‌شود.</p>
+<p>یک تعریف تابع، نام تابع را با شیء تابع در جدول نماد فعلی مرتبط می‌کند. مفسر شیئی را که آن نام به آن اشاره می‌کند به‌عنوان یک تابع تعریف‌شده توسط کاربر تشخیص می‌دهد. نام‌های دیگر نیز می‌توانند به همان شیء تابع اشاره کنند و برای دسترسی به تابع استفاده شوند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fib</span>
+<span class="go">&lt;function fib at 10042ed0&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">fib</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="go">0 1 1 2 3 5 8 13 21 34 55 89</span>
+</pre></div>
+</div>
+<p>اگر از زبان‌های دیگر آمده باشید، ممکن است اعتراض کنید که <code class="docutils literal notranslate"><span class="pre">fib</span></code> یک تابع نیست، بلکه یک رویه (<em>procedure</em>) است، زیرا مقداری برنمی‌گرداند. در واقع، حتی تابع‌هایی که دستور <a class="reference internal" href="../reference/simple_stmts.html#return"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">return</span></code></a> ندارند نیز یک مقدار برمی‌گردانند، هرچند مقدار نسبتاً بی‌اهمیتی است. این مقدار <code class="docutils literal notranslate"><span class="pre">None</span></code> نام دارد (که یک نام داخلی است). نوشتن مقدار <code class="docutils literal notranslate"><span class="pre">None</span></code> معمولاً توسط مفسر حذف می‌شود اگر تنها مقداری باشد که قرار است نوشته شود. اگر واقعاً بخواهید می‌توانید آن را با استفاده از <a class="reference internal" href="../library/functions.html#print" title="print"><code class="xref py py-func docutils literal notranslate"><span class="pre">print()</span></code></a> ببینید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fib</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<p>نوشتن تابعی که به‌جای چاپ کردن سری فیبوناچی، فهرستی از اعداد آن را برگرداند ساده است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">fib2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>  <span class="c1"># بازگرداندن دنباله‌ی فیبوناچی تا n</span>
+<span class="gp">... </span><span class="w">    </span><span class="sd">"""Return a list containing the Fibonacci series up to n."""</span>
+<span class="gp">... </span>    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">... </span>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<span class="gp">... </span>    <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>    <span class="c1"># توضیح زیر را ببینید</span>
+<span class="gp">... </span>        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">result</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f100</span> <span class="o">=</span> <span class="n">fib2</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>    <span class="c1"># فراخوانی تابع</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f100</span>                <span class="c1"># نمایش نتیجه</span>
+<span class="go">[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]</span>
+</pre></div>
+</div>
+<p>این مثال، مانند همیشه، چند ویژگی جدید پایتون را نشان می‌دهد:</p>
+<ul class="simple">
+<li><p>دستور <a class="reference internal" href="../reference/simple_stmts.html#return"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">return</span></code></a> یک مقدار را از یک تابع برمی‌گرداند. <code class="xref std std-keyword docutils literal notranslate"><span class="pre">return</span></code> بدون یک آرگومان عبارت، <code class="docutils literal notranslate"><span class="pre">None</span></code> را برمی‌گرداند. رسیدن به انتهای یک تابع نیز <code class="docutils literal notranslate"><span class="pre">None</span></code> را برمی‌گرداند.</p></li>
+<li><p>دستور <code class="docutils literal notranslate"><span class="pre">result.append(a)</span></code> یک <em>متد</em> از شیء فهرست <code class="docutils literal notranslate"><span class="pre">result</span></code> را فراخوانی می‌کند. یک متد تابعی است که به یک شیء «تعلق دارد» و با قالب <code class="docutils literal notranslate"><span class="pre">obj.methodname</span></code> نام‌گذاری می‌شود؛ در اینجا <code class="docutils literal notranslate"><span class="pre">obj</span></code> یک شیء (که می‌تواند یک عبارت باشد) و <code class="docutils literal notranslate"><span class="pre">methodname</span></code> نام متدی است که توسط نوع شیء تعریف شده است. نوع‌های مختلف، متدهای متفاوتی تعریف می‌کنند. متدهای نوع‌های مختلف می‌توانند نام یکسانی داشته باشند، بدون اینکه ابهامی ایجاد شود. (می‌توان با استفاده از <em>کلاس‌ها</em> نوع‌ها و متدهای شیء سفارشی خود را تعریف کرد؛ به <a class="reference internal" href="classes.html#tut-classes"><span class="std std-ref">کلاسها</span></a> مراجعه کنید.) متد <a class="reference internal" href="../library/stdtypes.html#list.append" title="list.append"><code class="xref py py-meth docutils literal notranslate"><span class="pre">append()</span></code></a> که در مثال نشان داده شده است برای اشیای فهرست تعریف شده است؛ این متد یک عنصر جدید را به انتهای فهرست اضافه می‌کند. در این مثال، معادل <code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">result</span> <span class="pre">+</span> <span class="pre">[a]</span></code> است، اما کارآمدتر است.</p></li>
+</ul>
+</section>
+<section id="more-on-defining-functions">
+<span id="tut-defining"></span><h2><span class="section-number">4.9. </span>اطلاعات بیشتر دربارهٔ تعریف تابع‌ها<a class="headerlink" href="#more-on-defining-functions" title="Link to this heading">¶</a></h2>
+<p>همچنین امکان تعریف تابع‌هایی با تعداد متغیری از آرگومان‌ها وجود دارد. سه شکل وجود دارد که می‌توان آن‌ها را با یکدیگر ترکیب کرد.</p>
+<section id="default-argument-values">
+<span id="tut-defaultargs"></span><h3><span class="section-number">4.9.1. </span>مقدارهای پیش‌فرض آرگومان‌ها<a class="headerlink" href="#default-argument-values" title="Link to this heading">¶</a></h3>
+<p>کاربردی‌ترین شکل، مشخص کردن یک مقدار پیش‌فرض برای یک یا چند آرگومان است. این کار تابعی ایجاد می‌کند که می‌توان آن را با آرگومان‌های کمتری نسبت به تعداد تعریف‌شده فراخوانی کرد. برای مثال:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ask_ok</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">reminder</span><span class="o">=</span><span class="s1">'Please try again!'</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">reply</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">reply</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">'y'</span><span class="p">,</span> <span class="s1">'ye'</span><span class="p">,</span> <span class="s1">'yes'</span><span class="p">}:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">reply</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'no'</span><span class="p">,</span> <span class="s1">'nop'</span><span class="p">,</span> <span class="s1">'nope'</span><span class="p">}:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">retries</span> <span class="o">=</span> <span class="n">retries</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">retries</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'invalid user response'</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">reminder</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>این تابع را می‌توان به چند روش فراخوانی کرد:</p>
+<ul class="simple">
+<li><p>فقط با دادن آرگومان اجباری: <code class="docutils literal notranslate"><span class="pre">ask_ok('Do</span> <span class="pre">you</span> <span class="pre">really</span> <span class="pre">want</span> <span class="pre">to</span> <span class="pre">quit?')</span></code></p></li>
+<li><p>با دادن یکی از آرگومان‌های اختیاری: <code class="docutils literal notranslate"><span class="pre">ask_ok('OK</span> <span class="pre">to</span> <span class="pre">overwrite</span> <span class="pre">the</span> <span class="pre">file?',</span> <span class="pre">2)</span></code></p></li>
+<li><p>یا حتی با دادن همهٔ آرگومان‌ها: <code class="docutils literal notranslate"><span class="pre">ask_ok('OK</span> <span class="pre">to</span> <span class="pre">overwrite</span> <span class="pre">the</span> <span class="pre">file?',</span> <span class="pre">2,</span> <span class="pre">'Come</span> <span class="pre">on,</span> <span class="pre">only</span> <span class="pre">yes</span> <span class="pre">or</span> <span class="pre">no!')</span></code></p></li>
+</ul>
+<p>این مثال همچنین کلیدواژهٔ <a class="reference internal" href="../reference/expressions.html#in"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">in</span></code></a> را معرفی می‌کند. این کلیدواژه بررسی می‌کند که آیا یک دنباله مقدار مشخصی را در خود دارد یا خیر.</p>
+<p>مقدارهای پیش‌فرض در نقطهٔ تعریف تابع و در محدودهٔ <em>تعریف‌کننده</em> (<em>defining scope</em>) ارزیابی می‌شوند، بنابراین</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">arg</span><span class="o">=</span><span class="n">i</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">f</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">5</span></code> را چاپ خواهد کرد.</p>
+<p><strong>هشدار مهم:</strong> مقدار پیش‌فرض فقط یک‌بار ارزیابی می‌شود. این موضوع زمانی تفاوت ایجاد می‌کند که مقدار پیش‌فرض یک شیء قابل تغییر مانند یک فهرست، دیکشنری، یا نمونه‌ای از بیشتر کلاس‌ها باشد. برای مثال، تابع زیر آرگومان‌هایی را که در فراخوانی‌های بعدی به آن داده می‌شوند جمع‌آوری می‌کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">L</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>این دستور چاپ خواهد کرد</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>اگر نمی‌خواهید مقدار پیش‌فرض بین فراخوانی‌های بعدی به اشتراک گذاشته شود، می‌توانید تابع را به این شکل بنویسید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">L</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">L</span>
+</pre></div>
+</div>
+</section>
+<section id="keyword-arguments">
+<span id="tut-keywordargs"></span><h3><span class="section-number">4.9.2. </span>آرگومان‌های کلیدواژه‌ای<a class="headerlink" href="#keyword-arguments" title="Link to this heading">¶</a></h3>
+<p>تابع‌ها همچنین می‌توانند با استفاده از <a class="reference internal" href="../glossary.html#term-keyword-argument"><span class="xref std std-term">keyword arguments</span></a> به شکل <code class="docutils literal notranslate"><span class="pre">kwarg=value</span></code> فراخوانی شوند. برای نمونه، تابع زیر:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">parrot</span><span class="p">(</span><span class="n">voltage</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s1">'a stiff'</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">'voom'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">'Norwegian Blue'</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"-- This parrot wouldn't"</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"if you put"</span><span class="p">,</span> <span class="n">voltage</span><span class="p">,</span> <span class="s2">"volts through it."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"-- Lovely plumage, the"</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"-- It's"</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="s2">"!"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>یک آرگومان اجباری (<code class="docutils literal notranslate"><span class="pre">voltage</span></code>) و سه آرگومان اختیاری (<code class="docutils literal notranslate"><span class="pre">state</span></code>، <code class="docutils literal notranslate"><span class="pre">action</span></code> و <code class="docutils literal notranslate"><span class="pre">type</span></code>) را می‌پذیرد. این تابع می‌تواند به هر یک از روش‌های زیر فراخوانی شود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">parrot</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>                                          <span class="c1"># یک آرگومان موقعیتی</span>
+<span class="n">parrot</span><span class="p">(</span><span class="n">voltage</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>                                  <span class="c1"># یک آرگومان کلیدواژه‌ای</span>
+<span class="n">parrot</span><span class="p">(</span><span class="n">voltage</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">'VOOOOOM'</span><span class="p">)</span>             <span class="c1"># دو آرگومان کلیدواژه‌ای</span>
+<span class="n">parrot</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">'VOOOOOM'</span><span class="p">,</span> <span class="n">voltage</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span>             <span class="c1"># دو آرگومان کلیدواژه‌ای</span>
+<span class="n">parrot</span><span class="p">(</span><span class="s1">'a million'</span><span class="p">,</span> <span class="s1">'bereft of life'</span><span class="p">,</span> <span class="s1">'jump'</span><span class="p">)</span>         <span class="c1"># سه آرگومان موقعیتی</span>
+<span class="n">parrot</span><span class="p">(</span><span class="s1">'a thousand'</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s1">'pushing up the daisies'</span><span class="p">)</span>  <span class="c1"># یک آرگومان موقعیتی، یک آرگومان کلیدواژه‌ای</span>
+</pre></div>
+</div>
+<p>اما تمام فراخوانی‌های زیر نامعتبر خواهند بود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">parrot</span><span class="p">()</span>                     <span class="c1"># آرگومان الزامی وارد نشده است</span>
+<span class="n">parrot</span><span class="p">(</span><span class="n">voltage</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">'dead'</span><span class="p">)</span>  <span class="c1"># آرگومان غیرکلیدواژه‌ای پس از آرگومان کلیدواژه‌ای آمده است</span>
+<span class="n">parrot</span><span class="p">(</span><span class="mi">110</span><span class="p">,</span> <span class="n">voltage</span><span class="o">=</span><span class="mi">220</span><span class="p">)</span>     <span class="c1"># مقدار تکراری برای یک آرگومان یکسان</span>
+<span class="n">parrot</span><span class="p">(</span><span class="n">actor</span><span class="o">=</span><span class="s1">'John Cleese'</span><span class="p">)</span>  <span class="c1"># آرگومان کلیدواژه‌ای ناشناخته</span>
+</pre></div>
+</div>
+<p>در یک فراخوانی تابع، آرگومان‌های کلیدواژه‌ای باید پس از آرگومان‌های موقعیتی بیایند. تمام آرگومان‌های کلیدواژه‌ای ارسال‌شده باید با یکی از آرگومان‌های پذیرفته‌شده توسط تابع مطابقت داشته باشند (برای مثال، <code class="docutils literal notranslate"><span class="pre">actor</span></code> یک آرگومان معتبر برای تابع <code class="docutils literal notranslate"><span class="pre">parrot</span></code> نیست)، و ترتیب آن‌ها اهمیتی ندارد. این موضوع شامل آرگومان‌های غیر‌اختیاری نیز می‌شود (برای مثال، <code class="docutils literal notranslate"><span class="pre">parrot(voltage=1000)</span></code> نیز معتبر است). هیچ آرگومانی نمی‌تواند بیش از یک‌بار مقدار دریافت کند. در اینجا مثالی وجود دارد که به دلیل این محدودیت شکست می‌خورد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">pass</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">function</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">function() got multiple values for argument 'a'</span>
+</pre></div>
+</div>
+<p>هنگامی که یک پارامتر رسمی نهایی به شکل <code class="docutils literal notranslate"><span class="pre">**name</span></code> وجود داشته باشد، یک فرهنگ لغت (به <a class="reference internal" href="../library/stdtypes.html#typesmapping"><span class="std std-ref">Mapping Types --- dict</span></a> مراجعه کنید) دریافت می‌کند که شامل تمام آرگومان‌های کلیدواژه‌ای است، به‌جز آن‌هایی که متناظر با یک پارامتر رسمی هستند. این مورد می‌تواند با یک پارامتر رسمی به شکل <code class="docutils literal notranslate"><span class="pre">*name</span></code> ترکیب شود (که در زیربخش بعدی توضیح داده شده است)؛ این پارامتر یک <a class="reference internal" href="datastructures.html#tut-tuples"><span class="std std-ref">tuple</span></a> دریافت می‌کند که شامل آرگومان‌های موقعیتی فراتر از فهرست پارامترهای رسمی است. (<code class="docutils literal notranslate"><span class="pre">*name</span></code> باید پیش از <code class="docutils literal notranslate"><span class="pre">**name</span></code> قرار گیرد.) برای مثال، اگر تابعی مانند زیر تعریف کنیم:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">cheeseshop</span><span class="p">(</span><span class="n">kind</span><span class="p">,</span> <span class="o">*</span><span class="n">arguments</span><span class="p">,</span> <span class="o">**</span><span class="n">keywords</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"-- Do you have any"</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="s2">"?"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"-- I'm sorry, we're all out of"</span><span class="p">,</span> <span class="n">kind</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">arguments</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">keywords</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">kw</span><span class="p">,</span> <span class="s2">":"</span><span class="p">,</span> <span class="n">keywords</span><span class="p">[</span><span class="n">kw</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>میتواند اینگونه فراخوانده شود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">cheeseshop</span><span class="p">(</span><span class="s2">"Limburger"</span><span class="p">,</span> <span class="s2">"It's very runny, sir."</span><span class="p">,</span>
+           <span class="s2">"It's really very, VERY runny, sir."</span><span class="p">,</span>
+           <span class="n">shopkeeper</span><span class="o">=</span><span class="s2">"Michael Palin"</span><span class="p">,</span>
+           <span class="n">client</span><span class="o">=</span><span class="s2">"John Cleese"</span><span class="p">,</span>
+           <span class="n">sketch</span><span class="o">=</span><span class="s2">"Cheese Shop Sketch"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>و قطعا این دستور چاپ خواهد کرد:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-- Do you have any Limburger ?
+-- I'm sorry, we're all out of Limburger
+It's very runny, sir.
+It's really very, VERY runny, sir.
+----------------------------------------
+shopkeeper : Michael Palin
+client : John Cleese
+sketch : Cheese Shop Sketch
+</pre></div>
+</div>
+<p>توجه داشته باشید که ترتیب چاپ آرگومان‌های کلیدواژه‌ای تضمین شده است که با ترتیبی که در فراخوانی تابع ارائه شده‌اند مطابقت داشته باشد.</p>
+</section>
+<section id="special-parameters">
+<h3><span class="section-number">4.9.3. </span>پارامترهای ویژه<a class="headerlink" href="#special-parameters" title="Link to this heading">¶</a></h3>
+<p>به طور پیش‌فرض، آرگومان‌ها را می‌توان در یک تابع پایتون یا با استفاده از موقعیت یا به‌صورت صریح با کلیدواژه ارسال کرد. برای خوانایی و کارایی، منطقی است که نحوه ارسال آرگومان‌ها را محدود کنیم تا یک توسعه‌دهنده تنها با نگاه کردن به تعریف تابع بتواند تعیین کند که موارد با موقعیت، با موقعیت یا کلیدواژه، یا فقط با کلیدواژه ارسال می‌شوند.</p>
+<p>تعریف یک تابع ممکن است به شکل زیر باشد:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def f(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2):
+      -----------    ----------     ----------
+        |             |                  |
+        |        Positional or keyword   |
+        |                                - Keyword only
+         -- Positional only
+</pre></div>
+</div>
+<p>که در آن <code class="docutils literal notranslate"><span class="pre">/</span></code> و <code class="docutils literal notranslate"><span class="pre">*</span></code> اختیاری هستند. اگر استفاده شوند، این نمادها نوع پارامتر را بر اساس نحوه ارسال آرگومان‌ها به تابع مشخص می‌کنند: فقط موقعیتی، موقعیتی یا کلیدواژه‌ای، و فقط کلیدواژه‌ای. پارامترهای کلیدواژه‌ای همچنین به عنوان پارامترهای نام‌دار شناخته می‌شوند.</p>
+<section id="positional-or-keyword-arguments">
+<h4><span class="section-number">4.9.3.1. </span>آرگومان‌های موقعیتی یا کلیدواژه‌ای<a class="headerlink" href="#positional-or-keyword-arguments" title="Link to this heading">¶</a></h4>
+<p>اگر <code class="docutils literal notranslate"><span class="pre">/</span></code> و <code class="docutils literal notranslate"><span class="pre">*</span></code> در تعریف تابع وجود نداشته باشند، آرگومان‌ها را می‌توان با موقعیت یا با کلیدواژه به یک تابع ارسال کرد.</p>
+</section>
+<section id="positional-only-parameters">
+<h4><span class="section-number">4.9.3.2. </span>پارامترهای فقط موقعیتی<a class="headerlink" href="#positional-only-parameters" title="Link to this heading">¶</a></h4>
+<p>با بررسی دقیق‌تر، می‌توان برخی پارامترها را به صورت <em>فقط موقعیتی</em> مشخص کرد. اگر <em>فقط موقعیتی</em> باشند، ترتیب پارامترها اهمیت دارد و پارامترها نمی‌توانند با کلیدواژه ارسال شوند. پارامترهای فقط موقعیتی قبل از یک <code class="docutils literal notranslate"><span class="pre">/</span></code> (خط مورب) قرار می‌گیرند. <code class="docutils literal notranslate"><span class="pre">/</span></code> برای جدا کردن منطقی پارامترهای فقط موقعیتی از سایر پارامترها استفاده می‌شود. اگر <code class="docutils literal notranslate"><span class="pre">/</span></code> در تعریف تابع وجود نداشته باشد، هیچ پارامتر فقط موقعیتی وجود ندارد.</p>
+<p>پارامترهای پس از <code class="docutils literal notranslate"><span class="pre">/</span></code> می‌توانند <em>موقعیتی یا کلیدواژه‌ای</em> یا <em>فقط کلیدواژه‌ای</em> باشند.</p>
+</section>
+<section id="keyword-only-arguments">
+<h4><span class="section-number">4.9.3.3. </span>آرگومان‌های فقط کلیدواژه‌ای<a class="headerlink" href="#keyword-only-arguments" title="Link to this heading">¶</a></h4>
+<p>برای مشخص کردن پارامترها به‌عنوان <em>فقط کلیدواژه‌ای</em>، که نشان می‌دهد پارامترها باید با آرگومان کلیدواژه‌ای ارسال شوند، یک <code class="docutils literal notranslate"><span class="pre">*</span></code> را در فهرست آرگومان‌ها درست قبل از اولین پارامتر <em>فقط کلیدواژه‌ای</em> قرار دهید.</p>
+</section>
+<section id="function-examples">
+<h4><span class="section-number">4.9.3.4. </span>مثال‌های توابع<a class="headerlink" href="#function-examples" title="Link to this heading">¶</a></h4>
+<p>تعریف‌های تابع زیر را با دقت بررسی کنید و به نشانه‌های <code class="docutils literal notranslate"><span class="pre">/</span></code> و <code class="docutils literal notranslate"><span class="pre">*</span></code> توجه کنید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">standard_arg</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">pos_only_arg</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="o">/</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">kwd_only_arg</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">combined_example</span><span class="p">(</span><span class="n">pos_only</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="n">standard</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">kwd_only</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">pos_only</span><span class="p">,</span> <span class="n">standard</span><span class="p">,</span> <span class="n">kwd_only</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>اولین تعریف تابع، یعنی <code class="docutils literal notranslate"><span class="pre">standard_arg</span></code>، آشناترین شکل است؛ هیچ محدودیتی برای شیوه فراخوانی قرار نمی‌دهد و آرگومان‌ها می‌توانند با موقعیت یا کلیدواژه ارسال شوند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">standard_arg</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">2</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">standard_arg</span><span class="p">(</span><span class="n">arg</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>تابع دوم، <code class="docutils literal notranslate"><span class="pre">pos_only_arg</span></code>، محدود شده است تا فقط از پارامترهای موقعیتی استفاده کند، زیرا یک <code class="docutils literal notranslate"><span class="pre">/</span></code> در تعریف تابع وجود دارد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pos_only_arg</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">1</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pos_only_arg</span><span class="p">(</span><span class="n">arg</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">pos_only_arg() got some positional-only arguments passed as keyword arguments: 'arg'</span>
+</pre></div>
+</div>
+<p>تابع سوم، <code class="docutils literal notranslate"><span class="pre">kwd_only_arg</span></code>، همان‌طور که وجود یک <code class="docutils literal notranslate"><span class="pre">*</span></code> در تعریف تابع نشان می‌دهد، فقط آرگومان‌های کلیدواژه‌ای را می‌پذیرد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kwd_only_arg</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">kwd_only_arg() takes 0 positional arguments but 1 was given</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kwd_only_arg</span><span class="p">(</span><span class="n">arg</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>و تابع آخر از هر سه شیوه فراخوانی در یک تعریف تابع استفاده می‌کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">combined_example</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">combined_example() takes 2 positional arguments but 3 were given</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">combined_example</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">kwd_only</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">1 2 3</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">combined_example</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">standard</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">kwd_only</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">1 2 3</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">combined_example</span><span class="p">(</span><span class="n">pos_only</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">standard</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">kwd_only</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">combined_example() got some positional-only arguments passed as keyword arguments: 'pos_only'</span>
+</pre></div>
+</div>
+<p>در نهایت، این تعریف تابع را در نظر بگیرید که در آن بین آرگومان موقعیتی <code class="docutils literal notranslate"><span class="pre">name</span></code> و <code class="docutils literal notranslate"><span class="pre">**kwds</span></code> که دارای کلیدواژه‌ای به نام <code class="docutils literal notranslate"><span class="pre">name</span></code> است، یک برخورد احتمالی وجود دارد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">'name'</span> <span class="ow">in</span> <span class="n">kwds</span>
+</pre></div>
+</div>
+<p>هیچ فراخوانی ممکنی وجود ندارد که باعث شود این تابع مقدار <code class="docutils literal notranslate"><span class="pre">True</span></code> را برگرداند، زیرا کلیدواژه <code class="docutils literal notranslate"><span class="pre">'name'</span></code> همیشه به اولین پارامتر متصل می‌شود. برای مثال:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">foo() got multiple values for argument 'name'</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>اما با استفاده از <code class="docutils literal notranslate"><span class="pre">/</span></code> (آرگومان‌های فقط موقعیتی)، این امکان وجود دارد، زیرا اجازه می‌دهد <code class="docutils literal notranslate"><span class="pre">name</span></code> به‌عنوان یک آرگومان موقعیتی و <code class="docutils literal notranslate"><span class="pre">'name'</span></code> به‌عنوان یک کلید در آرگومان‌های کلیدواژه‌ای استفاده شود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="s1">'name'</span> <span class="ow">in</span> <span class="n">kwds</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>به عبارت دیگر، نام پارامترهای فقط موقعیتی می‌تواند بدون ابهام در <code class="docutils literal notranslate"><span class="pre">**kwds</span></code> استفاده شود.</p>
+</section>
+<section id="recap">
+<h4><span class="section-number">4.9.3.5. </span>خلاصه<a class="headerlink" href="#recap" title="Link to this heading">¶</a></h4>
+<p>مورد استفاده تعیین می‌کند که کدام پارامترها را در تعریف تابع استفاده کنید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="n">pos_or_kwd</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">kwd1</span><span class="p">,</span> <span class="n">kwd2</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>برای راهنمایی:</p>
+<ul class="simple">
+<li><p>اگر می‌خواهید نام پارامترها برای کاربر قابل دسترس نباشد، از فقط-موقعیتی استفاده کنید. این زمانی مفید است که نام پارامترها معنای واقعی ندارند، زمانی که می‌خواهید ترتیب آرگومان‌ها هنگام فراخوانی تابع اجباری باشد، یا زمانی که به تعدادی پارامتر موقعیتی و کلیدواژه‌های دلخواه نیاز دارید.</p></li>
+<li><p>زمانی که نام‌ها دارای معنا هستند و تعریف تابع با مشخص کردن صریح نام‌ها قابل فهم‌تر می‌شود، یا زمانی که می‌خواهید کاربران به موقعیت آرگومان‌های ارسال‌شده وابسته نشوند، از فقط کلیدواژه‌ای استفاده کنید.</p></li>
+<li><p>برای یک API، از پارامترهای فقط موقعیتی استفاده کنید تا از شکستن تغییرات API در صورت تغییر نام پارامتر در آینده جلوگیری شود.</p></li>
+</ul>
+</section>
+</section>
+<section id="arbitrary-argument-lists">
+<span id="tut-arbitraryargs"></span><h3><span class="section-number">4.9.4. </span>فهرست‌های دلخواه آرگومان‌ها<a class="headerlink" href="#arbitrary-argument-lists" title="Link to this heading">¶</a></h3>
+<p id="index-4">در نهایت، کم‌کاربردترین گزینه این است که مشخص کنید یک تابع می‌تواند با تعداد دلخواهی از آرگومان‌ها فراخوانی شود. این آرگومان‌ها در یک تاپل بسته‌بندی می‌شوند (به <a class="reference internal" href="datastructures.html#tut-tuples"><span class="std std-ref">تاپل‌ها و دنباله‌ها</span></a> مراجعه کنید). پیش از آرگومان‌های با تعداد متغیر، می‌توان صفر یا چند آرگومان معمولی داشت.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">write_multiple_items</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">separator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">separator</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>معمولاً این آرگومان‌های <em>متغیرتعداد</em> در انتهای فهرست پارامترهای رسمی قرار می‌گیرند، زیرا تمام آرگومان‌های ورودی باقی‌مانده‌ای که به تابع ارسال می‌شوند را جمع‌آوری می‌کنند. هر پارامتر رسمی که پس از پارامتر <code class="docutils literal notranslate"><span class="pre">*args</span></code> قرار گیرد، یک آرگومان «فقط کلیدواژه‌ای» است؛ یعنی فقط می‌تواند به‌عنوان کلیدواژه استفاده شود و نه به صورت آرگومان موقعیتی.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">concat</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"/"</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">concat</span><span class="p">(</span><span class="s2">"earth"</span><span class="p">,</span> <span class="s2">"mars"</span><span class="p">,</span> <span class="s2">"venus"</span><span class="p">)</span>
+<span class="go">'earth/mars/venus'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">concat</span><span class="p">(</span><span class="s2">"earth"</span><span class="p">,</span> <span class="s2">"mars"</span><span class="p">,</span> <span class="s2">"venus"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">"."</span><span class="p">)</span>
+<span class="go">'earth.mars.venus'</span>
+</pre></div>
+</div>
+</section>
+<section id="unpacking-argument-lists">
+<span id="tut-unpacking-arguments"></span><h3><span class="section-number">4.9.5. </span>باز کردن بسته آرگومان‌ها<a class="headerlink" href="#unpacking-argument-lists" title="Link to this heading">¶</a></h3>
+<p>حالت معکوس زمانی رخ می‌دهد که آرگومان‌ها از قبل در یک فهرست یا تاپل قرار دارند، اما برای فراخوانی تابعی که به آرگومان‌های موقعیتی جداگانه نیاز دارد، باید باز شوند. برای مثال، تابع داخلی <a class="reference internal" href="../library/stdtypes.html#range" title="range"><code class="xref py py-func docutils literal notranslate"><span class="pre">range()</span></code></a> آرگومان‌های جداگانه <em>start</em> و <em>stop</em> را انتظار دارد. اگر این آرگومان‌ها به صورت جداگانه در دسترس نیستند، فراخوانی تابع را با عملگر <code class="docutils literal notranslate"><span class="pre">*</span></code> برای باز کردن آرگومان‌ها از یک فهرست یا تاپل بنویسید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>            <span class="c1"># فراخوانی معمولی با آرگومان‌های جداگانه</span>
+<span class="go">[3, 4, 5]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">))</span>            <span class="c1"># فراخوانی با آرگومان‌های بازشده از یک فهرست</span>
+<span class="go">[3, 4, 5]</span>
+</pre></div>
+</div>
+<p id="index-5">به همین شکل، دیکشنری‌ها می‌توانند با عملگر <code class="docutils literal notranslate"><span class="pre">**</span></code> آرگومان‌های کلیدواژه‌ای فراهم کنند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">parrot</span><span class="p">(</span><span class="n">voltage</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s1">'a stiff'</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">'voom'</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"-- This parrot wouldn't"</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"if you put"</span><span class="p">,</span> <span class="n">voltage</span><span class="p">,</span> <span class="s2">"volts through it."</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"E's"</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="s2">"!"</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"voltage"</span><span class="p">:</span> <span class="s2">"four million"</span><span class="p">,</span> <span class="s2">"state"</span><span class="p">:</span> <span class="s2">"bleedin' demised"</span><span class="p">,</span> <span class="s2">"action"</span><span class="p">:</span> <span class="s2">"VOOM"</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parrot</span><span class="p">(</span><span class="o">**</span><span class="n">d</span><span class="p">)</span>
+<span class="go">-- This parrot wouldn't VOOM if you put four million volts through it. E's bleedin' demised !</span>
+</pre></div>
+</div>
+</section>
+<section id="lambda-expressions">
+<span id="tut-lambda"></span><h3><span class="section-number">4.9.6. </span>عبارت‌های لامبدا<a class="headerlink" href="#lambda-expressions" title="Link to this heading">¶</a></h3>
+<p>توابع کوچک بی‌نام را می‌توان با کلیدواژه <a class="reference internal" href="../reference/expressions.html#lambda"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">lambda</span></code></a> ایجاد کرد. این تابع مجموع دو آرگومان خود را برمی‌گرداند: <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">a,</span> <span class="pre">b:</span> <span class="pre">a+b</span></code>. توابع لامبدا را می‌توان هر جا که به اشیای تابع نیاز باشد استفاده کرد. آن‌ها از نظر نحوی به یک عبارت منفرد محدود هستند. از نظر معنایی، آن‌ها تنها شکری نحوی برای یک تعریف معمولی تابع هستند. مانند تعریف‌های توابع تو‌در‌تو، توابع لامبدا می‌توانند به متغیرهای محدوده‌ی دربرگیرنده دسترسی داشته باشند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">make_incrementor</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">n</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">make_incrementor</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">42</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">43</span>
+</pre></div>
+</div>
+<p>مثال بالا از یک عبارت لامبدا برای برگرداندن یک تابع استفاده می‌کند. کاربرد دیگر آن، ارسال یک تابع کوچک به‌عنوان آرگومان است. برای مثال، <a class="reference internal" href="../library/stdtypes.html#list.sort" title="list.sort"><code class="xref py py-meth docutils literal notranslate"><span class="pre">list.sort()</span></code></a> یک تابع کلید مرتب‌سازی <em>key</em> می‌گیرد که می‌تواند یک تابع لامبدا باشد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'one'</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'three'</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'four'</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pairs</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">pair</span><span class="p">:</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pairs</span>
+<span class="go">[(4, 'four'), (1, 'one'), (3, 'three'), (2, 'two')]</span>
+</pre></div>
+</div>
+</section>
+<section id="documentation-strings">
+<span id="tut-docstrings"></span><h3><span class="section-number">4.9.7. </span>رشته‌های مستندسازی<a class="headerlink" href="#documentation-strings" title="Link to this heading">¶</a></h3>
+<p id="index-6">در ادامه، برخی قراردادها دربارهٔ محتوا و قالب‌بندی رشته‌های مستندسازی آمده است.</p>
+<p>خط اول باید همیشه یک خلاصهٔ کوتاه و مختصر از هدف شیء باشد. برای کوتاه‌تر بودن، نباید به‌طور صریح نام یا نوع شیء را بیان کند، زیرا این موارد از راه‌های دیگری در دسترس هستند (مگر اینکه نام، خود یک فعل باشد که عملکرد یک تابع را توصیف می‌کند). این خط باید با یک حرف بزرگ شروع شود و با نقطه پایان یابد.</p>
+<p>اگر خطوط بیشتری در رشتهٔ مستندسازی وجود دارد، خط دوم باید خالی باشد تا به‌صورت بصری خلاصه را از ادامهٔ توضیحات جدا کند. خطوط بعدی باید شامل یک یا چند پاراگراف باشند که قراردادهای فراخوانی شیء، عوارض جانبی آن و موارد مشابه را توضیح می‌دهند.</p>
+<p>تجزیه‌گر پایتون هنگام استفاده از رشته‌های چندخطی به‌عنوان رشته‌های مستندسازی ماژول، کلاس یا تابع، تورفتگی را از آن‌ها حذف می‌کند.</p>
+<p>در اینجا یک نمونه از یک رشتهٔ مستندسازی چندخطی آمده است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">my_function</span><span class="p">():</span>
+<span class="gp">... </span><span class="w">    </span><span class="sd">"""Do nothing, but document it.</span>
+<span class="gp">...</span>
+<span class="gp">... </span><span class="sd">    No, really, it doesn't do anything:</span>
+<span class="gp">...</span>
+<span class="gp">... </span><span class="sd">        &gt;&gt;&gt; my_function()</span>
+<span class="gp">... </span><span class="sd">        &gt;&gt;&gt;</span>
+<span class="gp">... </span><span class="sd">    """</span>
+<span class="gp">... </span>    <span class="k">pass</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">my_function</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="go">Do nothing, but document it.</span>
+
+<span class="go">No, really, it doesn't do anything:</span>
+
+<span class="go">    &gt;&gt;&gt; my_function()</span>
+<span class="go">    &gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="function-annotations">
+<span id="tut-annotations"></span><h3><span class="section-number">4.9.8. </span>حاشیه‌نویسی‌های تابع<a class="headerlink" href="#function-annotations" title="Link to this heading">¶</a></h3>
+<p id="index-7"><a class="reference internal" href="../reference/compound_stmts.html#function"><span class="std std-ref">حاشیه‌نویسی‌های تابع</span></a> فراداده‌های کاملاً اختیاری دربارهٔ نوع‌های استفاده‌شده در توابع تعریف‌شده توسط کاربر هستند (برای اطلاعات بیشتر به <span class="target" id="index-17"></span><a class="pep reference external" href="https://peps.python.org/pep-3107/"><strong>PEP 3107</strong></a> و <span class="target" id="index-18"></span><a class="pep reference external" href="https://peps.python.org/pep-0484/"><strong>PEP 484</strong></a> مراجعه کنید).</p>
+<p><a class="reference internal" href="../glossary.html#term-function-annotation"><span class="xref std std-term">حاشیه‌نویسی‌ها</span></a> در ویژگی <a class="reference internal" href="../reference/datamodel.html#object.__annotations__" title="object.__annotations__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__annotations__</span></code></a> تابع، به‌صورت یک دیکشنری ذخیره می‌شوند و هیچ تأثیری بر بخش دیگری از تابع ندارند. حاشیه‌نویسی پارامترها با قرار دادن یک دونقطه پس از نام پارامتر و سپس یک عبارت که مقدار حاشیه‌نویسی را ارزیابی می‌کند، تعریف می‌شود. حاشیه‌نویسی مقدار بازگشتی با قرار دادن یک نشانهٔ لفظی <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code> و سپس یک عبارت، بین فهرست پارامترها و دونقطه‌ای که پایان دستور <a class="reference internal" href="../reference/compound_stmts.html#def"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">def</span></code></a> را مشخص می‌کند، تعریف می‌شود. مثال زیر دارای یک آرگومان اجباری، یک آرگومان اختیاری و مقدار بازگشتیِ حاشیه‌نویسی‌شده است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">ham</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">eggs</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'eggs'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Annotations:"</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="vm">__annotations__</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Arguments:"</span><span class="p">,</span> <span class="n">ham</span><span class="p">,</span> <span class="n">eggs</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">ham</span> <span class="o">+</span> <span class="s1">' and '</span> <span class="o">+</span> <span class="n">eggs</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="s1">'spam'</span><span class="p">)</span>
+<span class="go">Annotations: {'ham': &lt;class 'str'&gt;, 'return': &lt;class 'str'&gt;, 'eggs': &lt;class 'str'&gt;}</span>
+<span class="go">Arguments: spam eggs</span>
+<span class="go">'spam and eggs'</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="intermezzo-coding-style">
+<span id="tut-codingstyle"></span><h2><span class="section-number">4.10. </span>میان‌پرده: سبک کدنویسی<a class="headerlink" href="#intermezzo-coding-style" title="Link to this heading">¶</a></h2>
+<p id="index-10">اکنون که قصد دارید بخش‌های طولانی‌تر و پیچیده‌تری از کد پایتون بنویسید، زمان مناسبی است تا دربارهٔ <em>سبک کدنویسی</em> صحبت کنیم. بیشتر زبان‌ها را می‌توان به سبک‌های مختلفی نوشت (یا دقیق‌تر، <em>قالب‌بندی</em> کرد)؛ برخی از این سبک‌ها خواناتر از دیگران هستند. آسان‌تر کردن خواندن کد برای دیگران همیشه ایدهٔ خوبی است و پیروی از یک سبک کدنویسی مناسب کمک بسیار زیادی به این موضوع می‌کند.</p>
+<p>برای پایتون، <span class="target" id="index-19"></span><a class="pep reference external" href="https://peps.python.org/pep-0008/"><strong>PEP 8</strong></a> به‌عنوان راهنمای سبکی مطرح شده است که بیشتر پروژه‌ها از آن پیروی می‌کنند؛ این راهنما سبکی بسیار خوانا و چشم‌نواز را ترویج می‌کند. هر توسعه‌دهندهٔ پایتون باید در مقطعی آن را مطالعه کند؛ در ادامه مهم‌ترین نکات آن را برای شما استخراج کرده‌ایم:</p>
+<ul>
+<li><p>از تورفتگی ۴ فاصله‌ای استفاده کنید و از Tab استفاده نکنید.</p>
+<p>۴ فاصله سازشی مناسب بین تورفتگی کم (که امکان تو‌در‌تو شدن بیشتر را فراهم می‌کند) و تورفتگی زیاد (که خواندن را آسان‌تر می‌کند) است. استفاده از Tab باعث سردرگمی می‌شود و بهتر است کنار گذاشته شود.</p>
+</li>
+<li><p>خطوط را طوری شکسته‌بندی کنید که بیشتر از ۷۹ نویسه نباشند.</p>
+<p>این کار به کاربرانی که نمایشگرهای کوچک دارند کمک می‌کند و امکان نمایش چندین فایل کد در کنار یکدیگر را در نمایشگرهای بزرگ‌تر فراهم می‌سازد.</p>
+</li>
+<li><p>برای جدا کردن توابع و کلاس‌ها، و همچنین بلوک‌های بزرگ‌تر کد درون توابع، از خطوط خالی استفاده کنید.</p></li>
+<li><p>در صورت امکان، توضیحات را در یک خط جداگانه قرار دهید.</p></li>
+<li><p>از رشته‌های مستندسازی (docstring) استفاده کنید.</p></li>
+<li><p>در اطراف عملگرها و پس از ویرگول‌ها فاصله قرار دهید، اما مستقیماً درون سازه‌های محصورکننده فاصله نگذارید: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">f(1,</span> <span class="pre">2)</span> <span class="pre">+</span> <span class="pre">g(3,</span> <span class="pre">4)</span></code>.</p></li>
+<li><p>کلاس‌ها و توابع خود را به‌صورت یکدست نام‌گذاری کنید؛ قرارداد رایج این است که برای کلاس‌ها از <code class="docutils literal notranslate"><span class="pre">UpperCamelCase</span></code> و برای توابع و متدها از <code class="docutils literal notranslate"><span class="pre">lowercase_with_underscores</span></code> استفاده شود. همیشه از <code class="docutils literal notranslate"><span class="pre">self</span></code> به‌عنوان نام اولین آرگومان متد استفاده کنید (برای اطلاعات بیشتر دربارهٔ کلاس‌ها و متدها به <a class="reference internal" href="classes.html#tut-firstclasses"><span class="std std-ref">در نگاه اول به کلاسها</span></a> مراجعه کنید).</p></li>
+<li><p>اگر قرار است کد شما در محیط‌های بین‌المللی استفاده شود، از کدگذاری‌های پیچیده و خاص استفاده نکنید. کدگذاری پیش‌فرض پایتون، یعنی UTF-8، یا حتی ASCII ساده، در هر صورت بهترین انتخاب‌ها هستند.</p></li>
+<li><p>به همین ترتیب، اگر حتی کوچک‌ترین احتمالی وجود دارد که افرادی با زبان‌های دیگر این کد را بخوانند یا نگهداری کنند، از نویسه‌های غیر ASCII در شناسه‌ها استفاده نکنید.</p></li>
+</ul>
+<p class="rubric">پانویس‌ها</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>در واقع، <em>فراخوانی با ارجاع به شیء</em> توصیف دقیق‌تری خواهد بود؛ زیرا اگر یک شیء تغییرپذیر ارسال شود، فراخواننده هر تغییری را که فراخوانی‌شونده روی آن اعمال کند مشاهده خواهد کرد (مانند مواردی که به یک فهرست، عنصرهایی اضافه می‌شود).</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">4. ابزارهای بیشتر برای کنترل جریان</a><ul>
+<li><a class="reference internal" href="#if-statements">4.1. دستورهای <code class="xref std std-keyword docutils literal notranslate"><span class="pre">if</span></code></a></li>
+<li><a class="reference internal" href="#for-statements">4.2. دستورهای <code class="xref std std-keyword docutils literal notranslate"><span class="pre">for</span></code></a></li>
+<li><a class="reference internal" href="#the-range-function">4.3. تابع <code class="xref py py-func docutils literal notranslate"><span class="pre">range()</span></code></a></li>
+<li><a class="reference internal" href="#break-and-continue-statements">4.4. دستورهای <code class="xref std std-keyword docutils literal notranslate"><span class="pre">break</span></code> و <code class="xref std std-keyword docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li><a class="reference internal" href="#else-clauses-on-loops">4.5. بخش‌های <code class="xref std std-keyword docutils literal notranslate"><span class="pre">else</span></code> در حلقه‌ها</a></li>
+<li><a class="reference internal" href="#pass-statements">4.6. دستورهای <code class="xref std std-keyword docutils literal notranslate"><span class="pre">pass</span></code></a></li>
+<li><a class="reference internal" href="#match-statements">4.7. <code class="xref std std-keyword docutils literal notranslate"><span class="pre">match</span></code> دستورات</a></li>
+<li><a class="reference internal" href="#defining-functions">4.8. تعریف توابع</a></li>
+<li><a class="reference internal" href="#more-on-defining-functions">4.9. اطلاعات بیشتر دربارهٔ تعریف تابع‌ها</a><ul>
+<li><a class="reference internal" href="#default-argument-values">4.9.1. مقدارهای پیش‌فرض آرگومان‌ها</a></li>
+<li><a class="reference internal" href="#keyword-arguments">4.9.2. آرگومان‌های کلیدواژه‌ای</a></li>
+<li><a class="reference internal" href="#special-parameters">4.9.3. پارامترهای ویژه</a><ul>
+<li><a class="reference internal" href="#positional-or-keyword-arguments">4.9.3.1. آرگومان‌های موقعیتی یا کلیدواژه‌ای</a></li>
+<li><a class="reference internal" href="#positional-only-parameters">4.9.3.2. پارامترهای فقط موقعیتی</a></li>
+<li><a class="reference internal" href="#keyword-only-arguments">4.9.3.3. آرگومان‌های فقط کلیدواژه‌ای</a></li>
+<li><a class="reference internal" href="#function-examples">4.9.3.4. مثال‌های توابع</a></li>
+<li><a class="reference internal" href="#recap">4.9.3.5. خلاصه</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#arbitrary-argument-lists">4.9.4. فهرست‌های دلخواه آرگومان‌ها</a></li>
+<li><a class="reference internal" href="#unpacking-argument-lists">4.9.5. باز کردن بسته آرگومان‌ها</a></li>
+<li><a class="reference internal" href="#lambda-expressions">4.9.6. عبارت‌های لامبدا</a></li>
+<li><a class="reference internal" href="#documentation-strings">4.9.7. رشته‌های مستندسازی</a></li>
+<li><a class="reference internal" href="#function-annotations">4.9.8. حاشیه‌نویسی‌های تابع</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#intermezzo-coding-style">4.10. میان‌پرده: سبک کدنویسی</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="فصل قبلی"><span class="section-number">3. </span>معرفی غیررسمی پایتون</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="datastructures.html"
+                          title="فصل بعدی"><span class="section-number">5. </span>ساختمان داده‌ها</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/controlflow.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/controlflow.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/controlflow.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </div>
+<div id="sidebarbutton" title="تا کردن نوار کناره">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             >فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="datastructures.html" title="5. ساختمان داده‌ها"
+             >بعدی</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="3. معرفی غیررسمی پایتون"
+             >قبلی</a> |</li>
+
+          <li><img src="https://python.github.io/python-docs-fa/previews/42/_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">4. </span>ابزارهای بیشتر برای کنترل جریان</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>  
+    <div class="footer">
+    &copy; <a href="../copyright.html">حق چاپ</a> 2001 Python Software Foundation.
+    <br>
+    This page is licensed under the Python Software Foundation License Version 2.
+    <br>
+    Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
+    <br>
+    
+      See <a href="/license.html">History and License</a> for more information.<br>
+    
+    
+    <br>
+
+    The Python Software Foundation is a non-profit corporation.
+<a href="https://www.python.org/psf/donations/">Please donate.</a>
+<br>
+    <br>
+      آخرین بروز رسانی در اوت 18, 2026 (05:51 UTC) .
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
+    <br>
+
+    ایجاد شده با<a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+
+  </body>
+</html>
