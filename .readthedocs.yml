@@ -4,8 +4,31 @@ build:
   os: ubuntu-24.04
   tools:
     python: "3.12"
-
   commands:
+    - |
+      set +e
+      if git rev-parse --verify -q HEAD^ >/dev/null; then
+        CHANGED_FILES=$(git diff --name-only HEAD^ HEAD)
+      else
+        CHANGED_FILES=""
+      fi
+      echo "Changed files: $CHANGED_FILES"
+
+      SKIP=1
+      for f in $CHANGED_FILES; do
+        case "$f" in
+          *.po|*.yaml|*.yml)
+            SKIP=0
+            ;;
+        esac
+      done
+
+      if [ -n "$CHANGED_FILES" ] && [ "$SKIP" -eq 1 ]; then
+        echo "No documentation-relevant files changed, skipping build."
+        exit 183
+      fi
+      echo "Continuing build."
+      exit 0
     - git clone --depth 1 --branch v3.14.6 https://github.com/python/cpython venv/cpython
     - pip install -r venv/cpython/Doc/requirements.txt
     - mkdir -p venv/cpython/Doc/locales/fa/LC_MESSAGES
