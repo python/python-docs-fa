@@ -16,8 +16,11 @@ compile_mo.py`).
 import sys
 import os
 
-# venv/cpython/Tools/i18n/msgfmt.py, relative to repo root.
-sys.path.insert(0, os.path.join("venv", "cpython", "Tools", "i18n"))
+_venv_tools = os.environ.get(
+    "MSGFMT_TOOLS_PATH",
+    os.path.join("venv", "cpython", "Tools", "i18n"),
+)
+sys.path.insert(0, _venv_tools)
 import msgfmt  # noqa: E402
 
 

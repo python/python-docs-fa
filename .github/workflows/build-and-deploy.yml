@@ -41,17 +41,10 @@ jobs:
         with:
           path: Doc/locales/fa/LC_MESSAGES
 
-      - name: Strip stray fuzzy markers
-        run: python3 Doc/locales/fa/LC_MESSAGES/scripts/strip_fuzzy.py $(find Doc/locales/fa/LC_MESSAGES -name "*.po" -not -path "*/.git/*")
-
-      - name: Install gettext
-        run: sudo apt-get install -y gettext
-
-      - name: Compile .po files to .mo
-        run: |
-          find Doc/locales/fa/LC_MESSAGES -name "*.po" -not -path "*/.git/*" | while read f; do
-            msgfmt "$f" -o "${f%.po}.mo"
-          done
+      - name: Strip fuzzy markers and compile .po to .mo
+        run: find Doc/locales/fa/LC_MESSAGES -name "*.po" -not -path "*/.git/*" | python3 Doc/locales/fa/LC_MESSAGES/scripts/compile_mo.py
+        env:
+          MSGFMT_TOOLS_PATH: Tools/i18n
 
       - name: Setup problem matcher
         uses: sphinx-doc/github-problem-matcher@v1.1
