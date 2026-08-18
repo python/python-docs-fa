@@ -15,11 +15,11 @@
 
 ## چک‌لیست
 <!-- در هر براکتی که انجام شده، یک x قرار دهید.-->
+- [ ] من موافقت می‌کنم که از [آیین‌نامهٔ رفتاری PSF](https://www.python.org/psf/conduct/) پیروی کنم.
 - [ ] `msgfmt --check` روی فایل‌های تغییر یافته با موفقیت اجرا شده است
 - [ ] `python3 scripts/check_markup.py` روی فایل‌های تغییر یافته اجرا شده است
 - [ ] نشانه‌گذاری‌های Sphinx (`:class:`، `:func:`، کد درون‌خطی) و جای‌گذارها (`%s`، `{name}`) دست‌نخورده مانده‌اند
-- [ ] ترجمه‌ها با [واژه‌نامه (GLOSSARY.md)](GLOSSARY.md) هماهنگ است
+- [ ] ترجمه‌ها با [واژه‌نامه (GLOSSARY.md)](https://github.com/python/python-docs-fa/blob/3.14/GLOSSARY.md) هماهنگ است
 - [ ] رشته‌های `fuzzy` بررسی و در صورت لزوم بازنویسی شده‌اند
-- [ ] فایل [CONTRIBUTING.md](CONTRIBUTING.md) با دقت خوانده شده است.
-
+- [ ] فایل [CONTRIBUTING.md](https://github.com/python/python-docs-fa/blob/3.14/CONTRIBUTING.md) با دقت خوانده شده است.
 <!-- یادآوری: بررسی‌های خودکار (sphinx-lint ،msgfmt ،check_markup و ساخت کامل) در GitHub Actions روی پول‌ریکوئست اجرا می‌شوند. -->
