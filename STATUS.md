@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-08-16)
+(به‌روزرسانی: 2026-08-18)
 
 | File | Translated | Fuzzy |
 |:-----|:-----------:|:-----------:|
@@ -34,7 +34,7 @@
 | tutorial/stdlib2.po | 100.0% | 0.0% |
 | tutorial/venv.po | 100.0% | 0.0% |
 | tutorial/whatnow.po | 100.0% | 0.0% |
-| c-api/dict.po | 1.8% | 0.9% |
+| c-api/dict.po | 2.8% | 0.0% |
 | library/json.po | 1.1% | 0.0% |
 | c-api/arg.po | 0.0% | 0.0% |
 | c-api/buffer.po | 0.0% | 0.0% |
