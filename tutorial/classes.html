@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+<html lang="fa" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="9. کلاسها" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.python.org/3/tutorial/classes.html" />
+<meta property="og:site_name" content="Python documentation" />
+<meta property="og:description" content="کلاسها وسیله‌ای را برای بسته‌بندی کردن داده و عملکرد با هم فراهم می‌کنند. ایجاد یک کلاس جدید، نوع جدیدی ایجاد می‌کند که اجازه می‌دهد موارد جدیدی از آن نوع ساخته شود. هر نمونه از کلاس می‌تواند صفاتی..." />
+<meta property="og:image" content="_static/og-image.png" />
+<meta property="og:image:alt" content="Python documentation" />
+<meta name="description" content="کلاسها وسیله‌ای را برای بسته‌بندی کردن داده و عملکرد با هم فراهم می‌کنند. ایجاد یک کلاس جدید، نوع جدیدی ایجاد می‌کند که اجازه می‌دهد موارد جدیدی از آن نوع ساخته شود. هر نمونه از کلاس می‌تواند صفاتی..." />
+<meta name="theme-color" content="#3776ab">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+
+    <title>9. کلاسها &#8212; مستندات Python3.14.6</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=234b1a7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=4365c8fe" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=0fc419ee" />
+    
+    <script src="../_static/documentation_options.js?v=e254dbbb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=5df48d09"></script>
+    
+    <script src="../_static/sidebar.js"></script>
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="جستجو در مستندات Python3.14.6"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="درباره این مستندات" href="../about.html" />
+    <link rel="index" title="فهرست" href="../genindex.html" />
+    <link rel="search" title="جستجو" href="../search.html" />
+    <link rel="copyright" title="حق چاپ" href="../copyright.html" />
+    <link rel="next" title="10. نگاهی کوتاه به کتابخانهٔ استاندارد" href="stdlib.html" />
+    <link rel="prev" title="8. خطاها و استثناها" href="errors.html" />
+    
+      
+      <link rel="canonical" href="https://docs.python.org/3/tutorial/classes.html">
+      
+    
+
+    
+    <style>
+      @media only screen {
+        table.full-width-table {
+            width: 100%;
+        }
+      }
+    </style>
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg">
+            <script type="text/javascript" src="../_static/copybutton.js"></script>
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/search-focus.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
+            <script type="text/javascript" src="../_static/rtd_switcher.js"></script>
+            <meta name="readthedocs-addons-api-version" content="1">
+
+  </head>
+<body>
+<div class="mobile-nav">
+    <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
+           aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu">
+    <nav class="nav-content" role="navigation">
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Python logo">
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q">
+                <input type="submit" value="برو">
+            </form>
+        </span>
+    </nav>
+    <div class="menu-wrapper">
+        <nav class="menu" role="navigation" aria-label="main navigation">
+            <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">9. کلاسها</a><ul>
+<li><a class="reference internal" href="#a-word-about-names-and-objects">9.1. سخنی درباره‌ی نام‌ها و اشیاء</a></li>
+<li><a class="reference internal" href="#python-scopes-and-namespaces">9.2. محدوده‌ها و فضای نام‌ها در پایتون</a><ul>
+<li><a class="reference internal" href="#scopes-and-namespaces-example">9.2.1. مثال محدوده‌ها و فضای نام‌ها</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#a-first-look-at-classes">9.3. در نگاه اول به کلاسها</a><ul>
+<li><a class="reference internal" href="#class-definition-syntax">9.3.1. قواعد تعریف کلاس</a></li>
+<li><a class="reference internal" href="#class-objects">9.3.2. اشیاء کلاس</a></li>
+<li><a class="reference internal" href="#instance-objects">9.3.3. اشیاء نمونه</a></li>
+<li><a class="reference internal" href="#method-objects">9.3.4. متد اشیاء</a></li>
+<li><a class="reference internal" href="#class-and-instance-variables">9.3.5. کلاس و متغیر‌های نمونه</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#random-remarks">9.4. نکات پراکنده</a></li>
+<li><a class="reference internal" href="#inheritance">9.5. ارث‌بری</a><ul>
+<li><a class="reference internal" href="#multiple-inheritance">9.5.1. ارث‌بری چندگانه</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#private-variables">9.6. متغیر‌های خصوصی</a></li>
+<li><a class="reference internal" href="#odds-and-ends">9.7. نکات متفرقه</a></li>
+<li><a class="reference internal" href="#iterators">9.8. تکرارگرها</a></li>
+<li><a class="reference internal" href="#generators">9.9. تولیدگر</a></li>
+<li><a class="reference internal" href="#generator-expressions">9.10. عبارات تولیدگر</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="errors.html"
+                          title="فصل قبلی"><span class="section-number">8. </span>خطاها و استثناها</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="stdlib.html"
+                          title="فصل بعدی"><span class="section-number">10. </span>نگاهی کوتاه به کتابخانهٔ استاندارد</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/classes.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/classes.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/classes.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </nav>
+    </div>
+</div>
+
+  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             accesskey="I">فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="stdlib.html" title="10. نگاهی کوتاه به کتابخانهٔ استاندارد"
+             accesskey="N">بعدی</a> |</li>
+        <li class="right" >
+          <a href="errors.html" title="8. خطاها و استثناها"
+             accesskey="P">قبلی</a> |</li>
+
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">9. </span>کلاسها</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="classes">
+<span id="tut-classes"></span><h1><span class="section-number">9. </span>کلاسها<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h1>
+<p>کلاسها وسیله‌ای را برای بسته‌بندی کردن داده و عملکرد با هم فراهم می‌کنند. ایجاد یک کلاس جدید، نوع جدیدی ایجاد می‌کند که اجازه می‌دهد موارد جدیدی از آن نوع ساخته شود. هر نمونه از کلاس می‌تواند صفاتی داشته باشد که به آن متصل شده‌اند تا وضعیت آن را حفظ کنند. نمونه‌های کلاس می‌توانند همچنین متد‌هایی (که توسط کلاس تعریف شده‌اند) داشته باشند تا وضعیت آن را تغییر دهند.</p>
+<p>در مقایسه با دیگر زبانهای برنامه‌نویسی، مکانیزم کلاس در پایتون کلاسها را با حداقل قواعد و معناشناسی جدید اضافه می‌کند. این مکانیزم ترکیبی از مکانیزم‌های کلاسی است که در C++ و Modula-3 یافت می‌شود. کلاسهای پایتون تمام ویژگیهای استاندارد برنامه‌نویسی شیءگرا را فراهم می‌کنند: مکانیزم ارث بری کلاسها اجازه می‌دهد کلاسهای پایه‌ی متعددی داشته باشید، یک کلاس مشتق می‌تواند هر یک از متد‌های کلاسهای پایه‌ی خود را بازنویسی کند و یک متد می‌تواند متدی از کلاس پایه با همان نام را فراخوانی کند. اشیاء می‌توانند حاوی مقادیر و انواع داده‌ای دلخواه باشند. همان‌طور که برای ماژول‌ها صادق است، کلاسها نیز از طبیعت پویا در پایتون برخوردارند: آن‌ها در زمان اجرا ایجاد می‌شوند و می‌توانند پس از ایجاد بیشتر تغییر داده شوند.</p>
+<p>در اصطلاحات C++، معمولاً اعضای کلاس (از جمله اعضای داده) <em>public</em> هستند (به جز موردی که در پایین <a class="reference internal" href="#tut-private"><span class="std std-ref">متغیر‌های خصوصی</span></a> ذکر شده است)، و تمامی توابع عضو مجازی  هستند. همان‌طور که در Modula-3، هیچ میانبر‌هایی برای ارجاع به اعضای شیء از متد‌های آن وجود ندارد: تابع متد با یک آرگومان اول صریح که نمایانگر شیء است، اعلام می‌شود که این آرگومان به صورت ضمنی توسط فراخوانی فراهم می‌شود. همان‌طور که در Smalltalk، خود کلاسها اشیاء هستند. این ویژگی معناشناسی برای وارد کردن و تغییر نام را فراهم می‌آورد. برخلاف C++ و Modula-3، نوع‌های داخلی می‌توانند به‌عنوان کلاسهای پایه برای توسعه توسط کاربر استفاده شوند. همچنین، مانند C++، بیشتر عملگر‌های داخلی با نحوی خاص (عملگر‌های ریاضی، زیرنویسی و غیره) می‌توانند برای نمونه‌های کلاس بازتعریف شوند.</p>
+<p>(با نبود اصطلاحات پذیرفته شده جهانی برای صحبت درباره‌ی کلاسها، گاهی از اصطلاحات Smalltalk و C++ استفاده خواهم کرد. من از اصطلاحات Modula-3 استفاده می‌کردم، چون معنای شیء‌گرای آن به پایتون نزدیک‌تر از C++ است، اما انتظار دارم که تعداد کمی از خوانندگان با آن آشنا باشند.)</p>
+<section id="a-word-about-names-and-objects">
+<span id="tut-object"></span><h2><span class="section-number">9.1. </span>سخنی درباره‌ی نام‌ها و اشیاء<a class="headerlink" href="#a-word-about-names-and-objects" title="Link to this heading">¶</a></h2>
+<p>اشیاء هویت فردی دارند و چندین نام (در چندین محدوده) می‌توانند به یک شیء مشخص متصل شوند. این در زبانهای دیگر با نام «اسم‌های مستعار» شناخته می‌شود. این ویژگی معمولاً در نگاه اول به پایتون چندان جلب توجه نمی‌کند و هنگام کار با انواع پایه‌ی تغییرناپذیر (اعداد، رشته‌ها، تاپل‌ها) می‌توان آن را نادیده گرفت. با این حال، نام‌های مستعار می‌توانند تأثیری شگفت‌آور بر معناشناسی کد پایتونی داشته باشند، به‌ویژه هنگامی که با اشیاء تغییرپذیر مانند فهرستها، دیکشنری‌ها و بیشتر انواع دیگر سروکار داریم. این ویژگی معمولاً به سود برنامه تمام می‌شود، چون نام‌های مستعار از برخی جهات مانند اشاره‌گرها (pointer) رفتار می‌کنند. برای مثال، ارسال یک شیء به‌عنوان آرگومان ارزان است، چون پیاده‌سازی فقط یک اشاره‌گر را ارسال می‌کند؛ و اگر تابعی شیء‌ای را که به‌عنوان آرگومان دریافت کرده تغییر دهد، فراخوان‌نده تغییر را مشاهده خواهد کرد --- این کار نیاز به دو مکانیزم متفاوت برای ارسال آرگومان (مانند آنچه در پاسکال وجود دارد) را از بین می‌برد.</p>
+</section>
+<section id="python-scopes-and-namespaces">
+<span id="tut-scopes"></span><h2><span class="section-number">9.2. </span>محدوده‌ها و فضای نام‌ها در پایتون<a class="headerlink" href="#python-scopes-and-namespaces" title="Link to this heading">¶</a></h2>
+<p>قبل از معرفی کلاسها، ابتدا باید چیزی درباره‌ی قوانین محدوده در پایتون به شما بگویم. تعریف کلاسها چند ترفند جالب با فضا‌های نام انجام می‌دهد و برای اینکه به‌طور کامل متوجه شوید چه می‌گذرد، باید بدانید که محدوده‌ها و فضا‌های نام چگونه کار می‌کنند. ضمناً، آگاهی از این موضوع برای هر برنامه‌نویس پیشرفته‌ی پایتون مفید است.</p>
+<p>بیایید با چند تعریف شروع کنیم.</p>
+<p>«فضای نام»  <em>namespace</em> نگاشتی است از نام‌ها به اشیا. بیشتر فضای نام‌ها در حال حاضر به‌صورت دیکشنری‌های پایتون پیاده‌سازی شده‌اند، اما معمولاً این موضوع (به جز در بازدهی قابل مشاهده نیست و ممکن است در آینده تغییر کند. مثالهایی از فضای نام عبارت‌اند از: مجموعه نام‌های داخلی (که شامل توابعی مثل <a class="reference internal" href="../library/functions.html#abs" title="abs"><code class="xref py py-func docutils literal notranslate"><span class="pre">abs()</span></code></a> و نام‌های استثنائات داخلی است)؛ نام‌های سراسری در یک ماژول؛ و نام‌های محلی در یک فراخوانی تابع. به نوعی، مجموعه صفات «attributes» یک شیء نیز یک فضای نام را تشکیل می‌دهد. نکته‌ی مهم درباره‌ی فضای نام‌ها این است که هیچ ارتباطی بین نام‌ها در فضای نام‌های مختلف وجود ندارد؛ برای مثال، دو ماژول مختلف می‌توانند هر دو تابعی با نام <code class="docutils literal notranslate"><span class="pre">maximize</span></code> تعریف کنند بدون اینکه ابهامی پیش بیاید — استفاده‌کنندگان از ماژول‌ها باید نام ماژول را به‌عنوان پیشوند بیاورند.</p>
+<p>به‌هرحال، من واژه‌ی <em>ویژگی</em> «<em>attribute</em>» را برای هر نامی که بعد از یک نقطه بیاید به کار می‌برم — برای مثال، در عبارت <code class="docutils literal notranslate"><span class="pre">z.real</span></code>, <code class="docutils literal notranslate"><span class="pre">real</span></code> یک ویژگی شیء <code class="docutils literal notranslate"><span class="pre">z</span></code> است. از نظر دقیق‌تر، ارجاع به نام‌ها در ماژول‌ها نیز نوعی ارجاع به ویژگی محسوب می‌شود: در عبارت <code class="docutils literal notranslate"><span class="pre">modname.funcname</span></code>, <code class="docutils literal notranslate"><span class="pre">modname</span></code>  یک شیء ماژول است و <code class="docutils literal notranslate"><span class="pre">funcname</span></code> یکی از ویژگیهای آن است. در این حالت، نگاشتی ساده و مستقیم بین ویژگیهای ماژول و نام‌های سراسری تعریف‌شده در آن وجود دارد: هر دو یک فضای نام (namespace) را به اشتراک می‌گذارند! <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>ویژگیها ممکن است فقط خواندنی یا قابل نوشتن باشند. در حالت دوم، اختصاص دادن به ویژگیها ممکن است. ویژگیهای ماژول قابل نوشتن هستند: می‌توانید <code class="docutils literal notranslate"><span class="pre">modname.the_answer</span> <span class="pre">=</span> <span class="pre">42</span></code> را بنویسید. ویژگیهای قابل نوشتن را می‌توان با دستور <a class="reference internal" href="../reference/simple_stmts.html#del"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">del</span></code></a> نیز حذف کرد. به‌عنوان مثال، <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">modname.the_answer</span></code> ویژگی <code class="xref py py-attr docutils literal notranslate"><span class="pre">the_answer</span></code> را از شیئی که توسط <code class="docutils literal notranslate"><span class="pre">modname</span></code> نامگذاری شده است حذف خواهد کرد.</p>
+<p>فضا‌های نام در لحظات مختلف ایجاد می‌شوند و دارای طول عمر‌های متفاوتی هستند. فضای نام که شامل نام‌های داخلی است، زمانی که مفسر پایتون شروع به کار می‌کند ایجاد می‌شود و هرگز حذف نمی‌شود. فضای نام عمومی برای یک ماژول زمانی که تعریف ماژول خوانده می‌شود ایجاد می‌گردد؛ به‌طور معمول، فضا‌های نام ماژول نیز تا زمانی که مفسر پایان یابد باقی می‌مانند. دستوراتی که توسط اجرای سطح بالای مفسر، یا از فایل اسکریپت خوانده شده یا به‌طور تعاملی اجرا می‌شوند، به‌عنوان بخشی از ماژولی به نام <a class="reference internal" href="../library/__main__.html#module-__main__" title="__main__: The environment where top-level code is run. Covers command-line interfaces, import-time behavior, and ``__name__ == '__main__'``."><code class="xref py py-mod docutils literal notranslate"><span class="pre">__main__</span></code></a> در نظر گرفته می‌شوند، بنابراین آن‌ها فضای نام عمومی خود را دارند. (نام‌های درون‌ساخت نیز در واقع در یک ماژول قرار دارند؛ این ماژول <a class="reference internal" href="../library/builtins.html#module-builtins" title="builtins: The module that provides the built-in namespace."><code class="xref py py-mod docutils literal notranslate"><span class="pre">builtins</span></code></a> نامیده می‌شود.)</p>
+<p>فضای نام محلی برای یک تابع زمانی ایجاد می‌شود که تابع فراخوانی شود و زمانی که تابع بازمی‌گردد یا استثنا‌ای پرتاب می‌کند که در درون تابع مدیریت نمی‌شود، حذف می‌گردد. (در واقع، «فراموش شدن» توصیف بهتری برای چیزی است که واقعاً اتفاق می‌افتد.) البته، هر فراخوانی بازگشتی، فضای نام محلی خودش را دارد.</p>
+<p>یک <em>دامنه</em> «<em>scope</em>» یک ناحیه‌ی متنی از یک برنامه‌ی پایتون است که در آن یک فضای نام «namespace» به‌طور مستقیم قابل دستیابی است. &quot;به‌طور مستقیم قابل دستیابی&quot; در اینجا به این معنی است که یک ارجاع بدون صلاحیت به یک نام تلاش می‌کند تا نام «name» را در فضای نام «namespace» پیدا کند.</p>
+<p>اگرچه محدوده‌ها به‌صورت ایستا تعیین می‌شوند، اما به‌صورت پویا مورد استفاده قرار می‌گیرند. در هر زمان حین اجرا، ۳ یا ۴ محدوده‌ی تو در تو وجود دارند که فضاهای نام آن‌ها مستقیماً قابل دسترسی هستند:</p>
+<ul class="simple">
+<li><p>درونی‌ترین محدوده، که ابتدا جست‌وجو می‌شود، شامل نام‌های محلی است</p></li>
+<li><p>محدوده‌های هر تابع محاط‌شونده، که جست‌وجو از نزدیک‌ترین محدوده‌ی محاط‌شونده آغاز می‌شود، شامل نام‌های غیرمحلی و همچنین غیرسراسری هستند</p></li>
+<li><p>محدوده‌ی قبل از آخر شامل نام‌های عمومی ماژول جاری است</p></li>
+<li><p>بیرونی‌ترین محدوده (که آخر از همه جست‌وجو می‌شود) فضای نامی است که شامل نام‌های توکار است</p></li>
+</ul>
+<p>اگر یک نام به‌عنوان سراسری اعلام شود، تمام ارجاعها و تخصیص‌ها مستقیماً به محدوده‌ی یکی‌مانده‌به‌آخر که شامل نام‌های سراسری ماژول است، می‌روند. برای اتصال مجدد متغیرهایی که در خارج از درونی‌ترین محدوده یافت می‌شوند، می‌توان از دستور <a class="reference internal" href="../reference/simple_stmts.html#nonlocal"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">nonlocal</span></code></a> استفاده کرد؛ اگر به‌عنوان nonlocal اعلام نشوند، آن متغیرها فقط‌خواندنی هستند (تلاش برای نوشتن در چنین متغیری، صرفاً یک متغیر محلی <em>جدید</em> در درونی‌ترین محدوده ایجاد می‌کند و متغیر بیرونی با همان نام را بدون تغییر باقی می‌گذارد).</p>
+<p>معمولاً، محدوده‌ی محلی به نام‌های محلی تابع جاری (از نظر متنی) ارجاع می‌دهد. در خارج از توابع، محدوده‌ی محلی به همان فضای نامی ارجاع می‌دهد که محدوده‌ی سراسری به آن ارجاع می‌دهد: فضای نام ماژول. تعاریف کلاسها، فضای نام دیگری را در محدوده‌ی محلی قرار می‌دهند.</p>
+<p>درک این نکته مهم است که محدوده‌ها به‌صورت متنی (بر اساس جایگاه در کد) تعیین می‌شوند: محدوده‌ی سراسری تابعی که در یک ماژول تعریف شده است، همان فضای نام آن ماژول است، فرقی نمی‌کند که تابع از کجا یا با چه نام مستعاری فراخوانی شود. از سوی دیگر، جست‌وجوی واقعی برای نام‌ها به‌صورت پویا (داینامیک) و در زمان اجرا انجام می‌شود --- با این حال، تعریف زبان به سمت و سوی حلِ ایستا (استاتیک) نام‌ها در زمان «کامپایل» پیش می‌رود، پس به حلِ پویای نام‌ها اعتماد نکنید! (در واقع، متغیرهای محلی از قبل به‌صورت ایستا تعیین می‌شوند.)</p>
+<p>یک ویژگی خاص پایتون این است که --- اگر دستور <a class="reference internal" href="../reference/simple_stmts.html#global"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">global</span></code></a> یا <a class="reference internal" href="../reference/simple_stmts.html#nonlocal"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">nonlocal</span></code></a> فعال نباشد --- تخصیص‌های (مقداردهی‌های) نام‌ها همیشه به درونی‌ترین محدوده (محلی‌ترین) می‌روند. تخصیص‌ها داده‌ها را کپی نمی‌کنند --- بلکه فقط نام‌ها را به اشیاء متصل می‌کنند. همین موضوع در مورد حذف‌ها نیز صادق است: دستور <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">x</span></code> اتصال <code class="docutils literal notranslate"><span class="pre">x</span></code> را از فضای نامی که توسط محدوده‌ی محلی ارجاع داده شده است، حذف می‌کند. در واقع، تمام عملیاتی که نام‌های جدیدی معرفی می‌کنند از محدوده‌ی محلی استفاده می‌کنند: به‌ویژه، دستورات <a class="reference internal" href="../reference/simple_stmts.html#import"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">import</span></code></a> و تعاریف توابع، نام ماژول یا تابع را در محدوده‌ی محلی متصل می‌کنند.</p>
+<p>از دستور <a class="reference internal" href="../reference/simple_stmts.html#global"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">global</span></code></a> می‌توان برای نشان دادن این استفاده کرد که متغیرهای خاصی در محدوده‌ی سراسری قرار دارند و باید در همان محدوده دوباره متصل شوند؛ دستور <a class="reference internal" href="../reference/simple_stmts.html#nonlocal"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">nonlocal</span></code></a> نشان می‌دهد که متغیرهای خاصی در یک محدوده‌ی محاط‌شونده قرار دارند و باید در آن محدوده دوباره متصل شوند.</p>
+<section id="scopes-and-namespaces-example">
+<span id="tut-scopeexample"></span><h3><span class="section-number">9.2.1. </span>مثال محدوده‌ها و فضای نام‌ها<a class="headerlink" href="#scopes-and-namespaces-example" title="Link to this heading">¶</a></h3>
+<p>این مثالی است که نحوه‌ی ارجاع به محدوده‌ها و فضای نام‌های مختلف، و تأثیر دستورات <a class="reference internal" href="../reference/simple_stmts.html#global"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">global</span></code></a> و <a class="reference internal" href="../reference/simple_stmts.html#nonlocal"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">nonlocal</span></code></a> بر اتصال متغیرها را نشان می‌دهد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">scope_test</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">do_local</span><span class="p">():</span>
+        <span class="n">spam</span> <span class="o">=</span> <span class="s2">"local spam"</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">do_nonlocal</span><span class="p">():</span>
+        <span class="k">nonlocal</span> <span class="n">spam</span>
+        <span class="n">spam</span> <span class="o">=</span> <span class="s2">"nonlocal spam"</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">do_global</span><span class="p">():</span>
+        <span class="k">global</span> <span class="n">spam</span>
+        <span class="n">spam</span> <span class="o">=</span> <span class="s2">"global spam"</span>
+
+    <span class="n">spam</span> <span class="o">=</span> <span class="s2">"test spam"</span>
+    <span class="n">do_local</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"After local assignment:"</span><span class="p">,</span> <span class="n">spam</span><span class="p">)</span>
+    <span class="n">do_nonlocal</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"After nonlocal assignment:"</span><span class="p">,</span> <span class="n">spam</span><span class="p">)</span>
+    <span class="n">do_global</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"After global assignment:"</span><span class="p">,</span> <span class="n">spam</span><span class="p">)</span>
+
+<span class="n">scope_test</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"In global scope:"</span><span class="p">,</span> <span class="n">spam</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>خروجی کد مثال:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>After local assignment: test spam
+After nonlocal assignment: nonlocal spam
+After global assignment: nonlocal spam
+In global scope: global spam
+</pre></div>
+</div>
+<p>توجه کنید که تخصیص <em>محلی</em> (که به‌صورت پیش‌فرض است)، اتصال <em>spam</em> را در <em>scope_test</em> تغییر نداد. تخصیص <a class="reference internal" href="../reference/simple_stmts.html#nonlocal"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">nonlocal</span></code></a>، اتصال <em>spam</em> را در <em>scope_test</em> تغییر داد، و تخصیص <a class="reference internal" href="../reference/simple_stmts.html#global"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">global</span></code></a>، اتصال را در سطح ماژول تغییر داد.</p>
+<p>همچنین می‌توانید ببینید که قبل از تخصیص <a class="reference internal" href="../reference/simple_stmts.html#global"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">global</span></code></a>، هیچ اتصال قبلی برای <em>spam</em> وجود نداشت.</p>
+</section>
+</section>
+<section id="a-first-look-at-classes">
+<span id="tut-firstclasses"></span><h2><span class="section-number">9.3. </span>در نگاه اول به کلاسها<a class="headerlink" href="#a-first-look-at-classes" title="Link to this heading">¶</a></h2>
+<p>کلاسها کمی نحو جدید، سه نوع شیء جدید، و مفاهیم معنایی جدیدی را معرفی می‌کنند.</p>
+<section id="class-definition-syntax">
+<span id="tut-classdefinition"></span><h3><span class="section-number">9.3.1. </span>قواعد تعریف کلاس<a class="headerlink" href="#class-definition-syntax" title="Link to this heading">¶</a></h3>
+<p>ساده‌ترین شکل تعریف کلاس به این صورت است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ClassName</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">statement</span><span class="o">-</span><span class="mi">1</span><span class="o">&gt;</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">&lt;</span><span class="n">statement</span><span class="o">-</span><span class="n">N</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>تعاریف کلاسها، مانند تعاریف توابع (دستورات <a class="reference internal" href="../reference/compound_stmts.html#def"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">def</span></code></a>)، باید قبل از اینکه تأثیری داشته باشند، اجرا شوند. (به‌طور تئوری می‌توانید یک تعریف کلاس را در یک شاخه از دستور <a class="reference internal" href="../reference/compound_stmts.html#if"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">if</span></code></a> یا داخل یک تابع قرار دهید.)</p>
+<p>در عمل، دستورات داخل یک تعریف کلاس معمولاً تعاریف توابع هستند، اما دستورات دیگری نیز مجاز هستند و گاهی مفیدند --- بعداً به این موضوع بازخواهیم گشت. تعاریف توابع داخل یک کلاس معمولاً دارای شکل خاصی از فهرست آرگومان‌ها هستند که توسط قراردادهای فراخوانی برای متدها تعیین می‌شود --- باز هم، این موضوع بعداً توضیح داده می‌شود.</p>
+<p>هنگامی که یک تعریف کلاس وارد می‌شود، یک فضای نام جدید ایجاد شده و به‌عنوان محدوده‌ی محلی استفاده می‌شود --- بنابراین، تمام تخصیص‌ها به متغیرهای محلی به این فضای نام جدید می‌روند. به‌ویژه، تعاریف توابع، نام تابع جدید را در اینجا متصل می‌کنند.</p>
+<p>هنگامی که یک تعریف کلاس به‌طور عادی (با رسیدن به انتها) ترک می‌شود، یک <em>شیء کلاس</em> ایجاد می‌شود. این در اصل یک پوسته (wrapper) پیرامون محتویات فضای نامی است که توسط تعریف کلاس ایجاد شده است؛ در بخش بعدی بیشتر درباره‌ی اشیاء کلاس خواهیم آموخت. محدوده‌ی محلی اصلی (همان محدوده‌ای که درست قبل از ورود به تعریف کلاس فعال بود) بازیابی می‌شود، و شیء کلاس در اینجا به نام کلاسی که در سرآیند تعریف کلاس داده شده است، متصل می‌شود (<code class="xref py py-class docutils literal notranslate"><span class="pre">ClassName</span></code> در مثال).</p>
+</section>
+<section id="class-objects">
+<span id="tut-classobjects"></span><h3><span class="section-number">9.3.2. </span>اشیاء کلاس<a class="headerlink" href="#class-objects" title="Link to this heading">¶</a></h3>
+<p>اشیاء کلاس از دو نوع عملیات پشتیبانی می‌کنند: ارجاع به ویژگیها و نمونه‌سازی.</p>
+<p><em>ارجاع به ویژگیها</em> از همان دستور زبان استاندارد که برای همه‌ی ارجاعها به ویژگیها در پایتون استفاده می‌شود، پیروی می‌کند: <code class="docutils literal notranslate"><span class="pre">obj.name</span></code>. نام‌های ویژگی معتبر، همه‌ی نام‌هایی هستند که در هنگام ایجاد شیء کلاس، در فضای نام آن کلاس وجود داشته‌اند. بنابراین، اگر تعریف کلاس به این شکل بود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A simple example class"""</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">12345</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">'hello world'</span>
+</pre></div>
+</div>
+<p>سپس <code class="docutils literal notranslate"><span class="pre">MyClass.i</span></code> و <code class="docutils literal notranslate"><span class="pre">MyClass.f</span></code> ارجاعهای ویژگی معتبری هستند که به‌ترتیب یک عدد صحیح و یک شیء تابع را برمی‌گردانند. به ویژگیهای کلاس نیز می‌توان مقدار داد، بنابراین می‌توانید مقدار <code class="docutils literal notranslate"><span class="pre">MyClass.i</span></code> را با تخصیص (مقداردهی) تغییر دهید. <a class="reference internal" href="../reference/datamodel.html#type.__doc__" title="type.__doc__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__doc__</span></code></a> نیز یک ویژگی معتبر است که رشته‌ی مستند (docstring) متعلق به کلاس را برمی‌گرداند: <code class="docutils literal notranslate"><span class="pre">&quot;A</span> <span class="pre">simple</span> <span class="pre">example</span> <span class="pre">class&quot;</span></code>.</p>
+<p><em>نمونه‌سازی</em> کلاس از نماد توابع استفاده می‌کند. فقط تصور کنید که شیء کلاس، یک تابع بدون پارامتر است که یک نمونه‌ی جدید از کلاس را برمی‌گرداند. برای مثال (با فرض کلاس بالا):</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>یک <em>نمونه</em> جدید از کلاس ایجاد می‌کند و این شیء را به متغیر محلی <code class="docutils literal notranslate"><span class="pre">x</span></code> تخصیص می‌دهد.</p>
+<p>عملیات نمونه‌سازی (که «فراخوانی» یک شیء کلاس است) یک شیء خالی ایجاد می‌کند. بسیاری از کلاسها ترجیح می‌دهند اشیایی با نمونه‌هایی ایجاد کنند که به یک حالت اولیه‌ی خاص سفارشی‌سازی شده‌اند. بنابراین، یک کلاس ممکن است یک متد ویژه به نام <a class="reference internal" href="../reference/datamodel.html#object.__init__" title="object.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a> تعریف کند، مانند این:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>وقتی یک کلاس یک متد <a class="reference internal" href="../reference/datamodel.html#object.__init__" title="object.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a> تعریف می‌کند، نمونه‌سازی کلاس به‌طور خودکار <code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code> را برای نمونه‌ی تازه‌ایجادشده‌ی کلاس فراخوانی می‌کند. بنابراین در این مثال، می‌توان یک نمونه‌ی جدید و مقداردهی‌شده را با دستور زیر به‌دست آورد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>البته، متد <a class="reference internal" href="../reference/datamodel.html#object.__init__" title="object.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a> ممکن است برای انعطاف‌پذیری بیشتر، آرگومان‌هایی داشته باشد. در آن صورت، آرگومان‌هایی که به عملگر نمونه‌سازی کلاس داده می‌شوند، به <code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code> منتقل می‌شوند. برای مثال،</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Complex</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">realpart</span><span class="p">,</span> <span class="n">imagpart</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">realpart</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="n">imagpart</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">i</span>
+<span class="go">(3.0, -4.5)</span>
+</pre></div>
+</div>
+</section>
+<section id="instance-objects">
+<span id="tut-instanceobjects"></span><h3><span class="section-number">9.3.3. </span>اشیاء نمونه<a class="headerlink" href="#instance-objects" title="Link to this heading">¶</a></h3>
+<p>حالا با اشیاء نمونه چه کاری می‌توانیم انجام دهیم؟ تنها عملیاتی که اشیاء نمونه می‌فهمند، ارجاع به ویژگیها (attribute references) است. دو نوع نام ویژگی معتبر وجود دارد: ویژگیهای داده (data attributes) و متدها (methods).</p>
+<p><em>ویژگیهای داده</em> معادل «متغیرهای نمونه» در زبان اسمالتاک و «عضوهای داده» در ++C هستند. ویژگیهای داده نیازی به اعلام ندارند؛ مانند متغیرهای محلی، هنگامی که برای اولین بار به آنها مقدار داده می‌شود، به‌وجود می‌آیند. برای مثال، اگر <code class="docutils literal notranslate"><span class="pre">x</span></code> نمونه‌ای از <code class="xref py py-class docutils literal notranslate"><span class="pre">MyClass</span></code> باشد که در بالا ایجاد شده است، قطعه کد زیر مقدار <code class="docutils literal notranslate"><span class="pre">16</span></code> را چاپ می‌کند، بدون اینکه هیچ اثری از خود بر جای بگذارد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">x</span><span class="o">.</span><span class="n">counter</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">counter</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">counter</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">x</span><span class="o">.</span><span class="n">counter</span>
+</pre></div>
+</div>
+<p>نوع دیگر ارجاع به ویژگی نمونه، <em>متد</em> است. متد، تابعی است که «به» یک شیء تعلق دارد.</p>
+<p id="index-0">نام‌های متد معتبر یک شیء نمونه به کلاس آن بستگی دارد. طبق تعریف، تمام ویژگیهای یک کلاس که شیء تابع هستند، متدهای متناظر با نمونه‌های آن را تعریف می‌کنند. بنابراین در مثال ما، <code class="docutils literal notranslate"><span class="pre">x.f</span></code> یک ارجاع متد معتبر است، زیرا <code class="docutils literal notranslate"><span class="pre">MyClass.f</span></code> یک تابع است، اما <code class="docutils literal notranslate"><span class="pre">x.i</span></code> معتبر نیست، زیرا <code class="docutils literal notranslate"><span class="pre">MyClass.i</span></code> تابع نیست. اما <code class="docutils literal notranslate"><span class="pre">x.f</span></code> با <code class="docutils literal notranslate"><span class="pre">MyClass.f</span></code> یکسان نیست --- بلکه یک <em>شیء متد</em> است، نه یک شیء تابع.</p>
+</section>
+<section id="method-objects">
+<span id="tut-methodobjects"></span><h3><span class="section-number">9.3.4. </span>متد اشیاء<a class="headerlink" href="#method-objects" title="Link to this heading">¶</a></h3>
+<p>معمولاً، یک متد بلافاصله پس از اتصال فراخوانی می‌شود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">f</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>اگر <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">MyClass()</span></code>، همان‌طور که در بالا ذکر شد، این (فراخوانی) رشته‌ی <code class="docutils literal notranslate"><span class="pre">'hello</span> <span class="pre">world'</span></code> را برمی‌گرداند. با این حال، لزومی ندارد که یک متد بلافاصله فراخوانی شود: <code class="docutils literal notranslate"><span class="pre">x.f</span></code> یک شیء متد است و می‌توان آن را ذخیره کرده و در زمان دیگری فراخوانی کرد. برای مثال:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">xf</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">f</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">xf</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>تا پایان زمان به چاپ <code class="docutils literal notranslate"><span class="pre">hello</span> <span class="pre">world</span></code> ادامه می‌دهد.</p>
+<p>دقیقاً وقتی یک متد فراخوانی می‌شود، چه اتفاقی می‌افتد؟ احتمالاً متوجه شده‌اید که <code class="docutils literal notranslate"><span class="pre">x.f()</span></code> در بالا بدون هیچ آرگومانی فراخوانی شد، حتی اگر تعریف تابع <code class="xref py py-meth docutils literal notranslate"><span class="pre">f()</span></code> یک آرگومان را مشخص کرده بود. چه بر سر آن آرگومان آمد؟ مسلماً پایتون وقتی یک تابع که به آرگومان نیاز دارد، بدون هیچ آرگومانی فراخوانی می‌شود، یک استثنا ایجاد می‌کند --- حتی اگر آن آرگومان واقعاً استفاده نشود...</p>
+<p>در واقع، شاید پاسخ را حدس زده باشید: نکته‌ی ویژه در مورد متدها این است که شیء نمونه به‌عنوان اولین آرگومان تابع ارسال می‌شود. در مثال ما، فراخوانی <code class="docutils literal notranslate"><span class="pre">x.f()</span></code> دقیقاً معادل <code class="docutils literal notranslate"><span class="pre">MyClass.f(x)</span></code> است. به طور کلی، فراخوانی یک متد با فهرستی از <em>n</em> آرگومان معادل فراخوانی تابع متناظر با فهرست آرگومانی است که با قرار دادن شیء نمونه‌ی متد قبل از اولین آرگومان ایجاد می‌شود.</p>
+<p>به طور کلی، متدها به صورت زیر کار می‌کنند. هنگامی که به یک ویژگی غیرداده‌ای از یک نمونه ارجاع داده می‌شود، کلاس آن نمونه جست‌وجو می‌شود. اگر آن نام نشان‌دهنده‌ی یک ویژگی کلاس معتبر باشد که یک شیء تابع است، ارجاعات به هر دو شیء نمونه و شیء تابع در یک شیء متد بسته‌بندی می‌شوند. هنگامی که شیء متد با یک فهرست آرگومان فراخوانی می‌شود، یک فهرست آرگومان جدید از شیء نمونه و فهرست آرگومان ساخته می‌شود و شیء تابع با این فهرست آرگومان جدید فراخوانی می‌شود.</p>
+</section>
+<section id="class-and-instance-variables">
+<span id="tut-class-and-instance-variables"></span><h3><span class="section-number">9.3.5. </span>کلاس و متغیر‌های نمونه<a class="headerlink" href="#class-and-instance-variables" title="Link to this heading">¶</a></h3>
+<p>به‌طور کلی، متغیرهای نمونه برای داده‌هایی هستند که مختص به هر نمونه و متغیرهای کلاس برای ویژگیها و متدهایی هستند که بین همه‌ی نمونه‌ها از آن کلاس مشترک هستند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Dog</span><span class="p">:</span>
+
+    <span class="n">kind</span> <span class="o">=</span> <span class="s1">'canine'</span>         <span class="c1"># متغیر کلاسی که بین همهٔ نمونه‌ها مشترک است</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>    <span class="c1"># متغیر نمونه که برای هر نمونه یکتا است</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">'Fido'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">'Buddy'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">kind</span>                  <span class="c1"># بین همهٔ سگ‌ها مشترک است</span>
+<span class="s1">'canine'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span><span class="o">.</span><span class="n">kind</span>                  <span class="c1"># بین همهٔ سگ‌ها مشترک است</span>
+<span class="s1">'canine'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">name</span>                  <span class="c1"># مخصوص d است</span>
+<span class="s1">'Fido'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span><span class="o">.</span><span class="n">name</span>                  <span class="c1"># مخصوص e است</span>
+<span class="s1">'Buddy'</span>
+</pre></div>
+</div>
+<p>همان‌طور که در <a class="reference internal" href="#tut-object"><span class="std std-ref">سخنی درباره‌ی نام‌ها و اشیاء</span></a> بحث شد، داده‌های مشترک می‌توانند تأثیرات شگفت‌آوری بر روی اشیاء <a class="reference internal" href="../glossary.html#term-mutable"><span class="xref std std-term">mutable</span></a> مانند فهرستها و دیکشنری‌ها داشته باشند. برای مثال، فهرست <em>tricks</em> در کد زیر نباید به‌عنوان یک متغیر کلاس استفاده شود، زیرا فقط یک فهرست واحد بین همه‌ی نمونه‌های <em>Dog</em> مشترک خواهد بود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Dog</span><span class="p">:</span>
+
+    <span class="n">tricks</span> <span class="o">=</span> <span class="p">[]</span>             <span class="c1"># استفادهٔ اشتباه از یک متغیر کلاسی</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_trick</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trick</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tricks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trick</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">'Fido'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">'Buddy'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">add_trick</span><span class="p">(</span><span class="s1">'roll over'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span><span class="o">.</span><span class="n">add_trick</span><span class="p">(</span><span class="s1">'play dead'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">tricks</span>                <span class="c1"># به‌طور غیرمنتظره بین همهٔ سگ‌ها مشترک است</span>
+<span class="p">[</span><span class="s1">'roll over'</span><span class="p">,</span> <span class="s1">'play dead'</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>طراحی صحیح کلاس باید به جای آن از یک متغیر نمونه استفاده کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Dog</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tricks</span> <span class="o">=</span> <span class="p">[]</span>    <span class="c1"># برای هر سگ، یک فهرست خالی جدید ایجاد می‌کند</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_trick</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trick</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tricks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trick</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">'Fido'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">'Buddy'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">add_trick</span><span class="p">(</span><span class="s1">'roll over'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span><span class="o">.</span><span class="n">add_trick</span><span class="p">(</span><span class="s1">'play dead'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">tricks</span>
+<span class="p">[</span><span class="s1">'roll over'</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span><span class="o">.</span><span class="n">tricks</span>
+<span class="p">[</span><span class="s1">'play dead'</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="random-remarks">
+<span id="tut-remarks"></span><h2><span class="section-number">9.4. </span>نکات پراکنده<a class="headerlink" href="#random-remarks" title="Link to this heading">¶</a></h2>
+<p>اگر نام ویژگی مشابهی هم در یک نمونه و هم در یک کلاس وجود داشته باشد، آنگاه جست‌وجوی ویژگی، نمونه را اولویت‌بندی می‌کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Warehouse</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="n">purpose</span> <span class="o">=</span> <span class="s1">'storage'</span>
+<span class="gp">... </span>   <span class="n">region</span> <span class="o">=</span> <span class="s1">'west'</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w1</span> <span class="o">=</span> <span class="n">Warehouse</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">w1</span><span class="o">.</span><span class="n">purpose</span><span class="p">,</span> <span class="n">w1</span><span class="o">.</span><span class="n">region</span><span class="p">)</span>
+<span class="go">storage west</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w2</span> <span class="o">=</span> <span class="n">Warehouse</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w2</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="s1">'east'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">w2</span><span class="o">.</span><span class="n">purpose</span><span class="p">,</span> <span class="n">w2</span><span class="o">.</span><span class="n">region</span><span class="p">)</span>
+<span class="go">storage east</span>
+</pre></div>
+</div>
+<p>ویژگیهای داده ممکن است هم توسط متدها و هم توسط کاربران عادی (&quot;clients&quot;) یک شیء ارجاع داده شوند. به عبارت دیگر، کلاسها برای پیاده‌سازی انواع داده‌ی انتزاعی خالص قابل استفاده نیستند. در واقع، هیچ چیزی در پایتون امکان اعمال پنهان‌سازی داده را فراهم نمی‌کند --- همه‌چیز بر اساس قرارداد است. (از سوی دیگر، پیاده‌سازی پایتون که به زبان C نوشته شده است، می‌تواند جزئیات پیاده‌سازی را کاملاً پنهان کند و در صورت نیاز دسترسی به یک شیء را کنترل کند؛ این قابلیت می‌تواند توسط افزونه‌های پایتون که به زبان C نوشته می‌شوند، استفاده شود.)</p>
+<p>کاربران (clients) باید با احتیاط از ویژگیهای داده استفاده کنند --- کاربران ممکن است ناورداهای حفظ‌شده توسط متدها را با دستکاری در ویژگیهای داده‌شان به هم بریزند. توجه داشته باشید که کاربران ممکن است ویژگیهای داده‌ی خود را به یک شیء نمونه اضافه کنند بدون اینکه بر صحت متدها تأثیر بگذارند، تا زمانی که تداخل نام‌ها اجتناب شود --- باز هم، یک قرارداد نام‌گذاری می‌تواند از بسیاری از سردرگمی‌ها در اینجا جلوگیری کند.</p>
+<p>هیچ گونه میان‌بری برای ارجاع به ویژگیهای داده (یا سایر متدها!) از درون متدها وجود ندارد. به نظر من، این موضوع در واقع خوانایی متدها را افزایش می‌دهد: هیچ شانسی برای اشتباه گرفتن متغیرهای محلی و متغیرهای نمونه هنگام مرور سریع یک متد وجود ندارد.</p>
+<p>معمولاً، اولین آرگومان یک متد <code class="docutils literal notranslate"><span class="pre">self</span></code> نامیده می‌شود. این چیزی بیش از یک قرارداد نیست: نام <code class="docutils literal notranslate"><span class="pre">self</span></code> هیچ معنی خاصی برای پایتون ندارد. با این حال، توجه داشته باشید که با رعایت نکردن این قرارداد، کد شما ممکن است برای سایر برنامه‌نویسان پایتون کمتر خوانا باشد، و همچنین قابل‌تصور است که یک برنامه <em>مرورگر کلاس</em> (class browser) نوشته شود که به چنین قراردادی وابسته باشد.</p>
+<p>هر شیء تابعی که یک ویژگی کلاس باشد، یک متد برای نمونه‌های آن کلاس تعریف می‌کند. لازم نیست که تعریف تابع لزوماً درون تعریف کلاس قرار داشته باشد: اختصاص یک شیء تابع به یک متغیر محلی در کلاس نیز مجاز است. برای مثال:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># تابع بیرون از کلاس تعریف شده است</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">C</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">f1</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">'hello world'</span>
+
+    <span class="n">h</span> <span class="o">=</span> <span class="n">g</span>
+</pre></div>
+</div>
+<p>اکنون <code class="docutils literal notranslate"><span class="pre">f</span></code>، <code class="docutils literal notranslate"><span class="pre">g</span></code> و <code class="docutils literal notranslate"><span class="pre">h</span></code> همگی ویژگیهای کلاس <code class="xref py py-class docutils literal notranslate"><span class="pre">C</span></code> هستند که به اشیاء تابع اشاره دارند، و در نتیجه همگی متدهایی از نمونه‌های <code class="xref py py-class docutils literal notranslate"><span class="pre">C</span></code> هستند --- <code class="docutils literal notranslate"><span class="pre">h</span></code> دقیقاً معادل <code class="docutils literal notranslate"><span class="pre">g</span></code> است. توجه داشته باشید که این روش معمولاً فقط باعث سردرگمی خواننده‌ی برنامه می‌شود.</p>
+<p>متدها می‌توانند سایر متدها را با استفاده از ویژگیهای متد آرگومان <code class="docutils literal notranslate"><span class="pre">self</span></code> فراخوانی کنند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Bag</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">addtwice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>متدها ممکن است به نام‌های سراسری به همان روشی که توابع معمولی اشاره می‌کنند، ارجاع دهند.  محدوده‌ی سراسری مرتبط با یک متد، ماژولی است که شامل تعریف آن است. (یک کلاس هرگز به‌عنوان محدوده‌ی سراسری استفاده نمی‌شود.)  اگرچه به ندرت دلیل خوبی برای استفاده از داده‌های سراسری در یک متد یافت می‌شود، اما کاربردهای مشروع زیادی برای محدوده‌ی سراسری وجود دارد: برای یک چیز، توابع و ماژول‌هایی که به محدوده‌ی سراسری ایمپورت شده‌اند، می‌توانند توسط متدها استفاده شوند، همچنین توابع و کلاسهای تعریف‌شده در آن. معمولاً، کلاسی که شامل متد است، خود در این محدوده‌ی سراسری تعریف می‌شود، و در بخش بعدی دلایل خوبی خواهیم یافت که چرا یک متد ممکن است بخواهد به کلاس خودش ارجاع دهد.</p>
+<p>هر مقدار یک شیء است، و بنابراین دارای یک <em>کلاس</em> (که به آن <em>تایپ</em> نیز گفته می‌شود) می‌باشد. این مقدار به‌صورت <code class="docutils literal notranslate"><span class="pre">object.__class__</span></code> ذخیره می‌شود.</p>
+</section>
+<section id="inheritance">
+<span id="tut-inheritance"></span><h2><span class="section-number">9.5. </span>ارث‌بری<a class="headerlink" href="#inheritance" title="Link to this heading">¶</a></h2>
+<p>مسلماً، یک ویژگی زبانی بدون پشتیبانی از ارث‌بری، شایسته‌ی نام «کلاس» نخواهد بود. نحو تعریف یک کلاس مشتق‌شده (derived class) به این شکل است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">DerivedClassName</span><span class="p">(</span><span class="n">BaseClassName</span><span class="p">):</span>
+    <span class="o">&lt;</span><span class="n">statement</span><span class="o">-</span><span class="mi">1</span><span class="o">&gt;</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">&lt;</span><span class="n">statement</span><span class="o">-</span><span class="n">N</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>نام <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseClassName</span></code> باید در فضای نامی تعریف شده باشد که از محدوده‌ای که شامل تعریف کلاس مشتق‌شده است، قابل دسترسی باشد. به جای نام کلاس پایه، سایر عبارت‌های دلخواه نیز مجاز هستند. این می‌تواند مفید باشد، برای مثال، زمانی که کلاس پایه در ماژول دیگری تعریف شده است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">DerivedClassName</span><span class="p">(</span><span class="n">modname</span><span class="o">.</span><span class="n">BaseClassName</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>اجرای تعریف یک کلاس مشتق‌شده به همان شیوه‌ای است که برای یک کلاس پایه انجام می‌شود. هنگامی که شیء کلاس ساخته می‌شود، کلاس پایه به خاطر سپرده می‌شود.  این (اطلاعات) برای حل کردن ارجاعات به ویژگیها استفاده می‌شود: اگر ویژگی درخواستی در کلاس یافت نشود، جست‌وجو در کلاس پایه ادامه می‌یابد.  این قاعده به‌صورت بازگشتی اعمال می‌شود اگر خود کلاس پایه از کلاس دیگری مشتق شده باشد.</p>
+<p>هیچ نکته‌ی خاصی درباره‌ی نمونه‌سازی کلاسهای مشتق‌شده وجود ندارد: <code class="docutils literal notranslate"><span class="pre">DerivedClassName()</span></code> یک نمونه‌ی جدید از کلاس ایجاد می‌کند.  ارجاعهای متد به‌صورت زیر حل می‌شوند: ویژگی کلاس متناظر جست‌وجو می‌شود، در صورت لزوم در زنجیره‌ی کلاسهای پایه به پایین می‌رود، و ارجاع متد در صورتی معتبر است که این جست‌وجو به یک شیء تابع منجر شود.</p>
+<p>کلاسهای مشتق‌شده ممکن است متدهای کلاسهای پایه‌ی خود را بازنویسی کنند.  از آنجایی که متدها هنگام فراخوانی سایر متدهای همان شیء، امتیاز ویژه‌ای ندارند، یک متد از یک کلاس پایه که متد دیگری را که در همان کلاس پایه تعریف شده فراخوانی می‌کند، ممکن است در نهایت متدی از یک کلاس مشتق‌شده را فراخوانی کند که آن را بازنویسی کرده است.  (برای برنامه‌نویسان C++: تمام متدها در پایتون به‌طور مؤثر <code class="docutils literal notranslate"><span class="pre">virtual</span></code> هستند.)</p>
+<p>یک متد بازنویسی‌شده در یک کلاس مشتق‌شده ممکن است در واقع بخواهد به جای اینکه صرفاً متد کلاس پایه را با همین نام جایگزین کند، آن را گسترش دهد. یک راه ساده برای فراخوانی مستقیم متد کلاس پایه وجود دارد: فقط <code class="docutils literal notranslate"><span class="pre">BaseClassName.methodname(self,</span> <span class="pre">arguments)</span></code> را فراخوانی کنید.  این روش گاهی برای کاربران (clients) نیز مفید است.  (توجه داشته باشید که این روش تنها زمانی کار می‌کند که کلاس پایه به‌عنوان <code class="docutils literal notranslate"><span class="pre">BaseClassName</span></code> در محدوده‌ی سراسری (global scope) قابل دسترسی باشد.)</p>
+<p>پایتون دو تابع داخلی دارد که با ارث‌بری کار می‌کنند:</p>
+<ul class="simple">
+<li><p>برای بررسی نوع یک نمونه (instance) از <a class="reference internal" href="../library/functions.html#isinstance" title="isinstance"><code class="xref py py-func docutils literal notranslate"><span class="pre">isinstance()</span></code></a> استفاده کنید: <code class="docutils literal notranslate"><span class="pre">isinstance(obj,</span> <span class="pre">int)</span></code> تنها زمانی <code class="docutils literal notranslate"><span class="pre">True</span></code> خواهد بود که <code class="docutils literal notranslate"><span class="pre">obj.__class__</span></code> از نوع <a class="reference internal" href="../library/functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> باشد یا کلاسی که از <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code> مشتق شده باشد.</p></li>
+<li><p>برای بررسی ارث‌بری کلاسها از <a class="reference internal" href="../library/functions.html#issubclass" title="issubclass"><code class="xref py py-func docutils literal notranslate"><span class="pre">issubclass()</span></code></a> استفاده کنید: <code class="docutils literal notranslate"><span class="pre">issubclass(bool,</span> <span class="pre">int)</span></code> مقدار <code class="docutils literal notranslate"><span class="pre">True</span></code> است چون <a class="reference internal" href="../library/functions.html#bool" title="bool"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a> زیرکلاسی از <a class="reference internal" href="../library/functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> است.  با این حال، <code class="docutils literal notranslate"><span class="pre">issubclass(float,</span> <span class="pre">int)</span></code> مقدار <code class="docutils literal notranslate"><span class="pre">False</span></code> است چون <a class="reference internal" href="../library/functions.html#float" title="float"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> زیرکلاسی از <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code> نیست.</p></li>
+</ul>
+<section id="multiple-inheritance">
+<span id="tut-multiple"></span><h3><span class="section-number">9.5.1. </span>ارث‌بری چندگانه<a class="headerlink" href="#multiple-inheritance" title="Link to this heading">¶</a></h3>
+<p>پایتون همچنین از نوعی ارث‌بری چندگانه پشتیبانی می‌کند.  تعریف یک کلاس با چندین کلاس پایه به این شکل است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">DerivedClassName</span><span class="p">(</span><span class="n">Base1</span><span class="p">,</span> <span class="n">Base2</span><span class="p">,</span> <span class="n">Base3</span><span class="p">):</span>
+    <span class="o">&lt;</span><span class="n">statement</span><span class="o">-</span><span class="mi">1</span><span class="o">&gt;</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">&lt;</span><span class="n">statement</span><span class="o">-</span><span class="n">N</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>برای بیشتر کاربردها، در ساده‌ترین موارد، می‌توانید جست‌وجو برای ویژگیهای به‌ارث‌برده‌شده از یک کلاس والد را به‌صورت عمق‌اول، چپ‌به‌راست، بدون جست‌وجوی دوباره در همان کلاس در جایی که همپوشانی در سلسله‌مراتب وجود دارد، در نظر بگیرید. بنابراین، اگر ویژگی‌ای در <code class="xref py py-class docutils literal notranslate"><span class="pre">DerivedClassName</span></code> یافت نشد، در <code class="xref py py-class docutils literal notranslate"><span class="pre">Base1</span></code> جست‌وجو می‌شود، سپس (به‌صورت بازگشتی) در کلاسهای پایه‌ی <code class="xref py py-class docutils literal notranslate"><span class="pre">Base1</span></code>، و اگر در آنجا یافت نشد، در <code class="xref py py-class docutils literal notranslate"><span class="pre">Base2</span></code> جست‌وجو می‌شود، و به همین ترتیب.</p>
+<p>در واقع، این موضوع کمی پیچیده‌تر از این است؛ ترتیب حل متد به‌صورت پویا تغییر می‌کند تا از فراخوانی‌های مشارکتی به <a class="reference internal" href="../library/functions.html#super" title="super"><code class="xref py py-func docutils literal notranslate"><span class="pre">super()</span></code></a> پشتیبانی کند.  این رویکرد در برخی دیگر از زبانهای دارای ارث‌بری چندگانه با نام call-next-method شناخته می‌شود و از فراخوانی super موجود در زبانهای دارای ارث‌بری تکی قدرتمندتر است.</p>
+<p>ترتیب‌دهی پویا ضروری است زیرا همه‌ی موارد ارث‌بری چندگانه دارای یک یا چند رابطه‌ی الماسی هستند (جایی که حداقل یکی از کلاسهای والد از طریق چندین مسیر از پایین‌ترین کلاس قابل دسترسی است).  برای مثال، همه‌ی کلاسها از <a class="reference internal" href="../library/functions.html#object" title="object"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a> ارث‌بری می‌کنند، بنابراین هر موردی از ارث‌بری چندگانه بیش از یک مسیر برای رسیدن به <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code> فراهم می‌کند.  برای جلوگیری از دسترسی بیش از یک بار به کلاسهای پایه، الگوریتم پویا ترتیب جست‌وجو را به‌گونه‌ای خطی‌سازی می‌کند که ترتیب چپ‌به‌راست مشخص‌شده در هر کلاس را حفظ کند، که هر والد را فقط یک بار فراخوانی می‌کند، و یکنواخت است (به این معنی که یک کلاس می‌تواند زیرکلاس‌ داشته باشد بدون اینکه بر ترتیب اولویت والدین آن تأثیر بگذارد). این ویژگیها در کنار هم، طراحی کلاسهای قابل اعتماد و قابل توسعه با ارث‌بری چندگانه را ممکن می‌سازند. برای جزئیات بیشتر، به <a class="reference internal" href="../howto/mro.html#python-2-3-mro"><span class="std std-ref">The Python 2.3 Method Resolution Order</span></a> مراجعه کنید.</p>
+</section>
+</section>
+<section id="private-variables">
+<span id="tut-private"></span><h2><span class="section-number">9.6. </span>متغیر‌های خصوصی<a class="headerlink" href="#private-variables" title="Link to this heading">¶</a></h2>
+<p>متغیرهای نمونه‌ای «خصوصی» که جز از درون یک شیء قابل دسترسی نیستند، در پایتون وجود ندارند.  با این حال، یک قرارداد وجود دارد که توسط بیشتر کدهای پایتون دنبال می‌شود: یک نام که با زیرخط آغاز می‌شود (مثلاً <code class="docutils literal notranslate"><span class="pre">_spam</span></code>) باید به‌عنوان بخشی غیرعمومی از API در نظر گرفته شود (خواه یک تابع، یک متد یا یک عضو داده باشد).  باید به‌عنوان یک جزئیات پیاده‌سازی در نظر گرفته شود و ممکن است بدون اطلاع‌رسانی تغییر کند.</p>
+<p id="index-1">از آنجا که یک مورد استفاده‌ی معتبر برای اعضای خصوصی کلاس وجود دارد (به‌ویژه برای جلوگیری از برخورد نام‌ها با نام‌های تعریف‌شده توسط زیرکلاسها)، پشتیبانی محدودی برای چنین مکانیزمی، به نام <em class="dfn">name mangling</em> (دستکاری نام) وجود دارد.  هر شناسه‌ای به شکل <code class="docutils literal notranslate"><span class="pre">__spam</span></code> (حداقل دو زیرخط در ابتدا، حداکثر یک زیرخط در انتها) به‌صورت متنی با <code class="docutils literal notranslate"><span class="pre">_classname__spam</span></code> جایگزین می‌شود، که در آن <code class="docutils literal notranslate"><span class="pre">classname</span></code> نام کلاس جاری است با زیرخط‌های ابتدایی حذف‌شده.  این دستکاری بدون در نظر گرفتن جایگاه نحوی شناسه انجام می‌شود، تا زمانی که درون تعریف یک کلاس رخ دهد.</p>
+<div class="admonition seealso">
+<p class="admonition-title">همچنین ملاحظه نمائید</p>
+<p>برای جزئیات و موارد خاص، به <a class="reference internal" href="../reference/expressions.html#private-name-mangling"><span class="std std-ref">مشخصات دستکاری نام‌های خصوصی</span></a> مراجعه کنید.</p>
+</div>
+<p>دستکاری نام برای این مفید است که به زیرکلاسها اجازه دهد متدها را بدون شکستن فراخوانی‌های متد درون‌کلاسی بازنویسی کنند.  برای مثال:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Mapping</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterable</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__update</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterable</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">items_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+    <span class="n">__update</span> <span class="o">=</span> <span class="n">update</span>   <span class="c1"># نسخهٔ خصوصی از متد اصلی update()</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MappingSubclass</span><span class="p">(</span><span class="n">Mapping</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+        <span class="c1"># امضای جدیدی برای update() فراهم می‌کند</span>
+        <span class="c1"># اما __init__ را خراب نمی‌کند</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">items_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>مثال بالا حتی اگر <code class="docutils literal notranslate"><span class="pre">MappingSubclass</span></code> یک شناسه‌ی <code class="docutils literal notranslate"><span class="pre">__update</span></code> معرفی کند، کار خواهد کرد زیرا این شناسه به ترتیب در کلاس <code class="docutils literal notranslate"><span class="pre">Mapping</span></code> با <code class="docutils literal notranslate"><span class="pre">_Mapping__update</span></code> و در کلاس <code class="docutils literal notranslate"><span class="pre">MappingSubclass</span></code> با <code class="docutils literal notranslate"><span class="pre">_MappingSubclass__update</span></code> جایگزین می‌شود.</p>
+<p>توجه داشته باشید که قوانین دستکاری نام بیشتر برای جلوگیری از اشتباهات طراحی شده‌اند؛ همچنان دسترسی یا تغییر یک متغیر که خصوصی در نظر گرفته می‌شود، ممکن است. این حتی می‌تواند در شرایط خاص، مانند اشکال‌زدایی، مفید باشد.</p>
+<p>توجه داشته باشید که کد ارسال‌شده به <code class="docutils literal notranslate"><span class="pre">exec()</span></code> یا <code class="docutils literal notranslate"><span class="pre">eval()</span></code> نام کلاس کلاس فراخوان‌کننده را به‌عنوان کلاس جاری در نظر نمی‌گیرد؛ این مشابه تأثیر دستور <code class="docutils literal notranslate"><span class="pre">global</span></code> است که تأثیر آن نیز به همین ترتیب به کدی که با هم بایت‌کامپایل می‌شوند، محدود است.  همین محدودیت برای <code class="docutils literal notranslate"><span class="pre">getattr()</span></code>، <code class="docutils literal notranslate"><span class="pre">setattr()</span></code> و <code class="docutils literal notranslate"><span class="pre">delattr()</span></code> نیز اعمال می‌شود، همچنین زمانی که به طور مستقیم به <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> ارجاع داده می‌شود.</p>
+</section>
+<section id="odds-and-ends">
+<span id="tut-odds"></span><h2><span class="section-number">9.7. </span>نکات متفرقه<a class="headerlink" href="#odds-and-ends" title="Link to this heading">¶</a></h2>
+<p>گاهی اوقات داشتن یک نوع داده مشابه «رکورد» در پاسکال یا «ساختار» در C مفید است، که چندین آیتم داده‌ی نام‌دار را کنار هم بسته‌بندی می‌کند. روش استاندارد برای این کار استفاده از <a class="reference internal" href="../library/dataclasses.html#module-dataclasses" title="dataclasses: Generate special methods on user-defined classes."><code class="xref py py-mod docutils literal notranslate"><span class="pre">dataclasses</span></code></a> است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Employee</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">dept</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">salary</span><span class="p">:</span> <span class="nb">int</span>
+</pre></div>
+</div>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">john</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">'john'</span><span class="p">,</span> <span class="s1">'computer lab'</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">john</span><span class="o">.</span><span class="n">dept</span>
+<span class="go">'computer lab'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">john</span><span class="o">.</span><span class="n">salary</span>
+<span class="go">1000</span>
+</pre></div>
+</div>
+<p>یک قطعه کد پایتون که انتظار یک نوع دادهٔ انتزاعی خاص را دارد، اغلب می‌تواند به جای آن، یک کلاس دریافت کند که متدهای آن نوع داده را شبیه‌سازی می‌کند. برای مثال، اگر تابعی دارید که داده‌هایی را از یک شیء فایل قالب‌بندی می‌کند، می‌توانید کلاسی تعریف کنید با متدهای <a class="reference internal" href="../library/io.html#io.TextIOBase.read" title="io.TextIOBase.read"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read()</span></code></a> و <a class="reference internal" href="../library/io.html#io.TextIOBase.readline" title="io.TextIOBase.readline"><code class="xref py py-meth docutils literal notranslate"><span class="pre">readline()</span></code></a> که داده‌ها را از یک بافر رشته‌ای دریافت می‌کنند، و آن را به‌عنوان آرگومان به تابع ارسال کنید.</p>
+<p><a class="reference internal" href="../reference/datamodel.html#instance-methods"><span class="std std-ref">اشیاء متد نمونه</span></a> نیز ویژگیهایی دارند: <a class="reference internal" href="../reference/datamodel.html#method.__self__" title="method.__self__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">m.__self__</span></code></a> شیء نمونه‌ای است که متد <code class="xref py py-meth docutils literal notranslate"><span class="pre">m()</span></code> به آن تعلق دارد، و <a class="reference internal" href="../reference/datamodel.html#method.__func__" title="method.__func__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">m.__func__</span></code></a> همان <a class="reference internal" href="../reference/datamodel.html#user-defined-funcs"><span class="std std-ref">شیء تابع</span></a> متناظر با آن متد است.</p>
+</section>
+<section id="iterators">
+<span id="tut-iterators"></span><h2><span class="section-number">9.8. </span>تکرارگرها<a class="headerlink" href="#iterators" title="Link to this heading">¶</a></h2>
+<p>تا اینجا احتمالاً متوجه شده‌اید که می‌توان روی بیشتر اشیاء ظرف با استفاده از دستور <a class="reference internal" href="../reference/compound_stmts.html#for"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">for</span></code></a> حلقه زد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">'one'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">:</span><span class="mi">2</span><span class="p">}:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="s2">"123"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"myfile.txt"</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>این سبک دسترسی واضح، مختصر و راحت است.  استفاده از تکرارگرها در همه‌جا نفوذ کرده و پایتون را یکپارچه می‌کنند.  در پشت صحنه، دستور <a class="reference internal" href="../reference/compound_stmts.html#for"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">for</span></code></a> تابع <a class="reference internal" href="../library/functions.html#iter" title="iter"><code class="xref py py-func docutils literal notranslate"><span class="pre">iter()</span></code></a> را روی شیء ظرف فراخوانی می‌کند.  این تابع یک شیء تکرارگر برمی‌گرداند که متد <a class="reference internal" href="../library/stdtypes.html#iterator.__next__" title="iterator.__next__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__next__()</span></code></a> را تعریف می‌کند که به المان‌ها در ظرف یکی یکی دسترسی پیدا می‌کند.  وقتی المان‌ها تمام شوند، <code class="xref py py-meth docutils literal notranslate"><span class="pre">__next__()</span></code> یک استثنای <a class="reference internal" href="../library/exceptions.html#StopIteration" title="StopIteration"><code class="xref py py-exc docutils literal notranslate"><span class="pre">StopIteration</span></code></a> ایجاد می‌کند که به حلقه‌ی <code class="xref std std-keyword docutils literal notranslate"><span class="pre">for</span></code> می‌گوید پایان یابد.  می‌توانید متد <code class="xref py py-meth docutils literal notranslate"><span class="pre">__next__()</span></code> را با استفاده از تابع داخلی <a class="reference internal" href="../library/functions.html#next" title="next"><code class="xref py py-func docutils literal notranslate"><span class="pre">next()</span></code></a> فراخوانی کنید؛ این مثال نشان می‌دهد که چگونه همه‌چیز کار می‌کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">'abc'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">it</span>
+<span class="go">&lt;str_iterator object at 0x10c90e650&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+<span class="go">'a'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+<span class="go">'b'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+<span class="go">'c'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="w">    </span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+<span class="gr">StopIteration</span>
+</pre></div>
+</div>
+<p>حالا که با سازوکار پشت پروتکل تکرارگر آشنا شدید، اضافه کردن رفتار تکرارگر به کلاسهایتان آسان است.  یک متد <a class="reference internal" href="../library/stdtypes.html#container.__iter__" title="container.__iter__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__iter__()</span></code></a> تعریف کنید که یک شیء با متد <a class="reference internal" href="../library/stdtypes.html#iterator.__next__" title="iterator.__next__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__next__()</span></code></a> برمی‌گرداند.  اگر کلاس <code class="xref py py-meth docutils literal notranslate"><span class="pre">__next__()</span></code> را تعریف کرده باشد، آنگاه <code class="xref py py-meth docutils literal notranslate"><span class="pre">__iter__()</span></code> می‌تواند فقط <code class="docutils literal notranslate"><span class="pre">self</span></code> را برگرداند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Reverse</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Iterator for looping over a sequence backwards."""</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rev</span> <span class="o">=</span> <span class="n">Reverse</span><span class="p">(</span><span class="s1">'spam'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">iter</span><span class="p">(</span><span class="n">rev</span><span class="p">)</span>
+<span class="go">&lt;__main__.Reverse object at 0x00A1DB50&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">rev</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">m</span>
+<span class="go">a</span>
+<span class="go">p</span>
+<span class="go">s</span>
+</pre></div>
+</div>
+</section>
+<section id="generators">
+<span id="tut-generators"></span><h2><span class="section-number">9.9. </span>تولیدگر<a class="headerlink" href="#generators" title="Link to this heading">¶</a></h2>
+<p><a class="reference internal" href="../glossary.html#term-generator"><span class="xref std std-term">Generators</span></a> یک ابزار ساده و قدرتمند برای ایجاد اینتراتور‌ها هستند. آن‌ها مانند توابع عادی نوشته می‌شوند اما هر زمان که می‌خواهند داده‌ای را بازگردانند از دستور <a class="reference internal" href="../reference/simple_stmts.html#yield"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">yield</span></code></a> استفاده می‌کنند. هر بار که <a class="reference internal" href="../library/functions.html#next" title="next"><code class="xref py py-func docutils literal notranslate"><span class="pre">next()</span></code></a> بر روی آن فراخوانی می‌شود، تولیدگر از جایی که متوقف شده ادامه می‌یابد (تمام مقادیر داده‌ها و اینکه آخرین دستور اجرا شده چه بوده را به خاطر می‌آورد). یک مثال نشان می‌دهد که ایجاد تولیدگر‌ها می‌تواند به طرز باور‌نکردنی ساده باشد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">reverse</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">'golf'</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">f</span>
+<span class="go">l</span>
+<span class="go">o</span>
+<span class="go">g</span>
+</pre></div>
+</div>
+<p>هر چیزی که با تولیدگرها قابل انجام است، می‌تواند با استفاده از تکرارگرهای مبتنی بر کلاس نیز انجام شود، همانطور که در بخش قبلی توضیح داده شد. آنچه تولیدگر‌ها را فشرده می‌کند، این است که روش‌های <a class="reference internal" href="../library/stdtypes.html#iterator.__iter__" title="iterator.__iter__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__iter__()</span></code></a> و <a class="reference internal" href="../reference/expressions.html#generator.__next__" title="generator.__next__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__next__()</span></code></a> به‌طور خودکار ایجاد می‌شوند.</p>
+<p>یکی دیگر از ویژگی‌های کلیدواژه‌ای این است که متغیر‌های محلی و وضعیت اجرا به‌طور خودکار بین فراخوانی‌ها ذخیره می‌شوند. این امر نوشتن تابع را آسان‌تر و خیلی واضح‌تر از رویکردی که از متغیر‌های نمونه‌ای مانند <code class="docutils literal notranslate"><span class="pre">self.index</span></code> و <code class="docutils literal notranslate"><span class="pre">self.data</span></code> استفاده می‌کند، کرده است.</p>
+<p>علاوه بر ایجاد خودکار متد‌ها و ذخیره سازی وضعیت برنامه، زمانی که تولیدگر‌ها خاتمه می‌یابند، به‌طور خودکار <a class="reference internal" href="../library/exceptions.html#StopIteration" title="StopIteration"><code class="xref py py-exc docutils literal notranslate"><span class="pre">StopIteration</span></code></a> را ایجاد می‌کنند. این ویژگیها به صورت ترکیبی، ساختن تکرارگرها را به همان سادگی نوشتن یک تابع عادی امکان پذیر می‌سازند.</p>
+</section>
+<section id="generator-expressions">
+<span id="tut-genexps"></span><h2><span class="section-number">9.10. </span>عبارات تولیدگر<a class="headerlink" href="#generator-expressions" title="Link to this heading">¶</a></h2>
+<p>برخی از تولیدگر‌های ساده را می‌توان به‌صورت مختصر به‌عنوان عبارت کدنویسی کرد، با استفاده از یک نحو مشابه درک‌فهرستها اما با پرانتز به جای کروشه‌ی باز. این عبارت‌ها برای شرایطی طراحی شده‌اند که تولیدگر بلافاصله توسط یک تابع محاط‌شونده استفاده می‌شود.  عبارت‌های تولیدگر فشرده‌تر هستند اما نسبت به تعاریف کامل تولیدگر، انعطاف‌پذیری کمتری دارند و معمولاً نسبت به درک‌فهرستهای معادل، با حافظه سازگارتر هستند.</p>
+<p>مثالها:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>                 <span class="c1"># مجموع مربع‌ها</span>
+<span class="go">285</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xvec</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">yvec</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">xvec</span><span class="p">,</span> <span class="n">yvec</span><span class="p">))</span>         <span class="c1"># حاصل‌ضرب داخلی</span>
+<span class="go">260</span>
+</pre></div>
+</div>
+<p class="rubric">پاورقی‌ها</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>به جز یک مورد.  اشیاء ماژول یک ویژگی مخفی فقط‌خواندنی دارند به نام <a class="reference internal" href="../reference/datamodel.html#object.__dict__" title="object.__dict__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__dict__</span></code></a> که دیکشنری مورد استفاده برای پیاده‌سازی فضای نام ماژول را برمی‌گرداند؛ نام <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> یک ویژگی است اما یک نام سراسری نیست. بدیهی است که استفاده از این ویژگی، انتزاع پیاده‌سازی فضای نام را نقض می‌کند و باید به مواردی مانند اشکال‌زدای پس‌ازمرگ محدود شود.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">9. کلاسها</a><ul>
+<li><a class="reference internal" href="#a-word-about-names-and-objects">9.1. سخنی درباره‌ی نام‌ها و اشیاء</a></li>
+<li><a class="reference internal" href="#python-scopes-and-namespaces">9.2. محدوده‌ها و فضای نام‌ها در پایتون</a><ul>
+<li><a class="reference internal" href="#scopes-and-namespaces-example">9.2.1. مثال محدوده‌ها و فضای نام‌ها</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#a-first-look-at-classes">9.3. در نگاه اول به کلاسها</a><ul>
+<li><a class="reference internal" href="#class-definition-syntax">9.3.1. قواعد تعریف کلاس</a></li>
+<li><a class="reference internal" href="#class-objects">9.3.2. اشیاء کلاس</a></li>
+<li><a class="reference internal" href="#instance-objects">9.3.3. اشیاء نمونه</a></li>
+<li><a class="reference internal" href="#method-objects">9.3.4. متد اشیاء</a></li>
+<li><a class="reference internal" href="#class-and-instance-variables">9.3.5. کلاس و متغیر‌های نمونه</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#random-remarks">9.4. نکات پراکنده</a></li>
+<li><a class="reference internal" href="#inheritance">9.5. ارث‌بری</a><ul>
+<li><a class="reference internal" href="#multiple-inheritance">9.5.1. ارث‌بری چندگانه</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#private-variables">9.6. متغیر‌های خصوصی</a></li>
+<li><a class="reference internal" href="#odds-and-ends">9.7. نکات متفرقه</a></li>
+<li><a class="reference internal" href="#iterators">9.8. تکرارگرها</a></li>
+<li><a class="reference internal" href="#generators">9.9. تولیدگر</a></li>
+<li><a class="reference internal" href="#generator-expressions">9.10. عبارات تولیدگر</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="errors.html"
+                          title="فصل قبلی"><span class="section-number">8. </span>خطاها و استثناها</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="stdlib.html"
+                          title="فصل بعدی"><span class="section-number">10. </span>نگاهی کوتاه به کتابخانهٔ استاندارد</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/classes.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/classes.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/classes.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </div>
+<div id="sidebarbutton" title="تا کردن نوار کناره">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             >فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="stdlib.html" title="10. نگاهی کوتاه به کتابخانهٔ استاندارد"
+             >بعدی</a> |</li>
+        <li class="right" >
+          <a href="errors.html" title="8. خطاها و استثناها"
+             >قبلی</a> |</li>
+
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">9. </span>کلاسها</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>  
+    <div class="footer">
+    &copy; <a href="../copyright.html">حق چاپ</a> 2001 Python Software Foundation.
+    <br>
+    This page is licensed under the Python Software Foundation License Version 2.
+    <br>
+    Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
+    <br>
+    
+      See <a href="/license.html">History and License</a> for more information.<br>
+    
+    
+    <br>
+
+    The Python Software Foundation is a non-profit corporation.
+<a href="https://www.python.org/psf/donations/">Please donate.</a>
+<br>
+    <br>
+      آخرین بروز رسانی در اوت 18, 2026 (04:23 UTC) .
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
+    <br>
+
+    ایجاد شده با<a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+<html lang="fa" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="6. ماژول‌ها" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.python.org/3/tutorial/modules.html" />
+<meta property="og:site_name" content="Python documentation" />
+<meta property="og:description" content="اگر از مفسر پایتون خارج شوید و دوباره وارد آن شوید، تعریف‌هایی که ایجاد کرده‌اید (تابع‌ها و متغیرها) از بین می‌روند. بنابراین، اگر می‌خواهید برنامه‌ای نسبتاً طولانی‌تر بنویسید، بهتر است به‌جای آن ا..." />
+<meta property="og:image" content="_static/og-image.png" />
+<meta property="og:image:alt" content="Python documentation" />
+<meta name="description" content="اگر از مفسر پایتون خارج شوید و دوباره وارد آن شوید، تعریف‌هایی که ایجاد کرده‌اید (تابع‌ها و متغیرها) از بین می‌روند. بنابراین، اگر می‌خواهید برنامه‌ای نسبتاً طولانی‌تر بنویسید، بهتر است به‌جای آن ا..." />
+<meta name="theme-color" content="#3776ab">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+
+    <title>6. ماژول‌ها &#8212; مستندات Python3.14.6</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=234b1a7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=4365c8fe" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=0fc419ee" />
+    
+    <script src="../_static/documentation_options.js?v=e254dbbb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=5df48d09"></script>
+    
+    <script src="../_static/sidebar.js"></script>
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="جستجو در مستندات Python3.14.6"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="درباره این مستندات" href="../about.html" />
+    <link rel="index" title="فهرست" href="../genindex.html" />
+    <link rel="search" title="جستجو" href="../search.html" />
+    <link rel="copyright" title="حق چاپ" href="../copyright.html" />
+    <link rel="next" title="7. ورودی و خروجی" href="inputoutput.html" />
+    <link rel="prev" title="5. ساختمان داده‌ها" href="datastructures.html" />
+    
+      
+      <link rel="canonical" href="https://docs.python.org/3/tutorial/modules.html">
+      
+    
+
+    
+    <style>
+      @media only screen {
+        table.full-width-table {
+            width: 100%;
+        }
+      }
+    </style>
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg">
+            <script type="text/javascript" src="../_static/copybutton.js"></script>
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/search-focus.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
+            <script type="text/javascript" src="../_static/rtd_switcher.js"></script>
+            <meta name="readthedocs-addons-api-version" content="1">
+
+  </head>
+<body>
+<div class="mobile-nav">
+    <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
+           aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu">
+    <nav class="nav-content" role="navigation">
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Python logo">
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q">
+                <input type="submit" value="برو">
+            </form>
+        </span>
+    </nav>
+    <div class="menu-wrapper">
+        <nav class="menu" role="navigation" aria-label="main navigation">
+            <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">6. ماژول‌ها</a><ul>
+<li><a class="reference internal" href="#more-on-modules">6.1. بیشتر درباره‌ی ماژول‌ها</a><ul>
+<li><a class="reference internal" href="#executing-modules-as-scripts">6.1.1. اجرای ماژول‌ها به‌عنوان اسکریپت</a></li>
+<li><a class="reference internal" href="#the-module-search-path">6.1.2. مسیر جست‌وجوی ماژول‌ها</a></li>
+<li><a class="reference internal" href="#compiled-python-files">6.1.3. فایل‌های پایتون «کامپایل‌شده»</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#standard-modules">6.2. ماژول‌های استاندارد</a></li>
+<li><a class="reference internal" href="#the-dir-function">6.3. تابع <code class="xref py py-func docutils literal notranslate"><span class="pre">dir()</span></code></a></li>
+<li><a class="reference internal" href="#packages">6.4. بسته‌ها</a><ul>
+<li><a class="reference internal" href="#importing-from-a-package">6.4.1. وارد کردن * از یک بسته</a></li>
+<li><a class="reference internal" href="#intra-package-references">6.4.2. ارجاع‌های درون‌بسته‌ای</a></li>
+<li><a class="reference internal" href="#packages-in-multiple-directories">6.4.3. بسته‌ها در چندین پوشه</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="datastructures.html"
+                          title="فصل قبلی"><span class="section-number">5. </span>ساختمان داده‌ها</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="inputoutput.html"
+                          title="فصل بعدی"><span class="section-number">7. </span>ورودی و خروجی</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/modules.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/modules.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/modules.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </nav>
+    </div>
+</div>
+
+  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             accesskey="I">فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="inputoutput.html" title="7. ورودی و خروجی"
+             accesskey="N">بعدی</a> |</li>
+        <li class="right" >
+          <a href="datastructures.html" title="5. ساختمان داده‌ها"
+             accesskey="P">قبلی</a> |</li>
+
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">6. </span>ماژول‌ها</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="modules">
+<span id="tut-modules"></span><h1><span class="section-number">6. </span>ماژول‌ها<a class="headerlink" href="#modules" title="Link to this heading">¶</a></h1>
+<p>اگر از مفسر پایتون خارج شوید و دوباره وارد آن شوید، تعریف‌هایی که ایجاد کرده‌اید (تابع‌ها و متغیرها) از بین می‌روند. بنابراین، اگر می‌خواهید برنامه‌ای نسبتاً طولانی‌تر بنویسید، بهتر است به‌جای آن از یک ویرایشگر متن برای آماده‌سازی ورودی مفسر استفاده کنید و آن را با استفاده از آن فایل به‌عنوان ورودی اجرا کنید. این کار با نام ایجاد یک <em>اسکریپت</em> شناخته می‌شود. هرچه برنامهٔ شما طولانی‌تر شود، ممکن است بخواهید آن را برای نگهداری آسان‌تر به چندین فایل تقسیم کنید. همچنین ممکن است بخواهید از یک تابع کاربردی که در چندین برنامه نوشته‌اید، بدون کپی کردن تعریف آن در هر برنامه استفاده کنید.</p>
+<p>برای پشتیبانی از این کار، پایتون روشی دارد که به شما اجازه می‌دهد تعریف‌ها را در یک فایل قرار دهید و از آن‌ها در یک اسکریپت یا در یک نمونهٔ تعاملی از مفسر استفاده کنید. چنین فایلی یک <em>ماژول</em> نامیده می‌شود؛ تعریف‌های یک ماژول را می‌توان به ماژول‌های دیگر یا به ماژول <em>اصلی</em> (<em>main</em>) (مجموعه‌ای از متغیرهایی که در یک اسکریپت اجراشده در سطح بالا و در حالت ماشین‌حساب به آن‌ها دسترسی دارید) <em>وارد</em> کرد.</p>
+<p>یک ماژول فایلی است که شامل تعریف‌ها و دستورهای پایتون است. نام فایل، نام ماژول به‌همراه پسوند <code class="file docutils literal notranslate"><span class="pre">.py</span></code> است. درون یک ماژول، نام ماژول (به‌صورت یک رشته) به‌عنوان مقدار متغیر سراسری <code class="docutils literal notranslate"><span class="pre">__name__</span></code> در دسترس است. برای نمونه، با استفاده از ویرایشگر متن دلخواه خود فایلی با نام <code class="file docutils literal notranslate"><span class="pre">fibo.py</span></code> را در پوشهٔ جاری ایجاد کنید که محتوای زیر را داشته باشد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ماژول اعداد فیبوناچی</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Write Fibonacci series up to n."""</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fib2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Return Fibonacci series up to n."""</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+<p>اکنون وارد مفسر پایتون شوید و این ماژول را با دستور زیر وارد کنید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">fibo</span>
+</pre></div>
+</div>
+<p>این کار نام تابع‌هایی را که در <code class="docutils literal notranslate"><span class="pre">fibo</span></code> تعریف شده‌اند، مستقیماً به <a class="reference internal" href="../glossary.html#term-namespace"><span class="xref std std-term">فضای نام</span></a> فعلی اضافه نمی‌کند (برای جزئیات بیشتر به <a class="reference internal" href="classes.html#tut-scopes"><span class="std std-ref">محدوده‌ها و فضای نام‌ها در پایتون</span></a> مراجعه کنید)؛ بلکه فقط نام ماژول <code class="docutils literal notranslate"><span class="pre">fibo</span></code> را به آن اضافه می‌کند. با استفاده از نام ماژول می‌توانید به تابع‌ها دسترسی پیدا کنید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fibo</span><span class="o">.</span><span class="n">fib</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="go">0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fibo</span><span class="o">.</span><span class="n">fib2</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="go">[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fibo</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="go">'fibo'</span>
+</pre></div>
+</div>
+<p>اگر قصد دارید از یک تابع به‌طور مکرر استفاده کنید، می‌توانید آن را به یک نام محلی اختصاص دهید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fib</span> <span class="o">=</span> <span class="n">fibo</span><span class="o">.</span><span class="n">fib</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fib</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="go">0 1 1 2 3 5 8 13 21 34 55 89 144 233 377</span>
+</pre></div>
+</div>
+<section id="more-on-modules">
+<span id="tut-moremodules"></span><h2><span class="section-number">6.1. </span>بیشتر درباره‌ی ماژول‌ها<a class="headerlink" href="#more-on-modules" title="Link to this heading">¶</a></h2>
+<p>یک ماژول می‌تواند علاوه بر تعریف تابع‌ها، شامل دستورهای اجرایی نیز باشد. هدف از این دستورها مقداردهی اولیهٔ ماژول است. این دستورها فقط در <em>اولین</em> باری که نام ماژول در یک دستور import دیده می‌شود اجرا می‌شوند. <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> (همچنین اگر فایل به‌عنوان یک اسکریپت اجرا شود، این دستورها اجرا خواهند شد.)</p>
+<p>هر ماژول فضای نام خصوصی خود را دارد که توسط تمام تابع‌های تعریف‌شده در ماژول، به‌عنوان فضای نام سراسری استفاده می‌شود. بنابراین، نویسندهٔ یک ماژول می‌تواند بدون نگرانی از تداخل تصادفی با متغیرهای سراسری کاربر، از متغیرهای سراسری درون ماژول استفاده کند. از طرف دیگر، اگر بدانید چه کاری انجام می‌دهید، می‌توانید با همان نگارشی که برای ارجاع به تابع‌های ماژول استفاده می‌کنید، به متغیرهای سراسری ماژول دسترسی پیدا کنید: <code class="docutils literal notranslate"><span class="pre">modname.itemname</span></code>.</p>
+<p>ماژول‌ها می‌توانند ماژول‌های دیگری را وارد کنند. معمول است، اما اجباری نیست، که تمام دستورهای <a class="reference internal" href="../reference/simple_stmts.html#import"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">import</span></code></a> در ابتدای یک ماژول (یا به‌طور کلی یک اسکریپت) قرار داده شوند. نام ماژول‌های واردشده، اگر در سطح بالای یک ماژول (خارج از هر تابع یا کلاس) قرار گرفته باشند، به فضای نام سراسری ماژول اضافه می‌شوند.</p>
+<p>گونه‌ای از دستور <a class="reference internal" href="../reference/simple_stmts.html#import"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">import</span></code></a> وجود دارد که نام‌ها را از یک ماژول مستقیماً به فضای نام ماژولی که عمل وارد کردن را انجام می‌دهد وارد می‌کند. برای مثال:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">fibo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fib</span><span class="p">,</span> <span class="n">fib2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fib</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="go">0 1 1 2 3 5 8 13 21 34 55 89 144 233 377</span>
+</pre></div>
+</div>
+<p>این کار نام ماژولی را که وارد کردن از آن انجام شده است، به فضای نام محلی اضافه نمی‌کند (بنابراین در مثال، <code class="docutils literal notranslate"><span class="pre">fibo</span></code> تعریف نشده است).</p>
+<p>همچنین گونه‌ای وجود دارد که تمام نام‌هایی را که یک ماژول تعریف می‌کند وارد می‌کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">fibo</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fib</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="go">0 1 1 2 3 5 8 13 21 34 55 89 144 233 377</span>
+</pre></div>
+</div>
+<p>این دستور تمام نام‌ها را به‌جز نام‌هایی که با یک زیرخط (<code class="docutils literal notranslate"><span class="pre">_</span></code>) شروع می‌شوند وارد می‌کند. در بیشتر موارد، برنامه‌نویسان پایتون از این قابلیت استفاده نمی‌کنند، زیرا مجموعه‌ای نامشخص از نام‌ها را وارد مفسر می‌کند و ممکن است برخی مواردی را که قبلاً تعریف کرده‌اید پنهان کند.</p>
+<p>توجه داشته باشید که به‌طور کلی، وارد کردن <code class="docutils literal notranslate"><span class="pre">*</span></code> از یک ماژول یا بسته عملی نامطلوب محسوب می‌شود، زیرا اغلب باعث ایجاد کدی با خوانایی ضعیف می‌شود. بااین‌حال، استفاده از آن برای کاهش تایپ در نشست‌های تعاملی اشکالی ندارد.</p>
+<p>اگر نام ماژول پس از <code class="xref std std-keyword docutils literal notranslate"><span class="pre">as</span></code> قرار گیرد، نامی که پس از <code class="xref std std-keyword docutils literal notranslate"><span class="pre">as</span></code> می‌آید مستقیماً به ماژول واردشده متصل می‌شود.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">fibo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fib</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fib</span><span class="o">.</span><span class="n">fib</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="go">0 1 1 2 3 5 8 13 21 34 55 89 144 233 377</span>
+</pre></div>
+</div>
+<p>این کار در عمل همانند وارد کردن ماژول به روشی که <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">fibo</span></code> انجام می‌دهد است، با این تفاوت که ماژول به‌صورت <code class="docutils literal notranslate"><span class="pre">fib</span></code> در دسترس خواهد بود.</p>
+<p>همچنین می‌توان هنگام استفاده از <a class="reference internal" href="../reference/simple_stmts.html#from"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">from</span></code></a> از آن با اثر مشابهی استفاده کرد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">fibo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fib</span> <span class="k">as</span> <span class="n">fibonacci</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="go">0 1 1 2 3 5 8 13 21 34 55 89 144 233 377</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">توجه</p>
+<p>به دلایل کارایی، هر ماژول در هر نشست مفسر فقط یک بار وارد می‌شود. بنابراین، اگر ماژول‌های خود را تغییر دهید، باید مفسر را دوباره راه‌اندازی کنید؛ یا اگر فقط یک ماژول را می‌خواهید به‌صورت تعاملی آزمایش کنید، از <a class="reference internal" href="../library/importlib.html#importlib.reload" title="importlib.reload"><code class="xref py py-func docutils literal notranslate"><span class="pre">importlib.reload()</span></code></a> استفاده کنید، برای مثال: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">importlib;</span> <span class="pre">importlib.reload(modulename)</span></code>.</p>
+</div>
+<section id="executing-modules-as-scripts">
+<span id="tut-modulesasscripts"></span><h3><span class="section-number">6.1.1. </span>اجرای ماژول‌ها به‌عنوان اسکریپت<a class="headerlink" href="#executing-modules-as-scripts" title="Link to this heading">¶</a></h3>
+<p>وقتی یک ماژول پایتون را با استفاده از این دستور اجرا می‌کنید</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">fibo</span><span class="o">.</span><span class="n">py</span> <span class="o">&lt;</span><span class="n">arguments</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>کد موجود در ماژول اجرا خواهد شد، درست همانند زمانی که آن را وارد کرده‌اید، اما مقدار <code class="docutils literal notranslate"><span class="pre">__name__</span></code> برابر با <code class="docutils literal notranslate"><span class="pre">&quot;__main__&quot;</span></code> تنظیم می‌شود. این یعنی با افزودن کد زیر در انتهای ماژول خود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+    <span class="n">fib</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>می‌توانید فایل را هم به‌عنوان یک اسکریپت و هم به‌عنوان یک ماژول قابل وارد کردن استفاده کنید، زیرا کدی که خط فرمان را تجزیه می‌کند فقط زمانی اجرا می‌شود که ماژول به‌عنوان فایل «اصلی» اجرا شود:</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>fibo.py<span class="w"> </span><span class="m">50</span>
+<span class="go">0 1 1 2 3 5 8 13 21 34</span>
+</pre></div>
+</div>
+<p>اگر ماژول وارد شود، کد اجرا نمی‌شود:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">fibo</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>این روش اغلب برای فراهم کردن یک رابط کاربری مناسب برای یک ماژول یا برای اهداف آزمایشی استفاده می‌شود (اجرای ماژول به‌عنوان یک اسکریپت باعث اجرای یک مجموعهٔ آزمون می‌شود).</p>
+</section>
+<section id="the-module-search-path">
+<span id="tut-searchpath"></span><h3><span class="section-number">6.1.2. </span>مسیر جست‌وجوی ماژول‌ها<a class="headerlink" href="#the-module-search-path" title="Link to this heading">¶</a></h3>
+<p id="index-0">هنگامی که یک ماژول با نام <code class="xref py py-mod docutils literal notranslate"><span class="pre">spam</span></code> وارد می‌شود، مفسر ابتدا به دنبال یک ماژول داخلی با همان نام می‌گردد. نام این ماژول‌ها در <a class="reference internal" href="../library/sys.html#sys.builtin_module_names" title="sys.builtin_module_names"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.builtin_module_names</span></code></a> فهرست شده‌اند. اگر یافت نشود، سپس به دنبال فایلی با نام <code class="file docutils literal notranslate"><span class="pre">spam.py</span></code> در فهرستی از پوشه‌ها می‌گردد که توسط متغیر <a class="reference internal" href="../library/sys.html#sys.path" title="sys.path"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.path</span></code></a> مشخص شده‌اند. <code class="xref py py-data docutils literal notranslate"><span class="pre">sys.path</span></code> از این مکان‌ها مقداردهی اولیه می‌شود:</p>
+<ul class="simple">
+<li><p>پوشه‌ای که اسکریپت ورودی در آن قرار دارد (یا پوشهٔ جاری، زمانی که هیچ فایلی مشخص نشده باشد).</p></li>
+<li><p><span class="target" id="index-14"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONPATH"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONPATH</span></code></a> (فهرستی از نام پوشه‌ها با همان نحوی که متغیر پوستهٔ <span class="target" id="index-15"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PATH</span></code> دارد).</p></li>
+<li><p>مقدار پیش‌فرض وابسته به نصب (که طبق قرارداد شامل یک پوشهٔ <code class="docutils literal notranslate"><span class="pre">site-packages</span></code> است و توسط ماژول <a class="reference internal" href="../library/site.html#module-site" title="site: Module responsible for site-specific configuration."><code class="xref py py-mod docutils literal notranslate"><span class="pre">site</span></code></a> مدیریت می‌شود).</p></li>
+</ul>
+<p>جزئیات بیشتر در <a class="reference internal" href="../library/sys_path_init.html#sys-path-init"><span class="std std-ref">The initialization of the sys.path module search path</span></a> موجود است.</p>
+<div class="admonition note">
+<p class="admonition-title">توجه</p>
+<p>در سیستم‌های فایلی که از پیوندهای نمادین پشتیبانی می‌کنند، پوشهٔ شامل اسکریپت ورودی پس از دنبال کردن پیوند نمادین محاسبه می‌شود. به عبارت دیگر، پوشه‌ای که پیوند نمادین در آن قرار دارد <strong>به مسیر جست‌وجوی ماژول‌ها اضافه نمی‌شود</strong>.</p>
+</div>
+<p>پس از مقداردهی اولیه، برنامه‌های پایتون می‌توانند <a class="reference internal" href="../library/sys.html#sys.path" title="sys.path"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.path</span></code></a> را تغییر دهند. پوشه‌ای که اسکریپت در حال اجرا در آن قرار دارد، در ابتدای مسیر جست‌وجو و پیش از مسیر کتابخانهٔ استاندارد قرار داده می‌شود. این بدان معناست که اسکریپت‌های موجود در آن پوشه، به‌جای ماژول‌هایی با همان نام در پوشهٔ کتابخانه بارگذاری خواهند شد. این کار یک خطا محسوب می‌شود، مگر اینکه جایگزینی موردنظر باشد. برای اطلاعات بیشتر، بخش <a class="reference internal" href="#tut-standardmodules"><span class="std std-ref">ماژول‌های استاندارد</span></a> را ببینید.</p>
+</section>
+<section id="compiled-python-files">
+<span id="tut-pycache"></span><h3><span class="section-number">6.1.3. </span>فایل‌های پایتون «کامپایل‌شده»<a class="headerlink" href="#compiled-python-files" title="Link to this heading">¶</a></h3>
+<p>برای افزایش سرعت بارگذاری ماژول‌ها، پایتون نسخهٔ کامپایل‌شدهٔ هر ماژول را در پوشهٔ <code class="docutils literal notranslate"><span class="pre">__pycache__</span></code> و با نام <code class="file docutils literal notranslate"><span class="pre">module.</span><em><span class="pre">version</span></em><span class="pre">.pyc</span></code> ذخیره می‌کند؛ در این نام، نسخه قالب فایل کامپایل‌شده را مشخص می‌کند و معمولاً شامل شمارهٔ نسخهٔ پایتون است. برای مثال، در انتشار CPython نسخهٔ 3.3، نسخهٔ کامپایل‌شدهٔ spam.py به‌صورت <code class="docutils literal notranslate"><span class="pre">__pycache__/spam.cpython-33.pyc</span></code> ذخیره می‌شود. این قرارداد نام‌گذاری اجازه می‌دهد ماژول‌های کامپایل‌شده از انتشارها و نسخه‌های مختلف پایتون در کنار یکدیگر وجود داشته باشند.</p>
+<p>پایتون تاریخ تغییر فایل منبع را با نسخهٔ کامپایل‌شده بررسی می‌کند تا مشخص شود آیا قدیمی شده است و نیاز به کامپایل مجدد دارد یا خیر. این فرایند کاملاً خودکار است. همچنین، ماژول‌های کامپایل‌شده مستقل از پلتفرم هستند، بنابراین یک کتابخانهٔ یکسان می‌تواند بین سیستم‌هایی با معماری‌های متفاوت به اشتراک گذاشته شود.</p>
+<p>پایتون در دو حالت، حافظهٔ نهان را بررسی نمی‌کند. نخست، همیشه ماژولی را که مستقیماً از خط فرمان بارگذاری شده است دوباره کامپایل می‌کند و نتیجه را ذخیره نمی‌کند. دوم، اگر هیچ ماژول منبعی وجود نداشته باشد، حافظهٔ نهان را بررسی نمی‌کند. برای پشتیبانی از توزیع‌های بدون منبع (فقط کامپایل‌شده)، ماژول کامپایل‌شده باید در پوشهٔ منبع قرار داشته باشد و نباید ماژول منبعی وجود داشته باشد.</p>
+<p>چند نکته برای متخصصان:</p>
+<ul class="simple">
+<li><p>می‌توانید از گزینه‌های <a class="reference internal" href="../using/cmdline.html#cmdoption-O"><code class="xref std std-option docutils literal notranslate"><span class="pre">-O</span></code></a> یا <a class="reference internal" href="../using/cmdline.html#cmdoption-OO"><code class="xref std std-option docutils literal notranslate"><span class="pre">-OO</span></code></a> در دستور پایتون برای کاهش اندازهٔ یک ماژول کامپایل‌شده استفاده کنید. گزینهٔ <code class="docutils literal notranslate"><span class="pre">-O</span></code> دستورهای assert را حذف می‌کند و گزینهٔ <code class="docutils literal notranslate"><span class="pre">-OO</span></code> هم دستورهای assert و هم رشته‌های <strong>doc</strong> را حذف می‌کند. از آنجا که برخی برنامه‌ها ممکن است به وجود این موارد وابسته باشند، فقط زمانی باید از این گزینه استفاده کنید که بدانید چه کاری انجام می‌دهید. ماژول‌های «بهینه‌شده» دارای برچسب <code class="docutils literal notranslate"><span class="pre">opt-</span></code> هستند و معمولاً کوچک‌ترند. انتشارهای آینده ممکن است اثرات بهینه‌سازی را تغییر دهند.</p></li>
+<li><p>یک برنامه زمانی که از یک فایل <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> خوانده می‌شود، سریع‌تر از زمانی که از یک فایل <code class="docutils literal notranslate"><span class="pre">.py</span></code> خوانده می‌شود اجرا نمی‌شود؛ تنها چیزی که در فایل‌های <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> سریع‌تر است، سرعت بارگذاری آن‌هاست.</p></li>
+<li><p>ماژول <a class="reference internal" href="../library/compileall.html#module-compileall" title="compileall: Tools for byte-compiling all Python source files in a directory tree."><code class="xref py py-mod docutils literal notranslate"><span class="pre">compileall</span></code></a> می‌تواند برای تمام ماژول‌های موجود در یک پوشه فایل‌های .pyc ایجاد کند.</p></li>
+<li><p>جزئیات بیشتری دربارهٔ این فرایند، از جمله نمودار جریان تصمیم‌ها، در <span class="target" id="index-16"></span><a class="pep reference external" href="https://peps.python.org/pep-3147/"><strong>PEP 3147</strong></a> آمده است.</p></li>
+</ul>
+</section>
+</section>
+<section id="standard-modules">
+<span id="tut-standardmodules"></span><h2><span class="section-number">6.2. </span>ماژول‌های استاندارد<a class="headerlink" href="#standard-modules" title="Link to this heading">¶</a></h2>
+<p id="index-4">پایتون همراه با مجموعه‌ای از ماژول‌های استاندارد ارائه می‌شود که در یک سند جداگانه، یعنی مرجع کتابخانهٔ پایتون (&quot;مرجع کتابخانه&quot; از اینجا به بعد)، توضیح داده شده‌اند. برخی ماژول‌ها در مفسر داخلی هستند؛ این ماژول‌ها دسترسی به عملیاتی را فراهم می‌کنند که بخشی از هستهٔ زبان نیستند، اما بااین‌حال، یا برای افزایش کارایی یا برای فراهم کردن دسترسی به امکانات سیستم‌عامل مانند فراخوانی‌های سیستمی، به‌صورت داخلی وجود دارند. مجموعهٔ این ماژول‌ها یک گزینهٔ پیکربندی است که به پلتفرم زیربنایی نیز وابسته است. برای مثال، ماژول <a class="reference internal" href="../library/winreg.html#module-winreg" title="winreg: Routines and objects for manipulating the Windows registry."><code class="xref py py-mod docutils literal notranslate"><span class="pre">winreg</span></code></a> فقط در سیستم‌های ویندوز ارائه می‌شود. یک ماژول خاص شایستهٔ توجه بیشتر است: <a class="reference internal" href="../library/sys.html#module-sys" title="sys: Access system-specific parameters and functions."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code></a> که در هر مفسر پایتون داخلی است. متغیرهای <code class="docutils literal notranslate"><span class="pre">sys.ps1</span></code> و <code class="docutils literal notranslate"><span class="pre">sys.ps2</span></code> رشته‌هایی را تعریف می‌کنند که به‌عنوان اعلان‌های اصلی و ثانویه استفاده می‌شوند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">ps1</span>
+<span class="go">'&gt;&gt;&gt; '</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">ps2</span>
+<span class="go">'... '</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">ps1</span> <span class="o">=</span> <span class="s1">'C&gt; '</span>
+<span class="go">C&gt; print('Yuck!')</span>
+<span class="go">Yuck!</span>
+<span class="go">C&gt;</span>
+</pre></div>
+</div>
+<p>این دو متغیر فقط زمانی تعریف می‌شوند که مفسر در حالت تعاملی باشد.</p>
+<p>متغیر <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> فهرستی از رشته‌هاست که مسیر جست‌وجوی مفسر برای ماژول‌ها را تعیین می‌کند. این متغیر از یک مسیر پیش‌فرض گرفته‌شده از متغیر محیطی <span class="target" id="index-17"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONPATH"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONPATH</span></code></a> مقداردهی اولیه می‌شود، یا اگر <span class="target" id="index-18"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> تنظیم نشده باشد، از یک مقدار پیش‌فرض داخلی استفاده می‌کند. می‌توانید آن را با استفاده از عملیات استاندارد فهرست‌ها تغییر دهید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'/ufs/guido/lib/python'</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="the-dir-function">
+<span id="tut-dir"></span><h2><span class="section-number">6.3. </span>تابع <a class="reference internal" href="../library/functions.html#dir" title="dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">dir()</span></code></a><a class="headerlink" href="#the-dir-function" title="Link to this heading">¶</a></h2>
+<p>تابع داخلی <a class="reference internal" href="../library/functions.html#dir" title="dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">dir()</span></code></a> برای یافتن نام‌هایی که یک ماژول تعریف می‌کند استفاده می‌شود. این تابع یک فهرست مرتب‌شده از رشته‌ها برمی‌گرداند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">fibo</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">fibo</span><span class="p">)</span>
+<span class="go">['__name__', 'fib', 'fib2']</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span>
+<span class="go">['__breakpointhook__', '__displayhook__', '__doc__', '__excepthook__',</span>
+<span class="go"> '__interactivehook__', '__loader__', '__name__', '__package__', '__spec__',</span>
+<span class="go"> '__stderr__', '__stdin__', '__stdout__', '__unraisablehook__',</span>
+<span class="go"> '_clear_type_cache', '_current_frames', '_debugmallocstats', '_framework',</span>
+<span class="go"> '_getframe', '_git', '_home', '_xoptions', 'abiflags', 'addaudithook',</span>
+<span class="go"> 'api_version', 'argv', 'audit', 'base_exec_prefix', 'base_prefix',</span>
+<span class="go"> 'breakpointhook', 'builtin_module_names', 'byteorder', 'call_tracing',</span>
+<span class="go"> 'callstats', 'copyright', 'displayhook', 'dont_write_bytecode', 'exc_info',</span>
+<span class="go"> 'excepthook', 'exec_prefix', 'executable', 'exit', 'flags', 'float_info',</span>
+<span class="go"> 'float_repr_style', 'get_asyncgen_hooks', 'get_coroutine_origin_tracking_depth',</span>
+<span class="go"> 'getallocatedblocks', 'getdefaultencoding', 'getdlopenflags',</span>
+<span class="go"> 'getfilesystemencodeerrors', 'getfilesystemencoding', 'getprofile',</span>
+<span class="go"> 'getrecursionlimit', 'getrefcount', 'getsizeof', 'getswitchinterval',</span>
+<span class="go"> 'gettrace', 'hash_info', 'hexversion', 'implementation', 'int_info',</span>
+<span class="go"> 'intern', 'is_finalizing', 'last_traceback', 'last_type', 'last_value',</span>
+<span class="go"> 'maxsize', 'maxunicode', 'meta_path', 'modules', 'path', 'path_hooks',</span>
+<span class="go"> 'path_importer_cache', 'platform', 'prefix', 'ps1', 'ps2', 'pycache_prefix',</span>
+<span class="go"> 'set_asyncgen_hooks', 'set_coroutine_origin_tracking_depth', 'setdlopenflags',</span>
+<span class="go"> 'setprofile', 'setrecursionlimit', 'setswitchinterval', 'settrace', 'stderr',</span>
+<span class="go"> 'stdin', 'stdout', 'thread_info', 'unraisablehook', 'version', 'version_info',</span>
+<span class="go"> 'warnoptions']</span>
+</pre></div>
+</div>
+<p>بدون آرگومان، <a class="reference internal" href="../library/functions.html#dir" title="dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">dir()</span></code></a> نام‌هایی را که در حال حاضر تعریف کرده‌اید فهرست می‌کند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">fibo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fib</span> <span class="o">=</span> <span class="n">fibo</span><span class="o">.</span><span class="n">fib</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">()</span>
+<span class="go">['__builtins__', '__name__', 'a', 'fib', 'fibo', 'sys']</span>
+</pre></div>
+</div>
+<p>توجه کنید که این تابع همهٔ انواع نام‌ها را فهرست می‌کند: متغیرها، ماژول‌ها، تابع‌ها و غیره.</p>
+<p id="index-7"><a class="reference internal" href="../library/functions.html#dir" title="dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">dir()</span></code></a> نام تابع‌ها و متغیرهای داخلی را فهرست نمی‌کند. اگر فهرستی از آن‌ها می‌خواهید، این موارد در ماژول استاندارد <a class="reference internal" href="../library/builtins.html#module-builtins" title="builtins: The module that provides the built-in namespace."><code class="xref py py-mod docutils literal notranslate"><span class="pre">builtins</span></code></a> تعریف شده‌اند:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">builtins</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">builtins</span><span class="p">)</span>
+<span class="go">['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException',</span>
+<span class="go"> 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning',</span>
+<span class="go"> 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError',</span>
+<span class="go"> 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning',</span>
+<span class="go"> 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False',</span>
+<span class="go"> 'FileExistsError', 'FileNotFoundError', 'FloatingPointError',</span>
+<span class="go"> 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError',</span>
+<span class="go"> 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError',</span>
+<span class="go"> 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError',</span>
+<span class="go"> 'MemoryError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented',</span>
+<span class="go"> 'NotImplementedError', 'OSError', 'OverflowError',</span>
+<span class="go"> 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError',</span>
+<span class="go"> 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning',</span>
+<span class="go"> 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError',</span>
+<span class="go"> 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError',</span>
+<span class="go"> 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError',</span>
+<span class="go"> 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning',</span>
+<span class="go"> 'ValueError', 'Warning', 'ZeroDivisionError', '_', '__build_class__',</span>
+<span class="go"> '__debug__', '__doc__', '__import__', '__name__', '__package__', 'abs',</span>
+<span class="go"> 'all', 'any', 'ascii', 'bin', 'bool', 'bytearray', 'bytes', 'callable',</span>
+<span class="go"> 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits',</span>
+<span class="go"> 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit',</span>
+<span class="go"> 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr',</span>
+<span class="go"> 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass',</span>
+<span class="go"> 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview',</span>
+<span class="go"> 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property',</span>
+<span class="go"> 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice',</span>
+<span class="go"> 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars',</span>
+<span class="go"> 'zip']</span>
+</pre></div>
+</div>
+</section>
+<section id="packages">
+<span id="tut-packages"></span><h2><span class="section-number">6.4. </span>بسته‌ها<a class="headerlink" href="#packages" title="Link to this heading">¶</a></h2>
+<p>بسته‌ها روشی برای ساختاربندی فضای نام ماژول‌های پایتون با استفاده از «نام‌های نقطه‌دار ماژول» هستند. برای مثال، نام ماژول <code class="xref py py-mod docutils literal notranslate"><span class="pre">A.B</span></code> یک زیرماژول با نام <code class="docutils literal notranslate"><span class="pre">B</span></code> در بسته‌ای با نام <code class="docutils literal notranslate"><span class="pre">A</span></code> را مشخص می‌کند. همان‌طور که استفاده از ماژول‌ها باعث می‌شود نویسندگان ماژول‌های مختلف نگران نام متغیرهای سراسری یکدیگر نباشند، استفاده از نام‌های نقطه‌دار ماژول نیز باعث می‌شود نویسندگان بسته‌های چندماژوله‌ای مانند NumPy یا Pillow نگران نام ماژول‌های یکدیگر نباشند.</p>
+<p>فرض کنید می‌خواهید مجموعه‌ای از ماژول‌ها (یک «بسته») را برای مدیریت یکپارچهٔ فایل‌های صوتی و داده‌های صوتی طراحی کنید. قالب‌های فایل صوتی بسیار متفاوتی وجود دارند (که معمولاً با پسوندشان شناخته می‌شوند، برای مثال: <code class="file docutils literal notranslate"><span class="pre">.wav</span></code>، <code class="file docutils literal notranslate"><span class="pre">.aiff</span></code>، <code class="file docutils literal notranslate"><span class="pre">.au</span></code>)؛ بنابراین ممکن است نیاز داشته باشید مجموعه‌ای در حال رشد از ماژول‌ها را برای تبدیل بین قالب‌های مختلف فایل ایجاد و نگهداری کنید. همچنین عملیات‌های مختلف بسیاری وجود دارند که ممکن است بخواهید روی داده‌های صوتی انجام دهید (مانند ترکیب کردن، افزودن پژواک، اعمال تابع اکولایزر، ایجاد یک اثر استریوی مصنوعی)، بنابراین علاوه بر این، جریان بی‌پایانی از ماژول‌ها برای انجام این عملیات‌ها خواهید نوشت. ساختار احتمالی زیر برای بستهٔ شما وجود دارد (که به‌صورت یک سیستم فایل سلسله‌مراتبی بیان شده است):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sound/                          بسته‌های سطح بالا
+      __init__.py               راه‌اندازی اولیه بسته صوتی
+      formats/                  زیربسته برای تبدیل فرمت‌های فایل
+              __init__.py
+              wavread.py
+              wavwrite.py
+              aiffread.py
+              aiffwrite.py
+              auread.py
+              auwrite.py
+              ...
+      effects/                  زیربسته برای جلوه‌های صوتی
+              __init__.py
+              echo.py
+              surround.py
+              reverse.py
+              ...
+      filters/                  زیربسته برای فیلتر‌ها
+              __init__.py
+              equalizer.py
+              vocoder.py
+              karaoke.py
+              ...
+</pre></div>
+</div>
+<p>هنگام وارد کردن بسته، پایتون پوشه‌های موجود در <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> را جست‌وجو می‌کند تا زیرپوشهٔ بسته را پیدا کند.</p>
+<p>فایل‌های <code class="file docutils literal notranslate"><span class="pre">__init__.py</span></code> لازم هستند تا پایتون پوشه‌هایی را که شامل این فایل هستند به‌عنوان بسته در نظر بگیرد (مگر اینکه از یک <a class="reference internal" href="../glossary.html#term-namespace-package"><span class="xref std std-term">namespace package</span></a> استفاده شود که قابلیتی نسبتاً پیشرفته است). این کار از پنهان شدن ناخواستهٔ ماژول‌های معتبر که بعداً در مسیر جست‌وجوی ماژول قرار دارند، توسط پوشه‌هایی با نام مشترک مانند <code class="docutils literal notranslate"><span class="pre">string</span></code> جلوگیری می‌کند. در ساده‌ترین حالت، <code class="file docutils literal notranslate"><span class="pre">__init__.py</span></code> می‌تواند فقط یک فایل خالی باشد، اما می‌تواند کد مقداردهی اولیهٔ بسته را نیز اجرا کند یا متغیر <code class="docutils literal notranslate"><span class="pre">__all__</span></code> را که بعداً توضیح داده می‌شود، تنظیم کند.</p>
+<p>کاربران بسته می‌توانند ماژول‌های جداگانه‌ای را از بسته وارد کنند، برای مثال:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sound.effects.echo</span>
+</pre></div>
+</div>
+<p>این کار زیرماژول <code class="xref py py-mod docutils literal notranslate"><span class="pre">sound.effects.echo</span></code> را بارگذاری می‌کند. این ماژول باید با نام کامل خود ارجاع داده شود.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">sound</span><span class="o">.</span><span class="n">effects</span><span class="o">.</span><span class="n">echo</span><span class="o">.</span><span class="n">echofilter</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">atten</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>روش جایگزین برای وارد کردن زیرماژول به شکل زیر است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sound.effects</span><span class="w"> </span><span class="kn">import</span> <span class="n">echo</span>
+</pre></div>
+</div>
+<p>این روش نیز زیرماژول <code class="xref py py-mod docutils literal notranslate"><span class="pre">echo</span></code> را بارگذاری می‌کند و آن را بدون پیشوند بسته در دسترس قرار می‌دهد، بنابراین می‌توان از آن به شکل زیر استفاده کرد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span><span class="o">.</span><span class="n">echofilter</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">atten</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>یک حالت دیگر، وارد کردن مستقیم تابع یا متغیر موردنظر است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sound.effects.echo</span><span class="w"> </span><span class="kn">import</span> <span class="n">echofilter</span>
+</pre></div>
+</div>
+<p>دوباره، این کار زیرماژول <code class="xref py py-mod docutils literal notranslate"><span class="pre">echo</span></code> را بارگذاری می‌کند، اما باعث می‌شود تابع آن، یعنی <code class="xref py py-func docutils literal notranslate"><span class="pre">echofilter()</span></code>، مستقیماً در دسترس باشد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">echofilter</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">atten</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>توجه کنید که هنگام استفاده از <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">package</span> <span class="pre">import</span> <span class="pre">item</span></code>، مورد item می‌تواند یک زیرماژول (یا زیر‌بسته) از بسته باشد، یا نام دیگری باشد که در بسته تعریف شده است، مانند یک تابع، کلاس یا متغیر. دستور <code class="docutils literal notranslate"><span class="pre">import</span></code> ابتدا بررسی می‌کند که آیا item در بسته تعریف شده است یا خیر؛ اگر تعریف نشده باشد، فرض می‌کند که یک ماژول است و تلاش می‌کند آن را بارگذاری کند. اگر نتواند آن را پیدا کند، یک استثنای <a class="reference internal" href="../library/exceptions.html#ImportError" title="ImportError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ImportError</span></code></a> پرتاب می‌شود.</p>
+<p>برعکس، هنگام استفاده از نحوی مانند <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">item.subitem.subsubitem</span></code>، هر مورد به‌جز آخرین مورد باید یک بسته باشد؛ آخرین مورد می‌تواند یک ماژول یا یک بسته باشد، اما نمی‌تواند یک کلاس، تابع یا متغیر تعریف‌شده در مورد قبلی باشد.</p>
+<section id="importing-from-a-package">
+<span id="tut-pkg-import-star"></span><h3><span class="section-number">6.4.1. </span>وارد کردن * از یک بسته<a class="headerlink" href="#importing-from-a-package" title="Link to this heading">¶</a></h3>
+<p id="index-8">اکنون اگر کاربر بنویسد <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sound.effects</span> <span class="pre">import</span> <span class="pre">*</span></code> چه اتفاقی می‌افتد؟ در حالت ایده‌آل، انتظار می‌رود این دستور به‌نحوی به سیستم فایل مراجعه کند، زیرماژول‌های موجود در بسته را پیدا کند و همهٔ آن‌ها را وارد کند. این کار می‌تواند زمان زیادی طول بکشد و وارد کردن زیرماژول‌ها ممکن است عوارض جانبی ناخواسته‌ای پرتاب کند که باید فقط هنگام وارد کردن صریح زیرماژول رخ دهند.</p>
+<p>تنها راه‌حل این است که نویسندهٔ بسته یک فهرست صریح از بسته فراهم کند. دستور <a class="reference internal" href="../reference/simple_stmts.html#import"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">import</span></code></a> از قرارداد زیر استفاده می‌کند: اگر کد <code class="file docutils literal notranslate"><span class="pre">__init__.py</span></code> یک بسته، فهرستی با نام <code class="docutils literal notranslate"><span class="pre">__all__</span></code> تعریف کند، این فهرست به‌عنوان فهرست نام ماژول‌هایی در نظر گرفته می‌شود که هنگام مشاهدهٔ <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">package</span> <span class="pre">import</span> <span class="pre">*</span></code> باید وارد شوند. این وظیفهٔ نویسندهٔ بسته است که هنگام انتشار نسخهٔ جدید بسته، این فهرست را به‌روز نگه دارد. نویسندگان بسته همچنین ممکن است تصمیم بگیرند از این قابلیت پشتیبانی نکنند، اگر کاربردی برای وارد کردن * از بستهٔ خود نمی‌بینند. برای مثال، فایل <code class="file docutils literal notranslate"><span class="pre">sound/effects/__init__.py</span></code> می‌تواند شامل کد زیر باشد:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"echo"</span><span class="p">,</span> <span class="s2">"surround"</span><span class="p">,</span> <span class="s2">"reverse"</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>این یعنی <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sound.effects</span> <span class="pre">import</span> <span class="pre">*</span></code> سه زیرماژول نام‌بردهٔ بستهٔ <code class="xref py py-mod docutils literal notranslate"><span class="pre">sound.effects</span></code> را وارد خواهد کرد.</p>
+<p>توجه داشته باشید که زیرماژول‌ها ممکن است توسط نام‌هایی که به‌صورت محلی تعریف شده‌اند، پوشانده شوند. برای مثال، اگر یک تابع <code class="docutils literal notranslate"><span class="pre">reverse</span></code> به فایل <code class="file docutils literal notranslate"><span class="pre">sound/effects/__init__.py</span></code> اضافه کنید، دستور <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sound.effects</span> <span class="pre">import</span> <span class="pre">*</span></code> فقط دو زیرماژول <code class="docutils literal notranslate"><span class="pre">echo</span></code> و <code class="docutils literal notranslate"><span class="pre">surround</span></code> را وارد خواهد کرد، اما <em>زیرماژول</em> <code class="docutils literal notranslate"><span class="pre">reverse</span></code> را وارد نمی‌کند، زیرا توسط تابع <code class="docutils literal notranslate"><span class="pre">reverse</span></code> تعریف‌شده در همان فضا پوشانده شده است:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"echo"</span><span class="p">,</span>      <span class="c1"># به فایل «echo.py» اشاره می‌کند</span>
+    <span class="s2">"surround"</span><span class="p">,</span>  <span class="c1"># به فایل «surround.py» اشاره می‌کند</span>
+    <span class="s2">"reverse"</span><span class="p">,</span>   <span class="c1"># !!! اکنون به تابع «reverse» اشاره می‌کند !!!</span>
+<span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">reverse</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># &lt;-- این نام، زیرماژول «reverse.py» را می‌پوشاند</span>
+    <span class="k">return</span> <span class="n">msg</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>    <span class="c1">#     در صورت استفاده از «from sound.effects import *»</span>
+</pre></div>
+</div>
+<p>اگر <code class="docutils literal notranslate"><span class="pre">__all__</span></code> تعریف نشده باشد، دستور <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sound.effects</span> <span class="pre">import</span> <span class="pre">*</span></code> تمام زیرماژول‌های بستهٔ <code class="xref py py-mod docutils literal notranslate"><span class="pre">sound.effects</span></code> را به فضای نام فعلی وارد <em>نمی‌کند</em>؛ این دستور فقط اطمینان حاصل می‌کند که بستهٔ <code class="xref py py-mod docutils literal notranslate"><span class="pre">sound.effects</span></code> وارد شده است (و احتمالاً هر کد مقداردهی اولیه‌ای در <code class="file docutils literal notranslate"><span class="pre">__init__.py</span></code> اجرا می‌شود) و سپس هر نامی را که در بسته تعریف شده است وارد می‌کند. این شامل هر نامی است که توسط <code class="file docutils literal notranslate"><span class="pre">__init__.py</span></code> تعریف شده (و زیرماژول‌هایی که به‌صورت صریح بارگذاری شده‌اند) نیز می‌شود. همچنین شامل هر زیرماژول بسته‌ای است که قبلاً توسط دستورهای <a class="reference internal" href="../reference/simple_stmts.html#import"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">import</span></code></a> به‌صورت صریح بارگذاری شده‌اند. این کد را در نظر بگیرید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sound.effects.echo</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sound.effects.surround</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sound.effects</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>در این مثال، ماژول‌های <code class="xref py py-mod docutils literal notranslate"><span class="pre">echo</span></code> و <code class="xref py py-mod docutils literal notranslate"><span class="pre">surround</span></code> در فضای نام فعلی وارد می‌شوند، زیرا هنگام اجرای دستور <code class="docutils literal notranslate"><span class="pre">from...import</span></code> در بستهٔ <code class="xref py py-mod docutils literal notranslate"><span class="pre">sound.effects</span></code> تعریف شده‌اند. (این حالت زمانی که <code class="docutils literal notranslate"><span class="pre">__all__</span></code> تعریف شده باشد نیز کار می‌کند.)</p>
+<p>اگرچه برخی ماژول‌ها طوری طراحی شده‌اند که هنگام استفاده از <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">*</span></code> فقط نام‌هایی مطابق با الگوهای خاص صادر کنند، همچنان این کار در کدهای تولیدی روشی نامناسب محسوب می‌شود.</p>
+<p>به یاد داشته باشید که استفاده از <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">package</span> <span class="pre">import</span> <span class="pre">specific_submodule</span></code> هیچ مشکلی ندارد! در واقع، این نشانه‌گذاری توصیه‌شده است، مگر اینکه ماژول واردکننده نیاز داشته باشد از زیرماژول‌هایی با نام یکسان از بسته‌های مختلف استفاده کند.</p>
+</section>
+<section id="intra-package-references">
+<span id="id2"></span><h3><span class="section-number">6.4.2. </span>ارجاع‌های درون‌بسته‌ای<a class="headerlink" href="#intra-package-references" title="Link to this heading">¶</a></h3>
+<p>هنگامی که بسته‌ها به زیر‌بسته‌ها ساختاربندی می‌شوند (مانند بستهٔ <code class="xref py py-mod docutils literal notranslate"><span class="pre">sound</span></code> در مثال)، می‌توانید از وارد کردن مطلق برای ارجاع به زیرماژول‌های بسته‌های هم‌سطح استفاده کنید. برای مثال، اگر ماژول <code class="xref py py-mod docutils literal notranslate"><span class="pre">sound.filters.vocoder</span></code> نیاز داشته باشد از ماژول <code class="xref py py-mod docutils literal notranslate"><span class="pre">echo</span></code> در بستهٔ <code class="xref py py-mod docutils literal notranslate"><span class="pre">sound.effects</span></code> استفاده کند، می‌تواند از <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sound.effects</span> <span class="pre">import</span> <span class="pre">echo</span></code> استفاده کند.</p>
+<p>همچنین می‌توانید وارد کردن نسبی بنویسید، با استفاده از شکل <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module</span> <span class="pre">import</span> <span class="pre">name</span></code> از دستور import. این وارد کردن‌ها از نقطه‌های ابتدایی برای نشان دادن بسته‌های فعلی و والد درگیر در وارد کردن نسبی استفاده می‌کنند. برای مثال، از ماژول <code class="xref py py-mod docutils literal notranslate"><span class="pre">surround</span></code> ممکن است از دستور زیر استفاده کنید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">echo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">formats</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..filters</span><span class="w"> </span><span class="kn">import</span> <span class="n">equalizer</span>
+</pre></div>
+</div>
+<p>توجه کنید که وارد کردن‌های نسبی بر اساس نام بستهٔ ماژول فعلی هستند. از آنجا که ماژول اصلی هیچ بسته‌ای ندارد، ماژول‌هایی که قرار است به‌عنوان ماژول اصلی یک برنامهٔ پایتون استفاده شوند، باید همیشه از وارد کردن‌های مطلق استفاده کنند.</p>
+</section>
+<section id="packages-in-multiple-directories">
+<h3><span class="section-number">6.4.3. </span>بسته‌ها در چندین پوشه<a class="headerlink" href="#packages-in-multiple-directories" title="Link to this heading">¶</a></h3>
+<p>بسته‌ها یک ویژگی ویژهٔ دیگر را نیز پشتیبانی می‌کنند: <a class="reference internal" href="../reference/datamodel.html#module.__path__" title="module.__path__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__path__</span></code></a>. این ویژگی مقداردهی اولیه می‌شود تا پیش از اجرای کد موجود در آن فایل، یک <a class="reference internal" href="../glossary.html#term-sequence"><span class="xref std std-term">sequence</span></a> از رشته‌ها باشد که نام پوشهٔ شامل <code class="file docutils literal notranslate"><span class="pre">__init__.py</span></code> بسته را در خود دارد. این متغیر قابل تغییر است؛ تغییر آن بر جست‌وجوهای آینده برای ماژول‌ها و زیر‌بسته‌های موجود در بسته تأثیر می‌گذارد.</p>
+<p>اگرچه این قابلیت معمولاً موردنیاز نیست، می‌توان از آن برای گسترش مجموعهٔ ماژول‌هایی که در یک بسته پیدا می‌شوند استفاده کرد.</p>
+<p class="rubric">پانویس‌ها</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>در واقع، تعریف تابع‌ها نیز «دستورهایی» هستند که «اجرا» می‌شوند؛ اجرای یک تعریف تابع در سطح ماژول، نام تابع را به فضای نام سراسری ماژول اضافه می‌کند.</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">6. ماژول‌ها</a><ul>
+<li><a class="reference internal" href="#more-on-modules">6.1. بیشتر درباره‌ی ماژول‌ها</a><ul>
+<li><a class="reference internal" href="#executing-modules-as-scripts">6.1.1. اجرای ماژول‌ها به‌عنوان اسکریپت</a></li>
+<li><a class="reference internal" href="#the-module-search-path">6.1.2. مسیر جست‌وجوی ماژول‌ها</a></li>
+<li><a class="reference internal" href="#compiled-python-files">6.1.3. فایل‌های پایتون «کامپایل‌شده»</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#standard-modules">6.2. ماژول‌های استاندارد</a></li>
+<li><a class="reference internal" href="#the-dir-function">6.3. تابع <code class="xref py py-func docutils literal notranslate"><span class="pre">dir()</span></code></a></li>
+<li><a class="reference internal" href="#packages">6.4. بسته‌ها</a><ul>
+<li><a class="reference internal" href="#importing-from-a-package">6.4.1. وارد کردن * از یک بسته</a></li>
+<li><a class="reference internal" href="#intra-package-references">6.4.2. ارجاع‌های درون‌بسته‌ای</a></li>
+<li><a class="reference internal" href="#packages-in-multiple-directories">6.4.3. بسته‌ها در چندین پوشه</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="datastructures.html"
+                          title="فصل قبلی"><span class="section-number">5. </span>ساختمان داده‌ها</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="inputoutput.html"
+                          title="فصل بعدی"><span class="section-number">7. </span>ورودی و خروجی</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/modules.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/modules.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/modules.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </div>
+<div id="sidebarbutton" title="تا کردن نوار کناره">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             >فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="inputoutput.html" title="7. ورودی و خروجی"
+             >بعدی</a> |</li>
+        <li class="right" >
+          <a href="datastructures.html" title="5. ساختمان داده‌ها"
+             >قبلی</a> |</li>
+
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">6. </span>ماژول‌ها</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>  
+    <div class="footer">
+    &copy; <a href="../copyright.html">حق چاپ</a> 2001 Python Software Foundation.
+    <br>
+    This page is licensed under the Python Software Foundation License Version 2.
+    <br>
+    Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
+    <br>
+    
+      See <a href="/license.html">History and License</a> for more information.<br>
+    
+    
+    <br>
+
+    The Python Software Foundation is a non-profit corporation.
+<a href="https://www.python.org/psf/donations/">Please donate.</a>
+<br>
+    <br>
+      آخرین بروز رسانی در اوت 18, 2026 (04:23 UTC) .
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
+    <br>
+
+    ایجاد شده با<a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+
+  </body>
+</html>

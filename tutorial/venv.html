@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html lang="fa" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="12. محیط‌های مجازی و بسته‌ها" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.python.org/3/tutorial/venv.html" />
+<meta property="og:site_name" content="Python documentation" />
+<meta property="og:description" content="مقدمه: برنامه‌های پایتون معمولاً از بسته‌ها و ماژول‌هایی استفاده می‌کنند که بخشی از کتابخانهٔ استاندارد نیستند. همچنین، گاهی یک برنامه به نسخهٔ مشخصی از یک کتابخانه نیاز دارد؛ زیرا ممکن است به رفع ..." />
+<meta property="og:image" content="_static/og-image.png" />
+<meta property="og:image:alt" content="Python documentation" />
+<meta name="description" content="مقدمه: برنامه‌های پایتون معمولاً از بسته‌ها و ماژول‌هایی استفاده می‌کنند که بخشی از کتابخانهٔ استاندارد نیستند. همچنین، گاهی یک برنامه به نسخهٔ مشخصی از یک کتابخانه نیاز دارد؛ زیرا ممکن است به رفع ..." />
+<meta name="theme-color" content="#3776ab">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+
+    <title>12. محیط‌های مجازی و بسته‌ها &#8212; مستندات Python3.14.6</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=234b1a7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=4365c8fe" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=0fc419ee" />
+    
+    <script src="../_static/documentation_options.js?v=e254dbbb"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=5df48d09"></script>
+    
+    <script src="../_static/sidebar.js"></script>
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="جستجو در مستندات Python3.14.6"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="درباره این مستندات" href="../about.html" />
+    <link rel="index" title="فهرست" href="../genindex.html" />
+    <link rel="search" title="جستجو" href="../search.html" />
+    <link rel="copyright" title="حق چاپ" href="../copyright.html" />
+    <link rel="next" title="13. حالا چی؟" href="whatnow.html" />
+    <link rel="prev" title="11. مروری کوتاه بر کتابخانهٔ استاندارد — بخش دوم" href="stdlib2.html" />
+    
+      
+      <link rel="canonical" href="https://docs.python.org/3/tutorial/venv.html">
+      
+    
+
+    
+    <style>
+      @media only screen {
+        table.full-width-table {
+            width: 100%;
+        }
+      }
+    </style>
+<link rel="stylesheet" href="../_static/pydoctheme_dark.css" media="(prefers-color-scheme: dark)" id="pydoctheme_dark_css">
+    <link rel="shortcut icon" type="image/png" href="../_static/py.svg">
+            <script type="text/javascript" src="../_static/copybutton.js"></script>
+            <script type="text/javascript" src="../_static/menu.js"></script>
+            <script type="text/javascript" src="../_static/search-focus.js"></script>
+            <script type="text/javascript" src="../_static/themetoggle.js"></script> 
+            <script type="text/javascript" src="../_static/rtd_switcher.js"></script>
+            <meta name="readthedocs-addons-api-version" content="1">
+
+  </head>
+<body>
+<div class="mobile-nav">
+    <input type="checkbox" id="menuToggler" class="toggler__input" aria-controls="navigation"
+           aria-pressed="false" aria-expanded="false" role="button" aria-label="Menu">
+    <nav class="nav-content" role="navigation">
+        <label for="menuToggler" class="toggler__label">
+            <span></span>
+        </label>
+        <span class="nav-items-wrapper">
+            <a href="https://www.python.org/" class="nav-logo">
+                <img src="../_static/py.svg" alt="Python logo">
+            </a>
+            <span class="version_switcher_placeholder"></span>
+            <form role="search" class="search" action="../search.html" method="get">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="search-icon">
+                    <path fill-rule="nonzero" fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+                <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q">
+                <input type="submit" value="برو">
+            </form>
+        </span>
+    </nav>
+    <div class="menu-wrapper">
+        <nav class="menu" role="navigation" aria-label="main navigation">
+            <div class="language_switcher_placeholder"></div>
+            
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label>
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">12. محیط‌های مجازی و بسته‌ها</a><ul>
+<li><a class="reference internal" href="#introduction">12.1. مقدمه</a></li>
+<li><a class="reference internal" href="#creating-virtual-environments">12.2. ایجاد محیط‌های مجازی</a></li>
+<li><a class="reference internal" href="#managing-packages-with-pip">12.3. مدیریت بسته‌ها با pip</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="stdlib2.html"
+                          title="فصل قبلی"><span class="section-number">11. </span>مروری کوتاه بر کتابخانهٔ استاندارد — بخش دوم</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="whatnow.html"
+                          title="فصل بعدی"><span class="section-number">13. </span>حالا چی؟</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/venv.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/venv.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/venv.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </nav>
+    </div>
+</div>
+
+  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             accesskey="I">فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="whatnow.html" title="13. حالا چی؟"
+             accesskey="N">بعدی</a> |</li>
+        <li class="right" >
+          <a href="stdlib2.html" title="11. مروری کوتاه بر کتابخانهٔ استاندارد — بخش دوم"
+             accesskey="P">قبلی</a> |</li>
+
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">12. </span>محیط‌های مجازی و بسته‌ها</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="virtual-environments-and-packages">
+<span id="tut-venv"></span><h1><span class="section-number">12. </span>محیط‌های مجازی و بسته‌ها<a class="headerlink" href="#virtual-environments-and-packages" title="Link to this heading">¶</a></h1>
+<section id="introduction">
+<h2><span class="section-number">12.1. </span>مقدمه<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
+<p>برنامه‌های پایتون معمولاً از بسته‌ها و ماژول‌هایی استفاده می‌کنند که بخشی از کتابخانهٔ استاندارد نیستند. همچنین، گاهی یک برنامه به نسخهٔ مشخصی از یک کتابخانه نیاز دارد؛ زیرا ممکن است به رفع یک باگ خاص وابسته باشد یا با استفاده از نسخهٔ قدیمی‌تری از رابط آن کتابخانه نوشته شده باشد.</p>
+<p>این موضوع باعث می‌شود که یک نصب واحد از پایتون نتواند نیازهای همهٔ برنامه‌ها را برآورده کند. برای مثال، اگر برنامهٔ A به نسخهٔ 1.0 یک ماژول نیاز داشته باشد، اما برنامهٔ B به نسخهٔ 2.0 همان ماژول وابسته باشد، این نیازها با یکدیگر در تعارض خواهند بود و نصب هر یک از نسخه‌های 1.0 یا 2.0 باعث می‌شود یکی از برنامه‌ها دیگر قابل اجرا نباشد.</p>
+<p>راه‌حل این مشکل، ایجاد یک <a class="reference internal" href="../glossary.html#term-virtual-environment"><span class="xref std std-term">محیط مجازی</span></a> است؛ یک ساختار پوشه مستقل که شامل یک نصب از پایتون برای نسخه‌ای مشخص از پایتون، به‌همراه تعدادی بستهٔ اضافی است.</p>
+<p>به این ترتیب، هر برنامه می‌تواند از محیط مجازی مخصوص به خود استفاده کند. برای حل مثال قبلی، برنامهٔ A می‌تواند محیط مجازی خود را با نسخهٔ 1.0 آن ماژول داشته باشد، در حالی که برنامهٔ B از محیط مجزایی با نسخهٔ 2.0 استفاده کند. اگر بعدها برنامهٔ B به ارتقای آن کتابخانه به نسخهٔ 3.0 نیاز داشته باشد، این تغییر هیچ تأثیری بر محیط برنامهٔ A نخواهد داشت.</p>
+</section>
+<section id="creating-virtual-environments">
+<h2><span class="section-number">12.2. </span>ایجاد محیط‌های مجازی<a class="headerlink" href="#creating-virtual-environments" title="Link to this heading">¶</a></h2>
+<p>ماژولی که برای ایجاد و مدیریت محیط‌های مجازی استفاده می‌شود، <a class="reference internal" href="../library/venv.html#module-venv" title="venv: Creation of virtual environments."><code class="xref py py-mod docutils literal notranslate"><span class="pre">venv</span></code></a> نام دارد. ماژول <code class="xref py py-mod docutils literal notranslate"><span class="pre">venv</span></code> همان نسخه‌ای از پایتون را نصب می‌کند که دستور با آن اجرا شده است (همان‌طور که با گزینهٔ <a class="reference internal" href="../using/cmdline.html#cmdoption-version"><code class="xref std std-option docutils literal notranslate"><span class="pre">--version</span></code></a> گزارش می‌شود). برای مثال، اگر دستور را با <code class="docutils literal notranslate"><span class="pre">python3.12</span></code> اجرا کنید، نسخهٔ 3.12 نصب خواهد شد.</p>
+<p>برای ایجاد یک محیط مجازی، ابتدا پوشه موردنظر خود را انتخاب کنید و سپس ماژول <a class="reference internal" href="../library/venv.html#module-venv" title="venv: Creation of virtual environments."><code class="xref py py-mod docutils literal notranslate"><span class="pre">venv</span></code></a> را به‌صورت یک اسکریپت همراه با مسیر آن پوشه اجرا کنید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">tutorial</span><span class="o">-</span><span class="n">env</span>
+</pre></div>
+</div>
+<p>اگر پوشه <code class="docutils literal notranslate"><span class="pre">tutorial-env</span></code> وجود نداشته باشد، این دستور آن را ایجاد می‌کند و همچنین درون آن پوشه‌هایی شامل یک نسخه از مفسر پایتون و فایل‌های پشتیبان موردنیاز را می‌سازد.</p>
+<p>یکی از محل‌های رایج برای ایجاد محیط مجازی، پوشه <code class="docutils literal notranslate"><span class="pre">.venv</span></code> است. این نام معمولاً باعث می‌شود پوشه در شل مخفی بماند و در عین حال به‌خوبی نشان دهد که دلیل وجود آن چیست. همچنین از تداخل با فایل‌های تعریف متغیرهای محیطی <code class="docutils literal notranslate"><span class="pre">.env</span></code> که برخی ابزارها از آن‌ها پشتیبانی می‌کنند، جلوگیری می‌کند.</p>
+<p>پس از ایجاد محیط مجازی، می‌توانید آن را فعال کنید.</p>
+<p>در ویندوز، دستور زیر را اجرا کنید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">tutorial</span><span class="o">-</span><span class="n">env</span>\<span class="n">Scripts</span>\<span class="n">activate</span>
+</pre></div>
+</div>
+<p>در یونیکس یا macOS، دستور زیر را اجرا کنید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">tutorial</span><span class="o">-</span><span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+<p>(این اسکریپت برای شل bash نوشته شده است. اگر از شل‌های <strong class="program">csh</strong> یا <strong class="program">fish</strong> استفاده می‌کنید، باید به‌ترتیب از اسکریپت‌های <code class="docutils literal notranslate"><span class="pre">activate.csh</span></code> یا <code class="docutils literal notranslate"><span class="pre">activate.fish</span></code> استفاده کنید.)</p>
+<p>با فعال کردن محیط مجازی، اعلان (prompt) شل تغییر می‌کند تا نشان دهد از کدام محیط مجازی استفاده می‌کنید. همچنین محیط به‌گونه‌ای تنظیم می‌شود که با اجرای دستور <code class="docutils literal notranslate"><span class="pre">python</span></code>، همان نسخه و نصب پایتون مربوط به آن محیط مجازی اجرا شود. برای مثال:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">source</span><span class="w"> </span>~/envs/tutorial-env/bin/activate
+<span class="gp gp-VirtualEnv">(tutorial-env)</span> <span class="gp">$ </span>python
+<span class="go">Python 3.5.1 (default, May  6 2016, 10:59:36)</span>
+<span class="go">  ...</span>
+<span class="go">&gt;&gt;&gt; import sys</span>
+<span class="go">&gt;&gt;&gt; sys.path</span>
+<span class="go">['', '/usr/local/lib/python35.zip', ...,</span>
+<span class="go">'~/envs/tutorial-env/lib/python3.5/site-packages']</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>برای غیرفعال کردن محیط مجازی، دستور زیر را وارد کنید:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">deactivate</span>
+</pre></div>
+</div>
+<p>در ترمینال.</p>
+</section>
+<section id="managing-packages-with-pip">
+<h2><span class="section-number">12.3. </span>مدیریت بسته‌ها با pip<a class="headerlink" href="#managing-packages-with-pip" title="Link to this heading">¶</a></h2>
+<p>می‌توانید با استفاده از برنامه‌ای به نام <strong class="program">pip</strong> بسته‌ها را نصب، به‌روزرسانی و حذف کنید. به‌طور پیش‌فرض، <code class="docutils literal notranslate"><span class="pre">pip</span></code> بسته‌ها را از <a class="reference external" href="https://pypi.org">Python Package Index</a> نصب می‌کند. همچنین می‌توانید با مراجعه به این وب‌سایت در مرورگر خود، بسته‌های موجود در Python Package Index را مرور کنید.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span></code> دارای چندین زیرفرمان مانند «install»، «uninstall»، «freeze» و موارد دیگر است. (برای مشاهدهٔ مستندات کامل <code class="docutils literal notranslate"><span class="pre">pip</span></code> به راهنمای <a class="reference internal" href="../installing/index.html#installing-index"><span class="std std-ref">Installing Python modules</span></a> مراجعه کنید.)</p>
+<p>می‌توانید با مشخص کردن نام یک بسته، آخرین نسخهٔ آن را نصب کنید:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(tutorial-env)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>novas
+<span class="go">Collecting novas</span>
+<span class="go">  Downloading novas-3.1.1.3.tar.gz (136kB)</span>
+<span class="go">Installing collected packages: novas</span>
+<span class="go">  Running setup.py install for novas</span>
+<span class="go">Successfully installed novas-3.1.1.3</span>
+</pre></div>
+</div>
+<p>همچنین می‌توانید با نوشتن نام بسته، سپس <code class="docutils literal notranslate"><span class="pre">==</span></code> و شمارهٔ نسخه، نسخهٔ مشخصی از آن را نصب کنید:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(tutorial-env)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">requests</span><span class="o">==</span><span class="m">2</span>.6.0
+<span class="go">Collecting requests==2.6.0</span>
+<span class="go">  Using cached requests-2.6.0-py2.py3-none-any.whl</span>
+<span class="go">Installing collected packages: requests</span>
+<span class="go">Successfully installed requests-2.6.0</span>
+</pre></div>
+</div>
+<p>اگر این دستور را دوباره اجرا کنید، <code class="docutils literal notranslate"><span class="pre">pip</span></code> تشخیص می‌دهد که نسخهٔ درخواستی از قبل نصب شده است و هیچ کاری انجام نمی‌دهد. می‌توانید شمارهٔ نسخهٔ دیگری را مشخص کنید تا همان نسخه نصب شود، یا با اجرای <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span></code> بسته را به آخرین نسخه ارتقا دهید:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(tutorial-env)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>requests
+<span class="go">Collecting requests</span>
+<span class="go">Installing collected packages: requests</span>
+<span class="go">  Found existing installation: requests 2.6.0</span>
+<span class="go">    Uninstalling requests-2.6.0:</span>
+<span class="go">      Successfully uninstalled requests-2.6.0</span>
+<span class="go">Successfully installed requests-2.7.0</span>
+</pre></div>
+</div>
+<p>دستور <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">uninstall</span></code> که پس از آن یک یا چند نام بسته آورده می‌شود، آن بسته‌ها را از محیط مجازی حذف می‌کند.</p>
+<p>دستور <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">show</span></code> اطلاعات مربوط به یک بستهٔ مشخص را نمایش می‌دهد:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(tutorial-env)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>show<span class="w"> </span>requests
+<span class="go">---</span>
+<span class="go">Metadata-Version: 2.0</span>
+<span class="go">Name: requests</span>
+<span class="go">Version: 2.7.0</span>
+<span class="go">Summary: Python HTTP for Humans.</span>
+<span class="go">Home-page: http://python-requests.org</span>
+<span class="go">Author: Kenneth Reitz</span>
+<span class="go">Author-email: me@kennethreitz.com</span>
+<span class="go">License: Apache 2.0</span>
+<span class="go">Location: /Users/akuchling/envs/tutorial-env/lib/python3.4/site-packages</span>
+<span class="go">Requires:</span>
+</pre></div>
+</div>
+<p>دستور <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">list</span></code> فهرست تمام بسته‌های نصب‌شده در محیط مجازی را نمایش می‌دهد:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(tutorial-env)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>list
+<span class="go">novas (3.1.1.3)</span>
+<span class="go">numpy (1.9.2)</span>
+<span class="go">pip (7.0.3)</span>
+<span class="go">requests (2.7.0)</span>
+<span class="go">setuptools (16.0)</span>
+</pre></div>
+</div>
+<p>دستور <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">freeze</span></code> نیز فهرستی مشابه از بسته‌های نصب‌شده تولید می‌کند، اما خروجی آن در قالبی است که دستور <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span></code> انتظار دارد. معمولاً این فهرست را در فایلی با نام <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> ذخیره می‌کنند:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(tutorial-env)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+<span class="gp gp-VirtualEnv">(tutorial-env)</span> <span class="gp">$ </span>cat<span class="w"> </span>requirements.txt
+<span class="go">novas==3.1.1.3</span>
+<span class="go">numpy==1.9.2</span>
+<span class="go">requests==2.7.0</span>
+</pre></div>
+</div>
+<p>سپس می‌توان فایل <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> را در سامانهٔ کنترل نسخه ثبت (commit) کرد و همراه با برنامه منتشر نمود. در این صورت، کاربران می‌توانند با استفاده از <code class="docutils literal notranslate"><span class="pre">install</span> <span class="pre">-r</span></code> تمام بسته‌های موردنیاز را نصب کنند:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(tutorial-env)</span> <span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<span class="go">Collecting novas==3.1.1.3 (from -r requirements.txt (line 1))</span>
+<span class="go">  ...</span>
+<span class="go">Collecting numpy==1.9.2 (from -r requirements.txt (line 2))</span>
+<span class="go">  ...</span>
+<span class="go">Collecting requests==2.7.0 (from -r requirements.txt (line 3))</span>
+<span class="go">  ...</span>
+<span class="go">Installing collected packages: novas, numpy, requests</span>
+<span class="go">  Running setup.py install for novas</span>
+<span class="go">Successfully installed novas-3.1.1.3 numpy-1.9.2 requests-2.7.0</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span></code> گزینه‌های بسیار بیشتری نیز دارد. برای مطالعهٔ مستندات کامل <code class="docutils literal notranslate"><span class="pre">pip</span></code>، به راهنمای <a class="reference internal" href="../installing/index.html#installing-index"><span class="std std-ref">Installing Python modules</span></a> مراجعه کنید. همچنین، اگر بسته‌ای نوشته‌اید و می‌خواهید آن را در Python Package Index منتشر کنید، به <a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/">Python packaging user guide</a> مراجعه کنید.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../contents.html">فهرست عناوین</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">12. محیط‌های مجازی و بسته‌ها</a><ul>
+<li><a class="reference internal" href="#introduction">12.1. مقدمه</a></li>
+<li><a class="reference internal" href="#creating-virtual-environments">12.2. ایجاد محیط‌های مجازی</a></li>
+<li><a class="reference internal" href="#managing-packages-with-pip">12.3. مدیریت بسته‌ها با pip</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>موضوع قبلی</h4>
+    <p class="topless"><a href="stdlib2.html"
+                          title="فصل قبلی"><span class="section-number">11. </span>مروری کوتاه بر کتابخانهٔ استاندارد — بخش دوم</a></p>
+  </div>
+  <div>
+    <h4>موضوع  بعدی</h4>
+    <p class="topless"><a href="whatnow.html"
+                          title="فصل بعدی"><span class="section-number">13. </span>حالا چی؟</a></p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const title = document.querySelector('meta[property="og:title"]').content;
+        const elements = document.querySelectorAll('.improvepage');
+        const pageurl = window.location.href.split('?')[0];
+        elements.forEach(element => {
+            const url = new URL(element.href.split('?')[0].replace("-nojs", ""));
+            url.searchParams.set('pagetitle', title);
+            url.searchParams.set('pageurl', pageurl);
+            url.searchParams.set('pagesource', "tutorial/venv.rst");
+            element.href = url.toString();
+        });
+    });
+  </script>
+  <div role="note" aria-label="source link">
+    <h3>این صفحه</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">گزارش یک اشکال</a></li>
+      <li><a class="improvepage" href="../improve-page-nojs.html">بهبود این صفحه</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/main/Doc/tutorial/venv.rst?plain=1"
+            rel="nofollow">نمایش منبع
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://github.com/python/python-docs-fa/blob/3.14/tutorial/venv.po?plain=1"
+           rel="nofollow">نمایش منبع ترجمه</a>
+      </li>
+      
+    </ul>
+  </div>
+        </div>
+<div id="sidebarbutton" title="تا کردن نوار کناره">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>  
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>ناوبری</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="فهرست کلی"
+             >فهرست</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="نمایه ی ماژول های پایتون"
+             >ماژول ها</a> |</li>
+        <li class="right" >
+          <a href="whatnow.html" title="13. حالا چی؟"
+             >بعدی</a> |</li>
+        <li class="right" >
+          <a href="stdlib2.html" title="11. مروری کوتاه بر کتابخانهٔ استاندارد — بخش دوم"
+             >قبلی</a> |</li>
+
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"></li>
+          <li><a href="https://www.python.org/">Python</a> &#187;</li>
+          <li class="switchers">
+            <div class="language_switcher_placeholder"></div>
+            <div class="version_switcher_placeholder"></div>
+          </li>
+          <li>
+              
+          </li>
+    <li id="cpython-language-and-version">
+      <a href="../index.html">3.14.6 Documentation</a> &#187;
+    </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >راهنمای پایتون</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">12. </span>محیط‌های مجازی و بسته‌ها</a></li>
+                <li class="right">
+                    
+
+    <div class="inline-search" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="جستجو سریع" aria-label="جستجو سریع" type="search" name="q" id="search-box">
+          <input type="submit" value="برو">
+        </form>
+    </div>
+                     |
+                </li>
+            <li class="right">
+<label class="theme-selector-label">
+    Theme
+    <select class="theme-selector" oninput="activateTheme(this.value)">
+        <option value="auto" selected>Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</label> |</li>
+            
+      </ul>
+    </div>  
+    <div class="footer">
+    &copy; <a href="../copyright.html">حق چاپ</a> 2001 Python Software Foundation.
+    <br>
+    This page is licensed under the Python Software Foundation License Version 2.
+    <br>
+    Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
+    <br>
+    
+      See <a href="/license.html">History and License</a> for more information.<br>
+    
+    
+    <br>
+
+    The Python Software Foundation is a non-profit corporation.
+<a href="https://www.python.org/psf/donations/">Please donate.</a>
+<br>
+    <br>
+      آخرین بروز رسانی در اوت 18, 2026 (04:23 UTC) .
+    
+      <a href="/bugs.html">Found a bug</a>?
+    
+    <br>
+
+    ایجاد شده با<a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+
+  </body>
+</html>
