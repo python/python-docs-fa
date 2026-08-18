@@ -2,14 +2,16 @@ name: Build and Deploy to GitHub Pages
 
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 2 * * *' 
   push:
     branches:
       - 3.14
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: "pages"
@@ -24,41 +26,52 @@ jobs:
         with:
           repository: python/cpython
           ref: v3.14.6
-
+          
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
-
+          
       - name: Setup virtual environment
         run: make venv
         working-directory: ./Doc
-
+        
       - name: Checkout translation files
         uses: actions/checkout@v4
         with:
           path: Doc/locales/fa/LC_MESSAGES
 
-      - name: Install gettext
-        run: sudo apt-get install -y gettext
+      - name: Strip stray fuzzy markers
+        run: python3 Doc/locales/fa/LC_MESSAGES/scripts/strip_fuzzy.py $(find Doc/locales/fa/LC_MESSAGES -name "*.po" -not -path "*/.git/*")
 
       - name: Compile .po files to .mo
         run: |
-          find Doc/locales/fa/LC_MESSAGES -name "*.po" | while read f; do
+          find Doc/locales/fa/LC_MESSAGES -name "*.po" -not -path "*/.git/*" | while read f; do
             msgfmt "$f" -o "${f%.po}.mo"
           done
 
       - name: Setup problem matcher
         uses: sphinx-doc/github-problem-matcher@v1.1
-
+        
       - name: Build documentation
         run: make -e SPHINXOPTS="--color -D language='fa' -D gettext_allow_fuzzy_translations=1 --keep-going" html
         working-directory: ./Doc
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: Doc/build/html
-          keep_files: true
-          enable_jekyll: false
+          path: Doc/build/html
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
