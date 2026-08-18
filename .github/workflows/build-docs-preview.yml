@@ -3,8 +3,15 @@ name: Build Docs Preview
 
 on:
   pull_request:
+    types:
+      - opened
+      - synchronize
     paths:
       - '**/*.po'
+
+concurrency:
+  group: docs-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
   build:
