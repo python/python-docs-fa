@@ -515,7 +515,7 @@ msgstr ""
 "            print(\"Not a point\")"
 
 msgid "You can use positional parameters with some builtin classes that provide an ordering for their attributes (e.g. dataclasses). You can also define a specific position for attributes in patterns by setting the ``__match_args__`` special attribute in your classes. If it's set to (\"x\", \"y\"), the following patterns are all equivalent (and all bind the ``y`` attribute to the ``var`` variable)::"
-msgstr "می‌توانید از پارامترهای موقعیتی با برخی کلاس‌های داخلی که برای ویژگی‌های خود ترتیب مشخصی ارائه می‌کنند (برای مثال dataclassها) استفاده کنید. همچنین می‌توانید با تنظیم ویژگی ویژهٔ ``__match_args__`` در کلاس‌های خود، موقعیت مشخصی برای ویژگی‌ها در الگوها تعریف کنید. اگر این ویژگی روی (\"x\", \"y\") تنظیم شده باشد، الگوهای زیر همگی معادل هستند (و همگی ویژگی ``y`` را در متغیر ``var`` قرار می‌دهند)::"
+msgstr "می‌توانید از پارامترهای جایگاهی با برخی کلاس‌های داخلی که برای ویژگی‌های خود ترتیب مشخصی ارائه می‌کنند (برای مثال dataclassها) استفاده کنید. همچنین می‌توانید با تنظیم ویژگی ویژهٔ ``__match_args__`` در کلاس‌های خود، موقعیت مشخصی برای ویژگی‌ها در الگوها تعریف کنید. اگر این ویژگی روی (\"x\", \"y\") تنظیم شده باشد، الگوهای زیر همگی معادل هستند (و همگی ویژگی ``y`` را در متغیر ``var`` قرار می‌دهند)::"
 
 msgid ""
 "Point(1, var)\n"
@@ -913,12 +913,12 @@ msgid ""
 "parrot('a million', 'bereft of life', 'jump')         # 3 positional arguments\n"
 "parrot('a thousand', state='pushing up the daisies')  # 1 positional, 1 keyword"
 msgstr ""
-"parrot(1000)                                          # یک آرگومان موقعیتی\n"
+"parrot(1000)                                          # یک آرگومان جایگاهی\n"
 "parrot(voltage=1000)                                  # یک آرگومان کلیدواژه‌ای\n"
 "parrot(voltage=1000000, action='VOOOOOM')             # دو آرگومان کلیدواژه‌ای\n"
 "parrot(action='VOOOOOM', voltage=1000000)             # دو آرگومان کلیدواژه‌ای\n"
-"parrot('a million', 'bereft of life', 'jump')         # سه آرگومان موقعیتی\n"
-"parrot('a thousand', state='pushing up the daisies')  # یک آرگومان موقعیتی، یک آرگومان کلیدواژه‌ای"
+"parrot('a million', 'bereft of life', 'jump')         # سه آرگومان جایگاهی\n"
+"parrot('a thousand', state='pushing up the daisies')  # یک آرگومان جایگاهی، یک آرگومان کلیدواژه‌ای"
 
 msgid "but all the following calls would be invalid::"
 msgstr "اما تمام فراخوانی‌های زیر نامعتبر خواهند بود::"
@@ -935,7 +935,7 @@ msgstr ""
 "parrot(actor='John Cleese')  # آرگومان کلیدواژه‌ای ناشناخته"
 
 msgid "In a function call, keyword arguments must follow positional arguments. All the keyword arguments passed must match one of the arguments accepted by the function (e.g. ``actor`` is not a valid argument for the ``parrot`` function), and their order is not important.  This also includes non-optional arguments (e.g. ``parrot(voltage=1000)`` is valid too). No argument may receive a value more than once. Here's an example that fails due to this restriction::"
-msgstr "در یک فراخوانی تابع، آرگومان‌های کلیدواژه‌ای باید پس از آرگومان‌های موقعیتی بیایند. تمام آرگومان‌های کلیدواژه‌ای ارسال‌شده باید با یکی از آرگومان‌های پذیرفته‌شده توسط تابع مطابقت داشته باشند (برای مثال، ``actor`` یک آرگومان معتبر برای تابع ``parrot`` نیست)، و ترتیب آن‌ها اهمیتی ندارد. این موضوع شامل آرگومان‌های غیر‌اختیاری نیز می‌شود (برای مثال، ``parrot(voltage=1000)`` نیز معتبر است). هیچ آرگومانی نمی‌تواند بیش از یک‌بار مقدار دریافت کند. در اینجا مثالی وجود دارد که به دلیل این محدودیت شکست می‌خورد::"
+msgstr "در یک فراخوانی تابع، آرگومان‌های کلیدواژه‌ای باید پس از آرگومان‌های جایگاهی بیایند. تمام آرگومان‌های کلیدواژه‌ای ارسال‌شده باید با یکی از آرگومان‌های پذیرفته‌شده توسط تابع مطابقت داشته باشند (برای مثال، ``actor`` یک آرگومان معتبر برای تابع ``parrot`` نیست)، و ترتیب آن‌ها اهمیتی ندارد. این موضوع شامل آرگومان‌های غیر‌اختیاری نیز می‌شود (برای مثال، ``parrot(voltage=1000)`` نیز معتبر است). هیچ آرگومانی نمی‌تواند بیش از یک‌بار مقدار دریافت کند. در اینجا مثالی وجود دارد که به دلیل این محدودیت شکست می‌خورد::"
 
 msgid ""
 ">>> def function(a):\n"
@@ -955,7 +955,7 @@ msgstr ""
 "TypeError: function() got multiple values for argument 'a'"
 
 msgid "When a final formal parameter of the form ``**name`` is present, it receives a dictionary (see :ref:`typesmapping`) containing all keyword arguments except for those corresponding to a formal parameter.  This may be combined with a formal parameter of the form ``*name`` (described in the next subsection) which receives a :ref:`tuple <tut-tuples>` containing the positional arguments beyond the formal parameter list.  (``*name`` must occur before ``**name``.) For example, if we define a function like this::"
-msgstr "هنگامی که یک پارامتر رسمی نهایی به شکل ``**name`` وجود داشته باشد، یک فرهنگ لغت (به :ref:`typesmapping` مراجعه کنید) دریافت می‌کند که شامل تمام آرگومان‌های کلیدواژه‌ای است، به‌جز آن‌هایی که متناظر با یک پارامتر رسمی هستند. این مورد می‌تواند با یک پارامتر رسمی به شکل ``*name`` ترکیب شود (که در زیربخش بعدی توضیح داده شده است)؛ این پارامتر یک :ref:`tuple <tut-tuples>` دریافت می‌کند که شامل آرگومان‌های موقعیتی فراتر از فهرست پارامترهای رسمی است. (``*name`` باید پیش از ``**name`` قرار گیرد.) برای مثال، اگر تابعی مانند زیر تعریف کنیم::"
+msgstr "هنگامی که یک پارامتر رسمی نهایی به شکل ``**name`` وجود داشته باشد، یک فرهنگ لغت (به :ref:`typesmapping` مراجعه کنید) دریافت می‌کند که شامل تمام آرگومان‌های کلیدواژه‌ای است، به‌جز آن‌هایی که متناظر با یک پارامتر رسمی هستند. این مورد می‌تواند با یک پارامتر رسمی به شکل ``*name`` ترکیب شود (که در زیربخش بعدی توضیح داده شده است)؛ این پارامتر یک :ref:`tuple <tut-tuples>` دریافت می‌کند که شامل آرگومان‌های جایگاهی فراتر از فهرست پارامترهای رسمی است. (``*name`` باید پیش از ``**name`` قرار گیرد.) برای مثال، اگر تابعی مانند زیر تعریف کنیم::"
 
 msgid ""
 "def cheeseshop(kind, *arguments, **keywords):\n"
@@ -1042,22 +1042,22 @@ msgstr ""
 "         -- Positional only"
 
 msgid "where ``/`` and ``*`` are optional. If used, these symbols indicate the kind of parameter by how the arguments may be passed to the function: positional-only, positional-or-keyword, and keyword-only. Keyword parameters are also referred to as named parameters."
-msgstr "که در آن ``/`` و ``*`` اختیاری هستند. اگر استفاده شوند، این نمادها نوع پارامتر را بر اساس نحوه ارسال آرگومان‌ها به تابع مشخص می‌کنند: فقط موقعیتی، موقعیتی یا کلیدواژه‌ای، و فقط کلیدواژه‌ای. پارامترهای کلیدواژه‌ای همچنین به عنوان پارامترهای نام‌دار شناخته می‌شوند."
+msgstr "که در آن ``/`` و ``*`` اختیاری هستند. اگر استفاده شوند، این نمادها نوع پارامتر را بر اساس نحوه ارسال آرگومان‌ها به تابع مشخص می‌کنند: فقط‌جایگاهی، جایگاهی یا کلیدواژه‌ای، و فقط کلیدواژه‌ای. پارامترهای کلیدواژه‌ای همچنین به عنوان پارامترهای نام‌دار شناخته می‌شوند."
 
 msgid "Positional-or-Keyword Arguments"
-msgstr "آرگومان‌های موقعیتی یا کلیدواژه‌ای"
+msgstr "آرگومان‌های جایگاهی یا کلیدواژه‌ای"
 
 msgid "If ``/`` and ``*`` are not present in the function definition, arguments may be passed to a function by position or by keyword."
 msgstr "اگر ``/`` و ``*`` در تعریف تابع وجود نداشته باشند، آرگومان‌ها را می‌توان با موقعیت یا با کلیدواژه به یک تابع ارسال کرد."
 
 msgid "Positional-Only Parameters"
-msgstr "پارامترهای فقط موقعیتی"
+msgstr "پارامترهای فقط‌جایگاهی"
 
 msgid "Looking at this in a bit more detail, it is possible to mark certain parameters as *positional-only*. If *positional-only*, the parameters' order matters, and the parameters cannot be passed by keyword. Positional-only parameters are placed before a ``/`` (forward-slash). The ``/`` is used to logically separate the positional-only parameters from the rest of the parameters. If there is no ``/`` in the function definition, there are no positional-only parameters."
-msgstr "با بررسی دقیق‌تر، می‌توان برخی پارامترها را به صورت *فقط موقعیتی* مشخص کرد. اگر *فقط موقعیتی* باشند، ترتیب پارامترها اهمیت دارد و پارامترها نمی‌توانند با کلیدواژه ارسال شوند. پارامترهای فقط موقعیتی قبل از یک ``/`` (خط مورب) قرار می‌گیرند. ``/`` برای جدا کردن منطقی پارامترهای فقط موقعیتی از سایر پارامترها استفاده می‌شود. اگر ``/`` در تعریف تابع وجود نداشته باشد، هیچ پارامتر فقط موقعیتی وجود ندارد."
+msgstr "با بررسی دقیق‌تر، می‌توان برخی پارامترها را به صورت *فقط‌جایگاهی* مشخص کرد. اگر *فقط‌جایگاهی* باشند، ترتیب پارامترها اهمیت دارد و پارامترها نمی‌توانند با کلیدواژه ارسال شوند. پارامترهای فقط‌جایگاهی قبل از یک ``/`` (خط مورب) قرار می‌گیرند. ``/`` برای جدا کردن منطقی پارامترهای فقط‌جایگاهی از سایر پارامترها استفاده می‌شود. اگر ``/`` در تعریف تابع وجود نداشته باشد، هیچ پارامتر فقط‌جایگاهی وجود ندارد."
 
 msgid "Parameters following the ``/`` may be *positional-or-keyword* or *keyword-only*."
-msgstr "پارامترهای پس از ``/`` می‌توانند *موقعیتی یا کلیدواژه‌ای* یا *فقط کلیدواژه‌ای* باشند."
+msgstr "پارامترهای پس از ``/`` می‌توانند *جایگاهی یا کلیدواژه‌ای* یا *فقط کلیدواژه‌ای* باشند."
 
 msgid "Keyword-Only Arguments"
 msgstr "آرگومان‌های فقط کلیدواژه‌ای"
@@ -1113,7 +1113,7 @@ msgstr ""
 "2"
 
 msgid "The second function ``pos_only_arg`` is restricted to only use positional parameters as there is a ``/`` in the function definition::"
-msgstr "تابع دوم، ``pos_only_arg``، محدود شده است تا فقط از پارامترهای موقعیتی استفاده کند، زیرا یک ``/`` در تعریف تابع وجود دارد::"
+msgstr "تابع دوم، ``pos_only_arg``، محدود شده است تا فقط از پارامترهای جایگاهی استفاده کند، زیرا یک ``/`` در تعریف تابع وجود دارد::"
 
 msgid ""
 ">>> pos_only_arg(1)\n"
@@ -1189,7 +1189,7 @@ msgstr ""
 "TypeError: combined_example() got some positional-only arguments passed as keyword arguments: 'pos_only'"
 
 msgid "Finally, consider this function definition which has a potential collision between the positional argument ``name``  and ``**kwds`` which has ``name`` as a key::"
-msgstr "در نهایت، این تعریف تابع را در نظر بگیرید که در آن بین آرگومان موقعیتی ``name`` و ``**kwds`` که دارای کلیدواژه‌ای به نام ``name`` است، یک برخورد احتمالی وجود دارد::"
+msgstr "در نهایت، این تعریف تابع را در نظر بگیرید که در آن بین آرگومان جایگاهی ``name`` و ``**kwds`` که دارای کلیدواژه‌ای به نام ``name`` است، یک برخورد احتمالی وجود دارد::"
 
 msgid ""
 "def foo(name, **kwds):\n"
@@ -1215,7 +1215,7 @@ msgstr ""
 ">>>"
 
 msgid "But using ``/`` (positional only arguments), it is possible since it allows ``name`` as a positional argument and ``'name'`` as a key in the keyword arguments::"
-msgstr "اما با استفاده از ``/`` (آرگومان‌های فقط موقعیتی)، این امکان وجود دارد، زیرا اجازه می‌دهد ``name`` به‌عنوان یک آرگومان موقعیتی و ``'name'`` به‌عنوان یک کلید در آرگومان‌های کلیدواژه‌ای استفاده شود::"
+msgstr "اما با استفاده از ``/`` (آرگومان‌های فقط‌جایگاهی)، این امکان وجود دارد، زیرا اجازه می‌دهد ``name`` به‌عنوان یک آرگومان جایگاهی و ``'name'`` به‌عنوان یک کلید در آرگومان‌های کلیدواژه‌ای استفاده شود::"
 
 msgid ""
 ">>> def foo(name, /, **kwds):\n"
@@ -1231,7 +1231,7 @@ msgstr ""
 "True"
 
 msgid "In other words, the names of positional-only parameters can be used in ``**kwds`` without ambiguity."
-msgstr "به عبارت دیگر، نام پارامترهای فقط موقعیتی می‌تواند بدون ابهام در ``**kwds`` استفاده شود."
+msgstr "به عبارت دیگر، نام پارامترهای فقط‌جایگاهی می‌تواند بدون ابهام در ``**kwds`` استفاده شود."
 
 msgid "Recap"
 msgstr "خلاصه"
@@ -1246,13 +1246,13 @@ msgid "As guidance:"
 msgstr "برای راهنمایی:"
 
 msgid "Use positional-only if you want the name of the parameters to not be available to the user. This is useful when parameter names have no real meaning, if you want to enforce the order of the arguments when the function is called or if you need to take some positional parameters and arbitrary keywords."
-msgstr "اگر می‌خواهید نام پارامترها برای کاربر قابل دسترس نباشد، از فقط-موقعیتی استفاده کنید. این زمانی مفید است که نام پارامترها معنای واقعی ندارند، زمانی که می‌خواهید ترتیب آرگومان‌ها هنگام فراخوانی تابع اجباری باشد، یا زمانی که به تعدادی پارامتر موقعیتی و کلیدواژه‌های دلخواه نیاز دارید."
+msgstr "اگر می‌خواهید نام پارامترها برای کاربر قابل دسترس نباشد، از فقط‌جایگاهی استفاده کنید. این زمانی مفید است که نام پارامترها معنای واقعی ندارند، زمانی که می‌خواهید ترتیب آرگومان‌ها هنگام فراخوانی تابع اجباری باشد، یا زمانی که به تعدادی پارامتر جایگاهی و کلیدواژه‌های دلخواه نیاز دارید."
 
 msgid "Use keyword-only when names have meaning and the function definition is more understandable by being explicit with names or you want to prevent users relying on the position of the argument being passed."
 msgstr "زمانی که نام‌ها دارای معنا هستند و تعریف تابع با مشخص کردن صریح نام‌ها قابل فهم‌تر می‌شود، یا زمانی که می‌خواهید کاربران به موقعیت آرگومان‌های ارسال‌شده وابسته نشوند، از فقط کلیدواژه‌ای استفاده کنید."
 
 msgid "For an API, use positional-only to prevent breaking API changes if the parameter's name is modified in the future."
-msgstr "برای یک API، از پارامترهای فقط موقعیتی استفاده کنید تا از شکستن تغییرات API در صورت تغییر نام پارامتر در آینده جلوگیری شود."
+msgstr "برای یک API، از پارامترهای فقط‌جایگاهی استفاده کنید تا از شکستن تغییرات API در صورت تغییر نام پارامتر در آینده جلوگیری شود."
 
 msgid "Arbitrary Argument Lists"
 msgstr "فهرست‌های دلخواه آرگومان‌ها"
@@ -1268,7 +1268,7 @@ msgstr ""
 "    file.write(separator.join(args))"
 
 msgid "Normally, these *variadic* arguments will be last in the list of formal parameters, because they scoop up all remaining input arguments that are passed to the function. Any formal parameters which occur after the ``*args`` parameter are 'keyword-only' arguments, meaning that they can only be used as keywords rather than positional arguments. ::"
-msgstr "معمولاً این آرگومان‌های *متغیرتعداد* در انتهای فهرست پارامترهای رسمی قرار می‌گیرند، زیرا تمام آرگومان‌های ورودی باقی‌مانده‌ای که به تابع ارسال می‌شوند را جمع‌آوری می‌کنند. هر پارامتر رسمی که پس از پارامتر ``*args`` قرار گیرد، یک آرگومان «فقط کلیدواژه‌ای» است؛ یعنی فقط می‌تواند به‌عنوان کلیدواژه استفاده شود و نه به صورت آرگومان موقعیتی. ::"
+msgstr "معمولاً این آرگومان‌های *متغیرتعداد* در انتهای فهرست پارامترهای رسمی قرار می‌گیرند، زیرا تمام آرگومان‌های ورودی باقی‌مانده‌ای که به تابع ارسال می‌شوند را جمع‌آوری می‌کنند. هر پارامتر رسمی که پس از پارامتر ``*args`` قرار گیرد، یک آرگومان «فقط کلیدواژه‌ای» است؛ یعنی فقط می‌تواند به‌عنوان کلیدواژه استفاده شود و نه به صورت آرگومان جایگاهی. ::"
 
 msgid ""
 ">>> def concat(*args, sep=\"/\"):\n"
@@ -1291,7 +1291,7 @@ msgid "Unpacking Argument Lists"
 msgstr "باز کردن بسته آرگومان‌ها"
 
 msgid "The reverse situation occurs when the arguments are already in a list or tuple but need to be unpacked for a function call requiring separate positional arguments.  For instance, the built-in :func:`range` function expects separate *start* and *stop* arguments.  If they are not available separately, write the function call with the  ``*``\\ -operator to unpack the arguments out of a list or tuple::"
-msgstr "حالت معکوس زمانی رخ می‌دهد که آرگومان‌ها از قبل در یک فهرست یا تاپل قرار دارند، اما برای فراخوانی تابعی که به آرگومان‌های موقعیتی جداگانه نیاز دارد، باید باز شوند. برای مثال، تابع داخلی :func:`range` آرگومان‌های جداگانه *start* و *stop* را انتظار دارد. اگر این آرگومان‌ها به صورت جداگانه در دسترس نیستند، فراخوانی تابع را با عملگر ``*`` برای باز کردن آرگومان‌ها از یک فهرست یا تاپل بنویسید::"
+msgstr "حالت معکوس زمانی رخ می‌دهد که آرگومان‌ها از قبل در یک فهرست یا تاپل قرار دارند، اما برای فراخوانی تابعی که به آرگومان‌های جایگاهی جداگانه نیاز دارد، باید باز شوند. برای مثال، تابع داخلی :func:`range` آرگومان‌های جداگانه *start* و *stop* را انتظار دارد. اگر این آرگومان‌ها به صورت جداگانه در دسترس نیستند، فراخوانی تابع را با عملگر ``*`` برای باز کردن آرگومان‌ها از یک فهرست یا تاپل بنویسید::"
 
 msgid ""
 ">>> list(range(3, 6))            # normal call with separate arguments\n"
