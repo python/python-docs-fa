@@ -64,7 +64,7 @@
 | operator         | عملگر                    |
 | package          | بسته                     |
 | parameter        | پارامتر                  |
-| positinal        | جایگاهی                  |
+| positional        | جایگاهی                  |
 | property         | ویژگی، پراپرتی، خصوصیت   |
 | quotation        | علامت نقل‌وقول           |
 | raise            | پرتاب                    |
