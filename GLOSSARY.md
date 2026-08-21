@@ -54,8 +54,7 @@
 | loader           | بارگذار                  |
 | local            | محلی                     |
 | loop             | حلقه                     |
-| method           | متد                      |
-| method           | روش                      |
+| method           | متد، روش                      |
 | mock             | ماک                      |
 | module           | ماژول                    |
 | mutable          | تغییرپذیر                |
