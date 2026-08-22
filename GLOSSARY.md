@@ -65,6 +65,7 @@
 | parameter        | پارامتر                  |
 | positional        | جایگاهی                  |
 | property         | ویژگی، پراپرتی، خصوصیت   |
+| pass        | پاس دادن           |
 | quotation        | علامت نقل‌وقول           |
 | raise            | پرتاب                    |
 | return           | بازگشت، برگرداندن        |
