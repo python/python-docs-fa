@@ -217,22 +217,22 @@ msgid "Note that if the module didn't encapsulate code inside the ``main`` funct
 msgstr "توجه داشته باشید که اگر ماژول کد را درون تابع ``main`` محصور نمی‌کرد و به جای آن مستقیماً آن را درون بلوک ``if __name__ == '__main__'`` قرار می‌داد، متغیر ``phrase`` برای کل ماژول سراسری می‌شد.  این امر مستعد خطا است، زیرا ممکن است سایر توابع درون ماژول به‌طور ناخواسته از متغیر سراسری به جای یک نام محلی استفاده کنند.  تابع ``main`` این مشکل را حل می‌کند."
 
 msgid "Using a ``main`` function has the added benefit of the ``echo`` function itself being isolated and importable elsewhere. When ``echo.py`` is imported, the ``echo`` and ``main`` functions will be defined, but neither of them will be called, because ``__name__ != '__main__'``."
-msgstr ""
+msgstr "استفاده از تابع ``main`` این مزیت اضافی را دارد که خود تابع ``echo`` ایزوله و قابل ایمپورت در جای دیگر است. وقتی ``echo.py`` ایمپورت می‌شود، توابع ``echo`` و ``main`` تعریف می‌شوند، اما هیچ‌کدام از آن‌ها فراخوانی نمی‌شوند، زیرا ``__name__ != '__main__'`` است."
 
 msgid "Packaging Considerations"
-msgstr ""
+msgstr "ملاحظات بسته‌بندی"
 
 msgid "``main`` functions are often used to create command-line tools by specifying them as entry points for console scripts.  When this is done, `pip <https://pip.pypa.io/>`_ inserts the function call into a template script, where the return value of ``main`` is passed into :func:`sys.exit`. For example::"
-msgstr ""
+msgstr "توابع ``main`` اغلب برای ساختن ابزارهای خط فرمان با مشخص کردن آن‌ها به‌عنوان نقاط ورودی برای اسکریپت‌های کنسولی استفاده می‌شوند.  وقتی این کار انجام می‌شود، `pip <https://pip.pypa.io/>`_ فراخوانی تابع را در یک اسکریپت الگو قرار می‌دهد، جایی که مقدار بازگشتی ``main`` به :func:`sys.exit` پاس داده می‌شود.  برای مثال::"
 
 msgid "sys.exit(main())"
-msgstr ""
+msgstr "sys.exit(main())"
 
 msgid "Since the call to ``main`` is wrapped in :func:`sys.exit`, the expectation is that your function will return some value acceptable as an input to :func:`sys.exit`; typically, an integer or ``None`` (which is implicitly returned if your function does not have a return statement)."
-msgstr ""
+msgstr "از آنجایی که فراخوانی ``main`` در :func:`sys.exit` پیچیده شده است، انتظار می‌رود که تابع شما مقداری را برگرداند که به‌عنوان ورودی برای :func:`sys.exit` قابل‌قبول باشد؛ معمولاً یک عدد صحیح یا ``None`` (که اگر تابع شما دستور return نداشته باشد، به‌صورت ضمنی برگردانده می‌شود)."
 
 msgid "By proactively following this convention ourselves, our module will have the same behavior when run directly (i.e. ``python echo.py``) as it will have if we later package it as a console script entry-point in a pip-installable package."
-msgstr ""
+msgstr "با پیروی فعالانه‌ی خودمان از این قرارداد، ماژول ما هنگام اجرای مستقیم (یعنی ``python echo.py``) همان رفتاری را خواهد داشت که در صورت بسته‌بندی بعدی آن به‌عنوان یک نقطه‌ی ورودی اسکریپت کنسول در یک بسته‌ی قابل نصب با pip خواهد داشت."
 
 msgid "In particular, be careful about returning strings from your ``main`` function. :func:`sys.exit` will interpret a string argument as a failure message, so your program will have an exit code of ``1``, indicating failure, and the string will be written to :data:`sys.stderr`.  The ``echo.py`` example from earlier exemplifies using the ``sys.exit(main())`` convention."
 msgstr ""
