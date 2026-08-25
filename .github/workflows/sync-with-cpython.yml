@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
     inputs:
       cpython_tag:
-        description: 'CPython tag to sync against (e.g. v3.14.6)'
+        description: 'CPython tag to sync against (e.g. v3.14.7)'
         required: false
-        default: 'v3.14.6'
+        default: 'v3.14.7'
 
 permissions:
   contents: write
@@ -44,7 +44,7 @@ jobs:
             --depth 1 \
             --filter=blob:none \
             --sparse \
-            --branch ${{ github.event.inputs.cpython_tag || 'v3.14.6' }} \
+            --branch ${{ github.event.inputs.cpython_tag || 'v3.14.7' }} \
             https://github.com/python/cpython.git \
             .cpython-src
           cd .cpython-src
@@ -87,7 +87,7 @@ jobs:
       - name: Open issue for fuzzy strings
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CPYTHON_TAG: ${{ github.event.inputs.cpython_tag || 'v3.14.6' }}
+          CPYTHON_TAG: ${{ github.event.inputs.cpython_tag || 'v3.14.7' }}
         run: |
           tmpfile=$(mktemp)
           while IFS= read -r f; do
@@ -175,5 +175,5 @@ jobs:
             exit 0
           fi
           git commit -m \
-            "chore: sync msgids with CPython ${{ github.event.inputs.cpython_tag || 'v3.14.6' }}"
+            "chore: sync msgids with CPython ${{ github.event.inputs.cpython_tag || 'v3.14.7' }}"
           git push
