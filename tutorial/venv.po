@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
-"PO-Revision-Date: 2026-07-28 10:08+0330\n"
+"POT-Creation-Date: 2026-08-25 20:39+0330\n"
+"PO-Revision-Date: 2026-08-25 20:56+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/)\n"
 "Language: fa\n"
@@ -24,63 +24,156 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.6\n"
 
+#: ../../tutorial/venv.rst:6
 msgid "Virtual Environments and Packages"
 msgstr "محیط‌های مجازی و بسته‌ها"
 
+#: ../../tutorial/venv.rst:9
 msgid "Introduction"
 msgstr "مقدمه"
 
-msgid "Python applications will often use packages and modules that don't come as part of the standard library.  Applications will sometimes need a specific version of a library, because the application may require that a particular bug has been fixed or the application may be written using an obsolete version of the library's interface."
-msgstr "برنامه‌های پایتون معمولاً از بسته‌ها و ماژول‌هایی استفاده می‌کنند که بخشی از کتابخانهٔ استاندارد نیستند. همچنین، گاهی یک برنامه به نسخهٔ مشخصی از یک کتابخانه نیاز دارد؛ زیرا ممکن است به رفع یک باگ خاص وابسته باشد یا با استفاده از نسخهٔ قدیمی‌تری از رابط آن کتابخانه نوشته شده باشد."
+#: ../../tutorial/venv.rst:11
+msgid ""
+"Python applications will often use packages and modules that don't come as part of "
+"the standard library.  Applications will sometimes need a specific version of a "
+"library, because the application may require that a particular bug has been fixed "
+"or the application may be written using an obsolete version of the library's "
+"interface."
+msgstr ""
+"برنامه‌های پایتون معمولاً از بسته‌ها و ماژول‌هایی استفاده می‌کنند که بخشی از کتابخانهٔ "
+"استاندارد نیستند. همچنین، گاهی یک برنامه به نسخهٔ مشخصی از یک کتابخانه نیاز دارد؛ "
+"زیرا ممکن است به رفع یک باگ خاص وابسته باشد یا با استفاده از نسخهٔ قدیمی‌تری از رابط "
+"آن کتابخانه نوشته شده باشد."
 
-msgid "This means it may not be possible for one Python installation to meet the requirements of every application.  If application A needs version 1.0 of a particular module but application B needs version 2.0, then the requirements are in conflict and installing either version 1.0 or 2.0 will leave one application unable to run."
-msgstr "این موضوع باعث می‌شود که یک نصب واحد از پایتون نتواند نیازهای همهٔ برنامه‌ها را برآورده کند. برای مثال، اگر برنامهٔ A به نسخهٔ 1.0 یک ماژول نیاز داشته باشد، اما برنامهٔ B به نسخهٔ 2.0 همان ماژول وابسته باشد، این نیازها با یکدیگر در تعارض خواهند بود و نصب هر یک از نسخه‌های 1.0 یا 2.0 باعث می‌شود یکی از برنامه‌ها دیگر قابل اجرا نباشد."
+#: ../../tutorial/venv.rst:17
+msgid ""
+"This means it may not be possible for one Python installation to meet the "
+"requirements of every application.  If application A needs version 1.0 of a "
+"particular module but application B needs version 2.0, then the requirements are in "
+"conflict and installing either version 1.0 or 2.0 will leave one application unable "
+"to run."
+msgstr ""
+"این موضوع باعث می‌شود که یک نصب واحد از پایتون نتواند نیازهای همهٔ برنامه‌ها را "
+"برآورده کند. برای مثال، اگر برنامهٔ A به نسخهٔ 1.0 یک ماژول نیاز داشته باشد، اما "
+"برنامهٔ B به نسخهٔ 2.0 همان ماژول وابسته باشد، این نیازها با یکدیگر در تعارض خواهند "
+"بود و نصب هر یک از نسخه‌های 1.0 یا 2.0 باعث می‌شود یکی از برنامه‌ها دیگر قابل اجرا "
+"نباشد."
 
-msgid "The solution for this problem is to create a :term:`virtual environment`, a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages."
-msgstr "راه‌حل این مشکل، ایجاد یک :term:`محیط مجازی <virtual environment>` است؛ یک ساختار پوشه مستقل که شامل یک نصب از پایتون برای نسخه‌ای مشخص از پایتون، به‌همراه تعدادی بستهٔ اضافی است."
+#: ../../tutorial/venv.rst:23
+msgid ""
+"The solution for this problem is to create a :term:`virtual environment`, a self-"
+"contained directory tree that contains a Python installation for a particular "
+"version of Python, plus a number of additional packages."
+msgstr ""
+"راه‌حل این مشکل، ایجاد یک :term:`محیط مجازی <virtual environment>` است؛ یک ساختار "
+"پوشه مستقل که شامل یک نصب از پایتون برای نسخه‌ای مشخص از پایتون، به‌همراه تعدادی بستهٔ "
+"اضافی است."
 
-msgid "Different applications can then use different virtual environments. To resolve the earlier example of conflicting requirements, application A can have its own virtual environment with version 1.0 installed while application B has another virtual environment with version 2.0. If application B requires a library be upgraded to version 3.0, this will not affect application A's environment."
-msgstr "به این ترتیب، هر برنامه می‌تواند از محیط مجازی مخصوص به خود استفاده کند. برای حل مثال قبلی، برنامهٔ A می‌تواند محیط مجازی خود را با نسخهٔ 1.0 آن ماژول داشته باشد، در حالی که برنامهٔ B از محیط مجزایی با نسخهٔ 2.0 استفاده کند. اگر بعدها برنامهٔ B به ارتقای آن کتابخانه به نسخهٔ 3.0 نیاز داشته باشد، این تغییر هیچ تأثیری بر محیط برنامهٔ A نخواهد داشت."
+#: ../../tutorial/venv.rst:27
+msgid ""
+"Different applications can then use different virtual environments. To resolve the "
+"earlier example of conflicting requirements, application A can have its own virtual "
+"environment with version 1.0 installed while application B has another virtual "
+"environment with version 2.0. If application B requires a library be upgraded to "
+"version 3.0, this will not affect application A's environment."
+msgstr ""
+"به این ترتیب، هر برنامه می‌تواند از محیط مجازی مخصوص به خود استفاده کند. برای حل "
+"مثال قبلی، برنامهٔ A می‌تواند محیط مجازی خود را با نسخهٔ 1.0 آن ماژول داشته باشد، در "
+"حالی که برنامهٔ B از محیط مجزایی با نسخهٔ 2.0 استفاده کند. اگر بعدها برنامهٔ B به "
+"ارتقای آن کتابخانه به نسخهٔ 3.0 نیاز داشته باشد، این تغییر هیچ تأثیری بر محیط برنامهٔ "
+"A نخواهد داشت."
 
+#: ../../tutorial/venv.rst:36
 msgid "Creating Virtual Environments"
 msgstr "ایجاد محیط‌های مجازی"
 
-msgid "The module used to create and manage virtual environments is called :mod:`venv`.  :mod:`venv` will install the Python version from which the command was run (as reported by the :option:`--version` option). For instance, executing the command with ``python3.12`` will install version 3.12."
-msgstr "ماژولی که برای ایجاد و مدیریت محیط‌های مجازی استفاده می‌شود، :mod:`venv` نام دارد. ماژول :mod:`venv` همان نسخه‌ای از پایتون را نصب می‌کند که دستور با آن اجرا شده است (همان‌طور که با گزینهٔ :option:`--version` گزارش می‌شود). برای مثال، اگر دستور را با ``python3.12`` اجرا کنید، نسخهٔ 3.12 نصب خواهد شد."
+#: ../../tutorial/venv.rst:38
+msgid ""
+"The module used to create and manage virtual environments is "
+"called :mod:`venv`.  :mod:`venv` will install the Python version from which the "
+"command was run (as reported by the :option:`--version` option). For instance, "
+"executing the command with ``python3.12`` will install version 3.12."
+msgstr ""
+"ماژولی که برای ایجاد و مدیریت محیط‌های مجازی استفاده می‌شود، :mod:`venv` نام دارد. "
+"ماژول :mod:`venv` همان نسخه‌ای از پایتون را نصب می‌کند که دستور با آن اجرا شده است "
+"(همان‌طور که با گزینهٔ :option:`--version` گزارش می‌شود). برای مثال، اگر دستور را با "
+"``python3.12`` اجرا کنید، نسخهٔ 3.12 نصب خواهد شد."
 
-msgid "To create a virtual environment, decide upon a directory where you want to place it, and run the :mod:`venv` module as a script with the directory path::"
-msgstr "برای ایجاد یک محیط مجازی، ابتدا پوشه موردنظر خود را انتخاب کنید و سپس ماژول :mod:`venv` را به‌صورت یک اسکریپت همراه با مسیر آن پوشه اجرا کنید::"
+#: ../../tutorial/venv.rst:44
+msgid ""
+"To create a virtual environment, decide upon a directory where you want to place "
+"it, and run the :mod:`venv` module as a script with the directory path::"
+msgstr ""
+"برای ایجاد یک محیط مجازی، ابتدا پوشه موردنظر خود را انتخاب کنید و سپس "
+"ماژول :mod:`venv` را به‌صورت یک اسکریپت همراه با مسیر آن پوشه اجرا کنید::"
 
+#: ../../tutorial/venv.rst:47
 msgid "python -m venv tutorial-env"
 msgstr "python -m venv tutorial-env"
 
-msgid "This will create the ``tutorial-env`` directory if it doesn't exist, and also create directories inside it containing a copy of the Python interpreter and various supporting files."
-msgstr "اگر پوشه ``tutorial-env`` وجود نداشته باشد، این دستور آن را ایجاد می‌کند و همچنین درون آن پوشه‌هایی شامل یک نسخه از مفسر پایتون و فایل‌های پشتیبان موردنیاز را می‌سازد."
+#: ../../tutorial/venv.rst:49
+msgid ""
+"This will create the ``tutorial-env`` directory if it doesn't exist, and also "
+"create directories inside it containing a copy of the Python interpreter and "
+"various supporting files."
+msgstr ""
+"اگر پوشه ``tutorial-env`` وجود نداشته باشد، این دستور آن را ایجاد می‌کند و همچنین "
+"درون آن پوشه‌هایی شامل یک نسخه از مفسر پایتون و فایل‌های پشتیبان موردنیاز را می‌سازد."
 
-msgid "A common directory location for a virtual environment is ``.venv``. This name keeps the directory typically hidden in your shell and thus out of the way while giving it a name that explains why the directory exists. It also prevents clashing with ``.env`` environment variable definition files that some tooling supports."
-msgstr "یکی از محل‌های رایج برای ایجاد محیط مجازی، پوشه ``.venv`` است. این نام معمولاً باعث می‌شود پوشه در شل مخفی بماند و در عین حال به‌خوبی نشان دهد که دلیل وجود آن چیست. همچنین از تداخل با فایل‌های تعریف متغیرهای محیطی ``.env`` که برخی ابزارها از آن‌ها پشتیبانی می‌کنند، جلوگیری می‌کند."
+#: ../../tutorial/venv.rst:53
+msgid ""
+"A common directory location for a virtual environment is ``.venv``. This name keeps "
+"the directory typically hidden in your shell and thus out of the way while giving "
+"it a name that explains why the directory exists. It also prevents clashing with "
+"``.env`` environment variable definition files that some tooling supports."
+msgstr ""
+"یکی از محل‌های رایج برای ایجاد محیط مجازی، پوشه ``.venv`` است. این نام معمولاً باعث "
+"می‌شود پوشه در شل مخفی بماند و در عین حال به‌خوبی نشان دهد که دلیل وجود آن چیست. "
+"همچنین از تداخل با فایل‌های تعریف متغیرهای محیطی ``.env`` که برخی ابزارها از آن‌ها "
+"پشتیبانی می‌کنند، جلوگیری می‌کند."
 
+#: ../../tutorial/venv.rst:59
 msgid "Once you've created a virtual environment, you may activate it."
 msgstr "پس از ایجاد محیط مجازی، می‌توانید آن را فعال کنید."
 
+#: ../../tutorial/venv.rst:61
 msgid "On Windows, run::"
 msgstr "در ویندوز، دستور زیر را اجرا کنید::"
 
+#: ../../tutorial/venv.rst:63
 msgid "tutorial-env\\Scripts\\activate"
 msgstr "tutorial-env\\Scripts\\activate"
 
+#: ../../tutorial/venv.rst:65
 msgid "On Unix or MacOS, run::"
 msgstr "در یونیکس یا macOS، دستور زیر را اجرا کنید::"
 
+#: ../../tutorial/venv.rst:67
 msgid "source tutorial-env/bin/activate"
 msgstr "source tutorial-env/bin/activate"
 
-msgid "(This script is written for the bash shell.  If you use the :program:`csh` or :program:`fish` shells, there are alternate ``activate.csh`` and ``activate.fish`` scripts you should use instead.)"
-msgstr "(این اسکریپت برای شل bash نوشته شده است. اگر از شل‌های :program:`csh` یا :program:`fish` استفاده می‌کنید، باید به‌ترتیب از اسکریپت‌های ``activate.csh`` یا ``activate.fish`` استفاده کنید.)"
+#: ../../tutorial/venv.rst:69
+msgid ""
+"(This script is written for the bash shell.  If you use the :program:`csh` "
+"or :program:`fish` shells, there are alternate ``activate.csh`` and "
+"``activate.fish`` scripts you should use instead.)"
+msgstr ""
+"(این اسکریپت برای شل bash نوشته شده است. اگر از شل‌های :program:`csh` "
+"یا :program:`fish` استفاده می‌کنید، باید به‌ترتیب از اسکریپت‌های ``activate.csh`` یا "
+"``activate.fish`` استفاده کنید.)"
 
-msgid "Activating the virtual environment will change your shell's prompt to show what virtual environment you're using, and modify the environment so that running ``python`` will get you that particular version and installation of Python. For example:"
-msgstr "با فعال کردن محیط مجازی، اعلان (prompt) شل تغییر می‌کند تا نشان دهد از کدام محیط مجازی استفاده می‌کنید. همچنین محیط به‌گونه‌ای تنظیم می‌شود که با اجرای دستور ``python``، همان نسخه و نصب پایتون مربوط به آن محیط مجازی اجرا شود. برای مثال:"
+#: ../../tutorial/venv.rst:74
+msgid ""
+"Activating the virtual environment will change your shell's prompt to show what "
+"virtual environment you're using, and modify the environment so that running "
+"``python`` will get you that particular version and installation of Python. For "
+"example:"
+msgstr ""
+"با فعال کردن محیط مجازی، اعلان (prompt) شل تغییر می‌کند تا نشان دهد از کدام محیط "
+"مجازی استفاده می‌کنید. همچنین محیط به‌گونه‌ای تنظیم می‌شود که با اجرای دستور "
+"``python``، همان نسخه و نصب پایتون مربوط به آن محیط مجازی اجرا شود. برای مثال:"
 
+#: ../../tutorial/venv.rst:79
 msgid ""
 "$ source ~/envs/tutorial-env/bin/activate\n"
 "(tutorial-env) $ python\n"
@@ -102,27 +195,63 @@ msgstr ""
 "'~/envs/tutorial-env/lib/python3.5/site-packages']\n"
 ">>>"
 
+#: ../../tutorial/venv.rst:91
+msgid ""
+"Note that the activated virtual environment does not alter the ``PYTHONPATH`` "
+"variable in any way. This may lead to unexpected results if the path includes "
+"references to code which is incompatible with the Python version the virtual "
+"environment is using. The best practice is to ``unset PYTHONPATH`` in bash or the "
+"equivalent for the shell you are using."
+msgstr ""
+"توجه داشته باشید که محیط مجازی فعال‌شده، متغیر ``PYTHONPATH`` را به هیچ‌وجه تغییر "
+"نمی‌دهد. اگر این مسیر شامل ارجاع‌هایی به کدی باشد که با نسخه پایتونی که محیط مجازی "
+"استفاده می‌کند سازگار نیست، ممکن است به نتایج غیرمنتظره‌ای منجر شود. بهترین روش این "
+"است که در bash یا معادل آن در پوسته‌ای که استفاده می‌کنید، این متغیر را با دستور "
+"``unset PYTHONPATH``  حذف کنید."
+
+#: ../../tutorial/venv.rst:96
 msgid "To deactivate a virtual environment, type::"
 msgstr "برای غیرفعال کردن محیط مجازی، دستور زیر را وارد کنید::"
 
+#: ../../tutorial/venv.rst:98
 msgid "deactivate"
 msgstr "deactivate"
 
+#: ../../tutorial/venv.rst:100
 msgid "into the terminal."
 msgstr "در ترمینال."
 
+#: ../../tutorial/venv.rst:103
 msgid "Managing Packages with pip"
 msgstr "مدیریت بسته‌ها با pip"
 
-msgid "You can install, upgrade, and remove packages using a program called :program:`pip`.  By default ``pip`` will install packages from the `Python Package Index <https://pypi.org>`_.  You can browse the Python Package Index by going to it in your web browser."
-msgstr "می‌توانید با استفاده از برنامه‌ای به نام :program:`pip` بسته‌ها را نصب، به‌روزرسانی و حذف کنید. به‌طور پیش‌فرض، ``pip`` بسته‌ها را از `Python Package Index <https://pypi.org>`_ نصب می‌کند. همچنین می‌توانید با مراجعه به این وب‌سایت در مرورگر خود، بسته‌های موجود در Python Package Index را مرور کنید."
+#: ../../tutorial/venv.rst:105
+msgid ""
+"You can install, upgrade, and remove packages using a program "
+"called :program:`pip`.  By default ``pip`` will install packages from the `Python "
+"Package Index <https://pypi.org>`_.  You can browse the Python Package Index by "
+"going to it in your web browser."
+msgstr ""
+"می‌توانید با استفاده از برنامه‌ای به نام :program:`pip` بسته‌ها را نصب، به‌روزرسانی و "
+"حذف کنید. به‌طور پیش‌فرض، ``pip`` بسته‌ها را از `Python Package Index <https://"
+"pypi.org>`_ نصب می‌کند. همچنین می‌توانید با مراجعه به این وب‌سایت در مرورگر خود، "
+"بسته‌های موجود در Python Package Index را مرور کنید."
 
-msgid "``pip`` has a number of subcommands: \"install\", \"uninstall\", \"freeze\", etc.  (Consult the :ref:`installing-index` guide for complete documentation for ``pip``.)"
-msgstr "``pip`` دارای چندین زیرفرمان مانند «install»، «uninstall»، «freeze» و موارد دیگر است. (برای مشاهدهٔ مستندات کامل ``pip`` به راهنمای :ref:`installing-index` مراجعه کنید.)"
+#: ../../tutorial/venv.rst:110
+msgid ""
+"``pip`` has a number of subcommands: \"install\", \"uninstall\", \"freeze\", etc.  "
+"(Consult the :ref:`installing-index` guide for complete documentation for ``pip``.)"
+msgstr ""
+"``pip`` دارای چندین زیرفرمان مانند «install»، «uninstall»، «freeze» و موارد دیگر "
+"است. (برای مشاهدهٔ مستندات کامل ``pip`` به راهنمای :ref:`installing-index` مراجعه "
+"کنید.)"
 
-msgid "You can install the latest version of a package by specifying a package's name:"
+#: ../../tutorial/venv.rst:114
+msgid ""
+"You can install the latest version of a package by specifying a package's name:"
 msgstr "می‌توانید با مشخص کردن نام یک بسته، آخرین نسخهٔ آن را نصب کنید:"
 
+#: ../../tutorial/venv.rst:116
 msgid ""
 "(tutorial-env) $ python -m pip install novas\n"
 "Collecting novas\n"
@@ -138,9 +267,15 @@ msgstr ""
 "  Running setup.py install for novas\n"
 "Successfully installed novas-3.1.1.3"
 
-msgid "You can also install a specific version of a package by giving the package name  followed by ``==`` and the version number:"
-msgstr "همچنین می‌توانید با نوشتن نام بسته، سپس ``==`` و شمارهٔ نسخه، نسخهٔ مشخصی از آن را نصب کنید:"
+#: ../../tutorial/venv.rst:125
+msgid ""
+"You can also install a specific version of a package by giving the package name  "
+"followed by ``==`` and the version number:"
+msgstr ""
+"همچنین می‌توانید با نوشتن نام بسته، سپس ``==`` و شمارهٔ نسخه، نسخهٔ مشخصی از آن را نصب "
+"کنید:"
 
+#: ../../tutorial/venv.rst:128
 msgid ""
 "(tutorial-env) $ python -m pip install requests==2.6.0\n"
 "Collecting requests==2.6.0\n"
@@ -154,9 +289,19 @@ msgstr ""
 "Installing collected packages: requests\n"
 "Successfully installed requests-2.6.0"
 
-msgid "If you re-run this command, ``pip`` will notice that the requested version is already installed and do nothing.  You can supply a different version number to get that version, or you can run ``python -m pip install --upgrade`` to upgrade the package to the latest version:"
-msgstr "اگر این دستور را دوباره اجرا کنید، ``pip`` تشخیص می‌دهد که نسخهٔ درخواستی از قبل نصب شده است و هیچ کاری انجام نمی‌دهد. می‌توانید شمارهٔ نسخهٔ دیگری را مشخص کنید تا همان نسخه نصب شود، یا با اجرای ``python -m pip install --upgrade`` بسته را به آخرین نسخه ارتقا دهید:"
+#: ../../tutorial/venv.rst:136
+msgid ""
+"If you re-run this command, ``pip`` will notice that the requested version is "
+"already installed and do nothing.  You can supply a different version number to get "
+"that version, or you can run ``python -m pip install --upgrade`` to upgrade the "
+"package to the latest version:"
+msgstr ""
+"اگر این دستور را دوباره اجرا کنید، ``pip`` تشخیص می‌دهد که نسخهٔ درخواستی از قبل نصب "
+"شده است و هیچ کاری انجام نمی‌دهد. می‌توانید شمارهٔ نسخهٔ دیگری را مشخص کنید تا همان "
+"نسخه نصب شود، یا با اجرای ``python -m pip install --upgrade`` بسته را به آخرین نسخه "
+"ارتقا دهید:"
 
+#: ../../tutorial/venv.rst:141
 msgid ""
 "(tutorial-env) $ python -m pip install --upgrade requests\n"
 "Collecting requests\n"
@@ -174,12 +319,19 @@ msgstr ""
 "      Successfully uninstalled requests-2.6.0\n"
 "Successfully installed requests-2.7.0"
 
-msgid "``python -m pip uninstall`` followed by one or more package names will remove the packages from the virtual environment."
-msgstr "دستور ``python -m pip uninstall`` که پس از آن یک یا چند نام بسته آورده می‌شود، آن بسته‌ها را از محیط مجازی حذف می‌کند."
+#: ../../tutorial/venv.rst:151
+msgid ""
+"``python -m pip uninstall`` followed by one or more package names will remove the "
+"packages from the virtual environment."
+msgstr ""
+"دستور ``python -m pip uninstall`` که پس از آن یک یا چند نام بسته آورده می‌شود، آن "
+"بسته‌ها را از محیط مجازی حذف می‌کند."
 
+#: ../../tutorial/venv.rst:154
 msgid "``python -m pip show`` will display information about a particular package:"
 msgstr "دستور ``python -m pip show`` اطلاعات مربوط به یک بستهٔ مشخص را نمایش می‌دهد:"
 
+#: ../../tutorial/venv.rst:156
 msgid ""
 "(tutorial-env) $ python -m pip show requests\n"
 "---\n"
@@ -207,9 +359,14 @@ msgstr ""
 "Location: /Users/akuchling/envs/tutorial-env/lib/python3.4/site-packages\n"
 "Requires:"
 
-msgid "``python -m pip list`` will display all of the packages installed in the virtual environment:"
-msgstr "دستور ``python -m pip list`` فهرست تمام بسته‌های نصب‌شده در محیط مجازی را نمایش می‌دهد:"
+#: ../../tutorial/venv.rst:171
+msgid ""
+"``python -m pip list`` will display all of the packages installed in the virtual "
+"environment:"
+msgstr ""
+"دستور ``python -m pip list`` فهرست تمام بسته‌های نصب‌شده در محیط مجازی را نمایش می‌دهد:"
 
+#: ../../tutorial/venv.rst:174
 msgid ""
 "(tutorial-env) $ python -m pip list\n"
 "novas (3.1.1.3)\n"
@@ -225,9 +382,17 @@ msgstr ""
 "requests (2.7.0)\n"
 "setuptools (16.0)"
 
-msgid "``python -m pip freeze`` will produce a similar list of the installed packages, but the output uses the format that ``python -m pip install`` expects. A common convention is to put this list in a ``requirements.txt`` file:"
-msgstr "دستور ``python -m pip freeze`` نیز فهرستی مشابه از بسته‌های نصب‌شده تولید می‌کند، اما خروجی آن در قالبی است که دستور ``python -m pip install`` انتظار دارد. معمولاً این فهرست را در فایلی با نام ``requirements.txt`` ذخیره می‌کنند:"
+#: ../../tutorial/venv.rst:183
+msgid ""
+"``python -m pip freeze`` will produce a similar list of the installed packages, but "
+"the output uses the format that ``python -m pip install`` expects. A common "
+"convention is to put this list in a ``requirements.txt`` file:"
+msgstr ""
+"دستور ``python -m pip freeze`` نیز فهرستی مشابه از بسته‌های نصب‌شده تولید می‌کند، اما "
+"خروجی آن در قالبی است که دستور ``python -m pip install`` انتظار دارد. معمولاً این "
+"فهرست را در فایلی با نام ``requirements.txt`` ذخیره می‌کنند:"
 
+#: ../../tutorial/venv.rst:187
 msgid ""
 "(tutorial-env) $ python -m pip freeze > requirements.txt\n"
 "(tutorial-env) $ cat requirements.txt\n"
@@ -241,9 +406,17 @@ msgstr ""
 "numpy==1.9.2\n"
 "requests==2.7.0"
 
-msgid "The ``requirements.txt`` can then be committed to version control and shipped as part of an application.  Users can then install all the necessary packages with ``install -r``:"
-msgstr "سپس می‌توان فایل ``requirements.txt`` را در سامانهٔ کنترل نسخه ثبت (commit) کرد و همراه با برنامه منتشر نمود. در این صورت، کاربران می‌توانند با استفاده از ``install -r`` تمام بسته‌های موردنیاز را نصب کنند:"
+#: ../../tutorial/venv.rst:195
+msgid ""
+"The ``requirements.txt`` can then be committed to version control and shipped as "
+"part of an application.  Users can then install all the necessary packages with "
+"``install -r``:"
+msgstr ""
+"سپس می‌توان فایل ``requirements.txt`` را در سامانهٔ کنترل نسخه ثبت (commit) کرد و "
+"همراه با برنامه منتشر نمود. در این صورت، کاربران می‌توانند با استفاده از ``install "
+"-r`` تمام بسته‌های موردنیاز را نصب کنند:"
 
+#: ../../tutorial/venv.rst:199
 msgid ""
 "(tutorial-env) $ python -m pip install -r requirements.txt\n"
 "Collecting novas==3.1.1.3 (from -r requirements.txt (line 1))\n"
@@ -267,5 +440,14 @@ msgstr ""
 "  Running setup.py install for novas\n"
 "Successfully installed novas-3.1.1.3 numpy-1.9.2 requests-2.7.0"
 
-msgid "``pip`` has many more options.  Consult the :ref:`installing-index` guide for complete documentation for ``pip``.  When you've written a package and want to make it available on the Python Package Index, consult the `Python packaging user guide`_."
-msgstr "``pip`` گزینه‌های بسیار بیشتری نیز دارد. برای مطالعهٔ مستندات کامل ``pip``، به راهنمای :ref:`installing-index` مراجعه کنید. همچنین، اگر بسته‌ای نوشته‌اید و می‌خواهید آن را در Python Package Index منتشر کنید، به `Python packaging user guide`_ مراجعه کنید."
+#: ../../tutorial/venv.rst:212
+msgid ""
+"``pip`` has many more options.  Consult the :ref:`installing-index` guide for "
+"complete documentation for ``pip``.  When you've written a package and want to make "
+"it available on the Python Package Index, consult the `Python packaging user "
+"guide`_."
+msgstr ""
+"``pip`` گزینه‌های بسیار بیشتری نیز دارد. برای مطالعهٔ مستندات کامل ``pip``، به "
+"راهنمای :ref:`installing-index` مراجعه کنید. همچنین، اگر بسته‌ای نوشته‌اید و می‌خواهید "
+"آن را در Python Package Index منتشر کنید، به `Python packaging user guide`_ مراجعه "
+"کنید."

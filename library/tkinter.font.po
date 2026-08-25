@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-25 20:39+0330\n"
 "PO-Revision-Date: 2021-06-28 01:15+0000\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
 "Language: fa\n"
@@ -21,107 +21,179 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../library/tkinter.font.rst:2
 msgid ":mod:`!tkinter.font` --- Tkinter font wrapper"
 msgstr ""
 
+#: ../../library/tkinter.font.rst:7
 msgid "**Source code:** :source:`Lib/tkinter/font.py`"
 msgstr ""
 
-msgid "The :mod:`!tkinter.font` module provides the :class:`Font` class for creating and using named fonts."
+#: ../../library/tkinter.font.rst:11
+msgid ""
+"The :mod:`!tkinter.font` module provides the :class:`Font` class for "
+"creating and using named fonts."
 msgstr ""
 
+#: ../../library/tkinter.font.rst:14
 msgid "The different font weights and slants are:"
 msgstr ""
 
-msgid "The :class:`Font` class represents a named font. *Font* instances are given unique names and can be specified by their family, size, and style configuration. Named fonts are Tk's method of creating and identifying fonts as a single object, rather than specifying a font by its attributes with each occurrence."
+#: ../../library/tkinter.font.rst:23
+msgid ""
+"The :class:`Font` class represents a named font. *Font* instances are given "
+"unique names and can be specified by their family, size, and style "
+"configuration. Named fonts are Tk's method of creating and identifying fonts "
+"as a single object, rather than specifying a font by its attributes with "
+"each occurrence."
 msgstr ""
 
+#: ../../library/tkinter.font.rst:29
+msgid ""
+"Two fonts now compare equal (``==``) only when both are :class:`Font`   "
+"instances with the same name belonging to the same Tcl interpreter."
+msgstr ""
+
+#: ../../library/tkinter.font.rst:33
 msgid "arguments:"
 msgstr ""
 
+#: ../../library/tkinter.font.rst:0
 msgid "*font* - font specifier tuple (family, size, options)"
 msgstr ""
 
+#: ../../library/tkinter.font.rst:0
 msgid "*name* - unique font name"
 msgstr ""
 
+#: ../../library/tkinter.font.rst:0
 msgid "*exists* - self points to existing named font if true"
 msgstr ""
 
+#: ../../library/tkinter.font.rst:39
 msgid "additional keyword options (ignored if *font* is specified):"
 msgstr ""
 
-msgid "*family* - font family i.e. Courier, Times"
+#: ../../library/tkinter.font.rst:0
+msgid "*family* - font family, for example, Courier, Times"
 msgstr ""
 
+#: ../../library/tkinter.font.rst:0
 msgid "*size* - font size"
 msgstr ""
 
+#: ../../library/tkinter.font.rst:0
 msgid "If *size* is positive it is interpreted as size in points."
 msgstr ""
 
+#: ../../library/tkinter.font.rst:0
 msgid "If *size* is a negative number its absolute value is treated"
 msgstr ""
 
+#: ../../library/tkinter.font.rst:0
 msgid "as size in pixels."
 msgstr ""
 
+#: ../../library/tkinter.font.rst:0
 msgid "*weight* - font emphasis (NORMAL, BOLD)"
 msgstr ""
 
+#: ../../library/tkinter.font.rst:0
 msgid "*slant* - ROMAN, ITALIC"
 msgstr ""
 
+#: ../../library/tkinter.font.rst:0
 msgid "*underline* - font underlining (0 - none, 1 - underline)"
 msgstr ""
 
+#: ../../library/tkinter.font.rst:0
 msgid "*overstrike* - font strikeout (0 - none, 1 - strikeout)"
 msgstr ""
 
-msgid "Return the attributes of the font."
+#: ../../library/tkinter.font.rst:53
+msgid ""
+"Return the actual attributes of the font, which may differ from the "
+"requested ones because of platform limitations. With no *option*, return a "
+"dictionary of all the attributes; if *option* is given, return the value of "
+"that single attribute. The attributes are resolved on the display of the "
+"*displayof* widget, or the main application window if it is not specified."
 msgstr ""
 
+#: ../../library/tkinter.font.rst:62
 msgid "Retrieve an attribute of the font."
 msgstr ""
 
-msgid "Modify attributes of the font."
+#: ../../library/tkinter.font.rst:69
+msgid ""
+"Modify one or more attributes of the font. With no arguments, return a "
+"dictionary of the current attributes."
 msgstr ""
 
-msgid "Return new instance of the current font."
+#: ../../library/tkinter.font.rst:72
+msgid ":meth:`config` is an alias of :meth:`!configure`."
 msgstr ""
 
-msgid "Return amount of space the text would occupy on the specified display when formatted in the current font. If no display is specified then the main application window is assumed."
+#: ../../library/tkinter.font.rst:76
+msgid ""
+"Return a distinct copy of the current font: a new named font with the same "
+"attributes but a different name, which can be reconfigured independently of "
+"the original. If the current font wraps a font description, the copy is "
+"instead a named font with its resolved attributes."
 msgstr ""
 
-msgid "Return font-specific data. Options include:"
+#: ../../library/tkinter.font.rst:84
+msgid ""
+"Return amount of space the text would occupy on the specified display when "
+"formatted in the current font, as an integer number of pixels. If no display "
+"is specified then the main application window is assumed."
 msgstr ""
 
+#: ../../library/tkinter.font.rst:90
+msgid ""
+"Return font-specific data. With no options, return a dictionary mapping each "
+"metric name to its integer value; if one option name is given, return that "
+"metric's value as an integer. Options include:"
+msgstr ""
+
+#: ../../library/tkinter.font.rst:96
 msgid "*ascent* - distance between baseline and highest point that a"
 msgstr ""
 
+#: ../../library/tkinter.font.rst:97 ../../library/tkinter.font.rst:100
 msgid "character of the font can occupy"
 msgstr ""
 
+#: ../../library/tkinter.font.rst:99
 msgid "*descent* - distance between baseline and lowest point that a"
 msgstr ""
 
+#: ../../library/tkinter.font.rst:102
 msgid "*linespace* - minimum vertical separation necessary between any two"
 msgstr ""
 
+#: ../../library/tkinter.font.rst:103
 msgid "characters of the font that ensures no vertical overlap between lines."
 msgstr ""
 
+#: ../../library/tkinter.font.rst:105
 msgid "*fixed* - 1 if font is fixed-width else 0"
 msgstr ""
 
-msgid "Return the different font families."
+#: ../../library/tkinter.font.rst:109
+msgid "Return a tuple of the names of the available font families."
 msgstr ""
 
-msgid "Return the names of defined fonts."
+#: ../../library/tkinter.font.rst:113
+msgid "Return a tuple of the names of all the defined fonts."
 msgstr ""
 
-msgid "Return a :class:`Font` representation of a tk named font."
+#: ../../library/tkinter.font.rst:117
+msgid ""
+"Return a :class:`Font` representation of the existing named font *name*. "
+"*root* is the widget whose Tcl interpreter owns the font; if omitted, the "
+"default root window is used."
 msgstr ""
 
+#: ../../library/tkinter.font.rst:121
 msgid "The *root* parameter was added."
 msgstr ""

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-25 20:39+0330\n"
 "PO-Revision-Date: 2021-06-28 01:14+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
@@ -23,45 +23,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid ":mod:`!sysconfig` --- Provide access to Python's configuration information"
+#: ../../library/sysconfig.rst:2
+msgid ""
+":mod:`!sysconfig` --- Provide access to Python's configuration information"
 msgstr ""
 
+#: ../../library/sysconfig.rst:12
 msgid "**Source code:** :source:`Lib/sysconfig`"
 msgstr ""
 
-msgid "The :mod:`!sysconfig` module provides access to Python's configuration information like the list of installation paths and the configuration variables relevant for the current platform."
+#: ../../library/sysconfig.rst:19
+msgid ""
+"The :mod:`!sysconfig` module provides access to Python's configuration "
+"information like the list of installation paths and the configuration "
+"variables relevant for the current platform."
 msgstr ""
 
+#: ../../library/sysconfig.rst:25
 msgid "Configuration variables"
 msgstr ""
 
-msgid "A Python distribution contains a :file:`Makefile` and a :file:`pyconfig.h` header file that are necessary to build both the Python binary itself and third-party C extensions compiled using ``setuptools``."
+#: ../../library/sysconfig.rst:27
+msgid ""
+"A Python distribution contains a :file:`Makefile` and a :file:`pyconfig.h` "
+"header file that are necessary to build both the Python binary itself and "
+"third-party C extensions compiled using ``setuptools``."
 msgstr ""
 
-msgid ":mod:`!sysconfig` puts all variables found in these files in a dictionary that can be accessed using :func:`get_config_vars` or :func:`get_config_var`."
+#: ../../library/sysconfig.rst:31
+msgid ""
+":mod:`!sysconfig` puts all variables found in these files in a dictionary "
+"that can be accessed using :func:`get_config_vars` or :func:`get_config_var`."
 msgstr ""
 
+#: ../../library/sysconfig.rst:34
 msgid "Notice that on Windows, it's a much smaller set."
 msgstr ""
 
-msgid "With no arguments, return a dictionary of all configuration variables relevant for the current platform."
+#: ../../library/sysconfig.rst:38
+msgid ""
+"With no arguments, return a dictionary of all configuration variables "
+"relevant for the current platform."
 msgstr ""
 
-msgid "With arguments, return a list of values that result from looking up each argument in the configuration variable dictionary."
+#: ../../library/sysconfig.rst:41
+msgid ""
+"With arguments, return a list of values that result from looking up each "
+"argument in the configuration variable dictionary."
 msgstr ""
 
+#: ../../library/sysconfig.rst:44
 msgid "For each argument, if the value is not found, return ``None``."
 msgstr ""
 
-msgid "Return the value of a single variable *name*. Equivalent to ``get_config_vars().get(name)``."
+#: ../../library/sysconfig.rst:49
+msgid ""
+"Return the value of a single variable *name*. Equivalent to "
+"``get_config_vars().get(name)``."
 msgstr ""
 
+#: ../../library/sysconfig.rst:52
 msgid "If *name* is not found, return ``None``."
 msgstr ""
 
+#: ../../library/sysconfig.rst:54
 msgid "Example of usage::"
 msgstr ""
 
+#: ../../library/sysconfig.rst:56
 msgid ""
 ">>> import sysconfig\n"
 ">>> sysconfig.get_config_var('Py_ENABLE_SHARED')\n"
@@ -72,363 +101,630 @@ msgid ""
 "['ar', 'g++']"
 msgstr ""
 
+#: ../../library/sysconfig.rst:68
 msgid "Installation paths"
 msgstr ""
 
-msgid "Python uses an installation scheme that differs depending on the platform and on the installation options.  These schemes are stored in :mod:`!sysconfig` under unique identifiers based on the value returned by :const:`os.name`. The schemes are used by package installers to determine where to copy files to."
+#: ../../library/sysconfig.rst:70
+msgid ""
+"Python uses an installation scheme that differs depending on the platform "
+"and on the installation options.  These schemes are stored in :mod:`!"
+"sysconfig` under unique identifiers based on the value returned "
+"by :const:`os.name`. The schemes are used by package installers to determine "
+"where to copy files to."
 msgstr ""
 
+#: ../../library/sysconfig.rst:75
 msgid "Python currently supports nine schemes:"
 msgstr ""
 
-msgid "*posix_prefix*: scheme for POSIX platforms like Linux or macOS.  This is the default scheme used when Python or a component is installed."
+#: ../../library/sysconfig.rst:77
+msgid ""
+"*posix_prefix*: scheme for POSIX platforms like Linux or macOS.  This is the "
+"default scheme used when Python or a component is installed."
 msgstr ""
 
-msgid "*posix_home*: scheme for POSIX platforms, when the *home* option is used. This scheme defines paths located under a specific home prefix."
+#: ../../library/sysconfig.rst:79
+msgid ""
+"*posix_home*: scheme for POSIX platforms, when the *home* option is used. "
+"This scheme defines paths located under a specific home prefix."
 msgstr ""
 
-msgid "*posix_user*: scheme for POSIX platforms, when the *user* option is used. This scheme defines paths located under the user's home directory (:const:`site.USER_BASE`)."
+#: ../../library/sysconfig.rst:81
+msgid ""
+"*posix_user*: scheme for POSIX platforms, when the *user* option is used. "
+"This scheme defines paths located under the user's home directory "
+"(:const:`site.USER_BASE`)."
 msgstr ""
 
-msgid "*posix_venv*: scheme for :mod:`Python virtual environments <venv>` on POSIX platforms; by default it is the same as *posix_prefix*."
+#: ../../library/sysconfig.rst:84
+msgid ""
+"*posix_venv*: scheme for :mod:`Python virtual environments <venv>` on POSIX "
+"platforms; by default it is the same as *posix_prefix*."
 msgstr ""
 
-msgid "*nt*: scheme for Windows. This is the default scheme used when Python or a component is installed."
+#: ../../library/sysconfig.rst:86
+msgid ""
+"*nt*: scheme for Windows. This is the default scheme used when Python or a "
+"component is installed."
 msgstr ""
 
+#: ../../library/sysconfig.rst:88
 msgid "*nt_user*: scheme for Windows, when the *user* option is used."
 msgstr ""
 
-msgid "*nt_venv*: scheme for :mod:`Python virtual environments <venv>` on Windows; by default it is the same as *nt*."
+#: ../../library/sysconfig.rst:89
+msgid ""
+"*nt_venv*: scheme for :mod:`Python virtual environments <venv>` on Windows; "
+"by default it is the same as *nt*."
 msgstr ""
 
-msgid "*venv*: a scheme with values from either *posix_venv* or *nt_venv* depending on the platform Python runs on."
+#: ../../library/sysconfig.rst:91
+msgid ""
+"*venv*: a scheme with values from either *posix_venv* or *nt_venv* depending "
+"on the platform Python runs on."
 msgstr ""
 
+#: ../../library/sysconfig.rst:93
 msgid "*osx_framework_user*: scheme for macOS, when the *user* option is used."
 msgstr ""
 
-msgid "Each scheme is itself composed of a series of paths and each path has a unique identifier.  Python currently uses eight paths:"
+#: ../../library/sysconfig.rst:95
+msgid ""
+"Each scheme is itself composed of a series of paths and each path has a "
+"unique identifier.  Python currently uses eight paths:"
 msgstr ""
 
-msgid "*stdlib*: directory containing the standard Python library files that are not platform-specific."
+#: ../../library/sysconfig.rst:98
+msgid ""
+"*stdlib*: directory containing the standard Python library files that are "
+"not platform-specific."
 msgstr ""
 
-msgid "*platstdlib*: directory containing the standard Python library files that are platform-specific."
+#: ../../library/sysconfig.rst:100
+msgid ""
+"*platstdlib*: directory containing the standard Python library files that "
+"are platform-specific."
 msgstr ""
 
+#: ../../library/sysconfig.rst:102
 msgid "*platlib*: directory for site-specific, platform-specific files."
 msgstr ""
 
-msgid "*purelib*: directory for site-specific, non-platform-specific files ('pure' Python)."
+#: ../../library/sysconfig.rst:103
+msgid ""
+"*purelib*: directory for site-specific, non-platform-specific files ('pure' "
+"Python)."
 msgstr ""
 
-msgid "*include*: directory for non-platform-specific header files for the Python C-API."
+#: ../../library/sysconfig.rst:104
+msgid ""
+"*include*: directory for non-platform-specific header files for the Python C-"
+"API."
 msgstr ""
 
-msgid "*platinclude*: directory for platform-specific header files for the Python C-API."
+#: ../../library/sysconfig.rst:106
+msgid ""
+"*platinclude*: directory for platform-specific header files for the Python C-"
+"API."
 msgstr ""
 
+#: ../../library/sysconfig.rst:108
 msgid "*scripts*: directory for script files."
 msgstr ""
 
+#: ../../library/sysconfig.rst:109
 msgid "*data*: directory for data files."
 msgstr ""
 
+#: ../../library/sysconfig.rst:115
 msgid "User scheme"
 msgstr ""
 
-msgid "This scheme is designed to be the most convenient solution for users that don't have write permission to the global site-packages directory or don't want to install into it."
+#: ../../library/sysconfig.rst:117
+msgid ""
+"This scheme is designed to be the most convenient solution for users that "
+"don't have write permission to the global site-packages directory or don't "
+"want to install into it."
 msgstr ""
 
-msgid "Files will be installed into subdirectories of :const:`site.USER_BASE` (written as :file:`{userbase}` hereafter).  This scheme installs pure Python modules and extension modules in the same location (also known as :const:`site.USER_SITE`)."
+#: ../../library/sysconfig.rst:121
+msgid ""
+"Files will be installed into subdirectories of :const:`site.USER_BASE` "
+"(written as :file:`{userbase}` hereafter).  This scheme installs pure Python "
+"modules and extension modules in the same location (also known "
+"as :const:`site.USER_SITE`)."
 msgstr ""
 
+#: ../../library/sysconfig.rst:126
 msgid "``posix_user``"
 msgstr ""
 
+#: ../../library/sysconfig.rst:129 ../../library/sysconfig.rst:144
+#: ../../library/sysconfig.rst:159 ../../library/sysconfig.rst:187
+#: ../../library/sysconfig.rst:229 ../../library/sysconfig.rst:245
 msgid "Path"
 msgstr ""
 
+#: ../../library/sysconfig.rst:129 ../../library/sysconfig.rst:144
+#: ../../library/sysconfig.rst:159 ../../library/sysconfig.rst:187
+#: ../../library/sysconfig.rst:229 ../../library/sysconfig.rst:245
 msgid "Installation directory"
 msgstr ""
 
+#: ../../library/sysconfig.rst:131 ../../library/sysconfig.rst:146
+#: ../../library/sysconfig.rst:161 ../../library/sysconfig.rst:189
+#: ../../library/sysconfig.rst:231 ../../library/sysconfig.rst:247
 msgid "*stdlib*"
 msgstr ""
 
+#: ../../library/sysconfig.rst:131 ../../library/sysconfig.rst:132
 msgid ":file:`{userbase}/lib/python{X.Y}`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:132 ../../library/sysconfig.rst:147
+#: ../../library/sysconfig.rst:162 ../../library/sysconfig.rst:190
+#: ../../library/sysconfig.rst:232 ../../library/sysconfig.rst:248
 msgid "*platstdlib*"
 msgstr ""
 
+#: ../../library/sysconfig.rst:133 ../../library/sysconfig.rst:148
+#: ../../library/sysconfig.rst:163 ../../library/sysconfig.rst:191
+#: ../../library/sysconfig.rst:233 ../../library/sysconfig.rst:249
 msgid "*platlib*"
 msgstr ""
 
+#: ../../library/sysconfig.rst:133 ../../library/sysconfig.rst:134
 msgid ":file:`{userbase}/lib/python{X.Y}/site-packages`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:134 ../../library/sysconfig.rst:149
+#: ../../library/sysconfig.rst:164 ../../library/sysconfig.rst:192
+#: ../../library/sysconfig.rst:234 ../../library/sysconfig.rst:250
 msgid "*purelib*"
 msgstr ""
 
+#: ../../library/sysconfig.rst:135 ../../library/sysconfig.rst:150
+#: ../../library/sysconfig.rst:165 ../../library/sysconfig.rst:193
+#: ../../library/sysconfig.rst:235 ../../library/sysconfig.rst:251
 msgid "*include*"
 msgstr ""
 
+#: ../../library/sysconfig.rst:135 ../../library/sysconfig.rst:165
 msgid ":file:`{userbase}/include/python{X.Y}`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:136 ../../library/sysconfig.rst:151
+#: ../../library/sysconfig.rst:166 ../../library/sysconfig.rst:195
+#: ../../library/sysconfig.rst:237 ../../library/sysconfig.rst:253
 msgid "*scripts*"
 msgstr ""
 
+#: ../../library/sysconfig.rst:136 ../../library/sysconfig.rst:166
 msgid ":file:`{userbase}/bin`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:137 ../../library/sysconfig.rst:152
+#: ../../library/sysconfig.rst:167 ../../library/sysconfig.rst:196
+#: ../../library/sysconfig.rst:238 ../../library/sysconfig.rst:254
 msgid "*data*"
 msgstr ""
 
+#: ../../library/sysconfig.rst:137 ../../library/sysconfig.rst:152
+#: ../../library/sysconfig.rst:167
 msgid ":file:`{userbase}`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:141
 msgid "``nt_user``"
 msgstr ""
 
+#: ../../library/sysconfig.rst:146 ../../library/sysconfig.rst:147
 msgid ":file:`{userbase}\\\\Python{XY}`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:148 ../../library/sysconfig.rst:149
 msgid ":file:`{userbase}\\\\Python{XY}\\\\site-packages`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:150
 msgid ":file:`{userbase}\\\\Python{XY}\\\\Include`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:151
 msgid ":file:`{userbase}\\\\Python{XY}\\\\Scripts`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:156
 msgid "``osx_framework_user``"
 msgstr ""
 
+#: ../../library/sysconfig.rst:161 ../../library/sysconfig.rst:162
 msgid ":file:`{userbase}/lib/python`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:163 ../../library/sysconfig.rst:164
 msgid ":file:`{userbase}/lib/python/site-packages`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:174
 msgid "Home scheme"
 msgstr ""
 
-msgid "The idea behind the \"home scheme\" is that you build and maintain a personal stash of Python modules.  This scheme's name is derived from the idea of a \"home\" directory on Unix, since it's not unusual for a Unix user to make their home directory have a layout similar to :file:`/usr/` or :file:`/usr/local/`. This scheme can be used by anyone, regardless of the operating system they are installing for."
+#: ../../library/sysconfig.rst:176
+msgid ""
+"The idea behind the \"home scheme\" is that you build and maintain a "
+"personal stash of Python modules.  This scheme's name is derived from the "
+"idea of a \"home\" directory on Unix, since it's not unusual for a Unix user "
+"to make their home directory have a layout similar to :file:`/usr/` "
+"or :file:`/usr/local/`. This scheme can be used by anyone, regardless of the "
+"operating system they are installing for."
 msgstr ""
 
+#: ../../library/sysconfig.rst:184
 msgid "``posix_home``"
 msgstr ""
 
+#: ../../library/sysconfig.rst:189 ../../library/sysconfig.rst:190
+#: ../../library/sysconfig.rst:191 ../../library/sysconfig.rst:192
 msgid ":file:`{home}/lib/python`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:193 ../../library/sysconfig.rst:194
 msgid ":file:`{home}/include/python`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:194 ../../library/sysconfig.rst:236
+#: ../../library/sysconfig.rst:252
 msgid "*platinclude*"
 msgstr ""
 
+#: ../../library/sysconfig.rst:195
 msgid ":file:`{home}/bin`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:196
 msgid ":file:`{home}`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:203
 msgid "Prefix scheme"
 msgstr ""
 
-msgid "The \"prefix scheme\" is useful when you wish to use one Python installation to perform the build/install (i.e., to run the setup script), but install modules into the third-party module directory of a different Python installation (or something that looks like a different Python installation).  If this sounds a trifle unusual, it is---that's why the user and home schemes come before.  However, there are at least two known cases where the prefix scheme will be useful."
+#: ../../library/sysconfig.rst:205
+msgid ""
+"The \"prefix scheme\" is useful when you wish to use one Python installation "
+"to perform the build/install (i.e., to run the setup script), but install "
+"modules into the third-party module directory of a different Python "
+"installation (or something that looks like a different Python "
+"installation).  If this sounds a trifle unusual, it is---that's why the user "
+"and home schemes come before.  However, there are at least two known cases "
+"where the prefix scheme will be useful."
 msgstr ""
 
-msgid "First, consider that many Linux distributions put Python in :file:`/usr`, rather than the more traditional :file:`/usr/local`.  This is entirely appropriate, since in those cases Python is part of \"the system\" rather than a local add-on. However, if you are installing Python modules from source, you probably want them to go in :file:`/usr/local/lib/python2.{X}` rather than :file:`/usr/lib/python2.{X}`."
+#: ../../library/sysconfig.rst:212
+msgid ""
+"First, consider that many Linux distributions put Python in :file:`/usr`, "
+"rather than the more traditional :file:`/usr/local`.  This is entirely "
+"appropriate, since in those cases Python is part of \"the system\" rather "
+"than a local add-on. However, if you are installing Python modules from "
+"source, you probably want them to go in :file:`/usr/local/lib/python2.{X}` "
+"rather than :file:`/usr/lib/python2.{X}`."
 msgstr ""
 
-msgid "Another possibility is a network filesystem where the name used to write to a remote directory is different from the name used to read it: for example, the Python interpreter accessed as :file:`/usr/local/bin/python` might search for modules in :file:`/usr/local/lib/python2.{X}`, but those modules would have to be installed to, say, :file:`/mnt/{@server}/export/lib/python2.{X}`."
+#: ../../library/sysconfig.rst:219
+msgid ""
+"Another possibility is a network filesystem where the name used to write to "
+"a remote directory is different from the name used to read it: for example, "
+"the Python interpreter accessed as :file:`/usr/local/bin/python` might "
+"search for modules in :file:`/usr/local/lib/python2.{X}`, but those modules "
+"would have to be installed to, say, :file:`/mnt/{@server}/export/lib/python2."
+"{X}`."
 msgstr ""
 
+#: ../../library/sysconfig.rst:226
 msgid "``posix_prefix``"
 msgstr ""
 
+#: ../../library/sysconfig.rst:231 ../../library/sysconfig.rst:232
 msgid ":file:`{prefix}/lib/python{X.Y}`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:233 ../../library/sysconfig.rst:234
 msgid ":file:`{prefix}/lib/python{X.Y}/site-packages`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:235 ../../library/sysconfig.rst:236
 msgid ":file:`{prefix}/include/python{X.Y}`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:237
 msgid ":file:`{prefix}/bin`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:238 ../../library/sysconfig.rst:254
 msgid ":file:`{prefix}`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:242
 msgid "``nt``"
 msgstr ""
 
+#: ../../library/sysconfig.rst:247 ../../library/sysconfig.rst:248
 msgid ":file:`{prefix}\\\\Lib`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:249 ../../library/sysconfig.rst:250
 msgid ":file:`{prefix}\\\\Lib\\\\site-packages`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:251 ../../library/sysconfig.rst:252
 msgid ":file:`{prefix}\\\\Include`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:253
 msgid ":file:`{prefix}\\\\Scripts`"
 msgstr ""
 
+#: ../../library/sysconfig.rst:259
 msgid "Installation path functions"
 msgstr ""
 
-msgid ":mod:`!sysconfig` provides some functions to determine these installation paths."
+#: ../../library/sysconfig.rst:261
+msgid ""
+":mod:`!sysconfig` provides some functions to determine these installation "
+"paths."
 msgstr ""
 
-msgid "Return a tuple containing all schemes currently supported in :mod:`!sysconfig`."
+#: ../../library/sysconfig.rst:265
+msgid ""
+"Return a tuple containing all schemes currently supported in :mod:`!"
+"sysconfig`."
 msgstr ""
 
+#: ../../library/sysconfig.rst:271
 msgid "Return the default scheme name for the current platform."
 msgstr ""
 
-msgid "This function was previously named ``_get_default_scheme()`` and considered an implementation detail."
+#: ../../library/sysconfig.rst:273
+msgid ""
+"This function was previously named ``_get_default_scheme()`` and considered "
+"an implementation detail."
 msgstr ""
 
-msgid "When Python runs from a virtual environment, the *venv* scheme is returned."
+#: ../../library/sysconfig.rst:277
+msgid ""
+"When Python runs from a virtual environment, the *venv* scheme is returned."
 msgstr ""
 
-msgid "Return a preferred scheme name for an installation layout specified by *key*."
+#: ../../library/sysconfig.rst:283
+msgid ""
+"Return a preferred scheme name for an installation layout specified by *key*."
 msgstr ""
 
+#: ../../library/sysconfig.rst:285
 msgid "*key* must be either ``\"prefix\"``, ``\"home\"``, or ``\"user\"``."
 msgstr ""
 
-msgid "The return value is a scheme name listed in :func:`get_scheme_names`. It can be passed to :mod:`!sysconfig` functions that take a *scheme* argument, such as :func:`get_paths`."
+#: ../../library/sysconfig.rst:287
+msgid ""
+"The return value is a scheme name listed in :func:`get_scheme_names`. It can "
+"be passed to :mod:`!sysconfig` functions that take a *scheme* argument, such "
+"as :func:`get_paths`."
 msgstr ""
 
-msgid "When Python runs from a virtual environment and ``key=\"prefix\"``, the *venv* scheme is returned."
+#: ../../library/sysconfig.rst:293
+msgid ""
+"When Python runs from a virtual environment and ``key=\"prefix\"``, the "
+"*venv* scheme is returned."
 msgstr ""
 
-msgid "Return a dict containing preferred scheme names on the current platform. Python implementers and redistributors may add their preferred schemes to the ``_INSTALL_SCHEMES`` module-level global value, and modify this function to return those scheme names, to e.g. provide different schemes for system and language package managers to use, so packages installed by either do not mix with those by the other."
+#: ../../library/sysconfig.rst:300
+msgid ""
+"Return a dict containing preferred scheme names on the current platform. "
+"Python implementers and redistributors may add their preferred schemes to "
+"the ``_INSTALL_SCHEMES`` module-level global value, and modify this function "
+"to return those scheme names, to e.g. provide different schemes for system "
+"and language package managers to use, so packages installed by either do not "
+"mix with those by the other."
 msgstr ""
 
-msgid "End users should not use this function, but :func:`get_default_scheme` and :func:`get_preferred_scheme` instead."
+#: ../../library/sysconfig.rst:307
+msgid ""
+"End users should not use this function, but :func:`get_default_scheme` "
+"and :func:`get_preferred_scheme` instead."
 msgstr ""
 
-msgid "Return a tuple containing all path names currently supported in :mod:`!sysconfig`."
+#: ../../library/sysconfig.rst:315
+msgid ""
+"Return a tuple containing all path names currently supported in :mod:`!"
+"sysconfig`."
 msgstr ""
 
-msgid "Return an installation path corresponding to the path *name*, from the install scheme named *scheme*."
+#: ../../library/sysconfig.rst:321
+msgid ""
+"Return an installation path corresponding to the path *name*, from the "
+"install scheme named *scheme*."
 msgstr ""
 
-msgid "*name* has to be a value from the list returned by :func:`get_path_names`."
+#: ../../library/sysconfig.rst:324
+msgid ""
+"*name* has to be a value from the list returned by :func:`get_path_names`."
 msgstr ""
 
-msgid ":mod:`!sysconfig` stores installation paths corresponding to each path name, for each platform, with variables to be expanded.  For instance the *stdlib* path for the *nt* scheme is: ``{base}/Lib``."
+#: ../../library/sysconfig.rst:326
+msgid ""
+":mod:`!sysconfig` stores installation paths corresponding to each path name, "
+"for each platform, with variables to be expanded.  For instance the *stdlib* "
+"path for the *nt* scheme is: ``{base}/Lib``."
 msgstr ""
 
-msgid ":func:`get_path` will use the variables returned by :func:`get_config_vars` to expand the path.  All variables have default values for each platform so one may call this function and get the default value."
+#: ../../library/sysconfig.rst:330
+msgid ""
+":func:`get_path` will use the variables returned by :func:`get_config_vars` "
+"to expand the path.  All variables have default values for each platform so "
+"one may call this function and get the default value."
 msgstr ""
 
-msgid "If *scheme* is provided, it must be a value from the list returned by :func:`get_scheme_names`.  Otherwise, the default scheme for the current platform is used."
+#: ../../library/sysconfig.rst:334
+msgid ""
+"If *scheme* is provided, it must be a value from the list returned "
+"by :func:`get_scheme_names`.  Otherwise, the default scheme for the current "
+"platform is used."
 msgstr ""
 
-msgid "If *vars* is provided, it must be a dictionary of variables that will update the dictionary returned by :func:`get_config_vars`."
+#: ../../library/sysconfig.rst:338
+msgid ""
+"If *vars* is provided, it must be a dictionary of variables that will update "
+"the dictionary returned by :func:`get_config_vars`."
 msgstr ""
 
-msgid "If *expand* is set to ``False``, the path will not be expanded using the variables."
+#: ../../library/sysconfig.rst:341
+msgid ""
+"If *expand* is set to ``False``, the path will not be expanded using the "
+"variables."
 msgstr ""
 
+#: ../../library/sysconfig.rst:344
 msgid "If *name* is not found, raise a :exc:`KeyError`."
 msgstr ""
 
-msgid "Return a dictionary containing all installation paths corresponding to an installation scheme. See :func:`get_path` for more information."
+#: ../../library/sysconfig.rst:349
+msgid ""
+"Return a dictionary containing all installation paths corresponding to an "
+"installation scheme. See :func:`get_path` for more information."
 msgstr ""
 
-msgid "If *scheme* is not provided, will use the default scheme for the current platform."
+#: ../../library/sysconfig.rst:352
+msgid ""
+"If *scheme* is not provided, will use the default scheme for the current "
+"platform."
 msgstr ""
 
-msgid "If *vars* is provided, it must be a dictionary of variables that will update the dictionary used to expand the paths."
+#: ../../library/sysconfig.rst:355
+msgid ""
+"If *vars* is provided, it must be a dictionary of variables that will update "
+"the dictionary used to expand the paths."
 msgstr ""
 
+#: ../../library/sysconfig.rst:358
 msgid "If *expand* is set to false, the paths will not be expanded."
 msgstr ""
 
-msgid "If *scheme* is not an existing scheme, :func:`get_paths` will raise a :exc:`KeyError`."
+#: ../../library/sysconfig.rst:360
+msgid ""
+"If *scheme* is not an existing scheme, :func:`get_paths` will raise "
+"a :exc:`KeyError`."
 msgstr ""
 
+#: ../../library/sysconfig.rst:365
 msgid "Other functions"
 msgstr ""
 
-msgid "Return the ``MAJOR.MINOR`` Python version number as a string.  Similar to ``'%d.%d' % sys.version_info[:2]``."
+#: ../../library/sysconfig.rst:369
+msgid ""
+"Return the ``MAJOR.MINOR`` Python version number as a string.  Similar to "
+"``'%d.%d' % sys.version_info[:2]``."
 msgstr ""
 
+#: ../../library/sysconfig.rst:375
 msgid "Return a string that identifies the current platform."
 msgstr ""
 
-msgid "This is used mainly to distinguish platform-specific build directories and platform-specific built distributions.  Typically includes the OS name and version and the architecture (as supplied by :func:`os.uname`), although the exact information included depends on the OS; e.g., on Linux, the kernel version isn't particularly important."
+#: ../../library/sysconfig.rst:377
+msgid ""
+"This is used mainly to distinguish platform-specific build directories and "
+"platform-specific built distributions.  Typically includes the OS name and "
+"version and the architecture (as supplied by :func:`os.uname`), although the "
+"exact information included depends on the OS; e.g., on Linux, the kernel "
+"version isn't particularly important."
 msgstr ""
 
+#: ../../library/sysconfig.rst:383
 msgid "Examples of returned values:"
 msgstr ""
 
+#: ../../library/sysconfig.rst:386
 msgid "Windows:"
 msgstr ""
 
+#: ../../library/sysconfig.rst:388
 msgid "win-amd64 (64-bit Windows on AMD64, aka x86_64, Intel64, and EM64T)"
 msgstr ""
 
+#: ../../library/sysconfig.rst:389
 msgid "win-arm64 (64-bit Windows on ARM64, aka AArch64)"
 msgstr ""
 
+#: ../../library/sysconfig.rst:390
 msgid "win32 (all others - specifically, sys.platform is returned)"
 msgstr ""
 
+#: ../../library/sysconfig.rst:392
 msgid "POSIX based OS:"
 msgstr ""
 
+#: ../../library/sysconfig.rst:394
 msgid "linux-x86_64"
 msgstr ""
 
+#: ../../library/sysconfig.rst:395
 msgid "macosx-15.5-arm64"
 msgstr ""
 
+#: ../../library/sysconfig.rst:396
 msgid "macosx-26.0-universal2 (macOS on Apple Silicon or Intel)"
 msgstr ""
 
+#: ../../library/sysconfig.rst:397
 msgid "android-24-arm64_v8a"
 msgstr ""
 
-msgid "For other non-POSIX platforms, currently just returns :data:`sys.platform`."
+#: ../../library/sysconfig.rst:399
+msgid ""
+"For other non-POSIX platforms, currently just returns :data:`sys.platform`."
 msgstr ""
 
-msgid "Return ``True`` if the running Python interpreter was built from source and is being run from its built location, and not from a location resulting from e.g. running ``make install`` or installing via a binary installer."
+#: ../../library/sysconfig.rst:404
+msgid ""
+"Return ``True`` if the running Python interpreter was built from source and "
+"is being run from its built location, and not from a location resulting from "
+"e.g. running ``make install`` or installing via a binary installer."
 msgstr ""
 
+#: ../../library/sysconfig.rst:411
 msgid "Parse a :file:`config.h`\\-style file."
 msgstr ""
 
-msgid "*fp* is a file-like object pointing to the :file:`config.h`\\-like file."
+#: ../../library/sysconfig.rst:413
+msgid ""
+"*fp* is a file-like object pointing to the :file:`config.h`\\-like file."
 msgstr ""
 
-msgid "A dictionary containing name/value pairs is returned.  If an optional dictionary is passed in as the second argument, it is used instead of a new dictionary, and updated with the values read in the file."
+#: ../../library/sysconfig.rst:415
+msgid ""
+"A dictionary containing name/value pairs is returned.  If an optional "
+"dictionary is passed in as the second argument, it is used instead of a new "
+"dictionary, and updated with the values read in the file."
 msgstr ""
 
+#: ../../library/sysconfig.rst:422
 msgid "Return the path of :file:`pyconfig.h`."
 msgstr ""
 
+#: ../../library/sysconfig.rst:426
 msgid "Return the path of :file:`Makefile`."
 msgstr ""
 
+#: ../../library/sysconfig.rst:432
 msgid "Command-line usage"
 msgstr ""
 
+#: ../../library/sysconfig.rst:434
 msgid "You can use :mod:`!sysconfig` as a script with Python's *-m* option:"
 msgstr ""
 
+#: ../../library/sysconfig.rst:436
 msgid ""
 "$ python -m sysconfig\n"
 "Platform: \"macosx-10.4-i386\"\n"
@@ -453,8 +749,13 @@ msgid ""
 "        ..."
 msgstr ""
 
-msgid "This call will print in the standard output the information returned by :func:`get_platform`, :func:`get_python_version`, :func:`get_path` and :func:`get_config_vars`."
+#: ../../library/sysconfig.rst:460
+msgid ""
+"This call will print in the standard output the information returned "
+"by :func:`get_platform`, :func:`get_python_version`, :func:`get_path` "
+"and :func:`get_config_vars`."
 msgstr ""
 
+#: ../../library/sysconfig.rst:14
 msgid "configuration information"
 msgstr ""

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-25 20:39+0330\n"
 "PO-Revision-Date: 2021-06-28 00:50+0000\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
 "Language: fa\n"
@@ -21,51 +21,92 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../c-api/slice.rst:6
 msgid "Slice Objects"
 msgstr ""
 
-msgid "The type object for slice objects.  This is the same as :class:`slice` in the Python layer."
+#: ../../c-api/slice.rst:11
+msgid ""
+"The type object for slice objects.  This is the same as :class:`slice` in "
+"the Python layer."
 msgstr ""
 
-msgid "Return true if *ob* is a slice object; *ob* must not be ``NULL``.  This function always succeeds."
+#: ../../c-api/slice.rst:17
+msgid ""
+"Return true if *ob* is a slice object; *ob* must not be ``NULL``.  This "
+"function always succeeds."
 msgstr ""
 
-msgid "Return a new slice object with the given values.  The *start*, *stop*, and *step* parameters are used as the values of the slice object attributes of the same names.  Any of the values may be ``NULL``, in which case the ``None`` will be used for the corresponding attribute."
+#: ../../c-api/slice.rst:23
+msgid ""
+"Return a new slice object with the given values.  The *start*, *stop*, and "
+"*step* parameters are used as the values of the slice object attributes of "
+"the same names.  Any of the values may be ``NULL``, in which case the "
+"``None`` will be used for the corresponding attribute."
 msgstr ""
 
-msgid "Return ``NULL`` with an exception set if the new object could not be allocated."
+#: ../../c-api/slice.rst:28
+msgid ""
+"Return ``NULL`` with an exception set if the new object could not be "
+"allocated."
 msgstr ""
 
-msgid "Retrieve the start, stop and step indices from the slice object *slice*, assuming a sequence of length *length*. Treats indices greater than *length* as errors."
+#: ../../c-api/slice.rst:34
+msgid ""
+"Retrieve the start, stop and step indices from the slice object *slice*, "
+"assuming a sequence of length *length*. Treats indices greater than *length* "
+"as errors."
 msgstr ""
 
-msgid "Returns ``0`` on success and ``-1`` on error with no exception set (unless one of the indices was not ``None`` and failed to be converted to an integer, in which case ``-1`` is returned with an exception set)."
+#: ../../c-api/slice.rst:38
+msgid ""
+"Returns ``0`` on success and ``-1`` on error with no exception set (unless "
+"one of the indices was not ``None`` and failed to be converted to an "
+"integer, in which case ``-1`` is returned with an exception set)."
 msgstr ""
 
+#: ../../c-api/slice.rst:42
 msgid "You probably do not want to use this function."
 msgstr ""
 
-msgid "The parameter type for the *slice* parameter was ``PySliceObject*`` before."
+#: ../../c-api/slice.rst:44 ../../c-api/slice.rst:75
+msgid ""
+"The parameter type for the *slice* parameter was ``PySliceObject*`` before."
 msgstr ""
 
-msgid "Usable replacement for :c:func:`PySlice_GetIndices`.  Retrieve the start, stop, and step indices from the slice object *slice* assuming a sequence of length *length*, and store the length of the slice in *slicelength*.  Out of bounds indices are clipped in a manner consistent with the handling of normal slices."
+#: ../../c-api/slice.rst:51
+msgid ""
+"Usable replacement for :c:func:`PySlice_GetIndices`.  Retrieve the start, "
+"stop, and step indices from the slice object *slice* assuming a sequence of "
+"length *length*, and store the length of the slice in *slicelength*.  Out of "
+"bounds indices are clipped in a manner consistent with the handling of "
+"normal slices."
 msgstr ""
 
+#: ../../c-api/slice.rst:57
 msgid "Return ``0`` on success and ``-1`` on error with an exception set."
 msgstr ""
 
-msgid "This function is considered not safe for resizable sequences. Its invocation should be replaced by a combination of :c:func:`PySlice_Unpack` and :c:func:`PySlice_AdjustIndices` where ::"
+#: ../../c-api/slice.rst:60
+msgid ""
+"This function is considered not safe for resizable sequences. Its invocation "
+"should be replaced by a combination of :c:func:`PySlice_Unpack` "
+"and :c:func:`PySlice_AdjustIndices` where ::"
 msgstr ""
 
+#: ../../c-api/slice.rst:64
 msgid ""
-"if (PySlice_GetIndicesEx(slice, length, &start, &stop, &step, &slicelength) < 0) {\n"
+"if (PySlice_GetIndicesEx(slice, length, &start, &stop, &step, &slicelength) "
+"< 0) {\n"
 "    // return error\n"
 "}"
 msgstr ""
 
+#: ../../c-api/slice.rst:68
 msgid "is replaced by ::"
 msgstr ""
 
+#: ../../c-api/slice.rst:70
 msgid ""
 "if (PySlice_Unpack(slice, &start, &stop, &step) < 0) {\n"
 "    // return error\n"
@@ -73,32 +114,64 @@ msgid ""
 "slicelength = PySlice_AdjustIndices(length, &start, &stop, step);"
 msgstr ""
 
-msgid "If ``Py_LIMITED_API`` is not set or set to the value between ``0x03050400`` and ``0x03060000`` (not including) or ``0x03060100`` or higher :c:func:`!PySlice_GetIndicesEx` is implemented as a macro using :c:func:`!PySlice_Unpack` and :c:func:`!PySlice_AdjustIndices`. Arguments *start*, *stop* and *step* are evaluated more than once."
+#: ../../c-api/slice.rst:79
+msgid ""
+"If ``Py_LIMITED_API`` is not set or set to the value between ``0x03050400`` "
+"and ``0x03060000`` (not including) or ``0x03060100`` or higher :c:func:`!"
+"PySlice_GetIndicesEx` is implemented as a macro using :c:func:`!"
+"PySlice_Unpack` and :c:func:`!PySlice_AdjustIndices`. Arguments *start*, "
+"*stop* and *step* are evaluated more than once."
 msgstr ""
 
-msgid "If ``Py_LIMITED_API`` is set to the value less than ``0x03050400`` or between ``0x03060000`` and ``0x03060100`` (not including) :c:func:`!PySlice_GetIndicesEx` is a deprecated function."
+#: ../../c-api/slice.rst:86
+msgid ""
+"If ``Py_LIMITED_API`` is set to the value less than ``0x03050400`` or "
+"between ``0x03060000`` and ``0x03060100`` (not including) :c:func:`!"
+"PySlice_GetIndicesEx` is a deprecated function."
 msgstr ""
 
-msgid "Extract the start, stop and step data members from a slice object as C integers.  Silently reduce values larger than ``PY_SSIZE_T_MAX`` to ``PY_SSIZE_T_MAX``, silently boost the start and stop values less than ``PY_SSIZE_T_MIN`` to ``PY_SSIZE_T_MIN``, and silently boost the step values less than ``-PY_SSIZE_T_MAX`` to ``-PY_SSIZE_T_MAX``."
+#: ../../c-api/slice.rst:94
+msgid ""
+"Extract the start, stop and step data members from a slice object as C "
+"integers.  Silently reduce values larger than ``PY_SSIZE_T_MAX`` to "
+"``PY_SSIZE_T_MAX``, silently boost the start and stop values less than "
+"``PY_SSIZE_T_MIN`` to ``PY_SSIZE_T_MIN``, and silently boost the step values "
+"less than ``-PY_SSIZE_T_MAX`` to ``-PY_SSIZE_T_MAX``."
 msgstr ""
 
+#: ../../c-api/slice.rst:100
 msgid "Return ``-1`` with an exception set on error, ``0`` on success."
 msgstr ""
 
-msgid "Adjust start/end slice indices assuming a sequence of the specified length. Out of bounds indices are clipped in a manner consistent with the handling of normal slices."
+#: ../../c-api/slice.rst:107
+msgid ""
+"Adjust start/end slice indices assuming a sequence of the specified length. "
+"Out of bounds indices are clipped in a manner consistent with the handling "
+"of normal slices."
 msgstr ""
 
-msgid "Return the length of the slice.  Always successful.  Doesn't call Python code."
+#: ../../c-api/slice.rst:111
+msgid ""
+"Return the length of the slice.  Always successful.  Doesn't call Python "
+"code."
 msgstr ""
 
+#: ../../c-api/slice.rst:118
 msgid "Ellipsis Object"
 msgstr ""
 
-msgid "The type of Python :const:`Ellipsis` object.  Same as :class:`types.EllipsisType` in the Python layer."
+#: ../../c-api/slice.rst:123
+msgid ""
+"The type of Python :const:`Ellipsis` object.  Same "
+"as :class:`types.EllipsisType` in the Python layer."
 msgstr ""
 
-msgid "The Python ``Ellipsis`` object.  This object has no methods.  Like :c:data:`Py_None`, it is an :term:`immortal` singleton object."
+#: ../../c-api/slice.rst:129
+msgid ""
+"The Python ``Ellipsis`` object.  This object has no methods.  "
+"Like :c:data:`Py_None`, it is an :term:`immortal` singleton object."
 msgstr ""
 
+#: ../../c-api/slice.rst:132
 msgid ":c:data:`Py_Ellipsis` is immortal."
 msgstr ""

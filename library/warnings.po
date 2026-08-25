@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-25 20:39+0330\n"
 "PO-Revision-Date: 2021-06-28 01:17+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
@@ -24,253 +24,453 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../library/warnings.rst:2
 msgid ":mod:`!warnings` --- Warning control"
 msgstr ""
 
+#: ../../library/warnings.rst:7
 msgid "**Source code:** :source:`Lib/warnings.py`"
 msgstr ""
 
-msgid "Warning messages are typically issued in situations where it is useful to alert the user of some condition in a program, where that condition (normally) doesn't warrant raising an exception and terminating the program.  For example, one might want to issue a warning when a program uses an obsolete module."
+#: ../../library/warnings.rst:13
+msgid ""
+"Warning messages are typically issued in situations where it is useful to "
+"alert the user of some condition in a program, where that condition "
+"(normally) doesn't warrant raising an exception and terminating the "
+"program.  For example, one might want to issue a warning when a program uses "
+"an obsolete module."
 msgstr ""
 
-msgid "Python programmers issue warnings by calling the :func:`warn` function defined in this module.  (C programmers use :c:func:`PyErr_WarnEx`; see :ref:`exceptionhandling` for details)."
+#: ../../library/warnings.rst:18
+msgid ""
+"Python programmers issue warnings by calling the :func:`warn` function "
+"defined in this module.  (C programmers use :c:func:`PyErr_WarnEx`; "
+"see :ref:`exceptionhandling` for details)."
 msgstr ""
 
-msgid "Warning messages are normally written to :data:`sys.stderr`, but their disposition can be changed flexibly, from ignoring all warnings to turning them into exceptions.  The disposition of warnings can vary based on the :ref:`warning category <warning-categories>`, the text of the warning message, and the source location where it is issued.  Repetitions of a particular warning for the same source location are typically suppressed."
+#: ../../library/warnings.rst:22
+msgid ""
+"Warning messages are normally written to :data:`sys.stderr`, but their "
+"disposition can be changed flexibly, from ignoring all warnings to turning "
+"them into exceptions.  The disposition of warnings can vary based on "
+"the :ref:`warning category <warning-categories>`, the text of the warning "
+"message, and the source location where it is issued.  Repetitions of a "
+"particular warning for the same source location are typically suppressed."
 msgstr ""
 
-msgid "There are two stages in warning control: first, each time a warning is issued, a determination is made whether a message should be issued or not; next, if a message is to be issued, it is formatted and printed using a user-settable hook."
+#: ../../library/warnings.rst:29
+msgid ""
+"There are two stages in warning control: first, each time a warning is "
+"issued, a determination is made whether a message should be issued or not; "
+"next, if a message is to be issued, it is formatted and printed using a user-"
+"settable hook."
 msgstr ""
 
-msgid "The determination whether to issue a warning message is controlled by the :ref:`warning filter <warning-filter>`, which is a sequence of matching rules and actions. Rules can be added to the filter by calling :func:`filterwarnings` and reset to its default state by calling :func:`resetwarnings`."
+#: ../../library/warnings.rst:33
+msgid ""
+"The determination whether to issue a warning message is controlled by "
+"the :ref:`warning filter <warning-filter>`, which is a sequence of matching "
+"rules and actions. Rules can be added to the filter by "
+"calling :func:`filterwarnings` and reset to its default state by "
+"calling :func:`resetwarnings`."
 msgstr ""
 
-msgid "The printing of warning messages is done by calling :func:`showwarning`, which may be overridden; the default implementation of this function formats the message by calling :func:`formatwarning`, which is also available for use by custom implementations."
+#: ../../library/warnings.rst:38
+msgid ""
+"The printing of warning messages is done by calling :func:`showwarning`, "
+"which may be overridden; the default implementation of this function formats "
+"the message by calling :func:`formatwarning`, which is also available for "
+"use by custom implementations."
 msgstr ""
 
-msgid ":func:`logging.captureWarnings` allows you to handle all warnings with the standard logging infrastructure."
+#: ../../library/warnings.rst:44
+msgid ""
+":func:`logging.captureWarnings` allows you to handle all warnings with the "
+"standard logging infrastructure."
 msgstr ""
 
+#: ../../library/warnings.rst:51
 msgid "Warning Categories"
 msgstr ""
 
-msgid "There are a number of built-in exceptions that represent warning categories. This categorization is useful to be able to filter out groups of warnings."
+#: ../../library/warnings.rst:53
+msgid ""
+"There are a number of built-in exceptions that represent warning categories. "
+"This categorization is useful to be able to filter out groups of warnings."
 msgstr ""
 
-msgid "While these are technically :ref:`built-in exceptions <warning-categories-as-exceptions>`, they are documented here, because conceptually they belong to the warnings mechanism."
+#: ../../library/warnings.rst:56
+msgid ""
+"While these are technically :ref:`built-in exceptions <warning-categories-as-"
+"exceptions>`, they are documented here, because conceptually they belong to "
+"the warnings mechanism."
 msgstr ""
 
-msgid "User code can define additional warning categories by subclassing one of the standard warning categories.  A warning category must always be a subclass of the :exc:`Warning` class."
+#: ../../library/warnings.rst:60
+msgid ""
+"User code can define additional warning categories by subclassing one of the "
+"standard warning categories.  A warning category must always be a subclass "
+"of the :exc:`Warning` class."
 msgstr ""
 
+#: ../../library/warnings.rst:64
 msgid "The following warnings category classes are currently defined:"
 msgstr ""
 
+#: ../../library/warnings.rst:69
 msgid "Class"
 msgstr ""
 
+#: ../../library/warnings.rst:69
 msgid "Description"
 msgstr ""
 
+#: ../../library/warnings.rst:71
 msgid ":exc:`Warning`"
 msgstr ""
 
-msgid "This is the base class of all warning category classes.  It is a subclass of :exc:`Exception`."
+#: ../../library/warnings.rst:71
+msgid ""
+"This is the base class of all warning category classes.  It is a subclass "
+"of :exc:`Exception`."
 msgstr ""
 
+#: ../../library/warnings.rst:75
 msgid ":exc:`UserWarning`"
 msgstr ""
 
+#: ../../library/warnings.rst:75
 msgid "The default category for :func:`warn`."
 msgstr ""
 
+#: ../../library/warnings.rst:77
 msgid ":exc:`DeprecationWarning`"
 msgstr ""
 
-msgid "Base category for warnings about deprecated features when those warnings are intended for other Python developers (ignored by default, unless triggered by code in ``__main__``)."
+#: ../../library/warnings.rst:77
+msgid ""
+"Base category for warnings about deprecated features when those warnings are "
+"intended for other Python developers (ignored by default, unless triggered "
+"by code in ``__main__``)."
 msgstr ""
 
+#: ../../library/warnings.rst:82
 msgid ":exc:`SyntaxWarning`"
 msgstr ""
 
-msgid "Base category for warnings about dubious syntactic features (typically emitted when compiling Python source code, and hence may not be suppressed by runtime filters)"
+#: ../../library/warnings.rst:82
+msgid ""
+"Base category for warnings about dubious syntactic features (typically "
+"emitted when compiling Python source code, and hence may not be suppressed "
+"by runtime filters)"
 msgstr ""
 
+#: ../../library/warnings.rst:87
 msgid ":exc:`RuntimeWarning`"
 msgstr ""
 
+#: ../../library/warnings.rst:87
 msgid "Base category for warnings about dubious runtime features."
 msgstr ""
 
+#: ../../library/warnings.rst:90
 msgid ":exc:`FutureWarning`"
 msgstr ""
 
-msgid "Base category for warnings about deprecated features when those warnings are intended for end users of applications that are written in Python."
+#: ../../library/warnings.rst:90
+msgid ""
+"Base category for warnings about deprecated features when those warnings are "
+"intended for end users of applications that are written in Python."
 msgstr ""
 
+#: ../../library/warnings.rst:95
 msgid ":exc:`PendingDeprecationWarning`"
 msgstr ""
 
-msgid "Base category for warnings about features that will be deprecated in the future (ignored by default)."
+#: ../../library/warnings.rst:95
+msgid ""
+"Base category for warnings about features that will be deprecated in the "
+"future (ignored by default)."
 msgstr ""
 
+#: ../../library/warnings.rst:99
 msgid ":exc:`ImportWarning`"
 msgstr ""
 
-msgid "Base category for warnings triggered during the process of importing a module (ignored by default)."
+#: ../../library/warnings.rst:99
+msgid ""
+"Base category for warnings triggered during the process of importing a "
+"module (ignored by default)."
 msgstr ""
 
+#: ../../library/warnings.rst:103
 msgid ":exc:`UnicodeWarning`"
 msgstr ""
 
+#: ../../library/warnings.rst:103
 msgid "Base category for warnings related to Unicode."
 msgstr ""
 
+#: ../../library/warnings.rst:106
 msgid ":exc:`BytesWarning`"
 msgstr ""
 
-msgid "Base category for warnings related to :class:`bytes` and :class:`bytearray`."
+#: ../../library/warnings.rst:106
+msgid ""
+"Base category for warnings related to :class:`bytes` and :class:`bytearray`."
 msgstr ""
 
+#: ../../library/warnings.rst:109
 msgid ":exc:`ResourceWarning`"
 msgstr ""
 
-msgid "Base category for warnings related to resource usage (ignored by default)."
+#: ../../library/warnings.rst:109
+msgid ""
+"Base category for warnings related to resource usage (ignored by default)."
 msgstr ""
 
-msgid "Previously :exc:`DeprecationWarning` and :exc:`FutureWarning` were distinguished based on whether a feature was being removed entirely or changing its behaviour. They are now distinguished based on their intended audience and the way they're handled by the default warnings filters."
+#: ../../library/warnings.rst:113
+msgid ""
+"Previously :exc:`DeprecationWarning` and :exc:`FutureWarning` were "
+"distinguished based on whether a feature was being removed entirely or "
+"changing its behaviour. They are now distinguished based on their intended "
+"audience and the way they're handled by the default warnings filters."
 msgstr ""
 
+#: ../../library/warnings.rst:124
 msgid "The Warnings Filter"
 msgstr ""
 
-msgid "The warnings filter controls whether warnings are ignored, displayed, or turned into errors (raising an exception)."
+#: ../../library/warnings.rst:126
+msgid ""
+"The warnings filter controls whether warnings are ignored, displayed, or "
+"turned into errors (raising an exception)."
 msgstr ""
 
-msgid "Conceptually, the warnings filter maintains an ordered list of filter specifications; any specific warning is matched against each filter specification in the list in turn until a match is found; the filter determines the disposition of the match.  Each entry is a tuple of the form (*action*, *message*, *category*, *module*, *lineno*), where:"
+#: ../../library/warnings.rst:129
+msgid ""
+"Conceptually, the warnings filter maintains an ordered list of filter "
+"specifications; any specific warning is matched against each filter "
+"specification in the list in turn until a match is found; the filter "
+"determines the disposition of the match.  Each entry is a tuple of the form "
+"(*action*, *message*, *category*, *module*, *lineno*), where:"
 msgstr ""
 
+#: ../../library/warnings.rst:135
 msgid "*action* is one of the following strings:"
 msgstr ""
 
+#: ../../library/warnings.rst:138
 msgid "Value"
 msgstr ""
 
+#: ../../library/warnings.rst:138
 msgid "Disposition"
 msgstr ""
 
+#: ../../library/warnings.rst:140
 msgid "``\"default\"``"
 msgstr ""
 
-msgid "print the first occurrence of matching warnings for each location (module + line number) where the warning is issued"
+#: ../../library/warnings.rst:140
+msgid ""
+"print the first occurrence of matching warnings for each location (module + "
+"line number) where the warning is issued"
 msgstr ""
 
+#: ../../library/warnings.rst:144
 msgid "``\"error\"``"
 msgstr ""
 
+#: ../../library/warnings.rst:144
 msgid "turn matching warnings into exceptions"
 msgstr ""
 
+#: ../../library/warnings.rst:146
 msgid "``\"ignore\"``"
 msgstr ""
 
+#: ../../library/warnings.rst:146
 msgid "never print matching warnings"
 msgstr ""
 
+#: ../../library/warnings.rst:148
 msgid "``\"always\"``"
 msgstr ""
 
+#: ../../library/warnings.rst:148
 msgid "always print matching warnings"
 msgstr ""
 
+#: ../../library/warnings.rst:150
 msgid "``\"all\"``"
 msgstr ""
 
+#: ../../library/warnings.rst:150
 msgid "alias to \"always\""
 msgstr ""
 
+#: ../../library/warnings.rst:152
 msgid "``\"module\"``"
 msgstr ""
 
-msgid "print the first occurrence of matching warnings for each module where the warning is issued (regardless of line number)"
+#: ../../library/warnings.rst:152
+msgid ""
+"print the first occurrence of matching warnings for each module where the "
+"warning is issued (regardless of line number)"
 msgstr ""
 
+#: ../../library/warnings.rst:156
 msgid "``\"once\"``"
 msgstr ""
 
-msgid "print only the first occurrence of matching warnings, regardless of location"
+#: ../../library/warnings.rst:156
+msgid ""
+"print only the first occurrence of matching warnings, regardless of location"
 msgstr ""
 
-msgid "*message* is a string containing a regular expression that the start of the warning message must match, case-insensitively.  In :option:`-W` and :envvar:`PYTHONWARNINGS`, *message* is a literal string that the start of the warning message must contain (case-insensitively), ignoring any whitespace at the start or end of *message*."
+#: ../../library/warnings.rst:160
+msgid ""
+"*message* is a string containing a regular expression that the start of the "
+"warning message must match, case-insensitively.  In :option:`-W` "
+"and :envvar:`PYTHONWARNINGS`, *message* is a literal string that the start "
+"of the warning message must contain (case-insensitively), ignoring any "
+"whitespace at the start or end of *message*."
 msgstr ""
 
-msgid "*category* is a class (a subclass of :exc:`Warning`) of which the warning category must be a subclass in order to match."
+#: ../../library/warnings.rst:166
+msgid ""
+"*category* is a class (a subclass of :exc:`Warning`) of which the warning "
+"category must be a subclass in order to match."
 msgstr ""
 
-msgid "*module* is a string containing a regular expression that the start of the fully qualified module name must match, case-sensitively.  In :option:`-W` and :envvar:`PYTHONWARNINGS`, *module* is a literal string that the fully qualified module name must be equal to (case-sensitively), ignoring any whitespace at the start or end of *module*."
+#: ../../library/warnings.rst:169
+msgid ""
+"*module* is a string containing a regular expression that the start of the "
+"fully qualified module name must match, case-sensitively.  In :option:`-W` "
+"and :envvar:`PYTHONWARNINGS`, *module* is a literal string that the fully "
+"qualified module name must be equal to (case-sensitively), ignoring any "
+"whitespace at the start or end of *module*."
 msgstr ""
 
-msgid "*lineno* is an integer that the line number where the warning occurred must match, or ``0`` to match all line numbers."
+#: ../../library/warnings.rst:175
+msgid ""
+"*lineno* is an integer that the line number where the warning occurred must "
+"match, or ``0`` to match all line numbers."
 msgstr ""
 
-msgid "Since the :exc:`Warning` class is derived from the built-in :exc:`Exception` class, to turn a warning into an error we simply raise ``category(message)``."
+#: ../../library/warnings.rst:178
+msgid ""
+"Since the :exc:`Warning` class is derived from the built-in :exc:`Exception` "
+"class, to turn a warning into an error we simply raise ``category(message)``."
 msgstr ""
 
-msgid "If a warning is reported and doesn't match any registered filter then the \"default\" action is applied (hence its name)."
+#: ../../library/warnings.rst:181
+msgid ""
+"If a warning is reported and doesn't match any registered filter then the "
+"\"default\" action is applied (hence its name)."
 msgstr ""
 
+#: ../../library/warnings.rst:189
 msgid "Repeated Warning Suppression Criteria"
 msgstr ""
 
-msgid "The filters that suppress repeated warnings apply the following criteria to determine if a warning is considered a repeat:"
+#: ../../library/warnings.rst:191
+msgid ""
+"The filters that suppress repeated warnings apply the following criteria to "
+"determine if a warning is considered a repeat:"
 msgstr ""
 
-msgid "``\"default\"``: A warning is considered a repeat only if the (*message*, *category*, *module*, *lineno*) are all the same."
+#: ../../library/warnings.rst:193
+msgid ""
+"``\"default\"``: A warning is considered a repeat only if the (*message*, "
+"*category*, *module*, *lineno*) are all the same."
 msgstr ""
 
-msgid "``\"module\"``: A warning is considered a repeat if the (*message*, *category*, *module*) are the same, ignoring the line number."
+#: ../../library/warnings.rst:194
+msgid ""
+"``\"module\"``: A warning is considered a repeat if the (*message*, "
+"*category*, *module*) are the same, ignoring the line number."
 msgstr ""
 
-msgid "``\"once\"``: A warning is considered a repeat if the (*message*, *category*) are the same, ignoring the module and line number."
+#: ../../library/warnings.rst:195
+msgid ""
+"``\"once\"``: A warning is considered a repeat if the (*message*, "
+"*category*) are the same, ignoring the module and line number."
 msgstr ""
 
+#: ../../library/warnings.rst:201
 msgid "Describing Warning Filters"
 msgstr ""
 
-msgid "The warnings filter is initialized by :option:`-W` options passed to the Python interpreter command line and the :envvar:`PYTHONWARNINGS` environment variable. The interpreter saves the arguments for all supplied entries without interpretation in :data:`sys.warnoptions`; the :mod:`!warnings` module parses these when it is first imported (invalid options are ignored, after printing a message to :data:`sys.stderr`)."
+#: ../../library/warnings.rst:203
+msgid ""
+"The warnings filter is initialized by :option:`-W` options passed to the "
+"Python interpreter command line and the :envvar:`PYTHONWARNINGS` environment "
+"variable. The interpreter saves the arguments for all supplied entries "
+"without interpretation in :data:`sys.warnoptions`; the :mod:`!warnings` "
+"module parses these when it is first imported (invalid options are ignored, "
+"after printing a message to :data:`sys.stderr`)."
 msgstr ""
 
-msgid "Individual warnings filters are specified as a sequence of fields separated by colons::"
+#: ../../library/warnings.rst:210
+msgid ""
+"Individual warnings filters are specified as a sequence of fields separated "
+"by colons::"
 msgstr ""
 
+#: ../../library/warnings.rst:213
 msgid "action:message:category:module:line"
 msgstr ""
 
-msgid "The meaning of each of these fields is as described in :ref:`warning-filter`. When listing multiple filters on a single line (as for :envvar:`PYTHONWARNINGS`), the individual filters are separated by commas and the filters listed later take precedence over those listed before them (as they're applied left-to-right, and the most recently applied filters take precedence over earlier ones)."
-msgstr ""
-
-msgid "Commonly used warning filters apply to either all warnings, warnings in a particular category, or warnings raised by particular modules or packages. Some examples::"
-msgstr ""
-
+#: ../../library/warnings.rst:215
 msgid ""
-"default                      # Show all warnings (even those ignored by default)\n"
+"The meaning of each of these fields is as described in :ref:`warning-"
+"filter`. When listing multiple filters on a single line (as "
+"for :envvar:`PYTHONWARNINGS`), the individual filters are separated by "
+"commas and the filters listed later take precedence over those listed before "
+"them (as they're applied left-to-right, and the most recently applied "
+"filters take precedence over earlier ones)."
+msgstr ""
+
+#: ../../library/warnings.rst:222
+msgid ""
+"Commonly used warning filters apply to either all warnings, warnings in a "
+"particular category, or warnings raised by particular modules or packages. "
+"Some examples::"
+msgstr ""
+
+#: ../../library/warnings.rst:226
+msgid ""
+"default                      # Show all warnings (even those ignored by "
+"default)\n"
 "ignore                       # Ignore all warnings\n"
 "error                        # Convert all warnings to errors\n"
 "error::ResourceWarning       # Treat ResourceWarning messages as errors\n"
 "default::DeprecationWarning  # Show DeprecationWarning messages\n"
-"ignore,default:::mymodule    # Only report warnings triggered by \"mymodule\"\n"
+"ignore,default:::mymodule    # Only report warnings triggered by "
+"\"mymodule\"\n"
 "error:::mymodule             # Convert warnings to errors in \"mymodule\""
 msgstr ""
 
+#: ../../library/warnings.rst:238
 msgid "Default Warning Filter"
 msgstr ""
 
-msgid "By default, Python installs several warning filters, which can be overridden by the :option:`-W` command-line option, the :envvar:`PYTHONWARNINGS` environment variable and calls to :func:`filterwarnings`."
+#: ../../library/warnings.rst:240
+msgid ""
+"By default, Python installs several warning filters, which can be overridden "
+"by the :option:`-W` command-line option, the :envvar:`PYTHONWARNINGS` "
+"environment variable and calls to :func:`filterwarnings`."
 msgstr ""
 
-msgid "In regular release builds, the default warning filter has the following entries (in order of precedence)::"
+#: ../../library/warnings.rst:244
+msgid ""
+"In regular release builds, the default warning filter has the following "
+"entries (in order of precedence)::"
 msgstr ""
 
+#: ../../library/warnings.rst:247
 msgid ""
 "default::DeprecationWarning:__main__\n"
 "ignore::DeprecationWarning\n"
@@ -279,24 +479,46 @@ msgid ""
 "ignore::ResourceWarning"
 msgstr ""
 
-msgid "In a :ref:`debug build <debug-build>`, the list of default warning filters is empty."
+#: ../../library/warnings.rst:253
+msgid ""
+"In a :ref:`debug build <debug-build>`, the list of default warning filters "
+"is empty."
 msgstr ""
 
-msgid ":exc:`DeprecationWarning` is now ignored by default in addition to :exc:`PendingDeprecationWarning`."
+#: ../../library/warnings.rst:255
+msgid ""
+":exc:`DeprecationWarning` is now ignored by default in addition "
+"to :exc:`PendingDeprecationWarning`."
 msgstr ""
 
-msgid ":exc:`DeprecationWarning` is once again shown by default when triggered directly by code in ``__main__``."
+#: ../../library/warnings.rst:259
+msgid ""
+":exc:`DeprecationWarning` is once again shown by default when triggered "
+"directly by code in ``__main__``."
 msgstr ""
 
-msgid ":exc:`BytesWarning` no longer appears in the default filter list and is instead configured via :data:`sys.warnoptions` when :option:`-b` is specified twice."
+#: ../../library/warnings.rst:263
+msgid ""
+":exc:`BytesWarning` no longer appears in the default filter list and is "
+"instead configured via :data:`sys.warnoptions` when :option:`-b` is "
+"specified twice."
 msgstr ""
 
+#: ../../library/warnings.rst:272
 msgid "Overriding the default filter"
 msgstr ""
 
-msgid "Developers of applications written in Python may wish to hide *all* Python level warnings from their users by default, and only display them when running tests or otherwise working on the application. The :data:`sys.warnoptions` attribute used to pass filter configurations to the interpreter can be used as a marker to indicate whether or not warnings should be disabled::"
+#: ../../library/warnings.rst:274
+msgid ""
+"Developers of applications written in Python may wish to hide *all* Python "
+"level warnings from their users by default, and only display them when "
+"running tests or otherwise working on the application. "
+"The :data:`sys.warnoptions` attribute used to pass filter configurations to "
+"the interpreter can be used as a marker to indicate whether or not warnings "
+"should be disabled::"
 msgstr ""
 
+#: ../../library/warnings.rst:280
 msgid ""
 "import sys\n"
 "\n"
@@ -305,9 +527,14 @@ msgid ""
 "    warnings.simplefilter(\"ignore\")"
 msgstr ""
 
-msgid "Developers of test runners for Python code are advised to instead ensure that *all* warnings are displayed by default for the code under test, using code like::"
+#: ../../library/warnings.rst:286
+msgid ""
+"Developers of test runners for Python code are advised to instead ensure "
+"that *all* warnings are displayed by default for the code under test, using "
+"code like::"
 msgstr ""
 
+#: ../../library/warnings.rst:290
 msgid ""
 "import sys\n"
 "\n"
@@ -317,21 +544,34 @@ msgid ""
 "    os.environ[\"PYTHONWARNINGS\"] = \"default\" # Also affect subprocesses"
 msgstr ""
 
-msgid "Finally, developers of interactive shells that run user code in a namespace other than ``__main__`` are advised to ensure that :exc:`DeprecationWarning` messages are made visible by default, using code like the following (where ``user_ns`` is the module used to execute code entered interactively)::"
+#: ../../library/warnings.rst:297
+msgid ""
+"Finally, developers of interactive shells that run user code in a namespace "
+"other than ``__main__`` are advised to ensure that :exc:`DeprecationWarning` "
+"messages are made visible by default, using code like the following (where "
+"``user_ns`` is the module used to execute code entered interactively)::"
 msgstr ""
 
+#: ../../library/warnings.rst:302
 msgid ""
 "import warnings\n"
 "warnings.filterwarnings(\"default\", category=DeprecationWarning,\n"
 "                                   module=user_ns.get(\"__name__\"))"
 msgstr ""
 
+#: ../../library/warnings.rst:310
 msgid "Temporarily Suppressing Warnings"
 msgstr ""
 
-msgid "If you are using code that you know will raise a warning, such as a deprecated function, but do not want to see the warning (even when warnings have been explicitly configured via the command line), then it is possible to suppress the warning using the :class:`catch_warnings` context manager::"
+#: ../../library/warnings.rst:312
+msgid ""
+"If you are using code that you know will raise a warning, such as a "
+"deprecated function, but do not want to see the warning (even when warnings "
+"have been explicitly configured via the command line), then it is possible "
+"to suppress the warning using the :class:`catch_warnings` context manager::"
 msgstr ""
 
+#: ../../library/warnings.rst:317
 msgid ""
 "import warnings\n"
 "\n"
@@ -343,18 +583,35 @@ msgid ""
 "    fxn()"
 msgstr ""
 
-msgid "While within the context manager all warnings will simply be ignored. This allows you to use known-deprecated code without having to see the warning while not suppressing the warning for other code that might not be aware of its use of deprecated code."
+#: ../../library/warnings.rst:326
+msgid ""
+"While within the context manager all warnings will simply be ignored. This "
+"allows you to use known-deprecated code without having to see the warning "
+"while not suppressing the warning for other code that might not be aware of "
+"its use of deprecated code."
 msgstr ""
 
-msgid "See :ref:`warning-concurrent-safe` for details on the concurrency-safety of the :class:`catch_warnings` context manager when used in programs using multiple threads or async functions."
+#: ../../library/warnings.rst:333 ../../library/warnings.rst:375
+#: ../../library/warnings.rst:646
+msgid ""
+"See :ref:`warning-concurrent-safe` for details on the concurrency-safety of "
+"the :class:`catch_warnings` context manager when used in programs using "
+"multiple threads or async functions."
 msgstr ""
 
+#: ../../library/warnings.rst:340
 msgid "Testing Warnings"
 msgstr ""
 
-msgid "To test warnings raised by code, use the :class:`catch_warnings` context manager. With it you can temporarily mutate the warnings filter to facilitate your testing. For instance, do the following to capture all raised warnings to check::"
+#: ../../library/warnings.rst:342
+msgid ""
+"To test warnings raised by code, use the :class:`catch_warnings` context "
+"manager. With it you can temporarily mutate the warnings filter to "
+"facilitate your testing. For instance, do the following to capture all "
+"raised warnings to check::"
 msgstr ""
 
+#: ../../library/warnings.rst:347
 msgid ""
 "import warnings\n"
 "\n"
@@ -372,47 +629,115 @@ msgid ""
 "    assert \"deprecated\" in str(w[-1].message)"
 msgstr ""
 
-msgid "One can also cause all warnings to be exceptions by using ``error`` instead of ``always``. One thing to be aware of is that if a warning has already been raised because of a ``once``/``default`` rule, then no matter what filters are set the warning will not be seen again unless the warnings registry related to the warning has been cleared."
+#: ../../library/warnings.rst:362
+msgid ""
+"One can also cause all warnings to be exceptions by using ``error`` instead "
+"of ``always``. One thing to be aware of is that if a warning has already "
+"been raised because of a ``once``/``default`` rule, then no matter what "
+"filters are set the warning will not be seen again unless the warnings "
+"registry related to the warning has been cleared."
 msgstr ""
 
-msgid "Once the context manager exits, the warnings filter is restored to its state when the context was entered. This prevents tests from changing the warnings filter in unexpected ways between tests and leading to indeterminate test results."
+#: ../../library/warnings.rst:368
+msgid ""
+"Once the context manager exits, the warnings filter is restored to its state "
+"when the context was entered. This prevents tests from changing the warnings "
+"filter in unexpected ways between tests and leading to indeterminate test "
+"results."
 msgstr ""
 
-msgid "When testing multiple operations that raise the same kind of warning, it is important to test them in a manner that confirms each operation is raising a new warning (e.g. set warnings to be raised as exceptions and check the operations raise exceptions, check that the length of the warning list continues to increase after each operation, or else delete the previous entries from the warnings list before each new operation)."
+#: ../../library/warnings.rst:379
+msgid ""
+"When testing multiple operations that raise the same kind of warning, it is "
+"important to test them in a manner that confirms each operation is raising a "
+"new warning (e.g. set warnings to be raised as exceptions and check the "
+"operations raise exceptions, check that the length of the warning list "
+"continues to increase after each operation, or else delete the previous "
+"entries from the warnings list before each new operation)."
 msgstr ""
 
+#: ../../library/warnings.rst:390
 msgid "Updating Code For New Versions of Dependencies"
 msgstr ""
 
-msgid "Warning categories that are primarily of interest to Python developers (rather than end users of applications written in Python) are ignored by default."
+#: ../../library/warnings.rst:392
+msgid ""
+"Warning categories that are primarily of interest to Python developers "
+"(rather than end users of applications written in Python) are ignored by "
+"default."
 msgstr ""
 
-msgid "Notably, this \"ignored by default\" list includes :exc:`DeprecationWarning` (for every module except ``__main__``), which means developers should make sure to test their code with typically ignored warnings made visible in order to receive timely notifications of future breaking API changes (whether in the standard library or third party packages)."
+#: ../../library/warnings.rst:395
+msgid ""
+"Notably, this \"ignored by default\" list includes :exc:`DeprecationWarning` "
+"(for every module except ``__main__``), which means developers should make "
+"sure to test their code with typically ignored warnings made visible in "
+"order to receive timely notifications of future breaking API changes "
+"(whether in the standard library or third party packages)."
 msgstr ""
 
-msgid "In the ideal case, the code will have a suitable test suite, and the test runner will take care of implicitly enabling all warnings when running tests (the test runner provided by the :mod:`unittest` module does this)."
+#: ../../library/warnings.rst:401
+msgid ""
+"In the ideal case, the code will have a suitable test suite, and the test "
+"runner will take care of implicitly enabling all warnings when running tests "
+"(the test runner provided by the :mod:`unittest` module does this)."
 msgstr ""
 
-msgid "In less ideal cases, applications can be checked for use of deprecated interfaces by passing :option:`-Wd <-W>` to the Python interpreter (this is shorthand for :option:`!-W default`) or setting ``PYTHONWARNINGS=default`` in the environment. This enables default handling for all warnings, including those that are ignored by default. To change what action is taken for encountered warnings you can change what argument is passed to :option:`-W` (e.g. :option:`!-W error`). See the :option:`-W` flag for more details on what is possible."
+#: ../../library/warnings.rst:405
+msgid ""
+"In less ideal cases, applications can be checked for use of deprecated "
+"interfaces by passing :option:`-Wd <-W>` to the Python interpreter (this is "
+"shorthand for :option:`!-W default`) or setting ``PYTHONWARNINGS=default`` "
+"in the environment. This enables default handling for all warnings, "
+"including those that are ignored by default. To change what action is taken "
+"for encountered warnings you can change what argument is passed to :option:`-"
+"W` (e.g. :option:`!-W error`). See the :option:`-W` flag for more details on "
+"what is possible."
 msgstr ""
 
+#: ../../library/warnings.rst:418
 msgid "Available Functions"
 msgstr ""
 
-msgid "Issue a warning, or maybe ignore it or raise an exception.  The *category* argument, if given, must be a :ref:`warning category class <warning-categories>`; it defaults to :exc:`UserWarning`.  Alternatively, *message* can be a :exc:`Warning` instance, in which case *category* will be ignored and ``message.__class__`` will be used. In this case, the message text will be ``str(message)``. This function raises an exception if the particular warning issued is changed into an error by the :ref:`warnings filter <warning-filter>`.  The *stacklevel* argument can be used by wrapper functions written in Python, like this::"
+#: ../../library/warnings.rst:423
+msgid ""
+"Issue a warning, or maybe ignore it or raise an exception.  The *category* "
+"argument, if given, must be a :ref:`warning category class <warning-"
+"categories>`; it defaults to :exc:`UserWarning`.  Alternatively, *message* "
+"can be a :exc:`Warning` instance, in which case *category* will be ignored "
+"and ``message.__class__`` will be used. In this case, the message text will "
+"be ``str(message)``. This function raises an exception if the particular "
+"warning issued is changed into an error by the :ref:`warnings filter "
+"<warning-filter>`.  The *stacklevel* argument can be used by wrapper "
+"functions written in Python, like this::"
 msgstr ""
 
+#: ../../library/warnings.rst:432
 msgid ""
 "def deprecated_api(message):\n"
 "    warnings.warn(message, DeprecationWarning, stacklevel=2)"
 msgstr ""
 
-msgid "This makes the warning refer to ``deprecated_api``'s caller, rather than to the source of ``deprecated_api`` itself (since the latter would defeat the purpose of the warning message)."
+#: ../../library/warnings.rst:435
+msgid ""
+"This makes the warning refer to ``deprecated_api``'s caller, rather than to "
+"the source of ``deprecated_api`` itself (since the latter would defeat the "
+"purpose of the warning message)."
 msgstr ""
 
-msgid "The *skip_file_prefixes* keyword argument can be used to indicate which stack frames are ignored when counting stack levels. This can be useful when you want the warning to always appear at call sites outside of a package when a constant *stacklevel* does not fit all call paths or is otherwise challenging to maintain. If supplied, it must be a tuple of strings. When prefixes are supplied, stacklevel is implicitly overridden to be ``max(2, stacklevel)``. To cause a warning to be attributed to the caller from outside of the current package you might write::"
+#: ../../library/warnings.rst:439
+msgid ""
+"The *skip_file_prefixes* keyword argument can be used to indicate which "
+"stack frames are ignored when counting stack levels. This can be useful when "
+"you want the warning to always appear at call sites outside of a package "
+"when a constant *stacklevel* does not fit all call paths or is otherwise "
+"challenging to maintain. If supplied, it must be a tuple of strings. When "
+"prefixes are supplied, stacklevel is implicitly overridden to be ``max(2, "
+"stacklevel)``. To cause a warning to be attributed to the caller from "
+"outside of the current package you might write::"
 msgstr ""
 
+#: ../../library/warnings.rst:448
 msgid ""
 "# example/lower.py\n"
 "_warn_skips = (os.path.dirname(__file__),)\n"
@@ -429,57 +754,127 @@ msgid ""
 "    lower.one_way(**kw)"
 msgstr ""
 
-msgid "This makes the warning refer to both the ``example.lower.one_way()`` and ``example.higher.another_way()`` call sites only from calling code living outside of ``example`` package."
+#: ../../library/warnings.rst:462
+msgid ""
+"This makes the warning refer to both the ``example.lower.one_way()`` and "
+"``example.higher.another_way()`` call sites only from calling code living "
+"outside of ``example`` package."
 msgstr ""
 
-msgid "*source*, if supplied, is the destroyed object which emitted a :exc:`ResourceWarning`."
+#: ../../library/warnings.rst:466 ../../library/warnings.rst:499
+msgid ""
+"*source*, if supplied, is the destroyed object which emitted "
+"a :exc:`ResourceWarning`."
 msgstr ""
 
+#: ../../library/warnings.rst:469
 msgid "Added *source* parameter."
 msgstr ""
 
+#: ../../library/warnings.rst:472
 msgid "Added *skip_file_prefixes*."
 msgstr ""
 
-msgid "This is a low-level interface to the functionality of :func:`warn`, passing in explicitly the message, category, filename and line number, and optionally other arguments. *message* must be a string and *category* a subclass of :exc:`Warning` or *message* may be a :exc:`Warning` instance, in which case *category* will be ignored."
+#: ../../library/warnings.rst:478
+msgid ""
+"This is a low-level interface to the functionality of :func:`warn`, passing "
+"in explicitly the message, category, filename and line number, and "
+"optionally other arguments. *message* must be a string and *category* a "
+"subclass of :exc:`Warning` or *message* may be a :exc:`Warning` instance, in "
+"which case *category* will be ignored."
 msgstr ""
 
-msgid "*module*, if supplied, should be the module name. If no module is passed, the filename with ``.py`` stripped is used."
+#: ../../library/warnings.rst:485
+msgid ""
+"*module*, if supplied, should be the module name. If no module is passed, "
+"the filename with ``.py`` stripped is used."
 msgstr ""
 
-msgid "*registry*, if supplied, should be the ``__warningregistry__`` dictionary of the module. If no registry is passed, each warning is treated as the first occurrence, that is, filter actions ``\"default\"``, ``\"module\"`` and ``\"once\"`` are handled as ``\"always\"``."
+#: ../../library/warnings.rst:488
+msgid ""
+"*registry*, if supplied, should be the ``__warningregistry__`` dictionary of "
+"the module. If no registry is passed, each warning is treated as the first "
+"occurrence, that is, filter actions ``\"default\"``, ``\"module\"`` and "
+"``\"once\"`` are handled as ``\"always\"``."
 msgstr ""
 
-msgid "*module_globals*, if supplied, should be the global namespace in use by the code for which the warning is issued.  (This argument is used to support displaying source for modules found in zipfiles or other non-filesystem import sources)."
+#: ../../library/warnings.rst:494
+msgid ""
+"*module_globals*, if supplied, should be the global namespace in use by the "
+"code for which the warning is issued.  (This argument is used to support "
+"displaying source for modules found in zipfiles or other non-filesystem "
+"import sources)."
 msgstr ""
 
+#: ../../library/warnings.rst:502
 msgid "Add the *source* parameter."
 msgstr ""
 
-msgid "Write a warning to a file.  The default implementation calls ``formatwarning(message, category, filename, lineno, line)`` and writes the resulting string to *file*, which defaults to :data:`sys.stderr`.  You may replace this function with any callable by assigning to ``warnings.showwarning``. *line* is a line of source code to be included in the warning message; if *line* is not supplied, :func:`showwarning` will try to read the line specified by *filename* and *lineno*."
+#: ../../library/warnings.rst:508
+msgid ""
+"Write a warning to a file.  The default implementation calls "
+"``formatwarning(message, category, filename, lineno, line)`` and writes the "
+"resulting string to *file*, which defaults to :data:`sys.stderr`.  You may "
+"replace this function with any callable by assigning to "
+"``warnings.showwarning``. *line* is a line of source code to be included in "
+"the warning message; if *line* is not supplied, :func:`showwarning` will try "
+"to read the line specified by *filename* and *lineno*."
 msgstr ""
 
-msgid "Format a warning the standard way.  This returns a string which may contain embedded newlines and ends in a newline.  *line* is a line of source code to be included in the warning message; if *line* is not supplied, :func:`formatwarning` will try to read the line specified by *filename* and *lineno*."
+#: ../../library/warnings.rst:519
+msgid ""
+"Format a warning the standard way.  This returns a string which may contain "
+"embedded newlines and ends in a newline.  *line* is a line of source code to "
+"be included in the warning message; if *line* is not "
+"supplied, :func:`formatwarning` will try to read the line specified by "
+"*filename* and *lineno*."
 msgstr ""
 
-msgid "Insert an entry into the list of :ref:`warnings filter specifications <warning-filter>`.  The entry is inserted at the front by default; if *append* is true, it is inserted at the end.  This checks the types of the arguments, compiles the *message* and *module* regular expressions, and inserts them as a tuple in the list of warnings filters.  Entries closer to the front of the list override entries later in the list, if both match a particular warning.  Omitted arguments default to a value that matches everything."
+#: ../../library/warnings.rst:528
+msgid ""
+"Insert an entry into the list of :ref:`warnings filter specifications "
+"<warning-filter>`.  The entry is inserted at the front by default; if "
+"*append* is true, it is inserted at the end.  This checks the types of the "
+"arguments, compiles the *message* and *module* regular expressions, and "
+"inserts them as a tuple in the list of warnings filters.  Entries closer to "
+"the front of the list override entries later in the list, if both match a "
+"particular warning.  Omitted arguments default to a value that matches "
+"everything."
 msgstr ""
 
-msgid "Insert a simple entry into the list of :ref:`warnings filter specifications <warning-filter>`.  The meaning of the function parameters is as for :func:`filterwarnings`, but regular expressions are not needed as the filter inserted always matches any message in any module as long as the category and line number match."
+#: ../../library/warnings.rst:540
+msgid ""
+"Insert a simple entry into the list of :ref:`warnings filter specifications "
+"<warning-filter>`.  The meaning of the function parameters is as "
+"for :func:`filterwarnings`, but regular expressions are not needed as the "
+"filter inserted always matches any message in any module as long as the "
+"category and line number match."
 msgstr ""
 
-msgid "Reset the warnings filter.  This discards the effect of all previous calls to :func:`filterwarnings`, including that of the :option:`-W` command line options and calls to :func:`simplefilter`."
+#: ../../library/warnings.rst:549
+msgid ""
+"Reset the warnings filter.  This discards the effect of all previous calls "
+"to :func:`filterwarnings`, including that of the :option:`-W` command line "
+"options and calls to :func:`simplefilter`."
 msgstr ""
 
+#: ../../library/warnings.rst:556
 msgid "Decorator to indicate that a class, function or overload is deprecated."
 msgstr ""
 
-msgid "When this decorator is applied to an object, deprecation warnings may be emitted at runtime when the object is used. :term:`static type checkers <static type checker>` will also generate a diagnostic on usage of the deprecated object."
+#: ../../library/warnings.rst:558
+msgid ""
+"When this decorator is applied to an object, deprecation warnings may be "
+"emitted at runtime when the object is used. :term:`static type checkers "
+"<static type checker>` will also generate a diagnostic on usage of the "
+"deprecated object."
 msgstr ""
 
+#: ../../library/warnings.rst:563
 msgid "Usage::"
 msgstr ""
 
+#: ../../library/warnings.rst:565
 msgid ""
 "from warnings import deprecated\n"
 "from typing import overload\n"
@@ -499,59 +894,188 @@ msgid ""
 "def g(x: str) -> int: ..."
 msgstr ""
 
-msgid "The warning specified by *category* will be emitted at runtime on use of deprecated objects. For functions, that happens on calls; for classes, on instantiation and on creation of subclasses. If the *category* is ``None``, no warning is emitted at runtime. The *stacklevel* determines where the warning is emitted. If it is ``1`` (the default), the warning is emitted at the direct caller of the deprecated object; if it is higher, it is emitted further up the stack. Static type checker behavior is not affected by the *category* and *stacklevel* arguments."
+#: ../../library/warnings.rst:582
+msgid ""
+"The warning specified by *category* will be emitted at runtime on use of "
+"deprecated objects. For functions, that happens on calls; for classes, on "
+"instantiation and on creation of subclasses. If the *category* is ``None``, "
+"no warning is emitted at runtime. The *stacklevel* determines where the "
+"warning is emitted. If it is ``1`` (the default), the warning is emitted at "
+"the direct caller of the deprecated object; if it is higher, it is emitted "
+"further up the stack. Static type checker behavior is not affected by the "
+"*category* and *stacklevel* arguments."
 msgstr ""
 
-msgid "The deprecation message passed to the decorator is saved in the ``__deprecated__`` attribute on the decorated object. If applied to an overload, the decorator must be after the :deco:`~typing.overload` decorator for the attribute to exist on the overload as returned by :func:`typing.get_overloads`."
+#: ../../library/warnings.rst:593
+msgid ""
+"The deprecation message passed to the decorator is saved in the "
+"``__deprecated__`` attribute on the decorated object. If applied to an "
+"overload, the decorator must be after the :deco:`~typing.overload` decorator "
+"for the attribute to exist on the overload as returned "
+"by :func:`typing.get_overloads`."
 msgstr ""
 
+#: ../../library/warnings.rst:600
 msgid "See :pep:`702`."
 msgstr ""
 
+#: ../../library/warnings.rst:605
 msgid "Available Context Managers"
 msgstr ""
 
-msgid "A context manager that copies and, upon exit, restores the warnings filter and the :func:`showwarning` function. If the *record* argument is :const:`False` (the default) the context manager returns :class:`None` on entry. If *record* is :const:`True`, a list is returned that is progressively populated with objects as seen by a custom :func:`showwarning` function (which also suppresses output to ``sys.stdout``). Each object in the list has attributes with the same names as the arguments to :func:`showwarning`."
+#: ../../library/warnings.rst:609
+msgid ""
+"A context manager that copies and, upon exit, restores the warnings filter "
+"and the :func:`showwarning` function. If the *record* argument "
+"is :const:`False` (the default) the context manager returns :class:`None` on "
+"entry. If *record* is :const:`True`, a list is returned that is "
+"progressively populated with objects as seen by a custom :func:`showwarning` "
+"function (which also suppresses output to ``sys.stderr``). Each object in "
+"the list is guaranteed to have the following attributes:"
 msgstr ""
 
-msgid "The *module* argument takes a module that will be used instead of the module returned when you import :mod:`!warnings` whose filter will be protected. This argument exists primarily for testing the :mod:`!warnings` module itself."
+#: ../../library/warnings.rst:617
+msgid "``message``: the warning message (an instance of :exc:`Warning`)"
 msgstr ""
 
-msgid "If the *action* argument is not ``None``, the remaining arguments are passed to :func:`simplefilter` as if it were called immediately on entering the context."
+#: ../../library/warnings.rst:618
+msgid "``category``: the warning category (a subclass of :exc:`Warning`)"
 msgstr ""
 
-msgid "See :ref:`warning-filter` for the meaning of the *category* and *lineno* parameters."
+#: ../../library/warnings.rst:619
+msgid "``filename``: the file name where the warning occurred (:class:`str`)"
 msgstr ""
 
+#: ../../library/warnings.rst:620
+msgid "``lineno``: the line number in the file (:class:`int`)"
+msgstr ""
+
+#: ../../library/warnings.rst:621
+msgid "``file``: the file object used for output (if any), or ``None``"
+msgstr ""
+
+#: ../../library/warnings.rst:622
+msgid "``line``: the line of source code (if available), or ``None``"
+msgstr ""
+
+#: ../../library/warnings.rst:623
+msgid ""
+"``source``: the original object that generated the warning (if available), "
+"or ``None``"
+msgstr ""
+
+#: ../../library/warnings.rst:626
+msgid "The ``source`` attribute was added."
+msgstr ""
+
+#: ../../library/warnings.rst:629
+msgid ""
+"The type of these objects is not specified and may change; only the presence "
+"of these attributes is guaranteed."
+msgstr ""
+
+#: ../../library/warnings.rst:632
+msgid ""
+"The *module* argument takes a module that will be used instead of the module "
+"returned when you import :mod:`!warnings` whose filter will be protected. "
+"This argument exists primarily for testing the :mod:`!warnings` module "
+"itself."
+msgstr ""
+
+#: ../../library/warnings.rst:637
+msgid ""
+"If the *action* argument is not ``None``, the remaining arguments are passed "
+"to :func:`simplefilter` as if it were called immediately on entering the "
+"context."
+msgstr ""
+
+#: ../../library/warnings.rst:641
+msgid ""
+"See :ref:`warning-filter` for the meaning of the *category* and *lineno* "
+"parameters."
+msgstr ""
+
+#: ../../library/warnings.rst:653
 msgid "Added the *action*, *category*, *lineno*, and *append* parameters."
 msgstr ""
 
+#: ../../library/warnings.rst:659
 msgid "Concurrent safety of Context Managers"
 msgstr ""
 
-msgid "The behavior of :class:`catch_warnings` context manager depends on the :data:`sys.flags.context_aware_warnings` flag.  If the flag is true, the context manager behaves in a concurrent-safe fashion and otherwise not. Concurrent-safe means that it is both thread-safe and safe to use within :ref:`asyncio coroutines <coroutine>` and tasks.  Being thread-safe means that behavior is predictable in a multi-threaded program.  The flag defaults to true for free-threaded builds and false otherwise."
+#: ../../library/warnings.rst:661
+msgid ""
+"The behavior of :class:`catch_warnings` context manager depends on "
+"the :data:`sys.flags.context_aware_warnings` flag.  If the flag is true, the "
+"context manager behaves in a concurrent-safe fashion and otherwise not. "
+"Concurrent-safe means that it is both thread-safe and safe to use "
+"within :ref:`asyncio coroutines <coroutine>` and tasks.  Being thread-safe "
+"means that behavior is predictable in a multi-threaded program.  The flag "
+"defaults to true for free-threaded builds and false otherwise."
 msgstr ""
 
-msgid "If the :data:`~sys.flags.context_aware_warnings` flag is false, then :class:`catch_warnings` will modify the global attributes of the :mod:`!warnings` module.  This is not safe if used within a concurrent program (using multiple threads or using asyncio coroutines).  For example, if two or more threads use the :class:`catch_warnings` class at the same time, the behavior is undefined."
+#: ../../library/warnings.rst:669
+msgid ""
+"If the :data:`~sys.flags.context_aware_warnings` flag is false, "
+"then :class:`catch_warnings` will modify the global attributes of the :mod:`!"
+"warnings` module.  This is not safe if used within a concurrent program "
+"(using multiple threads or using asyncio coroutines).  For example, if two "
+"or more threads use the :class:`catch_warnings` class at the same time, the "
+"behavior is undefined."
 msgstr ""
 
-msgid "If the flag is true, :class:`catch_warnings` will not modify global attributes and will instead use a :class:`~contextvars.ContextVar` to store the newly established warning filtering state.  A context variable provides thread-local storage and it makes the use of :class:`catch_warnings` thread-safe."
+#: ../../library/warnings.rst:676
+msgid ""
+"If the flag is true, :class:`catch_warnings` will not modify global "
+"attributes and will instead use a :class:`~contextvars.ContextVar` to store "
+"the newly established warning filtering state.  A context variable provides "
+"thread-local storage and it makes the use of :class:`catch_warnings` thread-"
+"safe."
 msgstr ""
 
-msgid "The *record* parameter of the context handler also behaves differently depending on the value of the flag.  When *record* is true and the flag is false, the context manager works by replacing and then later restoring the module's :func:`showwarning` function.  That is not concurrent-safe."
+#: ../../library/warnings.rst:682
+msgid ""
+"The *record* parameter of the context handler also behaves differently "
+"depending on the value of the flag.  When *record* is true and the flag is "
+"false, the context manager works by replacing and then later restoring the "
+"module's :func:`showwarning` function.  That is not concurrent-safe."
 msgstr ""
 
-msgid "When *record* is true and the flag is true, the :func:`showwarning` function is not replaced.  Instead, the recording status is indicated by an internal property in the context variable.  In this case, the :func:`showwarning` function will not be restored when exiting the context handler."
+#: ../../library/warnings.rst:687
+msgid ""
+"When *record* is true and the flag is true, the :func:`showwarning` function "
+"is not replaced.  Instead, the recording status is indicated by an internal "
+"property in the context variable.  In this case, the :func:`showwarning` "
+"function will not be restored when exiting the context handler."
 msgstr ""
 
-msgid "The :data:`~sys.flags.context_aware_warnings` flag can be set the :option:`-X context_aware_warnings<-X>` command-line option or by the :envvar:`PYTHON_CONTEXT_AWARE_WARNINGS` environment variable."
+#: ../../library/warnings.rst:692
+msgid ""
+"The :data:`~sys.flags.context_aware_warnings` flag can be set the :option:`-"
+"X context_aware_warnings<-X>` command-line option or by "
+"the :envvar:`PYTHON_CONTEXT_AWARE_WARNINGS` environment variable."
 msgstr ""
 
-msgid "It is likely that most programs that desire thread-safe behaviour of the warnings module will also want to set the :data:`~sys.flags.thread_inherit_context` flag to true.  That flag causes threads created by :class:`threading.Thread` to start with a copy of the context variables from the thread starting it.  When true, the context established by :class:`catch_warnings` in one thread will also apply to new threads started by it.  If false, new threads will start with an empty warnings context variable, meaning that any filtering that was established by a :class:`catch_warnings` context manager will no longer be active."
+#: ../../library/warnings.rst:698
+msgid ""
+"It is likely that most programs that desire thread-safe behaviour of the "
+"warnings module will also want to set "
+"the :data:`~sys.flags.thread_inherit_context` flag to true.  That flag "
+"causes threads created by :class:`threading.Thread` to start with a copy of "
+"the context variables from the thread starting it.  When true, the context "
+"established by :class:`catch_warnings` in one thread will also apply to new "
+"threads started by it.  If false, new threads will start with an empty "
+"warnings context variable, meaning that any filtering that was established "
+"by a :class:`catch_warnings` context manager will no longer be active."
 msgstr ""
 
-msgid "Added the :data:`sys.flags.context_aware_warnings` flag and the use of a context variable for :class:`catch_warnings` if the flag is true.  Previous versions of Python acted as if the flag was always set to false."
+#: ../../library/warnings.rst:711
+msgid ""
+"Added the :data:`sys.flags.context_aware_warnings` flag and the use of a "
+"context variable for :class:`catch_warnings` if the flag is true.  Previous "
+"versions of Python acted as if the flag was always set to false."
 msgstr ""
 
+#: ../../library/warnings.rst:9
 msgid "warnings"
 msgstr ""

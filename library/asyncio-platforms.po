@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-25 20:39+0330\n"
 "PO-Revision-Date: 2021-06-28 00:55+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
@@ -23,78 +23,151 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../library/asyncio-platforms.rst:9
 msgid "Platform Support"
 msgstr ""
 
-msgid "The :mod:`asyncio` module is designed to be portable, but some platforms have subtle differences and limitations due to the platforms' underlying architecture and capabilities."
+#: ../../library/asyncio-platforms.rst:11
+msgid ""
+"The :mod:`asyncio` module is designed to be portable, but some platforms "
+"have subtle differences and limitations due to the platforms' underlying "
+"architecture and capabilities."
 msgstr ""
 
+#: ../../library/asyncio-platforms.rst:17
 msgid "All Platforms"
 msgstr ""
 
-msgid ":meth:`loop.add_reader` and :meth:`loop.add_writer` cannot be used to monitor file I/O."
+#: ../../library/asyncio-platforms.rst:19
+msgid ""
+":meth:`loop.add_reader` and :meth:`loop.add_writer` cannot be used to "
+"monitor file I/O."
 msgstr ""
 
+#: ../../library/asyncio-platforms.rst:22
+msgid ""
+":meth:`loop.connect_read_pipe` and :meth:`loop.connect_write_pipe` cannot be "
+"used with regular files.  See :ref:`Supported pipe objects <asyncio-pipe-"
+"objects>` for the objects that are accepted on each platform."
+msgstr ""
+
+#: ../../library/asyncio-platforms.rst:29
 msgid "Windows"
 msgstr ""
 
-msgid "**Source code:** :source:`Lib/asyncio/proactor_events.py`, :source:`Lib/asyncio/windows_events.py`, :source:`Lib/asyncio/windows_utils.py`"
+#: ../../library/asyncio-platforms.rst:31
+msgid ""
+"**Source code:** :source:`Lib/asyncio/proactor_events.py`, :source:`Lib/"
+"asyncio/windows_events.py`, :source:`Lib/asyncio/windows_utils.py`"
 msgstr ""
 
+#: ../../library/asyncio-platforms.rst:39
 msgid "On Windows, :class:`ProactorEventLoop` is now the default event loop."
 msgstr ""
 
+#: ../../library/asyncio-platforms.rst:41
 msgid "All event loops on Windows do not support the following methods:"
 msgstr ""
 
-msgid ":meth:`loop.create_unix_connection` and :meth:`loop.create_unix_server` are not supported. The :const:`socket.AF_UNIX` socket family is specific to Unix."
+#: ../../library/asyncio-platforms.rst:43
+msgid ""
+":meth:`loop.create_unix_connection` and :meth:`loop.create_unix_server` are "
+"not supported. The :const:`socket.AF_UNIX` socket family is specific to Unix."
 msgstr ""
 
-msgid ":meth:`loop.add_signal_handler` and :meth:`loop.remove_signal_handler` are not supported."
+#: ../../library/asyncio-platforms.rst:47
+msgid ""
+":meth:`loop.add_signal_handler` and :meth:`loop.remove_signal_handler` are "
+"not supported."
 msgstr ""
 
+#: ../../library/asyncio-platforms.rst:50
 msgid ":class:`SelectorEventLoop` has the following limitations:"
 msgstr ""
 
-msgid ":class:`~selectors.SelectSelector` is used to wait on socket events: it supports sockets and is limited to 512 sockets."
+#: ../../library/asyncio-platforms.rst:52
+msgid ""
+":class:`~selectors.SelectSelector` is used to wait on socket events: it "
+"supports sockets and is limited to 512 sockets."
 msgstr ""
 
-msgid ":meth:`loop.add_reader` and :meth:`loop.add_writer` only accept socket handles (e.g. pipe file descriptors are not supported)."
+#: ../../library/asyncio-platforms.rst:55
+msgid ""
+":meth:`loop.add_reader` and :meth:`loop.add_writer` only accept socket "
+"handles (e.g. pipe file descriptors are not supported)."
 msgstr ""
 
-msgid "Pipes are not supported, so the :meth:`loop.connect_read_pipe` and :meth:`loop.connect_write_pipe` methods are not implemented."
+#: ../../library/asyncio-platforms.rst:58
+msgid ""
+"Pipes are not supported, so the :meth:`loop.connect_read_pipe` "
+"and :meth:`loop.connect_write_pipe` methods are not implemented."
 msgstr ""
 
-msgid ":ref:`Subprocesses <asyncio-subprocess>` are not supported, i.e. :meth:`loop.subprocess_exec` and :meth:`loop.subprocess_shell` methods are not implemented."
+#: ../../library/asyncio-platforms.rst:61
+msgid ""
+":ref:`Subprocesses <asyncio-subprocess>` are not supported, "
+"i.e. :meth:`loop.subprocess_exec` and :meth:`loop.subprocess_shell` methods "
+"are not implemented."
 msgstr ""
 
+#: ../../library/asyncio-platforms.rst:65
 msgid ":class:`ProactorEventLoop` has the following limitations:"
 msgstr ""
 
-msgid "The :meth:`loop.add_reader` and :meth:`loop.add_writer` methods are not supported."
+#: ../../library/asyncio-platforms.rst:67
+msgid ""
+"The :meth:`loop.add_reader` and :meth:`loop.add_writer` methods are not "
+"supported."
 msgstr ""
 
-msgid "The resolution of the monotonic clock on Windows is usually around 15.6 milliseconds.  The best resolution is 0.5 milliseconds. The resolution depends on the hardware (availability of `HPET <https://en.wikipedia.org/wiki/High_Precision_Event_Timer>`_) and on the Windows configuration."
+#: ../../library/asyncio-platforms.rst:70
+msgid ""
+":meth:`loop.connect_read_pipe` and :meth:`loop.connect_write_pipe` only "
+"accept a handle opened for overlapped I/O. See :ref:`Supported pipe objects "
+"<asyncio-pipe-objects>` for which objects are supported."
 msgstr ""
 
+#: ../../library/asyncio-platforms.rst:74
+msgid ""
+"The resolution of the monotonic clock on Windows is usually around 15.6 "
+"milliseconds.  The best resolution is 0.5 milliseconds. The resolution "
+"depends on the hardware (availability of `HPET <https://en.wikipedia.org/"
+"wiki/High_Precision_Event_Timer>`_) and on the Windows configuration."
+msgstr ""
+
+#: ../../library/asyncio-platforms.rst:84
 msgid "Subprocess Support on Windows"
 msgstr ""
 
-msgid "On Windows, the default event loop :class:`ProactorEventLoop` supports subprocesses, whereas :class:`SelectorEventLoop` does not."
+#: ../../library/asyncio-platforms.rst:86
+msgid ""
+"On Windows, the default event loop :class:`ProactorEventLoop` supports "
+"subprocesses, whereas :class:`SelectorEventLoop` does not."
 msgstr ""
 
+#: ../../library/asyncio-platforms.rst:91
 msgid "macOS"
 msgstr ""
 
+#: ../../library/asyncio-platforms.rst:93
 msgid "Modern macOS versions are fully supported."
 msgstr ""
 
+#: ../../library/asyncio-platforms.rst:96
 msgid "macOS <= 10.8"
 msgstr ""
 
-msgid "On macOS 10.6, 10.7 and 10.8, the default event loop uses :class:`selectors.KqueueSelector`, which does not support character devices on these versions.  The :class:`SelectorEventLoop` can be manually configured to use :class:`~selectors.SelectSelector` or :class:`~selectors.PollSelector` to support character devices on these older versions of macOS.  Example::"
+#: ../../library/asyncio-platforms.rst:97
+msgid ""
+"On macOS 10.6, 10.7 and 10.8, the default event loop "
+"uses :class:`selectors.KqueueSelector`, which does not support character "
+"devices on these versions.  The :class:`SelectorEventLoop` can be manually "
+"configured to use :class:`~selectors.SelectSelector` "
+"or :class:`~selectors.PollSelector` to support character devices on these "
+"older versions of macOS.  Example::"
 msgstr ""
 
+#: ../../library/asyncio-platforms.rst:104
 msgid ""
 "import asyncio\n"
 "import selectors\n"

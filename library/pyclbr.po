@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-25 20:39+0330\n"
 "PO-Revision-Date: 2021-06-28 01:11+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
@@ -23,80 +23,150 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../library/pyclbr.rst:2
 msgid ":mod:`!pyclbr` --- Python module browser support"
 msgstr ""
 
+#: ../../library/pyclbr.rst:9
 msgid "**Source code:** :source:`Lib/pyclbr.py`"
 msgstr ""
 
-msgid "The :mod:`!pyclbr` module provides limited information about the functions, classes, and methods defined in a Python-coded module.  The information is sufficient to implement a module browser.  The information is extracted from the Python source code rather than by importing the module, so this module is safe to use with untrusted code. This restriction makes it impossible to use this module with modules not implemented in Python, including all standard and optional extension modules."
+#: ../../library/pyclbr.rst:13
+msgid ""
+"The :mod:`!pyclbr` module provides limited information about the functions, "
+"classes, and methods defined in a Python-coded module.  The information is "
+"sufficient to implement a module browser.  The information is extracted from "
+"the Python source code rather than by importing the module, so this module "
+"is safe to use with untrusted code. This restriction makes it impossible to "
+"use this module with modules not implemented in Python, including all "
+"standard and optional extension modules."
 msgstr ""
 
-msgid "Return a dictionary mapping module-level class names to class descriptors.  If possible, descriptors for imported base classes are included.  Parameter *module* is a string with the name of the module to read; it may be the name of a module within a package.  If given, *path* is a sequence of directory paths prepended to ``sys.path``, which is used to locate the module source code."
+#: ../../library/pyclbr.rst:25
+msgid ""
+"Return a dictionary mapping module-level class names to class descriptors.  "
+"If possible, descriptors for imported base classes are included.  Parameter "
+"*module* is a string with the name of the module to read; it may be the name "
+"of a module within a package.  If given, *path* is a sequence of directory "
+"paths prepended to ``sys.path``, which is used to locate the module source "
+"code."
 msgstr ""
 
-msgid "This function is the original interface and is only kept for back compatibility.  It returns a filtered version of the following."
+#: ../../library/pyclbr.rst:32
+msgid ""
+"This function is the original interface and is only kept for back "
+"compatibility.  It returns a filtered version of the following."
 msgstr ""
 
-msgid "Return a dictionary-based tree containing a function or class descriptors for each function and class defined in the module with a ``def`` or ``class`` statement.  The returned dictionary maps module-level function and class names to their descriptors.  Nested objects are entered into the children dictionary of their parent.  As with readmodule, *module* names the module to be read and *path* is prepended to sys.path.  If the module being read is a package, the returned dictionary has a key ``'__path__'`` whose value is a list containing the package search path."
+#: ../../library/pyclbr.rst:38
+msgid ""
+"Return a dictionary-based tree containing a function or class descriptors "
+"for each function and class defined in the module with a ``def`` or "
+"``class`` statement.  The returned dictionary maps module-level function and "
+"class names to their descriptors.  Nested objects are entered into the "
+"children dictionary of their parent.  As with readmodule, *module* names the "
+"module to be read and *path* is prepended to sys.path.  If the module being "
+"read is a package, the returned dictionary has a key ``'__path__'`` whose "
+"value is a list containing the package search path."
 msgstr ""
 
-msgid "Descriptors for nested definitions.  They are accessed through the new children attribute.  Each has a new parent attribute."
+#: ../../library/pyclbr.rst:48
+msgid ""
+"Descriptors for nested definitions.  They are accessed through the new "
+"children attribute.  Each has a new parent attribute."
 msgstr ""
 
-msgid "The descriptors returned by these functions are instances of Function and Class classes.  Users are not expected to create instances of these classes."
+#: ../../library/pyclbr.rst:52
+msgid ""
+"The descriptors returned by these functions are instances of Function and "
+"Class classes.  Users are not expected to create instances of these classes."
 msgstr ""
 
+#: ../../library/pyclbr.rst:60
 msgid "Function Objects"
 msgstr ""
 
-msgid "Class :class:`!Function` instances describe functions defined by def statements.  They have the following attributes:"
+#: ../../library/pyclbr.rst:64
+msgid ""
+"Class :class:`!Function` instances describe functions defined by def "
+"statements.  They have the following attributes:"
 msgstr ""
 
+#: ../../library/pyclbr.rst:70
 msgid "Name of the file in which the function is defined."
 msgstr ""
 
+#: ../../library/pyclbr.rst:75
 msgid "The name of the module defining the function described."
 msgstr ""
 
+#: ../../library/pyclbr.rst:80
 msgid "The name of the function."
 msgstr ""
 
+#: ../../library/pyclbr.rst:85 ../../library/pyclbr.rst:140
 msgid "The line number in the file where the definition starts."
 msgstr ""
 
+#: ../../library/pyclbr.rst:90
 msgid "For top-level functions, ``None``.  For nested functions, the parent."
 msgstr ""
 
-msgid "A :class:`dictionary <dict>` mapping names to descriptors for nested functions and classes."
+#: ../../library/pyclbr.rst:97
+msgid ""
+"A :class:`dictionary <dict>` mapping names to descriptors for nested "
+"functions and classes."
 msgstr ""
 
-msgid "``True`` for functions that are defined with the :keyword:`async <async def>` prefix, ``False`` otherwise."
+#: ../../library/pyclbr.rst:105
+msgid ""
+"``True`` for functions that are defined with the :keyword:`async <async "
+"def>` prefix, ``False`` otherwise."
 msgstr ""
 
+#: ../../library/pyclbr.rst:114
 msgid "Class Objects"
 msgstr ""
 
-msgid "Class :class:`!Class` instances describe classes defined by class statements.  They have the same attributes as :class:`Functions <Function>` and two more."
+#: ../../library/pyclbr.rst:118
+msgid ""
+"Class :class:`!Class` instances describe classes defined by class "
+"statements.  They have the same attributes as :class:`Functions <Function>` "
+"and two more."
 msgstr ""
 
+#: ../../library/pyclbr.rst:125
 msgid "Name of the file in which the class is defined."
 msgstr ""
 
+#: ../../library/pyclbr.rst:130
 msgid "The name of the module defining the class described."
 msgstr ""
 
+#: ../../library/pyclbr.rst:135
 msgid "The name of the class."
 msgstr ""
 
+#: ../../library/pyclbr.rst:145
 msgid "For top-level classes, ``None``.  For nested classes, the parent."
 msgstr ""
 
-msgid "A dictionary mapping names to descriptors for nested functions and classes."
+#: ../../library/pyclbr.rst:152
+msgid ""
+"A dictionary mapping names to descriptors for nested functions and classes."
 msgstr ""
 
-msgid "A list of :class:`!Class` objects which describe the immediate base classes of the class being described.  Classes which are named as superclasses but which are not discoverable by :func:`readmodule_ex` are listed as a string with the class name instead of as :class:`!Class` objects."
+#: ../../library/pyclbr.rst:160
+msgid ""
+"A list of :class:`!Class` objects which describe the immediate base classes "
+"of the class being described.  Classes which are named as superclasses but "
+"which are not discoverable by :func:`readmodule_ex` are listed as a string "
+"with the class name instead of as :class:`!Class` objects."
 msgstr ""
 
-msgid "A :class:`dictionary <dict>` mapping method names to line numbers. This can be derived from the newer :attr:`children` dictionary, but remains for back-compatibility."
+#: ../../library/pyclbr.rst:169
+msgid ""
+"A :class:`dictionary <dict>` mapping method names to line numbers. This can "
+"be derived from the newer :attr:`children` dictionary, but remains for back-"
+"compatibility."
 msgstr ""

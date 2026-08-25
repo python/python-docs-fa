@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-25 20:39+0330\n"
 "PO-Revision-Date: 2021-06-28 01:11+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
@@ -23,48 +23,82 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../library/pdb.rst:4
 msgid ":mod:`!pdb` --- The Python Debugger"
 msgstr ""
 
+#: ../../library/pdb.rst:9
 msgid "**Source code:** :source:`Lib/pdb.py`"
 msgstr ""
 
-msgid "The module :mod:`!pdb` defines an interactive source code debugger for Python programs.  It supports setting (conditional) breakpoints and single stepping at the source line level, inspection of stack frames, source code listing, and evaluation of arbitrary Python code in the context of any stack frame.  It also supports post-mortem debugging and can be called under program control."
+#: ../../library/pdb.rst:15
+msgid ""
+"The module :mod:`!pdb` defines an interactive source code debugger for "
+"Python programs.  It supports setting (conditional) breakpoints and single "
+"stepping at the source line level, inspection of stack frames, source code "
+"listing, and evaluation of arbitrary Python code in the context of any stack "
+"frame.  It also supports post-mortem debugging and can be called under "
+"program control."
 msgstr ""
 
-msgid "The debugger is extensible -- it is actually defined as the class :class:`Pdb`. This is currently undocumented but easily understood by reading the source.  The extension interface uses the modules :mod:`bdb` and :mod:`cmd`."
+#: ../../library/pdb.rst:26
+msgid ""
+"The debugger is extensible -- it is actually defined as the "
+"class :class:`Pdb`. This is currently undocumented but easily understood by "
+"reading the source.  The extension interface uses the modules :mod:`bdb` "
+"and :mod:`cmd`."
 msgstr ""
 
+#: ../../library/pdb.rst:32
 msgid "Module :mod:`faulthandler`"
 msgstr ""
 
-msgid "Used to dump Python tracebacks explicitly, on a fault, after a timeout, or on a user signal."
+#: ../../library/pdb.rst:33
+msgid ""
+"Used to dump Python tracebacks explicitly, on a fault, after a timeout, or "
+"on a user signal."
 msgstr ""
 
+#: ../../library/pdb.rst:36
 msgid "Module :mod:`traceback`"
 msgstr ""
 
-msgid "Standard interface to extract, format and print stack traces of Python programs."
+#: ../../library/pdb.rst:37
+msgid ""
+"Standard interface to extract, format and print stack traces of Python "
+"programs."
 msgstr ""
 
+#: ../../library/pdb.rst:39
 msgid "The typical usage to break into the debugger is to insert::"
 msgstr ""
 
+#: ../../library/pdb.rst:41
 msgid "import pdb; pdb.set_trace()"
 msgstr ""
 
+#: ../../library/pdb.rst:43
 msgid "Or::"
 msgstr ""
 
+#: ../../library/pdb.rst:45
 msgid "breakpoint()"
 msgstr ""
 
-msgid "at the location you want to break into the debugger, and then run the program. You can then step through the code following this statement, and continue running without the debugger using the :pdbcmd:`continue` command."
+#: ../../library/pdb.rst:47
+msgid ""
+"at the location you want to break into the debugger, and then run the "
+"program. You can then step through the code following this statement, and "
+"continue running without the debugger using the :pdbcmd:`continue` command."
 msgstr ""
 
-msgid "The built-in :func:`breakpoint`, when called with defaults, can be used instead of ``import pdb; pdb.set_trace()``."
+#: ../../library/pdb.rst:51
+msgid ""
+"The built-in :func:`breakpoint`, when called with defaults, can be used "
+"instead of ``import pdb; pdb.set_trace()``."
 msgstr ""
 
+#: ../../library/pdb.rst:57
 msgid ""
 "def double(x):\n"
 "   breakpoint()\n"
@@ -73,9 +107,13 @@ msgid ""
 "print(f\"{val} * 2 is {double(val)}\")"
 msgstr ""
 
-msgid "The debugger's prompt is ``(Pdb)``, which is the indicator that you are in debug mode::"
+#: ../../library/pdb.rst:63
+msgid ""
+"The debugger's prompt is ``(Pdb)``, which is the indicator that you are in "
+"debug mode::"
 msgstr ""
 
+#: ../../library/pdb.rst:65
 msgid ""
 "> ...(2)double()\n"
 "-> breakpoint()\n"
@@ -85,48 +123,82 @@ msgid ""
 "3 * 2 is 6"
 msgstr ""
 
-msgid "Tab-completion via the :mod:`readline` module is available for commands and command arguments, e.g. the current global and local names are offered as arguments of the ``p`` command."
+#: ../../library/pdb.rst:72
+msgid ""
+"Tab-completion via the :mod:`readline` module is available for commands and "
+"command arguments, e.g. the current global and local names are offered as "
+"arguments of the ``p`` command."
 msgstr ""
 
+#: ../../library/pdb.rst:81
 msgid "Command-line interface"
 msgstr ""
 
-msgid "You can also invoke :mod:`!pdb` from the command line to debug other scripts.  For example::"
+#: ../../library/pdb.rst:85
+msgid ""
+"You can also invoke :mod:`!pdb` from the command line to debug other "
+"scripts.  For example::"
 msgstr ""
 
+#: ../../library/pdb.rst:88
 msgid "python -m pdb [-c command] (-m module | -p pid | pyfile) [args ...]"
 msgstr ""
 
-msgid "When invoked as a module, pdb will automatically enter post-mortem debugging if the program being debugged exits abnormally.  After post-mortem debugging (or after normal exit of the program), pdb will restart the program.  Automatic restarting preserves pdb's state (such as breakpoints) and in most cases is more useful than quitting the debugger upon program's exit."
+#: ../../library/pdb.rst:90
+msgid ""
+"When invoked as a module, pdb will automatically enter post-mortem debugging "
+"if the program being debugged exits abnormally.  After post-mortem debugging "
+"(or after normal exit of the program), pdb will restart the program.  "
+"Automatic restarting preserves pdb's state (such as breakpoints) and in most "
+"cases is more useful than quitting the debugger upon program's exit."
 msgstr ""
 
-msgid "To execute commands as if given in a :file:`.pdbrc` file; see :ref:`debugger-commands`."
+#: ../../library/pdb.rst:98
+msgid ""
+"To execute commands as if given in a :file:`.pdbrc` file; see :ref:`debugger-"
+"commands`."
 msgstr ""
 
+#: ../../library/pdb.rst:101
 msgid "Added the ``-c`` option."
 msgstr ""
 
-msgid "To execute modules similar to the way ``python -m`` does. As with a script, the debugger will pause execution just before the first line of the module."
+#: ../../library/pdb.rst:106
+msgid ""
+"To execute modules similar to the way ``python -m`` does. As with a script, "
+"the debugger will pause execution just before the first line of the module."
 msgstr ""
 
+#: ../../library/pdb.rst:109
 msgid "Added the ``-m`` option."
 msgstr ""
 
+#: ../../library/pdb.rst:114
 msgid "Attach to the process with the specified PID."
 msgstr ""
 
-msgid "To attach to a running Python process for remote debugging, use the ``-p`` or ``--pid`` option with the target process's PID::"
+#: ../../library/pdb.rst:119
+msgid ""
+"To attach to a running Python process for remote debugging, use the ``-p`` "
+"or ``--pid`` option with the target process's PID::"
 msgstr ""
 
+#: ../../library/pdb.rst:122
 msgid "python -m pdb -p 1234"
 msgstr ""
 
-msgid "Attaching to a process that is blocked in a system call or waiting for I/O will only work once the next bytecode instruction is executed or when the process receives a signal."
+#: ../../library/pdb.rst:126
+msgid ""
+"Attaching to a process that is blocked in a system call or waiting for I/O "
+"will only work once the next bytecode instruction is executed or when the "
+"process receives a signal."
 msgstr ""
 
+#: ../../library/pdb.rst:130
 msgid "Typical usage to execute a statement under control of the debugger is::"
 msgstr ""
 
+#: ../../library/pdb.rst:132
 msgid ""
 ">>> import pdb\n"
 ">>> def f(x):\n"
@@ -138,9 +210,11 @@ msgid ""
 ">>>"
 msgstr ""
 
+#: ../../library/pdb.rst:141
 msgid "The typical usage to inspect a crashed program is::"
 msgstr ""
 
+#: ../../library/pdb.rst:143
 msgid ""
 ">>> import pdb\n"
 ">>> def f(x):\n"
@@ -158,227 +232,471 @@ msgid ""
 "(Pdb)"
 msgstr ""
 
-msgid "The implementation of :pep:`667` means that name assignments made via ``pdb`` will immediately affect the active scope, even when running inside an :term:`optimized scope`."
+#: ../../library/pdb.rst:158
+msgid ""
+"The implementation of :pep:`667` means that name assignments made via "
+"``pdb`` will immediately affect the active scope, even when running inside "
+"an :term:`optimized scope`."
 msgstr ""
 
-msgid "The module defines the following functions; each enters the debugger in a slightly different way:"
+#: ../../library/pdb.rst:164
+msgid ""
+"The module defines the following functions; each enters the debugger in a "
+"slightly different way:"
 msgstr ""
 
-msgid "Execute the *statement* (given as a string or a code object) under debugger control.  The debugger prompt appears before any code is executed; you can set breakpoints and type :pdbcmd:`continue`, or you can step through the statement using :pdbcmd:`step` or :pdbcmd:`next` (all these commands are explained below).  The optional *globals* and *locals* arguments specify the environment in which the code is executed; by default the dictionary of the module :mod:`__main__` is used.  (See the explanation of the built-in :func:`exec` or :func:`eval` functions.)"
+#: ../../library/pdb.rst:169
+msgid ""
+"Execute the *statement* (given as a string or a code object) under debugger "
+"control.  The debugger prompt appears before any code is executed; you can "
+"set breakpoints and type :pdbcmd:`continue`, or you can step through the "
+"statement using :pdbcmd:`step` or :pdbcmd:`next` (all these commands are "
+"explained below).  The optional *globals* and *locals* arguments specify the "
+"environment in which the code is executed; by default the dictionary of the "
+"module :mod:`__main__` is used.  (See the explanation of the built-"
+"in :func:`exec` or :func:`eval` functions.)"
 msgstr ""
 
-msgid "Evaluate the *expression* (given as a string or a code object) under debugger control.  When :func:`runeval` returns, it returns the value of the *expression*.  Otherwise this function is similar to :func:`run`."
+#: ../../library/pdb.rst:181
+msgid ""
+"Evaluate the *expression* (given as a string or a code object) under "
+"debugger control.  When :func:`runeval` returns, it returns the value of the "
+"*expression*.  Otherwise this function is similar to :func:`run`."
 msgstr ""
 
-msgid "Call the *function* (a function or method object, not a string) with the given arguments.  When :func:`runcall` returns, it returns whatever the function call returned.  The debugger prompt appears as soon as the function is entered."
+#: ../../library/pdb.rst:188
+msgid ""
+"Call the *function* (a function or method object, not a string) with the "
+"given arguments.  When :func:`runcall` returns, it returns whatever the "
+"function call returned.  The debugger prompt appears as soon as the function "
+"is entered."
 msgstr ""
 
-msgid "Enter the debugger at the calling stack frame.  This is useful to hard-code a breakpoint at a given point in a program, even if the code is not otherwise being debugged (e.g. when an assertion fails).  If given, *header* is printed to the console just before debugging begins. The *commands* argument, if given, is a list of commands to execute when the debugger starts."
+#: ../../library/pdb.rst:196
+msgid ""
+"Enter the debugger at the calling stack frame.  This is useful to hard-code "
+"a breakpoint at a given point in a program, even if the code is not "
+"otherwise being debugged (e.g. when an assertion fails).  If given, *header* "
+"is printed to the console just before debugging begins. The *commands* "
+"argument, if given, is a list of commands to execute when the debugger "
+"starts."
 msgstr ""
 
+#: ../../library/pdb.rst:204
 msgid "The keyword-only argument *header*."
 msgstr ""
 
-msgid ":func:`set_trace` will enter the debugger immediately, rather than on the next line of code to be executed."
+#: ../../library/pdb.rst:207
+msgid ""
+":func:`set_trace` will enter the debugger immediately, rather than on the "
+"next line of code to be executed."
 msgstr ""
 
+#: ../../library/pdb.rst:211
 msgid "The *commands* argument."
 msgstr ""
 
-msgid "async version of :func:`set_trace`. This function should be used inside an async function with :keyword:`await`."
+#: ../../library/pdb.rst:217
+msgid ""
+"async version of :func:`set_trace`. This function should be used inside an "
+"async function with :keyword:`await`."
 msgstr ""
 
+#: ../../library/pdb.rst:220
 msgid ""
 "async def f():\n"
 "    await pdb.set_trace_async()"
 msgstr ""
 
-msgid ":keyword:`await` statements are supported if the debugger is invoked by this function."
+#: ../../library/pdb.rst:225
+msgid ""
+":keyword:`await` statements are supported if the debugger is invoked by this "
+"function."
 msgstr ""
 
-msgid "Enter post-mortem debugging of the given exception or :ref:`traceback object <traceback-objects>`. If no value is given, it uses the exception that is currently being handled, or raises ``ValueError`` if there isn’t one."
+#: ../../library/pdb.rst:231
+msgid ""
+"Enter post-mortem debugging of the given exception or :ref:`traceback object "
+"<traceback-objects>`. If no value is given, it uses the exception that is "
+"currently being handled, or raises ``ValueError`` if there isn’t one."
 msgstr ""
 
+#: ../../library/pdb.rst:236
 msgid "Support for exception objects was added."
 msgstr ""
 
-msgid "Enter post-mortem debugging of the exception found in :data:`sys.last_exc`."
+#: ../../library/pdb.rst:241
+msgid ""
+"Enter post-mortem debugging of the exception found in :data:`sys.last_exc`."
 msgstr ""
 
-msgid "There are two supported backends for pdb: ``'settrace'`` and ``'monitoring'``. See :class:`bdb.Bdb` for details. The user can set the default backend to use if none is specified when instantiating :class:`Pdb`. If no backend is specified, the default is ``'settrace'``."
+#: ../../library/pdb.rst:246
+msgid ""
+"There are two supported backends for pdb: ``'settrace'`` and "
+"``'monitoring'``. See :class:`bdb.Bdb` for details. The user can set the "
+"default backend to use if none is specified when instantiating :class:`Pdb`. "
+"If no backend is specified, the default is ``'settrace'``."
 msgstr ""
 
-msgid ":func:`breakpoint` and :func:`set_trace` will not be affected by this function. They always use ``'monitoring'`` backend."
+#: ../../library/pdb.rst:253
+msgid ""
+":func:`breakpoint` and :func:`set_trace` will not be affected by this "
+"function. They always use ``'monitoring'`` backend."
 msgstr ""
 
+#: ../../library/pdb.rst:260
 msgid "Returns the default backend for pdb."
 msgstr ""
 
-msgid "The ``run*`` functions and :func:`set_trace` are aliases for instantiating the :class:`Pdb` class and calling the method of the same name.  If you want to access further features, you have to do this yourself:"
+#: ../../library/pdb.rst:264
+msgid ""
+"The ``run*`` functions and :func:`set_trace` are aliases for instantiating "
+"the :class:`Pdb` class and calling the method of the same name.  If you want "
+"to access further features, you have to do this yourself:"
 msgstr ""
 
+#: ../../library/pdb.rst:271
 msgid ":class:`Pdb` is the debugger class."
 msgstr ""
 
-msgid "The *completekey*, *stdin* and *stdout* arguments are passed to the underlying :class:`cmd.Cmd` class; see the description there."
+#: ../../library/pdb.rst:273
+msgid ""
+"The *completekey*, *stdin* and *stdout* arguments are passed to the "
+"underlying :class:`cmd.Cmd` class; see the description there."
 msgstr ""
 
-msgid "The *skip* argument, if given, must be an iterable of glob-style module name patterns.  The debugger will not step into frames that originate in a module that matches one of these patterns. [1]_"
+#: ../../library/pdb.rst:276
+msgid ""
+"The *skip* argument, if given, must be an iterable of glob-style module name "
+"patterns.  The debugger will not step into frames that originate in a module "
+"that matches one of these patterns. [1]_"
 msgstr ""
 
-msgid "By default, Pdb sets a handler for the SIGINT signal (which is sent when the user presses :kbd:`Ctrl-C` on the console) when you give a :pdbcmd:`continue` command. This allows you to break into the debugger again by pressing :kbd:`Ctrl-C`.  If you want Pdb not to touch the SIGINT handler, set *nosigint* to true."
+#: ../../library/pdb.rst:280
+msgid ""
+"By default, Pdb sets a handler for the SIGINT signal (which is sent when the "
+"user presses :kbd:`Ctrl-C` on the console) when you give "
+"a :pdbcmd:`continue` command. This allows you to break into the debugger "
+"again by pressing :kbd:`Ctrl-C`.  If you want Pdb not to touch the SIGINT "
+"handler, set *nosigint* to true."
 msgstr ""
 
-msgid "The *readrc* argument defaults to true and controls whether Pdb will load .pdbrc files from the filesystem."
+#: ../../library/pdb.rst:285
+msgid ""
+"The *readrc* argument defaults to true and controls whether Pdb will "
+"load .pdbrc files from the filesystem."
 msgstr ""
 
-msgid "The *mode* argument specifies how the debugger was invoked. It impacts the workings of some debugger commands. Valid values are ``'inline'`` (used by the breakpoint() builtin), ``'cli'`` (used by the command line invocation) or ``None`` (for backwards compatible behaviour, as before the *mode* argument was added)."
+#: ../../library/pdb.rst:288
+msgid ""
+"The *mode* argument specifies how the debugger was invoked. It impacts the "
+"workings of some debugger commands. Valid values are ``'inline'`` (used by "
+"the breakpoint() builtin), ``'cli'`` (used by the command line invocation) "
+"or ``None`` (for backwards compatible behaviour, as before the *mode* "
+"argument was added)."
 msgstr ""
 
-msgid "The *backend* argument specifies the backend to use for the debugger. If ``None`` is passed, the default backend will be used. See :func:`set_default_backend`. Otherwise the supported backends are ``'settrace'`` and ``'monitoring'``."
+#: ../../library/pdb.rst:295
+msgid ""
+"The *backend* argument specifies the backend to use for the debugger. If "
+"``None`` is passed, the default backend will be used. "
+"See :func:`set_default_backend`. Otherwise the supported backends are "
+"``'settrace'`` and ``'monitoring'``."
 msgstr ""
 
-msgid "The *colorize* argument, if set to ``True``, will enable colorized output in the debugger, if color is supported. This will highlight source code displayed in pdb."
+#: ../../library/pdb.rst:299
+msgid ""
+"The *colorize* argument, if set to ``True``, will enable colorized output in "
+"the debugger, if color is supported. This will highlight source code "
+"displayed in pdb."
 msgstr ""
 
+#: ../../library/pdb.rst:302
 msgid "Example call to enable tracing with *skip*::"
 msgstr ""
 
+#: ../../library/pdb.rst:304
 msgid "import pdb; pdb.Pdb(skip=['django.*']).set_trace()"
 msgstr ""
 
-msgid "Raises an :ref:`auditing event <auditing>` ``pdb.Pdb`` with no arguments."
+#: ../../library/pdb.rst:306
+msgid ""
+"Raises an :ref:`auditing event <auditing>` ``pdb.Pdb`` with no arguments."
 msgstr ""
 
+#: ../../library/pdb.rst:308
 msgid "Added the *skip* parameter."
 msgstr ""
 
-msgid "Added the *nosigint* parameter. Previously, a SIGINT handler was never set by Pdb."
+#: ../../library/pdb.rst:311
+msgid ""
+"Added the *nosigint* parameter. Previously, a SIGINT handler was never set "
+"by Pdb."
 msgstr ""
 
+#: ../../library/pdb.rst:315
 msgid "The *readrc* argument."
 msgstr ""
 
+#: ../../library/pdb.rst:318
 msgid "Added the *mode* argument."
 msgstr ""
 
+#: ../../library/pdb.rst:321
 msgid "Added the *backend* argument."
 msgstr ""
 
+#: ../../library/pdb.rst:324
 msgid "Added the *colorize* argument."
 msgstr ""
 
-msgid "Inline breakpoints like :func:`breakpoint` or :func:`pdb.set_trace` will always stop the program at calling frame, ignoring the *skip* pattern (if any)."
+#: ../../library/pdb.rst:327
+msgid ""
+"Inline breakpoints like :func:`breakpoint` or :func:`pdb.set_trace` will "
+"always stop the program at calling frame, ignoring the *skip* pattern (if "
+"any)."
 msgstr ""
 
+#: ../../library/pdb.rst:336
 msgid "See the documentation for the functions explained above."
 msgstr ""
 
+#: ../../library/pdb.rst:342
 msgid "Debugger commands"
 msgstr ""
 
-msgid "The commands recognized by the debugger are listed below.  Most commands can be abbreviated to one or two letters as indicated; e.g. ``h(elp)`` means that either ``h`` or ``help`` can be used to enter the help command (but not ``he`` or ``hel``, nor ``H`` or ``Help`` or ``HELP``).  Arguments to commands must be separated by whitespace (spaces or tabs).  Optional arguments are enclosed in square brackets (``[]``) in the command syntax; the square brackets must not be typed.  Alternatives in the command syntax are separated by a vertical bar (``|``)."
+#: ../../library/pdb.rst:344
+msgid ""
+"The commands recognized by the debugger are listed below.  Most commands can "
+"be abbreviated to one or two letters as indicated; e.g. ``h(elp)`` means "
+"that either ``h`` or ``help`` can be used to enter the help command (but not "
+"``he`` or ``hel``, nor ``H`` or ``Help`` or ``HELP``).  Arguments to "
+"commands must be separated by whitespace (spaces or tabs).  Optional "
+"arguments are enclosed in square brackets (``[]``) in the command syntax; "
+"the square brackets must not be typed.  Alternatives in the command syntax "
+"are separated by a vertical bar (``|``)."
 msgstr ""
 
-msgid "Entering a blank line repeats the last command entered.  Exception: if the last command was a :pdbcmd:`list` command, the next 11 lines are listed."
+#: ../../library/pdb.rst:353
+msgid ""
+"Entering a blank line repeats the last command entered.  Exception: if the "
+"last command was a :pdbcmd:`list` command, the next 11 lines are listed."
 msgstr ""
 
-msgid "Commands that the debugger doesn't recognize are assumed to be Python statements and are executed in the context of the program being debugged.  Python statements can also be prefixed with an exclamation point (``!``).  This is a powerful way to inspect the program being debugged; it is even possible to change a variable or call a function.  When an exception occurs in such a statement, the exception name is printed but the debugger's state is not changed."
+#: ../../library/pdb.rst:356
+msgid ""
+"Commands that the debugger doesn't recognize are assumed to be Python "
+"statements and are executed in the context of the program being debugged.  "
+"Python statements can also be prefixed with an exclamation point (``!``).  "
+"This is a powerful way to inspect the program being debugged; it is even "
+"possible to change a variable or call a function.  When an exception occurs "
+"in such a statement, the exception name is printed but the debugger's state "
+"is not changed."
 msgstr ""
 
-msgid "Expressions/Statements whose prefix is a pdb command are now correctly identified and executed."
+#: ../../library/pdb.rst:364
+msgid ""
+"Expressions/Statements whose prefix is a pdb command are now correctly "
+"identified and executed."
 msgstr ""
 
-msgid "The debugger supports :ref:`aliases <debugger-aliases>`.  Aliases can have parameters which allows one a certain level of adaptability to the context under examination."
+#: ../../library/pdb.rst:368
+msgid ""
+"The debugger supports :ref:`aliases <debugger-aliases>`.  Aliases can have "
+"parameters which allows one a certain level of adaptability to the context "
+"under examination."
 msgstr ""
 
-msgid "Multiple commands may be entered on a single line, separated by ``;;``.  (A single ``;`` is not used as it is the separator for multiple commands in a line that is passed to the Python parser.)  No intelligence is applied to separating the commands; the input is split at the first ``;;`` pair, even if it is in the middle of a quoted string. A workaround for strings with double semicolons is to use implicit string concatenation ``';'';'`` or ``\";\"\";\"``."
+#: ../../library/pdb.rst:372
+msgid ""
+"Multiple commands may be entered on a single line, separated by ``;;``.  (A "
+"single ``;`` is not used as it is the separator for multiple commands in a "
+"line that is passed to the Python parser.)  No intelligence is applied to "
+"separating the commands; the input is split at the first ``;;`` pair, even "
+"if it is in the middle of a quoted string. A workaround for strings with "
+"double semicolons is to use implicit string concatenation ``';'';'`` or ``\";"
+"\"\";\"``."
 msgstr ""
 
-msgid "To set a temporary global variable, use a *convenience variable*. A *convenience variable* is a variable whose name starts with ``$``.  For example, ``$foo = 1`` sets a global variable ``$foo`` which you can use in the debugger session.  The *convenience variables* are cleared when the program resumes execution so it's less likely to interfere with your program compared to using normal variables like ``foo = 1``."
+#: ../../library/pdb.rst:379
+msgid ""
+"To set a temporary global variable, use a *convenience variable*. A "
+"*convenience variable* is a variable whose name starts with ``$``.  For "
+"example, ``$foo = 1`` sets a global variable ``$foo`` which you can use in "
+"the debugger session.  The *convenience variables* are cleared when the "
+"program resumes execution so it's less likely to interfere with your program "
+"compared to using normal variables like ``foo = 1``."
 msgstr ""
 
+#: ../../library/pdb.rst:386
 msgid "There are four preset *convenience variables*:"
 msgstr ""
 
+#: ../../library/pdb.rst:388
 msgid "``$_frame``: the current frame you are debugging"
 msgstr ""
 
+#: ../../library/pdb.rst:389
 msgid "``$_retval``: the return value if the frame is returning"
 msgstr ""
 
+#: ../../library/pdb.rst:390
 msgid "``$_exception``: the exception if the frame is raising an exception"
 msgstr ""
 
+#: ../../library/pdb.rst:391
 msgid "``$_asynctask``: the asyncio task if pdb stops in an async function"
 msgstr ""
 
+#: ../../library/pdb.rst:395
 msgid "Added the *convenience variable* feature."
 msgstr ""
 
+#: ../../library/pdb.rst:397
 msgid "Added the ``$_asynctask`` convenience variable."
 msgstr ""
 
-msgid "If a file :file:`.pdbrc` exists in the user's home directory or in the current directory, it is read with ``'utf-8'`` encoding and executed as if it had been typed at the debugger prompt, with the exception that empty lines and lines starting with ``#`` are ignored.  This is particularly useful for aliases.  If both files exist, the one in the home directory is read first and aliases defined there can be overridden by the local file."
+#: ../../library/pdb.rst:404
+msgid ""
+"If a file :file:`.pdbrc` exists in the user's home directory or in the "
+"current directory, it is read with ``'utf-8'`` encoding and executed as if "
+"it had been typed at the debugger prompt, with the exception that empty "
+"lines and lines starting with ``#`` are ignored.  This is particularly "
+"useful for aliases.  If both files exist, the one in the home directory is "
+"read first and aliases defined there can be overridden by the local file."
 msgstr ""
 
-msgid ":file:`.pdbrc` can now contain commands that continue debugging, such as :pdbcmd:`continue` or :pdbcmd:`next`.  Previously, these commands had no effect."
+#: ../../library/pdb.rst:411
+msgid ""
+":file:`.pdbrc` can now contain commands that continue debugging, such "
+"as :pdbcmd:`continue` or :pdbcmd:`next`.  Previously, these commands had no "
+"effect."
 msgstr ""
 
-msgid ":file:`.pdbrc` is now read with ``'utf-8'`` encoding. Previously, it was read with the system locale encoding."
+#: ../../library/pdb.rst:416
+msgid ""
+":file:`.pdbrc` is now read with ``'utf-8'`` encoding. Previously, it was "
+"read with the system locale encoding."
 msgstr ""
 
-msgid "Without argument, print the list of available commands.  With a *command* as argument, print help about that command.  ``help pdb`` displays the full documentation (the docstring of the :mod:`pdb` module).  Since the *command* argument must be an identifier, ``help exec`` must be entered to get help on the ``!`` command."
+#: ../../library/pdb.rst:423
+msgid ""
+"Without argument, print the list of available commands.  With a *command* as "
+"argument, print help about that command.  ``help pdb`` displays the full "
+"documentation (the docstring of the :mod:`pdb` module).  Since the *command* "
+"argument must be an identifier, ``help exec`` must be entered to get help on "
+"the ``!`` command."
 msgstr ""
 
-msgid "Print a stack trace, with the most recent frame at the bottom.  if *count* is 0, print the current frame entry. If *count* is negative, print the least recent - *count* frames. If *count* is positive, print the most recent *count* frames.  An arrow (``>``) indicates the current frame, which determines the context of most commands."
+#: ../../library/pdb.rst:431
+msgid ""
+"Print a stack trace, with the most recent frame at the bottom.  if *count* "
+"is 0, print the current frame entry. If *count* is negative, print the least "
+"recent - *count* frames. If *count* is positive, print the most recent "
+"*count* frames.  An arrow (``>``) indicates the current frame, which "
+"determines the context of most commands."
 msgstr ""
 
+#: ../../library/pdb.rst:437
 msgid "*count* argument is added."
 msgstr ""
 
-msgid "Move the current frame *count* (default one) levels down in the stack trace (to a newer frame)."
+#: ../../library/pdb.rst:442
+msgid ""
+"Move the current frame *count* (default one) levels down in the stack trace "
+"(to a newer frame)."
 msgstr ""
 
-msgid "Move the current frame *count* (default one) levels up in the stack trace (to an older frame)."
+#: ../../library/pdb.rst:447
+msgid ""
+"Move the current frame *count* (default one) levels up in the stack trace "
+"(to an older frame)."
 msgstr ""
 
-msgid "With a *lineno* argument, set a break at line *lineno* in the current file. The line number may be prefixed with a *filename* and a colon, to specify a breakpoint in another file (possibly one that hasn't been loaded yet).  The file is searched on :data:`sys.path`.  Acceptable forms of *filename* are ``/abspath/to/file.py``, ``relpath/file.py``, ``module`` and ``package.module``."
+#: ../../library/pdb.rst:452
+msgid ""
+"With a *lineno* argument, set a break at line *lineno* in the current file. "
+"The line number may be prefixed with a *filename* and a colon, to specify a "
+"breakpoint in another file (possibly one that hasn't been loaded yet).  The "
+"file is searched on :data:`sys.path`.  Acceptable forms of *filename* are ``/"
+"abspath/to/file.py``, ``relpath/file.py``, ``module`` and ``package.module``."
 msgstr ""
 
-msgid "With a *function* argument, set a break at the first executable statement within that function. *function* can be any expression that evaluates to a function in the current namespace."
+#: ../../library/pdb.rst:459
+msgid ""
+"With a *function* argument, set a break at the first executable statement "
+"within that function. *function* can be any expression that evaluates to a "
+"function in the current namespace."
 msgstr ""
 
-msgid "If a second argument is present, it is an expression which must evaluate to true before the breakpoint is honored."
+#: ../../library/pdb.rst:463
+msgid ""
+"If a second argument is present, it is an expression which must evaluate to "
+"true before the breakpoint is honored."
 msgstr ""
 
-msgid "Without argument, list all breaks, including for each breakpoint, the number of times that breakpoint has been hit, the current ignore count, and the associated condition if any."
+#: ../../library/pdb.rst:466
+msgid ""
+"Without argument, list all breaks, including for each breakpoint, the number "
+"of times that breakpoint has been hit, the current ignore count, and the "
+"associated condition if any."
 msgstr ""
 
-msgid "Each breakpoint is assigned a number to which all the other breakpoint commands refer."
+#: ../../library/pdb.rst:470
+msgid ""
+"Each breakpoint is assigned a number to which all the other breakpoint "
+"commands refer."
 msgstr ""
 
-msgid "Temporary breakpoint, which is removed automatically when it is first hit. The arguments are the same as for :pdbcmd:`break`."
+#: ../../library/pdb.rst:475
+msgid ""
+"Temporary breakpoint, which is removed automatically when it is first hit. "
+"The arguments are the same as for :pdbcmd:`break`."
 msgstr ""
 
-msgid "With a *filename:lineno* argument, clear all the breakpoints at this line. With a space separated list of breakpoint numbers, clear those breakpoints. Without argument, clear all breaks (but first ask confirmation)."
+#: ../../library/pdb.rst:480
+msgid ""
+"With a *filename:lineno* argument, clear all the breakpoints at this line. "
+"With a space separated list of breakpoint numbers, clear those breakpoints. "
+"Without argument, clear all breaks (but first ask confirmation)."
 msgstr ""
 
-msgid "Disable the breakpoints given as a space separated list of breakpoint numbers.  Disabling a breakpoint means it cannot cause the program to stop execution, but unlike clearing a breakpoint, it remains in the list of breakpoints and can be (re-)enabled."
+#: ../../library/pdb.rst:486
+msgid ""
+"Disable the breakpoints given as a space separated list of breakpoint "
+"numbers.  Disabling a breakpoint means it cannot cause the program to stop "
+"execution, but unlike clearing a breakpoint, it remains in the list of "
+"breakpoints and can be (re-)enabled."
 msgstr ""
 
+#: ../../library/pdb.rst:493
 msgid "Enable the breakpoints specified."
 msgstr ""
 
-msgid "Set the ignore count for the given breakpoint number.  If *count* is omitted, the ignore count is set to 0.  A breakpoint becomes active when the ignore count is zero.  When non-zero, the *count* is decremented each time the breakpoint is reached and the breakpoint is not disabled and any associated condition evaluates to true."
+#: ../../library/pdb.rst:497
+msgid ""
+"Set the ignore count for the given breakpoint number.  If *count* is "
+"omitted, the ignore count is set to 0.  A breakpoint becomes active when the "
+"ignore count is zero.  When non-zero, the *count* is decremented each time "
+"the breakpoint is reached and the breakpoint is not disabled and any "
+"associated condition evaluates to true."
 msgstr ""
 
-msgid "Set a new *condition* for the breakpoint, an expression which must evaluate to true before the breakpoint is honored.  If *condition* is absent, any existing condition is removed; i.e., the breakpoint is made unconditional."
+#: ../../library/pdb.rst:505
+msgid ""
+"Set a new *condition* for the breakpoint, an expression which must evaluate "
+"to true before the breakpoint is honored.  If *condition* is absent, any "
+"existing condition is removed; i.e., the breakpoint is made unconditional."
 msgstr ""
 
-msgid "Specify a list of commands for breakpoint number *bpnumber*.  The commands themselves appear on the following lines.  Type a line containing just ``end`` to terminate the commands. An example::"
+#: ../../library/pdb.rst:511
+msgid ""
+"Specify a list of commands for breakpoint number *bpnumber*.  The commands "
+"themselves appear on the following lines.  Type a line containing just "
+"``end`` to terminate the commands. An example::"
 msgstr ""
 
+#: ../../library/pdb.rst:515
 msgid ""
 "(Pdb) commands 1\n"
 "(com) p some_variable\n"
@@ -386,93 +704,180 @@ msgid ""
 "(Pdb)"
 msgstr ""
 
-msgid "To remove all commands from a breakpoint, type ``commands`` and follow it immediately with ``end``; that is, give no commands."
+#: ../../library/pdb.rst:520
+msgid ""
+"To remove all commands from a breakpoint, type ``commands`` and follow it "
+"immediately with ``end``; that is, give no commands."
 msgstr ""
 
-msgid "With no *bpnumber* argument, ``commands`` refers to the last breakpoint set."
+#: ../../library/pdb.rst:523
+msgid ""
+"With no *bpnumber* argument, ``commands`` refers to the last breakpoint set."
 msgstr ""
 
-msgid "You can use breakpoint commands to start your program up again.  Simply use the :pdbcmd:`continue` command, or :pdbcmd:`step`, or any other command that resumes execution."
+#: ../../library/pdb.rst:525
+msgid ""
+"You can use breakpoint commands to start your program up again.  Simply use "
+"the :pdbcmd:`continue` command, or :pdbcmd:`step`, or any other command that "
+"resumes execution."
 msgstr ""
 
-msgid "Specifying any command resuming execution (currently :pdbcmd:`continue`, :pdbcmd:`step`, :pdbcmd:`next`, :pdbcmd:`return`, :pdbcmd:`until`, :pdbcmd:`jump`, :pdbcmd:`quit` and their abbreviations) terminates the command list (as if that command was immediately followed by end). This is because any time you resume execution (even with a simple next or step), you may encounter another breakpoint—which could have its own command list, leading to ambiguities about which list to execute."
+#: ../../library/pdb.rst:529
+msgid ""
+"Specifying any command resuming execution "
+"(currently :pdbcmd:`continue`, :pdbcmd:`step`, :pdbcmd:`next`, :pdbcmd:`return`, :pdbcmd:`until`, :pdbcmd:`jump`, :pdbcmd:`quit` "
+"and their abbreviations) terminates the command list (as if that command was "
+"immediately followed by end). This is because any time you resume execution "
+"(even with a simple next or step), you may encounter another breakpoint—"
+"which could have its own command list, leading to ambiguities about which "
+"list to execute."
 msgstr ""
 
-msgid "If the list of commands contains the ``silent`` command, or a command that resumes execution, then the breakpoint message containing information about the frame is not displayed."
+#: ../../library/pdb.rst:538
+msgid ""
+"If the list of commands contains the ``silent`` command, or a command that "
+"resumes execution, then the breakpoint message containing information about "
+"the frame is not displayed."
 msgstr ""
 
-msgid "Frame information will not be displayed if a command that resumes execution is present in the command list."
+#: ../../library/pdb.rst:542
+msgid ""
+"Frame information will not be displayed if a command that resumes execution "
+"is present in the command list."
 msgstr ""
 
-msgid "Execute the current line, stop at the first possible occasion (either in a function that is called or on the next line in the current function)."
+#: ../../library/pdb.rst:548
+msgid ""
+"Execute the current line, stop at the first possible occasion (either in a "
+"function that is called or on the next line in the current function)."
 msgstr ""
 
-msgid "Continue execution until the next line in the current function is reached or it returns.  (The difference between :pdbcmd:`next` and :pdbcmd:`step` is that :pdbcmd:`step` stops inside a called function, while :pdbcmd:`next` executes called functions at (nearly) full speed, only stopping at the next line in the current function.)"
+#: ../../library/pdb.rst:553
+msgid ""
+"Continue execution until the next line in the current function is reached or "
+"it returns.  (The difference between :pdbcmd:`next` and :pdbcmd:`step` is "
+"that :pdbcmd:`step` stops inside a called function, while :pdbcmd:`next` "
+"executes called functions at (nearly) full speed, only stopping at the next "
+"line in the current function.)"
 msgstr ""
 
-msgid "Without argument, continue execution until the line with a number greater than the current one is reached."
+#: ../../library/pdb.rst:561
+msgid ""
+"Without argument, continue execution until the line with a number greater "
+"than the current one is reached."
 msgstr ""
 
-msgid "With *lineno*, continue execution until a line with a number greater or equal to *lineno* is reached.  In both cases, also stop when the current frame returns."
+#: ../../library/pdb.rst:564
+msgid ""
+"With *lineno*, continue execution until a line with a number greater or "
+"equal to *lineno* is reached.  In both cases, also stop when the current "
+"frame returns."
 msgstr ""
 
+#: ../../library/pdb.rst:568
 msgid "Allow giving an explicit line number."
 msgstr ""
 
+#: ../../library/pdb.rst:573
 msgid "Continue execution until the current function returns."
 msgstr ""
 
+#: ../../library/pdb.rst:577
 msgid "Continue execution, only stop when a breakpoint is encountered."
 msgstr ""
 
-msgid "Set the next line that will be executed.  Only available in the bottom-most frame.  This lets you jump back and execute code again, or jump forward to skip code that you don't want to run."
+#: ../../library/pdb.rst:581
+msgid ""
+"Set the next line that will be executed.  Only available in the bottom-most "
+"frame.  This lets you jump back and execute code again, or jump forward to "
+"skip code that you don't want to run."
 msgstr ""
 
-msgid "It should be noted that not all jumps are allowed -- for instance it is not possible to jump into the middle of a :keyword:`for` loop or out of a :keyword:`finally` clause."
+#: ../../library/pdb.rst:585
+msgid ""
+"It should be noted that not all jumps are allowed -- for instance it is not "
+"possible to jump into the middle of a :keyword:`for` loop or out of "
+"a :keyword:`finally` clause."
 msgstr ""
 
-msgid "List source code for the current file.  Without arguments, list 11 lines around the current line or continue the previous listing.  With ``.`` as argument, list 11 lines around the current line.  With one argument, list 11 lines around at that line.  With two arguments, list the given range; if the second argument is less than the first, it is interpreted as a count."
+#: ../../library/pdb.rst:591
+msgid ""
+"List source code for the current file.  Without arguments, list 11 lines "
+"around the current line or continue the previous listing.  With ``.`` as "
+"argument, list 11 lines around the current line.  With one argument, list 11 "
+"lines around at that line.  With two arguments, list the given range; if the "
+"second argument is less than the first, it is interpreted as a count."
 msgstr ""
 
-msgid "The current line in the current frame is indicated by ``->``.  If an exception is being debugged, the line where the exception was originally raised or propagated is indicated by ``>>``, if it differs from the current line."
+#: ../../library/pdb.rst:597
+msgid ""
+"The current line in the current frame is indicated by ``->``.  If an "
+"exception is being debugged, the line where the exception was originally "
+"raised or propagated is indicated by ``>>``, if it differs from the current "
+"line."
 msgstr ""
 
+#: ../../library/pdb.rst:602
 msgid "Added the ``>>`` marker."
 msgstr ""
 
-msgid "List all source code for the current function or frame.  Interesting lines are marked as for :pdbcmd:`list`."
+#: ../../library/pdb.rst:607
+msgid ""
+"List all source code for the current function or frame.  Interesting lines "
+"are marked as for :pdbcmd:`list`."
 msgstr ""
 
+#: ../../library/pdb.rst:614
 msgid "Print the arguments of the current function and their current values."
 msgstr ""
 
+#: ../../library/pdb.rst:618
 msgid "Evaluate *expression* in the current context and print its value."
 msgstr ""
 
-msgid "``print()`` can also be used, but is not a debugger command --- this executes the Python :func:`print` function."
+#: ../../library/pdb.rst:622
+msgid ""
+"``print()`` can also be used, but is not a debugger command --- this "
+"executes the Python :func:`print` function."
 msgstr ""
 
-msgid "Like the :pdbcmd:`p` command, except the value of *expression* is pretty-printed using the :mod:`pprint` module."
+#: ../../library/pdb.rst:628
+msgid ""
+"Like the :pdbcmd:`p` command, except the value of *expression* is pretty-"
+"printed using the :mod:`pprint` module."
 msgstr ""
 
+#: ../../library/pdb.rst:633
 msgid "Print the type of *expression*."
 msgstr ""
 
+#: ../../library/pdb.rst:637
 msgid "Try to get source code of *expression* and display it."
 msgstr ""
 
-msgid "Display the value of *expression* if it changed, each time execution stops in the current frame."
+#: ../../library/pdb.rst:643
+msgid ""
+"Display the value of *expression* if it changed, each time execution stops "
+"in the current frame."
 msgstr ""
 
-msgid "Without *expression*, list all display expressions for the current frame."
+#: ../../library/pdb.rst:646
+msgid ""
+"Without *expression*, list all display expressions for the current frame."
 msgstr ""
 
-msgid "Display evaluates *expression* and compares to the result of the previous evaluation of *expression*, so when the result is mutable, display may not be able to pick up the changes."
+#: ../../library/pdb.rst:650
+msgid ""
+"Display evaluates *expression* and compares to the result of the previous "
+"evaluation of *expression*, so when the result is mutable, display may not "
+"be able to pick up the changes."
 msgstr ""
 
+#: ../../library/pdb.rst:654 ../../library/pdb.rst:819
 msgid "Example::"
 msgstr ""
 
+#: ../../library/pdb.rst:656
 msgid ""
 "lst = []\n"
 "breakpoint()\n"
@@ -481,9 +886,13 @@ msgid ""
 "print(lst)"
 msgstr ""
 
-msgid "Display won't realize ``lst`` has been changed because the result of evaluation is modified in place by ``lst.append(1)`` before being compared::"
+#: ../../library/pdb.rst:662
+msgid ""
+"Display won't realize ``lst`` has been changed because the result of "
+"evaluation is modified in place by ``lst.append(1)`` before being compared::"
 msgstr ""
 
+#: ../../library/pdb.rst:665
 msgid ""
 "> example.py(3)<module>()\n"
 "-> pass\n"
@@ -498,9 +907,11 @@ msgid ""
 "(Pdb)"
 msgstr ""
 
+#: ../../library/pdb.rst:677
 msgid "You can do some tricks with copy mechanism to make it work::"
 msgstr ""
 
+#: ../../library/pdb.rst:679
 msgid ""
 "> example.py(3)<module>()\n"
 "-> pass\n"
@@ -516,30 +927,64 @@ msgid ""
 "(Pdb)"
 msgstr ""
 
-msgid "Do not display *expression* anymore in the current frame.  Without *expression*, clear all display expressions for the current frame."
+#: ../../library/pdb.rst:696
+msgid ""
+"Do not display *expression* anymore in the current frame.  Without "
+"*expression*, clear all display expressions for the current frame."
 msgstr ""
 
-msgid "Start an interactive interpreter (using the :mod:`code` module) in a new global namespace initialised from the local and global namespaces for the current scope. Use ``exit()`` or ``quit()`` to exit the interpreter and return to the debugger."
+#: ../../library/pdb.rst:703
+msgid ""
+"Start an interactive interpreter (using the :mod:`code` module) in a new "
+"global namespace initialised from the local and global namespaces for the "
+"current scope. Use ``exit()`` or ``quit()`` to exit the interpreter and "
+"return to the debugger."
 msgstr ""
 
-msgid "As ``interact`` creates a new dedicated namespace for code execution, assignments to variables will not affect the original namespaces. However, modifications to any referenced mutable objects will be reflected in the original namespaces as usual."
+#: ../../library/pdb.rst:710
+msgid ""
+"As ``interact`` creates a new dedicated namespace for code execution, "
+"assignments to variables will not affect the original namespaces. However, "
+"modifications to any referenced mutable objects will be reflected in the "
+"original namespaces as usual."
 msgstr ""
 
-msgid "``exit()`` and ``quit()`` can be used to exit the :pdbcmd:`interact` command."
+#: ../../library/pdb.rst:717
+msgid ""
+"``exit()`` and ``quit()`` can be used to exit the :pdbcmd:`interact` command."
 msgstr ""
 
-msgid ":pdbcmd:`interact` directs its output to the debugger's output channel rather than :data:`sys.stderr`."
+#: ../../library/pdb.rst:721
+msgid ""
+":pdbcmd:`interact` directs its output to the debugger's output channel "
+"rather than :data:`sys.stderr`."
 msgstr ""
 
-msgid "Create an alias called *name* that executes *command*.  The *command* must *not* be enclosed in quotes.  Replaceable parameters can be indicated by ``%1``, ``%2``, ... and ``%9``, while ``%*`` is replaced by all the parameters. If *command* is omitted, the current alias for *name* is shown. If no arguments are given, all aliases are listed."
+#: ../../library/pdb.rst:729
+msgid ""
+"Create an alias called *name* that executes *command*.  The *command* must "
+"*not* be enclosed in quotes.  Replaceable parameters can be indicated by "
+"``%1``, ``%2``, ... and ``%9``, while ``%*`` is replaced by all the "
+"parameters. If *command* is omitted, the current alias for *name* is shown. "
+"If no arguments are given, all aliases are listed."
 msgstr ""
 
-msgid "Aliases may be nested and can contain anything that can be legally typed at the pdb prompt.  Note that internal pdb commands *can* be overridden by aliases.  Such a command is then hidden until the alias is removed.  Aliasing is recursively applied to the first word of the command line; all other words in the line are left alone."
+#: ../../library/pdb.rst:735
+msgid ""
+"Aliases may be nested and can contain anything that can be legally typed at "
+"the pdb prompt.  Note that internal pdb commands *can* be overridden by "
+"aliases.  Such a command is then hidden until the alias is removed.  "
+"Aliasing is recursively applied to the first word of the command line; all "
+"other words in the line are left alone."
 msgstr ""
 
-msgid "As an example, here are two useful aliases (especially when placed in the :file:`.pdbrc` file)::"
+#: ../../library/pdb.rst:741
+msgid ""
+"As an example, here are two useful aliases (especially when placed in "
+"the :file:`.pdbrc` file)::"
 msgstr ""
 
+#: ../../library/pdb.rst:744
 msgid ""
 "# Print instance variables (usage \"pi classInst\")\n"
 "alias pi for k in %1.__dict__.keys(): print(f\"%1.{k} = {%1.__dict__[k]}\")\n"
@@ -547,52 +992,93 @@ msgid ""
 "alias ps pi self"
 msgstr ""
 
+#: ../../library/pdb.rst:751
 msgid "Delete the specified alias *name*."
 msgstr ""
 
-msgid "Execute the (one-line) *statement* in the context of the current stack frame. The exclamation point can be omitted unless the first word of the statement resembles a debugger command, e.g.:"
+#: ../../library/pdb.rst:755
+msgid ""
+"Execute the (one-line) *statement* in the context of the current stack "
+"frame. The exclamation point can be omitted unless the first word of the "
+"statement resembles a debugger command, e.g.:"
 msgstr ""
 
+#: ../../library/pdb.rst:759
 msgid ""
 "(Pdb) ! n=42\n"
 "(Pdb)"
 msgstr ""
 
-msgid "To set a global variable, you can prefix the assignment command with a :keyword:`global` statement on the same line, e.g.:"
+#: ../../library/pdb.rst:764
+msgid ""
+"To set a global variable, you can prefix the assignment command with "
+"a :keyword:`global` statement on the same line, e.g.:"
 msgstr ""
 
+#: ../../library/pdb.rst:767
 msgid ""
 "(Pdb) global list_options; list_options = ['-l']\n"
 "(Pdb)"
 msgstr ""
 
-msgid "Restart the debugged Python program.  If *args* is supplied, it is split with :mod:`shlex` and the result is used as the new :data:`sys.argv`. History, breakpoints, actions and debugger options are preserved. :pdbcmd:`restart` is an alias for :pdbcmd:`run`."
+#: ../../library/pdb.rst:775
+msgid ""
+"Restart the debugged Python program.  If *args* is supplied, it is split "
+"with :mod:`shlex` and the result is used as the new :data:`sys.argv`. "
+"History, breakpoints, actions and debugger options are "
+"preserved. :pdbcmd:`restart` is an alias for :pdbcmd:`run`."
 msgstr ""
 
-msgid ":pdbcmd:`run` and :pdbcmd:`restart` commands are disabled when the debugger is invoked in ``'inline'`` mode."
+#: ../../library/pdb.rst:780
+msgid ""
+":pdbcmd:`run` and :pdbcmd:`restart` commands are disabled when the debugger "
+"is invoked in ``'inline'`` mode."
 msgstr ""
 
-msgid "Quit from the debugger.  The program being executed is aborted. An end-of-file input is equivalent to :pdbcmd:`quit`."
+#: ../../library/pdb.rst:786
+msgid ""
+"Quit from the debugger.  The program being executed is aborted. An end-of-"
+"file input is equivalent to :pdbcmd:`quit`."
 msgstr ""
 
-msgid "A confirmation prompt will be shown if the debugger is invoked in ``'inline'`` mode. Either ``y``, ``Y``, ``<Enter>`` or ``EOF`` will confirm the quit."
+#: ../../library/pdb.rst:789
+msgid ""
+"A confirmation prompt will be shown if the debugger is invoked in "
+"``'inline'`` mode. Either ``y``, ``Y``, ``<Enter>`` or ``EOF`` will confirm "
+"the quit."
 msgstr ""
 
-msgid "A confirmation prompt will be shown if the debugger is invoked in ``'inline'`` mode. After the confirmation, the debugger will call :func:`sys.exit` immediately, instead of raising :exc:`bdb.BdbQuit` in the next trace event."
+#: ../../library/pdb.rst:793
+msgid ""
+"A confirmation prompt will be shown if the debugger is invoked in "
+"``'inline'`` mode. After the confirmation, the debugger will "
+"call :func:`sys.exit` immediately, instead of raising :exc:`bdb.BdbQuit` in "
+"the next trace event."
 msgstr ""
 
-msgid "Enter a recursive debugger that steps through *code* (which is an arbitrary expression or statement to be executed in the current environment)."
+#: ../../library/pdb.rst:801
+msgid ""
+"Enter a recursive debugger that steps through *code* (which is an arbitrary "
+"expression or statement to be executed in the current environment)."
 msgstr ""
 
+#: ../../library/pdb.rst:807
 msgid "Print the return value for the last return of the current function."
 msgstr ""
 
+#: ../../library/pdb.rst:811
 msgid "List or jump between chained exceptions."
 msgstr ""
 
-msgid "When using ``pdb.pm()``  or ``Pdb.post_mortem(...)`` with a chained exception instead of a traceback, it allows the user to move between the chained exceptions using ``exceptions`` command to list exceptions, and ``exceptions <number>`` to switch to that exception."
+#: ../../library/pdb.rst:813
+msgid ""
+"When using ``pdb.pm()``  or ``Pdb.post_mortem(...)`` with a chained "
+"exception instead of a traceback, it allows the user to move between the "
+"chained exceptions using ``exceptions`` command to list exceptions, and "
+"``exceptions <number>`` to switch to that exception."
 msgstr ""
 
+#: ../../library/pdb.rst:821
 msgid ""
 "def out():\n"
 "    try:\n"
@@ -612,9 +1098,11 @@ msgid ""
 " out()"
 msgstr ""
 
+#: ../../library/pdb.rst:838
 msgid "calling ``pdb.pm()`` will allow to move between exceptions::"
 msgstr ""
 
+#: ../../library/pdb.rst:840
 msgid ""
 "> example.py(5)out()\n"
 "-> raise ValueError(\"reraise middle() error\") from e\n"
@@ -633,35 +1121,48 @@ msgid ""
 "-> return inner(0)"
 msgstr ""
 
+#: ../../library/pdb.rst:859
 msgid "Footnotes"
 msgstr ""
 
-msgid "Whether a frame is considered to originate in a certain module is determined by the ``__name__`` in the frame globals."
+#: ../../library/pdb.rst:860
+msgid ""
+"Whether a frame is considered to originate in a certain module is determined "
+"by the ``__name__`` in the frame globals."
 msgstr ""
 
+#: ../../library/pdb.rst:11
 msgid "debugging"
 msgstr ""
 
+#: ../../library/pdb.rst:21
 msgid "Pdb (class in pdb)"
 msgstr ""
 
+#: ../../library/pdb.rst:21
 msgid "module"
 msgstr ""
 
+#: ../../library/pdb.rst:21
 msgid "bdb"
 msgstr ""
 
+#: ../../library/pdb.rst:21
 msgid "cmd"
 msgstr ""
 
+#: ../../library/pdb.rst:400
 msgid ".pdbrc"
 msgstr ""
 
+#: ../../library/pdb.rst:400
 msgid "file"
 msgstr ""
 
+#: ../../library/pdb.rst:400
 msgid "debugger"
 msgstr ""
 
+#: ../../library/pdb.rst:400
 msgid "configuration"
 msgstr ""

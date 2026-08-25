@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-25 20:39+0330\n"
 "PO-Revision-Date: 2024-07-20 00:54+0000\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
 "Language: fa\n"
@@ -21,95 +21,168 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../deprecations/pending-removal-in-3.15.rst:2
 msgid "Pending removal in Python 3.15"
 msgstr ""
 
+#: ../../deprecations/pending-removal-in-3.15.rst:4
 msgid "The import system:"
 msgstr ""
 
-msgid "Setting :attr:`~module.__cached__` on a module while failing to set :attr:`__spec__.cached <importlib.machinery.ModuleSpec.cached>` is deprecated. In Python 3.15, :attr:`!__cached__` will cease to be set or take into consideration by the import system or standard library. (:gh:`97879`)"
+#: ../../deprecations/pending-removal-in-3.15.rst:6
+msgid ""
+"Setting :attr:`~module.__cached__` on a module while failing to "
+"set :attr:`__spec__.cached <importlib.machinery.ModuleSpec.cached>` is "
+"deprecated. In Python 3.15, :attr:`!__cached__` will cease to be set or take "
+"into consideration by the import system or standard library. (:gh:`97879`)"
 msgstr ""
 
-msgid "Setting :attr:`~module.__package__` on a module while failing to set :attr:`__spec__.parent <importlib.machinery.ModuleSpec.parent>` is deprecated. In Python 3.15, :attr:`!__package__` will cease to be set or take into consideration by the import system or standard library. (:gh:`97879`)"
+#: ../../deprecations/pending-removal-in-3.15.rst:11
+msgid ""
+"Setting :attr:`~module.__package__` on a module while failing to "
+"set :attr:`__spec__.parent <importlib.machinery.ModuleSpec.parent>` is "
+"deprecated. In Python 3.15, :attr:`!__package__` will cease to be set or "
+"take into consideration by the import system or standard library. "
+"(:gh:`97879`)"
 msgstr ""
 
+#: ../../deprecations/pending-removal-in-3.15.rst:16
 msgid ":mod:`ctypes`:"
 msgstr ""
 
-msgid "The undocumented :func:`!ctypes.SetPointerType` function has been deprecated since Python 3.13."
+#: ../../deprecations/pending-removal-in-3.15.rst:18
+msgid ""
+"The undocumented :func:`!ctypes.SetPointerType` function has been deprecated "
+"since Python 3.13."
 msgstr ""
 
+#: ../../deprecations/pending-removal-in-3.15.rst:21
 msgid ":mod:`http.server`:"
 msgstr ""
 
-msgid "The obsolete and rarely used :class:`~http.server.CGIHTTPRequestHandler` has been deprecated since Python 3.13. No direct replacement exists. *Anything* is better than CGI to interface a web server with a request handler."
+#: ../../deprecations/pending-removal-in-3.15.rst:23
+msgid ""
+"The obsolete and rarely used :class:`~http.server.CGIHTTPRequestHandler` has "
+"been deprecated since Python 3.13. No direct replacement exists. *Anything* "
+"is better than CGI to interface a web server with a request handler."
 msgstr ""
 
-msgid "The :option:`!--cgi` flag to the :program:`python -m http.server` command-line interface has been deprecated since Python 3.13."
+#: ../../deprecations/pending-removal-in-3.15.rst:29
+msgid ""
+"The :option:`!--cgi` flag to the :program:`python -m http.server` command-"
+"line interface has been deprecated since Python 3.13."
 msgstr ""
 
+#: ../../deprecations/pending-removal-in-3.15.rst:32
 msgid ":mod:`importlib`:"
 msgstr ""
 
+#: ../../deprecations/pending-removal-in-3.15.rst:34
 msgid "``load_module()`` method: use ``exec_module()`` instead."
 msgstr ""
 
-msgid ":class:`locale`:"
-msgstr ""
-
-msgid "The :func:`~locale.getdefaultlocale` function has been deprecated since Python 3.11. Its removal was originally planned for Python 3.13 (:gh:`90817`), but has been postponed to Python 3.15. Use :func:`~locale.getlocale`, :func:`~locale.setlocale`, and :func:`~locale.getencoding` instead. (Contributed by Hugo van Kemenade in :gh:`111187`.)"
-msgstr ""
-
+#: ../../deprecations/pending-removal-in-3.15.rst:36
 msgid ":mod:`pathlib`:"
 msgstr ""
 
-msgid ":meth:`.PurePath.is_reserved` has been deprecated since Python 3.13. Use :func:`os.path.isreserved` to detect reserved paths on Windows."
+#: ../../deprecations/pending-removal-in-3.15.rst:38
+msgid ""
+":meth:`.PurePath.is_reserved` has been deprecated since Python 3.13. "
+"Use :func:`os.path.isreserved` to detect reserved paths on Windows."
 msgstr ""
 
+#: ../../deprecations/pending-removal-in-3.15.rst:42
 msgid ":mod:`platform`:"
 msgstr ""
 
-msgid ":func:`~platform.java_ver` has been deprecated since Python 3.13. This function is only useful for Jython support, has a confusing API, and is largely untested."
+#: ../../deprecations/pending-removal-in-3.15.rst:44
+msgid ""
+":func:`~platform.java_ver` has been deprecated since Python 3.13. This "
+"function is only useful for Jython support, has a confusing API, and is "
+"largely untested."
 msgstr ""
 
+#: ../../deprecations/pending-removal-in-3.15.rst:48
 msgid ":mod:`sysconfig`:"
 msgstr ""
 
-msgid "The *check_home* argument of :func:`sysconfig.is_python_build` has been deprecated since Python 3.12."
+#: ../../deprecations/pending-removal-in-3.15.rst:50
+msgid ""
+"The *check_home* argument of :func:`sysconfig.is_python_build` has been "
+"deprecated since Python 3.12."
 msgstr ""
 
+#: ../../deprecations/pending-removal-in-3.15.rst:53
 msgid ":mod:`threading`:"
 msgstr ""
 
-msgid ":func:`~threading.RLock` will take no arguments in Python 3.15. Passing any arguments has been deprecated since Python 3.14, as the Python version does not permit any arguments, but the C version allows any number of positional or keyword arguments, ignoring every argument."
+#: ../../deprecations/pending-removal-in-3.15.rst:55
+msgid ""
+":func:`~threading.RLock` will take no arguments in Python 3.15. Passing any "
+"arguments has been deprecated since Python 3.14, as the Python version does "
+"not permit any arguments, but the C version allows any number of positional "
+"or keyword arguments, ignoring every argument."
 msgstr ""
 
+#: ../../deprecations/pending-removal-in-3.15.rst:61
 msgid ":mod:`types`:"
 msgstr ""
 
-msgid ":class:`types.CodeType`: Accessing :attr:`~codeobject.co_lnotab` was deprecated in :pep:`626` since 3.10 and was planned to be removed in 3.12, but it only got a proper :exc:`DeprecationWarning` in 3.12. May be removed in 3.15. (Contributed by Nikita Sobolev in :gh:`101866`.)"
+#: ../../deprecations/pending-removal-in-3.15.rst:63
+msgid ""
+":class:`types.CodeType`: Accessing :attr:`~codeobject.co_lnotab` was "
+"deprecated in :pep:`626` since 3.10 and was planned to be removed in 3.12, "
+"but it only got a proper :exc:`DeprecationWarning` in 3.12. May be removed "
+"in 3.15. (Contributed by Nikita Sobolev in :gh:`101866`.)"
 msgstr ""
 
+#: ../../deprecations/pending-removal-in-3.15.rst:70
 msgid ":mod:`typing`:"
 msgstr ""
 
-msgid "The undocumented keyword argument syntax for creating :class:`~typing.NamedTuple` classes (for example, ``Point = NamedTuple(\"Point\", x=int, y=int)``) has been deprecated since Python 3.13. Use the class-based syntax or the functional syntax instead."
+#: ../../deprecations/pending-removal-in-3.15.rst:72
+msgid ""
+"The undocumented keyword argument syntax for "
+"creating :class:`~typing.NamedTuple` classes (for example, ``Point = "
+"NamedTuple(\"Point\", x=int, y=int)``) has been deprecated since Python "
+"3.13. Use the class-based syntax or the functional syntax instead."
 msgstr ""
 
-msgid "When using the functional syntax of :class:`~typing.TypedDict`\\s, failing to pass a value to the *fields* parameter (``TD = TypedDict(\"TD\")``) or passing ``None`` (``TD = TypedDict(\"TD\", None)``) has been deprecated since Python 3.13. Use ``class TD(TypedDict): pass`` or ``TD = TypedDict(\"TD\", {})`` to create a TypedDict with zero field."
+#: ../../deprecations/pending-removal-in-3.15.rst:78
+msgid ""
+"When using the functional syntax of :class:`~typing.TypedDict`\\s, failing "
+"to pass a value to the *fields* parameter (``TD = TypedDict(\"TD\")``) or "
+"passing ``None`` (``TD = TypedDict(\"TD\", None)``) has been deprecated "
+"since Python 3.13. Use ``class TD(TypedDict): pass`` or ``TD = "
+"TypedDict(\"TD\", {})`` to create a TypedDict with zero field."
 msgstr ""
 
-msgid "The :func:`typing.no_type_check_decorator` decorator function has been deprecated since Python 3.13. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker."
+#: ../../deprecations/pending-removal-in-3.15.rst:85
+msgid ""
+"The :deco:`typing.no_type_check_decorator` decorator function has been "
+"deprecated since Python 3.13. After eight years in the :mod:`typing` module, "
+"it has yet to be supported by any major type checker."
 msgstr ""
 
+#: ../../deprecations/pending-removal-in-3.15.rst:90
 msgid ":mod:`wave`:"
 msgstr ""
 
-msgid "The :meth:`~wave.Wave_read.getmark`, :meth:`!setmark`, and :meth:`~wave.Wave_read.getmarkers` methods of the :class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes have been deprecated since Python 3.13."
+#: ../../deprecations/pending-removal-in-3.15.rst:92
+msgid ""
+"The :meth:`~wave.Wave_read.getmark`, :meth:`!setmark`, "
+"and :meth:`~wave.Wave_read.getmarkers` methods of "
+"the :class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes have been "
+"deprecated since Python 3.13."
 msgstr ""
 
+#: ../../deprecations/pending-removal-in-3.15.rst:97
 msgid ":mod:`zipimport`:"
 msgstr ""
 
-msgid ":meth:`~zipimport.zipimporter.load_module` has been deprecated since Python 3.10. Use :meth:`~zipimport.zipimporter.exec_module` instead. (Contributed by Jiahao Li in :gh:`125746`.)"
+#: ../../deprecations/pending-removal-in-3.15.rst:99
+msgid ""
+":meth:`~zipimport.zipimporter.load_module` has been deprecated since Python "
+"3.10. Use :meth:`~zipimport.zipimporter.exec_module` instead. (Contributed "
+"by Jiahao Li in :gh:`125746`.)"
 msgstr ""

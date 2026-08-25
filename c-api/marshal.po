@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-25 20:39+0330\n"
 "PO-Revision-Date: 2021-06-28 00:49+0000\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
 "Language: fa\n"
@@ -21,53 +21,108 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../c-api/marshal.rst:6
 msgid "Data marshalling support"
 msgstr ""
 
-msgid "These routines allow C code to work with serialized objects using the same data format as the :mod:`marshal` module.  There are functions to write data into the serialization format, and additional functions that can be used to read the data back.  Files used to store marshalled data must be opened in binary mode."
+#: ../../c-api/marshal.rst:8
+msgid ""
+"These routines allow C code to work with serialized objects using the same "
+"data format as the :mod:`marshal` module.  There are functions to write data "
+"into the serialization format, and additional functions that can be used to "
+"read the data back.  Files used to store marshalled data must be opened in "
+"binary mode."
 msgstr ""
 
+#: ../../c-api/marshal.rst:14
 msgid "Numeric values are stored with the least significant byte first."
 msgstr ""
 
-msgid "The module supports several versions of the data format; see the :py:mod:`Python module documentation <marshal>` for details."
+#: ../../c-api/marshal.rst:16
+msgid ""
+"The module supports several versions of the data format; see "
+"the :py:mod:`Python module documentation <marshal>` for details."
 msgstr ""
 
+#: ../../c-api/marshal.rst:21
 msgid "The current format version. See :py:data:`marshal.version`."
 msgstr ""
 
-msgid "Marshal a :c:expr:`long` integer, *value*, to *file*.  This will only write the least-significant 32 bits of *value*; regardless of the size of the native :c:expr:`long` type.  *version* indicates the file format."
+#: ../../c-api/marshal.rst:25
+msgid ""
+"Marshal a :c:expr:`long` integer, *value*, to *file*.  This will only write "
+"the least-significant 32 bits of *value*; regardless of the size of the "
+"native :c:expr:`long` type.  *version* indicates the file format."
 msgstr ""
 
-msgid "This function can fail, in which case it sets the error indicator. Use :c:func:`PyErr_Occurred` to check for that."
+#: ../../c-api/marshal.rst:29 ../../c-api/marshal.rst:37
+msgid ""
+"This function can fail, in which case it sets the error indicator. "
+"Use :c:func:`PyErr_Occurred` to check for that."
 msgstr ""
 
-msgid "Marshal a Python object, *value*, to *file*. *version* indicates the file format."
+#: ../../c-api/marshal.rst:34
+msgid ""
+"Marshal a Python object, *value*, to *file*. *version* indicates the file "
+"format."
 msgstr ""
 
-msgid "Return a bytes object containing the marshalled representation of *value*. *version* indicates the file format."
+#: ../../c-api/marshal.rst:42
+msgid ""
+"Return a bytes object containing the marshalled representation of *value*. "
+"*version* indicates the file format."
 msgstr ""
 
+#: ../../c-api/marshal.rst:46
 msgid "The following functions allow marshalled values to be read back in."
 msgstr ""
 
-msgid "Return a C :c:expr:`long` from the data stream in a :c:expr:`FILE*` opened for reading.  Only a 32-bit value can be read in using this function, regardless of the native size of :c:expr:`long`."
+#: ../../c-api/marshal.rst:51
+msgid ""
+"Return a C :c:expr:`long` from the data stream in a :c:expr:`FILE*` opened "
+"for reading.  Only a 32-bit value can be read in using this function, "
+"regardless of the native size of :c:expr:`long`."
 msgstr ""
 
-msgid "On error, sets the appropriate exception (:exc:`EOFError`) and returns ``-1``."
+#: ../../c-api/marshal.rst:55 ../../c-api/marshal.rst:65
+msgid ""
+"On error, sets the appropriate exception (:exc:`EOFError`) and returns "
+"``-1``."
 msgstr ""
 
-msgid "Return a C :c:expr:`short` from the data stream in a :c:expr:`FILE*` opened for reading.  Only a 16-bit value can be read in using this function, regardless of the native size of :c:expr:`short`."
+#: ../../c-api/marshal.rst:61
+msgid ""
+"Return a C :c:expr:`short` from the data stream in a :c:expr:`FILE*` opened "
+"for reading.  Only a 16-bit value can be read in using this function, "
+"regardless of the native size of :c:expr:`short`."
 msgstr ""
 
-msgid "Return a Python object from the data stream in a :c:expr:`FILE*` opened for reading."
+#: ../../c-api/marshal.rst:71
+msgid ""
+"Return a Python object from the data stream in a :c:expr:`FILE*` opened for "
+"reading."
 msgstr ""
 
-msgid "On error, sets the appropriate exception (:exc:`EOFError`, :exc:`ValueError` or :exc:`TypeError`) and returns ``NULL``."
+#: ../../c-api/marshal.rst:74 ../../c-api/marshal.rst:88
+#: ../../c-api/marshal.rst:97
+msgid ""
+"On error, sets the appropriate exception (:exc:`EOFError`, :exc:`ValueError` "
+"or :exc:`TypeError`) and returns ``NULL``."
 msgstr ""
 
-msgid "Return a Python object from the data stream in a :c:expr:`FILE*` opened for reading.  Unlike :c:func:`PyMarshal_ReadObjectFromFile`, this function assumes that no further objects will be read from the file, allowing it to aggressively load file data into memory so that the de-serialization can operate from data in memory rather than reading a byte at a time from the file.  Only use this variant if you are certain that you won't be reading anything else from the file."
+#: ../../c-api/marshal.rst:80
+msgid ""
+"Return a Python object from the data stream in a :c:expr:`FILE*` opened for "
+"reading.  Unlike :c:func:`PyMarshal_ReadObjectFromFile`, this function "
+"assumes that no further objects will be read from the file, allowing it to "
+"aggressively load file data into memory so that the de-serialization can "
+"operate from data in memory rather than reading a byte at a time from the "
+"file.  Only use this variant if you are certain that you won't be reading "
+"anything else from the file."
 msgstr ""
 
-msgid "Return a Python object from the data stream in a byte buffer containing *len* bytes pointed to by *data*."
+#: ../../c-api/marshal.rst:94
+msgid ""
+"Return a Python object from the data stream in a byte buffer containing "
+"*len* bytes pointed to by *data*."
 msgstr ""

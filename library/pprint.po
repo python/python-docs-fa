@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-25 20:39+0330\n"
 "PO-Revision-Date: 2021-06-28 01:11+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
@@ -24,123 +24,249 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../library/pprint.rst:2
 msgid ":mod:`!pprint` --- Data pretty printer"
 msgstr ""
 
+#: ../../library/pprint.rst:10
 msgid "**Source code:** :source:`Lib/pprint.py`"
 msgstr ""
 
-msgid "The :mod:`!pprint` module provides a capability to \"pretty-print\" arbitrary Python data structures in a form which can be used as input to the interpreter. If the formatted structures include objects which are not fundamental Python types, the representation may not be loadable.  This may be the case if objects such as files, sockets or classes are included, as well as many other objects which are not representable as Python literals."
+#: ../../library/pprint.rst:14
+msgid ""
+"The :mod:`!pprint` module provides a capability to \"pretty-print\" "
+"arbitrary Python data structures in a form which can be used as input to the "
+"interpreter. If the formatted structures include objects which are not "
+"fundamental Python types, the representation may not be loadable.  This may "
+"be the case if objects such as files, sockets or classes are included, as "
+"well as many other objects which are not representable as Python literals."
 msgstr ""
 
-msgid "The formatted representation keeps objects on a single line if it can, and breaks them onto multiple lines if they don't fit within the allowed width, adjustable by the *width* parameter defaulting to 80 characters."
+#: ../../library/pprint.rst:21
+msgid ""
+"The formatted representation keeps objects on a single line if it can, and "
+"breaks them onto multiple lines if they don't fit within the allowed width, "
+"adjustable by the *width* parameter defaulting to 80 characters."
 msgstr ""
 
+#: ../../library/pprint.rst:25
 msgid "Added support for pretty-printing :class:`types.SimpleNamespace`."
 msgstr ""
 
+#: ../../library/pprint.rst:28
 msgid "Added support for pretty-printing :class:`dataclasses.dataclass`."
 msgstr ""
 
+#: ../../library/pprint.rst:34
 msgid "Functions"
 msgstr ""
 
-msgid "Prints the formatted representation of *object*, followed by a newline. This function may be used in the interactive interpreter instead of the :func:`print` function for inspecting values. Tip: you can reassign ``print = pprint.pp`` for use within a scope."
+#: ../../library/pprint.rst:39
+msgid ""
+"Prints the formatted representation of *object*, followed by a newline. This "
+"function may be used in the interactive interpreter instead of "
+"the :func:`print` function for inspecting values. Tip: you can reassign "
+"``print = pprint.pp`` for use within a scope."
 msgstr ""
 
+#: ../../library/pprint.rst:0
 msgid "Parameters"
 msgstr ""
 
+#: ../../library/pprint.rst:44
 msgid "The object to be printed."
 msgstr ""
 
-msgid "A file-like object to which the output will be written by calling its :meth:`!write` method. If ``None`` (the default), :data:`sys.stdout` is used."
+#: ../../library/pprint.rst:47
+msgid ""
+"A file-like object to which the output will be written by calling "
+"its :meth:`!write` method. If ``None`` (the default), :data:`sys.stdout` is "
+"used."
 msgstr ""
 
+#: ../../library/pprint.rst:53
 msgid "The amount of indentation added for each nesting level."
 msgstr ""
 
-msgid "The desired maximum number of characters per line in the output. If a structure cannot be formatted within the width constraint, a best effort will be made."
+#: ../../library/pprint.rst:56
+msgid ""
+"The desired maximum number of characters per line in the output. If a "
+"structure cannot be formatted within the width constraint, a best effort "
+"will be made."
 msgstr ""
 
-msgid "The number of nesting levels which may be printed. If the data structure being printed is too deep, the next contained level is replaced by ``...``. If ``None`` (the default), there is no constraint on the depth of the objects being formatted."
+#: ../../library/pprint.rst:61
+msgid ""
+"The number of nesting levels which may be printed. If the data structure "
+"being printed is too deep, the next contained level is replaced by ``...``. "
+"If ``None`` (the default), there is no constraint on the depth of the "
+"objects being formatted."
 msgstr ""
 
-msgid "Control the way long :term:`sequences <sequence>` are formatted. If ``False`` (the default), each item of a sequence will be formatted on a separate line, otherwise as many items as will fit within the *width* will be formatted on each output line."
+#: ../../library/pprint.rst:69
+msgid ""
+"Control the way long :term:`sequences <sequence>` are formatted. If "
+"``False`` (the default), each item of a sequence will be formatted on a "
+"separate line, otherwise as many items as will fit within the *width* will "
+"be formatted on each output line."
 msgstr ""
 
-msgid "If ``True``, dictionaries will be formatted with their keys sorted, otherwise they will be displayed in insertion order (the default)."
+#: ../../library/pprint.rst:76
+msgid ""
+"If ``True``, dictionaries will be formatted with their keys sorted, "
+"otherwise they will be displayed in insertion order (the default)."
 msgstr ""
 
-msgid "If ``True``, integers will be formatted with the ``_`` character for a thousands separator, otherwise underscores are not displayed (the default)."
+#: ../../library/pprint.rst:81
+msgid ""
+"If ``True``, integers will be formatted with the ``_`` character for a "
+"thousands separator, otherwise underscores are not displayed (the default)."
 msgstr ""
 
-msgid "Alias for :func:`~pprint.pp` with *sort_dicts* set to ``True`` by default, which would automatically sort the dictionaries' keys, you might want to use :func:`~pprint.pp` instead where it is ``False`` by default."
+#: ../../library/pprint.rst:103
+msgid ""
+"Alias for :func:`~pprint.pp` with *sort_dicts* set to ``True`` by default, "
+"which would automatically sort the dictionaries' keys, you might want to "
+"use :func:`~pprint.pp` instead where it is ``False`` by default."
 msgstr ""
 
-msgid "Return the formatted representation of *object* as a string.  *indent*, *width*, *depth*, *compact*, *sort_dicts* and *underscore_numbers* are passed to the :class:`PrettyPrinter` constructor as formatting parameters and their meanings are as described in the documentation above."
+#: ../../library/pprint.rst:111
+msgid ""
+"Return the formatted representation of *object* as a string.  *indent*, "
+"*width*, *depth*, *compact*, *sort_dicts* and *underscore_numbers* are "
+"passed to the :class:`PrettyPrinter` constructor as formatting parameters "
+"and their meanings are as described in the documentation above."
 msgstr ""
 
-msgid "Determine if the formatted representation of *object* is \"readable\", or can be used to reconstruct the value using :func:`eval`.  This always returns ``False`` for recursive objects."
+#: ../../library/pprint.rst:121
+msgid ""
+"Determine if the formatted representation of *object* is \"readable\", or "
+"can be used to reconstruct the value using :func:`eval`.  This always "
+"returns ``False`` for recursive objects."
 msgstr ""
 
-msgid "Determine if *object* requires a recursive representation.  This function is subject to the same limitations as noted in :func:`saferepr` below and may raise an :exc:`RecursionError` if it fails to detect a recursive object."
+#: ../../library/pprint.rst:131
+msgid ""
+"Determine if *object* requires a recursive representation.  This function is "
+"subject to the same limitations as noted in :func:`saferepr` below and may "
+"raise an :exc:`RecursionError` if it fails to detect a recursive object."
 msgstr ""
 
-msgid "Return a string representation of *object*, protected against recursion in some common data structures, namely instances of :class:`dict`, :class:`list` and :class:`tuple` or subclasses whose ``__repr__`` has not been overridden.  If the representation of object exposes a recursive entry, the recursive reference will be represented as ``<Recursion on typename with id=number>``.  The representation is not otherwise formatted."
+#: ../../library/pprint.rst:138
+msgid ""
+"Return a string representation of *object*, protected against recursion in "
+"some common data structures, namely instances "
+"of :class:`dict`, :class:`list` and :class:`tuple` or subclasses whose "
+"``__repr__`` has not been overridden.  If the representation of object "
+"exposes a recursive entry, the recursive reference will be represented as "
+"``<Recursion on typename with id=number>``.  The representation is not "
+"otherwise formatted."
 msgstr ""
 
+#: ../../library/pprint.rst:151
 msgid "PrettyPrinter Objects"
 msgstr ""
 
+#: ../../library/pprint.rst:158
 msgid "Construct a :class:`PrettyPrinter` instance."
 msgstr ""
 
-msgid "Arguments have the same meaning as for :func:`~pprint.pp`. Note that they are in a different order, and that *sort_dicts* defaults to ``True``."
+#: ../../library/pprint.rst:160
+msgid ""
+"Arguments have the same meaning as for :func:`~pprint.pp`. Note that they "
+"are in a different order, and that *sort_dicts* defaults to ``True``."
 msgstr ""
 
+#: ../../library/pprint.rst:187
 msgid "Added the *compact* parameter."
 msgstr ""
 
+#: ../../library/pprint.rst:190
 msgid "Added the *sort_dicts* parameter."
 msgstr ""
 
+#: ../../library/pprint.rst:193
 msgid "Added the *underscore_numbers* parameter."
 msgstr ""
 
+#: ../../library/pprint.rst:196
 msgid "No longer attempts to write to :data:`!sys.stdout` if it is ``None``."
 msgstr ""
 
+#: ../../library/pprint.rst:200
 msgid ":class:`PrettyPrinter` instances have the following methods:"
 msgstr ""
 
-msgid "Return the formatted representation of *object*.  This takes into account the options passed to the :class:`PrettyPrinter` constructor."
+#: ../../library/pprint.rst:205
+msgid ""
+"Return the formatted representation of *object*.  This takes into account "
+"the options passed to the :class:`PrettyPrinter` constructor."
 msgstr ""
 
-msgid "Print the formatted representation of *object* on the configured stream, followed by a newline."
+#: ../../library/pprint.rst:211
+msgid ""
+"Print the formatted representation of *object* on the configured stream, "
+"followed by a newline."
 msgstr ""
 
-msgid "The following methods provide the implementations for the corresponding functions of the same names.  Using these methods on an instance is slightly more efficient since new :class:`PrettyPrinter` objects don't need to be created."
+#: ../../library/pprint.rst:214
+msgid ""
+"The following methods provide the implementations for the corresponding "
+"functions of the same names.  Using these methods on an instance is slightly "
+"more efficient since new :class:`PrettyPrinter` objects don't need to be "
+"created."
 msgstr ""
 
-msgid "Determine if the formatted representation of the object is \"readable,\" or can be used to reconstruct the value using :func:`eval`.  Note that this returns ``False`` for recursive objects.  If the *depth* parameter of the :class:`PrettyPrinter` is set and the object is deeper than allowed, this returns ``False``."
+#: ../../library/pprint.rst:224
+msgid ""
+"Determine if the formatted representation of the object is \"readable,\" or "
+"can be used to reconstruct the value using :func:`eval`.  Note that this "
+"returns ``False`` for recursive objects.  If the *depth* parameter of "
+"the :class:`PrettyPrinter` is set and the object is deeper than allowed, "
+"this returns ``False``."
 msgstr ""
 
+#: ../../library/pprint.rst:233
 msgid "Determine if the object requires a recursive representation."
 msgstr ""
 
-msgid "This method is provided as a hook to allow subclasses to modify the way objects are converted to strings.  The default implementation uses the internals of the :func:`saferepr` implementation."
+#: ../../library/pprint.rst:235
+msgid ""
+"This method is provided as a hook to allow subclasses to modify the way "
+"objects are converted to strings.  The default implementation uses the "
+"internals of the :func:`saferepr` implementation."
 msgstr ""
 
-msgid "Returns three values: the formatted version of *object* as a string, a flag indicating whether the result is readable, and a flag indicating whether recursion was detected.  The first argument is the object to be presented.  The second is a dictionary which contains the :func:`id` of objects that are part of the current presentation context (direct and indirect containers for *object* that are affecting the presentation) as the keys; if an object needs to be presented which is already represented in *context*, the third return value should be ``True``.  Recursive calls to the :meth:`.format` method should add additional entries for containers to this dictionary.  The third argument, *maxlevels*, gives the requested limit to recursion; this will be ``0`` if there is no requested limit.  This argument should be passed unmodified to recursive calls. The fourth argument, *level*, gives the current level; recursive calls should be passed a value less than that of the current call."
+#: ../../library/pprint.rst:242
+msgid ""
+"Returns three values: the formatted version of *object* as a string, a flag "
+"indicating whether the result is readable, and a flag indicating whether "
+"recursion was detected.  The first argument is the object to be presented.  "
+"The second is a dictionary which contains the :func:`id` of objects that are "
+"part of the current presentation context (direct and indirect containers for "
+"*object* that are affecting the presentation) as the keys; if an object "
+"needs to be presented which is already represented in *context*, the third "
+"return value should be ``True``.  Recursive calls to the :meth:`.format` "
+"method should add additional entries for containers to this dictionary.  The "
+"third argument, *maxlevels*, gives the requested limit to recursion; this "
+"will be ``0`` if there is no requested limit.  This argument should be "
+"passed unmodified to recursive calls. The fourth argument, *level*, gives "
+"the current level; recursive calls should be passed a value less than that "
+"of the current call."
 msgstr ""
 
+#: ../../library/pprint.rst:260
 msgid "Example"
 msgstr ""
 
-msgid "To demonstrate several uses of the :func:`~pprint.pp` function and its parameters, let's fetch information about a project from `PyPI <https://pypi.org>`_::"
+#: ../../library/pprint.rst:262
+msgid ""
+"To demonstrate several uses of the :func:`~pprint.pp` function and its "
+"parameters, let's fetch information about a project from `PyPI <https://"
+"pypi.org>`_::"
 msgstr ""
 
+#: ../../library/pprint.rst:265
 msgid ""
 ">>> import json\n"
 ">>> import pprint\n"
@@ -149,9 +275,11 @@ msgid ""
 "...     project_info = json.load(resp)['info']"
 msgstr ""
 
+#: ../../library/pprint.rst:271
 msgid "In its basic form, :func:`~pprint.pp` shows the whole object::"
 msgstr ""
 
+#: ../../library/pprint.rst:273
 msgid ""
 ">>> pprint.pp(project_info)\n"
 "{'author': 'The Python Packaging Authority',\n"
@@ -175,15 +303,18 @@ msgid ""
 "                '\\n'\n"
 "                'The file should use UTF-8 encoding and be written using '\n"
 "                'ReStructured Text. It\\n'\n"
-"                'will be used to generate the project webpage on PyPI, and '\n"
+"                'will be used to generate the project webpage on PyPI, and "
+"'\n"
 "                'should be written for\\n'\n"
 "                'that purpose.\\n'\n"
 "                '\\n'\n"
-"                'Typical contents for this file would include an overview of '\n"
+"                'Typical contents for this file would include an overview of "
+"'\n"
 "                'the project, basic\\n'\n"
 "                'usage examples, etc. Generally, including the project '\n"
 "                'changelog in here is not\\n'\n"
-"                'a good idea, although a simple \"What\\'s New\" section for the '\n"
+"                'a good idea, although a simple \"What\\'s New\" section for "
+"the '\n"
 "                'most recent version\\n'\n"
 "                'may be appropriate.',\n"
 " 'description_content_type': None,\n"
@@ -208,9 +339,13 @@ msgid ""
 " 'version': '1.2.0'}"
 msgstr ""
 
-msgid "The result can be limited to a certain *depth* (ellipsis is used for deeper contents)::"
+#: ../../library/pprint.rst:327
+msgid ""
+"The result can be limited to a certain *depth* (ellipsis is used for deeper "
+"contents)::"
 msgstr ""
 
+#: ../../library/pprint.rst:330
 msgid ""
 ">>> pprint.pp(project_info, depth=1)\n"
 "{'author': 'The Python Packaging Authority',\n"
@@ -224,15 +359,18 @@ msgid ""
 "                '\\n'\n"
 "                'The file should use UTF-8 encoding and be written using '\n"
 "                'ReStructured Text. It\\n'\n"
-"                'will be used to generate the project webpage on PyPI, and '\n"
+"                'will be used to generate the project webpage on PyPI, and "
+"'\n"
 "                'should be written for\\n'\n"
 "                'that purpose.\\n'\n"
 "                '\\n'\n"
-"                'Typical contents for this file would include an overview of '\n"
+"                'Typical contents for this file would include an overview of "
+"'\n"
 "                'the project, basic\\n'\n"
 "                'usage examples, etc. Generally, including the project '\n"
 "                'changelog in here is not\\n'\n"
-"                'a good idea, although a simple \"What\\'s New\" section for the '\n"
+"                'a good idea, although a simple \"What\\'s New\" section for "
+"the '\n"
 "                'most recent version\\n'\n"
 "                'may be appropriate.',\n"
 " 'description_content_type': None,\n"
@@ -256,9 +394,13 @@ msgid ""
 " 'version': '1.2.0'}"
 msgstr ""
 
-msgid "Additionally, maximum character *width* can be suggested. If a long object cannot be split, the specified width will be exceeded::"
+#: ../../library/pprint.rst:373
+msgid ""
+"Additionally, maximum character *width* can be suggested. If a long object "
+"cannot be split, the specified width will be exceeded::"
 msgstr ""
 
+#: ../../library/pprint.rst:376
 msgid ""
 ">>> pprint.pp(project_info, depth=1, width=60)\n"
 "{'author': 'The Python Packaging Authority',\n"
@@ -307,14 +449,18 @@ msgid ""
 " 'version': '1.2.0'}"
 msgstr ""
 
+#: ../../library/pprint.rst:119 ../../library/pprint.rst:222
 msgid "built-in function"
 msgstr ""
 
+#: ../../library/pprint.rst:119 ../../library/pprint.rst:222
 msgid "eval"
 msgstr ""
 
+#: ../../library/pprint.rst:153
 msgid "..."
 msgstr ""
 
+#: ../../library/pprint.rst:153
 msgid "placeholder"
 msgstr ""

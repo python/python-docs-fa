@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-25 20:39+0330\n"
 "PO-Revision-Date: 2021-06-28 00:54+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
@@ -23,24 +23,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../library/abc.rst:2
 msgid ":mod:`!abc` --- Abstract Base Classes"
 msgstr ""
 
+#: ../../library/abc.rst:11
 msgid "**Source code:** :source:`Lib/abc.py`"
 msgstr ""
 
-msgid "This module provides the infrastructure for defining :term:`abstract base classes <abstract base class>` (ABCs) in Python, as outlined in :pep:`3119`; see the PEP for why this was added to Python. (See also :pep:`3141` and the :mod:`numbers` module regarding a type hierarchy for numbers based on ABCs.)"
+#: ../../library/abc.rst:15
+msgid ""
+"This module provides the infrastructure for defining :term:`abstract base "
+"classes <abstract base class>` (ABCs) in Python, as outlined in :pep:`3119`; "
+"see the PEP for why this was added to Python. (See also :pep:`3141` and "
+"the :mod:`numbers` module regarding a type hierarchy for numbers based on "
+"ABCs.)"
 msgstr ""
 
-msgid "The :mod:`collections` module has some concrete classes that derive from ABCs; these can, of course, be further derived. In addition, the :mod:`collections.abc` submodule has some ABCs that can be used to test whether a class or instance provides a particular interface, for example, if it is :term:`hashable` or if it is a :term:`mapping`."
+#: ../../library/abc.rst:20
+msgid ""
+"The :mod:`collections` module has some concrete classes that derive from "
+"ABCs; these can, of course, be further derived. In addition, "
+"the :mod:`collections.abc` submodule has some ABCs that can be used to test "
+"whether a class or instance provides a particular interface, for example, if "
+"it is :term:`hashable` or if it is a :term:`mapping`."
 msgstr ""
 
-msgid "This module provides the metaclass :class:`ABCMeta` for defining ABCs and a helper class :class:`ABC` to alternatively define ABCs through inheritance:"
+#: ../../library/abc.rst:27
+msgid ""
+"This module provides the metaclass :class:`ABCMeta` for defining ABCs and a "
+"helper class :class:`ABC` to alternatively define ABCs through inheritance:"
 msgstr ""
 
-msgid "A helper class that has :class:`ABCMeta` as its metaclass.  With this class, an abstract base class can be created by simply deriving from :class:`!ABC` avoiding sometimes confusing metaclass usage, for example::"
+#: ../../library/abc.rst:32
+msgid ""
+"A helper class that has :class:`ABCMeta` as its metaclass.  With this class, "
+"an abstract base class can be created by simply deriving from :class:`!ABC` "
+"avoiding sometimes confusing metaclass usage, for example::"
 msgstr ""
 
+#: ../../library/abc.rst:36
 msgid ""
 "from abc import ABC\n"
 "\n"
@@ -48,9 +70,16 @@ msgid ""
 "    pass"
 msgstr ""
 
-msgid "Note that the type of :class:`!ABC` is still :class:`ABCMeta`, therefore inheriting from :class:`!ABC` requires the usual precautions regarding metaclass usage, as multiple inheritance may lead to metaclass conflicts. One may also define an abstract base class by passing the metaclass keyword and using :class:`!ABCMeta` directly, for example::"
+#: ../../library/abc.rst:41
+msgid ""
+"Note that the type of :class:`!ABC` is still :class:`ABCMeta`, therefore "
+"inheriting from :class:`!ABC` requires the usual precautions regarding "
+"metaclass usage, as multiple inheritance may lead to metaclass conflicts. "
+"One may also define an abstract base class by passing the metaclass keyword "
+"and using :class:`!ABCMeta` directly, for example::"
 msgstr ""
 
+#: ../../library/abc.rst:47
 msgid ""
 "from abc import ABCMeta\n"
 "\n"
@@ -58,18 +87,34 @@ msgid ""
 "    pass"
 msgstr ""
 
+#: ../../library/abc.rst:57
 msgid "Metaclass for defining Abstract Base Classes (ABCs)."
 msgstr ""
 
-msgid "Use this metaclass to create an ABC.  An ABC can be subclassed directly, and then acts as a mix-in class.  You can also register unrelated concrete classes (even built-in classes) and unrelated ABCs as \"virtual subclasses\" -- these and their descendants will be considered subclasses of the registering ABC by the built-in :func:`issubclass` function, but the registering ABC won't show up in their MRO (Method Resolution Order) nor will method implementations defined by the registering ABC be callable (not even via :func:`super`). [#]_"
+#: ../../library/abc.rst:59
+msgid ""
+"Use this metaclass to create an ABC.  An ABC can be subclassed directly, and "
+"then acts as a mix-in class.  You can also register unrelated concrete "
+"classes (even built-in classes) and unrelated ABCs as \"virtual subclasses\" "
+"-- these and their descendants will be considered subclasses of the "
+"registering ABC by the built-in :func:`issubclass` function, but the "
+"registering ABC won't show up in their MRO (Method Resolution Order) nor "
+"will method implementations defined by the registering ABC be callable (not "
+"even via :func:`super`). [#]_"
 msgstr ""
 
-msgid "Classes created with a metaclass of :class:`!ABCMeta` have the following method:"
+#: ../../library/abc.rst:68
+msgid ""
+"Classes created with a metaclass of :class:`!ABCMeta` have the following "
+"method:"
 msgstr ""
 
-msgid "Register *subclass* as a \"virtual subclass\" of this ABC. For example::"
+#: ../../library/abc.rst:72
+msgid ""
+"Register *subclass* as a \"virtual subclass\" of this ABC. For example::"
 msgstr ""
 
+#: ../../library/abc.rst:75
 msgid ""
 "from abc import ABC\n"
 "\n"
@@ -82,27 +127,48 @@ msgid ""
 "assert isinstance((), MyABC)"
 msgstr ""
 
+#: ../../library/abc.rst:85
 msgid "Returns the registered subclass, to allow usage as a class decorator."
 msgstr ""
 
-msgid "To detect calls to :meth:`!register`, you can use the :func:`get_cache_token` function."
+#: ../../library/abc.rst:88
+msgid ""
+"To detect calls to :meth:`!register`, you can use "
+"the :func:`get_cache_token` function."
 msgstr ""
 
+#: ../../library/abc.rst:92
 msgid "You can also override this method in an abstract base class:"
 msgstr ""
 
+#: ../../library/abc.rst:96
 msgid "(Must be defined as a class method.)"
 msgstr ""
 
-msgid "Check whether *subclass* is considered a subclass of this ABC.  This means that you can customize the behavior of :func:`issubclass` further without the need to call :meth:`register` on every class you want to consider a subclass of the ABC.  (This class method is called from the :meth:`~type.__subclasscheck__` method of the ABC.)"
+#: ../../library/abc.rst:98
+msgid ""
+"Check whether *subclass* is considered a subclass of this ABC.  This means "
+"that you can customize the behavior of :func:`issubclass` further without "
+"the need to call :meth:`register` on every class you want to consider a "
+"subclass of the ABC.  (This class method is called from "
+"the :meth:`~type.__subclasscheck__` method of the ABC.)"
 msgstr ""
 
-msgid "This method should return ``True``, ``False`` or :data:`NotImplemented`.  If it returns ``True``, the *subclass* is considered a subclass of this ABC. If it returns ``False``, the *subclass* is not considered a subclass of this ABC, even if it would normally be one.  If it returns :data:`!NotImplemented`, the subclass check is continued with the usual mechanism."
+#: ../../library/abc.rst:104
+msgid ""
+"This method should return ``True``, ``False`` or :data:`NotImplemented`.  If "
+"it returns ``True``, the *subclass* is considered a subclass of this ABC. If "
+"it returns ``False``, the *subclass* is not considered a subclass of this "
+"ABC, even if it would normally be one.  If it returns :data:`!"
+"NotImplemented`, the subclass check is continued with the usual mechanism."
 msgstr ""
 
-msgid "For a demonstration of these concepts, look at this example ABC definition::"
+#: ../../library/abc.rst:114
+msgid ""
+"For a demonstration of these concepts, look at this example ABC definition::"
 msgstr ""
 
+#: ../../library/abc.rst:116
 msgid ""
 "class Foo:\n"
 "    def __getitem__(self, index):\n"
@@ -132,30 +198,69 @@ msgid ""
 "MyIterable.register(Foo)"
 msgstr ""
 
-msgid "The ABC ``MyIterable`` defines the standard iterable method, :meth:`~object.__iter__`, as an abstract method.  The implementation given here can still be called from subclasses.  The :meth:`!get_iterator` method is also part of the ``MyIterable`` abstract base class, but it does not have to be overridden in non-abstract derived classes."
+#: ../../library/abc.rst:143
+msgid ""
+"The ABC ``MyIterable`` defines the standard iterable "
+"method, :meth:`~object.__iter__`, as an abstract method.  The implementation "
+"given here can still be called from subclasses.  The :meth:`!get_iterator` "
+"method is also part of the ``MyIterable`` abstract base class, but it does "
+"not have to be overridden in non-abstract derived classes."
 msgstr ""
 
-msgid "The :meth:`__subclasshook__` class method defined here says that any class that has an :meth:`~object.__iter__` method in its :attr:`~object.__dict__` (or in that of one of its base classes, accessed via the :attr:`~type.__mro__` list) is considered a ``MyIterable`` too."
+#: ../../library/abc.rst:149
+msgid ""
+"The :meth:`__subclasshook__` class method defined here says that any class "
+"that has an :meth:`~object.__iter__` method in its :attr:`~object.__dict__` "
+"(or in that of one of its base classes, accessed via "
+"the :attr:`~type.__mro__` list) is considered a ``MyIterable`` too."
 msgstr ""
 
-msgid "Finally, the last line makes ``Foo`` a virtual subclass of ``MyIterable``, even though it does not define an :meth:`~object.__iter__` method (it uses the old-style iterable protocol, defined in terms of :meth:`~object.__len__` and :meth:`~object.__getitem__`).  Note that this will not make ``get_iterator`` available as a method of ``Foo``, so it is provided separately."
+#: ../../library/abc.rst:154
+msgid ""
+"Finally, the last line makes ``Foo`` a virtual subclass of ``MyIterable``, "
+"even though it does not define an :meth:`~object.__iter__` method (it uses "
+"the old-style iterable protocol, defined in terms of :meth:`~object.__len__` "
+"and :meth:`~object.__getitem__`).  Note that this will not make "
+"``get_iterator`` available as a method of ``Foo``, so it is provided "
+"separately."
 msgstr ""
 
+#: ../../library/abc.rst:163
 msgid "The :mod:`!abc` module also provides the following decorator:"
 msgstr ""
 
+#: ../../library/abc.rst:167
 msgid "A decorator indicating abstract methods."
 msgstr ""
 
-msgid "Using this decorator requires that the class's metaclass is :class:`ABCMeta` or is derived from it.  A class that has a metaclass derived from :class:`!ABCMeta` cannot be instantiated unless all of its abstract methods and properties are overridden.  The abstract methods can be called using any of the normal 'super' call mechanisms.  :func:`!abstractmethod` may be used to declare abstract methods for properties and descriptors."
+#: ../../library/abc.rst:169
+msgid ""
+"Using this decorator requires that the class's metaclass is :class:`ABCMeta` "
+"or is derived from it.  A class that has a metaclass derived from :class:`!"
+"ABCMeta` cannot be instantiated unless all of its abstract methods and "
+"properties are overridden.  The abstract methods can be called using any of "
+"the normal 'super' call mechanisms.  :deco:`!abstractmethod` may be used to "
+"declare abstract methods for properties and descriptors."
 msgstr ""
 
-msgid "Dynamically adding abstract methods to a class, or attempting to modify the abstraction status of a method or class once it is created, are only supported using the :func:`update_abstractmethods` function.  The :func:`!abstractmethod` only affects subclasses derived using regular inheritance; \"virtual subclasses\" registered with the ABC's :meth:`~ABCMeta.register` method are not affected."
+#: ../../library/abc.rst:176
+msgid ""
+"Dynamically adding abstract methods to a class, or attempting to modify the "
+"abstraction status of a method or class once it is created, are only "
+"supported using the :func:`update_abstractmethods` function.  The :deco:`!"
+"abstractmethod` only affects subclasses derived using regular inheritance; "
+"\"virtual subclasses\" registered with the ABC's :meth:`~ABCMeta.register` "
+"method are not affected."
 msgstr ""
 
-msgid "When :func:`!abstractmethod` is applied in combination with other method descriptors, it should be applied as the innermost decorator, as shown in the following usage examples::"
+#: ../../library/abc.rst:183
+msgid ""
+"When :deco:`!abstractmethod` is applied in combination with other method "
+"descriptors, it should be applied as the innermost decorator, as shown in "
+"the following usage examples::"
 msgstr ""
 
+#: ../../library/abc.rst:187
 msgid ""
 "class C(ABC):\n"
 "    @abstractmethod\n"
@@ -188,9 +293,16 @@ msgid ""
 "    x = property(_get_x, _set_x)"
 msgstr ""
 
-msgid "In order to correctly interoperate with the abstract base class machinery, the descriptor must identify itself as abstract using :attr:`!__isabstractmethod__`. In general, this attribute should be ``True`` if any of the methods used to compose the descriptor are abstract. For example, Python's built-in :class:`property` does the equivalent of::"
+#: ../../library/abc.rst:217
+msgid ""
+"In order to correctly interoperate with the abstract base class machinery, "
+"the descriptor must identify itself as abstract using :attr:`!"
+"__isabstractmethod__`. In general, this attribute should be ``True`` if any "
+"of the methods used to compose the descriptor are abstract. For example, "
+"Python's built-in :deco:`property` does the equivalent of::"
 msgstr ""
 
+#: ../../library/abc.rst:223
 msgid ""
 "class Descriptor:\n"
 "    ...\n"
@@ -200,21 +312,38 @@ msgid ""
 "                   f in (self._fget, self._fset, self._fdel))"
 msgstr ""
 
-msgid "Unlike Java abstract methods, these abstract methods may have an implementation. This implementation can be called via the :func:`super` mechanism from the class that overrides it.  This could be useful as an end-point for a super-call in a framework that uses cooperative multiple-inheritance."
+#: ../../library/abc.rst:232
+msgid ""
+"Unlike Java abstract methods, these abstract methods may have an "
+"implementation. This implementation can be called via the :func:`super` "
+"mechanism from the class that overrides it.  This could be useful as an end-"
+"point for a super-call in a framework that uses cooperative multiple-"
+"inheritance."
 msgstr ""
 
+#: ../../library/abc.rst:239
 msgid "The :mod:`!abc` module also supports the following legacy decorators:"
 msgstr ""
 
-msgid "It is now possible to use :class:`classmethod` with :func:`abstractmethod`, making this decorator redundant."
+#: ../../library/abc.rst:244
+msgid ""
+"It is now possible to use :deco:`classmethod` with :deco:`abstractmethod`, "
+"making this decorator redundant."
 msgstr ""
 
-msgid "A subclass of the built-in :func:`classmethod`, indicating an abstract classmethod. Otherwise it is similar to :func:`abstractmethod`."
+#: ../../library/abc.rst:248
+msgid ""
+"A subclass of the built-in :class:`classmethod`, indicating an abstract "
+"classmethod. Otherwise it is similar to :deco:`abstractmethod`."
 msgstr ""
 
-msgid "This special case is deprecated, as the :func:`classmethod` decorator is now correctly identified as abstract when applied to an abstract method::"
+#: ../../library/abc.rst:251
+msgid ""
+"This special case is deprecated, as the :deco:`classmethod` decorator is now "
+"correctly identified as abstract when applied to an abstract method::"
 msgstr ""
 
+#: ../../library/abc.rst:255
 msgid ""
 "class C(ABC):\n"
 "    @classmethod\n"
@@ -223,15 +352,25 @@ msgid ""
 "        ..."
 msgstr ""
 
-msgid "It is now possible to use :class:`staticmethod` with :func:`abstractmethod`, making this decorator redundant."
+#: ../../library/abc.rst:265
+msgid ""
+"It is now possible to use :deco:`staticmethod` with :deco:`abstractmethod`, "
+"making this decorator redundant."
 msgstr ""
 
-msgid "A subclass of the built-in :func:`staticmethod`, indicating an abstract staticmethod. Otherwise it is similar to :func:`abstractmethod`."
+#: ../../library/abc.rst:269
+msgid ""
+"A subclass of the built-in :class:`staticmethod`, indicating an abstract "
+"staticmethod. Otherwise it is similar to :deco:`abstractmethod`."
 msgstr ""
 
-msgid "This special case is deprecated, as the :func:`staticmethod` decorator is now correctly identified as abstract when applied to an abstract method::"
+#: ../../library/abc.rst:272
+msgid ""
+"This special case is deprecated, as the :deco:`staticmethod` decorator is "
+"now correctly identified as abstract when applied to an abstract method::"
 msgstr ""
 
+#: ../../library/abc.rst:276
 msgid ""
 "class C(ABC):\n"
 "    @staticmethod\n"
@@ -240,15 +379,27 @@ msgid ""
 "        ..."
 msgstr ""
 
-msgid "It is now possible to use :class:`property`, :meth:`property.getter`, :meth:`property.setter` and :meth:`property.deleter` with :func:`abstractmethod`, making this decorator redundant."
+#: ../../library/abc.rst:285
+msgid ""
+"It is now possible to "
+"use :deco:`property`, :deco:`property.getter`, :deco:`property.setter` "
+"and :deco:`property.deleter` with :deco:`abstractmethod`, making this "
+"decorator redundant."
 msgstr ""
 
-msgid "A subclass of the built-in :func:`property`, indicating an abstract property."
+#: ../../library/abc.rst:290
+msgid ""
+"A subclass of the built-in :class:`property`, indicating an abstract "
+"property."
 msgstr ""
 
-msgid "This special case is deprecated, as the :func:`property` decorator is now correctly identified as abstract when applied to an abstract method::"
+#: ../../library/abc.rst:293
+msgid ""
+"This special case is deprecated, as the :deco:`property` decorator is now "
+"correctly identified as abstract when applied to an abstract method::"
 msgstr ""
 
+#: ../../library/abc.rst:297
 msgid ""
 "class C(ABC):\n"
 "    @property\n"
@@ -257,9 +408,14 @@ msgid ""
 "        ..."
 msgstr ""
 
-msgid "The above example defines a read-only property; you can also define a read-write abstract property by appropriately marking one or more of the underlying methods as abstract::"
+#: ../../library/abc.rst:303
+msgid ""
+"The above example defines a read-only property; you can also define a read-"
+"write abstract property by appropriately marking one or more of the "
+"underlying methods as abstract::"
 msgstr ""
 
+#: ../../library/abc.rst:307
 msgid ""
 "class C(ABC):\n"
 "    @property\n"
@@ -272,9 +428,13 @@ msgid ""
 "        ..."
 msgstr ""
 
-msgid "If only some components are abstract, only those components need to be updated to create a concrete property in a subclass::"
+#: ../../library/abc.rst:317
+msgid ""
+"If only some components are abstract, only those components need to be "
+"updated to create a concrete property in a subclass::"
 msgstr ""
 
+#: ../../library/abc.rst:320
 msgid ""
 "class D(C):\n"
 "    @C.x.setter\n"
@@ -282,29 +442,49 @@ msgid ""
 "        ..."
 msgstr ""
 
+#: ../../library/abc.rst:326
 msgid "The :mod:`!abc` module also provides the following functions:"
 msgstr ""
 
+#: ../../library/abc.rst:330
 msgid "Returns the current abstract base class cache token."
 msgstr ""
 
-msgid "The token is an opaque object (that supports equality testing) identifying the current version of the abstract base class cache for virtual subclasses. The token changes with every call to :meth:`ABCMeta.register` on any ABC."
+#: ../../library/abc.rst:332
+msgid ""
+"The token is an opaque object (that supports equality testing) identifying "
+"the current version of the abstract base class cache for virtual subclasses. "
+"The token changes with every call to :meth:`ABCMeta.register` on any ABC."
 msgstr ""
 
-msgid "A function to recalculate an abstract class's abstraction status. This function should be called if a class's abstract methods have been implemented or changed after it was created. Usually, this function should be called from within a class decorator."
+#: ../../library/abc.rst:340
+msgid ""
+"A function to recalculate an abstract class's abstraction status. This "
+"function should be called if a class's abstract methods have been "
+"implemented or changed after it was created. Usually, this function should "
+"be called from within a class decorator."
 msgstr ""
 
+#: ../../library/abc.rst:345
 msgid "Returns *cls*, to allow usage as a class decorator."
 msgstr ""
 
+#: ../../library/abc.rst:347
 msgid "If *cls* is not an instance of :class:`ABCMeta`, does nothing."
 msgstr ""
 
-msgid "This function assumes that *cls*'s superclasses are already updated. It does not update any subclasses."
+#: ../../library/abc.rst:351
+msgid ""
+"This function assumes that *cls*'s superclasses are already updated. It does "
+"not update any subclasses."
 msgstr ""
 
+#: ../../library/abc.rst:357
 msgid "Footnotes"
 msgstr ""
 
-msgid "C++ programmers should note that Python's virtual base class concept is not the same as C++'s."
+#: ../../library/abc.rst:358
+msgid ""
+"C++ programmers should note that Python's virtual base class concept is not "
+"the same as C++'s."
 msgstr ""

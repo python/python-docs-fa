@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-25 20:39+0330\n"
 "PO-Revision-Date: 2021-06-28 01:07+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
@@ -24,45 +24,78 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../library/html.parser.rst:2
 msgid ":mod:`!html.parser` --- Simple HTML and XHTML parser"
 msgstr ""
 
+#: ../../library/html.parser.rst:7
 msgid "**Source code:** :source:`Lib/html/parser.py`"
 msgstr ""
 
-msgid "This module defines a class :class:`HTMLParser` which serves as the basis for parsing text files formatted in HTML (HyperText Mark-up Language) and XHTML."
+#: ../../library/html.parser.rst:15
+msgid ""
+"This module defines a class :class:`HTMLParser` which serves as the basis "
+"for parsing text files formatted in HTML (HyperText Mark-up Language) and "
+"XHTML."
 msgstr ""
 
+#: ../../library/html.parser.rst:20
 msgid "Create a parser instance able to parse invalid markup."
 msgstr ""
 
-msgid "If *convert_charrefs* is true (the default), all character references (except the ones in elements like ``script`` and ``style``) are automatically converted to the corresponding Unicode characters."
+#: ../../library/html.parser.rst:22
+msgid ""
+"If *convert_charrefs* is true (the default), all character references "
+"(except the ones in elements like ``script`` and ``style``) are "
+"automatically converted to the corresponding Unicode characters."
 msgstr ""
 
-msgid "If *scripting* is false (the default), the content of the ``noscript`` element is parsed normally; if it's true, it's returned as is without being parsed."
+#: ../../library/html.parser.rst:26
+msgid ""
+"If *scripting* is false (the default), the content of the ``noscript`` "
+"element is parsed normally; if it's true, it's returned as is without being "
+"parsed."
 msgstr ""
 
-msgid "An :class:`.HTMLParser` instance is fed HTML data and calls handler methods when start tags, end tags, text, comments, and other markup elements are encountered.  The user should subclass :class:`.HTMLParser` and override its methods to implement the desired behavior."
+#: ../../library/html.parser.rst:30
+msgid ""
+"An :class:`.HTMLParser` instance is fed HTML data and calls handler methods "
+"when start tags, end tags, text, comments, and other markup elements are "
+"encountered.  The user should subclass :class:`.HTMLParser` and override its "
+"methods to implement the desired behavior."
 msgstr ""
 
-msgid "This parser does not check that end tags match start tags or call the end-tag handler for elements which are closed implicitly by closing an outer element."
+#: ../../library/html.parser.rst:35
+msgid ""
+"This parser does not check that end tags match start tags or call the end-"
+"tag handler for elements which are closed implicitly by closing an outer "
+"element."
 msgstr ""
 
+#: ../../library/html.parser.rst:38
 msgid "*convert_charrefs* keyword argument added."
 msgstr ""
 
+#: ../../library/html.parser.rst:41
 msgid "The default value for argument *convert_charrefs* is now ``True``."
 msgstr ""
 
+#: ../../library/html.parser.rst:44
 msgid "Added the *scripting* parameter."
 msgstr ""
 
+#: ../../library/html.parser.rst:49
 msgid "Example HTML Parser Application"
 msgstr ""
 
-msgid "As a basic example, below is a simple HTML parser that uses the :class:`HTMLParser` class to print out start tags, end tags, and data as they are encountered:"
+#: ../../library/html.parser.rst:51
+msgid ""
+"As a basic example, below is a simple HTML parser that uses "
+"the :class:`HTMLParser` class to print out start tags, end tags, and data as "
+"they are encountered:"
 msgstr ""
 
+#: ../../library/html.parser.rst:55
 msgid ""
 "from html.parser import HTMLParser\n"
 "\n"
@@ -81,9 +114,11 @@ msgid ""
 "            '<body><h1>Parse me!</h1></body></html>')"
 msgstr ""
 
+#: ../../library/html.parser.rst:73
 msgid "The output will then be:"
 msgstr ""
 
+#: ../../library/html.parser.rst:75
 msgid ""
 "Encountered a start tag: html\n"
 "Encountered a start tag: head\n"
@@ -99,93 +134,195 @@ msgid ""
 "Encountered an end tag : html"
 msgstr ""
 
+#: ../../library/html.parser.rst:92
 msgid ":class:`.HTMLParser` Methods"
 msgstr ""
 
+#: ../../library/html.parser.rst:94
 msgid ":class:`HTMLParser` instances have the following methods:"
 msgstr ""
 
-msgid "Feed some text to the parser.  It is processed insofar as it consists of complete elements; incomplete data is buffered until more data is fed or :meth:`close` is called.  *data* must be :class:`str`."
+#: ../../library/html.parser.rst:99
+msgid ""
+"Feed some text to the parser.  It is processed insofar as it consists of "
+"complete elements; incomplete data is buffered until more data is fed "
+"or :meth:`close` is called.  *data* must be :class:`str`."
 msgstr ""
 
-msgid "Force processing of all buffered data as if it were followed by an end-of-file mark.  This method may be redefined by a derived class to define additional processing at the end of the input, but the redefined version should always call the :class:`HTMLParser` base class method :meth:`close`."
+#: ../../library/html.parser.rst:106
+msgid ""
+"Force processing of all buffered data as if it were followed by an end-of-"
+"file mark.  This method may be redefined by a derived class to define "
+"additional processing at the end of the input, but the redefined version "
+"should always call the :class:`HTMLParser` base class method :meth:`close`."
 msgstr ""
 
-msgid "Reset the instance.  Loses all unprocessed data.  This is called implicitly at instantiation time."
+#: ../../library/html.parser.rst:114
+msgid ""
+"Reset the instance.  Loses all unprocessed data.  This is called implicitly "
+"at instantiation time."
 msgstr ""
 
+#: ../../library/html.parser.rst:120
 msgid "Return current line number and offset."
 msgstr ""
 
-msgid "Return the text of the most recently opened start tag.  This should not normally be needed for structured processing, but may be useful in dealing with HTML \"as deployed\" or for re-generating input with minimal changes (whitespace between attributes can be preserved, etc.)."
+#: ../../library/html.parser.rst:125
+msgid ""
+"Return the text of the most recently opened start tag.  This should not "
+"normally be needed for structured processing, but may be useful in dealing "
+"with HTML \"as deployed\" or for re-generating input with minimal changes "
+"(whitespace between attributes can be preserved, etc.)."
 msgstr ""
 
-msgid "The following methods are called when data or markup elements are encountered and they are meant to be overridden in a subclass.  The base class implementations do nothing (except for :meth:`~HTMLParser.handle_startendtag`):"
+#: ../../library/html.parser.rst:131
+msgid ""
+"The following methods are called when data or markup elements are "
+"encountered and they are meant to be overridden in a subclass.  The base "
+"class implementations do nothing (except "
+"for :meth:`~HTMLParser.handle_startendtag`):"
 msgstr ""
 
-msgid "This method is called to handle the start tag of an element (e.g. ``<div id=\"main\">``)."
+#: ../../library/html.parser.rst:138
+msgid ""
+"This method is called to handle the start tag of an element (e.g. ``<div "
+"id=\"main\">``)."
 msgstr ""
 
-msgid "The *tag* argument is the name of the tag converted to lower case. The *attrs* argument is a list of ``(name, value)`` pairs containing the attributes found inside the tag's ``<>`` brackets.  The *name* will be translated to lower case, and quotes in the *value* have been removed, and character and entity references have been replaced.  For empty attributes, *value* is ``None``."
+#: ../../library/html.parser.rst:140
+msgid ""
+"The *tag* argument is the name of the tag converted to lower case. The "
+"*attrs* argument is a list of ``(name, value)`` pairs containing the "
+"attributes found inside the tag's ``<>`` brackets.  The *name* will be "
+"translated to lower case, and quotes in the *value* have been removed, and "
+"character and entity references have been replaced.  For empty attributes, "
+"*value* is ``None``."
 msgstr ""
 
-msgid "For instance, for the tag ``<A HREF=\"https://www.cwi.nl/\">``, this method would be called as ``handle_starttag('a', [('href', 'https://www.cwi.nl/')])``."
+#: ../../library/html.parser.rst:146
+msgid ""
+"For instance, for the tag ``<A HREF=\"https://www.cwi.nl/\">``, this method "
+"would be called as ``handle_starttag('a', [('href', 'https://"
+"www.cwi.nl/')])``."
 msgstr ""
 
-msgid "All entity references from :mod:`html.entities` are replaced in the attribute values."
+#: ../../library/html.parser.rst:149
+msgid ""
+"All entity references from :mod:`html.entities` are replaced in the "
+"attribute values."
 msgstr ""
 
-msgid "This method is called to handle the end tag of an element (e.g. ``</div>``)."
+#: ../../library/html.parser.rst:155
+msgid ""
+"This method is called to handle the end tag of an element (e.g. ``</div>``)."
 msgstr ""
 
+#: ../../library/html.parser.rst:157
 msgid "The *tag* argument is the name of the tag converted to lower case."
 msgstr ""
 
-msgid "Similar to :meth:`handle_starttag`, but called when the parser encounters an XHTML-style empty tag (``<img ... />``).  This method may be overridden by subclasses which require this particular lexical information; the default implementation simply calls :meth:`handle_starttag` and :meth:`handle_endtag`."
+#: ../../library/html.parser.rst:162
+msgid ""
+"Similar to :meth:`handle_starttag`, but called when the parser encounters an "
+"XHTML-style empty tag (``<img ... />``).  This method may be overridden by "
+"subclasses which require this particular lexical information; the default "
+"implementation simply calls :meth:`handle_starttag` "
+"and :meth:`handle_endtag`."
 msgstr ""
 
-msgid "This method is called to process arbitrary data (e.g. text nodes and the content of elements like ``script`` and ``style``)."
+#: ../../library/html.parser.rst:170
+msgid ""
+"This method is called to process arbitrary data (e.g. text nodes and the "
+"content of elements like ``script`` and ``style``)."
 msgstr ""
 
-msgid "This method is called to process a named character reference of the form ``&name;`` (e.g. ``&gt;``), where *name* is a general entity reference (e.g. ``'gt'``). This method is only called if *convert_charrefs* is false."
+#: ../../library/html.parser.rst:176
+msgid ""
+"This method is called to process a named character reference of the form "
+"``&name;`` (e.g. ``&gt;``), where *name* is a general entity reference (e.g. "
+"``'gt'``). This method is only called if *convert_charrefs* is false."
 msgstr ""
 
-msgid "This method is called to process decimal and hexadecimal numeric character references of the form :samp:`&#{NNN};` and :samp:`&#x{NNN};`.  For example, the decimal equivalent for ``&gt;`` is ``&#62;``, whereas the hexadecimal is ``&#x3E;``; in this case the method will receive ``'62'`` or ``'x3E'``. This method is only called if *convert_charrefs* is false."
+#: ../../library/html.parser.rst:184
+msgid ""
+"This method is called to process decimal and hexadecimal numeric character "
+"references of the form :samp:`&#{NNN};` and :samp:`&#x{NNN};`.  For example, "
+"the decimal equivalent for ``&gt;`` is ``&#62;``, whereas the hexadecimal is "
+"``&#x3E;``; in this case the method will receive ``'62'`` or ``'x3E'``. This "
+"method is only called if *convert_charrefs* is false."
 msgstr ""
 
-msgid "This method is called when a comment is encountered (e.g. ``<!--comment-->``)."
+#: ../../library/html.parser.rst:193
+msgid ""
+"This method is called when a comment is encountered (e.g. ``<!--comment--"
+">``)."
 msgstr ""
 
-msgid "For example, the comment ``<!-- comment -->`` will cause this method to be called with the argument ``' comment '``."
+#: ../../library/html.parser.rst:195
+msgid ""
+"For example, the comment ``<!-- comment -->`` will cause this method to be "
+"called with the argument ``' comment '``."
 msgstr ""
 
-msgid "The content of Internet Explorer conditional comments (condcoms) will also be sent to this method, so, for ``<!--[if IE 9]>IE9-specific content<![endif]-->``, this method will receive ``'[if IE 9]>IE9-specific content<![endif]'``."
+#: ../../library/html.parser.rst:198
+msgid ""
+"The content of Internet Explorer conditional comments (condcoms) will also "
+"be sent to this method, so, for ``<!--[if IE 9]>IE9-specific content<!"
+"[endif]-->``, this method will receive ``'[if IE 9]>IE9-specific content<!"
+"[endif]'``."
 msgstr ""
 
-msgid "This method is called to handle an HTML doctype declaration (e.g. ``<!DOCTYPE html>``)."
+#: ../../library/html.parser.rst:205
+msgid ""
+"This method is called to handle an HTML doctype declaration (e.g. ``<!"
+"DOCTYPE html>``)."
 msgstr ""
 
-msgid "The *decl* parameter will be the entire contents of the declaration inside the ``<!...>`` markup (e.g. ``'DOCTYPE html'``)."
+#: ../../library/html.parser.rst:208
+msgid ""
+"The *decl* parameter will be the entire contents of the declaration inside "
+"the ``<!...>`` markup (e.g. ``'DOCTYPE html'``)."
 msgstr ""
 
-msgid "Method called when a processing instruction is encountered.  The *data* parameter will contain the entire processing instruction. For example, for the processing instruction ``<?proc color='red'>``, this method would be called as ``handle_pi(\"proc color='red'\")``.  It is intended to be overridden by a derived class; the base class implementation does nothing."
+#: ../../library/html.parser.rst:214
+msgid ""
+"Method called when a processing instruction is encountered.  The *data* "
+"parameter will contain the entire processing instruction. For example, for "
+"the processing instruction ``<?proc color='red'>``, this method would be "
+"called as ``handle_pi(\"proc color='red'\")``.  It is intended to be "
+"overridden by a derived class; the base class implementation does nothing."
 msgstr ""
 
-msgid "The :class:`HTMLParser` class uses the SGML syntactic rules for processing instructions.  An XHTML processing instruction using the trailing ``'?'`` will cause the ``'?'`` to be included in *data*."
+#: ../../library/html.parser.rst:222
+msgid ""
+"The :class:`HTMLParser` class uses the SGML syntactic rules for processing "
+"instructions.  An XHTML processing instruction using the trailing ``'?'`` "
+"will cause the ``'?'`` to be included in *data*."
 msgstr ""
 
-msgid "This method is called when an unrecognized declaration is read by the parser."
+#: ../../library/html.parser.rst:229
+msgid ""
+"This method is called when an unrecognized declaration is read by the parser."
 msgstr ""
 
-msgid "The *data* parameter will be the entire contents of the declaration inside the ``<![...]>`` markup.  It is sometimes useful to be overridden by a derived class.  The base class implementation does nothing."
+#: ../../library/html.parser.rst:231
+msgid ""
+"The *data* parameter will be the entire contents of the declaration inside "
+"the ``<![...]>`` markup.  It is sometimes useful to be overridden by a "
+"derived class.  The base class implementation does nothing."
 msgstr ""
 
+#: ../../library/html.parser.rst:239
 msgid "Examples"
 msgstr ""
 
-msgid "The following class implements a parser that will be used to illustrate more examples:"
+#: ../../library/html.parser.rst:241
+msgid ""
+"The following class implements a parser that will be used to illustrate more "
+"examples:"
 msgstr ""
 
+#: ../../library/html.parser.rst:244
 msgid ""
 "from html.parser import HTMLParser\n"
 "from html.entities import name2codepoint\n"
@@ -222,18 +359,23 @@ msgid ""
 "parser = MyHTMLParser()"
 msgstr ""
 
+#: ../../library/html.parser.rst:280
 msgid "Parsing a doctype:"
 msgstr ""
 
+#: ../../library/html.parser.rst:282
 msgid ""
 ">>> parser.feed('<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" '\n"
 "...             '\"http://www.w3.org/TR/html4/strict.dtd\">')\n"
-"Decl     : DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\""
+"Decl     : DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://"
+"www.w3.org/TR/html4/strict.dtd\""
 msgstr ""
 
+#: ../../library/html.parser.rst:288
 msgid "Parsing an element with a few attributes and a title:"
 msgstr ""
 
+#: ../../library/html.parser.rst:290
 msgid ""
 ">>> parser.feed('<img src=\"python-logo.png\" alt=\"The Python logo\">')\n"
 "Start tag: img\n"
@@ -246,11 +388,16 @@ msgid ""
 "End tag  : h1"
 msgstr ""
 
-msgid "The content of elements like ``script`` and ``style`` is returned as is, without further parsing:"
+#: ../../library/html.parser.rst:302
+msgid ""
+"The content of elements like ``script`` and ``style`` is returned as is, "
+"without further parsing:"
 msgstr ""
 
+#: ../../library/html.parser.rst:305
 msgid ""
-">>> parser.feed('<style type=\"text/css\">#python { color: green }</style>')\n"
+">>> parser.feed('<style type=\"text/css\">#python { color: green }</"
+"style>')\n"
 "Start tag: style\n"
 "     attr: ('type', 'text/css')\n"
 "Data     : #python { color: green }\n"
@@ -264,11 +411,17 @@ msgid ""
 "End tag  : script"
 msgstr ""
 
-msgid "Attribute names are converted to lowercase, quotes from attribute values removed, and ``None`` is returned as *value* for empty attributes (such as ``checked``):"
+#: ../../library/html.parser.rst:320
+msgid ""
+"Attribute names are converted to lowercase, quotes from attribute values "
+"removed, and ``None`` is returned as *value* for empty attributes (such as "
+"``checked``):"
 msgstr ""
 
+#: ../../library/html.parser.rst:323
 msgid ""
-">>> parser.feed(\"<input TYPE='checkbox' checked required='' disabled=disabled>\")\n"
+">>> parser.feed(\"<input TYPE='checkbox' checked required='' "
+"disabled=disabled>\")\n"
 "Start tag: input\n"
 "     attr: ('type', 'checkbox')\n"
 "     attr: ('checked', None)\n"
@@ -276,9 +429,11 @@ msgid ""
 "     attr: ('disabled', 'disabled')"
 msgstr ""
 
+#: ../../library/html.parser.rst:332
 msgid "Parsing comments:"
 msgstr ""
 
+#: ../../library/html.parser.rst:334
 msgid ""
 ">>> parser.feed('<!--a comment-->'\n"
 "...             '<!--[if IE 9]>IE-specific content<![endif]-->')\n"
@@ -286,9 +441,13 @@ msgid ""
 "Comment  : [if IE 9]>IE-specific content<![endif]"
 msgstr ""
 
-msgid "Parsing named and numeric character references and converting them to the correct char (note: these 3 references are all equivalent to ``'>'``):"
+#: ../../library/html.parser.rst:341
+msgid ""
+"Parsing named and numeric character references and converting them to the "
+"correct char (note: these 3 references are all equivalent to ``'>'``):"
 msgstr ""
 
+#: ../../library/html.parser.rst:344
 msgid ""
 ">>> parser = MyHTMLParser()\n"
 ">>> parser.feed('&gt;&#62;&#x3E;')\n"
@@ -301,9 +460,14 @@ msgid ""
 "Num ent  : >"
 msgstr ""
 
-msgid "Feeding incomplete chunks to :meth:`~HTMLParser.feed` works, but :meth:`~HTMLParser.handle_data` might be called more than once if *convert_charrefs* is false:"
+#: ../../library/html.parser.rst:356
+msgid ""
+"Feeding incomplete chunks to :meth:`~HTMLParser.feed` works, "
+"but :meth:`~HTMLParser.handle_data` might be called more than once if "
+"*convert_charrefs* is false:"
 msgstr ""
 
+#: ../../library/html.parser.rst:360
 msgid ""
 ">>> for chunk in ['<sp', 'an>buff', 'ered', ' text</s', 'pan>']:\n"
 "...     parser.feed(chunk)\n"
@@ -315,9 +479,11 @@ msgid ""
 "End tag  : span"
 msgstr ""
 
+#: ../../library/html.parser.rst:371
 msgid "Parsing invalid HTML (e.g. unquoted attributes) also works:"
 msgstr ""
 
+#: ../../library/html.parser.rst:373
 msgid ""
 ">>> parser.feed('<p><a class=link href=#main>tag soup</p ></a>')\n"
 "Start tag: p\n"
@@ -329,8 +495,10 @@ msgid ""
 "End tag  : a"
 msgstr ""
 
+#: ../../library/html.parser.rst:9
 msgid "HTML"
 msgstr ""
 
+#: ../../library/html.parser.rst:9
 msgid "XHTML"
 msgstr ""

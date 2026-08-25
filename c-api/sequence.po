@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-25 20:39+0330\n"
 "PO-Revision-Date: 2021-06-28 00:50+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
@@ -22,98 +22,205 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../c-api/sequence.rst:6
 msgid "Sequence Protocol"
 msgstr ""
 
-msgid "Return ``1`` if the object provides the sequence protocol, and ``0`` otherwise. Note that it returns ``1`` for Python classes with a :meth:`~object.__getitem__` method, unless they are :class:`dict` subclasses, since in general it is impossible to determine what type of keys the class supports.  This function always succeeds."
+#: ../../c-api/sequence.rst:11
+msgid ""
+"Return ``1`` if the object provides the sequence protocol, and ``0`` "
+"otherwise. Note that it returns ``1`` for Python classes with "
+"a :meth:`~object.__getitem__` method, unless they are :class:`dict` "
+"subclasses, since in general it is impossible to determine what type of keys "
+"the class supports.  This function always succeeds."
 msgstr ""
 
-msgid "Returns the number of objects in sequence *o* on success, and ``-1`` on failure.  This is equivalent to the Python expression ``len(o)``."
+#: ../../c-api/sequence.rst:23
+msgid ""
+"Returns the number of objects in sequence *o* on success, and ``-1`` on "
+"failure.  This is equivalent to the Python expression ``len(o)``."
 msgstr ""
 
-msgid "Return the concatenation of *o1* and *o2* on success, and ``NULL`` on failure. This is the equivalent of the Python expression ``o1 + o2``."
+#: ../../c-api/sequence.rst:29
+msgid ""
+"Return the concatenation of *o1* and *o2* on success, and ``NULL`` on "
+"failure. This is the equivalent of the Python expression ``o1 + o2``."
 msgstr ""
 
-msgid "Return the result of repeating sequence object *o* *count* times, or ``NULL`` on failure.  This is the equivalent of the Python expression ``o * count``."
+#: ../../c-api/sequence.rst:35
+msgid ""
+"Return the result of repeating sequence object *o* *count* times, or "
+"``NULL`` on failure.  This is the equivalent of the Python expression ``o * "
+"count``."
 msgstr ""
 
-msgid "Return the concatenation of *o1* and *o2* on success, and ``NULL`` on failure. The operation is done *in-place* when *o1* supports it.  This is the equivalent of the Python expression ``o1 += o2``."
+#: ../../c-api/sequence.rst:41
+msgid ""
+"Return the concatenation of *o1* and *o2* on success, and ``NULL`` on "
+"failure. The operation is done *in-place* when *o1* supports it.  This is "
+"the equivalent of the Python expression ``o1 += o2``."
 msgstr ""
 
-msgid "Return the result of repeating sequence object *o* *count* times, or ``NULL`` on failure.  The operation is done *in-place* when *o* supports it.  This is the equivalent of the Python expression ``o *= count``."
+#: ../../c-api/sequence.rst:48
+msgid ""
+"Return the result of repeating sequence object *o* *count* times, or "
+"``NULL`` on failure.  The operation is done *in-place* when *o* supports "
+"it.  This is the equivalent of the Python expression ``o *= count``."
 msgstr ""
 
-msgid "Return the *i*\\ th element of *o*, or ``NULL`` on failure. This is the equivalent of the Python expression ``o[i]``."
+#: ../../c-api/sequence.rst:55
+msgid ""
+"Return the *i*\\ th element of *o*, or ``NULL`` on failure. This is the "
+"equivalent of the Python expression ``o[i]``."
 msgstr ""
 
-msgid "Return the slice of sequence object *o* between *i1* and *i2*, or ``NULL`` on failure. This is the equivalent of the Python expression ``o[i1:i2]``."
+#: ../../c-api/sequence.rst:61
+msgid ""
+"Return the slice of sequence object *o* between *i1* and *i2*, or ``NULL`` "
+"on failure. This is the equivalent of the Python expression ``o[i1:i2]``."
 msgstr ""
 
-msgid "Assign object *v* to the *i*\\ th element of *o*.  Raise an exception and return ``-1`` on failure; return ``0`` on success.  This is the equivalent of the Python statement ``o[i] = v``.  This function *does not* steal a reference to *v*."
+#: ../../c-api/sequence.rst:67
+msgid ""
+"Assign object *v* to the *i*\\ th element of *o*.  Raise an exception and "
+"return ``-1`` on failure; return ``0`` on success.  This is the equivalent "
+"of the Python statement ``o[i] = v``.  This function *does not* "
+"\":term:`steal`\" a reference to *v*."
 msgstr ""
 
-msgid "If *v* is ``NULL``, the element is deleted, but this feature is deprecated in favour of using :c:func:`PySequence_DelItem`."
+#: ../../c-api/sequence.rst:72
+msgid ""
+"If *v* is ``NULL``, the element is deleted, but this feature is deprecated "
+"in favour of using :c:func:`PySequence_DelItem`."
 msgstr ""
 
-msgid "Delete the *i*\\ th element of object *o*.  Returns ``-1`` on failure.  This is the equivalent of the Python statement ``del o[i]``."
+#: ../../c-api/sequence.rst:78
+msgid ""
+"Delete the *i*\\ th element of object *o*.  Returns ``-1`` on failure.  This "
+"is the equivalent of the Python statement ``del o[i]``."
 msgstr ""
 
-msgid "Assign the sequence object *v* to the slice in sequence object *o* from *i1* to *i2*.  This is the equivalent of the Python statement ``o[i1:i2] = v``."
+#: ../../c-api/sequence.rst:84
+msgid ""
+"Assign the sequence object *v* to the slice in sequence object *o* from *i1* "
+"to *i2*.  This is the equivalent of the Python statement ``o[i1:i2] = v``."
 msgstr ""
 
-msgid "Delete the slice in sequence object *o* from *i1* to *i2*.  Returns ``-1`` on failure.  This is the equivalent of the Python statement ``del o[i1:i2]``."
+#: ../../c-api/sequence.rst:90
+msgid ""
+"Delete the slice in sequence object *o* from *i1* to *i2*.  Returns ``-1`` "
+"on failure.  This is the equivalent of the Python statement ``del o[i1:i2]``."
 msgstr ""
 
-msgid "Return the number of occurrences of *value* in *o*, that is, return the number of keys for which ``o[key] == value``.  On failure, return ``-1``.  This is equivalent to the Python expression ``o.count(value)``."
+#: ../../c-api/sequence.rst:96
+msgid ""
+"Return the number of occurrences of *value* in *o*, that is, return the "
+"number of keys for which ``o[key] == value``.  On failure, return ``-1``.  "
+"This is equivalent to the Python expression ``o.count(value)``."
 msgstr ""
 
-msgid "Determine if *o* contains *value*.  If an item in *o* is equal to *value*, return ``1``, otherwise return ``0``. On error, return ``-1``.  This is equivalent to the Python expression ``value in o``."
+#: ../../c-api/sequence.rst:103
+msgid ""
+"Determine if *o* contains *value*.  If an item in *o* is equal to *value*, "
+"return ``1``, otherwise return ``0``. On error, return ``-1``.  This is "
+"equivalent to the Python expression ``value in o``."
 msgstr ""
 
+#: ../../c-api/sequence.rst:110
 msgid "Alias for :c:func:`PySequence_Contains`."
 msgstr ""
 
+#: ../../c-api/sequence.rst:112
 msgid "The function should no longer be used to write new code."
 msgstr ""
 
-msgid "Return the first index *i* for which ``o[i] == value``.  On error, return ``-1``.    This is equivalent to the Python expression ``o.index(value)``."
+#: ../../c-api/sequence.rst:118
+msgid ""
+"Return the first index *i* for which ``o[i] == value``.  On error, return "
+"``-1``.    This is equivalent to the Python expression ``o.index(value)``."
 msgstr ""
 
-msgid "Return a list object with the same contents as the sequence or iterable *o*, or ``NULL`` on failure.  The returned list is guaranteed to be new.  This is equivalent to the Python expression ``list(o)``."
+#: ../../c-api/sequence.rst:124
+msgid ""
+"Return a list object with the same contents as the sequence or iterable *o*, "
+"or ``NULL`` on failure.  The returned list is guaranteed to be new.  This is "
+"equivalent to the Python expression ``list(o)``."
 msgstr ""
 
-msgid "Return a tuple object with the same contents as the sequence or iterable *o*, or ``NULL`` on failure.  If *o* is a tuple, a new reference will be returned, otherwise a tuple will be constructed with the appropriate contents.  This is equivalent to the Python expression ``tuple(o)``."
+#: ../../c-api/sequence.rst:133
+msgid ""
+"Return a tuple object with the same contents as the sequence or iterable "
+"*o*, or ``NULL`` on failure.  If *o* is a tuple, a new reference will be "
+"returned, otherwise a tuple will be constructed with the appropriate "
+"contents.  This is equivalent to the Python expression ``tuple(o)``."
 msgstr ""
 
-msgid "Return the sequence or iterable *o* as an object usable by the other ``PySequence_Fast*`` family of functions. If the object is not a sequence or iterable, raises :exc:`TypeError` with *m* as the message text. Returns ``NULL`` on failure."
+#: ../../c-api/sequence.rst:141
+msgid ""
+"Return the sequence or iterable *o* as an object usable by the other "
+"``PySequence_Fast*`` family of functions. If the object is not a sequence or "
+"iterable, raises :exc:`TypeError` with *m* as the message text. Returns "
+"``NULL`` on failure."
 msgstr ""
 
-msgid "The ``PySequence_Fast*`` functions are thus named because they assume *o* is a :c:type:`PyTupleObject` or a :c:type:`PyListObject` and access the data fields of *o* directly."
+#: ../../c-api/sequence.rst:146
+msgid ""
+"The ``PySequence_Fast*`` functions are thus named because they assume *o* is "
+"a :c:type:`PyTupleObject` or a :c:type:`PyListObject` and access the data "
+"fields of *o* directly."
 msgstr ""
 
-msgid "As a CPython implementation detail, if *o* is already a sequence or list, it will be returned."
+#: ../../c-api/sequence.rst:150
+msgid ""
+"As a CPython implementation detail, if *o* is already a sequence or list, it "
+"will be returned."
 msgstr ""
 
-msgid "Returns the length of *o*, assuming that *o* was returned by :c:func:`PySequence_Fast` and that *o* is not ``NULL``.  The size can also be retrieved by calling :c:func:`PySequence_Size` on *o*, but :c:func:`PySequence_Fast_GET_SIZE` is faster because it can assume *o* is a list or tuple."
+#: ../../c-api/sequence.rst:156
+msgid ""
+"Returns the length of *o*, assuming that *o* was returned "
+"by :c:func:`PySequence_Fast` and that *o* is not ``NULL``.  The size can "
+"also be retrieved by calling :c:func:`PySequence_Size` on *o*, "
+"but :c:func:`PySequence_Fast_GET_SIZE` is faster because it can assume *o* "
+"is a list or tuple."
 msgstr ""
 
-msgid "Return the *i*\\ th element of *o*, assuming that *o* was returned by :c:func:`PySequence_Fast`, *o* is not ``NULL``, and that *i* is within bounds."
+#: ../../c-api/sequence.rst:165
+msgid ""
+"Return the *i*\\ th element of *o*, assuming that *o* was returned "
+"by :c:func:`PySequence_Fast`, *o* is not ``NULL``, and that *i* is within "
+"bounds."
 msgstr ""
 
-msgid "Return the underlying array of PyObject pointers.  Assumes that *o* was returned by :c:func:`PySequence_Fast` and *o* is not ``NULL``."
+#: ../../c-api/sequence.rst:171
+msgid ""
+"Return the underlying array of PyObject pointers.  Assumes that *o* was "
+"returned by :c:func:`PySequence_Fast` and *o* is not ``NULL``."
 msgstr ""
 
-msgid "Note, if a list gets resized, the reallocation may relocate the items array. So, only use the underlying array pointer in contexts where the sequence cannot change."
+#: ../../c-api/sequence.rst:174
+msgid ""
+"Note, if a list gets resized, the reallocation may relocate the items array. "
+"So, only use the underlying array pointer in contexts where the sequence "
+"cannot change."
 msgstr ""
 
-msgid "Return the *i*\\ th element of *o* or ``NULL`` on failure. Faster form of :c:func:`PySequence_GetItem` but without checking that :c:func:`PySequence_Check` on *o* is true and without adjustment for negative indices."
+#: ../../c-api/sequence.rst:181
+msgid ""
+"Return the *i*\\ th element of *o* or ``NULL`` on failure. Faster form "
+"of :c:func:`PySequence_GetItem` but without checking "
+"that :c:func:`PySequence_Check` on *o* is true and without adjustment for "
+"negative indices."
 msgstr ""
 
+#: ../../c-api/sequence.rst:21 ../../c-api/sequence.rst:131
 msgid "built-in function"
 msgstr ""
 
+#: ../../c-api/sequence.rst:21
 msgid "len"
 msgstr ""
 
+#: ../../c-api/sequence.rst:131
 msgid "tuple"
 msgstr ""

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-25 20:39+0330\n"
 "PO-Revision-Date: 2021-06-28 01:49+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
@@ -24,170 +24,349 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../reference/introduction.rst:6
 msgid "Introduction"
 msgstr ""
 
-msgid "This reference manual describes the Python programming language. It is not intended as a tutorial."
+#: ../../reference/introduction.rst:8
+msgid ""
+"This reference manual describes the Python programming language. It is not "
+"intended as a tutorial."
 msgstr ""
 
-msgid "While I am trying to be as precise as possible, I chose to use English rather than formal specifications for everything except syntax and lexical analysis. This should make the document more understandable to the average reader, but will leave room for ambiguities. Consequently, if you were coming from Mars and tried to re-implement Python from this document alone, you might have to guess things and in fact you would probably end up implementing quite a different language. On the other hand, if you are using Python and wonder what the precise rules about a particular area of the language are, you should definitely be able to find them here. If you would like to see a more formal definition of the language, maybe you could volunteer your time --- or invent a cloning machine :-)."
+#: ../../reference/introduction.rst:11
+msgid ""
+"While I am trying to be as precise as possible, I chose to use English "
+"rather than formal specifications for everything except syntax and lexical "
+"analysis. This should make the document more understandable to the average "
+"reader, but will leave room for ambiguities. Consequently, if you were "
+"coming from Mars and tried to re-implement Python from this document alone, "
+"you might have to guess things and in fact you would probably end up "
+"implementing quite a different language. On the other hand, if you are using "
+"Python and wonder what the precise rules about a particular area of the "
+"language are, you should definitely be able to find them here. If you would "
+"like to see a more formal definition of the language, maybe you could "
+"volunteer your time --- or invent a cloning machine :-)."
 msgstr ""
 
-msgid "It is dangerous to add too many implementation details to a language reference document --- the implementation may change, and other implementations of the same language may work differently.  On the other hand, CPython is the one Python implementation in widespread use (although alternate implementations continue to gain support), and its particular quirks are sometimes worth being mentioned, especially where the implementation imposes additional limitations. Therefore, you'll find short \"implementation notes\" sprinkled throughout the text."
+#: ../../reference/introduction.rst:23
+msgid ""
+"It is dangerous to add too many implementation details to a language "
+"reference document --- the implementation may change, and other "
+"implementations of the same language may work differently.  On the other "
+"hand, CPython is the one Python implementation in widespread use (although "
+"alternate implementations continue to gain support), and its particular "
+"quirks are sometimes worth being mentioned, especially where the "
+"implementation imposes additional limitations. Therefore, you'll find short "
+"\"implementation notes\" sprinkled throughout the text."
 msgstr ""
 
-msgid "Every Python implementation comes with a number of built-in and standard modules.  These are documented in :ref:`library-index`.  A few built-in modules are mentioned when they interact in a significant way with the language definition."
+#: ../../reference/introduction.rst:32
+msgid ""
+"Every Python implementation comes with a number of built-in and standard "
+"modules.  These are documented in :ref:`library-index`.  A few built-in "
+"modules are mentioned when they interact in a significant way with the "
+"language definition."
 msgstr ""
 
+#: ../../reference/introduction.rst:41
 msgid "Alternate Implementations"
 msgstr ""
 
-msgid "Though there is one Python implementation which is by far the most popular, there are some alternate implementations which are of particular interest to different audiences."
+#: ../../reference/introduction.rst:43
+msgid ""
+"Though there is one Python implementation which is by far the most popular, "
+"there are some alternate implementations which are of particular interest to "
+"different audiences."
 msgstr ""
 
+#: ../../reference/introduction.rst:47
 msgid "Known implementations include:"
 msgstr ""
 
+#: ../../reference/introduction.rst:49
 msgid "CPython"
 msgstr ""
 
-msgid "This is the original and most-maintained implementation of Python, written in C. New language features generally appear here first."
+#: ../../reference/introduction.rst:50
+msgid ""
+"This is the original and most-maintained implementation of Python, written "
+"in C. New language features generally appear here first."
 msgstr ""
 
+#: ../../reference/introduction.rst:53
 msgid "Jython"
 msgstr ""
 
-msgid "Python implemented in Java.  This implementation can be used as a scripting language for Java applications, or can be used to create applications using the Java class libraries.  It is also often used to create tests for Java libraries. More information can be found at `the Jython website <https://www.jython.org/>`_."
+#: ../../reference/introduction.rst:54
+msgid ""
+"Python implemented in Java.  This implementation can be used as a scripting "
+"language for Java applications, or can be used to create applications using "
+"the Java class libraries.  It is also often used to create tests for Java "
+"libraries. More information can be found at `the Jython website <https://"
+"www.jython.org/>`_."
 msgstr ""
 
+#: ../../reference/introduction.rst:59
 msgid "Python for .NET"
 msgstr ""
 
-msgid "This implementation actually uses the CPython implementation, but is a managed .NET application and makes .NET libraries available.  It was created by Brian Lloyd.  For more information, see the `Python for .NET home page <https://pythonnet.github.io/>`_."
+#: ../../reference/introduction.rst:60
+msgid ""
+"This implementation actually uses the CPython implementation, but is a "
+"managed .NET application and makes .NET libraries available.  It was created "
+"by Brian Lloyd.  For more information, see the `Python for .NET home page "
+"<https://pythonnet.github.io/>`_."
 msgstr ""
 
+#: ../../reference/introduction.rst:65
 msgid "IronPython"
 msgstr ""
 
-msgid "An alternate Python for .NET.  Unlike Python.NET, this is a complete Python implementation that generates IL, and compiles Python code directly to .NET assemblies.  It was created by Jim Hugunin, the original creator of Jython.  For more information, see `the IronPython website <https://ironpython.net/>`_."
+#: ../../reference/introduction.rst:66
+msgid ""
+"An alternate Python for .NET.  Unlike Python.NET, this is a complete Python "
+"implementation that generates IL, and compiles Python code directly to .NET "
+"assemblies.  It was created by Jim Hugunin, the original creator of Jython.  "
+"For more information, see `the IronPython website <https://ironpython.net/"
+">`_."
 msgstr ""
 
+#: ../../reference/introduction.rst:71
 msgid "PyPy"
 msgstr ""
 
-msgid "An implementation of Python written completely in Python. It supports several advanced features not found in other implementations like stackless support and a Just in Time compiler. One of the goals of the project is to encourage experimentation with the language itself by making it easier to modify the interpreter (since it is written in Python).  Additional information is available on `the PyPy project's home page <https://pypy.org/>`_."
+#: ../../reference/introduction.rst:72
+msgid ""
+"An implementation of Python written completely in Python. It supports "
+"several advanced features not found in other implementations like stackless "
+"support and a Just in Time compiler. One of the goals of the project is to "
+"encourage experimentation with the language itself by making it easier to "
+"modify the interpreter (since it is written in Python).  Additional "
+"information is available on `the PyPy project's home page <https://pypy.org/"
+">`_."
 msgstr ""
 
-msgid "Each of these implementations varies in some way from the language as documented in this manual, or introduces specific information beyond what's covered in the standard Python documentation.  Please refer to the implementation-specific documentation to determine what else you need to know about the specific implementation you're using."
+#: ../../reference/introduction.rst:79
+msgid ""
+"Each of these implementations varies in some way from the language as "
+"documented in this manual, or introduces specific information beyond what's "
+"covered in the standard Python documentation.  Please refer to the "
+"implementation-specific documentation to determine what else you need to "
+"know about the specific implementation you're using."
 msgstr ""
 
+#: ../../reference/introduction.rst:89
 msgid "Notation"
 msgstr ""
 
-msgid "The descriptions of lexical analysis and syntax use a grammar notation that is a mixture of `EBNF <https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form>`_ and `PEG <https://en.wikipedia.org/wiki/Parsing_expression_grammar>`_. For example:"
+#: ../../reference/introduction.rst:93
+msgid ""
+"The descriptions of lexical analysis and syntax use a grammar notation that "
+"is a mixture of `EBNF <https://en.wikipedia.org/wiki/"
+"Extended_Backus%E2%80%93Naur_form>`_ and `PEG <https://en.wikipedia.org/wiki/"
+"Parsing_expression_grammar>`_. For example:"
 msgstr ""
 
-msgid "In this example, the first line says that a ``name`` is a ``letter`` followed by a sequence of zero or more ``letter``\\ s, ``digit``\\ s, and underscores. A ``letter`` in turn is any of the single characters ``'a'`` through ``'z'`` and ``A`` through ``Z``; a ``digit`` is a single character from ``0`` to ``9``."
+#: ../../reference/introduction.rst:106
+msgid ""
+"In this example, the first line says that a ``name`` is a ``letter`` "
+"followed by a sequence of zero or more ``letter``\\ s, ``digit``\\ s, and "
+"underscores. A ``letter`` in turn is any of the single characters ``'a'`` "
+"through ``'z'`` and ``A`` through ``Z``; a ``digit`` is a single character "
+"from ``0`` to ``9``."
 msgstr ""
 
-msgid "Each rule begins with a name (which identifies the rule that's being defined) followed by a colon, ``:``. The definition to the right of the colon uses the following syntax elements:"
+#: ../../reference/introduction.rst:112
+msgid ""
+"Each rule begins with a name (which identifies the rule that's being "
+"defined) followed by a colon, ``:``. The definition to the right of the "
+"colon uses the following syntax elements:"
 msgstr ""
 
-msgid "``name``: A name refers to another rule. Where possible, it is a link to the rule's definition."
+#: ../../reference/introduction.rst:116
+msgid ""
+"``name``: A name refers to another rule. Where possible, it is a link to the "
+"rule's definition."
 msgstr ""
 
-msgid "``TOKEN``: An uppercase name refers to a :term:`token`. For the purposes of grammar definitions, tokens are the same as rules."
+#: ../../reference/introduction.rst:119
+msgid ""
+"``TOKEN``: An uppercase name refers to a :term:`token`. For the purposes of "
+"grammar definitions, tokens are the same as rules."
 msgstr ""
 
-msgid "``\"text\"``, ``'text'``: Text in single or double quotes must match literally (without the quotes). The type of quote is chosen according to the meaning of ``text``:"
+#: ../../reference/introduction.rst:122
+msgid ""
+"``\"text\"``, ``'text'``: Text in single or double quotes must match "
+"literally (without the quotes). The type of quote is chosen according to the "
+"meaning of ``text``:"
 msgstr ""
 
+#: ../../reference/introduction.rst:126
 msgid "``'if'``: A name in single quotes denotes a :ref:`keyword <keywords>`."
 msgstr ""
 
-msgid "``\"case\"``: A name in double quotes denotes a :ref:`soft-keyword <soft-keywords>`."
+#: ../../reference/introduction.rst:127
+msgid ""
+"``\"case\"``: A name in double quotes denotes a :ref:`soft-keyword <soft-"
+"keywords>`."
 msgstr ""
 
-msgid "``'@'``: A non-letter symbol in single quotes denotes an :py:data:`~token.OP` token, that is, a :ref:`delimiter <delimiters>` or :ref:`operator <operators>`."
+#: ../../reference/introduction.rst:129
+msgid ""
+"``'@'``: A non-letter symbol in single quotes denotes "
+"an :py:data:`~token.OP` token, that is, a :ref:`delimiter <delimiters>` "
+"or :ref:`operator <operators>`."
 msgstr ""
 
-msgid "``e1 e2``: Items separated only by whitespace denote a sequence. Here, ``e1`` must be followed by ``e2``."
+#: ../../reference/introduction.rst:133
+msgid ""
+"``e1 e2``: Items separated only by whitespace denote a sequence. Here, "
+"``e1`` must be followed by ``e2``."
 msgstr ""
 
-msgid "``e1 | e2``: A vertical bar is used to separate alternatives. It denotes PEG's \"ordered choice\": if ``e1`` matches, ``e2`` is not considered. In traditional PEG grammars, this is written as a slash, ``/``, rather than a vertical bar. See :pep:`617` for more background and details."
+#: ../../reference/introduction.rst:135
+msgid ""
+"``e1 | e2``: A vertical bar is used to separate alternatives. It denotes "
+"PEG's \"ordered choice\": if ``e1`` matches, ``e2`` is not considered. In "
+"traditional PEG grammars, this is written as a slash, ``/``, rather than a "
+"vertical bar. See :pep:`617` for more background and details."
 msgstr ""
 
+#: ../../reference/introduction.rst:141
 msgid "``e*``: A star means zero or more repetitions of the preceding item."
 msgstr ""
 
+#: ../../reference/introduction.rst:142
 msgid "``e+``: Likewise, a plus means one or more repetitions."
 msgstr ""
 
-msgid "``[e]``: A phrase enclosed in square brackets means zero or one occurrences. In other words, the enclosed phrase is optional."
+#: ../../reference/introduction.rst:143
+msgid ""
+"``[e]``: A phrase enclosed in square brackets means zero or one occurrences. "
+"In other words, the enclosed phrase is optional."
 msgstr ""
 
-msgid "``e?``: A question mark has exactly the same meaning as square brackets: the preceding item is optional."
+#: ../../reference/introduction.rst:145
+msgid ""
+"``e?``: A question mark has exactly the same meaning as square brackets: the "
+"preceding item is optional."
 msgstr ""
 
+#: ../../reference/introduction.rst:147
 msgid "``(e)``: Parentheses are used for grouping."
 msgstr ""
 
-msgid "The following notation is only used in :ref:`lexical definitions <notation-lexical-vs-syntactic>`."
+#: ../../reference/introduction.rst:149
+msgid ""
+"The following notation is only used in :ref:`lexical definitions <notation-"
+"lexical-vs-syntactic>`."
 msgstr ""
 
-msgid "``\"a\"...\"z\"``: Two literal characters separated by three dots mean a choice of any single character in the given (inclusive) range of ASCII characters."
+#: ../../reference/introduction.rst:152
+msgid ""
+"``\"a\"...\"z\"``: Two literal characters separated by three dots mean a "
+"choice of any single character in the given (inclusive) range of ASCII "
+"characters."
 msgstr ""
 
-msgid "``<...>``: A phrase between angular brackets gives an informal description of the matched symbol (for example, ``<any ASCII character except \"\\\">``), or an abbreviation that is defined in nearby text (for example, ``<Lu>``)."
+#: ../../reference/introduction.rst:154
+msgid ""
+"``<...>``: A phrase between angular brackets gives an informal description "
+"of the matched symbol (for example, ``<any ASCII character except \"\\"
+"\">``), or an abbreviation that is defined in nearby text (for example, "
+"``<Lu>``)."
 msgstr ""
 
-msgid "Some definitions also use *lookaheads*, which indicate that an element must (or must not) match at a given position, but without consuming any input:"
+#: ../../reference/introduction.rst:160
+msgid ""
+"Some definitions also use *lookaheads*, which indicate that an element must "
+"(or must not) match at a given position, but without consuming any input:"
 msgstr ""
 
+#: ../../reference/introduction.rst:163
 msgid "``&e``: a positive lookahead (that is, ``e`` is required to match)"
 msgstr ""
 
-msgid "``!e``: a negative lookahead (that is, ``e`` is required *not* to match)"
+#: ../../reference/introduction.rst:164
+msgid ""
+"``!e``: a negative lookahead (that is, ``e`` is required *not* to match)"
 msgstr ""
 
-msgid "The unary operators (``*``, ``+``, ``?``) bind as tightly as possible; the vertical bar (``|``) binds most loosely."
+#: ../../reference/introduction.rst:166
+msgid ""
+"The unary operators (``*``, ``+``, ``?``) bind as tightly as possible; the "
+"vertical bar (``|``) binds most loosely."
 msgstr ""
 
+#: ../../reference/introduction.rst:169
 msgid "White space is only meaningful to separate tokens."
 msgstr ""
 
-msgid "Rules are normally contained on a single line, but rules that are too long may be wrapped:"
+#: ../../reference/introduction.rst:171
+msgid ""
+"Rules are normally contained on a single line, but rules that are too long "
+"may be wrapped:"
 msgstr ""
 
-msgid "Alternatively, rules may be formatted with the first line ending at the colon, and each alternative beginning with a vertical bar on a new line. For example:"
+#: ../../reference/introduction.rst:180
+msgid ""
+"Alternatively, rules may be formatted with the first line ending at the "
+"colon, and each alternative beginning with a vertical bar on a new line. For "
+"example:"
 msgstr ""
 
+#: ../../reference/introduction.rst:195
 msgid "This does *not* mean that there is an empty first alternative."
 msgstr ""
 
+#: ../../reference/introduction.rst:202
 msgid "Lexical and Syntactic definitions"
 msgstr ""
 
-msgid "There is some difference between *lexical* and *syntactic* analysis: the :term:`lexical analyzer` operates on the individual characters of the input source, while the *parser* (syntactic analyzer) operates on the stream of :term:`tokens <token>` generated by the lexical analysis. However, in some cases the exact boundary between the two phases is a CPython implementation detail."
+#: ../../reference/introduction.rst:204
+msgid ""
+"There is some difference between *lexical* and *syntactic* analysis: "
+"the :term:`lexical analyzer` operates on the individual characters of the "
+"input source, while the *parser* (syntactic analyzer) operates on the stream "
+"of :term:`tokens <token>` generated by the lexical analysis. However, in "
+"some cases the exact boundary between the two phases is a CPython "
+"implementation detail."
 msgstr ""
 
-msgid "The practical difference between the two is that in *lexical* definitions, all whitespace is significant. The lexical analyzer :ref:`discards <whitespace>` all whitespace that is not converted to tokens like :data:`token.INDENT` or :data:`~token.NEWLINE`. *Syntactic* definitions then use these tokens, rather than source characters."
+#: ../../reference/introduction.rst:211
+msgid ""
+"The practical difference between the two is that in *lexical* definitions, "
+"all whitespace is significant. The lexical analyzer :ref:`discards "
+"<whitespace>` all whitespace that is not converted to tokens "
+"like :data:`token.INDENT` or :data:`~token.NEWLINE`. *Syntactic* definitions "
+"then use these tokens, rather than source characters."
 msgstr ""
 
-msgid "This documentation uses the same BNF grammar for both styles of definitions. All uses of BNF in the next chapter (:ref:`lexical`) are lexical definitions; uses in subsequent chapters are syntactic definitions."
+#: ../../reference/introduction.rst:217
+msgid ""
+"This documentation uses the same BNF grammar for both styles of definitions. "
+"All uses of BNF in the next chapter (:ref:`lexical`) are lexical "
+"definitions; uses in subsequent chapters are syntactic definitions."
 msgstr ""
 
+#: ../../reference/introduction.rst:91
 msgid "BNF"
 msgstr ""
 
+#: ../../reference/introduction.rst:91
 msgid "grammar"
 msgstr ""
 
+#: ../../reference/introduction.rst:91
 msgid "syntax"
 msgstr ""
 
+#: ../../reference/introduction.rst:91
 msgid "notation"
 msgstr ""
 
+#: ../../reference/introduction.rst:197
 msgid "lexical definitions"
 msgstr ""
