@@ -235,16 +235,16 @@ msgid "By proactively following this convention ourselves, our module will have 
 msgstr "با پیروی فعالانه‌ی خودمان از این قرارداد، ماژول ما هنگام اجرای مستقیم (یعنی ``python echo.py``) همان رفتاری را خواهد داشت که در صورت بسته‌بندی بعدی آن به‌عنوان یک نقطه‌ی ورودی اسکریپت کنسول در یک بسته‌ی قابل نصب با pip خواهد داشت."
 
 msgid "In particular, be careful about returning strings from your ``main`` function. :func:`sys.exit` will interpret a string argument as a failure message, so your program will have an exit code of ``1``, indicating failure, and the string will be written to :data:`sys.stderr`.  The ``echo.py`` example from earlier exemplifies using the ``sys.exit(main())`` convention."
-msgstr ""
+msgstr "به‌ویژه، در مورد بازگرداندن رشته‌ها از تابع ``main`` خود دقت کنید. :func:`sys.exit` یک آرگومان رشته‌ای را به‌عنوان پیام شکست تفسیر می‌کند، بنابراین برنامه‌ی شما کد خروجی ``1`` را خواهد داشت که نشان‌دهنده‌ی شکست است و رشته به :data:`sys.stderr` نوشته می‌شود.  مثال ``echo.py`` از قبل، استفاده از قرارداد ``sys.exit(main())`` را به‌خوبی نشان می‌دهد."
 
 msgid "`Python Packaging User Guide <https://packaging.python.org/>`_ contains a collection of tutorials and references on how to distribute and install Python packages with modern tools."
-msgstr ""
+msgstr "`Python Packaging User Guide <https://packaging.python.org/>`_ شامل مجموعه‌ای از آموزش‌ها و مراجع درباره‌ی نحوه‌ی توزیع و نصب بسته‌های پایتون با ابزارهای مدرن است."
 
 msgid "``__main__.py`` in Python Packages"
-msgstr ""
+msgstr "``__main__.py`` در بسته‌های پایتون"
 
 msgid "If you are not familiar with Python packages, see section :ref:`tut-packages` of the tutorial.  Most commonly, the ``__main__.py`` file is used to provide a command-line interface for a package. Consider the following hypothetical package, \"bandclass\":"
-msgstr ""
+msgstr "اگر با بسته‌های پایتون آشنایی ندارید، به بخش :ref:`tut-packages` از آموزش مراجعه کنید.  معمولاً، از فایل ``__main__.py`` برای ارائه‌ی یک رابط خط فرمان برای یک بسته استفاده می‌شود. بسته‌ی فرضی زیر را در نظر بگیرید، \"bandclass\":"
 
 msgid ""
 "bandclass\n"
@@ -252,15 +252,19 @@ msgid ""
 "  ├── __main__.py\n"
 "  └── student.py"
 msgstr ""
+"bandclass\n"
+"  ├── __init__.py\n"
+"  ├── __main__.py\n"
+"  └── student.py"
 
 msgid "``__main__.py`` will be executed when the package itself is invoked directly from the command line using the :option:`-m` flag. For example:"
-msgstr ""
+msgstr "``__main__.py`` زمانی اجرا می‌شود که خود بسته مستقیماً از خط فرمان با استفاده از پرچم :option:`-m` فراخوانی شود. برای مثال:"
 
 msgid "$ python -m bandclass"
-msgstr ""
+msgstr "$ python -m bandclass"
 
 msgid "This command will cause ``__main__.py`` to run. How you utilize this mechanism will depend on the nature of the package you are writing, but in this hypothetical case, it might make sense to allow the teacher to search for students::"
-msgstr ""
+msgstr "این دستور باعث اجرای ``__main__.py`` می‌شود. نحوه‌ی استفاده‌ی شما از این مکانیزم به ماهیت بسته‌ای که می‌نویسید بستگی دارد، اما در این حالت فرضی، ممکن است منطقی باشد که به معلم اجازه دهید دانش‌آموزان را جستجو کند::"
 
 msgid ""
 "# bandclass/__main__.py\n"
@@ -271,9 +275,16 @@ msgid ""
 "student_name = sys.argv[1] if len(sys.argv) >= 2 else ''\n"
 "print(f'Found student: {search_students(student_name)}')"
 msgstr ""
+"# bandclass/__main__.py\n"
+"\n"
+"import sys\n"
+"from .student import search_students\n"
+"\n"
+"student_name = sys.argv[1] if len(sys.argv) >= 2 else ''\n"
+"print(f'Found student: {search_students(student_name)}')"
 
 msgid "Note that ``from .student import search_students`` is an example of a relative import.  This import style can be used when referencing modules within a package.  For more details, see :ref:`intra-package-references` in the :ref:`tut-modules` section of the tutorial."
-msgstr ""
+msgstr "توجه داشته باشید که ``from .student import search_students`` مثالی از یک ایمپورت نسبی است.  این سبک ایمپورت را می‌توان هنگام ارجاع به ماژول‌های درون یک بسته استفاده کرد.  برای اطلاعات بیشتر، به :ref:`intra-package-references` در بخش :ref:`tut-modules` از آموزش مراجعه کنید."
 
 msgid "The content of ``__main__.py`` typically isn't fenced with an ``if __name__ == '__main__'`` block.  Instead, those files are kept short and import functions to execute from other modules.  Those other modules can then be easily unit-tested and are properly reusable."
 msgstr ""

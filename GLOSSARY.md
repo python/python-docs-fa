@@ -17,7 +17,7 @@
 | character        | نویسه                    |
 | class            | کلاس                     |
 | command line     | خط فرمان                 |
-| community        | کامیونیتی                |
+| community        | کامیونیتی، انجمن                |
 | component        | کامپوننت                 |
 | custom           | سفارشی، اختصاصی          |
 | decorator        | دکوراتور، آراینده        |
@@ -65,7 +65,6 @@
 | parameter        | پارامتر                  |
 | positional        | جایگاهی                  |
 | property         | ویژگی، پراپرتی، خصوصیت   |
-| pass        | پاس دادن           |
 | quotation        | علامت نقل‌وقول           |
 | raise            | پرتاب                    |
 | return           | بازگشت، برگرداندن        |
