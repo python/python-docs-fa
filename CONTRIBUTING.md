@@ -10,7 +10,7 @@
    ```bash
    git clone https://github.com/<username>/python-docs-fa.git
    cd python-docs-fa
-   git remote add upstream https://github.com/revisto/python-docs-fa.git
+   git remote add upstream https://github.com/python/python-docs-fa.git
    ```
 2. یک شاخه برای کارتان بسازید (نام شاخه باید گویا باشد، مثلاً `translate-something`):
    ```bash
@@ -105,7 +105,7 @@ python3 scripts/update_po_headers.py --dry-run
 
 # فقط اصلاح فیلد Language-Team بدون دست‌زدن به اعتبارها
 python3 scripts/update_po_headers.py --no-credits \
-    --language-team "Persian (https://github.com/revisto/python-docs-fa/)" \
+    --language-team "Persian (https://github.com/python/python-docs-fa/)" \
     bugs.po tutorial/
 
 # ادغام نام‌های جدید با فهرست موجود (نام‌های قبلی حذف نمی‌شوند)
