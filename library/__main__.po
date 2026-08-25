@@ -6,13 +6,14 @@
 # Translators:
 # Revisto <theRevisto@gmail.com>, 2025
 # Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026
+# invincible627 <fatemehzahra810@gmail.com>, 2026
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-20 04:14+0000\n"
 "PO-Revision-Date: 2021-06-28 00:54+0000\n"
 "Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
 "Language: fa\n"
@@ -25,40 +26,46 @@ msgid ":mod:`!__main__` --- Top-level code environment"
 msgstr ""
 
 msgid "In Python, the special name ``__main__`` is used for two important constructs:"
-msgstr ""
+msgstr "در پایتون، از نام ویژه‌ی ``__main__`` برای دو ساختار مهم استفاده می‌شود:"
 
 msgid "the name of the top-level environment of the program, which can be checked using the ``__name__ == '__main__'`` expression; and"
-msgstr ""
+msgstr "نام محیط سطح بالای برنامه، که می‌توان آن را با استفاده از عبارت ``__name__ == '__main__'`` بررسی کرد؛ و"
 
 msgid "the ``__main__.py`` file in Python packages."
-msgstr ""
+msgstr "فایل ``__main__.py`` در بسته‌های پایتون."
 
 msgid "Both of these mechanisms are related to Python modules; how users interact with them and how they interact with each other.  They are explained in detail below.  If you're new to Python modules, see the tutorial section :ref:`tut-modules` for an introduction."
-msgstr ""
+msgstr "هر دوی این مکانیزم‌ها به ماژول‌های پایتون مربوط می‌شوند: نحوه‌ی تعامل کاربران با آن‌ها و نحوه‌ی تعامل آن‌ها با یکدیگر.  این موارد در زیر به‌تفصیل توضیح داده شده‌اند.  اگر با ماژول‌های پایتون تازه‌کار هستید، برای آشنایی به بخش آموزش :ref:`tut-modules` مراجعه کنید."
 
 msgid "``__name__ == '__main__'``"
-msgstr ""
+msgstr "``__name__ == '__main__'``"
 
 msgid "When a Python module or package is imported, ``__name__`` is set to the module's name.  Usually, this is the name of the Python file itself without the ``.py`` extension::"
-msgstr ""
+msgstr "هنگامی که یک ماژول یا بستهٔ پایتون ایمپورت می‌شود، ``__name__`` به نام ماژول تنظیم می‌شود.  معمولاً این همان نام فایل پایتون است بدون پسوند ``.py``::"
 
 msgid ""
 ">>> import configparser\n"
 ">>> configparser.__name__\n"
 "'configparser'"
 msgstr ""
+">>> import configparser\n"
+">>> configparser.__name__\n"
+"'configparser'"
 
 msgid "If the file is part of a package, ``__name__`` will also include the parent package's path::"
-msgstr ""
+msgstr "اگر فایل بخشی از یک بسته باشد، ``__name__`` همچنین مسیر بستهٔ والد را شامل خواهد شد::"
 
 msgid ""
 ">>> from concurrent.futures import process\n"
 ">>> process.__name__\n"
 "'concurrent.futures.process'"
 msgstr ""
+">>> from concurrent.futures import process\n"
+">>> process.__name__\n"
+"'concurrent.futures.process'"
 
 msgid "However, if the module is executed in the top-level code environment, its ``__name__`` is set to the string ``'__main__'``."
-msgstr ""
+msgstr "با این حال، اگر ماژول در محیط کد سطح بالا اجرا شود، ``__name__`` آن به رشته‌ی ``'__main__'`` تنظیم می‌شود."
 
 msgid "What is the \"top-level code environment\"?"
 msgstr ""

@@ -1762,10 +1762,10 @@ msgid "This function is invoked by the :keyword:`import` statement.  It can be r
 msgstr "این تابع توسط دستور :keyword:`import` فراخوانی می‌شود. برای تغییر معنای دستور :keyword:`!import` می‌توان آن را (با وارد کردن ماژول :mod:`builtins` و انتساب به ``builtins.__import__``) جایگزین کرد، اما انجام این کار **اکیداً توصیه نمی‌شود**، زیرا معمولاً استفاده از import hookها (به :pep:`302` مراجعه کنید) برای دستیابی به همان هدف ساده‌تر است و با کدی که فرض می‌کند پیاده‌سازی پیش‌فرض import در حال استفاده است نیز مشکلی ایجاد نمی‌کند. همچنین استفادهٔ مستقیم از :func:`__import__` به نفع :func:`importlib.import_module` توصیه نمی‌شود."
 
 msgid "The function imports the module *name*, potentially using the given *globals* and *locals* to determine how to interpret the name in a package context. The *fromlist* gives the names of objects or submodules that should be imported from the module given by *name*.  The standard implementation does not use its *locals* argument at all and uses its *globals* only to determine the package context of the :keyword:`import` statement."
-msgstr "این تابع ماژول *name* را درون‌ریزی می‌کند و در صورت نیاز از *globals* و *locals* داده‌شده برای تعیین نحوهٔ تفسیر نام در زمینهٔ یک بسته استفاده می‌کند. آرگومان *fromlist* نام اشیا یا زیرماژول‌هایی را مشخص می‌کند که باید از ماژول مشخص‌شده توسط *name* وارد شوند. پیاده‌سازی استاندارد اصلاً از آرگومان *locals* استفاده نمی‌کند و از *globals* تنها برای تعیین زمینهٔ بسته در دستور :keyword:`import` بهره می‌برد."
+msgstr "این تابع ماژول *name* را ایمپورت می‌کند و در صورت نیاز از *globals* و *locals* داده‌شده برای تعیین نحوهٔ تفسیر نام در زمینهٔ یک بسته استفاده می‌کند. آرگومان *fromlist* نام اشیا یا زیرماژول‌هایی را مشخص می‌کند که باید از ماژول مشخص‌شده توسط *name* وارد شوند. پیاده‌سازی استاندارد اصلاً از آرگومان *locals* استفاده نمی‌کند و از *globals* تنها برای تعیین زمینهٔ بسته در دستور :keyword:`import` بهره می‌برد."
 
 msgid "*level* specifies whether to use absolute or relative imports. ``0`` (the default) means only perform absolute imports.  Positive values for *level* indicate the number of parent directories to search relative to the directory of the module calling :func:`__import__` (see :pep:`328` for the details)."
-msgstr "*level* مشخص می‌کند که از درون‌ریزی مطلق استفاده شود یا نسبی. مقدار ``0`` (که مقدار پیش‌فرض است) به این معناست که فقط درون‌ریزی مطلق انجام شود. مقادیر مثبت برای *level* تعداد پوشه‌های والد را مشخص می‌کنند که باید نسبت به پوشهٔ ماژولی که :func:`__import__` را فراخوانی کرده است جست‌وجو شوند (برای جزئیات، :pep:`328` را ببینید)."
+msgstr "*level* مشخص می‌کند که از ایمپورت مطلق استفاده شود یا نسبی. مقدار ``0`` (که مقدار پیش‌فرض است) به این معناست که فقط ایمپورت مطلق انجام شود. مقادیر مثبت برای *level* تعداد پوشه‌های والد را مشخص می‌کنند که باید نسبت به پوشهٔ ماژولی که :func:`__import__` را فراخوانی کرده است جست‌وجو شوند (برای جزئیات، :pep:`328` را ببینید)."
 
 msgid "When the *name* variable is of the form ``package.module``, normally, the top-level package (the name up till the first dot) is returned, *not* the module named by *name*.  However, when a non-empty *fromlist* argument is given, the module named by *name* is returned."
 msgstr "وقتی متغیر *name* به شکل ``package.module`` باشد، به‌طور معمول بستهٔ سطح بالا (بخشی از نام تا اولین نقطه) بازگردانده می‌شود، نه ماژولی که *name* به آن اشاره می‌کند. با این حال، اگر آرگومان *fromlist* ناتهی باشد، ماژول مشخص‌شده توسط *name* بازگردانده می‌شود."
@@ -1798,10 +1798,10 @@ msgstr ""
 "saus = _temp.sausage"
 
 msgid "Here, the ``spam.ham`` module is returned from :func:`__import__`.  From this object, the names to import are retrieved and assigned to their respective names."
-msgstr "در اینجا، ماژول ``spam.ham`` از :func:`__import__` بازگردانده می‌شود. سپس، نام‌هایی که باید درون‌ریزی شوند از این شیء استخراج شده و به نام‌های متناظر خود اختصاص داده می‌شوند."
+msgstr "در اینجا، ماژول ``spam.ham`` از :func:`__import__` بازگردانده می‌شود. سپس، نام‌هایی که باید ایمپورت شوند از این شیء استخراج شده و به نام‌های متناظر خود اختصاص داده می‌شوند."
 
 msgid "If you simply want to import a module (potentially within a package) by name, use :func:`importlib.import_module`."
-msgstr "اگر فقط می‌خواهید یک ماژول (احتمالاً درون یک بسته) را بر اساس نام آن درون‌ریزی کنید، از :func:`importlib.import_module` استفاده کنید."
+msgstr "اگر فقط می‌خواهید یک ماژول (احتمالاً درون یک بسته) را بر اساس نام آن ایمپورت کنید، از :func:`importlib.import_module` استفاده کنید."
 
 msgid "Negative values for *level* are no longer supported (which also changes the default value to 0)."
 msgstr "مقادیر منفی برای *level* دیگر پشتیبانی نمی‌شوند (در نتیجه، مقدار پیش‌فرض آن نیز به 0 تغییر کرده است)."
@@ -1891,7 +1891,7 @@ msgid "statement"
 msgstr "دستور"
 
 msgid "import"
-msgstr "درون‌ریزی"
+msgstr "ایمپورت"
 
 msgid "builtins"
 msgstr "پیش ساخته‌ها"

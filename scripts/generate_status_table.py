@@ -38,6 +38,7 @@ def file_stats(path: Path):
 def build_table() -> str:
     files = sorted(REPO_ROOT.rglob("*.po"))
     rows = []
+    totals = {"translated": 0, "fuzzy": 0, "untranslated": 0}
     for f in files:
         if ".cpython-src" in f.parts or ".git" in f.parts:
             continue
@@ -46,17 +47,32 @@ def build_table() -> str:
         translated_pct = (t / total * 100) if total else 100.0
         fuzzy_pct = (fz / total * 100) if total else 0.0
         rel = f.relative_to(REPO_ROOT)
-        rows.append((str(rel), translated_pct, fuzzy_pct))
+        rows.append((str(rel), translated_pct, fuzzy_pct, t, u, total))
+
+        totals["translated"] += t
+        totals["fuzzy"] += fz
+        totals["untranslated"] += u
 
     # most-complete files first, matching the old report's ordering
     rows.sort(key=lambda r: (-r[1], r[0]))
 
     lines = [
-        "| File | Translated | Fuzzy |",
-        "|:-----|:-----------:|:-----------:|",
+        "| فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد ترجمه‌نشده |",
+        "|:-----|:-----------:|:-----------:|:-----------:|:-----------:|",
     ]
-    for name, t_pct, f_pct in rows:
-        lines.append(f"| {name} | {t_pct:.1f}% | {f_pct:.1f}% |")
+    for name, t_pct, f_pct, t_count, u_count, _total in rows:
+        lines.append(
+            f"| {name} | {t_pct:.1f}% | {f_pct:.1f}% | {t_count} | {u_count} |"
+        )
+
+    grand_total = sum(totals.values())
+    lines.append(
+        f"| **مجموع** | "
+        f"**{(totals['translated'] / grand_total * 100) if grand_total else 100.0:.1f}%** | "
+        f"**{(totals['fuzzy'] / grand_total * 100) if grand_total else 0.0:.1f}%** | "
+        f"**{totals['translated']}** | **{totals['untranslated']}** |"
+    )
+
     return "\n".join(lines)
 
 
