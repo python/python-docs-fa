@@ -40,41 +40,101 @@ import sys
 # Extend this for your own glossary/language as needed.
 # ---------------------------------------------------------------------------
 FALLBACK_MAP = {
-    "accessibility": "دسترسی‌پذیری", "await": "await", "argument": "آرگومان",
-    "async": "ناهمگام، غیرهمگام", "API": "API", "attribute": "ویژگی، صفت، شاخصه",
-    "boolean": "بولی", "built-in": "توکار، درونی، درون‌ساخته",
-    "callback": "کال‌بک، فراخوانی بازگشتی", "character": "نویسه",
-    "context management": "مدیریت زمینه", "class": "کلاس", "cache": "نهانگاه",
-    "coroutine": "هم‌روال", "command line": "خط فرمان", "community": "کامیونیتی",
-    "component": "کامپوننت", "custom": "سفارشی، اختصاصی",
-    "decorator": "دکوراتور، آراینده", "debugging": "اشکال‌زدایی، دیباگ کردن",
-    "decoding": "کدگشایی", "deprecated": "منسوخ، از رده خارج شده",
-    "dependency": "وابستگی", "dictionary": "دیکشنری", "directory": "پوشه",
-    "duck-typing": "نوع‌دهی اردکی", "DOM": "DOM", "element": "المان، عنصر",
-    "endpoint": "پایانه", "escape": "خنثی کردن", "encoding": "کدگذاری",
-    "ecosystem": "اکوسیستم", "event": "رویداد", "exception": "استثنا",
-    "expression": "عبارت", "function": "تابع", "f-string": "اف‌استرینگ",
-    "generator": "تولیدگر", "global": "سراسری", "garbage collection": "زباله‌روبی",
-    "generic function": "تابع عام، تابع عمومی", "hexadecimal": "مبنای شانزده",
-    "immortal": "نامیرا", "import": "ایمپورت", "immutable": "تغییرناپذیر",
-    "index": "اندیس، شماره", "instance": "نمونه", "integer": "عدد صحیح",
-    "interface": "رابط", "interpreter": "مفسر", "item": "آیتم",
-    "iterable": "تکرارپذیر", "keyword": "کلیدواژه",
-    "keyword argument": "آرگومان کلیدواژه‌ای", "list": "فهرست",
-    "list comprehension": "درک فهرستی", "load": "بارگذاری", "loader": "بارگذار",
-    "local": "محلی", "loop": "حلقه", "method": "متد", "metaclass": "فراکلاس",
-    "mock": "ماک", "module": "ماژول", "mutable": "تغییرپذیر",
-    "namespace": "نام‌فضا", "object": "شیء", "operator": "عملگر",
-    "package": "بسته", "parameter": "پارامتر", "positional": "جایگاهی",
-    "property": "ویژگی، پراپرتی، خصوصیت", "parallelism": "موازی‌سازی",
-    "quotation": "علامت نقل‌قول", "raise": "پرتاب", "return": "بازگشت، برگرداندن",
-    "runtime": "ران‌تایم", "race": "رقابت", "scope": "محدوده",
-    "shadowing": "پوشاندن", "stack traceback": "ردگیری پشته", "statement": "دستور",
-    "string": "رشته", "syntax": "سینتکس، نحو", "shell": "پوسته",
-    "syntactic sugar": "قند نحوی", "tracking": "پیگیری",
-    "type": "نوع، نوع داده، تایپ", "thread": "نخ", "unit test": "یونیت تست",
-    "unpacking": "واگشایی", "value": "مقدار", "variable": "متغیر",
-    "wrapper": "پوششی، دربرگیرنده", "iterator": "تکرارگر",
+    "accessibility": "دسترسی‌پذیری",
+    "await": "await",
+    "argument": "آرگومان",
+    "async": "ناهمگام، غیرهمگام",
+    "API": "API",
+    "attribute": "ویژگی، صفت، شاخصه",
+    "boolean": "بولی",
+    "built-in": "توکار، درونی، درون‌ساخته",
+    "callback": "کال‌بک، فراخوانی بازگشتی",
+    "character": "نویسه",
+    "context management": "مدیریت زمینه",
+    "class": "کلاس",
+    "cache": "نهانگاه",
+    "coroutine": "هم‌روال",
+    "command line": "خط فرمان",
+    "community": "کامیونیتی",
+    "component": "کامپوننت",
+    "custom": "سفارشی، اختصاصی",
+    "decorator": "دکوراتور، آراینده",
+    "debugging": "اشکال‌زدایی، دیباگ کردن",
+    "decoding": "کدگشایی",
+    "deprecated": "منسوخ، از رده خارج شده",
+    "dependency": "وابستگی",
+    "dictionary": "دیکشنری",
+    "directory": "پوشه",
+    "duck-typing": "نوع‌دهی اردکی",
+    "DOM": "DOM",
+    "element": "المان، عنصر",
+    "endpoint": "پایانه",
+    "escape": "خنثی کردن",
+    "encoding": "کدگذاری",
+    "ecosystem": "اکوسیستم",
+    "event": "رویداد",
+    "exception": "استثنا",
+    "expression": "عبارت",
+    "function": "تابع",
+    "f-string": "اف‌استرینگ",
+    "generator": "تولیدگر",
+    "global": "سراسری",
+    "garbage collection": "زباله‌روبی",
+    "generic function": "تابع عام، تابع عمومی",
+    "hexadecimal": "مبنای شانزده",
+    "immortal": "نامیرا",
+    "import": "ایمپورت",
+    "immutable": "تغییرناپذیر",
+    "index": "اندیس، شماره",
+    "instance": "نمونه",
+    "integer": "عدد صحیح",
+    "interface": "رابط",
+    "interpreter": "مفسر",
+    "item": "آیتم",
+    "iterable": "تکرارپذیر",
+    "keyword": "کلیدواژه",
+    "keyword argument": "آرگومان کلیدواژه‌ای",
+    "list": "فهرست",
+    "list comprehension": "درک فهرستی",
+    "load": "بارگذاری",
+    "loader": "بارگذار",
+    "local": "محلی",
+    "loop": "حلقه",
+    "method": "متد",
+    "metaclass": "فراکلاس",
+    "mock": "ماک",
+    "module": "ماژول",
+    "mutable": "تغییرپذیر",
+    "namespace": "نام‌فضا",
+    "object": "شیء",
+    "operator": "عملگر",
+    "package": "بسته",
+    "parameter": "پارامتر",
+    "positional": "جایگاهی",
+    "property": "ویژگی، پراپرتی، خصوصیت",
+    "parallelism": "موازی‌سازی",
+    "quotation": "علامت نقل‌قول",
+    "raise": "پرتاب",
+    "return": "بازگشت، برگرداندن",
+    "runtime": "ران‌تایم",
+    "race": "رقابت",
+    "scope": "محدوده",
+    "shadowing": "پوشاندن",
+    "stack traceback": "ردگیری پشته",
+    "statement": "دستور",
+    "string": "رشته",
+    "syntax": "سینتکس، نحو",
+    "shell": "پوسته",
+    "syntactic sugar": "قند نحوی",
+    "tracking": "پیگیری",
+    "type": "نوع، نوع داده، تایپ",
+    "thread": "نخ",
+    "unit test": "یونیت تست",
+    "unpacking": "واگشایی",
+    "value": "مقدار",
+    "variable": "متغیر",
+    "wrapper": "پوششی، دربرگیرنده",
+    "iterator": "تکرارگر",
 }
 
 # Matches BOTH forms so both get (re)normalized to :term:`Persian <target>`:
@@ -83,15 +143,17 @@ FALLBACK_MAP = {
 #                                "Something" may be stale English display
 #                                text left over from the source file.
 # Group 'target' is always the real glossary-entry id to link to.
-TERM_RE = re.compile(r':term:`(?:(?P<target_only>[^`<>]+)|[^`<>]*<(?P<target_bracketed>[^`<>]+)>)`')
+TERM_RE = re.compile(
+    r":term:`(?:(?P<target_only>[^`<>]+)|[^`<>]*<(?P<target_bracketed>[^`<>]+)>)`"
+)
 
 
 def po_unescape(s):
-    return s.replace('\\n', '\n').replace('\\"', '"').replace('\\\\', '\\')
+    return s.replace("\\n", "\n").replace('\\"', '"').replace("\\\\", "\\")
 
 
 def po_escape(s):
-    return s.replace('\\', '\\\\').replace('"', '\\"').replace('\n', '\\n')
+    return s.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
 
 
 def parse_po_string_block(lines, i, n):
@@ -119,8 +181,9 @@ def parse_po(text):
             _, id_parts, j1 = parse_po_string_block(lines, i, n)
             if j1 < n and re.match(r'^msgstr\s+"', lines[j1]):
                 _, str_parts, j2 = parse_po_string_block(lines, j1, n)
-                entries.append({"type": "pair", "msgid_parts": id_parts,
-                                 "msgstr_parts": str_parts})
+                entries.append(
+                    {"type": "pair", "msgid_parts": id_parts, "msgstr_parts": str_parts}
+                )
                 i = j2
             else:
                 entries.append({"type": "other", "raw": [lines[i]]})
@@ -146,7 +209,7 @@ def build_term_map(entries):
         msgstr_full = join_parts_decoded(e["msgstr_parts"]).strip()
         if not msgid_full or not msgstr_full:
             continue
-        if re.search(r'[`:]', msgid_full) or len(msgid_full) > 60:
+        if re.search(r"[`:]", msgid_full) or len(msgid_full) > 60:
             continue
         term_map[msgid_full] = msgstr_full
     return term_map
@@ -167,12 +230,13 @@ def fix_po(text):
 
     def replace_in_text(s):
         def repl(m):
-            term = m.group('target_only') or m.group('target_bracketed')
+            term = m.group("target_only") or m.group("target_bracketed")
             translated = translate(term)
             if translated is None:
                 missing.add(term)
                 return m.group(0)  # leave completely unchanged
-            return f':term:`{translated} <{term}>`'
+            return f":term:`{translated} <{term}>`"
+
         return TERM_RE.sub(repl, s)
 
     changed_count = 0
@@ -180,7 +244,7 @@ def fix_po(text):
         if e["type"] != "pair":
             continue
         msgstr_full = join_parts_decoded(e["msgstr_parts"])
-        if ':term:`' not in msgstr_full:
+        if ":term:`" not in msgstr_full:
             continue
         new_full = replace_in_text(msgstr_full)
         if new_full == msgstr_full:
@@ -217,8 +281,9 @@ def main():
         sys.exit(1)
 
     in_path = sys.argv[1]
-    out_path = sys.argv[2] if len(sys.argv) > 2 else re.sub(
-        r'\.po$', '.fixed.po', in_path)
+    out_path = (
+        sys.argv[2] if len(sys.argv) > 2 else re.sub(r"\.po$", ".fixed.po", in_path)
+    )
 
     with open(in_path, encoding="utf-8") as f:
         text = f.read()
