@@ -150,22 +150,22 @@ msgid "atomic operation"
 msgstr "عملیات اتمی"
 
 msgid "An operation that appears to execute as a single, indivisible step: no other thread can observe it half-done, and its effects become visible all at once.  Python does not guarantee that high-level statements are atomic (for example, ``x += 1`` performs multiple bytecode operations and is not atomic).  Atomicity is only guaranteed where explicitly documented.  See also :term:`race condition` and :term:`data race`."
-msgstr "عملیاتی که به نظر می‌رسد به‌عنوان یک گام واحد و تقسیم‌ناپذیر اجرا می‌شود: هیچ نخٔ دیگری نمی‌تواند اجرای ناقص آن را مشاهده کند و اثرات آن یکباره قابل مشاهده می‌شوند. پایتون تضمین نمی‌کند که دستورهای سطح بالا اتمی باشند (برای مثال، ``x += 1`` چندین عملیات بایت‌کد انجام می‌دهد و اتمی نیست). اتمی بودن فقط در مواردی تضمین می‌شود که به‌صراحت مستند شده باشند. همچنین :term:`شرط رقابت <race condition>` و :term:`رقابت داده <data race>` را ببینید."
+msgstr "عملیاتی که به نظر می‌رسد به‌عنوان یک گام واحد و تقسیم‌ناپذیر اجرا می‌شود: هیچ نخ دیگری نمی‌تواند اجرای ناقص آن را مشاهده کند و اثرات آن یکباره قابل مشاهده می‌شوند. پایتون تضمین نمی‌کند که دستورهای سطح بالا اتمی باشند (برای مثال، ``x += 1`` چندین عملیات بایت‌کد انجام می‌دهد و اتمی نیست). اتمی بودن فقط در مواردی تضمین می‌شود که به‌صراحت مستند شده باشند. همچنین :term:`شرط رقابت <race condition>` و :term:`رقابت داده <data race>` را ببینید."
 
 msgid "attached thread state"
-msgstr "وضعیت نخٔ متصل"
+msgstr "وضعیت نخ متصل"
 
 msgid "A :term:`thread state` that is active for the current OS thread."
-msgstr "یک :term:`وضعیت نخٔ اجرایی <thread state>` که برای نخٔ فعلی سیستم‌عامل فعال است."
+msgstr "یک :term:`وضعیت نخ اجرایی <thread state>` که برای نخ فعلی سیستم‌عامل فعال است."
 
 msgid "When a :term:`thread state` is attached, the OS thread has access to the full Python C API and can safely invoke the bytecode interpreter."
-msgstr "هنگامی که یک :term:`وضعیت نخٔ اجرایی <thread state>` متصل است، نخٔ سیستم‌عامل به تمام API زبان C پایتون دسترسی دارد و می‌تواند به‌طور ایمن مفسر بایت‌کد را فراخوانی کند."
+msgstr "هنگامی که یک :term:`وضعیت نخ اجرایی <thread state>` متصل است، نخ سیستم‌عامل به تمام API زبان C پایتون دسترسی دارد و می‌تواند به‌طور ایمن مفسر بایت‌کد را فراخوانی کند."
 
 msgid "Unless a function explicitly notes otherwise, attempting to call the C API without an attached thread state will result in a fatal error or undefined behavior.  A thread state can be attached and detached explicitly by the user through the C API, or implicitly by the runtime, including during blocking C calls and by the bytecode interpreter in between calls."
-msgstr "مگر این‌که یک تابع به‌طور صریح خلاف آن را ذکر کند، تلاش برای فراخوانی API زبان C بدون یک وضعیت نخٔ متصل، به یک خطای مهلک یا رفتار تعریف‌نشده منجر خواهد شد. یک وضعیت نخ می‌تواند به‌صورت صریح توسط کاربر از طریق API زبان C متصل و جدا شود، یا به‌صورت ضمنی توسط ران‌تایم، از جمله در طول فراخوانی‌های C مسدودکننده و توسط مفسر بایت‌کد در بین فراخوانی‌ها، مدیریت شود."
+msgstr "مگر این‌که یک تابع به‌طور صریح خلاف آن را ذکر کند، تلاش برای فراخوانی API زبان C بدون یک وضعیت نخ متصل، به یک خطای مهلک یا رفتار تعریف‌نشده منجر خواهد شد. یک وضعیت نخ می‌تواند به‌صورت صریح توسط کاربر از طریق API زبان C متصل و جدا شود، یا به‌صورت ضمنی توسط ران‌تایم، از جمله در طول فراخوانی‌های C مسدودکننده و توسط مفسر بایت‌کد در بین فراخوانی‌ها، مدیریت شود."
 
 msgid "On most builds of Python, having an attached thread state implies that the caller holds the :term:`GIL` for the current interpreter, so only one OS thread can have an attached thread state at a given moment. In :term:`free-threaded builds <free-threaded build>` of Python, threads can concurrently hold an attached thread state, allowing for true parallelism of the bytecode interpreter."
-msgstr "در بیشتر ساخت‌های پایتون، داشتن یک وضعیت نخٔ متصل به این معناست که فراخواننده :term:`GIL <GIL>` را برای مفسر فعلی در اختیار دارد، بنابراین در یک لحظهٔ مشخص فقط یک نخٔ سیستم‌عامل می‌تواند یک وضعیت نخٔ متصل داشته باشد. در :term:`ساخت نخ‌آزاد <free-threaded build>` پایتون، نخ‌ها می‌توانند به‌طور هم‌زمان وضعیت نخٔ متصل داشته باشند، که امکان موازی‌سازی واقعی مفسر بایت‌کد را فراهم می‌کند."
+msgstr "در بیشتر ساخت‌های پایتون، داشتن یک وضعیت نخ متصل به این معناست که فراخواننده :term:`GIL <GIL>` را برای مفسر فعلی در اختیار دارد، بنابراین در یک لحظهٔ مشخص فقط یک نخ سیستم‌عامل می‌تواند یک وضعیت نخ متصل داشته باشد. در :term:`ساخت نخ‌آزاد <free-threaded build>` پایتون، نخ‌ها می‌توانند به‌طور هم‌زمان وضعیت نخ متصل داشته باشند، که امکان موازی‌سازی واقعی مفسر بایت‌کد را فراهم می‌کند."
 
 msgid "attribute"
 msgstr "ویژگی"
@@ -380,7 +380,7 @@ msgid "deadlock"
 msgstr "بن‌بست"
 
 msgid "A situation in which two or more tasks (threads, processes, or coroutines) wait indefinitely for each other to release resources or complete actions, preventing any from making progress.  For example, if thread A holds lock 1 and waits for lock 2, while thread B holds lock 2 and waits for lock 1, both threads will wait indefinitely.  In Python this often arises from acquiring multiple locks in conflicting orders or from circular join/await dependencies.  Deadlocks can be avoided by always acquiring multiple :term:`locks <lock>` in a consistent order.  See also :term:`lock` and :term:`reentrant`."
-msgstr "وضعیتی که در آن دو یا چند وظیفه (نخ‌ها، پردازه‌ها یا هم‌روال‌ها) به‌طور نامحدود منتظر می‌مانند تا یکدیگر منابع را آزاد کنند یا اقداماتی را کامل کنند، و در نتیجه هیچ‌کدام نمی‌توانند پیشرفت کنند. برای مثال، اگر نخٔ A قفل ۱ را در اختیار داشته باشد و منتظر قفل ۲ باشد، در حالی که نخٔ B قفل ۲ را در اختیار دارد و منتظر قفل ۱ است، هر دو نخ به‌طور نامحدود منتظر خواهند ماند. در پایتون، این وضعیت اغلب از دریافت چندین قفل با ترتیب‌های ناسازگار یا از وابستگی‌های join/await چرخه‌ای ایجاد می‌شود. می‌توان با همیشه دریافت کردن چندین :term:`قفل <lock>` به یک ترتیب ثابت از بن‌بست‌ها جلوگیری کرد. همچنین :term:`قفل <lock>` و :term:`بازورودپذیر <reentrant>` را ببینید."
+msgstr "وضعیتی که در آن دو یا چند وظیفه (نخ‌ها، پردازه‌ها یا هم‌روال‌ها) به‌طور نامحدود منتظر می‌مانند تا یکدیگر منابع را آزاد کنند یا اقداماتی را کامل کنند، و در نتیجه هیچ‌کدام نمی‌توانند پیشرفت کنند. برای مثال، اگر نخ A قفل ۱ را در اختیار داشته باشد و منتظر قفل ۲ باشد، در حالی که نخ B قفل ۲ را در اختیار دارد و منتظر قفل ۱ است، هر دو نخ به‌طور نامحدود منتظر خواهند ماند. در پایتون، این وضعیت اغلب از دریافت چندین قفل با ترتیب‌های ناسازگار یا از وابستگی‌های join/await چرخه‌ای ایجاد می‌شود. می‌توان با همیشه دریافت کردن چندین :term:`قفل <lock>` به یک ترتیب ثابت از بن‌بست‌ها جلوگیری کرد. همچنین :term:`قفل <lock>` و :term:`بازورودپذیر <reentrant>` را ببینید."
 
 msgid "decorator"
 msgstr "دکوراتور"
@@ -678,7 +678,7 @@ msgid "As of Python 3.13, the GIL can be disabled using the :option:`--disable-g
 msgstr "از پایتون ۳.۱۳، می‌توان GIL را با استفاده از پیکربندی ساخت :option:`--disable-gil` غیرفعال کرد. پس از ساخت پایتون با این گزینه، کد باید با :option:`-X gil=0 <-X>` یا پس از تنظیم متغیر محیطی :envvar:`PYTHON_GIL=0 <PYTHON_GIL>` اجرا شود. این ویژگی عملکرد بهتر برای برنامه‌های چندنخی را فراهم می‌کند و استفادهٔ مؤثرتر از CPUهای چند‌هسته‌ای را آسان‌تر می‌سازد. برای جزئیات بیشتر، :pep:`703` را ببینید."
 
 msgid "In prior versions of Python's C API, a function might declare that it requires the GIL to be held in order to use it. This refers to having an :term:`attached thread state`."
-msgstr "در نسخه‌های پیشین API زبان C پایتون، یک تابع ممکن بود اعلام کند که برای استفاده از آن، لازم است GIL در اختیار گرفته شده باشد. این موضوع به داشتن یک :term:`وضعیت نخٔ متصل <attached thread state>` اشاره دارد."
+msgstr "در نسخه‌های پیشین API زبان C پایتون، یک تابع ممکن بود اعلام کند که برای استفاده از آن، لازم است GIL در اختیار گرفته شده باشد. این موضوع به داشتن یک :term:`وضعیت نخ متصل <attached thread state>` اشاره دارد."
 
 msgid "global state"
 msgstr "وضعیت سراسری"
@@ -1083,7 +1083,7 @@ msgid "parallelism"
 msgstr "موازی‌سازی"
 
 msgid "Executing multiple operations at the same time (e.g. on multiple CPU cores).  In Python builds with the :term:`global interpreter lock (GIL) <global interpreter lock>`, only one thread runs Python bytecode at a time, so taking advantage of multiple CPU cores typically involves multiple processes (e.g. :mod:`multiprocessing`) or native extensions that release the GIL. In :term:`free-threaded <free threading>` Python, multiple Python threads can run Python code simultaneously on different cores."
-msgstr "اجرای چندین عملیات در یک زمان (برای مثال روی چند هستهٔ CPU). در ساخت‌های پایتون با :term:`قفل مفسر سراسری <global interpreter lock>`، تنها یک نخ در هر لحظه بایت‌کد پایتون را اجرا می‌کند، بنابراین بهره‌گیری از چند هستهٔ CPU معمولاً شامل چند فرایند (برای مثال :mod:`multiprocessing`) یا افزونه‌های بومی است که GIL را آزاد می‌کنند. در پایتون :term:`نخ‌گذاری آزاد <free threading>`، چندین نخٔ پایتون می‌توانند به‌طور هم‌زمان کد پایتون را روی هسته‌های مختلف اجرا کنند."
+msgstr "اجرای چندین عملیات در یک زمان (برای مثال روی چند هستهٔ CPU). در ساخت‌های پایتون با :term:`قفل مفسر سراسری <global interpreter lock>`، تنها یک نخ در هر لحظه بایت‌کد پایتون را اجرا می‌کند، بنابراین بهره‌گیری از چند هستهٔ CPU معمولاً شامل چند فرایند (برای مثال :mod:`multiprocessing`) یا افزونه‌های بومی است که GIL را آزاد می‌کنند. در پایتون :term:`نخ‌گذاری آزاد <free threading>`، چندین نخ پایتون می‌توانند به‌طور هم‌زمان کد پایتون را روی هسته‌های مختلف اجرا کنند."
 
 msgid "parameter"
 msgstr "پارامتر"
@@ -1092,7 +1092,7 @@ msgid "A named entity in a :term:`function` (or method) definition that specifie
 msgstr "یک موجودیت نام‌گذاری‌شده در تعریف یک :term:`تابع <function>` (یا متد) که یک :term:`آرگومان <argument>` (یا در برخی موارد، آرگومان‌ها) را مشخص می‌کند که تابع می‌تواند بپذیرد. پنج نوع پارامتر وجود دارد:"
 
 msgid ":dfn:`positional-or-keyword`: specifies an argument that can be passed either :term:`positionally <argument>` or as a :term:`keyword argument <argument>`.  This is the default kind of parameter, for example *foo* and *bar* in the following::"
-msgstr ":dfn:`positional-or-keyword`: آرگومانی را مشخص می‌کند که می‌تواند به‌صورت :term:`آرگومان <argument>` یا به‌عنوان یک :term:`آرگومان <argument>` ارسال شود. این نوع پیش‌فرض پارامتر است، برای مثال *foo* و *bar* در موارد زیر::"
+msgstr ":dfn:`positional-or-keyword`: آرگومانی را مشخص می‌کند که می‌تواند به‌صورت :term:`آرگومان جایگاهی <argument>` یا به‌عنوان یک :term:`آرگومان کلیدواژه‌ای <argument>` ارسال شود. این نوع پیش‌فرض پارامتر است، برای مثال *foo* و *bar* در موارد زیر::"
 
 msgid "def func(foo, bar=None): ..."
 msgstr "def func(foo, bar=None): ..."
@@ -1302,13 +1302,13 @@ msgid "reentrant"
 msgstr "بازورودپذیر"
 
 msgid "A property of a function or :term:`lock` that allows it to be called or acquired multiple times by the same thread without causing errors or a :term:`deadlock`."
-msgstr "ویژگی یک تابع یا :term:`قفل <lock>` که به آن اجازه می‌دهد بدون ایجاد خطا یا یک :term:`بن‌بست <deadlock>`، چندین بار توسط یک نخٔ اجرایی یکسان فراخوانی یا دریافت شود."
+msgstr "ویژگی یک تابع یا :term:`قفل <lock>` که به آن اجازه می‌دهد بدون ایجاد خطا یا یک :term:`بن‌بست <deadlock>`، چندین بار توسط یک نخ اجرایی یکسان فراخوانی یا دریافت شود."
 
 msgid "For functions, reentrancy means the function can be safely called again before a previous invocation has completed, which is important when functions may be called recursively or from signal handlers. Thread-unsafe functions may be :term:`non-deterministic` if they're called reentrantly in a multithreaded program."
 msgstr "در مورد توابع، بازورودپذیری به این معناست که می‌توان تابع را پیش از کامل‌شدن یک فراخوانی قبلی، دوباره با ایمنی فراخوانی کرد؛ این موضوع زمانی اهمیت دارد که توابع ممکن است به‌صورت بازگشتی یا از درون دستگردان‌های سیگنال فراخوانی شوند. توابع ناایمن برای نخ‌های اجرایی ممکن است در صورتی که در یک برنامهٔ چندنخی به‌صورت بازورودپذیر فراخوانی شوند، :term:`غیرقطعی <non-deterministic>` باشند."
 
 msgid "For locks, Python's :class:`threading.RLock` (reentrant lock) is reentrant, meaning a thread that already holds the lock can acquire it again without blocking.  In contrast, :class:`threading.Lock` is not reentrant - attempting to acquire it twice from the same thread will cause a deadlock."
-msgstr "در مورد قفل‌ها، :class:`threading.RLock` پایتون (قفل بازورودپذیر) بازورودپذیر است؛ یعنی نخٔ اجرایی‌ای که از پیش قفل را در اختیار دارد، می‌تواند دوباره آن را دریافت کند، بدون آنکه مسدود شود. در مقابل، :class:`threading.Lock` بازورودپذیر نیست؛ تلاش برای دریافت آن دو بار از همان نخٔ اجرایی باعث یک بن‌بست می‌شود."
+msgstr "در مورد قفل‌ها، :class:`threading.RLock` پایتون (قفل بازورودپذیر) بازورودپذیر است؛ یعنی نخ اجرایی‌ای که از پیش قفل را در اختیار دارد، می‌تواند دوباره آن را دریافت کند، بدون آنکه مسدود شود. در مقابل، :class:`threading.Lock` بازورودپذیر نیست؛ تلاش برای دریافت آن دو بار از همان نخ اجرایی باعث یک بن‌بست می‌شود."
 
 msgid "See also :term:`lock` and :term:`deadlock`."
 msgstr "همچنین :term:`قفل <lock>` و :term:`بن‌بست <deadlock>` را ببینید."
@@ -1419,13 +1419,13 @@ msgid "synchronization primitive"
 msgstr "اولیه"
 
 msgid "A basic building block for coordinating (synchronizing) the execution of multiple threads to ensure :term:`thread-safe` access to shared resources. Python's :mod:`threading` module provides several synchronization primitives including :class:`~threading.Lock`, :class:`~threading.RLock`, :class:`~threading.Semaphore`, :class:`~threading.Condition`, :class:`~threading.Event`, and :class:`~threading.Barrier`.  Additionally, the :mod:`queue` module provides multi-producer, multi-consumer queues that are especially useful in multithreaded programs. These primitives help prevent :term:`race conditions <race condition>` and coordinate thread execution.  See also :term:`lock`."
-msgstr "یک سازهٔ پایه برای هماهنگ‌سازی اجرای چند نخٔ اجرایی، با هدف اطمینان از دسترسی :term:`ایمن برای نخ‌های اجرایی <thread-safe>` به منابع مشترک. ماژول :mod:`threading` پایتون چندین اولیهٔ همگام‌سازی، از جمله :class:`~threading.Lock`، :class:`~threading.RLock`، :class:`~threading.Semaphore`، :class:`~threading.Condition`، :class:`~threading.Event` و :class:`~threading.Barrier` را فراهم می‌کند. افزون بر این، ماژول :mod:`queue` صف‌های چندتولیدکننده، چندمصرف‌کننده‌ای را فراهم می‌کند که به‌ویژه در برنامه‌های چندنخی مفید هستند. این اولیه‌ها به جلوگیری از :term:`شرط رقابت <race condition>` و هماهنگ‌سازی اجرای نخ‌های اجرایی کمک می‌کنند. همچنین :term:`قفل <lock>` را ببینید."
+msgstr "یک سازهٔ پایه برای هماهنگ‌سازی اجرای چند نخ اجرایی، با هدف اطمینان از دسترسی :term:`ایمن برای نخ‌های اجرایی <thread-safe>` به منابع مشترک. ماژول :mod:`threading` پایتون چندین اولیهٔ همگام‌سازی، از جمله :class:`~threading.Lock`، :class:`~threading.RLock`، :class:`~threading.Semaphore`، :class:`~threading.Condition`، :class:`~threading.Event` و :class:`~threading.Barrier` را فراهم می‌کند. افزون بر این، ماژول :mod:`queue` صف‌های چندتولیدکننده، چندمصرف‌کننده‌ای را فراهم می‌کند که به‌ویژه در برنامه‌های چندنخی مفید هستند. این اولیه‌ها به جلوگیری از :term:`شرط رقابت <race condition>` و هماهنگ‌سازی اجرای نخ‌های اجرایی کمک می‌کنند. همچنین :term:`قفل <lock>` را ببینید."
 
 msgid "t-string"
-msgstr "t-string"
+msgstr "تی‌استرینگ"
 
 msgid "t-strings"
-msgstr "t-strings"
+msgstr "تی‌استرینگ‌ها"
 
 msgid "String literals prefixed with ``t`` or ``T`` are commonly called \"t-strings\" which is short for :ref:`template string literals <t-strings>`."
 msgstr "لیترال‌های رشته‌ای که با ``t`` یا ``T`` پیشوندگذاری شده‌اند، معمولاً «t-string» نامیده می‌شوند که شکل کوتاه‌شدهٔ :ref:`template string literals <t-strings>` است."
@@ -1452,19 +1452,19 @@ msgid "See also :term:`binary file` for a file object able to read and write :te
 msgstr "همچنین برای یک شیء فایل که می‌تواند :term:`شیء شبه‌بایت <bytes-like object>` را بخواند و بنویسد، :term:`فایل دودویی <binary file>` را ببینید."
 
 msgid "thread state"
-msgstr "وضعیت نخٔ اجرایی"
+msgstr "وضعیت نخ اجرایی"
 
 msgid "The information used by the :term:`CPython` runtime to run in an OS thread. For example, this includes the current exception, if any, and the state of the bytecode interpreter."
-msgstr "اطلاعاتی که :term:`CPython <CPython>` ران‌تایم برای اجرا در یک نخٔ اجرایی سیستم‌عامل استفاده می‌کند. برای مثال، این اطلاعات شامل استثنای فعلی، در صورت وجود، و وضعیت مفسر بایت‌کد است."
+msgstr "اطلاعاتی که :term:`CPython <CPython>` ران‌تایم برای اجرا در یک نخ اجرایی سیستم‌عامل استفاده می‌کند. برای مثال، این اطلاعات شامل استثنای فعلی، در صورت وجود، و وضعیت مفسر بایت‌کد است."
 
 msgid "Each thread state is bound to a single OS thread, but threads may have many thread states available.  At most, one of them may be :term:`attached <attached thread state>` at once."
-msgstr "هر وضعیت نخٔ اجرایی به یک نخٔ اجرایی سیستم‌عامل واحد وابسته است، اما نخ‌های اجرایی ممکن است وضعیت‌های نخٔ اجرایی متعددی در دسترس داشته باشند. در هر لحظه حداکثر یکی از آن‌ها می‌تواند :term:`وضعیت نخٔ متصل <attached thread state>` باشد."
+msgstr "هر وضعیت نخ اجرایی به یک نخ اجرایی سیستم‌عامل واحد وابسته است، اما نخ‌های اجرایی ممکن است وضعیت‌های نخ اجرایی متعددی در دسترس داشته باشند. در هر لحظه حداکثر یکی از آن‌ها می‌تواند :term:`وضعیت نخ متصل <attached thread state>` باشد."
 
 msgid "An :term:`attached thread state` is required to call most of Python's C API, unless a function explicitly documents otherwise. The bytecode interpreter only runs under an attached thread state."
-msgstr "برای فراخوانی بیشتر API زبان C پایتون، یک :term:`وضعیت نخٔ متصل <attached thread state>` لازم است، مگر اینکه تابعی صراحتاً خلاف آن را مستند کرده باشد. مفسر بایت‌کد فقط در یک وضعیت نخٔ اجرایی پیوست‌شده اجرا می‌شود."
+msgstr "برای فراخوانی بیشتر API زبان C پایتون، یک :term:`وضعیت نخ متصل <attached thread state>` لازم است، مگر اینکه تابعی صراحتاً خلاف آن را مستند کرده باشد. مفسر بایت‌کد فقط در یک وضعیت نخ اجرایی پیوست‌شده اجرا می‌شود."
 
 msgid "Each thread state belongs to a single interpreter, but each interpreter may have many thread states, including multiple for the same OS thread. Thread states from multiple interpreters may be bound to the same thread, but only one can be :term:`attached <attached thread state>` in that thread at any given moment."
-msgstr "هر وضعیت نخٔ اجرایی به یک مفسر واحد تعلق دارد، اما هر مفسر ممکن است وضعیت‌های نخٔ اجرایی متعددی داشته باشد، از جمله چند وضعیت برای یک نخٔ اجرایی سیستم‌عامل یکسان. وضعیت‌های نخٔ اجرایی از مفسرهای متعدد ممکن است به یک نخٔ اجرایی یکسان وابسته باشند، اما در هر لحظه فقط یکی از آن‌ها می‌تواند در آن نخٔ اجرایی :term:`وضعیت نخٔ متصل <attached thread state>` باشد."
+msgstr "هر وضعیت نخ اجرایی به یک مفسر واحد تعلق دارد، اما هر مفسر ممکن است وضعیت‌های نخ اجرایی متعددی داشته باشد، از جمله چند وضعیت برای یک نخ اجرایی سیستم‌عامل یکسان. وضعیت‌های نخ اجرایی از مفسرهای متعدد ممکن است به یک نخ اجرایی یکسان وابسته باشند، اما در هر لحظه فقط یکی از آن‌ها می‌تواند در آن نخ اجرایی :term:`وضعیت نخ متصل <attached thread state>` باشد."
 
 msgid "See :ref:`Thread State and the Global Interpreter Lock <threads>` for more information."
 msgstr "برای اطلاعات بیشتر، :ref:`Thread State and the Global Interpreter Lock <threads>` را ببینید."
@@ -1473,7 +1473,7 @@ msgid "thread-safe"
 msgstr "ایمن برای نخ‌های اجرایی"
 
 msgid "A module, function, or class that behaves correctly when used by multiple threads concurrently.  Thread-safe code uses appropriate :term:`synchronization primitives <synchronization primitive>` like :term:`locks <lock>` to protect shared mutable state, or is designed to avoid shared mutable state entirely.  In the :term:`free-threaded <free threading>` build, built-in types like :class:`dict`, :class:`list`, and :class:`set` use internal locking to make many operations thread-safe, although thread safety is not necessarily guaranteed.  Code that is not thread-safe may experience :term:`race conditions <race condition>` and :term:`data races <data race>` when used in multi-threaded programs."
-msgstr "یک ماژول، تابع یا کلاس که هنگام استفادهٔ هم‌زمان توسط چند نخٔ اجرایی، به‌درستی رفتار می‌کند. کد ایمن برای نخ‌های اجرایی از :term:`اولیه <synchronization primitive>` مناسب، مانند :term:`قفل <lock>`، برای محافظت از وضعیت تغییرپذیر مشترک استفاده می‌کند یا به‌گونه‌ای طراحی شده است که به‌طور کامل از وضعیت تغییرپذیر مشترک اجتناب کند. در ساخت :term:`نخ‌گذاری آزاد <free threading>`، نوع‌های توکار مانند :class:`dict`، :class:`list` و :class:`set` از قفل‌گذاری داخلی برای ایمن‌کردن بسیاری از عملیات در برابر اجرای هم‌زمان نخ‌های اجرایی استفاده می‌کنند، هرچند ایمنی در برابر نخ‌های اجرایی لزوماً تضمین‌شده نیست. کدی که برای نخ‌های اجرایی ایمن نیست، هنگام استفاده در برنامه‌های چندنخی ممکن است دچار :term:`شرط رقابت <race condition>` و :term:`رقابت داده <data race>` شود."
+msgstr "یک ماژول، تابع یا کلاس که هنگام استفادهٔ هم‌زمان توسط چند نخ اجرایی، به‌درستی رفتار می‌کند. کد ایمن برای نخ‌های اجرایی از :term:`اولیه <synchronization primitive>` مناسب، مانند :term:`قفل <lock>`، برای محافظت از وضعیت تغییرپذیر مشترک استفاده می‌کند یا به‌گونه‌ای طراحی شده است که به‌طور کامل از وضعیت تغییرپذیر مشترک اجتناب کند. در ساخت :term:`نخ‌گذاری آزاد <free threading>`، نوع‌های توکار مانند :class:`dict`، :class:`list` و :class:`set` از قفل‌گذاری داخلی برای ایمن‌کردن بسیاری از عملیات در برابر اجرای هم‌زمان نخ‌های اجرایی استفاده می‌کنند، هرچند ایمنی در برابر نخ‌های اجرایی لزوماً تضمین‌شده نیست. کدی که برای نخ‌های اجرایی ایمن نیست، هنگام استفاده در برنامه‌های چندنخی ممکن است دچار :term:`شرط رقابت <race condition>` و :term:`رقابت داده <data race>` شود."
 
 msgid "token"
 msgstr "توکن"
