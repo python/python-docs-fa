@@ -7,39 +7,52 @@
 
 | English          | فارسی                    |
 | ---------------- | ------------------------ |
-| accessibility    | دسترسی‌پذیری             |
+| accessibility    | دسترسی‌پذیری              |
+| await            | await                    |
 | argument         | آرگومان                  |
 | async            | ناهمگام، غیرهمگام        |
+| API              | API                      |
 | attribute        | ویژگی، صفت، شاخصه        |
 | boolean          | بولی                     |
-| built-in         | توکار، درونی، درون‌ساخته |
-| callback         | کال‌بک، فراخوانی بازگشتی |
+| built-in         | توکار، درونی، درون‌ساخته  |
+| callback         | کال‌بک، فراخوانی بازگشتی  |
 | character        | نویسه                    |
-| class            | کلاس                     |
+| context management | مدیریت زمینه           |
+| class            | کلاس                      |
+| cache            | نهانگاه                  |
+| coroutine        | هم‌روال                   |
 | command line     | خط فرمان                 |
 | community        | کامیونیتی                |
 | component        | کامپوننت                 |
 | custom           | سفارشی، اختصاصی          |
 | decorator        | دکوراتور، آراینده        |
-| debugging        | اشکال‌زدایی، دیباگ کردن  |
+| debugging        | اشکال‌زدایی، دیباگ کردن   |
+| decoding         | کدگشایی                  |
 | deprecated       | منسوخ، از رده خارج شده   |
 | dependency       | وابستگی                  |
 | dictionary       | دیکشنری                  |
 | directory        | پوشه                     |
+| duck-typing      | نوع‌دهی اردکی             |
 | DOM              | DOM                      |
 | element          | المان، عنصر              |
 | endpoint         | پایانه                   |
 | escape           | خنثی کردن                |
+| encoding         | کدگذاری                  |
 | ecosystem        | اکوسیستم                 |
 | event            | رویداد                   |
 | exception        | استثنا                   |
 | expression       | عبارت                    |
 | function         | تابع                     |
+| f-string         | اف‌استرینگ                |
 | generator        | تولیدگر                  |
 | global           | سراسری                   |
+| garbage collection | زباله‌روبی              |
+| generic function | تابع عام، تابع عمومی     |
+| hexadecimal      | مبنای شانزده             |
+| immortal         | نامیرا                   |
 | import           | ایمپورت                  |
 | immutable        | تغییرناپذیر              |
-| index            | اندیس، شماره              |
+| index            | اندیس، شماره             |
 | instance         | نمونه                    |
 | integer          | عدد صحیح                 |
 | interface        | رابط                     |
@@ -47,7 +60,7 @@
 | item             | آیتم                     |
 | iterable         | تکرارپذیر                |
 | keyword          | کلیدواژه                 |
-| keyword argument | آرگومان کلیدواژه‌ای      |
+| keyword argument | آرگومان کلیدواژه‌ای       |
 | list             | فهرست                    |
 | list comprehension | درک فهرستی             |
 | load             | بارگذاری                 |
@@ -56,28 +69,34 @@
 | loop             | حلقه                     |
 | method           | متد                      |
 | method           | روش                      |
+| metaclass        | فراکلاس                   |
 | mock             | ماک                      |
 | module           | ماژول                    |
 | mutable          | تغییرپذیر                |
-| namespace        | نام‌فضا                  |
+| namespace        | نام‌فضا                   |
 | object           | شیء                      |
 | operator         | عملگر                    |
 | package          | بسته                     |
 | parameter        | پارامتر                  |
-| positional        | جایگاهی                  |
+| positional        | جایگاهی                 |
 | property         | ویژگی، پراپرتی، خصوصیت   |
-| quotation        | علامت نقل‌وقول           |
+| parallelism      | موازی‌سازی                |
+| quotation        | علامت نقل‌قول              |
 | raise            | پرتاب                    |
 | return           | بازگشت، برگرداندن        |
-| runtime          | ران‌تایم                 |
+| runtime          | ران‌تایم                  |
+| race             | رقابت                    |
 | scope            | محدوده                   |
 | shadowing        | پوشاندن                  |
 | stack traceback  | ردگیری پشته              |
 | statement        | دستور                    |
 | string           | رشته                     |
 | syntax           | سینتکس، نحو              |
-| Tracking         | پیگیری                   |
+| shell            | پوسته                    |
+| syntactic sugar  | قند نحوی                 |
+| tracking         | پیگیری                   |
 | type             | نوع، نوع داده، تایپ      |
+| thread           | نخ                       |
 | unit test        | یونیت تست                |
 | unpacking        | واگشایی                  |
 | value            | مقدار                    |
