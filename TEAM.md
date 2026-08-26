@@ -1,7 +1,7 @@
 | User | Role | Translated Count |
 |:-----|:------:|:------------------:|
 | Revisto | coordinator | 3984 |
-| sepehr-rs | coordinator | 1630 |
+| sepehr-rs | coordinator | 2210 |
 | danialbehzadi | reviewer | 677 |
 | invincible627 | translator | 358 |
 | khosro_o | reviewer | 63 |
