@@ -21,6 +21,8 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    env:
+      CPYTHON_TAG: ${{ github.event.inputs.cpython_tag || 'v3.14.7' }}
     steps:
       - name: Checkout translation repo
         uses: actions/checkout@v4
@@ -38,41 +40,12 @@ jobs:
       - name: Install Python dependencies
         run: pip install sphinx sphinx-intl
 
-      - name: Checkout CPython docs only (sparse)
-        run: |
-          git clone \
-            --depth 1 \
-            --filter=blob:none \
-            --sparse \
-            --branch ${{ github.event.inputs.cpython_tag || 'v3.14.7' }} \
-            https://github.com/python/cpython.git \
-            .cpython-src
-          cd .cpython-src
-          git sparse-checkout set Doc Include
-
-      - name: Install CPython doc dependencies
-        run: |
-          python -m venv .cpython-src/Doc/venv
-          .cpython-src/Doc/venv/bin/pip install \
-            -r .cpython-src/Doc/requirements.txt
-
-      - name: Build .pot templates
-        run: |
-          cd .cpython-src/Doc
-          ./venv/bin/sphinx-build \
-            -b gettext \
-            . \
-            ../../.pot-templates
-
-      - name: Merge .pot into .po files
-        run: |
-          find .pot-templates -name "*.pot" | while read f; do
-            rel="${f#.pot-templates/}"
-            po="${rel%.pot}.po"
-            if [ -f "$po" ]; then
-              msgmerge --update --backup=off --no-location --no-wrap "$po" "$f"
-            fi
-          done
+      # Item 4: fetch/build/merge/validate now all live in one shared
+      # module (scripts/po_sync.py) instead of inline bash/awk here, so
+      # this workflow can't drift from update_python_version.py the way
+      # it did before (missing --no-location --no-wrap on one side).
+      - name: Sync msgids (fetch, build gettext, merge, validate)
+        run: python scripts/po_sync.py sync-only "$CPYTHON_TAG"
 
       - name: Ensure translation label exists
         env:
@@ -87,7 +60,6 @@ jobs:
       - name: Open issue for fuzzy strings
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CPYTHON_TAG: ${{ github.event.inputs.cpython_tag || 'v3.14.7' }}
         run: |
           tmpfile=$(mktemp)
           while IFS= read -r f; do
@@ -130,41 +102,11 @@ jobs:
           fi
           rm -f "$tmpfile"
 
-      - name: Validate .po files
-        run: |
-          tmpfile=$(mktemp)
-          find . -name "*.po" \
-            -not -path "./.git/*" \
-            -not -path "./.cpython-src/*" \
-            -not -path "./.pot-templates/*" | while read f; do
-            msgfmt --check "$f" -o /dev/null || echo "FAIL: $f" >> "$tmpfile"
-          done
-          if [ -s "$tmpfile" ]; then
-            cat "$tmpfile"
-            rm -f "$tmpfile"
-            exit 1
-          fi
-          rm -f "$tmpfile"
-
-      - name: Clean up scratch files
-        run: rm -rf .cpython-src .pot-templates
-
       - name: Stage changes
         run: git add --all
 
       - name: Unstage POT-Creation-Date-only changes
-        run: |
-          git diff --staged --name-only | while read f; do
-            if git diff --staged -U0 -- "$f" \
-                | grep '^[+-]' \
-                | grep -v '^[+-][+-][+-]' \
-                | grep -qv 'POT-Creation-Date'; then
-              : # has real changes, keep staged
-            else
-              git restore --staged "$f"
-              git restore "$f"
-            fi
-          done
+        run: python scripts/unstage_cosmetic.py
 
       - name: Commit if changed
         run: |
@@ -174,6 +116,5 @@ jobs:
             echo "Nothing to commit, skipping."
             exit 0
           fi
-          git commit -m \
-            "chore: sync msgids with CPython ${{ github.event.inputs.cpython_tag || 'v3.14.7' }}"
+          git commit -m "chore: sync msgids with CPython $CPYTHON_TAG"
           git push
