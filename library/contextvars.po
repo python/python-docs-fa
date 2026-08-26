@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-25 20:39+0330\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2021-06-28 00:57+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
@@ -23,120 +23,69 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../../library/contextvars.rst:2
 msgid ":mod:`!contextvars` --- Context Variables"
 msgstr ""
 
-#: ../../library/contextvars.rst:11
-msgid ""
-"This module provides APIs to manage, store, and access context-local state.  "
-"The :class:`~contextvars.ContextVar` class is used to declare and work with "
-"*Context Variables*.  The :func:`~contextvars.copy_context` function and "
-"the :class:`~contextvars.Context` class should be used to manage the current "
-"context in asynchronous frameworks."
+msgid "This module provides APIs to manage, store, and access context-local state.  The :class:`~contextvars.ContextVar` class is used to declare and work with *Context Variables*.  The :func:`~contextvars.copy_context` function and the :class:`~contextvars.Context` class should be used to manage the current context in asynchronous frameworks."
 msgstr ""
 
-#: ../../library/contextvars.rst:17
-msgid ""
-"Context managers that have state should use Context Variables instead "
-"of :func:`threading.local` to prevent their state from bleeding to other "
-"code unexpectedly, when used in concurrent code."
+msgid "Context managers that have state should use Context Variables instead of :func:`threading.local` to prevent their state from bleeding to other code unexpectedly, when used in concurrent code."
 msgstr ""
 
-#: ../../library/contextvars.rst:21
 msgid "See also :pep:`567` for additional details."
 msgstr ""
 
-#: ../../library/contextvars.rst:27
 msgid "Context Variables"
 msgstr ""
 
-#: ../../library/contextvars.rst:31
 msgid "This class is used to declare a new Context Variable, e.g.::"
 msgstr ""
 
-#: ../../library/contextvars.rst:33
 msgid "var: ContextVar[int] = ContextVar('var', default=42)"
 msgstr ""
 
-#: ../../library/contextvars.rst:35
-msgid ""
-"The required *name* parameter is used for introspection and debug purposes."
+msgid "The required *name* parameter is used for introspection and debug purposes."
 msgstr ""
 
-#: ../../library/contextvars.rst:38
-msgid ""
-"The optional keyword-only *default* parameter is returned "
-"by :meth:`ContextVar.get` when no value for the variable is found in the "
-"current context."
+msgid "The optional keyword-only *default* parameter is returned by :meth:`ContextVar.get` when no value for the variable is found in the current context."
 msgstr ""
 
-#: ../../library/contextvars.rst:42
-msgid ""
-"**Important:** Context Variables should be created at the top module level "
-"and never in closures.  :class:`Context` objects hold strong references to "
-"context variables which prevents context variables from being properly "
-"garbage collected."
+msgid "**Important:** Context Variables should be created at the top module level and never in closures.  :class:`Context` objects hold strong references to context variables which prevents context variables from being properly garbage collected."
 msgstr ""
 
-#: ../../library/contextvars.rst:47
-msgid ""
-":class:`!ContextVar`\\s are :ref:`generic <generics>` over the type of their "
-"contained value."
+msgid ":class:`!ContextVar`\\s are :ref:`generic <generics>` over the type of their contained value."
 msgstr ""
 
-#: ../../library/contextvars.rst:52
 msgid "The name of the variable.  This is a read-only property."
 msgstr ""
 
-#: ../../library/contextvars.rst:58
 msgid "Return a value for the context variable for the current context."
 msgstr ""
 
-#: ../../library/contextvars.rst:60
-msgid ""
-"If there is no value for the variable in the current context, the method "
-"will:"
+msgid "If there is no value for the variable in the current context, the method will:"
 msgstr ""
 
-#: ../../library/contextvars.rst:63
-msgid ""
-"return the value of the *default* argument of the method, if provided; or"
+msgid "return the value of the *default* argument of the method, if provided; or"
 msgstr ""
 
-#: ../../library/contextvars.rst:66
-msgid ""
-"return the default value for the context variable, if it was created with "
-"one; or"
+msgid "return the default value for the context variable, if it was created with one; or"
 msgstr ""
 
-#: ../../library/contextvars.rst:69
 msgid "raise a :exc:`LookupError`."
 msgstr ""
 
-#: ../../library/contextvars.rst:73
-msgid ""
-"Call to set a new value for the context variable in the current context."
+msgid "Call to set a new value for the context variable in the current context."
 msgstr ""
 
-#: ../../library/contextvars.rst:76
-msgid ""
-"The required *value* argument is the new value for the context variable."
+msgid "The required *value* argument is the new value for the context variable."
 msgstr ""
 
-#: ../../library/contextvars.rst:79
-msgid ""
-"Returns a :class:`~contextvars.Token` object that can be used to restore the "
-"variable to its previous value via the :meth:`ContextVar.reset` method."
+msgid "Returns a :class:`~contextvars.Token` object that can be used to restore the variable to its previous value via the :meth:`ContextVar.reset` method."
 msgstr ""
 
-#: ../../library/contextvars.rst:83
-msgid ""
-"For convenience, the token object can be used as a context manager to avoid "
-"calling :meth:`ContextVar.reset` manually::"
+msgid "For convenience, the token object can be used as a context manager to avoid calling :meth:`ContextVar.reset` manually::"
 msgstr ""
 
-#: ../../library/contextvars.rst:86
 msgid ""
 "var = ContextVar('var', default='default value')\n"
 "\n"
@@ -146,11 +95,9 @@ msgid ""
 "assert var.get() == 'default value'"
 msgstr ""
 
-#: ../../library/contextvars.rst:93
 msgid "It is a shorthand for::"
 msgstr ""
 
-#: ../../library/contextvars.rst:95
 msgid ""
 "var = ContextVar('var', default='default value')\n"
 "\n"
@@ -163,21 +110,15 @@ msgid ""
 "assert var.get() == 'default value'"
 msgstr ""
 
-#: ../../library/contextvars.rst:107
 msgid "Added support for using tokens as context managers."
 msgstr ""
 
-#: ../../library/contextvars.rst:111
-msgid ""
-"Reset the context variable to the value it had before "
-"the :meth:`ContextVar.set` that created the *token* was used."
+msgid "Reset the context variable to the value it had before the :meth:`ContextVar.set` that created the *token* was used."
 msgstr ""
 
-#: ../../library/contextvars.rst:114
 msgid "For example::"
 msgstr ""
 
-#: ../../library/contextvars.rst:116
 msgid ""
 "var = ContextVar('var')\n"
 "\n"
@@ -189,154 +130,83 @@ msgid ""
 "# var.get() would raise a LookupError."
 msgstr ""
 
-#: ../../library/contextvars.rst:125
 msgid "The same *token* cannot be used twice."
 msgstr ""
 
-#: ../../library/contextvars.rst:130
-msgid ""
-"*Token* objects are returned by the :meth:`ContextVar.set` method. They can "
-"be passed to the :meth:`ContextVar.reset` method to revert the value of the "
-"variable to what it was before the corresponding *set*. A single token "
-"cannot reset a context variable more than once."
+msgid "*Token* objects are returned by the :meth:`ContextVar.set` method. They can be passed to the :meth:`ContextVar.reset` method to revert the value of the variable to what it was before the corresponding *set*. A single token cannot reset a context variable more than once."
 msgstr ""
 
-#: ../../library/contextvars.rst:135
-msgid ""
-"Tokens support the :ref:`context manager protocol <context-managers>` to "
-"automatically reset context variables. See :meth:`ContextVar.set`."
+msgid "Tokens support the :ref:`context manager protocol <context-managers>` to automatically reset context variables. See :meth:`ContextVar.set`."
 msgstr ""
 
-#: ../../library/contextvars.rst:138
-msgid ""
-"Tokens are :ref:`generic <generics>` over the same type as "
-"the :class:`ContextVar` which created them."
+msgid "Tokens are :ref:`generic <generics>` over the same type as the :class:`ContextVar` which created them."
 msgstr ""
 
-#: ../../library/contextvars.rst:143
 msgid "Added support for usage as a context manager."
 msgstr ""
 
-#: ../../library/contextvars.rst:147
-msgid ""
-"A read-only property.  Points to the :class:`ContextVar` object that created "
-"the token."
+msgid "A read-only property.  Points to the :class:`ContextVar` object that created the token."
 msgstr ""
 
-#: ../../library/contextvars.rst:152
-msgid ""
-"A read-only property.  Set to the value the variable had before "
-"the :meth:`ContextVar.set` method call that created the token. It points "
-"to :attr:`Token.MISSING` if the variable was not set before the call."
+msgid "A read-only property.  Set to the value the variable had before the :meth:`ContextVar.set` method call that created the token. It points to :attr:`Token.MISSING` if the variable was not set before the call."
 msgstr ""
 
-#: ../../library/contextvars.rst:159
 msgid "A marker object used by :attr:`Token.old_value`."
 msgstr ""
 
-#: ../../library/contextvars.rst:163
 msgid "Manual Context Management"
 msgstr ""
 
-#: ../../library/contextvars.rst:167
 msgid "Returns a copy of the current :class:`~contextvars.Context` object."
 msgstr ""
 
-#: ../../library/contextvars.rst:169
-msgid ""
-"The following snippet gets a copy of the current context and prints all "
-"variables and their values that are set in it::"
+msgid "The following snippet gets a copy of the current context and prints all variables and their values that are set in it::"
 msgstr ""
 
-#: ../../library/contextvars.rst:172
 msgid ""
 "ctx: Context = copy_context()\n"
 "print(list(ctx.items()))"
 msgstr ""
 
-#: ../../library/contextvars.rst:175
-msgid ""
-"The function has an *O*\\ (1) complexity, i.e. works equally fast for "
-"contexts with a few context variables and for contexts that have a lot of "
-"them."
+msgid "The function has an *O*\\ (1) complexity, i.e. works equally fast for contexts with a few context variables and for contexts that have a lot of them."
 msgstr ""
 
-#: ../../library/contextvars.rst:182
 msgid "A mapping of :class:`ContextVars <ContextVar>` to their values."
 msgstr ""
 
-#: ../../library/contextvars.rst:184
-msgid ""
-"``Context()`` creates an empty context with no values in it. To get a copy "
-"of the current context use the :func:`~contextvars.copy_context` function."
+msgid "``Context()`` creates an empty context with no values in it. To get a copy of the current context use the :func:`~contextvars.copy_context` function."
 msgstr ""
 
-#: ../../library/contextvars.rst:188
-msgid ""
-"Each thread has its own effective stack of :class:`!Context` objects.  "
-"The :term:`current context` is the :class:`!Context` object at the top of "
-"the current thread's stack.  All :class:`!Context` objects in the stacks are "
-"considered to be *entered*."
+msgid "Each thread has its own effective stack of :class:`!Context` objects.  The :term:`current context` is the :class:`!Context` object at the top of the current thread's stack.  All :class:`!Context` objects in the stacks are considered to be *entered*."
 msgstr ""
 
-#: ../../library/contextvars.rst:193
-msgid ""
-"*Entering* a context, which can be done by calling its :meth:`~Context.run` "
-"method, makes the context the current context by pushing it onto the top of "
-"the current thread's context stack."
+msgid "*Entering* a context, which can be done by calling its :meth:`~Context.run` method, makes the context the current context by pushing it onto the top of the current thread's context stack."
 msgstr ""
 
-#: ../../library/contextvars.rst:197
-msgid ""
-"*Exiting* from the current context, which can be done by returning from the "
-"callback passed to the :meth:`~Context.run` method, restores the current "
-"context to what it was before the context was entered by popping the context "
-"off the top of the context stack."
+msgid "*Exiting* from the current context, which can be done by returning from the callback passed to the :meth:`~Context.run` method, restores the current context to what it was before the context was entered by popping the context off the top of the context stack."
 msgstr ""
 
-#: ../../library/contextvars.rst:202
-msgid ""
-"Since each thread has its own context stack, :class:`ContextVar` objects "
-"behave in a similar fashion to :func:`threading.local` when values are "
-"assigned in different threads."
+msgid "Since each thread has its own context stack, :class:`ContextVar` objects behave in a similar fashion to :func:`threading.local` when values are assigned in different threads."
 msgstr ""
 
-#: ../../library/contextvars.rst:206
-msgid ""
-"Attempting to enter an already entered context, including contexts entered "
-"in other threads, raises a :exc:`RuntimeError`."
+msgid "Attempting to enter an already entered context, including contexts entered in other threads, raises a :exc:`RuntimeError`."
 msgstr ""
 
-#: ../../library/contextvars.rst:209
 msgid "After exiting a context, it can later be re-entered (from any thread)."
 msgstr ""
 
-#: ../../library/contextvars.rst:211
-msgid ""
-"Any changes to :class:`ContextVar` values via the :meth:`ContextVar.set` "
-"method are recorded in the current context.  The :meth:`ContextVar.get` "
-"method returns the value associated with the current context.  Exiting a "
-"context effectively reverts any changes made to context variables while the "
-"context was entered (if needed, the values can be restored by re-entering "
-"the context)."
+msgid "Any changes to :class:`ContextVar` values via the :meth:`ContextVar.set` method are recorded in the current context.  The :meth:`ContextVar.get` method returns the value associated with the current context.  Exiting a context effectively reverts any changes made to context variables while the context was entered (if needed, the values can be restored by re-entering the context)."
 msgstr ""
 
-#: ../../library/contextvars.rst:218
 msgid "Context implements the :class:`collections.abc.Mapping` interface."
 msgstr ""
 
-#: ../../library/contextvars.rst:222
-msgid ""
-"Enters the Context, executes ``callable(*args, **kwargs)``, then exits the "
-"Context.  Returns *callable*'s return value, or propagates an exception if "
-"one occurred."
+msgid "Enters the Context, executes ``callable(*args, **kwargs)``, then exits the Context.  Returns *callable*'s return value, or propagates an exception if one occurred."
 msgstr ""
 
-#: ../../library/contextvars.rst:226
 msgid "Example:"
 msgstr ""
 
-#: ../../library/contextvars.rst:228
 msgid ""
 "import contextvars\n"
 "\n"
@@ -370,63 +240,39 @@ msgid ""
 "print(var.get())  # 'spam'"
 msgstr ""
 
-#: ../../library/contextvars.rst:274
 msgid "Return a shallow copy of the context object."
 msgstr ""
 
-#: ../../library/contextvars.rst:278
-msgid ""
-"Return ``True`` if the *context* has a value for *var* set; return ``False`` "
-"otherwise."
+msgid "Return ``True`` if the *context* has a value for *var* set; return ``False`` otherwise."
 msgstr ""
 
-#: ../../library/contextvars.rst:283
-msgid ""
-"Return the value of the *var* :class:`ContextVar` variable. If the variable "
-"is not set in the context object, a :exc:`KeyError` is raised."
+msgid "Return the value of the *var* :class:`ContextVar` variable. If the variable is not set in the context object, a :exc:`KeyError` is raised."
 msgstr ""
 
-#: ../../library/contextvars.rst:289
-msgid ""
-"Return the value for *var* if *var* has the value in the context object.  "
-"Return *default* otherwise.  If *default* is not given, return ``None``."
+msgid "Return the value for *var* if *var* has the value in the context object.  Return *default* otherwise.  If *default* is not given, return ``None``."
 msgstr ""
 
-#: ../../library/contextvars.rst:295
 msgid "Return an iterator over the variables stored in the context object."
 msgstr ""
 
-#: ../../library/contextvars.rst:300
 msgid "Return the number of variables set in the context object."
 msgstr ""
 
-#: ../../library/contextvars.rst:304
 msgid "Return a list of all variables in the context object."
 msgstr ""
 
-#: ../../library/contextvars.rst:308
 msgid "Return a list of all variables' values in the context object."
 msgstr ""
 
-#: ../../library/contextvars.rst:313
-msgid ""
-"Return a list of 2-tuples containing all variables and their values in the "
-"context object."
+msgid "Return a list of 2-tuples containing all variables and their values in the context object."
 msgstr ""
 
-#: ../../library/contextvars.rst:318
 msgid "asyncio support"
 msgstr ""
 
-#: ../../library/contextvars.rst:320
-msgid ""
-"Context variables are natively supported in :mod:`asyncio` and are ready to "
-"be used without any extra configuration.  For example, here is a simple echo "
-"server, that uses a context variable to make the address of a remote client "
-"available in the Task that handles that client::"
+msgid "Context variables are natively supported in :mod:`asyncio` and are ready to be used without any extra configuration.  For example, here is a simple echo server, that uses a context variable to make the address of a remote client available in the Task that handles that client::"
 msgstr ""
 
-#: ../../library/contextvars.rst:326
 msgid ""
 "import asyncio\n"
 "import contextvars\n"

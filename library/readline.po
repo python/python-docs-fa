@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-25 20:39+0330\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2021-06-28 01:12+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
@@ -24,360 +24,164 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../../library/readline.rst:2
 msgid ":mod:`!readline` --- GNU readline interface"
 msgstr ""
 
-#: ../../library/readline.rst:11
-msgid ""
-"The :mod:`!readline` module defines a number of functions to facilitate "
-"completion and reading/writing of history files from the Python interpreter. "
-"This module can be used directly, or via the :mod:`rlcompleter` module, "
-"which supports completion of Python identifiers at the interactive prompt.  "
-"Settings made using  this module affect the behaviour of both the "
-"interpreter's interactive prompt  and the prompts offered by the built-"
-"in :func:`input` function."
+msgid "The :mod:`!readline` module defines a number of functions to facilitate completion and reading/writing of history files from the Python interpreter. This module can be used directly, or via the :mod:`rlcompleter` module, which supports completion of Python identifiers at the interactive prompt.  Settings made using  this module affect the behaviour of both the interpreter's interactive prompt  and the prompts offered by the built-in :func:`input` function."
 msgstr ""
 
-#: ../../library/readline.rst:19
-msgid ""
-"Readline keybindings may be configured via an initialization file, typically "
-"``.inputrc`` in your home directory.  See `Readline Init File <https://"
-"tiswww.cwru.edu/php/chet/readline/rluserman.html#Readline-Init-File>`_ in "
-"the GNU Readline manual for information about the format and allowable "
-"constructs of that file, and the capabilities of the Readline library in "
-"general."
+msgid "Readline keybindings may be configured via an initialization file, typically ``.inputrc`` in your home directory.  See `Readline Init File <https://tiswww.cwru.edu/php/chet/readline/rluserman.html#Readline-Init-File>`_ in the GNU Readline manual for information about the format and allowable constructs of that file, and the capabilities of the Readline library in general."
 msgstr ""
 
-#: ../../library/readline.rst:30 ../../includes/wasm-mobile-notavail.rst:3
 msgid "Availability"
 msgstr ""
 
-#: ../../includes/wasm-mobile-notavail.rst:5
-msgid ""
-"This module is not supported on :ref:`mobile platforms <mobile-"
-"availability>` or :ref:`WebAssembly platforms <wasm-availability>`."
+msgid "This module is not supported on :ref:`mobile platforms <mobile-availability>` or :ref:`WebAssembly platforms <wasm-availability>`."
 msgstr ""
 
-#: ../../includes/optional-module.rst:1
-msgid ""
-"This is an :term:`optional module`. If it is missing from your copy of "
-"CPython, look for documentation from your distributor (that is, whoever "
-"provided Python to you). If you are the distributor, see :ref:`optional-"
-"module-requirements`."
+msgid "This is an :term:`optional module`. If it is missing from your copy of CPython, look for documentation from your distributor (that is, whoever provided Python to you). If you are the distributor, see :ref:`optional-module-requirements`."
 msgstr ""
 
-#: ../../library/readline.rst:34
-msgid ""
-"The underlying Readline library API may be implemented by the ``editline`` "
-"(``libedit``) library instead of GNU readline. On macOS the :mod:`!readline` "
-"module detects which library is being used at run time."
+msgid "The underlying Readline library API may be implemented by the ``editline`` (``libedit``) library instead of GNU readline. On macOS the :mod:`!readline` module detects which library is being used at run time."
 msgstr ""
 
-#: ../../library/readline.rst:39
-msgid ""
-"The configuration file for ``editline`` is different from that of GNU "
-"readline. If you programmatically load configuration strings you can "
-"use :data:`backend` to determine which library is being used."
+msgid "The configuration file for ``editline`` is different from that of GNU readline. If you programmatically load configuration strings you can use :data:`backend` to determine which library is being used."
 msgstr ""
 
-#: ../../library/readline.rst:43
-msgid ""
-"If you use ``editline``/``libedit`` readline emulation on macOS, the "
-"initialization file located in your home directory is named ``.editrc``. For "
-"example, the following content in ``~/.editrc`` will turn ON *vi* "
-"keybindings and TAB completion::"
+msgid "If you use ``editline``/``libedit`` readline emulation on macOS, the initialization file located in your home directory is named ``.editrc``. For example, the following content in ``~/.editrc`` will turn ON *vi* keybindings and TAB completion::"
 msgstr ""
 
-#: ../../library/readline.rst:48
 msgid ""
 "python:bind -v\n"
 "python:bind ^I rl_complete"
 msgstr ""
 
-#: ../../library/readline.rst:51
-msgid ""
-"Also note that different libraries may use different history file formats. "
-"When switching the underlying library, existing history files may become "
-"unusable."
+msgid "Also note that different libraries may use different history file formats. When switching the underlying library, existing history files may become unusable."
 msgstr ""
 
-#: ../../library/readline.rst:57
-msgid ""
-"The name of the underlying Readline library being used, either "
-"``\"readline\"`` or ``\"editline\"``."
+msgid "The name of the underlying Readline library being used, either ``\"readline\"`` or ``\"editline\"``."
 msgstr ""
 
-#: ../../library/readline.rst:63
 msgid "Init file"
 msgstr ""
 
-#: ../../library/readline.rst:65
 msgid "The following functions relate to the init file and user configuration:"
 msgstr ""
 
-#: ../../library/readline.rst:70
-msgid ""
-"Execute the init line provided in the *string* argument. This "
-"calls :c:func:`!rl_parse_and_bind` in the underlying library."
+msgid "Execute the init line provided in the *string* argument. This calls :c:func:`!rl_parse_and_bind` in the underlying library."
 msgstr ""
 
-#: ../../library/readline.rst:76
-msgid ""
-"Execute a readline initialization file. The default filename is the last "
-"filename used. This calls :c:func:`!rl_read_init_file` in the underlying "
-"library. It raises an :ref:`auditing event <auditing>` ``open`` with the "
-"file name if given, and :code:`\"<readline_init_file>\"` otherwise, "
-"regardless of which file the library resolves."
+msgid "Execute a readline initialization file. The default filename is the last filename used. This calls :c:func:`!rl_read_init_file` in the underlying library. It raises an :ref:`auditing event <auditing>` ``open`` with the file name if given, and :code:`\"<readline_init_file>\"` otherwise, regardless of which file the library resolves."
 msgstr ""
 
-#: ../../library/readline.rst:82 ../../library/readline.rst:125
-#: ../../library/readline.rst:137 ../../library/readline.rst:152
 msgid "The auditing event was added."
 msgstr ""
 
-#: ../../library/readline.rst:87
 msgid "Line buffer"
 msgstr ""
 
-#: ../../library/readline.rst:89
 msgid "The following functions operate on the line buffer:"
 msgstr ""
 
-#: ../../library/readline.rst:94
-msgid ""
-"Return the current contents of the line buffer (:c:data:`!rl_line_buffer` in "
-"the underlying library)."
+msgid "Return the current contents of the line buffer (:c:data:`!rl_line_buffer` in the underlying library)."
 msgstr ""
 
-#: ../../library/readline.rst:100
-msgid ""
-"Insert text into the line buffer at the cursor position.  This "
-"calls :c:func:`!rl_insert_text` in the underlying library, but ignores the "
-"return value."
+msgid "Insert text into the line buffer at the cursor position.  This calls :c:func:`!rl_insert_text` in the underlying library, but ignores the return value."
 msgstr ""
 
-#: ../../library/readline.rst:107
-msgid ""
-"Change what's displayed on the screen to reflect the current contents of the "
-"line buffer.  This calls :c:func:`!rl_redisplay` in the underlying library."
+msgid "Change what's displayed on the screen to reflect the current contents of the line buffer.  This calls :c:func:`!rl_redisplay` in the underlying library."
 msgstr ""
 
-#: ../../library/readline.rst:112
 msgid "History file"
 msgstr ""
 
-#: ../../library/readline.rst:114
 msgid "The following functions operate on a history file:"
 msgstr ""
 
-#: ../../library/readline.rst:119
-msgid ""
-"Load a readline history file, and append it to the history list. The default "
-"filename is :file:`~/.history`.  This calls :c:func:`!read_history` in the "
-"underlying library and raises an :ref:`auditing event <auditing>` ``open`` "
-"with the file name if given and :code:`\"~/.history\"` otherwise."
+msgid "Load a readline history file, and append it to the history list. The default filename is :file:`~/.history`.  This calls :c:func:`!read_history` in the underlying library and raises an :ref:`auditing event <auditing>` ``open`` with the file name if given and :code:`\"~/.history\"` otherwise."
 msgstr ""
 
-#: ../../library/readline.rst:131
-msgid ""
-"Save the history list to a readline history file, overwriting any existing "
-"file.  The default filename is :file:`~/.history`.  This calls :c:func:`!"
-"write_history` in the underlying library and raises an :ref:`auditing event "
-"<auditing>` ``open`` with the file name if given and :code:`\"~/.history\"` "
-"otherwise."
+msgid "Save the history list to a readline history file, overwriting any existing file.  The default filename is :file:`~/.history`.  This calls :c:func:`!write_history` in the underlying library and raises an :ref:`auditing event <auditing>` ``open`` with the file name if given and :code:`\"~/.history\"` otherwise."
 msgstr ""
 
-#: ../../library/readline.rst:143
-msgid ""
-"Append the last *nelements* items of history to a file.  The default "
-"filename is :file:`~/.history`.  The file must already exist.  This "
-"calls :c:func:`!append_history` in the underlying library.  This function "
-"only exists if Python was compiled for a version of the library that "
-"supports it. It raises an :ref:`auditing event <auditing>` ``open`` with the "
-"file name if given and :code:`\"~/.history\"` otherwise."
+msgid "Append the last *nelements* items of history to a file.  The default filename is :file:`~/.history`.  The file must already exist.  This calls :c:func:`!append_history` in the underlying library.  This function only exists if Python was compiled for a version of the library that supports it. It raises an :ref:`auditing event <auditing>` ``open`` with the file name if given and :code:`\"~/.history\"` otherwise."
 msgstr ""
 
-#: ../../library/readline.rst:159
-msgid ""
-"Set or return the desired number of lines to save in the history file. "
-"The :func:`write_history_file` function uses this value to truncate the "
-"history file, by calling :c:func:`!history_truncate_file` in the underlying "
-"library.  Negative values imply unlimited history file size."
+msgid "Set or return the desired number of lines to save in the history file. The :func:`write_history_file` function uses this value to truncate the history file, by calling :c:func:`!history_truncate_file` in the underlying library.  Negative values imply unlimited history file size."
 msgstr ""
 
-#: ../../library/readline.rst:167
 msgid "History list"
 msgstr ""
 
-#: ../../library/readline.rst:169
 msgid "The following functions operate on a global history list:"
 msgstr ""
 
-#: ../../library/readline.rst:174
-msgid ""
-"Clear the current history.  This calls :c:func:`!clear_history` in the "
-"underlying library.  The Python function only exists if Python was compiled "
-"for a version of the library that supports it."
+msgid "Clear the current history.  This calls :c:func:`!clear_history` in the underlying library.  The Python function only exists if Python was compiled for a version of the library that supports it."
 msgstr ""
 
-#: ../../library/readline.rst:181
-msgid ""
-"Return the number of items currently in the history.  (This is different "
-"from :func:`get_history_length`, which returns the maximum number of lines "
-"that will be written to a history file.)"
+msgid "Return the number of items currently in the history.  (This is different from :func:`get_history_length`, which returns the maximum number of lines that will be written to a history file.)"
 msgstr ""
 
-#: ../../library/readline.rst:188
-msgid ""
-"Return the current contents of history item at *index*.  The item index is "
-"one-based.  This calls :c:func:`!history_get` in the underlying library."
+msgid "Return the current contents of history item at *index*.  The item index is one-based.  This calls :c:func:`!history_get` in the underlying library."
 msgstr ""
 
-#: ../../library/readline.rst:194
-msgid ""
-"Remove history item specified by its position from the history. The position "
-"is zero-based.  This calls :c:func:`!remove_history` in the underlying "
-"library."
+msgid "Remove history item specified by its position from the history. The position is zero-based.  This calls :c:func:`!remove_history` in the underlying library."
 msgstr ""
 
-#: ../../library/readline.rst:201
-msgid ""
-"Replace history item specified by its position with *line*. The position is "
-"zero-based.  This calls :c:func:`!replace_history_entry` in the underlying "
-"library."
+msgid "Replace history item specified by its position with *line*. The position is zero-based.  This calls :c:func:`!replace_history_entry` in the underlying library."
 msgstr ""
 
-#: ../../library/readline.rst:208
-msgid ""
-"Append *line* to the history buffer, as if it was the last line typed. This "
-"calls :c:func:`!add_history` in the underlying library."
+msgid "Append *line* to the history buffer, as if it was the last line typed. This calls :c:func:`!add_history` in the underlying library."
 msgstr ""
 
-#: ../../library/readline.rst:214
-msgid ""
-"Enable or disable automatic calls to :c:func:`!add_history` when reading "
-"input via readline.  The *enabled* argument should be a Boolean value that "
-"when true, enables auto history, and that when false, disables auto history."
+msgid "Enable or disable automatic calls to :c:func:`!add_history` when reading input via readline.  The *enabled* argument should be a Boolean value that when true, enables auto history, and that when false, disables auto history."
 msgstr ""
 
-#: ../../library/readline.rst:222
-msgid ""
-"Auto history is enabled by default, and changes to this do not persist "
-"across multiple sessions."
+msgid "Auto history is enabled by default, and changes to this do not persist across multiple sessions."
 msgstr ""
 
-#: ../../library/readline.rst:227
 msgid "Startup hooks"
 msgstr ""
 
-#: ../../library/readline.rst:232
-msgid ""
-"Set or remove the function invoked by the :c:data:`!rl_startup_hook` "
-"callback of the underlying library.  If *function* is specified, it will be "
-"used as the new hook function; if omitted or ``None``, any function already "
-"installed is removed.  The hook is called with no arguments just before "
-"readline prints the first prompt."
+msgid "Set or remove the function invoked by the :c:data:`!rl_startup_hook` callback of the underlying library.  If *function* is specified, it will be used as the new hook function; if omitted or ``None``, any function already installed is removed.  The hook is called with no arguments just before readline prints the first prompt."
 msgstr ""
 
-#: ../../library/readline.rst:241
-msgid ""
-"Set or remove the function invoked by the :c:data:`!rl_pre_input_hook` "
-"callback of the underlying library.  If *function* is specified, it will be "
-"used as the new hook function; if omitted or ``None``, any function already "
-"installed is removed.  The hook is called with no arguments after the first "
-"prompt has been printed and just before readline starts reading input "
-"characters.  This function only exists if Python was compiled for a version "
-"of the library that supports it."
+msgid "Set or remove the function invoked by the :c:data:`!rl_pre_input_hook` callback of the underlying library.  If *function* is specified, it will be used as the new hook function; if omitted or ``None``, any function already installed is removed.  The hook is called with no arguments after the first prompt has been printed and just before readline starts reading input characters.  This function only exists if Python was compiled for a version of the library that supports it."
 msgstr ""
 
-#: ../../library/readline.rst:253
 msgid "Completion"
 msgstr ""
 
-#: ../../library/readline.rst:255
-msgid ""
-"The following functions relate to implementing a custom word completion "
-"function.  This is typically operated by the Tab key, and can suggest and "
-"automatically complete a word being typed.  By default, Readline is set up "
-"to be used by :mod:`rlcompleter` to complete Python identifiers for the "
-"interactive interpreter.  If the :mod:`!readline` module is to be used with "
-"a custom completer, a different set of word delimiters should be set."
+msgid "The following functions relate to implementing a custom word completion function.  This is typically operated by the Tab key, and can suggest and automatically complete a word being typed.  By default, Readline is set up to be used by :mod:`rlcompleter` to complete Python identifiers for the interactive interpreter.  If the :mod:`!readline` module is to be used with a custom completer, a different set of word delimiters should be set."
 msgstr ""
 
-#: ../../library/readline.rst:265
-msgid ""
-"Set or remove the completer function.  If *function* is specified, it will "
-"be used as the new completer function; if omitted or ``None``, any completer "
-"function already installed is removed.  The completer function is called as "
-"``function(text, state)``, for *state* in ``0``, ``1``, ``2``, ..., until it "
-"returns a non-string value.  It should return the next possible completion "
-"starting with *text*."
+msgid "Set or remove the completer function.  If *function* is specified, it will be used as the new completer function; if omitted or ``None``, any completer function already installed is removed.  The completer function is called as ``function(text, state)``, for *state* in ``0``, ``1``, ``2``, ..., until it returns a non-string value.  It should return the next possible completion starting with *text*."
 msgstr ""
 
-#: ../../library/readline.rst:272
-msgid ""
-"The installed completer function is invoked by the *entry_func* callback "
-"passed to :c:func:`!rl_completion_matches` in the underlying library. The "
-"*text* string comes from the first parameter to the :c:data:`!"
-"rl_attempted_completion_function` callback of the underlying library."
+msgid "The installed completer function is invoked by the *entry_func* callback passed to :c:func:`!rl_completion_matches` in the underlying library. The *text* string comes from the first parameter to the :c:data:`!rl_attempted_completion_function` callback of the underlying library."
 msgstr ""
 
-#: ../../library/readline.rst:281
-msgid ""
-"Get the completer function, or ``None`` if no completer function has been "
-"set."
+msgid "Get the completer function, or ``None`` if no completer function has been set."
 msgstr ""
 
-#: ../../library/readline.rst:286
-msgid ""
-"Get the type of completion being attempted.  This returns the :c:data:`!"
-"rl_completion_type` variable in the underlying library as an integer."
+msgid "Get the type of completion being attempted.  This returns the :c:data:`!rl_completion_type` variable in the underlying library as an integer."
 msgstr ""
 
-#: ../../library/readline.rst:294
-msgid ""
-"Get the beginning or ending index of the completion scope. These indexes are "
-"the *start* and *end* arguments passed to the :c:data:`!"
-"rl_attempted_completion_function` callback of the underlying library.  The "
-"values may be different in the same input editing scenario based on the "
-"underlying C readline implementation. Ex: libedit is known to behave "
-"differently than libreadline."
+msgid "Get the beginning or ending index of the completion scope. These indexes are the *start* and *end* arguments passed to the :c:data:`!rl_attempted_completion_function` callback of the underlying library.  The values may be different in the same input editing scenario based on the underlying C readline implementation. Ex: libedit is known to behave differently than libreadline."
 msgstr ""
 
-#: ../../library/readline.rst:305
-msgid ""
-"Set or get the word delimiters for completion.  These determine the start of "
-"the word to be considered for completion (the completion scope). These "
-"functions access the :c:data:`!rl_completer_word_break_characters` variable "
-"in the underlying library."
+msgid "Set or get the word delimiters for completion.  These determine the start of the word to be considered for completion (the completion scope). These functions access the :c:data:`!rl_completer_word_break_characters` variable in the underlying library."
 msgstr ""
 
-#: ../../library/readline.rst:313
-msgid ""
-"Set or remove the completion display function.  If *function* is specified, "
-"it will be used as the new completion display function; if omitted or "
-"``None``, any completion display function already installed is removed.  "
-"This sets or clears the :c:data:`!rl_completion_display_matches_hook` "
-"callback in the underlying library.  The completion display function is "
-"called as ``function(substitution, [matches], longest_match_length)`` once "
-"each time matches need to be displayed."
+msgid "Set or remove the completion display function.  If *function* is specified, it will be used as the new completion display function; if omitted or ``None``, any completion display function already installed is removed.  This sets or clears the :c:data:`!rl_completion_display_matches_hook` callback in the underlying library.  The completion display function is called as ``function(substitution, [matches], longest_match_length)`` once each time matches need to be displayed."
 msgstr ""
 
-#: ../../library/readline.rst:326
 msgid "Example"
 msgstr ""
 
-#: ../../library/readline.rst:328
-msgid ""
-"The following example demonstrates how to use the :mod:`!readline` module's "
-"history reading and writing functions to automatically load and save a "
-"history file named :file:`.python_history` from the user's home directory.  "
-"The code below would normally be executed automatically during interactive "
-"sessions from the user's :envvar:`PYTHONSTARTUP` file. ::"
+msgid "The following example demonstrates how to use the :mod:`!readline` module's history reading and writing functions to automatically load and save a history file named :file:`.python_history` from the user's home directory.  The code below would normally be executed automatically during interactive sessions from the user's :envvar:`PYTHONSTARTUP` file. ::"
 msgstr ""
 
-#: ../../library/readline.rst:334
 msgid ""
 "import atexit\n"
 "import os\n"
@@ -394,19 +198,12 @@ msgid ""
 "atexit.register(readline.write_history_file, histfile)"
 msgstr ""
 
-#: ../../library/readline.rst:348
-msgid ""
-"This code is actually automatically run when Python is run "
-"in :ref:`interactive mode <tut-interactive>` (see :ref:`rlcompleter-config`)."
+msgid "This code is actually automatically run when Python is run in :ref:`interactive mode <tut-interactive>` (see :ref:`rlcompleter-config`)."
 msgstr ""
 
-#: ../../library/readline.rst:351
-msgid ""
-"The following example achieves the same goal but supports concurrent "
-"interactive sessions, by only appending the new history. ::"
+msgid "The following example achieves the same goal but supports concurrent interactive sessions, by only appending the new history. ::"
 msgstr ""
 
-#: ../../library/readline.rst:354
 msgid ""
 "import atexit\n"
 "import os\n"
@@ -427,13 +224,9 @@ msgid ""
 "atexit.register(save, h_len, histfile)"
 msgstr ""
 
-#: ../../library/readline.rst:372
-msgid ""
-"The following example extends the :class:`code.InteractiveConsole` class to "
-"support history save/restore. ::"
+msgid "The following example extends the :class:`code.InteractiveConsole` class to support history save/restore. ::"
 msgstr ""
 
-#: ../../library/readline.rst:375
 msgid ""
 "import atexit\n"
 "import code\n"
@@ -460,9 +253,5 @@ msgid ""
 "        readline.write_history_file(histfile)"
 msgstr ""
 
-#: ../../library/readline.rst:401
-msgid ""
-"The new :term:`REPL` introduced in version 3.13 doesn't support readline. "
-"However, readline can still be used by setting "
-"the :envvar:`PYTHON_BASIC_REPL` environment variable."
+msgid "The new :term:`REPL` introduced in version 3.13 doesn't support readline. However, readline can still be used by setting the :envvar:`PYTHON_BASIC_REPL` environment variable."
 msgstr ""

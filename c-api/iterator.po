@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-25 20:39+0330\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2021-06-28 00:49+0000\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
 "Language: fa\n"
@@ -21,129 +21,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../../c-api/iterator.rst:6
 msgid "Iterator Objects"
 msgstr ""
 
-#: ../../c-api/iterator.rst:8
-msgid ""
-"Python provides two general-purpose iterator objects.  The first, a sequence "
-"iterator, works with an arbitrary sequence supporting "
-"the :meth:`~object.__getitem__` method.  The second works with a callable "
-"object and a sentinel value, calling the callable for each item in the "
-"sequence, and ending the iteration when the sentinel value is returned."
+msgid "Python provides two general-purpose iterator objects.  The first, a sequence iterator, works with an arbitrary sequence supporting the :meth:`~object.__getitem__` method.  The second works with a callable object and a sentinel value, calling the callable for each item in the sequence, and ending the iteration when the sentinel value is returned."
 msgstr ""
 
-#: ../../c-api/iterator.rst:17
-msgid ""
-"Type object for iterator objects returned by :c:func:`PySeqIter_New` and the "
-"one-argument form of the :func:`iter` built-in function for built-in "
-"sequence types."
+msgid "Type object for iterator objects returned by :c:func:`PySeqIter_New` and the one-argument form of the :func:`iter` built-in function for built-in sequence types."
 msgstr ""
 
-#: ../../c-api/iterator.rst:24
-msgid ""
-"Return true if the type of *op* is :c:data:`PySeqIter_Type`.  This function "
-"always succeeds."
+msgid "Return true if the type of *op* is :c:data:`PySeqIter_Type`.  This function always succeeds."
 msgstr ""
 
-#: ../../c-api/iterator.rst:30
-msgid ""
-"Return an iterator that works with a general sequence object, *seq*.  The "
-"iteration ends when the sequence raises :exc:`IndexError` for the "
-"subscripting operation."
+msgid "Return an iterator that works with a general sequence object, *seq*.  The iteration ends when the sequence raises :exc:`IndexError` for the subscripting operation."
 msgstr ""
 
-#: ../../c-api/iterator.rst:37
-msgid ""
-"Type object for iterator objects returned by :c:func:`PyCallIter_New` and "
-"the two-argument form of the :func:`iter` built-in function."
+msgid "Type object for iterator objects returned by :c:func:`PyCallIter_New` and the two-argument form of the :func:`iter` built-in function."
 msgstr ""
 
-#: ../../c-api/iterator.rst:43
-msgid ""
-"Return true if the type of *op* is :c:data:`PyCallIter_Type`.  This function "
-"always succeeds."
+msgid "Return true if the type of *op* is :c:data:`PyCallIter_Type`.  This function always succeeds."
 msgstr ""
 
-#: ../../c-api/iterator.rst:49
-msgid ""
-"Return a new iterator.  The first parameter, *callable*, can be any Python "
-"callable object that can be called with no parameters; each call to it "
-"should return the next item in the iteration.  When *callable* returns a "
-"value equal to *sentinel*, the iteration will be terminated."
+msgid "Return a new iterator.  The first parameter, *callable*, can be any Python callable object that can be called with no parameters; each call to it should return the next item in the iteration.  When *callable* returns a value equal to *sentinel*, the iteration will be terminated."
 msgstr ""
 
-#: ../../c-api/iterator.rst:56
 msgid "Range Objects"
 msgstr ""
 
-#: ../../c-api/iterator.rst:60
 msgid "The type object for :class:`range` objects."
 msgstr ""
 
-#: ../../c-api/iterator.rst:65
-msgid ""
-"Return true if the object *o* is an instance of a :class:`range` object. "
-"This function always succeeds."
+msgid "Return true if the object *o* is an instance of a :class:`range` object. This function always succeeds."
 msgstr ""
 
-#: ../../c-api/iterator.rst:70
 msgid "Builtin Iterator Types"
 msgstr ""
 
-#: ../../c-api/iterator.rst:72
-msgid ""
-"These are built-in iteration types that are included in Python's C API, but "
-"provide no additional functions. They are here for completeness."
+msgid "These are built-in iteration types that are included in Python's C API, but provide no additional functions. They are here for completeness."
 msgstr ""
 
-#: ../../c-api/iterator.rst:80
 msgid "C type"
 msgstr ""
 
-#: ../../c-api/iterator.rst:81
 msgid "Python type"
 msgstr ""
 
-#: ../../c-api/iterator.rst:83
 msgid ":py:class:`enumerate`"
 msgstr ""
 
-#: ../../c-api/iterator.rst:85
 msgid ":py:class:`filter`"
 msgstr ""
 
-#: ../../c-api/iterator.rst:87
 msgid ":py:class:`map`"
 msgstr ""
 
-#: ../../c-api/iterator.rst:89
 msgid ":py:class:`reversed`"
 msgstr ""
 
-#: ../../c-api/iterator.rst:91
 msgid ":py:class:`zip`"
 msgstr ""
 
-#: ../../c-api/iterator.rst:95
 msgid "Other Iterator Objects"
 msgstr ""
 
-#: ../../c-api/iterator.rst:113
 msgid "Type objects for iterators of various built-in objects."
 msgstr ""
 
-#: ../../c-api/iterator.rst:115
-msgid ""
-"Do not create instances of these directly; prefer "
-"calling :c:func:`PyObject_GetIter` instead."
+msgid "Do not create instances of these directly; prefer calling :c:func:`PyObject_GetIter` instead."
 msgstr ""
 
-#: ../../c-api/iterator.rst:118
-msgid ""
-"Note that there is no guarantee that a given built-in type uses a given "
-"iterator type. For example, iterating over :class:`range` will use one of "
-"two iterator types depending on the size of the range. Other types may start "
-"using a similar scheme in the future, without warning."
+msgid "Note that there is no guarantee that a given built-in type uses a given iterator type. For example, iterating over :class:`range` will use one of two iterator types depending on the size of the range. Other types may start using a similar scheme in the future, without warning."
 msgstr ""

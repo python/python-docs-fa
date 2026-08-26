@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-25 20:39+0330\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2026-07-25 14:55+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -31,283 +31,124 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.6\n"
 
-#: ../../c-api/allocation.rst:6
 msgid "Allocating objects on the heap"
 msgstr "تخصیص اشیاء روی پشته"
 
-#: ../../c-api/allocation.rst:17
-msgid ""
-"Initialize a newly allocated object *op* with its type and initial "
-"reference.  Returns the initialized object.  Other fields of the object are "
-"not initialized.  Despite its name, this function is unrelated to the "
-"object's :meth:`~object.__init__` method (:c:member:`~PyTypeObject.tp_init` "
-"slot).  Specifically, this function does **not** call the object's :meth:`!"
-"__init__` method."
-msgstr ""
-"یک شیء *op* که به‌تازگی تخصیص داده شده را با نوع و مرجع اولیه‌اش مقداردهی "
-"اولیه می‌کند. شیء مقداردهی‌شده را برمی‌گرداند. سایر فیلدهای شیء مقداردهی اولیه "
-"نمی‌شوند. با وجود نام این تابع، آن به متد :meth:`~object.__init__` شیء "
-"(درگاه :c:member:`~PyTypeObject.tp_init`) مربوط نیست. به‌طور خاص، این تابع "
-"متد :meth:`!__init__` شیء را **فراخوانی نمی‌کند**."
+msgid "Initialize a newly allocated object *op* with its type and initial reference.  Returns the initialized object.  Other fields of the object are not initialized.  Despite its name, this function is unrelated to the object's :meth:`~object.__init__` method (:c:member:`~PyTypeObject.tp_init` slot).  Specifically, this function does **not** call the object's :meth:`!__init__` method."
+msgstr "یک شیء *op* که به‌تازگی تخصیص داده شده را با نوع و مرجع اولیه‌اش مقداردهی اولیه می‌کند. شیء مقداردهی‌شده را برمی‌گرداند. سایر فیلدهای شیء مقداردهی اولیه نمی‌شوند. با وجود نام این تابع، آن به متد :meth:`~object.__init__` شیء (درگاه :c:member:`~PyTypeObject.tp_init`) مربوط نیست. به‌طور خاص، این تابع متد :meth:`!__init__` شیء را **فراخوانی نمی‌کند**."
 
-#: ../../c-api/allocation.rst:24
-msgid ""
-"In general, consider this function to be a low-level routine. "
-"Use :c:member:`~PyTypeObject.tp_alloc` where possible. For "
-"implementing :c:member:`!tp_alloc` for your type, "
-"prefer :c:func:`PyType_GenericAlloc` or :c:func:`PyObject_New`."
-msgstr ""
-"در کل، این تابع را یک روتین سطح پایین در نظر بگیرید. تا جایی که ممکن است "
-"از :c:member:`~PyTypeObject.tp_alloc` استفاده کنید. برای "
-"پیاده‌سازی :c:member:`!tp_alloc` برای نوع خود، "
-"از :c:func:`PyType_GenericAlloc` یا :c:func:`PyObject_New` استفاده کنید."
+msgid "In general, consider this function to be a low-level routine. Use :c:member:`~PyTypeObject.tp_alloc` where possible. For implementing :c:member:`!tp_alloc` for your type, prefer :c:func:`PyType_GenericAlloc` or :c:func:`PyObject_New`."
+msgstr "در کل، این تابع را یک روتین سطح پایین در نظر بگیرید. تا جایی که ممکن است از :c:member:`~PyTypeObject.tp_alloc` استفاده کنید. برای پیاده‌سازی :c:member:`!tp_alloc` برای نوع خود، از :c:func:`PyType_GenericAlloc` یا :c:func:`PyObject_New` استفاده کنید."
 
-#: ../../c-api/allocation.rst:31
-msgid ""
-"This function only initializes the object's memory corresponding to the "
-"initial :c:type:`PyObject` structure.  It does not zero the rest."
-msgstr ""
-"این تابع فقط حافظه‌ی شیء را که مربوط به ساختار ابتدایی :c:type:`PyObject` "
-"است، مقداردهی اولیه می‌کند. بقیه‌ی حافظه را صفر نمی‌کند."
+msgid "This function only initializes the object's memory corresponding to the initial :c:type:`PyObject` structure.  It does not zero the rest."
+msgstr "این تابع فقط حافظه‌ی شیء را که مربوط به ساختار ابتدایی :c:type:`PyObject` است، مقداردهی اولیه می‌کند. بقیه‌ی حافظه را صفر نمی‌کند."
 
-#: ../../c-api/allocation.rst:37
-msgid ""
-"This does everything :c:func:`PyObject_Init` does, and also initializes the "
-"length information for a variable-size object."
-msgstr ""
-"این تابع همهٔ کارهایی را انجام می‌دهد که :c:func:`PyObject_Init` انجام می‌دهد، "
-"و همچنین اطلاعات مربوط به طول را برای یک شیء با اندازهٔ متغیر مقداردهی می‌کند."
+msgid "This does everything :c:func:`PyObject_Init` does, and also initializes the length information for a variable-size object."
+msgstr "این تابع همهٔ کارهایی را انجام می‌دهد که :c:func:`PyObject_Init` انجام می‌دهد، و همچنین اطلاعات مربوط به طول را برای یک شیء با اندازهٔ متغیر مقداردهی می‌کند."
 
-#: ../../c-api/allocation.rst:42
-msgid ""
-"This function only initializes some of the object's memory.  It does not "
-"zero the rest."
-msgstr ""
-"این تابع فقط بخشی از حافظه‌ی شیء را مقداردهی اولیه می‌کند. بقیه‌ی حافظه را صفر "
-"نمی‌کند."
+msgid "This function only initializes some of the object's memory.  It does not zero the rest."
+msgstr "این تابع فقط بخشی از حافظه‌ی شیء را مقداردهی اولیه می‌کند. بقیه‌ی حافظه را صفر نمی‌کند."
 
-#: ../../c-api/allocation.rst:48
-msgid ""
-"Allocates a new Python object using the C structure type *TYPE* and the "
-"Python type object *typeobj* (``PyTypeObject*``) by "
-"calling :c:func:`PyObject_Malloc` to allocate memory and initializing it "
-"like :c:func:`PyObject_Init`.  The caller will own the only reference to the "
-"object (i.e. its reference count will be one)."
-msgstr ""
-"یک شیء پایتونی جدید با استفاده از نوع ساختار C یعنی *TYPE* و شیء نوع پایتون "
-"یعنی *typeobj* (``PyTypeObject*``) با فراخوانی :c:func:`PyObject_Malloc` "
-"برای تخصیص حافظه و مقداردهی اولیه‌ی آن مانند :c:func:`PyObject_Init` تخصیص "
-"می‌دهد. فراخوان‌نده، تنها مرجع به شیء را در اختیار خواهد داشت (یعنی شمارنده‌ی "
-"ارجاع آن یک خواهد بود)."
+msgid "Allocates a new Python object using the C structure type *TYPE* and the Python type object *typeobj* (``PyTypeObject*``) by calling :c:func:`PyObject_Malloc` to allocate memory and initializing it like :c:func:`PyObject_Init`.  The caller will own the only reference to the object (i.e. its reference count will be one)."
+msgstr "یک شیء پایتونی جدید با استفاده از نوع ساختار C یعنی *TYPE* و شیء نوع پایتون یعنی *typeobj* (``PyTypeObject*``) با فراخوانی :c:func:`PyObject_Malloc` برای تخصیص حافظه و مقداردهی اولیه‌ی آن مانند :c:func:`PyObject_Init` تخصیص می‌دهد. فراخوان‌نده، تنها مرجع به شیء را در اختیار خواهد داشت (یعنی شمارنده‌ی ارجاع آن یک خواهد بود)."
 
-#: ../../c-api/allocation.rst:54 ../../c-api/allocation.rst:107
-msgid ""
-"Avoid calling this directly to allocate memory for an object; call the "
-"type's :c:member:`~PyTypeObject.tp_alloc` slot instead."
-msgstr ""
-"از فراخوانی مستقیم این تابع برای تخصیص حافظه به یک شیء خودداری کنید؛ به جای "
-"آن، درگاه :c:member:`~PyTypeObject.tp_alloc` تایپ را فراخوانی کنید."
+msgid "Avoid calling this directly to allocate memory for an object; call the type's :c:member:`~PyTypeObject.tp_alloc` slot instead."
+msgstr "از فراخوانی مستقیم این تابع برای تخصیص حافظه به یک شیء خودداری کنید؛ به جای آن، درگاه :c:member:`~PyTypeObject.tp_alloc` تایپ را فراخوانی کنید."
 
-#: ../../c-api/allocation.rst:57 ../../c-api/allocation.rst:110
-msgid ""
-"When populating a type's :c:member:`~PyTypeObject.tp_alloc` "
-"slot, :c:func:`PyType_GenericAlloc` is preferred over a custom function that "
-"simply calls this macro."
-msgstr ""
-"هنگام پر کردن درگاه :c:member:`~PyTypeObject.tp_alloc` یک "
-"تایپ، :c:func:`PyType_GenericAlloc` بر یک تابع سفارشی که صرفاً این ماکرو را "
-"فراخوانی می‌کند، ترجیح داده می‌شود."
+msgid "When populating a type's :c:member:`~PyTypeObject.tp_alloc` slot, :c:func:`PyType_GenericAlloc` is preferred over a custom function that simply calls this macro."
+msgstr "هنگام پر کردن درگاه :c:member:`~PyTypeObject.tp_alloc` یک تایپ، :c:func:`PyType_GenericAlloc` بر یک تابع سفارشی که صرفاً این ماکرو را فراخوانی می‌کند، ترجیح داده می‌شود."
 
-#: ../../c-api/allocation.rst:61
-msgid ""
-"This macro does not "
-"call :c:member:`~PyTypeObject.tp_alloc`, :c:member:`~PyTypeObject.tp_new` "
-"(:meth:`~object.__new__`), or :c:member:`~PyTypeObject.tp_init` "
-"(:meth:`~object.__init__`)."
-msgstr ""
-"این "
-"ماکرو :c:member:`~PyTypeObject.tp_alloc`، :c:member:`~PyTypeObject.tp_new` "
-"(:meth:`~object.__new__`) یا :c:member:`~PyTypeObject.tp_init` "
-"(:meth:`~object.__init__`) را فراخوانی نمی‌کند."
+msgid "This macro does not call :c:member:`~PyTypeObject.tp_alloc`, :c:member:`~PyTypeObject.tp_new` (:meth:`~object.__new__`), or :c:member:`~PyTypeObject.tp_init` (:meth:`~object.__init__`)."
+msgstr "این ماکرو :c:member:`~PyTypeObject.tp_alloc`، :c:member:`~PyTypeObject.tp_new` (:meth:`~object.__new__`) یا :c:member:`~PyTypeObject.tp_init` (:meth:`~object.__init__`) را فراخوانی نمی‌کند."
 
-#: ../../c-api/allocation.rst:65
-msgid ""
-"This cannot be used for objects with :c:macro:`Py_TPFLAGS_HAVE_GC` set "
-"in :c:member:`~PyTypeObject.tp_flags`; use :c:macro:`PyObject_GC_New` "
-"instead."
-msgstr ""
-"این را نمی‌توان برای اشیایی که :c:macro:`Py_TPFLAGS_HAVE_GC` "
-"در :c:member:`~PyTypeObject.tp_flags` آنها تنظیم شده است، استفاده کرد؛ به "
-"جای آن از :c:macro:`PyObject_GC_New` استفاده کنید."
+msgid "This cannot be used for objects with :c:macro:`Py_TPFLAGS_HAVE_GC` set in :c:member:`~PyTypeObject.tp_flags`; use :c:macro:`PyObject_GC_New` instead."
+msgstr "این را نمی‌توان برای اشیایی که :c:macro:`Py_TPFLAGS_HAVE_GC` در :c:member:`~PyTypeObject.tp_flags` آنها تنظیم شده است، استفاده کرد؛ به جای آن از :c:macro:`PyObject_GC_New` استفاده کنید."
 
-#: ../../c-api/allocation.rst:68
-msgid ""
-"Memory allocated by this macro must be freed with :c:func:`PyObject_Free` "
-"(usually called via the object's :c:member:`~PyTypeObject.tp_free` slot)."
-msgstr ""
-"حافظه‌ای که توسط این ماکرو تخصیص داده می‌شود، باید با :c:func:`PyObject_Free` "
-"آزاد شود (معمولاً از طریق درگاه :c:member:`~PyTypeObject.tp_free` شیء "
-"فراخوانی می‌شود)."
+msgid "Memory allocated by this macro must be freed with :c:func:`PyObject_Free` (usually called via the object's :c:member:`~PyTypeObject.tp_free` slot)."
+msgstr "حافظه‌ای که توسط این ماکرو تخصیص داده می‌شود، باید با :c:func:`PyObject_Free` آزاد شود (معمولاً از طریق درگاه :c:member:`~PyTypeObject.tp_free` شیء فراخوانی می‌شود)."
 
-#: ../../c-api/allocation.rst:73 ../../c-api/allocation.rst:123
-msgid ""
-"The returned memory is not guaranteed to have been completely zeroed before "
-"it was initialized."
-msgstr ""
-"حافظه‌ی برگشتی تضمین نمی‌شود که به‌طور کامل صفر شده باشد قبل از این‌که مقداردهی "
-"اولیه شود."
+msgid "The returned memory is not guaranteed to have been completely zeroed before it was initialized."
+msgstr "حافظه‌ی برگشتی تضمین نمی‌شود که به‌طور کامل صفر شده باشد قبل از این‌که مقداردهی اولیه شود."
 
-#: ../../c-api/allocation.rst:78 ../../c-api/allocation.rst:128
-msgid ""
-"This macro does not construct a fully initialized object of the given type; "
-"it merely allocates memory and prepares it for further initialization "
-"by :c:member:`~PyTypeObject.tp_init`.  To construct a fully initialized "
-"object, call *typeobj* instead.  For example::"
-msgstr ""
-"این ماکرو یک شیء کاملاً مقداردهی‌شده از نوع داده‌شده را نمی‌سازد؛ بلکه صرفاً "
-"حافظه تخصیص می‌دهد و آن را برای مقداردهی اولیه‌ی بیشتر "
-"توسط :c:member:`~PyTypeObject.tp_init` آماده می‌کند. برای ساختن یک شیء کاملاً "
-"مقداردهی‌شده، به جای آن *typeobj* را فراخوانی کنید. برای مثال::"
+msgid "This macro does not construct a fully initialized object of the given type; it merely allocates memory and prepares it for further initialization by :c:member:`~PyTypeObject.tp_init`.  To construct a fully initialized object, call *typeobj* instead.  For example::"
+msgstr "این ماکرو یک شیء کاملاً مقداردهی‌شده از نوع داده‌شده را نمی‌سازد؛ بلکه صرفاً حافظه تخصیص می‌دهد و آن را برای مقداردهی اولیه‌ی بیشتر توسط :c:member:`~PyTypeObject.tp_init` آماده می‌کند. برای ساختن یک شیء کاملاً مقداردهی‌شده، به جای آن *typeobj* را فراخوانی کنید. برای مثال::"
 
-#: ../../c-api/allocation.rst:83
 msgid "PyObject *foo = PyObject_CallNoArgs((PyObject *)&PyFoo_Type);"
 msgstr "PyObject *foo = PyObject_CallNoArgs((PyObject *)&PyFoo_Type);"
 
-#: ../../c-api/allocation.rst:87 ../../c-api/allocation.rst:137
-#: ../../c-api/allocation.rst:184 ../../c-api/allocation.rst:186
-#: ../../c-api/allocation.rst:188
 msgid ":c:func:`PyObject_Free`"
 msgstr ":c:func:`PyObject_Free`"
 
-#: ../../c-api/allocation.rst:88
 msgid ":c:macro:`PyObject_GC_New`"
 msgstr ":c:macro:`PyObject_GC_New`"
 
-#: ../../c-api/allocation.rst:89 ../../c-api/allocation.rst:139
 msgid ":c:func:`PyType_GenericAlloc`"
 msgstr ":c:func:`PyType_GenericAlloc`"
 
-#: ../../c-api/allocation.rst:90 ../../c-api/allocation.rst:140
 msgid ":c:member:`~PyTypeObject.tp_alloc`"
 msgstr ":c:member:`~PyTypeObject.tp_alloc`"
 
-#: ../../c-api/allocation.rst:95
 msgid "Like :c:macro:`PyObject_New` except:"
 msgstr "مثل :c:macro:`PyObject_New` جز:"
 
-#: ../../c-api/allocation.rst:97
-msgid ""
-"It allocates enough memory for the *TYPE* structure plus *size* "
-"(``Py_ssize_t``) fields of the size given by "
-"the :c:member:`~PyTypeObject.tp_itemsize` field of *typeobj*."
-msgstr ""
-"این (ماکرو) به اندازه‌ی کافی برای ساختار *TYPE* به اضافه‌ی *size* "
-"(``Py_ssize_t``) فیلد به اندازه‌ای که توسط "
-"فیلد :c:member:`~PyTypeObject.tp_itemsize` از *typeobj* مشخص شده، حافظه "
-"تخصیص می‌دهد."
+msgid "It allocates enough memory for the *TYPE* structure plus *size* (``Py_ssize_t``) fields of the size given by the :c:member:`~PyTypeObject.tp_itemsize` field of *typeobj*."
+msgstr "این (ماکرو) به اندازه‌ی کافی برای ساختار *TYPE* به اضافه‌ی *size* (``Py_ssize_t``) فیلد به اندازه‌ای که توسط فیلد :c:member:`~PyTypeObject.tp_itemsize` از *typeobj* مشخص شده، حافظه تخصیص می‌دهد."
 
-#: ../../c-api/allocation.rst:100
 msgid "The memory is initialized like :c:func:`PyObject_InitVar`."
 msgstr "حافظه، مانند :c:func:`PyObject_InitVar` مقداردهی اولیه می‌شود."
 
-#: ../../c-api/allocation.rst:102
-msgid ""
-"This is useful for implementing objects like tuples, which are able to "
-"determine their size at construction time.  Embedding the array of fields "
-"into the same allocation decreases the number of allocations, improving the "
-"memory management efficiency."
-msgstr ""
-"این (روش) برای پیاده‌سازی اشیایی مثل تاپل‌ها مفید است، که می‌توانند اندازه‌ی خود "
-"را در زمان ساخت تعیین کنند. جاسازی آرایه‌ی فیلدها در همان تخصیص، تعداد "
-"تخصیص‌ها را کاهش می‌دهد و بازدهی مدیریت حافظه را بهبود می‌بخشد."
+msgid "This is useful for implementing objects like tuples, which are able to determine their size at construction time.  Embedding the array of fields into the same allocation decreases the number of allocations, improving the memory management efficiency."
+msgstr "این (روش) برای پیاده‌سازی اشیایی مثل تاپل‌ها مفید است، که می‌توانند اندازه‌ی خود را در زمان ساخت تعیین کنند. جاسازی آرایه‌ی فیلدها در همان تخصیص، تعداد تخصیص‌ها را کاهش می‌دهد و بازدهی مدیریت حافظه را بهبود می‌بخشد."
 
-#: ../../c-api/allocation.rst:114
-msgid ""
-"This cannot be used for objects with :c:macro:`Py_TPFLAGS_HAVE_GC` set "
-"in :c:member:`~PyTypeObject.tp_flags`; use :c:macro:`PyObject_GC_NewVar` "
-"instead."
-msgstr ""
-"این را نمی‌توان برای اشیایی که :c:macro:`Py_TPFLAGS_HAVE_GC` "
-"در :c:member:`~PyTypeObject.tp_flags` آنها تنظیم شده است، استفاده کرد؛ به "
-"جای آن از :c:macro:`PyObject_GC_NewVar` استفاده کنید."
+msgid "This cannot be used for objects with :c:macro:`Py_TPFLAGS_HAVE_GC` set in :c:member:`~PyTypeObject.tp_flags`; use :c:macro:`PyObject_GC_NewVar` instead."
+msgstr "این را نمی‌توان برای اشیایی که :c:macro:`Py_TPFLAGS_HAVE_GC` در :c:member:`~PyTypeObject.tp_flags` آنها تنظیم شده است، استفاده کرد؛ به جای آن از :c:macro:`PyObject_GC_NewVar` استفاده کنید."
 
-#: ../../c-api/allocation.rst:118
-msgid ""
-"Memory allocated by this function must be freed with :c:func:`PyObject_Free` "
-"(usually called via the object's :c:member:`~PyTypeObject.tp_free` slot)."
-msgstr ""
-"حافظه‌ای که توسط این تابع تخصیص داده می‌شود، باید با :c:func:`PyObject_Free` "
-"آزاد شود (معمولاً از طریق درگاه :c:member:`~PyTypeObject.tp_free` شیء "
-"فراخوانی می‌شود)."
+msgid "Memory allocated by this function must be freed with :c:func:`PyObject_Free` (usually called via the object's :c:member:`~PyTypeObject.tp_free` slot)."
+msgstr "حافظه‌ای که توسط این تابع تخصیص داده می‌شود، باید با :c:func:`PyObject_Free` آزاد شود (معمولاً از طریق درگاه :c:member:`~PyTypeObject.tp_free` شیء فراخوانی می‌شود)."
 
-#: ../../c-api/allocation.rst:133
-msgid ""
-"PyObject *list_instance = PyObject_CallNoArgs((PyObject *)&PyList_Type);"
-msgstr ""
-"PyObject *list_instance = PyObject_CallNoArgs((PyObject *)&PyList_Type);"
+msgid "PyObject *list_instance = PyObject_CallNoArgs((PyObject *)&PyList_Type);"
+msgstr "PyObject *list_instance = PyObject_CallNoArgs((PyObject *)&PyList_Type);"
 
-#: ../../c-api/allocation.rst:138
 msgid ":c:macro:`PyObject_GC_NewVar`"
 msgstr ":c:macro:`PyObject_GC_NewVar`"
 
-#: ../../c-api/allocation.rst:145
-msgid ""
-"Object which is visible in Python as ``None``.  This should only be accessed "
-"using the :c:macro:`Py_None` macro, which evaluates to a pointer to this "
-"object."
+msgid "Object which is visible in Python as ``None``.  This should only be accessed using the :c:macro:`Py_None` macro, which evaluates to a pointer to this object."
 msgstr ""
 "شیء‌ای که در پایتون به صورت ``None`` قابل مشاهده است\n"
-"این فقط باید با استفاده از ماکرو :c:macro:`Py_None`، که به یک اشاره‌گر به این "
-"شیء ارزیابی می‌شود، دسترسی پذیر باشد."
+"این فقط باید با استفاده از ماکرو :c:macro:`Py_None`، که به یک اشاره‌گر به این شیء ارزیابی می‌شود، دسترسی پذیر باشد."
 
-#: ../../c-api/allocation.rst:152
 msgid ":ref:`moduleobjects`"
 msgstr ":ref:`moduleobjects`"
 
-#: ../../c-api/allocation.rst:153
 msgid "To allocate and create extension modules."
 msgstr "برای تخصیص و ایجاد ماژول‌های افزونه."
 
-#: ../../c-api/allocation.rst:157
 msgid "Soft-deprecated aliases"
 msgstr "نامهای مستعار با منسوخ‌سازی نرم"
 
-#: ../../c-api/allocation.rst:161
-msgid ""
-"These are aliases to existing functions and macros. They exist solely for "
-"backwards compatibility."
-msgstr ""
-"اینها نامهای مستعاری برای توابع و ماکروهای موجود هستند. آن‌ها صرفاً برای "
-"سازگاری با نسخه‌های قبلی وجود دارند."
+msgid "These are aliases to existing functions and macros. They exist solely for backwards compatibility."
+msgstr "اینها نامهای مستعاری برای توابع و ماکروهای موجود هستند. آن‌ها صرفاً برای سازگاری با نسخه‌های قبلی وجود دارند."
 
-#: ../../c-api/allocation.rst:169
 msgid "Soft-deprecated alias"
 msgstr "نامهای مستعار با منسوخ‌سازی نرم"
 
-#: ../../c-api/allocation.rst:170
 msgid "Function"
 msgstr "تابع"
 
-#: ../../c-api/allocation.rst:172
 msgid ":c:macro:`PyObject_New`"
 msgstr ":c:macro:`PyObject_New`"
 
-#: ../../c-api/allocation.rst:174
 msgid ":c:macro:`PyObject_NewVar`"
 msgstr ":c:macro:`PyObject_NewVar`"
 
-#: ../../c-api/allocation.rst:176
 msgid ":c:func:`PyObject_Init`"
 msgstr ":c:func:`PyObject_Init`"
 
-#: ../../c-api/allocation.rst:178
 msgid ":c:func:`PyObject_InitVar`"
 msgstr ":c:func:`PyObject_InitVar`"
 
-#: ../../c-api/allocation.rst:180
 msgid ":c:func:`PyObject_Malloc`"
 msgstr ":c:func:`PyObject_Malloc`"
 
-#: ../../c-api/allocation.rst:182
 msgid ":c:func:`PyObject_Realloc`"
 msgstr ":c:func:`PyObject_Realloc`"

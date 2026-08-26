@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-25 20:39+0330\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2021-06-28 00:55+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
@@ -24,1004 +24,716 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../../library/asyncio-llapi-index.rst:6
 msgid "Low-level API Index"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:8
 msgid "This page lists all low-level asyncio APIs."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:12
 msgid "Obtaining the Event Loop"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:18
 msgid ":func:`asyncio.get_running_loop`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:19
 msgid "The **preferred** function to get the running event loop."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:21
 msgid ":func:`asyncio.get_event_loop`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:22
 msgid "Get an event loop instance (running or current via the current policy)."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:24
 msgid ":func:`asyncio.set_event_loop`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:25
 msgid "Set the event loop as current via the current policy."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:27
 msgid ":func:`asyncio.new_event_loop`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:28
 msgid "Create a new event loop."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:32
-#: ../../library/asyncio-llapi-index.rst:269
 msgid "Examples"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:33
 msgid ":ref:`Using asyncio.get_running_loop() <asyncio_example_future>`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:37
 msgid "Event Loop Methods"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:39
-msgid ""
-"See also the main documentation section about the :ref:`asyncio-event-loop-"
-"methods`."
+msgid "See also the main documentation section about the :ref:`asyncio-event-loop-methods`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:42
 msgid "Lifecycle"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:47
 msgid ":meth:`loop.run_until_complete`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:48
 msgid "Run a Future/Task/awaitable until complete."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:50
 msgid ":meth:`loop.run_forever`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:51
 msgid "Run the event loop forever."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:53
 msgid ":meth:`loop.stop`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:54
 msgid "Stop the event loop."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:56
 msgid ":meth:`loop.close`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:57
 msgid "Close the event loop."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:59
 msgid ":meth:`loop.is_running`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:60
 msgid "Return ``True`` if the event loop is running."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:62
 msgid ":meth:`loop.is_closed`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:63
 msgid "Return ``True`` if the event loop is closed."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:65
 msgid "``await`` :meth:`loop.shutdown_asyncgens`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:66
 msgid "Close asynchronous generators."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:69
 msgid "Debugging"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:74
 msgid ":meth:`loop.set_debug`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:75
 msgid "Enable or disable the debug mode."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:77
 msgid ":meth:`loop.get_debug`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:78
 msgid "Get the current debug mode."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:81
 msgid "Scheduling Callbacks"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:86
 msgid ":meth:`loop.call_soon`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:87
 msgid "Invoke a callback soon."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:89
 msgid ":meth:`loop.call_soon_threadsafe`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:90
 msgid "A thread-safe variant of :meth:`loop.call_soon`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:92
 msgid ":meth:`loop.call_later`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:93
 msgid "Invoke a callback *after* the given time."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:95
 msgid ":meth:`loop.call_at`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:96
 msgid "Invoke a callback *at* the given time."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:99
 msgid "Thread/Interpreter/Process Pool"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:104
 msgid "``await`` :meth:`loop.run_in_executor`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:105
-msgid ""
-"Run a CPU-bound or other blocking function in a :mod:`concurrent.futures` "
-"executor."
+msgid "Run a CPU-bound or other blocking function in a :mod:`concurrent.futures` executor."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:108
 msgid ":meth:`loop.set_default_executor`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:109
 msgid "Set the default executor for :meth:`loop.run_in_executor`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:112
 msgid "Tasks and Futures"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:117
 msgid ":meth:`loop.create_future`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:118
 msgid "Create a :class:`Future` object."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:120
 msgid ":meth:`loop.create_task`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:121
 msgid "Schedule coroutine as a :class:`Task`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:123
 msgid ":meth:`loop.set_task_factory`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:124
-msgid ""
-"Set a factory used by :meth:`loop.create_task` to create :class:`Tasks "
-"<Task>`."
+msgid "Set a factory used by :meth:`loop.create_task` to create :class:`Tasks <Task>`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:127
 msgid ":meth:`loop.get_task_factory`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:128
-msgid ""
-"Get the factory :meth:`loop.create_task` uses to create :class:`Tasks "
-"<Task>`."
+msgid "Get the factory :meth:`loop.create_task` uses to create :class:`Tasks <Task>`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:132
 msgid "DNS"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:137
 msgid "``await`` :meth:`loop.getaddrinfo`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:138
 msgid "Asynchronous version of :meth:`socket.getaddrinfo`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:140
 msgid "``await`` :meth:`loop.getnameinfo`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:141
 msgid "Asynchronous version of :meth:`socket.getnameinfo`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:144
 msgid "Networking and IPC"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:149
 msgid "``await`` :meth:`loop.create_connection`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:150
 msgid "Open a TCP connection."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:152
 msgid "``await`` :meth:`loop.create_server`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:153
 msgid "Create a TCP server."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:155
 msgid "``await`` :meth:`loop.create_unix_connection`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:156
 msgid "Open a Unix socket connection."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:158
 msgid "``await`` :meth:`loop.create_unix_server`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:159
 msgid "Create a Unix socket server."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:161
 msgid "``await`` :meth:`loop.connect_accepted_socket`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:162
 msgid "Wrap a :class:`~socket.socket` into a ``(transport, protocol)`` pair."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:165
 msgid "``await`` :meth:`loop.create_datagram_endpoint`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:166
 msgid "Open a datagram (UDP) connection."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:168
 msgid "``await`` :meth:`loop.sendfile`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:169
 msgid "Send a file over a transport."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:171
 msgid "``await`` :meth:`loop.start_tls`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:172
 msgid "Upgrade an existing connection to TLS."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:174
 msgid "``await`` :meth:`loop.connect_read_pipe`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:175
 msgid "Wrap a read end of a pipe into a ``(transport, protocol)`` pair."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:177
 msgid "``await`` :meth:`loop.connect_write_pipe`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:178
 msgid "Wrap a write end of a pipe into a ``(transport, protocol)`` pair."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:181
 msgid "Sockets"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:186
 msgid "``await`` :meth:`loop.sock_recv`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:187
 msgid "Receive data from the :class:`~socket.socket`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:189
 msgid "``await`` :meth:`loop.sock_recv_into`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:190
 msgid "Receive data from the :class:`~socket.socket` into a buffer."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:192
 msgid "``await`` :meth:`loop.sock_recvfrom`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:193
 msgid "Receive a datagram from the :class:`~socket.socket`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:195
 msgid "``await`` :meth:`loop.sock_recvfrom_into`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:196
 msgid "Receive a datagram from the :class:`~socket.socket` into a buffer."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:198
 msgid "``await`` :meth:`loop.sock_sendall`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:199
 msgid "Send data to the :class:`~socket.socket`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:201
 msgid "``await`` :meth:`loop.sock_sendto`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:202
 msgid "Send a datagram via the :class:`~socket.socket` to the given address."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:204
 msgid "``await`` :meth:`loop.sock_connect`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:205
 msgid "Connect the :class:`~socket.socket`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:207
 msgid "``await`` :meth:`loop.sock_accept`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:208
 msgid "Accept a :class:`~socket.socket` connection."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:210
 msgid "``await`` :meth:`loop.sock_sendfile`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:211
 msgid "Send a file over the :class:`~socket.socket`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:213
 msgid ":meth:`loop.add_reader`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:214
 msgid "Start watching a file descriptor for read availability."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:216
 msgid ":meth:`loop.remove_reader`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:217
 msgid "Stop watching a file descriptor for read availability."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:219
 msgid ":meth:`loop.add_writer`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:220
 msgid "Start watching a file descriptor for write availability."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:222
 msgid ":meth:`loop.remove_writer`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:223
 msgid "Stop watching a file descriptor for write availability."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:226
 msgid "Unix Signals"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:231
 msgid ":meth:`loop.add_signal_handler`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:232
 msgid "Add a handler for a :mod:`signal`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:234
 msgid ":meth:`loop.remove_signal_handler`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:235
 msgid "Remove a handler for a :mod:`signal`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:238
 msgid "Subprocesses"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:243
 msgid ":meth:`loop.subprocess_exec`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:244
 msgid "Spawn a subprocess."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:246
 msgid ":meth:`loop.subprocess_shell`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:247
 msgid "Spawn a subprocess from a shell command."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:250
 msgid "Error Handling"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:255
 msgid ":meth:`loop.call_exception_handler`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:256
 msgid "Call the exception handler."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:258
 msgid ":meth:`loop.set_exception_handler`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:259
 msgid "Set a new exception handler."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:261
 msgid ":meth:`loop.get_exception_handler`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:262
 msgid "Get the current exception handler."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:264
 msgid ":meth:`loop.default_exception_handler`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:265
 msgid "The default exception handler implementation."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:270
-msgid ""
-":ref:`Using asyncio.new_event_loop() and loop.run_forever() "
-"<asyncio_example_lowlevel_helloworld>`."
+msgid ":ref:`Using asyncio.new_event_loop() and loop.run_forever() <asyncio_example_lowlevel_helloworld>`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:273
 msgid ":ref:`Using loop.call_later() <asyncio_example_call_later>`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:275
-msgid ""
-"Using ``loop.create_connection()`` to implement :ref:`an echo-client "
-"<asyncio_example_tcp_echo_client_protocol>`."
+msgid "Using ``loop.create_connection()`` to implement :ref:`an echo-client <asyncio_example_tcp_echo_client_protocol>`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:278
-msgid ""
-"Using ``loop.create_connection()`` to :ref:`connect a socket "
-"<asyncio_example_create_connection>`."
+msgid "Using ``loop.create_connection()`` to :ref:`connect a socket <asyncio_example_create_connection>`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:281
-msgid ""
-":ref:`Using add_reader() to watch an FD for read events "
-"<asyncio_example_watch_fd>`."
+msgid ":ref:`Using add_reader() to watch an FD for read events <asyncio_example_watch_fd>`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:284
 msgid ":ref:`Using loop.add_signal_handler() <asyncio_example_unix_signals>`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:286
 msgid ":ref:`Using loop.subprocess_exec() <asyncio_example_subprocess_proto>`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:290
 msgid "Transports"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:292
 msgid "All transports implement the following methods:"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:298
 msgid ":meth:`transport.close() <BaseTransport.close>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:299
 msgid "Close the transport."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:301
 msgid ":meth:`transport.is_closing() <BaseTransport.is_closing>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:302
 msgid "Return ``True`` if the transport is closing or is closed."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:304
 msgid ":meth:`transport.get_extra_info() <BaseTransport.get_extra_info>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:305
 msgid "Request for information about the transport."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:307
 msgid ":meth:`transport.set_protocol() <BaseTransport.set_protocol>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:308
 msgid "Set a new protocol."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:310
 msgid ":meth:`transport.get_protocol() <BaseTransport.get_protocol>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:311
 msgid "Return the current protocol."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:314
-msgid ""
-"Transports that can receive data (TCP and Unix connections, pipes, etc).  "
-"Returned from methods "
-"like :meth:`loop.create_connection`, :meth:`loop.create_unix_connection`, :meth:`loop.connect_read_pipe`, "
-"etc:"
+msgid "Transports that can receive data (TCP and Unix connections, pipes, etc).  Returned from methods like :meth:`loop.create_connection`, :meth:`loop.create_unix_connection`, :meth:`loop.connect_read_pipe`, etc:"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:319
 msgid "Read Transports"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:324
 msgid ":meth:`transport.is_reading() <ReadTransport.is_reading>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:325
 msgid "Return ``True`` if the transport is receiving."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:327
 msgid ":meth:`transport.pause_reading() <ReadTransport.pause_reading>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:328
 msgid "Pause receiving."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:330
 msgid ":meth:`transport.resume_reading() <ReadTransport.resume_reading>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:331
 msgid "Resume receiving."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:334
-msgid ""
-"Transports that can Send data (TCP and Unix connections, pipes, etc).  "
-"Returned from methods "
-"like :meth:`loop.create_connection`, :meth:`loop.create_unix_connection`, :meth:`loop.connect_write_pipe`, "
-"etc:"
+msgid "Transports that can Send data (TCP and Unix connections, pipes, etc).  Returned from methods like :meth:`loop.create_connection`, :meth:`loop.create_unix_connection`, :meth:`loop.connect_write_pipe`, etc:"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:339
 msgid "Write Transports"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:344
 msgid ":meth:`transport.write() <WriteTransport.write>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:345
 msgid "Write data to the transport."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:347
 msgid ":meth:`transport.writelines() <WriteTransport.writelines>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:348
 msgid "Write buffers to the transport."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:350
 msgid ":meth:`transport.can_write_eof() <WriteTransport.can_write_eof>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:351
 msgid "Return :const:`True` if the transport supports sending EOF."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:353
 msgid ":meth:`transport.write_eof() <WriteTransport.write_eof>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:354
 msgid "Close and send EOF after flushing buffered data."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:356
 msgid ":meth:`transport.abort() <WriteTransport.abort>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:357
-#: ../../library/asyncio-llapi-index.rst:383
 msgid "Close the transport immediately."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:359
-msgid ""
-":meth:`transport.get_write_buffer_size() "
-"<WriteTransport.get_write_buffer_size>`"
+msgid ":meth:`transport.get_write_buffer_size() <WriteTransport.get_write_buffer_size>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:361
 msgid "Return the current size of the output buffer."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:363
-msgid ""
-":meth:`transport.get_write_buffer_limits() "
-"<WriteTransport.get_write_buffer_limits>`"
+msgid ":meth:`transport.get_write_buffer_limits() <WriteTransport.get_write_buffer_limits>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:365
 msgid "Return high and low water marks for write flow control."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:367
-msgid ""
-":meth:`transport.set_write_buffer_limits() "
-"<WriteTransport.set_write_buffer_limits>`"
+msgid ":meth:`transport.set_write_buffer_limits() <WriteTransport.set_write_buffer_limits>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:369
 msgid "Set new high and low water marks for write flow control."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:372
 msgid "Transports returned by :meth:`loop.create_datagram_endpoint`:"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:374
 msgid "Datagram Transports"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:379
 msgid ":meth:`transport.sendto() <DatagramTransport.sendto>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:380
 msgid "Send data to the remote peer."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:382
 msgid ":meth:`transport.abort() <DatagramTransport.abort>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:386
-msgid ""
-"Low-level transport abstraction over subprocesses. Returned "
-"by :meth:`loop.subprocess_exec` and :meth:`loop.subprocess_shell`:"
+msgid "Low-level transport abstraction over subprocesses. Returned by :meth:`loop.subprocess_exec` and :meth:`loop.subprocess_shell`:"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:390
 msgid "Subprocess Transports"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:395
 msgid ":meth:`transport.get_pid() <SubprocessTransport.get_pid>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:396
 msgid "Return the subprocess process id."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:398
-msgid ""
-":meth:`transport.get_pipe_transport() "
-"<SubprocessTransport.get_pipe_transport>`"
+msgid ":meth:`transport.get_pipe_transport() <SubprocessTransport.get_pipe_transport>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:400
-msgid ""
-"Return the transport for the requested communication pipe (*stdin*, "
-"*stdout*, or *stderr*)."
+msgid "Return the transport for the requested communication pipe (*stdin*, *stdout*, or *stderr*)."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:403
 msgid ":meth:`transport.get_returncode() <SubprocessTransport.get_returncode>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:404
 msgid "Return the subprocess return code."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:406
 msgid ":meth:`transport.kill() <SubprocessTransport.kill>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:407
 msgid "Kill the subprocess."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:409
 msgid ":meth:`transport.send_signal() <SubprocessTransport.send_signal>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:410
 msgid "Send a signal to the subprocess."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:412
 msgid ":meth:`transport.terminate() <SubprocessTransport.terminate>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:413
 msgid "Stop the subprocess."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:415
 msgid ":meth:`transport.close() <SubprocessTransport.close>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:416
 msgid "Kill the subprocess and close all pipes."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:420
 msgid "Protocols"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:422
 msgid "Protocol classes can implement the following **callback methods**:"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:428
 msgid "``callback`` :meth:`connection_made() <BaseProtocol.connection_made>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:429
 msgid "Called when a connection is made."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:431
 msgid "``callback`` :meth:`connection_lost() <BaseProtocol.connection_lost>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:432
 msgid "Called when the connection is lost or closed."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:434
 msgid "``callback`` :meth:`pause_writing() <BaseProtocol.pause_writing>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:435
 msgid "Called when the transport's buffer goes over the high water mark."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:437
 msgid "``callback`` :meth:`resume_writing() <BaseProtocol.resume_writing>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:438
 msgid "Called when the transport's buffer drains below the low water mark."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:441
 msgid "Streaming Protocols (TCP, Unix Sockets, Pipes)"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:446
 msgid "``callback`` :meth:`data_received() <Protocol.data_received>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:447
 msgid "Called when some data is received."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:449
 msgid "``callback`` :meth:`eof_received() <Protocol.eof_received>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:450
-#: ../../library/asyncio-llapi-index.rst:465
 msgid "Called when an EOF is received."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:453
 msgid "Buffered Streaming Protocols"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:458
 msgid "``callback`` :meth:`get_buffer() <BufferedProtocol.get_buffer>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:459
 msgid "Called to allocate a new receive buffer."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:461
 msgid "``callback`` :meth:`buffer_updated() <BufferedProtocol.buffer_updated>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:462
 msgid "Called when the buffer was updated with the received data."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:464
 msgid "``callback`` :meth:`eof_received() <BufferedProtocol.eof_received>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:468
 msgid "Datagram Protocols"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:473
-msgid ""
-"``callback`` :meth:`datagram_received() <DatagramProtocol.datagram_received>`"
+msgid "``callback`` :meth:`datagram_received() <DatagramProtocol.datagram_received>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:475
 msgid "Called when a datagram is received."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:477
 msgid "``callback`` :meth:`error_received() <DatagramProtocol.error_received>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:478
-msgid ""
-"Called when a previous send or receive operation raises an :class:`OSError`."
+msgid "Called when a previous send or receive operation raises an :class:`OSError`."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:482
 msgid "Subprocess Protocols"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:487
 msgid "``callback`` :meth:`~SubprocessProtocol.pipe_data_received`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:488
-msgid ""
-"Called when the child process writes data into its *stdout* or *stderr* pipe."
+msgid "Called when the child process writes data into its *stdout* or *stderr* pipe."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:491
 msgid "``callback`` :meth:`~SubprocessProtocol.pipe_connection_lost`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:492
-msgid ""
-"Called when one of the pipes communicating with the child process is closed."
+msgid "Called when one of the pipes communicating with the child process is closed."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:495
-msgid ""
-"``callback`` :meth:`process_exited() <SubprocessProtocol.process_exited>`"
+msgid "``callback`` :meth:`process_exited() <SubprocessProtocol.process_exited>`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:497
-msgid ""
-"Called when the child process has exited. It can be called "
-"before :meth:`~SubprocessProtocol.pipe_data_received` "
-"and :meth:`~SubprocessProtocol.pipe_connection_lost` methods."
+msgid "Called when the child process has exited. It can be called before :meth:`~SubprocessProtocol.pipe_data_received` and :meth:`~SubprocessProtocol.pipe_connection_lost` methods."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:503
 msgid "Event Loop Policies"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:505
-msgid ""
-"Policies is a low-level mechanism to alter the behavior of functions "
-"like :func:`asyncio.get_event_loop`.  See also the main :ref:`policies "
-"section <asyncio-policies>` for more details."
+msgid "Policies is a low-level mechanism to alter the behavior of functions like :func:`asyncio.get_event_loop`.  See also the main :ref:`policies section <asyncio-policies>` for more details."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:511
 msgid "Accessing Policies"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:516
 msgid ":meth:`asyncio.get_event_loop_policy`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:517
 msgid "Return the current process-wide policy."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:519
 msgid ":meth:`asyncio.set_event_loop_policy`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:520
 msgid "Set a new process-wide policy."
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:522
 msgid ":class:`AbstractEventLoopPolicy`"
 msgstr ""
 
-#: ../../library/asyncio-llapi-index.rst:523
 msgid "Base class for policy objects."
 msgstr ""
