@@ -36,16 +36,24 @@ WORKDIR = REPO_ROOT / ".cpython-src"
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__,
-                                      formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     parser.add_argument("tag", help="CPython git tag to sync against, e.g. v3.14.7")
-    parser.add_argument("--keep-src", action="store_true",
-                         help="keep the scratch CPython checkout instead of deleting it")
-    parser.add_argument("--locale", default="fa",
-                         help="locale code for new .po files (default: fa)")
-    parser.add_argument("--no-commit-filter", action="store_true",
-                         help="skip unstaging POT-Creation-Date-only changes "
-                              "(item 3) -- useful if you want to inspect the raw diff")
+    parser.add_argument(
+        "--keep-src",
+        action="store_true",
+        help="keep the scratch CPython checkout instead of deleting it",
+    )
+    parser.add_argument(
+        "--locale", default="fa", help="locale code for new .po files (default: fa)"
+    )
+    parser.add_argument(
+        "--no-commit-filter",
+        action="store_true",
+        help="skip unstaging POT-Creation-Date-only changes "
+        "(item 3) -- useful if you want to inspect the raw diff",
+    )
     args = parser.parse_args()
 
     print(f"== Fetching CPython {args.tag} (full clone) ==")

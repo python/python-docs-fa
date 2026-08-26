@@ -41,7 +41,9 @@ MSGMERGE_FLAGS = ["--update", "--backup=off", "--no-location", "--no-wrap"]
 IGNORED_DIR_NAMES = {".git", ".cpython-src", ".pot-templates"}
 
 
-def run(cmd: list, cwd: Path | None = None, check: bool = True) -> subprocess.CompletedProcess:
+def run(
+    cmd: list, cwd: Path | None = None, check: bool = True
+) -> subprocess.CompletedProcess:
     print(f"$ {' '.join(str(c) for c in cmd)}")
     return subprocess.run(cmd, cwd=cwd, check=check)
 
@@ -60,14 +62,25 @@ def iter_po_files(repo_root: Path = REPO_ROOT):
 # Fetch + build .pot templates
 # ---------------------------------------------------------------------------
 
+
 def fetch_cpython_full(tag: str, workdir: Path) -> None:
     """Full clone of CPython at `tag`. Used by the version-bump script,
     which needs the full doc tree to build every .pot (including ones for
     brand-new pages that a sparse checkout might not anticipate)."""
     if workdir.exists():
         shutil.rmtree(workdir)
-    run(["git", "clone", "--depth", "1", "--branch", tag,
-         "https://github.com/python/cpython.git", str(workdir)])
+    run(
+        [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "--branch",
+            tag,
+            "https://github.com/python/cpython.git",
+            str(workdir),
+        ]
+    )
 
 
 def fetch_cpython_sparse(tag: str, workdir: Path) -> None:
@@ -76,8 +89,20 @@ def fetch_cpython_sparse(tag: str, workdir: Path) -> None:
     so we don't need the rest of the tree."""
     if workdir.exists():
         shutil.rmtree(workdir)
-    run(["git", "clone", "--depth", "1", "--filter=blob:none", "--sparse",
-         "--branch", tag, "https://github.com/python/cpython.git", str(workdir)])
+    run(
+        [
+            "git",
+            "clone",
+            "--depth",
+            "1",
+            "--filter=blob:none",
+            "--sparse",
+            "--branch",
+            tag,
+            "https://github.com/python/cpython.git",
+            str(workdir),
+        ]
+    )
     run(["git", "sparse-checkout", "set", "Doc", "Include"], cwd=workdir)
 
 
@@ -97,12 +122,17 @@ def build_gettext(doc_dir: Path) -> Path:
 # Merge
 # ---------------------------------------------------------------------------
 
+
 @dataclass
 class MergeReport:
     updated: list = field(default_factory=list)
     new_po_created: list = field(default_factory=list)
-    missing_pot: list = field(default_factory=list)  # .po with no matching .pot upstream
-    new_pot_no_po: list = field(default_factory=list)  # .pot with no .po yet (new upstream page)
+    missing_pot: list = field(
+        default_factory=list
+    )  # .po with no matching .pot upstream
+    new_pot_no_po: list = field(
+        default_factory=list
+    )  # .pot with no .po yet (new upstream page)
 
     def summary(self) -> str:
         lines = [
@@ -124,8 +154,10 @@ def merge_existing(pot_root: Path, repo_root: Path = REPO_ROOT) -> MergeReport:
         rel = po_path.relative_to(repo_root)
         pot_path = pot_root / rel.with_suffix(".pot")
         if not pot_path.exists():
-            print(f"  ! no matching .pot for {rel} "
-                  f"(page may have been removed/renamed upstream -- review manually)")
+            print(
+                f"  ! no matching .pot for {rel} "
+                f"(page may have been removed/renamed upstream -- review manually)"
+            )
             report.missing_pot.append(rel)
             continue
         run(["msgmerge", *MSGMERGE_FLAGS, str(po_path), str(pot_path)])
@@ -148,8 +180,9 @@ def detect_new_pot_files(pot_root: Path, repo_root: Path = REPO_ROOT) -> list:
     return new_pot
 
 
-def create_po_for_new_pot(pot_root: Path, rel_pot_paths: list, locale: str = "fa",
-                           repo_root: Path = REPO_ROOT) -> list:
+def create_po_for_new_pot(
+    pot_root: Path, rel_pot_paths: list, locale: str = "fa", repo_root: Path = REPO_ROOT
+) -> list:
     """Create a fresh .po (via msginit) for each given new .pot. Only called
     from the version-bump script -- the nightly workflow reports these via
     detect_new_pot_files() but leaves creation to a human-reviewed run."""
@@ -158,18 +191,31 @@ def create_po_for_new_pot(pot_root: Path, rel_pot_paths: list, locale: str = "fa
         pot_path = pot_root / rel
         po_path = repo_root / rel.with_suffix(".po")
         po_path.parent.mkdir(parents=True, exist_ok=True)
-        run(["msginit", "--no-translator", "-l", locale,
-             "-i", str(pot_path), "-o", str(po_path)])
+        run(
+            [
+                "msginit",
+                "--no-translator",
+                "-l",
+                locale,
+                "-i",
+                str(pot_path),
+                "-o",
+                str(po_path),
+            ]
+        )
         created.append(rel)
     return created
 
 
-def merge_all(pot_root: Path, create_new: bool, locale: str = "fa",
-               repo_root: Path = REPO_ROOT) -> MergeReport:
+def merge_all(
+    pot_root: Path, create_new: bool, locale: str = "fa", repo_root: Path = REPO_ROOT
+) -> MergeReport:
     report = merge_existing(pot_root, repo_root)
     new_pot = detect_new_pot_files(pot_root, repo_root)
     if create_new:
-        report.new_po_created = create_po_for_new_pot(pot_root, new_pot, locale, repo_root)
+        report.new_po_created = create_po_for_new_pot(
+            pot_root, new_pot, locale, repo_root
+        )
     else:
         report.new_pot_no_po = new_pot
     return report
@@ -179,6 +225,7 @@ def merge_all(pot_root: Path, create_new: bool, locale: str = "fa",
 # Validate
 # ---------------------------------------------------------------------------
 
+
 def check_po_files(repo_root: Path = REPO_ROOT) -> list:
     """Run msgfmt --check on every .po file. Returns a list of (path, stderr)
     for any that fail; empty list means all good."""
@@ -186,7 +233,8 @@ def check_po_files(repo_root: Path = REPO_ROOT) -> list:
     for po_path in iter_po_files(repo_root):
         result = subprocess.run(
             ["msgfmt", "--check", "-o", "/dev/null", str(po_path)],
-            capture_output=True, text=True,
+            capture_output=True,
+            text=True,
         )
         if result.returncode != 0:
             bad.append((po_path, result.stderr.strip()))
@@ -196,6 +244,7 @@ def check_po_files(repo_root: Path = REPO_ROOT) -> list:
 # ---------------------------------------------------------------------------
 # CLI -- the "sync-only" mode the workflow shells out to (item 4)
 # ---------------------------------------------------------------------------
+
 
 def _cli_sync_only(args: argparse.Namespace) -> int:
     """Sparse clone + build gettext + merge into existing .po files +
@@ -216,7 +265,9 @@ def _cli_sync_only(args: argparse.Namespace) -> int:
     report = merge_all(pot_root, create_new=False)
     print(f"\n{report.summary()}")
     if report.new_pot_no_po:
-        print("\nNew upstream pages with no .po yet (run update_python_version.py to create):")
+        print(
+            "\nNew upstream pages with no .po yet (run update_python_version.py to create):"
+        )
         for rel in report.new_pot_no_po:
             print(f"  - {rel}")
 
@@ -243,12 +294,15 @@ def main() -> None:
     sync = sub.add_parser(
         "sync-only",
         help="Sparse-checkout sync used by the nightly workflow: fetch, "
-             "build gettext, merge into existing .po files, report new "
-             "upstream pages, validate. Does not create new .po files.",
+        "build gettext, merge into existing .po files, report new "
+        "upstream pages, validate. Does not create new .po files.",
     )
     sync.add_argument("tag", help="CPython git tag to sync against, e.g. v3.14.7")
-    sync.add_argument("--keep-src", action="store_true",
-                       help="keep the scratch CPython checkout instead of deleting it")
+    sync.add_argument(
+        "--keep-src",
+        action="store_true",
+        help="keep the scratch CPython checkout instead of deleting it",
+    )
     sync.set_defaults(func=_cli_sync_only)
 
     args = parser.parse_args()

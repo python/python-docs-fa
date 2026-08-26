@@ -36,10 +36,12 @@ def has_only_cosmetic_diff(path: str) -> bool:
     `path` is a POT-Creation-Date line (i.e. nothing else changed)."""
     result = subprocess.run(
         ["git", "diff", "--staged", "-U0", "--", path],
-        capture_output=True, text=True,
+        capture_output=True,
+        text=True,
     )
     changed_lines = [
-        line for line in result.stdout.splitlines()
+        line
+        for line in result.stdout.splitlines()
         if line.startswith(("+", "-")) and not line.startswith(("+++", "---"))
     ]
     if not changed_lines:
