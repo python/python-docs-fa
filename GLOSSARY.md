@@ -5,99 +5,80 @@
 > این واژه‌نامه با الهام از واژه‌نامه پروژهٔ ترجمه مستندات Vue.js به فارسی تهیه شده و از ساختار و توضیحات دقیق اون استفاده شده. با تشکر از مشارکت‌کنندگان این پروژه برای زحماتشون:
 > https://github.com/vuejs-translations/docs-fa/blob/main/GLOSSARY.md
 
-| English            | فارسی                   |
-| ------------------ | ----------------------- |
-| accessibility      | دسترسی‌پذیری             |
-| API                | API                     |
-| argument           | آرگومان                 |
-| async              | ناهمگام، غیرهمگام       |
-| attribute          | ویژگی، صفت، شاخصه       |
-| await              | await                   |
-| boolean            | بولی                    |
-| built-in           | توکار، درونی، درون‌ساخته |
-| cache              | نهانگاه                 |
-| callback           | کال‌بک، فراخوانی بازگشتی |
-| character          | نویسه                   |
-| class              | کلاس                    |
-| command line       | خط فرمان                |
-| community          | کامیونیتی، انجمن               |
-| component          | کامپوننت                |
-| context management | مدیریت زمینه            |
-| coroutine          | هم‌روال                  |
-| custom             | سفارشی، اختصاصی         |
-| debugging          | اشکال‌زدایی، دیباگ کردن  |
-| decoding           | کدگشایی                 |
-| decorator          | دکوراتور، آراینده       |
-| dependency         | وابستگی                 |
-| deprecated         | منسوخ، از رده خارج شده  |
-| dictionary         | دیکشنری                 |
-| directory          | پوشه                    |
-| DOM                | DOM                     |
-| duck-typing        | نوع‌دهی اردکی            |
-| ecosystem          | اکوسیستم                |
-| element            | المان، عنصر             |
-| encoding           | کدگذاری                 |
-| endpoint           | پایانه                  |
-| escape             | خنثی کردن               |
-| event              | رویداد                  |
-| exception          | استثنا                  |
-| expression         | عبارت                   |
-| f-string           | اف‌استرینگ               |
-| function           | تابع                    |
-| garbage collection | زباله‌روبی               |
-| generator          | تولیدگر                 |
-| generic function   | تابع عام، تابع عمومی    |
-| global             | سراسری                  |
-| hexadecimal        | مبنای شانزده            |
-| immortal           | نامیرا                  |
-| immutable          | تغییرناپذیر             |
-| import             | ایمپورت                 |
-| index              | اندیس، شماره            |
-| instance           | نمونه                   |
-| integer            | عدد صحیح                |
-| interface          | رابط                    |
-| interpreter        | مفسر                    |
-| item               | آیتم                    |
-| iterable           | تکرارپذیر               |
-| keyword            | کلیدواژه                |
-| keyword argument   | آرگومان کلیدواژه‌ای      |
-| list               | فهرست                   |
-| list comprehension | درک فهرستی              |
-| load               | بارگذاری                |
-| loader             | بارگذار                 |
-| local              | محلی                    |
-| loop               | حلقه                    |
-| metaclass          | فراکلاس                 |
-| method             | متد، روش                     |
-| mock               | ماک                     |
-| module             | ماژول                   |
-| mutable            | تغییرپذیر               |
-| namespace          | نام‌فضا                  |
-| object             | شیء                     |
-| operator           | عملگر                   |
-| package            | بسته                    |
-| parallelism        | موازی‌سازی               |
-| parameter          | پارامتر                 |
-| positional         | جایگاهی                 |
-| property           | ویژگی، پراپرتی، خصوصیت  |
-| quotation          | علامت نقل‌قول            |
-| race               | رقابت                   |
-| raise              | پرتاب                   |
-| return             | بازگشت، برگرداندن       |
-| runtime            | ران‌تایم                 |
-| scope              | محدوده                  |
-| shadowing          | پوشاندن                 |
-| shell              | پوسته                   |
-| stack traceback    | ردگیری پشته             |
-| statement          | دستور                   |
-| string             | رشته                    |
-| syntactic sugar    | قند نحوی                |
-| syntax             | سینتکس، نحو             |
-| thread             | نخ                      |
-| tracking           | پیگیری                  |
-| type               | نوع، نوع داده، تایپ     |
-| unit test          | یونیت تست               |
-| unpacking          | واگشایی                 |
-| value              | مقدار                   |
-| variable           | متغیر                   |
-| wrapper            | پوششی، دربرگیرنده       |
+| English          | فارسی                    |
+| ---------------- | ------------------------ |
+| accessibility    | دسترسی‌پذیری             |
+| argument         | آرگومان                  |
+| async            | ناهمگام، غیرهمگام        |
+| attribute        | ویژگی، صفت، شاخصه        |
+| boolean          | بولی                     |
+| built-in         | توکار، درونی، درون‌ساخته |
+| callback         | کال‌بک، فراخوانی بازگشتی |
+| character        | نویسه                    |
+| class            | کلاس                     |
+| command line     | خط فرمان                 |
+| community        | کامیونیتی، انجمن                |
+| component        | کامپوننت                 |
+| custom           | سفارشی، اختصاصی          |
+| decorator        | دکوراتور، آراینده        |
+| debugging        | اشکال‌زدایی، دیباگ کردن  |
+| deprecated       | منسوخ، از رده خارج شده   |
+| dependency       | وابستگی                  |
+| dictionary       | دیکشنری                  |
+| directory        | پوشه                     |
+| DOM              | DOM                      |
+| element          | المان، عنصر              |
+| endpoint         | پایانه                   |
+| escape           | خنثی کردن                |
+| ecosystem        | اکوسیستم                 |
+| event            | رویداد                   |
+| exception        | استثنا                   |
+| expression       | عبارت                    |
+| function         | تابع                     |
+| generator        | تولیدگر                  |
+| global           | سراسری                   |
+| import           | ایمپورت                  |
+| immutable        | تغییرناپذیر              |
+| index            | اندیس، شماره              |
+| instance         | نمونه                    |
+| integer          | عدد صحیح                 |
+| interface        | رابط                     |
+| interpreter      | مفسر                     |
+| item             | آیتم                     |
+| iterable         | تکرارپذیر                |
+| keyword          | کلیدواژه                 |
+| keyword argument | آرگومان کلیدواژه‌ای      |
+| list             | فهرست                    |
+| list comprehension | درک فهرستی             |
+| load             | بارگذاری                 |
+| loader           | بارگذار                  |
+| local            | محلی                     |
+| loop             | حلقه                     |
+| method           | متد، روش                      |
+| mock             | ماک                      |
+| module           | ماژول                    |
+| mutable          | تغییرپذیر                |
+| namespace        | نام‌فضا                  |
+| object           | شیء                      |
+| operator         | عملگر                    |
+| package          | بسته                     |
+| parameter        | پارامتر                  |
+| positional        | جایگاهی                  |
+| property         | ویژگی، پراپرتی، خصوصیت   |
+| quotation        | علامت نقل‌وقول           |
+| raise            | پرتاب                    |
+| return           | بازگشت، برگرداندن        |
+| runtime          | ران‌تایم                 |
+| scope            | محدوده                   |
+| shadowing        | پوشاندن                  |
+| stack traceback  | ردگیری پشته              |
+| statement        | دستور                    |
+| string           | رشته                     |
+| syntax           | سینتکس، نحو              |
+| Tracking         | پیگیری                   |
+| type             | نوع، نوع داده، تایپ      |
+| unit test        | یونیت تست                |
+| unpacking        | واگشایی                  |
+| value            | مقدار                    |
+| variable         | متغیر                    |
+| wrapper          | پوششی، دربرگیرنده        |
