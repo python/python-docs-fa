@@ -12,10 +12,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-26 03:59+0000\n"
+"POT-Creation-Date: 2026-08-18 04:30+0000\n"
 "PO-Revision-Date: 2026-08-14 10:15+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
-"Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
+"Language-Team: Persian (https://github.com/revisto/python-docs-fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -131,7 +131,7 @@ msgid "The :func:`range` Function"
 msgstr "تابع :func:`range`"
 
 msgid "If you do need to iterate over a sequence of numbers, the built-in function :func:`range` comes in handy.  It generates arithmetic progressions::"
-msgstr "اگر واقعاً نیاز دارید روی یک دنباله از اعداد پیمایش کنید، تابع توکار :func:`range` بسیار کاربردی است. این تابع تصاعدهای حسابی تولید می‌کند::"
+msgstr "اگر واقعاً نیاز دارید روی یک دنباله از اعداد پیمایش کنید، تابع داخلی :func:`range` بسیار کاربردی است. این تابع تصاعدهای حسابی تولید می‌کند::"
 
 msgid ""
 ">>> for i in range(5):\n"
@@ -212,10 +212,10 @@ msgstr ""
 "range(0, 10)"
 
 msgid "In many ways the object returned by :func:`range` behaves as if it is a list, but in fact it isn't. It is an object which returns the successive items of the desired sequence when you iterate over it, but it doesn't really make the list, thus saving space."
-msgstr "از بسیاری جهات، شی‌ءای که توسط :func:`range` برگردانده می‌شود طوری رفتار می‌کند که گویی یک فهرست است، اما در واقع چنین نیست. این یک شیء است که هنگام پیمایش، آیتم‌های متوالی دنبالهٔ موردنظر را برمی‌گرداند، اما واقعاً فهرست را ایجاد نمی‌کند و در نتیجه در فضا صرفه‌جویی می‌شود."
+msgstr "از بسیاری جهات، شیئی که توسط :func:`range` برگردانده می‌شود طوری رفتار می‌کند که گویی یک فهرست است، اما در واقع چنین نیست. این یک شیء است که هنگام پیمایش، آیتم‌های متوالی دنبالهٔ موردنظر را برمی‌گرداند، اما واقعاً فهرست را ایجاد نمی‌کند و در نتیجه در فضا صرفه‌جویی می‌شود."
 
 msgid "We say such an object is :term:`iterable`, that is, suitable as a target for functions and constructs that expect something from which they can obtain successive items until the supply is exhausted.  We have seen that the :keyword:`for` statement is such a construct, while an example of a function that takes an iterable is :func:`sum`::"
-msgstr "می‌گوییم چنین شی‌ءای :term:`تکرارپذیر <iterable>` است؛ یعنی برای استفاده به‌عنوان هدف تابع‌ها و ساختارهایی مناسب است که انتظار دارند چیزی وجود داشته باشد که بتوانند از آن آیتم‌های متوالی را تا زمانی که چیزی باقی نمانده است دریافت کنند. دیدیم که دستور :keyword:`for` چنین ساختاری است، در حالی که نمونه‌ای از تابعی که یک شیء تکرارپذیر دریافت می‌کند :func:`sum` است::"
+msgstr "می‌گوییم چنین شیئی :term:`iterable` است؛ یعنی برای استفاده به‌عنوان هدف تابع‌ها و ساختارهایی مناسب است که انتظار دارند چیزی وجود داشته باشد که بتوانند از آن آیتم‌های متوالی را تا زمانی که چیزی باقی نمانده است دریافت کنند. دیدیم که دستور :keyword:`for` چنین ساختاری است، در حالی که نمونه‌ای از تابعی که یک شیء تکرارپذیر دریافت می‌کند :func:`sum` است::"
 
 msgid ""
 ">>> sum(range(4))  # 0 + 1 + 2 + 3\n"
@@ -231,7 +231,7 @@ msgid ":keyword:`!break` and :keyword:`!continue` Statements"
 msgstr "دستورهای :keyword:`!break` و :keyword:`!continue`"
 
 msgid "The :keyword:`break` statement breaks out of the innermost enclosing :keyword:`for` or :keyword:`while` loop::"
-msgstr "دستور :keyword:`break` از توکار‌ترین حلقهٔ محصورکنندهٔ :keyword:`for` یا :keyword:`while` خارج می‌شود::"
+msgstr "دستور :keyword:`break` از داخلی‌ترین حلقهٔ محصورکنندهٔ :keyword:`for` یا :keyword:`while` خارج می‌شود::"
 
 msgid ""
 ">>> for n in range(2, 10):\n"
@@ -397,7 +397,7 @@ msgid "For this last case, many people use the ellipsis literal :code:`...` inst
 msgstr "برای حالت آخر، بسیاری از افراد به‌جای :code:`pass` از مقدار لفظی بیضی :code:`...` استفاده می‌کنند. این استفاده هیچ معنای ویژه‌ای برای پایتون ندارد و بخشی از تعریف زبان نیست (در اینجا می‌توانستید از هر عبارت ثابتی استفاده کنید)، اما :code:`...` به‌صورت قراردادی به‌عنوان بدنهٔ جای‌نگهدار نیز استفاده می‌شود. به :ref:`bltin-ellipsis-object` مراجعه کنید."
 
 msgid ":keyword:`!match` Statements"
-msgstr "دستورات :keyword:`!match`"
+msgstr ":keyword:`!match` دستورات"
 
 msgid "A :keyword:`match` statement takes an expression and compares its value to successive patterns given as one or more case blocks.  This is superficially similar to a switch statement in C, Java or JavaScript (and many other languages), but it's more similar to pattern matching in languages like Rust or Haskell. Only the first pattern that matches gets executed and it can also extract components (sequence elements or object attributes) from the value into variables. If no case matches, none of the branches is executed."
 msgstr "یک دستور :keyword:`match` یک عبارت را دریافت می‌کند و مقدار آن را با الگوهای متوالی که در یک یا چند بلوک case ارائه شده‌اند مقایسه می‌کند. این دستور در ظاهر شبیه دستور switch در C، Java یا JavaScript (و بسیاری از زبان‌های دیگر) است، اما شباهت بیشتری به تطبیق الگو (*pattern matching*) در زبان‌هایی مانند Rust یا Haskell دارد. تنها اولین الگویی که تطبیق پیدا کند اجرا می‌شود و این دستور همچنین می‌تواند اجزا (عناصر دنباله یا ویژگی‌های شیء) را از مقدار استخراج کرده و در متغیرها قرار دهد. اگر هیچ caseای تطبیق پیدا نکند، هیچ‌یک از شاخه‌ها اجرا نمی‌شوند."
@@ -515,7 +515,7 @@ msgstr ""
 "            print(\"Not a point\")"
 
 msgid "You can use positional parameters with some builtin classes that provide an ordering for their attributes (e.g. dataclasses). You can also define a specific position for attributes in patterns by setting the ``__match_args__`` special attribute in your classes. If it's set to (\"x\", \"y\"), the following patterns are all equivalent (and all bind the ``y`` attribute to the ``var`` variable)::"
-msgstr "می‌توانید از پارامترهای جایگاهی با برخی کلاس‌های توکار که برای ویژگی‌های خود ترتیب مشخصی ارائه می‌کنند (برای مثال dataclassها) استفاده کنید. همچنین می‌توانید با تنظیم ویژگی ویژهٔ ``__match_args__`` در کلاس‌های خود، موقعیت مشخصی برای ویژگی‌ها در الگوها تعریف کنید. اگر این ویژگی روی (\"x\", \"y\") تنظیم شده باشد، الگوهای زیر همگی معادل هستند (و همگی ویژگی ``y`` را در متغیر ``var`` قرار می‌دهند)::"
+msgstr "می‌توانید از پارامترهای جایگاهی با برخی کلاس‌های داخلی که برای ویژگی‌های خود ترتیب مشخصی ارائه می‌کنند (برای مثال dataclassها) استفاده کنید. همچنین می‌توانید با تنظیم ویژگی ویژهٔ ``__match_args__`` در کلاس‌های خود، موقعیت مشخصی برای ویژگی‌ها در الگوها تعریف کنید. اگر این ویژگی روی (\"x\", \"y\") تنظیم شده باشد، الگوهای زیر همگی معادل هستند (و همگی ویژگی ``y`` را در متغیر ``var`` قرار می‌دهند)::"
 
 msgid ""
 "Point(1, var)\n"
@@ -688,13 +688,13 @@ msgid "The first statement of the function body can optionally be a string liter
 msgstr "اولین دستور بدنهٔ تابع می‌تواند به‌صورت اختیاری یک رشتهٔ لفظی باشد؛ این رشتهٔ لفظی، رشتهٔ مستندات تابع یا :dfn:`docstring` است. (اطلاعات بیشتر دربارهٔ رشته‌های مستندات را می‌توانید در بخش :ref:`tut-docstrings` پیدا کنید.) ابزارهایی وجود دارند که از docstringها برای تولید خودکار مستندات آنلاین یا چاپی، یا برای اجازه دادن به کاربر جهت مرور تعاملی کد استفاده می‌کنند؛ بهتر است در کدی که می‌نویسید docstringها را قرار دهید، بنابراین آن را به یک عادت تبدیل کنید."
 
 msgid "The *execution* of a function introduces a new symbol table used for the local variables of the function.  More precisely, all variable assignments in a function store the value in the local symbol table; whereas variable references first look in the local symbol table, then in the local symbol tables of enclosing functions, then in the global symbol table, and finally in the table of built-in names. Thus, global variables and variables of enclosing functions cannot be directly assigned a value within a function (unless, for global variables, named in a :keyword:`global` statement, or, for variables of enclosing functions, named in a :keyword:`nonlocal` statement), although they may be referenced."
-msgstr "*اجرای* یک تابع، یک جدول نماد جدید ایجاد می‌کند که برای متغیرهای محلی تابع استفاده می‌شود. به‌طور دقیق‌تر، تمام انتساب‌های متغیر در یک تابع، مقدار را در جدول نماد محلی ذخیره می‌کنند؛ در حالی که ارجاع‌های متغیر ابتدا در جدول نماد محلی، سپس در جدول‌های نماد محلی تابع‌های دربرگیرنده، سپس در جدول نماد سراسری، و در نهایت در جدول نام‌های توکار جست‌وجو می‌شوند. بنابراین، متغیرهای سراسری و متغیرهای تابع‌های دربرگیرنده نمی‌توانند مستقیماً درون یک تابع مقداردهی شوند (مگر اینکه برای متغیرهای سراسری با یک دستور :keyword:`global`، یا برای متغیرهای تابع‌های دربرگیرنده با یک دستور :keyword:`nonlocal` نام‌گذاری شده باشند)، اگرچه می‌توان به آن‌ها ارجاع داد."
+msgstr "*اجرای* یک تابع، یک جدول نماد جدید ایجاد می‌کند که برای متغیرهای محلی تابع استفاده می‌شود. به‌طور دقیق‌تر، تمام انتساب‌های متغیر در یک تابع، مقدار را در جدول نماد محلی ذخیره می‌کنند؛ در حالی که ارجاع‌های متغیر ابتدا در جدول نماد محلی، سپس در جدول‌های نماد محلی تابع‌های دربرگیرنده، سپس در جدول نماد سراسری، و در نهایت در جدول نام‌های داخلی جست‌وجو می‌شوند. بنابراین، متغیرهای سراسری و متغیرهای تابع‌های دربرگیرنده نمی‌توانند مستقیماً درون یک تابع مقداردهی شوند (مگر اینکه برای متغیرهای سراسری با یک دستور :keyword:`global`، یا برای متغیرهای تابع‌های دربرگیرنده با یک دستور :keyword:`nonlocal` نام‌گذاری شده باشند)، اگرچه می‌توان به آن‌ها ارجاع داد."
 
 msgid "The actual parameters (arguments) to a function call are introduced in the local symbol table of the called function when it is called; thus, arguments are passed using *call by value* (where the *value* is always an object *reference*, not the value of the object). [#]_ When a function calls another function, or calls itself recursively, a new local symbol table is created for that call."
 msgstr "پارامترهای واقعی (آرگومان‌ها) در یک فراخوانی تابع، هنگام فراخوانی تابع در جدول نماد محلی تابع فراخوانی‌شده قرار می‌گیرند؛ بنابراین، آرگومان‌ها با استفاده از *انتقال با مقدار* (*call by value*) ارسال می‌شوند (که در آن *مقدار* همیشه یک ارجاع به شیء است، نه مقدار خود شیء). [#]_ هنگامی که یک تابع، تابع دیگری را فراخوانی می‌کند یا به‌صورت بازگشتی خودش را فراخوانی می‌کند، یک جدول نماد محلی جدید برای آن فراخوانی ایجاد می‌شود."
 
 msgid "A function definition associates the function name with the function object in the current symbol table.  The interpreter recognizes the object pointed to by that name as a user-defined function.  Other names can also point to that same function object and can also be used to access the function::"
-msgstr "یک تعریف تابع، نام تابع را با شیء تابع در جدول نماد فعلی مرتبط می‌کند. مفسر شی‌ءای را که آن نام به آن اشاره می‌کند به‌عنوان یک تابع تعریف‌شده توسط کاربر تشخیص می‌دهد. نام‌های دیگر نیز می‌توانند به همان شیء تابع اشاره کنند و برای دسترسی به تابع استفاده شوند::"
+msgstr "یک تعریف تابع، نام تابع را با شیء تابع در جدول نماد فعلی مرتبط می‌کند. مفسر شیئی را که آن نام به آن اشاره می‌کند به‌عنوان یک تابع تعریف‌شده توسط کاربر تشخیص می‌دهد. نام‌های دیگر نیز می‌توانند به همان شیء تابع اشاره کنند و برای دسترسی به تابع استفاده شوند::"
 
 msgid ""
 ">>> fib\n"
@@ -710,7 +710,7 @@ msgstr ""
 "0 1 1 2 3 5 8 13 21 34 55 89"
 
 msgid "Coming from other languages, you might object that ``fib`` is not a function but a procedure since it doesn't return a value.  In fact, even functions without a :keyword:`return` statement do return a value, albeit a rather boring one.  This value is called ``None`` (it's a built-in name).  Writing the value ``None`` is normally suppressed by the interpreter if it would be the only value written. You can see it if you really want to using :func:`print`::"
-msgstr "اگر از زبان‌های دیگر آمده باشید، ممکن است اعتراض کنید که ``fib`` یک تابع نیست، بلکه یک رویه (*procedure*) است، زیرا مقداری برنمی‌گرداند. در واقع، حتی تابع‌هایی که دستور :keyword:`return` ندارند نیز یک مقدار برمی‌گردانند، هرچند مقدار نسبتاً بی‌اهمیتی است. این مقدار ``None`` نام دارد (که یک نام توکار است). نوشتن مقدار ``None`` معمولاً توسط مفسر حذف می‌شود اگر تنها مقداری باشد که قرار است نوشته شود. اگر واقعاً بخواهید می‌توانید آن را با استفاده از :func:`print` ببینید::"
+msgstr "اگر از زبان‌های دیگر آمده باشید، ممکن است اعتراض کنید که ``fib`` یک تابع نیست، بلکه یک رویه (*procedure*) است، زیرا مقداری برنمی‌گرداند. در واقع، حتی تابع‌هایی که دستور :keyword:`return` ندارند نیز یک مقدار برمی‌گردانند، هرچند مقدار نسبتاً بی‌اهمیتی است. این مقدار ``None`` نام دارد (که یک نام داخلی است). نوشتن مقدار ``None`` معمولاً توسط مفسر حذف می‌شود اگر تنها مقداری باشد که قرار است نوشته شود. اگر واقعاً بخواهید می‌توانید آن را با استفاده از :func:`print` ببینید::"
 
 msgid ""
 ">>> fib(0)\n"
@@ -887,7 +887,7 @@ msgid "Keyword Arguments"
 msgstr "آرگومان‌های کلیدواژه‌ای"
 
 msgid "Functions can also be called using :term:`keyword arguments <keyword argument>` of the form ``kwarg=value``.  For instance, the following function::"
-msgstr "تابع‌ها همچنین می‌توانند با استفاده از :term:`آرگومان کلیدواژه‌ای <keyword argument>` به شکل ``kwarg=value`` فراخوانی شوند. برای نمونه، تابع زیر::"
+msgstr "تابع‌ها همچنین می‌توانند با استفاده از :term:`keyword arguments <keyword argument>` به شکل ``kwarg=value`` فراخوانی شوند. برای نمونه، تابع زیر::"
 
 msgid ""
 "def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):\n"
@@ -1291,7 +1291,7 @@ msgid "Unpacking Argument Lists"
 msgstr "باز کردن بسته آرگومان‌ها"
 
 msgid "The reverse situation occurs when the arguments are already in a list or tuple but need to be unpacked for a function call requiring separate positional arguments.  For instance, the built-in :func:`range` function expects separate *start* and *stop* arguments.  If they are not available separately, write the function call with the  ``*``\\ -operator to unpack the arguments out of a list or tuple::"
-msgstr "حالت معکوس زمانی رخ می‌دهد که آرگومان‌ها از قبل در یک فهرست یا تاپل قرار دارند، اما برای فراخوانی تابعی که به آرگومان‌های جایگاهی جداگانه نیاز دارد، باید باز شوند. برای مثال، تابع توکار :func:`range` آرگومان‌های جداگانه *start* و *stop* را انتظار دارد. اگر این آرگومان‌ها به صورت جداگانه در دسترس نیستند، فراخوانی تابع را با عملگر ``*`` برای باز کردن آرگومان‌ها از یک فهرست یا تاپل بنویسید::"
+msgstr "حالت معکوس زمانی رخ می‌دهد که آرگومان‌ها از قبل در یک فهرست یا تاپل قرار دارند، اما برای فراخوانی تابعی که به آرگومان‌های جایگاهی جداگانه نیاز دارد، باید باز شوند. برای مثال، تابع داخلی :func:`range` آرگومان‌های جداگانه *start* و *stop* را انتظار دارد. اگر این آرگومان‌ها به صورت جداگانه در دسترس نیستند، فراخوانی تابع را با عملگر ``*`` برای باز کردن آرگومان‌ها از یک فهرست یا تاپل بنویسید::"
 
 msgid ""
 ">>> list(range(3, 6))            # normal call with separate arguments\n"
@@ -1543,7 +1543,7 @@ msgid "function annotations"
 msgstr "حاشیه‌نویسی‌های تابع"
 
 msgid ": (colon)"
-msgstr ": (علامت نقل‌قول)"
+msgstr ": (علامت نقل‌وقول)"
 
 msgid "coding"
 msgstr "کد زدن"

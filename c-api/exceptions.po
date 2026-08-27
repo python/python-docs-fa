@@ -14,10 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-26 03:59+0000\n"
+"POT-Creation-Date: 2026-08-18 04:30+0000\n"
 "PO-Revision-Date: 2021-06-28 00:48+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
-"Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
+"Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -82,18 +82,6 @@ msgid "Similar to :c:func:`PyErr_WriteUnraisable`, but the *format* and subseque
 msgstr ""
 
 msgid "Print the standard traceback display of ``exc`` to ``sys.stderr``, including chained exceptions and notes."
-msgstr ""
-
-msgid "Legacy variant of :c:func:`PyErr_DisplayException`."
-msgstr ""
-
-msgid "Print the exception *value* with its traceback to :data:`sys.stderr`. If *value* has no traceback set, *tb* is used as its traceback. The first argument is ignored."
-msgstr ""
-
-msgid "If :data:`sys.stderr` is ``None``, nothing is printed. If :data:`sys.stderr` is not set, the exception is dumped to the C ``stderr`` stream instead."
-msgstr ""
-
-msgid "Use :c:func:`PyErr_DisplayException` instead."
 msgstr ""
 
 msgid "Raising exceptions"
@@ -256,13 +244,10 @@ msgstr ""
 msgid ":c:func:`PyErr_GetHandledException`, to save the exception currently being handled."
 msgstr ""
 
-msgid "Set *exc* as the exception currently being raised, clearing the existing exception if one is set.  If *exc* is ``NULL``, just clear the existing exception."
+msgid "Set *exc* as the exception currently being raised, clearing the existing exception if one is set."
 msgstr ""
 
-msgid "*exc* must be a valid exception or ``NULL``."
-msgstr ""
-
-msgid "This call \":term:`steals <steal>`\" a reference to *exc*."
+msgid "This call steals a reference to *exc*, which must be a valid exception."
 msgstr ""
 
 msgid "Use :c:func:`PyErr_GetRaisedException` instead."
@@ -327,13 +312,13 @@ msgstr ""
 msgid "This function is not normally used by code that wants to handle exceptions. Rather, it can be used when code needs to save and restore the exception state temporarily.  Use :c:func:`PyErr_SetExcInfo` to restore or clear the exception state."
 msgstr ""
 
-msgid "Set the exception info, as known from ``sys.exc_info()``.  This refers to an exception that was *already caught*, not to an exception that was freshly raised.  This function \":term:`steals <steal>`\" the references of the arguments. To clear the exception state, pass ``NULL`` for all three arguments. This function is kept for backwards compatibility. Prefer using :c:func:`PyErr_SetHandledException`."
+msgid "Set the exception info, as known from ``sys.exc_info()``.  This refers to an exception that was *already caught*, not to an exception that was freshly raised.  This function steals the references of the arguments. To clear the exception state, pass ``NULL`` for all three arguments. This function is kept for backwards compatibility. Prefer using :c:func:`PyErr_SetHandledException`."
 msgstr ""
 
 msgid "This function is not normally used by code that wants to handle exceptions. Rather, it can be used when code needs to save and restore the exception state temporarily.  Use :c:func:`PyErr_GetExcInfo` to read the exception state."
 msgstr ""
 
-msgid "The ``type`` and ``traceback`` arguments are no longer used and can be NULL. The interpreter now derives them from the exception instance (the ``value`` argument). The function still \":term:`steals <steal>`\" references of all three arguments."
+msgid "The ``type`` and ``traceback`` arguments are no longer used and can be NULL. The interpreter now derives them from the exception instance (the ``value`` argument). The function still steals references of all three arguments."
 msgstr ""
 
 msgid "Signal Handling"
@@ -441,13 +426,13 @@ msgstr ""
 msgid "Return the context (another exception instance during whose handling *ex* was raised) associated with the exception as a new reference, as accessible from Python through the :attr:`~BaseException.__context__` attribute. If there is no context associated, this returns ``NULL``."
 msgstr ""
 
-msgid "Set the context associated with the exception to *ctx*.  Use ``NULL`` to clear it.  There is no type check to make sure that *ctx* is an exception instance. This \":term:`steals <steal>`\" a reference to *ctx*."
+msgid "Set the context associated with the exception to *ctx*.  Use ``NULL`` to clear it.  There is no type check to make sure that *ctx* is an exception instance. This steals a reference to *ctx*."
 msgstr ""
 
 msgid "Return the cause (either an exception instance, or ``None``, set by ``raise ... from ...``) associated with the exception as a new reference, as accessible from Python through the :attr:`~BaseException.__cause__` attribute."
 msgstr ""
 
-msgid "Set the cause associated with the exception to *cause*.  Use ``NULL`` to clear it.  There is no type check to make sure that *cause* is either an exception instance or ``None``. This \":term:`steals <steal>`\" a reference to *cause*."
+msgid "Set the cause associated with the exception to *cause*.  Use ``NULL`` to clear it.  There is no type check to make sure that *cause* is either an exception instance or ``None``.  This steals a reference to *cause*."
 msgstr ""
 
 msgid "The :attr:`~BaseException.__suppress_context__` attribute is implicitly set to ``True`` by this function."
@@ -534,7 +519,7 @@ msgstr ""
 msgid "Ends a :c:func:`Py_EnterRecursiveCall`.  Must be called once for each *successful* invocation of :c:func:`Py_EnterRecursiveCall`."
 msgstr ""
 
-msgid "Properly implementing :c:member:`~PyTypeObject.tp_repr` for container types requires special recursion handling.  In addition to protecting the stack, :c:member:`~PyTypeObject.tp_repr` also needs to track objects to prevent cycles.  The following two functions facilitate this functionality.  Effectively, these are the C equivalent to :deco:`reprlib.recursive_repr`."
+msgid "Properly implementing :c:member:`~PyTypeObject.tp_repr` for container types requires special recursion handling.  In addition to protecting the stack, :c:member:`~PyTypeObject.tp_repr` also needs to track objects to prevent cycles.  The following two functions facilitate this functionality.  Effectively, these are the C equivalent to :func:`reprlib.recursive_repr`."
 msgstr ""
 
 msgid "Called at the beginning of the :c:member:`~PyTypeObject.tp_repr` implementation to detect cycles."

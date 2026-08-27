@@ -14,10 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-26 03:59+0000\n"
+"POT-Creation-Date: 2026-08-18 04:30+0000\n"
 "PO-Revision-Date: 2021-06-28 00:57+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
-"Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
+"Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -83,13 +83,13 @@ msgstr ""
 msgid "At the point where the generator yields, the block nested in the :keyword:`with` statement is executed.  The generator is then resumed after the block is exited. If an unhandled exception occurs in the block, it is reraised inside the generator at the point where the yield occurred.  Thus, you can use a :keyword:`try`...\\ :keyword:`except`...\\ :keyword:`finally` statement to trap the error (if any), or ensure that some cleanup takes place. If an exception is trapped merely in order to log it or to perform some action (rather than to suppress it entirely), the generator must reraise that exception. Otherwise the generator context manager will indicate to the :keyword:`!with` statement that the exception has been handled, and execution will resume with the statement immediately following the :keyword:`!with` statement."
 msgstr ""
 
-msgid ":deco:`contextmanager` uses :class:`ContextDecorator` so the context managers it creates can be used as decorators as well as in :keyword:`with` statements. When used as a decorator, a new generator instance is implicitly created on each function call (this allows the otherwise \"one-shot\" context managers created by :deco:`contextmanager` to meet the requirement that context managers support multiple invocations in order to be used as decorators)."
+msgid ":func:`contextmanager` uses :class:`ContextDecorator` so the context managers it creates can be used as decorators as well as in :keyword:`with` statements. When used as a decorator, a new generator instance is implicitly created on each function call (this allows the otherwise \"one-shot\" context managers created by :func:`contextmanager` to meet the requirement that context managers support multiple invocations in order to be used as decorators)."
 msgstr ""
 
 msgid "Use of :class:`ContextDecorator`."
 msgstr ""
 
-msgid "Similar to :deco:`~contextlib.contextmanager`, but creates an :ref:`asynchronous context manager <async-context-managers>`."
+msgid "Similar to :func:`~contextlib.contextmanager`, but creates an :ref:`asynchronous context manager <async-context-managers>`."
 msgstr ""
 
 msgid "This function is a :term:`decorator` that can be used to define a factory function for :keyword:`async with` statement asynchronous context managers, without needing to create a class or separate :meth:`~object.__aenter__` and :meth:`~object.__aexit__` methods. It must be applied to an :term:`asynchronous generator` function."
@@ -114,7 +114,7 @@ msgid ""
 "        return conn.query('SELECT ...')"
 msgstr ""
 
-msgid "Context managers defined with :deco:`asynccontextmanager` can be used either as decorators or with :keyword:`async with` statements::"
+msgid "Context managers defined with :func:`asynccontextmanager` can be used either as decorators or with :keyword:`async with` statements::"
 msgstr ""
 
 msgid ""
@@ -134,10 +134,10 @@ msgid ""
 "    # ... async code ..."
 msgstr ""
 
-msgid "When used as a decorator, a new generator instance is implicitly created on each function call. This allows the otherwise \"one-shot\" context managers created by :deco:`asynccontextmanager` to meet the requirement that context managers support multiple invocations in order to be used as decorators."
+msgid "When used as a decorator, a new generator instance is implicitly created on each function call. This allows the otherwise \"one-shot\" context managers created by :func:`asynccontextmanager` to meet the requirement that context managers support multiple invocations in order to be used as decorators."
 msgstr ""
 
-msgid "Async context managers created with :deco:`asynccontextmanager` can be used as decorators."
+msgid "Async context managers created with :func:`asynccontextmanager` can be used as decorators."
 msgstr ""
 
 msgid "Return a context manager that closes *thing* upon completion of the block.  This is basically equivalent to::"
@@ -344,7 +344,7 @@ msgstr ""
 msgid "Context managers inheriting from ``ContextDecorator`` have to implement :meth:`~object.__enter__` and :meth:`~object.__exit__` as normal. ``__exit__`` retains its optional exception handling even when used as a decorator."
 msgstr ""
 
-msgid "``ContextDecorator`` is used by :deco:`contextmanager`, so you get this functionality automatically."
+msgid "``ContextDecorator`` is used by :func:`contextmanager`, so you get this functionality automatically."
 msgstr ""
 
 msgid "Example of ``ContextDecorator``::"
@@ -565,7 +565,7 @@ msgstr ""
 msgid "Similar to :meth:`ExitStack.close` but properly handles awaitables."
 msgstr ""
 
-msgid "Continuing the example for :deco:`asynccontextmanager`::"
+msgid "Continuing the example for :func:`asynccontextmanager`::"
 msgstr ""
 
 msgid ""
@@ -807,7 +807,7 @@ msgstr ""
 msgid "Files are an example of effectively single use context managers, since the first :keyword:`with` statement will close the file, preventing any further IO operations using that file object."
 msgstr ""
 
-msgid "Context managers created using :deco:`contextmanager` are also single use context managers, and will complain about the underlying generator failing to yield if an attempt is made to use them a second time::"
+msgid "Context managers created using :func:`contextmanager` are also single use context managers, and will complain about the underlying generator failing to yield if an attempt is made to use them a second time::"
 msgstr ""
 
 msgid ""

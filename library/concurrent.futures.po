@@ -13,10 +13,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-26 03:59+0000\n"
+"POT-Creation-Date: 2026-08-18 04:30+0000\n"
 "PO-Revision-Date: 2021-06-28 00:57+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
-"Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
+"Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -275,6 +275,9 @@ msgstr ""
 msgid "*max_tasks_per_child* is an optional argument that specifies the maximum number of tasks a single process can execute before it will exit and be replaced with a fresh worker process. By default *max_tasks_per_child* is ``None`` which means worker processes will live as long as the pool. When a max is specified, the \"spawn\" multiprocessing start method will be used by default in absence of a *mp_context* parameter. This feature is incompatible with the \"fork\" start method."
 msgstr ""
 
+msgid "Bugs have been reported when using the *max_tasks_per_child* feature that can result in the :class:`ProcessPoolExecutor` hanging in some circumstances. Follow its eventual resolution in :gh:`115634`."
+msgstr ""
+
 msgid "When one of the worker processes terminates abruptly, a :exc:`~concurrent.futures.process.BrokenProcessPool` error is now raised. Previously, behaviour was undefined but operations on the executor or its futures would often freeze or deadlock."
 msgstr ""
 
@@ -291,9 +294,6 @@ msgid "*max_workers* uses :func:`os.process_cpu_count` by default, instead of :f
 msgstr ""
 
 msgid "The default process start method (see :ref:`multiprocessing-start-methods`) changed away from *fork*. If you require the *fork* start method for :class:`ProcessPoolExecutor` you must explicitly pass ``mp_context=multiprocessing.get_context(\"fork\")``."
-msgstr ""
-
-msgid "Fixed a deadlock (:gh:`115634`) where the executor could hang after a worker process exited upon reaching its *max_tasks_per_child* limit while tasks remained queued."
 msgstr ""
 
 msgid "Attempt to terminate all living worker processes immediately by calling :meth:`Process.terminate <multiprocessing.Process.terminate>` on each of them. Internally, it will also call :meth:`Executor.shutdown` to ensure that all other resources associated with the executor are freed."

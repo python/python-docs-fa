@@ -14,10 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-26 03:59+0000\n"
+"POT-Creation-Date: 2026-08-18 04:30+0000\n"
 "PO-Revision-Date: 2021-06-28 01:51+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
-"Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
+"Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "This article explains the new features in Python 2.5.  The final release of Python 2.5 is scheduled for August 2006; :pep:`356` describes the planned release schedule.  Python 2.5 was released on September 19, 2006."
 msgstr ""
 
-msgid "The changes in Python 2.5 are an interesting mix of language and library improvements. The library enhancements will be more important to Python's user community, I think, because several widely useful packages were added.  New modules include ElementTree for XML processing (:mod:`xml.etree.ElementTree`), the SQLite database module (:mod:`sqlite3`), and the :mod:`ctypes` module for calling C functions."
+msgid "The changes in Python 2.5 are an interesting mix of language and library improvements. The library enhancements will be more important to Python's user community, I think, because several widely useful packages were added.  New modules include ElementTree for XML processing (:mod:`xml.etree`), the SQLite database module (:mod:`sqlite`), and the :mod:`ctypes` module for calling C functions."
 msgstr ""
 
 msgid "The language changes are of middling significance.  Some pleasant new features were added, but most of them aren't features that you'll use every day. Conditional expressions were finally added to the language using a novel syntax; see section :ref:`pep-308`.  The new ':keyword:`with`' statement will make writing cleanup code easier (section :ref:`pep-343`).  Values can now be passed into generators (section :ref:`pep-342`).  Imports are now visible as either absolute or relative (section :ref:`pep-328`).  Some corner cases of exception handling are handled better (section :ref:`pep-341`).  All these improvements are worthwhile, but they're improvements to one specific language feature or another; none of them are broad modifications to Python's semantics."
@@ -114,10 +114,10 @@ msgstr ""
 msgid "The :mod:`functools` module is intended to contain tools for functional-style programming."
 msgstr ""
 
-msgid "One useful tool in this module is the :func:`~functools.partial` function. For programs written in a functional style, you'll sometimes want to construct variants of existing functions that have some of the parameters filled in.  Consider a Python function ``f(a, b, c)``; you could create a new function ``g(b, c)`` that was equivalent to ``f(1, b, c)``.  This is called \"partial function application\"."
+msgid "One useful tool in this module is the :func:`partial` function. For programs written in a functional style, you'll sometimes want to construct variants of existing functions that have some of the parameters filled in.  Consider a Python function ``f(a, b, c)``; you could create a new function ``g(b, c)`` that was equivalent to ``f(1, b, c)``.  This is called \"partial function application\"."
 msgstr ""
 
-msgid ":func:`~functools.partial` takes the arguments ``(function, arg1, arg2, ... kwarg1=value1, kwarg2=value2)``.  The resulting object is callable, so you can just call it to invoke *function* with the filled-in arguments."
+msgid ":func:`partial` takes the arguments ``(function, arg1, arg2, ... kwarg1=value1, kwarg2=value2)``.  The resulting object is callable, so you can just call it to invoke *function* with the filled-in arguments."
 msgstr ""
 
 msgid "Here's a small but realistic example::"
@@ -135,7 +135,7 @@ msgid ""
 "server_log('Unable to open socket')"
 msgstr ""
 
-msgid "Here's another example, from a program that uses PyGTK.  Here a context-sensitive pop-up menu is being constructed dynamically.  The callback provided for the menu option is a partially applied version of the ``open_item()`` method, where the first argument has been provided. ::"
+msgid "Here's another example, from a program that uses PyGTK.  Here a context-sensitive pop-up menu is being constructed dynamically.  The callback provided for the menu option is a partially applied version of the :meth:`open_item` method, where the first argument has been provided. ::"
 msgstr ""
 
 msgid ""
@@ -148,7 +148,7 @@ msgid ""
 "        popup_menu.append( (\"Open\", open_func, 1) )"
 msgstr ""
 
-msgid "Another function in the :mod:`functools` module is the ``update_wrapper(wrapper, wrapped)`` function that helps you write well-behaved decorators.  :func:`~functools.update_wrapper` copies the name, module, and docstring attribute to a wrapper function so that tracebacks inside the wrapped function are easier to understand.  For example, you might write::"
+msgid "Another function in the :mod:`functools` module is the ``update_wrapper(wrapper, wrapped)`` function that helps you write well-behaved decorators.  :func:`update_wrapper` copies the name, module, and docstring attribute to a wrapper function so that tracebacks inside the wrapped function are easier to understand.  For example, you might write::"
 msgstr ""
 
 msgid ""
@@ -160,7 +160,7 @@ msgid ""
 "    return wrapper"
 msgstr ""
 
-msgid ":func:`~functools.wraps` is a decorator that can be used inside your own decorators to copy the wrapped function's information.  An alternate  version of the previous example would be::"
+msgid ":func:`wraps` is a decorator that can be used inside your own decorators to copy the wrapped function's information.  An alternate  version of the previous example would be::"
 msgstr ""
 
 msgid ""
@@ -181,7 +181,7 @@ msgstr ""
 msgid "PEP 314: Metadata for Python Software Packages v1.1"
 msgstr ""
 
-msgid "Some simple dependency support was added to Distutils.  The :func:`!setup` function now has ``requires``, ``provides``, and ``obsoletes`` keyword parameters.  When you build a source distribution using the ``sdist`` command, the dependency information will be recorded in the :file:`PKG-INFO` file."
+msgid "Some simple dependency support was added to Distutils.  The :func:`setup` function now has ``requires``, ``provides``, and ``obsoletes`` keyword parameters.  When you build a source distribution using the ``sdist`` command, the dependency information will be recorded in the :file:`PKG-INFO` file."
 msgstr ""
 
 msgid "Another new keyword parameter is ``download_url``, which should be set to a URL for the package's source code.  This means it's now possible to look up an entry in the package index, determine the dependencies for a package, and download the required packages. ::"
@@ -232,16 +232,16 @@ msgid ""
 "pkg/string.py"
 msgstr ""
 
-msgid "This defines a package named ``pkg`` containing the ``pkg.main`` and ``pkg.string`` submodules."
+msgid "This defines a package named :mod:`pkg` containing the :mod:`pkg.main` and :mod:`pkg.string` submodules."
 msgstr ""
 
-msgid "Consider the code in the :file:`main.py` module.  What happens if it executes the statement ``import string``?  In Python 2.4 and earlier, it will first look in the package's directory to perform a relative import, finds :file:`pkg/string.py`, imports the contents of that file as the ``pkg.string`` module, and that module is bound to the name ``string`` in the ``pkg.main`` module's namespace."
+msgid "Consider the code in the :file:`main.py` module.  What happens if it executes the statement ``import string``?  In Python 2.4 and earlier, it will first look in the package's directory to perform a relative import, finds :file:`pkg/string.py`, imports the contents of that file as the :mod:`pkg.string` module, and that module is bound to the name ``string`` in the :mod:`pkg.main` module's namespace."
 msgstr ""
 
-msgid "That's fine if ``pkg.string`` was what you wanted.  But what if you wanted Python's standard :mod:`string` module?  There's no clean way to ignore ``pkg.string`` and look for the standard module; generally you had to look at the contents of ``sys.modules``, which is slightly unclean.    Holger Krekel's :mod:`!py.std` package provides a tidier way to perform imports from the standard library, ``import py; py.std.string.join()``, but that package isn't available on all Python installations."
+msgid "That's fine if :mod:`pkg.string` was what you wanted.  But what if you wanted Python's standard :mod:`string` module?  There's no clean way to ignore :mod:`pkg.string` and look for the standard module; generally you had to look at the contents of ``sys.modules``, which is slightly unclean.    Holger Krekel's :mod:`py.std` package provides a tidier way to perform imports from the standard library, ``import py; py.std.string.join()``, but that package isn't available on all Python installations."
 msgstr ""
 
-msgid "Reading code which relies on relative imports is also less clear, because a reader may be confused about which module, :mod:`string` or ``pkg.string``, is intended to be used.  Python users soon learned not to duplicate the names of standard library modules in the names of their packages' submodules, but you can't protect against having your submodule's name being used for a new module added in a future version of Python."
+msgid "Reading code which relies on relative imports is also less clear, because a reader may be confused about which module, :mod:`string` or :mod:`pkg.string`, is intended to be used.  Python users soon learned not to duplicate the names of standard library modules in the names of their packages' submodules, but you can't protect against having your submodule's name being used for a new module added in a future version of Python."
 msgstr ""
 
 msgid "In Python 2.5, you can switch :keyword:`import`'s behaviour to  absolute imports using a ``from __future__ import absolute_import`` directive.  This absolute-import behaviour will become the default in a future version (probably Python 2.7).  Once absolute imports  are the default, ``import string`` will always find the standard library's version. It's suggested that users should begin using absolute imports as much as possible, so it's preferable to begin writing ``from pkg import string`` in your code."
@@ -257,7 +257,7 @@ msgid ""
 "from . import string"
 msgstr ""
 
-msgid "This imports the :mod:`string` module relative to the current package, so in ``pkg.main`` this will import *name1* and *name2* from ``pkg.string``. Additional leading periods perform the relative import starting from the parent of the current package.  For example, code in the ``A.B.C`` module can do::"
+msgid "This imports the :mod:`string` module relative to the current package, so in :mod:`pkg.main` this will import *name1* and *name2* from :mod:`pkg.string`. Additional leading periods perform the relative import starting from the parent of the current package.  For example, code in the :mod:`A.B.C` module can do::"
 msgstr ""
 
 msgid ""
@@ -278,7 +278,7 @@ msgstr ""
 msgid "https://pylib.readthedocs.io/"
 msgstr ""
 
-msgid "The py library by Holger Krekel, which contains the :mod:`!py.std` package."
+msgid "The py library by Holger Krekel, which contains the :mod:`py.std` package."
 msgstr ""
 
 msgid "PEP 338: Executing Modules as Scripts"
@@ -287,7 +287,7 @@ msgstr ""
 msgid "The :option:`-m` switch added in Python 2.4 to execute a module as a script gained a few more abilities.  Instead of being implemented in C code inside the Python interpreter, the switch now uses an implementation in a new module, :mod:`runpy`."
 msgstr ""
 
-msgid "The :mod:`runpy` module implements a more sophisticated import mechanism so that it's now possible to run modules in a package such as :mod:`!pychecker.checker`. The module also supports alternative import mechanisms such as the :mod:`zipimport` module.  This means you can add a .zip archive's path to ``sys.path`` and then use the :option:`-m` switch to execute code from the archive."
+msgid "The :mod:`runpy` module implements a more sophisticated import mechanism so that it's now possible to run modules in a package such as :mod:`pychecker.checker`. The module also supports alternative import mechanisms such as the :mod:`zipimport` module.  This means you can add a .zip archive's path to ``sys.path`` and then use the :option:`-m` switch to execute code from the archive."
 msgstr ""
 
 msgid ":pep:`338` - Executing modules as scripts"
@@ -318,7 +318,7 @@ msgid ""
 "    final-block"
 msgstr ""
 
-msgid "The code in *block-1* is executed.  If the code raises an exception, the various :keyword:`except` blocks are tested: if the exception is of class ``Exception1``, *handler-1* is executed; otherwise if it's of class ``Exception2``, *handler-2* is executed, and so forth.  If no exception is raised, the *else-block* is executed."
+msgid "The code in *block-1* is executed.  If the code raises an exception, the various :keyword:`except` blocks are tested: if the exception is of class :class:`Exception1`, *handler-1* is executed; otherwise if it's of class :class:`Exception2`, *handler-2* is executed, and so forth.  If no exception is raised, the *else-block* is executed."
 msgstr ""
 
 msgid "No matter what happened previously, the *final-block* is executed once the code block is complete and any raised exceptions handled. Even if there's an error in an exception handler or the *else-block* and a new exception is raised, the code in the *final-block* is still run."
@@ -400,16 +400,16 @@ msgid ""
 "StopIteration"
 msgstr ""
 
-msgid ":keyword:`yield` will usually return :const:`None`, so you should always check for this case.  Don't just use its value in expressions unless you're sure that the :meth:`~generator.send` method will be the only method used to resume your generator function."
+msgid ":keyword:`yield` will usually return :const:`None`, so you should always check for this case.  Don't just use its value in expressions unless you're sure that the :meth:`send` method will be the only method used to resume your generator function."
 msgstr ""
 
-msgid "In addition to :meth:`~generator.send`, there are two other new methods on generators:"
+msgid "In addition to :meth:`send`, there are two other new methods on generators:"
 msgstr ""
 
 msgid "``throw(type, value=None, traceback=None)`` is used to raise an exception inside the generator; the exception is raised by the :keyword:`yield` expression where the generator's execution is paused."
 msgstr ""
 
-msgid ":meth:`~generator.close` raises a new :exc:`GeneratorExit` exception inside the generator to terminate the iteration.  On receiving this exception, the generator's code must either raise :exc:`GeneratorExit` or :exc:`StopIteration`.  Catching the :exc:`GeneratorExit` exception and returning a value is illegal and will trigger a :exc:`RuntimeError`; if the function raises some other exception, that exception is propagated to the caller.  :meth:`~generator.close` will also be called by Python's garbage collector when the generator is garbage-collected."
+msgid ":meth:`close` raises a new :exc:`GeneratorExit` exception inside the generator to terminate the iteration.  On receiving this exception, the generator's code must either raise :exc:`GeneratorExit` or :exc:`StopIteration`.  Catching the :exc:`GeneratorExit` exception and returning a value is illegal and will trigger a :exc:`RuntimeError`; if the function raises some other exception, that exception is propagated to the caller.  :meth:`close` will also be called by Python's garbage collector when the generator is garbage-collected."
 msgstr ""
 
 msgid "If you need to run cleanup code when a :exc:`GeneratorExit` occurs, I suggest using a ``try: ... finally:`` suite instead of  catching :exc:`GeneratorExit`."
@@ -421,10 +421,10 @@ msgstr ""
 msgid "Generators also become *coroutines*, a more generalized form of subroutines. Subroutines are entered at one point and exited at another point (the top of the function, and a :keyword:`return` statement), but coroutines can be entered, exited, and resumed at many different points (the :keyword:`yield` statements). We'll have to figure out patterns for using coroutines effectively in Python."
 msgstr ""
 
-msgid "The addition of the :meth:`~generator.close` method has one side effect that isn't obvious. :meth:`~generator.close` is called when a generator is garbage-collected, so this means the generator's code gets one last chance to run before the generator is destroyed. This last chance means that ``try...finally`` statements in generators can now be guaranteed to work; the :keyword:`finally` clause will now always get a chance to run.  The syntactic restriction that you couldn't mix :keyword:`yield` statements with a ``try...finally`` suite has therefore been removed.  This seems like a minor bit of language trivia, but using generators and ``try...finally`` is actually necessary in order to implement the :keyword:`with` statement described by :pep:`343`.  I'll look at this new statement in the following  section."
+msgid "The addition of the :meth:`close` method has one side effect that isn't obvious. :meth:`close` is called when a generator is garbage-collected, so this means the generator's code gets one last chance to run before the generator is destroyed. This last chance means that ``try...finally`` statements in generators can now be guaranteed to work; the :keyword:`finally` clause will now always get a chance to run.  The syntactic restriction that you couldn't mix :keyword:`yield` statements with a ``try...finally`` suite has therefore been removed.  This seems like a minor bit of language trivia, but using generators and ``try...finally`` is actually necessary in order to implement the :keyword:`with` statement described by :pep:`343`.  I'll look at this new statement in the following  section."
 msgstr ""
 
-msgid "Another even more esoteric effect of this change: previously, the :attr:`!gi_frame` attribute of a generator was always a frame object. It's now possible for :attr:`!gi_frame` to be ``None`` once the generator has been exhausted."
+msgid "Another even more esoteric effect of this change: previously, the :attr:`gi_frame` attribute of a generator was always a frame object. It's now possible for :attr:`gi_frame` to be ``None`` once the generator has been exhausted."
 msgstr ""
 
 msgid ":pep:`342` - Coroutines via Enhanced Generators"
@@ -509,7 +509,7 @@ msgstr ""
 msgid "The lock is acquired before the block is executed and always released once  the block is complete."
 msgstr ""
 
-msgid "The new :func:`~decimal.localcontext` function in the :mod:`decimal` module makes it easy to save and restore the current decimal context, which encapsulates the desired precision and rounding characteristics for computations::"
+msgid "The new :func:`localcontext` function in the :mod:`decimal` module makes it easy to save and restore the current decimal context, which encapsulates the desired precision and rounding characteristics for computations::"
 msgstr ""
 
 msgid ""
@@ -566,7 +566,7 @@ msgid ""
 "    # ... more operations ..."
 msgstr ""
 
-msgid "The transaction should be committed if the code in the block runs flawlessly or rolled back if there's an exception. Here's the basic interface for ``DatabaseConnection`` that I'll assume::"
+msgid "The transaction should be committed if the code in the block runs flawlessly or rolled back if there's an exception. Here's the basic interface for :class:`DatabaseConnection` that I'll assume::"
 msgstr ""
 
 msgid ""
@@ -617,7 +617,7 @@ msgstr ""
 msgid "The new :mod:`contextlib` module provides some functions and a decorator that are useful for writing objects for use with the ':keyword:`with`' statement."
 msgstr ""
 
-msgid "The decorator is called :deco:`~contextlib.contextmanager`, and lets you write a single generator function instead of defining a new class.  The generator should yield exactly one value.  The code up to the :keyword:`yield` will be executed as the :meth:`~object.__enter__` method, and the value yielded will be the method's return value that will get bound to the variable in the ':keyword:`with`' statement's :keyword:`!as` clause, if any.  The code after the :keyword:`yield` will be executed in the :meth:`~object.__exit__` method.  Any exception raised in the block will be raised by the :keyword:`!yield` statement."
+msgid "The decorator is called :func:`contextmanager`, and lets you write a single generator function instead of defining a new class.  The generator should yield exactly one value.  The code up to the :keyword:`yield` will be executed as the :meth:`~object.__enter__` method, and the value yielded will be the method's return value that will get bound to the variable in the ':keyword:`with`' statement's :keyword:`!as` clause, if any.  The code after the :keyword:`yield` will be executed in the :meth:`~object.__exit__` method.  Any exception raised in the block will be raised by the :keyword:`!yield` statement."
 msgstr ""
 
 msgid "Our database example from the previous section could be written  using this decorator as::"
@@ -735,7 +735,7 @@ msgstr ""
 msgid "This change most strongly affects authors of C extension modules.   Python strings and container types such as lists and tuples  now use :c:type:`Py_ssize_t` to store their size.   Functions such as :c:func:`PyList_Size`  now return :c:type:`Py_ssize_t`.  Code in extension modules may therefore need to have some variables changed to :c:type:`Py_ssize_t`."
 msgstr ""
 
-msgid "The :c:func:`PyArg_ParseTuple` and :c:func:`Py_BuildValue` functions have a new conversion code, ``n``, for :c:type:`Py_ssize_t`.   :c:func:`PyArg_ParseTuple`'s ``s#`` and ``t#`` still output :c:expr:`int` by default, but you can define the macro  :c:macro:`!PY_SSIZE_T_CLEAN` before including :file:`Python.h`  to make them return :c:type:`Py_ssize_t`."
+msgid "The :c:func:`PyArg_ParseTuple` and :c:func:`Py_BuildValue` functions have a new conversion code, ``n``, for :c:type:`Py_ssize_t`.   :c:func:`PyArg_ParseTuple`'s ``s#`` and ``t#`` still output :c:expr:`int` by default, but you can define the macro  :c:macro:`PY_SSIZE_T_CLEAN` before including :file:`Python.h`  to make them return :c:type:`Py_ssize_t`."
 msgstr ""
 
 msgid ":pep:`353` has a section on conversion guidelines that  extension authors should read to learn about supporting 64-bit platforms."
@@ -750,13 +750,13 @@ msgstr ""
 msgid "PEP 357: The '__index__' method"
 msgstr ""
 
-msgid "The NumPy developers had a problem that could only be solved by adding a new special method, :meth:`~object.__index__`.  When using slice notation, as in ``[start:stop:step]``, the values of the *start*, *stop*, and *step* indexes must all be either integers or long integers.  NumPy defines a variety of specialized integer types corresponding to unsigned and signed integers of 8, 16, 32, and 64 bits, but there was no way to signal that these types could be used as slice indexes."
+msgid "The NumPy developers had a problem that could only be solved by adding a new special method, :meth:`__index__`.  When using slice notation, as in ``[start:stop:step]``, the values of the *start*, *stop*, and *step* indexes must all be either integers or long integers.  NumPy defines a variety of specialized integer types corresponding to unsigned and signed integers of 8, 16, 32, and 64 bits, but there was no way to signal that these types could be used as slice indexes."
 msgstr ""
 
-msgid "Slicing can't just use the existing :meth:`~object.__int__` method because that method is also used to implement coercion to integers.  If slicing used :meth:`~object.__int__`, floating-point numbers would also become legal slice indexes and that's clearly an undesirable behaviour."
+msgid "Slicing can't just use the existing :meth:`__int__` method because that method is also used to implement coercion to integers.  If slicing used :meth:`__int__`, floating-point numbers would also become legal slice indexes and that's clearly an undesirable behaviour."
 msgstr ""
 
-msgid "Instead, a new special method called :meth:`~object.__index__` was added.  It takes no arguments and returns an integer giving the slice index to use.  For example::"
+msgid "Instead, a new special method called :meth:`__index__` was added.  It takes no arguments and returns an integer giving the slice index to use.  For example::"
 msgstr ""
 
 msgid ""
@@ -768,7 +768,7 @@ msgstr ""
 msgid "The return value must be either a Python integer or long integer. The interpreter will check that the type returned is correct, and raises a :exc:`TypeError` if this requirement isn't met."
 msgstr ""
 
-msgid "A corresponding :c:member:`~PyNumberMethods.nb_index` slot was added to the C-level :c:type:`PyNumberMethods` structure to let C extensions implement this protocol. ``PyNumber_Index(obj)`` can be used in extension code to call the :meth:`~object.__index__` function and retrieve its result."
+msgid "A corresponding :c:member:`~PyNumberMethods.nb_index` slot was added to the C-level :c:type:`PyNumberMethods` structure to let C extensions implement this protocol. ``PyNumber_Index(obj)`` can be used in extension code to call the :meth:`__index__` function and retrieve its result."
 msgstr ""
 
 msgid ":pep:`357` - Allowing Any Object to be Used for Slicing"
@@ -783,7 +783,7 @@ msgstr ""
 msgid "Here are all of the changes that Python 2.5 makes to the core Python language."
 msgstr ""
 
-msgid "The :class:`dict` type has a new hook for letting subclasses provide a default value when a key isn't contained in the dictionary. When a key isn't found, the dictionary's ``__missing__(key)`` method will be called.  This hook is used to implement the new :class:`~collections.defaultdict` class in the :mod:`collections` module.  The following example defines a dictionary  that returns zero for any missing key::"
+msgid "The :class:`dict` type has a new hook for letting subclasses provide a default value when a key isn't contained in the dictionary. When a key isn't found, the dictionary's ``__missing__(key)`` method will be called.  This hook is used to implement the new :class:`defaultdict` class in the :mod:`collections` module.  The following example defines a dictionary  that returns zero for any missing key::"
 msgstr ""
 
 msgid ""
@@ -821,7 +821,7 @@ msgstr ""
 msgid "(Implemented by Fredrik Lundh following a suggestion by Raymond Hettinger.)"
 msgstr ""
 
-msgid "The :meth:`~str.startswith` and :meth:`~str.endswith` methods of string types now accept tuples of strings to check for. ::"
+msgid "The :meth:`startswith` and :meth:`endswith` methods of string types now accept tuples of strings to check for. ::"
 msgstr ""
 
 msgid ""
@@ -832,7 +832,7 @@ msgstr ""
 msgid "(Implemented by Georg Brandl following a suggestion by Tom Lynn.)"
 msgstr ""
 
-msgid "The :func:`min` and :func:`max` built-in functions gained a ``key`` keyword parameter analogous to the ``key`` argument for :meth:`~list.sort`.  This parameter supplies a function that takes a single argument and is called for every value in the list; :func:`min`/:func:`max` will return the element with the smallest/largest return value from this function. For example, to find the longest string in a list, you can do::"
+msgid "The :func:`min` and :func:`max` built-in functions gained a ``key`` keyword parameter analogous to the ``key`` argument for :meth:`sort`.  This parameter supplies a function that takes a single argument and is called for every value in the list; :func:`min`/:func:`max` will return the element with the smallest/largest return value from this function. For example, to find the longest string in a list, you can do::"
 msgstr ""
 
 msgid ""
@@ -849,7 +849,7 @@ msgstr ""
 msgid "Two new built-in functions, :func:`any` and :func:`all`, evaluate whether an iterator contains any true or false values.  :func:`any` returns :const:`True` if any value returned by the iterator is true; otherwise it will return :const:`False`.  :func:`all` returns :const:`True` only if all of the values returned by the iterator evaluate as true. (Suggested by Guido van Rossum, and implemented by Raymond Hettinger.)"
 msgstr ""
 
-msgid "The result of a class's :meth:`~object.__hash__` method can now be either a long integer or a regular integer.  If a long integer is returned, the hash of that value is taken.  In earlier versions the hash value was required to be a regular integer, but in 2.5 the :func:`id` built-in was changed to always return non-negative numbers, and users often seem to use ``id(self)`` in :meth:`~object.__hash__` methods (though this is discouraged)."
+msgid "The result of a class's :meth:`__hash__` method can now be either a long integer or a regular integer.  If a long integer is returned, the hash of that value is taken.  In earlier versions the hash value was required to be a regular integer, but in 2.5 the :func:`id` built-in was changed to always return non-negative numbers, and users often seem to use ``id(self)`` in :meth:`__hash__` methods (though this is discouraged)."
 msgstr ""
 
 msgid "ASCII is now the default encoding for modules.  It's now  a syntax error if a module contains string literals with 8-bit characters but doesn't have an encoding declaration.  In Python 2.4 this triggered a warning, not a syntax error.  See :pep:`263`  for how to declare a module's encoding; for example, you might add  a line like this near the top of the source file::"
@@ -926,7 +926,7 @@ msgstr ""
 msgid "The ``long(str, base)`` function is now faster on long digit strings because fewer intermediate results are calculated.  The peak is for strings of around 800--1000 digits where  the function is 6 times faster. (Contributed by Alan McIntyre and committed at the NeedForSpeed sprint.)"
 msgstr ""
 
-msgid "It's now illegal to mix iterating over a file  with ``for line in file`` and calling  the file object's :meth:`!read`/:meth:`!readline`/:meth:`!readlines` methods.  Iteration uses an internal buffer and the  :meth:`!read\\*` methods don't use that buffer.   Instead they would return the data following the buffer, causing the data to appear out of order.  Mixing iteration and these methods will now trigger a :exc:`ValueError` from the :meth:`!read\\*` method. (Implemented by Thomas Wouters.)"
+msgid "It's now illegal to mix iterating over a file  with ``for line in file`` and calling  the file object's :meth:`read`/:meth:`readline`/:meth:`readlines` methods.  Iteration uses an internal buffer and the  :meth:`!read\\*` methods don't use that buffer.   Instead they would return the data following the buffer, causing the data to appear out of order.  Mixing iteration and these methods will now trigger a :exc:`ValueError` from the :meth:`!read\\*` method. (Implemented by Thomas Wouters.)"
 msgstr ""
 
 msgid "The :mod:`struct` module now compiles structure format  strings into an internal representation and caches this representation, yielding a 20% speedup. (Contributed by Bob Ippolito at the NeedForSpeed sprint.)"
@@ -944,7 +944,7 @@ msgstr ""
 msgid "Python's built-in exceptions are now new-style classes, a change that speeds up instantiation considerably.  Exception handling in Python 2.5 is therefore about 30% faster than in 2.4. (Contributed by Richard Jones, Georg Brandl and Sean Reifschneider at the NeedForSpeed sprint.)"
 msgstr ""
 
-msgid "Importing now caches the paths tried, recording whether  they exist or not so that the interpreter makes fewer  :c:func:`!open` and :c:func:`!stat` calls on startup. (Contributed by Martin von Löwis and Georg Brandl.)"
+msgid "Importing now caches the paths tried, recording whether  they exist or not so that the interpreter makes fewer  :c:func:`open` and :c:func:`stat` calls on startup. (Contributed by Martin von Löwis and Georg Brandl.)"
 msgstr ""
 
 msgid "New, Improved, and Removed Modules"
@@ -956,13 +956,13 @@ msgstr ""
 msgid "The :mod:`!audioop` module now supports the a-LAW encoding, and the code for u-LAW encoding has been improved.  (Contributed by Lars Immisch.)"
 msgstr ""
 
-msgid "The :mod:`codecs` module gained support for incremental codecs.  The :func:`codecs.lookup` function now returns a :class:`~codecs.CodecInfo` instance instead of a tuple. :class:`~codecs.CodecInfo` instances behave like a 4-tuple to preserve backward compatibility but also have the attributes :attr:`~codecs.CodecInfo.encode`, :attr:`~codecs.CodecInfo.decode`, :attr:`~codecs.CodecInfo.incrementalencoder`, :attr:`~codecs.CodecInfo.incrementaldecoder`, :attr:`~codecs.CodecInfo.streamwriter`, and :attr:`~codecs.CodecInfo.streamreader`.  Incremental codecs  can receive input and produce output in multiple chunks; the output is the same as if the entire input was fed to the non-incremental codec. See the :mod:`codecs` module documentation for details. (Designed and implemented by Walter Dörwald.)"
+msgid "The :mod:`codecs` module gained support for incremental codecs.  The :func:`codec.lookup` function now returns a :class:`CodecInfo` instance instead of a tuple. :class:`CodecInfo` instances behave like a 4-tuple to preserve backward compatibility but also have the attributes :attr:`encode`, :attr:`decode`, :attr:`incrementalencoder`, :attr:`incrementaldecoder`, :attr:`streamwriter`, and :attr:`streamreader`.  Incremental codecs  can receive input and produce output in multiple chunks; the output is the same as if the entire input was fed to the non-incremental codec. See the :mod:`codecs` module documentation for details. (Designed and implemented by Walter Dörwald.)"
 msgstr ""
 
-msgid "The :mod:`collections` module gained a new type, :class:`~collections.defaultdict`, that subclasses the standard :class:`dict` type.  The new type mostly behaves like a dictionary but constructs a default value when a key isn't present, automatically adding it to the dictionary for the requested key value."
+msgid "The :mod:`collections` module gained a new type, :class:`defaultdict`, that subclasses the standard :class:`dict` type.  The new type mostly behaves like a dictionary but constructs a default value when a key isn't present, automatically adding it to the dictionary for the requested key value."
 msgstr ""
 
-msgid "The first argument to :class:`~collections.defaultdict`'s constructor is a factory function that gets called whenever a key is requested but not found. This factory function receives no arguments, so you can use built-in type constructors such as :func:`list` or :func:`int`.  For example,  you can make an index of words based on their initial letter like this::"
+msgid "The first argument to :class:`defaultdict`'s constructor is a factory function that gets called whenever a key is requested but not found. This factory function receives no arguments, so you can use built-in type constructors such as :func:`list` or :func:`int`.  For example,  you can make an index of words based on their initial letter like this::"
 msgstr ""
 
 msgid ""
@@ -991,7 +991,7 @@ msgstr ""
 msgid "(Contributed by Guido van Rossum.)"
 msgstr ""
 
-msgid "The :class:`~collections.deque` double-ended queue type supplied by the :mod:`collections` module now has a ``remove(value)`` method that removes the first occurrence of *value* in the queue, raising :exc:`ValueError` if the value isn't found. (Contributed by Raymond Hettinger.)"
+msgid "The :class:`deque` double-ended queue type supplied by the :mod:`collections` module now has a ``remove(value)`` method that removes the first occurrence of *value* in the queue, raising :exc:`ValueError` if the value isn't found. (Contributed by Raymond Hettinger.)"
 msgstr ""
 
 msgid "New module: The :mod:`contextlib` module contains helper functions for use with the new ':keyword:`with`' statement.  See section :ref:`contextlibmod` for more about this module."
@@ -1000,10 +1000,10 @@ msgstr ""
 msgid "New module: The :mod:`cProfile` module is a C implementation of  the existing :mod:`profile` module that has much lower overhead. The module's interface is the same as :mod:`profile`: you run ``cProfile.run('main()')`` to profile a function, can save profile data to a file, etc.  It's not yet known if the Hotshot profiler, which is also written in C but doesn't match the :mod:`profile` module's interface, will continue to be maintained in future versions of Python.  (Contributed by Armin Rigo.)"
 msgstr ""
 
-msgid "Also, the :mod:`pstats` module for analyzing the data measured by the profiler now supports directing the output to any file object by supplying a *stream* argument to the :class:`~pstats.Stats` constructor. (Contributed by Skip Montanaro.)"
+msgid "Also, the :mod:`pstats` module for analyzing the data measured by the profiler now supports directing the output to any file object by supplying a *stream* argument to the :class:`Stats` constructor. (Contributed by Skip Montanaro.)"
 msgstr ""
 
-msgid "The :mod:`csv` module, which parses files in comma-separated value format, received several enhancements and a number of bugfixes.  You can now set the maximum size in bytes of a field by calling the ``csv.field_size_limit(new_limit)`` function; omitting the *new_limit* argument will return the currently set limit.  The :class:`~csv.reader` class now has a :attr:`~csv.csvreader.line_num` attribute that counts the number of physical lines read from the source; records can span multiple physical lines, so :attr:`~csv.csvreader.line_num` is not the same as the number of records read."
+msgid "The :mod:`csv` module, which parses files in comma-separated value format, received several enhancements and a number of bugfixes.  You can now set the maximum size in bytes of a field by calling the ``csv.field_size_limit(new_limit)`` function; omitting the *new_limit* argument will return the currently set limit.  The :class:`reader` class now has a :attr:`line_num` attribute that counts the number of physical lines read from the source; records can span multiple physical lines, so :attr:`line_num` is not the same as the number of records read."
 msgstr ""
 
 msgid "The CSV parser is now stricter about multi-line quoted fields. Previously, if a line ended within a quoted field without a terminating newline character, a newline would be inserted into the returned field. This behavior caused problems when reading files that contained carriage return characters within fields, so the code was changed to return the field without inserting newlines. As a consequence, if newlines embedded within fields are important, the input should be split into lines in a manner that preserves the newline characters."
@@ -1022,25 +1022,25 @@ msgid ""
 "                          '%H:%M:%S %Y-%m-%d')"
 msgstr ""
 
-msgid "The :meth:`difflib.SequenceMatcher.get_matching_blocks` method in the :mod:`difflib` module now guarantees to return a minimal list of blocks describing matching subsequences.  Previously, the algorithm would occasionally break a block of matching elements into two list entries. (Enhancement by Tim Peters.)"
+msgid "The :meth:`SequenceMatcher.get_matching_blocks` method in the :mod:`difflib` module now guarantees to return a minimal list of blocks describing matching subsequences.  Previously, the algorithm would occasionally break a block of matching elements into two list entries. (Enhancement by Tim Peters.)"
 msgstr ""
 
 msgid "The :mod:`doctest` module gained a ``SKIP`` option that keeps an example from being executed at all.  This is intended for code snippets that are usage examples intended for the reader and aren't actually test cases."
 msgstr ""
 
-msgid "An *encoding* parameter was added to the :func:`~doctest.testfile` function and the :class:`~doctest.DocFileSuite` class to specify the file's encoding.  This makes it easier to use non-ASCII characters in  tests contained within a docstring. (Contributed by Bjorn Tillenius.)"
+msgid "An *encoding* parameter was added to the :func:`testfile` function and the :class:`DocFileSuite` class to specify the file's encoding.  This makes it easier to use non-ASCII characters in  tests contained within a docstring. (Contributed by Bjorn Tillenius.)"
 msgstr ""
 
 msgid "The :mod:`email` package has been updated to version 4.0. (Contributed by Barry Warsaw.)"
 msgstr ""
 
-msgid "The :mod:`fileinput` module was made more flexible. Unicode filenames are now supported, and a *mode* parameter that defaults to ``\"r\"`` was added to the :func:`input` function to allow opening files in binary or :term:`universal newlines` mode.  Another new parameter, *openhook*, lets you use a function other than :func:`open`  to open the input files.  Once you're iterating over the set of files, the :class:`~fileinput.FileInput` object's new :meth:`~fileinput.fileno` returns the file descriptor for the currently opened file. (Contributed by Georg Brandl.)"
+msgid "The :mod:`fileinput` module was made more flexible. Unicode filenames are now supported, and a *mode* parameter that defaults to ``\"r\"`` was added to the :func:`input` function to allow opening files in binary or :term:`universal newlines` mode.  Another new parameter, *openhook*, lets you use a function other than :func:`open`  to open the input files.  Once you're iterating over the set of files, the :class:`FileInput` object's new :meth:`~fileinput.fileno` returns the file descriptor for the currently opened file. (Contributed by Georg Brandl.)"
 msgstr ""
 
-msgid "In the :mod:`gc` module, the new :func:`~gc.get_count` function returns a 3-tuple containing the current collection counts for the three GC generations.  This is accounting information for the garbage collector; when these counts reach a specified threshold, a garbage collection sweep will be made.  The existing :func:`gc.collect` function now takes an optional *generation* argument of 0, 1, or 2 to specify which generation to collect. (Contributed by Barry Warsaw.)"
+msgid "In the :mod:`gc` module, the new :func:`get_count` function returns a 3-tuple containing the current collection counts for the three GC generations.  This is accounting information for the garbage collector; when these counts reach a specified threshold, a garbage collection sweep will be made.  The existing :func:`gc.collect` function now takes an optional *generation* argument of 0, 1, or 2 to specify which generation to collect. (Contributed by Barry Warsaw.)"
 msgstr ""
 
-msgid "The :func:`~heapq.nsmallest` and  :func:`~heapq.nlargest` functions in the :mod:`heapq` module  now support a ``key`` keyword parameter similar to the one provided by the :func:`min`/:func:`max` functions and the :meth:`~list.sort` methods.  For example::"
+msgid "The :func:`nsmallest` and  :func:`nlargest` functions in the :mod:`heapq` module  now support a ``key`` keyword parameter similar to the one provided by the :func:`min`/:func:`max` functions and the :meth:`sort` methods.  For example::"
 msgstr ""
 
 msgid ""
@@ -1063,22 +1063,22 @@ msgid ""
 "itertools.islice(iterable, s.start, s.stop, s.step)"
 msgstr ""
 
-msgid "The :func:`format` function in the :mod:`locale` module has been modified and two new functions were added, :func:`~locale.format_string` and :func:`~locale.currency`."
+msgid "The :func:`format` function in the :mod:`locale` module has been modified and two new functions were added, :func:`format_string` and :func:`currency`."
 msgstr ""
 
 msgid "The :func:`format` function's *val* parameter could previously be a string as long as no more than one %char specifier appeared; now the parameter must be exactly one %char specifier with no surrounding text.  An optional *monetary* parameter was also added which, if ``True``, will use the locale's rules for formatting currency in placing a separator between groups of three digits."
 msgstr ""
 
-msgid "To format strings with multiple %char specifiers, use the new :func:`~locale.format_string` function that works like :func:`format` but also supports mixing %char specifiers with arbitrary text."
+msgid "To format strings with multiple %char specifiers, use the new :func:`format_string` function that works like :func:`format` but also supports mixing %char specifiers with arbitrary text."
 msgstr ""
 
-msgid "A new :func:`~locale.currency` function was also added that formats a number according to the current locale's settings."
+msgid "A new :func:`currency` function was also added that formats a number according to the current locale's settings."
 msgstr ""
 
 msgid "(Contributed by Georg Brandl.)"
 msgstr ""
 
-msgid "The :mod:`mailbox` module underwent a massive rewrite to add the capability to modify mailboxes in addition to reading them.  A new set of classes that include :class:`~mailbox.mbox`, :class:`~mailbox.MH`, and :class:`~mailbox.Maildir` are used to read mailboxes, and have an ``add(message)`` method to add messages, ``remove(key)`` to remove messages, and :meth:`~mailbox.Mailbox.lock`/:meth:`~mailbox.Mailbox.unlock` to lock/unlock the mailbox. The following example converts a maildir-format mailbox into an mbox-format one::"
+msgid "The :mod:`mailbox` module underwent a massive rewrite to add the capability to modify mailboxes in addition to reading them.  A new set of classes that include :class:`mbox`, :class:`MH`, and :class:`Maildir` are used to read mailboxes, and have an ``add(message)`` method to add messages, ``remove(key)`` to remove messages, and :meth:`lock`/:meth:`unlock` to lock/unlock the mailbox. The following example converts a maildir-format mailbox into an mbox-format one::"
 msgstr ""
 
 msgid ""
@@ -1102,22 +1102,22 @@ msgstr ""
 msgid "The :mod:`!nis` module now supports accessing domains other than the system default domain by supplying a *domain* argument to the :func:`!nis.match` and :func:`!nis.maps` functions. (Contributed by Ben Bell.)"
 msgstr ""
 
-msgid "The :mod:`operator` module's :func:`~operator.itemgetter`  and :func:`~operator.attrgetter` functions now support multiple fields.   A call such as ``operator.attrgetter('a', 'b')`` will return a function  that retrieves the ``a`` and ``b`` attributes.  Combining  this new feature with the :meth:`~list.sort` method's ``key`` parameter  lets you easily sort lists using multiple fields. (Contributed by Raymond Hettinger.)"
+msgid "The :mod:`operator` module's :func:`itemgetter`  and :func:`attrgetter` functions now support multiple fields.   A call such as ``operator.attrgetter('a', 'b')`` will return a function  that retrieves the :attr:`a` and :attr:`b` attributes.  Combining  this new feature with the :meth:`sort` method's ``key`` parameter  lets you easily sort lists using multiple fields. (Contributed by Raymond Hettinger.)"
 msgstr ""
 
-msgid "The :mod:`optparse` module was updated to version 1.5.1 of the Optik library. The :class:`~optparse.OptionParser` class gained an :attr:`!epilog` attribute, a string that will be printed after the help message, and a :meth:`!destroy` method to break reference cycles created by the object. (Contributed by Greg Ward.)"
+msgid "The :mod:`optparse` module was updated to version 1.5.1 of the Optik library. The :class:`OptionParser` class gained an :attr:`epilog` attribute, a string that will be printed after the help message, and a :meth:`destroy` method to break reference cycles created by the object. (Contributed by Greg Ward.)"
 msgstr ""
 
-msgid "The :mod:`os` module underwent several changes.  The :attr:`!stat_float_times` variable now defaults to true, meaning that :func:`os.stat` will now return time values as floats.  (This doesn't necessarily mean that :func:`os.stat` will return times that are precise to fractions of a second; not all systems support such precision.)"
+msgid "The :mod:`os` module underwent several changes.  The :attr:`stat_float_times` variable now defaults to true, meaning that :func:`os.stat` will now return time values as floats.  (This doesn't necessarily mean that :func:`os.stat` will return times that are precise to fractions of a second; not all systems support such precision.)"
 msgstr ""
 
 msgid "Constants named :const:`os.SEEK_SET`, :const:`os.SEEK_CUR`, and :const:`os.SEEK_END` have been added; these are the parameters to the :func:`os.lseek` function.  Two new constants for locking are :const:`os.O_SHLOCK` and :const:`os.O_EXLOCK`."
 msgstr ""
 
-msgid "Two new functions, :func:`~os.wait3` and :func:`~os.wait4`, were added.  They're similar the :func:`~os.waitpid` function which waits for a child process to exit and returns a tuple of the process ID and its exit status, but :func:`~os.wait3` and :func:`~os.wait4` return additional information.  :func:`~os.wait3` doesn't take a process ID as input, so it waits for any child process to exit and returns a 3-tuple of *process-id*, *exit-status*, *resource-usage* as returned from the :func:`resource.getrusage` function. ``wait4(pid)`` does take a process ID. (Contributed by Chad J. Schroeder.)"
+msgid "Two new functions, :func:`wait3` and :func:`wait4`, were added.  They're similar the :func:`waitpid` function which waits for a child process to exit and returns a tuple of the process ID and its exit status, but :func:`wait3` and :func:`wait4` return additional information.  :func:`wait3` doesn't take a process ID as input, so it waits for any child process to exit and returns a 3-tuple of *process-id*, *exit-status*, *resource-usage* as returned from the :func:`resource.getrusage` function. ``wait4(pid)`` does take a process ID. (Contributed by Chad J. Schroeder.)"
 msgstr ""
 
-msgid "On FreeBSD, the :func:`os.stat` function now returns  times with nanosecond resolution, and the returned object now has :attr:`~os.stat_result.st_gen` and :attr:`~os.stat_result.st_birthtime`. The :attr:`~os.stat_result.st_flags` attribute is also available, if the platform supports it. (Contributed by Antti Louko and Diego Pettenò.)"
+msgid "On FreeBSD, the :func:`os.stat` function now returns  times with nanosecond resolution, and the returned object now has :attr:`st_gen` and :attr:`st_birthtime`. The :attr:`st_flags` attribute is also available, if the platform supports it. (Contributed by Antti Louko and  Diego Pettenò.)"
 msgstr ""
 
 msgid "The Python debugger provided by the :mod:`pdb` module can now store lists of commands to execute when a breakpoint is reached and execution stops.  Once breakpoint #1 has been created, enter ``commands 1`` and enter a series of commands to be executed, finishing the list with ``end``.  The command list can include commands that resume execution, such as ``continue`` or ``next``. (Contributed by Grégoire Dooms.)"
@@ -1132,37 +1132,37 @@ msgstr ""
 msgid "The pybench benchmark suite by Marc-André Lemburg is now included in the :file:`Tools/pybench` directory.  The pybench suite is an improvement on the commonly used :file:`pystone.py` program because pybench provides a more detailed measurement of the interpreter's speed.  It times particular operations such as function calls, tuple slicing, method lookups, and numeric operations, instead of performing many different operations and reducing the result to a single number as :file:`pystone.py` does."
 msgstr ""
 
-msgid "The :mod:`!pyexpat` module now uses version 2.0 of the Expat parser. (Contributed by Trent Mick.)"
+msgid "The :mod:`pyexpat` module now uses version 2.0 of the Expat parser. (Contributed by Trent Mick.)"
 msgstr ""
 
-msgid "The :class:`~queue.Queue` class provided by the :mod:`queue` module gained two new methods.  :meth:`~queue.Queue.join` blocks until all items in the queue have been retrieved and all processing work on the items  have been completed.  Worker threads call the other new method,  :meth:`~queue.Queue.task_done`, to signal that processing for an item has been completed.  (Contributed by Raymond Hettinger.)"
+msgid "The :class:`~queue.Queue` class provided by the :mod:`Queue` module gained two new methods.  :meth:`join` blocks until all items in the queue have been retrieved and all processing work on the items  have been completed.  Worker threads call the other new method,  :meth:`task_done`, to signal that processing for an item has been completed.  (Contributed by Raymond Hettinger.)"
 msgstr ""
 
-msgid "The old :mod:`!regex` and :mod:`!regsub` modules, which have been  deprecated ever since Python 2.0, have finally been deleted.   Other deleted modules: :mod:`!statcache`, :mod:`!tzparse`, :mod:`!whrandom`."
+msgid "The old :mod:`regex` and :mod:`regsub` modules, which have been  deprecated ever since Python 2.0, have finally been deleted.   Other deleted modules: :mod:`statcache`, :mod:`tzparse`, :mod:`whrandom`."
 msgstr ""
 
-msgid "Also deleted: the :file:`lib-old` directory, which includes ancient modules such as :mod:`!dircmp` and :mod:`!ni`, was removed.  :file:`lib-old` wasn't on the default ``sys.path``, so unless your programs explicitly added the directory to ``sys.path``, this removal shouldn't affect your code."
+msgid "Also deleted: the :file:`lib-old` directory, which includes ancient modules such as :mod:`dircmp` and :mod:`ni`, was removed.  :file:`lib-old` wasn't on the default ``sys.path``, so unless your programs explicitly added the directory to ``sys.path``, this removal shouldn't affect your code."
 msgstr ""
 
 msgid "The :mod:`rlcompleter` module is no longer  dependent on importing the :mod:`readline` module and therefore now works on non-Unix platforms. (Patch from Robert Kiendl.)"
 msgstr ""
 
-msgid "The :mod:`SimpleXMLRPCServer <xmlrpc.server>` and :mod:`DocXMLRPCServer <xmlrpc.server>`  classes now have a :attr:`~xmlrpc.server.SimpleXMLRPCRequestHandler.rpc_paths` attribute that constrains XML-RPC operations to a limited set of URL paths; the default is to allow only ``'/'`` and ``'/RPC2'``.  Setting :attr:`~xmlrpc.server.SimpleXMLRPCRequestHandler.rpc_paths` to ``None`` or an empty tuple disables  this path checking."
+msgid "The :mod:`SimpleXMLRPCServer <xmlrpc.server>` and :mod:`DocXMLRPCServer <xmlrpc.server>`  classes now have a :attr:`rpc_paths` attribute that constrains XML-RPC operations to a limited set of URL paths; the default is to allow only ``'/'`` and ``'/RPC2'``.  Setting :attr:`rpc_paths` to ``None`` or an empty tuple disables  this path checking."
 msgstr ""
 
-msgid "The :mod:`socket` module now supports :const:`!AF_NETLINK` sockets on Linux, thanks to a patch from Philippe Biondi.   Netlink sockets are a Linux-specific mechanism for communications between a user-space process and kernel code; an introductory  article about them is at https://www.linuxjournal.com/article/7356. In Python code, netlink addresses are represented as a tuple of 2 integers, ``(pid, group_mask)``."
+msgid "The :mod:`socket` module now supports :const:`AF_NETLINK` sockets on Linux, thanks to a patch from Philippe Biondi.   Netlink sockets are a Linux-specific mechanism for communications between a user-space process and kernel code; an introductory  article about them is at https://www.linuxjournal.com/article/7356. In Python code, netlink addresses are represented as a tuple of 2 integers, ``(pid, group_mask)``."
 msgstr ""
 
 msgid "Two new methods on socket objects, ``recv_into(buffer)`` and ``recvfrom_into(buffer)``, store the received data in an object  that supports the buffer protocol instead of returning the data as a string.  This means you can put the data directly into an array or a memory-mapped file."
 msgstr ""
 
-msgid "Socket objects also gained :meth:`!getfamily`, :meth:`!gettype`, and :meth:`!getproto` accessor methods to retrieve the family, type, and protocol values for the socket."
+msgid "Socket objects also gained :meth:`getfamily`, :meth:`gettype`, and :meth:`getproto` accessor methods to retrieve the family, type, and protocol values for the socket."
 msgstr ""
 
 msgid "New module: the :mod:`!spwd` module provides functions for accessing the shadow password database on systems that support  shadow passwords."
 msgstr ""
 
-msgid "The :mod:`struct` is now faster because it  compiles format strings into :class:`~struct.Struct` objects with :meth:`~struct.Struct.pack` and :meth:`~struct.Struct.unpack` methods.  This is similar to how the :mod:`re` module lets you create compiled regular expression objects.  You can still use the module-level  :func:`~struct.pack` and :func:`~struct.unpack` functions; they'll create  :class:`~struct.Struct` objects and cache them.  Or you can use  :class:`~struct.Struct` instances directly::"
+msgid "The :mod:`struct` is now faster because it  compiles format strings into :class:`Struct` objects with :meth:`pack` and :meth:`unpack` methods.  This is similar to how the :mod:`re` module lets you create compiled regular expression objects.  You can still use the module-level  :func:`pack` and :func:`unpack` functions; they'll create  :class:`Struct` objects and cache them.  Or you can use  :class:`Struct` instances directly::"
 msgstr ""
 
 msgid ""
@@ -1175,7 +1175,7 @@ msgstr ""
 msgid "You can also pack and unpack data to and from buffer objects directly using the ``pack_into(buffer, offset, v1, v2, ...)`` and ``unpack_from(buffer, offset)`` methods.  This lets you store data directly into an array or a memory-mapped file."
 msgstr ""
 
-msgid "(:class:`~struct.Struct` objects were implemented by Bob Ippolito at the NeedForSpeed sprint.  Support for buffer objects was added by Martin Blais, also at the NeedForSpeed sprint.)"
+msgid "(:class:`Struct` objects were implemented by Bob Ippolito at the NeedForSpeed sprint.  Support for buffer objects was added by Martin Blais, also at the NeedForSpeed sprint.)"
 msgstr ""
 
 msgid "The Python developers switched from CVS to Subversion during the 2.5 development process.  Information about the exact build version is available as the ``sys.subversion`` variable, a 3-tuple of ``(interpreter-name, branch-name, revision-range)``.  For example, at the time of writing my copy of 2.5 was reporting ``('CPython', 'trunk', '45313:45315')``."
@@ -1187,7 +1187,7 @@ msgstr ""
 msgid "Another new function, :func:`sys._current_frames`, returns the current stack frames for all running threads as a dictionary mapping thread identifiers to the topmost stack frame currently active in that thread at the time the function is called.  (Contributed by Tim Peters.)"
 msgstr ""
 
-msgid "The :class:`~tarfile.TarFile` class in the :mod:`tarfile` module now has an :meth:`~tarfile.TarFile.extractall` method that extracts all members from the archive into the current working directory.  It's also possible to set a different directory as the extraction target, and to unpack only a subset of the archive's members."
+msgid "The :class:`TarFile` class in the :mod:`tarfile` module now has an :meth:`extractall` method that extracts all members from the archive into the current working directory.  It's also possible to set a different directory as the extraction target, and to unpack only a subset of the archive's members."
 msgstr ""
 
 msgid "The compression used for a tarfile opened in stream mode can now be autodetected using the mode ``'r|*'``. (Contributed by Lars Gustäbel.)"
@@ -1199,7 +1199,7 @@ msgstr ""
 msgid "The :mod:`unicodedata` module has been updated to use version 4.1.0 of the Unicode character database.  Version 3.2.0 is required  by some specifications, so it's still available as  :data:`unicodedata.ucd_3_2_0`."
 msgstr ""
 
-msgid "New module: the  :mod:`uuid` module generates  universally unique identifiers (UUIDs) according to :rfc:`4122`.  The RFC defines several different UUID versions that are generated from a starting string, from system properties, or purely randomly.  This module contains a :class:`~uuid.UUID` class and  functions named :func:`~uuid.uuid1`, :func:`~uuid.uuid3`, :func:`~uuid.uuid4`,  and  :func:`~uuid.uuid5` to generate different versions of UUID.  (Version 2 UUIDs  are not specified in :rfc:`4122` and are not supported by this module.) ::"
+msgid "New module: the  :mod:`uuid` module generates  universally unique identifiers (UUIDs) according to :rfc:`4122`.  The RFC defines several different UUID versions that are generated from a starting string, from system properties, or purely randomly.  This module contains a :class:`UUID` class and  functions named :func:`uuid1`, :func:`uuid3`, :func:`uuid4`,  and  :func:`uuid5` to generate different versions of UUID.  (Version 2 UUIDs  are not specified in :rfc:`4122` and are not supported by this module.) ::"
 msgstr ""
 
 msgid ""
@@ -1224,10 +1224,10 @@ msgstr ""
 msgid "(Contributed by Ka-Ping Yee.)"
 msgstr ""
 
-msgid "The :mod:`weakref` module's :class:`~weakref.WeakKeyDictionary` and :class:`~weakref.WeakValueDictionary` types gained new methods for iterating over the weak references contained in the dictionary.  :meth:`!iterkeyrefs` and :meth:`~weakref.WeakKeyDictionary.keyrefs` methods were added to :class:`~weakref.WeakKeyDictionary`, and :meth:`!itervaluerefs` and :meth:`~weakref.WeakValueDictionary.valuerefs` were added to :class:`~weakref.WeakValueDictionary`.  (Contributed by Fred L. Drake, Jr.)"
+msgid "The :mod:`weakref` module's :class:`WeakKeyDictionary` and :class:`WeakValueDictionary` types gained new methods for iterating over the weak references contained in the dictionary.  :meth:`iterkeyrefs` and :meth:`keyrefs` methods were added to :class:`WeakKeyDictionary`, and :meth:`itervaluerefs` and :meth:`valuerefs` were added to :class:`WeakValueDictionary`.  (Contributed by Fred L. Drake, Jr.)"
 msgstr ""
 
-msgid "The :mod:`webbrowser` module received a number of enhancements. It's now usable as a script with ``python -m webbrowser``, taking a URL as the argument; there are a number of switches  to control the behaviour (:option:`!-n` for a new browser window,  :option:`!-t` for a new tab).  New module-level functions, :func:`~webbrowser.open_new` and :func:`~webbrowser.open_new_tab`, were added  to support this.  The module's :func:`open` function supports an additional feature, an *autoraise* parameter that signals whether to raise the open window when possible. A number of additional browsers were added to the supported list such as Firefox, Opera, Konqueror, and elinks.  (Contributed by Oleg Broytmann and Georg Brandl.)"
+msgid "The :mod:`webbrowser` module received a number of enhancements. It's now usable as a script with ``python -m webbrowser``, taking a URL as the argument; there are a number of switches  to control the behaviour (:option:`!-n` for a new browser window,  :option:`!-t` for a new tab).  New module-level functions, :func:`open_new` and :func:`open_new_tab`, were added  to support this.  The module's :func:`open` function supports an additional feature, an *autoraise* parameter that signals whether to raise the open window when possible. A number of additional browsers were added to the supported list such as Firefox, Opera, Konqueror, and elinks.  (Contributed by Oleg Broytmann and Georg Brandl.)"
 msgstr ""
 
 msgid "The :mod:`xmlrpclib <xmlrpc.client>` module now supports returning  :class:`~datetime.datetime` objects for the XML-RPC date type.  Supply  ``use_datetime=True`` to the :func:`~xmlrpc.client.loads` function or the :class:`!Unmarshaller` class to enable this feature. (Contributed by Skip Montanaro.)"
@@ -1236,7 +1236,7 @@ msgstr ""
 msgid "The :mod:`zipfile` module now supports the ZIP64 version of the  format, meaning that a .zip archive can now be larger than 4 GiB and can contain individual files larger than 4 GiB.  (Contributed by Ronald Oussoren.)"
 msgstr ""
 
-msgid "The :mod:`zlib` module's :class:`!Compress` and :class:`!Decompress` objects now support a :meth:`copy` method that makes a copy of the  object's internal state and returns a new  :class:`!Compress` or :class:`!Decompress` object. (Contributed by Chris AtLee.)"
+msgid "The :mod:`zlib` module's :class:`Compress` and :class:`Decompress` objects now support a :meth:`copy` method that makes a copy of the  object's internal state and returns a new  :class:`Compress` or :class:`Decompress` object. (Contributed by Chris AtLee.)"
 msgstr ""
 
 msgid "The ctypes package"
@@ -1245,7 +1245,7 @@ msgstr ""
 msgid "The :mod:`ctypes` package, written by Thomas Heller, has been added  to the standard library.  :mod:`ctypes` lets you call arbitrary functions  in shared libraries or DLLs.  Long-time users may remember the :mod:`!dl` module, which provides functions for loading shared libraries and calling functions in them. The :mod:`ctypes` package is much fancier."
 msgstr ""
 
-msgid "To load a shared library or DLL, you must create an instance of the :class:`~ctypes.CDLL` class and provide the name or path of the shared library or DLL. Once that's done, you can call arbitrary functions by accessing them as attributes of the :class:`~ctypes.CDLL` object.   ::"
+msgid "To load a shared library or DLL, you must create an instance of the :class:`CDLL` class and provide the name or path of the shared library or DLL. Once that's done, you can call arbitrary functions by accessing them as attributes of the :class:`CDLL` object.   ::"
 msgstr ""
 
 msgid ""
@@ -1255,10 +1255,10 @@ msgid ""
 "result = libc.printf(\"Line of output\\n\")"
 msgstr ""
 
-msgid "Type constructors for the various C types are provided: :func:`~ctypes.c_int`, :func:`~ctypes.c_float`, :func:`~ctypes.c_double`, :func:`~ctypes.c_char_p` (equivalent to :c:expr:`char \\*`), and so forth.  Unlike Python's types, the C versions are all mutable; you can assign to their :attr:`~ctypes._SimpleCData.value` attribute to change the wrapped value.  Python integers and strings will be automatically converted to the corresponding C types, but for other types you  must call the correct type constructor.  (And I mean *must*;  getting it wrong will often result in the interpreter crashing with a segmentation fault.)"
+msgid "Type constructors for the various C types are provided: :func:`c_int`, :func:`c_float`, :func:`c_double`, :func:`c_char_p` (equivalent to :c:expr:`char \\*`), and so forth.  Unlike Python's types, the C versions are all mutable; you can assign to their :attr:`value` attribute to change the wrapped value.  Python integers and strings will be automatically converted to the corresponding C types, but for other types you  must call the correct type constructor.  (And I mean *must*;  getting it wrong will often result in the interpreter crashing with a segmentation fault.)"
 msgstr ""
 
-msgid "You shouldn't use :func:`~ctypes.c_char_p` with a Python string when the C function will be modifying the memory area, because Python strings are  supposed to be immutable; breaking this rule will cause puzzling bugs.  When you need a modifiable memory area, use :func:`~ctypes.create_string_buffer`::"
+msgid "You shouldn't use :func:`c_char_p` with a Python string when the C function will be modifying the memory area, because Python strings are  supposed to be immutable; breaking this rule will cause puzzling bugs.  When you need a modifiable memory area, use :func:`create_string_buffer`::"
 msgstr ""
 
 msgid ""
@@ -1267,7 +1267,7 @@ msgid ""
 "libc.strfry(buf)"
 msgstr ""
 
-msgid "C functions are assumed to return integers, but you can set the :attr:`~ctypes._CFuncPtr.restype` attribute of the function object to  change this::"
+msgid "C functions are assumed to return integers, but you can set the :attr:`restype` attribute of the function object to  change this::"
 msgstr ""
 
 msgid ""
@@ -1308,16 +1308,16 @@ msgstr ""
 msgid "The ElementTree package"
 msgstr ""
 
-msgid "A subset of Fredrik Lundh's ElementTree library for processing XML has been added to the standard library as :mod:`!xml.etree`.  The available modules are :mod:`!ElementTree`, :mod:`!ElementPath`, and :mod:`!ElementInclude` from ElementTree 1.2.6.    The :mod:`!cElementTree` accelerator module is also included."
+msgid "A subset of Fredrik Lundh's ElementTree library for processing XML has been added to the standard library as :mod:`xml.etree`.  The available modules are :mod:`ElementTree`, :mod:`ElementPath`, and :mod:`ElementInclude` from ElementTree 1.2.6.    The :mod:`cElementTree` accelerator module is also included."
 msgstr ""
 
 msgid "The rest of this section will provide a brief overview of using ElementTree. Full documentation for ElementTree is available at https://web.archive.org/web/20201124024954/http://effbot.org/zone/element-index.htm."
 msgstr ""
 
-msgid "ElementTree represents an XML document as a tree of element nodes. The text content of the document is stored as the :attr:`~xml.etree.ElementTree.Element.text` and :attr:`~xml.etree.ElementTree.Element.tail` attributes of  (This is one of the major differences between ElementTree and the Document Object Model; in the DOM there are many different types of node, including :class:`!TextNode`.)"
+msgid "ElementTree represents an XML document as a tree of element nodes. The text content of the document is stored as the :attr:`text` and :attr:`tail` attributes of  (This is one of the major differences between ElementTree and the Document Object Model; in the DOM there are many different types of node, including :class:`TextNode`.)"
 msgstr ""
 
-msgid "The most commonly used parsing function is :func:`~xml.etree.ElementTree.parse`, that takes either a string (assumed to contain a filename) or a file-like object and returns an :class:`~xml.etree.ElementTree.ElementTree` instance::"
+msgid "The most commonly used parsing function is :func:`parse`, that takes either a string (assumed to contain a filename) or a file-like object and returns an :class:`ElementTree` instance::"
 msgstr ""
 
 msgid ""
@@ -1330,10 +1330,10 @@ msgid ""
 "tree = ET.parse(feed)"
 msgstr ""
 
-msgid "Once you have an :class:`~xml.etree.ElementTree.ElementTree` instance, you can call its :meth:`~xml.etree.ElementTree.ElementTree.getroot` method to get the root :class:`~xml.etree.ElementTree.Element` node."
+msgid "Once you have an :class:`ElementTree` instance, you can call its :meth:`getroot` method to get the root :class:`Element` node."
 msgstr ""
 
-msgid "There's also an :func:`~xml.etree.ElementTree.XML` function that takes a string literal and returns an :class:`~xml.etree.ElementTree.Element` node (not an :class:`~xml.etree.ElementTree.ElementTree`).   This function provides a tidy way to incorporate XML fragments, approaching the convenience of an XML literal::"
+msgid "There's also an :func:`XML` function that takes a string literal and returns an :class:`Element` node (not an :class:`ElementTree`).   This function provides a tidy way to incorporate XML fragments, approaching the convenience of an XML literal::"
 msgstr ""
 
 msgid ""
@@ -1424,7 +1424,7 @@ msgstr ""
 msgid "Deletes attribute *name*."
 msgstr ""
 
-msgid "Comments and processing instructions are also represented as :class:`~xml.etree.ElementTree.Element` nodes.  To check if a node is a comment or processing instructions::"
+msgid "Comments and processing instructions are also represented as :class:`Element` nodes.  To check if a node is a comment or processing instructions::"
 msgstr ""
 
 msgid ""
@@ -1434,7 +1434,7 @@ msgid ""
 "    ..."
 msgstr ""
 
-msgid "To generate XML output, you should call the :meth:`xml.etree.ElementTree.ElementTree.write` method. Like :func:`~xml.etree.ElementTree.parse`, it can take either a string or a file-like object::"
+msgid "To generate XML output, you should call the :meth:`ElementTree.write` method. Like :func:`parse`, it can take either a string or a file-like object::"
 msgstr ""
 
 msgid ""
@@ -1492,7 +1492,7 @@ msgid ""
 "h = hashlib.new('md5')          # Provide algorithm as a string"
 msgstr ""
 
-msgid "Once a hash object has been created, its methods are the same as before: ``update(string)`` hashes the specified string into the  current digest state, :meth:`~hashlib.hash.digest` and :meth:`~hashlib.hash.hexdigest` return the digest value as a binary string or a string of hex digits, and :meth:`copy` returns a new hashing object with the same digest state."
+msgid "Once a hash object has been created, its methods are the same as before: ``update(string)`` hashes the specified string into the  current digest state, :meth:`digest` and :meth:`hexdigest` return the digest value as a binary string or a string of hex digits, and :meth:`copy` returns a new hashing object with the same digest state."
 msgstr ""
 
 msgid "The documentation  for the :mod:`hashlib` module."
@@ -1513,7 +1513,7 @@ msgstr ""
 msgid "If you're compiling the Python source yourself, note that the source tree doesn't include the SQLite code, only the wrapper module. You'll need to have the SQLite libraries and headers installed before compiling Python, and the build process will compile the module when the necessary headers are available."
 msgstr ""
 
-msgid "To use the module, you must first create a :class:`~sqlite3.Connection` object that represents the database.  Here the data will be stored in the :file:`/tmp/example` file::"
+msgid "To use the module, you must first create a :class:`Connection` object that represents the database.  Here the data will be stored in the :file:`/tmp/example` file::"
 msgstr ""
 
 msgid "conn = sqlite3.connect('/tmp/example')"
@@ -1522,7 +1522,7 @@ msgstr ""
 msgid "You can also supply the special name ``:memory:`` to create a database in RAM."
 msgstr ""
 
-msgid "Once you have a :class:`~sqlite3.Connection`, you can create a :class:`~sqlite3.Cursor`  object and call its :meth:`~sqlite3.Cursor.execute` method to perform SQL commands::"
+msgid "Once you have a :class:`Connection`, you can create a :class:`Cursor`  object and call its :meth:`execute` method to perform SQL commands::"
 msgstr ""
 
 msgid ""
@@ -1541,7 +1541,7 @@ msgstr ""
 msgid "Usually your SQL operations will need to use values from Python variables.  You shouldn't assemble your query using Python's string operations because doing so is insecure; it makes your program vulnerable to an SQL injection attack."
 msgstr ""
 
-msgid "Instead, use the DB-API's parameter substitution.  Put ``?`` as a placeholder wherever you want to use a value, and then provide a tuple of values as the second argument to the cursor's :meth:`~sqlite3.Cursor.execute` method.  (Other database modules may use a different placeholder, such as ``%s`` or ``:1``.) For example::"
+msgid "Instead, use the DB-API's parameter substitution.  Put ``?`` as a placeholder wherever you want to use a value, and then provide a tuple of values as the second argument to the cursor's :meth:`execute` method.  (Other database modules may use a different placeholder, such as ``%s`` or ``:1``.) For example::"
 msgstr ""
 
 msgid ""
@@ -1561,7 +1561,7 @@ msgid ""
 "    c.execute('insert into stocks values (?,?,?,?,?)', t)"
 msgstr ""
 
-msgid "To retrieve data after executing a SELECT statement, you can either  treat the cursor as an iterator, call the cursor's :meth:`~sqlite3.Cursor.fetchone` method to retrieve a single matching row,  or call :meth:`~sqlite3.Cursor.fetchall` to get a list of the matching rows."
+msgid "To retrieve data after executing a SELECT statement, you can either  treat the cursor as an iterator, call the cursor's :meth:`fetchone` method to retrieve a single matching row,  or call :meth:`fetchall` to get a list of the matching rows."
 msgstr ""
 
 msgid "This example uses the iterator form::"
@@ -1668,7 +1668,7 @@ msgid ""
 "for_loop = ast.body[1]"
 msgstr ""
 
-msgid "No official documentation has been written for the AST code yet, but :pep:`339` discusses the design.  To start learning about the code, read the definition of the various AST nodes in :file:`Parser/Python.asdl`.  A Python script reads this file and generates a set of C structure definitions in :file:`Include/Python-ast.h`.  The :c:func:`!PyParser_ASTFromString` and :c:func:`!PyParser_ASTFromFile`, defined in :file:`Include/pythonrun.h`, take Python source as input and return the root of an AST representing the contents. This AST can then be turned into a code object by :c:func:`!PyAST_Compile`.  For more information, read the source code, and then ask questions on python-dev."
+msgid "No official documentation has been written for the AST code yet, but :pep:`339` discusses the design.  To start learning about the code, read the definition of the various AST nodes in :file:`Parser/Python.asdl`.  A Python script reads this file and generates a set of C structure definitions in :file:`Include/Python-ast.h`.  The :c:func:`PyParser_ASTFromString` and :c:func:`!PyParser_ASTFromFile`, defined in :file:`Include/pythonrun.h`, take Python source as input and return the root of an AST representing the contents. This AST can then be turned into a code object by :c:func:`!PyAST_Compile`.  For more information, read the source code, and then ask questions on python-dev."
 msgstr ""
 
 msgid "The AST code was developed under Jeremy Hylton's management, and implemented by (in alphabetical order) Brett Cannon, Nick Coghlan, Grant Edwards, John Ehresman, Kurt Kaiser, Neal Norwitz, Tim Peters, Armin Rigo, and Neil Schemenauer, plus the participants in a number of AST sprints at conferences such as PyCon."
@@ -1730,7 +1730,7 @@ msgstr ""
 msgid "ASCII is now the default encoding for modules.  It's now  a syntax error if a module contains string literals with 8-bit characters but doesn't have an encoding declaration.  In Python 2.4 this triggered a warning, not a syntax error."
 msgstr ""
 
-msgid "Previously, the :attr:`!gi_frame` attribute of a generator was always a frame object.  Because of the :pep:`342` changes described in section :ref:`pep-342`, it's now possible for :attr:`!gi_frame` to be ``None``."
+msgid "Previously, the :attr:`gi_frame` attribute of a generator was always a frame object.  Because of the :pep:`342` changes described in section :ref:`pep-342`, it's now possible for :attr:`gi_frame` to be ``None``."
 msgstr ""
 
 msgid "A new warning, :class:`UnicodeWarning`, is triggered when  you attempt to compare a Unicode string and an 8-bit string that can't be converted to Unicode using the default ASCII encoding.  Previously such comparisons would raise a :class:`UnicodeDecodeError` exception."
@@ -1745,7 +1745,7 @@ msgstr ""
 msgid "Library: The :mod:`pickle` and :mod:`!cPickle` modules no longer accept a return value of ``None`` from the :meth:`~object.__reduce__` method; the method must return a tuple of arguments instead.  The modules also no longer accept the deprecated *bin* keyword parameter."
 msgstr ""
 
-msgid "Library: The :mod:`SimpleXMLRPCServer <xmlrpc.server>` and :mod:`DocXMLRPCServer <xmlrpc.server>`  classes now have a :attr:`~xmlrpc.server.SimpleXMLRPCRequestHandler.rpc_paths` attribute that constrains XML-RPC operations to a limited set of URL paths; the default is to allow only ``'/'`` and ``'/RPC2'``. Setting  :attr:`~xmlrpc.server.SimpleXMLRPCRequestHandler.rpc_paths` to ``None`` or an empty tuple disables this path checking."
+msgid "Library: The :mod:`SimpleXMLRPCServer <xmlrpc.server>` and :mod:`DocXMLRPCServer <xmlrpc.server>`  classes now have a :attr:`rpc_paths` attribute that constrains XML-RPC operations to a limited set of URL paths; the default is to allow only ``'/'`` and ``'/RPC2'``. Setting  :attr:`rpc_paths` to ``None`` or an empty tuple disables  this path checking."
 msgstr ""
 
 msgid "C API: Many functions now use :c:type:`Py_ssize_t`  instead of :c:expr:`int` to allow processing more data on 64-bit machines.  Extension code may need to make the same change to avoid warnings and to support 64-bit machines.  See the earlier section :ref:`pep-353` for a discussion of this change."

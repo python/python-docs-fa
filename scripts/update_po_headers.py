@@ -37,7 +37,7 @@ Usage:
     python3 scripts/update_po_headers.py --dry-run                        # just show changes
     python3 scripts/update_po_headers.py --merge                          # keep existing names, add git ones
     python3 scripts/update_po_headers.py --no-credits \\
-        --language-team "Persian (https://github.com/python/python-docs-fa/)" \\
+        --language-team "Persian (https://github.com/revisto/python-docs-fa/)" \\
         bugs.po tutorial/ library/functions.po
 """
 import argparse
@@ -273,7 +273,7 @@ def main():
         "--language-team",
         metavar="VALUE",
         help="set the Language-Team: header field to VALUE, e.g. "
-        "'Persian (https://github.com/python/python-docs-fa/)'",
+        "'Persian (https://github.com/revisto/python-docs-fa/)'",
     )
     parser.add_argument(
         "--no-credits",

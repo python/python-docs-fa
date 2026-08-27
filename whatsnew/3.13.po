@@ -14,10 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-26 03:59+0000\n"
+"POT-Creation-Date: 2026-08-18 04:30+0000\n"
 "PO-Revision-Date: 2024-05-11 01:09+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
-"Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
+"Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1456,7 +1456,7 @@ msgstr ""
 msgid "Deprecate omitting the *fields* parameter when creating a :class:`~typing.NamedTuple` or :class:`typing.TypedDict` class, and deprecate passing ``None`` to the *fields* parameter of both types. Python 3.15 will require a valid sequence for the *fields* parameter. To create a NamedTuple class with zero fields, use ``class NT(NamedTuple): pass`` or ``NT = NamedTuple(\"NT\", ())``. To create a TypedDict class with zero fields, use ``class TD(TypedDict): pass`` or ``TD = TypedDict(\"TD\", {})``. (Contributed by Alex Waygood in :gh:`105566` and :gh:`105570`.)"
 msgstr ""
 
-msgid "Deprecate the :deco:`typing.no_type_check_decorator` decorator function, to be removed in Python 3.15. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker. (Contributed by Alex Waygood in :gh:`106309`.)"
+msgid "Deprecate the :func:`typing.no_type_check_decorator` decorator function, to be removed in Python 3.15. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker. (Contributed by Alex Waygood in :gh:`106309`.)"
 msgstr ""
 
 msgid "Deprecate :data:`typing.AnyStr`. In Python 3.16, it will be removed from ``typing.__all__``, and a :exc:`DeprecationWarning` will be emitted at runtime when it is imported or accessed. It will be removed entirely in Python 3.18. Use the new :ref:`type parameter syntax <type-params>` instead. (Contributed by Michael The in :gh:`107116`.)"
@@ -1591,6 +1591,12 @@ msgstr ""
 msgid "``load_module()`` method: use ``exec_module()`` instead."
 msgstr ""
 
+msgid ":class:`locale`:"
+msgstr ""
+
+msgid "The :func:`~locale.getdefaultlocale` function has been deprecated since Python 3.11. Its removal was originally planned for Python 3.13 (:gh:`90817`), but has been postponed to Python 3.15. Use :func:`~locale.getlocale`, :func:`~locale.setlocale`, and :func:`~locale.getencoding` instead. (Contributed by Hugo van Kemenade in :gh:`111187`.)"
+msgstr ""
+
 msgid ":meth:`.PurePath.is_reserved` has been deprecated since Python 3.13. Use :func:`os.path.isreserved` to detect reserved paths on Windows."
 msgstr ""
 
@@ -1621,7 +1627,7 @@ msgstr ""
 msgid "When using the functional syntax of :class:`~typing.TypedDict`\\s, failing to pass a value to the *fields* parameter (``TD = TypedDict(\"TD\")``) or passing ``None`` (``TD = TypedDict(\"TD\", None)``) has been deprecated since Python 3.13. Use ``class TD(TypedDict): pass`` or ``TD = TypedDict(\"TD\", {})`` to create a TypedDict with zero field."
 msgstr ""
 
-msgid "The :deco:`typing.no_type_check_decorator` decorator function has been deprecated since Python 3.13. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker."
+msgid "The :func:`typing.no_type_check_decorator` decorator function has been deprecated since Python 3.13. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker."
 msgstr ""
 
 msgid "The :meth:`~wave.Wave_read.getmark`, :meth:`!setmark`, and :meth:`~wave.Wave_read.getmarkers` methods of the :class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes have been deprecated since Python 3.13."

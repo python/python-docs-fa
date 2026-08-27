@@ -1,545 +1,542 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-08-27)
+(به‌روزرسانی: 2026-08-21)
 
-| فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد ترجمه‌نشده |
-|:-----|:-----------:|:-----------:|:-----------:|:-----------:|
-| about.po | 100.0% | 0.0% | 10 | 0 |
-| bugs.po | 100.0% | 0.0% | 31 | 0 |
-| c-api/abstract.po | 100.0% | 0.0% | 3 | 0 |
-| c-api/allocation.po | 100.0% | 0.0% | 40 | 0 |
-| c-api/apiabiversion.po | 100.0% | 0.0% | 60 | 0 |
-| c-api/bool.po | 100.0% | 0.0% | 11 | 0 |
-| c-api/bytearray.po | 100.0% | 0.0% | 23 | 0 |
-| contents.po | 100.0% | 0.0% | 1 | 0 |
-| copyright.po | 100.0% | 0.0% | 7 | 0 |
-| glossary.po | 100.0% | 0.0% | 499 | 0 |
-| improve-page-nojs.po | 100.0% | 0.0% | 6 | 0 |
-| improve-page.po | 100.0% | 0.0% | 8 | 0 |
-| library/__future__.po | 100.0% | 0.0% | 49 | 0 |
-| library/functions.po | 100.0% | 0.0% | 521 | 0 |
-| sphinx.po | 100.0% | 0.0% | 112 | 0 |
-| tutorial/appendix.po | 100.0% | 0.0% | 28 | 0 |
-| tutorial/appetite.po | 100.0% | 0.0% | 17 | 0 |
-| tutorial/classes.po | 100.0% | 0.0% | 149 | 0 |
-| tutorial/controlflow.po | 100.0% | 0.0% | 226 | 0 |
-| tutorial/datastructures.po | 100.0% | 0.0% | 127 | 0 |
-| tutorial/errors.po | 100.0% | 0.0% | 96 | 0 |
-| tutorial/floatingpoint.po | 100.0% | 0.0% | 76 | 0 |
-| tutorial/index.po | 100.0% | 0.0% | 9 | 0 |
-| tutorial/inputoutput.po | 100.0% | 0.0% | 112 | 0 |
-| tutorial/interactive.po | 100.0% | 0.0% | 7 | 0 |
-| tutorial/interpreter.po | 100.0% | 0.0% | 33 | 0 |
-| tutorial/introduction.po | 100.0% | 0.0% | 120 | 0 |
-| tutorial/modules.po | 100.0% | 0.0% | 117 | 0 |
-| tutorial/stdlib.po | 100.0% | 0.0% | 67 | 0 |
-| tutorial/stdlib2.po | 100.0% | 0.0% | 65 | 0 |
-| tutorial/venv.po | 100.0% | 0.0% | 43 | 0 |
-| tutorial/whatnow.po | 100.0% | 0.0% | 18 | 0 |
-| library/__main__.po | 13.9% | 0.0% | 10 | 62 |
-| c-api/dict.po | 2.8% | 0.0% | 3 | 106 |
-| library/json.po | 1.1% | 0.0% | 2 | 175 |
-| c-api/arg.po | 0.0% | 0.0% | 0 | 205 |
-| c-api/buffer.po | 0.0% | 0.0% | 0 | 119 |
-| c-api/bytes.po | 0.0% | 0.0% | 0 | 77 |
-| c-api/call.po | 0.0% | 0.0% | 0 | 99 |
-| c-api/capsule.po | 0.0% | 0.0% | 0 | 36 |
-| c-api/cell.po | 0.0% | 0.0% | 0 | 11 |
-| c-api/code.po | 0.0% | 0.0% | 0 | 82 |
-| c-api/codec.po | 0.0% | 0.0% | 0 | 30 |
-| c-api/complex.po | 0.0% | 0.0% | 0 | 35 |
-| c-api/concrete.po | 0.0% | 0.0% | 0 | 16 |
-| c-api/contextvars.po | 0.0% | 0.0% | 0 | 38 |
-| c-api/conversion.po | 0.0% | 0.0% | 0 | 55 |
-| c-api/coro.po | 0.0% | 0.0% | 0 | 6 |
-| c-api/curses.po | 0.0% | 0.0% | 0 | 28 |
-| c-api/datetime.po | 0.0% | 0.0% | 0 | 65 |
-| c-api/descriptor.po | 0.0% | 0.0% | 0 | 33 |
-| c-api/exceptions.po | 0.0% | 0.0% | 0 | 274 |
-| c-api/extension-modules.po | 0.0% | 0.0% | 0 | 50 |
-| c-api/file.po | 0.0% | 0.0% | 0 | 31 |
-| c-api/float.po | 0.0% | 0.0% | 0 | 58 |
-| c-api/frame.po | 0.0% | 0.0% | 0 | 61 |
-| c-api/function.po | 0.0% | 0.0% | 0 | 43 |
-| c-api/gcsupport.po | 0.0% | 0.0% | 0 | 68 |
-| c-api/gen.po | 0.0% | 0.0% | 0 | 18 |
-| c-api/hash.po | 0.0% | 0.0% | 0 | 40 |
-| c-api/import.po | 0.0% | 0.0% | 0 | 67 |
-| c-api/index.po | 0.0% | 0.0% | 0 | 2 |
-| c-api/init.po | 0.0% | 0.0% | 0 | 8 |
-| c-api/init_config.po | 0.0% | 0.0% | 0 | 639 |
-| c-api/interp-lifecycle.po | 0.0% | 0.0% | 0 | 202 |
-| c-api/intro.po | 0.0% | 0.0% | 0 | 217 |
-| c-api/iter.po | 0.0% | 0.0% | 0 | 12 |
-| c-api/iterator.po | 0.0% | 0.0% | 0 | 24 |
-| c-api/lifecycle.po | 0.0% | 0.0% | 0 | 45 |
-| c-api/list.po | 0.0% | 0.0% | 0 | 38 |
-| c-api/long.po | 0.0% | 0.0% | 0 | 179 |
-| c-api/mapping.po | 0.0% | 0.0% | 0 | 23 |
-| c-api/marshal.po | 0.0% | 0.0% | 0 | 17 |
-| c-api/memory.po | 0.0% | 0.0% | 0 | 219 |
-| c-api/memoryview.po | 0.0% | 0.0% | 0 | 15 |
-| c-api/method.po | 0.0% | 0.0% | 0 | 20 |
-| c-api/module.po | 0.0% | 0.0% | 0 | 135 |
-| c-api/monitoring.po | 0.0% | 0.0% | 0 | 55 |
-| c-api/none.po | 0.0% | 0.0% | 0 | 7 |
-| c-api/number.po | 0.0% | 0.0% | 0 | 48 |
-| c-api/object.po | 0.0% | 0.0% | 0 | 147 |
-| c-api/objimpl.po | 0.0% | 0.0% | 0 | 2 |
-| c-api/perfmaps.po | 0.0% | 0.0% | 0 | 24 |
-| c-api/picklebuffer.po | 0.0% | 0.0% | 0 | 16 |
-| c-api/profiling.po | 0.0% | 0.0% | 0 | 46 |
-| c-api/refcounting.po | 0.0% | 0.0% | 0 | 50 |
-| c-api/reflection.po | 0.0% | 0.0% | 0 | 17 |
-| c-api/sequence.po | 0.0% | 0.0% | 0 | 32 |
-| c-api/set.po | 0.0% | 0.0% | 0 | 35 |
-| c-api/slice.po | 0.0% | 0.0% | 0 | 25 |
-| c-api/stable.po | 0.0% | 0.0% | 0 | 45 |
-| c-api/structures.po | 0.0% | 0.0% | 0 | 206 |
-| c-api/subinterpreters.po | 0.0% | 0.0% | 0 | 87 |
-| c-api/synchronization.po | 0.0% | 0.0% | 0 | 58 |
-| c-api/sys.po | 0.0% | 0.0% | 0 | 87 |
-| c-api/threads.po | 0.0% | 0.0% | 0 | 176 |
-| c-api/time.po | 0.0% | 0.0% | 0 | 27 |
-| c-api/tls.po | 0.0% | 0.0% | 0 | 27 |
-| c-api/tuple.po | 0.0% | 0.0% | 0 | 47 |
-| c-api/type.po | 0.0% | 0.0% | 0 | 137 |
-| c-api/typehints.po | 0.0% | 0.0% | 0 | 7 |
-| c-api/typeobj.po | 0.0% | 0.0% | 0 | 764 |
-| c-api/unicode.po | 0.0% | 0.0% | 0 | 414 |
-| c-api/utilities.po | 0.0% | 0.0% | 0 | 2 |
-| c-api/veryhigh.po | 0.0% | 0.0% | 0 | 86 |
-| c-api/weakref.po | 0.0% | 0.0% | 0 | 23 |
-| deprecations/c-api-pending-removal-in-3.14.po | 0.0% | 0.0% | 0 | 3 |
-| deprecations/c-api-pending-removal-in-3.15.po | 0.0% | 0.0% | 0 | 45 |
-| deprecations/c-api-pending-removal-in-3.16.po | 0.0% | 0.0% | 0 | 2 |
-| deprecations/c-api-pending-removal-in-3.18.po | 0.0% | 0.0% | 0 | 22 |
-| deprecations/c-api-pending-removal-in-future.po | 0.0% | 0.0% | 0 | 20 |
-| deprecations/index.po | 0.0% | 0.0% | 0 | 230 |
-| deprecations/pending-removal-in-3.13.po | 0.0% | 0.0% | 0 | 33 |
-| deprecations/pending-removal-in-3.14.po | 0.0% | 0.0% | 0 | 33 |
-| deprecations/pending-removal-in-3.15.po | 0.0% | 0.0% | 0 | 29 |
-| deprecations/pending-removal-in-3.16.po | 0.0% | 0.0% | 0 | 36 |
-| deprecations/pending-removal-in-3.17.po | 0.0% | 0.0% | 0 | 9 |
-| deprecations/pending-removal-in-3.18.po | 0.0% | 0.0% | 0 | 3 |
-| deprecations/pending-removal-in-3.19.po | 0.0% | 0.0% | 0 | 3 |
-| deprecations/pending-removal-in-future.po | 0.0% | 0.0% | 0 | 70 |
-| distributing/index.po | 0.0% | 0.0% | 0 | 2 |
-| extending/building.po | 0.0% | 0.0% | 0 | 6 |
-| extending/embedding.po | 0.0% | 0.0% | 0 | 59 |
-| extending/extending.po | 0.0% | 0.0% | 0 | 226 |
-| extending/index.po | 0.0% | 0.0% | 0 | 11 |
-| extending/newtypes.po | 0.0% | 0.0% | 0 | 117 |
-| extending/newtypes_tutorial.po | 0.0% | 0.0% | 0 | 180 |
-| extending/windows.po | 0.0% | 0.0% | 0 | 28 |
-| faq/design.po | 0.0% | 0.0% | 0 | 172 |
-| faq/extending.po | 0.0% | 0.0% | 0 | 64 |
-| faq/general.po | 0.0% | 0.0% | 0 | 98 |
-| faq/gui.po | 0.0% | 0.0% | 0 | 16 |
-| faq/index.po | 0.0% | 0.0% | 0 | 1 |
-| faq/installed.po | 0.0% | 0.0% | 0 | 15 |
-| faq/library.po | 0.0% | 0.0% | 0 | 153 |
-| faq/programming.po | 0.0% | 0.0% | 0 | 506 |
-| faq/windows.po | 0.0% | 0.0% | 0 | 58 |
-| howto/a-conceptual-overview-of-asyncio.po | 0.0% | 0.0% | 0 | 93 |
-| howto/annotations.po | 0.0% | 0.0% | 0 | 52 |
-| howto/argparse-optparse.po | 0.0% | 0.0% | 0 | 20 |
-| howto/argparse.po | 0.0% | 0.0% | 0 | 145 |
-| howto/clinic.po | 0.0% | 0.0% | 0 | 2 |
-| howto/cporting.po | 0.0% | 0.0% | 0 | 5 |
-| howto/curses.po | 0.0% | 0.0% | 0 | 121 |
-| howto/descriptor.po | 0.0% | 0.0% | 0 | 230 |
-| howto/enum.po | 0.0% | 0.0% | 0 | 309 |
-| howto/free-threading-extensions.po | 0.0% | 0.0% | 0 | 106 |
-| howto/free-threading-python.po | 0.0% | 0.0% | 0 | 67 |
-| howto/functional.po | 0.0% | 0.0% | 0 | 252 |
-| howto/gdb_helpers.po | 0.0% | 0.0% | 0 | 86 |
-| howto/index.po | 0.0% | 0.0% | 0 | 30 |
-| howto/instrumentation.po | 0.0% | 0.0% | 0 | 99 |
-| howto/ipaddress.po | 0.0% | 0.0% | 0 | 65 |
-| howto/isolating-extensions.po | 0.0% | 0.0% | 0 | 134 |
-| howto/logging-cookbook.po | 0.0% | 0.0% | 0 | 435 |
-| howto/logging.po | 0.0% | 0.0% | 0 | 250 |
-| howto/mro.po | 0.0% | 0.0% | 0 | 120 |
-| howto/perf_profiling.po | 0.0% | 0.0% | 0 | 50 |
-| howto/pyporting.po | 0.0% | 0.0% | 0 | 13 |
-| howto/regex.po | 0.0% | 0.0% | 0 | 337 |
-| howto/remote_debugging.po | 0.0% | 0.0% | 0 | 146 |
-| howto/sockets.po | 0.0% | 0.0% | 0 | 63 |
-| howto/sorting.po | 0.0% | 0.0% | 0 | 92 |
-| howto/timerfd.po | 0.0% | 0.0% | 0 | 12 |
-| howto/unicode.po | 0.0% | 0.0% | 0 | 145 |
-| howto/urllib2.po | 0.0% | 0.0% | 0 | 100 |
-| installing/index.po | 0.0% | 0.0% | 0 | 53 |
-| library/_thread.po | 0.0% | 0.0% | 0 | 52 |
-| library/abc.po | 0.0% | 0.0% | 0 | 60 |
-| library/aifc.po | 0.0% | 0.0% | 0 | 3 |
-| library/allos.po | 0.0% | 0.0% | 0 | 2 |
-| library/annotationlib.po | 0.0% | 0.0% | 0 | 158 |
-| library/archiving.po | 0.0% | 0.0% | 0 | 2 |
-| library/argparse.po | 0.0% | 0.0% | 0 | 408 |
-| library/array.po | 0.0% | 0.0% | 0 | 89 |
-| library/ast.po | 0.0% | 0.0% | 0 | 339 |
-| library/asynchat.po | 0.0% | 0.0% | 0 | 4 |
-| library/asyncio-api-index.po | 0.0% | 0.0% | 0 | 100 |
-| library/asyncio-dev.po | 0.0% | 0.0% | 0 | 84 |
-| library/asyncio-eventloop.po | 0.0% | 0.0% | 0 | 426 |
-| library/asyncio-exceptions.po | 0.0% | 0.0% | 0 | 19 |
-| library/asyncio-extending.po | 0.0% | 0.0% | 0 | 27 |
-| library/asyncio-future.po | 0.0% | 0.0% | 0 | 66 |
-| library/asyncio-graph.po | 0.0% | 0.0% | 0 | 32 |
-| library/asyncio-llapi-index.po | 0.0% | 0.0% | 0 | 238 |
-| library/asyncio-platforms.po | 0.0% | 0.0% | 0 | 27 |
-| library/asyncio-policy.po | 0.0% | 0.0% | 0 | 36 |
-| library/asyncio-protocol.po | 0.0% | 0.0% | 0 | 194 |
-| library/asyncio-queue.po | 0.0% | 0.0% | 0 | 49 |
-| library/asyncio-runner.po | 0.0% | 0.0% | 0 | 41 |
-| library/asyncio-stream.po | 0.0% | 0.0% | 0 | 105 |
-| library/asyncio-subprocess.po | 0.0% | 0.0% | 0 | 80 |
-| library/asyncio-sync.po | 0.0% | 0.0% | 0 | 100 |
-| library/asyncio-task.po | 0.0% | 0.0% | 0 | 277 |
-| library/asyncio-threading.po | 0.0% | 0.0% | 0 | 21 |
-| library/asyncio-tools.po | 0.0% | 0.0% | 0 | 22 |
-| library/asyncio.po | 0.0% | 0.0% | 0 | 36 |
-| library/asyncore.po | 0.0% | 0.0% | 0 | 4 |
-| library/atexit.po | 0.0% | 0.0% | 0 | 22 |
-| library/audioop.po | 0.0% | 0.0% | 0 | 3 |
-| library/audit_events.po | 0.0% | 0.0% | 0 | 26 |
-| library/base64.po | 0.0% | 0.0% | 0 | 78 |
-| library/bdb.po | 0.0% | 0.0% | 0 | 119 |
-| library/binary.po | 0.0% | 0.0% | 0 | 4 |
-| library/binascii.po | 0.0% | 0.0% | 0 | 38 |
-| library/bisect.po | 0.0% | 0.0% | 0 | 36 |
-| library/builtins.po | 0.0% | 0.0% | 0 | 9 |
-| library/bz2.po | 0.0% | 0.0% | 0 | 75 |
-| library/calendar.po | 0.0% | 0.0% | 0 | 117 |
-| library/cgi.po | 0.0% | 0.0% | 0 | 4 |
-| library/cgitb.po | 0.0% | 0.0% | 0 | 4 |
-| library/chunk.po | 0.0% | 0.0% | 0 | 3 |
-| library/cmath.po | 0.0% | 0.0% | 0 | 124 |
-| library/cmd.po | 0.0% | 0.0% | 0 | 50 |
-| library/cmdline.po | 0.0% | 0.0% | 0 | 53 |
-| library/cmdlinelibs.po | 0.0% | 0.0% | 0 | 3 |
-| library/code.po | 0.0% | 0.0% | 0 | 33 |
-| library/codecs.po | 0.0% | 0.0% | 0 | 565 |
-| library/codeop.po | 0.0% | 0.0% | 0 | 14 |
-| library/collections.abc.po | 0.0% | 0.0% | 0 | 142 |
-| library/collections.po | 0.0% | 0.0% | 0 | 244 |
-| library/colorsys.po | 0.0% | 0.0% | 0 | 13 |
-| library/compileall.po | 0.0% | 0.0% | 0 | 63 |
-| library/compression.po | 0.0% | 0.0% | 0 | 7 |
-| library/compression.zstd.po | 0.0% | 0.0% | 0 | 174 |
-| library/concurrency.po | 0.0% | 0.0% | 0 | 3 |
-| library/concurrent.futures.po | 0.0% | 0.0% | 0 | 121 |
-| library/concurrent.interpreters.po | 0.0% | 0.0% | 0 | 87 |
-| library/concurrent.po | 0.0% | 0.0% | 0 | 4 |
-| library/configparser.po | 0.0% | 0.0% | 0 | 226 |
-| library/constants.po | 0.0% | 0.0% | 0 | 22 |
-| library/contextlib.po | 0.0% | 0.0% | 0 | 172 |
-| library/contextvars.po | 0.0% | 0.0% | 0 | 66 |
-| library/copy.po | 0.0% | 0.0% | 0 | 32 |
-| library/copyreg.po | 0.0% | 0.0% | 0 | 12 |
-| library/crypt.po | 0.0% | 0.0% | 0 | 4 |
-| library/crypto.po | 0.0% | 0.0% | 0 | 3 |
-| library/csv.po | 0.0% | 0.0% | 0 | 130 |
-| library/ctypes.po | 0.0% | 0.0% | 0 | 676 |
-| library/curses.ascii.po | 0.0% | 0.0% | 0 | 69 |
-| library/curses.panel.po | 0.0% | 0.0% | 0 | 25 |
-| library/curses.po | 0.0% | 0.0% | 0 | 503 |
-| library/custominterp.po | 0.0% | 0.0% | 0 | 3 |
-| library/dataclasses.po | 0.0% | 0.0% | 0 | 162 |
-| library/datatypes.po | 0.0% | 0.0% | 0 | 4 |
-| library/datetime.po | 0.0% | 0.0% | 0 | 658 |
-| library/dbm.po | 0.0% | 0.0% | 0 | 108 |
-| library/debug.po | 0.0% | 0.0% | 0 | 2 |
-| library/decimal.po | 0.0% | 0.0% | 0 | 386 |
-| library/development.po | 0.0% | 0.0% | 0 | 3 |
-| library/devmode.po | 0.0% | 0.0% | 0 | 58 |
-| library/dialog.po | 0.0% | 0.0% | 0 | 68 |
-| library/difflib.po | 0.0% | 0.0% | 0 | 150 |
-| library/dis.po | 0.0% | 0.0% | 0 | 414 |
-| library/distribution.po | 0.0% | 0.0% | 0 | 2 |
-| library/distutils.po | 0.0% | 0.0% | 0 | 3 |
-| library/doctest.po | 0.0% | 0.0% | 0 | 379 |
-| library/email.charset.po | 0.0% | 0.0% | 0 | 44 |
-| library/email.compat32-message.po | 0.0% | 0.0% | 0 | 115 |
-| library/email.contentmanager.po | 0.0% | 0.0% | 0 | 42 |
-| library/email.encoders.po | 0.0% | 0.0% | 0 | 15 |
-| library/email.errors.po | 0.0% | 0.0% | 0 | 26 |
-| library/email.examples.po | 0.0% | 0.0% | 0 | 20 |
-| library/email.generator.po | 0.0% | 0.0% | 0 | 41 |
-| library/email.header.po | 0.0% | 0.0% | 0 | 46 |
-| library/email.headerregistry.po | 0.0% | 0.0% | 0 | 111 |
-| library/email.iterators.po | 0.0% | 0.0% | 0 | 12 |
-| library/email.message.po | 0.0% | 0.0% | 0 | 111 |
-| library/email.mime.po | 0.0% | 0.0% | 0 | 38 |
-| library/email.parser.po | 0.0% | 0.0% | 0 | 48 |
-| library/email.po | 0.0% | 0.0% | 0 | 23 |
-| library/email.policy.po | 0.0% | 0.0% | 0 | 108 |
-| library/email.utils.po | 0.0% | 0.0% | 0 | 36 |
-| library/ensurepip.po | 0.0% | 0.0% | 0 | 40 |
-| library/enum.po | 0.0% | 0.0% | 0 | 257 |
-| library/errno.po | 0.0% | 0.0% | 0 | 161 |
-| library/exceptions.po | 0.0% | 0.0% | 0 | 204 |
-| library/faulthandler.po | 0.0% | 0.0% | 0 | 53 |
-| library/fcntl.po | 0.0% | 0.0% | 0 | 54 |
-| library/filecmp.po | 0.0% | 0.0% | 0 | 42 |
-| library/fileformats.po | 0.0% | 0.0% | 0 | 2 |
-| library/fileinput.po | 0.0% | 0.0% | 0 | 46 |
-| library/filesys.po | 0.0% | 0.0% | 0 | 8 |
-| library/fnmatch.po | 0.0% | 0.0% | 0 | 38 |
-| library/fractions.po | 0.0% | 0.0% | 0 | 41 |
-| library/frameworks.po | 0.0% | 0.0% | 0 | 5 |
-| library/ftplib.po | 0.0% | 0.0% | 0 | 99 |
-| library/functional.po | 0.0% | 0.0% | 0 | 3 |
-| library/functools.po | 0.0% | 0.0% | 0 | 126 |
-| library/gc.po | 0.0% | 0.0% | 0 | 67 |
-| library/getopt.po | 0.0% | 0.0% | 0 | 37 |
-| library/getpass.po | 0.0% | 0.0% | 0 | 16 |
-| library/gettext.po | 0.0% | 0.0% | 0 | 129 |
-| library/glob.po | 0.0% | 0.0% | 0 | 46 |
-| library/graphlib.po | 0.0% | 0.0% | 0 | 40 |
-| library/grp.po | 0.0% | 0.0% | 0 | 27 |
-| library/gzip.po | 0.0% | 0.0% | 0 | 71 |
-| library/hashlib.po | 0.0% | 0.0% | 0 | 170 |
-| library/heapq.po | 0.0% | 0.0% | 0 | 73 |
-| library/hmac.po | 0.0% | 0.0% | 0 | 27 |
-| library/html.entities.po | 0.0% | 0.0% | 0 | 9 |
-| library/html.parser.po | 0.0% | 0.0% | 0 | 64 |
-| library/html.po | 0.0% | 0.0% | 0 | 8 |
-| library/http.client.po | 0.0% | 0.0% | 0 | 118 |
-| library/http.cookiejar.po | 0.0% | 0.0% | 0 | 159 |
-| library/http.cookies.po | 0.0% | 0.0% | 0 | 52 |
-| library/http.po | 0.0% | 0.0% | 0 | 247 |
-| library/http.server.po | 0.0% | 0.0% | 0 | 141 |
-| library/i18n.po | 0.0% | 0.0% | 0 | 3 |
-| library/idle.po | 0.0% | 0.0% | 0 | 297 |
-| library/imaplib.po | 0.0% | 0.0% | 0 | 134 |
-| library/imghdr.po | 0.0% | 0.0% | 0 | 4 |
-| library/imp.po | 0.0% | 0.0% | 0 | 4 |
-| library/importlib.metadata.po | 0.0% | 0.0% | 0 | 120 |
-| library/importlib.po | 0.0% | 0.0% | 0 | 284 |
-| library/importlib.resources.abc.po | 0.0% | 0.0% | 0 | 37 |
-| library/importlib.resources.po | 0.0% | 0.0% | 0 | 53 |
-| library/index.po | 0.0% | 0.0% | 0 | 5 |
-| library/inspect.po | 0.0% | 0.0% | 0 | 420 |
-| library/internet.po | 0.0% | 0.0% | 0 | 7 |
-| library/intro.po | 0.0% | 0.0% | 0 | 32 |
-| library/io.po | 0.0% | 0.0% | 0 | 289 |
-| library/ipaddress.po | 0.0% | 0.0% | 0 | 168 |
-| library/ipc.po | 0.0% | 0.0% | 0 | 4 |
-| library/itertools.po | 0.0% | 0.0% | 0 | 198 |
-| library/keyword.po | 0.0% | 0.0% | 0 | 7 |
-| library/language.po | 0.0% | 0.0% | 0 | 3 |
-| library/linecache.po | 0.0% | 0.0% | 0 | 17 |
-| library/locale.po | 0.0% | 0.0% | 0 | 163 |
-| library/logging.config.po | 0.0% | 0.0% | 0 | 171 |
-| library/logging.handlers.po | 0.0% | 0.0% | 0 | 276 |
-| library/logging.po | 0.0% | 0.0% | 0 | 372 |
-| library/lzma.po | 0.0% | 0.0% | 0 | 128 |
-| library/mailbox.po | 0.0% | 0.0% | 0 | 307 |
-| library/mailcap.po | 0.0% | 0.0% | 0 | 3 |
-| library/markup.po | 0.0% | 0.0% | 0 | 2 |
-| library/marshal.po | 0.0% | 0.0% | 0 | 56 |
-| library/math.po | 0.0% | 0.0% | 0 | 268 |
-| library/mimetypes.po | 0.0% | 0.0% | 0 | 68 |
-| library/mm.po | 0.0% | 0.0% | 0 | 2 |
-| library/mmap.po | 0.0% | 0.0% | 0 | 65 |
-| library/modulefinder.po | 0.0% | 0.0% | 0 | 16 |
-| library/modules.po | 0.0% | 0.0% | 0 | 3 |
-| library/msilib.po | 0.0% | 0.0% | 0 | 3 |
-| library/msvcrt.po | 0.0% | 0.0% | 0 | 47 |
-| library/multiprocessing.po | 0.0% | 0.0% | 0 | 620 |
-| library/multiprocessing.shared_memory.po | 0.0% | 0.0% | 0 | 56 |
-| library/netdata.po | 0.0% | 0.0% | 0 | 2 |
-| library/netrc.po | 0.0% | 0.0% | 0 | 19 |
-| library/nis.po | 0.0% | 0.0% | 0 | 3 |
-| library/nntplib.po | 0.0% | 0.0% | 0 | 3 |
-| library/numbers.po | 0.0% | 0.0% | 0 | 34 |
-| library/numeric.po | 0.0% | 0.0% | 0 | 3 |
-| library/operator.po | 0.0% | 0.0% | 0 | 189 |
-| library/optparse.po | 0.0% | 0.0% | 0 | 532 |
-| library/os.path.po | 0.0% | 0.0% | 0 | 110 |
-| library/os.po | 0.0% | 0.0% | 0 | 1075 |
-| library/ossaudiodev.po | 0.0% | 0.0% | 0 | 3 |
-| library/pathlib.po | 0.0% | 0.0% | 0 | 445 |
-| library/pdb.po | 0.0% | 0.0% | 0 | 179 |
-| library/persistence.po | 0.0% | 0.0% | 0 | 3 |
-| library/pickle.po | 0.0% | 0.0% | 0 | 251 |
-| library/pickletools.po | 0.0% | 0.0% | 0 | 19 |
-| library/pipes.po | 0.0% | 0.0% | 0 | 4 |
-| library/pkgutil.po | 0.0% | 0.0% | 0 | 49 |
-| library/platform.po | 0.0% | 0.0% | 0 | 89 |
-| library/plistlib.po | 0.0% | 0.0% | 0 | 51 |
-| library/poplib.po | 0.0% | 0.0% | 0 | 53 |
-| library/posix.po | 0.0% | 0.0% | 0 | 21 |
-| library/pprint.po | 0.0% | 0.0% | 0 | 50 |
-| library/profile.po | 0.0% | 0.0% | 0 | 181 |
-| library/pty.po | 0.0% | 0.0% | 0 | 21 |
-| library/pwd.po | 0.0% | 0.0% | 0 | 36 |
-| library/py_compile.po | 0.0% | 0.0% | 0 | 30 |
-| library/pyclbr.po | 0.0% | 0.0% | 0 | 26 |
-| library/pydoc.po | 0.0% | 0.0% | 0 | 25 |
-| library/pyexpat.po | 0.0% | 0.0% | 0 | 165 |
-| library/python.po | 0.0% | 0.0% | 0 | 3 |
-| library/queue.po | 0.0% | 0.0% | 0 | 58 |
-| library/quopri.po | 0.0% | 0.0% | 0 | 13 |
-| library/random.po | 0.0% | 0.0% | 0 | 138 |
-| library/re.po | 0.0% | 0.0% | 0 | 445 |
-| library/readline.po | 0.0% | 0.0% | 0 | 59 |
-| library/removed.po | 0.0% | 0.0% | 0 | 2 |
-| library/reprlib.po | 0.0% | 0.0% | 0 | 39 |
-| library/resource.po | 0.0% | 0.0% | 0 | 110 |
-| library/rlcompleter.po | 0.0% | 0.0% | 0 | 13 |
-| library/runpy.po | 0.0% | 0.0% | 0 | 40 |
-| library/sched.po | 0.0% | 0.0% | 0 | 25 |
-| library/secrets.po | 0.0% | 0.0% | 0 | 39 |
-| library/security_warnings.po | 0.0% | 0.0% | 0 | 17 |
-| library/select.po | 0.0% | 0.0% | 0 | 209 |
-| library/selectors.po | 0.0% | 0.0% | 0 | 58 |
-| library/shelve.po | 0.0% | 0.0% | 0 | 40 |
-| library/shlex.po | 0.0% | 0.0% | 0 | 77 |
-| library/shutil.po | 0.0% | 0.0% | 0 | 194 |
-| library/signal.po | 0.0% | 0.0% | 0 | 143 |
-| library/site.po | 0.0% | 0.0% | 0 | 61 |
-| library/smtpd.po | 0.0% | 0.0% | 0 | 4 |
-| library/smtplib.po | 0.0% | 0.0% | 0 | 124 |
-| library/sndhdr.po | 0.0% | 0.0% | 0 | 4 |
-| library/socket.po | 0.0% | 0.0% | 0 | 385 |
-| library/socketserver.po | 0.0% | 0.0% | 0 | 99 |
-| library/spwd.po | 0.0% | 0.0% | 0 | 4 |
-| library/sqlite3.po | 0.0% | 0.0% | 0 | 480 |
-| library/ssl.po | 0.0% | 0.0% | 0 | 547 |
-| library/stat.po | 0.0% | 0.0% | 0 | 92 |
-| library/statistics.po | 0.0% | 0.0% | 0 | 248 |
-| library/stdtypes.po | 0.0% | 0.0% | 0 | 1582 |
-| library/string.po | 0.0% | 0.0% | 0 | 224 |
-| library/string.templatelib.po | 0.0% | 0.0% | 0 | 56 |
-| library/stringprep.po | 0.0% | 0.0% | 0 | 25 |
-| library/struct.po | 0.0% | 0.0% | 0 | 205 |
-| library/subprocess.po | 0.0% | 0.0% | 0 | 314 |
-| library/sunau.po | 0.0% | 0.0% | 0 | 3 |
-| library/superseded.po | 0.0% | 0.0% | 0 | 4 |
-| library/symtable.po | 0.0% | 0.0% | 0 | 73 |
-| library/sys.monitoring.po | 0.0% | 0.0% | 0 | 119 |
-| library/sys.po | 0.0% | 0.0% | 0 | 478 |
-| library/sys_path_init.po | 0.0% | 0.0% | 0 | 27 |
-| library/sysconfig.po | 0.0% | 0.0% | 0 | 136 |
-| library/syslog.po | 0.0% | 0.0% | 0 | 31 |
-| library/tabnanny.po | 0.0% | 0.0% | 0 | 11 |
-| library/tarfile.po | 0.0% | 0.0% | 0 | 363 |
-| library/telnetlib.po | 0.0% | 0.0% | 0 | 4 |
-| library/tempfile.po | 0.0% | 0.0% | 0 | 88 |
-| library/termios.po | 0.0% | 0.0% | 0 | 25 |
-| library/test.po | 0.0% | 0.0% | 0 | 337 |
-| library/text.po | 0.0% | 0.0% | 0 | 3 |
-| library/textwrap.po | 0.0% | 0.0% | 0 | 58 |
-| library/threading.po | 0.0% | 0.0% | 0 | 284 |
-| library/threadsafety.po | 0.0% | 0.0% | 0 | 122 |
-| library/time.po | 0.0% | 0.0% | 0 | 280 |
-| library/timeit.po | 0.0% | 0.0% | 0 | 68 |
-| library/tk.po | 0.0% | 0.0% | 0 | 8 |
-| library/tkinter.colorchooser.po | 0.0% | 0.0% | 0 | 8 |
-| library/tkinter.dnd.po | 0.0% | 0.0% | 0 | 20 |
-| library/tkinter.font.po | 0.0% | 0.0% | 0 | 37 |
-| library/tkinter.messagebox.po | 0.0% | 0.0% | 0 | 43 |
-| library/tkinter.po | 0.0% | 0.0% | 0 | 1236 |
-| library/tkinter.scrolledtext.po | 0.0% | 0.0% | 0 | 7 |
-| library/tkinter.ttk.po | 0.0% | 0.0% | 0 | 476 |
-| library/token.po | 0.0% | 0.0% | 0 | 100 |
-| library/tokenize.po | 0.0% | 0.0% | 0 | 52 |
-| library/tomllib.po | 0.0% | 0.0% | 0 | 52 |
-| library/trace.po | 0.0% | 0.0% | 0 | 43 |
-| library/traceback.po | 0.0% | 0.0% | 0 | 118 |
-| library/tracemalloc.po | 0.0% | 0.0% | 0 | 156 |
-| library/tty.po | 0.0% | 0.0% | 0 | 17 |
-| library/turtle.po | 0.0% | 0.0% | 0 | 691 |
-| library/types.po | 0.0% | 0.0% | 0 | 105 |
-| library/typing.po | 0.0% | 0.0% | 0 | 833 |
-| library/unicodedata.po | 0.0% | 0.0% | 0 | 43 |
-| library/unittest.mock-examples.po | 0.0% | 0.0% | 0 | 182 |
-| library/unittest.mock.po | 0.0% | 0.0% | 0 | 448 |
-| library/unittest.po | 0.0% | 0.0% | 0 | 560 |
-| library/unix.po | 0.0% | 0.0% | 0 | 2 |
-| library/urllib.error.po | 0.0% | 0.0% | 0 | 15 |
-| library/urllib.parse.po | 0.0% | 0.0% | 0 | 169 |
-| library/urllib.po | 0.0% | 0.0% | 0 | 7 |
-| library/urllib.request.po | 0.0% | 0.0% | 0 | 295 |
-| library/urllib.robotparser.po | 0.0% | 0.0% | 0 | 19 |
-| library/uu.po | 0.0% | 0.0% | 0 | 4 |
-| library/uuid.po | 0.0% | 0.0% | 0 | 79 |
-| library/venv.po | 0.0% | 0.0% | 0 | 137 |
-| library/warnings.po | 0.0% | 0.0% | 0 | 160 |
-| library/wave.po | 0.0% | 0.0% | 0 | 61 |
-| library/weakref.po | 0.0% | 0.0% | 0 | 96 |
-| library/webbrowser.po | 0.0% | 0.0% | 0 | 90 |
-| library/windows.po | 0.0% | 0.0% | 0 | 2 |
-| library/winreg.po | 0.0% | 0.0% | 0 | 176 |
-| library/winsound.po | 0.0% | 0.0% | 0 | 40 |
-| library/wsgiref.po | 0.0% | 0.0% | 0 | 135 |
-| library/xdrlib.po | 0.0% | 0.0% | 0 | 3 |
-| library/xml.dom.minidom.po | 0.0% | 0.0% | 0 | 56 |
-| library/xml.dom.po | 0.0% | 0.0% | 0 | 235 |
-| library/xml.dom.pulldom.po | 0.0% | 0.0% | 0 | 30 |
-| library/xml.etree.elementtree.po | 0.0% | 0.0% | 0 | 266 |
-| library/xml.po | 0.0% | 0.0% | 0 | 27 |
-| library/xml.sax.handler.po | 0.0% | 0.0% | 0 | 104 |
-| library/xml.sax.po | 0.0% | 0.0% | 0 | 32 |
-| library/xml.sax.reader.po | 0.0% | 0.0% | 0 | 75 |
-| library/xml.sax.utils.po | 0.0% | 0.0% | 0 | 15 |
-| library/xmlrpc.client.po | 0.0% | 0.0% | 0 | 113 |
-| library/xmlrpc.po | 0.0% | 0.0% | 0 | 5 |
-| library/xmlrpc.server.po | 0.0% | 0.0% | 0 | 57 |
-| library/zipapp.po | 0.0% | 0.0% | 0 | 77 |
-| library/zipfile.po | 0.0% | 0.0% | 0 | 216 |
-| library/zipimport.po | 0.0% | 0.0% | 0 | 39 |
-| library/zlib.po | 0.0% | 0.0% | 0 | 96 |
-| library/zoneinfo.po | 0.0% | 0.0% | 0 | 84 |
-| license.po | 0.0% | 0.0% | 0 | 129 |
-| reference/compound_stmts.po | 0.0% | 0.0% | 0 | 480 |
-| reference/datamodel.po | 0.0% | 0.0% | 0 | 913 |
-| reference/executionmodel.po | 0.0% | 0.0% | 0 | 145 |
-| reference/expressions.po | 0.0% | 0.0% | 0 | 595 |
-| reference/grammar.po | 0.0% | 0.0% | 0 | 7 |
-| reference/import.po | 0.0% | 0.0% | 0 | 202 |
-| reference/index.po | 0.0% | 0.0% | 0 | 2 |
-| reference/introduction.po | 0.0% | 0.0% | 0 | 56 |
-| reference/lexical_analysis.po | 0.0% | 0.0% | 0 | 476 |
-| reference/simple_stmts.po | 0.0% | 0.0% | 0 | 291 |
-| reference/toplevel_components.po | 0.0% | 0.0% | 0 | 32 |
-| using/android.po | 0.0% | 0.0% | 0 | 27 |
-| using/cmdline.po | 0.0% | 0.0% | 0 | 265 |
-| using/configure.po | 0.0% | 0.0% | 0 | 468 |
-| using/editors.po | 0.0% | 0.0% | 0 | 6 |
-| using/index.po | 0.0% | 0.0% | 0 | 2 |
-| using/ios.po | 0.0% | 0.0% | 0 | 91 |
-| using/mac.po | 0.0% | 0.0% | 0 | 94 |
-| using/unix.po | 0.0% | 0.0% | 0 | 63 |
-| using/windows.po | 0.0% | 0.0% | 0 | 576 |
-| whatsnew/2.0.po | 0.0% | 0.0% | 0 | 207 |
-| whatsnew/2.1.po | 0.0% | 0.0% | 0 | 154 |
-| whatsnew/2.2.po | 0.0% | 0.0% | 0 | 216 |
-| whatsnew/2.3.po | 0.0% | 0.0% | 0 | 387 |
-| whatsnew/2.4.po | 0.0% | 0.0% | 0 | 319 |
-| whatsnew/2.5.po | 0.0% | 0.0% | 0 | 452 |
-| whatsnew/2.6.po | 0.0% | 0.0% | 0 | 626 |
-| whatsnew/2.7.po | 0.0% | 0.0% | 0 | 498 |
-| whatsnew/3.0.po | 0.0% | 0.0% | 0 | 212 |
-| whatsnew/3.1.po | 0.0% | 0.0% | 0 | 132 |
-| whatsnew/3.10.po | 0.0% | 0.0% | 0 | 550 |
-| whatsnew/3.11.po | 0.0% | 0.0% | 0 | 776 |
-| whatsnew/3.12.po | 0.0% | 0.0% | 0 | 856 |
-| whatsnew/3.13.po | 0.0% | 0.0% | 0 | 933 |
-| whatsnew/3.14.po | 0.0% | 0.0% | 0 | 1054 |
-| whatsnew/3.2.po | 0.0% | 0.0% | 0 | 576 |
-| whatsnew/3.3.po | 0.0% | 0.0% | 0 | 682 |
-| whatsnew/3.4.po | 0.0% | 0.0% | 0 | 517 |
-| whatsnew/3.5.po | 0.0% | 0.0% | 0 | 578 |
-| whatsnew/3.6.po | 0.0% | 0.0% | 0 | 544 |
-| whatsnew/3.7.po | 0.0% | 0.0% | 0 | 568 |
-| whatsnew/3.8.po | 0.0% | 0.0% | 0 | 513 |
-| whatsnew/3.9.po | 0.0% | 0.0% | 0 | 380 |
-| whatsnew/changelog.po | 0.0% | 0.0% | 0 | 1 |
-| whatsnew/index.po | 0.0% | 0.0% | 0 | 3 |
-| **مجموع** | **3.9%** | **0.0%** | **2706** | **67536** |
+| File | Translated | Fuzzy |
+|:-----|:-----------:|:-----------:|
+| about.po | 100.0% | 0.0% |
+| bugs.po | 100.0% | 0.0% |
+| c-api/abstract.po | 100.0% | 0.0% |
+| c-api/allocation.po | 100.0% | 0.0% |
+| c-api/apiabiversion.po | 100.0% | 0.0% |
+| c-api/bool.po | 100.0% | 0.0% |
+| c-api/bytearray.po | 100.0% | 0.0% |
+| contents.po | 100.0% | 0.0% |
+| copyright.po | 100.0% | 0.0% |
+| improve-page-nojs.po | 100.0% | 0.0% |
+| improve-page.po | 100.0% | 0.0% |
+| library/__future__.po | 100.0% | 0.0% |
+| library/functions.po | 100.0% | 0.0% |
+| sphinx.po | 100.0% | 0.0% |
+| tutorial/appendix.po | 100.0% | 0.0% |
+| tutorial/appetite.po | 100.0% | 0.0% |
+| tutorial/classes.po | 100.0% | 0.0% |
+| tutorial/controlflow.po | 100.0% | 0.0% |
+| tutorial/datastructures.po | 100.0% | 0.0% |
+| tutorial/errors.po | 100.0% | 0.0% |
+| tutorial/floatingpoint.po | 100.0% | 0.0% |
+| tutorial/index.po | 100.0% | 0.0% |
+| tutorial/inputoutput.po | 100.0% | 0.0% |
+| tutorial/interactive.po | 100.0% | 0.0% |
+| tutorial/interpreter.po | 100.0% | 0.0% |
+| tutorial/introduction.po | 100.0% | 0.0% |
+| tutorial/modules.po | 100.0% | 0.0% |
+| tutorial/stdlib.po | 100.0% | 0.0% |
+| tutorial/stdlib2.po | 100.0% | 0.0% |
+| tutorial/venv.po | 100.0% | 0.0% |
+| tutorial/whatnow.po | 100.0% | 0.0% |
+| library/__main__.po | 13.9% | 0.0% |
+| c-api/dict.po | 2.8% | 0.0% |
+| library/json.po | 1.1% | 0.0% |
+| c-api/arg.po | 0.0% | 0.0% |
+| c-api/buffer.po | 0.0% | 0.0% |
+| c-api/bytes.po | 0.0% | 0.0% |
+| c-api/call.po | 0.0% | 0.0% |
+| c-api/capsule.po | 0.0% | 0.0% |
+| c-api/cell.po | 0.0% | 0.0% |
+| c-api/code.po | 0.0% | 0.0% |
+| c-api/codec.po | 0.0% | 0.0% |
+| c-api/complex.po | 0.0% | 0.0% |
+| c-api/concrete.po | 0.0% | 0.0% |
+| c-api/contextvars.po | 0.0% | 0.0% |
+| c-api/conversion.po | 0.0% | 0.0% |
+| c-api/coro.po | 0.0% | 0.0% |
+| c-api/curses.po | 0.0% | 0.0% |
+| c-api/datetime.po | 0.0% | 0.0% |
+| c-api/descriptor.po | 0.0% | 0.0% |
+| c-api/exceptions.po | 0.0% | 0.0% |
+| c-api/extension-modules.po | 0.0% | 0.0% |
+| c-api/file.po | 0.0% | 0.0% |
+| c-api/float.po | 0.0% | 0.0% |
+| c-api/frame.po | 0.0% | 0.0% |
+| c-api/function.po | 0.0% | 0.0% |
+| c-api/gcsupport.po | 0.0% | 0.0% |
+| c-api/gen.po | 0.0% | 0.0% |
+| c-api/hash.po | 0.0% | 0.0% |
+| c-api/import.po | 0.0% | 0.0% |
+| c-api/index.po | 0.0% | 0.0% |
+| c-api/init.po | 0.0% | 0.0% |
+| c-api/init_config.po | 0.0% | 0.0% |
+| c-api/interp-lifecycle.po | 0.0% | 0.0% |
+| c-api/intro.po | 0.0% | 0.0% |
+| c-api/iter.po | 0.0% | 0.0% |
+| c-api/iterator.po | 0.0% | 0.0% |
+| c-api/lifecycle.po | 0.0% | 0.0% |
+| c-api/list.po | 0.0% | 0.0% |
+| c-api/long.po | 0.0% | 0.0% |
+| c-api/mapping.po | 0.0% | 0.0% |
+| c-api/marshal.po | 0.0% | 0.0% |
+| c-api/memory.po | 0.0% | 0.0% |
+| c-api/memoryview.po | 0.0% | 0.0% |
+| c-api/method.po | 0.0% | 0.0% |
+| c-api/module.po | 0.0% | 0.0% |
+| c-api/monitoring.po | 0.0% | 0.0% |
+| c-api/none.po | 0.0% | 0.0% |
+| c-api/number.po | 0.0% | 0.0% |
+| c-api/object.po | 0.0% | 0.0% |
+| c-api/objimpl.po | 0.0% | 0.0% |
+| c-api/perfmaps.po | 0.0% | 0.0% |
+| c-api/picklebuffer.po | 0.0% | 0.0% |
+| c-api/profiling.po | 0.0% | 0.0% |
+| c-api/refcounting.po | 0.0% | 0.0% |
+| c-api/reflection.po | 0.0% | 0.0% |
+| c-api/sequence.po | 0.0% | 0.0% |
+| c-api/set.po | 0.0% | 0.0% |
+| c-api/slice.po | 0.0% | 0.0% |
+| c-api/stable.po | 0.0% | 0.0% |
+| c-api/structures.po | 0.0% | 0.0% |
+| c-api/subinterpreters.po | 0.0% | 0.0% |
+| c-api/synchronization.po | 0.0% | 0.0% |
+| c-api/sys.po | 0.0% | 0.0% |
+| c-api/threads.po | 0.0% | 0.0% |
+| c-api/time.po | 0.0% | 0.0% |
+| c-api/tls.po | 0.0% | 0.0% |
+| c-api/tuple.po | 0.0% | 0.0% |
+| c-api/type.po | 0.0% | 0.0% |
+| c-api/typehints.po | 0.0% | 0.0% |
+| c-api/typeobj.po | 0.0% | 0.0% |
+| c-api/unicode.po | 0.0% | 0.0% |
+| c-api/utilities.po | 0.0% | 0.0% |
+| c-api/veryhigh.po | 0.0% | 0.0% |
+| c-api/weakref.po | 0.0% | 0.0% |
+| deprecations/c-api-pending-removal-in-3.14.po | 0.0% | 0.0% |
+| deprecations/c-api-pending-removal-in-3.15.po | 0.0% | 0.0% |
+| deprecations/c-api-pending-removal-in-3.16.po | 0.0% | 0.0% |
+| deprecations/c-api-pending-removal-in-3.18.po | 0.0% | 0.0% |
+| deprecations/c-api-pending-removal-in-future.po | 0.0% | 0.0% |
+| deprecations/index.po | 0.0% | 0.0% |
+| deprecations/pending-removal-in-3.13.po | 0.0% | 0.0% |
+| deprecations/pending-removal-in-3.14.po | 0.0% | 0.0% |
+| deprecations/pending-removal-in-3.15.po | 0.0% | 0.0% |
+| deprecations/pending-removal-in-3.16.po | 0.0% | 0.0% |
+| deprecations/pending-removal-in-3.17.po | 0.0% | 0.0% |
+| deprecations/pending-removal-in-3.18.po | 0.0% | 0.0% |
+| deprecations/pending-removal-in-3.19.po | 0.0% | 0.0% |
+| deprecations/pending-removal-in-future.po | 0.0% | 0.0% |
+| distributing/index.po | 0.0% | 0.0% |
+| extending/building.po | 0.0% | 0.0% |
+| extending/embedding.po | 0.0% | 0.0% |
+| extending/extending.po | 0.0% | 0.0% |
+| extending/index.po | 0.0% | 0.0% |
+| extending/newtypes.po | 0.0% | 0.0% |
+| extending/newtypes_tutorial.po | 0.0% | 0.0% |
+| extending/windows.po | 0.0% | 0.0% |
+| faq/design.po | 0.0% | 0.0% |
+| faq/extending.po | 0.0% | 0.0% |
+| faq/general.po | 0.0% | 0.0% |
+| faq/gui.po | 0.0% | 0.0% |
+| faq/index.po | 0.0% | 0.0% |
+| faq/installed.po | 0.0% | 0.0% |
+| faq/library.po | 0.0% | 0.0% |
+| faq/programming.po | 0.0% | 0.0% |
+| faq/windows.po | 0.0% | 0.0% |
+| glossary.po | 0.0% | 0.0% |
+| howto/a-conceptual-overview-of-asyncio.po | 0.0% | 0.0% |
+| howto/annotations.po | 0.0% | 0.0% |
+| howto/argparse-optparse.po | 0.0% | 0.0% |
+| howto/argparse.po | 0.0% | 0.0% |
+| howto/clinic.po | 0.0% | 0.0% |
+| howto/cporting.po | 0.0% | 0.0% |
+| howto/curses.po | 0.0% | 0.0% |
+| howto/descriptor.po | 0.0% | 0.0% |
+| howto/enum.po | 0.0% | 0.0% |
+| howto/free-threading-extensions.po | 0.0% | 0.0% |
+| howto/free-threading-python.po | 0.0% | 0.0% |
+| howto/functional.po | 0.0% | 0.0% |
+| howto/gdb_helpers.po | 0.0% | 0.0% |
+| howto/index.po | 0.0% | 0.0% |
+| howto/instrumentation.po | 0.0% | 0.0% |
+| howto/ipaddress.po | 0.0% | 0.0% |
+| howto/isolating-extensions.po | 0.0% | 0.0% |
+| howto/logging-cookbook.po | 0.0% | 0.0% |
+| howto/logging.po | 0.0% | 0.0% |
+| howto/mro.po | 0.0% | 0.0% |
+| howto/perf_profiling.po | 0.0% | 0.0% |
+| howto/pyporting.po | 0.0% | 0.0% |
+| howto/regex.po | 0.0% | 0.0% |
+| howto/remote_debugging.po | 0.0% | 0.0% |
+| howto/sockets.po | 0.0% | 0.0% |
+| howto/sorting.po | 0.0% | 0.0% |
+| howto/timerfd.po | 0.0% | 0.0% |
+| howto/unicode.po | 0.0% | 0.0% |
+| howto/urllib2.po | 0.0% | 0.0% |
+| installing/index.po | 0.0% | 0.0% |
+| library/_thread.po | 0.0% | 0.0% |
+| library/abc.po | 0.0% | 0.0% |
+| library/aifc.po | 0.0% | 0.0% |
+| library/allos.po | 0.0% | 0.0% |
+| library/annotationlib.po | 0.0% | 0.0% |
+| library/archiving.po | 0.0% | 0.0% |
+| library/argparse.po | 0.0% | 0.0% |
+| library/array.po | 0.0% | 0.0% |
+| library/ast.po | 0.0% | 0.0% |
+| library/asynchat.po | 0.0% | 0.0% |
+| library/asyncio-api-index.po | 0.0% | 0.0% |
+| library/asyncio-dev.po | 0.0% | 0.0% |
+| library/asyncio-eventloop.po | 0.0% | 0.0% |
+| library/asyncio-exceptions.po | 0.0% | 0.0% |
+| library/asyncio-extending.po | 0.0% | 0.0% |
+| library/asyncio-future.po | 0.0% | 0.0% |
+| library/asyncio-graph.po | 0.0% | 0.0% |
+| library/asyncio-llapi-index.po | 0.0% | 0.0% |
+| library/asyncio-platforms.po | 0.0% | 0.0% |
+| library/asyncio-policy.po | 0.0% | 0.0% |
+| library/asyncio-protocol.po | 0.0% | 0.0% |
+| library/asyncio-queue.po | 0.0% | 0.0% |
+| library/asyncio-runner.po | 0.0% | 0.0% |
+| library/asyncio-stream.po | 0.0% | 0.0% |
+| library/asyncio-subprocess.po | 0.0% | 0.0% |
+| library/asyncio-sync.po | 0.0% | 0.0% |
+| library/asyncio-task.po | 0.0% | 0.0% |
+| library/asyncio.po | 0.0% | 0.0% |
+| library/asyncore.po | 0.0% | 0.0% |
+| library/atexit.po | 0.0% | 0.0% |
+| library/audioop.po | 0.0% | 0.0% |
+| library/audit_events.po | 0.0% | 0.0% |
+| library/base64.po | 0.0% | 0.0% |
+| library/bdb.po | 0.0% | 0.0% |
+| library/binary.po | 0.0% | 0.0% |
+| library/binascii.po | 0.0% | 0.0% |
+| library/bisect.po | 0.0% | 0.0% |
+| library/builtins.po | 0.0% | 0.0% |
+| library/bz2.po | 0.0% | 0.0% |
+| library/calendar.po | 0.0% | 0.0% |
+| library/cgi.po | 0.0% | 0.0% |
+| library/cgitb.po | 0.0% | 0.0% |
+| library/chunk.po | 0.0% | 0.0% |
+| library/cmath.po | 0.0% | 0.0% |
+| library/cmd.po | 0.0% | 0.0% |
+| library/cmdline.po | 0.0% | 0.0% |
+| library/cmdlinelibs.po | 0.0% | 0.0% |
+| library/code.po | 0.0% | 0.0% |
+| library/codecs.po | 0.0% | 0.0% |
+| library/codeop.po | 0.0% | 0.0% |
+| library/collections.abc.po | 0.0% | 0.0% |
+| library/collections.po | 0.0% | 0.0% |
+| library/colorsys.po | 0.0% | 0.0% |
+| library/compileall.po | 0.0% | 0.0% |
+| library/compression.po | 0.0% | 0.0% |
+| library/compression.zstd.po | 0.0% | 0.0% |
+| library/concurrency.po | 0.0% | 0.0% |
+| library/concurrent.futures.po | 0.0% | 0.0% |
+| library/concurrent.interpreters.po | 0.0% | 0.0% |
+| library/concurrent.po | 0.0% | 0.0% |
+| library/configparser.po | 0.0% | 0.0% |
+| library/constants.po | 0.0% | 0.0% |
+| library/contextlib.po | 0.0% | 0.0% |
+| library/contextvars.po | 0.0% | 0.0% |
+| library/copy.po | 0.0% | 0.0% |
+| library/copyreg.po | 0.0% | 0.0% |
+| library/crypt.po | 0.0% | 0.0% |
+| library/crypto.po | 0.0% | 0.0% |
+| library/csv.po | 0.0% | 0.0% |
+| library/ctypes.po | 0.0% | 0.0% |
+| library/curses.ascii.po | 0.0% | 0.0% |
+| library/curses.panel.po | 0.0% | 0.0% |
+| library/curses.po | 0.0% | 0.0% |
+| library/custominterp.po | 0.0% | 0.0% |
+| library/dataclasses.po | 0.0% | 0.0% |
+| library/datatypes.po | 0.0% | 0.0% |
+| library/datetime.po | 0.0% | 0.0% |
+| library/dbm.po | 0.0% | 0.0% |
+| library/debug.po | 0.0% | 0.0% |
+| library/decimal.po | 0.0% | 0.0% |
+| library/development.po | 0.0% | 0.0% |
+| library/devmode.po | 0.0% | 0.0% |
+| library/dialog.po | 0.0% | 0.0% |
+| library/difflib.po | 0.0% | 0.0% |
+| library/dis.po | 0.0% | 0.0% |
+| library/distribution.po | 0.0% | 0.0% |
+| library/distutils.po | 0.0% | 0.0% |
+| library/doctest.po | 0.0% | 0.0% |
+| library/email.charset.po | 0.0% | 0.0% |
+| library/email.compat32-message.po | 0.0% | 0.0% |
+| library/email.contentmanager.po | 0.0% | 0.0% |
+| library/email.encoders.po | 0.0% | 0.0% |
+| library/email.errors.po | 0.0% | 0.0% |
+| library/email.examples.po | 0.0% | 0.0% |
+| library/email.generator.po | 0.0% | 0.0% |
+| library/email.header.po | 0.0% | 0.0% |
+| library/email.headerregistry.po | 0.0% | 0.0% |
+| library/email.iterators.po | 0.0% | 0.0% |
+| library/email.message.po | 0.0% | 0.0% |
+| library/email.mime.po | 0.0% | 0.0% |
+| library/email.parser.po | 0.0% | 0.0% |
+| library/email.po | 0.0% | 0.0% |
+| library/email.policy.po | 0.0% | 0.0% |
+| library/email.utils.po | 0.0% | 0.0% |
+| library/ensurepip.po | 0.0% | 0.0% |
+| library/enum.po | 0.0% | 0.0% |
+| library/errno.po | 0.0% | 0.0% |
+| library/exceptions.po | 0.0% | 0.0% |
+| library/faulthandler.po | 0.0% | 0.0% |
+| library/fcntl.po | 0.0% | 0.0% |
+| library/filecmp.po | 0.0% | 0.0% |
+| library/fileformats.po | 0.0% | 0.0% |
+| library/fileinput.po | 0.0% | 0.0% |
+| library/filesys.po | 0.0% | 0.0% |
+| library/fnmatch.po | 0.0% | 0.0% |
+| library/fractions.po | 0.0% | 0.0% |
+| library/frameworks.po | 0.0% | 0.0% |
+| library/ftplib.po | 0.0% | 0.0% |
+| library/functional.po | 0.0% | 0.0% |
+| library/functools.po | 0.0% | 0.0% |
+| library/gc.po | 0.0% | 0.0% |
+| library/getopt.po | 0.0% | 0.0% |
+| library/getpass.po | 0.0% | 0.0% |
+| library/gettext.po | 0.0% | 0.0% |
+| library/glob.po | 0.0% | 0.0% |
+| library/graphlib.po | 0.0% | 0.0% |
+| library/grp.po | 0.0% | 0.0% |
+| library/gzip.po | 0.0% | 0.0% |
+| library/hashlib.po | 0.0% | 0.0% |
+| library/heapq.po | 0.0% | 0.0% |
+| library/hmac.po | 0.0% | 0.0% |
+| library/html.entities.po | 0.0% | 0.0% |
+| library/html.parser.po | 0.0% | 0.0% |
+| library/html.po | 0.0% | 0.0% |
+| library/http.client.po | 0.0% | 0.0% |
+| library/http.cookiejar.po | 0.0% | 0.0% |
+| library/http.cookies.po | 0.0% | 0.0% |
+| library/http.po | 0.0% | 0.0% |
+| library/http.server.po | 0.0% | 0.0% |
+| library/i18n.po | 0.0% | 0.0% |
+| library/idle.po | 0.0% | 0.0% |
+| library/imaplib.po | 0.0% | 0.0% |
+| library/imghdr.po | 0.0% | 0.0% |
+| library/imp.po | 0.0% | 0.0% |
+| library/importlib.metadata.po | 0.0% | 0.0% |
+| library/importlib.po | 0.0% | 0.0% |
+| library/importlib.resources.abc.po | 0.0% | 0.0% |
+| library/importlib.resources.po | 0.0% | 0.0% |
+| library/index.po | 0.0% | 0.0% |
+| library/inspect.po | 0.0% | 0.0% |
+| library/internet.po | 0.0% | 0.0% |
+| library/intro.po | 0.0% | 0.0% |
+| library/io.po | 0.0% | 0.0% |
+| library/ipaddress.po | 0.0% | 0.0% |
+| library/ipc.po | 0.0% | 0.0% |
+| library/itertools.po | 0.0% | 0.0% |
+| library/keyword.po | 0.0% | 0.0% |
+| library/language.po | 0.0% | 0.0% |
+| library/linecache.po | 0.0% | 0.0% |
+| library/locale.po | 0.0% | 0.0% |
+| library/logging.config.po | 0.0% | 0.0% |
+| library/logging.handlers.po | 0.0% | 0.0% |
+| library/logging.po | 0.0% | 0.0% |
+| library/lzma.po | 0.0% | 0.0% |
+| library/mailbox.po | 0.0% | 0.0% |
+| library/mailcap.po | 0.0% | 0.0% |
+| library/markup.po | 0.0% | 0.0% |
+| library/marshal.po | 0.0% | 0.0% |
+| library/math.po | 0.0% | 0.0% |
+| library/mimetypes.po | 0.0% | 0.0% |
+| library/mm.po | 0.0% | 0.0% |
+| library/mmap.po | 0.0% | 0.0% |
+| library/modulefinder.po | 0.0% | 0.0% |
+| library/modules.po | 0.0% | 0.0% |
+| library/msilib.po | 0.0% | 0.0% |
+| library/msvcrt.po | 0.0% | 0.0% |
+| library/multiprocessing.po | 0.0% | 0.0% |
+| library/multiprocessing.shared_memory.po | 0.0% | 0.0% |
+| library/netdata.po | 0.0% | 0.0% |
+| library/netrc.po | 0.0% | 0.0% |
+| library/nis.po | 0.0% | 0.0% |
+| library/nntplib.po | 0.0% | 0.0% |
+| library/numbers.po | 0.0% | 0.0% |
+| library/numeric.po | 0.0% | 0.0% |
+| library/operator.po | 0.0% | 0.0% |
+| library/optparse.po | 0.0% | 0.0% |
+| library/os.path.po | 0.0% | 0.0% |
+| library/os.po | 0.0% | 0.0% |
+| library/ossaudiodev.po | 0.0% | 0.0% |
+| library/pathlib.po | 0.0% | 0.0% |
+| library/pdb.po | 0.0% | 0.0% |
+| library/persistence.po | 0.0% | 0.0% |
+| library/pickle.po | 0.0% | 0.0% |
+| library/pickletools.po | 0.0% | 0.0% |
+| library/pipes.po | 0.0% | 0.0% |
+| library/pkgutil.po | 0.0% | 0.0% |
+| library/platform.po | 0.0% | 0.0% |
+| library/plistlib.po | 0.0% | 0.0% |
+| library/poplib.po | 0.0% | 0.0% |
+| library/posix.po | 0.0% | 0.0% |
+| library/pprint.po | 0.0% | 0.0% |
+| library/profile.po | 0.0% | 0.0% |
+| library/pty.po | 0.0% | 0.0% |
+| library/pwd.po | 0.0% | 0.0% |
+| library/py_compile.po | 0.0% | 0.0% |
+| library/pyclbr.po | 0.0% | 0.0% |
+| library/pydoc.po | 0.0% | 0.0% |
+| library/pyexpat.po | 0.0% | 0.0% |
+| library/python.po | 0.0% | 0.0% |
+| library/queue.po | 0.0% | 0.0% |
+| library/quopri.po | 0.0% | 0.0% |
+| library/random.po | 0.0% | 0.0% |
+| library/re.po | 0.0% | 0.0% |
+| library/readline.po | 0.0% | 0.0% |
+| library/removed.po | 0.0% | 0.0% |
+| library/reprlib.po | 0.0% | 0.0% |
+| library/resource.po | 0.0% | 0.0% |
+| library/rlcompleter.po | 0.0% | 0.0% |
+| library/runpy.po | 0.0% | 0.0% |
+| library/sched.po | 0.0% | 0.0% |
+| library/secrets.po | 0.0% | 0.0% |
+| library/security_warnings.po | 0.0% | 0.0% |
+| library/select.po | 0.0% | 0.0% |
+| library/selectors.po | 0.0% | 0.0% |
+| library/shelve.po | 0.0% | 0.0% |
+| library/shlex.po | 0.0% | 0.0% |
+| library/shutil.po | 0.0% | 0.0% |
+| library/signal.po | 0.0% | 0.0% |
+| library/site.po | 0.0% | 0.0% |
+| library/smtpd.po | 0.0% | 0.0% |
+| library/smtplib.po | 0.0% | 0.0% |
+| library/sndhdr.po | 0.0% | 0.0% |
+| library/socket.po | 0.0% | 0.0% |
+| library/socketserver.po | 0.0% | 0.0% |
+| library/spwd.po | 0.0% | 0.0% |
+| library/sqlite3.po | 0.0% | 0.0% |
+| library/ssl.po | 0.0% | 0.0% |
+| library/stat.po | 0.0% | 0.0% |
+| library/statistics.po | 0.0% | 0.0% |
+| library/stdtypes.po | 0.0% | 0.0% |
+| library/string.po | 0.0% | 0.0% |
+| library/string.templatelib.po | 0.0% | 0.0% |
+| library/stringprep.po | 0.0% | 0.0% |
+| library/struct.po | 0.0% | 0.0% |
+| library/subprocess.po | 0.0% | 0.0% |
+| library/sunau.po | 0.0% | 0.0% |
+| library/superseded.po | 0.0% | 0.0% |
+| library/symtable.po | 0.0% | 0.0% |
+| library/sys.monitoring.po | 0.0% | 0.0% |
+| library/sys.po | 0.0% | 0.0% |
+| library/sys_path_init.po | 0.0% | 0.0% |
+| library/sysconfig.po | 0.0% | 0.0% |
+| library/syslog.po | 0.0% | 0.0% |
+| library/tabnanny.po | 0.0% | 0.0% |
+| library/tarfile.po | 0.0% | 0.0% |
+| library/telnetlib.po | 0.0% | 0.0% |
+| library/tempfile.po | 0.0% | 0.0% |
+| library/termios.po | 0.0% | 0.0% |
+| library/test.po | 0.0% | 0.0% |
+| library/text.po | 0.0% | 0.0% |
+| library/textwrap.po | 0.0% | 0.0% |
+| library/threading.po | 0.0% | 0.0% |
+| library/threadsafety.po | 0.0% | 0.0% |
+| library/time.po | 0.0% | 0.0% |
+| library/timeit.po | 0.0% | 0.0% |
+| library/tk.po | 0.0% | 0.0% |
+| library/tkinter.colorchooser.po | 0.0% | 0.0% |
+| library/tkinter.dnd.po | 0.0% | 0.0% |
+| library/tkinter.font.po | 0.0% | 0.0% |
+| library/tkinter.messagebox.po | 0.0% | 0.0% |
+| library/tkinter.po | 0.0% | 0.0% |
+| library/tkinter.scrolledtext.po | 0.0% | 0.0% |
+| library/tkinter.ttk.po | 0.0% | 0.0% |
+| library/token.po | 0.0% | 0.0% |
+| library/tokenize.po | 0.0% | 0.0% |
+| library/tomllib.po | 0.0% | 0.0% |
+| library/trace.po | 0.0% | 0.0% |
+| library/traceback.po | 0.0% | 0.0% |
+| library/tracemalloc.po | 0.0% | 0.0% |
+| library/tty.po | 0.0% | 0.0% |
+| library/turtle.po | 0.0% | 0.0% |
+| library/types.po | 0.0% | 0.0% |
+| library/typing.po | 0.0% | 0.0% |
+| library/unicodedata.po | 0.0% | 0.0% |
+| library/unittest.mock-examples.po | 0.0% | 0.0% |
+| library/unittest.mock.po | 0.0% | 0.0% |
+| library/unittest.po | 0.0% | 0.0% |
+| library/unix.po | 0.0% | 0.0% |
+| library/urllib.error.po | 0.0% | 0.0% |
+| library/urllib.parse.po | 0.0% | 0.0% |
+| library/urllib.po | 0.0% | 0.0% |
+| library/urllib.request.po | 0.0% | 0.0% |
+| library/urllib.robotparser.po | 0.0% | 0.0% |
+| library/uu.po | 0.0% | 0.0% |
+| library/uuid.po | 0.0% | 0.0% |
+| library/venv.po | 0.0% | 0.0% |
+| library/warnings.po | 0.0% | 0.0% |
+| library/wave.po | 0.0% | 0.0% |
+| library/weakref.po | 0.0% | 0.0% |
+| library/webbrowser.po | 0.0% | 0.0% |
+| library/windows.po | 0.0% | 0.0% |
+| library/winreg.po | 0.0% | 0.0% |
+| library/winsound.po | 0.0% | 0.0% |
+| library/wsgiref.po | 0.0% | 0.0% |
+| library/xdrlib.po | 0.0% | 0.0% |
+| library/xml.dom.minidom.po | 0.0% | 0.0% |
+| library/xml.dom.po | 0.0% | 0.0% |
+| library/xml.dom.pulldom.po | 0.0% | 0.0% |
+| library/xml.etree.elementtree.po | 0.0% | 0.0% |
+| library/xml.po | 0.0% | 0.0% |
+| library/xml.sax.handler.po | 0.0% | 0.0% |
+| library/xml.sax.po | 0.0% | 0.0% |
+| library/xml.sax.reader.po | 0.0% | 0.0% |
+| library/xml.sax.utils.po | 0.0% | 0.0% |
+| library/xmlrpc.client.po | 0.0% | 0.0% |
+| library/xmlrpc.po | 0.0% | 0.0% |
+| library/xmlrpc.server.po | 0.0% | 0.0% |
+| library/zipapp.po | 0.0% | 0.0% |
+| library/zipfile.po | 0.0% | 0.0% |
+| library/zipimport.po | 0.0% | 0.0% |
+| library/zlib.po | 0.0% | 0.0% |
+| library/zoneinfo.po | 0.0% | 0.0% |
+| license.po | 0.0% | 0.0% |
+| reference/compound_stmts.po | 0.0% | 0.0% |
+| reference/datamodel.po | 0.0% | 0.0% |
+| reference/executionmodel.po | 0.0% | 0.0% |
+| reference/expressions.po | 0.0% | 0.0% |
+| reference/grammar.po | 0.0% | 0.0% |
+| reference/import.po | 0.0% | 0.0% |
+| reference/index.po | 0.0% | 0.0% |
+| reference/introduction.po | 0.0% | 0.0% |
+| reference/lexical_analysis.po | 0.0% | 0.0% |
+| reference/simple_stmts.po | 0.0% | 0.0% |
+| reference/toplevel_components.po | 0.0% | 0.0% |
+| using/android.po | 0.0% | 0.0% |
+| using/cmdline.po | 0.0% | 0.0% |
+| using/configure.po | 0.0% | 0.0% |
+| using/editors.po | 0.0% | 0.0% |
+| using/index.po | 0.0% | 0.0% |
+| using/ios.po | 0.0% | 0.0% |
+| using/mac.po | 0.0% | 0.0% |
+| using/unix.po | 0.0% | 0.0% |
+| using/windows.po | 0.0% | 0.0% |
+| whatsnew/2.0.po | 0.0% | 0.0% |
+| whatsnew/2.1.po | 0.0% | 0.0% |
+| whatsnew/2.2.po | 0.0% | 0.0% |
+| whatsnew/2.3.po | 0.0% | 0.0% |
+| whatsnew/2.4.po | 0.0% | 0.0% |
+| whatsnew/2.5.po | 0.0% | 0.0% |
+| whatsnew/2.6.po | 0.0% | 0.0% |
+| whatsnew/2.7.po | 0.0% | 0.0% |
+| whatsnew/3.0.po | 0.0% | 0.0% |
+| whatsnew/3.1.po | 0.0% | 0.0% |
+| whatsnew/3.10.po | 0.0% | 0.0% |
+| whatsnew/3.11.po | 0.0% | 0.0% |
+| whatsnew/3.12.po | 0.0% | 0.0% |
+| whatsnew/3.13.po | 0.0% | 0.0% |
+| whatsnew/3.14.po | 0.0% | 0.0% |
+| whatsnew/3.2.po | 0.0% | 0.0% |
+| whatsnew/3.3.po | 0.0% | 0.0% |
+| whatsnew/3.4.po | 0.0% | 0.0% |
+| whatsnew/3.5.po | 0.0% | 0.0% |
+| whatsnew/3.6.po | 0.0% | 0.0% |
+| whatsnew/3.7.po | 0.0% | 0.0% |
+| whatsnew/3.8.po | 0.0% | 0.0% |
+| whatsnew/3.9.po | 0.0% | 0.0% |
+| whatsnew/changelog.po | 0.0% | 0.0% |
+| whatsnew/index.po | 0.0% | 0.0% |
 <!-- TRANSLATION_STATUS_END -->
