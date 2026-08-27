@@ -15,10 +15,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2021-06-28 01:13+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
-"Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
+"Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -472,46 +472,7 @@ msgstr ""
 msgid "The following functions all create :ref:`socket objects <socket-objects>`."
 msgstr ""
 
-msgid "Create a new socket using the given address family, socket type and protocol number.  The address family should be :const:`AF_INET` (the default), :const:`AF_INET6`, :const:`AF_UNIX`, :const:`AF_CAN`, :const:`AF_PACKET`, or :const:`AF_RDS`. The socket type should be :const:`SOCK_STREAM` (the default), :const:`SOCK_DGRAM`, :const:`SOCK_RAW` or perhaps one of the other ``SOCK_`` constants. The protocol number is usually zero and may be omitted or in the case where the address family is :const:`AF_CAN` the protocol should be one of :const:`CAN_RAW`, :const:`CAN_BCM`, :const:`CAN_ISOTP` or :const:`CAN_J1939`."
-msgstr ""
-
-msgid "If *fileno* is specified, the values for *family*, *type*, and *proto* are auto-detected from the specified file descriptor.  Auto-detection can be overruled by calling the function with explicit *family*, *type*, or *proto* arguments.  This only affects how Python represents e.g. the return value of :meth:`socket.getpeername` but not the actual OS resource.  Unlike :func:`socket.fromfd`, *fileno* will return the same socket and not a duplicate. This may help close a detached socket using :meth:`socket.close`."
-msgstr ""
-
-msgid "The newly created socket is :ref:`non-inheritable <fd_inheritance>`."
-msgstr ""
-
-msgid "Raises an :ref:`auditing event <auditing>` ``socket.__new__`` with arguments ``self``, ``family``, ``type``, ``protocol``."
-msgstr ""
-
-msgid "The AF_CAN family was added. The AF_RDS family was added."
-msgstr ""
-
-msgid "The CAN_BCM protocol was added."
-msgstr ""
-
-msgid "The returned socket is now non-inheritable."
-msgstr ""
-
-msgid "The CAN_ISOTP protocol was added."
-msgstr ""
-
-msgid "When :const:`SOCK_NONBLOCK` or :const:`SOCK_CLOEXEC` bit flags are applied to *type* they are cleared, and :attr:`socket.type` will not reflect them.  They are still passed to the underlying system ``socket()`` call.  Therefore,"
-msgstr ""
-
-msgid ""
-"sock = socket.socket(\n"
-"    socket.AF_INET,\n"
-"    socket.SOCK_STREAM | socket.SOCK_NONBLOCK)"
-msgstr ""
-
-msgid "will still create a non-blocking socket on OSes that support ``SOCK_NONBLOCK``, but ``sock.type`` will be set to ``socket.SOCK_STREAM``."
-msgstr ""
-
-msgid "The CAN_J1939 protocol was added."
-msgstr ""
-
-msgid "The IPPROTO_MPTCP protocol was added."
+msgid "The :class:`socket <socket.socket>` class constructor creates a new socket directly; see :ref:`socket-objects` for its parameters and full description."
 msgstr ""
 
 msgid "Build a pair of connected socket objects using the given address family, socket type, and protocol number.  Address family, socket type, and protocol number are as for the :func:`~socket.socket` function. The default family is :const:`AF_UNIX` if defined on the platform; otherwise, the default is :const:`AF_INET`."
@@ -575,10 +536,13 @@ msgstr ""
 msgid "Duplicate the file descriptor *fd* (an integer as returned by a file object's :meth:`~io.IOBase.fileno` method) and build a socket object from the result.  Address family, socket type and protocol number are as for the :func:`~socket.socket` function. The file descriptor should refer to a socket, but this is not checked --- subsequent operations on the object may fail if the file descriptor is invalid. This function is rarely needed, but can be used to get or set socket options on a socket passed to a program as standard input or output (such as a server started by the Unix inet daemon).  The socket is assumed to be in blocking mode."
 msgstr ""
 
-msgid "Instantiate a socket from data obtained from the :meth:`socket.share` method.  The socket is assumed to be in blocking mode."
+msgid "The newly created socket is :ref:`non-inheritable <fd_inheritance>`."
 msgstr ""
 
-msgid "This is a Python type object that represents the socket object type. It is the same as ``type(socket(...))``."
+msgid "The returned socket is now non-inheritable."
+msgstr ""
+
+msgid "Instantiate a socket from data obtained from the :meth:`socket.share` method.  The socket is assumed to be in blocking mode."
 msgstr ""
 
 msgid "Other functions"
@@ -823,6 +787,42 @@ msgstr ""
 msgid "Socket Objects"
 msgstr ""
 
+msgid "Create a new socket using the given address family, socket type and protocol number.  The address family should be :const:`AF_INET` (the default), :const:`AF_INET6`, :const:`AF_UNIX`, :const:`AF_CAN`, :const:`AF_PACKET`, or :const:`AF_RDS`. The socket type should be :const:`SOCK_STREAM` (the default), :const:`SOCK_DGRAM`, :const:`SOCK_RAW` or perhaps one of the other ``SOCK_`` constants. The protocol number is usually zero and may be omitted or in the case where the address family is :const:`AF_CAN` the protocol should be one of :const:`CAN_RAW`, :const:`CAN_BCM`, :const:`CAN_ISOTP` or :const:`CAN_J1939`."
+msgstr ""
+
+msgid "If *fileno* is specified, the values for *family*, *type*, and *proto* are auto-detected from the specified file descriptor.  Auto-detection can be overruled by calling the function with explicit *family*, *type*, or *proto* arguments.  This only affects how Python represents e.g. the return value of :meth:`socket.getpeername` but not the actual OS resource.  Unlike :func:`socket.fromfd`, *fileno* will return the same socket and not a duplicate. This may help close a detached socket using :meth:`socket.close`."
+msgstr ""
+
+msgid "Raises an :ref:`auditing event <auditing>` ``socket.__new__`` with arguments ``self``, ``family``, ``type``, ``protocol``."
+msgstr ""
+
+msgid "The AF_CAN family was added. The AF_RDS family was added."
+msgstr ""
+
+msgid "The CAN_BCM protocol was added."
+msgstr ""
+
+msgid "The CAN_ISOTP protocol was added."
+msgstr ""
+
+msgid "When :const:`SOCK_NONBLOCK` or :const:`SOCK_CLOEXEC` bit flags are applied to *type* they are cleared, and :attr:`socket.type` will not reflect them.  They are still passed to the underlying system ``socket()`` call.  Therefore,"
+msgstr ""
+
+msgid ""
+"sock = socket.socket(\n"
+"    socket.AF_INET,\n"
+"    socket.SOCK_STREAM | socket.SOCK_NONBLOCK)"
+msgstr ""
+
+msgid "will still create a non-blocking socket on OSes that support ``SOCK_NONBLOCK``, but ``sock.type`` will be set to ``socket.SOCK_STREAM``."
+msgstr ""
+
+msgid "The CAN_J1939 protocol was added."
+msgstr ""
+
+msgid "The IPPROTO_MPTCP protocol was added."
+msgstr ""
+
 msgid "Socket objects have the following methods.  Except for :meth:`~socket.makefile`, these correspond to Unix system calls applicable to sockets."
 msgstr ""
 
@@ -850,7 +850,7 @@ msgstr ""
 msgid "Sockets are automatically closed when they are garbage-collected, but it is recommended to :meth:`close` them explicitly, or to use a :keyword:`with` statement around them."
 msgstr ""
 
-msgid ":exc:`OSError` is now raised if an error occurs when the underlying :c:func:`close` call is made."
+msgid ":exc:`OSError` is now raised if an error occurs when the underlying :c:func:`!close` call is made."
 msgstr ""
 
 msgid ":meth:`close` releases the resource associated with a connection but does not necessarily close the connection immediately.  If you want to close the connection in a timely fashion, call :meth:`shutdown` before :meth:`close`."
@@ -868,7 +868,7 @@ msgstr ""
 msgid "The method now waits until the connection completes instead of raising an :exc:`InterruptedError` exception if the connection is interrupted by a signal, the signal handler doesn't raise an exception and the socket is blocking or has a timeout (see the :pep:`475` for the rationale)."
 msgstr ""
 
-msgid "Like ``connect(address)``, but return an error indicator instead of raising an exception for errors returned by the C-level :c:func:`connect` call (other problems, such as \"host not found,\" can still raise exceptions).  The error indicator is ``0`` if the operation succeeded, otherwise the value of the :c:data:`errno` variable.  This is useful to support, for example, asynchronous connects."
+msgid "Like ``connect(address)``, but return an error indicator instead of raising an exception for errors returned by the C-level :c:func:`!connect` call (other problems, such as \"host not found,\" can still raise exceptions).  The error indicator is ``0`` if the operation succeeded, otherwise the value of the :c:data:`errno` variable.  This is useful to support, for example, asynchronous connects."
 msgstr ""
 
 msgid "Put the socket object into closed state without actually closing the underlying file descriptor.  The file descriptor is returned, and can be reused for other purposes."
@@ -952,7 +952,7 @@ msgstr ""
 msgid "Some systems do not indicate the truncated length of ancillary data items which have been only partially received.  If an item appears to extend beyond the end of the buffer, :meth:`recvmsg` will issue a :exc:`RuntimeWarning`, and will return the part of it which is inside the buffer provided it has not been truncated before the start of its associated data."
 msgstr ""
 
-msgid "On systems which support the :const:`SCM_RIGHTS` mechanism, the following function will receive up to *maxfds* file descriptors, returning the message data and a list containing the descriptors (while ignoring unexpected conditions such as unrelated control messages being received).  See also :meth:`sendmsg`. ::"
+msgid "On systems which support the :const:`!SCM_RIGHTS` mechanism, the following function will receive up to *maxfds* file descriptors, returning the message data and a list containing the descriptors (while ignoring unexpected conditions such as unrelated control messages being received).  See also :meth:`sendmsg`. ::"
 msgstr ""
 
 msgid ""
@@ -1015,7 +1015,7 @@ msgstr ""
 msgid "Send normal and ancillary data to the socket, gathering the non-ancillary data from a series of buffers and concatenating it into a single message.  The *buffers* argument specifies the non-ancillary data as an iterable of :term:`bytes-like objects <bytes-like object>` (e.g. :class:`bytes` objects); the operating system may set a limit (:func:`~os.sysconf` value ``SC_IOV_MAX``) on the number of buffers that can be used.  The *ancdata* argument specifies the ancillary data (control messages) as an iterable of zero or more tuples ``(cmsg_level, cmsg_type, cmsg_data)``, where *cmsg_level* and *cmsg_type* are integers specifying the protocol level and protocol-specific type respectively, and *cmsg_data* is a bytes-like object holding the associated data.  Note that some systems (in particular, systems without :func:`CMSG_SPACE`) might support sending only one control message per call.  The *flags* argument defaults to 0 and has the same meaning as for :meth:`send`.  If *address* is supplied and not ``None``, it sets a destination address for the message.  The return value is the number of bytes of non-ancillary data sent."
 msgstr ""
 
-msgid "The following function sends the list of file descriptors *fds* over an :const:`AF_UNIX` socket, on systems which support the :const:`SCM_RIGHTS` mechanism.  See also :meth:`recvmsg`. ::"
+msgid "The following function sends the list of file descriptors *fds* over an :const:`AF_UNIX` socket, on systems which support the :const:`!SCM_RIGHTS` mechanism.  See also :meth:`recvmsg`. ::"
 msgstr ""
 
 msgid ""
@@ -1052,7 +1052,7 @@ msgstr ""
 msgid "The method no longer applies :const:`SOCK_NONBLOCK` flag on :attr:`socket.type`."
 msgstr ""
 
-msgid "Set a timeout on blocking socket operations.  The *value* argument can be a nonnegative floating-point number expressing seconds, or ``None``. If a non-zero value is given, subsequent socket operations will raise a :exc:`timeout` exception if the timeout period *value* has elapsed before the operation has completed.  If zero is given, the socket is put in non-blocking mode. If ``None`` is given, the socket is put in blocking mode."
+msgid "Set a timeout on blocking socket operations.  The *value* argument can be a nonnegative real number expressing seconds, or ``None``. If a non-zero value is given, subsequent socket operations will raise a :exc:`timeout` exception if the timeout period *value* has elapsed before the operation has completed.  If zero is given, the socket is put in non-blocking mode. If ``None`` is given, the socket is put in blocking mode."
 msgstr ""
 
 msgid "For further information, please consult the :ref:`notes on socket timeouts <socket-timeouts>`."
@@ -1061,7 +1061,7 @@ msgstr ""
 msgid "The method no longer toggles :const:`SOCK_NONBLOCK` flag on :attr:`socket.type`."
 msgstr ""
 
-msgid "Set the value of the given socket option (see the Unix manual page :manpage:`setsockopt(2)`).  The needed symbolic constants are defined in this module (:ref:`!SO_\\* etc. <socket-unix-constants>`).  The value can be an integer, ``None`` or a :term:`bytes-like object` representing a buffer. In the latter case it is up to the caller to ensure that the bytestring contains the proper bits (see the optional built-in module :mod:`struct` for a way to encode C structures as bytestrings). When *value* is set to ``None``, *optlen* argument is required. It's equivalent to calling :c:func:`setsockopt` C function with ``optval=NULL`` and ``optlen=optlen``."
+msgid "Set the value of the given socket option (see the Unix manual page :manpage:`setsockopt(2)`).  The needed symbolic constants are defined in this module (:ref:`!SO_\\* etc. <socket-unix-constants>`).  The value can be an integer, ``None`` or a :term:`bytes-like object` representing a buffer. In the latter case it is up to the caller to ensure that the bytestring contains the proper bits (see the optional built-in module :mod:`struct` for a way to encode C structures as bytestrings). When *value* is set to ``None``, *optlen* argument is required. It's equivalent to calling :c:func:`!setsockopt` C function with ``optval=NULL`` and ``optlen=optlen``."
 msgstr ""
 
 msgid "setsockopt(level, optname, None, optlen: int) form added."
@@ -1073,7 +1073,7 @@ msgstr ""
 msgid "Duplicate a socket and prepare it for sharing with a target process.  The target process must be provided with *process_id*.  The resulting bytes object can then be passed to the target process using some form of interprocess communication and the socket can be recreated there using :func:`fromshare`. Once this method has been called, it is safe to close the socket since the operating system has already duplicated it for the target process."
 msgstr ""
 
-msgid "Note that there are no methods :meth:`read` or :meth:`write`; use :meth:`~socket.recv` and :meth:`~socket.send` without *flags* argument instead."
+msgid "Note that there are no methods :meth:`!read` or :meth:`!write`; use :meth:`~socket.recv` and :meth:`~socket.send` without *flags* argument instead."
 msgstr ""
 
 msgid "Socket objects also have these (read-only) attributes that correspond to the values given to the :class:`~socket.socket` constructor."
@@ -1086,6 +1086,9 @@ msgid "The socket type."
 msgstr ""
 
 msgid "The socket protocol."
+msgstr ""
+
+msgid "The base class of the :class:`~socket.socket` type, re-exported from :mod:`!_socket`.  An instance check such as ``isinstance(socket(...), SocketType)`` is true, but ``SocketType`` is not the same as ``type(socket(...))``, which is :class:`~socket.socket` itself."
 msgstr ""
 
 msgid "Notes on socket timeouts"

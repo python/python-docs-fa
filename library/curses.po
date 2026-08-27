@@ -15,10 +15,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2021-06-28 01:03+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
-"Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
+"Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,6 +100,9 @@ msgstr ""
 msgid "Change the definition of the color-pair ``0`` to ``(fg, bg)``."
 msgstr ""
 
+msgid "This is an ncurses extension."
+msgstr ""
+
 msgid "Return the output speed of the terminal in bits per second.  On software terminal emulators it will have a fixed high value. Included for historical reasons; in former times, it was used to  write output loops for time delays and occasionally to change interfaces depending on the line speed."
 msgstr ""
 
@@ -112,7 +115,7 @@ msgstr ""
 msgid "Enter cbreak mode.  In cbreak mode (sometimes called \"rare\" mode) normal tty line buffering is turned off and characters are available to be read one by one. However, unlike raw mode, special characters (interrupt, quit, suspend, and flow control) retain their effects on the tty driver and calling program.  Calling first :func:`raw` then :func:`cbreak` leaves the terminal in cbreak mode."
 msgstr ""
 
-msgid "Return the intensity of the red, green, and blue (RGB) components in the color *color_number*, which must be between ``0`` and ``COLORS - 1``.  Return a 3-tuple, containing the R,G,B values for the given color, which will be between ``0`` (no component) and ``1000`` (maximum amount of component)."
+msgid "Return the intensity of the red, green, and blue (RGB) components in the color *color_number*, which must be between ``0`` and ``COLORS - 1``.  Return a 3-tuple, containing the R,G,B values for the given color, which will be between ``0`` (no component) and ``1000`` (maximum amount of component).  Raise an exception if the color is not supported."
 msgstr ""
 
 msgid "Return the attribute value for displaying text in the specified color pair. Only the first 256 color pairs are supported. This attribute value can be combined with :const:`A_STANDOUT`, :const:`A_REVERSE`, and the other :const:`!A_\\*` attributes.  :func:`pair_number` is the counterpart to this function."
@@ -130,7 +133,7 @@ msgstr ""
 msgid "Insert an *ms* millisecond pause in output."
 msgstr ""
 
-msgid "Update the physical screen.  The curses library keeps two data structures, one representing the current physical screen contents and a virtual screen representing the desired next state.  The :func:`doupdate` ground updates the physical screen to match the virtual screen."
+msgid "Update the physical screen.  The curses library keeps two data structures, one representing the current physical screen contents and a virtual screen representing the desired next state.  The :func:`doupdate` function updates the physical screen to match the virtual screen."
 msgstr ""
 
 msgid "The virtual screen may be updated by a :meth:`~window.noutrefresh` call after write operations such as :meth:`~window.addstr` have been performed on a window.  The normal :meth:`~window.refresh` call is simply :meth:`!noutrefresh` followed by :func:`!doupdate`; if you have to update multiple windows, you can speed performance and perhaps reduce screen flicker by issuing :meth:`!noutrefresh` calls on all windows, followed by a single :func:`!doupdate`."
@@ -145,7 +148,7 @@ msgstr ""
 msgid "Return the user's current erase character as a one-byte bytes object.  Under Unix operating systems this is a property of the controlling tty of the curses program, and is not set by the curses library itself."
 msgstr ""
 
-msgid "The :func:`.filter` routine, if used, must be called before :func:`initscr` is called.  The effect is that, during those calls, :envvar:`LINES` is set to ``1``; the capabilities ``clear``, ``cup``, ``cud``, ``cud1``, ``cuu1``, ``cuu``, ``vpa`` are disabled; and the ``home`` string is set to the value of ``cr``. The effect is that the cursor is confined to the current line, and so are screen updates.  This may be used for enabling character-at-a-time  line editing without touching the rest of the screen."
+msgid "The :func:`.filter` routine, if used, must be called before :func:`initscr` is called.  The effect is that, during the initialization, :envvar:`LINES` is set to ``1``; the capabilities ``clear``, ``cup``, ``cud``, ``cud1``, ``cuu1``, ``cuu``, ``vpa`` are disabled; and the ``home`` string is set to the value of ``cr``. The effect is that the cursor is confined to the current line, and so are screen updates.  This may be used for enabling character-at-a-time  line editing without touching the rest of the screen."
 msgstr ""
 
 msgid "Flash the screen.  That is, change it to reverse-video and then change it back in a short interval.  Some people prefer such as 'visible bell' to the audible attention signal produced by :func:`beep`."
@@ -163,13 +166,13 @@ msgstr ""
 msgid "Return the current coordinates of the virtual screen cursor as a tuple ``(y, x)``.  If :meth:`leaveok <window.leaveok>` is currently ``True``, then return ``(-1, -1)``."
 msgstr ""
 
-msgid "Read window related data stored in the file by an earlier :func:`window.putwin` call. The routine then creates and initializes a new window using that data, returning the new window object."
+msgid "Read window-related data stored in the file by an earlier :meth:`window.putwin` call. The routine then creates and initializes a new window using that data, returning the new window object.  The *file* argument must be a file object opened for reading in binary mode."
 msgstr ""
 
 msgid "Return ``True`` if the terminal can display colors; otherwise, return ``False``."
 msgstr ""
 
-msgid "Return ``True`` if the module supports extended colors; otherwise, return ``False``. Extended color support allows more than 256 color pairs for terminals that support more than 16 colors (e.g. xterm-256color)."
+msgid "Return ``True`` if the module supports extended colors; otherwise, return ``False``. Extended color support allows more than 256 color pairs for terminals that support more than 16 colors (for example, xterm-256color)."
 msgstr ""
 
 msgid "Extended color support requires ncurses version 6.1 or later."
@@ -196,7 +199,13 @@ msgstr ""
 msgid "Initialize the library. Return a :ref:`window <curses-window-objects>` object which represents the whole screen."
 msgstr ""
 
+msgid "See :func:`setupterm` for a caveat about calling it before this function."
+msgstr ""
+
 msgid "If there is an error opening the terminal, the underlying curses library may cause the interpreter to exit."
+msgstr ""
+
+msgid "If *flag* is ``True``, pressing an interrupt key (interrupt, break, or quit) will flush all output in the terminal driver queue.  If *flag* is ``False``, no flushing is done."
 msgstr ""
 
 msgid "Return ``True`` if :func:`resize_term` would modify the window structure, ``False`` otherwise."
@@ -208,6 +217,9 @@ msgstr ""
 msgid "Return the name of the key numbered *k* as a bytes object.  The name of a key generating printable ASCII character is the key's character.  The name of a control-key combination is a two-byte bytes object consisting of a caret (``b'^'``) followed by the corresponding printable ASCII character.  The name of an alt-key combination (128--255) is a bytes object consisting of the prefix ``b'M-'`` followed by the name of the corresponding ASCII character."
 msgstr ""
 
+msgid "Raise a :exc:`ValueError` if *k* is negative."
+msgstr ""
+
 msgid "Return the user's current line kill character as a one-byte bytes object. Under Unix operating systems this is a property of the controlling tty of the curses program, and is not set by the curses library itself."
 msgstr ""
 
@@ -217,10 +229,10 @@ msgstr ""
 msgid "If *flag* is ``True``, allow 8-bit characters to be input.  If *flag* is ``False``,  allow only 7-bit chars."
 msgstr ""
 
-msgid "Set the maximum time in milliseconds that can elapse between press and release events in order for them to be recognized as a click, and return the previous interval value.  The default value is 200 milliseconds, or one fifth of a second."
+msgid "Set the maximum time in milliseconds that can elapse between press and release events in order for them to be recognized as a click, and return the previous interval value.  The default value is 166 milliseconds, or one sixth of a second. Use a negative *interval* to obtain the interval value without changing it."
 msgstr ""
 
-msgid "Set the mouse events to be reported, and return a tuple ``(availmask, oldmask)``.   *availmask* indicates which of the specified mouse events can be reported; on complete failure it returns ``0``.  *oldmask* is the previous value of the given window's mouse event mask.  If this function is never called, no mouse events are ever reported."
+msgid "Set the mouse events to be reported, and return a tuple ``(availmask, oldmask)``.   *availmask* indicates which of the specified mouse events can be reported; on complete failure it returns ``0``.  *oldmask* is the previous value of the mouse event mask.  If this function is never called, no mouse events are ever reported."
 msgstr ""
 
 msgid "Sleep for *ms* milliseconds."
@@ -229,7 +241,7 @@ msgstr ""
 msgid "Create and return a pointer to a new pad data structure with the given number of lines and columns.  Return a pad as a window object."
 msgstr ""
 
-msgid "A pad is like a window, except that it is not restricted by the screen size, and is not necessarily associated with a particular part of the screen.  Pads can be used when a large window is needed, and only a part of the window will be on the screen at one time.  Automatic refreshes of pads (such as from scrolling or echoing of input) do not occur.  The :meth:`~window.refresh` and :meth:`~window.noutrefresh` methods of a pad require 6 arguments to specify the part of the pad to be displayed and the location on the screen to be used for the display. The arguments are *pminrow*, *pmincol*, *sminrow*, *smincol*, *smaxrow*, *smaxcol*; the *p* arguments refer to the upper left corner of the pad region to be displayed and the *s* arguments define a clipping box on the screen within which the pad region is to be displayed."
+msgid "A pad is like a window, except that it is not restricted by the screen size, and is not necessarily associated with a particular part of the screen.  Pads can be used when a large window is needed, and only a part of the window will be on the screen at one time.  Automatic refreshes of pads (such as from scrolling or echoing of input) do not occur.  The :meth:`~window.refresh` and :meth:`~window.noutrefresh` methods of a pad require 6 arguments to specify the part of the pad to be displayed and the location on the screen to be used for the display. The arguments are *pminrow*, *pmincol*, *sminrow*, *smincol*, *smaxrow*, *smaxcol*; the *p* arguments refer to the upper-left corner of the pad region to be displayed and the *s* arguments define a clipping box on the screen within which the pad region is to be displayed."
 msgstr ""
 
 msgid "Return a new :ref:`window <curses-window-objects>`, whose left-upper corner is at  ``(begin_y, begin_x)``, and whose height/width is  *nlines*/*ncols*."
@@ -239,6 +251,9 @@ msgid "By default, the window will extend from the  specified position to the lo
 msgstr ""
 
 msgid "Enter newline mode.  This mode translates the return key into newline on input, and translates newline into return and line-feed on output. Newline mode is initially on."
+msgstr ""
+
+msgid "If *flag* is ``False``, the effect is the same as calling :func:`nonl`."
 msgstr ""
 
 msgid "Leave cbreak mode.  Return to normal \"cooked\" mode with line buffering."
@@ -263,6 +278,9 @@ msgid "Return the number of the color-pair set by the attribute value *attr*. :f
 msgstr ""
 
 msgid "Equivalent to ``tputs(str, 1, putchar)``; emit the value of a specified terminfo capability for the current terminal.  Note that the output of :func:`putp` always goes to standard output."
+msgstr ""
+
+msgid ":func:`setupterm` (or :func:`initscr`) must be called first."
 msgstr ""
 
 msgid "If *flag* is ``False``, the effect is the same as calling :func:`noqiflush`. If *flag* is ``True``, or no argument is provided, the queues will be flushed when these control characters are read."
@@ -307,6 +325,12 @@ msgstr ""
 msgid "Initialize the terminal.  *term* is a string giving the terminal name, or ``None``; if omitted or ``None``, the value of the :envvar:`TERM` environment variable will be used.  *fd* is the file descriptor to which any initialization sequences will be sent; if not supplied or ``-1``, the file descriptor for ``sys.stdout`` will be used."
 msgstr ""
 
+msgid "Raise a :exc:`curses.error` if the terminal could not be found or its terminfo database entry could not be read.  If the terminal has already been initialized, this function has no effect."
+msgstr ""
+
+msgid "Calling :func:`initscr` after :func:`setupterm` leaks the terminal that :func:`setupterm` allocated: the curses library keeps only a single current terminal and does not free the previously allocated one."
+msgstr ""
+
 msgid "Must be called if the programmer wants to use colors, and before any other color manipulation routine is called.  It is good practice to call this routine right after :func:`initscr`."
 msgstr ""
 
@@ -328,7 +352,7 @@ msgstr ""
 msgid "Return the value of the string capability corresponding to the terminfo capability name *capname* as a bytes object.  Return ``None`` if *capname* is not a terminfo \"string capability\", or is canceled or absent from the terminal description."
 msgstr ""
 
-msgid "Instantiate the bytes object *str* with the supplied parameters, where *str* should be a parameterized string obtained from the terminfo database.  E.g. ``tparm(tigetstr(\"cup\"), 5, 3)`` could result in ``b'\\033[6;4H'``, the exact result depending on terminal type."
+msgid "Instantiate the bytes object *str* with the supplied parameters, where *str* should be a parameterized string obtained from the terminfo database.  For example, ``tparm(tigetstr(\"cup\"), 5, 3)`` could result in ``b'\\033[6;4H'``, the exact result depending on terminal type.  Up to nine integer parameters may be supplied."
 msgstr ""
 
 msgid "Specify that the file descriptor *fd* be used for typeahead checking.  If *fd* is ``-1``, then no typeahead checking is done."
@@ -367,7 +391,7 @@ msgstr ""
 msgid "Initialize curses and call another callable object, *func*, which should be the rest of your curses-using application.  If the application raises an exception, this function will restore the terminal to a sane state before re-raising the exception and generating a traceback.  The callable object *func* is then passed the main window 'stdscr' as its first argument, followed by any other arguments passed to :func:`!wrapper`.  Before calling *func*, :func:`!wrapper` turns on cbreak mode, turns off echo, enables the terminal keypad, and initializes colors if the terminal has color support.  On exit (whether normally or by exception) it restores cooked mode, turns on echo, and disables the terminal keypad."
 msgstr ""
 
-msgid "Window Objects"
+msgid "Window objects"
 msgstr ""
 
 msgid "Window objects, as returned by :func:`initscr` and :func:`newwin` above, have the following methods and attributes:"
@@ -376,7 +400,7 @@ msgstr ""
 msgid "Paint character *ch* at ``(y, x)`` with attributes *attr*, overwriting any character previously painted at that location.  By default, the character position and attributes are the current settings for the window object."
 msgstr ""
 
-msgid "Writing outside the window, subwindow, or pad raises a :exc:`curses.error`. Attempting to write to the lower right corner of a window, subwindow, or pad will cause an exception to be raised after the character is printed."
+msgid "Writing outside the window, subwindow, or pad raises a :exc:`curses.error`. Attempting to write to the lower-right corner of a window, subwindow, or pad will cause an exception to be raised after the character is printed."
 msgstr ""
 
 msgid "Paint at most *n* characters of the character string *str* at ``(y, x)`` with attributes *attr*, overwriting anything previously on the display."
@@ -385,10 +409,10 @@ msgstr ""
 msgid "Paint the character string *str* at ``(y, x)`` with attributes *attr*, overwriting anything previously on the display."
 msgstr ""
 
-msgid "Writing outside the window, subwindow, or pad raises :exc:`curses.error`. Attempting to write to the lower right corner of a window, subwindow, or pad will cause an exception to be raised after the string is printed."
+msgid "Writing outside the window, subwindow, or pad raises :exc:`curses.error`. Attempting to write to the lower-right corner of a window, subwindow, or pad will cause an exception to be raised after the string is printed."
 msgstr ""
 
-msgid "A `bug in ncurses <https://bugs.python.org/issue35924>`_, the backend for this Python module, can cause SegFaults when resizing windows. This is fixed in ncurses-6.1-20190511.  If you are stuck with an earlier ncurses, you can avoid triggering this if you do not call :func:`addstr` with a *str* that has embedded newlines.  Instead, call :func:`addstr` separately for each line."
+msgid "A bug in ncurses, the backend for this Python module, could cause segfaults when resizing windows.  This was fixed in ncurses-6.1-20190511. If you are stuck with an earlier ncurses, you can avoid triggering it by not calling :meth:`!addstr` with a *str* that has embedded newlines; instead, call :meth:`!addstr` separately for each line."
 msgstr ""
 
 msgid "Remove attribute *attr* from the \"background\" set applied to all writes to the current window."
@@ -514,7 +538,7 @@ msgstr ""
 msgid "Update the current cursor position of all the ancestors of the window to reflect the current cursor position of the window."
 msgstr ""
 
-msgid "Delete any character at ``(y, x)``."
+msgid "Delete the character under the cursor, or at ``(y, x)`` if specified.  All characters to the right on the same line are shifted one position left."
 msgstr ""
 
 msgid "Delete the line under the cursor. All following lines are moved up by one line."
@@ -541,7 +565,7 @@ msgstr ""
 msgid "Return a tuple ``(y, x)`` of coordinates of upper-left corner."
 msgstr ""
 
-msgid "Return the given window's current background character/attribute pair."
+msgid "Return the given window's current background character/attribute pair. Its components can be extracted like those of :meth:`inch`."
 msgstr ""
 
 msgid "Get a character. Note that the integer returned does *not* have to be in ASCII range: function keys, keypad keys and so on are represented by numbers higher than 255.  In no-delay mode, return ``-1`` if there is no input, otherwise wait until a key is pressed."
@@ -559,7 +583,7 @@ msgstr ""
 msgid "Return the beginning coordinates of this window relative to its parent window as a tuple ``(y, x)``.  Return ``(-1, -1)`` if this window has no parent."
 msgstr ""
 
-msgid "Read a bytes object from the user, with primitive line editing capacity. The maximum value for *n* is 2047."
+msgid "Read a bytes object from the user, with primitive line editing capacity. At most *n* characters are read; *n* defaults to and cannot exceed 2047."
 msgstr ""
 
 msgid "The maximum value for *n* was increased from 1023 to 2047."
@@ -568,22 +592,22 @@ msgstr ""
 msgid "Return a tuple ``(y, x)`` of current cursor position  relative to the window's upper-left corner."
 msgstr ""
 
-msgid "Display a horizontal line starting at ``(y, x)`` with length *n* consisting of the character *ch*."
+msgid "Display a horizontal line starting at ``(y, x)`` with length *n* consisting of the character *ch* with attributes *attr*.  The line stops at the right edge of the window if fewer than *n* cells are available."
 msgstr ""
 
 msgid "If *flag* is ``False``, curses no longer considers using the hardware insert/delete character feature of the terminal; if *flag* is ``True``, use of character insertion and deletion is enabled.  When curses is first initialized, use of character insert/delete is enabled by default."
 msgstr ""
 
-msgid "If *flag* is ``True``, :mod:`!curses` will try and use hardware line editing facilities. Otherwise, line insertion/deletion are disabled."
+msgid "If *flag* is ``True``, :mod:`!curses` will try to use hardware line editing facilities.  Otherwise, curses will not use them."
 msgstr ""
 
 msgid "If *flag* is ``True``, any change in the window image automatically causes the window to be refreshed; you no longer have to call :meth:`refresh` yourself. However, it may degrade performance considerably, due to repeated calls to wrefresh.  This option is disabled by default."
 msgstr ""
 
-msgid "Return the character at the given position in the window. The bottom 8 bits are the character proper, and upper bits are the attributes."
+msgid "Return the character at the given position in the window. The bottom 8 bits are the character proper and the upper bits are the attributes; extract them with the :data:`A_CHARTEXT` and :data:`A_ATTRIBUTES` bit-masks, and the color pair with :func:`pair_number`. The character byte is the locale-encoded byte of the cell's character, consistent with :meth:`instr`. On a wide-character build, a character that does not fit in a single byte in the current locale has a character byte of ``0``; use :meth:`instr` to read such characters."
 msgstr ""
 
-msgid "Paint character *ch* at ``(y, x)`` with attributes *attr*, moving the line from position *x* right by one character."
+msgid "Insert character *ch* with attributes *attr* before the character under the cursor, or at ``(y, x)`` if specified.  All characters to the right of the cursor are shifted one position right, with the rightmost character on the line being lost.  The cursor position does not change."
 msgstr ""
 
 msgid "Insert *nlines* lines into the specified window above the current line.  The *nlines* bottom lines are lost.  For negative *nlines*, delete *nlines* lines starting with the one under the cursor, and move the remaining lines up.  The bottom *nlines* lines are cleared.  The current cursor position remains the same."
@@ -598,7 +622,7 @@ msgstr ""
 msgid "Insert a character string (as many characters as will fit on the line) before the character under the cursor.  All characters to the right of the cursor are shifted right, with the rightmost characters on the line being lost.  The cursor position does not change (after moving to *y*, *x*, if specified)."
 msgstr ""
 
-msgid "Return a bytes object of characters, extracted from the window starting at the current cursor position, or at *y*, *x* if specified. Attributes are stripped from the characters.  If *n* is specified, :meth:`instr` returns a string at most *n* characters long (exclusive of the trailing NUL). The maximum value for *n* is 2047."
+msgid "Return a bytes object of characters, extracted from the window starting at the current cursor position, or at *y*, *x* if specified, and stopping at the end of the line. Attributes and color information are stripped from the characters.  If *n* is specified, :meth:`instr` returns a string at most *n* characters long (exclusive of the trailing NUL). The maximum value for *n* is 2047."
 msgstr ""
 
 msgid "Return ``True`` if the specified line was modified since the last call to :meth:`refresh`; otherwise return ``False``.  Raise a :exc:`curses.error` exception if *line* is not valid for the given window."
@@ -610,7 +634,7 @@ msgstr ""
 msgid "If *flag* is ``True``, escape sequences generated by some keys (keypad,  function keys) will be interpreted by :mod:`!curses`. If *flag* is ``False``, escape sequences will be left as is in the input stream."
 msgstr ""
 
-msgid "If *flag* is ``True``, cursor is left where it is on update, instead of being at \"cursor position.\"  This reduces cursor movement where possible. If possible the cursor will be made invisible."
+msgid "If *flag* is ``True``, cursor is left where it is on update, instead of being at \"cursor position.\"  This reduces cursor movement where possible."
 msgstr ""
 
 msgid "If *flag* is ``False``, cursor will always be at \"cursor position\" after an update."
@@ -625,6 +649,9 @@ msgstr ""
 msgid "Move the window so its upper-left corner is at ``(new_y, new_x)``."
 msgstr ""
 
+msgid "Moving the window so that any part of it would be off the screen is an error: the window is not moved and :exc:`curses.error` is raised."
+msgstr ""
+
 msgid "If *flag* is ``True``, :meth:`getch` will be non-blocking."
 msgstr ""
 
@@ -635,6 +662,9 @@ msgid "If *flag* is ``False``, after a few milliseconds, an escape sequence will
 msgstr ""
 
 msgid "Mark for refresh but wait.  This function updates the data structure representing the desired state of the window, but does not force an update of the physical screen.  To accomplish that, call  :func:`doupdate`."
+msgstr ""
+
+msgid "The 6 arguments can only be specified, and are then required, when the window is a pad created with :func:`newpad`; they have the same meaning as for :meth:`refresh`."
 msgstr ""
 
 msgid "Overlay the window on top of *destwin*. The windows need not be the same size, only the overlapping region is copied. This copy is non-destructive, which means that the current background character does not overwrite the old contents of *destwin*."
@@ -661,13 +691,13 @@ msgstr ""
 msgid "Update the display immediately (sync actual screen with previous drawing/deleting methods)."
 msgstr ""
 
-msgid "The 6 optional arguments can only be specified when the window is a pad created with :func:`newpad`.  The additional parameters are needed to indicate what part of the pad and screen are involved. *pminrow* and *pmincol* specify the upper left-hand corner of the rectangle to be displayed in the pad.  *sminrow*, *smincol*, *smaxrow*, and *smaxcol* specify the edges of the rectangle to be displayed on the screen.  The lower right-hand corner of the rectangle to be displayed in the pad is calculated from the screen coordinates, since the rectangles must be the same size.  Both rectangles must be entirely contained within their respective structures.  Negative values of *pminrow*, *pmincol*, *sminrow*, or *smincol* are treated as if they were zero."
+msgid "The 6 arguments can only be specified, and are then required, when the window is a pad created with :func:`newpad`.  The additional parameters are needed to indicate what part of the pad and screen are involved. *pminrow* and *pmincol* specify the upper-left corner of the rectangle to be displayed in the pad.  *sminrow*, *smincol*, *smaxrow*, and *smaxcol* specify the edges of the rectangle to be displayed on the screen.  The lower-right corner of the rectangle to be displayed in the pad is calculated from the screen coordinates, since the rectangles must be the same size.  Both rectangles must be entirely contained within their respective structures.  Negative values of *pminrow*, *pmincol*, *sminrow*, or *smincol* are treated as if they were zero."
 msgstr ""
 
 msgid "Reallocate storage for a curses window to adjust its dimensions to the specified values.  If either dimension is larger than the current values, the window's data is filled with blanks that have the current background rendition (as set by :meth:`bkgdset`) merged into them."
 msgstr ""
 
-msgid "Scroll the screen or scrolling region upward by *lines* lines."
+msgid "Scroll the screen or scrolling region.  Scroll upward by *lines* lines if *lines* is positive, or downward if it is negative.  Scrolling has no effect unless it has been enabled for the window with :meth:`scrollok`."
 msgstr ""
 
 msgid "Control what happens when the cursor of a window is moved off the edge of the window or scrolling region, either as a result of a newline action on the bottom line, or typing the last character of the last line.  If *flag* is ``False``, the cursor is left on the bottom line.  If *flag* is ``True``, the window is scrolled up one line.  Note that in order to get the physical scrolling effect on the terminal, it is also necessary to call :meth:`idlok`."
@@ -682,7 +712,10 @@ msgstr ""
 msgid "Turn on attribute *A_STANDOUT*."
 msgstr ""
 
-msgid "Return a sub-window, whose upper-left corner is at ``(begin_y, begin_x)``, and whose width/height is *ncols*/*nlines*."
+msgid "Return a sub-pad, whose upper-left corner is at ``(begin_y, begin_x)``, and whose width/height is *ncols*/*nlines*.  The coordinates are relative to the parent pad (unlike :meth:`subwin`, which uses screen coordinates).  This method is only available for pads created with :func:`newpad`."
+msgstr ""
+
+msgid "Return a sub-window, whose upper-left corner is at the screen-relative coordinates ``(begin_y, begin_x)``, and whose width/height is *ncols*/*nlines*."
 msgstr ""
 
 msgid "By default, the sub-window will extend from the specified position to the lower right corner of the window."
@@ -739,10 +772,10 @@ msgstr ""
 msgid "The maximum number of color pairs the terminal can support. It is defined only after the call to :func:`start_color`."
 msgstr ""
 
-msgid "The width of the screen, i.e., the number of columns. It is defined only after the call to :func:`initscr`. Updated by :func:`update_lines_cols`, :func:`resizeterm` and :func:`resize_term`."
+msgid "The width of the screen, that is, the number of columns. It is defined only after the call to :func:`initscr`. Updated by :func:`update_lines_cols`, :func:`resizeterm` and :func:`resize_term`."
 msgstr ""
 
-msgid "The height of the screen, i.e., the number of lines. It is defined only after the call to :func:`initscr`. Updated by :func:`update_lines_cols`, :func:`resizeterm` and :func:`resize_term`."
+msgid "The height of the screen, that is, the number of lines. It is defined only after the call to :func:`initscr`. Updated by :func:`update_lines_cols`, :func:`resizeterm` and :func:`resize_term`."
 msgstr ""
 
 msgid "Some constants are available to specify character cell attributes. The exact constants available are system dependent."
@@ -1168,7 +1201,7 @@ msgstr ""
 msgid "ACS code"
 msgstr ""
 
-msgid "alternate name for upper right corner"
+msgid "alternate name for upper-right corner"
 msgstr ""
 
 msgid "solid square block"
@@ -1180,7 +1213,7 @@ msgstr ""
 msgid "alternate name for horizontal line"
 msgstr ""
 
-msgid "alternate name for upper left corner"
+msgid "alternate name for upper-left corner"
 msgstr ""
 
 msgid "alternate name for top tee"
@@ -1219,10 +1252,10 @@ msgstr ""
 msgid "less-than-or-equal-to"
 msgstr ""
 
-msgid "lower left-hand corner"
+msgid "lower-left corner"
 msgstr ""
 
-msgid "lower right-hand corner"
+msgid "lower-right corner"
 msgstr ""
 
 msgid "left tee"
@@ -1258,7 +1291,7 @@ msgstr ""
 msgid "scan line 9"
 msgstr ""
 
-msgid "alternate name for lower right corner"
+msgid "alternate name for lower-right corner"
 msgstr ""
 
 msgid "alternate name for vertical line"
@@ -1267,7 +1300,7 @@ msgstr ""
 msgid "alternate name for right tee"
 msgstr ""
 
-msgid "alternate name for lower left corner"
+msgid "alternate name for lower-left corner"
 msgstr ""
 
 msgid "alternate name for bottom tee"
@@ -1288,10 +1321,10 @@ msgstr ""
 msgid "up arrow"
 msgstr ""
 
-msgid "upper left corner"
+msgid "upper-left corner"
 msgstr ""
 
-msgid "upper right corner"
+msgid "upper-right corner"
 msgstr ""
 
 msgid "vertical line"
@@ -1322,6 +1355,9 @@ msgid "Shift was down during button state change"
 msgstr ""
 
 msgid "Control was down during button state change"
+msgstr ""
+
+msgid "Alt was down during button state change"
 msgstr ""
 
 msgid "The following table lists the predefined colors:"
@@ -1363,7 +1399,7 @@ msgstr ""
 msgid "The module :mod:`!curses.textpad` defines the following function:"
 msgstr ""
 
-msgid "Draw a rectangle.  The first argument must be a window object; the remaining arguments are coordinates relative to that window.  The second and third arguments are the y and x coordinates of the upper left hand corner of the rectangle to be drawn; the fourth and fifth arguments are the y and x coordinates of the lower right hand corner. The rectangle will be drawn using VT100/IBM PC forms characters on terminals that make this possible (including xterm and most other software terminal emulators).  Otherwise it will be drawn with ASCII  dashes, vertical bars, and plus signs."
+msgid "Draw a rectangle.  The first argument must be a window object; the remaining arguments are coordinates relative to that window.  The second and third arguments are the y and x coordinates of the upper-left corner of the rectangle to be drawn; the fourth and fifth arguments are the y and x coordinates of the lower-right corner. The rectangle will be drawn using VT100/IBM PC forms characters on terminals that make this possible (including xterm and most other software terminal emulators).  Otherwise it will be drawn with ASCII  dashes, vertical bars, and plus signs."
 msgstr ""
 
 msgid "Textbox objects"
@@ -1372,16 +1408,16 @@ msgstr ""
 msgid "You can instantiate a :class:`Textbox` object as follows:"
 msgstr ""
 
-msgid "Return a textbox widget object.  The *win* argument should be a curses :ref:`window <curses-window-objects>` object in which the textbox is to be contained. The edit cursor of the textbox is initially located at the upper left hand corner of the containing window, with coordinates ``(0, 0)``. The instance's :attr:`stripspaces` flag is initially on."
+msgid "Return a textbox widget object.  The *win* argument should be a curses :ref:`window <curses-window-objects>` object in which the textbox is to be contained.  If *insert_mode* is true, the textbox inserts typed characters, shifting existing text to the right, rather than overwriting it. The edit cursor of the textbox is initially located at the upper-left corner of the containing window, with coordinates ``(0, 0)``. The instance's :attr:`stripspaces` flag is initially on."
 msgstr ""
 
 msgid ":class:`Textbox` objects have the following methods:"
 msgstr ""
 
-msgid "This is the entry point you will normally use.  It accepts editing keystrokes until one of the termination keystrokes is entered.  If *validator* is supplied, it must be a function.  It will be called for each keystroke entered with the keystroke as a parameter; command dispatch is done on the result. This method returns the window contents as a string; whether blanks in the window are included is affected by the :attr:`stripspaces` attribute."
+msgid "This is the entry point you will normally use.  It accepts editing keystrokes until one of the termination keystrokes is entered.  If *validate* is supplied, it must be a function.  It will be called for each keystroke entered with the keystroke as a parameter; command dispatch is done on the result.  If it returns a false value, the keystroke is ignored.  This method returns the window contents as a string; whether blanks in the window are included is affected by the :attr:`stripspaces` attribute."
 msgstr ""
 
-msgid "Process a single command keystroke.  Here are the supported special keystrokes:"
+msgid "Process a single command keystroke.  Returns ``1`` to continue editing, or ``0`` if a termination keystroke was processed.  Here are the supported special keystrokes:"
 msgstr ""
 
 msgid "Keystroke"
@@ -1435,7 +1471,7 @@ msgstr ""
 msgid ":kbd:`Control-J`"
 msgstr ""
 
-msgid "Terminate if the window is 1 line, otherwise insert newline."
+msgid "Terminate if the window is 1 line, otherwise move to the start of the next line."
 msgstr ""
 
 msgid ":kbd:`Control-K`"

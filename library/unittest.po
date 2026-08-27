@@ -14,10 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2021-06-28 01:16+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
-"Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
+"Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -486,7 +486,7 @@ msgstr ""
 msgid "Unittest supports skipping individual test methods and even whole classes of tests.  In addition, it supports marking a test as an \"expected failure,\" a test that is broken and will fail, but shouldn't be counted as a failure on a :class:`TestResult`."
 msgstr ""
 
-msgid "Skipping a test is simply a matter of using the :func:`skip` :term:`decorator` or one of its conditional variants, calling :meth:`TestCase.skipTest` within a :meth:`~TestCase.setUp` or test method, or raising :exc:`SkipTest` directly."
+msgid "Skipping a test is simply a matter of using the :deco:`skip` :term:`decorator` or one of its conditional variants, calling :meth:`TestCase.skipTest` within a :meth:`~TestCase.setUp` or test method, or raising :exc:`SkipTest` directly."
 msgstr ""
 
 msgid "Basic skipping looks like this::"
@@ -545,7 +545,7 @@ msgstr ""
 msgid ":meth:`TestCase.setUp` can also skip the test.  This is useful when a resource that needs to be set up is not available."
 msgstr ""
 
-msgid "Expected failures use the :func:`expectedFailure` decorator. ::"
+msgid "Expected failures use the :deco:`expectedFailure` decorator. ::"
 msgstr ""
 
 msgid ""
@@ -688,7 +688,7 @@ msgstr ""
 msgid "Method called immediately after the test method has been called and the result recorded.  This is called even if the test method raised an exception, so the implementation in subclasses may need to be particularly careful about checking internal state.  Any exception, other than :exc:`AssertionError` or :exc:`SkipTest`, raised by this method will be considered an additional error rather than a test failure (thus increasing the total number of reported errors). This method will only be called if the :meth:`setUp` succeeds, regardless of the outcome of the test method. The default implementation does nothing."
 msgstr ""
 
-msgid "A class method called before tests in an individual class are run. ``setUpClass`` is called with the class as the only argument and must be decorated as a :func:`classmethod`::"
+msgid "A class method called before tests in an individual class are run. ``setUpClass`` is called with the class as the only argument and must be decorated as a :deco:`classmethod`::"
 msgstr ""
 
 msgid ""
@@ -700,7 +700,7 @@ msgstr ""
 msgid "See `Class and Module Fixtures`_ for more details."
 msgstr ""
 
-msgid "A class method called after tests in an individual class have run. ``tearDownClass`` is called with the class as the only argument and must be decorated as a :meth:`classmethod`::"
+msgid "A class method called after tests in an individual class have run. ``tearDownClass`` is called with the class as the only argument and must be decorated as a :deco:`classmethod`::"
 msgstr ""
 
 msgid ""
@@ -1642,7 +1642,7 @@ msgstr ""
 msgid "Return ``True`` if all tests run so far have passed, otherwise returns ``False``."
 msgstr ""
 
-msgid "Returns ``False`` if there were any :attr:`unexpectedSuccesses` from tests marked with the :func:`expectedFailure` decorator."
+msgid "Returns ``False`` if there were any :attr:`unexpectedSuccesses` from tests marked with the :deco:`expectedFailure` decorator."
 msgstr ""
 
 msgid "This method can be called to signal that the set of tests being run should be aborted by setting the :attr:`shouldStop` attribute to ``True``. :class:`!TestRunner` objects should respect this flag and return without running any additional tests."
@@ -1690,13 +1690,13 @@ msgstr ""
 msgid "The default implementation appends a tuple ``(test, reason)`` to the instance's :attr:`skipped` attribute."
 msgstr ""
 
-msgid "Called when the test case *test* fails or errors, but was marked with the :func:`expectedFailure` decorator."
+msgid "Called when the test case *test* fails or errors, but was marked with the :deco:`expectedFailure` decorator."
 msgstr ""
 
 msgid "The default implementation appends a tuple ``(test, formatted_err)`` to the instance's :attr:`expectedFailures` attribute, where *formatted_err* is a formatted traceback derived from *err*."
 msgstr ""
 
-msgid "Called when the test case *test* was marked with the :func:`expectedFailure` decorator, but succeeded."
+msgid "Called when the test case *test* was marked with the :deco:`expectedFailure` decorator, but succeeded."
 msgstr ""
 
 msgid "The default implementation appends the test to the instance's :attr:`unexpectedSuccesses` attribute."

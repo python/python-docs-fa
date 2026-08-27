@@ -14,10 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2021-06-28 00:54+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
-"Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
+"Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -755,7 +755,13 @@ msgstr ""
 msgid "Asynchronous version of :meth:`socket.connect() <socket.socket.connect>`."
 msgstr ""
 
-msgid "``address`` no longer needs to be resolved.  ``sock_connect`` will try to check if the *address* is already resolved by calling :func:`socket.inet_pton`.  If not, :meth:`loop.getaddrinfo` will be used to resolve the *address*."
+msgid "With :class:`SelectorEventLoop`, *address* does not need to be resolved: for :const:`~socket.AF_INET` and :const:`~socket.AF_INET6` sockets, ``sock_connect`` first checks whether *address* is already resolved by calling :func:`socket.inet_pton`, and uses :meth:`loop.getaddrinfo` to resolve it if it is not."
+msgstr ""
+
+msgid ":class:`ProactorEventLoop`, the default event loop on Windows, does not resolve *address*.  The host must already be a numeric IP address; passing a host name raises :exc:`OSError`.  Resolve the address with :meth:`loop.getaddrinfo` first, or use :meth:`loop.create_connection`, which resolves the address on every platform."
+msgstr ""
+
+msgid "With :class:`SelectorEventLoop`, ``address`` no longer needs to be resolved."
 msgstr ""
 
 msgid ":meth:`loop.create_connection` and  :func:`asyncio.open_connection() <open_connection>`."
@@ -809,7 +815,7 @@ msgstr ""
 msgid "Register the read end of *pipe* in the event loop."
 msgstr ""
 
-msgid "*pipe* is a :term:`file-like object <file object>`."
+msgid "*pipe* is a :term:`file-like object <file object>`.  See :ref:`Supported pipe objects <asyncio-pipe-objects>` for the objects supported as *pipe*."
 msgstr ""
 
 msgid "Return pair ``(transport, protocol)``, where *transport* supports the :class:`ReadTransport` interface and *protocol* is an object instantiated by the *protocol_factory*."
@@ -821,10 +827,28 @@ msgstr ""
 msgid "Register the write end of *pipe* in the event loop."
 msgstr ""
 
-msgid "*pipe* is :term:`file-like object <file object>`."
+msgid "Return pair ``(transport, protocol)``, where *transport* supports :class:`WriteTransport` interface and *protocol* is an object instantiated by the *protocol_factory*."
 msgstr ""
 
-msgid "Return pair ``(transport, protocol)``, where *transport* supports :class:`WriteTransport` interface and *protocol* is an object instantiated by the *protocol_factory*."
+msgid "Supported pipe objects"
+msgstr ""
+
+msgid "These methods only work with objects the operating system can poll for readiness or perform overlapped I/O on.  Regular files on disk are **not** supported on any platform.  There is no asynchronous file I/O in asyncio; use :meth:`loop.run_in_executor` to read and write regular files without blocking the event loop."
+msgstr ""
+
+msgid "On Unix, with :class:`SelectorEventLoop`, *pipe* must wrap one of the following:"
+msgstr ""
+
+msgid "a pipe, such as an end of an :func:`os.pipe` pair or a FIFO created with :func:`os.mkfifo`;"
+msgstr ""
+
+msgid "a socket;"
+msgstr ""
+
+msgid "a character device, such as a terminal."
+msgstr ""
+
+msgid "On Windows, where only :class:`ProactorEventLoop` implements these methods, *pipe* must wrap a handle opened for overlapped I/O (that is, created with the ``FILE_FLAG_OVERLAPPED`` flag), since the handle has to be associated with an I/O completion port.  Handles that were not opened for overlapped I/O are rejected.  In particular, the standard streams (:data:`sys.stdin`, :data:`sys.stdout` and :data:`sys.stderr`), console handles, and the pipes created by :func:`os.pipe` are **not** opened for overlapped I/O and therefore cannot be used with these methods."
 msgstr ""
 
 msgid ":class:`SelectorEventLoop` does not support the above methods on Windows.  Use :class:`ProactorEventLoop` instead for Windows."
@@ -1244,6 +1268,9 @@ msgid "Return ``True`` if the server is accepting new connections."
 msgstr ""
 
 msgid "Wait until the :meth:`close` method completes and all active connections have finished."
+msgstr ""
+
+msgid "``wait_closed()`` now waits until the server is closed and all active connections have finished.  Previously, it returned immediately if the server was already closed, even if connections were still active."
 msgstr ""
 
 msgid "List of socket-like objects, ``asyncio.trsock.TransportSocket``, which the server is listening on."

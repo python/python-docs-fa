@@ -14,10 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2021-06-28 01:09+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
-"Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
+"Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -120,40 +120,10 @@ msgstr ""
 msgid "For a more convenient way of compressing a single chunk of data, see :func:`compress`."
 msgstr ""
 
-msgid "The *format* argument specifies what container format should be used. Possible values are:"
+msgid "The *format* argument specifies what container format should be used. Possible values are :const:`FORMAT_XZ` (the default), :const:`FORMAT_ALONE` and :const:`FORMAT_RAW`."
 msgstr ""
 
-msgid ":const:`FORMAT_XZ`: The ``.xz`` container format."
-msgstr ""
-
-msgid "This is the default format."
-msgstr ""
-
-msgid ":const:`FORMAT_ALONE`: The legacy ``.lzma`` container format."
-msgstr ""
-
-msgid "This format is more limited than ``.xz`` -- it does not support integrity checks or multiple filters."
-msgstr ""
-
-msgid ":const:`FORMAT_RAW`: A raw data stream, not using any container format."
-msgstr ""
-
-msgid "This format specifier does not support integrity checks, and requires that you always specify a custom filter chain (for both compression and decompression). Additionally, data compressed in this manner cannot be decompressed using :const:`FORMAT_AUTO` (see :class:`LZMADecompressor`)."
-msgstr ""
-
-msgid "The *check* argument specifies the type of integrity check to include in the compressed data. This check is used when decompressing, to ensure that the data has not been corrupted. Possible values are:"
-msgstr ""
-
-msgid ":const:`CHECK_NONE`: No integrity check. This is the default (and the only acceptable value) for :const:`FORMAT_ALONE` and :const:`FORMAT_RAW`."
-msgstr ""
-
-msgid ":const:`CHECK_CRC32`: 32-bit Cyclic Redundancy Check."
-msgstr ""
-
-msgid ":const:`CHECK_CRC64`: 64-bit Cyclic Redundancy Check. This is the default for :const:`FORMAT_XZ`."
-msgstr ""
-
-msgid ":const:`CHECK_SHA256`: 256-bit Secure Hash Algorithm."
+msgid "The *check* argument specifies the type of integrity check to include in the compressed data. This check is used when decompressing, to ensure that the data has not been corrupted. Possible values are :const:`CHECK_NONE`, :const:`CHECK_CRC32`, :const:`CHECK_CRC64` (the default for :const:`FORMAT_XZ`) and :const:`CHECK_SHA256`."
 msgstr ""
 
 msgid "If the specified check is not supported, an :class:`LZMAError` is raised."
@@ -276,22 +246,22 @@ msgstr ""
 msgid "Branch-Call-Jump (BCJ) filters:"
 msgstr ""
 
-msgid ":const:`FILTER_X86`"
+msgid ":const:`!FILTER_X86`"
 msgstr ""
 
-msgid ":const:`FILTER_IA64`"
+msgid ":const:`!FILTER_IA64`"
 msgstr ""
 
-msgid ":const:`FILTER_ARM`"
+msgid ":const:`!FILTER_ARM`"
 msgstr ""
 
-msgid ":const:`FILTER_ARMTHUMB`"
+msgid ":const:`!FILTER_ARMTHUMB`"
 msgstr ""
 
-msgid ":const:`FILTER_POWERPC`"
+msgid ":const:`!FILTER_POWERPC`"
 msgstr ""
 
-msgid ":const:`FILTER_SPARC`"
+msgid ":const:`!FILTER_SPARC`"
 msgstr ""
 
 msgid "A filter chain can consist of up to 4 filters, and cannot be empty. The last filter in the chain must be a compression filter, and any other filters must be delta or BCJ filters."
@@ -331,6 +301,72 @@ msgid "The delta filter stores the differences between bytes, producing more rep
 msgstr ""
 
 msgid "The BCJ filters are intended to be applied to machine code. They convert relative branches, calls and jumps in the code to use absolute addressing, with the aim of increasing the redundancy that can be exploited by the compressor. These filters support one option, ``start_offset``. This specifies the address that should be mapped to the beginning of the input data. The default is 0."
+msgstr ""
+
+msgid "Constants"
+msgstr ""
+
+msgid "The following module-level constants are provided for use as the *format*, *check*, *preset* and *filters* arguments of the classes and functions above."
+msgstr ""
+
+msgid "Container formats:"
+msgstr ""
+
+msgid "The ``.xz`` container format."
+msgstr ""
+
+msgid "The legacy ``.lzma`` container format.  This format is more limited than ``.xz`` -- it does not support integrity checks or multiple filters."
+msgstr ""
+
+msgid "A raw data stream, not using any container format.  This format specifier does not support integrity checks, and requires that you always specify a custom filter chain (for both compression and decompression).  Additionally, data compressed in this manner cannot be decompressed using :const:`FORMAT_AUTO`."
+msgstr ""
+
+msgid "Used for decompression only.  The container format is detected automatically, so that both ``.xz`` and ``.lzma`` files can be decompressed."
+msgstr ""
+
+msgid "Integrity checks:"
+msgstr ""
+
+msgid "No integrity check.  This is the default (and the only acceptable value) for :const:`FORMAT_ALONE` and :const:`FORMAT_RAW`."
+msgstr ""
+
+msgid "A 32-bit Cyclic Redundancy Check."
+msgstr ""
+
+msgid "A 64-bit Cyclic Redundancy Check.  This is the default for :const:`FORMAT_XZ`."
+msgstr ""
+
+msgid "A 256-bit Secure Hash Algorithm."
+msgstr ""
+
+msgid "The integrity check used by a stream could not yet be determined.  This may be the value of the :attr:`LZMADecompressor.check` attribute until enough of the input has been decoded."
+msgstr ""
+
+msgid "The largest supported integrity-check ID."
+msgstr ""
+
+msgid "Compression presets:"
+msgstr ""
+
+msgid "The default compression preset, equivalent to preset level ``6``."
+msgstr ""
+
+msgid "A flag that may be bitwise OR-ed with a preset level (``0`` to ``9``) to select a slower but more thorough variant of that preset."
+msgstr ""
+
+msgid "Filter IDs and options:"
+msgstr ""
+
+msgid "The LZMA1 and LZMA2 compression filters.  :const:`FILTER_LZMA1` is for use with :const:`FORMAT_ALONE`, while :const:`FILTER_LZMA2` is for use with :const:`FORMAT_XZ` and :const:`FORMAT_RAW`."
+msgstr ""
+
+msgid "The delta filter."
+msgstr ""
+
+msgid "Compression modes that may be used as the ``mode`` option of a filter specifier (see :ref:`filter-chain-specs`)."
+msgstr ""
+
+msgid "Match finders that may be used as the ``mf`` option of a filter specifier (see :ref:`filter-chain-specs`)."
 msgstr ""
 
 msgid "Examples"

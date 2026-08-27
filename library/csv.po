@@ -14,10 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2021-06-28 01:03+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
-"Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
+"Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,6 +70,14 @@ msgid ""
 "Spam, Lovely Spam, Wonderful Spam"
 msgstr ""
 
+msgid "where :file:`eggs.csv` contains:"
+msgstr ""
+
+msgid ""
+"Spam Spam Spam Spam Spam |Baked Beans|\n"
+"Spam |Lovely Spam| |Wonderful Spam|"
+msgstr ""
+
 msgid "Return a writer object responsible for converting the user's data into delimited strings on the given file-like object.  *csvfile* can be any object with a :meth:`~io.TextIOBase.write` method.  If *csvfile* is a file object, it should be opened with ``newline=''`` [1]_.  An optional *dialect* parameter can be given which is used to define a set of parameters specific to a particular CSV dialect.  It may be an instance of a subclass of the :class:`Dialect` class or one of the strings returned by the :func:`list_dialects` function.  The other optional *fmtparams* keyword arguments can be given to override individual formatting parameters in the current dialect.  For full details about dialects and formatting parameters, see the :ref:`csv-fmt-params` section. To make it as easy as possible to interface with modules which implement the DB API, the value :const:`None` is written as the empty string.  While this isn't a reversible transformation, it makes it easier to dump SQL NULL data values to CSV files without preprocessing the data returned from a ``cursor.fetch*`` call. All other non-string data are stringified with :func:`str` before being written."
 msgstr ""
 
@@ -80,6 +88,9 @@ msgid ""
 "                            quotechar='|', quoting=csv.QUOTE_MINIMAL)\n"
 "    spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])\n"
 "    spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])"
+msgstr ""
+
+msgid "which writes :file:`eggs.csv` containing:"
 msgstr ""
 
 msgid "Associate *dialect* with *name*.  *name* must be a string. The dialect can be specified either by passing a sub-class of :class:`Dialect`, or by *fmtparams* keyword arguments, or both, with keyword arguments overriding parameters of the dialect. For full details about dialects and formatting parameters, see section :ref:`csv-fmt-params`."
@@ -135,6 +146,15 @@ msgid ""
 "{'first_name': 'John', 'last_name': 'Cleese'}"
 msgstr ""
 
+msgid "where :file:`names.csv` contains:"
+msgstr ""
+
+msgid ""
+"first_name,last_name\n"
+"Eric,Idle\n"
+"John,Cleese"
+msgstr ""
+
 msgid "Create an object which operates like a regular writer but maps dictionaries onto output rows.  The *fieldnames* parameter is a :mod:`sequence <collections.abc>` of keys that identify the order in which values in the dictionary passed to the :meth:`~csvwriter.writerow` method are written to file *f*.  The optional *restval* parameter specifies the value to be written if the dictionary is missing a key in *fieldnames*.  If the dictionary passed to the :meth:`~csvwriter.writerow` method contains a key not found in *fieldnames*, the optional *extrasaction* parameter indicates what action to take. If it is set to ``'raise'``, the default value, a :exc:`ValueError` is raised. If it is set to ``'ignore'``, extra values in the dictionary are ignored. Any other optional or keyword arguments are passed to the underlying :class:`writer` instance."
 msgstr ""
 
@@ -152,6 +172,16 @@ msgid ""
 "    writer.writerow({'first_name': 'Baked', 'last_name': 'Beans'})\n"
 "    writer.writerow({'first_name': 'Lovely', 'last_name': 'Spam'})\n"
 "    writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})"
+msgstr ""
+
+msgid "which writes :file:`names.csv` containing:"
+msgstr ""
+
+msgid ""
+"first_name,last_name\n"
+"Baked,Beans\n"
+"Lovely,Spam\n"
+"Wonderful,Spam"
 msgstr ""
 
 msgid "The :class:`Dialect` class is a container class whose attributes contain information for how to handle doublequotes, whitespace, delimiters, etc. Due to the lack of a strict CSV specification, different applications produce subtly different CSV data.  :class:`Dialect` instances define how :class:`reader` and :class:`writer` instances behave."
@@ -183,6 +213,9 @@ msgid "The :class:`Sniffer` class provides two methods:"
 msgstr ""
 
 msgid "Analyze the given *sample* and return a :class:`Dialect` subclass reflecting the parameters found.  If the optional *delimiters* parameter is given, it is interpreted as a string containing possible valid delimiter characters."
+msgstr ""
+
+msgid "If several delimiters fit the sample equally well --- for example if both ``','`` and ``';'`` split every row consistently --- the delimiters ``','``, ``'\\t'``, ``';'``, ``' '`` and ``':'`` are preferred, in this order, no matter how many times each of them occurs."
 msgstr ""
 
 msgid "Analyze the sample text (presumed to be in CSV format) and return :const:`True` if the first row appears to be a series of column headers. Inspecting each column, one of two key criteria will be considered to estimate if the sample contains a header:"

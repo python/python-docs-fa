@@ -10,7 +10,7 @@
    ```bash
    git clone https://github.com/<username>/python-docs-fa.git
    cd python-docs-fa
-   git remote add upstream https://github.com/revisto/python-docs-fa.git
+   git remote add upstream https://github.com/python/python-docs-fa.git
    ```
 2. یک شاخه برای کارتان بسازید (نام شاخه باید گویا باشد، مثلاً `translate-something`):
    ```bash
@@ -45,7 +45,7 @@
 2. فایل `.po` مورد نظر را با [Poedit](https://poedit.net) یا هر ویرایشگر متنی باز کنید.
    - در Poedit رشته‌های ترجمه‌نشده یا `fuzzy` را از پنل فیلتر (Filter) پیدا کنید.
 3. متن `msgid` را ترجمه کنید و در `msgstr` وارد کنید.
-4. **نشانه‌گذاری‌های Sphinx** مثل `` :class:`int` `` ، `` :func:`repr` `` ، `` :ref:`...` `` ، `` ``code`` `` و **جای‌گذارها** مثل `%s` یا `{name}` را دقیقاً بدون تغییر نگه دارید؛ فقط متن اطراف آن‌ها ترجمه می‌شود. ترجمهٔ `target` در `` :term:`text <target>` `` ممنوع است چون لینک را خراب می‌کند.
+4. **نشانه‌گذاری‌های Sphinx** مثل `` :class:`int` `` ، `` :func:`repr` `` ، `` :ref:`...` `` ، `` ``code`` `` و **جای‌گذارها** مثل `%s` یا `{name}` را دقیقاً بدون تغییر نگه دارید؛ فقط متن اطراف آن‌ها ترجمه می‌شود. در `` :term:`target` ``، اگر عبارت داخل بک‌تیک با شناسهٔ واژه‌نامه یکی است، می‌توانید آن را به شکل `` :term:`ترجمه <target>` `` بنویسید تا هم متن ترجمه‌شده نمایش داده شود و هم لینک درست کار کند؛ در این حالت فقط بخش نمایشی (پیش از `<`) ترجمه می‌شود و `target` داخل `<>` باید دقیقاً همان شناسهٔ انگلیسی اصلی (بدون تغییر) باقی بماند، چون تغییر آن لینک را خراب می‌کند.
 5. داخل کدها (بلوک‌های `code-block`) نام متغیرها، توابع و کلمات کلیدی را ترجمه نکنید؛ فقط رشته‌ها و کامنت‌ها را می‌توانید ترجمه کنید.
 6. از [واژه‌نامهٔ پروژه (GLOSSARY.md)](GLOSSARY.md) برای ثابت نگه‌داشتن اصطلاحات استفاده کنید.
 7. اگر به اصطلاحی برخوردید که در واژه‌نامه نبود، ترجمه‌ای برای آن انتخاب کنید و به واژه‌نامه اضافه کنید.
@@ -105,7 +105,7 @@ python3 scripts/update_po_headers.py --dry-run
 
 # فقط اصلاح فیلد Language-Team بدون دست‌زدن به اعتبارها
 python3 scripts/update_po_headers.py --no-credits \
-    --language-team "Persian (https://github.com/revisto/python-docs-fa/)" \
+    --language-team "Persian (https://github.com/python/python-docs-fa/)" \
     bugs.po tutorial/
 
 # ادغام نام‌های جدید با فهرست موجود (نام‌های قبلی حذف نمی‌شوند)
