@@ -14,10 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2021-06-29 13:04+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
-"Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
+"Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -613,7 +613,7 @@ msgstr ""
 msgid "functools"
 msgstr ""
 
-msgid "The :mod:`functools` module includes a new decorator for caching function calls.  :func:`functools.lru_cache` can save repeated queries to an external resource whenever the results are expected to be the same."
+msgid "The :mod:`functools` module includes a new decorator for caching function calls.  :deco:`functools.lru_cache` can save repeated queries to an external resource whenever the results are expected to be the same."
 msgstr ""
 
 msgid "For example, adding a caching decorator to a database query function can save database accesses for popular searches:"
@@ -628,7 +628,7 @@ msgstr ""
 msgid "(Contributed by Raymond Hettinger and incorporating design ideas from Jim Baker, Miki Tebeka, and Nick Coghlan; see `recipe 498245 <https://code.activestate.com/recipes/498245-lru-and-lfu-cache-decorators/>`_\\, `recipe 577479 <https://code.activestate.com/recipes/577479-simple-caching-decorator/>`_\\, :issue:`10586`, and :issue:`10593`.)"
 msgstr ""
 
-msgid "The :func:`functools.wraps` decorator now adds a :attr:`__wrapped__` attribute pointing to the original callable function.  This allows wrapped functions to be introspected.  It also copies :attr:`~function.__annotations__` if defined.  And now it also gracefully skips over missing attributes such as :attr:`~function.__doc__` which might not be defined for the wrapped callable."
+msgid "The :deco:`functools.wraps` decorator now adds a :attr:`__wrapped__` attribute pointing to the original callable function.  This allows wrapped functions to be introspected.  It also copies :attr:`~function.__annotations__` if defined.  And now it also gracefully skips over missing attributes such as :attr:`~function.__doc__` which might not be defined for the wrapped callable."
 msgstr ""
 
 msgid "In the above example, the cache can be removed by recovering the original function:"
@@ -637,10 +637,10 @@ msgstr ""
 msgid "(By Nick Coghlan and Terrence Cole; :issue:`9567`, :issue:`3445`, and :issue:`8814`.)"
 msgstr ""
 
-msgid "To help write classes with rich comparison methods, a new decorator :func:`functools.total_ordering` will use existing equality and inequality methods to fill in the remaining methods."
+msgid "To help write classes with rich comparison methods, a new decorator :deco:`functools.total_ordering` will use existing equality and inequality methods to fill in the remaining methods."
 msgstr ""
 
-msgid "For example, supplying *__eq__* and *__lt__* will enable :func:`~functools.total_ordering` to fill-in *__le__*, *__gt__* and *__ge__*::"
+msgid "For example, supplying *__eq__* and *__lt__* will enable :deco:`~functools.total_ordering` to fill-in *__le__*, *__gt__* and *__ge__*::"
 msgstr ""
 
 msgid ""
@@ -838,10 +838,10 @@ msgstr ""
 msgid "abc"
 msgstr ""
 
-msgid "The :mod:`abc` module now supports :func:`~abc.abstractclassmethod` and :func:`~abc.abstractstaticmethod`."
+msgid "The :mod:`abc` module now supports :deco:`~abc.abstractclassmethod` and :deco:`~abc.abstractstaticmethod`."
 msgstr ""
 
-msgid "These tools make it possible to define an :term:`abstract base class` that requires a particular :func:`classmethod` or :func:`staticmethod` to be implemented::"
+msgid "These tools make it possible to define an :term:`abstract base class` that requires a particular :deco:`classmethod` or :deco:`staticmethod` to be implemented::"
 msgstr ""
 
 msgid ""
@@ -895,7 +895,7 @@ msgstr ""
 msgid "When writing a :meth:`~object.__repr__` method for a custom container, it is easy to forget to handle the case where a member refers back to the container itself. Python's builtin objects such as :class:`list` and :class:`set` handle self-reference by displaying \"...\" in the recursive part of the representation string."
 msgstr ""
 
-msgid "To help write such :meth:`~object.__repr__` methods, the :mod:`reprlib` module has a new decorator, :func:`~reprlib.recursive_repr`, for detecting recursive calls to :meth:`!__repr__` and substituting a placeholder string instead::"
+msgid "To help write such :meth:`~object.__repr__` methods, the :mod:`reprlib` module has a new decorator, :deco:`~reprlib.recursive_repr`, for detecting recursive calls to :meth:`!__repr__` and substituting a placeholder string instead::"
 msgstr ""
 
 msgid ""
@@ -972,13 +972,13 @@ msgstr ""
 msgid "There is a new and slightly mind-blowing tool :class:`~contextlib.ContextDecorator` that is helpful for creating a :term:`context manager` that does double duty as a function decorator."
 msgstr ""
 
-msgid "As a convenience, this new functionality is used by :func:`~contextlib.contextmanager` so that no extra effort is needed to support both roles."
+msgid "As a convenience, this new functionality is used by :deco:`~contextlib.contextmanager` so that no extra effort is needed to support both roles."
 msgstr ""
 
 msgid "The basic idea is that both context managers and function decorators can be used for pre-action and post-action wrappers.  Context managers wrap a group of statements using a :keyword:`with` statement, and function decorators wrap a group of statements enclosed in a function.  So, occasionally there is a need to write a pre-action or post-action wrapper that can be used in either role."
 msgstr ""
 
-msgid "For example, it is sometimes useful to wrap functions or groups of statements with a logger that can track the time of entry and time of exit.  Rather than writing both a function decorator and a context manager for the task, the :func:`~contextlib.contextmanager` provides both capabilities in a single definition::"
+msgid "For example, it is sometimes useful to wrap functions or groups of statements with a logger that can track the time of entry and time of exit.  Rather than writing both a function decorator and a context manager for the task, the :deco:`~contextlib.contextmanager` provides both capabilities in a single definition::"
 msgstr ""
 
 msgid ""

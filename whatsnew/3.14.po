@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2026-07-25 12:59+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: none\n"
@@ -2165,12 +2165,6 @@ msgstr ""
 msgid "``load_module()`` method: use ``exec_module()`` instead."
 msgstr ""
 
-msgid ":class:`locale`:"
-msgstr ""
-
-msgid "The :func:`~locale.getdefaultlocale` function has been deprecated since Python 3.11. Its removal was originally planned for Python 3.13 (:gh:`90817`), but has been postponed to Python 3.15. Use :func:`~locale.getlocale`, :func:`~locale.setlocale`, and :func:`~locale.getencoding` instead. (Contributed by Hugo van Kemenade in :gh:`111187`.)"
-msgstr ""
-
 msgid ":mod:`pathlib`:"
 msgstr ""
 
@@ -2210,7 +2204,7 @@ msgstr ""
 msgid "When using the functional syntax of :class:`~typing.TypedDict`\\s, failing to pass a value to the *fields* parameter (``TD = TypedDict(\"TD\")``) or passing ``None`` (``TD = TypedDict(\"TD\", None)``) has been deprecated since Python 3.13. Use ``class TD(TypedDict): pass`` or ``TD = TypedDict(\"TD\", {})`` to create a TypedDict with zero field."
 msgstr ""
 
-msgid "The :func:`typing.no_type_check_decorator` decorator function has been deprecated since Python 3.13. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker."
+msgid "The :deco:`typing.no_type_check_decorator` decorator function has been deprecated since Python 3.13. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker."
 msgstr ""
 
 msgid ":mod:`wave`:"
@@ -3255,6 +3249,9 @@ msgid "The :ref:`garbage collector is now incremental <whatsnew314-incremental-g
 msgstr ""
 
 msgid "The :func:`locale.nl_langinfo` function now temporarily sets the ``LC_CTYPE`` locale in some cases. This temporary change affects other threads. (Contributed by Serhiy Storchaka in :gh:`69998`.)"
+msgstr ""
+
+msgid ":func:`pickle.dump` and :func:`pickle.dumps` now raise :exc:`~pickle.PicklingError` for some failures that previously raised :exc:`AttributeError`, :exc:`ImportError`, :exc:`ValueError`, :exc:`UnicodeEncodeError` or :exc:`!PicklingError`, depending on the implementation (for example, pickling a local object, or an object whose module cannot be imported). The original exception is chained to the :exc:`!PicklingError`. Code that caught these exceptions should also catch :exc:`!PicklingError`. (Contributed by Serhiy Storchaka in :gh:`122311`.)"
 msgstr ""
 
 msgid ":class:`types.UnionType` is now an alias for :class:`typing.Union`, causing changes in some behaviors. See :ref:`above <whatsnew314-typing-union>` for more details. (Contributed by Jelle Zijlstra in :gh:`105499`.)"

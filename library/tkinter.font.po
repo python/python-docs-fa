@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2021-06-28 01:15+0000\n"
-"Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
+"Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,6 +36,9 @@ msgstr ""
 msgid "The :class:`Font` class represents a named font. *Font* instances are given unique names and can be specified by their family, size, and style configuration. Named fonts are Tk's method of creating and identifying fonts as a single object, rather than specifying a font by its attributes with each occurrence."
 msgstr ""
 
+msgid "Two fonts now compare equal (``==``) only when both are :class:`Font`   instances with the same name belonging to the same Tcl interpreter."
+msgstr ""
+
 msgid "arguments:"
 msgstr ""
 
@@ -51,7 +54,7 @@ msgstr ""
 msgid "additional keyword options (ignored if *font* is specified):"
 msgstr ""
 
-msgid "*family* - font family i.e. Courier, Times"
+msgid "*family* - font family, for example, Courier, Times"
 msgstr ""
 
 msgid "*size* - font size"
@@ -78,22 +81,25 @@ msgstr ""
 msgid "*overstrike* - font strikeout (0 - none, 1 - strikeout)"
 msgstr ""
 
-msgid "Return the attributes of the font."
+msgid "Return the actual attributes of the font, which may differ from the requested ones because of platform limitations. With no *option*, return a dictionary of all the attributes; if *option* is given, return the value of that single attribute. The attributes are resolved on the display of the *displayof* widget, or the main application window if it is not specified."
 msgstr ""
 
 msgid "Retrieve an attribute of the font."
 msgstr ""
 
-msgid "Modify attributes of the font."
+msgid "Modify one or more attributes of the font. With no arguments, return a dictionary of the current attributes."
 msgstr ""
 
-msgid "Return new instance of the current font."
+msgid ":meth:`config` is an alias of :meth:`!configure`."
 msgstr ""
 
-msgid "Return amount of space the text would occupy on the specified display when formatted in the current font. If no display is specified then the main application window is assumed."
+msgid "Return a distinct copy of the current font: a new named font with the same attributes but a different name, which can be reconfigured independently of the original. If the current font wraps a font description, the copy is instead a named font with its resolved attributes."
 msgstr ""
 
-msgid "Return font-specific data. Options include:"
+msgid "Return amount of space the text would occupy on the specified display when formatted in the current font, as an integer number of pixels. If no display is specified then the main application window is assumed."
+msgstr ""
+
+msgid "Return font-specific data. With no options, return a dictionary mapping each metric name to its integer value; if one option name is given, return that metric's value as an integer. Options include:"
 msgstr ""
 
 msgid "*ascent* - distance between baseline and highest point that a"
@@ -114,13 +120,13 @@ msgstr ""
 msgid "*fixed* - 1 if font is fixed-width else 0"
 msgstr ""
 
-msgid "Return the different font families."
+msgid "Return a tuple of the names of the available font families."
 msgstr ""
 
-msgid "Return the names of defined fonts."
+msgid "Return a tuple of the names of all the defined fonts."
 msgstr ""
 
-msgid "Return a :class:`Font` representation of a tk named font."
+msgid "Return a :class:`Font` representation of the existing named font *name*. *root* is the widget whose Tcl interpreter owns the font; if omitted, the default root window is used."
 msgstr ""
 
 msgid "The *root* parameter was added."

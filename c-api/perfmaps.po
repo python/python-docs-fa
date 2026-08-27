@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2023-05-24 13:07+0000\n"
-"Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
+"Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,4 +51,46 @@ msgid "Will call :c:func:`PyUnstable_PerfMapState_Init` before writing the entry
 msgstr ""
 
 msgid "Close the perf map file opened by :c:func:`PyUnstable_PerfMapState_Init`. This is called by the runtime itself during interpreter shut-down. In general, there shouldn't be a reason to explicitly call this, except to handle specific scenarios such as forking."
+msgstr ""
+
+msgid "Open the ``/tmp/perf-$pid.map`` file and append the content of *parent_filename* to it."
+msgstr ""
+
+msgid "This function is available on all platforms but only generates output on platforms that support perf maps (currently only Linux). On other platforms, it does nothing."
+msgstr ""
+
+msgid "Compile the given code object using the current perf trampoline."
+msgstr ""
+
+msgid "The \"current\" trampoline is the one set by the runtime or the most recent :c:func:`PyUnstable_PerfTrampoline_SetPersistAfterFork` call."
+msgstr ""
+
+msgid "If no trampoline is set, falls back to normal compilation (no perf map entry)."
+msgstr ""
+
+msgid "Parameters"
+msgstr ""
+
+msgid "The code object to compile."
+msgstr ""
+
+msgid "Returns"
+msgstr ""
+
+msgid "0 on success, -1 on failure."
+msgstr ""
+
+msgid "Set whether the perf trampoline should persist after a fork."
+msgstr ""
+
+msgid "If ``enable`` is true (non-zero): perf map file remains open/valid post-fork. Child process inherits all existing perf map entries."
+msgstr ""
+
+msgid "If ``enable`` is false (zero): perf map closes post-fork. Child process gets empty perf map."
+msgstr ""
+
+msgid "Default: false (clears on fork)."
+msgstr ""
+
+msgid "1 to enable, 0 to disable."
 msgstr ""

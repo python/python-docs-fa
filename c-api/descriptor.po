@@ -13,10 +13,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-18 04:30+0000\n"
+"POT-Creation-Date: 2026-08-26 03:59+0000\n"
 "PO-Revision-Date: 2021-06-28 00:48+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
-"Language-Team: Persian (https://github.com/revisto/python-docs-fa/fa/)\n"
+"Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,19 +32,67 @@ msgstr ""
 msgid "The type object for the built-in descriptor types."
 msgstr ""
 
+msgid "Create a new get-set descriptor for extension type *type* from the :c:type:`PyGetSetDef` structure *getset*."
+msgstr ""
+
+msgid "Get-set descriptors expose attributes implemented by C getter and setter functions rather than stored directly in the instance. This is the same kind of descriptor created for entries in :c:member:`~PyTypeObject.tp_getset`, and it appears in Python as a :class:`types.GetSetDescriptorType` object."
+msgstr ""
+
+msgid "On success, return a :term:`strong reference` to the descriptor. Return ``NULL`` with an exception set on failure."
+msgstr ""
+
+msgid "Create a new member descriptor for extension type *type* from the :c:type:`PyMemberDef` structure *member*."
+msgstr ""
+
+msgid "Member descriptors expose fields in the type's C struct as Python attributes. This is the same kind of descriptor created for entries in :c:member:`~PyTypeObject.tp_members`, and it appears in Python as a :class:`types.MemberDescriptorType` object."
+msgstr ""
+
 msgid "The type object for member descriptor objects created from :c:type:`PyMemberDef` structures. These descriptors expose fields of a C struct as attributes on a type, and correspond to :class:`types.MemberDescriptorType` objects in Python."
 msgstr ""
 
-msgid "The type object for get/set descriptor objects created from :c:type:`PyGetSetDef` structures. These descriptors implement attributes whose value is computed by C getter and setter functions, and are used for many built-in type attributes."
+msgid "The type object for get/set descriptor objects created from :c:type:`PyGetSetDef` structures. These descriptors implement attributes whose value is computed by C getter and setter functions, and are used for many built-in type attributes. They correspond to :class:`types.GetSetDescriptorType` objects in Python."
 msgstr ""
 
-msgid "The type object for method descriptor objects created from :c:type:`PyMethodDef` structures. These descriptors expose C functions as methods on a type, and correspond to :class:`types.MemberDescriptorType` objects in Python."
+msgid "Create a new method descriptor for extension type *type* from the :c:type:`PyMethodDef` structure *meth*."
+msgstr ""
+
+msgid "Method descriptors expose C functions as methods on a type. This is the same kind of descriptor created for entries in :c:member:`~PyTypeObject.tp_methods`, and it appears in Python as a :class:`types.MethodDescriptorType` object."
+msgstr ""
+
+msgid "The type object for method descriptor objects created from :c:type:`PyMethodDef` structures. These descriptors expose C functions as methods on a type, and correspond to :class:`types.MethodDescriptorType` objects in Python."
+msgstr ""
+
+msgid "Describes a slot wrapper used by :c:func:`PyDescr_NewWrapper`."
+msgstr ""
+
+msgid "Each ``wrapperbase`` record stores the Python-visible name and metadata for a special method implemented by a type slot, together with the wrapper function used to adapt that slot to Python's calling convention."
+msgstr ""
+
+msgid "Create a new wrapper descriptor for extension type *type* from the :c:struct:`wrapperbase` structure *base* and the wrapped slot function pointer *wrapped*."
+msgstr ""
+
+msgid "Wrapper descriptors expose special methods implemented by type slots. This is the same kind of descriptor that CPython creates for slot-based special methods such as ``__repr__`` or ``__add__``, and it appears in Python as a :class:`types.WrapperDescriptorType` object."
 msgstr ""
 
 msgid "The type object for wrapper descriptor objects created by :c:func:`PyDescr_NewWrapper` and :c:func:`PyWrapper_New`. Wrapper descriptors are used internally to expose special methods implemented via wrapper structures, and appear in Python as :class:`types.WrapperDescriptorType` objects."
 msgstr ""
 
+msgid "Create a new class method descriptor for extension type *type* from the :c:type:`PyMethodDef` structure *method*."
+msgstr ""
+
+msgid "Class method descriptors expose C methods that receive the class rather than an instance when accessed. This is the same kind of descriptor created for ``METH_CLASS`` entries in :c:member:`~PyTypeObject.tp_methods`, and it appears in Python as a :class:`types.ClassMethodDescriptorType` object."
+msgstr ""
+
 msgid "Return non-zero if the descriptor object *descr* describes a data attribute, or ``0`` if it describes a method.  *descr* must be a descriptor object; there is no error checking."
+msgstr ""
+
+msgid "Create a new bound wrapper object from the wrapper descriptor *d* and the instance *self*."
+msgstr ""
+
+msgid "This is the bound form of a wrapper descriptor created by :c:func:`PyDescr_NewWrapper`. CPython creates these objects when a slot wrapper is accessed through an instance, and they appear in Python as :class:`types.MethodWrapperType` objects."
+msgstr ""
+
+msgid "On success, return a :term:`strong reference` to the wrapper object. Return ``NULL`` with an exception set on failure."
 msgstr ""
 
 msgid "Built-in descriptors"
@@ -56,7 +104,7 @@ msgstr ""
 msgid "The type of class method objects. This is the same object as :class:`classmethod` in the Python layer."
 msgstr ""
 
-msgid "The type object for C-level class method descriptor objects. This is the type of the descriptors created for :func:`classmethod` defined in C extension types, and is the same object as :class:`classmethod` in Python."
+msgid "The type object for C-level class method descriptor objects. This is the type of the descriptors created for :func:`classmethod` defined in C extension types, and corresponds to :class:`types.ClassMethodDescriptorType` objects in Python."
 msgstr ""
 
 msgid "Create a new :class:`classmethod` object wrapping *callable*. *callable* must be a callable object and must not be ``NULL``."
