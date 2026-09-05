@@ -25,109 +25,142 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid ":mod:`!pwd` --- The password database"
-msgstr ""
+msgstr ":mod:`!pwd` --- پایگاه داده‌ی گذرواژه"
 
-msgid "This module provides access to the Unix user account and password database.  It is available on all Unix versions."
+msgid ""
+"This module provides access to the Unix user account and password database."
+"  It is available on all Unix versions."
 msgstr ""
+"این ماژول امکان دسترسی به پایگاه داده حساب‌های کاربری و گذرواژه‌های یونیکس "
+"را فراهم می‌کند. این ماژول در تمام نسخه‌های یونیکس در دسترس است."
 
 msgid "Availability"
-msgstr ""
+msgstr "دسترسی"
 
-msgid "Password database entries are reported as a tuple-like object, whose attributes correspond to the members of the ``passwd`` structure (Attribute field below, see ``<pwd.h>``):"
+msgid ""
+"Password database entries are reported as a tuple-like object, whose "
+"attributes correspond to the members of the ``passwd`` structure (Attribute "
+"field below, see ``<pwd.h>``):"
 msgstr ""
+"ورودی‌های پایگاه داده‌ی گذرواژه به‌صورت یک شیء شبه‌تاپل گزارش می‌شوند که "
+"ویژگی‌های آن با اعضای ساختار ``passwd`` متناظر است (فیلد Attribute در زیر، "
+"``<pwd.h>`` را ببینید):"
 
 msgid "Index"
-msgstr ""
+msgstr "اندیس"
 
 msgid "Attribute"
-msgstr ""
+msgstr "ویژگی"
 
 msgid "Meaning"
-msgstr ""
+msgstr "معنی"
 
 msgid "0"
-msgstr ""
+msgstr "0"
 
 msgid "``pw_name``"
-msgstr ""
+msgstr "``pw_name``"
 
 msgid "Login name"
-msgstr ""
+msgstr "نام ورود"
 
 msgid "1"
-msgstr ""
+msgstr "1"
 
 msgid "``pw_passwd``"
-msgstr ""
+msgstr "``pw_passwd``"
 
 msgid "Optional encrypted password"
-msgstr ""
+msgstr "گذرواژه‌ی رمزنگاری‌شده اختیاری"
 
 msgid "2"
-msgstr ""
+msgstr "2"
 
 msgid "``pw_uid``"
-msgstr ""
+msgstr "``pw_uid``"
 
 msgid "Numerical user ID"
-msgstr ""
+msgstr "شناسه کاربر عددی"
 
 msgid "3"
-msgstr ""
+msgstr "3"
 
 msgid "``pw_gid``"
-msgstr ""
+msgstr "``pw_gid``"
 
 msgid "Numerical group ID"
-msgstr ""
+msgstr "شناسه‌ی عددی گروه"
 
 msgid "4"
-msgstr ""
+msgstr "۴"
 
 msgid "``pw_gecos``"
-msgstr ""
+msgstr "``pw_gecos``"
 
 msgid "User name or comment field"
-msgstr ""
+msgstr "فیلد نام‌کاربری یا کامنت"
 
 msgid "5"
-msgstr ""
+msgstr "۵"
 
 msgid "``pw_dir``"
-msgstr ""
+msgstr "``pw_dir``"
 
 msgid "User home directory"
-msgstr ""
+msgstr "پوشه‌ی خانه‌ی کاربر"
 
 msgid "6"
-msgstr ""
+msgstr "۶"
 
 msgid "``pw_shell``"
-msgstr ""
+msgstr "``pw_shell``"
 
 msgid "User command interpreter"
-msgstr ""
+msgstr "مفسر فرمان کاربر"
 
-msgid "The uid and gid items are integers, all others are strings. :exc:`KeyError` is raised if the entry asked for cannot be found."
+msgid ""
+"The uid and gid items are integers, all others are strings. :exc:`KeyError` "
+"is raised if the entry asked for cannot be found."
 msgstr ""
+"آیتم‌های uid و gid عدد صحیح هستند، تمام آیتم‌های دیگر رشته هستند. اگر مدخل "
+"درخواست‌شده پیدا نشود، :exc:`KeyError` پرتاب می‌شود."
 
-msgid "In traditional Unix the field ``pw_passwd`` usually contains a password encrypted with a DES derived algorithm.  However most modern unices  use a so-called *shadow password* system.  On those unices the *pw_passwd* field only contains an asterisk (``'*'``) or the  letter ``'x'`` where the encrypted password is stored in a file :file:`/etc/shadow` which is not world readable.  Whether the *pw_passwd* field contains anything useful is system-dependent."
+msgid ""
+"In traditional Unix the field ``pw_passwd`` usually contains a password "
+"encrypted with a DES derived algorithm.  However most modern unices  use a "
+"so-called *shadow password* system.  On those unices the *pw_passwd* field "
+"only contains an asterisk (``'*'``) or the  letter ``'x'`` where the "
+"encrypted password is stored in a file :file:`/etc/shadow` which is not "
+"world readable.  Whether the *pw_passwd* field contains anything useful is "
+"system-dependent."
 msgstr ""
+"در یونیکس سنتی، فیلد ``pw_passwd`` معمولاً حاوی گذرواژه‌ای است که با یک "
+"الگوریتم مشتق‌شده از DES رمزگذاری شده است. با این حال، بیشتر سیستم‌های "
+"یونیکس مدرن از یک سیستم به‌اصطلاح *گذرواژه سایه* استفاده می‌کنند. در آن "
+"سیستم‌های یونیکس، فیلد *pw_passwd* فقط حاوی یک ستاره (``'*'``) یا نویسه "
+"``'x'`` است و گذرواژه رمزگذاری‌شده در فایل :file:`/etc/shadow` ذخیره می‌شود "
+"که برای همه قابل خواندن نیست. اینکه فیلد *pw_passwd* حاوی چیز مفیدی باشد یا "
+"نه، به سیستم وابسته است."
 
 msgid "It defines the following items:"
-msgstr ""
+msgstr "این آیتم‌های زیر را تعریف می‌کند:"
 
 msgid "Return the password database entry for the given numeric user ID."
 msgstr ""
+"بازگرداندن مدخل پایگاه داده‌ی گذرواژه برای شناسه‌ی کاربری عددی داده‌شده."
 
 msgid "Return the password database entry for the given user name."
-msgstr ""
+msgstr "مدخل پایگاه داده‌ی گذرواژه را برای نام کاربری داده‌شده برمی‌گرداند."
 
-msgid "Return a list of all available password database entries, in arbitrary order."
+msgid ""
+"Return a list of all available password database entries, in arbitrary "
+"order."
 msgstr ""
+"فهرستی از تمام ورودی‌های در دسترس پایگاه داده گذرواژه را با ترتیبی دلخواه "
+"برمی‌گرداند."
 
 msgid "Module :mod:`grp`"
-msgstr ""
+msgstr "ماژول :mod:`grp`"
 
 msgid "An interface to the group database, similar to this."
-msgstr ""
+msgstr "رابطی به پایگاه داده‌ی گروه، مشابه این."

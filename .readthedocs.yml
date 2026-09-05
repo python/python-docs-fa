@@ -36,11 +36,13 @@ build:
     - find */ -name "*.po" -not -path "venv/*" | xargs -I{} cp --parents {} venv/cpython/Doc/locales/fa/LC_MESSAGES/
     - find venv/cpython/Doc/locales/fa/LC_MESSAGES -name "*.po" | python3 scripts/compile_mo.py
     - python -m sphinx -T -j auto -b html
+        --color
         -d $READTHEDOCS_OUTPUT/doctrees
         -D language=fa
-        -D locale_dirs=locales
-        -D gettext_compact=0
         -D gettext_allow_fuzzy_translations=1
-        -D html_theme_options.is_rtl=1
+        -D suppress_warnings=misc.highlighting_failure
+        -D gettext_compact=0
+        -D html_theme_options.is_rtl=true
+        --keep-going
         venv/cpython/Doc
         $READTHEDOCS_OUTPUT/html

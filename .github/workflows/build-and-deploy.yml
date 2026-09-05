@@ -50,7 +50,7 @@ jobs:
         uses: sphinx-doc/github-problem-matcher@v1.1
         
       - name: Build documentation
-        run: make -e SPHINXOPTS="--color -D language='fa' -D gettext_allow_fuzzy_translations=1 --keep-going" html
+        run: make -e SPHINXOPTS="--color -D language='fa' -D gettext_allow_fuzzy_translations=1 -D suppress_warnings=misc.highlighting_failure -D html_theme_options.is_rtl=true --keep-going" html
         working-directory: ./Doc
         
       - name: Setup Pages

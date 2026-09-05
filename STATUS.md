@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-09-05)
+(به‌روزرسانی: 2026-08-26)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -179,7 +179,7 @@
 | library/archiving.po | 0.0% | 0.0% | 0 | 2 |
 | library/argparse.po | 0.0% | 0.0% | 0 | 408 |
 | library/array.po | 0.0% | 0.0% | 0 | 89 |
-| library/ast.po | 0.0% | 0.0% | 0 | 338 |
+| library/ast.po | 0.0% | 0.0% | 0 | 339 |
 | library/asynchat.po | 0.0% | 0.0% | 0 | 4 |
 | library/asyncio-api-index.po | 0.0% | 0.0% | 0 | 100 |
 | library/asyncio-dev.po | 0.0% | 0.0% | 0 | 84 |
@@ -280,7 +280,7 @@
 | library/ensurepip.po | 0.0% | 0.0% | 0 | 40 |
 | library/enum.po | 0.0% | 0.0% | 0 | 257 |
 | library/errno.po | 0.0% | 0.0% | 0 | 161 |
-| library/exceptions.po | 0.0% | 0.0% | 0 | 203 |
+| library/exceptions.po | 0.0% | 0.0% | 0 | 204 |
 | library/faulthandler.po | 0.0% | 0.0% | 0 | 53 |
 | library/fcntl.po | 0.0% | 0.0% | 0 | 54 |
 | library/filecmp.po | 0.0% | 0.0% | 0 | 42 |
@@ -500,7 +500,7 @@
 | reference/datamodel.po | 0.0% | 0.0% | 0 | 913 |
 | reference/executionmodel.po | 0.0% | 0.0% | 0 | 145 |
 | reference/expressions.po | 0.0% | 0.0% | 0 | 595 |
-| reference/grammar.po | 0.0% | 0.0% | 0 | 6 |
+| reference/grammar.po | 0.0% | 0.0% | 0 | 7 |
 | reference/import.po | 0.0% | 0.0% | 0 | 202 |
 | reference/index.po | 0.0% | 0.0% | 0 | 2 |
 | reference/introduction.po | 0.0% | 0.0% | 0 | 56 |
@@ -541,5 +541,5 @@
 | whatsnew/3.9.po | 0.0% | 0.0% | 0 | 380 |
 | whatsnew/changelog.po | 0.0% | 0.0% | 0 | 1 |
 | whatsnew/index.po | 0.0% | 0.0% | 0 | 3 |
-| **مجموع** | **3.9%** | **0.0%** | **2706** | **67533** |
+| **مجموع** | **3.9%** | **0.0%** | **2706** | **67536** |
 <!-- TRANSLATION_STATUS_END -->
