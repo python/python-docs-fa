@@ -1,306 +1,318 @@
 #!/usr/bin/env python3
 """
-fix_term_refs.py
+find_untranslated_terms.py (v2)
 
-Converts plain Sphinx `:term:`English`` references inside the *translated*
-(msgstr) strings of a gettext .po file into the explicit-title form:
+Scan a directory tree of .po files with polib and find msgstr entries that
+still contain a given English technical term verbatim (whole word, case
+insensitive) in PROSE, even though the corresponding msgid also contains
+that term in prose.
 
-    :term:`Persian translation <English>`
+This version is markup-aware: Sphinx roles (:class:`Foo`, :func:`bar`,
+:mod:`os`, ...), inline code spans (`...`, ``...``), literal/code blocks,
+and quoted code-ish snippets are stripped out before matching, so words
+that are only appearing as ROLE NAMES or inside CODE (e.g. "class" in
+":class:`bool`", "return"/"raise"/"import" inside a doctest) are not
+counted as "untranslated prose".
 
-so that the reader sees translated text while the link still resolves to the
-correct (English) glossary entry ID.
+Fixes vs the first version:
+  - .git (and other VCS/venv/cache dirs) is excluded from the file walk.
+  - Sphinx role markup is stripped, not just backticks, which is why
+    "class", "api", "import", "return", "value", "type" etc. were wildly
+    inflated before (those words double as role names / Python keywords
+    that show up constantly in code, not prose).
+  - Full per-term hit lists are always written out (JSON/CSV); the
+    console summary intentionally still only *shows* a few examples
+    per term, since printing 5000+ lines to a terminal isn't useful --
+    use --json/--csv to get everything.
 
-The English msgid lines are left completely untouched. Only msgstr strings
-are modified, and only occurrences of :term:`X` where X has no `<...>`
-already (i.e. plain references, not ones that already specify a custom title).
-
-Persian translations are looked up in two places, in priority order:
-  1. This .po file's own entries — i.e. if somewhere in the file there's a
-     msgid "duck-typing" / msgstr "نوع‌دهی اردکی", that translation is used.
-  2. A fallback dictionary (FALLBACK_MAP below) for terms that aren't
-     separately defined in the .po file itself. Edit/extend this dict for
-     your own glossary as needed.
-
-If a term can't be resolved through either source, the reference is left
-unchanged and reported at the end so you can add it to FALLBACK_MAP or fix
-the source file.
-
-Usage:
-    python3 fix_term_refs.py input.po output.po
-
-If output.po is omitted, writes to input.fixed.po next to the input file.
+Requires: polib  (pip install polib --break-system-packages)
 """
 
+import argparse
+import csv
+import json
 import re
 import sys
+from collections import defaultdict
+from pathlib import Path
+
+try:
+    import polib
+except ImportError:
+    sys.exit("This script requires polib. Install with: pip install polib --break-system-packages")
+
+
+TERMS = [
+    "heap", "type", "value", "async", "wildcard", "index", "property",
+    "bootstrapping", "mock", "pipe", "docstring", "object", "action",
+    "local", "escape", "raise", "return", "list", "operator", "element",
+    "import", "encoding", "global", "string", "class", "module",
+    "function", "shell", "exception", "event", "coroutine", "interface",
+    "cache", "command line", "package", "method", "widget", "symlink",
+    "item", "generator", "loop", "runtime", "built-in", "namespace",
+    "syntax", "argument", "wrapper", "load", "attribute", "thread",
+    "api", "variable", "expression", "f-string", "callback",
+]
+
+EXCLUDE_DIRS = {".git", ".venv", "venv", "node_modules", "__pycache__", ".tox"}
 
 # ---------------------------------------------------------------------------
-# Fallback English -> target-language translations, used only when a term
-# isn't itself defined as a msgid/msgstr pair inside the .po file.
-# Extend this for your own glossary/language as needed.
+# Markup stripping (adapted from check_consistency.py's approach)
 # ---------------------------------------------------------------------------
-FALLBACK_MAP = {
-    "accessibility": "دسترسی‌پذیری",
-    "await": "await",
-    "argument": "آرگومان",
-    "async": "ناهمگام، غیرهمگام",
-    "API": "API",
-    "attribute": "ویژگی، صفت، شاخصه",
-    "boolean": "بولی",
-    "built-in": "توکار، درونی، درون‌ساخته",
-    "callback": "کال‌بک، فراخوانی بازگشتی",
-    "character": "نویسه",
-    "context management": "مدیریت زمینه",
-    "class": "کلاس",
-    "cache": "نهانگاه",
-    "coroutine": "هم‌روال",
-    "command line": "خط فرمان",
-    "community": "کامیونیتی",
-    "component": "کامپوننت",
-    "custom": "سفارشی، اختصاصی",
-    "decorator": "دکوراتور، آراینده",
-    "debugging": "اشکال‌زدایی، دیباگ کردن",
-    "decoding": "کدگشایی",
-    "deprecated": "منسوخ، از رده خارج شده",
-    "dependency": "وابستگی",
-    "dictionary": "دیکشنری",
-    "directory": "پوشه",
-    "duck-typing": "نوع‌دهی اردکی",
-    "DOM": "DOM",
-    "element": "المان، عنصر",
-    "endpoint": "پایانه",
-    "escape": "خنثی کردن",
-    "encoding": "کدگذاری",
-    "ecosystem": "اکوسیستم",
-    "event": "رویداد",
-    "exception": "استثنا",
-    "expression": "عبارت",
-    "function": "تابع",
-    "f-string": "اف‌استرینگ",
-    "generator": "تولیدگر",
-    "global": "سراسری",
-    "garbage collection": "زباله‌روبی",
-    "generic function": "تابع عام، تابع عمومی",
-    "hexadecimal": "مبنای شانزده",
-    "immortal": "نامیرا",
-    "import": "ایمپورت",
-    "immutable": "تغییرناپذیر",
-    "index": "اندیس، شماره",
-    "instance": "نمونه",
-    "integer": "عدد صحیح",
-    "interface": "رابط",
-    "interpreter": "مفسر",
-    "item": "آیتم",
-    "iterable": "تکرارپذیر",
-    "keyword": "کلیدواژه",
-    "keyword argument": "آرگومان کلیدواژه‌ای",
-    "list": "فهرست",
-    "list comprehension": "درک فهرستی",
-    "load": "بارگذاری",
-    "loader": "بارگذار",
-    "local": "محلی",
-    "loop": "حلقه",
-    "method": "متد",
-    "metaclass": "فراکلاس",
-    "mock": "ماک",
-    "module": "ماژول",
-    "mutable": "تغییرپذیر",
-    "namespace": "نام‌فضا",
-    "object": "شیء",
-    "operator": "عملگر",
-    "package": "بسته",
-    "parameter": "پارامتر",
-    "positional": "جایگاهی",
-    "property": "ویژگی، پراپرتی، خصوصیت",
-    "parallelism": "موازی‌سازی",
-    "quotation": "علامت نقل‌قول",
-    "raise": "پرتاب",
-    "return": "بازگشت، برگرداندن",
-    "runtime": "ران‌تایم",
-    "race": "رقابت",
-    "scope": "محدوده",
-    "shadowing": "پوشاندن",
-    "stack traceback": "ردگیری پشته",
-    "statement": "دستور",
-    "string": "رشته",
-    "syntax": "سینتکس، نحو",
-    "shell": "پوسته",
-    "syntactic sugar": "قند نحوی",
-    "tracking": "پیگیری",
-    "type": "نوع، نوع داده، تایپ",
-    "thread": "نخ",
-    "unit test": "یونیت تست",
-    "unpacking": "واگشایی",
-    "value": "مقدار",
-    "variable": "متغیر",
-    "wrapper": "پوششی، دربرگیرنده",
-    "iterator": "تکرارگر",
+
+# Sphinx/reST roles whose *content* is code/identifiers, not prose.
+CODE_ROLES = {
+    "func", "meth", "mod", "class", "data", "const", "attr", "exc", "obj",
+    "command", "cmdoption", "envvar", "file", "kbd", "option", "program",
+    "regexp", "makevar", "dunder", "module", "method", "exception", "ref",
+    "doc", "download", "env", "pep", "rfc", "issue", "source", "mimetype",
+    "keyword", "literal", "token", "grammar", "confval", "setting",
 }
 
-# Matches BOTH forms so both get (re)normalized to :term:`Persian <target>`:
-#   :term:`X`                -- plain ref, target/display are both X
-#   :term:`Something <X>`    -- already has explicit title (target is X);
-#                                "Something" may be stale English display
-#                                text left over from the source file.
-# Group 'target' is always the real glossary-entry id to link to.
-TERM_RE = re.compile(
-    r":term:`(?:(?P<target_only>[^`<>]+)|[^`<>]*<(?P<target_bracketed>[^`<>]+)>)`"
+ROLE_RE = re.compile(r":([\w+-]+):`([^`]*)`")
+DOUBLE_BACKTICK_RE = re.compile(r"``.*?``", re.DOTALL)
+SINGLE_BACKTICK_RE = re.compile(r"`([^`]*)`")
+SUBREF_RE = re.compile(r"\|[\w.-]+\|")
+URL_RE = re.compile(r"https?://\S+")
+EMPH_RE = re.compile(r"(\*\*?)(.+?)\1")
+TARGET_RE = re.compile(r"^(.*)\s<[^<>]+>$")
+
+
+def strip_markup(text, keep_prose_roles=True):
+    """Remove code spans / role markup; keep the *display text* of prose
+    roles like :term:`Foo` or :ref:`title <target>` since translators do
+    translate that part."""
+    def role_repl(m):
+        role, body = m.group(1).lower(), m.group(2)
+        if role in CODE_ROLES:
+            return " "
+        if not keep_prose_roles:
+            return " "
+        t = TARGET_RE.match(body)
+        return t.group(1) if t else body
+
+    text = DOUBLE_BACKTICK_RE.sub(" ", text)
+    text = ROLE_RE.sub(role_repl, text)
+    text = SINGLE_BACKTICK_RE.sub(r" \1 ", text)
+    text = SUBREF_RE.sub(" ", text)
+    text = URL_RE.sub(" ", text)
+    text = EMPH_RE.sub(r"\2", text)
+    return text
+
+
+WORD_RE = re.compile(r"[A-Za-z][A-Za-z\-]*[A-Za-z]|[A-Za-z]")
+QUOTED_CODE_RE = re.compile(r"'([\w.\-/ ]+)'|\"([\w.\-/ ]+)\"")
+
+
+def quoted_span_is_code(content):
+    words = content.split()
+    return (
+        len(words) == 1
+        or any(c in content for c in ".-_")
+        or content.startswith(("import ", "from "))
+    )
+
+
+def strip_quoted_code(text):
+    def repl(m):
+        content = m.group(1) or m.group(2)
+        return " " if quoted_span_is_code(content) else m.group(0)
+    return QUOTED_CODE_RE.sub(repl, text)
+
+
+CODE_LINE_START_RE = re.compile(
+    r"^(?:import|from)\s"
+    r"|^[a-z_][\w.]*(?:\[[^\]]*\])?\s*[=(]"
+    r"|^[a-z_][\w.]*\("
+)
+CODE_STMT_RE = re.compile(
+    r"^(?:if|elif|else|for|while|def|class|try|except|finally|with|return"
+    r"|raise|break|continue|lambda|async|await)\b.*:\s*(?:#.*)?$"
 )
 
 
-def po_unescape(s):
-    return s.replace("\\n", "\n").replace('\\"', '"').replace("\\\\", "\\")
+def looks_codeish(line):
+    if line.startswith((">>>", "...", "$", "#")):
+        return True
+    if line.startswith(("'", '"', "[", "{", "<")) or line[0:1].isdigit():
+        return True
+    return bool(CODE_LINE_START_RE.match(line) or CODE_STMT_RE.match(line))
 
 
-def po_escape(s):
-    return s.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
+def prose_line(line):
+    s = line.strip()
+    if not s or looks_codeish(s):
+        return False
+    return len(s.split()) >= 3 and s[0].isupper()
 
 
-def parse_po_string_block(lines, i, n):
-    """Parse a 'msgid "..."' or 'msgstr "..."' plus any continuation quoted
-    lines. Returns (keyword, parts, next_index)."""
-    m = re.match(r'^(msgid|msgstr)\s+"(.*)"\s*$', lines[i])
-    keyword = m.group(1)
-    parts = [m.group(2)]
-    j = i + 1
-    while j < n and re.match(r'^\s*"(.*)"\s*$', lines[j]):
-        parts.append(re.match(r'^\s*"(.*)"\s*$', lines[j]).group(1))
-        j += 1
-    return keyword, parts, j
+def looks_like_code_block(msgid):
+    """Whole-entry literal blocks (doctests, code listings)."""
+    s = msgid.strip()
+    if "\n" not in s:
+        return False
+    lines = [ln for ln in s.splitlines() if ln.strip()]
+    if not lines:
+        return True
+    codeish = sum(
+        1 for ln in lines
+        if ln.lstrip().startswith((">>>", "...", "#", "$"))
+        or ln.startswith((" ", "\t"))
+    )
+    return codeish / len(lines) >= 0.8
 
 
-def parse_po(text):
-    """Parse .po text into a list of entries: pairs (msgid/msgstr) or other
-    raw lines (comments, headers, blanks), preserving order."""
-    lines = text.split("\n")
-    n = len(lines)
-    entries = []
-    i = 0
-    while i < n:
-        if re.match(r'^msgid\s+"', lines[i]):
-            _, id_parts, j1 = parse_po_string_block(lines, i, n)
-            if j1 < n and re.match(r'^msgstr\s+"', lines[j1]):
-                _, str_parts, j2 = parse_po_string_block(lines, j1, n)
-                entries.append(
-                    {"type": "pair", "msgid_parts": id_parts, "msgstr_parts": str_parts}
-                )
-                i = j2
-            else:
-                entries.append({"type": "other", "raw": [lines[i]]})
-                i = i + 1  # fall back to line-by-line if malformed
+def standalone_code_entry(msgid):
+    lines = [ln for ln in msgid.split("\n") if ln.strip()]
+    if not lines:
+        return False
+    codeish = sum(1 for ln in lines if ln[0] in " \t" or looks_codeish(ln.strip()))
+    prose = sum(1 for ln in lines if prose_line(ln))
+    return codeish >= max(1, len(lines) // 2) and prose <= len(lines) // 3
+
+
+def strip_literal_blocks(msgid):
+    """Drop the code content after a '::' literal-block marker."""
+    out = []
+    in_block = False
+    for ln in msgid.split("\n"):
+        stripped = ln.strip()
+        if not in_block:
+            if stripped == "::":
+                in_block = True
+                continue
+            if stripped.endswith("::"):
+                out.append(ln[:ln.rindex("::")].rstrip())
+                in_block = True
+                continue
+            out.append(ln)
         else:
-            entries.append({"type": "other", "raw": [lines[i]]})
-            i += 1
-    return entries
+            if not stripped:
+                continue
+            if ln[0] in " \t" or looks_codeish(stripped):
+                continue
+            in_block = False
+            out.append(ln)
+    return "\n".join(out)
 
 
-def join_parts_decoded(parts):
-    return "".join(po_unescape(p) for p in parts)
+def mostly_preserved_code(msgid, msgstr):
+    """Code listings where only comments were translated: almost all
+    English tokens of msgid reappear verbatim in msgstr."""
+    toks = [t.lower() for t in WORD_RE.findall(strip_markup(msgid))]
+    if len(toks) < 6:
+        return False
+    kept = sum(1 for t in toks if t in msgstr)
+    return kept / len(toks) >= 0.8
 
 
-def build_term_map(entries):
-    """Build English-term -> translation dict from the .po file's own short,
-    markup-free msgid/msgstr pairs (these are glossary entry definitions)."""
-    term_map = {}
-    for e in entries:
-        if e["type"] != "pair":
+def clean_prose(msgid):
+    """Full pipeline: literal blocks -> markup -> quoted code stripped."""
+    text = strip_literal_blocks(msgid)
+    text = strip_markup(text)
+    text = strip_quoted_code(text)
+    return text
+
+
+# ---------------------------------------------------------------------------
+# Term matching
+# ---------------------------------------------------------------------------
+
+def build_term_pattern(term):
+    escaped = re.escape(term)
+    # spaces/hyphens interchangeable, optional plural
+    parts = [re.escape(p) for p in re.split(r"[\s\-]+", term) if p]
+    body = r"[\s\-]+".join(parts)
+    return re.compile(rf"(?<![A-Za-z0-9_.\-]){body}(?:e?s)?(?![A-Za-z0-9_])", re.IGNORECASE)
+
+
+TERM_PATTERNS = {term: build_term_pattern(term) for term in TERMS}
+
+
+def iter_po_files(root):
+    root = Path(root)
+    if root.is_file():
+        yield root
+        return
+    for p in sorted(root.rglob("*.po")):
+        if not (set(p.parts) & EXCLUDE_DIRS):
+            yield p
+
+
+def scan_file(path):
+    hits = []
+    try:
+        po = polib.pofile(str(path))
+    except Exception as e:
+        print(f"  ! failed to parse {path}: {e}", file=sys.stderr)
+        return hits
+
+    for entry in po:
+        if entry.obsolete or entry.fuzzy or not entry.msgstr or not entry.msgid:
             continue
-        msgid_full = join_parts_decoded(e["msgid_parts"]).strip()
-        msgstr_full = join_parts_decoded(e["msgstr_parts"]).strip()
-        if not msgid_full or not msgstr_full:
+
+        msgid, msgstr = entry.msgid, entry.msgstr
+        if msgstr.strip() == msgid.strip():
+            continue  # identical: probably an untranslated code-only string
+        if looks_like_code_block(msgid) or standalone_code_entry(msgid):
             continue
-        if re.search(r"[`:]", msgid_full) or len(msgid_full) > 60:
+        if mostly_preserved_code(msgid, msgstr):
             continue
-        term_map[msgid_full] = msgstr_full
-    return term_map
 
-
-def fix_po(text):
-    """Run the conversion. Returns (new_text, changed_count, missing_terms)."""
-    entries = parse_po(text)
-    term_map = build_term_map(entries)
-    missing = set()
-
-    def translate(term):
-        if term in term_map:
-            return term_map[term]
-        if term in FALLBACK_MAP:
-            return FALLBACK_MAP[term]
-        return None
-
-    def replace_in_text(s):
-        def repl(m):
-            term = m.group("target_only") or m.group("target_bracketed")
-            translated = translate(term)
-            if translated is None:
-                missing.add(term)
-                return m.group(0)  # leave completely unchanged
-            return f":term:`{translated} <{term}>`"
-
-        return TERM_RE.sub(repl, s)
-
-    changed_count = 0
-    for e in entries:
-        if e["type"] != "pair":
+        prose = clean_prose(msgid)
+        if not prose.strip():
             continue
-        msgstr_full = join_parts_decoded(e["msgstr_parts"])
-        if ":term:`" not in msgstr_full:
-            continue
-        new_full = replace_in_text(msgstr_full)
-        if new_full == msgstr_full:
-            continue
-        changed_count += 1
-        if len(e["msgstr_parts"]) > 1:
-            segs = new_full.split("\n")
-            new_parts = [""]
-            for k, seg in enumerate(segs):
-                suffix = "\\n" if k < len(segs) - 1 else ""
-                new_parts.append(po_escape(seg) + suffix)
-            e["msgstr_parts"] = new_parts
-        else:
-            e["msgstr_parts"] = [po_escape(new_full)]
 
-    out_lines = []
-    for e in entries:
-        if e["type"] == "other":
-            out_lines.extend(e["raw"])
-        else:
-            out_lines.append(f'msgid "{e["msgid_parts"][0]}"')
-            for p in e["msgid_parts"][1:]:
-                out_lines.append(f'"{p}"')
-            out_lines.append(f'msgstr "{e["msgstr_parts"][0]}"')
-            for p in e["msgstr_parts"][1:]:
-                out_lines.append(f'"{p}"')
+        for term, pattern in TERM_PATTERNS.items():
+            if pattern.search(prose) and pattern.search(msgstr):
+                hits.append((term, entry.linenum, msgid, msgstr))
 
-    return "\n".join(out_lines), changed_count, missing
+    return hits
 
 
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: python3 fix_term_refs.py input.po [output.po]")
-        sys.exit(1)
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("root", help="Root directory to search for .po files (or a single .po file)")
+    ap.add_argument("--json", metavar="PATH", help="Write full results as JSON")
+    ap.add_argument("--csv", metavar="PATH", help="Write full results as CSV")
+    ap.add_argument("--examples", type=int, default=4,
+                     help="Example locations to show per term in the console summary (default 4)")
+    args = ap.parse_args()
 
-    in_path = sys.argv[1]
-    out_path = (
-        sys.argv[2] if len(sys.argv) > 2 else re.sub(r"\.po$", ".fixed.po", in_path)
-    )
+    po_files = list(iter_po_files(args.root))
+    if not po_files:
+        sys.exit(f"No .po files found under {args.root}")
 
-    with open(in_path, encoding="utf-8") as f:
-        text = f.read()
+    print(f"Scanning {len(po_files)} .po file(s) under {args.root} ...\n", file=sys.stderr)
 
-    new_text, changed_count, missing = fix_po(text)
+    results = defaultdict(list)
+    for path in po_files:
+        for term, linenum, msgid, msgstr in scan_file(path):
+            results[term].append({"file": str(path), "line": linenum, "msgid": msgid, "msgstr": msgstr})
 
-    with open(out_path, "w", encoding="utf-8") as f:
-        f.write(new_text)
+    total_entries = sum(len(v) for v in results.values())
+    print(f"English term kept in prose -- {total_entries} entries")
+    print("The English term is left untranslated inside prose. If that is the intended")
+    print("convention, add the English form to glossary.json; otherwise translate these:\n")
 
-    print(f"Wrote: {out_path}")
-    print(f"Changed msgstr entries: {changed_count}")
-    if missing:
-        print(f"Terms left unchanged (no translation found, {len(missing)}):")
-        for t in sorted(missing):
-            print(f"  - {t}")
-    else:
-        print("All :term: references resolved.")
+    for term in sorted(results.keys(), key=lambda t: -len(results[t])):
+        entries = results[term]
+        example_str = ", ".join(f"{e['file']}:{e['line']}" for e in entries[: args.examples])
+        print(f"{term}: {len(entries)} entries (e.g. {example_str})\n")
+
+    if args.json:
+        with open(args.json, "w", encoding="utf-8") as f:
+            json.dump(results, f, indent=2, ensure_ascii=False)
+        print(f"Full results written to {args.json}", file=sys.stderr)
+
+    if args.csv:
+        with open(args.csv, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["term", "file", "line", "msgid", "msgstr"])
+            for term, entries in results.items():
+                for e in entries:
+                    writer.writerow([term, e["file"], e["line"], e["msgid"], e["msgstr"]])
+        print(f"Full results written to {args.csv}", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-26 03:59+0000\n"
-"PO-Revision-Date: 2021-06-28 01:49+0000\n"
+"PO-Revision-Date: 2026-09-04 07:22+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
 "Language: fa\n"
@@ -23,51 +23,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.6\n"
 
 msgid "Expressions"
-msgstr ""
+msgstr "عبارات"
 
 msgid "This chapter explains the meaning of the elements of expressions in Python."
-msgstr ""
+msgstr "این فصل معنای عناصر عبارت‌ها در پایتون را توضیح می‌دهد."
 
 msgid "**Syntax Notes:** In this and the following chapters, :ref:`grammar notation <notation>` will be used to describe syntax, not lexical analysis."
-msgstr ""
+msgstr "**یادداشت‌های سینتکس:** در این فصل و فصل‌های پس از آن، از :ref:`نمادگذاری دستور زبان <notation>` برای توصیف سینتکس استفاده خواهد شد، نه برای تحلیل واژگانی."
 
 msgid "When (one alternative of) a syntax rule has the form:"
-msgstr ""
+msgstr "هنگامی که (یکی از جایگزین‌های) یک قاعده‌ی نحو به شکل زیر باشد:"
 
 msgid "and no semantics are given, the semantics of this form of ``name`` are the same as for ``othername``."
-msgstr ""
+msgstr "و هیچ معنایی ارائه نشده است، معنای این شکل از ``name`` همان معنای ``othername`` است."
 
 msgid "Arithmetic conversions"
-msgstr ""
+msgstr "تبدیلات حسابی"
 
 msgid "When a description of an arithmetic operator below uses the phrase \"the numeric arguments are converted to a common real type\", this means that the operator implementation for built-in numeric types works as described in the :ref:`Numeric Types <stdtypes-mixed-arithmetic>` section of the standard library documentation."
-msgstr ""
+msgstr "هرگاه در توضیح یک عملگر حسابی در زیر از عبارت «آرگومان‌های عددی به یک نوع حقیقی مشترک تبدیل می‌شوند» استفاده شده باشد، این بدان معناست که پیاده‌سازی عملگر برای انواع عددی توکار، همان‌طور که در بخش :ref:`انواع عددی <stdtypes-mixed-arithmetic>` مستندات کتابخانه استاندارد توضیح داده شده است، کار می‌کند."
 
 msgid "Some additional rules apply for certain operators and non-numeric operands (for example, a string as a left argument to the ``%`` operator). Extensions must define their own conversion behavior."
-msgstr ""
+msgstr "برخی قواعد اضافی برای برخی عملگرها و عملوندهای غیرعددی اعمال می‌شوند (برای مثال، یک رشته به‌عنوان آرگومان سمت چپ عملگر ``%``). افزونه‌ها باید رفتار تبدیل خود را تعریف کنند."
 
 msgid "Atoms"
-msgstr ""
+msgstr "اتم‌ها"
 
 msgid "Atoms are the most basic elements of expressions. The simplest atoms are :ref:`names <identifiers>` or literals. Forms enclosed in parentheses, brackets or braces are also categorized syntactically as atoms."
-msgstr ""
+msgstr "اتم‌ها بنیادی‌ترین عناصر عبارت‌ها هستند. ساده‌ترین اتم‌ها :ref:`نام‌ها <identifiers>` یا مقادیر لفظی هستند. صورت‌هایی که در پرانتز، کروشه یا آکولاد محصور شده‌اند نیز از نظر نحوی در دسته اتم‌ها قرار می‌گیرند."
 
 msgid "Formally, the syntax for atoms is:"
-msgstr ""
+msgstr "به‌طور رسمی، نحو اتم‌ها عبارت است از:"
 
 msgid "Built-in constants"
-msgstr ""
+msgstr "ثابت‌های توکار"
 
 msgid "The keywords ``True``, ``False``, and ``None`` name :ref:`built-in constants <built-in-consts>`. The token ``...`` names the :py:data:`Ellipsis` constant."
-msgstr ""
+msgstr "کلیدواژه‌های ``True``، ``False`` و ``None`` نام‌های :ref:`ثابت‌های توکار <built-in-consts>` هستند. توکن ``...`` نام ثابت :py:data:`Ellipsis` است."
 
 msgid "Evaluation of these atoms yields the corresponding value."
-msgstr ""
+msgstr "ارزیابی این اتم‌ها مقدار متناظر را به دست می‌دهد."
 
 msgid "Several more built-in constants are available as global variables, but only the ones mentioned here are :ref:`keywords <keywords>`. In particular, these names cannot be reassigned or used as attributes:"
-msgstr ""
+msgstr "چند ثابت توکار دیگر نیز به‌عنوان متغیرهای سراسری در دسترس هستند، اما تنها مواردی که در اینجا ذکر شده‌اند :ref:`کلیدواژه‌ها <keywords>` هستند. به‌ویژه، این نام‌ها را نمی‌توان دوباره مقداردهی کرد یا به‌عنوان ویژگی استفاده کرد:"
 
 msgid ""
 ">>> False = 123\n"
@@ -76,84 +77,89 @@ msgid ""
 "   ^^^^^\n"
 "SyntaxError: cannot assign to False"
 msgstr ""
+">>> False = 123\n"
+"  File \"<input>\", line 1\n"
+"   False = 123\n"
+"   ^^^^^\n"
+"SyntaxError: cannot assign to False"
 
 msgid "Identifiers (Names)"
-msgstr ""
+msgstr "شناسه‌ها (نام‌ها)"
 
 msgid "An identifier occurring as an atom is a name.  See section :ref:`identifiers` for lexical definition and section :ref:`naming` for documentation of naming and binding."
-msgstr ""
+msgstr "یک شناسه که به‌عنوان یک اتم (atom) ظاهر می‌شود، یک نام است. بخش :ref:`identifiers` را برای تعریف واژگانی و بخش :ref:`naming` را برای مستندات نام‌گذاری و پیوند ببینید."
 
 msgid "When the name is bound to an object, evaluation of the atom yields that object. When a name is not bound, an attempt to evaluate it raises a :exc:`NameError` exception."
-msgstr ""
+msgstr "هنگامی که نام به یک شیء مقید شده باشد، ارزیابی اتم، آن شیء را حاصل می‌کند. هنگامی که نامی مقید نشده باشد، تلاش برای ارزیابی آن، استثنای :exc:`NameError` را پرتاب می‌کند."
 
 msgid "Private name mangling"
-msgstr ""
+msgstr "تغییر نام خصوصی (private name mangling)"
 
 msgid "When an identifier that textually occurs in a class definition begins with two or more underscore characters and does not end in two or more underscores, it is considered a :dfn:`private name` of that class."
-msgstr ""
+msgstr "هرگاه شناسه‌ای که در متن تعریف یک کلاس آمده باشد با ۲ یا چند نویسه زیرخط آغاز شود و به ۲ یا چند زیرخط ختم نشود، یک :dfn:`نام خصوصی <private name>` برای آن کلاس محسوب می‌شود."
 
 msgid "The :ref:`class specifications <class>`."
-msgstr ""
+msgstr ":ref:`مشخصات کلاس <class>`."
 
 msgid "More precisely, private names are transformed to a longer form before code is generated for them.  If the transformed name is longer than 255 characters, implementation-defined truncation may happen."
-msgstr ""
+msgstr "دقیق‌تر اینکه، نام‌های خصوصی پیش از تولید کد برای آن‌ها به شکل طولانی‌تری تبدیل می‌شوند. اگر نام تبدیل‌شده طولانی‌تر از ۲۵۵ نویسه باشد، ممکن است کوتاه‌سازی (truncation) تعریف‌شده توسط پیاده‌سازی رخ دهد."
 
 msgid "The transformation is independent of the syntactical context in which the identifier is used but only the following private identifiers are mangled:"
-msgstr ""
+msgstr "این تبدیل مستقل از زمینه‌ی نحوی‌ای است که شناسه در آن استفاده می‌شود، اما تنها شناسه‌های خصوصی زیر تغییر نام داده می‌شوند:"
 
 msgid "Any name used as the name of a variable that is assigned or read or any name of an attribute being accessed."
-msgstr ""
+msgstr "هر نامی که به‌عنوان نام متغیری استفاده شود که به آن مقدار انتساب داده می‌شود یا خوانده می‌شود، یا هر نامی از یک ویژگی که مورد دسترسی قرار می‌گیرد."
 
 msgid "The :attr:`~definition.__name__` attribute of nested functions, classes, and type aliases is however not mangled."
-msgstr ""
+msgstr "با این حال، ویژگی :attr:`~definition.__name__` در توابع، کلاس‌ها و نام‌های مستعار نوع تودرتو تغییر نام نمی‌یابد."
 
 msgid "The name of imported modules, e.g., ``__spam`` in ``import __spam``. If the module is part of a package (i.e., its name contains a dot), the name is *not* mangled, e.g., the ``__foo`` in ``import __foo.bar`` is not mangled."
-msgstr ""
+msgstr "نام ماژول‌های ایمپورت‌شده، برای مثال ``__spam`` در ``import __spam``. اگر ماژول بخشی از یک بسته باشد (یعنی نام آن شامل نقطه باشد)، نام دستکاری *نمی‌شود*، برای مثال ``__foo`` در ``import __foo.bar`` دستکاری نمی‌شود."
 
 msgid "The name of an imported member, e.g., ``__f`` in ``from spam import __f``."
-msgstr ""
+msgstr "نام یک عضو ایمپورت‌شده، مثلاً ``__f`` در ``from spam import __f``."
 
 msgid "The transformation rule is defined as follows:"
-msgstr ""
+msgstr "قاعده تبدیل به‌صورت زیر تعریف شده است:"
 
 msgid "The class name, with leading underscores removed and a single leading underscore inserted, is inserted in front of the identifier, e.g., the identifier ``__spam`` occurring in a class named ``Foo``, ``_Foo`` or ``__Foo`` is transformed to ``_Foo__spam``."
-msgstr ""
+msgstr "نام کلاس، پس از حذف زیرخط‌های آغازین و افزودن یک زیرخط در ابتدا، در جلوی شناسه قرار می‌گیرد؛ برای مثال، شناسه‌ی ``__spam`` که در کلاسی با نام ``Foo``، ``_Foo`` یا ``__Foo`` آمده باشد، به ``_Foo__spam`` تبدیل می‌شود."
 
 msgid "If the class name consists only of underscores, the transformation is the identity, e.g., the identifier ``__spam`` occurring in a class named ``_`` or ``__`` is left as is."
-msgstr ""
+msgstr "اگر نام کلاس فقط از زیرخط تشکیل شده باشد، تبدیل همانی است؛ برای مثال، شناسه‌ی ``__spam`` که در کلاسی با نام ``_`` یا ``__`` آمده است، بدون تغییر باقی می‌ماند."
 
 msgid "Literals"
-msgstr ""
+msgstr "مقادیر لفظی"
 
 msgid "A :dfn:`literal` is a textual representation of a value. Python supports numeric, string and bytes literals. :ref:`Format strings <f-strings>` and :ref:`template strings <t-strings>` are treated as string literals."
-msgstr ""
+msgstr ":dfn:`لفظی <literal>` نمایشی متنی از یک مقدار است. پایتون از مقادیر لفظی عددی، رشته‌ای و بایتی پشتیبانی می‌کند. :ref:`اف‌استرینگ‌ها <f-strings>` و :ref:`رشته‌های قالبی <t-strings>` به‌عنوان مقادیر لفظی رشته‌ای در نظر گرفته می‌شوند."
 
 msgid "Numeric literals consist of a single :token:`NUMBER <python-grammar:NUMBER>` token, which names an integer, floating-point number, or an imaginary number. See the :ref:`numbers` section in Lexical analysis documentation for details."
-msgstr ""
+msgstr "مقادیر لفظی عددی از یک توکن :token:`NUMBER <python-grammar:NUMBER>` تشکیل شده‌اند که یک عدد صحیح، عدد ممیز شناور یا عدد موهومی را مشخص می‌کند. برای جزئیات، بخش :ref:`numbers` را در مستندات تحلیل واژگانی ببینید."
 
 msgid "String and bytes literals may consist of several tokens. See section :ref:`string-concatenation` for details."
-msgstr ""
+msgstr "مقادیر لفظی رشته و بایت ممکن است از چندین توکن تشکیل شده باشند. برای جزئیات، بخش :ref:`string-concatenation` را ببینید."
 
 msgid "Note that negative and complex numbers, like ``-3`` or ``3+4.2j``, are syntactically not literals, but :ref:`unary <unary>` or :ref:`binary <binary>` arithmetic operations involving the ``-`` or ``+`` operator."
-msgstr ""
+msgstr "توجه داشته باشید که اعداد منفی و مختلط، مانند ``-3`` یا ``3+4.2j``، از نظر سینتکسی لفظی نیستند، بلکه عملیات حسابی :ref:`یک‌عملوندی <unary>` یا :ref:`دوعملوندی <binary>` هستند که شامل عملگر ``-`` یا ``+`` می‌شوند."
 
 msgid "Evaluation of a literal yields an object of the given type (:class:`int`, :class:`float`, :class:`complex`, :class:`str`, :class:`bytes`, or :class:`~string.templatelib.Template`) with the given value. The value may be approximated in the case of floating-point and imaginary literals."
-msgstr ""
+msgstr "ارزیابی یک لفظی، شیء‌ای از نوع داده‌شده (:class:`int`، :class:`float`، :class:`complex`، :class:`str`، :class:`bytes`، یا :class:`~string.templatelib.Template`) با مقدار داده‌شده را به دست می‌دهد. در مورد مقادیر لفظی ممیز شناور و موهومی، ممکن است مقدار تقریبی باشد."
 
 msgid "The formal grammar for literals is:"
-msgstr ""
+msgstr "دستور زبان صوری برای مقادیر لفظی چنین است:"
 
 msgid "Literals and object identity"
-msgstr ""
+msgstr "مقادیر لفظی و هویت شیء"
 
 msgid "All literals correspond to immutable data types, and hence the object's identity is less important than its value.  Multiple evaluations of literals with the same value (either the same occurrence in the program text or a different occurrence) may obtain the same object or a different object with the same value."
-msgstr ""
+msgstr "همه‌ی مقادیر لفظی با انواع داده‌ی تغییرناپذیر متناظر هستند، و از این رو، هویت شیء کم‌اهمیت‌تر از مقدار آن است. ارزیابی‌های متعدد مقادیر لفظیی با مقدار یکسان (چه همان محل در متن برنامه و چه محلی دیگر) ممکن است همان شیء یا شیء متفاوتی با همان مقدار را به دست آورند."
 
 msgid "CPython implementation detail"
-msgstr ""
+msgstr "جزئیات پیاده‌سازی CPython"
 
 msgid "For example, in CPython, *small* integers with the same value evaluate to the same object::"
-msgstr ""
+msgstr "برای مثال، در CPython، اعداد صحیح *کوچک* با مقدار یکسان، به یک شیء یکسان ارزیابی می‌شوند::"
 
 msgid ""
 ">>> x = 7\n"
@@ -161,9 +167,13 @@ msgid ""
 ">>> x is y\n"
 "True"
 msgstr ""
+">>> x = 7\n"
+">>> y = 7\n"
+">>> x is y\n"
+"True"
 
 msgid "However, large integers evaluate to different objects::"
-msgstr ""
+msgstr "با این حال، اعداد صحیح بزرگ به اشیاء متفاوتی ارزیابی می‌شوند::"
 
 msgid ""
 ">>> x = 123456789\n"
@@ -171,12 +181,16 @@ msgid ""
 ">>> x is y\n"
 "False"
 msgstr ""
+">>> x = 123456789\n"
+">>> y = 123456789\n"
+">>> x is y\n"
+"False"
 
 msgid "This behavior may change in future versions of CPython. In particular, the boundary between \"small\" and \"large\" integers has already changed in the past."
-msgstr ""
+msgstr "این رفتار ممکن است در نسخه‌های آینده CPython تغییر کند. به‌ویژه، مرز بین اعداد صحیح «کوچک» و «بزرگ» پیش‌تر تغییر کرده است."
 
 msgid "CPython will emit a :py:exc:`SyntaxWarning` when you compare literals using ``is``::"
-msgstr ""
+msgstr "CPython هنگامی که مقادیر لفظی را با استفاده از ``is`` مقایسه می‌کنید، یک :py:exc:`SyntaxWarning` صادر می‌کند::"
 
 msgid ""
 ">>> x = 7\n"
@@ -184,29 +198,35 @@ msgid ""
 "<input>:1: SyntaxWarning: \"is\" with 'int' literal. Did you mean \"==\"?\n"
 "True"
 msgstr ""
+">>> x = 7\n"
+">>> x is 7\n"
+"<input>:1: SyntaxWarning: \"is\" with 'int' literal. Did you mean \"==\"?\n"
+"True"
 
 msgid "See :ref:`faq-identity-with-is` for more information."
-msgstr ""
+msgstr "برای اطلاعات بیشتر، :ref:`faq-identity-with-is` را ببینید."
 
 msgid ":ref:`Template strings <t-strings>` are immutable but may reference mutable objects as :class:`~string.templatelib.Interpolation` values. For the purposes of this section, two t-strings have the \"same value\" if both their structure and the *identity* of the values match."
-msgstr ""
+msgstr ":ref:`رشته‌های الگو <t-strings>` تغییرناپذیر هستند، اما ممکن است به اشیای تغییرپذیر به‌عنوان مقادیر :class:`~string.templatelib.Interpolation` ارجاع دهند. برای اهداف این بخش، دو تی‌استرینگ «مقدار یکسان» دارند اگر هم ساختار آن‌ها و هم *هویت* مقادیرشان مطابقت داشته باشد."
 
 msgid "Currently, each evaluation of a template string results in a different object."
-msgstr ""
+msgstr "در حال حاضر، هر ارزیابی از یک رشته‌ی قالب به یک شیء متفاوت منجر می‌شود."
 
 msgid "String literal concatenation"
-msgstr ""
+msgstr "الحاق رشته‌های تحت‌اللفظی"
 
 msgid "Multiple adjacent string or bytes literals, possibly using different quoting conventions, are allowed, and their meaning is the same as their concatenation::"
-msgstr ""
+msgstr "مقادیر لفظی مجاور رشته یا بایت، که ممکن است از قواعد متفاوتی برای علامت نقل‌قول استفاده کنند، مجاز هستند و معنای آن‌ها همان معنای الحاق آن‌ها است::"
 
 msgid ""
 ">>> \"hello\" 'world'\n"
 "\"helloworld\""
 msgstr ""
+">>> \"hello\" 'world'\n"
+"\"helloworld\""
 
 msgid "This feature is defined at the syntactical level, so it only works with literals. To concatenate string expressions at run time, the '+' operator may be used::"
-msgstr ""
+msgstr "این قابلیت در سطح نحو تعریف شده است، بنابراین فقط با مقادیر لفظی کار می‌کند. برای الحاق عبارات رشته‌ای در ران‌تایم، می‌توان از عملگر '+' استفاده کرد::"
 
 msgid ""
 ">>> greeting = \"Hello\"\n"
@@ -215,162 +235,185 @@ msgid ""
 ">>> print(greeting + space + name)   # not: print(greeting space name)\n"
 "Hello Blaise"
 msgstr ""
+">>> greeting = \"Hello\"\n"
+">>> space = \" \"\n"
+">>> name = \"Blaise\"\n"
+">>> print(greeting + space + name)   # not: print(greeting space name)\n"
+"Hello Blaise"
 
 msgid "Literal concatenation can freely mix raw strings, triple-quoted strings, and formatted string literals. For example::"
-msgstr ""
+msgstr "در الحاق لفظی می‌توان آزادانه رشته‌های خام، رشته‌های دارای سه علامت نقل‌قول و مقادیر لفظی رشته‌ای قالب‌بندی‌شده را با هم ترکیب کرد. برای مثال::"
 
 msgid ""
 ">>> \"Hello\" r', ' f\"{name}!\"\n"
 "\"Hello, Blaise!\""
 msgstr ""
+">>> \"Hello\" r', ' f\"{name}!\"\n"
+"\"Hello, Blaise!\""
 
 msgid "This feature can be used to reduce the number of backslashes needed, to split long strings conveniently across long lines, or even to add comments to parts of strings. For example::"
-msgstr ""
+msgstr "می‌توان از این قابلیت برای کاهش تعداد بک‌اسلش‌های مورد نیاز، تقسیم راحت رشته‌های طولانی در خطوط طولانی، یا حتی افزودن کامنت به بخش‌هایی از رشته‌ها استفاده کرد. برای مثال::"
 
 msgid ""
 "re.compile(\"[A-Za-z_]\"       # letter or underscore\n"
 "           \"[A-Za-z0-9_]*\"   # letter, digit or underscore\n"
 "          )"
 msgstr ""
+"re.compile(\"[A-Za-z_]\"       # letter or underscore\n"
+"           \"[A-Za-z0-9_]*\"   # letter, digit or underscore\n"
+"          )"
 
 msgid "However, bytes literals may only be combined with other byte literals; not with string literals of any kind. Also, template string literals may only be combined with other template string literals::"
-msgstr ""
+msgstr "با این حال، مقادیر لفظی بایت فقط می‌توانند با دیگر مقادیر لفظی بایت ترکیب شوند؛ نه با مقادیر لفظی رشته از هیچ نوعی. همچنین، مقادیر لفظی رشته قالب فقط می‌توانند با دیگر مقادیر لفظی رشته قالب ترکیب شوند::"
 
 msgid ""
 ">>> t\"Hello\" t\"{name}!\"\n"
 "Template(strings=('Hello', '!'), interpolations=(...))"
 msgstr ""
+">>> t\"Hello\" t\"{name}!\"\n"
+"Template(strings=('Hello', '!'), interpolations=(...))"
 
 msgid "Formally:"
-msgstr ""
+msgstr "به‌طور رسمی:"
 
 msgid "Parenthesized forms"
-msgstr ""
+msgstr "قالب‌های پرانتزدار"
 
 msgid "A parenthesized form is an optional expression list enclosed in parentheses:"
-msgstr ""
+msgstr "شکل پرانتزدار، یک فهرست عبارت اختیاری است که در پرانتز محصور شده است:"
 
 msgid "A parenthesized expression list yields whatever that expression list yields: if the list contains at least one comma, it yields a tuple; otherwise, it yields the single expression that makes up the expression list."
-msgstr ""
+msgstr "یک فهرست عبارت پرانتزبندی‌شده، هر آنچه را که آن فهرست عبارت برمی‌گرداند، برمی‌گرداند: اگر فهرست دست‌کم شامل یک ویرگول باشد، یک تاپل  برمی‌گرداند؛ در غیر این صورت، عبارت واحدی را برمی‌گرداند که فهرست عبارت را تشکیل می‌دهد."
 
 msgid "An empty pair of parentheses yields an empty tuple object.  Since tuples are immutable, the same rules as for literals apply (i.e., two occurrences of the empty tuple may or may not yield the same object)."
-msgstr ""
+msgstr "یک جفت پرانتز خالی، یک شیء تاپل خالی را حاصل می‌کند. از آن‌جا که تاپل‌ها تغییرناپذیرند، همان قواعد مربوط به مقادیر لفظی اعمال می‌شود (یعنی ممکن است دو رخداد از تاپل خالی، شیء یکسانی را حاصل دهند یا ندهند)."
 
 msgid "Note that tuples are not formed by the parentheses, but rather by use of the comma.  The exception is the empty tuple, for which parentheses *are* required --- allowing unparenthesized \"nothing\" in expressions would cause ambiguities and allow common typos to pass uncaught."
-msgstr ""
+msgstr "توجه داشته باشید که تاپل‌ها با پرانتزها تشکیل نمی‌شوند، بلکه با استفاده از کاما تشکیل می‌شوند. استثنا، تاپل خالی است که برای آن پرانتزها *الزامی* هستند — اجازه دادن به «هیچ» بدون پرانتز در عبارت‌ها باعث ایجاد ابهام می‌شود و اجازه می‌دهد خطاهای تایپی رایج بدون شناسایی باقی بمانند."
 
 msgid "Displays for lists, sets and dictionaries"
-msgstr ""
+msgstr "نمایش فهرست‌ها، مجموعه‌ها و دیکشنری‌ها"
 
 msgid "For constructing a list, a set or a dictionary Python provides special syntax called \"displays\", each of them in two flavors:"
-msgstr ""
+msgstr "برای ساختن فهرست، مجموعه یا دیکشنری، پایتون نحو خاصی به نام «نمایش‌ها» (displays) فراهم می‌کند که هر کدام دو گونه دارند:"
 
 msgid "either the container contents are listed explicitly, or"
-msgstr ""
+msgstr "یا محتویات ظرف به‌صورت صریح فهرست می‌شوند، یا"
 
 msgid "they are computed via a set of looping and filtering instructions, called a :dfn:`comprehension`."
-msgstr ""
+msgstr "آن‌ها از طریق مجموعه‌ای از دستورهای حلقه و فیلتر کردن، که به آن :dfn:`comprehension` گفته می‌شود، محاسبه می‌شوند."
 
 msgid "Common syntax elements for comprehensions are:"
-msgstr ""
+msgstr "عناصر نحوی مشترک برای درک‌ها عبارتند از:"
 
-msgid "The comprehension consists of a single expression followed by at least one :keyword:`!for` clause and zero or more :keyword:`!for` or :keyword:`!if` clauses. In this case, the elements of the new container are those that would be produced by considering each of the :keyword:`!for` or :keyword:`!if` clauses a block, nesting from left to right, and evaluating the expression to produce an element each time the innermost block is reached."
-msgstr ""
+msgid ""
+"The comprehension consists of a single expression followed by at least one :keyword:`!for` clause and zero or more :keyword:`!for` or :keyword:`!if` clauses. In this case, the elements of the new container are those that would be produced by considering each of the :keyword:`!for` or :keyword:`!if` clauses a block, nesting from left to right, and evaluating the expression to produce an element each time the "
+"innermost block is reached."
+msgstr "این درک از یک عبارت واحد تشکیل شده است که پس از آن حداقل ۱ بند :keyword:`!for` و ۰ یا چند بند :keyword:`!for` یا :keyword:`!if` قرار می‌گیرد. در این حالت، عناصر ظرف جدید آن‌هایی هستند که با در نظر گرفتن هر یک از بندهای :keyword:`!for` یا :keyword:`!if` به‌عنوان یک بلوک، تودرتو شدن آن‌ها از چپ به راست، و ارزیابی عبارت برای تولید یک عنصر هر بار که به داخلی‌ترین بلوک می‌رسید، تولید می‌شوند."
 
 msgid "However, aside from the iterable expression in the leftmost :keyword:`!for` clause, the comprehension is executed in a separate implicitly nested scope. This ensures that names assigned to in the target list don't \"leak\" into the enclosing scope."
-msgstr ""
+msgstr "با این حال، به‌جز عبارت پیمایش‌پذیر در چپ‌ترین بند :keyword:`!for`، درک در یک محدوده‌ی تودرتوی ضمنی جداگانه اجرا می‌شود. این امر تضمین می‌کند که نام‌هایی که در فهرست هدف به آن‌ها انتساب داده می‌شود، به محدوده‌ی دربرگیرنده «نشت» نمی‌کنند."
 
-msgid "The iterable expression in the leftmost :keyword:`!for` clause is evaluated directly in the enclosing scope and then passed as an argument to the implicitly nested scope. Subsequent :keyword:`!for` clauses and any filter condition in the leftmost :keyword:`!for` clause cannot be evaluated in the enclosing scope as they may depend on the values obtained from the leftmost iterable. For example: ``[x*y for x in range(10) for y in range(x, x+10)]``."
-msgstr ""
+msgid ""
+"The iterable expression in the leftmost :keyword:`!for` clause is evaluated directly in the enclosing scope and then passed as an argument to the implicitly nested scope. Subsequent :keyword:`!for` clauses and any filter condition in the leftmost :keyword:`!for` clause cannot be evaluated in the enclosing scope as they may depend on the values obtained from the leftmost iterable. For example: ``[x*y for x in "
+"range(10) for y in range(x, x+10)]``."
+msgstr "عبارت پیمایش‌پذیر در چپ‌ترین بند :keyword:`!for` مستقیماً در محدوده دربرگیرنده ارزیابی می‌شود و سپس به‌عنوان آرگومان به محدوده تودرتوی ضمنی ارسال می‌شود. بندهای :keyword:`!for` بعدی و هر شرط فیلتر در چپ‌ترین بند :keyword:`!for` نمی‌توانند در محدوده دربرگیرنده ارزیابی شوند، زیرا ممکن است به مقادیر به‌دست‌آمده از چپ‌ترین پیمایش‌پذیر وابسته باشند. برای مثال: ``[x*y for x in range(10) for y in range(x, x+10)]``."
 
 msgid "To ensure the comprehension always results in a container of the appropriate type, ``yield`` and ``yield from`` expressions are prohibited in the implicitly nested scope."
-msgstr ""
+msgstr "برای اطمینان از اینکه درک همیشه به ظرفی از نوع مناسب منجر می‌شود، عبارت‌های ``yield`` و ``yield from`` در محدوده‌ی تودرتوی ضمنی ممنوع هستند."
 
-msgid "Since Python 3.6, in an :keyword:`async def` function, an :keyword:`!async for` clause may be used to iterate over a :term:`asynchronous iterator`. A comprehension in an :keyword:`!async def` function may consist of either a :keyword:`!for` or :keyword:`!async for` clause following the leading expression, may contain additional :keyword:`!for` or :keyword:`!async for` clauses, and may also use :keyword:`await` expressions."
-msgstr ""
+msgid ""
+"Since Python 3.6, in an :keyword:`async def` function, an :keyword:`!async for` clause may be used to iterate over a :term:`asynchronous iterator`. A comprehension in an :keyword:`!async def` function may consist of either a :keyword:`!for` or :keyword:`!async for` clause following the leading expression, may contain additional :keyword:`!for` or :keyword:`!async for` clauses, and may also use :keyword:`await` "
+"expressions."
+msgstr "از پایتون 3.6، در یک تابع :keyword:`async def`، می‌توان از یک بند :keyword:`!async for` برای تکرار بر روی یک :term:`asynchronous iterator` استفاده کرد. یک درک در یک تابع :keyword:`!async def` می‌تواند شامل یک بند :keyword:`!for` یا :keyword:`!async for` پس از عبارت آغازین باشد، می‌تواند شامل بندهای :keyword:`!for` یا :keyword:`!async for` اضافی باشد، و همچنین می‌تواند از عبارت‌های :keyword:`await` استفاده کند."
 
 msgid "If a comprehension contains :keyword:`!async for` clauses, or if it contains :keyword:`!await` expressions or other asynchronous comprehensions anywhere except the iterable expression in the leftmost :keyword:`!for` clause, it is called an :dfn:`asynchronous comprehension`. An asynchronous comprehension may suspend the execution of the coroutine function in which it appears. See also :pep:`530`."
-msgstr ""
+msgstr "اگر یک درک شامل بندهای :keyword:`!async for` باشد، یا شامل عبارت‌های :keyword:`!await` یا دیگر درک‌های ناهمگام در هر جایی به‌جز عبارت پیمایش‌پذیر در چپ‌ترین بند :keyword:`!for` باشد، به آن :dfn:`درک ناهمگام <asynchronous comprehension>` گفته می‌شود. یک درک ناهمگام ممکن است اجرای تابع هم‌روالی که در آن ظاهر می‌شود را معلق کند. همچنین :pep:`530` را ببینید."
 
 msgid "Asynchronous comprehensions were introduced."
-msgstr ""
+msgstr "درک‌های ناهمگام معرفی شدند."
 
 msgid "``yield`` and ``yield from`` prohibited in the implicitly nested scope."
-msgstr ""
+msgstr "``yield`` و ``yield from`` در محدوده‌ی تودرتوی ضمنی ممنوع است."
 
 msgid "Asynchronous comprehensions are now allowed inside comprehensions in asynchronous functions. Outer comprehensions implicitly become asynchronous."
-msgstr ""
+msgstr "درک‌های ناهمگام اکنون در داخل درک‌ها در توابع ناهمگام مجاز هستند. درک‌های بیرونی به‌طور ضمنی ناهمگام می‌شوند."
 
 msgid "List displays"
-msgstr ""
+msgstr "نمایش‌های فهرست"
 
 msgid "A list display is a possibly empty series of expressions enclosed in square brackets:"
-msgstr ""
+msgstr "نمایش فهرست، دنباله‌ای از عبارت‌ها است که ممکن است خالی باشد و درون کروشه قرار دارد:"
 
 msgid "A list display yields a new list object, the contents being specified by either a list of expressions or a comprehension.  When a comma-separated list of expressions is supplied, its elements are evaluated from left to right and placed into the list object in that order.  When a comprehension is supplied, the list is constructed from the elements resulting from the comprehension."
-msgstr ""
+msgstr "یک نمایش فهرست، یک شیء فهرست جدید حاصل می‌کند که محتوای آن توسط یک فهرست از عبارت‌ها یا یک درک فهرستی مشخص می‌شود. هنگامی که یک فهرست از عبارت‌های جداشده با کاما ارائه شود، عناصر آن از چپ به راست ارزیابی می‌شوند و با همان ترتیب در شیء فهرست قرار می‌گیرند. هنگامی که یک درک فهرستی ارائه شود، فهرست از عناصر حاصل از آن درک ساخته می‌شود."
 
 msgid "Set displays"
-msgstr ""
+msgstr "نمایش‌های مجموعه"
 
 msgid "A set display is denoted by curly braces and distinguishable from dictionary displays by the lack of colons separating keys and values:"
-msgstr ""
+msgstr "نمایش مجموعه با آکولادها مشخص می‌شود و به دلیل نبود علامت دونقطه برای جدا کردن کلیدها و مقدارها، از نمایش‌های دیکشنری قابل تشخیص است:"
 
 msgid "A set display yields a new mutable set object, the contents being specified by either a sequence of expressions or a comprehension.  When a comma-separated list of expressions is supplied, its elements are evaluated from left to right and added to the set object.  When a comprehension is supplied, the set is constructed from the elements resulting from the comprehension."
-msgstr ""
+msgstr "یک نمایش مجموعه، یک شیء مجموعه‌ی تغییرپذیر جدید ایجاد می‌کند که محتوای آن یا با دنباله‌ای از عبارت‌ها یا با یک درک مشخص می‌شود. هنگامی که یک فهرست جداشده با کاما از عبارت‌ها ارائه شود، عناصر آن از چپ به راست ارزیابی می‌شوند و به شیء مجموعه افزوده می‌شوند. هنگامی که یک درک ارائه شود، مجموعه از عناصر حاصل از آن درک ساخته می‌شود."
 
 msgid "An empty set cannot be constructed with ``{}``; this literal constructs an empty dictionary."
-msgstr ""
+msgstr "یک مجموعه خالی را نمی‌توان با ``{}`` ساخت؛ این لفظی یک دیکشنری خالی می‌سازد."
 
 msgid "Dictionary displays"
-msgstr ""
+msgstr "نمایش‌های دیکشنری"
 
 msgid "A dictionary display is a possibly empty series of dict items (key/value pairs) enclosed in curly braces:"
-msgstr ""
+msgstr "نمایش دیکشنری دنباله‌ای از آیتم‌های دیکشنری (جفت‌های کلید/مقدار) است که ممکن است خالی باشد و در آکولاد محصور شده است:"
 
 msgid "A dictionary display yields a new dictionary object."
-msgstr ""
+msgstr "یک نمایش دیکشنری، یک شیء دیکشنری جدید ایجاد می‌کند."
 
 msgid "If a comma-separated sequence of dict items is given, they are evaluated from left to right to define the entries of the dictionary: each key object is used as a key into the dictionary to store the corresponding value.  This means that you can specify the same key multiple times in the dict item list, and the final dictionary's value for that key will be the last one given."
-msgstr ""
+msgstr "اگر دنباله‌ای از آیتم‌های دیکشنری که با کاما از هم جدا شده‌اند داده شود، آن‌ها از چپ به راست ارزیابی می‌شوند تا ورودی‌های دیکشنری را تعریف کنند: هر شیء کلید به‌عنوان کلیدی در دیکشنری برای ذخیره مقدار متناظر استفاده می‌شود. این بدان معناست که شما می‌توانید یک کلید را چندین بار در فهرست آیتم‌های دیکشنری مشخص کنید و مقدار دیکشنری نهایی برای آن کلید، آخرین مقدار داده‌شده خواهد بود."
 
 msgid "A double asterisk ``**`` denotes :dfn:`dictionary unpacking`. Its operand must be a :term:`mapping`.  Each mapping item is added to the new dictionary.  Later values replace values already set by earlier dict items and earlier dictionary unpackings."
-msgstr ""
+msgstr "نماد دو ستاره ``**`` نشان‌دهنده :dfn:`واگشایی دیکشنری <dictionary unpacking>` است. عملوند آن باید یک :term:`نگاشت <mapping>` باشد. هر آیتم از نگاشت به دیکشنری جدید اضافه می‌شود. مقادیر بعدی جایگزین مقادیری می‌شوند که از پیش توسط آیتم‌های دیکشنری پیشین و واگشایی‌های دیکشنری پیشین تعیین شده‌اند."
 
 msgid "Unpacking into dictionary displays, originally proposed by :pep:`448`."
-msgstr ""
+msgstr "واگشایی در نمایش‌های دیکشنری، که در ابتدا در :pep:`448` پیشنهاد شده بود."
 
 msgid "A dict comprehension, in contrast to list and set comprehensions, needs two expressions separated with a colon followed by the usual \"for\" and \"if\" clauses. When the comprehension is run, the resulting key and value elements are inserted in the new dictionary in the order they are produced."
-msgstr ""
+msgstr "درک دیکشنری، برخلاف درک فهرستی و درک مجموعه، به دو عبارت نیاز دارد که با یک دونقط از هم جدا شده‌اند و پس از آن‌ها بندهای معمول «for» و «if» می‌آیند. هنگامی که درک اجرا می‌شود، عناصر کلید و مقدار حاصل به ترتیبی که تولید می‌شوند، در دیکشنری جدید درج می‌شوند."
 
 msgid "Restrictions on the types of the key values are listed earlier in section :ref:`types`.  (To summarize, the key type should be :term:`hashable`, which excludes all mutable objects.)  Clashes between duplicate keys are not detected; the last value (textually rightmost in the display) stored for a given key value prevails."
-msgstr ""
+msgstr "محدودیت‌های مربوط به انواع مقادیر کلید، پیش‌تر در بخش :ref:`types` فهرست شده‌اند. (به‌طور خلاصه، نوع کلید باید :term:`هش‌پذیر <hashable>` باشد، که شامل همه اشیاء تغییرپذیر نمی‌شود.) تعارض‌های بین کلیدهای تکراری شناسایی نمی‌شوند؛ آخرین مقدار ذخیره‌شده برای یک مقدار کلید مشخص (که از نظر متنی در نمایش سمت راست‌تر است) اعمال می‌شود."
 
 msgid "Prior to Python 3.8, in dict comprehensions, the evaluation order of key and value was not well-defined.  In CPython, the value was evaluated before the key.  Starting with 3.8, the key is evaluated before the value, as proposed by :pep:`572`."
-msgstr ""
+msgstr "پیش از پایتون 3.8، در درک دیکشنری، ترتیب ارزیابی کلید و مقدار به‌خوبی تعریف‌نشده بود. در CPython، مقدار پیش از کلید ارزیابی می‌شد. از 3.8 به بعد، کلید پیش از مقدار ارزیابی می‌شود، همان‌طور که در :pep:`572` پیشنهاد شده است."
 
 msgid "Generator expressions"
-msgstr ""
+msgstr "عبارت‌های تولیدگر"
 
 msgid "The syntax for :dfn:`generator expressions` is the same as for list :ref:`comprehensions <comprehensions>`, except that they are enclosed in parentheses instead of brackets. For example::"
-msgstr ""
+msgstr "سینتکس :dfn:`عبارت‌های تولیدگر <generator expressions>` همانند :ref:`درک‌های فهرستی <comprehensions>` است، با این تفاوت که آن‌ها به جای کروشه در پرانتز قرار می‌گیرند. برای مثال::"
 
 msgid ""
 ">>> iterator = (x ** 2 for x in range(10))\n"
 ">>> iterator\n"
 "<generator object <genexpr> at ...>"
 msgstr ""
+">>> iterator = (x ** 2 for x in range(10))\n"
+">>> iterator\n"
+"<generator object <genexpr> at ...>"
 
 msgid "At runtime, a generator expression evaluates to a :term:`generator iterator` which yields the same values as the corresponding list comprehension::"
-msgstr ""
+msgstr "در ران‌تایم، یک عبارت تولیدگر به یک :term:`generator iterator` ارزیابی می‌شود که همان مقادیرِ درک فهرستی متناظر را تولید می‌کند::"
 
 msgid ""
 ">>> list(iterator)\n"
 "[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]"
 msgstr ""
+">>> list(iterator)\n"
+"[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]"
 
 msgid "Thus, the example above is roughly equivalent to defining and calling the following generator function::"
-msgstr ""
+msgstr "بنابراین، مثال بالا تقریباً معادل تعریف و فراخوانی تابع تولیدگر زیر است::"
 
 msgid ""
 "def make_generator_of_squares(iterator):\n"
@@ -379,9 +422,14 @@ msgid ""
 "\n"
 "make_generator_of_squares(iter(range(10)))"
 msgstr ""
+"def make_generator_of_squares(iterator):\n"
+"    for x in iterator:\n"
+"        yield x ** 2\n"
+"\n"
+"make_generator_of_squares(iter(range(10)))"
 
 msgid "The enclosing parentheses can be omitted in calls when the generator expression is the only positional argument and there are no keyword arguments. See the :ref:`Calls section <calls>` for details. For example::"
-msgstr ""
+msgstr "هنگامی که عبارت تولیدگر تنها آرگومان جایگاهی باشد و هیچ آرگومان کلیدواژه‌ای وجود نداشته باشد، می‌توان پرانتزهای دربرگیرنده را در فراخوانی‌ها حذف کرد. برای جزئیات، :ref:`بخش فراخوانی‌ها <calls>` را ببینید. برای مثال::"
 
 msgid ""
 "# The parentheses after `sum` are part of the call syntax:\n"
@@ -392,9 +440,16 @@ msgid ""
 ">>> sum((x ** 2 for x in range(10)), start=1000)\n"
 "1285"
 msgstr ""
+"# The parentheses after `sum` are part of the call syntax:\n"
+">>> sum(x ** 2 for x in range(10))\n"
+"285\n"
+"\n"
+"# The generator needs its own parentheses if it's not the only argument:\n"
+">>> sum((x ** 2 for x in range(10)), start=1000)\n"
+"1285"
 
 msgid "The iterable expression in the leftmost :keyword:`!for` clause is evaluated immediately, so that an error raised by this expression will be emitted at the point where the generator expression is defined, rather than at the point where the first value is retrieved::"
-msgstr ""
+msgstr "عبارت پیمایش‌پذیر در چپ‌ترین بند :keyword:`!for` بلافاصله ارزیابی می‌شود، به‌طوری که خطایی که این عبارت پرتاب می‌کند، در نقطه‌ای که عبارت تولیدگر تعریف می‌شود بروز می‌کند، نه در نقطه‌ای که نخستین مقدار بازیابی می‌شود::"
 
 msgid ""
 ">>> (x ** 2 for x in nonexistent_iterable)\n"
@@ -402,9 +457,13 @@ msgid ""
 "  ...\n"
 "NameError: name 'nonexistent_iterable' is not defined"
 msgstr ""
+">>> (x ** 2 for x in nonexistent_iterable)\n"
+"Traceback (most recent call last):\n"
+"  ...\n"
+"NameError: name 'nonexistent_iterable' is not defined"
 
 msgid "After the expression is evaluated, an iterator is created from the result, as if :py:func:`iter` was called on it. Any error raised when creating the iterator is also emitted immediately::"
-msgstr ""
+msgstr "پس از ارزیابی عبارت، یک پیمایش‌گر از نتیجه ایجاد می‌شود، گویی که :py:func:`iter` بر روی آن فراخوانی شده است. هر خطایی که هنگام ایجاد پیمایش‌گر پرتاب شود نیز بلافاصله منتشر می‌شود::"
 
 msgid ""
 ">>> (x ** 2 for x in None)\n"
@@ -412,9 +471,13 @@ msgid ""
 "  ...\n"
 "TypeError: 'NoneType' object is not iterable"
 msgstr ""
+">>> (x ** 2 for x in None)\n"
+"Traceback (most recent call last):\n"
+"  ...\n"
+"TypeError: 'NoneType' object is not iterable"
 
 msgid "All other expressions are evaluated lazily, in the same fashion as normal generators (that is, when the iterator is asked to yield a value)::"
-msgstr ""
+msgstr "تمام عبارت‌های دیگر به‌صورت تنبل ارزیابی می‌شوند، به همان شیوه‌ی تولیدگرهای معمولی (یعنی زمانی که از پیمایش‌گر خواسته شود مقداری را yield کند)::"
 
 msgid ""
 ">>> iterator = (nonexistent_value for x in range(10))\n"
@@ -425,6 +488,13 @@ msgid ""
 "  ...\n"
 "NameError: name 'nonexistent_value' is not defined"
 msgstr ""
+">>> iterator = (nonexistent_value for x in range(10))\n"
+">>> iterator\n"
+"<generator object <genexpr> at ...>\n"
+">>> list(iterator)\n"
+"Traceback (most recent call last):\n"
+"  ...\n"
+"NameError: name 'nonexistent_value' is not defined"
 
 msgid ""
 ">>> iterator = (x * y for x in range(10) for y in nonexistent_iterable)\n"
@@ -435,27 +505,36 @@ msgid ""
 "  ...\n"
 "NameError: name 'nonexistent_iterable' is not defined"
 msgstr ""
+">>> iterator = (x * y for x in range(10) for y in nonexistent_iterable)\n"
+">>> iterator\n"
+"<generator object <genexpr> at ...>\n"
+">>> list(iterator)\n"
+"Traceback (most recent call last):\n"
+"  ...\n"
+"NameError: name 'nonexistent_iterable' is not defined"
 
 msgid "To avoid interfering with the expected operation of the generator expression itself, ``yield`` and ``yield from`` expressions are prohibited inside the implicitly nested scope."
-msgstr ""
+msgstr "برای جلوگیری از اخلال در عملکرد مورد انتظار خود عبارت تولیدگر، عبارت‌های ``yield`` و ``yield from`` در محدوده تودرتوی ضمنی ممنوع هستند."
 
 msgid "If a generator expression contains either :keyword:`!async for` clauses or :keyword:`await` expressions it is called an :dfn:`asynchronous generator expression`. An asynchronous generator expression returns a new asynchronous generator object, which is an asynchronous iterator (see :ref:`async-iterators`)."
-msgstr ""
+msgstr "اگر یک عبارت تولیدگر شامل بندهای :keyword:`!async for` یا عبارات :keyword:`await` باشد، به آن :dfn:`عبارت تولیدگر ناهمگام <asynchronous generator expression>` گفته می‌شود. یک عبارت تولیدگر ناهمگام یک شیء تولیدگر ناهمگام جدید برمی‌گرداند که یک پیمایش‌گر ناهمگام است (به :ref:`async-iterators` مراجعه کنید)."
 
 msgid "The formal grammar for generator expressions is:"
-msgstr ""
+msgstr "دستور زبان صوری عبارت‌های تولیدگر:"
 
 msgid "Asynchronous generator expressions were introduced."
-msgstr ""
+msgstr "عبارات تولیدگر ناهمگام معرفی شدند."
 
 msgid "Prior to Python 3.7, asynchronous generator expressions could only appear in :keyword:`async def` coroutines.  Starting with 3.7, any function can use asynchronous generator expressions."
-msgstr ""
+msgstr "پیش از پایتون 3.7، عبارات تولیدگر ناهمگام فقط می‌توانستند در هم‌روال‌های :keyword:`async def` ظاهر شوند. از 3.7 به بعد، هر تابعی می‌تواند از عبارات تولیدگر ناهمگام استفاده کند."
 
 msgid "Yield expressions"
-msgstr ""
+msgstr "عبارت‌های yield"
 
-msgid "The yield expression is used when defining a :term:`generator` function or an :term:`asynchronous generator` function and thus can only be used in the body of a function definition.  Using a yield expression in a function's body causes that function to be a generator function, and using it in an :keyword:`async def` function's body causes that coroutine function to be an asynchronous generator function. For example::"
-msgstr ""
+msgid ""
+"The yield expression is used when defining a :term:`generator` function or an :term:`asynchronous generator` function and thus can only be used in the body of a function definition.  Using a yield expression in a function's body causes that function to be a generator function, and using it in an :keyword:`async def` function's body causes that coroutine function to be an asynchronous generator function. For "
+"example::"
+msgstr "عبارت yield هنگام تعریف یک تابع :term:`تولیدگر <generator>` یا یک تابع :term:`تولیدگر ناهمگام <asynchronous generator>` استفاده می‌شود و بنابراین فقط می‌تواند در بدنه‌ی تعریف یک تابع استفاده شود. استفاده از عبارت yield در بدنه‌ی یک تابع، آن تابع را به یک تابع تولیدگر تبدیل می‌کند، و استفاده از آن در بدنه‌ی یک تابع :keyword:`async def`، آن تابع هم‌روال را به یک تابع تولیدگر ناهمگام تبدیل می‌کند. برای مثال::"
 
 msgid ""
 "def gen():  # defines a generator function\n"
@@ -464,102 +543,133 @@ msgid ""
 "async def agen(): # defines an asynchronous generator function\n"
 "    yield 123"
 msgstr ""
+"def gen():  # defines a generator function\n"
+"    yield 123\n"
+"\n"
+"async def agen(): # defines an asynchronous generator function\n"
+"    yield 123"
 
 msgid "Due to their side effects on the containing scope, ``yield`` expressions are not permitted as part of the implicitly defined scopes used to implement comprehensions and generator expressions."
-msgstr ""
+msgstr "به دلیل عوارض جانبی عبارات ``yield`` بر محدوده‌ی دربرگیرنده، این عبارات مجاز نیستند بخشی از محدوده‌هایی باشند که به‌طور ضمنی برای پیاده‌سازی درک‌ها و عبارات تولیدگر تعریف شده‌اند."
 
 msgid "Yield expressions prohibited in the implicitly nested scopes used to implement comprehensions and generator expressions."
-msgstr ""
+msgstr "عبارات yield در محدوده‌های تودرتوی ضمنی که برای پیاده‌سازی درک‌ها و عبارات تولیدگر به کار می‌روند، ممنوع است."
 
 msgid "Generator functions are described below, while asynchronous generator functions are described separately in section :ref:`asynchronous-generator-functions`."
-msgstr ""
+msgstr "توابع تولیدگر در ادامه توضیح داده شده‌اند، در حالی که توابع تولیدگر ناهمگام به‌طور جداگانه در بخش :ref:`asynchronous-generator-functions` توضیح داده شده‌اند."
 
-msgid "When a generator function is called, it returns an iterator known as a generator.  That generator then controls the execution of the generator function.  The execution starts when one of the generator's methods is called. At that time, the execution proceeds to the first yield expression, where it is suspended again, returning the value of :token:`~python-grammar:yield_list` to the generator's caller, or ``None`` if :token:`~python-grammar:yield_list` is omitted. By suspended, we mean that all local state is retained, including the current bindings of local variables, the instruction pointer, the internal evaluation stack, and the state of any exception handling. When the execution is resumed by calling one of the generator's methods, the function can proceed exactly as if the yield expression were just another external call.  The value of the yield expression after resuming depends on the method which resumed the execution.  If :meth:`~generator.__next__` is used (typically via either a :keyword:`for` or the :func:`next` builtin) then the result is :const:`None`.  Otherwise, if :meth:`~generator.send` is used, then the result will be the value passed in to that method."
+msgid ""
+"When a generator function is called, it returns an iterator known as a generator.  That generator then controls the execution of the generator function.  The execution starts when one of the generator's methods is called. At that time, the execution proceeds to the first yield expression, where it is suspended again, returning the value of :token:`~python-grammar:yield_list` to the generator's caller, or ``None`` "
+"if :token:`~python-grammar:yield_list` is omitted. By suspended, we mean that all local state is retained, including the current bindings of local variables, the instruction pointer, the internal evaluation stack, and the state of any exception handling. When the execution is resumed by calling one of the generator's methods, the function can proceed exactly as if the yield expression were just another external "
+"call.  The value of the yield expression after resuming depends on the method which resumed the execution.  If :meth:`~generator.__next__` is used (typically via either a :keyword:`for` or the :func:`next` builtin) then the result is :const:`None`.  Otherwise, if :meth:`~generator.send` is used, then the result will be the value passed in to that method."
 msgstr ""
+"هنگامی که یک تابع تولیدگر فراخوانی می‌شود، یک پیمایشگر برمی‌گرداند که به‌عنوان تولیدگر شناخته می‌شود. سپس آن تولیدگر اجرای تابع تولیدگر را کنترل می‌کند. اجرا زمانی آغاز می‌شود که یکی از متدهای تولیدگر فراخوانی شود. در آن هنگام، اجرا به نخستین عبارت yield می‌رسد، جایی که دوباره معلق می‌شود و مقدار :token:`~python-grammar:yield_list` را به فراخواننده‌ی تولیدگر برمی‌گرداند، یا اگر :token:`~python-grammar:yield_list` حذف شده "
+"باشد، ``None`` را برمی‌گرداند. منظور از معلق بودن این است که تمام وضعیت محلی حفظ می‌شود، از جمله انتساب‌های کنونی متغیرهای محلی، اشاره‌گر دستور، پشته‌ی ارزیابی داخلی، و وضعیت هرگونه مدیریت استثنا. هنگامی که اجرا با فراخوانی یکی از متدهای تولیدگر از سر گرفته می‌شود، تابع می‌تواند دقیقاً به‌گونه‌ای پیش برود که گویی عبارت yield تنها یک فراخوانی خارجی دیگر باشد. مقدار عبارت yield پس از آنکه اجرا از سر گرفته شد، به متدی بستگی "
+"دارد که اجرا را از سر گرفته است. اگر از :meth:`~generator.__next__` استفاده شود (معمولاً از طریق :keyword:`for` یا تابع توکار :func:`next`)، نتیجه :const:`None` است. در غیر این صورت، اگر از :meth:`~generator.send` استفاده شود، نتیجه مقداری خواهد بود که به آن متد ارسال شده است."
 
 msgid "All of this makes generator functions quite similar to coroutines; they yield multiple times, they have more than one entry point and their execution can be suspended.  The only difference is that a generator function cannot control where the execution should continue after it yields; the control is always transferred to the generator's caller."
-msgstr ""
+msgstr "همه‌ی این موارد باعث می‌شود توابع تولیدگر بسیار شبیه به هم‌روال‌ها باشند؛ آن‌ها چندین بار yield می‌کنند، بیش از یک نقطه‌ی ورود دارند و اجرای آن‌ها می‌تواند معلق شود. تنها تفاوت این است که تابع تولیدگر نمی‌تواند کنترل کند که پس از yield، اجرا باید از کجا ادامه یابد؛ کنترل همیشه به فراخواننده‌ی تولیدگر منتقل می‌شود."
 
 msgid "Yield expressions are allowed anywhere in a :keyword:`try` construct.  If the generator is not resumed before it is finalized (by reaching a zero reference count or by being garbage collected), the generator-iterator's :meth:`~generator.close` method will be called, allowing any pending :keyword:`finally` clauses to execute."
-msgstr ""
+msgstr "عبارت‌های yield در هر جای یک ساختار :keyword:`try` مجاز هستند. اگر تولیدگر پیش از نهایی شدن (با رسیدن تعداد ارجاع‌ها به صفر یا زباله‌روبی شدن) از سر گرفته نشود، متد :meth:`~generator.close` پیمایش‌پذیر تولیدگر فراخوانی می‌شود تا امکان اجرای هر بند :keyword:`finally` در انتظار فراهم شود."
 
-msgid "When ``yield from <expr>`` is used, the supplied expression must be an iterable. The values produced by iterating that iterable are passed directly to the caller of the current generator's methods. Any values passed in with :meth:`~generator.send` and any exceptions passed in with :meth:`~generator.throw` are passed to the underlying iterator if it has the appropriate methods.  If this is not the case, then :meth:`~generator.send` will raise :exc:`AttributeError` or :exc:`TypeError`, while :meth:`~generator.throw` will just raise the passed in exception immediately."
+msgid ""
+"When ``yield from <expr>`` is used, the supplied expression must be an iterable. The values produced by iterating that iterable are passed directly to the caller of the current generator's methods. Any values passed in with :meth:`~generator.send` and any exceptions passed in with :meth:`~generator.throw` are passed to the underlying iterator if it has the appropriate methods.  If this is not the case, "
+"then :meth:`~generator.send` will raise :exc:`AttributeError` or :exc:`TypeError`, while :meth:`~generator.throw` will just raise the passed in exception immediately."
 msgstr ""
+"هنگامی که از ``yield from <expr>`` استفاده می‌شود، عبارت ارائه‌شده باید پیمایش‌پذیر باشد. مقادیری که با پیمایش آن پیمایش‌پذیر تولید می‌شوند، مستقیماً به فراخواننده‌ی متدهای تولیدگر فعلی ارسال می‌شوند. هر مقداری که با :meth:`~generator.send` ارسال شود و هر استثنایی که با :meth:`~generator.throw` ارسال شود، در صورتی که پیمایشگر زیرین متدهای مناسب را داشته باشد، به آن ارسال می‌شود. در غیر این صورت، :meth:`~generator.send` "
+"استثناهای :exc:`AttributeError` یا :exc:`TypeError` را پرتاب می‌کند، در حالی که :meth:`~generator.throw` فقط استثنای ارسال‌شده را بلافاصله پرتاب می‌کند."
 
 msgid "When the underlying iterator is complete, the :attr:`~StopIteration.value` attribute of the raised :exc:`StopIteration` instance becomes the value of the yield expression. It can be either set explicitly when raising :exc:`StopIteration`, or automatically when the subiterator is a generator (by returning a value from the subgenerator)."
-msgstr ""
+msgstr "هنگامی که پیمایش‌گر زیربنایی به پایان می‌رسد، ویژگی :attr:`~StopIteration.value` از نمونه‌ی پرتاب‌شده‌ی :exc:`StopIteration` به مقدار عبارت yield تبدیل می‌شود. این ویژگی می‌تواند یا هنگام پرتاب :exc:`StopIteration` به‌صراحت تنظیم شود، یا وقتی زیرپیمایش‌گر یک تولیدگر باشد به‌طور خودکار (با برگرداندن یک مقدار از زیرتولیدگر) تنظیم شود."
 
 msgid "Added ``yield from <expr>`` to delegate control flow to a subiterator."
-msgstr ""
+msgstr "``yield from <expr>`` افزوده شد تا جریان کنترل به یک زیرپیمایش‌گر (subiterator) واگذار شود."
 
 msgid "The parentheses may be omitted when the yield expression is the sole expression on the right hand side of an assignment statement."
-msgstr ""
+msgstr "هنگامی که عبارت yield تنها عبارت در سمت راست یک دستور انتساب باشد، می‌توان پرانتزها را حذف کرد."
 
 msgid ":pep:`255` - Simple Generators"
-msgstr ""
+msgstr ":pep:`255` - تولیدگرهای ساده"
 
 msgid "The proposal for adding generators and the :keyword:`yield` statement to Python."
-msgstr ""
+msgstr "پیشنهاد برای افزودن تولیدگرها و دستور :keyword:`yield` به پایتون."
 
 msgid ":pep:`342` - Coroutines via Enhanced Generators"
-msgstr ""
+msgstr ":pep:`342` - هم‌روال‌ها از طریق تولیدگرهای بهبودیافته"
 
 msgid "The proposal to enhance the API and syntax of generators, making them usable as simple coroutines."
-msgstr ""
+msgstr "پیشنهادی برای بهبود API و سینتکس تولیدگرها، تا بتوان از آن‌ها به‌عنوان هم‌روال‌های ساده استفاده کرد."
 
 msgid ":pep:`380` - Syntax for Delegating to a Subgenerator"
-msgstr ""
+msgstr ":pep:`380` - سینتکس واگذاری به یک زیرتولیدگر"
 
 msgid "The proposal to introduce the :token:`~python-grammar:yield_from` syntax, making delegation to subgenerators easy."
-msgstr ""
+msgstr "پیشنهاد برای معرفی سینتکس :token:`~python-grammar:yield_from`، که واگذاری به زیرتولیدگرها را آسان می‌کند."
 
 msgid ":pep:`525` - Asynchronous Generators"
-msgstr ""
+msgstr ":pep:`525` - تولیدگرهای ناهمگام"
 
 msgid "The proposal that expanded on :pep:`492` by adding generator capabilities to coroutine functions."
-msgstr ""
+msgstr "پیشنهادی که :pep:`492` را با افزودن قابلیت‌های تولیدگر به توابع هم‌روال گسترش داد."
 
 msgid "Generator-iterator methods"
-msgstr ""
+msgstr "متدهای تولیدگر-پیمایش‌گر"
 
 msgid "This subsection describes the methods of a generator iterator.  They can be used to control the execution of a generator function."
-msgstr ""
+msgstr "این زیربخش متدهای یک پیمایشگر تولیدگر را شرح می‌دهد. می‌توان از آن‌ها برای کنترل اجرای یک تابع تولیدگر استفاده کرد."
 
 msgid "Note that calling any of the generator methods below when the generator is already executing raises a :exc:`ValueError` exception."
-msgstr ""
+msgstr "توجه داشته باشید که فراخوانی هر یک از متدهای تولیدگر زیر، هنگامی که تولیدگر از قبل در حال اجرا است، باعث پرتاب یک استثنای :exc:`ValueError` می‌شود."
 
-msgid "Starts the execution of a generator function or resumes it at the last executed yield expression.  When a generator function is resumed with a :meth:`~generator.__next__` method, the current yield expression always evaluates to :const:`None`.  The execution then continues to the next yield expression, where the generator is suspended again, and the value of the :token:`~python-grammar:yield_list` is returned to :meth:`__next__`'s caller.  If the generator exits without yielding another value, a :exc:`StopIteration` exception is raised."
+msgid ""
+"Starts the execution of a generator function or resumes it at the last executed yield expression.  When a generator function is resumed with a :meth:`~generator.__next__` method, the current yield expression always evaluates to :const:`None`.  The execution then continues to the next yield expression, where the generator is suspended again, and the value of the :token:`~python-grammar:yield_list` is returned "
+"to :meth:`__next__`'s caller.  If the generator exits without yielding another value, a :exc:`StopIteration` exception is raised."
 msgstr ""
+"اجرای یک تابع تولیدگر را آغاز می‌کند یا آن را از آخرین عبارت yield اجراشده از سر می‌گیرد. هنگامی که یک تابع تولیدگر با متد :meth:`~generator.__next__` از سر گرفته می‌شود، عبارت yield جاری همیشه به :const:`None` ارزیابی می‌شود. سپس اجرا تا عبارت yield بعدی ادامه می‌یابد، جایی که تولیدگر دوباره معلق می‌شود، و مقدار :token:`~python-grammar:yield_list` به فراخواننده‌ی :meth:`__next__` بازگردانده می‌شود. اگر تولیدگر بدون اینکه "
+"مقدار دیگری yield کند خارج شود، استثنای :exc:`StopIteration` پرتاب می‌شود."
 
 msgid "This method is normally called implicitly, e.g. by a :keyword:`for` loop, or by the built-in :func:`next` function."
-msgstr ""
+msgstr "این متد معمولاً به‌صورت ضمنی فراخوانی می‌شود، مثلاً توسط یک حلقه :keyword:`for`، یا توسط تابع توکار :func:`next`."
 
-msgid "Resumes the execution and \"sends\" a value into the generator function.  The *value* argument becomes the result of the current yield expression.  The :meth:`send` method returns the next value yielded by the generator, or raises :exc:`StopIteration` if the generator exits without yielding another value.  When :meth:`send` is called to start the generator, it must be called with :const:`None` as the argument, because there is no yield expression that could receive the value."
+msgid ""
+"Resumes the execution and \"sends\" a value into the generator function.  The *value* argument becomes the result of the current yield expression.  The :meth:`send` method returns the next value yielded by the generator, or raises :exc:`StopIteration` if the generator exits without yielding another value.  When :meth:`send` is called to start the generator, it must be called with :const:`None` as the argument, "
+"because there is no yield expression that could receive the value."
 msgstr ""
+"اجرا را از سر می‌گیرد و یک مقدار را به تابع تولیدگر «ارسال» می‌کند. آرگومان *value* به نتیجه‌ی عبارت yield جاری تبدیل می‌شود. متد :meth:`send` مقدار بعدی تولیدشده توسط تولیدگر را برمی‌گرداند، یا اگر تولیدگر بدون تولید مقدار دیگری خارج شود، :exc:`StopIteration` را پرتاب می‌کند. هنگامی که :meth:`send` برای شروع تولیدگر فراخوانی می‌شود، باید با :const:`None` به‌عنوان آرگومان فراخوانی شود، زیرا هیچ عبارت yield وجود ندارد که "
+"بتواند مقدار را دریافت کند."
 
 msgid "Raises an exception at the point where the generator was paused, and returns the next value yielded by the generator function.  If the generator exits without yielding another value, a :exc:`StopIteration` exception is raised.  If the generator function does not catch the passed-in exception, or raises a different exception, then that exception propagates to the caller."
-msgstr ""
+msgstr "استثنایی را در نقطه‌ای که تولیدگر متوقف شده بود، پرتاب می‌کند و مقدار بعدی‌ای را که تابع تولیدگر آن را تولید می‌کند، برمی‌گرداند. اگر تولیدگر بدون تولید مقدار دیگری خارج شود، استثنای :exc:`StopIteration` پرتاب می‌شود. اگر تابع تولیدگر، استثنای ارسال‌شده را نگیرد یا استثنای متفاوتی پرتاب کند، آن استثنا به فراخواننده منتشر می‌شود."
 
 msgid "In typical use, this is called with a single exception instance similar to the way the :keyword:`raise` keyword is used."
-msgstr ""
+msgstr "در استفاده معمول، این با یک نمونه استثنا فراخوانی می‌شود، مشابه روشی که از کلیدواژه :keyword:`raise` استفاده می‌شود."
 
-msgid "For backwards compatibility, however, the second signature is supported, following a convention from older versions of Python. The *type* argument should be an exception class, and *value* should be an exception instance. If the *value* is not provided, the *type* constructor is called to get an instance. If *traceback* is provided, it is set on the exception, otherwise any existing :attr:`~BaseException.__traceback__` attribute stored in *value* may be cleared."
+msgid ""
+"For backwards compatibility, however, the second signature is supported, following a convention from older versions of Python. The *type* argument should be an exception class, and *value* should be an exception instance. If the *value* is not provided, the *type* constructor is called to get an instance. If *traceback* is provided, it is set on the exception, otherwise any "
+"existing :attr:`~BaseException.__traceback__` attribute stored in *value* may be cleared."
 msgstr ""
+"با این حال، برای سازگاری با نسخه‌های قدیمی، امضای دوم طبق قراردادی از نسخه‌های قدیمی‌تر پایتون پشتیبانی می‌شود. آرگومان *type* باید یک کلاس استثنا باشد و *value* باید یک نمونه استثنا باشد. اگر *value* ارائه نشود، سازنده‌ی *type* برای ایجاد یک نمونه فراخوانی می‌شود. اگر *traceback* ارائه شود، روی استثنا تنظیم می‌شود؛ در غیر این صورت، ممکن است هر ویژگی :attr:`~BaseException.__traceback__` موجود که در *value* ذخیره‌شده باشد "
+"پاک شود."
 
 msgid "The second signature \\(type\\[, value\\[, traceback\\]\\]\\) is deprecated and may be removed in a future version of Python."
-msgstr ""
+msgstr "امضای دوم \\(type\\[, value\\[, traceback\\]\\]\\) منسوخ شده است و ممکن است در نسخه‌ای آینده از پایتون حذف شود."
 
-msgid "Raises a :exc:`GeneratorExit` exception at the point where the generator function was paused (equivalent to calling ``throw(GeneratorExit)``). The exception is raised by the yield expression where the generator was paused. If the generator function catches the exception and returns a value, this value is returned from :meth:`close`.  If the generator function is already closed, or raises :exc:`GeneratorExit` (by not catching the exception), :meth:`close` returns :const:`None`.  If the generator yields a value, a :exc:`RuntimeError` is raised.  If the generator raises any other exception, it is propagated to the caller.  If the generator has already exited due to an exception or normal exit, :meth:`close` returns :const:`None` and has no other effect."
+msgid ""
+"Raises a :exc:`GeneratorExit` exception at the point where the generator function was paused (equivalent to calling ``throw(GeneratorExit)``). The exception is raised by the yield expression where the generator was paused. If the generator function catches the exception and returns a value, this value is returned from :meth:`close`.  If the generator function is already closed, or raises :exc:`GeneratorExit` (by "
+"not catching the exception), :meth:`close` returns :const:`None`.  If the generator yields a value, a :exc:`RuntimeError` is raised.  If the generator raises any other exception, it is propagated to the caller.  If the generator has already exited due to an exception or normal exit, :meth:`close` returns :const:`None` and has no other effect."
 msgstr ""
+"استثنای :exc:`GeneratorExit` را در نقطه‌ای که تابع تولیدگر در آن متوقف شده بود پرتاب می‌کند (معادل فراخوانی ``throw(GeneratorExit)``). این استثنا در عبارت yield که تولیدگر در آن متوقف شده بود پرتاب می‌شود. اگر تابع تولیدگر استثنا را بگیرد و مقداری را برگرداند، این مقدار از :meth:`close` برگردانده می‌شود. اگر تابع تولیدگر از قبل بسته شده باشد، یا :exc:`GeneratorExit` را پرتاب کند (با نگرفتن استثنا)، :meth:`close` "
+"مقدار :const:`None` را برمی‌گرداند. اگر تولیدگر مقداری را yield کند، استثنای :exc:`RuntimeError` پرتاب می‌شود. اگر تولیدگر هر استثنای دیگری را پرتاب کند، آن استثنا به فراخواننده منتقل می‌شود. اگر تولیدگر از قبل به دلیل یک استثنا یا خروج عادی خارج شده باشد، :meth:`close` مقدار :const:`None` را برمی‌گرداند و هیچ اثر دیگری ندارد."
 
 msgid "If a generator returns a value upon being closed, the value is returned by :meth:`close`."
-msgstr ""
+msgstr "اگر یک تولیدگر هنگام بسته شدن مقداری برگرداند، آن مقدار توسط :meth:`close` برگردانده می‌شود."
 
 msgid "Examples"
-msgstr ""
+msgstr "مثال‌ها"
 
 msgid "Here is a simple example that demonstrates the behavior of generators and generator functions::"
-msgstr ""
+msgstr "در اینجا یک مثال ساده آمده است که رفتار تولیدگرها و توابع تولیدگر را نشان می‌دهد::"
 
 msgid ""
 ">>> def echo(value=None):\n"
@@ -586,93 +696,155 @@ msgid ""
 ">>> generator.close()\n"
 "Don't forget to clean up when 'close()' is called."
 msgstr ""
+">>> def echo(value=None):\n"
+"...     print(\"Execution starts when 'next()' is called for the first time.\")\n"
+"...     try:\n"
+"...         while True:\n"
+"...             try:\n"
+"...                 value = (yield value)\n"
+"...             except Exception as e:\n"
+"...                 value = e\n"
+"...     finally:\n"
+"...         print(\"Don't forget to clean up when 'close()' is called.\")\n"
+"...\n"
+">>> generator = echo(1)\n"
+">>> print(next(generator))\n"
+"Execution starts when 'next()' is called for the first time.\n"
+"1\n"
+">>> print(next(generator))\n"
+"None\n"
+">>> print(generator.send(2))\n"
+"2\n"
+">>> generator.throw(TypeError, \"spam\")\n"
+"TypeError('spam',)\n"
+">>> generator.close()\n"
+"Don't forget to clean up when 'close()' is called."
 
 msgid "For examples using ``yield from``, see :ref:`pep-380` in \"What's New in Python.\""
-msgstr ""
+msgstr "برای مثال‌هایی که از ``yield from`` استفاده می‌کنند، به :ref:`pep-380` در «تازه‌های پایتون» مراجعه کنید."
 
 msgid "Asynchronous generator functions"
-msgstr ""
+msgstr "توابع تولیدگر ناهمگام"
 
 msgid "The presence of a yield expression in a function or method defined using :keyword:`async def` further defines the function as an :term:`asynchronous generator` function."
-msgstr ""
+msgstr "وجود عبارت yield در تابع یا متدی که با :keyword:`async def` تعریف شده است، آن تابع را به‌عنوان یک تابع :term:`تولیدگر ناهمگام <asynchronous generator>` نیز تعریف می‌کند."
 
 msgid "When an asynchronous generator function is called, it returns an asynchronous iterator known as an asynchronous generator object. That object then controls the execution of the generator function. An asynchronous generator object is typically used in an :keyword:`async for` statement in a coroutine function analogously to how a generator object would be used in a :keyword:`for` statement."
-msgstr ""
+msgstr "هنگامی که یک تابع تولیدگر ناهمگام فراخوانی می‌شود، یک پیمایش‌گر ناهمگام را بازمی‌گرداند که به‌عنوان یک شیء تولیدگر ناهمگام شناخته می‌شود. سپس آن شیء اجرای تابع تولیدگر را کنترل می‌کند. یک شیء تولیدگر ناهمگام به‌طور معمول در یک دستور :keyword:`async for` در یک تابع هم‌روال استفاده می‌شود، همان‌گونه که یک شیء تولیدگر در یک دستور :keyword:`for` استفاده می‌شود."
 
-msgid "Calling one of the asynchronous generator's methods returns an :term:`awaitable` object, and the execution starts when this object is awaited on. At that time, the execution proceeds to the first yield expression, where it is suspended again, returning the value of :token:`~python-grammar:yield_list` to the awaiting coroutine. As with a generator, suspension means that all local state is retained, including the current bindings of local variables, the instruction pointer, the internal evaluation stack, and the state of any exception handling. When the execution is resumed by awaiting on the next object returned by the asynchronous generator's methods, the function can proceed exactly as if the yield expression were just another external call. The value of the yield expression after resuming depends on the method which resumed the execution.  If :meth:`~agen.__anext__` is used then the result is :const:`None`. Otherwise, if :meth:`~agen.asend` is used, then the result will be the value passed in to that method."
+msgid ""
+"Calling one of the asynchronous generator's methods returns an :term:`awaitable` object, and the execution starts when this object is awaited on. At that time, the execution proceeds to the first yield expression, where it is suspended again, returning the value of :token:`~python-grammar:yield_list` to the awaiting coroutine. As with a generator, suspension means that all local state is retained, including the "
+"current bindings of local variables, the instruction pointer, the internal evaluation stack, and the state of any exception handling. When the execution is resumed by awaiting on the next object returned by the asynchronous generator's methods, the function can proceed exactly as if the yield expression were just another external call. The value of the yield expression after resuming depends on the method which "
+"resumed the execution.  If :meth:`~agen.__anext__` is used then the result is :const:`None`. Otherwise, if :meth:`~agen.asend` is used, then the result will be the value passed in to that method."
 msgstr ""
+"فراخوانی یکی از متدهای تولیدگر ناهمگام یک شیء :term:`awaitable` بازمی‌گرداند و اجرا هنگامی آغاز می‌شود که این شیء await شود. در آن هنگام، اجرا به نخستین عبارت yield می‌رسد، جایی که دوباره معلق می‌شود و مقدار :token:`~python-grammar:yield_list` را به هم‌روال در انتظار بازمی‌گرداند. مانند یک تولیدگر، تعلیق به این معناست که تمام وضعیت محلی حفظ می‌شود، از جمله پیوندهای فعلی متغیرهای محلی، اشاره‌گر دستور، پشته ارزیابی داخلی و "
+"وضعیت هرگونه مدیریت استثنا. هنگامی که اجرا با await کردن شیء بعدی که توسط متدهای تولیدگر ناهمگام بازمی‌گردد، از سر گرفته شود، تابع می‌تواند دقیقاً همان‌طور پیش برود که گویی عبارت yield صرفاً یک فراخوانی خارجی دیگر باشد. مقدار عبارت yield پس از ازسرگیری، به متدی بستگی دارد که اجرا را از سر گرفته است. اگر از :meth:`~agen.__anext__` استفاده شود، نتیجه :const:`None` است. در غیر این صورت، اگر از :meth:`~agen.asend` استفاده "
+"شود، نتیجه مقداری خواهد بود که به آن متد ارسال شده است."
 
-msgid "If an asynchronous generator happens to exit early by :keyword:`break`, the caller task being cancelled, or other exceptions, the generator's async cleanup code will run and possibly raise exceptions or access context variables in an unexpected context--perhaps after the lifetime of tasks it depends, or during the event loop shutdown when the async-generator garbage collection hook is called. To prevent this, the caller must explicitly close the async generator by calling :meth:`~agen.aclose` method to finalize the generator and ultimately detach it from the event loop."
+msgid ""
+"If an asynchronous generator happens to exit early by :keyword:`break`, the caller task being cancelled, or other exceptions, the generator's async cleanup code will run and possibly raise exceptions or access context variables in an unexpected context--perhaps after the lifetime of tasks it depends, or during the event loop shutdown when the async-generator garbage collection hook is called. To prevent this, the "
+"caller must explicitly close the async generator by calling :meth:`~agen.aclose` method to finalize the generator and ultimately detach it from the event loop."
 msgstr ""
+"اگر یک تولیدگر ناهمگام با :keyword:`break`، لغو شدن وظیفه فراخوان، یا سایر استثناها پیش از موعد خارج شود، کد پاک‌سازی ناهمگام تولیدگر اجرا خواهد شد و ممکن است در زمینه‌ای غیرمنتظره استثناهایی را پرتاب کند یا به متغیرهای زمینه دسترسی یابد—شاید پس از پایان عمر تسک‌هایی که به آن‌ها وابسته است، یا در جریان خاموش شدن حلقه‌ی رویداد، هنگامی که قلاب زباله‌روبی تولیدگر ناهمگام فراخوانی می‌شود. برای جلوگیری از این موضوع، فراخوان "
+"باید به‌صراحت با فراخوانی متد :meth:`~agen.aclose` تولیدگر ناهمگام را ببندد تا تولیدگر را نهایی‌سازی کند و در نهایت آن را از حلقه‌ی رویداد جدا کند."
 
-msgid "In an asynchronous generator function, yield expressions are allowed anywhere in a :keyword:`try` construct. However, if an asynchronous generator is not resumed before it is finalized (by reaching a zero reference count or by being garbage collected), then a yield expression within a :keyword:`!try` construct could result in a failure to execute pending :keyword:`finally` clauses.  In this case, it is the responsibility of the event loop or scheduler running the asynchronous generator to call the asynchronous generator-iterator's :meth:`~agen.aclose` method and run the resulting coroutine object, thus allowing any pending :keyword:`!finally` clauses to execute."
+msgid ""
+"In an asynchronous generator function, yield expressions are allowed anywhere in a :keyword:`try` construct. However, if an asynchronous generator is not resumed before it is finalized (by reaching a zero reference count or by being garbage collected), then a yield expression within a :keyword:`!try` construct could result in a failure to execute pending :keyword:`finally` clauses.  In this case, it is the "
+"responsibility of the event loop or scheduler running the asynchronous generator to call the asynchronous generator-iterator's :meth:`~agen.aclose` method and run the resulting coroutine object, thus allowing any pending :keyword:`!finally` clauses to execute."
 msgstr ""
+"در یک تابع تولیدگر ناهمگام، عبارت‌های yield در هر جایی از ساختار :keyword:`try` مجاز هستند. با این حال، اگر یک تولیدگر ناهمگام پیش از نهایی شدن (با رسیدن شمار ارجاع به صفر یا با زباله‌روبی شدن) از سر گرفته نشود، آنگاه یک عبارت yield درون ساختار :keyword:`!try` ممکن است منجر به اجرا نشدن بندهای :keyword:`finally` در انتظار اجرا شود. در این حالت، بر عهده حلقه رویداد یا زمان‌بندِ در حال اجرای تولیدگر ناهمگام است که "
+"متد :meth:`~agen.aclose` پیمایشگر تولیدگر ناهمگام را فراخوانی کند و شیء هم‌روال حاصل را اجرا کند، تا بدین ترتیب امکان اجرای هر بند :keyword:`!finally` در انتظار اجرا فراهم شود."
 
-msgid "To take care of finalization upon event loop termination, an event loop should define a *finalizer* function which takes an asynchronous generator-iterator and presumably calls :meth:`~agen.aclose` and executes the coroutine. This  *finalizer* may be registered by calling :func:`sys.set_asyncgen_hooks`. When first iterated over, an asynchronous generator-iterator will store the registered *finalizer* to be called upon finalization. For a reference example of a *finalizer* method see the implementation of ``asyncio.Loop.shutdown_asyncgens`` in :source:`Lib/asyncio/base_events.py`."
+msgid ""
+"To take care of finalization upon event loop termination, an event loop should define a *finalizer* function which takes an asynchronous generator-iterator and presumably calls :meth:`~agen.aclose` and executes the coroutine. This  *finalizer* may be registered by calling :func:`sys.set_asyncgen_hooks`. When first iterated over, an asynchronous generator-iterator will store the registered *finalizer* to be called "
+"upon finalization. For a reference example of a *finalizer* method see the implementation of ``asyncio.Loop.shutdown_asyncgens`` in :source:`Lib/asyncio/base_events.py`."
 msgstr ""
+"برای رسیدگی به نهایی‌سازی هنگام پایان حلقه رویداد، یک حلقه رویداد باید یک تابع *نهایی‌ساز* (finalizer) تعریف کند که یک پیمایش‌گرٔ تولیدگر ناهمگام را می‌گیرد و احتمالاً :meth:`~agen.aclose` را فراخوانی می‌کند و هم‌روال را اجرا می‌نماید. این *نهایی‌ساز* (finalizer) را می‌توان با فراخوانی :func:`sys.set_asyncgen_hooks` ثبت کرد. یک پیمایش‌گرٔ تولیدگر ناهمگام در نخستین پیمایش، *نهایی‌ساز* (finalizer) ثبت‌شده را ذخیره می‌کند تا در زمان "
+"نهایی‌سازی فراخوانی شود. برای دیدن یک نمونه‌ی مرجع از متد *نهایی‌ساز* (finalizer)، پیاده‌سازی ``asyncio.Loop.shutdown_asyncgens`` در :source:`Lib/asyncio/base_events.py` را ببینید."
 
 msgid "The expression ``yield from <expr>`` is a syntax error when used in an asynchronous generator function."
-msgstr ""
+msgstr "عبارت ``yield from <expr>`` هنگام استفاده در یک تابع تولیدگر ناهمگام، خطای نحوی است."
 
 msgid "Asynchronous generator-iterator methods"
-msgstr ""
+msgstr "متدهای تولیدگر-پیمایش‌گر ناهمگام"
 
 msgid "This subsection describes the methods of an asynchronous generator iterator, which are used to control the execution of a generator function."
-msgstr ""
+msgstr "این زیربخش، متدهای پیمایش‌گر تولیدگر ناهمگام را شرح می‌دهد که برای کنترل اجرای تابع تولیدگر به کار می‌روند."
 
-msgid "Returns an awaitable which when run starts to execute the asynchronous generator or resumes it at the last executed yield expression.  When an asynchronous generator function is resumed with an :meth:`~agen.__anext__` method, the current yield expression always evaluates to :const:`None` in the returned awaitable, which when run will continue to the next yield expression. The value of the :token:`~python-grammar:yield_list` of the yield expression is the value of the :exc:`StopIteration` exception raised by the completing coroutine.  If the asynchronous generator exits without yielding another value, the awaitable instead raises a :exc:`StopAsyncIteration` exception, signalling that the asynchronous iteration has completed."
+msgid ""
+"Returns an awaitable which when run starts to execute the asynchronous generator or resumes it at the last executed yield expression.  When an asynchronous generator function is resumed with an :meth:`~agen.__anext__` method, the current yield expression always evaluates to :const:`None` in the returned awaitable, which when run will continue to the next yield expression. The value of the :token:`~python-"
+"grammar:yield_list` of the yield expression is the value of the :exc:`StopIteration` exception raised by the completing coroutine.  If the asynchronous generator exits without yielding another value, the awaitable instead raises a :exc:`StopAsyncIteration` exception, signalling that the asynchronous iteration has completed."
 msgstr ""
+"یک awaitable برمی‌گرداند که هنگام اجرا، اجرای تولیدگر ناهمگام را آغاز می‌کند یا آن را در آخرین عبارت yield اجراشده از سر می‌گیرد. هنگامی که یک تابع تولیدگر ناهمگام با متد :meth:`~agen.__anext__` از سر گرفته شود، عبارت yield جاری همیشه در awaitable برگردانده‌شده، به :const:`None` ارزیابی می‌شود، که وقتی اجرا شود، به عبارت yield بعدی ادامه می‌دهد. مقدار :token:`~python-grammar:yield_list` عبارت yield، مقدار "
+"استثنای :exc:`StopIteration` است که توسط هم‌روال کامل‌شونده پرتاب می‌شود. اگر تولیدگر ناهمگام بدون اینکه مقدار دیگری را yield کند، خارج شود، awaitable در عوض یک استثنا :exc:`StopAsyncIteration` پرتاب می‌کند، که نشان می‌دهد تکرار ناهمگام کامل شده است."
 
 msgid "This method is normally called implicitly by a :keyword:`async for` loop."
-msgstr ""
+msgstr "این متد معمولاً به‌صورت ضمنی توسط یک حلقه‌ی :keyword:`async for` فراخوانی می‌شود."
 
-msgid "Returns an awaitable which when run resumes the execution of the asynchronous generator. As with the :meth:`~generator.send` method for a generator, this \"sends\" a value into the asynchronous generator function, and the *value* argument becomes the result of the current yield expression. The awaitable returned by the :meth:`asend` method will return the next value yielded by the generator as the value of the raised :exc:`StopIteration`, or raises :exc:`StopAsyncIteration` if the asynchronous generator exits without yielding another value.  When :meth:`asend` is called to start the asynchronous generator, it must be called with :const:`None` as the argument, because there is no yield expression that could receive the value."
+msgid ""
+"Returns an awaitable which when run resumes the execution of the asynchronous generator. As with the :meth:`~generator.send` method for a generator, this \"sends\" a value into the asynchronous generator function, and the *value* argument becomes the result of the current yield expression. The awaitable returned by the :meth:`asend` method will return the next value yielded by the generator as the value of the "
+"raised :exc:`StopIteration`, or raises :exc:`StopAsyncIteration` if the asynchronous generator exits without yielding another value.  When :meth:`asend` is called to start the asynchronous generator, it must be called with :const:`None` as the argument, because there is no yield expression that could receive the value."
 msgstr ""
+"یک شیء انتظارپذیر (awaitable) بازمی‌گرداند که هنگام اجرا، اجرای تولیدگر ناهمگام را از سر می‌گیرد. همانند متد :meth:`~generator.send` برای یک تولیدگر، این متد یک مقدار را به تابع تولیدگر ناهمگام «ارسال» می‌کند و آرگومان *value* به نتیجه‌ی عبارت yield جاری تبدیل می‌شود. شیء انتظارپذیر بازگردانده‌شده توسط متد :meth:`asend`، مقدار بعدی را که توسط تولیدگر yield شده است، به‌عنوان مقدار :exc:`StopIteration` پرتاب‌شده بازمی‌گرداند، "
+"یا اگر تولیدگر ناهمگام بدون yield کردن مقدار دیگری خارج شود، :exc:`StopAsyncIteration` را پرتاب می‌کند. هنگامی که :meth:`asend` برای شروع تولیدگر ناهمگام فراخوانی می‌شود، باید با :const:`None` به‌عنوان آرگومان فراخوانی شود، زیرا هیچ عبارت yield وجود ندارد که بتواند مقدار را دریافت کند."
 
-msgid "Returns an awaitable that raises an exception of type ``type`` at the point where the asynchronous generator was paused, and returns the next value yielded by the generator function as the value of the raised :exc:`StopIteration` exception.  If the asynchronous generator exits without yielding another value, a :exc:`StopAsyncIteration` exception is raised by the awaitable. If the generator function does not catch the passed-in exception, or raises a different exception, then when the awaitable is run that exception propagates to the caller of the awaitable."
+msgid ""
+"Returns an awaitable that raises an exception of type ``type`` at the point where the asynchronous generator was paused, and returns the next value yielded by the generator function as the value of the raised :exc:`StopIteration` exception.  If the asynchronous generator exits without yielding another value, a :exc:`StopAsyncIteration` exception is raised by the awaitable. If the generator function does not catch "
+"the passed-in exception, or raises a different exception, then when the awaitable is run that exception propagates to the caller of the awaitable."
 msgstr ""
+"یک شیء انتظارپذیر (awaitable) بازمی‌گرداند که در نقطه‌ای که تولیدگر ناهمگام مکث کرده بود، استثنایی از نوع ``type`` پرتاب می‌کند و مقدار بعدی تولیدشده توسط تابع تولیدگر را به‌عنوان مقدار استثنای :exc:`StopIteration` پرتاب‌شده بازمی‌گرداند. اگر تولیدگر ناهمگام بدون تولید مقدار دیگری خارج شود، یک استثنای :exc:`StopAsyncIteration` توسط awaitable پرتاب می‌شود. اگر تابع تولیدگر استثنای داده‌شده را نگیرد یا استثنای دیگری پرتاب "
+"کند، آنگاه هنگامی که awaitable اجرا می‌شود، آن استثنا به فراخواننده‌ی awaitable منتشر می‌شود."
 
-msgid "Returns an awaitable that when run will throw a :exc:`GeneratorExit` into the asynchronous generator function at the point where it was paused. If the asynchronous generator function then exits gracefully, is already closed, or raises :exc:`GeneratorExit` (by not catching the exception), then the returned awaitable will raise a :exc:`StopIteration` exception. Any further awaitables returned by subsequent calls to the asynchronous generator will raise a :exc:`StopAsyncIteration` exception.  If the asynchronous generator yields a value, a :exc:`RuntimeError` is raised by the awaitable.  If the asynchronous generator raises any other exception, it is propagated to the caller of the awaitable.  If the asynchronous generator has already exited due to an exception or normal exit, then further calls to :meth:`aclose` will return an awaitable that does nothing."
+msgid ""
+"Returns an awaitable that when run will throw a :exc:`GeneratorExit` into the asynchronous generator function at the point where it was paused. If the asynchronous generator function then exits gracefully, is already closed, or raises :exc:`GeneratorExit` (by not catching the exception), then the returned awaitable will raise a :exc:`StopIteration` exception. Any further awaitables returned by subsequent calls to "
+"the asynchronous generator will raise a :exc:`StopAsyncIteration` exception.  If the asynchronous generator yields a value, a :exc:`RuntimeError` is raised by the awaitable.  If the asynchronous generator raises any other exception, it is propagated to the caller of the awaitable.  If the asynchronous generator has already exited due to an exception or normal exit, then further calls to :meth:`aclose` will return "
+"an awaitable that does nothing."
 msgstr ""
+"یک شیء awaitable بازمی‌گرداند که هنگام اجرا، یک استثنای :exc:`GeneratorExit` را به درون تابع تولیدگر ناهمگام در نقطه‌ای که متوقف شده بود پرتاب می‌کند. اگر تابع تولیدگر ناهمگام سپس به‌صورت مناسب خارج شود، از قبل بسته شده باشد، یا استثنای :exc:`GeneratorExit` را پرتاب کند (با نگرفتن استثنا)، آنگاه شیء awaitable بازگشت‌داده‌شده یک استثنای :exc:`StopIteration` پرتاب خواهد کرد. هر شیء awaitable بعدی که توسط فراخوانی‌های بعدی "
+"تولیدگر ناهمگام بازگشت داده شود، یک استثنای :exc:`StopAsyncIteration` پرتاب خواهد کرد. اگر تولیدگر ناهمگام مقداری را yield کند، شیء awaitable یک استثنای :exc:`RuntimeError` پرتاب می‌کند. اگر تولیدگر ناهمگام استثنای دیگری پرتاب کند، آن استثنا به فراخواننده‌ی شیء awaitable منتقل می‌شود. اگر تولیدگر ناهمگام از قبل به دلیل یک استثنا یا خروج عادی خارج شده باشد، آنگاه فراخوانی‌های بعدی :meth:`aclose` یک شیء awaitable "
+"بازمی‌گردانند که هیچ کاری انجام نمی‌دهد."
 
 msgid "Primaries"
-msgstr ""
+msgstr "اولیه‌ها"
 
 msgid "Primaries represent the most tightly bound operations of the language. Their syntax is:"
-msgstr ""
+msgstr "اولیه‌ها نشان‌دهنده‌ی محکم‌ترین عملیات زبان هستند. نحو آن‌ها به این صورت است:"
 
 msgid "Attribute references"
-msgstr ""
+msgstr "ارجاع‌های ویژگی"
 
 msgid "An attribute reference is a primary followed by a period and a name:"
-msgstr ""
+msgstr "ارجاع به ویژگی یک عبارت اصلی (primary) است که پس از آن یک نقطه و یک نام می‌آید:"
 
 msgid "The primary must evaluate to an object of a type that supports attribute references, which most objects do.  This object is then asked to produce the attribute whose name is the identifier. The type and value produced is determined by the object.  Multiple evaluations of the same attribute reference may yield different objects."
-msgstr ""
+msgstr "عبارت اصلی (primary) باید به شیئی از نوعی ارزیابی شود که از ارجاع‌های ویژگی پشتیبانی می‌کند؛ بیشتر اشیاء نیز چنین هستند. سپس از این شیء خواسته می‌شود ویژگی‌ای با نام آن شناسه تولید کند. نوع و مقدار تولیدشده توسط شیء تعیین می‌شود. ارزیابی‌های متعدد یک ارجاع ویژگی یکسان ممکن است اشیاء متفاوتی تولید کنند."
 
 msgid "This production can be customized by overriding the :meth:`~object.__getattribute__` method or the :meth:`~object.__getattr__` method.  The :meth:`!__getattribute__` method is called first and either returns a value or raises :exc:`AttributeError` if the attribute is not available."
-msgstr ""
+msgstr "این تولید را می‌توان با بازنویسی متد :meth:`~object.__getattribute__` یا متد :meth:`~object.__getattr__` سفارشی‌سازی کرد. متد :meth:`!__getattribute__` ابتدا فراخوانی می‌شود و یا مقداری را برمی‌گرداند یا در صورت در دسترس نبودن ویژگی، :exc:`AttributeError` را پرتاب می‌کند."
 
 msgid "If an :exc:`AttributeError` is raised and the object has a :meth:`!__getattr__` method, that method is called as a fallback."
-msgstr ""
+msgstr "اگر یک :exc:`AttributeError` پرتاب شود و شیء متد :meth:`!__getattr__` داشته باشد، آن متد به‌عنوان جایگزین فراخوانی می‌شود."
 
 msgid "Subscriptions and slicings"
-msgstr ""
+msgstr "زیرنویسی‌ها و برش‌دهی‌ها"
 
 msgid "The :dfn:`subscription` syntax is usually used for selecting an element from a :ref:`container <sequence-types>` -- for example, to get a value from a :class:`dict`::"
-msgstr ""
+msgstr "نحو :dfn:`زیرنویسی <subscription>` معمولاً برای انتخاب یک عنصر از یک :ref:`محفظه <sequence-types>` استفاده می‌شود -- برای مثال، برای دریافت یک مقدار از یک :class:`dict`::"
 
 msgid ""
 ">>> digits_by_name = {'one': 1, 'two': 2}\n"
 ">>> digits_by_name['two']  # Subscripting a dictionary using the key 'two'\n"
 "2"
 msgstr ""
+">>> digits_by_name = {'one': 1, 'two': 2}\n"
+">>> digits_by_name['two']  # Subscripting a dictionary using the key 'two'\n"
+"2"
 
 msgid "In the subscription syntax, the object being subscribed -- a :ref:`primary <primaries>` -- is followed by a :dfn:`subscript` in square brackets. In the simplest case, the subscript is a single expression."
-msgstr ""
+msgstr "در نحو زیرنویسی (subscription)، پس از شیء مورد زیرنویسی — یک :ref:`اولیه <primaries>` — یک :dfn:`زیرنویس (subscript) <subscript>` در کروشه‌های مربع قرار می‌گیرد. در ساده‌ترین حالت، زیرنویس یک عبارت واحد است."
 
 msgid "Depending on the type of the object being subscribed, the subscript is sometimes called a :term:`key` (for mappings), :term:`index` (for sequences), or *type argument* (for :term:`generic types <generic type>`). Syntactically, these are all equivalent::"
-msgstr ""
+msgstr "بسته به نوع شیءای که زیرنویس بر آن اعمال می‌شود، زیرنویس (subscript) گاهی :term:`کلید <key>` (برای نگاشت‌ها)، :term:`اندیس <index>` (برای دنباله‌ها)، یا *آرگومان نوع* (برای :term:`انواع عام <generic type>`) نامیده می‌شود. از نظر سینتکسی، همه این‌ها معادل هستند::"
 
 msgid ""
 ">>> colors = ['red', 'blue', 'green', 'black']\n"
@@ -682,12 +854,18 @@ msgid ""
 ">>> list[str]  # Parameterizing the list type using the type argument str\n"
 "list[str]"
 msgstr ""
+">>> colors = ['red', 'blue', 'green', 'black']\n"
+">>> colors[3]  # Subscripting a list using the index 3\n"
+"'black'\n"
+"\n"
+">>> list[str]  # Parameterizing the list type using the type argument str\n"
+"list[str]"
 
 msgid "At runtime, the interpreter will evaluate the primary and the subscript, and call the primary's :meth:`~object.__getitem__` or :meth:`~object.__class_getitem__` :term:`special method` with the subscript as argument. For more details on which of these methods is called, see :ref:`classgetitem-versus-getitem`."
-msgstr ""
+msgstr "در ران‌تایم، مفسر عبارت اصلی و زیرنویس را ارزیابی می‌کند و :meth:`~object.__getitem__` یا :meth:`~object.__class_getitem__` آن را که :term:`متد ویژه <special method>` است، با زیرنویس به‌عنوان آرگومان فراخوانی می‌کند. برای جزئیات بیشتر درباره‌ی این‌که کدام‌یک از این متدها فراخوانی می‌شود، :ref:`classgetitem-versus-getitem` را ببینید."
 
 msgid "To show how subscription works, we can define a custom object that implements :meth:`~object.__getitem__` and prints out the value of the subscript::"
-msgstr ""
+msgstr "برای نشان دادن چگونگی کار زیرنویسی، می‌توانیم یک شیء سفارشی تعریف کنیم که :meth:`~object.__getitem__` را پیاده‌سازی می‌کند و مقدار زیرنویس را چاپ می‌کند::"
 
 msgid ""
 ">>> class SubscriptionDemo:\n"
@@ -700,12 +878,28 @@ msgid ""
 ">>> demo['a' * 3]\n"
 "subscripted with: 'aaa'"
 msgstr ""
+">>> class SubscriptionDemo:\n"
+"...     def __getitem__(self, key):\n"
+"...         print(f'subscripted with: {key!r}')\n"
+"...\n"
+">>> demo = SubscriptionDemo()\n"
+">>> demo[1]\n"
+"subscripted with: 1\n"
+">>> demo['a' * 3]\n"
+"subscripted with: 'aaa'"
 
 msgid "See :meth:`~object.__getitem__` documentation for how built-in types handle subscription."
-msgstr ""
+msgstr "برای جزئیات مربوط به نحوه‌ی مدیریت زیرنویسی توسط انواع توکار، مستندات :meth:`~object.__getitem__` را ببینید."
 
-msgid "Subscriptions may also be used as targets in :ref:`assignment <assignment>` or :ref:`deletion <del>` statements. In these cases, the interpreter will call the subscripted object's :meth:`~object.__setitem__` or :meth:`~object.__delitem__` :term:`special method`, respectively, instead of :meth:`~object.__getitem__`."
+msgid ""
+"Subscriptions may also be used as targets in :ref:`assignment <assignment>` or :ref:`deletion <del>` statements. In these cases, the interpreter will call the subscripted object's :meth:`~object.__setitem__` or :meth:`~object.__delitem__` :term:`special method`, respectively, instead of :meth:`~object.__getitem__`."
 msgstr ""
+"از زیرنویسی‌ها نیز می‌توان به‌عنوان هدف در دستورهای "
+":ref:`انتساب <assignment>` یا :ref:`حذف <del>` استفاده کرد. در این موارد، "
+"مفسر به‌ترتیب به‌جای :meth:`~object.__getitem__`، "
+":term:`متد ویژه <special method>` "
+":meth:`~object.__setitem__` یا :meth:`~object.__delitem__` "
+"شیء مورد زیرنویسی را فراخوانی می‌کند."
 
 msgid ""
 ">>> colors = ['red', 'blue', 'green', 'black']\n"
@@ -716,15 +910,22 @@ msgid ""
 ">>> colors\n"
 "['red', 'blue', 'green']"
 msgstr ""
+">>> colors = ['red', 'blue', 'green', 'black']\n"
+">>> colors[3] = 'white'  # Setting item at index\n"
+">>> colors\n"
+"['red', 'blue', 'green', 'white']\n"
+">>> del colors[3]  # Deleting item at index 3\n"
+">>> colors\n"
+"['red', 'blue', 'green']"
 
 msgid "All advanced forms of *subscript* documented in the following sections are also usable for assignment and deletion."
-msgstr ""
+msgstr "همه‌ی شکل‌های پیشرفته‌ی *زیرنویس* (subscript) که در بخش‌های بعدی مستند شده‌اند، برای انتساب و حذف نیز قابل استفاده‌اند."
 
 msgid "Slicings"
-msgstr ""
+msgstr "برش‌ها"
 
 msgid "A more advanced form of subscription, :dfn:`slicing`, is commonly used to extract a portion of a :ref:`sequence <datamodel-sequences>`. In this form, the subscript is a :term:`slice`: up to three expressions separated by colons. Any of the expressions may be omitted, but a slice must contain at least one colon::"
-msgstr ""
+msgstr "شکل پیشرفته‌تری از زیرنویسی، یعنی :dfn:`برش‌دهی <slicing>`، معمولاً برای استخراج بخشی از یک :ref:`دنباله <datamodel-sequences>` استفاده می‌شود. در این حالت، زیرنویس یک :term:`برش <slice>` است: حداکثر سه عبارت که با دونقطه از یکدیگر جدا شده‌اند. هر یک از عبارت‌ها ممکن است حذف شود، اما یک برش باید دست‌کم شامل یک دونقطه باشد::"
 
 msgid ""
 ">>> number_names = ['zero', 'one', 'two', 'three', 'four', 'five']\n"
@@ -744,9 +945,29 @@ msgid ""
 ">>> number_names\n"
 "['zero', 'one', 'two', 'three']"
 msgstr ""
+">>> number_names = ['zero', 'one', 'two', 'three', 'four', 'five']\n"
+">>> number_names[1:3]\n"
+"['one', 'two']\n"
+">>> number_names[1:]\n"
+"['one', 'two', 'three', 'four', 'five']\n"
+">>> number_names[:3]\n"
+"['zero', 'one', 'two']\n"
+">>> number_names[:]\n"
+"['zero', 'one', 'two', 'three', 'four', 'five']\n"
+">>> number_names[::2]\n"
+"['zero', 'two', 'four']\n"
+">>> number_names[:-3]\n"
+"['zero', 'one', 'two']\n"
+">>> del number_names[4:]\n"
+">>> number_names\n"
+"['zero', 'one', 'two', 'three']"
 
-msgid "When a slice is evaluated, the interpreter constructs a :class:`slice` object whose :attr:`~slice.start`, :attr:`~slice.stop` and :attr:`~slice.step` attributes, respectively, are the results of the expressions between the colons. Any missing expression evaluates to :const:`None`. This :class:`!slice` object is then passed to the :meth:`~object.__getitem__` or :meth:`~object.__class_getitem__` :term:`special method`, as above. ::"
+msgid ""
+"When a slice is evaluated, the interpreter constructs a :class:`slice` object whose :attr:`~slice.start`, :attr:`~slice.stop` and :attr:`~slice.step` attributes, respectively, are the results of the expressions between the colons. Any missing expression evaluates to :const:`None`. This :class:`!slice` object is then passed to the :meth:`~object.__getitem__` or :meth:`~object.__class_getitem__` :term:`special "
+"method`, as above. ::"
 msgstr ""
+"هنگامی که یک برش (slice) ارزیابی می‌شود، مفسر یک شیء :class:`slice` ایجاد می‌کند که ویژگی‌های :attr:`~slice.start`، :attr:`~slice.stop` و :attr:`~slice.step` آن به‌ترتیب نتایج عبارت‌های بین دونقطه‌ها هستند. هر عبارت جاافتاده به :const:`None` ارزیابی می‌شود. سپس این شیء :class:`!slice` به :meth:`~object.__getitem__` یا :meth:`~object.__class_getitem__` :term:`متد خاص <special method>`، همان‌طور که در بالا ذکر شد، داده "
+"می‌شود. ::"
 
 msgid ""
 "# continuing with the SubscriptionDemo instance defined above:\n"
@@ -755,12 +976,17 @@ msgid ""
 ">>> demo[::'spam']\n"
 "subscripted with: slice(None, None, 'spam')"
 msgstr ""
+"# continuing with the SubscriptionDemo instance defined above:\n"
+">>> demo[2:3]\n"
+"subscripted with: slice(2, 3, None)\n"
+">>> demo[::'spam']\n"
+"subscripted with: slice(None, None, 'spam')"
 
 msgid "Comma-separated subscripts"
-msgstr ""
+msgstr "زیرنویس‌های جداشده با ویرگول"
 
 msgid "The subscript can also be given as two or more comma-separated expressions or slices::"
-msgstr ""
+msgstr "همچنین می‌توان زیرنویس (subscript) را به‌صورت دو یا چند عبارت یا برش جداشده با کاما نیز مشخص کرد::"
 
 msgid ""
 "# continuing with the SubscriptionDemo instance defined above:\n"
@@ -769,76 +995,98 @@ msgid ""
 ">>> demo[1:2, 3]\n"
 "subscripted with: (slice(1, 2, None), 3)"
 msgstr ""
+"# continuing with the SubscriptionDemo instance defined above:\n"
+">>> demo[1, 2, 3]\n"
+"subscripted with: (1, 2, 3)\n"
+">>> demo[1:2, 3]\n"
+"subscripted with: (slice(1, 2, None), 3)"
 
 msgid "This form is commonly used with numerical libraries for slicing multi-dimensional data. In this case, the interpreter constructs a :class:`tuple` of the results of the expressions or slices, and passes this tuple to the :meth:`~object.__getitem__` or :meth:`~object.__class_getitem__` :term:`special method`, as above."
-msgstr ""
+msgstr "این شکل معمولاً با کتابخانه‌های عددی برای برش داده‌های چندبُعدی استفاده می‌شود. در این حالت، مفسر یک :class:`tuple` از نتایج عبارت‌ها یا برش‌ها می‌سازد و این tuple را به :term:`متد ویژه <special method>` :meth:`~object.__getitem__` یا :meth:`~object.__class_getitem__`، همان‌طور که در بالا آمد، ارسال می‌کند."
 
 msgid "The subscript may also be given as a single expression or slice followed by a comma, to specify a one-element tuple::"
-msgstr ""
+msgstr "همچنین می‌توان زیرنویس (subscript) را به‌صورت یک عبارت یا برش تنها به‌همراه ویرگولی پس از آن، برای مشخص کردن یک تاپل تک‌عضوی به کار برد::"
 
 msgid ""
 ">>> demo['spam',]\n"
 "subscripted with: ('spam',)"
 msgstr ""
+">>> demo['spam',]\n"
+"subscripted with: ('spam',)"
 
 msgid "\"Starred\" subscriptions"
-msgstr ""
+msgstr "زیرنویسی‌های «ستاره‌دار»"
 
 msgid "Expressions in *tuple_slices* may be starred. See :pep:`646`."
-msgstr ""
+msgstr "عبارت‌های درون *tuple_slices* می‌توانند ستاره‌دار باشند. :pep:`646` را ببینید."
 
 msgid "The subscript can also contain a starred expression. In this case, the interpreter unpacks the result into a tuple, and passes this tuple to :meth:`~object.__getitem__` or :meth:`~object.__class_getitem__`::"
-msgstr ""
+msgstr "عبارت اندیس‌دهی می‌تواند شامل یک عبارت ستاره‌دار نیز باشد. در این حالت، مفسر نتیجه را در قالب یک تاپل واگشایی می‌کند و این تاپل را به :meth:`~object.__getitem__` یا :meth:`~object.__class_getitem__` منتقل می‌کند::"
 
 msgid ""
 "# continuing with the SubscriptionDemo instance defined above:\n"
 ">>> demo[*range(10)]\n"
 "subscripted with: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)"
 msgstr ""
+"# continuing with the SubscriptionDemo instance defined above:\n"
+">>> demo[*range(10)]\n"
+"subscripted with: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)"
 
 msgid "Starred expressions may be combined with comma-separated expressions and slices::"
-msgstr ""
+msgstr "می‌توان عبارت‌های ستاره‌دار را با عبارت‌های جداشده با کاما و برش‌ها ترکیب کرد::"
 
 msgid ""
 ">>> demo['a', 'b', *range(3), 'c']\n"
 "subscripted with: ('a', 'b', 0, 1, 2, 'c')"
 msgstr ""
+">>> demo['a', 'b', *range(3), 'c']\n"
+"subscripted with: ('a', 'b', 0, 1, 2, 'c')"
 
 msgid "Formal subscription grammar"
-msgstr ""
+msgstr "دستور زبان رسمی اشتراک (subscription)"
 
 msgid "Recall that the ``|`` operator :ref:`denotes ordered choice <notation>`. Specifically, in :token:`!subscript`, if both alternatives would match, the first (:token:`!single_subscript`) has priority."
-msgstr ""
+msgstr "به یاد داشته باشید که عملگر ``|`` :ref:`بیانگر انتخاب ترتیبی <notation>` است. به‌طور مشخص، در :token:`!subscript`، اگر هر دو جایگزین تطابق یابند، نخستین (:token:`!single_subscript`) اولویت دارد."
 
 msgid "Calls"
-msgstr ""
+msgstr "فراخوانی‌ها"
 
 msgid "A call calls a callable object (e.g., a :term:`function`) with a possibly empty series of :term:`arguments <argument>`:"
-msgstr ""
+msgstr "یک فراخوانی، یک شیء قابل فراخوانی (برای مثال، یک :term:`تابع <function>`) را با دنباله‌ای از :term:`آرگومان‌ها <argument>` که ممکن است خالی باشد فراخوانی می‌کند:"
 
 msgid "An optional trailing comma may be present after the positional and keyword arguments but does not affect the semantics."
-msgstr ""
+msgstr "ممکن است یک ویرگول پایانی اختیاری پس از آرگومان‌های جایگاهی و کلیدواژه‌ای وجود داشته باشد، اما بر معناشناسی تأثیری نمی‌گذارد."
 
 msgid "The primary must evaluate to a callable object (user-defined functions, built-in functions, methods of built-in objects, class objects, methods of class instances, and all objects having a :meth:`~object.__call__` method are callable).  All argument expressions are evaluated before the call is attempted.  Please refer to section :ref:`function` for the syntax of formal :term:`parameter` lists."
-msgstr ""
+msgstr "عبارت اصلی باید به یک شیء قابل فراخوانی ارزیابی شود (توابع تعریف‌شده توسط کاربر، توابع توکار، متدهای اشیاء توکار، اشیاء کلاس، متدهای نمونه‌های کلاس، و همه اشیایی که متد :meth:`~object.__call__` دارند، قابل فراخوانی هستند). تمام عبارت‌های آرگومان پیش از تلاش برای فراخوانی ارزیابی می‌شوند. برای سینتکس فهرست‌های :term:`پارامتر <parameter>` صوری، به بخش :ref:`تابع <function>` مراجعه کنید."
 
-msgid "If keyword arguments are present, they are first converted to positional arguments, as follows.  First, a list of unfilled slots is created for the formal parameters.  If there are N positional arguments, they are placed in the first N slots.  Next, for each keyword argument, the identifier is used to determine the corresponding slot (if the identifier is the same as the first formal parameter name, the first slot is used, and so on).  If the slot is already filled, a :exc:`TypeError` exception is raised. Otherwise, the argument is placed in the slot, filling it (even if the expression is ``None``, it fills the slot).  When all arguments have been processed, the slots that are still unfilled are filled with the corresponding default value from the function definition.  (Default values are calculated, once, when the function is defined; thus, a mutable object such as a list or dictionary used as default value will be shared by all calls that don't specify an argument value for the corresponding slot; this should usually be avoided.)  If there are any unfilled slots for which no default value is specified, a :exc:`TypeError` exception is raised.  Otherwise, the list of filled slots is used as the argument list for the call."
+msgid ""
+"If keyword arguments are present, they are first converted to positional arguments, as follows.  First, a list of unfilled slots is created for the formal parameters.  If there are N positional arguments, they are placed in the first N slots.  Next, for each keyword argument, the identifier is used to determine the corresponding slot (if the identifier is the same as the first formal parameter name, the first slot "
+"is used, and so on).  If the slot is already filled, a :exc:`TypeError` exception is raised. Otherwise, the argument is placed in the slot, filling it (even if the expression is ``None``, it fills the slot).  When all arguments have been processed, the slots that are still unfilled are filled with the corresponding default value from the function definition.  (Default values are calculated, once, when the function "
+"is defined; thus, a mutable object such as a list or dictionary used as default value will be shared by all calls that don't specify an argument value for the corresponding slot; this should usually be avoided.)  If there are any unfilled slots for which no default value is specified, a :exc:`TypeError` exception is raised.  Otherwise, the list of filled slots is used as the argument list for the call."
 msgstr ""
+"اگر آرگومان‌های کلیدواژه‌ای وجود داشته باشند، آن‌ها ابتدا به آرگومان‌های جایگاهی تبدیل می‌شوند، به شرح زیر. نخست، فهرستی از جایگاه‌های پر نشده برای پارامترهای صوری ایجاد می‌شود. اگر N آرگومان جایگاهی وجود داشته باشد، آن‌ها در N جایگاه نخست قرار می‌گیرند. سپس، برای هر آرگومان کلیدواژه‌ای، از شناسه برای تعیین جایگاه متناظر استفاده می‌شود (اگر شناسه با نام نخستین پارامتر صوری یکسان باشد، نخستین جایگاه استفاده می‌شود، و به همین "
+"ترتیب). اگر جایگاه از قبل پر شده باشد، استثنای :exc:`TypeError` پرتاب می‌شود. در غیر این صورت، آرگومان در جایگاه قرار می‌گیرد و آن را پر می‌کند (حتی اگر عبارت ``None`` باشد، جایگاه را پر می‌کند). هنگامی که همه‌ی آرگومان‌ها پردازش شدند، جایگاه‌هایی که هنوز پر نشده‌اند با مقدار پیش‌فرض متناظر از تعریف تابع پر می‌شوند. (مقادیر پیش‌فرض یک بار، هنگام تعریف تابع محاسبه می‌شوند؛ بنابراین، یک شیء تغییرپذیر مانند فهرست یا دیکشنری که "
+"به‌عنوان مقدار پیش‌فرض استفاده شود، بین همه‌ی فراخوانی‌هایی که برای جایگاه متناظر مقدار آرگومان مشخص نمی‌کنند، مشترک خواهد بود؛ معمولاً باید از این کار اجتناب شود.) اگر جایگاه‌های پر نشده‌ای وجود داشته باشند که هیچ مقدار پیش‌فرضی برای آن‌ها مشخص نشده باشد، استثنای :exc:`TypeError` پرتاب می‌شود. در غیر این صورت، فهرست جایگاه‌های پر شده به‌عنوان فهرست آرگومان‌ها برای فراخوانی استفاده می‌شود."
 
 msgid "An implementation may provide built-in functions whose positional parameters do not have names, even if they are 'named' for the purpose of documentation, and which therefore cannot be supplied by keyword.  In CPython, this is the case for functions implemented in C that use :c:func:`PyArg_ParseTuple` to parse their arguments."
-msgstr ""
+msgstr "یک پیاده‌سازی ممکن است توابع توکاری را ارائه دهد که پارامترهای جایگاهی آن‌ها نام ندارند، حتی اگر برای اهداف مستندسازی «نام‌گذاری‌شده» باشند، و بنابراین نمی‌توان آن‌ها را با کلیدواژه ارسال کرد. در CPython، این حالت برای توابعی صدق می‌کند که در C پیاده‌سازی شده‌اند و از :c:func:`PyArg_ParseTuple` برای تجزیه آرگومان‌های خود استفاده می‌کنند."
 
 msgid "If there are more positional arguments than there are formal parameter slots, a :exc:`TypeError` exception is raised, unless a formal parameter using the syntax ``*identifier`` is present; in this case, that formal parameter receives a tuple containing the excess positional arguments (or an empty tuple if there were no excess positional arguments)."
-msgstr ""
+msgstr "اگر آرگومان‌های جایگاهی بیشتری نسبت به جایگاه‌های پارامتر صوری وجود داشته باشد، استثنای :exc:`TypeError` پرتاب می‌شود، مگر اینکه یک پارامتر صوری با استفاده از سینتکس ``*identifier`` وجود داشته باشد؛ در این حالت، آن پارامتر صوری یک تاپل شامل آرگومان‌های جایگاهی مازاد را دریافت می‌کند (یا یک تاپل خالی اگر هیچ آرگومان جایگاهی مازادی وجود نداشته باشد)."
 
-msgid "If any keyword argument does not correspond to a formal parameter name, a :exc:`TypeError` exception is raised, unless a formal parameter using the syntax ``**identifier`` is present; in this case, that formal parameter receives a dictionary containing the excess keyword arguments (using the keywords as keys and the argument values as corresponding values), or a (new) empty dictionary if there were no excess keyword arguments."
+msgid ""
+"If any keyword argument does not correspond to a formal parameter name, a :exc:`TypeError` exception is raised, unless a formal parameter using the syntax ``**identifier`` is present; in this case, that formal parameter receives a dictionary containing the excess keyword arguments (using the keywords as keys and the argument values as corresponding values), or a (new) empty dictionary if there were no excess "
+"keyword arguments."
 msgstr ""
+"اگر آرگومان کلیدواژه‌ای وجود داشته باشد که با نام یک پارامتر صوری مطابقت نداشته باشد، یک استثنای :exc:`TypeError` پرتاب می‌شود، مگر اینکه یک پارامتر صوری با استفاده از سینتکس ``**identifier`` وجود داشته باشد؛ در این حالت، آن پارامتر صوری یک دیکشنری حاوی آرگومان‌های کلیدواژه‌ای اضافی دریافت می‌کند (با استفاده از کلیدواژه‌ها به‌عنوان کلیدها و مقادیر آرگومان‌ها به‌عنوان مقادیر متناظر)، یا اگر آرگومان کلیدواژه‌ای اضافی وجود "
+"نداشته باشد، یک دیکشنری خالی (جدید) دریافت می‌کند."
 
 msgid "If the syntax ``*expression`` appears in the function call, ``expression`` must evaluate to an :term:`iterable`.  Elements from these iterables are treated as if they were additional positional arguments.  For the call ``f(x1, x2, *y, x3, x4)``, if *y* evaluates to a sequence *y1*, ..., *yM*, this is equivalent to a call with M+4 positional arguments *x1*, *x2*, *y1*, ..., *yM*, *x3*, *x4*."
-msgstr ""
+msgstr "اگر نحو ``*expression`` در فراخوانی تابع آمده باشد، ``expression`` باید به یک :term:`پیمایش‌پذیر <iterable>` ارزیابی شود. با عناصر این پیمایش‌پذیرها چنان رفتار می‌شود که گویی آرگومان‌های جایگاهی اضافی هستند. برای فراخوانی ``f(x1, x2, *y, x3, x4)``، اگر *y* به یک دنباله *y1*، ...، *yM* ارزیابی شود، این معادل یک فراخوانی با M+۴ آرگومان جایگاهی *x1*، *x2*، *y1*، ...، *yM*، *x3*، *x4* است."
 
 msgid "A consequence of this is that although the ``*expression`` syntax may appear *after* explicit keyword arguments, it is processed *before* the keyword arguments (and any ``**expression`` arguments -- see below).  So::"
-msgstr ""
+msgstr "پیامد این موضوع آن است که اگرچه سینتکس ``*expression`` ممکن است *بعد از* آرگومان‌های کلیدواژه‌ای صریح ظاهر شود، اما *قبل از* آرگومان‌های کلیدواژه‌ای (و هر آرگومان ``**expression`` — در زیر ببینید) پردازش می‌شود. بنابراین::"
 
 msgid ""
 ">>> def f(a, b):\n"
@@ -853,459 +1101,508 @@ msgid ""
 ">>> f(1, *(2,))\n"
 "1 2"
 msgstr ""
+">>> def f(a, b):\n"
+"...     print(a, b)\n"
+"...\n"
+">>> f(b=1, *(2,))\n"
+"2 1\n"
+">>> f(a=1, *(2,))\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 1, in <module>\n"
+"TypeError: f() got multiple values for keyword argument 'a'\n"
+">>> f(1, *(2,))\n"
+"1 2"
 
 msgid "It is unusual for both keyword arguments and the ``*expression`` syntax to be used in the same call, so in practice this confusion does not often arise."
-msgstr ""
+msgstr "استفاده همزمان از آرگومان‌های کلیدواژه‌ای و سینتکس ``*expression`` در یک فراخوانی غیرمعمول است، بنابراین در عمل این سردرگمی اغلب پیش نمی‌آید."
 
 msgid "If the syntax ``**expression`` appears in the function call, ``expression`` must evaluate to a :term:`mapping`, the contents of which are treated as additional keyword arguments. If a parameter matching a key has already been given a value (by an explicit keyword argument, or from another unpacking), a :exc:`TypeError` exception is raised."
-msgstr ""
+msgstr "اگر سینتکس ``**expression`` در فراخوانی تابع وجود داشته باشد، ``expression`` باید به یک :term:`نگاشت <mapping>` ارزیابی شود؛ محتوای آن به‌عنوان آرگومان‌های کلیدواژه‌ای اضافی در نظر گرفته می‌شود. اگر به پارامتری که با یک کلید مطابقت دارد، از قبل مقداری داده شده باشد (با یک آرگومان کلیدواژه‌ای صریح، یا از واگشایی دیگری)، استثنای :exc:`TypeError` پرتاب می‌شود."
 
-msgid "When ``**expression`` is used, each key in this mapping must be a string. Each value from the mapping is assigned to the first formal parameter eligible for keyword assignment whose name is equal to the key. A key need not be a Python identifier (e.g. ``\"max-temp °F\"`` is acceptable, although it will not match any formal parameter that could be declared). If there is no match to a formal parameter the key-value pair is collected by the ``**`` parameter, if there is one, or if there is not, a :exc:`TypeError` exception is raised."
+msgid ""
+"When ``**expression`` is used, each key in this mapping must be a string. Each value from the mapping is assigned to the first formal parameter eligible for keyword assignment whose name is equal to the key. A key need not be a Python identifier (e.g. ``\"max-temp °F\"`` is acceptable, although it will not match any formal parameter that could be declared). If there is no match to a formal parameter the key-value "
+"pair is collected by the ``**`` parameter, if there is one, or if there is not, a :exc:`TypeError` exception is raised."
 msgstr ""
+"هنگامی که از ``**expression`` استفاده می‌شود، هر کلید در این نگاشت باید یک رشته باشد. هر مقدار از این نگاشت به اولین پارامتر رسمی واجد شرایط برای انتساب کلیدواژه‌ای که نام آن برابر با کلید است، اختصاص می‌یابد. کلید لازم نیست یک شناسه پایتون باشد (برای مثال ``\"max-temp °F\"`` قابل قبول است، اگرچه با هیچ پارامتر رسمی‌ای که بتوان آن را اعلان کرد مطابقت نخواهد داشت). اگر هیچ مطابقتی با یک پارامتر رسمی وجود نداشته باشد، "
+"جفت کلید-مقدار توسط پارامتر ``**`` جمع‌آوری می‌شود، در صورتی که چنین پارامتری وجود داشته باشد، و در غیر این صورت، استثنای :exc:`TypeError` پرتاب می‌شود."
 
 msgid "Formal parameters using the syntax ``*identifier`` or ``**identifier`` cannot be used as positional argument slots or as keyword argument names."
-msgstr ""
+msgstr "نمی‌توان از پارامترهای صوری با نحو ``*identifier`` یا ``**identifier`` به‌عنوان جایگاه‌های آرگومان‌های جایگاهی یا نام‌های آرگومان‌های کلیدواژه‌ای استفاده کرد."
 
 msgid "Function calls accept any number of ``*`` and ``**`` unpackings, positional arguments may follow iterable unpackings (``*``), and keyword arguments may follow dictionary unpackings (``**``). Originally proposed by :pep:`448`."
-msgstr ""
+msgstr "فراخوانی‌های تابع هر تعداد واگشایی ``*`` و ``**`` را می‌پذیرند، آرگومان‌های جایگاهی می‌توانند پس از واگشایی‌های پیمایش‌پذیر (``*``) بیایند، و آرگومان‌های کلیدواژه‌ای می‌توانند پس از واگشایی‌های دیکشنری (``**``) بیایند. در ابتدا توسط :pep:`448` پیشنهاد شد."
 
 msgid "A call always returns some value, possibly ``None``, unless it raises an exception.  How this value is computed depends on the type of the callable object."
-msgstr ""
+msgstr "یک فراخوانی همیشه مقداری را برمی‌گرداند، که ممکن است ``None`` باشد، مگر آنکه استثنایی را پرتاب کند. نحوه محاسبه این مقدار به نوع شیء فراخوانی‌پذیر بستگی دارد."
 
 msgid "If it is---"
-msgstr ""
+msgstr "اگر این‌طور باشد---"
 
 msgid "a user-defined function:"
-msgstr ""
+msgstr "یک تابع تعریف‌شده توسط کاربر:"
 
-msgid "The code block for the function is executed, passing it the argument list.  The first thing the code block will do is bind the formal parameters to the arguments; this is described in section :ref:`function`.  When the code block executes a :keyword:`return` statement, this specifies the return value of the function call.  If execution reaches the end of the code block without executing a :keyword:`return` statement, the return value is ``None``."
-msgstr ""
+msgid ""
+"The code block for the function is executed, passing it the argument list.  The first thing the code block will do is bind the formal parameters to the arguments; this is described in section :ref:`function`.  When the code block executes a :keyword:`return` statement, this specifies the return value of the function call.  If execution reaches the end of the code block without executing a :keyword:`return` "
+"statement, the return value is ``None``."
+msgstr "بلوک کد مربوط به تابع اجرا می‌شود و فهرست آرگومان‌ها به آن داده می‌شود. نخستین کاری که بلوک کد انجام می‌دهد، انتساب پارامترهای صوری به آرگومان‌ها است؛ این موضوع در بخش :ref:`تابع <function>` توضیح داده شده است. هنگامی که بلوک کد یک دستور :keyword:`return` را اجرا می‌کند، مقدار بازگشتی فراخوانی تابع را مشخص می‌کند. اگر اجرا به انتهای بلوک کد برسد بدون آنکه دستور :keyword:`return` اجرا شود، مقدار بازگشتی ``None`` است."
 
 msgid "a built-in function or method:"
-msgstr ""
+msgstr "یک تابع یا متد توکار:"
 
 msgid "The result is up to the interpreter; see :ref:`built-in-funcs` for the descriptions of built-in functions and methods."
-msgstr ""
+msgstr "نتیجه به مفسر بستگی دارد؛ برای توضیحات توابع و متدهای توکار به :ref:`built-in-funcs` مراجعه کنید."
 
 msgid "a class object:"
-msgstr ""
+msgstr "یک شیء کلاس:"
 
 msgid "A new instance of that class is returned."
-msgstr ""
+msgstr "یک نمونه جدید از آن کلاس بازگردانده می‌شود."
 
 msgid "a class instance method:"
-msgstr ""
+msgstr "یک متد نمونه‌ی کلاس:"
 
 msgid "The corresponding user-defined function is called, with an argument list that is one longer than the argument list of the call: the instance becomes the first argument."
-msgstr ""
+msgstr "تابع تعریف‌شده توسط کاربر متناظر فراخوانی می‌شود، با فهرست آرگومانی که یک آیتم بیشتر از فهرست آرگومان‌های فراخوانی دارد: نمونه اولین آرگومان می‌شود."
 
 msgid "a class instance:"
-msgstr ""
+msgstr "یک نمونه از کلاس:"
 
 msgid "The class must define a :meth:`~object.__call__` method; the effect is then the same as if that method was called."
-msgstr ""
+msgstr "کلاس باید یک متد :meth:`~object.__call__` تعریف کند؛ در این صورت اثر آن همانند حالتی است که گویی آن متد فراخوانی‌شده باشد."
 
 msgid "Await expression"
-msgstr ""
+msgstr "عبارت await"
 
 msgid "Suspend the execution of :term:`coroutine` on an :term:`awaitable` object. Can only be used inside a :term:`coroutine function`."
-msgstr ""
+msgstr "اجرای :term:`هم‌روال <coroutine>` را بر روی یک شیء :term:`awaitable` معلق می‌کند. فقط می‌تواند درون یک :term:`تابع هم‌روال <coroutine function>` استفاده شود."
 
 msgid "The power operator"
-msgstr ""
+msgstr "عملگر توان"
 
 msgid "The power operator binds more tightly than unary operators on its left; it binds less tightly than unary operators on its right.  The syntax is:"
-msgstr ""
+msgstr "عملگر توان نسبت به عملگرهای یک‌عملوندی در سمت چپ خود، اولویت بیشتری دارد؛ این عملگر نسبت به عملگرهای یک‌عملوندی در سمت راست خود، اولویت کمتری دارد. نحو به این صورت است:"
 
 msgid "Thus, in an unparenthesized sequence of power and unary operators, the operators are evaluated from right to left (this does not constrain the evaluation order for the operands): ``-1**2`` results in ``-1``."
-msgstr ""
+msgstr "بنابراین، در یک دنباله بدون پرانتز از عملگرهای توان و یک‌عملوندی، عملگرها از راست به چپ ارزیابی می‌شوند (این موضوع ترتیب ارزیابی عملوندها را محدود نمی‌کند): ``-1**2`` برابر با ``-1`` می‌شود."
 
 msgid "The power operator has the same semantics as the built-in :func:`pow` function, when called with two arguments: it yields its left argument raised to the power of its right argument. Numeric arguments are first :ref:`converted to a common type <stdtypes-mixed-arithmetic>`, and the result is of that type."
-msgstr ""
+msgstr "عملگر توان همان معنایی را دارد که تابع توکار :func:`pow` هنگام فراخوانی با دو آرگومان دارد: این عملگر، آرگومان چپ خود را به توان آرگومان راست خود برمی‌گرداند. آرگومان‌های عددی ابتدا :ref:`به یک نوع مشترک تبدیل می‌شوند <stdtypes-mixed-arithmetic>`، و نتیجه از آن نوع است."
 
 msgid "For int operands, the result has the same type as the operands unless the second argument is negative; in that case, all arguments are converted to float and a float result is delivered. For example, ``10**2`` returns ``100``, but ``10**-2`` returns ``0.01``."
-msgstr ""
+msgstr "برای عملوندهای int، نتیجه هم‌نوع با عملوندها است، مگر اینکه آرگومان دوم منفی باشد؛ در آن صورت، تمام آرگومان‌ها به float تبدیل می‌شوند و نتیجه‌ای از نوع float برگردانده می‌شود. برای مثال، ``10**2`` مقدار ``100`` را برمی‌گرداند، اما ``10**-2`` مقدار ``0.01`` را برمی‌گرداند."
 
 msgid "Raising ``0.0`` to a negative power results in a :exc:`ZeroDivisionError`. Raising a negative number to a fractional power results in a :class:`complex` number. (In earlier versions it raised a :exc:`ValueError`.)"
-msgstr ""
+msgstr "رساندن ``0.0`` به توان منفی منجر به :exc:`ZeroDivisionError` می‌شود. رساندن یک عدد منفی به توان کسری منجر به یک عدد :class:`complex` می‌شود. (در نسخه‌های پیشین، :exc:`ValueError` پرتاب می‌شد.)"
 
 msgid "This operation can be customized using the special :meth:`~object.__pow__` and :meth:`~object.__rpow__` methods."
-msgstr ""
+msgstr "این عملیات را می‌توان با استفاده از متدهای ویژه‌ی :meth:`~object.__pow__` و :meth:`~object.__rpow__` سفارشی کرد."
 
 msgid "Unary arithmetic and bitwise operations"
-msgstr ""
+msgstr "عملیات حسابی و بیتی یک‌عملوندی"
 
 msgid "All unary arithmetic and bitwise operations have the same priority:"
-msgstr ""
+msgstr "تمام عملیات حسابی و بیتی یک‌عملوندی اولویت یکسانی دارند:"
 
 msgid "The unary ``-`` (minus) operator yields the negation of its numeric argument; the operation can be overridden with the :meth:`~object.__neg__` special method."
-msgstr ""
+msgstr "عملگر یک‌دایی ``-`` (منفی)، منفیِ آرگومان عددی خود را برمی‌گرداند؛ این عملیات را می‌توان با متد خاص :meth:`~object.__neg__` بازنویسی کرد."
 
 msgid "The unary ``+`` (plus) operator yields its numeric argument unchanged; the operation can be overridden with the :meth:`~object.__pos__` special method."
-msgstr ""
+msgstr "عملگر یک‌عملوندی ``+`` (مثبت) آرگومان عددی خود را بدون تغییر برمی‌گرداند؛ این عملیات را می‌توان با متد ویژه :meth:`~object.__pos__` بازنویسی کرد."
 
 msgid "The unary ``~`` (invert) operator yields the bitwise inversion of its integer argument.  The bitwise inversion of ``x`` is defined as ``-(x+1)``.  It only applies to integral numbers or to custom objects that override the :meth:`~object.__invert__` special method."
-msgstr ""
+msgstr "عملگر یک‌عملوندی ``~`` (وارون‌سازی) وارونگی بیتی آرگومان عدد صحیح خود را حاصل می‌کند. وارونگی بیتی ``x`` به صورت ``-(x+1)`` تعریف شده است. این عملگر فقط بر اعداد صحیح یا اشیاء سفارشی‌ای اعمال می‌شود که متد ویژه :meth:`~object.__invert__` را بازنویسی کرده‌اند."
 
 msgid "In all three cases, if the argument does not have the proper type, a :exc:`TypeError` exception is raised."
-msgstr ""
+msgstr "در هر سه حالت، اگر آرگومان نوع مناسب نداشته باشد، استثنای :exc:`TypeError` پرتاب می‌شود."
 
 msgid "Binary arithmetic operations"
-msgstr ""
+msgstr "عملیات حسابی دودویی"
 
 msgid "The binary arithmetic operations have the conventional priority levels.  Note that some of these operations also apply to certain non-numeric types.  Apart from the power operator, there are only two levels, one for multiplicative operators and one for additive operators:"
-msgstr ""
+msgstr "عملیات حسابی دودویی دارای سطوح اولویت مرسوم هستند. توجه داشته باشید که برخی از این عملیات بر برخی انواع غیرعددی نیز اعمال می‌شوند. به جز عملگر توان، تنها دو سطح وجود دارد، یکی برای عملگرهای ضربی و دیگری برای عملگرهای جمعی:"
 
-msgid "The ``*`` (multiplication) operator yields the product of its arguments.  The arguments must either both be numbers, or one argument must be an integer and the other must be a sequence. In the former case, the numbers are :ref:`converted to a common real type <stdtypes-mixed-arithmetic>` and then multiplied together.  In the latter case, sequence repetition is performed; a negative repetition factor yields an empty sequence."
-msgstr ""
+msgid ""
+"The ``*`` (multiplication) operator yields the product of its arguments.  The arguments must either both be numbers, or one argument must be an integer and the other must be a sequence. In the former case, the numbers are :ref:`converted to a common real type <stdtypes-mixed-arithmetic>` and then multiplied together.  In the latter case, sequence repetition is performed; a negative repetition factor yields an empty "
+"sequence."
+msgstr "عملگر ``*`` (ضرب) حاصل‌ضرب آرگومان‌هایش را به دست می‌دهد. آرگومان‌ها باید یا هر دو عدد باشند، یا یکی از آرگومان‌ها باید عدد صحیح و دیگری باید یک دنباله باشد. در حالت اول، اعداد :ref:`به یک نوع حقیقی مشترک تبدیل می‌شوند <stdtypes-mixed-arithmetic>` و سپس در هم ضرب می‌شوند. در حالت دوم، تکرار دنباله انجام می‌شود؛ ضریب تکرار منفی، یک دنباله خالی به دست می‌دهد."
 
 msgid "This operation can be customized using the special :meth:`~object.__mul__` and :meth:`~object.__rmul__` methods."
-msgstr ""
+msgstr "این عملیات را می‌توان با استفاده از متدهای ویژه‌ی :meth:`~object.__mul__` و :meth:`~object.__rmul__` سفارشی‌سازی کرد."
 
 msgid "If only one operand is a complex number, the other operand is converted to a floating-point number."
-msgstr ""
+msgstr "اگر تنها یکی از عملوندها یک عدد مختلط باشد، عملوند دیگر به یک عدد ممیز شناور تبدیل می‌شود."
 
 msgid "The ``@`` (at) operator is intended to be used for matrix multiplication.  No builtin Python types implement this operator."
-msgstr ""
+msgstr "عملگر ``@`` (at) برای ضرب ماتریسی در نظر گرفته شده است. هیچ‌یک از انواع توکار پایتون این عملگر را پیاده‌سازی نمی‌کنند."
 
 msgid "This operation can be customized using the special :meth:`~object.__matmul__` and :meth:`~object.__rmatmul__` methods."
-msgstr ""
+msgstr "این عملیات را می‌توان با استفاده از متدهای خاص :meth:`~object.__matmul__` و :meth:`~object.__rmatmul__` سفارشی‌سازی کرد."
 
-msgid "The ``/`` (division) and ``//`` (floor division) operators yield the quotient of their arguments.  The numeric arguments are first :ref:`converted to a common type <stdtypes-mixed-arithmetic>`. Division of integers yields a float, while floor division of integers results in an integer; the result is that of mathematical division with the 'floor' function applied to the result.  Division by zero raises the :exc:`ZeroDivisionError` exception."
-msgstr ""
+msgid ""
+"The ``/`` (division) and ``//`` (floor division) operators yield the quotient of their arguments.  The numeric arguments are first :ref:`converted to a common type <stdtypes-mixed-arithmetic>`. Division of integers yields a float, while floor division of integers results in an integer; the result is that of mathematical division with the 'floor' function applied to the result.  Division by zero raises "
+"the :exc:`ZeroDivisionError` exception."
+msgstr "عملگرهای ``/`` (تقسیم) و ``//`` (تقسیم کف) خارج‌قسمت آرگومان‌های خود را برمی‌گردانند. آرگومان‌های عددی ابتدا :ref:`به یک نوع مشترک تبدیل می‌شوند <stdtypes-mixed-arithmetic>`. تقسیم اعداد صحیح یک مقدار شناور برمی‌گرداند، در حالی که تقسیم کف اعداد صحیح یک عدد صحیح برمی‌گرداند؛ این نتیجه، حاصل تقسیم ریاضی است که تابع 'floor' بر آن اعمال شده باشد. تقسیم بر صفر استثنای :exc:`ZeroDivisionError` را پرتاب می‌کند."
 
 msgid "The division operation can be customized using the special :meth:`~object.__truediv__` and :meth:`~object.__rtruediv__` methods. The floor division operation can be customized using the special :meth:`~object.__floordiv__` and :meth:`~object.__rfloordiv__` methods."
-msgstr ""
+msgstr "عملیات تقسیم را می‌توان با استفاده از متدهای ویژه :meth:`~object.__truediv__` و :meth:`~object.__rtruediv__` سفارشی‌سازی کرد. عملیات تقسیم کف (floor division) را می‌توان با استفاده از متدهای ویژه :meth:`~object.__floordiv__` و :meth:`~object.__rfloordiv__` سفارشی‌سازی کرد."
 
-msgid "The ``%`` (modulo) operator yields the remainder from the division of the first argument by the second.  The numeric arguments are first :ref:`converted to a common type <stdtypes-mixed-arithmetic>`. A zero right argument raises the :exc:`ZeroDivisionError` exception.  The arguments may be floating-point numbers, e.g., ``3.14%0.7`` equals ``0.34`` (since ``3.14`` equals ``4*0.7 + 0.34``.)  The modulo operator always yields a result with the same sign as its second operand (or zero); the absolute value of the result is strictly smaller than the absolute value of the second operand [#]_."
+msgid ""
+"The ``%`` (modulo) operator yields the remainder from the division of the first argument by the second.  The numeric arguments are first :ref:`converted to a common type <stdtypes-mixed-arithmetic>`. A zero right argument raises the :exc:`ZeroDivisionError` exception.  The arguments may be floating-point numbers, e.g., ``3.14%0.7`` equals ``0.34`` (since ``3.14`` equals ``4*0.7 + 0.34``.)  The modulo operator "
+"always yields a result with the same sign as its second operand (or zero); the absolute value of the result is strictly smaller than the absolute value of the second operand [#]_."
 msgstr ""
+"عملگر ``%`` (باقی‌مانده) باقی‌مانده‌ی تقسیم آرگومان اول بر آرگومان دوم را برمی‌گرداند. آرگومان‌های عددی ابتدا :ref:`به یک نوع مشترک تبدیل می‌شوند <stdtypes-mixed-arithmetic>`. صفر بودن آرگومان سمت راست باعث پرتاب استثنای :exc:`ZeroDivisionError` می‌شود. آرگومان‌ها ممکن است اعداد ممیز شناور باشند، برای مثال، ``3.14%0.7`` برابر ``0.34`` است (زیرا ``3.14`` برابر ``4*0.7 + 0.34`` است.) عملگر باقی‌مانده همیشه نتیجه‌ای با همان "
+"علامت عملوند دوم خود (یا صفر) حاصل می‌کند؛ مقدار مطلق نتیجه اکیداً کوچک‌تر از مقدار مطلق عملوند دوم است [#]_."
 
 msgid "The floor division and modulo operators are connected by the following identity: ``x == (x//y)*y + (x%y)``.  Floor division and modulo are also connected with the built-in function :func:`divmod`: ``divmod(x, y) == (x//y, x%y)``. [#]_."
-msgstr ""
+msgstr "عملگرهای تقسیم صحیح و باقی‌مانده با اتحاد زیر به یکدیگر مرتبط هستند: ``x == (x//y)*y + (x%y)``. تقسیم صحیح و باقی‌مانده همچنین با تابع توکار :func:`divmod` مرتبط هستند: ``divmod(x, y) == (x//y, x%y)``. [#]_."
 
 msgid "In addition to performing the modulo operation on numbers, the ``%`` operator is also overloaded by string objects to perform old-style string formatting (also known as interpolation).  The syntax for string formatting is described in the Python Library Reference, section :ref:`old-string-formatting`."
-msgstr ""
+msgstr "علاوه بر انجام عملیات باقی‌مانده روی اعداد، اشیاء رشته نیز عملگر ``%`` را سربارگذاری کرده‌اند تا قالب‌بندی رشته به سبک قدیمی (که به آن درون‌یابی (interpolation) نیز گفته می‌شود) انجام شود. نحو قالب‌بندی رشته در مرجع کتابخانه پایتون، بخش :ref:`old-string-formatting` توضیح داده شده است."
 
 msgid "The *modulo* operation can be customized using the special :meth:`~object.__mod__` and :meth:`~object.__rmod__` methods."
-msgstr ""
+msgstr "عملیات *باقی‌مانده* را می‌توان با استفاده از متدهای ویژه :meth:`~object.__mod__` و :meth:`~object.__rmod__` سفارشی‌سازی کرد."
 
 msgid "The floor division operator, the modulo operator, and the :func:`divmod` function are not defined for complex numbers.  Instead, convert to a floating-point number using the :func:`abs` function if appropriate."
-msgstr ""
+msgstr "عملگر تقسیم کف (floor division)، عملگر باقی‌مانده (modulo)، و تابع :func:`divmod` برای اعداد مختلط تعریف نشده‌اند. در عوض، در صورت مناسب بودن، با استفاده از تابع :func:`abs` آن را به یک عدد ممیز شناور تبدیل کنید."
 
 msgid "The ``+`` (addition) operator yields the sum of its arguments.  The arguments must either both be numbers or both be sequences of the same type.  In the former case, the numbers are :ref:`converted to a common real type <stdtypes-mixed-arithmetic>` and then added together. In the latter case, the sequences are concatenated."
-msgstr ""
+msgstr "عملگر ``+`` (جمع) حاصل‌جمع آرگومان‌های خود را برمی‌گرداند. آرگومان‌ها باید یا هر دو عدد یا هر دو دنباله‌هایی از یک نوع باشند. در حالت اول، اعداد :ref:`به یک نوع حقیقی مشترک تبدیل می‌شوند <stdtypes-mixed-arithmetic>` و سپس با هم جمع می‌شوند. در حالت دوم، دنباله‌ها به یکدیگر الحاق می‌شوند."
 
 msgid "This operation can be customized using the special :meth:`~object.__add__` and :meth:`~object.__radd__` methods."
-msgstr ""
+msgstr "این عملیات را می‌توان با استفاده از متدهای ویژه‌ی :meth:`~object.__add__` و :meth:`~object.__radd__` سفارشی کرد."
 
 msgid "The ``-`` (subtraction) operator yields the difference of its arguments. The numeric arguments are first :ref:`converted to a common real type <stdtypes-mixed-arithmetic>`."
-msgstr ""
+msgstr "عملگر ``-`` (تفریق)، تفاضل آرگومان‌های خود را برمی‌گرداند. آرگومان‌های عددی ابتدا :ref:`به یک نوع حقیقی مشترک تبدیل می‌شوند <stdtypes-mixed-arithmetic>`."
 
 msgid "This operation can be customized using the special :meth:`~object.__sub__` and :meth:`~object.__rsub__` methods."
-msgstr ""
+msgstr "این عملیات را می‌توان با استفاده از متدهای ویژه‌ی :meth:`~object.__sub__` و :meth:`~object.__rsub__` سفارشی‌سازی کرد."
 
 msgid "Shifting operations"
-msgstr ""
+msgstr "عملیات جابه‌جایی"
 
 msgid "The shifting operations have lower priority than the arithmetic operations:"
-msgstr ""
+msgstr "عملیات جابه‌جایی اولویت پایین‌تری نسبت به عملیات حسابی دارند:"
 
 msgid "These operators accept integers as arguments.  They shift the first argument to the left or right by the number of bits given by the second argument."
-msgstr ""
+msgstr "این عملگرها، اعداد صحیح را به‌عنوان آرگومان می‌پذیرند. آن‌ها آرگومان اول را به تعداد بیت‌های تعیین‌شده توسط آرگومان دوم، به چپ یا راست شیفت می‌دهند."
 
 msgid "The left shift operation can be customized using the special :meth:`~object.__lshift__` and :meth:`~object.__rlshift__` methods. The right shift operation can be customized using the special :meth:`~object.__rshift__` and :meth:`~object.__rrshift__` methods."
-msgstr ""
+msgstr "عملیات شیفت چپ را می‌توان با استفاده از متدهای ویژه :meth:`~object.__lshift__` و :meth:`~object.__rlshift__` سفارشی‌سازی کرد. عملیات شیفت راست را می‌توان با استفاده از متدهای ویژه :meth:`~object.__rshift__` و :meth:`~object.__rrshift__` سفارشی‌سازی کرد."
 
 msgid "A right shift by *n* bits is defined as floor division by ``pow(2,n)``.  A left shift by *n* bits is defined as multiplication with ``pow(2,n)``."
-msgstr ""
+msgstr "شیفت راست به اندازه‌ی *n* بیت به‌صورت تقسیم کف (floor division) بر ``pow(2,n)`` تعریف می‌شود. شیفت چپ به اندازه‌ی *n* بیت به‌صورت ضرب در ``pow(2,n)`` تعریف می‌شود."
 
 msgid "Binary bitwise operations"
-msgstr ""
+msgstr "عملیات بیت‌به‌بیت دودویی"
 
 msgid "Each of the three bitwise operations has a different priority level:"
-msgstr ""
+msgstr "هر یک از سه عملیات بیتی، سطح اولویت متفاوتی دارد:"
 
 msgid "The ``&`` operator yields the bitwise AND of its arguments, which must be integers or one of them must be a custom object overriding :meth:`~object.__and__` or :meth:`~object.__rand__` special methods."
-msgstr ""
+msgstr "عملگر ``&`` حاصل AND بیت‌به‌بیت آرگومان‌هایش را برمی‌گرداند، که باید اعداد صحیح باشند یا یکی از آن‌ها باید یک شیء سفارشی باشد که متدهای ویژه :meth:`~object.__and__` یا :meth:`~object.__rand__` را بازنویسی می‌کند."
 
 msgid "The ``^`` operator yields the bitwise XOR (exclusive OR) of its arguments, which must be integers or one of them must be a custom object overriding :meth:`~object.__xor__` or :meth:`~object.__rxor__` special methods."
-msgstr ""
+msgstr "عملگر ``^`` حاصل XOR بیتی (یا انحصاری) آرگومان‌های خود را برمی‌گرداند؛ این آرگومان‌ها باید عدد صحیح باشند یا یکی از آن‌ها باید یک شیء سفارشی باشد که متدهای ویژه‌ی :meth:`~object.__xor__` یا :meth:`~object.__rxor__` را بازنویسی کرده باشد."
 
 msgid "The ``|`` operator yields the bitwise (inclusive) OR of its arguments, which must be integers or one of them must be a custom object overriding :meth:`~object.__or__` or :meth:`~object.__ror__` special methods."
-msgstr ""
+msgstr "عملگر ``|`` حاصل OR بیتی (شمولی) آرگومان‌هایش را برمی‌گرداند؛ آرگومان‌ها باید عدد صحیح باشند یا یکی از آن‌ها باید یک شیء سفارشی باشد که متدهای ویژه‌ی :meth:`~object.__or__` یا :meth:`~object.__ror__` را بازنویسی می‌کند."
 
 msgid "Comparisons"
-msgstr ""
+msgstr "مقایسه‌ها"
 
 msgid "Unlike C, all comparison operations in Python have the same priority, which is lower than that of any arithmetic, shifting or bitwise operation.  Also unlike C, expressions like ``a < b < c`` have the interpretation that is conventional in mathematics:"
-msgstr ""
+msgstr "برخلاف C، تمام عملیات مقایسه‌ای در پایتون اولویت یکسانی دارند که از اولویت هر عملیات حسابی، جابه‌جایی یا بیتی پایین‌تر است. همچنین برخلاف C، عبارت‌هایی مانند ``a < b < c`` تفسیری دارند که در ریاضیات مرسوم است:"
 
 msgid "Comparisons yield boolean values: ``True`` or ``False``. Custom :dfn:`rich comparison methods` may return non-boolean values. In this case Python will call :func:`bool` on such value in boolean contexts."
-msgstr ""
+msgstr "مقایسه‌ها مقادیر بولی را حاصل می‌کنند: ``True`` یا ``False``. ممکن است :dfn:`متدهای مقایسه غنی <rich comparison methods>` سفارشی، مقادیر غیربولی برگردانند. در این صورت، پایتون در زمینه‌های بولی، :func:`bool` را روی چنین مقداری فراخوانی می‌کند."
 
 msgid "Comparisons can be chained arbitrarily, e.g., ``x < y <= z`` is equivalent to ``x < y and y <= z``, except that ``y`` is evaluated only once (but in both cases ``z`` is not evaluated at all when ``x < y`` is found to be false)."
-msgstr ""
+msgstr "می‌توان مقایسه‌ها را به‌صورت دلخواه زنجیره‌ای کرد، برای مثال ``x < y <= z`` معادل ``x < y and y <= z`` است، با این تفاوت که ``y`` تنها یک بار ارزیابی می‌شود (اما در هر دو حالت، وقتی ``x < y`` نادرست باشد، ``z`` اصلاً ارزیابی نمی‌شود)."
 
 msgid "Formally, if *a*, *b*, *c*, ..., *y*, *z* are expressions and *op1*, *op2*, ..., *opN* are comparison operators, then ``a op1 b op2 c ... y opN z`` is equivalent to ``a op1 b and b op2 c and ... y opN z``, except that each expression is evaluated at most once."
-msgstr ""
+msgstr "به‌طور رسمی، اگر *a*، *b*، *c*، ...، *y*، *z* عبارت باشند و *op1*، *op2*، ...، *opN* عملگرهای مقایسه باشند، آنگاه ``a op1 b op2 c ... y opN z`` معادل ``a op1 b and b op2 c and ... y opN z`` است، با این تفاوت که هر عبارت حداکثر یک‌بار ارزیابی می‌شود."
 
 msgid "Note that ``a op1 b op2 c`` doesn't imply any kind of comparison between *a* and *c*, so that, e.g., ``x < y > z`` is perfectly legal (though perhaps not pretty)."
-msgstr ""
+msgstr "توجه داشته باشید که ``a op1 b op2 c`` به معنای هیچ‌گونه مقایسه‌ای بین *a* و *c* نیست، بنابراین، به‌عنوان مثال، ``x < y > z`` کاملاً مجاز است (هرچند شاید زیبا نباشد)."
 
 msgid "Value comparisons"
-msgstr ""
+msgstr "مقایسه‌های مقدار"
 
 msgid "The operators ``<``, ``>``, ``==``, ``>=``, ``<=``, and ``!=`` compare the values of two objects.  The objects do not need to have the same type."
-msgstr ""
+msgstr "عملگرهای ``<``، ``>``، ``==``، ``>=``، ``<=`` و ``!=`` مقادیر دو شیء را مقایسه می‌کنند. لازم نیست این دو شیء نوع یکسانی داشته باشند."
 
-msgid "Chapter :ref:`objects` states that objects have a value (in addition to type and identity).  The value of an object is a rather abstract notion in Python: For example, there is no canonical access method for an object's value.  Also, there is no requirement that the value of an object should be constructed in a particular way, e.g. comprised of all its data attributes. Comparison operators implement a particular notion of what the value of an object is.  One can think of them as defining the value of an object indirectly, by means of their comparison implementation."
+msgid ""
+"Chapter :ref:`objects` states that objects have a value (in addition to type and identity).  The value of an object is a rather abstract notion in Python: For example, there is no canonical access method for an object's value.  Also, there is no requirement that the value of an object should be constructed in a particular way, e.g. comprised of all its data attributes. Comparison operators implement a particular "
+"notion of what the value of an object is.  One can think of them as defining the value of an object indirectly, by means of their comparison implementation."
 msgstr ""
+"فصل :ref:`objects` بیان می‌کند که اشیاء دارای یک مقدار هستند (علاوه بر نوع و هویت). مقدار یک شیء در پایتون مفهومی نسبتاً انتزاعی است: برای مثال، هیچ روش دسترسی کانونیکالی برای مقدار یک شیء وجود ندارد. همچنین الزامی وجود ندارد که مقدار یک شیء به شکل خاصی ساخته شود، مثلاً از تمام ویژگی‌های داده‌ای آن تشکیل شده باشد. عملگرهای مقایسه‌ای مفهوم خاصی از اینکه مقدار یک شیء چیست را پیاده‌سازی می‌کنند. می‌توان آن‌ها را به‌عنوان "
+"تعریف‌کننده‌ی مقدار یک شیء به‌صورت غیرمستقیم، از طریق پیاده‌سازی مقایسه‌ی خود در نظر گرفت."
 
 msgid "Because all types are (direct or indirect) subtypes of :class:`object`, they inherit the default comparison behavior from :class:`object`.  Types can customize their comparison behavior by implementing :dfn:`rich comparison methods` like :meth:`~object.__lt__`, described in :ref:`customization`."
-msgstr ""
+msgstr "از آنجا که همه انواع (مستقیم یا غیرمستقیم) زیرنوع‌هایی از :class:`object` هستند، رفتار مقایسه پیش‌فرض را از :class:`object` به ارث می‌برند. انواع می‌توانند رفتار مقایسه خود را با پیاده‌سازی :dfn:`متدهای مقایسه غنی <rich comparison methods>` مانند :meth:`~object.__lt__` سفارشی‌سازی کنند، همان‌طور که در :ref:`customization` توضیح داده شده است."
 
 msgid "The default behavior for equality comparison (``==`` and ``!=``) is based on the identity of the objects.  Hence, equality comparison of instances with the same identity results in equality, and equality comparison of instances with different identities results in inequality.  A motivation for this default behavior is the desire that all objects should be reflexive (i.e. ``x is y`` implies ``x == y``)."
-msgstr ""
+msgstr "رفتار پیش‌فرض برای مقایسه برابری (``==`` و ``!=``) بر اساس هویت اشیء است. بنابراین، مقایسه برابری نمونه‌هایی با هویت یکسان منجر به برابری می‌شود، و مقایسه برابری نمونه‌هایی با هویت‌های متفاوت منجر به نابرابری می‌شود. انگیزه این رفتار پیش‌فرض، این خواست است که همه اشیء باید بازتابی باشند (یعنی ``x is y`` دلالت بر ``x == y`` دارد)."
 
 msgid "A default order comparison (``<``, ``>``, ``<=``, and ``>=``) is not provided; an attempt raises :exc:`TypeError`.  A motivation for this default behavior is the lack of a similar invariant as for equality."
-msgstr ""
+msgstr "مقایسه ترتیبی پیش‌فرض (``<``، ``>``، ``<=`` و ``>=``) ارائه نمی‌شود؛ تلاش برای آن باعث پرتاب :exc:`TypeError` می‌شود. انگیزه‌ای برای این رفتار پیش‌فرض، نبود یک ناوردا مشابه با برابری است."
 
 msgid "The behavior of the default equality comparison, that instances with different identities are always unequal, may be in contrast to what types will need that have a sensible definition of object value and value-based equality.  Such types will need to customize their comparison behavior, and in fact, a number of built-in types have done that."
-msgstr ""
+msgstr "رفتار مقایسه‌ی برابری پیش‌فرض، یعنی این‌که نمونه‌هایی با هویت‌های متفاوت همیشه نابرابر هستند، ممکن است با آنچه انواعی که تعریفی معقول از مقدار شیء و برابری مبتنی بر مقدار دارند به آن نیاز دارند، در تضاد باشد. چنین انواعی نیاز خواهند داشت که رفتار مقایسه‌ی خود را سفارشی‌سازی کنند، و در واقع، تعدادی از انواع توکار این کار را انجام داده‌اند."
 
 msgid "The following list describes the comparison behavior of the most important built-in types."
-msgstr ""
+msgstr "فهرست زیر رفتار مقایسه‌ای مهم‌ترین انواع توکار را توضیح می‌دهد."
 
 msgid "Numbers of built-in numeric types (:ref:`typesnumeric`) and of the standard library types :class:`fractions.Fraction` and :class:`decimal.Decimal` can be compared within and across their types, with the restriction that complex numbers do not support order comparison.  Within the limits of the types involved, they compare mathematically (algorithmically) correct without loss of precision."
-msgstr ""
+msgstr "اعداد انواع عددی توکار (:ref:`typesnumeric`) و انواع کتابخانه استاندارد :class:`fractions.Fraction` و :class:`decimal.Decimal` را می‌توان در داخل یک نوع و بین انواع مختلف مقایسه کرد، با این محدودیت که اعداد مختلط از مقایسه ترتیبی پشتیبانی نمی‌کنند. در محدوده انواع درگیر، این اعداد از نظر ریاضی (الگوریتمی) به‌درستی و بدون از دست رفتن دقت مقایسه می‌شوند."
 
 msgid "The not-a-number values ``float('NaN')`` and ``decimal.Decimal('NaN')`` are special.  Any ordered comparison of a number to a not-a-number value is false. A counter-intuitive implication is that not-a-number values are not equal to themselves.  For example, if ``x = float('NaN')``, ``3 < x``, ``x < 3`` and ``x == x`` are all false, while ``x != x`` is true.  This behavior is compliant with IEEE 754."
-msgstr ""
+msgstr "مقادیر غیرعدد (not-a-number) یعنی ``float('NaN')`` و ``decimal.Decimal('NaN')`` خاص هستند. هر مقایسه ترتیبی یک عدد با یک مقدار غیرعدد، نادرست است. یک پیامد غیرشهودی این است که مقادیر غیرعدد با خودشان برابر نیستند. برای مثال، اگر ``x = float('NaN')`` باشد، ``3 < x``، ``x < 3`` و ``x == x`` همگی نادرست هستند، در حالی که ``x != x`` درست است. این رفتار با IEEE 754 سازگار است."
 
 msgid "``None`` and :data:`NotImplemented` are singletons.  :PEP:`8` advises that comparisons for singletons should always be done with ``is`` or ``is not``, never the equality operators."
-msgstr ""
+msgstr "``None`` و :data:`NotImplemented` تک‌نمونه (singleton) هستند. :PEP:`8` توصیه می‌کند که مقایسه برای تک‌نمونه‌ها (singletons) باید همیشه با ``is`` یا ``is not`` انجام شود و هرگز از عملگرهای برابری استفاده نشود."
 
 msgid "Binary sequences (instances of :class:`bytes` or :class:`bytearray`) can be compared within and across their types.  They compare lexicographically using the numeric values of their elements."
-msgstr ""
+msgstr "دنباله‌های دودویی (نمونه‌های :class:`bytes` یا :class:`bytearray`) را می‌توان درون نوعشان و بین انواعشان مقایسه کرد. این دنباله‌ها با استفاده از مقادیر عددی عناصرشان به‌صورت واژه‌نامه‌ای مقایسه می‌شوند."
 
 msgid "Strings (instances of :class:`str`) compare lexicographically using the numerical Unicode code points (the result of the built-in function :func:`ord`) of their characters. [#]_"
-msgstr ""
+msgstr "رشته‌ها (نمونه‌های :class:`str`) با استفاده از نقاط کد عددی یونیکدِ نویسه‌هایشان (نتیجه‌ی تابع توکار :func:`ord`) به‌صورت واژگانی مقایسه می‌شوند. [#]_"
 
 msgid "Strings and binary sequences cannot be directly compared."
-msgstr ""
+msgstr "رشته‌ها و دنباله‌های دودویی را نمی‌توان به‌صورت مستقیم مقایسه کرد."
 
 msgid "Sequences (instances of :class:`tuple`, :class:`list`, or :class:`range`) can be compared only within each of their types, with the restriction that ranges do not support order comparison.  Equality comparison across these types results in inequality, and ordering comparison across these types raises :exc:`TypeError`."
-msgstr ""
+msgstr "دنباله‌ها (نمونه‌هایی از :class:`tuple`، :class:`list` یا :class:`range`) فقط می‌توانند در محدوده هر یک از نوع‌های خودشان مقایسه شوند، با این محدودیت که بازه‌ها از مقایسه ترتیبی پشتیبانی نمی‌کنند. مقایسه برابری میان این نوع‌ها منجر به نابرابری می‌شود و مقایسه ترتیبی میان این نوع‌ها :exc:`TypeError` را پرتاب می‌کند."
 
 msgid "Sequences compare lexicographically using comparison of corresponding elements.  The built-in containers typically assume identical objects are equal to themselves.  That lets them bypass equality tests for identical objects to improve performance and to maintain their internal invariants."
-msgstr ""
+msgstr "دنباله‌ها به‌صورت لغت‌نامه‌ای با مقایسه‌ی عناصر متناظر مقایسه می‌شوند. ظروف توکار معمولاً فرض می‌کنند اشیاء یکسان با خودشان برابر هستند. این امر به آن‌ها اجازه می‌دهد آزمون‌های برابری برای اشیاء یکسان را دور بزنند تا کارایی بهبود یابد و ناورداهای داخلی خود را حفظ کنند."
 
 msgid "Lexicographical comparison between built-in collections works as follows:"
-msgstr ""
+msgstr "مقایسه واژگانی بین مجموعه‌های توکار به‌صورت زیر عمل می‌کند:"
 
 msgid "For two collections to compare equal, they must be of the same type, have the same length, and each pair of corresponding elements must compare equal (for example, ``[1,2] == (1,2)`` is false because the type is not the same)."
-msgstr ""
+msgstr "برای این که دو مجموعه برابر مقایسه شوند، باید از یک نوع باشند، طول یکسانی داشته باشند، و هر جفت از عناصر متناظر باید با هم برابر باشند (برای مثال، ``[1,2] == (1,2)`` نادرست است زیرا نوع آن‌ها یکسان نیست)."
 
 msgid "Collections that support order comparison are ordered the same as their first unequal elements (for example, ``[1,2,x] <= [1,2,y]`` has the same value as ``x <= y``).  If a corresponding element does not exist, the shorter collection is ordered first (for example, ``[1,2] < [1,2,3]`` is true)."
-msgstr ""
+msgstr "مجموعه‌هایی که از مقایسه‌ی ترتیبی پشتیبانی می‌کنند، به همان ترتیب اولین عنصر نابرابرشان مرتب می‌شوند (برای مثال، ``[1,2,x] <= [1,2,y]`` همان مقدار ``x <= y`` را دارد). اگر عنصر متناظر وجود نداشته باشد، مجموعه‌ی کوتاه‌تر در ترتیب مقدم است (برای مثال، ``[1,2] < [1,2,3]`` درست است)."
 
 msgid "Mappings (instances of :class:`dict`) compare equal if and only if they have equal ``(key, value)`` pairs. Equality comparison of the keys and values enforces reflexivity."
-msgstr ""
+msgstr "نگاشت‌ها (نمونه‌های :class:`dict`) اگر و فقط اگر جفت‌های ``(key, value)`` برابر داشته باشند، برابر مقایسه می‌شوند. مقایسه‌ی برابری کلیدها و مقدارها، بازتابی‌بودن را الزامی می‌کند."
 
 msgid "Order comparisons (``<``, ``>``, ``<=``, and ``>=``) raise :exc:`TypeError`."
-msgstr ""
+msgstr "مقایسه‌های ترتیبی (``<``، ``>``، ``<=`` و ``>=``) استثنای :exc:`TypeError` را پرتاب می‌کنند."
 
 msgid "Sets (instances of :class:`set` or :class:`frozenset`) can be compared within and across their types."
-msgstr ""
+msgstr "مجموعه‌ها (نمونه‌هایی از :class:`set` یا :class:`frozenset`) را می‌توان در درون نوع خود و میان نوع‌هایشان مقایسه کرد."
 
-msgid "They define order comparison operators to mean subset and superset tests.  Those relations do not define total orderings (for example, the two sets ``{1,2}`` and ``{2,3}`` are not equal, nor subsets of one another, nor supersets of one another).  Accordingly, sets are not appropriate arguments for functions which depend on total ordering (for example, :func:`min`, :func:`max`, and :func:`sorted` produce undefined results given a list of sets as inputs)."
+msgid ""
+"They define order comparison operators to mean subset and superset tests.  Those relations do not define total orderings (for example, the two sets ``{1,2}`` and ``{2,3}`` are not equal, nor subsets of one another, nor supersets of one another).  Accordingly, sets are not appropriate arguments for functions which depend on total ordering (for example, :func:`min`, :func:`max`, and :func:`sorted` produce undefined "
+"results given a list of sets as inputs)."
 msgstr ""
+"آن‌ها عملگرهای مقایسه‌ای ترتیبی را به‌معنای آزمون‌های زیرمجموعه و ابرمجموعه تعریف می‌کنند. این روابط ترتیب‌های کامل را تعریف نمی‌کنند (برای مثال، دو مجموعه‌ی ``{1,2}`` و ``{2,3}`` نه برابرند، نه زیرمجموعه‌ی یکدیگرند و نه ابرمجموعه‌ی یکدیگرند). بر همین اساس، مجموعه‌ها آرگومان‌های مناسبی برای توابعی که به ترتیب کامل وابسته‌اند نیستند (برای مثال، :func:`min`، :func:`max` و :func:`sorted` در صورت دریافت فهرستی از مجموعه‌ها به‌عنوان "
+"ورودی، نتایج تعریف‌نشده تولید می‌کنند)."
 
 msgid "Comparison of sets enforces reflexivity of its elements."
-msgstr ""
+msgstr "مقایسه‌ی مجموعه‌ها، خاصیت بازتابی عناصر آن‌ها را اعمال می‌کند."
 
 msgid "Most other built-in types have no comparison methods implemented, so they inherit the default comparison behavior."
-msgstr ""
+msgstr "بیشتر انواع توکار دیگر متدهای مقایسه‌ای پیاده‌سازی‌شده ندارند، بنابراین رفتار مقایسه‌ای پیش‌فرض را به ارث می‌برند."
 
 msgid "User-defined classes that customize their comparison behavior should follow some consistency rules, if possible:"
-msgstr ""
+msgstr "کلاس‌های تعریف‌شده توسط کاربر که رفتار مقایسه‌ی خود را سفارشی‌سازی می‌کنند، باید در صورت امکان برخی قواعد سازگاری را رعایت کنند:"
 
 msgid "Equality comparison should be reflexive. In other words, identical objects should compare equal:"
-msgstr ""
+msgstr "مقایسه برابری باید بازتابی باشد. به عبارت دیگر، اشیاء یکسان باید در مقایسه برابر باشند:"
 
 msgid "``x is y`` implies ``x == y``"
-msgstr ""
+msgstr "``x is y`` دلالت بر ``x == y`` دارد"
 
 msgid "Comparison should be symmetric. In other words, the following expressions should have the same result:"
-msgstr ""
+msgstr "مقایسه باید متقارن باشد. به عبارت دیگر، عبارت‌های زیر باید نتیجه‌ی یکسانی داشته باشند:"
 
 msgid "``x == y`` and ``y == x``"
-msgstr ""
+msgstr "``x == y`` و ``y == x``"
 
 msgid "``x != y`` and ``y != x``"
-msgstr ""
+msgstr "``x != y`` و ``y != x``"
 
 msgid "``x < y`` and ``y > x``"
-msgstr ""
+msgstr "``x < y`` و ``y > x``"
 
 msgid "``x <= y`` and ``y >= x``"
-msgstr ""
+msgstr "``x <= y`` و ``y >= x``"
 
 msgid "Comparison should be transitive. The following (non-exhaustive) examples illustrate that:"
-msgstr ""
+msgstr "مقایسه باید ترایا باشد. مثال‌های زیر (غیرجامع) این موضوع را نشان می‌دهند:"
 
 msgid "``x > y and y > z`` implies ``x > z``"
-msgstr ""
+msgstr "``x > y and y > z`` دلالت بر ``x > z`` دارد"
 
 msgid "``x < y and y <= z`` implies ``x < z``"
-msgstr ""
+msgstr "``x < y and y <= z`` دلالت بر ``x < z`` دارد"
 
 msgid "Inverse comparison should result in the boolean negation. In other words, the following expressions should have the same result:"
-msgstr ""
+msgstr "مقایسه معکوس باید منجر به نقض بولی شود. به عبارت دیگر، عبارت‌های زیر باید نتیجه یکسانی داشته باشند:"
 
 msgid "``x == y`` and ``not x != y``"
-msgstr ""
+msgstr "``x == y`` و ``not x != y``"
 
 msgid "``x < y`` and ``not x >= y`` (for total ordering)"
-msgstr ""
+msgstr "``x < y`` و ``not x >= y`` (برای ترتیب کامل)"
 
 msgid "``x > y`` and ``not x <= y`` (for total ordering)"
-msgstr ""
+msgstr "``x > y`` و ``not x <= y`` (برای ترتیب کامل)"
 
 msgid "The last two expressions apply to totally ordered collections (e.g. to sequences, but not to sets or mappings). See also the :deco:`~functools.total_ordering` decorator."
-msgstr ""
+msgstr "دو عبارت آخر در مورد مجموعه‌های کاملاً مرتب صدق می‌کنند (برای مثال برای دنباله‌ها، اما نه برای مجموعه‌ها یا نگاشت‌ها). همچنین دکوراتور :deco:`~functools.total_ordering` را ببینید."
 
 msgid "The :func:`hash` result should be consistent with equality. Objects that are equal should either have the same hash value, or be marked as unhashable."
-msgstr ""
+msgstr "نتیجه‌ی :func:`hash` باید با برابری سازگار باشد. اشیایی که برابر هستند باید یا مقدار هش یکسانی داشته باشند، یا به‌عنوان هش‌ناپذیر (unhashable) علامت‌گذاری شوند."
 
 msgid "Python does not enforce these consistency rules. In fact, the not-a-number values are an example for not following these rules."
-msgstr ""
+msgstr "پایتون این قوانین سازگاری را اعمال نمی‌کند. در واقع، مقدارهای غیرعدد (not-a-number) نمونه‌ای از پیروی نکردن از این قوانین هستند."
 
 msgid "Membership test operations"
-msgstr ""
+msgstr "عملیات آزمون عضویت"
 
-msgid "The operators :keyword:`in` and :keyword:`not in` test for membership.  ``x in s`` evaluates to ``True`` if *x* is a member of *s*, and ``False`` otherwise. ``x not in s`` returns the negation of ``x in s``.  All built-in sequences and set types support this as well as dictionary, for which :keyword:`!in` tests whether the dictionary has a given key. For container types such as list, tuple, set, frozenset, dict, or collections.deque, the expression ``x in y`` is equivalent to ``any(x is e or x == e for e in y)``."
+msgid ""
+"The operators :keyword:`in` and :keyword:`not in` test for membership.  ``x in s`` evaluates to ``True`` if *x* is a member of *s*, and ``False`` otherwise. ``x not in s`` returns the negation of ``x in s``.  All built-in sequences and set types support this as well as dictionary, for which :keyword:`!in` tests whether the dictionary has a given key. For container types such as list, tuple, set, frozenset, dict, or "
+"collections.deque, the expression ``x in y`` is equivalent to ``any(x is e or x == e for e in y)``."
 msgstr ""
+"عملگرهای :keyword:`in` و :keyword:`not in` عضویت را آزمایش می‌کنند. ``x in s`` اگر *x* عضوی از *s* باشد به‌صورت ``True`` ارزیابی می‌شود و در غیر این صورت به‌صورت ``False`` ارزیابی می‌شود. ``x not in s`` نقیض ``x in s`` را برمی‌گرداند. همه دنباله‌های توکار و انواع مجموعه‌ای، و همچنین دیکشنری، از این پشتیبانی می‌کنند؛ برای دیکشنری، :keyword:`!in` آزمایش می‌کند که دیکشنری دارای کلید داده‌شده‌ای است یا نه. برای انواع ظرف مانند "
+"فهرست، تاپل، مجموعه، frozenset، دیکشنری یا collections.deque، عبارت ``x in y`` معادل ``any(x is e or x == e for e in y)`` است."
 
 msgid "For the string and bytes types, ``x in y`` is ``True`` if and only if *x* is a substring of *y*.  An equivalent test is ``y.find(x) != -1``.  Empty strings are always considered to be a substring of any other string, so ``\"\" in \"abc\"`` will return ``True``."
-msgstr ""
+msgstr "برای انواع رشته و بایت، ``x in y`` اگر و فقط اگر *x* زیررشته‌ای از *y* باشد، ``True`` است. یک آزمون معادل ``y.find(x) != -1`` است. رشته‌های خالی همیشه زیررشته‌ای از هر رشته دیگری در نظر گرفته می‌شوند، بنابراین ``\"\" in \"abc\"`` مقدار ``True`` را برمی‌گرداند."
 
 msgid "For user-defined classes which define the :meth:`~object.__contains__` method, ``x in y`` returns ``True`` if ``y.__contains__(x)`` returns a true value, and ``False`` otherwise."
-msgstr ""
+msgstr "برای کلاس‌های تعریف‌شده توسط کاربر که متد :meth:`~object.__contains__` را تعریف می‌کنند، اگر ``y.__contains__(x)`` یک مقدار درست برگرداند، ``x in y`` مقدار ``True`` را برمی‌گرداند و در غیر این صورت ``False`` را برمی‌گرداند."
 
 msgid "For user-defined classes which do not define :meth:`~object.__contains__` but do define :meth:`~object.__iter__`, ``x in y`` is ``True`` if some value ``z``, for which the expression ``x is z or x == z`` is true, is produced while iterating over ``y``. If an exception is raised during the iteration, it is as if :keyword:`in` raised that exception."
-msgstr ""
+msgstr "برای کلاس‌های تعریف‌شده توسط کاربر که :meth:`~object.__contains__` را تعریف نمی‌کنند اما :meth:`~object.__iter__` را تعریف می‌کنند، ``x in y`` برابر ``True`` است اگر در حین پیمایش روی ``y``، مقداری ``z`` تولید شود که عبارت ``x is z or x == z`` برای آن درست باشد. اگر در حین پیمایش استثنایی پرتاب شود، گویی :keyword:`in` آن استثنا را پرتاب کرده است."
 
 msgid "Lastly, the old-style iteration protocol is tried: if a class defines :meth:`~object.__getitem__`, ``x in y`` is ``True`` if and only if there is a non-negative integer index *i* such that ``x is y[i] or x == y[i]``, and no lower integer index raises the :exc:`IndexError` exception.  (If any other exception is raised, it is as if :keyword:`in` raised that exception)."
-msgstr ""
+msgstr "در نهایت، پروتکل تکرار به‌سبک قدیمی آزموده می‌شود: اگر کلاسی :meth:`~object.__getitem__` را تعریف کند، ``x in y`` اگر و تنها در صورتی ``True`` است که یک اندیس عدد صحیح نامنفی *i* وجود داشته باشد، به‌طوری که ``x is y[i] or x == y[i]`` برقرار باشد و هیچ اندیس عدد صحیح کوچک‌تری استثنا :exc:`IndexError` را پرتاب نکند. (اگر هر استثنا دیگری پرتاب شود، گویی :keyword:`in` آن استثنا را پرتاب کرده است)."
 
 msgid "The operator :keyword:`not in` is defined to have the inverse truth value of :keyword:`in`."
-msgstr ""
+msgstr "عملگر :keyword:`not in` به‌گونه‌ای تعریف شده است که مقدار درستی معکوسِ :keyword:`in` را داشته باشد."
 
 msgid "Identity comparisons"
-msgstr ""
+msgstr "مقایسه‌های هویت"
 
 msgid "The operators :keyword:`is` and :keyword:`is not` test for an object's identity: ``x is y`` is true if and only if *x* and *y* are the same object.  An Object's identity is determined using the :meth:`id` function.  ``x is not y`` yields the inverse truth value. [#]_"
-msgstr ""
+msgstr "عملگرهای :keyword:`is` و :keyword:`is not` هویت یک شیء را می‌سنجند: ``x is y`` اگر و تنها اگر *x* و *y* یک شیء یکسان باشند، درست است. هویت یک شیء با استفاده از تابع :meth:`id` تعیین می‌شود. ``x is not y`` مقدار درستی معکوس را برمی‌گرداند. [#]_"
 
 msgid "Boolean operations"
-msgstr ""
+msgstr "عملیات بولی"
 
-msgid "In the context of Boolean operations, and also when expressions are used by control flow statements, the following values are interpreted as false: ``False``, ``None``, numeric zero of all types, and empty strings and containers (including strings, tuples, lists, dictionaries, sets and frozensets).  All other values are interpreted as true.  User-defined objects can customize their truth value by providing a :meth:`~object.__bool__` method."
-msgstr ""
+msgid ""
+"In the context of Boolean operations, and also when expressions are used by control flow statements, the following values are interpreted as false: ``False``, ``None``, numeric zero of all types, and empty strings and containers (including strings, tuples, lists, dictionaries, sets and frozensets).  All other values are interpreted as true.  User-defined objects can customize their truth value by providing "
+"a :meth:`~object.__bool__` method."
+msgstr "در عملیات بولی، و همچنین هنگامی که عبارات در دستورهای کنترل جریان به کار می‌روند، مقادیر زیر به‌عنوان نادرست تفسیر می‌شوند: ``False``، ``None``، صفر عددی از تمام انواع، و رشته‌ها و ظروف خالی (شامل رشته‌ها، تاپل‌ها، فهرست‌ها، دیکشنری‌ها، مجموعه‌ها و frozensetها). تمام مقادیر دیگر به‌عنوان درست تفسیر می‌شوند. اشیای تعریف‌شده توسط کاربر می‌توانند مقدار درستی خود را با ارائه‌ی متد :meth:`~object.__bool__` سفارشی کنند."
 
 msgid "The operator :keyword:`not` yields ``True`` if its argument is false, ``False`` otherwise."
-msgstr ""
+msgstr "عملگر :keyword:`not` اگر آرگومان آن نادرست باشد، ``True`` و در غیر این صورت ``False`` برمی‌گرداند."
 
 msgid "The expression ``x and y`` first evaluates *x*; if *x* is false, its value is returned; otherwise, *y* is evaluated and the resulting value is returned."
-msgstr ""
+msgstr "عبارت ``x and y`` ابتدا *x* را ارزیابی می‌کند؛ اگر *x* نادرست باشد، مقدار آن برگردانده می‌شود؛ در غیر این صورت، *y* ارزیابی می‌شود و مقدار حاصل برگردانده می‌شود."
 
 msgid "The expression ``x or y`` first evaluates *x*; if *x* is true, its value is returned; otherwise, *y* is evaluated and the resulting value is returned."
-msgstr ""
+msgstr "عبارت ``x or y`` ابتدا *x* را ارزیابی می‌کند؛ اگر *x* درست باشد، مقدار آن برگردانده می‌شود؛ در غیر این صورت، *y* ارزیابی می‌شود و مقدار حاصل برگردانده می‌شود."
 
-msgid "Note that neither :keyword:`and` nor :keyword:`or` restrict the value and type they return to ``False`` and ``True``, but rather return the last evaluated argument.  This is sometimes useful, e.g., if ``s`` is a string that should be replaced by a default value if it is empty, the expression ``s or 'foo'`` yields the desired value.  Because :keyword:`not` has to create a new value, it returns a boolean value regardless of the type of its argument (for example, ``not 'foo'`` produces ``False`` rather than ``''``.)"
+msgid ""
+"Note that neither :keyword:`and` nor :keyword:`or` restrict the value and type they return to ``False`` and ``True``, but rather return the last evaluated argument.  This is sometimes useful, e.g., if ``s`` is a string that should be replaced by a default value if it is empty, the expression ``s or 'foo'`` yields the desired value.  Because :keyword:`not` has to create a new value, it returns a boolean value "
+"regardless of the type of its argument (for example, ``not 'foo'`` produces ``False`` rather than ``''``.)"
 msgstr ""
+"توجه داشته باشید که نه :keyword:`and` و نه :keyword:`or` مقدار و نوعی را که برمی‌گردانند به ``False`` و ``True`` محدود نمی‌کنند، بلکه آخرین آرگومان ارزیابی‌شده را برمی‌گردانند. این موضوع گاهی مفید است؛ مثلاً اگر ``s`` رشته‌ای باشد که در صورت خالی بودن باید با یک مقدار پیش‌فرض جایگزین شود، عبارت ``s or 'foo'`` مقدار دلخواه را برمی‌گرداند. از آنجا که :keyword:`not` باید مقدار جدیدی ایجاد کند، صرف‌نظر از نوع آرگومان خود یک "
+"مقدار بولی برمی‌گرداند (برای مثال، ``not 'foo'`` به جای ``''`` مقدار ``False`` تولید می‌کند.)"
 
 msgid "Assignment expressions"
-msgstr ""
+msgstr "عبارات انتساب"
 
 msgid "An assignment expression (sometimes also called a \"named expression\" or \"walrus\") assigns an :token:`~python-grammar:expression` to an :token:`~python-grammar:identifier`, while also returning the value of the :token:`~python-grammar:expression`."
-msgstr ""
+msgstr "یک عبارت انتساب (که گاهی به آن «عبارت نام‌دار» یا «والروس» نیز گفته می‌شود) یک :token:`~python-grammar:expression` را به یک :token:`~python-grammar:identifier` انتساب می‌دهد، و همزمان مقدار :token:`~python-grammar:expression` را نیز بازمی‌گرداند."
 
 msgid "One common use case is when handling matched regular expressions:"
-msgstr ""
+msgstr "یکی از موارد استفاده‌ی رایج، هنگام پردازش عبارات باقاعده‌ی تطبیق‌یافته است:"
 
 msgid ""
 "if matching := pattern.search(data):\n"
 "    do_something(matching)"
 msgstr ""
+"if matching := pattern.search(data):\n"
+"    do_something(matching)"
 
 msgid "Or, when processing a file stream in chunks:"
-msgstr ""
+msgstr "یا، هنگام پردازش جریان فایل به‌صورت تکه‌ای (chunks):"
 
 msgid ""
 "while chunk := file.read(9000):\n"
 "    process(chunk)"
 msgstr ""
+"while chunk := file.read(9000):\n"
+"    process(chunk)"
 
 msgid "Assignment expressions must be surrounded by parentheses when used as expression statements and when used as sub-expressions in slicing, conditional, lambda, keyword-argument, and comprehension-if expressions and in ``assert``, ``with``, and ``assignment`` statements. In all other places where they can be used, parentheses are not required, including in ``if`` and ``while`` statements."
-msgstr ""
+msgstr "عبارات انتساب باید هنگامی که به‌عنوان دستورهای عبارتی استفاده می‌شوند و هنگامی که به‌عنوان زیرعبارت‌هایی در عبارت‌های برش (slicing)، شرطی، لامبدا، آرگومان کلیدواژه‌ای و عبارت‌های if در درک (comprehension-if) و در دستورهای ``assert``، ``with`` و ``assignment`` به کار می‌روند، در پرانتز قرار گیرند. در هر جای دیگری که بتوان از آن‌ها استفاده کرد، نیازی به پرانتز نیست، از جمله در دستورهای ``if`` و ``while``."
 
 msgid "See :pep:`572` for more details about assignment expressions."
-msgstr ""
+msgstr "برای جزئیات بیشتر درباره‌ی عبارت‌های انتساب، :pep:`572` را ببینید."
 
 msgid "Conditional expressions"
-msgstr ""
+msgstr "عبارات شرطی"
 
 msgid "A conditional expression (sometimes called a \"ternary operator\") is an alternative to the if-else statement. As it is an expression, it returns a value and can appear as a sub-expression."
-msgstr ""
+msgstr "یک عبارت شرطی (که گاهی به آن «عملگر سه‌تایی» گفته می‌شود) جایگزینی برای دستور if-else است. از آن‌جا که این یک عبارت است، مقداری برمی‌گرداند و می‌تواند به‌عنوان یک زیرعبارت ظاهر شود."
 
 msgid "The expression ``x if C else y`` first evaluates the condition, *C* rather than *x*. If *C* is true, *x* is evaluated and its value is returned; otherwise, *y* is evaluated and its value is returned."
-msgstr ""
+msgstr "عبارت ``x if C else y`` ابتدا شرط، یعنی *C* را ارزیابی می‌کند، نه *x* را. اگر *C* درست باشد، *x* ارزیابی می‌شود و مقدار آن بازگردانده می‌شود؛ در غیر این صورت، *y* ارزیابی می‌شود و مقدار آن بازگردانده می‌شود."
 
 msgid "See :pep:`308` for more details about conditional expressions."
-msgstr ""
+msgstr "برای جزئیات بیشتر درباره عبارات شرطی، :pep:`308` را ببینید."
 
 msgid "Lambdas"
-msgstr ""
+msgstr "لامبداها"
 
 msgid "Lambda expressions (sometimes called lambda forms) are used to create anonymous functions. The expression ``lambda parameters: expression`` yields a function object.  The unnamed object behaves like a function object defined with:"
-msgstr ""
+msgstr "عبارات لامبدا (که گاهی فرم‌های لامبدا نامیده می‌شوند) برای ایجاد توابع ناشناس استفاده می‌شوند. عبارت ``lambda parameters: expression`` یک شیء تابع حاصل می‌دهد. این شیء بی‌نام مانند یک شیء تابعی رفتار می‌کند که به این صورت تعریف شده باشد:"
 
 msgid ""
 "def <lambda>(parameters):\n"
 "    return expression"
 msgstr ""
+"def <lambda>(parameters):\n"
+"    return expression"
 
 msgid "See section :ref:`function` for the syntax of parameter lists.  Note that functions created with lambda expressions cannot contain statements or annotations."
-msgstr ""
+msgstr "برای سینتکس فهرست‌های پارامتر، بخش :ref:`تابع <function>` را ببینید. توجه داشته باشید که توابع ایجادشده با عبارت‌های lambda نمی‌توانند شامل دستور یا یادداشت‌هاباشند."
 
 msgid "Expression lists"
-msgstr ""
+msgstr "فهرست‌های عبارت"
 
 msgid "Except when part of a list or set display, an expression list containing at least one comma yields a tuple.  The length of the tuple is the number of expressions in the list.  The expressions are evaluated from left to right."
-msgstr ""
+msgstr "مگر وقتی که بخشی از یک نمایش فهرست یا مجموعه باشد، یک فهرست عبارت شامل حداقل یک ویرگول، یک تاپل حاصل می‌دهد. طول تاپل برابر تعداد عبارت‌های داخل فهرست است. عبارت‌ها از چپ به راست ارزیابی می‌شوند."
 
 msgid "An asterisk ``*`` denotes :dfn:`iterable unpacking`.  Its operand must be an :term:`iterable`.  The iterable is expanded into a sequence of items, which are included in the new tuple, list, or set, at the site of the unpacking."
-msgstr ""
+msgstr "ستاره ``*`` نشان‌دهنده‌ی :dfn:`واگشایی پیمایش‌پذیر <iterable unpacking>` است. عملوند آن باید یک :term:`پیمایش‌پذیر <iterable>` باشد. این پیمایش‌پذیر به دنباله‌ای از آیتم‌ها بسط داده می‌شود که در محل واگشایی، در تاپل، فهرست یا مجموعه‌ی جدید گنجانده می‌شوند."
 
 msgid "Iterable unpacking in expression lists, originally proposed by :pep:`448`."
-msgstr ""
+msgstr "واگشایی پیمایش‌پذیرها در فهرست‌های عبارت، که در ابتدا در :pep:`448` پیشنهاد شد."
 
 msgid "Any item in an expression list may be starred. See :pep:`646`."
-msgstr ""
+msgstr "هر آیتم در یک فهرست عبارت می‌تواند ستاره‌دار شود. :pep:`646` را ببینید."
 
 msgid "A trailing comma is required only to create a one-item tuple, such as ``1,``; it is optional in all other cases. A single expression without a trailing comma doesn't create a tuple, but rather yields the value of that expression. (To create an empty tuple, use an empty pair of parentheses: ``()``.)"
-msgstr ""
+msgstr "ویرگول پایانی فقط برای ایجاد یک تاپلتک‌آیتمی، مانند ``1,`` لازم است؛ در تمام موارد دیگر اختیاری است. یک عبارت بدون ویرگول پایانی، تاپل ایجاد نمی‌کند، بلکه مقدار آن عبارت را برمی‌گرداند. (برای ایجاد یک تاپل خالی، از یک جفت پرانتز خالی استفاده کنید: ``()``.)"
 
 msgid "Evaluation order"
-msgstr ""
+msgstr "ترتیب ارزیابی"
 
 msgid "Python evaluates expressions from left to right.  Notice that while evaluating an assignment, the right-hand side is evaluated before the left-hand side."
-msgstr ""
+msgstr "پایتون عبارت‌ها را از چپ به راست ارزیابی می‌کند. توجه داشته باشید که هنگام ارزیابی یک انتساب، سمت راست پیش از سمت چپ ارزیابی می‌شود."
 
 msgid "In the following lines, expressions will be evaluated in the arithmetic order of their suffixes::"
-msgstr ""
+msgstr "در خطوط زیر، عبارت‌ها به ترتیب حسابی پسوندهایشان ارزیابی می‌شوند::"
 
 msgid ""
 "expr1, expr2, expr3, expr4\n"
@@ -1315,675 +1612,690 @@ msgid ""
 "expr1(expr2, expr3, *expr4, **expr5)\n"
 "expr3, expr4 = expr1, expr2"
 msgstr ""
+"expr1, expr2, expr3, expr4\n"
+"(expr1, expr2, expr3, expr4)\n"
+"{expr1: expr2, expr3: expr4}\n"
+"expr1 + expr2 * (expr3 - expr4)\n"
+"expr1(expr2, expr3, *expr4, **expr5)\n"
+"expr3, expr4 = expr1, expr2"
 
 msgid "Operator precedence"
-msgstr ""
+msgstr "اولویت عملگرها"
 
 msgid "The following table summarizes the operator precedence in Python, from highest precedence (most binding) to lowest precedence (least binding).  Operators in the same box have the same precedence.  Unless the syntax is explicitly given, operators are binary.  Operators in the same box group left to right (except for exponentiation and conditional expressions, which group from right to left)."
-msgstr ""
+msgstr "جدول زیر اولویت عملگرها در پایتون را خلاصه می‌کند، از بالاترین اولویت (بیشترین اتصال) تا پایین‌ترین اولویت (کمترین اتصال). عملگرهای موجود در یک جعبه، اولویت یکسانی دارند. مگر این‌که سینتکس به‌صراحت ذکر شده باشد، عملگرها دودویی هستند. عملگرهای موجود در یک جعبه از چپ به راست گروه‌بندی می‌شوند (به‌جز توان‌گیری و عبارت‌های شرطی که از راست به چپ گروه‌بندی می‌شوند)."
 
 msgid "Note that comparisons, membership tests, and identity tests, all have the same precedence and have a left-to-right chaining feature as described in the :ref:`comparisons` section."
-msgstr ""
+msgstr "توجه داشته باشید که مقایسه‌ها، آزمون‌های عضویت و آزمون‌های هویت، همگی اولویت یکسانی دارند و از ویژگی زنجیره‌سازی چپ‌به‌راست برخوردارند، همان‌طور که در بخش :ref:`مقایسه‌ها <comparisons>` توضیح داده شده است."
 
 msgid "Operator"
-msgstr ""
+msgstr "عملگر"
 
 msgid "Description"
-msgstr ""
+msgstr "توضیح"
 
 msgid "``(expressions...)``,"
-msgstr ""
+msgstr "``(expressions...)``,"
 
 msgid "``[expressions...]``, ``{key: value...}``, ``{expressions...}``"
-msgstr ""
+msgstr "``[expressions...]``، ``{key: value...}``، ``{expressions...}``"
 
 msgid "Binding or parenthesized expression, list display, dictionary display, set display"
-msgstr ""
+msgstr "پیوند یا عبارت داخل پرانتز، نمایش فهرست، نمایش دیکشنری، نمایش مجموعه"
 
 msgid "``x[index]``, ``x[index:index]`` ``x(arguments...)``, ``x.attribute``"
-msgstr ""
+msgstr "``x[index]``, ``x[index:index]`` ``x(arguments...)``, ``x.attribute``"
 
 msgid "Subscription (including slicing), call, attribute reference"
-msgstr ""
+msgstr "زیرنویسی (شامل برش)، فراخوانی، ارجاع به ویژگی"
 
 msgid ":keyword:`await x <await>`"
-msgstr ""
+msgstr ":keyword:`await x <await>`"
 
 msgid "``**``"
-msgstr ""
+msgstr "``**``"
 
 msgid "Exponentiation [#]_"
-msgstr ""
+msgstr "توان‌رسانی [#]_"
 
 msgid "``+x``, ``-x``, ``~x``"
-msgstr ""
+msgstr "``+x``, ``-x``, ``~x``"
 
 msgid "Positive, negative, bitwise NOT"
-msgstr ""
+msgstr "مثبت، منفی، نقیض بیت‌به‌بیت"
 
 msgid "``*``, ``@``, ``/``, ``//``, ``%``"
-msgstr ""
+msgstr "``*``, ``@``, ``/``, ``//``, ``%``"
 
 msgid "Multiplication, matrix multiplication, division, floor division, remainder [#]_"
-msgstr ""
+msgstr "ضرب، ضرب ماتریسی، تقسیم، تقسیم کف، باقی‌مانده [#]_"
 
 msgid "``+``, ``-``"
-msgstr ""
+msgstr "``+``، ``-``"
 
 msgid "Addition and subtraction"
-msgstr ""
+msgstr "جمع و تفریق"
 
 msgid "``<<``, ``>>``"
-msgstr ""
+msgstr "``<<``, ``>>``"
 
 msgid "Shifts"
-msgstr ""
+msgstr "شیفت‌ها"
 
 msgid "``&``"
-msgstr ""
+msgstr "``&``"
 
 msgid "Bitwise AND"
-msgstr ""
+msgstr "و بیت‌به‌بیت"
 
 msgid "``^``"
-msgstr ""
+msgstr "``^``"
 
 msgid "Bitwise XOR"
-msgstr ""
+msgstr "XOR بیت‌به‌بیت"
 
 msgid "``|``"
-msgstr ""
+msgstr "``|``"
 
 msgid "Bitwise OR"
-msgstr ""
+msgstr "یا بیتی (Bitwise OR)"
 
 msgid ":keyword:`in`, :keyword:`not in`, :keyword:`is`, :keyword:`is not`, ``<``, ``<=``, ``>``, ``>=``, ``!=``, ``==``"
-msgstr ""
+msgstr ":keyword:`in`, :keyword:`not in`, :keyword:`is`, :keyword:`is not`, ``<``, ``<=``, ``>``, ``>=``, ``!=``, ``==``"
 
 msgid "Comparisons, including membership tests and identity tests"
-msgstr ""
+msgstr "مقایسه‌ها، از جمله آزمون‌های عضویت و هویت"
 
 msgid ":keyword:`not x <not>`"
-msgstr ""
+msgstr ":keyword:`not x <not>`"
 
 msgid "Boolean NOT"
-msgstr ""
+msgstr "نفی بولی"
 
 msgid ":keyword:`and`"
-msgstr ""
+msgstr ":keyword:`and`"
 
 msgid "Boolean AND"
-msgstr ""
+msgstr "و بولی"
 
 msgid ":keyword:`or`"
-msgstr ""
+msgstr ":keyword:`or`"
 
 msgid "Boolean OR"
-msgstr ""
+msgstr "یا بولی"
 
 msgid ":keyword:`if <if_expr>` -- :keyword:`!else`"
-msgstr ""
+msgstr ":keyword:`if <if_expr>` -- :keyword:`!else`"
 
 msgid "Conditional expression"
-msgstr ""
+msgstr "عبارت شرطی"
 
 msgid ":keyword:`lambda`"
-msgstr ""
+msgstr ":keyword:`lambda`"
 
 msgid "Lambda expression"
-msgstr ""
+msgstr "عبارت لامبدا"
 
 msgid "``:=``"
-msgstr ""
+msgstr "``:=``"
 
 msgid "Assignment expression"
-msgstr ""
+msgstr "عبارت انتساب"
 
 msgid "Footnotes"
-msgstr ""
+msgstr "پانویس‌ها"
 
-msgid "While ``abs(x%y) < abs(y)`` is true mathematically, for floats it may not be true numerically due to roundoff.  For example, and assuming a platform on which a Python float is an IEEE 754 double-precision number, in order that ``-1e-100 % 1e100`` have the same sign as ``1e100``, the computed result is ``-1e-100 + 1e100``, which is numerically exactly equal to ``1e100``.  The function :func:`math.fmod` returns a result whose sign matches the sign of the first argument instead, and so returns ``-1e-100`` in this case. Which approach is more appropriate depends on the application."
+msgid ""
+"While ``abs(x%y) < abs(y)`` is true mathematically, for floats it may not be true numerically due to roundoff.  For example, and assuming a platform on which a Python float is an IEEE 754 double-precision number, in order that ``-1e-100 % 1e100`` have the same sign as ``1e100``, the computed result is ``-1e-100 + 1e100``, which is numerically exactly equal to ``1e100``.  The function :func:`math.fmod` returns a "
+"result whose sign matches the sign of the first argument instead, and so returns ``-1e-100`` in this case. Which approach is more appropriate depends on the application."
 msgstr ""
+"اگرچه ``abs(x%y) < abs(y)`` از نظر ریاضی درست است، اما برای اعداد ممیز شناور ممکن است به دلیل خطای گرد کردن از نظر عددی درست نباشد. برای مثال، با فرض سکویی که در آن عدد ممیز شناور پایتون یک عدد با دقت مضاعف IEEE 754 باشد، برای اینکه ``-1e-100 % 1e100`` همان علامت ``1e100`` را داشته باشد، نتیجه‌ی محاسبه‌شده ``-1e-100 + 1e100`` است، که از نظر عددی دقیقاً برابر با ``1e100`` است. تابع :func:`math.fmod` در عوض نتیجه‌ای "
+"برمی‌گرداند که علامت آن با علامت اولین آرگومان مطابقت دارد، و بنابراین در این حالت ``-1e-100`` را برمی‌گرداند. اینکه کدام روش مناسب‌تر است به برنامه بستگی دارد."
 
 msgid "If x is very close to an exact integer multiple of y, it's possible for ``x//y`` to be one larger than ``(x-x%y)//y`` due to rounding.  In such cases, Python returns the latter result, in order to preserve that ``divmod(x,y)[0] * y + x % y`` be very close to ``x``."
-msgstr ""
+msgstr "اگر x بسیار نزدیک به یک مضرب عدد صحیح دقیق از y باشد، ممکن است ``x//y`` به‌دلیل گرد کردن ۱ واحد بزرگ‌تر از ``(x-x%y)//y`` باشد. در چنین مواردی، پایتون نتیجه‌ی دوم را برمی‌گرداند تا حفظ شود که ``divmod(x,y)[0] * y + x % y`` بسیار نزدیک به ``x`` باشد."
 
-msgid "The Unicode standard distinguishes between :dfn:`code points` (e.g. U+0041) and :dfn:`abstract characters` (e.g. \"LATIN CAPITAL LETTER A\"). While most abstract characters in Unicode are only represented using one code point, there is a number of abstract characters that can in addition be represented using a sequence of more than one code point.  For example, the abstract character \"LATIN CAPITAL LETTER C WITH CEDILLA\" can be represented as a single :dfn:`precomposed character` at code position U+00C7, or as a sequence of a :dfn:`base character` at code position U+0043 (LATIN CAPITAL LETTER C), followed by a :dfn:`combining character` at code position U+0327 (COMBINING CEDILLA)."
+msgid ""
+"The Unicode standard distinguishes between :dfn:`code points` (e.g. U+0041) and :dfn:`abstract characters` (e.g. \"LATIN CAPITAL LETTER A\"). While most abstract characters in Unicode are only represented using one code point, there is a number of abstract characters that can in addition be represented using a sequence of more than one code point.  For example, the abstract character \"LATIN CAPITAL LETTER C WITH "
+"CEDILLA\" can be represented as a single :dfn:`precomposed character` at code position U+00C7, or as a sequence of a :dfn:`base character` at code position U+0043 (LATIN CAPITAL LETTER C), followed by a :dfn:`combining character` at code position U+0327 (COMBINING CEDILLA)."
 msgstr ""
+"استاندارد یونیکد میان :dfn:`نقاط کد (code points) <code points>` (مثلاً U+0041) و :dfn:`نویسه‌های انتزاعی (abstract characters) <abstract characters>` (مثلاً \"LATIN CAPITAL LETTER A\") تمایز قائل می‌شود. در حالی که بیشتر نویسه‌های انتزاعی در یونیکد تنها با استفاده از یک نقطه کد بازنمایی می‌شوند، تعدادی از نویسه‌های انتزاعی وجود دارند که علاوه بر این می‌توانند با استفاده از دنباله‌ای از بیش از یک نقطه کد نیز بازنمایی شوند. "
+"برای مثال، نویسه انتزاعی \"LATIN CAPITAL LETTER C WITH CEDILLA\" می‌تواند به‌عنوان یک :dfn:`نویسه پیش‌ترکیب‌شده (precomposed character) <precomposed character>` در موقعیت کد U+00C7 بازنمایی شود، یا به‌عنوان دنباله‌ای از یک :dfn:`نویسه پایه (base character) <base character>` در موقعیت کد U+0043 (LATIN CAPITAL LETTER C) و به‌دنبال آن یک :dfn:`نویسه ترکیبی (combining character) <combining character>` در موقعیت کد U+0327 "
+"(COMBINING CEDILLA) بازنمایی شود."
 
 msgid "The comparison operators on strings compare at the level of Unicode code points. This may be counter-intuitive to humans.  For example, ``\"\\u00C7\" == \"\\u0043\\u0327\"`` is ``False``, even though both strings represent the same abstract character \"LATIN CAPITAL LETTER C WITH CEDILLA\"."
-msgstr ""
+msgstr "عملگرهای مقایسه روی رشته‌ها، مقایسه را در سطح نقاط کد یونیکد انجام می‌دهند. این موضوع ممکن است برای انسان‌ها غیرشهودی باشد. برای مثال، ``\"\\u00C7\" == \"\\u0043\\u0327\"`` برابر ``False`` است، با وجود اینکه هر دو رشته نشان‌دهنده‌ی همان نویسه‌ی انتزاعی «LATIN CAPITAL LETTER C WITH CEDILLA» هستند."
 
 msgid "To compare strings at the level of abstract characters (that is, in a way intuitive to humans), use :func:`unicodedata.normalize`."
-msgstr ""
+msgstr "برای مقایسه‌ی رشته‌ها در سطح نویسه‌های انتزاعی (یعنی به‌شیوه‌ای که برای انسان شهودی باشد)، از :func:`unicodedata.normalize` استفاده کنید."
 
 msgid "Due to automatic garbage-collection, free lists, and the dynamic nature of descriptors, you may notice seemingly unusual behaviour in certain uses of the :keyword:`is` operator, like those involving comparisons between instance methods, or constants.  Check their documentation for more info."
-msgstr ""
+msgstr "به دلیل زباله‌روبی خودکار، فهرست‌های آزاد، و ماهیت پویای توصیف‌گرها، ممکن است رفتار به‌ظاهر غیرمعمولی را در برخی استفاده‌های خاص از عملگر :keyword:`is` مشاهده کنید، مانند مواردی که شامل مقایسه بین متدهای نمونه یا ثابت‌ها هستند. برای اطلاعات بیشتر، مستندات آن‌ها را بررسی کنید."
 
 msgid "The power operator ``**`` binds less tightly than an arithmetic or bitwise unary operator on its right, that is, ``2**-1`` is ``0.5``."
-msgstr ""
+msgstr "عملگر توان ``**`` نسبت به یک عملگر یک‌عملوندی حسابی یا بیتی در سمت راست خود اولویت کمتری دارد، یعنی ``2**-1`` برابر ``0.5`` است."
 
 msgid "The ``%`` operator is also used for string formatting; the same precedence applies."
-msgstr ""
+msgstr "عملگر ``%`` همچنین برای قالب‌بندی رشته استفاده می‌شود؛ همان اولویت اعمال می‌شود."
 
 msgid "expression"
-msgstr ""
+msgstr "عبارت"
 
 msgid "BNF"
-msgstr ""
+msgstr "BNF"
 
 msgid "arithmetic"
-msgstr ""
+msgstr "حساب"
 
 msgid "conversion"
-msgstr ""
+msgstr "تبدیل"
 
 msgid "atom"
-msgstr ""
+msgstr "اتم"
 
 msgid "name"
-msgstr ""
+msgstr "نام"
 
 msgid "identifier"
-msgstr ""
+msgstr "شناسه"
 
 msgid "exception"
-msgstr ""
+msgstr "استثنا"
 
 msgid "NameError"
-msgstr ""
+msgstr "NameError"
 
 msgid "mangling"
-msgstr ""
+msgstr "دستکاری (mangling)"
 
 msgid "private"
-msgstr ""
+msgstr "خصوصی"
 
 msgid "names"
-msgstr ""
+msgstr "نام‌ها"
 
 msgid "literal"
-msgstr ""
+msgstr "تحت‌اللفظی"
 
 msgid "immutable"
-msgstr ""
+msgstr "تغییرناپذیر"
 
 msgid "data"
-msgstr ""
+msgstr "داده"
 
 msgid "type"
-msgstr ""
+msgstr "نوع"
 
 msgid "object"
-msgstr ""
+msgstr "شیء"
 
 msgid "parenthesized form"
-msgstr ""
+msgstr "شکل پرانتزدار"
 
 msgid "() (parentheses)"
-msgstr ""
+msgstr "() (پرانتز)"
 
 msgid "tuple display"
-msgstr ""
+msgstr "نمایش تاپل"
 
 msgid "empty"
-msgstr ""
+msgstr "خالی"
 
 msgid "tuple"
-msgstr ""
+msgstr "تاپل"
 
 msgid "comma"
-msgstr ""
+msgstr "ویرگول"
 
 msgid ", (comma)"
-msgstr ""
+msgstr ", (کاما)"
 
 msgid "comprehensions"
-msgstr ""
+msgstr "درک‌ها"
 
 msgid "for"
-msgstr ""
+msgstr "برای"
 
 msgid "in comprehensions"
-msgstr ""
+msgstr "در درک‌ها"
 
 msgid "if"
-msgstr ""
+msgstr "اگر"
 
 msgid "async for"
-msgstr ""
+msgstr "async for"
 
 msgid "await"
-msgstr ""
+msgstr "await"
 
 msgid "list"
-msgstr ""
+msgstr "فهرست"
 
 msgid "display"
-msgstr ""
+msgstr "نمایش"
 
 msgid "[] (square brackets)"
-msgstr ""
+msgstr "[] (کمانک‌های مربع)"
 
 msgid "list expression"
-msgstr ""
+msgstr "عبارت فهرستی"
 
 msgid "expression list"
-msgstr ""
+msgstr "فهرست عبارت‌ها"
 
 msgid "set"
-msgstr ""
+msgstr "مجموعه"
 
 msgid "{} (curly brackets)"
-msgstr ""
+msgstr "{} (آکولاد)"
 
 msgid "set expression"
-msgstr ""
+msgstr "عبارت مجموعه"
 
 msgid "dictionary"
-msgstr ""
+msgstr "دیکشنری"
 
 msgid "key"
-msgstr ""
+msgstr "کلید"
 
 msgid "value"
-msgstr ""
+msgstr "مقدار"
 
 msgid "key/value pair"
-msgstr ""
+msgstr "جفت کلید/مقدار"
 
 msgid "dictionary expression"
-msgstr ""
+msgstr "عبارت دیکشنری"
 
 msgid ": (colon)"
-msgstr ""
+msgstr ": (دونقطه)"
 
 msgid "in dictionary expressions"
-msgstr ""
+msgstr "در عبارت‌های دیکشنری"
 
 msgid "in dictionary displays"
-msgstr ""
+msgstr "در نمایش‌های دیکشنری"
 
 msgid "unpacking"
-msgstr ""
+msgstr "واگشایی"
 
 msgid "**"
-msgstr ""
+msgstr "**"
 
 msgid "hashable"
-msgstr ""
+msgstr "هش‌پذیر"
 
 msgid "generator"
-msgstr ""
+msgstr "تولیدگر"
 
 msgid "generator expression"
-msgstr ""
+msgstr "عبارت تولیدگر"
 
 msgid "keyword"
-msgstr ""
+msgstr "کلیدواژه"
 
 msgid "yield"
-msgstr ""
+msgstr "yield"
 
 msgid "from"
-msgstr ""
+msgstr "from"
 
 msgid "function"
-msgstr ""
+msgstr "تابع"
 
 msgid "coroutine"
-msgstr ""
+msgstr "هم‌روال"
 
 msgid "yield from expression"
-msgstr ""
+msgstr "عبارت yield from"
 
 msgid "StopIteration"
-msgstr ""
+msgstr "StopIteration"
 
 msgid "GeneratorExit"
-msgstr ""
+msgstr "GeneratorExit"
 
 msgid "examples"
-msgstr ""
+msgstr "مثال‌ها"
 
 msgid "asynchronous-generator"
-msgstr ""
+msgstr "تولیدگر ناهمگام"
 
 msgid "StopAsyncIteration"
-msgstr ""
+msgstr "StopAsyncIteration"
 
 msgid "primary"
-msgstr ""
+msgstr "اصلی"
 
 msgid "attribute"
-msgstr ""
+msgstr "ویژگی"
 
 msgid "reference"
-msgstr ""
+msgstr "مرجع"
 
 msgid ". (dot)"
-msgstr ""
+msgstr ". (نقطه)"
 
 msgid "attribute reference"
-msgstr ""
+msgstr "ارجاع به ویژگی"
 
 msgid "AttributeError"
-msgstr ""
+msgstr "AttributeError"
 
 msgid "module"
-msgstr ""
+msgstr "ماژول"
 
 msgid "subscription"
-msgstr ""
+msgstr "دستور زبان رسمی زیرنویسی"
 
 msgid "sequence"
-msgstr ""
+msgstr "دنباله"
 
 msgid "mapping"
-msgstr ""
+msgstr "نگاشت"
 
 msgid "string"
-msgstr ""
+msgstr "رشته"
 
 msgid "item"
-msgstr ""
+msgstr "آیتم"
 
 msgid "slicing"
-msgstr ""
+msgstr "برش"
 
 msgid "slice"
-msgstr ""
+msgstr "برش"
 
 msgid "callable"
-msgstr ""
+msgstr "قابل فراخوانی"
 
 msgid "call"
-msgstr ""
+msgstr "فراخوانی"
 
 msgid "argument"
-msgstr ""
+msgstr "آرگومان"
 
 msgid "call semantics"
-msgstr ""
+msgstr "معناشناسی فراخوانی"
 
 msgid "argument list"
-msgstr ""
+msgstr "فهرست آرگومان‌ها"
 
 msgid "= (equals)"
-msgstr ""
+msgstr "= (برابر)"
 
 msgid "in function calls"
-msgstr ""
+msgstr "در فراخوانی‌های تابع"
 
 msgid "parameter"
-msgstr ""
+msgstr "پارامتر"
 
 msgid "* (asterisk)"
-msgstr ""
+msgstr "* (ستاره)"
 
 msgid "user-defined"
-msgstr ""
+msgstr "تعریف‌شده توسط کاربر"
 
 msgid "user-defined function"
-msgstr ""
+msgstr "تابع تعریف‌شده توسط کاربر"
 
 msgid "built-in function"
-msgstr ""
+msgstr "تابع توکار"
 
 msgid "method"
-msgstr ""
+msgstr "متد"
 
 msgid "built-in method"
-msgstr ""
+msgstr "متد توکار"
 
 msgid "class"
-msgstr ""
+msgstr "کلاس"
 
 msgid "class object"
-msgstr ""
+msgstr "شیء کلاس"
 
 msgid "class instance"
-msgstr ""
+msgstr "نمونه کلاس"
 
 msgid "instance"
-msgstr ""
+msgstr "نمونه"
 
 msgid "__call__() (object method)"
-msgstr ""
+msgstr "__call__() (متد شیء)"
 
 msgid "power"
-msgstr ""
+msgstr "توان"
 
 msgid "operation"
-msgstr ""
+msgstr "عملیات"
 
 msgid "operator"
-msgstr ""
+msgstr "عملگر"
 
 msgid "unary"
-msgstr ""
+msgstr "یک‌عملوندی"
 
 msgid "bitwise"
-msgstr ""
+msgstr "بیت‌به‌بیت"
 
 msgid "negation"
-msgstr ""
+msgstr "نفی"
 
 msgid "minus"
-msgstr ""
+msgstr "منها"
 
 msgid "- (minus)"
-msgstr ""
+msgstr "- (منها)"
 
 msgid "unary operator"
-msgstr ""
+msgstr "عملگر یک‌عملوندی"
 
 msgid "plus"
-msgstr ""
+msgstr "به‌علاوه"
 
 msgid "+ (plus)"
-msgstr ""
+msgstr "+ (مثبت)"
 
 msgid "inversion"
-msgstr ""
+msgstr "وارونگی"
 
 msgid "~ (tilde)"
-msgstr ""
+msgstr "~ (تیلدا)"
 
 msgid "TypeError"
-msgstr ""
+msgstr "TypeError"
 
 msgid "binary"
-msgstr ""
+msgstr "دودویی"
 
 msgid "multiplication"
-msgstr ""
+msgstr "ضرب"
 
 msgid "matrix multiplication"
-msgstr ""
+msgstr "ضرب ماتریس‌ها"
 
 msgid "@ (at)"
-msgstr ""
+msgstr "@ (در)"
 
 msgid "ZeroDivisionError"
-msgstr ""
+msgstr "ZeroDivisionError"
 
 msgid "division"
-msgstr ""
+msgstr "تقسیم"
 
 msgid "/ (slash)"
-msgstr ""
+msgstr "/ (اسلش)"
 
 msgid "//"
-msgstr ""
+msgstr "//"
 
 msgid "modulo"
-msgstr ""
+msgstr "پیمانه"
 
 msgid "% (percent)"
-msgstr ""
+msgstr "% (درصد)"
 
 msgid "addition"
-msgstr ""
+msgstr "جمع"
 
 msgid "binary operator"
-msgstr ""
+msgstr "عملگر دودویی"
 
 msgid "subtraction"
-msgstr ""
+msgstr "تفریق"
 
 msgid "shifting"
-msgstr ""
+msgstr "شیفت"
 
 msgid "<<"
-msgstr ""
+msgstr "<<"
 
 msgid ">>"
-msgstr ""
+msgstr ">>"
 
 msgid "ValueError"
-msgstr ""
+msgstr "ValueError"
 
 msgid "and"
-msgstr ""
+msgstr "و"
 
 msgid "& (ampersand)"
-msgstr ""
+msgstr "& (امپرسند)"
 
 msgid "xor"
-msgstr ""
+msgstr "یا انحصاری"
 
 msgid "exclusive"
-msgstr ""
+msgstr "انحصاری"
 
 msgid "or"
-msgstr ""
+msgstr "یا"
 
 msgid "^ (caret)"
-msgstr ""
+msgstr "^ (کارت)"
 
 msgid "inclusive"
-msgstr ""
+msgstr "شامل"
 
 msgid "| (vertical bar)"
-msgstr ""
+msgstr "| (خط عمودی)"
 
 msgid "comparison"
-msgstr ""
+msgstr "مقایسه"
 
 msgid "C"
-msgstr ""
+msgstr "C"
 
 msgid "language"
-msgstr ""
+msgstr "زبان"
 
 msgid "< (less)"
-msgstr ""
+msgstr "< (کمتر)"
 
 msgid "> (greater)"
-msgstr ""
+msgstr "(بزرگ‌تر)"
 
 msgid "<="
-msgstr ""
+msgstr "<="
 
 msgid ">="
-msgstr ""
+msgstr ">="
 
 msgid "=="
-msgstr ""
+msgstr "=="
 
 msgid "!="
-msgstr ""
+msgstr "!="
 
 msgid "chaining"
-msgstr ""
+msgstr "زنجیره‌سازی"
 
 msgid "comparisons"
-msgstr ""
+msgstr "مقایسه‌ها"
 
 msgid "in"
-msgstr ""
+msgstr "در"
 
 msgid "not in"
-msgstr ""
+msgstr "not in"
 
 msgid "membership"
-msgstr ""
+msgstr "عضویت"
 
 msgid "test"
-msgstr ""
+msgstr "آزمون"
 
 msgid "is"
-msgstr ""
+msgstr "is"
 
 msgid "is not"
-msgstr ""
+msgstr "نیست"
 
 msgid "identity"
-msgstr ""
+msgstr "هویت"
 
 msgid "Conditional"
-msgstr ""
+msgstr "شرطی"
 
 msgid "Boolean"
-msgstr ""
+msgstr "بولی"
 
 msgid "not"
-msgstr ""
+msgstr "نه"
 
 msgid ":= (colon equals)"
-msgstr ""
+msgstr ":= (دونقطه مساوی)"
 
 msgid "assignment expression"
-msgstr ""
+msgstr "عبارت انتساب"
 
 msgid "walrus operator"
-msgstr ""
+msgstr "عملگر والروس (walrus operator)"
 
 msgid "named expression"
-msgstr ""
+msgstr "عبارت نام‌دار"
 
 msgid "assignment"
-msgstr ""
+msgstr "انتساب"
 
 msgid "conditional"
-msgstr ""
+msgstr "condition"
 
 msgid "ternary"
-msgstr ""
+msgstr "سه‌تایی"
 
 msgid "conditional expression"
-msgstr ""
+msgstr "عبارت شرطی"
 
 msgid "else"
-msgstr ""
+msgstr "در غیر این صورت"
 
 msgid "lambda"
-msgstr ""
+msgstr "لامبدا"
 
 msgid "form"
-msgstr ""
+msgstr "فرم"
 
 msgid "anonymous"
-msgstr ""
+msgstr "ناشناس"
 
 msgid "lambda expression"
-msgstr ""
+msgstr "عبارت lambda"
 
 msgid "iterable"
-msgstr ""
+msgstr "پیمایش‌پذیر"
 
 msgid "in expression lists"
-msgstr ""
+msgstr "در فهرست‌های عبارت"
 
 msgid "trailing"
-msgstr ""
+msgstr "پایانی"
 
 msgid "evaluation"
-msgstr ""
+msgstr "ارزیابی"
 
 msgid "order"
-msgstr ""
+msgstr "ترتیب"
 
 msgid "precedence"
-msgstr ""
+msgstr "اولویت"

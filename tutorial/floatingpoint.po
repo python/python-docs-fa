@@ -60,7 +60,7 @@ msgid "Stop at any finite number of bits, and you get an approximation.  On most
 msgstr "اگر در هر تعداد محدود بیت متوقف شوید، یک مقدار تقریبی به دست می‌آورید. در بیشتر ماشین‌های امروزی، اعداد ممیز شناور با استفاده از یک کسر دودویی تقریبی نمایش داده می‌شوند که صورت آن از ۵۳ بیت اول، از مهم‌ترین بیت شروع‌شده، تشکیل شده و مخرج آن توانی از ۲ است. در مورد 1/10، کسر دودویی برابر با ``3602879701896397 / 2 ** 55`` است که به مقدار واقعی 1/10 نزدیک است، اما دقیقاً برابر آن نیست."
 
 msgid "Many users are not aware of the approximation because of the way values are displayed.  Python only prints a decimal approximation to the true decimal value of the binary approximation stored by the machine.  On most machines, if Python were to print the true decimal value of the binary approximation stored for 0.1, it would have to display::"
-msgstr "بسیاری از کاربران به دلیل نحوهٔ نمایش مقادیر، از این تقریب آگاه نیستند. پایتون تنها یک تقریب ده‌دهی از مقدار ده‌دهی واقعیِ مقدار دودویی ذخیره‌شده در ماشین را چاپ می‌کند. در بیشتر ماشین‌ها، اگر پایتون مقدار ده‌دهی واقعیِ تقریب دودویی ذخیره‌شده برای 0.1 را چاپ می‌کرد، مجبور بود مقدار زیر را نمایش دهد::"
+msgstr "بسیاری از کاربران به دلیل نحوه‌ی نمایش مقادیر، از این تقریب آگاه نیستند. پایتون تنها یک تقریب ده‌دهی از مقدار ده‌دهی واقعیِ مقدار دودویی ذخیره‌شده در ماشین را چاپ می‌کند. در بیشتر ماشین‌ها، اگر پایتون مقدار ده‌دهی واقعیِ تقریب دودویی ذخیره‌شده برای 0.1 را چاپ می‌کرد، مجبور بود مقدار زیر را نمایش دهد::"
 
 msgid ""
 ">>> 0.1\n"
@@ -80,16 +80,16 @@ msgstr ""
 "0.1"
 
 msgid "Just remember, even though the printed result looks like the exact value of 1/10, the actual stored value is the nearest representable binary fraction."
-msgstr "فقط به یاد داشته باشید که با وجود اینکه نتیجهٔ چاپ‌شده مانند مقدار دقیق 1/10 به نظر می‌رسد، مقدار واقعی ذخیره‌شده نزدیک‌ترین کسر دودویی قابل نمایش است."
+msgstr "فقط به یاد داشته باشید که با وجود اینکه نتیجه‌ی چاپ‌شده مانند مقدار دقیق 1/10 به نظر می‌رسد، مقدار واقعی ذخیره‌شده نزدیک‌ترین کسر دودویی قابل نمایش است."
 
 msgid "Interestingly, there are many different decimal numbers that share the same nearest approximate binary fraction.  For example, the numbers ``0.1`` and ``0.10000000000000001`` and ``0.1000000000000000055511151231257827021181583404541015625`` are all approximated by ``3602879701896397 / 2 ** 55``.  Since all of these decimal values share the same approximation, any one of them could be displayed while still preserving the invariant ``eval(repr(x)) == x``."
-msgstr "جالب است بدانید که چندین عدد ده‌دهی متفاوت می‌توانند همان نزدیک‌ترین کسر دودویی تقریبی را داشته باشند. برای مثال، اعداد ``0.1`` و ``0.10000000000000001`` و ``0.1000000000000000055511151231257827021181583404541015625`` همگی با ``3602879701896397 / 2 ** 55`` تقریب زده می‌شوند. از آنجا که همهٔ این مقادیر ده‌دهی یک تقریب یکسان دارند، هرکدام از آن‌ها می‌توانند نمایش داده شوند و همچنان شرط ثابت ``eval(repr(x)) == x`` برقرار بماند."
+msgstr "جالب است بدانید که چندین عدد ده‌دهی متفاوت می‌توانند همان نزدیک‌ترین کسر دودویی تقریبی را داشته باشند. برای مثال، اعداد ``0.1`` و ``0.10000000000000001`` و ``0.1000000000000000055511151231257827021181583404541015625`` همگی با ``3602879701896397 / 2 ** 55`` تقریب زده می‌شوند. از آنجا که همه‌ی این مقادیر ده‌دهی یک تقریب یکسان دارند، هرکدام از آن‌ها می‌توانند نمایش داده شوند و همچنان شرط ثابت ``eval(repr(x)) == x`` برقرار بماند."
 
 msgid "Historically, the Python prompt and built-in :func:`repr` function would choose the one with 17 significant digits, ``0.10000000000000001``.   Starting with Python 3.1, Python (on most systems) is now able to choose the shortest of these and simply display ``0.1``."
 msgstr "در گذشته، اعلان پایتون و تابع توکار :func:`repr` مقداری را با 17 رقم معنادار انتخاب می‌کردند: ``0.10000000000000001``. از پایتون 3.1 به بعد، پایتون (در بیشتر سیستم‌ها) قادر است کوتاه‌ترین مقدار از میان این نمایش‌ها را انتخاب کند و به‌سادگی ``0.1`` را نمایش دهد."
 
 msgid "Note that this is in the very nature of binary floating point: this is not a bug in Python, and it is not a bug in your code either.  You'll see the same kind of thing in all languages that support your hardware's floating-point arithmetic (although some languages may not *display* the difference by default, or in all output modes)."
-msgstr "توجه داشته باشید که این موضوع ذاتاً بخشی از ممیز شناور دودویی است: این یک باگ در پایتون نیست و در کد شما نیز اشکالی وجود ندارد. همین رفتار را در تمام زبان‌هایی که از محاسبات ممیز شناور سخت‌افزار شما پشتیبانی می‌کنند خواهید دید (اگرچه برخی زبان‌ها ممکن است این تفاوت را به‌صورت پیش‌فرض یا در همهٔ حالت‌های خروجی نمایش ندهند)."
+msgstr "توجه داشته باشید که این موضوع ذاتاً بخشی از ممیز شناور دودویی است: این یک باگ در پایتون نیست و در کد شما نیز اشکالی وجود ندارد. همین رفتار را در تمام زبان‌هایی که از محاسبات ممیز شناور سخت‌افزار شما پشتیبانی می‌کنند خواهید دید (اگرچه برخی زبان‌ها ممکن است این تفاوت را به‌صورت پیش‌فرض یا در همه‌ی حالت‌های خروجی نمایش ندهند)."
 
 msgid "For more pleasant output, you may wish to use string formatting to produce a limited number of significant digits:"
 msgstr "برای خروجی خواناتر، می‌توانید از قالب‌بندی رشته‌ها استفاده کنید تا تعداد محدودی رقم معنادار تولید شود:"
@@ -137,7 +137,7 @@ msgstr ""
 "False"
 
 msgid "Though the numbers cannot be made closer to their intended exact values, the :func:`math.isclose` function can be useful for comparing inexact values:"
-msgstr "اگرچه این اعداد نمی‌توانند به مقادیر دقیق موردنظرشان نزدیک‌تر شوند، تابع :func:`math.isclose` می‌تواند برای مقایسهٔ مقادیر تقریبی مفید باشد:"
+msgstr "اگرچه این اعداد نمی‌توانند به مقادیر دقیق موردنظرشان نزدیک‌تر شوند، تابع :func:`math.isclose` می‌تواند برای مقایسه‌ی مقادیر تقریبی مفید باشد:"
 
 msgid ""
 ">>> math.isclose(0.1 + 0.1 + 0.1, 0.3)\n"
@@ -147,7 +147,7 @@ msgstr ""
 "True"
 
 msgid "Alternatively, the :func:`round` function can be used to compare rough approximations:"
-msgstr "روش دیگر این است که برای مقایسهٔ تقریب‌های کلی از تابع :func:`round` استفاده کنید:"
+msgstr "روش دیگر این است که برای مقایسه‌ی تقریب‌های کلی از تابع :func:`round` استفاده کنید:"
 
 msgid ""
 ">>> round(math.pi, ndigits=2) == round(22 / 7, ndigits=2)\n"
@@ -157,10 +157,10 @@ msgstr ""
 "True"
 
 msgid "Binary floating-point arithmetic holds many surprises like this.  The problem with \"0.1\" is explained in precise detail below, in the \"Representation Error\" section.  See `Examples of Floating Point Problems <https://jvns.ca/blog/2023/01/13/examples-of-floating-point-problems/>`_ for a pleasant summary of how binary floating point works and the kinds of problems commonly encountered in practice.  Also see `The Perils of Floating Point <http://www.indowsway.com/floatingpoint.htm>`_ for a more complete account of other common surprises."
-msgstr "محاسبات ممیز شناور دودویی شگفتی‌های زیادی مانند این دارند. مشکل مربوط به \"0.1\" در ادامه، در بخش «خطای نمایش» با جزئیات دقیق توضیح داده شده است. همچنین `Examples of Floating Point Problems <https://jvns.ca/blog/2023/01/13/examples-of-floating-point-problems/>`_ را ببینید که خلاصه‌ای قابل‌فهم از نحوهٔ کار ممیز شناور دودویی و مشکلات رایج آن در عمل ارائه می‌دهد. برای توضیح کامل‌تر سایر شگفتی‌های رایج نیز `The Perils of Floating Point <http://www.indowsway.com/floatingpoint.htm>`_ را ببینید."
+msgstr "محاسبات ممیز شناور دودویی شگفتی‌های زیادی مانند این دارند. مشکل مربوط به \"0.1\" در ادامه، در بخش «خطای نمایش» با جزئیات دقیق توضیح داده شده است. همچنین `Examples of Floating Point Problems <https://jvns.ca/blog/2023/01/13/examples-of-floating-point-problems/>`_ را ببینید که خلاصه‌ای قابل‌فهم از نحوه‌ی کار ممیز شناور دودویی و مشکلات رایج آن در عمل ارائه می‌دهد. برای توضیح کامل‌تر سایر شگفتی‌های رایج نیز `The Perils of Floating Point <http://www.indowsway.com/floatingpoint.htm>`_ را ببینید."
 
 msgid "As that says near the end, \"there are no easy answers.\"  Still, don't be unduly wary of floating point!  The errors in Python float operations are inherited from the floating-point hardware, and on most machines are on the order of no more than 1 part in 2\\*\\*53 per operation.  That's more than adequate for most tasks, but you do need to keep in mind that it's not decimal arithmetic and that every float operation can suffer a new rounding error."
-msgstr "همان‌طور که در پایان آن توضیح داده شده است، «پاسخ‌ ساده‌ای وجود ندارد.» با این حال، نباید بیش از حد از اعداد ممیز شناور بترسید! خطاهای موجود در عملیات float پایتون از سخت‌افزار محاسبات ممیز شناور به ارث می‌رسند و در بیشتر ماشین‌ها برای هر عملیات، در حدود حداکثر ۱ واحد از هر 2**53 واحد هستند. این مقدار برای بیشتر کارها کاملاً کافی است، اما باید در نظر داشته باشید که این محاسبات، حساب ده‌دهی نیستند و هر عملیات ممیز شناور می‌تواند با یک خطای گرد کردن جدید همراه شود."
+msgstr "همان‌طور که در پایان آن توضیح داده شده است، «پاسخ ساده‌ای وجود ندارد.» با این حال، نباید بیش از حد از اعداد ممیز شناور بترسید! خطاهای موجود در عملیات float پایتون از سخت‌افزار محاسبات ممیز شناور به ارث می‌رسند و در بیشتر ماشین‌ها برای هر عملیات، در حدود حداکثر ۱ واحد از هر 2**53 واحد هستند. این مقدار برای بیشتر کارها کاملاً کافی است، اما باید در نظر داشته باشید که این محاسبات، حساب ده‌دهی نیستند و هر عملیات ممیز شناور می‌تواند با یک خطای گرد کردن جدید همراه شود."
 
 msgid "While pathological cases do exist, for most casual use of floating-point arithmetic you'll see the result you expect in the end if you simply round the display of your final results to the number of decimal digits you expect. :func:`str` usually suffices, and for finer control see the :meth:`str.format` method's format specifiers in :ref:`formatstrings`."
 msgstr "با وجود اینکه حالت‌های غیرعادی و مشکل‌زا وجود دارند، در بیشتر استفاده‌های معمول از محاسبات ممیز شناور، اگر نمایش نتایج نهایی خود را به تعداد ارقام اعشاری مورد انتظارتان گرد کنید، در نهایت نتیجه‌ای را که انتظار دارید مشاهده خواهید کرد. تابع :func:`str` معمولاً کافی است و برای کنترل دقیق‌تر، مشخص‌کننده‌های قالب‌بندی متد :meth:`str.format` را در :ref:`formatstrings` ببینید."
@@ -197,7 +197,7 @@ msgstr ""
 "True"
 
 msgid "The :meth:`float.hex` method expresses a float in hexadecimal (base 16), again giving the exact value stored by your computer:"
-msgstr "متد :meth:`float.hex` یک عدد ممیز شناور را به شکل هگزادسیمال (مبنای ۱۶) نمایش می‌دهد و دوباره مقدار دقیقی را که توسط کامپیوتر شما ذخیره شده است ارائه می‌کند:"
+msgstr "متد :meth:`float.hex` یک عدد ممیز شناور را به شکل مبنای شانزده نمایش می‌دهد و دوباره مقدار دقیقی را که توسط کامپیوتر شما ذخیره شده است ارائه می‌کند:"
 
 msgid ""
 ">>> x.hex()\n"
@@ -207,7 +207,7 @@ msgstr ""
 "'0x1.921f9f01b866ep+1'"
 
 msgid "This precise hexadecimal representation can be used to reconstruct the float value exactly:"
-msgstr "این نمایش دقیق هگزادسیمال می‌تواند برای بازسازی دقیق مقدار عدد ممیز شناور استفاده شود:"
+msgstr "این نمایش دقیق مبنای شانزده می‌تواند برای بازسازی دقیق مقدار عدد ممیز شناور استفاده شود:"
 
 msgid ""
 ">>> x == float.fromhex('0x1.921f9f01b866ep+1')\n"

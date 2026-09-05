@@ -25,301 +25,350 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "High-level API Index"
-msgstr ""
+msgstr "اندیس API سطح بالا"
 
 msgid "This page lists all high-level async/await enabled asyncio APIs."
 msgstr ""
+"این صفحه همه‌ی APIهای سطح بالای asyncio را که از ناهمگام/await پشتیبانی "
+"می‌کنند، فهرست می‌کند."
 
 msgid "Tasks"
-msgstr ""
+msgstr "وظایف"
 
-msgid "Utilities to run asyncio programs, create Tasks, and await on multiple things with timeouts."
+msgid ""
+"Utilities to run asyncio programs, create Tasks, and await on multiple "
+"things with timeouts."
 msgstr ""
+"ابزارهایی برای اجرای برنامه‌های asyncio، ایجاد Taskها، و await روی چندین "
+"چیز با مهلت‌های زمانی (timeouts)."
 
 msgid ":func:`run`"
-msgstr ""
+msgstr ":func:`run`"
 
 msgid "Create event loop, run a coroutine, close the loop."
-msgstr ""
+msgstr "ایجاد حلقه رویداد، اجرای یک هم‌روال، بستن حلقه."
 
 msgid ":class:`Runner`"
-msgstr ""
+msgstr ":class:`Runner`"
 
 msgid "A context manager that simplifies multiple async function calls."
-msgstr ""
+msgstr "مدیر زمینه‌ای که فراخوانی‌های متعدد تابع ناهمگام را ساده می‌کند."
 
 msgid ":class:`Task`"
-msgstr ""
+msgstr ":class:`Task`"
 
 msgid "Task object."
-msgstr ""
+msgstr "شیء Task."
 
 msgid ":class:`TaskGroup`"
-msgstr ""
+msgstr ":class:`TaskGroup`"
 
-msgid "A context manager that holds a group of tasks. Provides a convenient and reliable way to wait for all tasks in the group to finish."
+msgid ""
+"A context manager that holds a group of tasks. Provides a convenient and "
+"reliable way to wait for all tasks in the group to finish."
 msgstr ""
+"یک مدیریت‌کننده‌ی زمینه که گروهی از وظایف را نگه می‌دارد. راهی آسان و مطمئن "
+"برای منتظر ماندن تا پایان همه‌ی وظایف گروه فراهم می‌کند."
 
 msgid ":func:`create_task`"
-msgstr ""
+msgstr ":func:`create_task`"
 
 msgid "Start an asyncio Task, then returns it."
-msgstr ""
+msgstr "یک Task از asyncio را آغاز می‌کند و سپس آن را برمی‌گرداند."
 
 msgid ":func:`current_task`"
-msgstr ""
+msgstr ":func:`current_task`"
 
 msgid "Return the current Task."
-msgstr ""
+msgstr "Task جاری را برمی‌گرداند."
 
 msgid ":func:`all_tasks`"
-msgstr ""
+msgstr ":func:`all_tasks`"
 
 msgid "Return all tasks that are not yet finished for an event loop."
 msgstr ""
+"تمام تسک‌هایی را که هنوز برای یک حلقه رویداد تمام نشده‌اند، برمی‌گرداند."
 
 msgid "``await`` :func:`sleep`"
-msgstr ""
+msgstr "``await`` :func:`sleep`"
 
 msgid "Sleep for a number of seconds."
-msgstr ""
+msgstr "برای تعدادی ثانیه متوقف می‌شود."
 
 msgid "``await`` :func:`gather`"
-msgstr ""
+msgstr "``await`` :func:`gather`"
 
 msgid "Schedule and wait for things concurrently."
-msgstr ""
+msgstr "چیزها را زمان‌بندی کنید و به‌صورت همزمان منتظر آن‌ها بمانید."
 
 msgid "``await`` :func:`wait_for`"
-msgstr ""
+msgstr "``await`` :func:`wait_for`"
 
 msgid "Run with a timeout."
-msgstr ""
+msgstr "با یک محدودیت زمانی (timeout) اجرا کنید."
 
 msgid "``await`` :func:`shield`"
-msgstr ""
+msgstr "``await`` :func:`shield`"
 
 msgid "Shield from cancellation."
-msgstr ""
+msgstr "محافظت در برابر لغو."
 
 msgid "``await`` :func:`wait`"
-msgstr ""
+msgstr "``await`` :func:`wait`"
 
 msgid "Monitor for completion."
-msgstr ""
+msgstr "برای تکمیل، پایش کنید."
 
 msgid ":func:`timeout`"
-msgstr ""
+msgstr ":func:`timeout`"
 
 msgid "Run with a timeout. Useful in cases when ``wait_for`` is not suitable."
 msgstr ""
+"با یک مهلت زمانی اجرا می‌شود. در مواردی که ``wait_for`` مناسب نیست، مفید "
+"است."
 
 msgid ":func:`to_thread`"
-msgstr ""
+msgstr ":func:`to_thread`"
 
 msgid "Asynchronously run a function in a separate OS thread."
-msgstr ""
+msgstr "یک تابع را به‌صورت ناهمگام در یک نخ سیستم‌عاملی جداگانه اجرا کنید."
 
 msgid ":func:`run_coroutine_threadsafe`"
-msgstr ""
+msgstr ":func:`run_coroutine_threadsafe`"
 
 msgid "Schedule a coroutine from another OS thread."
-msgstr ""
+msgstr "یک هم‌روال را از یک نخ دیگر سیستم‌عامل زمان‌بندی کنید."
 
 msgid "``for in`` :func:`as_completed`"
-msgstr ""
+msgstr "``for in`` :func:`as_completed`"
 
 msgid "Monitor for completion with a ``for`` loop."
-msgstr ""
+msgstr "تکمیل را با یک حلقه ``for`` پایش کنید."
 
 msgid "Examples"
-msgstr ""
+msgstr "مثال‌ها"
 
-msgid ":ref:`Using asyncio.gather() to run things in parallel <asyncio_example_gather>`."
+msgid ""
+":ref:`Using asyncio.gather() to run things in parallel "
+"<asyncio_example_gather>`."
 msgstr ""
+":ref:`استفاده از asyncio.gather() برای اجرای موارد به‌صورت موازی "
+"<asyncio_example_gather>`."
 
-msgid ":ref:`Using asyncio.wait_for() to enforce a timeout <asyncio_example_waitfor>`."
+msgid ""
+":ref:`Using asyncio.wait_for() to enforce a timeout "
+"<asyncio_example_waitfor>`."
 msgstr ""
+":ref:`استفاده از asyncio.wait_for() برای اعمال مهلت "
+"<asyncio_example_waitfor>`."
 
 msgid ":ref:`Cancellation <asyncio_example_task_cancel>`."
-msgstr ""
+msgstr ":ref:`لغو <asyncio_example_task_cancel>`."
 
 msgid ":ref:`Using asyncio.sleep() <asyncio_example_sleep>`."
-msgstr ""
+msgstr ":ref:`استفاده از asyncio.sleep() <asyncio_example_sleep>`."
 
 msgid "See also the main :ref:`Tasks documentation page <coroutine>`."
 msgstr ""
+"همچنین صفحه‌ی مستندات اصلی :ref:`هم‌روال <coroutine>` را ببینید."
 
 msgid "Queues"
-msgstr ""
+msgstr "صف‌ها"
 
-msgid "Queues should be used to distribute work amongst multiple asyncio Tasks, implement connection pools, and pub/sub patterns."
+msgid ""
+"Queues should be used to distribute work amongst multiple asyncio Tasks, "
+"implement connection pools, and pub/sub patterns."
 msgstr ""
+"باید از صف‌ها برای توزیع کار بین چندین Task در asyncio، پیاده‌سازی استخرهای "
+"اتصال و الگوهای pub/sub استفاده شود."
 
 msgid ":class:`Queue`"
-msgstr ""
+msgstr ":class:`Queue`"
 
 msgid "A FIFO queue."
-msgstr ""
+msgstr "یک صف FIFO."
 
 msgid ":class:`PriorityQueue`"
-msgstr ""
+msgstr ":class:`PriorityQueue`"
 
 msgid "A priority queue."
-msgstr ""
+msgstr "یک صف اولویت‌دار."
 
 msgid ":class:`LifoQueue`"
-msgstr ""
+msgstr ":class:`LifoQueue`"
 
 msgid "A LIFO queue."
-msgstr ""
+msgstr "یک صف LIFO."
 
-msgid ":ref:`Using asyncio.Queue to distribute workload between several Tasks <asyncio_example_queue_dist>`."
+msgid ""
+":ref:`Using asyncio.Queue to distribute workload between several Tasks "
+"<asyncio_example_queue_dist>`."
 msgstr ""
+":ref:`استفاده از asyncio.Queue برای توزیع بار کاری بین چند Task "
+"<asyncio_example_queue_dist>`."
 
 msgid "See also the :ref:`Queues documentation page <asyncio-queues>`."
-msgstr ""
+msgstr "همچنین :ref:`صفحه‌ی مستندات صف‌ها <asyncio-queues>` را ببینید."
 
 msgid "Subprocesses"
-msgstr ""
+msgstr "زیرفرایندها"
 
 msgid "Utilities to spawn subprocesses and run shell commands."
-msgstr ""
+msgstr "ابزارهایی برای ایجاد زیرفرایندها و اجرای دستورات پوسته."
 
 msgid "``await`` :func:`create_subprocess_exec`"
-msgstr ""
+msgstr "``await`` :func:`create_subprocess_exec`"
 
 msgid "Create a subprocess."
-msgstr ""
+msgstr "ایجاد یک زیرفرایند."
 
 msgid "``await`` :func:`create_subprocess_shell`"
-msgstr ""
+msgstr "``await`` :func:`create_subprocess_shell`"
 
 msgid "Run a shell command."
-msgstr ""
+msgstr "یک فرمان پوسته را اجرا کنید."
 
 msgid ":ref:`Executing a shell command <asyncio_example_subprocess_shell>`."
-msgstr ""
+msgstr ":ref:`اجرای یک دستور پوسته <asyncio_example_subprocess_shell>`."
 
-msgid "See also the :ref:`subprocess APIs <asyncio-subprocess>` documentation."
+msgid ""
+"See also the :ref:`subprocess APIs <asyncio-subprocess>` documentation."
 msgstr ""
+"همچنین مستندات :ref:`APIهای subprocess <asyncio-subprocess>` را ببینید."
 
 msgid "Streams"
-msgstr ""
+msgstr "جریان‌ها"
 
 msgid "High-level APIs to work with network IO."
-msgstr ""
+msgstr "APIهای سطح بالا برای کار با ورودی/خروجی شبکه."
 
 msgid "``await`` :func:`open_connection`"
-msgstr ""
+msgstr "``await`` :func:`open_connection`"
 
 msgid "Establish a TCP connection."
-msgstr ""
+msgstr "برقراری یک اتصال TCP."
 
 msgid "``await`` :func:`open_unix_connection`"
-msgstr ""
+msgstr "``await`` :func:`open_unix_connection`"
 
 msgid "Establish a Unix socket connection."
-msgstr ""
+msgstr "برقراری اتصال سوکت یونیکس."
 
 msgid "``await`` :func:`start_server`"
-msgstr ""
+msgstr "``await`` :func:`start_server`"
 
 msgid "Start a TCP server."
-msgstr ""
+msgstr "یک سرور TCP را راه‌اندازی کنید."
 
 msgid "``await`` :func:`start_unix_server`"
-msgstr ""
+msgstr "``await`` :func:`start_unix_server`"
 
 msgid "Start a Unix socket server."
-msgstr ""
+msgstr "راه‌اندازی یک سرور سوکت یونیکس."
 
 msgid ":class:`StreamReader`"
-msgstr ""
+msgstr ":class:`StreamReader`"
 
 msgid "High-level async/await object to receive network data."
-msgstr ""
+msgstr "شیء سطح‌بالای async/await برای دریافت داده‌های شبکه."
 
 msgid ":class:`StreamWriter`"
-msgstr ""
+msgstr ":class:`StreamWriter`"
 
 msgid "High-level async/await object to send network data."
-msgstr ""
+msgstr "شیء سطح بالای ناهمگام/await برای ارسال داده‌های شبکه."
 
 msgid ":ref:`Example TCP client <asyncio_example_stream>`."
-msgstr ""
+msgstr ":ref:`نمونه کلاینت TCP <asyncio_example_stream>`."
 
 msgid "See also the :ref:`streams APIs <asyncio-streams>` documentation."
-msgstr ""
+msgstr "همچنین مستندات :ref:`APIهای streams <asyncio-streams>` را ببینید."
 
 msgid "Synchronization"
-msgstr ""
+msgstr "همگام‌سازی"
 
 msgid "Threading-like synchronization primitives that can be used in Tasks."
 msgstr ""
+"اولیه‌های همگام‌سازی مشابه threading که می‌توان از آن‌ها در Taskها استفاده "
+"کرد."
 
 msgid ":class:`Lock`"
-msgstr ""
+msgstr ":class:`Lock`"
 
 msgid "A mutex lock."
-msgstr ""
+msgstr "یک قفل انحصار متقابل (mutex)."
 
 msgid ":class:`Event`"
-msgstr ""
+msgstr ":class:`Event`"
 
 msgid "An event object."
-msgstr ""
+msgstr "یک شیء رویداد."
 
 msgid ":class:`Condition`"
-msgstr ""
+msgstr ":class:`Condition`"
 
 msgid "A condition object."
-msgstr ""
+msgstr "یک شیء شرطی."
 
 msgid ":class:`Semaphore`"
-msgstr ""
+msgstr ":class:`Semaphore`"
 
 msgid "A semaphore."
-msgstr ""
+msgstr "یک سمافور."
 
 msgid ":class:`BoundedSemaphore`"
-msgstr ""
+msgstr ":class:`BoundedSemaphore`"
 
 msgid "A bounded semaphore."
-msgstr ""
+msgstr "یک سمافور محدود."
 
 msgid ":class:`Barrier`"
-msgstr ""
+msgstr ":class:`Barrier`"
 
 msgid "A barrier object."
-msgstr ""
+msgstr "یک شیء سد."
 
 msgid ":ref:`Using asyncio.Event <asyncio_example_sync_event>`."
-msgstr ""
+msgstr ":ref:`استفاده از asyncio.Event <asyncio_example_sync_event>`."
 
 msgid ":ref:`Using asyncio.Barrier <asyncio_example_barrier>`."
-msgstr ""
+msgstr ":ref:`استفاده از asyncio.Barrier <asyncio_example_barrier>`."
 
-msgid "See also the documentation of asyncio :ref:`synchronization primitives <asyncio-sync>`."
+msgid ""
+"See also the documentation of asyncio :ref:`synchronization primitives "
+"<asyncio-sync>`."
 msgstr ""
+"همچنین مستندات asyncio برای :ref:`سازوکارهای همگام‌سازی <asyncio-sync>` را "
+"ببینید."
 
 msgid "Exceptions"
-msgstr ""
+msgstr "استثناها"
 
 msgid ":exc:`asyncio.CancelledError`"
-msgstr ""
+msgstr ":exc:`asyncio.CancelledError`"
 
 msgid "Raised when a Task is cancelled. See also :meth:`Task.cancel`."
 msgstr ""
+"هنگامی که یک Task لغو شود، پرتاب می‌شود. همچنین ببینید :meth:`Task.cancel`."
 
 msgid ":exc:`asyncio.BrokenBarrierError`"
-msgstr ""
+msgstr ":exc:`asyncio.BrokenBarrierError`"
 
 msgid "Raised when a Barrier is broken. See also :meth:`Barrier.wait`."
 msgstr ""
+"هنگامی که یک Barrier شکسته شود، پرتاب می‌شود. همچنین :meth:`Barrier.wait` را"
+" ببینید."
 
-msgid ":ref:`Handling CancelledError to run code on cancellation request <asyncio_example_task_cancel>`."
+msgid ""
+":ref:`Handling CancelledError to run code on cancellation request "
+"<asyncio_example_task_cancel>`."
 msgstr ""
+":ref:`مدیریت CancelledError برای اجرای کد در زمان درخواست لغو "
+"<asyncio_example_task_cancel>`."
 
-msgid "See also the full list of :ref:`asyncio-specific exceptions <asyncio-exceptions>`."
+msgid ""
+"See also the full list of :ref:`asyncio-specific exceptions <asyncio-"
+"exceptions>`."
 msgstr ""
+"همچنین فهرست کامل :ref:`استثناهای مخصوص asyncio <asyncio-exceptions>` را "
+"ببینید."

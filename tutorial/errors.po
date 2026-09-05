@@ -35,7 +35,7 @@ msgid "Syntax Errors"
 msgstr "خطاهای دستوری"
 
 msgid "Syntax errors, also known as parsing errors, are perhaps the most common kind of complaint you get while you are still learning Python::"
-msgstr "خطاهای دستوری، که به‌عنوان خطاهای تجزیه‌گر «parsing errors» نیز شناخته می‌شوند، شاید رایج‌ترین نوع خطاهایی باشند که هنگام یادگیری پایتون با آن‌ها مواجه می‌شوید::"
+msgstr "خطاهای دستوری، که به‌عنوان خطاهای پارسر «parsing errors» نیز شناخته می‌شوند، شاید رایج‌ترین نوع خطاهایی باشند که هنگام یادگیری پایتون با آن‌ها مواجه می‌شوید::"
 
 msgid ""
 ">>> while True print('Hello world')\n"
@@ -52,12 +52,12 @@ msgstr ""
 
 msgid "The parser repeats the offending line and displays little arrows pointing at the place where the error was detected.  Note that this is not always the place that needs to be fixed.  In the example, the error is detected at the function :func:`print`, since a colon (``':'``) is missing just before it."
 msgstr ""
-"تجزیه‌گر «parser» خط مشکل‌دار را تکرار می‌کند و فلش‌های کوچکی را نشان می‌دهد که به جایی اشاره دارند که خطا در آن شناسایی شده است.\n"
+"پارسر «parser» خط مشکل‌دار را تکرار می‌کند و فلش‌های کوچکی را نشان می‌دهد که به جایی اشاره دارند که خطا در آن شناسایی شده است.\n"
 "توجه داشته باشید که این همیشه همان جایی نیست که باید اصلاح شود.\n"
 "در این مثال، خطا در تابع :func:`print` شناسایی شده است، زیرا دو نقطه (``':'``) درست قبل از آن وجود ندارد."
 
 msgid "The file name (``<stdin>`` in our example) and line number are printed so you know where to look in case the input came from a file."
-msgstr "نام فایل (در مثال ما ``<stdin>``) و شماره خط چاپ می‌ شوند تا اگر ورودی از یک فایل آمده باشد، بدانید باید کجا را بررسی کنید."
+msgstr "نام فایل (در مثال ما ``<stdin>``) و شماره خط چاپ می شوند تا اگر ورودی از یک فایل آمده باشد، بدانید باید کجا را بررسی کنید."
 
 msgid "Exceptions"
 msgstr "استثنا ها"
@@ -105,10 +105,10 @@ msgstr ""
 "TypeError: can only concatenate str (not \"int\") to str"
 
 msgid "The last line of the error message indicates what happened. Exceptions come in different types, and the type is printed as part of the message: the types in the example are :exc:`ZeroDivisionError`, :exc:`NameError` and :exc:`TypeError`. The string printed as the exception type is the name of the built-in exception that occurred.  This is true for all built-in exceptions, but need not be true for user-defined exceptions (although it is a useful convention). Standard exception names are built-in identifiers (not reserved keywords)."
-msgstr "آخرین خط از پیام خطا نشان می دهد که چه اتفاقی افتاده است. استثناها دارای انواع مختلفی هستند و نوع آنها به‌عنوان بخشی از پیام چاپ می شود: انواع موجود در مثال عبارتند از :exc:`ZeroDivisionError`، :exc:`NameError` و :exc:`TypeError`. رشته ای که به‌عنوان نوع استثنا چاپ می شود، نام استثنای توکار است که رخ داده است. این موضوع برای تمام استثناهای توکار صدق می کند، اما برای استثناهای تعریف شده توسط کاربر لزوماً صحیح نیست (گرچه این یک قاعدهٔ مفید محسوب می‌شود). نام های استثنای استاندارد شناسه های توکار هستند (نه کلمات کلیدواژه‌ای رزرو شده)."
+msgstr "آخرین خط از پیام خطا نشان می دهد که چه اتفاقی افتاده است. استثناها دارای انواع مختلفی هستند و نوع آنها به‌عنوان بخشی از پیام چاپ می شود: انواع موجود در مثال عبارتند از :exc:`ZeroDivisionError`، :exc:`NameError` و :exc:`TypeError`. رشته ای که به‌عنوان نوع استثنا چاپ می شود، نام استثنای توکار است که رخ داده است. این موضوع برای تمام استثناهای توکار صدق می کند، اما برای استثناهای تعریف شده توسط کاربر لزوماً صحیح نیست (گرچه این یک قاعده‌ی مفید محسوب می‌شود). نام های استثنای استاندارد شناسه های توکار هستند (نه کلمات کلیدواژه‌ای رزرو شده)."
 
 msgid "The rest of the line provides detail based on the type of exception and what caused it."
-msgstr "بخش باقی‌ماندهٔ خط، جزئیاتی را بسته به نوع استثنا «exception» و علت وقوع آن ارائه می‌دهد."
+msgstr "بخش باقی‌مانده‌ی خط، جزئیاتی را بسته به نوع استثنا «exception» و علت وقوع آن ارائه می‌دهد."
 
 msgid "The preceding part of the error message shows the context where the exception occurred, in the form of a stack traceback. In general it contains a stack traceback listing source lines; however, it will not display lines read from standard input."
 msgstr "بخش قبلی پیام خطا، زمینه‌ای را نشان می‌دهد که در آن استثنا رخ داده است، به‌صورت یک ردگیری پشته «stack traceback». به‌طور کلی، این بخش شامل ردگیری پشته‌ای است که خطوطی از کد منبع را فهرست می‌کند؛ با این حال، خطوطی که از ورودی استاندارد «standard input» خوانده شده‌اند در آن نمایش داده نمی‌شوند."
@@ -152,10 +152,10 @@ msgid "If an exception occurs during execution of the :keyword:`try` clause, the
 msgstr "اگر در طول اجرای بخش :keyword:`try` استثنایی رخ دهد، بقیه آن بخش نادیده گرفته می‌شود. سپس، اگر نوع استثنا با استثنایی که بعد از کلیدواژه :keyword:`except` آمده مطابقت داشته باشد، *بخش except* اجرا می‌شود و پس از آن اجرای برنامه بعد از بلوک try/except ادامه می‌یابد."
 
 msgid "If an exception occurs which does not match the exception named in the *except clause*, it is passed on to outer :keyword:`try` statements; if no handler is found, it is an *unhandled exception* and execution stops with an error message."
-msgstr "اگر استثنایی رخ دهد که با استثنای نام‌برده‌شده در *بند except* مطابقت نداشته باشد، به دستورهای :keyword:`try` بیرونی منتقل می‌شود. اگر هیچ رسیدگی‌کننده‌ای (handler) پیدا نشود، آن استثنا یک *استثنای رسیدگی‌نشده* (unhandled exception) محسوب می‌شود و اجرای برنامه با نمایش یک پیام خطا متوقف خواهد شد."
+msgstr "اگر استثنایی رخ دهد که با استثنای نام‌برده‌شده در *بند except* مطابقت نداشته باشد، به دستورهای :keyword:`try` بیرونی منتقل می‌شود. اگر هیچ هندلرای (handler) پیدا نشود، آن استثنا یک *استثنای رسیدگی‌نشده* (unhandled exception) محسوب می‌شود و اجرای برنامه با نمایش یک پیام خطا متوقف خواهد شد."
 
 msgid "A :keyword:`try` statement may have more than one *except clause*, to specify handlers for different exceptions.  At most one handler will be executed. Handlers only handle exceptions that occur in the corresponding *try clause*, not in other handlers of the same :keyword:`!try` statement.  An *except clause* may name multiple exceptions, for example::"
-msgstr "یک دستور :keyword:`try` می‌تواند بیش از یک *بند except* داشته باشد تا برای استثناهای مختلف رسیدگی‌کننده‌های متفاوتی تعریف شود. در هر بار وقوع استثنا، حداکثر یکی از این رسیدگی‌کننده‌ها اجرا می‌شود. هر رسیدگی‌کننده فقط استثناهایی را مدیریت می‌کند که در *بخش try* متناظر با آن رخ داده‌اند، نه استثناهایی که در سایر رسیدگی‌کننده‌های همان دستور :keyword:`!try` ایجاد شوند. همچنین یک *بند except* می‌تواند چندین استثنا را مشخص کند، برای مثال::"
+msgstr "یک دستور :keyword:`try` می‌تواند بیش از یک *بند except* داشته باشد تا برای استثناهای مختلف هندلرهای متفاوتی تعریف شود. در هر بار وقوع استثنا، حداکثر یکی از این هندلرها اجرا می‌شود. هر هندلر فقط استثناهایی را مدیریت می‌کند که در *بخش try* متناظر با آن رخ داده‌اند، نه استثناهایی که در سایر هندلرهای همان دستور :keyword:`!try` ایجاد شوند. همچنین یک *بند except* می‌تواند چندین استثنا را مشخص کند، برای مثال::"
 
 msgid ""
 "... except RuntimeError, TypeError, NameError:\n"
@@ -165,7 +165,7 @@ msgstr ""
 "...     pass"
 
 msgid "A class in an :keyword:`except` clause matches exceptions which are instances of the class itself or one of its derived classes (but not the other way around --- an *except clause* listing a derived class does not match instances of its base classes). For example, the following code will print B, C, D in that order::"
-msgstr "کلاسی که در یک :keyword:`except` مشخص می‌شود، با استثناهایی مطابقت دارد که نمونه‌ای از همان کلاس یا یکی از زیرکلاس‌های آن باشند (اما برعکس آن صادق نیست؛ یعنی *بند except* که یک زیرکلاس را مشخص می‌کند، با نمونه‌های کلاس پایهٔ آن مطابقت نخواهد داشت). برای مثال، کد زیر به‌ترتیب `B`، `C` و `D` را چاپ می‌کند::"
+msgstr "کلاسی که در یک :keyword:`except` مشخص می‌شود، با استثناهایی مطابقت دارد که نمونه‌ای از همان کلاس یا یکی از زیرکلاس‌های آن باشند (اما برعکس آن صادق نیست؛ یعنی *بند except* که یک زیرکلاس را مشخص می‌کند، با نمونه‌های کلاس پایه‌ی آن مطابقت نخواهد داشت). برای مثال، کد زیر به‌ترتیب `B`، `C` و `D` را چاپ می‌کند::"
 
 msgid ""
 "class B(Exception):\n"
@@ -213,7 +213,7 @@ msgid "When an exception occurs, it may have associated values, also known as th
 msgstr "هنگامی که یک استثنا رخ می‌دهد، ممکن است مقادیر مرتبطی نیز همراه آن باشد که به آن‌ها *آرگومان‌های* استثنا گفته می‌شود. وجود و نوع این آرگومان‌ها به نوع استثنا بستگی دارد."
 
 msgid "The *except clause* may specify a variable after the exception name.  The variable is bound to the exception instance which typically has an ``args`` attribute that stores the arguments. For convenience, builtin exception types define :meth:`~object.__str__` to print all the arguments without explicitly accessing ``.args``.  ::"
-msgstr "*بند except* می‌تواند پس از نام استثنا، یک متغیر نیز مشخص کند. این متغیر به نمونهٔ استثنا (exception instance) نسبت داده می‌شود که معمولاً دارای ویژگی ``args`` برای ذخیرهٔ آرگومان‌های استثنا است. برای راحتی، انواع توکار استثنا متد :meth:`~object.__str__` را طوری تعریف کرده‌اند که بدون نیاز به دسترسی مستقیم به ``.args``، همهٔ آرگومان‌ها را چاپ کند.::"
+msgstr "*بند except* می‌تواند پس از نام استثنا، یک متغیر نیز مشخص کند. این متغیر به نمونه‌ی استثنا (exception instance) نسبت داده می‌شود که معمولاً دارای ویژگی ``args`` برای ذخیره‌ی آرگومان‌های استثنا است. برای راحتی، انواع توکار استثنا متد :meth:`~object.__str__` را طوری تعریف کرده‌اند که بدون نیاز به دسترسی مستقیم به ``.args``، همه‌ی آرگومان‌ها را چاپ کند.::"
 
 msgid ""
 ">>> try:\n"
@@ -254,10 +254,10 @@ msgid "The exception's :meth:`~object.__str__` output is printed as the last par
 msgstr "خروجی متد :meth:`~object.__str__` استثنا به‌عنوان آخرین بخش (بخش «جزئیات») پیام مربوط به استثناهای رسیدگی‌نشده چاپ می‌شود."
 
 msgid ":exc:`BaseException` is the common base class of all exceptions. One of its subclasses, :exc:`Exception`, is the base class of all the non-fatal exceptions. Exceptions which are not subclasses of :exc:`Exception` are not typically handled, because they are used to indicate that the program should terminate. They include :exc:`SystemExit` which is raised by :meth:`sys.exit` and :exc:`KeyboardInterrupt` which is raised when a user wishes to interrupt the program."
-msgstr ":exc:`BaseException` کلاس پایهٔ مشترک همهٔ استثناها است. یکی از زیرکلاس‌های آن، یعنی :exc:`Exception`، کلاس پایهٔ تمام استثناهای غیرمرگبار است. استثناهایی که زیرکلاس :exc:`Exception` نیستند معمولاً مدیریت نمی‌شوند، زیرا برای نشان دادن این موضوع به‌کار می‌روند که برنامه باید خاتمه یابد. از جملهٔ آن‌ها می‌توان به :exc:`SystemExit` که توسط :meth:`sys.exit` پرتاب می‌شود و :exc:`KeyboardInterrupt` که هنگام درخواست کاربر برای قطع اجرای برنامه پرتاب می‌شود، اشاره کرد."
+msgstr ":exc:`BaseException` کلاس پایه‌ی مشترک همه‌ی استثناها است. یکی از زیرکلاس‌های آن، یعنی :exc:`Exception`، کلاس پایه‌ی تمام استثناهای غیرمرگبار است. استثناهایی که زیرکلاس :exc:`Exception` نیستند معمولاً مدیریت نمی‌شوند، زیرا برای نشان دادن این موضوع به‌کار می‌روند که برنامه باید خاتمه یابد. از جمله‌ی آن‌ها می‌توان به :exc:`SystemExit` که توسط :meth:`sys.exit` پرتاب می‌شود و :exc:`KeyboardInterrupt` که هنگام درخواست کاربر برای قطع اجرای برنامه پرتاب می‌شود، اشاره کرد."
 
 msgid ":exc:`Exception` can be used as a wildcard that catches (almost) everything. However, it is good practice to be as specific as possible with the types of exceptions that we intend to handle, and to allow any unexpected exceptions to propagate on."
-msgstr ":exc:`Exception` را می‌توان به‌عنوان یک الگوی کلی (wildcard) برای گرفتن (تقریباً) همهٔ استثناها به‌کار برد. با این حال، بهتر است تا حد امکان نوع استثناهایی را که قصد مدیریت آن‌ها را داریم به‌طور دقیق مشخص کنیم و اجازه دهیم استثناهای غیرمنتظره به سطوح بالاتر منتقل شوند."
+msgstr ":exc:`Exception` را می‌توان به‌عنوان یک الگوی کلی (wildcard) برای گرفتن (تقریباً) همه‌ی استثناها به‌کار برد. با این حال، بهتر است تا حد امکان نوع استثناهایی را که قصد مدیریت آن‌ها را داریم به‌طور دقیق مشخص کنیم و اجازه دهیم استثناهای غیرمنتظره به سطوح بالاتر منتقل شوند."
 
 msgid "The most common pattern for handling :exc:`Exception` is to print or log the exception and then re-raise it (allowing a caller to handle the exception as well)::"
 msgstr "رایج‌ترین الگوی مدیریت :exc:`Exception` این است که ابتدا استثنا چاپ یا ثبت (log) شود و سپس دوباره پرتاب گردد تا فراخواننده نیز بتواند در صورت نیاز آن را مدیریت کند::"
@@ -292,7 +292,7 @@ msgstr ""
 "    raise"
 
 msgid "The :keyword:`try` ... :keyword:`except` statement has an optional *else clause*, which, when present, must follow all *except clauses*.  It is useful for code that must be executed if the *try clause* does not raise an exception. For example::"
-msgstr "دستور :keyword:`try` ... :keyword:`except` یک *بند else* اختیاری نیز دارد که در صورت وجود، باید پس از همهٔ *بندهای except* قرار گیرد. این بند برای کدی مفید است که تنها در صورتی باید اجرا شود که *بخش try* هیچ استثنایی پرتاب نکرده باشد. برای مثال::"
+msgstr "دستور :keyword:`try` ... :keyword:`except` یک *بند else* اختیاری نیز دارد که در صورت وجود، باید پس از همه‌ی *بندهای except* قرار گیرد. این بند برای کدی مفید است که تنها در صورتی باید اجرا شود که *بخش try* هیچ استثنایی پرتاب نکرده باشد. برای مثال::"
 
 msgid ""
 "for arg in sys.argv[1:]:\n"
@@ -317,7 +317,7 @@ msgid "The use of the :keyword:`!else` clause is better than adding additional c
 msgstr "استفاده از بند :keyword:`!else` بهتر از افزودن کد بیشتر به :keyword:`try` است، زیرا از این که به‌طور ناخواسته استثنایی که توسط کد محافظت‌شده با دستور :keyword:`!try` ... :keyword:`!except` پرتاب نشده است نیز گرفته شود، جلوگیری می‌کند."
 
 msgid "Exception handlers do not handle only exceptions that occur immediately in the *try clause*, but also those that occur inside functions that are called (even indirectly) in the *try clause*. For example::"
-msgstr "رسیدگی‌کننده‌های استثنا فقط استثناهایی را که مستقیماً در *بخش try* رخ می‌دهند مدیریت نمی‌کنند، بلکه استثناهایی را که درون توابعی که (حتی به‌طور غیرمستقیم) از *بخش try* فراخوانی شده‌اند نیز رخ می‌دهند، مدیریت می‌کنند. برای مثال::"
+msgstr "هندلرهای استثنا فقط استثناهایی را که مستقیماً در *بخش try* رخ می‌دهند مدیریت نمی‌کنند، بلکه استثناهایی را که درون توابعی که (حتی به‌طور غیرمستقیم) از *بخش try* فراخوانی شده‌اند نیز رخ می‌دهند، مدیریت می‌کنند. برای مثال::"
 
 msgid ""
 ">>> def this_fails():\n"
@@ -360,7 +360,7 @@ msgstr ""
 "NameError: HiThere"
 
 msgid "The sole argument to :keyword:`raise` indicates the exception to be raised. This must be either an exception instance or an exception class (a class that derives from :class:`BaseException`, such as :exc:`Exception` or one of its subclasses).  If an exception class is passed, it will be implicitly instantiated by calling its constructor with no arguments::"
-msgstr "تنها آرگومان دستور :keyword:`raise` مشخص می‌کند که چه استثنایی باید پرتاب شود. این آرگومان باید یا یک نمونهٔ استثنا (exception instance) باشد یا یک کلاس استثنا (کلاسی که از :class:`BaseException` مشتق شده باشد، مانند :exc:`Exception` یا یکی از زیرکلاس‌های آن). اگر یک کلاس استثنا ارسال شود، پایتون به‌طور ضمنی با فراخوانی سازندهٔ آن بدون هیچ آرگومانی، یک نمونه از آن ایجاد می‌کند::"
+msgstr "تنها آرگومان دستور :keyword:`raise` مشخص می‌کند که چه استثنایی باید پرتاب شود. این آرگومان باید یا یک نمونه‌ی استثنا (exception instance) باشد یا یک کلاس استثنا (کلاسی که از :class:`BaseException` مشتق شده باشد، مانند :exc:`Exception` یا یکی از زیرکلاس‌های آن). اگر یک کلاس استثنا ارسال شود، پایتون به‌طور ضمنی با فراخوانی سازنده‌ی آن بدون هیچ آرگومانی، یک نمونه از آن ایجاد می‌کند::"
 
 msgid "raise ValueError  # shorthand for 'raise ValueError()'"
 msgstr "raise ValueError  # کوتاه‌شده برای 'raise ValueError()'"
@@ -519,7 +519,7 @@ msgstr ""
 "RuntimeError"
 
 msgid "For more information about chaining mechanics, see :ref:`bltin-exceptions`."
-msgstr "برای اطلاعات بیشتر دربارهٔ سازوکار زنجیره‌سازی استثناها، به :ref:`bltin-exceptions` مراجعه کنید."
+msgstr "برای اطلاعات بیشتر درباره‌ی سازوکار زنجیره‌سازی استثناها، به :ref:`bltin-exceptions` مراجعه کنید."
 
 msgid "User-defined Exceptions"
 msgstr "استثناهای تعریف شده توسط کاربر"
@@ -528,10 +528,10 @@ msgid "Programs may name their own exceptions by creating a new exception class 
 msgstr "برنامه‌ها می‌توانند با ایجاد یک کلاس استثنای جدید، استثناهای اختصاصی خود را تعریف کنند (برای آشنایی بیشتر با کلاس‌های پایتون، به :ref:`tut-classes` مراجعه کنید). معمولاً استثناها باید، به‌صورت مستقیم یا غیرمستقیم، از کلاس :exc:`Exception` مشتق شوند."
 
 msgid "Exception classes can be defined which do anything any other class can do, but are usually kept simple, often only offering a number of attributes that allow information about the error to be extracted by handlers for the exception."
-msgstr "کلاس‌های استثنا می‌توانند هر کاری را انجام دهند که سایر کلاس‌ها قادر به انجام آن هستند، اما معمولاً ساده نگه داشته می‌شوند و اغلب تنها چند ویژگی (attribute) در اختیار می‌گذارند تا مدیریت‌کننده‌های استثنا بتوانند اطلاعات مربوط به خطا را از آن‌ها استخراج کنند."
+msgstr "کلاس‌های استثنا می‌توانند هر کاری را انجام دهند که سایر کلاس‌ها قادر به انجام آن هستند، اما معمولاً ساده نگه داشته می‌شوند و اغلب تنها چند ویژگی (attribute) در اختیار می‌گذارند تا هندلرهای استثنا بتوانند اطلاعات مربوط به خطا را از آن‌ها استخراج کنند."
 
 msgid "Most exceptions are defined with names that end in \"Error\", similar to the naming of the standard exceptions."
-msgstr "نام بیشتر استثناها به «Error» ختم می‌شود؛ مشابه شیوهٔ نام‌گذاری استثناهای استاندارد."
+msgstr "نام بیشتر استثناها به «Error» ختم می‌شود؛ مشابه شیوه‌ی نام‌گذاری استثناهای استاندارد."
 
 msgid "Many standard modules define their own exceptions to report errors that may occur in functions they define."
 msgstr "بسیاری از ماژول‌های استاندارد، استثناهای اختصاصی خود را برای گزارش خطاهایی که ممکن است در توابعشان رخ دهد تعریف می‌کنند."
@@ -575,13 +575,13 @@ msgid "An exception could occur during execution of an :keyword:`!except` or :ke
 msgstr "ممکن است هنگام اجرای بخش :keyword:`!except` یا :keyword:`!else` نیز استثنایی رخ دهد. در این حالت نیز، پس از اجرای بخش :keyword:`!finally`، استثنا دوباره پرتاب خواهد شد."
 
 msgid "If the :keyword:`!finally` clause executes a :keyword:`break`, :keyword:`continue` or :keyword:`return` statement, exceptions are not re-raised. This can be confusing and is therefore discouraged. From version 3.14 the compiler emits a :exc:`SyntaxWarning` for it (see :pep:`765`)."
-msgstr "اگر بخش :keyword:`!finally` شامل یکی از دستورات :keyword:`break`، :keyword:`continue` یا :keyword:`return` باشد، استثناها دوباره پرتاب نخواهند شد. این رفتار ممکن است باعث سردرگمی شود و به همین دلیل استفاده از آن توصیه نمی‌شود. از نسخهٔ ۳٫۱۴، کامپایلر برای این حالت یک :exc:`SyntaxWarning` صادر می‌کند (به :pep:`765` مراجعه کنید)."
+msgstr "اگر بخش :keyword:`!finally` شامل یکی از دستورات :keyword:`break`، :keyword:`continue` یا :keyword:`return` باشد، استثناها دوباره پرتاب نخواهند شد. این رفتار ممکن است باعث سردرگمی شود و به همین دلیل استفاده از آن توصیه نمی‌شود. از نسخه‌ی ۳٫۱۴، کامپایلر برای این حالت یک :exc:`SyntaxWarning` صادر می‌کند (به :pep:`765` مراجعه کنید)."
 
 msgid "If the :keyword:`!try` statement reaches a :keyword:`break`, :keyword:`continue` or :keyword:`return` statement, the :keyword:`!finally` clause will execute just prior to the :keyword:`!break`, :keyword:`!continue` or :keyword:`!return` statement's execution."
 msgstr "اگر دستور :keyword:`!try` به یکی از دستورات :keyword:`break`، :keyword:`continue` یا :keyword:`return` برسد، بخش :keyword:`!finally` درست پیش از اجرای دستور :keyword:`!break`، :keyword:`!continue` یا :keyword:`!return` اجرا خواهد شد."
 
 msgid "If a :keyword:`!finally` clause includes a :keyword:`!return` statement, the returned value will be the one from the :keyword:`!finally` clause's :keyword:`!return` statement, not the value from the :keyword:`!try` clause's :keyword:`!return` statement. This can be confusing and is therefore discouraged. From version 3.14 the compiler emits a :exc:`SyntaxWarning` for it (see :pep:`765`)."
-msgstr "اگر بخش :keyword:`!finally` شامل یک دستور :keyword:`!return` باشد، مقدار بازگشتی همان مقداری خواهد بود که در دستور :keyword:`!return` داخل بخش :keyword:`!finally` مشخص شده است، نه مقداری که در دستور :keyword:`!return` داخل بخش :keyword:`!try` تعیین شده بود. این رفتار ممکن است باعث سردرگمی شود و به همین دلیل استفاده از آن توصیه نمی‌شود. از نسخهٔ ۳٫۱۴، کامپایلر برای این حالت یک :exc:`SyntaxWarning` صادر می‌کند (به :pep:`765` مراجعه کنید)."
+msgstr "اگر بخش :keyword:`!finally` شامل یک دستور :keyword:`!return` باشد، مقدار بازگشتی همان مقداری خواهد بود که در دستور :keyword:`!return` داخل بخش :keyword:`!finally` مشخص شده است، نه مقداری که در دستور :keyword:`!return` داخل بخش :keyword:`!try` تعیین شده بود. این رفتار ممکن است باعث سردرگمی شود و به همین دلیل استفاده از آن توصیه نمی‌شود. از نسخه‌ی ۳٫۱۴، کامپایلر برای این حالت یک :exc:`SyntaxWarning` صادر می‌کند (به :pep:`765` مراجعه کنید)."
 
 msgid "For example::"
 msgstr "برای مثال::"
@@ -701,7 +701,7 @@ msgid "Raising and Handling Multiple Unrelated Exceptions"
 msgstr "پرتاب و مدیریت چندین استثنای نامربوط به هم"
 
 msgid "There are situations where it is necessary to report several exceptions that have occurred. This is often the case in concurrency frameworks, when several tasks may have failed in parallel, but there are also other use cases where it is desirable to continue execution and collect multiple errors rather than raise the first exception."
-msgstr "گاهی لازم است چندین استثنا که رخ داده‌اند به‌طور هم‌زمان گزارش شوند. این وضعیت معمولاً در چارچوب‌های هم‌روندی (concurrency) پیش می‌آید؛ جایی که ممکن است چندین وظیفه به‌طور موازی شکست بخورند. البته موارد دیگری نیز وجود دارد که در آن‌ها ترجیح داده می‌شود اجرای برنامه ادامه پیدا کند و چندین خطا جمع‌آوری شوند، به‌جای اینکه با اولین استثنا متوقف شود."
+msgstr "گاهی لازم است چندین استثنا که رخ داده‌اند به‌طور همزمان گزارش شوند. این وضعیت معمولاً در چارچوب‌های هم‌روندی (concurrency) پیش می‌آید؛ جایی که ممکن است چندین وظیفه به‌طور موازی شکست بخورند. البته موارد دیگری نیز وجود دارد که در آن‌ها ترجیح داده می‌شود اجرای برنامه ادامه پیدا کند و چندین خطا جمع‌آوری شوند، به‌جای اینکه با اولین استثنا متوقف شود."
 
 msgid "The builtin :exc:`ExceptionGroup` wraps a list of exception instances so that they can be raised together. It is an exception itself, so it can be caught like any other exception. ::"
 msgstr "استثنای توکار :exc:`ExceptionGroup` فهرستی از نمونه‌های استثنا را در خود نگه می‌دارد تا بتوان آن‌ها را به‌صورت گروهی پرتاب کرد. خود این کلاس نیز یک استثنا است، بنابراین مانند هر استثنای دیگری قابل مدیریت (catch) است.::"
@@ -758,7 +758,7 @@ msgstr ""
 ">>>"
 
 msgid "By using ``except*`` instead of ``except``, we can selectively handle only the exceptions in the group that match a certain type. In the following example, which shows a nested exception group, each ``except*`` clause extracts from the group exceptions of a certain type while letting all other exceptions propagate to other clauses and eventually to be reraised. ::"
-msgstr "با استفاده از ``except*`` به‌جای ``except``، می‌توان فقط استثناهای موجود در گروه را که با یک نوع مشخص مطابقت دارند، به‌صورت انتخابی مدیریت کرد. در مثال زیر که یک گروه استثنای تو‌در‌تو را نشان می‌دهد، هر بخش ``except*`` استثناهای هم‌نوع را از گروه استخراج می‌کند و سایر استثناها را برای رسیدگی توسط بخش‌های دیگر عبور می‌دهد تا در نهایت دوباره پرتاب شوند.::"
+msgstr "با استفاده از ``except*`` به‌جای ``except``، می‌توان فقط استثناهای موجود در گروه را که با یک نوع مشخص مطابقت دارند، به‌صورت انتخابی مدیریت کرد. در مثال زیر که یک گروه استثنای تودرتو را نشان می‌دهد، هر بخش ``except*`` استثناهای هم‌نوع را از گروه استخراج می‌کند و سایر استثناها را برای رسیدگی توسط بخش‌های دیگر عبور می‌دهد تا در نهایت دوباره پرتاب شوند.::"
 
 msgid ""
 ">>> def f():\n"
@@ -873,7 +873,7 @@ msgid "Enriching Exceptions with Notes"
 msgstr "افزودن یادداشت به استثناها"
 
 msgid "When an exception is created in order to be raised, it is usually initialized with information that describes the error that has occurred. There are cases where it is useful to add information after the exception was caught. For this purpose, exceptions have a method ``add_note(note)`` that accepts a string and adds it to the exception's notes list. The standard traceback rendering includes all notes, in the order they were added, after the exception. ::"
-msgstr "وقتی یک استثنا برای پرتاب شدن پرتاب می‌شود، معمولاً با اطلاعاتی مقداردهی اولیه می‌شود که خطای رخ‌داده را توصیف می‌کنند. بااین‌حال، گاهی مفید است که پس از مدیریت (catch) شدن استثنا نیز اطلاعات بیشتری به آن افزوده شود. برای این منظور، استثناها متدی به نام ``add_note(note)`` دارند که یک رشته را دریافت کرده و آن را به فهرست یادداشت‌های استثنا اضافه می‌کند. نمایش استاندارد traceback همهٔ این یادداشت‌ها را، به همان ترتیبی که اضافه شده‌اند، پس از اطلاعات استثنا نمایش می‌دهد.::"
+msgstr "وقتی یک استثنا برای پرتاب شدن پرتاب می‌شود، معمولاً با اطلاعاتی مقداردهی اولیه می‌شود که خطای رخ‌داده را توصیف می‌کنند. بااین‌حال، گاهی مفید است که پس از مدیریت (catch) شدن استثنا نیز اطلاعات بیشتری به آن افزوده شود. برای این منظور، استثناها متدی به نام ``add_note(note)`` دارند که یک رشته را دریافت کرده و آن را به فهرست یادداشت‌های استثنا اضافه می‌کند. نمایش استاندارد traceback همه‌ی این یادداشت‌ها را، به همان ترتیبی که اضافه شده‌اند، پس از اطلاعات استثنا نمایش می‌دهد.::"
 
 msgid ""
 ">>> try:\n"

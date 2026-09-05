@@ -2,102 +2,494 @@
 
 ما توی واژه‌نامه یه سری معادل فارسی برای کلمات و عبارت‌های تخصصی فهرست کردیم که باید موقع ترجمه به اونها پایبند بمونیم. همچنین بهتره که بعضی از کلمات/عبارات رو ترجمه نکنیم و براشون معادل فارسی درنظر نگیریم، درحالی که بعضی از اونها چندین معادل دارن که می‌تونیم برحسب شرایط به انتخاب خودمون استفاده کنیم. یکی از اهداف اصلی ما کامل کردن واژه‌نامه‌ست تا بتونیم فرایند ترجمه رو راحت‌تر کنیم و کیفیت ترجمه رو بالا ببریم، بنابراین اگر که معادل فارسی بهتری برای موارد زیر مدنظر دارید حتما اونها رو اصلاح کنید.
 
-> این واژه‌نامه با الهام از واژه‌نامه پروژهٔ ترجمه مستندات Vue.js به فارسی تهیه شده و از ساختار و توضیحات دقیق اون استفاده شده. با تشکر از مشارکت‌کنندگان این پروژه برای زحماتشون:
+> این واژه‌نامه با الهام از واژه‌نامه پروژه‌ی ترجمه مستندات Vue.js به فارسی تهیه شده و از ساختار و توضیحات دقیق اون استفاده شده. با تشکر از مشارکت‌کنندگان این پروژه برای زحماتشون:
 > https://github.com/vuejs-translations/docs-fa/blob/main/GLOSSARY.md
 
-| English            | فارسی                   |
-| ------------------ | ----------------------- |
-| accessibility      | دسترسی‌پذیری             |
-| API                | API                     |
-| argument           | آرگومان                 |
-| async              | ناهمگام، غیرهمگام       |
-| attribute          | ویژگی، صفت، شاخصه       |
-| await              | await                   |
-| boolean            | بولی                    |
-| built-in           | توکار، درونی، درون‌ساخته |
-| cache              | نهانگاه                 |
-| callback           | کال‌بک، فراخوانی بازگشتی |
-| character          | نویسه                   |
-| class              | کلاس                    |
-| command line       | خط فرمان                |
-| community          | کامیونیتی               |
-| component          | کامپوننت                |
-| context management | مدیریت زمینه            |
-| coroutine          | هم‌روال                  |
-| custom             | سفارشی، اختصاصی         |
-| debugging          | اشکال‌زدایی، دیباگ کردن  |
-| decoding           | کدگشایی                 |
-| decorator          | دکوراتور، آراینده       |
-| dependency         | وابستگی                 |
-| deprecated         | منسوخ، از رده خارج شده  |
-| dictionary         | دیکشنری                 |
-| directory          | پوشه                    |
-| DOM                | DOM                     |
-| duck-typing        | نوع‌دهی اردکی            |
-| ecosystem          | اکوسیستم                |
-| element            | المان، عنصر             |
-| encoding           | کدگذاری                 |
-| endpoint           | پایانه                  |
-| escape             | خنثی کردن               |
-| event              | رویداد                  |
-| exception          | استثنا                  |
-| expression         | عبارت                   |
-| f-string           | اف‌استرینگ               |
-| function           | تابع                    |
-| garbage collection | زباله‌روبی               |
-| generator          | تولیدگر                 |
-| generic function   | تابع عام، تابع عمومی    |
-| global             | سراسری                  |
-| hexadecimal        | مبنای شانزده            |
-| immortal           | نامیرا                  |
-| immutable          | تغییرناپذیر             |
-| import             | ایمپورت                 |
-| index              | اندیس، شماره            |
-| instance           | نمونه                   |
-| integer            | عدد صحیح                |
-| interface          | رابط                    |
-| interpreter        | مفسر                    |
-| item               | آیتم                    |
-| iterable           | تکرارپذیر               |
-| keyword            | کلیدواژه                |
-| keyword argument   | آرگومان کلیدواژه‌ای      |
-| list               | فهرست                   |
-| list comprehension | درک فهرستی              |
-| load               | بارگذاری                |
-| loader             | بارگذار                 |
-| local              | محلی                    |
-| loop               | حلقه                    |
-| metaclass          | فراکلاس                 |
-| method             | متد                     |
-| mock               | ماک                     |
-| module             | ماژول                   |
-| mutable            | تغییرپذیر               |
-| namespace          | نام‌فضا                  |
-| object             | شیء                     |
-| operator           | عملگر                   |
-| package            | بسته                    |
-| parallelism        | موازی‌سازی               |
-| parameter          | پارامتر                 |
-| positional         | جایگاهی                 |
-| property           | ویژگی، پراپرتی، خصوصیت  |
-| quotation          | علامت نقل‌قول            |
-| race               | رقابت                   |
-| raise              | پرتاب                   |
-| return             | بازگشت، برگرداندن       |
-| runtime            | ران‌تایم                 |
-| scope              | محدوده                  |
-| shadowing          | پوشاندن                 |
-| shell              | پوسته                   |
-| stack traceback    | ردگیری پشته             |
-| statement          | دستور                   |
-| string             | رشته                    |
-| syntactic sugar    | قند نحوی                |
-| syntax             | سینتکس، نحو             |
-| thread             | نخ                      |
-| tracking           | پیگیری                  |
-| type               | نوع، نوع داده، تایپ     |
-| unit test          | یونیت تست               |
-| unpacking          | واگشایی                 |
-| value              | مقدار                   |
-| variable           | متغیر                   |
-| wrapper            | پوششی، دربرگیرنده       |
+| English | فارسی |
+| --- | --- |
+| `__pycache__` | `__pycache__` |
+| ABC | کلاس پایه انتزاعی |
+| abstract base class | کلاس پایه انتزاعی |
+| accessibility | دسترسی‌پذیری |
+| action | اکشن، کنش |
+| anchor | لنگر |
+| annotate | حاشیه‌نویسی کردن |
+| annotation | حاشیه‌نویسی |
+| API | API |
+| argument | آرگومان |
+| ASCII | اسکی |
+| assertion | ادعا، شرط |
+| async | ناهمگام، غیرهمگام |
+| asynchronous context manager | مدیر زمینه ناهمگام |
+| asynchronous generator | تولیدگر ناهمگام |
+| asynchronous iterable | پیمایش‌پذیر ناهمگام |
+| asynchronous iterator | پیمایش‌گر ناهمگام |
+| attribute | ویژگی، صفت، شاخصه |
+| attribute reference | ارجاع به ویژگی |
+| audit | حسابرسی |
+| autospeccing | مشخصه‌گذاری خودکار |
+| availability | دسترس‌پذیری |
+| await | await |
+| awaitable | انتظارپذیر، awaitable |
+| backend | بک‌اند |
+| backreference | بازارجاع |
+| backslash | بک‌اسلش |
+| backspace | بک‌اسپیس، پس‌بر |
+| barrier | سد |
+| BDFL | BDFL (دیکتاتور خیرخواه مادام‌العمر) |
+| big-endian | بزرگ‌اندیان |
+| binary | دودویی |
+| binary file | پرونده دودویی |
+| bind | مقید کردن |
+| bitmap | بیت‌مپ |
+| bitmask | نقاب بیتی |
+| bitwise mask | نقاب بیتی |
+| blob | بلاب |
+| boilerplate | کد پیش‌ساخته، متن قالبی |
+| bom, byte-order mark | نشانگر ترتیب بایت |
+| boolean | بولی |
+| bootstrapping | بوت‌استرپینگ |
+| borrowed reference | ارجاع امانتی |
+| bot | بات |
+| bottom tee | tee پایین |
+| bounding box | جعبه‌ی محدودکننده |
+| bound | کران |
+| broadcast (network/event) | پخش |
+| broadcasting (array) | بسط‌دهی |
+| buffer | بافر |
+| built-in | توکار، درونی، درون‌ساخته |
+| by-name | نام‌محور |
+| bytecode | بایت‌کد |
+| bytes-like object | شیء شبه‌بایت |
+| CA | مرجع صدور گواهی |
+| cache | نهانگاه |
+| calendar | گاه‌شماری |
+| callable | فراخوانی‌پذیر |
+| callback | کال‌بک، فراخوانی بازگشتی |
+| canonical | کانونیکال |
+| capture pattern | الگوی ثبت‌کننده |
+| capturing group | گروه ثبت‌کننده |
+| cardinality | کاردینالیتی |
+| carriage return | بازگشت به ابتدای سطر |
+| cast | تبدیل نوع، قالب‌ریزی |
+| certification | گواهی‌سازی |
+| certificate   | گواهی     |
+| character | نویسه |
+| checkbutton | دکمه‌ی انتخابی |
+| checksum | جمع‌آزما |
+| chunked | بخش‌بندی‌شده |
+| cipher | رمز |
+| class | کلاس |
+| class method | متد کلاس |
+| class variable | متغیر کلاس |
+| classmethod | classmethod |
+| CLI | رابط خط فرمان، CLI |
+| clone | رونوشت |
+| closure | بستار |
+| code point | نقطه‌کد |
+| coercion | تبدیل ضمنی نوع |
+| collation | ترتیب‌گذاری |
+| column | ستون |
+| combobox | جعبه انتخاب |
+| command line | خط فرمان |
+| comment | کامنت |
+| commit (database transaction) | ثبت نهایی |
+| community | کامیونیتی |
+| compile | کامپایل |
+| compiled | کامپایل‌شده |
+| component | کامپوننت، جزء |
+| container | ظرف |
+| context | زمینه |
+| context management | مدیریت زمینه |
+| context manager | مدیر زمینه |
+| context variable | متغیر زمینه |
+| contiguous | پیوسته |
+| contravariant | پادوردا |
+| converter | مبدل |
+| converter function | تابع تبدیل‌کننده |
+| coroutine | هم‌روال |
+| covariant | هم‌وردا |
+| CPU-bound | محدود به CPU |
+| CPython | سی‌پایتون |
+| crash | فروپاشی |
+| CRL | فهرست لغو گواهی |
+| cursor | مکان‌نما |
+| cursor (database) | نشانگر |
+| custom | سفارشی، اختصاصی |
+| daemon | دِیمِن |
+| dataclass | دیتاکلاس |
+| debugging | اشکال‌زدایی، دیباگ کردن |
+| decoding | کدگشایی |
+| decompressor | واگشا |
+| decorator | دکوراتور، آراینده |
+| deferred reference counting | شمارش ارجاعِ معوق |
+| delegation | واگذاری |
+| delta | دلتا |
+| dependency | وابستگی |
+| dependency resolution | حل وابستگی |
+| deprecated | منسوخ، از رده خارج شده |
+| deque | صف دوطرفه |
+| descriptor | توصیف‌گر |
+| deserialization | سریال‌زدایی |
+| deserialize | سریال‌زدایی کردن |
+| deserializer | سریال‌زدا |
+| dialect | گویش |
+| dictionary | دیکشنری |
+| dictionary comprehension | درک دیکشنری |
+| dictionary view | نمای دیکشنری |
+| directive | دایرکتیو |
+| directory | پوشه |
+| disassemble | واسازی کردن |
+| disassembler | واساز |
+| dispatch table | جدول نگاشت |
+| docstring | رشته مستند |
+| DOM | DOM |
+| double (double precision) | ممیز شناور با دقت مضاعف |
+| drop-in | جایگزین مستقیم |
+| duck-typing | نوع‌دهی اردکی |
+| dump | برون‌ریزی |
+| EAFP | EAFP (بهتر است پوزش بخواهی تا اجازه) |
+| ecosystem | اکوسیستم |
+| element | المان، عنصر |
+| ellipsis | سه‌نقطه |
+| Ellipsis | Ellipsis |
+| encoding | کدگذاری |
+| endian | اندیان |
+| endianness | ترتیب بایت |
+| endpoint | پایانه |
+| entitlement | حق دسترسی |
+| entity | موجودیت |
+| enum | enum |
+| envelope | پاکت |
+| EOF | EOF، پایان پرونده |
+| epoch | مبدأ زمان |
+| escape | خنثی کردن، گریز |
+| event | رویداد |
+| exception | استثنا |
+| executor | اجراکننده |
+| expression | عبارت |
+| extended hex alphabet | الفبای مبنای شانزده‌ی توسعه‌یافته |
+| extension module | ماژول توسعه‌ای |
+| extension types | نوع‌های توسعه‌ای |
+| f-string | اف‌استرینگ |
+| facility | امکان، دسته گزارش |
+| factory function | تابع کارخانه‌ای |
+| fallback | جایگزین |
+| file object | شیء پرونده |
+| file-like object | شیء شبه‌پرونده |
+| filesystem encoding | کدگذاری فایل‌سیستم |
+| finalizer | نهایی‌ساز |
+| finder | یابنده |
+| fixture | ثابت آزمایشی |
+| flattening | تخت‌سازی |
+| float (type) | اعشاری |
+| float (value) | عدد اعشاری |
+| floating point (adj., representation) | ممیز شناور |
+| floating-point arithmetic | محاسبات ممیز شناور |
+| floating-point number | عدد ممیز شناور |
+| floor division | تقسیم کف |
+| folding | تا کردن |
+| fork | انشعاب، فورک |
+| form feed | تغذیه‌ی صفحه |
+| formatter | قالب‌بند |
+| forward reference | ارجاع پیشرو |
+| free threading | نخ‌بندی آزاد |
+| free variable | متغیر آزاد |
+| free-threaded | نخ‌آزاد |
+| function | تابع |
+| function annotation | حاشیه‌نویسی تابع |
+| futures | آینده‌نماها، فیوچرز |
+| garbage collection | زباله‌روبی |
+| generator | تولیدگر |
+| generator expression | عبارت تولیدگر |
+| generic | عام |
+| generic function | تابع عام، تابع عمومی |
+| generic type | نوع عام |
+| GIL | قفل مفسر سراسری |
+| global | سراسری، عمومی |
+| guard | نگهبان |
+| handshake | دست‌دهی |
+| handle | دسته |
+| handler | هندلر |
+| hash-based pyc | pyc مبتنی بر هش |
+| hashable | هش‌پذیر |
+| header | سرآیند |
+| heap | هیپ |
+| hex | مبنای شانزده |
+| hexadecimal | مبنای شانزده |
+| hook | قلاب |
+| howto | راهنمای عملی |
+| IDE | IDE, محیط توسعه یکپارچه |
+| idempotent | هم‌توان |
+| IDN | IDN، دامنه اینترنتی بین‌المللی |
+| immortal | نامیرا |
+| immutable | تغییرناپذیر |
+| import | ایمپورت |
+| import path | مسیر ایمپورت |
+| importing | ایمپورت کردن |
+| index | اندیس، شماره |
+| inode | آی‌نود |
+| instance | نمونه |
+| integer | عدد صحیح |
+| interactive | تعاملی |
+| interface | رابط |
+| interpolation | درون‌یابی |
+| interpreted | تفسیرشده |
+| interpreter | مفسر |
+| invariant | ناوردا |
+| IPC | ارتباط بین‌فرایندی |
+| item | آیتم |
+| iterable | پیمایش‌پذیر |
+| iterate | پیمایش کردن |
+| iteration | پیمایش |
+| iterator | پیمایش‌گر |
+| join | پیوستن، الحاق |
+| junction | اتصال |
+| key function | تابع کلید |
+| keybinding | کلیدبندی |
+| keyword | کلیدواژه |
+| keyword argument | آرگومان کلیدواژه‌ای |
+| lambda | لامبدا |
+| LBYL | LBYL (نگاه کن پیش از پریدن) |
+| line | سطر |
+| line feed | تغذیه‌ی سطر |
+| list | فهرست |
+| list comprehension | درک فهرستی |
+| literal | لفظی |
+| literals | مقادیر لفظی |
+| little-endian | کوچک‌اندیان |
+| load | بارگذاری |
+| loader | بارگذار |
+| local | محلی |
+| locale | locale |
+| logger | گزارش‌گیر |
+| logging | گزارش‌گیری |
+| long distance matcher | تطبیق‌گر فاصله بلند |
+| lookahead assertion | شرط پیش‌نگر |
+| lookbehind assertion | شرط پس‌نگر |
+| loop | حلقه |
+| magic method | متد ویژه |
+| manager | مدیر |
+| map | نگاشت |
+| mapped | نگاشت‌شده |
+| mapping | نگاشت |
+| marshal | مارشال‌کردن |
+| marshaling/marshalling | مارشالینگ |
+| mask | نقاب |
+| master (pty) | اصلی |
+| match finder | تطبیق‌یاب |
+| max-heap | هیپ بیشینه |
+| meta path finder | یابنده مسیر فرا |
+| metaclass | فراکلاس |
+| method | متد، روش |
+| method resolution order (MRO) | ترتیب حل متد |
+| min-heap | هیپ کمینه |
+| mix-in | میکس‌این |
+| mixed-in | افزوده‌شده، میکس‌این |
+| mock | ماک |
+| mode | حالت |
+| module | ماژول |
+| module spec | مشخصه ماژول |
+| monkey-patch | مانکی‌پچ |
+| mutable | تغییرپذیر |
+| mutex | قفل متقابل |
+| name resolution | حل نام |
+| named tuple | تاپل نام‌دار |
+| namespace | فضای نام |
+| namespace package | بسته فضای‌نام |
+| NaN | NaN |
+| nested scope | محدوده تودرتو |
+| no-op | عملیات بی‌اثر |
+| non-capturing group | گروه غیرثبت‌کننده |
+| notation | نمادگذاری، نماد |
+| nul | تهی |
+| object | شیء |
+| octet | هشت‌بیتی |
+| offset | آفست |
+| opcode | کدعمل |
+| operator | عملگر |
+| optimized scope | محدوده بهینه‌شده |
+| ordinal | ترتیبی |
+| overload | سربارگذاری |
+| overloaded | سربارگذاری‌شده |
+| package | بسته |
+| padding | پُرکننده، پدینگ |
+| pane | بخش |
+| parallelism | موازی‌سازی |
+| parameter | پارامتر |
+| parser | پارسر |
+| patch | وصل |
+| path entry | ورودی مسیر |
+| path entry finder | یابنده ورودی مسیر |
+| path entry hook | قلاب ورودی مسیر |
+| path-based finder | یابنده مبتنی بر مسیر |
+| path-like object | شیء شبه‌مسیر |
+| pathname | مسیرنام |
+| payload | بار |
+| PEP | PEP (پیشنهاد بهبود پایتون) |
+| persistence | ماندگاری |
+| persistent | پایا |
+| picklable | پیکل‌پذیر |
+| pickle | پیکل |
+| pickler | پیکل‌ساز |
+| pipe | پایپ |
+| placeholder | جای‌نگهدار |
+| poll | پایش |
+| polling | پایش |
+| portion | بخش |
+| positional | جایگاهی |
+| positional argument | آرگومان جایگاهی |
+| post-mortem debugging | اشکال‌زدایی پس از خاتمه |
+| precision | دقت |
+| predicate | محمول |
+| process | فرایند |
+| process-local | فرایندمحلی |
+| process-safe | فرایندایمن |
+| profiler | پروفایل‌گیر |
+| profiling | پروفایل‌گیری |
+| proleptic Gregorian | گاه‌شماری میلادی تعمیم‌یافته |
+| prompt | اعلان |
+| property | ویژگی، پراپرتی، خصوصیت |
+| protocol | پروتکل |
+| prototype | پیش‌نمونه |
+| provisional API | API آزمایشی |
+| proxy | پراکسی |
+| pseudo-terminal | شبه‌پایانه |
+| qualified | کامل |
+| qualified name | نام کامل |
+| qualifier | مشخص‌کننده |
+| quantifier | کمیت‌گذار |
+| quotation | علامت نقل‌قول |
+| quoted-printable | quoted-printable |
+| race | رقابت |
+| realm | قلمرو |
+| reentrancy | بازورودپذیری |
+| reentrant | بازورودپذیر |
+| refcount | شمارش ارجاع |
+| reference | ارجاع |
+| reference counting | شمارش ارجاع |
+| register | ثبت کردن |
+| registry | رجیستری |
+| regular expression/RE | عبارت باقاعده |
+| regular package | بسته معمولی |
+| REPL | REPL، پوسته تعاملی پایتون |
+| resolution | حل، وضوح |
+| resolve | حل کردن |
+| return | بازگشت، برگرداندن |
+| reverse solidus | اسلش معکوس |
+| rollback | بازگردانی |
+| rollover | چرخش |
+| row | ردیف |
+| run time, run-time | زمان اجرا |
+| runtime | ران‌تایم |
+| salt | نمک |
+| sandbox | سندباکس |
+| sash | نوار جداکننده |
+| scheme | طرح‌واره، طرح |
+| scope | محدوده |
+| seal | مهر و موم |
+| seed | بذر |
+| seek | مکان‌یابی کردن |
+| seeking | مکان‌یابی |
+| segmentation fault | خطای قطعه‌بندی (segmentation fault) |
+| sentinel | نشانگر |
+| sequence | دنباله |
+| serialization | سریال‌سازی |
+| set | مجموعه |
+| set comprehension | درک مجموعه |
+| shadowing | پوشاندن |
+| shelf | قفسه |
+| shell | پوسته |
+| signal | سیگنال |
+| single dispatch | ارسال تک‌گانه |
+| single precision | دقت منفرد |
+| singleton | تک‌نمونه |
+| slave (pty) | پیرو |
+| sleep | توقف |
+| slice | اسلایس |
+| slot | جایگاه |
+| snapshot | تصویر لحظه‌ای |
+| spec | مشخصات |
+| special method | متد ویژه |
+| spinbox | اسپین‌باکس |
+| stack traceback | ردگیری پشته |
+| state | وضعیت |
+| statement | دستور |
+| static method | متد ایستا |
+| staticmethod | staticmethod |
+| stipple | نقطه‌نگاری |
+| string | رشته |
+| stringifier | رشته‌ساز |
+| struct sequence | دنباله ساختاری |
+| stub | stub |
+| subnormal | زیرنرمال |
+| subscript | زیرنویس |
+| subscription | زیرنویسی |
+| suite | بدنه |
+| surrogate | جانشین |
+| symlink | پیوند نمادین |
+| syntactic sugar | قند نحوی |
+| syntax | سینتکس، نحو |
+| t-string | تی‌استرینگ |
+| task | وظیفه |
+| test | آزمون |
+| test fixture | ثابت آزمایشی |
+| text encoding | کدگذاری متن |
+| text file | پرونده متنی |
+| thread | نخ |
+| thread-local | نخ‌محلی |
+| thread-safe | نخ‌ایمن |
+| time tuple | تاپل زمانی |
+| timeout | مهلت زمانی |
+| titlecase | نگارش عنوان‌نویسی |
+| titlecased | عنوان‌نویسی‌شده |
+| TLS | TLS |
+| token | توکن |
+| tokenizer | توکن‌ساز |
+| trace | ردگیری |
+| tracking | پیگیری |
+| trampoline | ترامپولین |
+| transcode | بازکدگذاری کردن |
+| transcoding | بازکدگذاری |
+| transformer | تبدیل کننده |
+| Transport Layer Security | امنیت لایه انتقال |
+| trap (catch/intercept) | گرفتن، رهگیری کردن |
+| trap (decimal signal mechanism) | تله |
+| treeview | نمای درختی |
+| triple-quoted string | رشته سه‌نقل‌قولی |
+| turtle | turtle، لاک‌پشت |
+| type | نوع، نوع داده، تایپ |
+| type alias | مستعار نوع |
+| type hint | راهنمای نوع |
+| typeahead | پیش‌تایپ |
+| unary | یک‌عملوندی |
+| undo buffer | بافر لغو |
+| unhashable | هش‌ناپذیر |
+| unicode | یونیکد |
+| unit test | آزمون واحد |
+| universal | همگانی |
+| universal newlines | سطرهای جدید همگانی |
+| unmarshal | مارشال‌گشایی کردن |
+| unmarshaling | مارشال‌گشایی |
+| unpacking | واگشایی |
+| unpacking assignments | انتساب‌های واگشایی |
+| unpickle | پیکل‌گشایی |
+| UTC | UTC، زمان هماهنگ جهانی |
+| value | مقدار |
+| variable | متغیر |
+| variable annotation | حاشیه‌نویسی متغیر |
+| view | نما |
+| virtual environment | محیط مجازی |
+| walrus operator | عملگر گراز دریایی |
+| weak reference | ارجاع ضعیف |
+| wide | پهن |
+| widget | ابزارک |
+| wildcard | وایلدکارد |
+| wrap | پوشش دادن، دربرگرفتن |
+| wrapper | پوششی، دربرگیرنده |
+| write-back | بازنوشت |
+| write-through | نوشتن‌همزمان |
+| zero-padded | پرشده با صفر |
+| zero-padding | پدینگ صفر |
+| zero-width assertion | شرط با عرض صفر |
+| zip application | برنامه zip |

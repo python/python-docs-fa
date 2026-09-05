@@ -25,715 +25,843 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Low-level API Index"
-msgstr ""
+msgstr "اندیس API سطح پایین"
 
 msgid "This page lists all low-level asyncio APIs."
-msgstr ""
+msgstr "این صفحه همه‌ی APIهای سطح پایین asyncio را فهرست می‌کند."
 
 msgid "Obtaining the Event Loop"
-msgstr ""
+msgstr "به دست آوردن حلقه رویداد"
 
 msgid ":func:`asyncio.get_running_loop`"
-msgstr ""
+msgstr ":func:`asyncio.get_running_loop`"
 
 msgid "The **preferred** function to get the running event loop."
-msgstr ""
+msgstr "تابع **ارجح** برای دریافت حلقه رویداد در حال اجرا."
 
 msgid ":func:`asyncio.get_event_loop`"
-msgstr ""
+msgstr ":func:`asyncio.get_event_loop`"
 
-msgid "Get an event loop instance (running or current via the current policy)."
+msgid ""
+"Get an event loop instance (running or current via the current policy)."
 msgstr ""
+"نمونه‌ای از حلقه رویداد را دریافت کنید (در حال اجرا یا جاری از طریق سیاست "
+"جاری)."
 
 msgid ":func:`asyncio.set_event_loop`"
-msgstr ""
+msgstr ":func:`asyncio.set_event_loop`"
 
 msgid "Set the event loop as current via the current policy."
-msgstr ""
+msgstr "حلقه رویداد را از طریق سیاست جاری به‌عنوان حلقه جاری تنظیم کنید."
 
 msgid ":func:`asyncio.new_event_loop`"
-msgstr ""
+msgstr ":func:`asyncio.new_event_loop`"
 
 msgid "Create a new event loop."
-msgstr ""
+msgstr "یک حلقه رویداد جدید ایجاد کنید."
 
 msgid "Examples"
-msgstr ""
+msgstr "مثال‌ها"
 
 msgid ":ref:`Using asyncio.get_running_loop() <asyncio_example_future>`."
 msgstr ""
+":ref:`استفاده از asyncio.get_running_loop() <asyncio_example_future>`."
 
 msgid "Event Loop Methods"
-msgstr ""
+msgstr "متدهای حلقه رویداد"
 
-msgid "See also the main documentation section about the :ref:`asyncio-event-loop-methods`."
+msgid ""
+"See also the main documentation section about the :ref:`asyncio-event-loop-"
+"methods`."
 msgstr ""
+"همچنین بخش اصلی مستندات درباره :ref:`asyncio-event-loop-methods` را ببینید."
 
 msgid "Lifecycle"
-msgstr ""
+msgstr "چرخه حیات"
 
 msgid ":meth:`loop.run_until_complete`"
-msgstr ""
+msgstr ":meth:`loop.run_until_complete`"
 
 msgid "Run a Future/Task/awaitable until complete."
-msgstr ""
+msgstr "یک Future/Task/awaitable را تا کامل شدن اجرا کنید."
 
 msgid ":meth:`loop.run_forever`"
-msgstr ""
+msgstr ":meth:`loop.run_forever`"
 
 msgid "Run the event loop forever."
-msgstr ""
+msgstr "حلقه رویداد را برای همیشه اجرا می‌کند."
 
 msgid ":meth:`loop.stop`"
-msgstr ""
+msgstr ":meth:`loop.stop`"
 
 msgid "Stop the event loop."
-msgstr ""
+msgstr "حلقه رویداد را متوقف می‌کند."
 
 msgid ":meth:`loop.close`"
-msgstr ""
+msgstr ":meth:`loop.close`"
 
 msgid "Close the event loop."
-msgstr ""
+msgstr "حلقه رویداد را ببندید."
 
 msgid ":meth:`loop.is_running`"
-msgstr ""
+msgstr ":meth:`loop.is_running`"
 
 msgid "Return ``True`` if the event loop is running."
-msgstr ""
+msgstr "اگر حلقه رویداد در حال اجرا باشد، ``True`` را برمی‌گرداند."
 
 msgid ":meth:`loop.is_closed`"
-msgstr ""
+msgstr ":meth:`loop.is_closed`"
 
 msgid "Return ``True`` if the event loop is closed."
-msgstr ""
+msgstr "اگر حلقه رویداد بسته باشد، ``True`` را برمی‌گرداند."
 
 msgid "``await`` :meth:`loop.shutdown_asyncgens`"
-msgstr ""
+msgstr "``await`` :meth:`loop.shutdown_asyncgens`"
 
 msgid "Close asynchronous generators."
-msgstr ""
+msgstr "تولیدگرهای ناهمگام را ببندید."
 
 msgid "Debugging"
-msgstr ""
+msgstr "اشکال‌زدایی"
 
 msgid ":meth:`loop.set_debug`"
-msgstr ""
+msgstr ":meth:`loop.set_debug`"
 
 msgid "Enable or disable the debug mode."
-msgstr ""
+msgstr "فعال یا غیرفعال کردن حالت اشکال‌زدایی."
 
 msgid ":meth:`loop.get_debug`"
-msgstr ""
+msgstr ":meth:`loop.get_debug`"
 
 msgid "Get the current debug mode."
-msgstr ""
+msgstr "دریافت حالت اشکال‌زدایی فعلی."
 
 msgid "Scheduling Callbacks"
-msgstr ""
+msgstr "زمان‌بندی کال‌بک‌ها"
 
 msgid ":meth:`loop.call_soon`"
-msgstr ""
+msgstr ":meth:`loop.call_soon`"
 
 msgid "Invoke a callback soon."
-msgstr ""
+msgstr "یک کال‌بک را به‌زودی فراخوانی کنید."
 
 msgid ":meth:`loop.call_soon_threadsafe`"
-msgstr ""
+msgstr ":meth:`loop.call_soon_threadsafe`"
 
 msgid "A thread-safe variant of :meth:`loop.call_soon`."
-msgstr ""
+msgstr "گونه‌ای ایمن از نظر نخ‌ها (thread-safe) از :meth:`loop.call_soon`."
 
 msgid ":meth:`loop.call_later`"
-msgstr ""
+msgstr ":meth:`loop.call_later`"
 
 msgid "Invoke a callback *after* the given time."
-msgstr ""
+msgstr "یک کال‌بک را *پس از* زمان داده‌شده فراخوانی کنید."
 
 msgid ":meth:`loop.call_at`"
-msgstr ""
+msgstr ":meth:`loop.call_at`"
 
 msgid "Invoke a callback *at* the given time."
-msgstr ""
+msgstr "یک کال‌بک را *در* زمان داده‌شده فراخوانی کنید."
 
 msgid "Thread/Interpreter/Process Pool"
-msgstr ""
+msgstr "استخر نخ/مفسر/فرایند"
 
 msgid "``await`` :meth:`loop.run_in_executor`"
-msgstr ""
+msgstr "``await`` :meth:`loop.run_in_executor`"
 
-msgid "Run a CPU-bound or other blocking function in a :mod:`concurrent.futures` executor."
+msgid ""
+"Run a CPU-bound or other blocking function in a :mod:`concurrent.futures` "
+"executor."
 msgstr ""
+"یک تابع محدود به CPU یا یک تابع مسدودکننده دیگر را در یک اجراکننده "
+"(executor) از :mod:`concurrent.futures` اجرا کنید."
 
 msgid ":meth:`loop.set_default_executor`"
-msgstr ""
+msgstr ":meth:`loop.set_default_executor`"
 
 msgid "Set the default executor for :meth:`loop.run_in_executor`."
-msgstr ""
+msgstr "اجراکننده‌ی پیش‌فرض را برای :meth:`loop.run_in_executor` تنظیم کنید."
 
 msgid "Tasks and Futures"
-msgstr ""
+msgstr "وظایف و آینده‌نماها (Tasks and Futures)"
 
 msgid ":meth:`loop.create_future`"
-msgstr ""
+msgstr ":meth:`loop.create_future`"
 
 msgid "Create a :class:`Future` object."
-msgstr ""
+msgstr "یک شیء :class:`Future` ایجاد کنید."
 
 msgid ":meth:`loop.create_task`"
-msgstr ""
+msgstr ":meth:`loop.create_task`"
 
 msgid "Schedule coroutine as a :class:`Task`."
-msgstr ""
+msgstr "هم‌روال را به‌عنوان یک :class:`Task` زمان‌بندی کنید."
 
 msgid ":meth:`loop.set_task_factory`"
-msgstr ""
+msgstr ":meth:`loop.set_task_factory`"
 
-msgid "Set a factory used by :meth:`loop.create_task` to create :class:`Tasks <Task>`."
+msgid ""
+"Set a factory used by :meth:`loop.create_task` to create :class:`Tasks "
+"<Task>`."
 msgstr ""
+"کارخانه‌ای را تنظیم کنید که :meth:`loop.create_task` برای ایجاد "
+":class:`Tasks <Task>` از آن استفاده می‌کند."
 
 msgid ":meth:`loop.get_task_factory`"
-msgstr ""
+msgstr ":meth:`loop.get_task_factory`"
 
-msgid "Get the factory :meth:`loop.create_task` uses to create :class:`Tasks <Task>`."
+msgid ""
+"Get the factory :meth:`loop.create_task` uses to create :class:`Tasks "
+"<Task>`."
 msgstr ""
+"کارخانه‌ای را که :meth:`loop.create_task` برای ایجاد :class:`Tasks <Task>` "
+"استفاده می‌کند، دریافت کنید."
 
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 msgid "``await`` :meth:`loop.getaddrinfo`"
-msgstr ""
+msgstr "``await`` :meth:`loop.getaddrinfo`"
 
 msgid "Asynchronous version of :meth:`socket.getaddrinfo`."
-msgstr ""
+msgstr "نسخه‌ی ناهمگام از :meth:`socket.getaddrinfo`."
 
 msgid "``await`` :meth:`loop.getnameinfo`"
-msgstr ""
+msgstr "``await`` :meth:`loop.getnameinfo`"
 
 msgid "Asynchronous version of :meth:`socket.getnameinfo`."
-msgstr ""
+msgstr "نسخه‌ی ناهمگام :meth:`socket.getnameinfo`."
 
 msgid "Networking and IPC"
-msgstr ""
+msgstr "شبکه‌سازی و ارتباط بین‌فرایندی (IPC)"
 
 msgid "``await`` :meth:`loop.create_connection`"
-msgstr ""
+msgstr "``await`` :meth:`loop.create_connection`"
 
 msgid "Open a TCP connection."
-msgstr ""
+msgstr "یک اتصال TCP باز کنید."
 
 msgid "``await`` :meth:`loop.create_server`"
-msgstr ""
+msgstr "``await`` :meth:`loop.create_server`"
 
 msgid "Create a TCP server."
-msgstr ""
+msgstr "یک سرور TCP ایجاد کنید."
 
 msgid "``await`` :meth:`loop.create_unix_connection`"
-msgstr ""
+msgstr "``await`` :meth:`loop.create_unix_connection`"
 
 msgid "Open a Unix socket connection."
-msgstr ""
+msgstr "باز کردن یک اتصال سوکت یونیکس."
 
 msgid "``await`` :meth:`loop.create_unix_server`"
-msgstr ""
+msgstr "``await`` :meth:`loop.create_unix_server`"
 
 msgid "Create a Unix socket server."
-msgstr ""
+msgstr "یک سرور سوکت یونیکس ایجاد کنید."
 
 msgid "``await`` :meth:`loop.connect_accepted_socket`"
-msgstr ""
+msgstr "``await`` :meth:`loop.connect_accepted_socket`"
 
 msgid "Wrap a :class:`~socket.socket` into a ``(transport, protocol)`` pair."
 msgstr ""
+"یک :class:`~socket.socket` را در یک جفت ``(transport, protocol)`` قرار دهید."
 
 msgid "``await`` :meth:`loop.create_datagram_endpoint`"
-msgstr ""
+msgstr "``await`` :meth:`loop.create_datagram_endpoint`"
 
 msgid "Open a datagram (UDP) connection."
-msgstr ""
+msgstr "باز کردن یک اتصال دیتاگرام (UDP)."
 
 msgid "``await`` :meth:`loop.sendfile`"
-msgstr ""
+msgstr "``await`` :meth:`loop.sendfile`"
 
 msgid "Send a file over a transport."
-msgstr ""
+msgstr "ارسال یک فایل از طریق یک انتقال ."
 
 msgid "``await`` :meth:`loop.start_tls`"
-msgstr ""
+msgstr "``await`` :meth:`loop.start_tls`"
 
 msgid "Upgrade an existing connection to TLS."
-msgstr ""
+msgstr "ارتقای یک اتصال موجود به TLS."
 
 msgid "``await`` :meth:`loop.connect_read_pipe`"
-msgstr ""
+msgstr "``await`` :meth:`loop.connect_read_pipe`"
 
 msgid "Wrap a read end of a pipe into a ``(transport, protocol)`` pair."
 msgstr ""
+"انتهای خواندنی یک پایپ را در قالب یک جفت ``(transport, protocol)`` بپیچید."
 
 msgid "``await`` :meth:`loop.connect_write_pipe`"
-msgstr ""
+msgstr "``await`` :meth:`loop.connect_write_pipe`"
 
 msgid "Wrap a write end of a pipe into a ``(transport, protocol)`` pair."
 msgstr ""
+"انتهای نوشتنی یک پایپ را به‌صورت یک جفت ``(transport, protocol)`` درآورید."
 
 msgid "Sockets"
-msgstr ""
+msgstr "سوکت‌ها"
 
 msgid "``await`` :meth:`loop.sock_recv`"
-msgstr ""
+msgstr "``await`` :meth:`loop.sock_recv`"
 
 msgid "Receive data from the :class:`~socket.socket`."
-msgstr ""
+msgstr "داده را از :class:`~socket.socket` دریافت کنید."
 
 msgid "``await`` :meth:`loop.sock_recv_into`"
-msgstr ""
+msgstr "``await`` :meth:`loop.sock_recv_into`"
 
 msgid "Receive data from the :class:`~socket.socket` into a buffer."
-msgstr ""
+msgstr "داده را از :class:`~socket.socket` در یک بافر دریافت کنید."
 
 msgid "``await`` :meth:`loop.sock_recvfrom`"
-msgstr ""
+msgstr "``await`` :meth:`loop.sock_recvfrom`"
 
 msgid "Receive a datagram from the :class:`~socket.socket`."
-msgstr ""
+msgstr "یک دیتاگرام را از :class:`~socket.socket` دریافت کنید."
 
 msgid "``await`` :meth:`loop.sock_recvfrom_into`"
-msgstr ""
+msgstr "``await`` :meth:`loop.sock_recvfrom_into`"
 
 msgid "Receive a datagram from the :class:`~socket.socket` into a buffer."
-msgstr ""
+msgstr "یک دیتاگرام را از :class:`~socket.socket` در یک بافر دریافت کنید."
 
 msgid "``await`` :meth:`loop.sock_sendall`"
-msgstr ""
+msgstr "``await`` :meth:`loop.sock_sendall`"
 
 msgid "Send data to the :class:`~socket.socket`."
-msgstr ""
+msgstr "داده را به :class:`~socket.socket` ارسال کنید."
 
 msgid "``await`` :meth:`loop.sock_sendto`"
-msgstr ""
+msgstr "``await`` :meth:`loop.sock_sendto`"
 
 msgid "Send a datagram via the :class:`~socket.socket` to the given address."
 msgstr ""
+"یک دیتاگرام را از طریق :class:`~socket.socket` به نشانی داده‌شده ارسال کنید."
 
 msgid "``await`` :meth:`loop.sock_connect`"
-msgstr ""
+msgstr "``await`` :meth:`loop.sock_connect`"
 
 msgid "Connect the :class:`~socket.socket`."
-msgstr ""
+msgstr "اتصال :class:`~socket.socket`."
 
 msgid "``await`` :meth:`loop.sock_accept`"
-msgstr ""
+msgstr "``await`` :meth:`loop.sock_accept`"
 
 msgid "Accept a :class:`~socket.socket` connection."
-msgstr ""
+msgstr "یک اتصال :class:`~socket.socket` را می‌پذیرد."
 
 msgid "``await`` :meth:`loop.sock_sendfile`"
-msgstr ""
+msgstr "``await`` :meth:`loop.sock_sendfile`"
 
 msgid "Send a file over the :class:`~socket.socket`."
-msgstr ""
+msgstr "یک فایل را از طریق :class:`~socket.socket` ارسال کنید."
 
 msgid ":meth:`loop.add_reader`"
-msgstr ""
+msgstr ":meth:`loop.add_reader`"
 
 msgid "Start watching a file descriptor for read availability."
-msgstr ""
+msgstr "آغاز پایش یک توصیف‌گر فایل برای دسترس‌پذیری جهت خواندن."
 
 msgid ":meth:`loop.remove_reader`"
-msgstr ""
+msgstr ":meth:`loop.remove_reader`"
 
 msgid "Stop watching a file descriptor for read availability."
 msgstr ""
+"پایش یک توصیف‌گر فایل (file descriptor) را برای دسترس‌پذیری جهت خواندن "
+"متوقف کنید."
 
 msgid ":meth:`loop.add_writer`"
-msgstr ""
+msgstr ":meth:`loop.add_writer`"
 
 msgid "Start watching a file descriptor for write availability."
-msgstr ""
+msgstr "شروع به پایش یک توصیف‌گر فایل برای آمادگی نوشتن کنید."
 
 msgid ":meth:`loop.remove_writer`"
-msgstr ""
+msgstr ":meth:`loop.remove_writer`"
 
 msgid "Stop watching a file descriptor for write availability."
-msgstr ""
+msgstr "پایش یک توصیف‌گر فایل از نظر دسترس‌پذیری برای نوشتن را متوقف کنید."
 
 msgid "Unix Signals"
-msgstr ""
+msgstr "سیگنال‌های یونیکس"
 
 msgid ":meth:`loop.add_signal_handler`"
-msgstr ""
+msgstr ":meth:`loop.add_signal_handler`"
 
 msgid "Add a handler for a :mod:`signal`."
-msgstr ""
+msgstr "افزودن یک هندلر برای :mod:`signal`."
 
 msgid ":meth:`loop.remove_signal_handler`"
-msgstr ""
+msgstr ":meth:`loop.remove_signal_handler`"
 
 msgid "Remove a handler for a :mod:`signal`."
-msgstr ""
+msgstr "حذف یک هندلر برای :mod:`signal`."
 
 msgid "Subprocesses"
-msgstr ""
+msgstr "زیرفرایندها"
 
 msgid ":meth:`loop.subprocess_exec`"
-msgstr ""
+msgstr ":meth:`loop.subprocess_exec`"
 
 msgid "Spawn a subprocess."
-msgstr ""
+msgstr "راه‌اندازی یک زیرفرایند."
 
 msgid ":meth:`loop.subprocess_shell`"
-msgstr ""
+msgstr ":meth:`loop.subprocess_shell`"
 
 msgid "Spawn a subprocess from a shell command."
-msgstr ""
+msgstr "راه‌اندازی یک زیرفرایند از طریق یک دستور پوسته."
 
 msgid "Error Handling"
-msgstr ""
+msgstr "مدیریت خطا"
 
 msgid ":meth:`loop.call_exception_handler`"
-msgstr ""
+msgstr ":meth:`loop.call_exception_handler`"
 
 msgid "Call the exception handler."
-msgstr ""
+msgstr "مدیر استثنا را فراخوانی کنید."
 
 msgid ":meth:`loop.set_exception_handler`"
-msgstr ""
+msgstr ":meth:`loop.set_exception_handler`"
 
 msgid "Set a new exception handler."
-msgstr ""
+msgstr "یک هندلری جدید استثنا تنظیم کنید."
 
 msgid ":meth:`loop.get_exception_handler`"
-msgstr ""
+msgstr ":meth:`loop.get_exception_handler`"
 
 msgid "Get the current exception handler."
-msgstr ""
+msgstr "دریافت هندلر استثنای فعلی."
 
 msgid ":meth:`loop.default_exception_handler`"
-msgstr ""
+msgstr ":meth:`loop.default_exception_handler`"
 
 msgid "The default exception handler implementation."
-msgstr ""
+msgstr "پیاده‌سازی هندلر استثنای پیش‌فرض."
 
-msgid ":ref:`Using asyncio.new_event_loop() and loop.run_forever() <asyncio_example_lowlevel_helloworld>`."
+msgid ""
+":ref:`Using asyncio.new_event_loop() and loop.run_forever() "
+"<asyncio_example_lowlevel_helloworld>`."
 msgstr ""
+":ref:`استفاده از asyncio.new_event_loop() و loop.run_forever() "
+"<asyncio_example_lowlevel_helloworld>`."
 
 msgid ":ref:`Using loop.call_later() <asyncio_example_call_later>`."
-msgstr ""
+msgstr ":ref:`استفاده از loop.call_later() <asyncio_example_call_later>`."
 
-msgid "Using ``loop.create_connection()`` to implement :ref:`an echo-client <asyncio_example_tcp_echo_client_protocol>`."
+msgid ""
+"Using ``loop.create_connection()`` to implement :ref:`an echo-client "
+"<asyncio_example_tcp_echo_client_protocol>`."
 msgstr ""
+"استفاده از ``loop.create_connection()`` برای پیاده‌سازی :ref:`یک کلاینت اکو "
+"<asyncio_example_tcp_echo_client_protocol>`."
 
-msgid "Using ``loop.create_connection()`` to :ref:`connect a socket <asyncio_example_create_connection>`."
+msgid ""
+"Using ``loop.create_connection()`` to :ref:`connect a socket "
+"<asyncio_example_create_connection>`."
 msgstr ""
+"استفاده از ``loop.create_connection()`` برای :ref:`اتصال یک سوکت "
+"<asyncio_example_create_connection>`."
 
-msgid ":ref:`Using add_reader() to watch an FD for read events <asyncio_example_watch_fd>`."
+msgid ""
+":ref:`Using add_reader() to watch an FD for read events "
+"<asyncio_example_watch_fd>`."
 msgstr ""
+":ref:`استفاده از add_reader() برای پایش یک FD برای رویدادهای خواندن "
+"<asyncio_example_watch_fd>`."
 
 msgid ":ref:`Using loop.add_signal_handler() <asyncio_example_unix_signals>`."
 msgstr ""
+":ref:`استفاده از loop.add_signal_handler() <asyncio_example_unix_signals>`."
 
-msgid ":ref:`Using loop.subprocess_exec() <asyncio_example_subprocess_proto>`."
+msgid ""
+":ref:`Using loop.subprocess_exec() <asyncio_example_subprocess_proto>`."
 msgstr ""
+":ref:`استفاده از loop.subprocess_exec() <asyncio_example_subprocess_proto>`."
 
 msgid "Transports"
-msgstr ""
+msgstr "انتقال‌ها"
 
 msgid "All transports implement the following methods:"
-msgstr ""
+msgstr "تمام ترابری‌هامتدهای زیر را پیاده‌سازی می‌کنند:"
 
 msgid ":meth:`transport.close() <BaseTransport.close>`"
-msgstr ""
+msgstr ":meth:`transport.close() <BaseTransport.close>`"
 
 msgid "Close the transport."
-msgstr ""
+msgstr "انتقالرا ببندید."
 
 msgid ":meth:`transport.is_closing() <BaseTransport.is_closing>`"
-msgstr ""
+msgstr ":meth:`transport.is_closing() <BaseTransport.is_closing>`"
 
 msgid "Return ``True`` if the transport is closing or is closed."
 msgstr ""
+"اگر انتقالدر حال بسته شدن یا بسته باشد، ``True`` برمی‌گرداند."
 
 msgid ":meth:`transport.get_extra_info() <BaseTransport.get_extra_info>`"
-msgstr ""
+msgstr ":meth:`transport.get_extra_info() <BaseTransport.get_extra_info>`"
 
 msgid "Request for information about the transport."
-msgstr ""
+msgstr "درخواست اطلاعات درباره‌ی انتقال ."
 
 msgid ":meth:`transport.set_protocol() <BaseTransport.set_protocol>`"
-msgstr ""
+msgstr ":meth:`transport.set_protocol() <BaseTransport.set_protocol>`"
 
 msgid "Set a new protocol."
-msgstr ""
+msgstr "یک پروتکل جدید را تنظیم کنید."
 
 msgid ":meth:`transport.get_protocol() <BaseTransport.get_protocol>`"
-msgstr ""
+msgstr ":meth:`transport.get_protocol() <BaseTransport.get_protocol>`"
 
 msgid "Return the current protocol."
-msgstr ""
+msgstr "پروتکل جاری را برمی‌گرداند."
 
-msgid "Transports that can receive data (TCP and Unix connections, pipes, etc).  Returned from methods like :meth:`loop.create_connection`, :meth:`loop.create_unix_connection`, :meth:`loop.connect_read_pipe`, etc:"
+msgid ""
+"Transports that can receive data (TCP and Unix connections, pipes, etc).  "
+"Returned from methods like :meth:`loop.create_connection`, "
+":meth:`loop.create_unix_connection`, :meth:`loop.connect_read_pipe`, etc:"
 msgstr ""
+"انتقال‌دهنده‌هاییکه می‌توانند داده دریافت کنند (اتصال‌های TCP "
+"و Unix، پایپ‌ها و غیره). از متدهایی مانند :meth:`loop.create_connection`، "
+":meth:`loop.create_unix_connection`، :meth:`loop.connect_read_pipe` و غیره "
+"بازگشت داده می‌شوند:"
 
 msgid "Read Transports"
-msgstr ""
+msgstr "ترابردهای خواندنی"
 
 msgid ":meth:`transport.is_reading() <ReadTransport.is_reading>`"
-msgstr ""
+msgstr ":meth:`transport.is_reading() <ReadTransport.is_reading>`"
 
 msgid "Return ``True`` if the transport is receiving."
-msgstr ""
+msgstr "اگر انتقالدر حال دریافت باشد، ``True`` برمی‌گرداند."
 
 msgid ":meth:`transport.pause_reading() <ReadTransport.pause_reading>`"
-msgstr ""
+msgstr ":meth:`transport.pause_reading() <ReadTransport.pause_reading>`"
 
 msgid "Pause receiving."
-msgstr ""
+msgstr "دریافت را موقتاً متوقف کنید."
 
 msgid ":meth:`transport.resume_reading() <ReadTransport.resume_reading>`"
-msgstr ""
+msgstr ":meth:`transport.resume_reading() <ReadTransport.resume_reading>`"
 
 msgid "Resume receiving."
-msgstr ""
+msgstr "دریافت را از سر بگیرید."
 
-msgid "Transports that can Send data (TCP and Unix connections, pipes, etc).  Returned from methods like :meth:`loop.create_connection`, :meth:`loop.create_unix_connection`, :meth:`loop.connect_write_pipe`, etc:"
+msgid ""
+"Transports that can Send data (TCP and Unix connections, pipes, etc).  "
+"Returned from methods like :meth:`loop.create_connection`, "
+":meth:`loop.create_unix_connection`, :meth:`loop.connect_write_pipe`, etc:"
 msgstr ""
+"انتقال‌هایی که می‌توانند داده ارسال کنند (اتصالات TCP و Unix، پایپ‌ها و "
+"غیره). از متدهایی مانند :meth:`loop.create_connection`، "
+":meth:`loop.create_unix_connection`، :meth:`loop.connect_write_pipe` و غیره "
+"برگردانده می‌شوند:"
 
 msgid "Write Transports"
-msgstr ""
+msgstr "انتقال‌های نوشتن (Write Transports)"
 
 msgid ":meth:`transport.write() <WriteTransport.write>`"
-msgstr ""
+msgstr ":meth:`transport.write() <WriteTransport.write>`"
 
 msgid "Write data to the transport."
-msgstr ""
+msgstr "داده‌ها را در انتقالبنویسید."
 
 msgid ":meth:`transport.writelines() <WriteTransport.writelines>`"
-msgstr ""
+msgstr ":meth:`transport.writelines() <WriteTransport.writelines>`"
 
 msgid "Write buffers to the transport."
-msgstr ""
+msgstr "بافرها را به انتقال بنویسید."
 
 msgid ":meth:`transport.can_write_eof() <WriteTransport.can_write_eof>`"
-msgstr ""
+msgstr ":meth:`transport.can_write_eof() <WriteTransport.can_write_eof>`"
 
 msgid "Return :const:`True` if the transport supports sending EOF."
 msgstr ""
+"اگر انتقالاز ارسال EOF پشتیبانی کند، :const:`True` را "
+"برمی‌گرداند."
 
 msgid ":meth:`transport.write_eof() <WriteTransport.write_eof>`"
-msgstr ""
+msgstr ":meth:`transport.write_eof() <WriteTransport.write_eof>`"
 
 msgid "Close and send EOF after flushing buffered data."
-msgstr ""
+msgstr "بستن و ارسال EOF پس از تخلیه‌ی داده‌های بافرشده."
 
 msgid ":meth:`transport.abort() <WriteTransport.abort>`"
-msgstr ""
+msgstr ":meth:`transport.abort() <WriteTransport.abort>`"
 
 msgid "Close the transport immediately."
-msgstr ""
+msgstr "انتقالرا بلافاصله ببندید."
 
-msgid ":meth:`transport.get_write_buffer_size() <WriteTransport.get_write_buffer_size>`"
+msgid ""
+":meth:`transport.get_write_buffer_size() "
+"<WriteTransport.get_write_buffer_size>`"
 msgstr ""
+":meth:`transport.get_write_buffer_size() "
+"<WriteTransport.get_write_buffer_size>`"
 
 msgid "Return the current size of the output buffer."
-msgstr ""
+msgstr "اندازه‌ی فعلی بافر خروجی را برمی‌گرداند."
 
-msgid ":meth:`transport.get_write_buffer_limits() <WriteTransport.get_write_buffer_limits>`"
+msgid ""
+":meth:`transport.get_write_buffer_limits() "
+"<WriteTransport.get_write_buffer_limits>`"
 msgstr ""
+":meth:`transport.get_write_buffer_limits() "
+"<WriteTransport.get_write_buffer_limits>`"
 
 msgid "Return high and low water marks for write flow control."
 msgstr ""
+"حد آستانه‌های بالا و پایین (high and low water marks) برای کنترل جریان نوشتن"
+" را برمی‌گرداند."
 
-msgid ":meth:`transport.set_write_buffer_limits() <WriteTransport.set_write_buffer_limits>`"
+msgid ""
+":meth:`transport.set_write_buffer_limits() "
+"<WriteTransport.set_write_buffer_limits>`"
 msgstr ""
+":meth:`transport.set_write_buffer_limits() "
+"<WriteTransport.set_write_buffer_limits>`"
 
 msgid "Set new high and low water marks for write flow control."
-msgstr ""
+msgstr "آستانه‌های بالا و پایین جدید را برای کنترل جریان نوشتن تنظیم کنید."
 
 msgid "Transports returned by :meth:`loop.create_datagram_endpoint`:"
 msgstr ""
+"انتقال‌هایبرگردانده‌شده توسط "
+":meth:`loop.create_datagram_endpoint`:"
 
 msgid "Datagram Transports"
-msgstr ""
+msgstr "انتقال‌های دیتاگرام (Datagram Transports)"
 
 msgid ":meth:`transport.sendto() <DatagramTransport.sendto>`"
-msgstr ""
+msgstr ":meth:`transport.sendto() <DatagramTransport.sendto>`"
 
 msgid "Send data to the remote peer."
-msgstr ""
+msgstr "داده‌ها را به همتای راه‌دور ارسال کنید."
 
 msgid ":meth:`transport.abort() <DatagramTransport.abort>`"
-msgstr ""
+msgstr ":meth:`transport.abort() <DatagramTransport.abort>`"
 
-msgid "Low-level transport abstraction over subprocesses. Returned by :meth:`loop.subprocess_exec` and :meth:`loop.subprocess_shell`:"
+msgid ""
+"Low-level transport abstraction over subprocesses. Returned by "
+":meth:`loop.subprocess_exec` and :meth:`loop.subprocess_shell`:"
 msgstr ""
+"انتزاع انتقالسطح پایین بر روی زیرفرایندها. توسط "
+":meth:`loop.subprocess_exec` و :meth:`loop.subprocess_shell` برگردانده "
+"می‌شود:"
 
 msgid "Subprocess Transports"
-msgstr ""
+msgstr "ترابری‌های زیرفرآیند"
 
 msgid ":meth:`transport.get_pid() <SubprocessTransport.get_pid>`"
-msgstr ""
+msgstr ":meth:`transport.get_pid() <SubprocessTransport.get_pid>`"
 
 msgid "Return the subprocess process id."
-msgstr ""
+msgstr "شناسه‌ی فرایند زیرفرایند را بازمی‌گرداند."
 
-msgid ":meth:`transport.get_pipe_transport() <SubprocessTransport.get_pipe_transport>`"
+msgid ""
+":meth:`transport.get_pipe_transport() "
+"<SubprocessTransport.get_pipe_transport>`"
 msgstr ""
+":meth:`transport.get_pipe_transport() "
+"<SubprocessTransport.get_pipe_transport>`"
 
-msgid "Return the transport for the requested communication pipe (*stdin*, *stdout*, or *stderr*)."
+msgid ""
+"Return the transport for the requested communication pipe (*stdin*, "
+"*stdout*, or *stderr*)."
 msgstr ""
+"انتقال برای پایپ ارتباطی درخواست‌شده (*stdin*، *stdout* یا "
+"*stderr*) را برمی‌گرداند."
 
-msgid ":meth:`transport.get_returncode() <SubprocessTransport.get_returncode>`"
+msgid ""
+":meth:`transport.get_returncode() <SubprocessTransport.get_returncode>`"
 msgstr ""
+":meth:`transport.get_returncode() <SubprocessTransport.get_returncode>`"
 
 msgid "Return the subprocess return code."
-msgstr ""
+msgstr "کد بازگشتی زیرفرایند را برمی‌گرداند."
 
 msgid ":meth:`transport.kill() <SubprocessTransport.kill>`"
-msgstr ""
+msgstr ":meth:`transport.kill() <SubprocessTransport.kill>`"
 
 msgid "Kill the subprocess."
-msgstr ""
+msgstr "زیرفرایند را بکشید."
 
 msgid ":meth:`transport.send_signal() <SubprocessTransport.send_signal>`"
-msgstr ""
+msgstr ":meth:`transport.send_signal() <SubprocessTransport.send_signal>`"
 
 msgid "Send a signal to the subprocess."
-msgstr ""
+msgstr "سیگنالی به زیرفرایند ارسال کنید."
 
 msgid ":meth:`transport.terminate() <SubprocessTransport.terminate>`"
-msgstr ""
+msgstr ":meth:`transport.terminate() <SubprocessTransport.terminate>`"
 
 msgid "Stop the subprocess."
-msgstr ""
+msgstr "زیرفرایند را متوقف کنید."
 
 msgid ":meth:`transport.close() <SubprocessTransport.close>`"
-msgstr ""
+msgstr ":meth:`transport.close() <SubprocessTransport.close>`"
 
 msgid "Kill the subprocess and close all pipes."
-msgstr ""
+msgstr "زیرفرایند را خاتمه دهید و تمام پایپ‌ها را ببندید."
 
 msgid "Protocols"
-msgstr ""
+msgstr "پروتکل‌ها"
 
 msgid "Protocol classes can implement the following **callback methods**:"
-msgstr ""
+msgstr "کلاس‌های پروتکل می‌توانند **متدهای کال‌بک** زیر را پیاده‌سازی کنند:"
 
 msgid "``callback`` :meth:`connection_made() <BaseProtocol.connection_made>`"
-msgstr ""
+msgstr "``callback`` :meth:`connection_made() <BaseProtocol.connection_made>`"
 
 msgid "Called when a connection is made."
-msgstr ""
+msgstr "هنگامی که یک اتصال برقرار می‌شود، فراخوانی می‌شود."
 
 msgid "``callback`` :meth:`connection_lost() <BaseProtocol.connection_lost>`"
-msgstr ""
+msgstr "``callback`` :meth:`connection_lost() <BaseProtocol.connection_lost>`"
 
 msgid "Called when the connection is lost or closed."
-msgstr ""
+msgstr "هنگامی که اتصال قطع یا بسته می‌شود، فراخوانی می‌شود."
 
 msgid "``callback`` :meth:`pause_writing() <BaseProtocol.pause_writing>`"
-msgstr ""
+msgstr "``callback`` :meth:`pause_writing() <BaseProtocol.pause_writing>`"
 
 msgid "Called when the transport's buffer goes over the high water mark."
 msgstr ""
+"هنگامی که بافرانتقالاز آستانه بالا (high water mark) "
+"عبور کند، فراخوانی می‌شود."
 
 msgid "``callback`` :meth:`resume_writing() <BaseProtocol.resume_writing>`"
-msgstr ""
+msgstr "``callback`` :meth:`resume_writing() <BaseProtocol.resume_writing>`"
 
 msgid "Called when the transport's buffer drains below the low water mark."
 msgstr ""
+"هنگامی که بافرانتقالبه زیر آستانه پایین (low water "
+"mark) تخلیه شود، فراخوانی می‌شود."
 
 msgid "Streaming Protocols (TCP, Unix Sockets, Pipes)"
-msgstr ""
+msgstr "پروتکل‌های جریانی (TCP، Unix Sockets، Pipes)"
 
 msgid "``callback`` :meth:`data_received() <Protocol.data_received>`"
-msgstr ""
+msgstr "``callback`` :meth:`data_received() <Protocol.data_received>`"
 
 msgid "Called when some data is received."
-msgstr ""
+msgstr "هنگامی که داده‌ای دریافت می‌شود، فراخوانی می‌شود."
 
 msgid "``callback`` :meth:`eof_received() <Protocol.eof_received>`"
-msgstr ""
+msgstr "``callback`` :meth:`eof_received() <Protocol.eof_received>`"
 
 msgid "Called when an EOF is received."
-msgstr ""
+msgstr "هنگام دریافت EOF فراخوانی می‌شود."
 
 msgid "Buffered Streaming Protocols"
-msgstr ""
+msgstr "پروتکل‌های جریانی بافرشده"
 
 msgid "``callback`` :meth:`get_buffer() <BufferedProtocol.get_buffer>`"
-msgstr ""
+msgstr "``callback`` :meth:`get_buffer() <BufferedProtocol.get_buffer>`"
 
 msgid "Called to allocate a new receive buffer."
-msgstr ""
+msgstr "برای تخصیص یک بافر دریافت جدید فراخوانی می‌شود."
 
-msgid "``callback`` :meth:`buffer_updated() <BufferedProtocol.buffer_updated>`"
+msgid ""
+"``callback`` :meth:`buffer_updated() <BufferedProtocol.buffer_updated>`"
 msgstr ""
+"``callback`` :meth:`buffer_updated() <BufferedProtocol.buffer_updated>`"
 
 msgid "Called when the buffer was updated with the received data."
-msgstr ""
+msgstr "هنگامی که بافر با داده‌های دریافتی به‌روزرسانی شد، فراخوانی می‌شود."
 
 msgid "``callback`` :meth:`eof_received() <BufferedProtocol.eof_received>`"
-msgstr ""
+msgstr "``callback`` :meth:`eof_received() <BufferedProtocol.eof_received>`"
 
 msgid "Datagram Protocols"
-msgstr ""
+msgstr "پروتکل‌های دیتاگرام"
 
-msgid "``callback`` :meth:`datagram_received() <DatagramProtocol.datagram_received>`"
+msgid ""
+"``callback`` :meth:`datagram_received() "
+"<DatagramProtocol.datagram_received>`"
 msgstr ""
+"``callback`` :meth:`datagram_received() "
+"<DatagramProtocol.datagram_received>`"
 
 msgid "Called when a datagram is received."
-msgstr ""
+msgstr "هنگام دریافت یک دیتاگرام، فراخوانی می‌شود."
 
-msgid "``callback`` :meth:`error_received() <DatagramProtocol.error_received>`"
+msgid ""
+"``callback`` :meth:`error_received() <DatagramProtocol.error_received>`"
 msgstr ""
+"``callback`` :meth:`error_received() <DatagramProtocol.error_received>`"
 
-msgid "Called when a previous send or receive operation raises an :class:`OSError`."
+msgid ""
+"Called when a previous send or receive operation raises an :class:`OSError`."
 msgstr ""
+"هرگاه یک عملیات ارسال یا دریافت پیشین، یک :class:`OSError` را پرتاب کند، "
+"فراخوانی می‌شود."
 
 msgid "Subprocess Protocols"
-msgstr ""
+msgstr "پروتکل‌های زیرفرایند"
 
 msgid "``callback`` :meth:`~SubprocessProtocol.pipe_data_received`"
-msgstr ""
+msgstr "``callback`` :meth:`~SubprocessProtocol.pipe_data_received`"
 
-msgid "Called when the child process writes data into its *stdout* or *stderr* pipe."
+msgid ""
+"Called when the child process writes data into its *stdout* or *stderr* "
+"pipe."
 msgstr ""
+"هنگامی فراخوانی می‌شود که فرایند فرزند داده‌ای را در پایپ  *stdout* یا"
+" *stderr* خود می‌نویسد."
 
 msgid "``callback`` :meth:`~SubprocessProtocol.pipe_connection_lost`"
-msgstr ""
+msgstr "``callback`` :meth:`~SubprocessProtocol.pipe_connection_lost`"
 
-msgid "Called when one of the pipes communicating with the child process is closed."
+msgid ""
+"Called when one of the pipes communicating with the child process is closed."
 msgstr ""
+"هنگامی که یکی از پایپ‌هایارتباطی با فرایند فرزند بسته می‌شود، "
+"فراخوانی می‌شود."
 
-msgid "``callback`` :meth:`process_exited() <SubprocessProtocol.process_exited>`"
+msgid ""
+"``callback`` :meth:`process_exited() <SubprocessProtocol.process_exited>`"
 msgstr ""
+"``callback`` :meth:`process_exited() <SubprocessProtocol.process_exited>`"
 
-msgid "Called when the child process has exited. It can be called before :meth:`~SubprocessProtocol.pipe_data_received` and :meth:`~SubprocessProtocol.pipe_connection_lost` methods."
+msgid ""
+"Called when the child process has exited. It can be called before "
+":meth:`~SubprocessProtocol.pipe_data_received` and "
+":meth:`~SubprocessProtocol.pipe_connection_lost` methods."
 msgstr ""
+"هنگامی که فرایند فرزند خارج شده باشد، فراخوانی می‌شود. ممکن است پیش از "
+"متدهای :meth:`~SubprocessProtocol.pipe_data_received` و "
+":meth:`~SubprocessProtocol.pipe_connection_lost` فراخوانی شود."
 
 msgid "Event Loop Policies"
-msgstr ""
+msgstr "سیاست‌های حلقه رویداد"
 
-msgid "Policies is a low-level mechanism to alter the behavior of functions like :func:`asyncio.get_event_loop`.  See also the main :ref:`policies section <asyncio-policies>` for more details."
+msgid ""
+"Policies is a low-level mechanism to alter the behavior of functions like "
+":func:`asyncio.get_event_loop`.  See also the main :ref:`policies section "
+"<asyncio-policies>` for more details."
 msgstr ""
+"سیاست‌ها یک سازوکار سطح پایین برای تغییر رفتار توابعی مانند "
+":func:`asyncio.get_event_loop` هستند. همچنین برای جزئیات بیشتر، :ref:`بخش "
+"اصلی سیاست‌ها <asyncio-policies>` را ببینید."
 
 msgid "Accessing Policies"
-msgstr ""
+msgstr "دسترسی به سیاست‌ها"
 
 msgid ":meth:`asyncio.get_event_loop_policy`"
-msgstr ""
+msgstr ":meth:`asyncio.get_event_loop_policy`"
 
 msgid "Return the current process-wide policy."
-msgstr ""
+msgstr "سیاست جاری در سطح فرآیند را برمی‌گرداند."
 
 msgid ":meth:`asyncio.set_event_loop_policy`"
-msgstr ""
+msgstr ":meth:`asyncio.set_event_loop_policy`"
 
 msgid "Set a new process-wide policy."
-msgstr ""
+msgstr "یک خط‌مشی جدید برای کل فرایند تنظیم کنید."
 
 msgid ":class:`AbstractEventLoopPolicy`"
-msgstr ""
+msgstr ":class:`AbstractEventLoopPolicy`"
 
 msgid "Base class for policy objects."
-msgstr ""
+msgstr "کلاس پایه برای اشیای سیاست."
