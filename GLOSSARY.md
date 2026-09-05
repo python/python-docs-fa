@@ -20,7 +20,7 @@
 | character          | نویسه                   |
 | class              | کلاس                    |
 | command line       | خط فرمان                |
-| community          | کامیونیتی               |
+| community          | کامیونیتی، انجمن               |
 | component          | کامپوننت                |
 | context management | مدیریت زمینه            |
 | coroutine          | هم‌روال                  |
@@ -68,7 +68,7 @@
 | local              | محلی                    |
 | loop               | حلقه                    |
 | metaclass          | فراکلاس                 |
-| method             | متد                     |
+| method             | متد، متد                     |
 | mock               | ماک                     |
 | module             | ماژول                   |
 | mutable            | تغییرپذیر               |
