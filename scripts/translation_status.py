@@ -13,6 +13,7 @@ Usage:
     python3 scripts/translation_status.py tutorial/           # just one directory
     python3 scripts/translation_status.py --only-incomplete   # hide fully-done files
     python3 scripts/translation_status.py --sort name
+    python3 scripts/translation_status.py --sort fuzzy
     python3 scripts/translation_status.py --format markdown > STATUS.md
 """
 import argparse
@@ -71,7 +72,7 @@ def main():
     )
     parser.add_argument(
         "--sort",
-        choices=["percent", "untranslated", "name"],
+        choices=["percent", "untranslated", "fuzzy", "name"],
         default="percent",
         help="Sort order (default: percent, least-translated first)",
     )
@@ -106,6 +107,8 @@ def main():
         rows.sort(key=lambda r: r[5])
     elif args.sort == "untranslated":
         rows.sort(key=lambda r: -r[3])
+    elif args.sort == "fuzzy":
+        rows.sort(key=lambda r: -r[2])
     else:
         rows.sort(key=lambda r: r[0])
 
