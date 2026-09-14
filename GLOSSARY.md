@@ -320,7 +320,7 @@
 | name resolution | حل نام |
 | named tuple | تاپل نام‌دار |
 | namespace | فضای نام |
-| namespace package | بسته فضای‌نام |
+| namespace package | بسته فضای نام |
 | NaN | NaN |
 | nested scope | محدوده تودرتو |
 | no-op | عملیات بی‌اثر |
@@ -458,7 +458,7 @@
 | surrogate | جانشین |
 | symlink | پیوند نمادین |
 | syntactic sugar | قند نحوی |
-| syntax | سینتکس، نحو |
+| syntax | سینتکس |
 | t-string | تی‌استرینگ |
 | task | وظیفه |
 | test | آزمون |
