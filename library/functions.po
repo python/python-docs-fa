@@ -380,7 +380,7 @@ msgid ""
 "in Python 2."
 msgstr ""
 "مانند تابع :func:`repr`، رشته‌ای حاوی نمایش قابل چاپ یک شیء را برمی‌گرداند، اما نویسه‌های غیر اَسکی (non-ASCII) را در رشته‌ی بازگردانده‌شده "
-"توسط تابع :func:`repr`، با استفاده از دنباله‌های گریز (escapes) ``\\x``، ``\\u`` یا ``\\U`` اِسکِیپ (escape) می‌کند. این عمل، رشته‌ای مشابه "
+"توسط تابع :func:`repr`، با استفاده از دنباله‌های خنثی‌سازی (escapes) ``\\x``، ``\\u`` یا ``\\U`` اِسکِیپ (escape) می‌کند. این عمل، رشته‌ای مشابه "
 "آنچه تابع :func:`repr` در پایتون ۲ بازمی‌گرداند، تولید می‌کند."
 
 msgid ""
@@ -773,8 +773,8 @@ msgstr "گروه‌بندی رقم‌ها با استفاده از زیرخط، 
 
 msgid "Falls back to :meth:`~object.__index__` if :meth:`~object.__complex__` and :meth:`~object.__float__` are not defined."
 msgstr ""
-"اگر :meth:`~object.__complex__ <~object.__index__>` و :meth:`~object.__float__ <~object.__complex__>` تعریف نشده باشند، "
-"به :meth:`~object.__index__ <~object.__float__>` بازمی‌گردد."
+"اگر :meth:`~object.__complex__` و :meth:`~object.__float__` تعریف نشده باشند، "
+"به :meth:`~object.__index__` بازمی‌گردد."
 
 msgid ""
 "Passing a complex number as the *real* or *imag* argument is now deprecated; it should only be passed as a single positional argument."
@@ -1137,7 +1137,7 @@ msgid "The float type is described in :ref:`typesnumeric`."
 msgstr "نوع ممیز شناور در :ref:`typesnumeric` توضیح داده شده است."
 
 msgid "Falls back to :meth:`~object.__index__` if :meth:`~object.__float__` is not defined."
-msgstr "اگر :meth:`~object.__float__ <~object.__index__>` تعریف نشده باشد، به :meth:`~object.__index__ <~object.__float__>` بازمی‌گردد."
+msgstr "اگر :meth:`~object.__float__` تعریف نشده باشد، به :meth:`~object.__index__` بازمی‌گردد."
 
 msgid ""
 "Convert a *value* to a \"formatted\" representation, as controlled by *format_spec*.  The interpretation of *format_spec* will depend "
@@ -1395,7 +1395,7 @@ msgid "The first parameter is now positional-only."
 msgstr "پارامتر اول اکنون فقط به‌صورت فقط‌جایگاهی قابل ارسال است."
 
 msgid "Falls back to :meth:`~object.__index__` if :meth:`~object.__int__` is not defined."
-msgstr "اگر :meth:`~object.__int__ <~object.__index__>` تعریف نشده باشد، به :meth:`~object.__index__ <~object.__int__>` بازمی‌گردد."
+msgstr "اگر :meth:`~object.__int__` تعریف نشده باشد، به :meth:`~object.__index__` بازمی‌گردد."
 
 msgid ""
 ":class:`int` string inputs and string representations can be limited to help avoid denial of service attacks. A :exc:`ValueError` is "
@@ -1841,10 +1841,10 @@ msgstr ""
 "متناظر آن‌ها به صورت :samp:`&#{nnn};` جایگزین می‌شوند."
 
 msgid "``'backslashreplace'`` replaces malformed data by Python's backslashed escape sequences."
-msgstr "``'backslashreplace'`` داده‌های نادرست را با دنباله‌های گریز دارای بک‌اسلش در پایتون جایگزین می‌کند."
+msgstr "``'backslashreplace'`` داده‌های نادرست را با دنباله‌های خنثی‌سازی دارای بک‌اسلش در پایتون جایگزین می‌کند."
 
 msgid "``'namereplace'`` (also only supported when writing) replaces unsupported characters with ``\\N{...}`` escape sequences."
-msgstr "``'namereplace'`` (که آن هم فقط هنگام نوشتن پشتیبانی می‌شود) نویسه‌های پشتیبانی‌نشده را با دنباله‌های گریز ``\\N{...}`` جایگزین می‌کند."
+msgstr "``'namereplace'`` (که آن هم فقط هنگام نوشتن پشتیبانی می‌شود) نویسه‌های پشتیبانی‌نشده را با دنباله‌های خنثی‌سازی ``\\N{...}`` جایگزین می‌کند."
 
 msgid ""
 "*newline* determines how to parse newline characters from the stream. It can be ``None``, ``''``, ``'\\n'``, ``'\\r'``, and "
@@ -1931,8 +1931,8 @@ msgstr ""
 "مشخص :class:`io.TextIOWrapper`) را بازمی‌گرداند. هنگام باز کردن پرونده در حالت دودویی همراه با بافر، کلاس بازگردانده‌شده زیرکلاسی "
 "از :class:`io.BufferedIOBase` خواهد بود. کلاس دقیق بسته به حالت متفاوت است: در حالت خواندن دودویی، :class:`io.BufferedReader`؛ در "
 "حالت‌های نوشتن دودویی و افزودن به انتهای پرونده، :class:`io.BufferedWriter`؛ و در حالت خواندن/نوشتن، :class:`io.BufferedRandom` "
-"بازگردانده می‌شود. اگر بافر غیرفعال باشد، جریان خام (raw stream)، یعنی :class:`io.FileIO <io.RawIOBase>` که زیرکلاسی "
-"از :class:`io.RawIOBase <io.FileIO>` است، بازگردانده می‌شود."
+"بازگردانده می‌شود. اگر بافر غیرفعال باشد، جریان خام (raw stream)، یعنی :class:`io.FileIO` که زیرکلاسی "
+"از :class:`io.RawIOBase` است، بازگردانده می‌شود."
 
 msgid ""
 "See also the file handling modules, such as :mod:`fileinput`, :mod:`io` (where :func:`open` is "
