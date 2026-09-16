@@ -68,7 +68,7 @@
 | local              | محلی                    |
 | loop               | حلقه                    |
 | metaclass          | فراکلاس                 |
-| method             | متد، متد                     |
+| method             | متد                     |
 | mock               | ماک                     |
 | module             | ماژول                   |
 | mutable            | تغییرپذیر               |
