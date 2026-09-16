@@ -33,7 +33,7 @@ msgid "**Source code:** :source:`Lib/socket.py`"
 msgstr "**کد منبع:** :source:`Lib/socket.py`"
 
 msgid "This module provides access to the BSD *socket* interface. It is available on all modern Unix systems, Windows, MacOS, and probably additional platforms."
-msgstr "این ماژول دسترسی به رابط *سوکت* BSD را فراهم می‌کند. این ماژول در تمام سیستم‌های یونیکس مدرن، ویندوز، مک‌اواس و احتمالاً پلتفرم‌های دیگر در دسترس است."
+msgstr "این ماژول دسترسی به رابط \*سوکت\* BSD را فراهم می‌کند. این ماژول در تمام سیستم‌های یونیکس مدرن، ویندوز، مک‌اواس و احتمالاً پلتفرم‌های دیگر در دسترس است."
 
 msgid "Some behavior may be platform dependent, since calls are made to the operating system socket APIs."
 msgstr "برخی رفتارها ممکن است وابسته به پلتفرم باشند، زیرا APIهای سوکت سیستم‌عامل فراخوانی می‌شوند."
@@ -78,16 +78,16 @@ msgid "Writable :term:`bytes-like object` is now accepted."
 msgstr "اکنون :term:`bytes-like object` قابل نوشتن پذیرفته می‌شود."
 
 msgid "A pair ``(host, port)`` is used for the :const:`AF_INET` address family, where *host* is a string representing either a hostname in internet domain notation like ``'daring.cwi.nl'`` or an IPv4 address like ``'100.50.200.5'``, and *port* is an integer."
-msgstr "از یک جفت ``(host, port)`` برای خانواده‌ی نشانی :const:`AF_INET` استفاده می‌شود، که در آن *host* رشته‌ای است که یا یک نام میزبان با نمادگذاری دامنه‌ی اینترنتی مانند ``'daring.cwi.nl'`` یا یک نشانی IPv4 مانند ``'100.50.200.5'`` را نشان می‌دهد، و *port* یک عدد صحیح است."
+msgstr "از یک جفت ``(host, port)`` برای خانواده‌ی نشانی :const:`AF_INET` استفاده می‌شود، که در آن \*host\* رشته‌ای است که یا یک نام میزبان با نمادگذاری دامنه‌ی اینترنتی مانند ``'daring.cwi.nl'`` یا یک نشانی IPv4 مانند ``'100.50.200.5'`` را نشان می‌دهد، و \*port\* یک عدد صحیح است."
 
 msgid "For IPv4 addresses, two special forms are accepted instead of a host address: ``''`` represents :const:`INADDR_ANY`, which is used to bind to all interfaces, and the string ``'<broadcast>'`` represents :const:`INADDR_BROADCAST`.  This behavior is not compatible with IPv6, therefore, you may want to avoid these if you intend to support IPv6 with your Python programs."
 msgstr "برای آدرس‌های IPv4، به جای آدرس میزبان، دو شکل خاص پذیرفته می‌شوند: ``''`` نشان‌دهنده :const:`INADDR_ANY` است که برای مقیدسازی به همه رابط‌ها استفاده می‌شود، و رشته ``'<broadcast>'`` نشان‌دهنده :const:`INADDR_BROADCAST` است. این رفتار با IPv6 ناسازگار است، بنابراین، اگر قصد دارید در برنامه‌های پایتون خود از IPv6 پشتیبانی کنید، ممکن است بخواهید از این موارد اجتناب کنید."
 
 msgid "For :const:`AF_INET6` address family, a four-tuple ``(host, port, flowinfo, scope_id)`` is used, where *flowinfo* and *scope_id* represent the ``sin6_flowinfo`` and ``sin6_scope_id`` members in :const:`struct sockaddr_in6` in C.  For :mod:`!socket` module methods, *flowinfo* and *scope_id* can be omitted just for backward compatibility.  Note, however, omission of *scope_id* can cause problems in manipulating scoped IPv6 addresses."
-msgstr "برای خانواده‌ی آدرس :const:`AF_INET6`، از یک چهارتایی ``(host, port, flowinfo, scope_id)`` استفاده می‌شود، که در آن *flowinfo* و *scope_id* نشان‌دهنده‌ی اعضای ``sin6_flowinfo`` و ``sin6_scope_id`` در :const:`struct sockaddr_in6` در C هستند. برای متدهای ماژول :mod:`!socket`، می‌توان *flowinfo* و *scope_id* را فقط برای سازگاری با نسخه‌های پیشین حذف کرد. با این حال توجه داشته باشید که حذف *scope_id* می‌تواند در کار با آدرس‌های IPv6 محدوده‌دار مشکل‌ساز شود."
+msgstr "برای خانواده‌ی آدرس :const:`AF_INET6`، از یک چهارتایی ``(host, port, flowinfo, scope_id)`` استفاده می‌شود، که در آن \*flowinfo\* و \*scope_id\* نشان‌دهنده‌ی اعضای ``sin6_flowinfo`` و ``sin6_scope_id`` در :const:`struct sockaddr_in6` در C هستند. برای متدهای ماژول :mod:`!socket`، می‌توان \*flowinfo\* و \*scope_id\* را فقط برای سازگاری با نسخه‌های پیشین حذف کرد. با این حال توجه داشته باشید که حذف \*scope_id\* می‌تواند در کار با آدرس‌های IPv6 محدوده‌دار مشکل‌ساز شود."
 
 msgid "For multicast addresses (with *scope_id* meaningful) *address* may not contain ``%scope_id`` (or ``zone id``) part. This information is superfluous and may be safely omitted (recommended)."
-msgstr "برای آدرس‌های چندپخشی (multicast)، که در آن‌ها *scope_id* معنادار است، لازم نیست *address* شامل بخش ``%scope_id`` (یا ``zone id``) باشد. این اطلاعات اضافی است و می‌توان با اطمینان آن را حذف کرد (توصیه می‌شود)."
+msgstr "برای آدرس‌های چندپخشی (multicast)، که در آن‌ها \*scope_id\* معنادار است، لازم نیست \*address\* شامل بخش ``%scope_id`` (یا ``zone id``) باشد. این اطلاعات اضافی است و می‌توان با اطمینان آن را حذف کرد (توصیه می‌شود)."
 
 msgid ":const:`AF_NETLINK` sockets are represented as pairs ``(pid, groups)``."
 msgstr "سوکت‌های :const:`AF_NETLINK` به‌صورت جفت‌های ``(pid, groups)`` نمایش داده می‌شوند."
@@ -96,22 +96,22 @@ msgid "Linux-only support for TIPC is available using the :const:`AF_TIPC` addre
 msgstr "پشتیبانی از TIPC فقط در لینوکس، با استفاده از خانواده‌ی نشانی :const:`AF_TIPC` در دسترس است. TIPC یک پروتکل شبکه‌ای باز و غیرمبتنی بر IP است که برای استفاده در محیط‌های رایانه‌ای خوشه‌ای طراحی شده است. نشانی‌ها به‌صورت یک تاپل نمایش داده می‌شوند و فیلدها به نوع نشانی بستگی دارند. قالب کلی تاپل به‌صورت ``(addr_type, v1, v2, v3 [, scope])`` است، که در آن:"
 
 msgid "*addr_type* is one of :const:`TIPC_ADDR_NAMESEQ`, :const:`TIPC_ADDR_NAME`, or :const:`TIPC_ADDR_ID`."
-msgstr "*addr_type* یکی از :const:`TIPC_ADDR_NAMESEQ`، :const:`TIPC_ADDR_NAME` یا :const:`TIPC_ADDR_ID` است."
+msgstr "\*addr_type\* یکی از :const:`TIPC_ADDR_NAMESEQ`، :const:`TIPC_ADDR_NAME` یا :const:`TIPC_ADDR_ID` است."
 
 msgid "*scope* is one of :const:`TIPC_ZONE_SCOPE`, :const:`TIPC_CLUSTER_SCOPE`, and :const:`TIPC_NODE_SCOPE`."
-msgstr "*scope* یکی از :const:`TIPC_ZONE_SCOPE`، :const:`TIPC_CLUSTER_SCOPE` و :const:`TIPC_NODE_SCOPE` است."
+msgstr "\*scope\* یکی از :const:`TIPC_ZONE_SCOPE`، :const:`TIPC_CLUSTER_SCOPE` و :const:`TIPC_NODE_SCOPE` است."
 
 msgid "If *addr_type* is :const:`TIPC_ADDR_NAME`, then *v1* is the server type, *v2* is the port identifier, and *v3* should be 0."
-msgstr "اگر *addr_type* برابر :const:`TIPC_ADDR_NAME` باشد، آنگاه *v1* نوع سرور است، *v2* شناسه درگاه است و *v3* باید ۰ باشد."
+msgstr "اگر \*addr_type\* برابر :const:`TIPC_ADDR_NAME` باشد، آنگاه \*v1\* نوع سرور است، \*v2\* شناسه درگاه است و \*v3\* باید ۰ باشد."
 
 msgid "If *addr_type* is :const:`TIPC_ADDR_NAMESEQ`, then *v1* is the server type, *v2* is the lower port number, and *v3* is the upper port number."
-msgstr "اگر *addr_type* برابر با :const:`TIPC_ADDR_NAMESEQ` باشد، آنگاه *v1* نوع سرور، *v2* شماره پورت پایینی و *v3* شماره پورت بالایی است."
+msgstr "اگر \*addr_type\* برابر با :const:`TIPC_ADDR_NAMESEQ` باشد، آنگاه \*v1\* نوع سرور، \*v2\* شماره پورت پایینی و \*v3\* شماره پورت بالایی است."
 
 msgid "If *addr_type* is :const:`TIPC_ADDR_ID`, then *v1* is the node, *v2* is the reference, and *v3* should be set to 0."
-msgstr "اگر *addr_type* برابر :const:`TIPC_ADDR_ID` باشد، آنگاه *v1* گره است، *v2* مرجع است و *v3* باید روی ۰ تنظیم شود."
+msgstr "اگر \*addr_type\* برابر :const:`TIPC_ADDR_ID` باشد، آنگاه \*v1\* گره است، \*v2\* مرجع است و \*v3\* باید روی ۰ تنظیم شود."
 
 msgid "A tuple ``(interface, )`` is used for the :const:`AF_CAN` address family, where *interface* is a string representing a network interface name like ``'can0'``. The network interface name ``''`` can be used to receive packets from all network interfaces of this family."
-msgstr "از یک تاپل ``(interface, )`` برای خانواده آدرس :const:`AF_CAN` استفاده می‌شود، که در آن *interface* رشته‌ای است که نام یک رابط شبکه مانند ``'can0'`` را نشان می‌دهد. می‌توان از نام رابط شبکه ``''`` برای دریافت بسته‌ها از تمام رابط‌های شبکه این خانواده استفاده کرد."
+msgstr "از یک تاپل ``(interface, )`` برای خانواده آدرس :const:`AF_CAN` استفاده می‌شود، که در آن \*interface\* رشته‌ای است که نام یک رابط شبکه مانند ``'can0'`` را نشان می‌دهد. می‌توان از نام رابط شبکه ``''`` برای دریافت بسته‌ها از تمام رابط‌های شبکه این خانواده استفاده کرد."
 
 msgid ":const:`CAN_ISOTP` protocol requires a tuple ``(interface, rx_addr, tx_addr)`` where both additional parameters are unsigned long integer that represent a CAN identifier (standard or extended)."
 msgstr "پروتکل :const:`CAN_ISOTP` به یک تاپلبه صورت ``(interface, rx_addr, tx_addr)`` نیاز دارد، که در آن هر دو پارامتر اضافی، عدد صحیح بلند بدون علامت هستند و یک شناسه CAN (استاندارد یا گسترده) را نشان می‌دهند."
@@ -171,13 +171,13 @@ msgid ":const:`AF_ALG` is a Linux-only socket based interface to Kernel cryptogr
 msgstr ":const:`AF_ALG` یک رابط مبتنی بر سوکت و فقط مخصوص لینوکس برای رمزنگاری هسته است. یک سوکت الگوریتم با یک تاپل شامل دو تا چهار المان ``(type, name [, feat [, mask]])`` پیکربندی می‌شود، که در آن:"
 
 msgid "*type* is the algorithm type as string, e.g. ``aead``, ``hash``, ``skcipher`` or ``rng``."
-msgstr "*type* نوع الگوریتم به‌صورت رشته است، مثلاً ``aead``، ``hash``، ``skcipher`` یا ``rng``."
+msgstr "\*type\* نوع الگوریتم به‌صورت رشته است، مثلاً ``aead``، ``hash``، ``skcipher`` یا ``rng``."
 
 msgid "*name* is the algorithm name and operation mode as string, e.g. ``sha256``, ``hmac(sha256)``, ``cbc(aes)`` or ``drbg_nopr_ctr_aes256``."
-msgstr "*name* نام الگوریتم و حالت عملکرد به‌صورت رشته است، برای مثال ``sha256``، ``hmac(sha256)``، ``cbc(aes)`` یا ``drbg_nopr_ctr_aes256``."
+msgstr "\*name\* نام الگوریتم و حالت عملکرد به‌صورت رشته است، برای مثال ``sha256``، ``hmac(sha256)``، ``cbc(aes)`` یا ``drbg_nopr_ctr_aes256``."
 
 msgid "*feat* and *mask* are unsigned 32bit integers."
-msgstr "*feat* و *mask* اعداد صحیح ۳۲ بیتی بدون علامت هستند."
+msgstr "\*feat\* و \*mask\* اعداد صحیح ۳۲ بیتی بدون علامت هستند."
 
 msgid "Some algorithm types require more recent Kernels."
 msgstr "برخی از انواع الگوریتم به هسته‌های جدیدتر نیاز دارند."
@@ -192,13 +192,13 @@ msgid ":const:`AF_PACKET` is a low-level interface directly to network devices. 
 msgstr ":const:`AF_PACKET` یک رابط سطح پایین برای دسترسی مستقیم به دستگاه‌های شبکه است. نشانی‌ها به‌صورت تاپل ``(ifname, proto[, pkttype[, hatype[, addr]]])`` نمایش داده می‌شوند که در آن:"
 
 msgid "*ifname* - String specifying the device name."
-msgstr "*ifname* - رشته‌ای که نام دستگاه را مشخص می‌کند."
+msgstr "\*ifname\* - رشته‌ای که نام دستگاه را مشخص می‌کند."
 
 msgid "*proto* - The Ethernet protocol number. May be :data:`ETH_P_ALL` to capture all protocols, one of the :ref:`ETHERTYPE_* constants <socket-ethernet-types>` or any other Ethernet protocol number."
-msgstr "*proto* - شماره‌ی پروتکل اترنت. می‌تواند :data:`ETH_P_ALL` برای ضبط تمام پروتکل‌ها، یکی از :ref:`ثابت‌های ETHERTYPE_* <socket-ethernet-types>` یا هر شماره‌ی پروتکل اترنت دیگری باشد."
+msgstr "\*proto\* - شماره‌ی پروتکل اترنت. می‌تواند :data:`ETH_P_ALL` برای ضبط تمام پروتکل‌ها، یکی از :ref:`ثابت‌های ETHERTYPE_\* <socket-ethernet-types>` یا هر شماره‌ی پروتکل اترنت دیگری باشد."
 
 msgid "*pkttype* - Optional integer specifying the packet type:"
-msgstr "*pkttype* - عدد صحیح اختیاری برای مشخص کردن نوع بسته:"
+msgstr "\*pkttype\* - عدد صحیح اختیاری برای مشخص کردن نوع بسته:"
 
 msgid "``PACKET_HOST`` (the default) - Packet addressed to the local host."
 msgstr "``PACKET_HOST`` (پیش‌فرض) - بسته‌ای که مقصد آن میزبان محلی است."
@@ -216,13 +216,13 @@ msgid "``PACKET_OUTGOING`` - Packet originating from the local host that is loop
 msgstr "``PACKET_OUTGOING`` - بسته‌ای که از میزبان محلی سرچشمه می‌گیرد و به یک سوکت بسته (packet socket) حلقه می‌شود."
 
 msgid "*hatype* - Optional integer specifying the ARP hardware address type."
-msgstr "*hatype* - عدد صحیح اختیاری برای مشخص کردن نوع نشانی سخت‌افزاری ARP."
+msgstr "\*hatype\* - عدد صحیح اختیاری برای مشخص کردن نوع نشانی سخت‌افزاری ARP."
 
 msgid "*addr* - Optional bytes-like object specifying the hardware physical address, whose interpretation depends on the device."
-msgstr "*addr* - شیء اختیاری ماننده بایت (bytes-like object) که آدرس فیزیکی سخت‌افزار را مشخص می‌کند و تفسیر آن به دستگاه بستگی دارد."
+msgstr "\*addr\* - شیء اختیاری ماننده بایت (bytes-like object) که آدرس فیزیکی سخت‌افزار را مشخص می‌کند و تفسیر آن به دستگاه بستگی دارد."
 
 msgid ":const:`AF_QIPCRTR` is a Linux-only socket based interface for communicating with services running on co-processors in Qualcomm platforms. The address family is represented as a ``(node, port)`` tuple where the *node* and *port* are non-negative integers."
-msgstr ":const:`AF_QIPCRTR` یک رابط مبتنی بر سوکت، فقط مخصوص لینوکس، برای ارتباط با سرویس‌هایی است که روی پردازنده‌های کمکی در پلتفرم‌های Qualcomm اجرا می‌شوند. این خانواده آدرس به‌صورت یک تاپل ``(node, port)`` نمایش داده می‌شود که در آن *node* و *port* اعداد صحیح نامنفی هستند."
+msgstr ":const:`AF_QIPCRTR` یک رابط مبتنی بر سوکت، فقط مخصوص لینوکس، برای ارتباط با سرویس‌هایی است که روی پردازنده‌های کمکی در پلتفرم‌های Qualcomm اجرا می‌شوند. این خانواده آدرس به‌صورت یک تاپل ``(node, port)`` نمایش داده می‌شود که در آن \*node\* و \*port\* اعداد صحیح نامنفی هستند."
 
 msgid ":const:`IPPROTO_UDPLITE` is a variant of UDP which allows you to specify what portion of a packet is covered with the checksum. It adds two socket options that you can change. ``self.setsockopt(IPPROTO_UDPLITE, UDPLITE_SEND_CSCOV, length)`` will change what portion of outgoing packets are covered by the checksum and ``self.setsockopt(IPPROTO_UDPLITE, UDPLITE_RECV_CSCOV, length)`` will filter out packets which cover too little of their data. In both cases ``length`` should be in ``range(8, 2**16, 8)``."
 msgstr ":const:`IPPROTO_UDPLITE` گونه‌ای از UDP است که به شما اجازه می‌دهد مشخص کنید چه بخشی از یک بسته تحت پوشش جمع‌آزما (checksum) قرار می‌گیرد. این پروتکل دو گزینه‌ی سوکت اضافه می‌کند که می‌توانید آن‌ها را تغییر دهید. ``self.setsockopt(IPPROTO_UDPLITE, UDPLITE_SEND_CSCOV, length)`` میزان پوشش جمع‌آزما برای بسته‌های خروجی را تغییر می‌دهد و ``self.setsockopt(IPPROTO_UDPLITE, UDPLITE_RECV_CSCOV, length)`` بسته‌هایی را که بخش خیلی کمی از داده‌هایشان تحت پوشش جمع‌آزما قرار می‌گیرد فیلتر می‌کند. در هر دو حالت ``length`` باید در ``range(8, 2**16, 8)`` باشد."
@@ -258,7 +258,7 @@ msgid "The ``service_id`` is the service identifier of the registered service."
 msgstr "``service_id`` شناسه‌ی سرویس ثبت‌شده است."
 
 msgid "If you use a hostname in the *host* portion of IPv4/v6 socket address, the program may show a nondeterministic behavior, as Python uses the first address returned from the DNS resolution.  The socket address will be resolved differently into an actual IPv4/v6 address, depending on the results from DNS resolution and/or the host configuration.  For deterministic behavior use a numeric address in *host* portion."
-msgstr "اگر در بخش *host* نشانی سوکت IPv4/v6 از یک نام میزبان استفاده کنید، ممکن است برنامه رفتاری غیرقطعی نشان دهد، زیرا پایتون از اولین نشانی بازگشتی از حل DNS استفاده می‌کند. نشانی سوکت بسته به نتایج حل DNS و/یا پیکربندی میزبان، به‌شکل متفاوتی به یک نشانی IPv4/v6 واقعی حل می‌شود. برای رفتار قطعی، از یک نشانی عددی در بخش *host* استفاده کنید."
+msgstr "اگر در بخش \*host\* نشانی سوکت IPv4/v6 از یک نام میزبان استفاده کنید، ممکن است برنامه رفتاری غیرقطعی نشان دهد، زیرا پایتون از اولین نشانی بازگشتی از حل DNS استفاده می‌کند. نشانی سوکت بسته به نتایج حل DNS و/یا پیکربندی میزبان، به‌شکل متفاوتی به یک نشانی IPv4/v6 واقعی حل می‌شود. برای رفتار قطعی، از یک نشانی عددی در بخش \*host\* استفاده کنید."
 
 msgid "All errors raise exceptions.  The normal exceptions for invalid argument types and out-of-memory conditions can be raised. Errors related to socket or address semantics raise :exc:`OSError` or one of its subclasses."
 msgstr "همه‌ی خطاها استثنا پرتاب می‌کنند. استثناهای معمول برای انواع نامعتبر آرگومان و شرایط کمبود حافظه ممکن است پرتاب شوند. خطاهای مربوط به معنای سوکت یا آدرس، :exc:`OSError` یا یکی از زیرکلاس‌های آن را پرتاب می‌کنند."
@@ -282,13 +282,13 @@ msgid "Following :pep:`3151`, this class was made an alias of :exc:`OSError`."
 msgstr "پیرو :pep:`3151`، این کلاس به نام مستعار :exc:`OSError` تبدیل شد."
 
 msgid "A subclass of :exc:`OSError`, this exception is raised for address-related errors, i.e. for functions that use *h_errno* in the POSIX C API, including :func:`gethostbyname_ex` and :func:`gethostbyaddr`. The accompanying value is a pair ``(h_errno, string)`` representing an error returned by a library call.  *h_errno* is a numeric value, while *string* represents the description of *h_errno*, as returned by the :c:func:`hstrerror` C function."
-msgstr "این استثنا که زیرکلاسی از :exc:`OSError` است، برای خطاهای مرتبط با نشانی پرتاب می‌شود، یعنی برای توابعی که از *h_errno* در API C POSIX استفاده می‌کنند، از جمله :func:`gethostbyname_ex` و :func:`gethostbyaddr`. مقدار همراه، یک جفت ``(h_errno, string)`` است که نشان‌دهنده‌ی خطایی است که توسط یک فراخوانی کتابخانه برگردانده شده است. *h_errno* یک مقدار عددی است، در حالی که *string* بیانگر توضیح *h_errno* است، همان‌طور که توسط تابع C :c:func:`hstrerror` برگردانده می‌شود."
+msgstr "این استثنا که زیرکلاسی از :exc:`OSError` است، برای خطاهای مرتبط با نشانی پرتاب می‌شود، یعنی برای توابعی که از \*h_errno\* در API C POSIX استفاده می‌کنند، از جمله :func:`gethostbyname_ex` و :func:`gethostbyaddr`. مقدار همراه، یک جفت ``(h_errno, string)`` است که نشان‌دهنده‌ی خطایی است که توسط یک فراخوانی کتابخانه برگردانده شده است. \*h_errno\* یک مقدار عددی است، در حالی که \*string\* بیانگر توضیح \*h_errno\* است، همان‌طور که توسط تابع C :c:func:`hstrerror` برگردانده می‌شود."
 
 msgid "This class was made a subclass of :exc:`OSError`."
 msgstr "این کلاس به زیرکلاسی از :exc:`OSError` تبدیل شد."
 
 msgid "A subclass of :exc:`OSError`, this exception is raised for address-related errors by :func:`getaddrinfo` and :func:`getnameinfo`. The accompanying value is a pair ``(error, string)`` representing an error returned by a library call.  *string* represents the description of *error*, as returned by the :c:func:`gai_strerror` C function.  The numeric *error* value will match one of the :const:`!EAI_\\*` constants defined in this module."
-msgstr "این استثنا زیرکلاسی از :exc:`OSError` است و برای خطاهای مرتبط با نشانی توسط :func:`getaddrinfo` و :func:`getnameinfo` پرتاب می‌شود. مقدار همراه آن یک جفت ``(error, string)`` است که نشان‌دهنده‌ی خطایی است که از یک فراخوانی کتابخانه برگردانده شده است. *string* شرح *error* را نشان می‌دهد، همان‌طور که توسط تابع C :c:func:`gai_strerror` برگردانده شده است. مقدار عددی *error* با یکی از ثابت‌های :const:`!EAI_\\*` تعریف‌شده در این ماژول مطابقت خواهد داشت."
+msgstr "این استثنا زیرکلاسی از :exc:`OSError` است و برای خطاهای مرتبط با نشانی توسط :func:`getaddrinfo` و :func:`getnameinfo` پرتاب می‌شود. مقدار همراه آن یک جفت ``(error, string)`` است که نشان‌دهنده‌ی خطایی است که از یک فراخوانی کتابخانه برگردانده شده است. \*string\* شرح \*error\* را نشان می‌دهد، همان‌طور که توسط تابع C :c:func:`gai_strerror` برگردانده شده است. مقدار عددی \*error\* با یکی از ثابت‌های :const:`!EAI_\\*` تعریف‌شده در این ماژول مطابقت خواهد داشت."
 
 msgid "A deprecated alias of :exc:`TimeoutError`."
 msgstr "یک نام مستعار منسوخ برای :exc:`TimeoutError`."
@@ -303,7 +303,7 @@ msgid "Constants"
 msgstr "ثابت‌ها"
 
 msgid "The AF_* and SOCK_* constants are now :class:`AddressFamily` and :class:`SocketKind` :class:`.IntEnum` collections."
-msgstr "ثابت‌های AF_* و SOCK_* اکنون مجموعه‌های :class:`AddressFamily` و :class:`SocketKind` از نوع :class:`.IntEnum` هستند."
+msgstr "ثابت‌های AF\_\* و SOCK\_\* اکنون مجموعه‌های :class:`AddressFamily` و :class:`SocketKind` از نوع :class:`.IntEnum` هستند."
 
 msgid "These constants represent the address (and protocol) families, used for the first argument to :func:`~socket.socket`.  If the :const:`AF_UNIX` constant is not defined then this protocol is unsupported.  More constants may be available depending on the system."
 msgstr "این ثابت‌ها نشان‌دهنده‌ی خانواده‌های آدرس (و پروتکل) هستند و برای اولین آرگومان :func:`~socket.socket` استفاده می‌شوند. اگر ثابت :const:`AF_UNIX` تعریف نشده باشد، این پروتکل پشتیبانی نمی‌شود. بسته به سیستم، ممکن است ثابت‌های بیشتری در دسترس باشند."
@@ -492,31 +492,31 @@ msgid "Windows support added."
 msgstr "پشتیبانی از ویندوز اضافه شد."
 
 msgid "Connect to a TCP service listening on the internet *address* (a 2-tuple ``(host, port)``), and return the socket object.  This is a higher-level function than :meth:`socket.connect`: if *host* is a non-numeric hostname, it will try to resolve it for both :data:`AF_INET` and :data:`AF_INET6`, and then try to connect to all possible addresses in turn until a connection succeeds.  This makes it easy to write clients that are compatible to both IPv4 and IPv6."
-msgstr "به یک سرویس TCP که به *نشانی* اینترنتی (یک دوتایی (2-tuple) به شکل ``(host, port)``) گوش می‌دهد متصل می‌شود و شیء سوکت را برمی‌گرداند. این تابع سطح بالاتری نسبت به :meth:`socket.connect` است: اگر *host* یک نام میزبان غیرعددی باشد، تلاش می‌کند آن را برای هر دو :data:`AF_INET` و :data:`AF_INET6` حل کند و سپس تلاش می‌کند به‌ترتیب به تمام نشانی‌های ممکن متصل شود تا اتصالی با موفقیت برقرار شود. این کار نوشتن کلاینت‌هایی را که با هر دو IPv4 و IPv6 سازگار باشند، آسان می‌کند."
+msgstr "به یک سرویس TCP که به \*نشانی\* اینترنتی (یک دوتایی (2-tuple) به شکل ``(host, port)``) گوش می‌دهد متصل می‌شود و شیء سوکت را برمی‌گرداند. این تابع سطح بالاتری نسبت به :meth:`socket.connect` است: اگر \*host\* یک نام میزبان غیرعددی باشد، تلاش می‌کند آن را برای هر دو :data:`AF_INET` و :data:`AF_INET6` حل کند و سپس تلاش می‌کند به‌ترتیب به تمام نشانی‌های ممکن متصل شود تا اتصالی با موفقیت برقرار شود. این کار نوشتن کلاینت‌هایی را که با هر دو IPv4 و IPv6 سازگار باشند، آسان می‌کند."
 
 msgid "Passing the optional *timeout* parameter will set the timeout on the socket instance before attempting to connect.  If no *timeout* is supplied, the global default timeout setting returned by :func:`getdefaulttimeout` is used."
-msgstr "با ارسال پارامتر اختیاری *timeout*، مهلت روی نمونه سوکت پیش از تلاش برای اتصال تنظیم می‌شود. اگر *timeout* ارائه نشود، از تنظیم مهلت پیش‌فرض سراسری که توسط :func:`getdefaulttimeout` برگردانده می‌شود، استفاده خواهد شد."
+msgstr "با ارسال پارامتر اختیاری \*timeout\*، مهلت روی نمونه سوکت پیش از تلاش برای اتصال تنظیم می‌شود. اگر \*timeout\* ارائه نشود، از تنظیم مهلت پیش‌فرض سراسری که توسط :func:`getdefaulttimeout` برگردانده می‌شود، استفاده خواهد شد."
 
 msgid "If supplied, *source_address* must be a 2-tuple ``(host, port)`` for the socket to bind to as its source address before connecting.  If host or port are '' or 0 respectively the OS default behavior will be used."
-msgstr "اگر ارائه شود، *source_address* باید یک تاپل دوتایی (2-tuple) به‌صورت ``(host, port)`` باشد تا سوکت پیش از اتصال، آن را به‌عنوان نشانی مبدأ خود مقید کند . اگر host یا port به‌ترتیب '' یا 0 باشند، رفتار پیش‌فرض سیستم‌عامل استفاده خواهد شد."
+msgstr "اگر ارائه شود، \*source_address\* باید یک تاپل دوتایی (2-tuple) به‌صورت ``(host, port)`` باشد تا سوکت پیش از اتصال، آن را به‌عنوان نشانی مبدأ خود مقید کند . اگر host یا port به‌ترتیب '' یا 0 باشند، رفتار پیش‌فرض سیستم‌عامل استفاده خواهد شد."
 
 msgid "When a connection cannot be created, an exception is raised. By default, it is the exception from the last address in the list. If *all_errors* is ``True``, it is an :exc:`ExceptionGroup` containing the errors of all attempts."
-msgstr "هنگامی که ایجاد یک اتصال ممکن نباشد، یک استثنا پرتاب می‌شود. به‌طور پیش‌فرض، این استثنا مربوط به آخرین نشانی در فهرست است. اگر *all_errors* برابر ``True`` باشد، یک :exc:`ExceptionGroup` حاوی خطاهای تمام تلاش‌ها خواهد بود."
+msgstr "هنگامی که ایجاد یک اتصال ممکن نباشد، یک استثنا پرتاب می‌شود. به‌طور پیش‌فرض، این استثنا مربوط به آخرین نشانی در فهرست است. اگر \*all_errors\* برابر ``True`` باشد، یک :exc:`ExceptionGroup` حاوی خطاهای تمام تلاش‌ها خواهد بود."
 
 msgid "*source_address* was added."
-msgstr "*source_address* اضافه شد."
+msgstr "\*source_address\* اضافه شد."
 
 msgid "*all_errors* was added."
-msgstr "*all_errors* افزوده شد."
+msgstr "\*all_errors\* افزوده شد."
 
 msgid "Convenience function which creates a TCP socket bound to *address* (a 2-tuple ``(host, port)``) and returns the socket object."
-msgstr "تابع سهولت‌بخشی که یک سوکت TCP مقید به *address* (یک ۲-تایی ``(host, port)``) را ایجاد می‌کند و شیء سوکت را برمی‌گرداند."
+msgstr "تابع سهولت‌بخشی که یک سوکت TCP مقید به \*address\* (یک ۲-تایی ``(host, port)``) را ایجاد می‌کند و شیء سوکت را برمی‌گرداند."
 
 msgid "*family* should be either :data:`AF_INET` or :data:`AF_INET6`. *backlog* is the queue size passed to :meth:`socket.listen`; if not specified , a default reasonable value is chosen. *reuse_port* dictates whether to set the :data:`SO_REUSEPORT` socket option."
-msgstr "*family* باید یکی از :data:`AF_INET` یا :data:`AF_INET6` باشد. *backlog* اندازه صفی است که به :meth:`socket.listen` داده می‌شود؛ اگر مشخص نشده باشد، یک مقدار پیش‌فرض مناسب انتخاب می‌شود. *reuse_port* تعیین می‌کند که آیا گزینه سوکت :data:`SO_REUSEPORT` تنظیم شود یا خیر."
+msgstr "\*family\* باید یکی از :data:`AF_INET` یا :data:`AF_INET6` باشد. \*backlog\* اندازه صفی است که به :meth:`socket.listen` داده می‌شود؛ اگر مشخص نشده باشد، یک مقدار پیش‌فرض مناسب انتخاب می‌شود. \*reuse_port\* تعیین می‌کند که آیا گزینه سوکت :data:`SO_REUSEPORT` تنظیم شود یا خیر."
 
 msgid "If *dualstack_ipv6* is true, *family* is :data:`AF_INET6` and the platform supports it the socket will be able to accept both IPv4 and IPv6 connections, else it will raise :exc:`ValueError`. Most POSIX platforms and Windows are supposed to support this functionality. When this functionality is enabled the address returned by :meth:`socket.getpeername` when an IPv4 connection occurs will be an IPv6 address represented as an IPv4-mapped IPv6 address. If *dualstack_ipv6* is false it will explicitly disable this functionality on platforms that enable it by default (e.g. Linux). This parameter can be used in conjunction with :func:`has_dualstack_ipv6`:"
-msgstr "اگر *dualstack_ipv6* درست باشد، *family* برابر با :data:`AF_INET6` باشد و سکو از آن پشتیبانی کند، سوکت می‌تواند هر دو اتصال IPv4 و IPv6 را بپذیرد؛ در غیر این صورت، استثنای :exc:`ValueError` پرتاب می‌شود. انتظار می‌رود بیشتر سکوهای POSIX و ویندوز از این قابلیت پشتیبانی کنند. هنگامی که این قابلیت فعال باشد، آدرس برگردانده‌شده توسط :meth:`socket.getpeername` در صورت وقوع یک اتصال IPv4، یک آدرس IPv6 خواهد بود که به‌صورت آدرس IPv6 نگاشت‌شده به IPv4 (IPv4-mapped IPv6 address) نمایش داده می‌شود. اگر *dualstack_ipv6* نادرست باشد، این قابلیت در سکوهای که آن را به‌طور پیش‌فرض فعال می‌کنند (مانند لینوکس) به‌صراحت غیرفعال می‌شود. این پارامتر می‌تواند همراه با :func:`has_dualstack_ipv6` استفاده شود:"
+msgstr "اگر \*dualstack_ipv6\* درست باشد، \*family\* برابر با :data:`AF_INET6` باشد و سکو از آن پشتیبانی کند، سوکت می‌تواند هر دو اتصال IPv4 و IPv6 را بپذیرد؛ در غیر این صورت، استثنای :exc:`ValueError` پرتاب می‌شود. انتظار می‌رود بیشتر سکوهای POSIX و ویندوز از این قابلیت پشتیبانی کنند. هنگامی که این قابلیت فعال باشد، آدرس برگردانده‌شده توسط :meth:`socket.getpeername` در صورت وقوع یک اتصال IPv4، یک آدرس IPv6 خواهد بود که به‌صورت آدرس IPv6 نگاشت‌شده به IPv4 (IPv4-mapped IPv6 address) نمایش داده می‌شود. اگر \*dualstack_ipv6\* نادرست باشد، این قابلیت در سکوهای که آن را به‌طور پیش‌فرض فعال می‌کنند (مانند لینوکس) به‌صراحت غیرفعال می‌شود. این پارامتر می‌تواند همراه با :func:`has_dualstack_ipv6` استفاده شود:"
 
 msgid ""
 "import socket\n"
@@ -536,13 +536,13 @@ msgstr ""
 "    s = socket.create_server(addr)"
 
 msgid "On POSIX platforms the :data:`SO_REUSEADDR` socket option is set in order to immediately reuse previous sockets which were bound on the same *address* and remained in TIME_WAIT state."
-msgstr "در پلتفرم‌های POSIX، گزینه‌ی سوکت :data:`SO_REUSEADDR` تنظیم می‌شود تا امکان استفاده‌ی فوری از سوکت‌های پیشینی که به همان *آدرس* پیوند داده شده‌اند و در وضعیت TIME_WAIT باقی مانده‌اند، فراهم شود."
+msgstr "در پلتفرم‌های POSIX، گزینه‌ی سوکت :data:`SO_REUSEADDR` تنظیم می‌شود تا امکان استفاده‌ی فوری از سوکت‌های پیشینی که به همان \*آدرس\* پیوند داده شده‌اند و در وضعیت TIME_WAIT باقی مانده‌اند، فراهم شود."
 
 msgid "Return ``True`` if the platform supports creating a TCP socket which can handle both IPv4 and IPv6 connections."
 msgstr "اگر سکو از ایجاد یک سوکت TCP که بتواند هر دو اتصال IPv4 و IPv6 را مدیریت کند پشتیبانی کند، ``True`` را برمی‌گرداند."
 
 msgid "Duplicate the file descriptor *fd* (an integer as returned by a file object's :meth:`~io.IOBase.fileno` method) and build a socket object from the result.  Address family, socket type and protocol number are as for the :func:`~socket.socket` function. The file descriptor should refer to a socket, but this is not checked --- subsequent operations on the object may fail if the file descriptor is invalid. This function is rarely needed, but can be used to get or set socket options on a socket passed to a program as standard input or output (such as a server started by the Unix inet daemon).  The socket is assumed to be in blocking mode."
-msgstr "توصیف‌گر پرونده *fd* (یک عدد صحیح که توسط متد :meth:`~io.IOBase.fileno` یک شیء پرونده برگردانده می‌شود) تکثیر می‌شود و از نتیجه، یک شیء سوکت ساخته می‌شود. خانواده آدرس، نوع سوکت و شماره پروتکل همانند تابع :func:`~socket.socket` هستند. توصیف‌گر پرونده باید به یک سوکت ارجاع دهد، اما این موضوع بررسی نمی‌شود --- عملیات‌های بعدی روی شیء ممکن است در صورت نامعتبر بودن توصیف‌گر پرونده با شکست مواجه شوند. این تابع به‌ندرت مورد نیاز است، اما می‌توان از آن برای دریافت یا تنظیم گزینه‌های سوکت روی سوکتی که به‌عنوان ورودی یا خروجی استاندارد به برنامه داده شده است استفاده کرد (مانند سروری که توسط دیمن inet در یونیکس راه‌اندازی شده است). فرض می‌شود سوکت در حالت مسدودکننده قرار دارد."
+msgstr "توصیف‌گر پرونده \*fd\* (یک عدد صحیح که توسط متد :meth:`~io.IOBase.fileno` یک شیء پرونده برگردانده می‌شود) تکثیر می‌شود و از نتیجه، یک شیء سوکت ساخته می‌شود. خانواده آدرس، نوع سوکت و شماره پروتکل همانند تابع :func:`~socket.socket` هستند. توصیف‌گر پرونده باید به یک سوکت ارجاع دهد، اما این موضوع بررسی نمی‌شود --- عملیات‌های بعدی روی شیء ممکن است در صورت نامعتبر بودن توصیف‌گر پرونده با شکست مواجه شوند. این تابع به‌ندرت مورد نیاز است، اما می‌توان از آن برای دریافت یا تنظیم گزینه‌های سوکت روی سوکتی که به‌عنوان ورودی یا خروجی استاندارد به برنامه داده شده است استفاده کرد (مانند سروری که توسط دیمن inet در یونیکس راه‌اندازی شده است). فرض می‌شود سوکت در حالت مسدودکننده قرار دارد."
 
 msgid "The newly created socket is :ref:`non-inheritable <fd_inheritance>`."
 msgstr "سوکت تازه‌ایجادشده :ref:`غیرقابل ارث‌بری <fd_inheritance>` است."
@@ -566,10 +566,10 @@ msgid "This function wraps the C function ``getaddrinfo`` of the underlying syst
 msgstr "این تابع، پوششی برای تابع ``getaddrinfo`` زبان C در سیستم زیرین است."
 
 msgid "Translate the *host*/*port* argument into a sequence of 5-tuples that contain all the necessary arguments for creating a socket connected to that service. *host* is a domain name, a string representation of an IPv4/v6 address or ``None``. *port* is a string service name such as ``'http'``, a numeric port number or ``None``.  By passing ``None`` as the value of *host* and *port*, you can pass ``NULL`` to the underlying C API."
-msgstr "آرگومان *host*/*port* را به دنباله‌ای از تاپل‌های ۵تایی تبدیل می‌کند که شامل همه آرگومان‌های لازم برای ایجاد سوکتی متصل به آن سرویس است. *host* یک نام دامنه، نمایش رشته‌ای از یک آدرس IPv4/v6 یا ``None`` است. *port* یک نام سرویس رشته‌ای مانند ``'http'``، یک شماره پورت عددی یا ``None`` است. با ارسال ``None`` به‌عنوان مقدار *host* و *port*، می‌توانید ``NULL`` را به API زیربنایی C ارسال کنید."
+msgstr "آرگومان \*host\*/\*port\* را به دنباله‌ای از تاپل‌های ۵تایی تبدیل می‌کند که شامل همه آرگومان‌های لازم برای ایجاد سوکتی متصل به آن سرویس است. \*host\* یک نام دامنه، نمایش رشته‌ای از یک آدرس IPv4/v6 یا ``None`` است. \*port\* یک نام سرویس رشته‌ای مانند ``'http'``، یک شماره پورت عددی یا ``None`` است. با ارسال ``None`` به‌عنوان مقدار \*host\* و \*port\*، می‌توانید ``NULL`` را به API زیربنایی C ارسال کنید."
 
 msgid "The *family*, *type* and *proto* arguments can be optionally specified in order to provide options and limit the list of addresses returned. Pass their default values (:data:`AF_UNSPEC`, 0, and 0, respectively) to not limit the results. See the note below for details."
-msgstr "آرگومان‌های *family*، *type* و *proto* را می‌توان به‌صورت اختیاری مشخص کرد تا گزینه‌ها فراهم شوند و فهرست نشانی‌های بازگردانده‌شده محدود شود. برای اینکه نتایج محدود نشوند، مقادیر پیش‌فرض آن‌ها (به‌ترتیب :data:`AF_UNSPEC`، 0 و 0) را ارسال کنید. برای جزئیات، یادداشت زیر را ببینید."
+msgstr "آرگومان‌های \*family\*، \*type\* و \*proto\* را می‌توان به‌صورت اختیاری مشخص کرد تا گزینه‌ها فراهم شوند و فهرست نشانی‌های بازگردانده‌شده محدود شود. برای اینکه نتایج محدود نشوند، مقادیر پیش‌فرض آن‌ها (به‌ترتیب :data:`AF_UNSPEC`، 0 و 0) را ارسال کنید. برای جزئیات، یادداشت زیر را ببینید."
 
 msgid "The *flags* argument can be one or several of the ``AI_*`` constants, and will influence how results are computed and returned. For example, :const:`AI_NUMERICHOST` will disable domain name resolution and will raise an error if *host* is a domain name."
 msgstr "آرگومان *flags* می‌تواند یک یا چند مورد از ثابت‌های ``AI_*`` باشد و بر چگونگی محاسبه و برگرداندن نتایج تأثیر می‌گذارد. برای مثال، :const:`AI_NUMERICHOST` حل نام دامنه را غیرفعال می‌کند و اگر *host* یک نام دامنه باشد، خطایی پرتاب می‌کند."
@@ -581,19 +581,19 @@ msgid "``(family, type, proto, canonname, sockaddr)``"
 msgstr "``(family, type, proto, canonname, sockaddr)``"
 
 msgid "In these tuples, *family*, *type*, *proto* are all integers and are meant to be passed to the :func:`~socket.socket` function.  *canonname* will be a string representing the canonical name of the *host* if :const:`AI_CANONNAME` is part of the *flags* argument; else *canonname* will be empty.  *sockaddr* is a tuple describing a socket address, whose format depends on the returned *family* (a ``(address, port)`` 2-tuple for :const:`AF_INET`, a ``(address, port, flowinfo, scope_id)`` 4-tuple for :const:`AF_INET6`), and is meant to be passed to the :meth:`socket.connect` method."
-msgstr "در این تاپل‌ها، *family*، *type* و *proto* همگی اعداد صحیح هستند و باید به تابع :func:`~socket.socket` فرستاده شوند.  اگر :const:`AI_CANONNAME` بخشی از آرگومان *flags* باشد، *canonname* رشته‌ای خواهد بود که نام متعارف *host* را نشان می‌دهد؛ در غیر این صورت *canonname* خالی خواهد بود.  *sockaddr* تاپلی است که نشانی سوکت را توصیف می‌کند و قالب آن به *family* برگردانده‌شده بستگی دارد (یک تاپل ۲تایی ``(address, port)`` برای :const:`AF_INET`، یک تاپل ۴تایی ``(address, port, flowinfo, scope_id)`` برای :const:`AF_INET6`) و باید به متد :meth:`socket.connect` فرستاده شود."
+msgstr "در این تاپل‌ها، \*family\*، \*type\* و \*proto\* همگی اعداد صحیح هستند و باید به تابع :func:`~socket.socket` فرستاده شوند.  اگر :const:`AI_CANONNAME` بخشی از آرگومان \*flags\* باشد، \*canonname\* رشته‌ای خواهد بود که نام متعارف \*host\* را نشان می‌دهد؛ در غیر این صورت \*canonname\* خالی خواهد بود.  \*sockaddr\* تاپلی است که نشانی سوکت را توصیف می‌کند و قالب آن به \*family\* برگردانده‌شده بستگی دارد (یک تاپل ۲تایی ``(address, port)`` برای :const:`AF_INET`، یک تاپل ۴تایی ``(address, port, flowinfo, scope_id)`` برای :const:`AF_INET6`) و باید به متد :meth:`socket.connect` فرستاده شود."
 
 msgid "If you intend to use results from :func:`!getaddrinfo` to create a socket (rather than, for example, retrieve *canonname*), consider limiting the results by *type* (e.g. :data:`SOCK_STREAM` or :data:`SOCK_DGRAM`) and/or *proto* (e.g. :data:`IPPROTO_TCP` or :data:`IPPROTO_UDP`) that your application can handle."
-msgstr "اگر قصد دارید از نتایج :func:`!getaddrinfo` برای ایجاد یک سوکت استفاده کنید (نه مثلاً برای بازیابی *canonname*)، در نظر بگیرید که نتایج را بر اساس *type* (مثلاً :data:`SOCK_STREAM` یا :data:`SOCK_DGRAM`) و/یا *proto* (مثلاً :data:`IPPROTO_TCP` یا :data:`IPPROTO_UDP`) که برنامه شما می‌تواند از آن‌ها پشتیبانی کند، محدود کنید."
+msgstr "اگر قصد دارید از نتایج :func:`!getaddrinfo` برای ایجاد یک سوکت استفاده کنید (نه مثلاً برای بازیابی \*canonname\*)، در نظر بگیرید که نتایج را بر اساس \*type\* (مثلاً :data:`SOCK_STREAM` یا :data:`SOCK_DGRAM`) و/یا \*proto\* (مثلاً :data:`IPPROTO_TCP` یا :data:`IPPROTO_UDP`) که برنامه شما می‌تواند از آن‌ها پشتیبانی کند، محدود کنید."
 
 msgid "The behavior with default values of *family*, *type*, *proto* and *flags* is system-specific."
-msgstr "رفتار با مقادیر پیش‌فرض *family*، *type*، *proto* و *flags* وابسته به سیستم است."
+msgstr "رفتار با مقادیر پیش‌فرض \*family\*، \*type\*، \*proto\* و \*flags\* وابسته به سیستم است."
 
 msgid "Many systems (for example, most Linux configurations) will return a sorted list of all matching addresses. These addresses should generally be tried in order until a connection succeeds (possibly tried in parallel, for example, using a `Happy Eyeballs`_ algorithm). In these cases, limiting the *type* and/or *proto* can help eliminate unsuccessful or unusable connection attempts."
-msgstr "بسیاری از سیستم‌ها (برای مثال، بیشتر پیکربندی‌های لینوکس) فهرست مرتب‌شده‌ای از همه‌ی نشانی‌های منطبق برمی‌گردانند. این نشانی‌ها معمولاً باید به‌ترتیب امتحان شوند تا اتصال با موفقیت برقرار شود (ممکن است به‌صورت موازی نیز امتحان شوند، برای مثال با استفاده از یک الگوریتم `Happy Eyeballs`_). در این موارد، محدود کردن *type* و/یا *proto* می‌تواند به حذف تلاش‌های اتصال بی‌نتیجه یا غیرقابل‌استفاده کمک کند."
+msgstr "بسیاری از سیستم‌ها (برای مثال، بیشتر پیکربندی‌های لینوکس) فهرست مرتب‌شده‌ای از همه‌ی نشانی‌های منطبق برمی‌گردانند. این نشانی‌ها معمولاً باید به‌ترتیب امتحان شوند تا اتصال با موفقیت برقرار شود (ممکن است به‌صورت موازی نیز امتحان شوند، برای مثال با استفاده از یک الگوریتم `Happy Eyeballs`_). در این موارد، محدود کردن \*type\* و/یا \*proto\* می‌تواند به حذف تلاش‌های اتصال بی‌نتیجه یا غیرقابل‌استفاده کمک کند."
 
 msgid "Some systems will, however, only return a single address. (For example, this was reported on Solaris and AIX configurations.) On these systems, limiting the *type* and/or *proto* helps ensure that this address is usable."
-msgstr "با این حال، برخی سیستم‌ها تنها یک نشانی را برمی‌گردانند. (برای مثال، این مورد در پیکربندی‌های Solaris و AIX گزارش شده است.) در این سیستم‌ها، محدود کردن *type* و/یا *proto* کمک می‌کند اطمینان حاصل شود که این نشانی قابل استفاده باشد."
+msgstr "با این حال، برخی سیستم‌ها تنها یک نشانی را برمی‌گردانند. (برای مثال، این مورد در پیکربندی‌های Solaris و AIX گزارش شده است.) در این سیستم‌ها، محدود کردن \*type\* و/یا \*proto\* کمک می‌کند اطمینان حاصل شود که این نشانی قابل استفاده باشد."
 
 msgid "Raises an :ref:`auditing event <auditing>` ``socket.getaddrinfo`` with arguments ``host``, ``port``, ``family``, ``type``, ``protocol``."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``socket.getaddrinfo`` را با آرگومان‌های ``host``، ``port``، ``family``، ``type`` و ``protocol`` پرتاب می‌کند."
@@ -621,7 +621,7 @@ msgid "for IPv6 multicast addresses, string representing an address will not con
 msgstr "برای نشانی‌های چندپخشی (multicast) در IPv6، رشته‌ی نشان‌دهنده‌ی یک نشانی حاوی بخش ``%scope_id`` نخواهد بود."
 
 msgid "Return a fully qualified domain name for *name*. If *name* is omitted or empty, it is interpreted as the local host.  To find the fully qualified name, the hostname returned by :func:`gethostbyaddr` is checked, followed by aliases for the host, if available.  The first name which includes a period is selected.  In case no fully qualified domain name is available and *name* was provided, it is returned unchanged.  If *name* was empty or equal to ``'0.0.0.0'``, the hostname from :func:`gethostname` is returned."
-msgstr "یک نام دامنه کامل (fully qualified domain name) برای *name* برمی‌گرداند. اگر *name* حذف‌شده یا خالی باشد، به‌عنوان میزبان محلی در نظر گرفته می‌شود. برای یافتن نام کامل، نام میزبان برگردانده‌شده توسط :func:`gethostbyaddr` بررسی می‌شود و سپس نام‌های مستعار میزبان، در صورت موجود بودن، بررسی می‌شوند. اولین نامی که شامل یک نقطه باشد انتخاب می‌شود. در صورتی که هیچ نام دامنه کاملی در دسترس نباشد و *name* ارائه شده باشد، بدون تغییر برگردانده می‌شود. اگر *name* خالی یا برابر با ``'0.0.0.0'`` باشد، نام میزبان حاصل از :func:`gethostname` برگردانده می‌شود."
+msgstr "یک نام دامنه کامل (fully qualified domain name) برای \*name\* برمی‌گرداند. اگر \*name\* حذف‌شده یا خالی باشد، به‌عنوان میزبان محلی در نظر گرفته می‌شود. برای یافتن نام کامل، نام میزبان برگردانده‌شده توسط :func:`gethostbyaddr` بررسی می‌شود و سپس نام‌های مستعار میزبان، در صورت موجود بودن، بررسی می‌شوند. اولین نامی که شامل یک نقطه باشد انتخاب می‌شود. در صورتی که هیچ نام دامنه کاملی در دسترس نباشد و \*name\* ارائه شده باشد، بدون تغییر برگردانده می‌شود. اگر \*name\* خالی یا برابر با ``'0.0.0.0'`` باشد، نام میزبان حاصل از :func:`gethostname` برگردانده می‌شود."
 
 msgid "Translate a host name to IPv4 address format.  The IPv4 address is returned as a string, such as  ``'100.50.200.5'``.  If the host name is an IPv4 address itself it is returned unchanged.  See :func:`gethostbyname_ex` for a more complete interface. :func:`gethostbyname` does not support IPv6 name resolution, and :func:`getaddrinfo` should be used instead for IPv4/v6 dual stack support."
 msgstr "نام میزبان را به قالب نشانی IPv4 ترجمه می‌کند. نشانی IPv4 به‌صورت یک رشته برگردانده می‌شود، مانند ``'100.50.200.5'``. اگر نام میزبان خودش یک نشانی IPv4 باشد، بدون تغییر برگردانده می‌شود. برای یک رابط کامل‌تر :func:`gethostbyname_ex` را ببینید. :func:`gethostbyname` از حل نام IPv6 پشتیبانی نمی‌کند، و برای پشتیبانی از پشته دوگانه IPv4/v6 باید به‌جای آن از :func:`getaddrinfo` استفاده شود."
@@ -630,7 +630,7 @@ msgid "Raises an :ref:`auditing event <auditing>` ``socket.gethostbyname`` with 
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``socket.gethostbyname`` را با آرگومان ``hostname`` پرتاب می‌کند."
 
 msgid "Translate a host name to IPv4 address format, extended interface. Return a 3-tuple ``(hostname, aliaslist, ipaddrlist)`` where *hostname* is the host's primary host name, *aliaslist* is a (possibly empty) list of alternative host names for the same address, and *ipaddrlist* is a list of IPv4 addresses for the same interface on the same host (often but not always a single address). :func:`gethostbyname_ex` does not support IPv6 name resolution, and :func:`getaddrinfo` should be used instead for IPv4/v6 dual stack support."
-msgstr "یک نام میزبان را به قالب نشانی IPv4 ترجمه می‌کند؛ رابط گسترش‌یافته. یک ۳‌تایی ``(hostname, aliaslist, ipaddrlist)`` برمی‌گرداند که در آن *hostname* نام میزبان اصلی آن میزبان است، *aliaslist* فهرستی (احتمالاً خالی) از نام‌های میزبان جایگزین برای همان نشانی است، و *ipaddrlist* فهرستی از نشانی‌های IPv4 برای همان رابط در همان میزبان است (اغلب، اما نه همیشه، یک نشانی واحد). :func:`gethostbyname_ex` از حل نام IPv6 پشتیبانی نمی‌کند، و برای پشتیبانی از پشته دوگانه‌ی IPv4/v6 باید به‌جای آن از :func:`getaddrinfo` استفاده شود."
+msgstr "یک نام میزبان را به قالب نشانی IPv4 ترجمه می‌کند؛ رابط گسترش‌یافته. یک ۳‌تایی ``(hostname, aliaslist, ipaddrlist)`` برمی‌گرداند که در آن \*hostname\* نام میزبان اصلی آن میزبان است، \*aliaslist\* فهرستی (احتمالاً خالی) از نام‌های میزبان جایگزین برای همان نشانی است، و \*ipaddrlist\* فهرستی از نشانی‌های IPv4 برای همان رابط در همان میزبان است (اغلب، اما نه همیشه، یک نشانی واحد). :func:`gethostbyname_ex` از حل نام IPv6 پشتیبانی نمی‌کند، و برای پشتیبانی از پشته دوگانه‌ی IPv4/v6 باید به‌جای آن از :func:`getaddrinfo` استفاده شود."
 
 msgid "Return a string containing the hostname of the machine where  the Python interpreter is currently executing."
 msgstr "رشته‌ای را برمی‌گرداند که حاوی نام میزبان ماشینی است که مفسر پایتون در حال حاضر روی آن اجرا می‌شود."
@@ -642,19 +642,19 @@ msgid "Note: :func:`gethostname` doesn't always return the fully qualified domai
 msgstr "توجه: :func:`gethostname` همیشه نام دامنه‌ی کاملاً مشخص (fully qualified domain name) را برنمی‌گرداند؛ برای این کار از :func:`getfqdn` استفاده کنید."
 
 msgid "Return a 3-tuple ``(hostname, aliaslist, ipaddrlist)`` where *hostname* is the primary host name responding to the given *ip_address*, *aliaslist* is a (possibly empty) list of alternative host names for the same address, and *ipaddrlist* is a list of IPv4/v6 addresses for the same interface on the same host (most likely containing only a single address). To find the fully qualified domain name, use the function :func:`getfqdn`. :func:`gethostbyaddr` supports both IPv4 and IPv6."
-msgstr "یک تاپل ۳-تایی ``(hostname, aliaslist, ipaddrlist)`` برمی‌گرداند که در آن *hostname* نام میزبان اصلی پاسخ‌دهنده به *ip_address* داده‌شده است، *aliaslist* فهرستی (احتمالاً خالی) از نام‌های میزبان جایگزین برای همان نشانی است، و *ipaddrlist* فهرستی از نشانی‌های IPv4/v6 برای همان رابط در همان میزبان است (که به احتمال زیاد فقط شامل یک نشانی می‌شود). برای یافتن نام دامنه‌ی کامل، از تابع :func:`getfqdn` استفاده کنید. :func:`gethostbyaddr` از هر دو IPv4 و IPv6 پشتیبانی می‌کند."
+msgstr "یک تاپل ۳-تایی ``(hostname, aliaslist, ipaddrlist)`` برمی‌گرداند که در آن \*hostname\* نام میزبان اصلی پاسخ‌دهنده به \*ip_address\* داده‌شده است، \*aliaslist\* فهرستی (احتمالاً خالی) از نام‌های میزبان جایگزین برای همان نشانی است، و \*ipaddrlist\* فهرستی از نشانی‌های IPv4/v6 برای همان رابط در همان میزبان است (که به احتمال زیاد فقط شامل یک نشانی می‌شود). برای یافتن نام دامنه‌ی کامل، از تابع :func:`getfqdn` استفاده کنید. :func:`gethostbyaddr` از هر دو IPv4 و IPv6 پشتیبانی می‌کند."
 
 msgid "Raises an :ref:`auditing event <auditing>` ``socket.gethostbyaddr`` with argument ``ip_address``."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``socket.gethostbyaddr`` را با آرگومان ``ip_address`` پرتاب می‌کند."
 
 msgid "Translate a socket address *sockaddr* into a 2-tuple ``(host, port)``. Depending on the settings of *flags*, the result can contain a fully qualified domain name or numeric address representation in *host*.  Similarly, *port* can contain a string port name or a numeric port number."
-msgstr "نشانی سوکت *sockaddr* را به یک تاپل دوتایی ``(host, port)`` تبدیل می‌کند. بسته به تنظیمات *flags*، نتیجه می‌تواند شامل یک نام دامنه‌ی کامل یا نمایش عددی نشانی در *host* باشد. به‌طور مشابه، *port* می‌تواند شامل یک نام پورت به‌صورت رشته یا یک شماره پورت عددی باشد."
+msgstr "نشانی سوکت \*sockaddr\* را به یک تاپل دوتایی ``(host, port)`` تبدیل می‌کند. بسته به تنظیمات \*flags\*، نتیجه می‌تواند شامل یک نام دامنه‌ی کامل یا نمایش عددی نشانی در \*host\* باشد. به‌طور مشابه، \*port\* می‌تواند شامل یک نام پورت به‌صورت رشته یا یک شماره پورت عددی باشد."
 
 msgid "For IPv6 addresses, ``%scope_id`` is appended to the host part if *sockaddr* contains meaningful *scope_id*. Usually this happens for multicast addresses."
-msgstr "برای آدرس‌های IPv6، اگر *sockaddr* شامل *scope_id* معناداری باشد، ``%scope_id`` به بخش میزبان افزوده می‌شود. معمولاً این حالت برای آدرس‌های چندپخشی (multicast) رخ می‌دهد."
+msgstr "برای آدرس‌های IPv6، اگر \*sockaddr\* شامل \*scope_id\* معناداری باشد، ``%scope_id`` به بخش میزبان افزوده می‌شود. معمولاً این حالت برای آدرس‌های چندپخشی (multicast) رخ می‌دهد."
 
 msgid "For more information about *flags* you can consult :manpage:`getnameinfo(3)`."
-msgstr "برای اطلاعات بیشتر درباره‌ی *flags* می‌توانید به :manpage:`getnameinfo(3)` مراجعه کنید."
+msgstr "برای اطلاعات بیشتر درباره‌ی \*flags\* می‌توانید به :manpage:`getnameinfo(3)` مراجعه کنید."
 
 msgid "Raises an :ref:`auditing event <auditing>` ``socket.getnameinfo`` with argument ``sockaddr``."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``socket.getnameinfo`` را با آرگومان ``sockaddr`` پرتاب می‌کند."
@@ -681,7 +681,7 @@ msgid "Convert 16-bit positive integers from network to host byte order.  On mac
 msgstr "اعداد صحیح مثبت ۱۶ بیتی را از ترتیب بایت شبکه به ترتیب بایت میزبان تبدیل می‌کند. در ماشین‌هایی که ترتیب بایت میزبان همان ترتیب بایت شبکه است، این عملیات بی‌اثر (no-op) است؛ در غیر این صورت، یک عملیات جابه‌جایی ۲ بایتی انجام می‌دهد."
 
 msgid "Raises :exc:`OverflowError` if *x* does not fit in a 16-bit unsigned integer."
-msgstr "اگر *x* در یک عدد صحیح بدون علامت ۱۶‌بیتی نگنجد، :exc:`OverflowError` را پرتاب می‌کند."
+msgstr "اگر \*x\* در یک عدد صحیح بدون علامت ۱۶‌بیتی نگنجد، :exc:`OverflowError` را پرتاب می‌کند."
 
 msgid "Convert 32-bit positive integers from host to network byte order.  On machines where the host byte order is the same as network byte order, this is a no-op; otherwise, it performs a 4-byte swap operation."
 msgstr "اعداد صحیح مثبت ۳۲ بیتی را از ترتیب بایت میزبان به ترتیب بایت شبکه تبدیل می‌کند. در ماشین‌هایی که ترتیب بایت میزبان با ترتیب بایت شبکه یکسان است، اینیک عملیات بی‌اثر (no-op) است؛ در غیر این صورت، یک عملیات جابجایی ۴ بایتی را انجام می‌دهد."
@@ -711,7 +711,7 @@ msgid "Convert an IP address from its family-specific string format to a packed,
 msgstr "یک نشانی IP را از قالب رشته‌ای مختص خانواده‌اش به قالب دودویی فشرده تبدیل می‌کند. :func:`inet_pton` زمانی مفید است که یک کتابخانه یا پروتکل شبکه به یک شیء از نوع :c:struct:`in_addr` (مشابه :func:`inet_aton`) یا :c:struct:`in6_addr` نیاز داشته باشد."
 
 msgid "Supported values for *address_family* are currently :const:`AF_INET` and :const:`AF_INET6`. If the IP address string *ip_string* is invalid, :exc:`OSError` will be raised. Note that exactly what is valid depends on both the value of *address_family* and the underlying implementation of :c:func:`inet_pton`."
-msgstr "مقادیر پشتیبانی‌شده برای *address_family* در حال حاضر :const:`AF_INET` و :const:`AF_INET6` هستند. اگر رشته‌ی نشانی IP *ip_string* نامعتبر باشد، :exc:`OSError` پرتاب می‌شود. توجه داشته باشید که دقیقاً آنچه معتبر است، هم به مقدار *address_family* و هم به پیاده‌سازی زیربنایی :c:func:`inet_pton` بستگی دارد."
+msgstr "مقادیر پشتیبانی‌شده برای \*address_family\* در حال حاضر :const:`AF_INET` و :const:`AF_INET6` هستند. اگر رشته‌ی نشانی IP \*ip_string\* نامعتبر باشد، :exc:`OSError` پرتاب می‌شود. توجه داشته باشید که دقیقاً آنچه معتبر است، هم به مقدار \*address_family\* و هم به پیاده‌سازی زیربنایی :c:func:`inet_pton` بستگی دارد."
 
 msgid "Windows support added"
 msgstr "پشتیبانی از ویندوز افزوده شد"
@@ -720,16 +720,16 @@ msgid "Convert a packed IP address (a :term:`bytes-like object` of some number o
 msgstr "یک نشانی IP فشرده (یک :term:`شیء شبه‌بایت <bytes-like object>` با تعدادی بایت) را به نمایش رشته‌ای استاندارد و مختص خانواده‌ی آن (برای مثال، ``'7.10.0.5'`` یا ``'5aef:2b::8'``) تبدیل می‌کند. :func:`inet_ntop` هنگامی مفید است که یک کتابخانه یا پروتکل شبکه شیءای از نوع :c:struct:`in_addr` (مشابه :func:`inet_ntoa`) یا :c:struct:`in6_addr` برمی‌گرداند."
 
 msgid "Supported values for *address_family* are currently :const:`AF_INET` and :const:`AF_INET6`. If the bytes object *packed_ip* is not the correct length for the specified address family, :exc:`ValueError` will be raised. :exc:`OSError` is raised for errors from the call to :func:`inet_ntop`."
-msgstr "مقادیر پشتیبانی‌شده برای *address_family* در حال حاضر :const:`AF_INET` و :const:`AF_INET6` هستند. اگر طول شیء bytes *packed_ip* برای خانواده‌ی نشانی مشخص‌شده صحیح نباشد، :exc:`ValueError` پرتاب خواهد شد. :exc:`OSError` برای خطاهای ناشی از فراخوانی :func:`inet_ntop` پرتاب می‌شود."
+msgstr "مقادیر پشتیبانی‌شده برای \*address_family\* در حال حاضر :const:`AF_INET` و :const:`AF_INET6` هستند. اگر طول شیء bytes \*packed_ip\* برای خانواده‌ی نشانی مشخص‌شده صحیح نباشد، :exc:`ValueError` پرتاب خواهد شد. :exc:`OSError` برای خطاهای ناشی از فراخوانی :func:`inet_ntop` پرتاب می‌شود."
 
 msgid "Return the total length, without trailing padding, of an ancillary data item with associated data of the given *length*.  This value can often be used as the buffer size for :meth:`~socket.recvmsg` to receive a single item of ancillary data, but :rfc:`3542` requires portable applications to use :func:`CMSG_SPACE` and thus include space for padding, even when the item will be the last in the buffer.  Raises :exc:`OverflowError` if *length* is outside the permissible range of values."
-msgstr "طول کل یک آیتم داده‌ی جانبی با داده‌ی مرتبط به طول *length* داده‌شده را، بدون پرکننده‌ی انتهایی (padding)، برمی‌گرداند. این مقدار اغلب می‌تواند به‌عنوان اندازه‌ی بافربرای دریافت یک آیتم داده‌ی جانبی از طریق :meth:`~socket.recvmsg` استفاده شود، اما :rfc:`3542` برنامه‌های قابل‌حمل را ملزم می‌کند که از :func:`CMSG_SPACE` استفاده کنند و بنابراین فضایی برای پرکننده (padding) در نظر بگیرند، حتی وقتی آیتم آخرین آیتم در بافر باشد. اگر *length* خارج از محدوده‌ی مجاز مقادیر باشد، :exc:`OverflowError` پرتاب می‌شود."
+msgstr "طول کل یک آیتم داده‌ی جانبی با داده‌ی مرتبط به طول \*length\* داده‌شده را، بدون پرکننده‌ی انتهایی (padding)، برمی‌گرداند. این مقدار اغلب می‌تواند به‌عنوان اندازه‌ی بافربرای دریافت یک آیتم داده‌ی جانبی از طریق :meth:`~socket.recvmsg` استفاده شود، اما :rfc:`3542` برنامه‌های قابل‌حمل را ملزم می‌کند که از :func:`CMSG_SPACE` استفاده کنند و بنابراین فضایی برای پرکننده (padding) در نظر بگیرند، حتی وقتی آیتم آخرین آیتم در بافر باشد. اگر \*length\* خارج از محدوده‌ی مجاز مقادیر باشد، :exc:`OverflowError` پرتاب می‌شود."
 
 msgid "Most Unix platforms."
 msgstr "بیشتر پلتفرم‌های یونیکس."
 
 msgid "Return the buffer size needed for :meth:`~socket.recvmsg` to receive an ancillary data item with associated data of the given *length*, along with any trailing padding.  The buffer space needed to receive multiple items is the sum of the :func:`CMSG_SPACE` values for their associated data lengths.  Raises :exc:`OverflowError` if *length* is outside the permissible range of values."
-msgstr "اندازه‌ی بافر موردنیاز برای :meth:`~socket.recvmsg` را برمی‌گرداند تا یک آیتم داده‌ی جانبی با داده‌ی مرتبط به طول *length* داده‌شده، به‌همراه هرگونه پرکننده‌ی انتهایی (padding) دریافت شود. فضای بافر موردنیاز برای دریافت چند آیتم، مجموع مقادیر :func:`CMSG_SPACE` برای طول‌های داده‌ی مرتبط آن‌ها است. اگر *length* خارج از محدوده‌ی مجاز مقادیر باشد، :exc:`OverflowError` پرتاب می‌شود."
+msgstr "اندازه‌ی بافر موردنیاز برای :meth:`~socket.recvmsg` را برمی‌گرداند تا یک آیتم داده‌ی جانبی با داده‌ی مرتبط به طول \*length\* داده‌شده، به‌همراه هرگونه پرکننده‌ی انتهایی (padding) دریافت شود. فضای بافر موردنیاز برای دریافت چند آیتم، مجموع مقادیر :func:`CMSG_SPACE` برای طول‌های داده‌ی مرتبط آن‌ها است. اگر \*length\* خارج از محدوده‌ی مجاز مقادیر باشد، :exc:`OverflowError` پرتاب می‌شود."
 
 msgid "Note that some systems might support ancillary data without providing this function.  Also note that setting the buffer size using the results of this function may not precisely limit the amount of ancillary data that can be received, since additional data may be able to fit into the padding area."
 msgstr "توجه داشته باشید که برخی سیستم‌ها ممکن است بدون ارائه‌ی این تابع، از داده‌های جانبی پشتیبانی کنند. همچنین توجه داشته باشید که تنظیم اندازه‌ی بافر  با استفاده از نتایج این تابع ممکن است دقیقاً میزان داده‌های جانبی قابل دریافت را محدود نکند، زیرا ممکن است داده‌های اضافی بتوانند در ناحیه‌ی پدینگ (padding) جای گیرند."
@@ -744,7 +744,7 @@ msgid "Set the default timeout in seconds (float) for new socket objects.  When 
 msgstr "مهلت پیش‌فرض را بر حسب ثانیه (float) برای اشیای جدید سوکت تنظیم کنید. هنگامی که ماژول socket برای اولین بار ایمپورت می‌شود، مقدار پیش‌فرض ``None`` است. برای مقادیر ممکن و معانی مربوط به آن‌ها :meth:`~socket.settimeout` را ببینید."
 
 msgid "Set the machine's hostname to *name*.  This will raise an :exc:`OSError` if you don't have enough rights."
-msgstr "نام میزبان ماشین را روی *name* تنظیم می‌کند. اگر دسترسی کافی نداشته باشید، این کار یک :exc:`OSError` را پرتاب می‌کند."
+msgstr "نام میزبان ماشین را روی \*name\* تنظیم می‌کند. اگر دسترسی کافی نداشته باشید، این کار یک :exc:`OSError` را پرتاب می‌کند."
 
 msgid "Raises an :ref:`auditing event <auditing>` ``socket.sethostname`` with argument ``name``."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``socket.sethostname`` را با آرگومان ``name`` پرتاب می‌کند."
@@ -783,13 +783,13 @@ msgid "Return a network interface name corresponding to an interface index numbe
 msgstr "نام رابط شبکه متناظر با شماره اندیس رابط را برمی‌گرداند. اگر رابطی با اندیس داده‌شده وجود نداشته باشد، :exc:`OSError` رخ می‌دهد."
 
 msgid "Send the list of file descriptors *fds* over an :const:`AF_UNIX` socket *sock*. The *fds* parameter is a sequence of file descriptors. Consult :meth:`~socket.sendmsg` for the documentation of these parameters."
-msgstr "فهرست توصیف‌گرهای پرونده *fds* را از طریق یک سوکت :const:`AF_UNIX` با نام *sock* ارسال کنید. پارامتر *fds* یک دنباله از توصیف‌گرهای پرونده است. برای مستندات این پارامترها به :meth:`~socket.sendmsg` مراجعه کنید."
+msgstr "فهرست توصیف‌گرهای پرونده \*fds\* را از طریق یک سوکت :const:`AF_UNIX` با نام \*sock\* ارسال کنید. پارامتر \*fds\* یک دنباله از توصیف‌گرهای پرونده است. برای مستندات این پارامترها به :meth:`~socket.sendmsg` مراجعه کنید."
 
 msgid "Unix platforms supporting :meth:`~socket.sendmsg` and :const:`SCM_RIGHTS` mechanism."
 msgstr "سکوهای یونیکسی که از :meth:`~socket.sendmsg` و سازوکار :const:`SCM_RIGHTS` پشتیبانی می‌کنند."
 
 msgid "Receive up to *maxfds* file descriptors from an :const:`AF_UNIX` socket *sock*. Return ``(msg, list(fds), flags, addr)``. Consult :meth:`~socket.recvmsg` for the documentation of these parameters."
-msgstr "حداکثر *maxfds* توصیف‌گر پرونده را از یک سوکت :const:`AF_UNIX` به نام *sock* دریافت می‌کند. مقدار ``(msg, list(fds), flags, addr)`` را برمی‌گرداند. برای مستندات این پارامترها به :meth:`~socket.recvmsg` مراجعه کنید."
+msgstr "حداکثر \*maxfds\* توصیف‌گر پرونده را از یک سوکت :const:`AF_UNIX` به نام \*sock\* دریافت می‌کند. مقدار ``(msg, list(fds), flags, addr)`` را برمی‌گرداند. برای مستندات این پارامترها به :meth:`~socket.recvmsg` مراجعه کنید."
 
 msgid "Unix platforms supporting :meth:`~socket.recvmsg` and :const:`SCM_RIGHTS` mechanism."
 msgstr "سکوهای یونیکسی که از :meth:`~socket.recvmsg` و سازوکار :const:`SCM_RIGHTS` پشتیبانی می‌کنند."
@@ -804,7 +804,7 @@ msgid "Create a new socket using the given address family, socket type and proto
 msgstr "با استفاده از خانواده آدرس، نوع سوکت و شماره پروتکل داده‌شده، یک سوکت جدید ایجاد کنید. خانواده آدرس باید :const:`AF_INET` (پیش‌فرض)، :const:`AF_INET6`، :const:`AF_UNIX`، :const:`AF_CAN`، :const:`AF_PACKET` یا :const:`AF_RDS` باشد. نوع سوکت باید :const:`SOCK_STREAM` (پیش‌فرض)، :const:`SOCK_DGRAM`، :const:`SOCK_RAW` یا شاید یکی از سایر ثابت‌های ``SOCK_`` باشد. شماره پروتکل معمولاً صفر است و می‌تواند حذف شود، یا در صورتی که خانواده آدرس :const:`AF_CAN` باشد، پروتکل باید یکی از :const:`CAN_RAW`، :const:`CAN_BCM`، :const:`CAN_ISOTP` یا :const:`CAN_J1939` باشد."
 
 msgid "If *fileno* is specified, the values for *family*, *type*, and *proto* are auto-detected from the specified file descriptor.  Auto-detection can be overruled by calling the function with explicit *family*, *type*, or *proto* arguments.  This only affects how Python represents e.g. the return value of :meth:`socket.getpeername` but not the actual OS resource.  Unlike :func:`socket.fromfd`, *fileno* will return the same socket and not a duplicate. This may help close a detached socket using :meth:`socket.close`."
-msgstr "اگر *fileno* مشخص شده باشد، مقادیر *family*، *type* و *proto* به‌صورت خودکار از توصیف‌گر پرونده مشخص‌شده تشخیص داده می‌شوند. می‌توان با فراخوانی تابع با آرگومان‌های صریح *family*، *type* یا *proto*، تشخیص خودکار را لغو کرد. این موضوع فقط بر نحوه‌ی بازنمایی پایتون، برای مثال مقدار بازگشتی :meth:`socket.getpeername`، تأثیر می‌گذارد، نه بر منبع واقعی سیستم‌عامل. برخلاف :func:`socket.fromfd`، *fileno* همان سوکت را برمی‌گرداند، نه یک سوکت تکراری. این ممکن است به بستن یک سوکت جداشده با استفاده از :meth:`socket.close` کمک کند."
+msgstr "اگر \*fileno\* مشخص شده باشد، مقادیر \*family\*، \*type\* و \*proto\* به‌صورت خودکار از توصیف‌گر پرونده مشخص‌شده تشخیص داده می‌شوند. می‌توان با فراخوانی تابع با آرگومان‌های صریح \*family\*، \*type\* یا \*proto\*، تشخیص خودکار را لغو کرد. این موضوع فقط بر نحوه‌ی بازنمایی پایتون، برای مثال مقدار بازگشتی :meth:`socket.getpeername`، تأثیر می‌گذارد، نه بر منبع واقعی سیستم‌عامل. برخلاف :func:`socket.fromfd`، \*fileno\* همان سوکت را برمی‌گرداند، نه یک سوکت تکراری. این ممکن است به بستن یک سوکت جداشده با استفاده از :meth:`socket.close` کمک کند."
 
 msgid "Raises an :ref:`auditing event <auditing>` ``socket.__new__`` with arguments ``self``, ``family``, ``type``, ``protocol``."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``socket.__new__`` را با آرگومان‌های ``self``، ``family``، ``type``، ``protocol`` پرتاب می‌کند."
@@ -819,7 +819,7 @@ msgid "The CAN_ISOTP protocol was added."
 msgstr "پروتکل CAN_ISOTP افزوده شد."
 
 msgid "When :const:`SOCK_NONBLOCK` or :const:`SOCK_CLOEXEC` bit flags are applied to *type* they are cleared, and :attr:`socket.type` will not reflect them.  They are still passed to the underlying system ``socket()`` call.  Therefore,"
-msgstr "هنگامی که پرچم‌های بیتی :const:`SOCK_NONBLOCK` یا :const:`SOCK_CLOEXEC` به *type* اعمال شوند، این پرچم‌ها پاک می‌شوند و :attr:`socket.type` آن‌ها را بازتاب نخواهد داد. آن‌ها همچنان به فراخوانی سیستمی زیربنایی ``socket()`` ارسال می‌شوند. بنابراین،"
+msgstr "هنگامی که پرچم‌های بیتی :const:`SOCK_NONBLOCK` یا :const:`SOCK_CLOEXEC` به \*type\* اعمال شوند، این پرچم‌ها پاک می‌شوند و :attr:`socket.type` آن‌ها را بازتاب نخواهد داد. آن‌ها همچنان به فراخوانی سیستمی زیربنایی ``socket()`` ارسال می‌شوند. بنابراین،"
 
 msgid ""
 "sock = socket.socket(\n"
@@ -846,7 +846,7 @@ msgid "Support for the :term:`context manager` protocol was added.  Exiting the 
 msgstr "پشتیبانی از پروتکل :term:`context manager` افزوده شد. خروج از مدیر زمینه معادل فراخوانی :meth:`~socket.close` است."
 
 msgid "Accept a connection. The socket must be bound to an address and listening for connections. The return value is a pair ``(conn, address)`` where *conn* is a *new* socket object usable to send and receive data on the connection, and *address* is the address bound to the socket on the other end of the connection."
-msgstr "پذیرش یک اتصال. سوکت باید به یک آدرس مقید شده و در حال گوش‌دادن به اتصال‌ها باشد. مقدار بازگشتی یک جفت ``(conn, address)`` است که در آن *conn* یک شیء سوکت *جدید* است که می‌توان از آن برای ارسال و دریافت داده روی اتصال استفاده کرد، و *address* آدرسی است که به سوکت در سمت دیگر اتصال مقید شده است."
+msgstr "پذیرش یک اتصال. سوکت باید به یک آدرس مقید شده و در حال گوش‌دادن به اتصال‌ها باشد. مقدار بازگشتی یک جفت ``(conn, address)`` است که در آن \*conn\* یک شیء سوکت \*جدید\* است که می‌توان از آن برای ارسال و دریافت داده روی اتصال استفاده کرد، و \*address\* آدرسی است که به سوکت در سمت دیگر اتصال مقید شده است."
 
 msgid "The socket is now non-inheritable."
 msgstr "سوکت اکنون غیرقابل ارث‌بری است."
@@ -855,7 +855,7 @@ msgid "If the system call is interrupted and the signal handler does not raise a
 msgstr "اگر فراخوانی سیستمی قطع شود و هندلر سیگنال استثنایی پرتاب نکند، متد اکنون به‌جای پرتاب استثنای :exc:`InterruptedError`، فراخوانی سیستمی را دوباره تلاش می‌کند (برای دلیل آن :pep:`475` را ببینید)."
 
 msgid "Bind the socket to *address*.  The socket must not already be bound. The format of *address* depends on the address family --- see :ref:`socket-addresses`."
-msgstr "سوکت را به *address* مقید کنید. سوکت نباید از قبل مقید شده باشد. قالب *address* به خانواده آدرس بستگی دارد — :ref:`socket-addresses` را ببینید."
+msgstr "سوکت را به \*address\* مقید کنید. سوکت نباید از قبل مقید شده باشد. قالب \*address\* به خانواده آدرس بستگی دارد — :ref:`socket-addresses` را ببینید."
 
 msgid "Raises an :ref:`auditing event <auditing>` ``socket.bind`` with arguments ``self``, ``address``."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``socket.bind`` را با آرگومان‌های ``self`` و ``address`` پرتاب می‌کند."
@@ -873,7 +873,7 @@ msgid ":meth:`close` releases the resource associated with a connection but does
 msgstr ":meth:`close` منبع مرتبط با یک اتصال را آزاد می‌کند، اما لزوماً اتصال را بلافاصله نمی‌بندد. اگر می‌خواهید اتصال را به‌موقع ببندید، پیش از :meth:`close`، :meth:`shutdown` را فراخوانی کنید."
 
 msgid "Connect to a remote socket at *address*. The format of *address* depends on the address family --- see :ref:`socket-addresses`."
-msgstr "به یک سوکتدوردست در *address* متصل شوید. قالب *address* به خانواده‌ی نشانی (address family) وابسته است — :ref:`socket-addresses` را ببینید."
+msgstr "به یک سوکتدوردست در \*address\* متصل شوید. قالب \*address\* به خانواده‌ی نشانی (address family) وابسته است — :ref:`socket-addresses` را ببینید."
 
 msgid "If the connection is interrupted by a signal, the method waits until the connection completes, or raises a :exc:`TimeoutError` on timeout, if the signal handler doesn't raise an exception and the socket is blocking or has a timeout. For non-blocking sockets, the method raises an :exc:`InterruptedError` exception if the connection is interrupted by a signal (or the exception raised by the signal handler)."
 msgstr "اگر یک سیگنال اتصال را قطع کند، در صورتی که هندلر سیگنال استثنایی پرتاب نکند و سوکت مسدودکننده یا دارای مهلت زمانی باشد، متد تا کامل شدن اتصال صبر می‌کند یا در صورت مهلت زمانی، :exc:`TimeoutError` پرتاب می‌کند. برای سوکت‌های غیرمسدودکننده، اگر یک سیگنال اتصال را قطع کند، متد استثنای :exc:`InterruptedError` (یا استثنای پرتاب‌شده توسط هندلر سیگنال) را پرتاب می‌کند."
@@ -909,7 +909,7 @@ msgid "Return the socket's own address.  This is useful to find out the port num
 msgstr "نشانی خود سوکت را برمی‌گرداند. این کار برای مثال برای یافتن شماره پورت یک سوکت IPv4/v6 مفید است. قالب نشانی برگردانده‌شده به خانواده نشانی بستگی دارد --- :ref:`socket-addresses` را ببینید."
 
 msgid "Return the value of the given socket option (see the Unix man page :manpage:`getsockopt(2)`).  The needed symbolic constants (:ref:`SO_\\* etc. <socket-unix-constants>`) are defined in this module.  If *buflen* is absent, an integer option is assumed and its integer value is returned by the function.  If *buflen* is present, it specifies the maximum length of the buffer used to receive the option in, and this buffer is returned as a bytes object.  It is up to the caller to decode the contents of the buffer (see the optional built-in module :mod:`struct` for a way to decode C structures encoded as byte strings)."
-msgstr "مقدار گزینه‌ی سوکت داده‌شده را برمی‌گرداند (به صفحه‌ی man یونیکس :manpage:`getsockopt(2)` مراجعه کنید). ثابت‌های نمادین مورد نیاز (:ref:`SO_\\* etc. <socket-unix-constants>`) در این ماژول تعریف شده‌اند. اگر *buflen* وجود نداشته باشد، یک گزینه از نوع عدد صحیح فرض می‌شود و مقدار عدد صحیح آن توسط تابع بازگردانده می‌شود. اگر *buflen* وجود داشته باشد، حداکثر طول بافری را که برای دریافت گزینه استفاده می‌شود، مشخص می‌کند و این بافر به‌عنوان یک شیء bytes بازگردانده می‌شود. کدگشایی محتویات بافر بر عهده‌ی فراخواننده است (برای آشنایی با روشی برای کدگشایی ساختارهای C کدگذاری‌شده به‌صورت رشته‌های بایتی، ماژول توکار اختیاری :mod:`struct` را ببینید)."
+msgstr "مقدار گزینه‌ی سوکت داده‌شده را برمی‌گرداند (به صفحه‌ی man یونیکس :manpage:`getsockopt(2)` مراجعه کنید). ثابت‌های نمادین مورد نیاز (:ref:`SO_\\* etc. <socket-unix-constants>`) در این ماژول تعریف شده‌اند. اگر \*buflen\* وجود نداشته باشد، یک گزینه از نوع عدد صحیح فرض می‌شود و مقدار عدد صحیح آن توسط تابع بازگردانده می‌شود. اگر \*buflen\* وجود داشته باشد، حداکثر طول بافری را که برای دریافت گزینه استفاده می‌شود، مشخص می‌کند و این بافر به‌عنوان یک شیء bytes بازگردانده می‌شود. کدگشایی محتویات بافر بر عهده‌ی فراخواننده است (برای آشنایی با روشی برای کدگشایی ساختارهای C کدگذاری‌شده به‌صورت رشته‌های بایتی، ماژول توکار اختیاری :mod:`struct` را ببینید)."
 
 msgid "Return ``True`` if socket is in blocking mode, ``False`` if in non-blocking."
 msgstr "اگر سوکت در حالت مسدودکننده باشد، ``True`` و اگر در حالت غیرمسدودکننده باشد، ``False`` بازمی‌گرداند."
@@ -930,13 +930,13 @@ msgid "Currently only the following control codes are supported: ``SIO_RCVALL``,
 msgstr "در حال حاضر فقط کدهای کنترلی زیر پشتیبانی می‌شوند: ``SIO_RCVALL``، ``SIO_KEEPALIVE_VALS`` و ``SIO_LOOPBACK_FAST_PATH``."
 
 msgid "Enable a server to accept connections.  If *backlog* is specified, it must be at least 0 (if it is lower, it is set to 0); it specifies the number of unaccepted connections that the system will allow before refusing new connections. If not specified, a default reasonable value is chosen."
-msgstr "یک سرور را برای پذیرش اتصال‌ها فعال می‌کند. اگر *backlog* مشخص شده باشد، باید حداقل ۰ باشد (اگر کمتر باشد، روی ۰ تنظیم می‌شود)؛ این مقدار تعداد اتصال‌های پذیرفته‌نشده‌ای را مشخص می‌کند که سیستم پیش از رد کردن اتصال‌های جدید مجاز می‌داند. اگر مشخص نشده باشد، یک مقدار پیش‌فرض معقول انتخاب می‌شود."
+msgstr "یک سرور را برای پذیرش اتصال‌ها فعال می‌کند. اگر \*backlog\* مشخص شده باشد، باید حداقل ۰ باشد (اگر کمتر باشد، روی ۰ تنظیم می‌شود)؛ این مقدار تعداد اتصال‌های پذیرفته‌نشده‌ای را مشخص می‌کند که سیستم پیش از رد کردن اتصال‌های جدید مجاز می‌داند. اگر مشخص نشده باشد، یک مقدار پیش‌فرض معقول انتخاب می‌شود."
 
 msgid "The *backlog* parameter is now optional."
-msgstr "پارامتر *backlog* اکنون اختیاری است."
+msgstr "پارامتر \*backlog\* اکنون اختیاری است."
 
 msgid "Return a :term:`file object` associated with the socket.  The exact returned type depends on the arguments given to :meth:`makefile`.  These arguments are interpreted the same way as by the built-in :func:`open` function, except the only supported *mode* values are ``'r'`` (default), ``'w'``, ``'b'``, or a combination of those."
-msgstr "یک :term:`file object` مرتبط با سوکت را برمی‌گرداند. نوع دقیق بازگشتی به آرگومان‌های داده‌شده به :meth:`makefile` بستگی دارد. این آرگومان‌ها به همان شیوه‌ای که تابع توکار :func:`open` آن‌ها را تفسیر می‌کند، تفسیر می‌شوند، با این تفاوت که تنها مقادیر پشتیبانی‌شده برای *mode*، ``'r'`` (پیش‌فرض)، ``'w'``، ``'b'`` یا ترکیبی از آن‌ها هستند."
+msgstr "یک :term:`file object` مرتبط با سوکت را برمی‌گرداند. نوع دقیق بازگشتی به آرگومان‌های داده‌شده به :meth:`makefile` بستگی دارد. این آرگومان‌ها به همان شیوه‌ای که تابع توکار :func:`open` آن‌ها را تفسیر می‌کند، تفسیر می‌شوند، با این تفاوت که تنها مقادیر پشتیبانی‌شده برای \*mode\*، ``'r'`` (پیش‌فرض)، ``'w'``، ``'b'`` یا ترکیبی از آن‌ها هستند."
 
 msgid "The socket must be in blocking mode; it can have a timeout, but the file object's internal buffer may end up in an inconsistent state if a timeout occurs."
 msgstr "سوکت باید در حالت مسدودکننده باشد؛ می‌تواند مهلت زمانی داشته باشد، اما اگر مهلت زمانی رخ دهد، بافر داخلی شیء پرونده ممکن است در وضعیت ناسازگار قرار گیرد."
@@ -948,28 +948,28 @@ msgid "On Windows, the file-like object created by :meth:`makefile` cannot be us
 msgstr "در ویندوز، نمی‌توان از شیء شبه‌پرونده ایجادشده توسط :meth:`makefile` در مواردی که یک شیء پرونده دارای توصیف‌گر پرونده انتظار می‌رود استفاده کرد، مانند آرگومان‌های جریان :meth:`subprocess.Popen`."
 
 msgid "Receive data from the socket.  The return value is a bytes object representing the data received.  The maximum amount of data to be received at once is specified by *bufsize*. A returned empty bytes object indicates that the client has disconnected. See the Unix manual page :manpage:`recv(2)` for the meaning of the optional argument *flags*; it defaults to zero."
-msgstr "داده‌ها را از سوکت دریافت می‌کند. مقدار بازگشتی یک شیء bytes است که داده‌های دریافت‌شده را نشان می‌دهد. حداکثر مقدار داده‌ای که یکجا دریافت می‌شود، با *bufsize* مشخص می‌شود. بازگشت یک شیء bytes خالی نشان می‌دهد که کلاینت قطع شده است. برای معنای آرگومان اختیاری *flags*، صفحه راهنمای Unix :manpage:`recv(2)` را ببینید؛ مقدار پیش‌فرض آن صفر است."
+msgstr "داده‌ها را از سوکت دریافت می‌کند. مقدار بازگشتی یک شیء bytes است که داده‌های دریافت‌شده را نشان می‌دهد. حداکثر مقدار داده‌ای که یکجا دریافت می‌شود، با \*bufsize\* مشخص می‌شود. بازگشت یک شیء bytes خالی نشان می‌دهد که کلاینت قطع شده است. برای معنای آرگومان اختیاری \*flags\*، صفحه راهنمای Unix :manpage:`recv(2)` را ببینید؛ مقدار پیش‌فرض آن صفر است."
 
 msgid "Receive data from the socket.  The return value is a pair ``(bytes, address)`` where *bytes* is a bytes object representing the data received and *address* is the address of the socket sending the data.  See the Unix manual page :manpage:`recv(2)` for the meaning of the optional argument *flags*; it defaults to zero. The format of *address* depends on the address family --- see :ref:`socket-addresses`."
-msgstr "داده‌ها را از سوکت دریافت می‌کند. مقدار بازگشتی یک جفت ``(bytes, address)`` است که در آن *bytes* یک شیء bytes است که داده‌های دریافتی را نشان می‌دهد و *address* نشانی سوکت ارسال‌کننده‌ی داده‌ها است. برای معنای آرگومان اختیاری *flags*، صفحه‌ی راهنمای Unix :manpage:`recv(2)` را ببینید؛ مقدار پیش‌فرض آن ۰ است. قالب *address* به خانواده‌ی نشانی بستگی دارد --- :ref:`socket-addresses` را ببینید."
+msgstr "داده‌ها را از سوکت دریافت می‌کند. مقدار بازگشتی یک جفت ``(bytes, address)`` است که در آن \*bytes\* یک شیء bytes است که داده‌های دریافتی را نشان می‌دهد و \*address\* نشانی سوکت ارسال‌کننده‌ی داده‌ها است. برای معنای آرگومان اختیاری \*flags\*، صفحه‌ی راهنمای Unix :manpage:`recv(2)` را ببینید؛ مقدار پیش‌فرض آن ۰ است. قالب \*address\* به خانواده‌ی نشانی بستگی دارد --- :ref:`socket-addresses` را ببینید."
 
 msgid "For multicast IPv6 address, first item of *address* does not contain ``%scope_id`` part anymore. In order to get full IPv6 address use :func:`getnameinfo`."
-msgstr "برای نشانی چندپخشی IPv6، اولین آیتم *address* دیگر شامل بخش ``%scope_id`` نمی‌شود. برای دریافت نشانی کامل IPv6 از :func:`getnameinfo` استفاده کنید."
+msgstr "برای نشانی چندپخشی IPv6، اولین آیتم \*address\* دیگر شامل بخش ``%scope_id`` نمی‌شود. برای دریافت نشانی کامل IPv6 از :func:`getnameinfo` استفاده کنید."
 
 msgid "Receive normal data (up to *bufsize* bytes) and ancillary data from the socket.  The *ancbufsize* argument sets the size in bytes of the internal buffer used to receive the ancillary data; it defaults to 0, meaning that no ancillary data will be received.  Appropriate buffer sizes for ancillary data can be calculated using :func:`CMSG_SPACE` or :func:`CMSG_LEN`, and items which do not fit into the buffer might be truncated or discarded.  The *flags* argument defaults to 0 and has the same meaning as for :meth:`recv`."
-msgstr "داده‌های عادی (تا *bufsize* بایت) و داده‌های کمکی را از سوکت دریافت می‌کند. آرگومان *ancbufsize* اندازه‌ی بافر داخلی را بر حسب بایت برای دریافت داده‌های کمکی تعیین می‌کند؛ مقدار پیش‌فرض آن ۰ است، به این معنا که هیچ داده‌ی کمکی دریافت نخواهد شد. اندازه‌های مناسب بافر برای داده‌های کمکی را می‌توان با استفاده از :func:`CMSG_SPACE` یا :func:`CMSG_LEN` محاسبه کرد، و آیتم‌هایی که در بافر نمی‌گنجند ممکن است بریده یا دور ریخته شوند. آرگومان *flags* به‌طور پیش‌فرض مقدار ۰ دارد و همان معنایی را دارد که برای :meth:`recv` دارد."
+msgstr "داده‌های عادی (تا \*bufsize\* بایت) و داده‌های کمکی را از سوکت دریافت می‌کند. آرگومان \*ancbufsize\* اندازه‌ی بافر داخلی را بر حسب بایت برای دریافت داده‌های کمکی تعیین می‌کند؛ مقدار پیش‌فرض آن ۰ است، به این معنا که هیچ داده‌ی کمکی دریافت نخواهد شد. اندازه‌های مناسب بافر برای داده‌های کمکی را می‌توان با استفاده از :func:`CMSG_SPACE` یا :func:`CMSG_LEN` محاسبه کرد، و آیتم‌هایی که در بافر نمی‌گنجند ممکن است بریده یا دور ریخته شوند. آرگومان \*flags\* به‌طور پیش‌فرض مقدار ۰ دارد و همان معنایی را دارد که برای :meth:`recv` دارد."
 
 msgid "The return value is a 4-tuple: ``(data, ancdata, msg_flags, address)``.  The *data* item is a :class:`bytes` object holding the non-ancillary data received.  The *ancdata* item is a list of zero or more tuples ``(cmsg_level, cmsg_type, cmsg_data)`` representing the ancillary data (control messages) received: *cmsg_level* and *cmsg_type* are integers specifying the protocol level and protocol-specific type respectively, and *cmsg_data* is a :class:`bytes` object holding the associated data.  The *msg_flags* item is the bitwise OR of various flags indicating conditions on the received message; see your system documentation for details. If the receiving socket is unconnected, *address* is the address of the sending socket, if available; otherwise, its value is unspecified."
-msgstr "مقدار بازگشتی یک تاپل ۴تایی است: ``(data, ancdata, msg_flags, address)``. آیتم *data* یک شیء :class:`bytes` حاوی داده‌های غیرجانبی دریافت‌شده است. آیتم *ancdata* فهرستی از صفر یا چند تاپل ``(cmsg_level, cmsg_type, cmsg_data)`` است که داده‌های جانبی (پیام‌های کنترلی) دریافت‌شده را نشان می‌دهد: *cmsg_level* و *cmsg_type* اعداد صحیحی هستند که به ترتیب سطح پروتکل و نوع مختص پروتکل را مشخص می‌کنند، و *cmsg_data* یک شیء :class:`bytes` حاوی داده مرتبط است. آیتم *msg_flags* حاصل یای بیتی (bitwise OR) پرچم‌های مختلفی است که شرایط پیام دریافتی را نشان می‌دهند؛ برای جزئیات، مستندات سیستم خود را ببینید. اگر سوکت دریافت‌کننده متصل نباشد، *address* نشانی سوکت فرستنده است، در صورتی که در دسترس باشد؛ در غیر این صورت، مقدار آن نامشخص است."
+msgstr "مقدار بازگشتی یک تاپل ۴تایی است: ``(data, ancdata, msg_flags, address)``. آیتم \*data\* یک شیء :class:`bytes` حاوی داده‌های غیرجانبی دریافت‌شده است. آیتم \*ancdata\* فهرستی از صفر یا چند تاپل ``(cmsg_level, cmsg_type, cmsg_data)`` است که داده‌های جانبی (پیام‌های کنترلی) دریافت‌شده را نشان می‌دهد: \*cmsg_level\* و \*cmsg_type\* اعداد صحیحی هستند که به ترتیب سطح پروتکل و نوع مختص پروتکل را مشخص می‌کنند، و \*cmsg_data\* یک شیء :class:`bytes` حاوی داده مرتبط است. آیتم \*msg_flags\* حاصل یای بیتی (bitwise OR) پرچم‌های مختلفی است که شرایط پیام دریافتی را نشان می‌دهند؛ برای جزئیات، مستندات سیستم خود را ببینید. اگر سوکت دریافت‌کننده متصل نباشد، \*address\* نشانی سوکت فرستنده است، در صورتی که در دسترس باشد؛ در غیر این صورت، مقدار آن نامشخص است."
 
 msgid "On some systems, :meth:`sendmsg` and :meth:`recvmsg` can be used to pass file descriptors between processes over an :const:`AF_UNIX` socket.  When this facility is used (it is often restricted to :const:`SOCK_STREAM` sockets), :meth:`recvmsg` will return, in its ancillary data, items of the form ``(socket.SOL_SOCKET, socket.SCM_RIGHTS, fds)``, where *fds* is a :class:`bytes` object representing the new file descriptors as a binary array of the native C :c:expr:`int` type.  If :meth:`recvmsg` raises an exception after the system call returns, it will first attempt to close any file descriptors received via this mechanism."
-msgstr "در برخی از سیستم‌ها، می‌توان از :meth:`sendmsg` و :meth:`recvmsg` برای انتقال توصیف‌گرهای پرونده بین فرآیندها از طریق یک سوکت :const:`AF_UNIX` استفاده کرد. هنگامی که از این قابلیت استفاده شود (که اغلب به سوکت‌های :const:`SOCK_STREAM` محدود است)، :meth:`recvmsg` در داده‌های جانبی خود، آیتم‌هایی را به شکل ``(socket.SOL_SOCKET, socket.SCM_RIGHTS, fds)`` برمی‌گرداند، که در آن *fds* یک شیء :class:`bytes` است که توصیف‌گرهای پرونده جدید را به‌صورت یک آرایه دودویی از نوع بومی :c:expr:`int` در C نشان می‌دهد. اگر :meth:`recvmsg` پس از بازگشت فراخوانی سیستم، استثنایی پرتاب کند، ابتدا تلاش می‌کند هر توصیف‌گر پرونده دریافت‌شده از طریق این سازوکار را ببندد."
+msgstr "در برخی از سیستم‌ها، می‌توان از :meth:`sendmsg` و :meth:`recvmsg` برای انتقال توصیف‌گرهای پرونده بین فرآیندها از طریق یک سوکت :const:`AF_UNIX` استفاده کرد. هنگامی که از این قابلیت استفاده شود (که اغلب به سوکت‌های :const:`SOCK_STREAM` محدود است)، :meth:`recvmsg` در داده‌های جانبی خود، آیتم‌هایی را به شکل ``(socket.SOL_SOCKET, socket.SCM_RIGHTS, fds)`` برمی‌گرداند، که در آن \*fds\* یک شیء :class:`bytes` است که توصیف‌گرهای پرونده جدید را به‌صورت یک آرایه دودویی از نوع بومی :c:expr:`int` در C نشان می‌دهد. اگر :meth:`recvmsg` پس از بازگشت فراخوانی سیستم، استثنایی پرتاب کند، ابتدا تلاش می‌کند هر توصیف‌گر پرونده دریافت‌شده از طریق این سازوکار را ببندد."
 
 msgid "Some systems do not indicate the truncated length of ancillary data items which have been only partially received.  If an item appears to extend beyond the end of the buffer, :meth:`recvmsg` will issue a :exc:`RuntimeWarning`, and will return the part of it which is inside the buffer provided it has not been truncated before the start of its associated data."
 msgstr "برخی سیستم‌ها طول بریده‌شده‌ی آیتم‌های داده‌ی جانبی را که تنها به‌طور ناقص دریافت شده‌اند، نشان نمی‌دهند. اگر به نظر برسد آیتمی از انتهای بافر فراتر می‌رود، :meth:`recvmsg` یک :exc:`RuntimeWarning` صادر می‌کند و بخشی از آن را که درون بافر است برمی‌گرداند، به شرطی که پیش از شروع داده‌ی مرتبط آن بریده نشده باشد."
 
 msgid "On systems which support the :const:`!SCM_RIGHTS` mechanism, the following function will receive up to *maxfds* file descriptors, returning the message data and a list containing the descriptors (while ignoring unexpected conditions such as unrelated control messages being received).  See also :meth:`sendmsg`. ::"
-msgstr "در سیستم‌هایی که از سازوکار :const:`!SCM_RIGHTS` پشتیبانی می‌کنند، تابع زیر حداکثر *maxfds* توصیف‌گر پرونده را دریافت می‌کند و داده پیام و فهرستی حاوی توصیف‌گرها را برمی‌گرداند (در حالی که شرایط غیرمنتظره‌ای مانند دریافت پیام‌های کنترلی نامرتبط را نادیده می‌گیرد). همچنین :meth:`sendmsg` را ببینید. ::"
+msgstr "در سیستم‌هایی که از سازوکار :const:`!SCM_RIGHTS` پشتیبانی می‌کنند، تابع زیر حداکثر \*maxfds\* توصیف‌گر پرونده را دریافت می‌کند و داده پیام و فهرستی حاوی توصیف‌گرها را برمی‌گرداند (در حالی که شرایط غیرمنتظره‌ای مانند دریافت پیام‌های کنترلی نامرتبط را نادیده می‌گیرد). همچنین :meth:`sendmsg` را ببینید. ::"
 
 msgid ""
 "import socket, array\n"
@@ -995,10 +995,10 @@ msgstr ""
 "    return msg, list(fds)"
 
 msgid "Receive normal data and ancillary data from the socket, behaving as :meth:`recvmsg` would, but scatter the non-ancillary data into a series of buffers instead of returning a new bytes object.  The *buffers* argument must be an iterable of objects that export writable buffers (e.g. :class:`bytearray` objects); these will be filled with successive chunks of the non-ancillary data until it has all been written or there are no more buffers.  The operating system may set a limit (:func:`~os.sysconf` value ``SC_IOV_MAX``) on the number of buffers that can be used.  The *ancbufsize* and *flags* arguments have the same meaning as for :meth:`recvmsg`."
-msgstr "داده‌های عادی و داده‌های جانبی را از سوکت دریافت می‌کند، همان‌گونه که :meth:`recvmsg` عمل می‌کند، اما داده‌های غیرجانبی را به‌جای برگرداندن یک شیء bytes جدید، در مجموعه‌ای از بافرها پخش می‌کند. آرگومان *buffers* باید یک پیمایش‌پذیر از اشیایی باشد که بافرهای قابل‌نوشتن را در دسترس قرار می‌دهند (مانند اشیاء :class:`bytearray`)؛ این بافرها با تکه‌های متوالی از داده‌های غیرجانبی پر می‌شوند تا همه آن داده‌ها نوشته شوند یا دیگر بافری باقی نمانده باشد. ممکن است سیستم‌عامل محدودیتی (مقدار :func:`~os.sysconf` یعنی ``SC_IOV_MAX``) برای تعداد بافرهایی که می‌توان از آن‌ها استفاده کرد تعیین کند. آرگومان‌های *ancbufsize* و *flags* همان معنایی را دارند که برای :meth:`recvmsg` دارند."
+msgstr "داده‌های عادی و داده‌های جانبی را از سوکت دریافت می‌کند، همان‌گونه که :meth:`recvmsg` عمل می‌کند، اما داده‌های غیرجانبی را به‌جای برگرداندن یک شیء bytes جدید، در مجموعه‌ای از بافرها پخش می‌کند. آرگومان \*buffers\* باید یک پیمایش‌پذیر از اشیایی باشد که بافرهای قابل‌نوشتن را در دسترس قرار می‌دهند (مانند اشیاء :class:`bytearray`)؛ این بافرها با تکه‌های متوالی از داده‌های غیرجانبی پر می‌شوند تا همه آن داده‌ها نوشته شوند یا دیگر بافری باقی نمانده باشد. ممکن است سیستم‌عامل محدودیتی (مقدار :func:`~os.sysconf` یعنی ``SC_IOV_MAX``) برای تعداد بافرهایی که می‌توان از آن‌ها استفاده کرد تعیین کند. آرگومان‌های \*ancbufsize\* و \*flags\* همان معنایی را دارند که برای :meth:`recvmsg` دارند."
 
 msgid "The return value is a 4-tuple: ``(nbytes, ancdata, msg_flags, address)``, where *nbytes* is the total number of bytes of non-ancillary data written into the buffers, and *ancdata*, *msg_flags* and *address* are the same as for :meth:`recvmsg`."
-msgstr "مقدار بازگشتی یک تاپل ۴تایی است: ``(nbytes, ancdata, msg_flags, address)``، که در آن *nbytes* تعداد کل بایت‌های داده غیرجانبی نوشته‌شده در بافرها است، و *ancdata*، *msg_flags* و *address* همانند :meth:`recvmsg` هستند."
+msgstr "مقدار بازگشتی یک تاپل ۴تایی است: ``(nbytes, ancdata, msg_flags, address)``، که در آن \*nbytes\* تعداد کل بایت‌های داده غیرجانبی نوشته‌شده در بافرها است، و \*ancdata\*، \*msg_flags\* و \*address\* همانند :meth:`recvmsg` هستند."
 
 msgid "Example::"
 msgstr "مثال::"
@@ -1029,31 +1029,31 @@ msgstr ""
 "[bytearray(b'Mary'), bytearray(b'01 had a 9'), bytearray(b'little lamb---')]"
 
 msgid "Receive data from the socket, writing it into *buffer* instead of creating a new bytestring.  The return value is a pair ``(nbytes, address)`` where *nbytes* is the number of bytes received and *address* is the address of the socket sending the data.  See the Unix manual page :manpage:`recv(2)` for the meaning of the optional argument *flags*; it defaults to zero. The format of *address* depends on the address family --- see :ref:`socket-addresses`."
-msgstr "داده‌ها را از سوکت دریافت می‌کند و به‌جای ایجاد یک رشته بایتی جدید، آن‌ها را در *buffer* می‌نویسد. مقدار بازگشتی یک جفت ``(nbytes, address)`` است که در آن *nbytes* تعداد بایت‌های دریافت‌شده و *address* نشانی سوکت ارسال‌کننده داده‌ها است. برای آگاهی از معنای آرگومان اختیاری *flags*، به صفحه راهنمای Unix :manpage:`recv(2)` مراجعه کنید؛ مقدار پیش‌فرض آن صفر است. قالب *address* به خانواده نشانی بستگی دارد — به :ref:`socket-addresses` مراجعه کنید."
+msgstr "داده‌ها را از سوکت دریافت می‌کند و به‌جای ایجاد یک رشته بایتی جدید، آن‌ها را در \*buffer\* می‌نویسد. مقدار بازگشتی یک جفت ``(nbytes, address)`` است که در آن \*nbytes\* تعداد بایت‌های دریافت‌شده و \*address\* نشانی سوکت ارسال‌کننده داده‌ها است. برای آگاهی از معنای آرگومان اختیاری \*flags\*، به صفحه راهنمای Unix :manpage:`recv(2)` مراجعه کنید؛ مقدار پیش‌فرض آن صفر است. قالب \*address\* به خانواده نشانی بستگی دارد — به :ref:`socket-addresses` مراجعه کنید."
 
 msgid "Receive up to *nbytes* bytes from the socket, storing the data into a buffer rather than creating a new bytestring.  If *nbytes* is not specified (or 0), receive up to the size available in the given buffer.  Returns the number of bytes received.  See the Unix manual page :manpage:`recv(2)` for the meaning of the optional argument *flags*; it defaults to zero."
-msgstr "حداکثر *nbytes* بایت را از سوکت دریافت می‌کند و داده‌ها را به جای ایجاد یک رشته بایتی جدید، در یک بافر ذخیره می‌کند. اگر *nbytes* مشخص نشده باشد (یا ۰)، حداکثر به اندازه فضای موجود در بافر داده‌شده دریافت می‌شود. تعداد بایت‌های دریافت‌شده را برمی‌گرداند. برای معنای آرگومان اختیاری *flags*، به صفحه راهنمای یونیکس :manpage:`recv(2)` مراجعه کنید؛ مقدار پیش‌فرض آن صفر است."
+msgstr "حداکثر \*nbytes\* بایت را از سوکت دریافت می‌کند و داده‌ها را به جای ایجاد یک رشته بایتی جدید، در یک بافر ذخیره می‌کند. اگر \*nbytes\* مشخص نشده باشد (یا ۰)، حداکثر به اندازه فضای موجود در بافر داده‌شده دریافت می‌شود. تعداد بایت‌های دریافت‌شده را برمی‌گرداند. برای معنای آرگومان اختیاری \*flags\*، به صفحه راهنمای یونیکس :manpage:`recv(2)` مراجعه کنید؛ مقدار پیش‌فرض آن صفر است."
 
 msgid "Send data to the socket.  The socket must be connected to a remote socket.  The optional *flags* argument has the same meaning as for :meth:`recv`. Returns the number of bytes sent. Applications are responsible for checking that all data has been sent; if only some of the data was transmitted, the application needs to attempt delivery of the remaining data. For further information on this topic, consult the :ref:`socket-howto`."
-msgstr "داده‌ها را به سوکت ارسال کنید. سوکت باید به یک سوکت راه‌دور متصل باشد. آرگومان اختیاری *flags* همان معنای مورد استفاده در :meth:`recv` را دارد. تعداد بایت‌های ارسال‌شده را برمی‌گرداند. برنامه‌ها مسئول بررسی این هستند که همه داده‌ها ارسال شده‌اند؛ اگر تنها بخشی از داده‌ها منتقل شد، برنامه باید برای ارسال داده‌های باقی‌مانده تلاش کند. برای اطلاعات بیشتر درباره این موضوع، به :ref:`socket-howto` مراجعه کنید."
+msgstr "داده‌ها را به سوکت ارسال کنید. سوکت باید به یک سوکت راه‌دور متصل باشد. آرگومان اختیاری \*flags\* همان معنای مورد استفاده در :meth:`recv` را دارد. تعداد بایت‌های ارسال‌شده را برمی‌گرداند. برنامه‌ها مسئول بررسی این هستند که همه داده‌ها ارسال شده‌اند؛ اگر تنها بخشی از داده‌ها منتقل شد، برنامه باید برای ارسال داده‌های باقی‌مانده تلاش کند. برای اطلاعات بیشتر درباره این موضوع، به :ref:`socket-howto` مراجعه کنید."
 
 msgid "Send data to the socket.  The socket must be connected to a remote socket.  The optional *flags* argument has the same meaning as for :meth:`recv`. Unlike :meth:`send`, this method continues to send data from *bytes* until either all data has been sent or an error occurs.  ``None`` is returned on success.  On error, an exception is raised, and there is no way to determine how much data, if any, was successfully sent."
-msgstr "داده‌ها را به سوکت ارسال می‌کند. سوکت باید به یک سوکت راه دور متصل باشد. آرگومان اختیاری *flags* همان معنایی را دارد که برای :meth:`recv` دارد. برخلاف :meth:`send`، این متد به ارسال داده از *bytes* ادامه می‌دهد تا اینکه یا همه داده‌ها ارسال شوند یا خطایی رخ دهد. در صورت موفقیت، ``None`` برگردانده می‌شود. در صورت خطا، استثنایی پرتاب می‌شود و هیچ راهی برای تعیین اینکه چه مقدار داده، در صورت وجود، با موفقیت ارسال شده است، وجود ندارد."
+msgstr "داده‌ها را به سوکت ارسال می‌کند. سوکت باید به یک سوکت راه دور متصل باشد. آرگومان اختیاری \*flags\* همان معنایی را دارد که برای :meth:`recv` دارد. برخلاف :meth:`send`، این متد به ارسال داده از \*bytes\* ادامه می‌دهد تا اینکه یا همه داده‌ها ارسال شوند یا خطایی رخ دهد. در صورت موفقیت، ``None`` برگردانده می‌شود. در صورت خطا، استثنایی پرتاب می‌شود و هیچ راهی برای تعیین اینکه چه مقدار داده، در صورت وجود، با موفقیت ارسال شده است، وجود ندارد."
 
 msgid "The socket timeout is no longer reset each time data is sent successfully. The socket timeout is now the maximum total duration to send all data."
 msgstr "مهلت زمانی سوکت دیگر هر بار که داده با موفقیت ارسال می‌شود، بازنشانی نمی‌شود. مهلت زمانی سوکت اکنون حداکثر مدت‌زمان کل برای ارسال تمام داده‌ها است."
 
 msgid "Send data to the socket.  The socket should not be connected to a remote socket, since the destination socket is specified by *address*.  The optional *flags* argument has the same meaning as for :meth:`recv`.  Return the number of bytes sent. The format of *address* depends on the address family --- see :ref:`socket-addresses`."
-msgstr "داده را به سوکت ارسال می‌کند. سوکت نباید به یک سوکت دوردست متصل باشد، زیرا سوکت مقصد توسط *address* مشخص می‌شود. آرگومان اختیاری *flags* همان معنایی را دارد که برای :meth:`recv` دارد. تعداد بایت‌های ارسال‌شده را برمی‌گرداند. قالب *address* به خانواده‌ی نشانی بستگی دارد — :ref:`socket-addresses` را ببینید."
+msgstr "داده را به سوکت ارسال می‌کند. سوکت نباید به یک سوکت دوردست متصل باشد، زیرا سوکت مقصد توسط \*address\* مشخص می‌شود. آرگومان اختیاری \*flags\* همان معنایی را دارد که برای :meth:`recv` دارد. تعداد بایت‌های ارسال‌شده را برمی‌گرداند. قالب \*address\* به خانواده‌ی نشانی بستگی دارد — :ref:`socket-addresses` را ببینید."
 
 msgid "Raises an :ref:`auditing event <auditing>` ``socket.sendto`` with arguments ``self``, ``address``."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``socket.sendto`` را با آرگومان‌های ``self`` و ``address`` پرتاب می‌کند."
 
 msgid "Send normal and ancillary data to the socket, gathering the non-ancillary data from a series of buffers and concatenating it into a single message.  The *buffers* argument specifies the non-ancillary data as an iterable of :term:`bytes-like objects <bytes-like object>` (e.g. :class:`bytes` objects); the operating system may set a limit (:func:`~os.sysconf` value ``SC_IOV_MAX``) on the number of buffers that can be used.  The *ancdata* argument specifies the ancillary data (control messages) as an iterable of zero or more tuples ``(cmsg_level, cmsg_type, cmsg_data)``, where *cmsg_level* and *cmsg_type* are integers specifying the protocol level and protocol-specific type respectively, and *cmsg_data* is a bytes-like object holding the associated data.  Note that some systems (in particular, systems without :func:`CMSG_SPACE`) might support sending only one control message per call.  The *flags* argument defaults to 0 and has the same meaning as for :meth:`send`.  If *address* is supplied and not ``None``, it sets a destination address for the message.  The return value is the number of bytes of non-ancillary data sent."
-msgstr "داده‌های عادی و جانبی را به سوکت ارسال می‌کند؛ داده‌های غیرجانبی را از مجموعه‌ای از بافرها گردآوری کرده و در یک پیام واحد به هم می‌چسباند. آرگومان *buffers* داده‌های غیرجانبی را به‌صورت یک پیمایش‌پذیر از :term:`اشیاء شبه‌بایت <bytes-like object>` مشخص می‌کند (برای مثال اشیاء :class:`bytes`)؛ سیستم‌عامل ممکن است محدودیتی (مقدار ``SC_IOV_MAX`` از :func:`~os.sysconf`) بر تعداد بافرهای قابل استفاده تعیین کند. آرگومان *ancdata* داده‌های جانبی (پیام‌های کنترلی) را به‌صورت یک پیمایش‌پذیر از صفر یا چند تاپل ``(cmsg_level, cmsg_type, cmsg_data)`` مشخص می‌کند، که در آن *cmsg_level* و *cmsg_type* اعداد صحیحی هستند که به‌ترتیب سطح پروتکل و نوع خاص پروتکل را مشخص می‌کنند، و *cmsg_data* یک شیء شبه‌بایت حاوی داده مرتبط است. توجه داشته باشید که برخی سیستم‌ها (به‌ویژه سیستم‌های بدون :func:`CMSG_SPACE`) ممکن است تنها از ارسال یک پیام کنترلی در هر فراخوانی پشتیبانی کنند. آرگومان *flags* به‌طور پیش‌فرض ۰ است و همان معنای :meth:`send` را دارد. اگر *address* ارائه شود و ``None`` نباشد، آدرس مقصدی برای پیام تنظیم می‌کند. مقدار بازگشتی تعداد بایت‌های داده غیرجانبی ارسال‌شده است."
+msgstr "داده‌های عادی و جانبی را به سوکت ارسال می‌کند؛ داده‌های غیرجانبی را از مجموعه‌ای از بافرها گردآوری کرده و در یک پیام واحد به هم می‌چسباند. آرگومان \*buffers\* داده‌های غیرجانبی را به‌صورت یک پیمایش‌پذیر از :term:`اشیاء شبه‌بایت <bytes-like object>` مشخص می‌کند (برای مثال اشیاء :class:`bytes`)؛ سیستم‌عامل ممکن است محدودیتی (مقدار ``SC_IOV_MAX`` از :func:`~os.sysconf`) بر تعداد بافرهای قابل استفاده تعیین کند. آرگومان \*ancdata\* داده‌های جانبی (پیام‌های کنترلی) را به‌صورت یک پیمایش‌پذیر از صفر یا چند تاپل ``(cmsg_level, cmsg_type, cmsg_data)`` مشخص می‌کند، که در آن \*cmsg_level\* و \*cmsg_type\* اعداد صحیحی هستند که به‌ترتیب سطح پروتکل و نوع خاص پروتکل را مشخص می‌کنند، و \*cmsg_data\* یک شیء شبه‌بایت حاوی داده مرتبط است. توجه داشته باشید که برخی سیستم‌ها (به‌ویژه سیستم‌های بدون :func:`CMSG_SPACE`) ممکن است تنها از ارسال یک پیام کنترلی در هر فراخوانی پشتیبانی کنند. آرگومان \*flags\* به‌طور پیش‌فرض ۰ است و همان معنای :meth:`send` را دارد. اگر \*address\* ارائه شود و ``None`` نباشد، آدرس مقصدی برای پیام تنظیم می‌کند. مقدار بازگشتی تعداد بایت‌های داده غیرجانبی ارسال‌شده است."
 
 msgid "The following function sends the list of file descriptors *fds* over an :const:`AF_UNIX` socket, on systems which support the :const:`!SCM_RIGHTS` mechanism.  See also :meth:`recvmsg`. ::"
-msgstr "تابع زیر فهرست توصیف‌گرهای پرونده *fds* را از طریق یک سوکت :const:`AF_UNIX` در سیستم‌هایی که از سازوکار :const:`!SCM_RIGHTS` پشتیبانی می‌کنند، ارسال می‌کند. همچنین :meth:`recvmsg` را ببینید. ::"
+msgstr "تابع زیر فهرست توصیف‌گرهای پرونده \*fds\* را از طریق یک سوکت :const:`AF_UNIX` در سیستم‌هایی که از سازوکار :const:`!SCM_RIGHTS` پشتیبانی می‌کنند، ارسال می‌کند. همچنین :meth:`recvmsg` را ببینید. ::"
 
 msgid ""
 "import socket, array\n"
@@ -1073,13 +1073,13 @@ msgid "Specialized version of :meth:`~socket.sendmsg` for :const:`AF_ALG` socket
 msgstr "نسخه‌ی تخصصی :meth:`~socket.sendmsg` برای سوکت :const:`AF_ALG` است. حالت، IV، طول داده‌های مرتبط با AEAD و پرچم‌ها را برای سوکت :const:`AF_ALG` تنظیم می‌کند."
 
 msgid "Send a file until EOF is reached by using high-performance :mod:`os.sendfile` and return the total number of bytes which were sent. *file* must be a regular file object opened in binary mode. If :mod:`os.sendfile` is not available (e.g. Windows) or *file* is not a regular file :meth:`send` will be used instead. *offset* tells from where to start reading the file. If specified, *count* is the total number of bytes to transmit as opposed to sending the file until EOF is reached. File position is updated on return or also in case of error in which case :meth:`file.tell() <io.IOBase.tell>` can be used to figure out the number of bytes which were sent. The socket must be of :const:`SOCK_STREAM` type. Non-blocking sockets are not supported."
-msgstr "یک پرونده را تا رسیدن به EOF با استفاده از :mod:`os.sendfile` با کارایی بالا ارسال می‌کند و تعداد کل بایت‌های ارسال‌شده را برمی‌گرداند. *file* باید یک شیء پرونده معمولی باشد که در حالت دودویی باز شده است. اگر :mod:`os.sendfile` در دسترس نباشد (برای مثال ویندوز) یا *file* یک پرونده معمولی نباشد، به‌جای آن از :meth:`send` استفاده خواهد شد. *offset* مشخص می‌کند که خواندن پرونده از کجا آغاز شود. در صورت تعیین شدن، *count* تعداد کل بایت‌هایی است که باید منتقل شوند، برخلاف ارسال پرونده تا رسیدن به EOF. موقعیت پرونده هنگام بازگشت و همچنین در صورت بروز خطا به‌روزرسانی می‌شود؛ در این صورت می‌توان از :meth:`file.tell() <io.IOBase.tell>` برای تشخیص تعداد بایت‌های ارسال‌شده استفاده کرد. سوکت باید از نوع :const:`SOCK_STREAM` باشد. سوکت‌های غیرمسدودکننده پشتیبانی نمی‌شوند."
+msgstr "یک پرونده را تا رسیدن به EOF با استفاده از :mod:`os.sendfile` با کارایی بالا ارسال می‌کند و تعداد کل بایت‌های ارسال‌شده را برمی‌گرداند. \*file\* باید یک شیء پرونده معمولی باشد که در حالت دودویی باز شده است. اگر :mod:`os.sendfile` در دسترس نباشد (برای مثال ویندوز) یا \*file\* یک پرونده معمولی نباشد، به‌جای آن از :meth:`send` استفاده خواهد شد. \*offset\* مشخص می‌کند که خواندن پرونده از کجا آغاز شود. در صورت تعیین شدن، \*count\* تعداد کل بایت‌هایی است که باید منتقل شوند، برخلاف ارسال پرونده تا رسیدن به EOF. موقعیت پرونده هنگام بازگشت و همچنین در صورت بروز خطا به‌روزرسانی می‌شود؛ در این صورت می‌توان از :meth:`file.tell() <io.IOBase.tell>` برای تشخیص تعداد بایت‌های ارسال‌شده استفاده کرد. سوکت باید از نوع :const:`SOCK_STREAM` باشد. سوکت‌های غیرمسدودکننده پشتیبانی نمی‌شوند."
 
 msgid "Set the :ref:`inheritable flag <fd_inheritance>` of the socket's file descriptor or socket's handle."
 msgstr ":ref:`پرچم ارث‌پذیری <fd_inheritance>` توصیف‌گر پرونده سوکت یا دسته‌ی سوکت را تنظیم کنید."
 
 msgid "Set blocking or non-blocking mode of the socket: if *flag* is false, the socket is set to non-blocking, else to blocking mode."
-msgstr "حالت مسدودکننده یا غیرمسدودکننده‌ی سوکت را تنظیم می‌کند: اگر *flag* نادرست باشد، سوکت در حالت غیرمسدودکننده تنظیم می‌شود، در غیر این صورت در حالت مسدودکننده تنظیم می‌شود."
+msgstr "حالت مسدودکننده یا غیرمسدودکننده‌ی سوکت را تنظیم می‌کند: اگر \*flag\* نادرست باشد، سوکت در حالت غیرمسدودکننده تنظیم می‌شود، در غیر این صورت در حالت مسدودکننده تنظیم می‌شود."
 
 msgid "This method is a shorthand for certain :meth:`~socket.settimeout` calls:"
 msgstr "این متد میان‌بری برای برخی فراخوانی‌های :meth:`~socket.settimeout` است:"
@@ -1094,7 +1094,7 @@ msgid "The method no longer applies :const:`SOCK_NONBLOCK` flag on :attr:`socket
 msgstr "این متد دیگر پرچم :const:`SOCK_NONBLOCK` را روی :attr:`socket.type` اعمال نمی‌کند."
 
 msgid "Set a timeout on blocking socket operations.  The *value* argument can be a nonnegative real number expressing seconds, or ``None``. If a non-zero value is given, subsequent socket operations will raise a :exc:`timeout` exception if the timeout period *value* has elapsed before the operation has completed.  If zero is given, the socket is put in non-blocking mode. If ``None`` is given, the socket is put in blocking mode."
-msgstr "برای عملیات‌های مسدودکننده سوکت یک مهلت تنظیم کنید. آرگومان *value* می‌تواند یک عدد حقیقی نامنفی بیان‌کننده ثانیه‌ها، یا ``None`` باشد. اگر مقدار غیرصفر داده شود، در عملیات‌های بعدی سوکت، چنانچه دوره مهلت *value* پیش از تکمیل عملیات سپری شده باشد، استثنای :exc:`timeout` پرتاب خواهد شد. اگر ۰ داده شود، سوکت در حالت غیرمسدودکننده قرار می‌گیرد. اگر ``None`` داده شود، سوکت در حالت مسدودکننده قرار می‌گیرد."
+msgstr "برای عملیات‌های مسدودکننده سوکت یک مهلت تنظیم کنید. آرگومان \*value\* می‌تواند یک عدد حقیقی نامنفی بیان‌کننده ثانیه‌ها، یا ``None`` باشد. اگر مقدار غیرصفر داده شود، در عملیات‌های بعدی سوکت، چنانچه دوره مهلت \*value\* پیش از تکمیل عملیات سپری شده باشد، استثنای :exc:`timeout` پرتاب خواهد شد. اگر ۰ داده شود، سوکت در حالت غیرمسدودکننده قرار می‌گیرد. اگر ``None`` داده شود، سوکت در حالت مسدودکننده قرار می‌گیرد."
 
 msgid "For further information, please consult the :ref:`notes on socket timeouts <socket-timeouts>`."
 msgstr "برای اطلاعات بیشتر، لطفاً :ref:`یادداشت‌های مربوط به مهلت‌های زمانی سوکت <socket-timeouts>` را مطالعه کنید."
@@ -1103,19 +1103,19 @@ msgid "The method no longer toggles :const:`SOCK_NONBLOCK` flag on :attr:`socket
 msgstr "این متد دیگر پرچم :const:`SOCK_NONBLOCK` را روی :attr:`socket.type` تغییر وضعیت نمی‌دهد."
 
 msgid "Set the value of the given socket option (see the Unix manual page :manpage:`setsockopt(2)`).  The needed symbolic constants are defined in this module (:ref:`!SO_\\* etc. <socket-unix-constants>`).  The value can be an integer, ``None`` or a :term:`bytes-like object` representing a buffer. In the latter case it is up to the caller to ensure that the bytestring contains the proper bits (see the optional built-in module :mod:`struct` for a way to encode C structures as bytestrings). When *value* is set to ``None``, *optlen* argument is required. It's equivalent to calling :c:func:`!setsockopt` C function with ``optval=NULL`` and ``optlen=optlen``."
-msgstr "مقدار گزینه‌ی سوکت داده‌شده را تنظیم می‌کند (صفحه‌ی راهنمای یونیکس :manpage:`setsockopt(2)` را ببینید). ثابت‌های نمادین مورد نیاز در این ماژول تعریف شده‌اند (:ref:`!SO_\\* etc. <socket-unix-constants>`). مقدار می‌تواند یک عدد صحیح، ``None`` یا یک :term:`bytes-like object` باشد که نشان‌دهنده‌ی یک بافر است. در حالت آخر، این بر عهده‌ی فراخواننده است که اطمینان حاصل کند رشته‌بایت حاوی بیت‌های مناسب است (برای راهی جهت کدگذاری ساختارهای C به‌صورت رشته‌بایت‌ها، ماژول توکار اختیاری :mod:`struct` را ببینید). هنگامی که *value* روی ``None`` تنظیم شود، آرگومان *optlen* الزامی است. این معادل فراخوانی تابع C :c:func:`!setsockopt` با ``optval=NULL`` و ``optlen=optlen`` است."
+msgstr "مقدار گزینه‌ی سوکت داده‌شده را تنظیم می‌کند (صفحه‌ی راهنمای یونیکس :manpage:`setsockopt(2)` را ببینید). ثابت‌های نمادین مورد نیاز در این ماژول تعریف شده‌اند (:ref:`!SO_\\* etc. <socket-unix-constants>`). مقدار می‌تواند یک عدد صحیح، ``None`` یا یک :term:`bytes-like object` باشد که نشان‌دهنده‌ی یک بافر است. در حالت آخر، این بر عهده‌ی فراخواننده است که اطمینان حاصل کند رشته‌بایت حاوی بیت‌های مناسب است (برای راهی جهت کدگذاری ساختارهای C به‌صورت رشته‌بایت‌ها، ماژول توکار اختیاری :mod:`struct` را ببینید). هنگامی که \*value\* روی ``None`` تنظیم شود، آرگومان \*optlen\* الزامی است. این معادل فراخوانی تابع C :c:func:`!setsockopt` با ``optval=NULL`` و ``optlen=optlen`` است."
 
 msgid "setsockopt(level, optname, None, optlen: int) form added."
 msgstr "شکل setsockopt(level, optname, None, optlen: int) اضافه شد."
 
 msgid "Shut down one or both halves of the connection.  If *how* is :const:`SHUT_RD`, further receives are disallowed.  If *how* is :const:`SHUT_WR`, further sends are disallowed.  If *how* is :const:`SHUT_RDWR`, further sends and receives are disallowed."
-msgstr "یک یا هر دو نیمه‌ی اتصال را خاموش کنید. اگر *how* برابر :const:`SHUT_RD` باشد، دریافت‌های بعدی مجاز نیستند. اگر *how* برابر :const:`SHUT_WR` باشد، ارسال‌های بعدی مجاز نیستند. اگر *how* برابر :const:`SHUT_RDWR` باشد، ارسال‌ها و دریافت‌های بعدی مجاز نیستند."
+msgstr "یک یا هر دو نیمه‌ی اتصال را خاموش کنید. اگر \*how\* برابر :const:`SHUT_RD` باشد، دریافت‌های بعدی مجاز نیستند. اگر \*how\* برابر :const:`SHUT_WR` باشد، ارسال‌های بعدی مجاز نیستند. اگر \*how\* برابر :const:`SHUT_RDWR` باشد، ارسال‌ها و دریافت‌های بعدی مجاز نیستند."
 
 msgid "Duplicate a socket and prepare it for sharing with a target process.  The target process must be provided with *process_id*.  The resulting bytes object can then be passed to the target process using some form of interprocess communication and the socket can be recreated there using :func:`fromshare`. Once this method has been called, it is safe to close the socket since the operating system has already duplicated it for the target process."
-msgstr "سوکت را تکثیر می‌کند و آن را برای اشتراک‌گذاری با یک فرایند هدف آماده می‌کند. فرایند هدف باید با *process_id* مشخص شود. سپس می‌توان شیء bytes حاصل را با استفاده از نوعی ارتباط بین‌فرایندی به فرایند هدف منتقل کرد و سوکت را در آن‌جا با استفاده از :func:`fromshare` دوباره ایجاد کرد. پس از فراخوانی این متد، بستن سوکت بی‌خطر است، زیرا سیستم‌عامل پیش‌تر آن را برای فرایند هدف تکثیر کرده است."
+msgstr "سوکت را تکثیر می‌کند و آن را برای اشتراک‌گذاری با یک فرایند هدف آماده می‌کند. فرایند هدف باید با \*process_id\* مشخص شود. سپس می‌توان شیء bytes حاصل را با استفاده از نوعی ارتباط بین‌فرایندی به فرایند هدف منتقل کرد و سوکت را در آن‌جا با استفاده از :func:`fromshare` دوباره ایجاد کرد. پس از فراخوانی این متد، بستن سوکت بی‌خطر است، زیرا سیستم‌عامل پیش‌تر آن را برای فرایند هدف تکثیر کرده است."
 
 msgid "Note that there are no methods :meth:`!read` or :meth:`!write`; use :meth:`~socket.recv` and :meth:`~socket.send` without *flags* argument instead."
-msgstr "توجه داشته باشید که متدهای :meth:`!read` یا :meth:`!write` وجود ندارند؛ در عوض از :meth:`~socket.recv` و :meth:`~socket.send` بدون آرگومان *flags* استفاده کنید."
+msgstr "توجه داشته باشید که متدهای :meth:`!read` یا :meth:`!write` وجود ندارند؛ در عوض از :meth:`~socket.recv` و :meth:`~socket.send` بدون آرگومان \*flags\* استفاده کنید."
 
 msgid "Socket objects also have these (read-only) attributes that correspond to the values given to the :class:`~socket.socket` constructor."
 msgstr "اشیای سوکت همچنین دارای این ویژگی‌های (فقط‌خواندنی) هستند که با مقادیر داده‌شده به سازنده‌ی :class:`~socket.socket` مطابقت دارند."
@@ -1139,16 +1139,16 @@ msgid "A socket object can be in one of three modes: blocking, non-blocking, or 
 msgstr "یک شیء سوکت می‌تواند در یکی از سه حالت باشد: مسدودکننده، غیرمسدودکننده، یا مهلت زمانی . سوکت‌ها به‌طور پیش‌فرض همیشه در حالت مسدودکننده ایجاد می‌شوند، اما می‌توان این حالت را با فراخوانی :func:`setdefaulttimeout` تغییر داد."
 
 msgid "In *blocking mode*, operations block until complete or the system returns an error (such as connection timed out)."
-msgstr "در *حالت مسدودکننده*، عملیات‌ها تا زمانی که کامل شوند یا سیستم خطایی برگرداند، مسدود می‌شوند (مانند اتمام مهلت اتصال)."
+msgstr "در \*حالت مسدودکننده\*، عملیات‌ها تا زمانی که کامل شوند یا سیستم خطایی برگرداند، مسدود می‌شوند (مانند اتمام مهلت اتصال)."
 
 msgid "In *non-blocking mode*, operations fail (with an error that is unfortunately system-dependent) if they cannot be completed immediately: functions from the :mod:`select` module can be used to know when and whether a socket is available for reading or writing."
-msgstr "در *حالت غیرمسدود*، عملیات‌ها در صورتی شکست می‌خورند که نتوانند بلافاصله کامل شوند (با خطایی که متأسفانه به سیستم وابسته است): برای تشخیص اینکه چه زمانی و آیا یک سوکت برای خواندن یا نوشتن در دسترس است، می‌توان از توابع ماژول :mod:`select` استفاده کرد."
+msgstr "در \*حالت غیرمسدود\*، عملیات‌ها در صورتی شکست می‌خورند که نتوانند بلافاصله کامل شوند (با خطایی که متأسفانه به سیستم وابسته است): برای تشخیص اینکه چه زمانی و آیا یک سوکت برای خواندن یا نوشتن در دسترس است، می‌توان از توابع ماژول :mod:`select` استفاده کرد."
 
 msgid "In *timeout mode*, operations fail if they cannot be completed within the timeout specified for the socket (they raise a :exc:`timeout` exception) or if the system returns an error."
-msgstr "در *حالت مهلت *، عملیات‌ها ناموفق می‌شوند اگر نتوانند در مهلت تعیین‌شده برای سوکت تکمیل شوند (آن‌ها استثانای :exc:`timeout` را پرتاب می‌کنند) یا اگر سیستم خطایی برگرداند."
+msgstr "در \*حالت مهلت \*، عملیات‌ها ناموفق می‌شوند اگر نتوانند در مهلت تعیین‌شده برای سوکت تکمیل شوند (آن‌ها استثانای :exc:`timeout` را پرتاب می‌کنند) یا اگر سیستم خطایی برگرداند."
 
 msgid "At the operating system level, sockets in *timeout mode* are internally set in non-blocking mode.  Also, the blocking and timeout modes are shared between file descriptors and socket objects that refer to the same network endpoint. This implementation detail can have visible consequences if e.g. you decide to use the :meth:`~socket.fileno` of a socket."
-msgstr "در سطح سیستم‌عامل، سوکت‌هایی که در *حالت مهلت زمانی* هستند، به‌صورت داخلی در حالت غیرمسدودکننده تنظیم می‌شوند. همچنین حالت‌های مسدودکننده و مهلت زمانی بین توصیف‌گرهای پرونده و اشیای سوکتی که به یک پایانه شبکه یکسان اشاره می‌کنند، مشترک هستند. این جزئیات پیاده‌سازی می‌تواند پیامدهای قابل‌مشاهده‌ای داشته باشد، برای مثال اگر تصمیم بگیرید از :meth:`~socket.fileno` یک سوکت استفاده کنید."
+msgstr "در سطح سیستم‌عامل، سوکت‌هایی که در \*حالت مهلت زمانی\* هستند، به‌صورت داخلی در حالت غیرمسدودکننده تنظیم می‌شوند. همچنین حالت‌های مسدودکننده و مهلت زمانی بین توصیف‌گرهای پرونده و اشیای سوکتی که به یک پایانه شبکه یکسان اشاره می‌کنند، مشترک هستند. این جزئیات پیاده‌سازی می‌تواند پیامدهای قابل‌مشاهده‌ای داشته باشد، برای مثال اگر تصمیم بگیرید از :meth:`~socket.fileno` یک سوکت استفاده کنید."
 
 msgid "Timeouts and the ``connect`` method"
 msgstr "مهلت‌ها و متد ``connect``"
@@ -1163,10 +1163,10 @@ msgid "If :func:`getdefaulttimeout` is not :const:`None`, sockets returned by th
 msgstr "اگر :func:`getdefaulttimeout` برابر :const:`None` نباشد، سوکت‌های برگردانده‌شده توسط متد :meth:`~socket.accept` آن مهلت زمانی را به ارث می‌برند. در غیر این صورت، رفتار به تنظیمات سوکت گوش‌دهنده بستگی دارد:"
 
 msgid "if the listening socket is in *blocking mode* or in *timeout mode*, the socket returned by :meth:`~socket.accept` is in *blocking mode*;"
-msgstr "اگر سوکت گوش‌کننده در *حالت مسدودکننده* یا در *حالت timeout* باشد، سوکت برگردانده‌شده توسط :meth:`~socket.accept` در *حالت مسدودکننده* است؛"
+msgstr "اگر سوکت گوش‌کننده در \*حالت مسدودکننده\* یا در \*حالت timeout\* باشد، سوکت برگردانده‌شده توسط :meth:`~socket.accept` در \*حالت مسدودکننده\* است؛"
 
 msgid "if the listening socket is in *non-blocking mode*, whether the socket returned by :meth:`~socket.accept` is in blocking or non-blocking mode is operating system-dependent.  If you want to ensure cross-platform behaviour, it is recommended you manually override this setting."
-msgstr "اگر سوکت شنونده در *حالت غیرمسدود* باشد، مسدود یا غیرمسدود بودن سوکتی که :meth:`~socket.accept` برمی‌گرداند، به سیستم‌عامل وابسته است. اگر می‌خواهید رفتار بین‌سکویی را تضمین کنید، توصیه می‌شود این تنظیم را به‌صورت دستی بازنویسی کنید."
+msgstr "اگر سوکت شنونده در \*حالت غیرمسدود\* باشد، مسدود یا غیرمسدود بودن سوکتی که :meth:`~socket.accept` برمی‌گرداند، به سیستم‌عامل وابسته است. اگر می‌خواهید رفتار بین‌سکویی را تضمین کنید، توصیه می‌شود این تنظیم را به‌صورت دستی بازنویسی کنید."
 
 msgid "Example"
 msgstr "مثال"
@@ -1527,10 +1527,10 @@ msgid "For an introduction to socket programming (in C), see the following paper
 msgstr "برای آشنایی با برنامه‌نویسی سوکت (به زبان C)، مقاله‌های زیر را ببینید:"
 
 msgid "*An Introductory 4.3BSD Interprocess Communication Tutorial*, by Stuart Sechrest"
-msgstr "*آموزش مقدماتی ارتباط بین‌فرایندی 4.3BSD*، اثر Stuart Sechrest"
+msgstr "\*آموزش مقدماتی ارتباط بین‌فرایندی 4.3BSD\*، اثر Stuart Sechrest"
 
 msgid "*An Advanced 4.3BSD Interprocess Communication Tutorial*, by Samuel J.  Leffler et al,"
-msgstr "*آموزش پیشرفته ارتباط بین‌فرایندی 4.3BSD*، اثر Samuel J. Leffler و دیگران،"
+msgstr "\*آموزش پیشرفته ارتباط بین‌فرایندی 4.3BSD\*، اثر Samuel J. Leffler و دیگران،"
 
 msgid "both in the UNIX Programmer's Manual, Supplementary Documents 1 (sections PS1:7 and PS1:8).  The platform-specific reference material for the various socket-related system calls are also a valuable source of information on the details of socket semantics.  For Unix, refer to the manual pages; for Windows, see the WinSock (or Winsock 2) specification.  For IPv6-ready APIs, readers may want to refer to :rfc:`3493` titled Basic Socket Interface Extensions for IPv6."
 msgstr "هر دو در UNIX Programmer's Manual، Supplementary Documents 1 (بخش‌های PS1:7 و PS1:8). مستندات مرجع مختص هر سکو برای فراخوانی‌های سیستمی مختلف مرتبط با سوکت نیز منبع ارزشمندی برای اطلاعات درباره‌ی جزئیات معناشناسی سوکت است. برای Unix، به صفحات راهنما مراجعه کنید؛ برای Windows، مشخصات WinSock (یا Winsock 2) را ببینید. برای APIهای آماده برای IPv6، خوانندگان ممکن است بخواهند به :rfc:`3493` با عنوان Basic Socket Interface Extensions for IPv6 مراجعه کنند."

@@ -375,9 +375,9 @@ msgid ""
 " )"
 msgstr ""
 "CREATE TABLE test(\n"
-"   i integer primary key,  ! به دنبال مبدلی به نام \"integer\" می‌گردد\n"
-"   p point,                ! به دنبال مبدلی به نام \"point\" می‌گردد\n"
-"   n number(10)            ! به دنبال مبدلی به نام \"number\" می‌گردد\n"
+"   i integer primary key,  ! will look up a converter named \"integer\"\n"
+"   p point,                ! will look up a converter named \"point\"\n"
+"   n number(10)            ! will look up a converter named \"number\"\n"
 " )"
 
 msgid "This flag may be combined with :const:`PARSE_COLNAMES` using the ``|`` (bitwise or) operator."
@@ -390,7 +390,7 @@ msgid "Pass this flag value to the *detect_types* parameter of :func:`connect` t
 msgstr "این مقدار پرچم را به پارامتر *detect_types* از :func:`connect` بدهید تا با استفاده از نام نوع، که از نام ستون پرس‌وجو تجزیه می‌شود، به‌عنوان کلید دیکشنری مبدل، یک تابع مبدل را جستجو کنید. نام ستون پرس‌وجو باید داخل علامت نقل‌قول دوتایی (``\"``) و نام نوع باید داخل کروشه (``[]``) قرار گیرد."
 
 msgid "SELECT MAX(p) as \"p [point]\" FROM test;  ! will look up converter \"point\""
-msgstr "SELECT MAX(p) as \"p [point]\" FROM test;  ! مبدل (converter) \"point\" را جست‌وجو خواهد کرد"
+msgstr "SELECT MAX(p) as \"p [point]\" FROM test;  ! will look up converter \"point\""
 
 msgid "This flag may be combined with :const:`PARSE_DECLTYPES` using the ``|`` (bitwise or) operator."
 msgstr "می‌توان این پرچم را با :const:`PARSE_DECLTYPES` با استفاده از عملگر ``|`` (یای بیتی) ترکیب کرد."

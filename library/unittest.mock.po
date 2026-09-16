@@ -100,13 +100,13 @@ msgid "There is also :func:`patch.dict` for setting values in a dictionary just 
 msgstr "همچنین :func:`patch.dict` برای تنظیم مقادیر در یک دیکشنری فقط در طول یک محدوده و بازگرداندن دیکشنری به حالت اصلی خود هنگام پایان آزمون وجود دارد:"
 
 msgid "Mock supports the mocking of Python :ref:`magic methods <magic-methods>`. The easiest way of using magic methods is with the :class:`MagicMock` class. It allows you to do things like:"
-msgstr "Mock از ماک کردن :ref:`متدهای ویژه <magic-methods>` پایتون پشتیبانی می‌کند. ساده‌ترین راه برای استفاده از متدهای ویژه، استفاده از کلاس :class:`MagicMock` است. این کلاس به شما امکان می‌دهد کارهایی مانند موارد زیر را انجام دهید:"
+msgstr "Mock از ماک کردن :ref:`متدهای جادویی <magic-methods>` پایتون پشتیبانی می‌کند. ساده‌ترین راه برای استفاده از متدهای ویژه، استفاده از کلاس :class:`MagicMock` است. این کلاس به شما امکان می‌دهد کارهایی مانند موارد زیر را انجام دهید:"
 
 msgid "Mock allows you to assign functions (or other Mock instances) to magic methods and they will be called appropriately. The :class:`MagicMock` class is just a Mock variant that has all of the magic methods pre-created for you (well, all the useful ones anyway)."
-msgstr "ماک به شما اجازه می‌دهد توابع (یا دیگر نمونه‌های ماک) را به متدهای ویژه اختصاص دهید و آن‌ها به‌درستی فراخوانی می‌شوند. کلاس :class:`MagicMock` صرفاً گونه‌ای از ماک است که تمام متدهای ویژه آن از پیش برای شما ایجاد شده‌اند (البته به‌هرحال همه‌ی متدهای مفید)."
+msgstr "ماک به شما اجازه می‌دهد توابع (یا دیگر نمونه‌های ماک) را به متدهای جادویی اختصاص دهید و آن‌ها به‌درستی فراخوانی می‌شوند. کلاس :class:`MagicMock` صرفاً گونه‌ای از ماک است که تمام متدهای ویژه آن از پیش برای شما ایجاد شده‌اند (البته به‌هرحال همه‌ی متدهای مفید)."
 
 msgid "The following is an example of using magic methods with the ordinary Mock class:"
-msgstr "در زیر مثالی از استفاده از متدهای ویژه با کلاس معمولی Mock آمده است:"
+msgstr "در زیر مثالی از استفاده از متدهای جادویی با کلاس معمولی Mock آمده است:"
 
 msgid "For ensuring that the mock objects in your tests have the same api as the objects they are replacing, you can use :ref:`auto-speccing <auto-speccing>`. Auto-speccing can be done through the *autospec* argument to patch, or the :func:`create_autospec` function. Auto-speccing creates mock objects that have the same attributes and methods as the objects they are replacing, and any functions and methods (including constructors) have the same call signature as the real object."
 msgstr "برای اطمینان از اینکه اشیای ماک در آزمون‌های شما همان API اشیایی را دارند که جایگزین آن‌ها می‌شوند، می‌توانید از :ref:`auto-speccing <auto-speccing>` استفاده کنید. Auto-speccing را می‌توان از طریق آرگومان *autospec* در patch، یا تابع :func:`create_autospec` انجام داد. Auto-speccing اشیای ماکی ایجاد می‌کند که همان ویژگی‌ها و متدهای اشیایی را دارند که جایگزین آن‌ها می‌شوند، و همه توابع و متدها (از جمله سازنده‌ها) همان امضای فراخوانی شیء واقعی را دارند."
@@ -124,7 +124,7 @@ msgid ":class:`Mock` is a flexible mock object intended to replace the use of st
 msgstr ":class:`Mock` یک شیء ماک انعطاف‌پذیر است که برای جایگزینی استفاده از جایگزین‌های موقت (stubs) و جایگزین‌های آزمون (test doubles) در سراسر کد شما در نظر گرفته شده است. ماک‌ها فراخوانی‌پذیر هستند و هنگامی که به ویژگی‌های آن‌ها دسترسی پیدا می‌کنید، آن ویژگی‌ها را به‌عنوان ماک‌های جدید ایجاد می‌کنند [#]_. دسترسی به همان ویژگی همیشه همان ماک را برمی‌گرداند. ماک‌ها نحوه استفاده شما از آن‌ها را ثبت می‌کنند و به شما امکان می‌دهند درباره آنچه کد شما با آن‌ها انجام داده است، ادعاهایی مطرح کنید."
 
 msgid ":class:`MagicMock` is a subclass of :class:`Mock` with all the magic methods pre-created and ready to use. There are also non-callable variants, useful when you are mocking out objects that aren't callable: :class:`NonCallableMock` and :class:`NonCallableMagicMock`"
-msgstr ":class:`MagicMock` یک زیرکلاس از :class:`Mock` است که تمام متدهای ویژه آن از پیش ساخته‌شده‌اند و آماده استفاده هستند. همچنین گونه‌های غیرفراخوانی‌پذیر نیز وجود دارند که هنگام ماک‌کردن اشیایی که فراخوانی‌پذیر نیستند، مفید هستند: :class:`NonCallableMock` و :class:`NonCallableMagicMock`"
+msgstr ":class:`MagicMock` یک زیرکلاس از :class:`Mock` است که تمام متدهای جادویی آن از پیش ساخته‌شده‌اند و آماده استفاده هستند. همچنین گونه‌های غیرفراخوانی‌پذیر نیز وجود دارند که هنگام ماک‌کردن اشیایی که فراخوانی‌پذیر نیستند، مفید هستند: :class:`NonCallableMock` و :class:`NonCallableMagicMock`"
 
 msgid "The :func:`patch` decorators makes it easy to temporarily replace classes in a particular module with a :class:`Mock` object. By default :func:`patch` will create a :class:`MagicMock` for you. You can specify an alternative class of :class:`Mock` using the *new_callable* argument to :func:`patch`."
 msgstr "دکوراتورهای :func:`patch` جایگزینی موقت کلاس‌ها در یک ماژول خاص با یک شیء :class:`Mock` را آسان می‌کنند. به‌طور پیش‌فرض، :func:`patch` یک :class:`MagicMock` برای شما ایجاد می‌کند. شما می‌توانید با استفاده از آرگومان *new_callable* در :func:`patch`، یک کلاس جایگزین برای :class:`Mock` را مشخص کنید."
@@ -367,7 +367,7 @@ msgid "Members of :attr:`method_calls` are :data:`call` objects. These can be un
 msgstr "اعضای :attr:`method_calls` اشیای :data:`call` هستند. می‌توان آن‌ها را به‌صورت تاپل واگشایی کرد تا به آرگومان‌های جداگانه دسترسی پیدا کرد. :ref:`فراخوانی‌ها به‌صورت تاپل <calls-as-tuples>` را ببینید."
 
 msgid ":attr:`mock_calls` records *all* calls to the mock object, its methods, magic methods *and* return value mocks."
-msgstr ":attr:`mock_calls` *همه* فراخوانی‌ها به شیء ماک، متدهای آن، متدهای ویژه *و* ماک‌های مقدار بازگشتی را ثبت می‌کند."
+msgstr ":attr:`mock_calls` *همه* فراخوانی‌ها به شیء ماک، متدهای آن، متدهای جادویی *و* ماک‌های مقدار بازگشتی را ثبت می‌کند."
 
 msgid "Members of :attr:`mock_calls` are :data:`call` objects. These can be unpacked as tuples to get at the individual arguments. See :ref:`calls as tuples <calls-as-tuples>`."
 msgstr "عناصر :attr:`mock_calls` اشیای :data:`call` هستند. می‌توانید این‌ها را به‌صورت تاپل واگشایی کنید تا به تک‌تک آرگومان‌ها دسترسی پیدا کنید. :ref:`فراخوانی‌ها به‌صورت تاپل <calls-as-tuples>` را ببینید."
@@ -388,7 +388,7 @@ msgid "Mock objects that use a class or an instance as a :attr:`!spec` or :attr:
 msgstr "اشیای ماک که از یک کلاس یا نمونه به‌عنوان :attr:`!spec` یا :attr:`!spec_set` استفاده می‌کنند، می‌توانند آزمون‌های :func:`isinstance` را بگذرانند:"
 
 msgid "The :class:`Mock` classes have support for mocking magic methods. See :ref:`magic methods <magic-methods>` for the full details."
-msgstr "کلاس‌های :class:`Mock` از ماک کردن متدهای ویژه پشتیبانی می‌کنند. برای جزئیات کامل، :ref:`متدهای ویژه <magic-methods>` را ببینید."
+msgstr "کلاس‌های :class:`Mock` از ماک کردن متدهای جادویی پشتیبانی می‌کنند. برای جزئیات کامل، :ref:`متدهای جادویی <magic-methods>` را ببینید."
 
 msgid "The mock classes and the :func:`patch` decorators all take arbitrary keyword arguments for configuration. For the :func:`patch` decorators the keywords are passed to the constructor of the mock being created. The keyword arguments are for configuring attributes of the mock:"
 msgstr "کلاس‌های ماک و دکوراتورهای :func:`patch` همگی آرگومان‌های کلیدواژه‌ای دلخواه را برای پیکربندی می‌پذیرند. در دکوراتورهای :func:`patch`، کلیدواژه‌ها به سازنده‌ی ماکِ در حال ایجاد ارسال می‌شوند. آرگومان‌های کلیدواژه‌ای برای پیکربندی ویژگی‌های ماک هستند:"
@@ -721,7 +721,7 @@ msgstr ""
 "[call.child1('one'), call.child2('two')]"
 
 msgid "The only exceptions are magic methods and attributes (those that have leading and trailing double underscores). Mock doesn't create these but instead raises an :exc:`AttributeError`. This is because the interpreter will often implicitly request these methods, and gets *very* confused to get a new Mock object when it expects a magic method. If you need magic method support see :ref:`magic methods <magic-methods>`."
-msgstr "تنها استثناها متدها و ویژگی‌های جادویی هستند (آن‌هایی که در ابتدا و انتها دو زیرخط دارند). Mock این‌ها را ایجاد نمی‌کند، بلکه در عوض یک :exc:`AttributeError` پرتاب می‌کند. این به این دلیل است که مفسر اغلب این متدها را به‌طور ضمنی درخواست می‌کند و هنگامی که انتظار یک متد ویژه را دارد، دریافت یک شیء Mock جدید آن را *بسیار* سردرگم می‌کند. اگر به پشتیبانی از متدهای ویژه نیاز دارید، :ref:`متدهای ویژه <magic-methods>` را ببینید."
+msgstr "تنها استثناها متدها و ویژگی‌های جادویی هستند (آن‌هایی که در ابتدا و انتها دو زیرخط دارند). Mock این‌ها را ایجاد نمی‌کند، بلکه در عوض یک :exc:`AttributeError` پرتاب می‌کند. این به این دلیل است که مفسر اغلب این متدها را به‌طور ضمنی درخواست می‌کند و هنگامی که انتظار یک متد جادویی را دارد، دریافت یک شیء Mock جدید آن را *بسیار* سردرگم می‌کند. اگر به پشتیبانی از متدهای جادویی نیاز دارید، :ref:`متدهای جادویی <magic-methods>` را ببینید."
 
 msgid "The patchers"
 msgstr "وصله‌کننده‌ها"
@@ -1331,11 +1331,11 @@ msgid ""
 "    -> some_function instantiates SomeClass"
 msgstr ""
 "a.py\n"
-"    -> SomeClass را تعریف می‌کند\n"
+"    -> Defines SomeClass\n"
 "\n"
 "b.py\n"
 "    -> from a import SomeClass\n"
-"    -> some_function SomeClass را نمونه‌سازی می‌کند"
+"    -> some_function instantiates SomeClass"
 
 msgid "Now we want to test ``some_function`` but we want to mock out ``SomeClass`` using :func:`patch`. The problem is that when we import module b, which we will have to do when it imports ``SomeClass`` from module a. If we use :func:`patch` to mock out ``a.SomeClass`` then it will have no effect on our test; module b already has a reference to the *real* ``SomeClass`` and it looks like our patching had no effect."
 msgstr "اکنون می‌خواهیم ``some_function`` را آزمون کنیم، اما می‌خواهیم با استفاده از :func:`patch`، ``SomeClass`` را ماک کنیم. مشکل این است که وقتی ماژول b را ایمپورت می‌کنیم (که باید این کار را انجام دهیم)، این ماژول ``SomeClass`` را از ماژول a ایمپورت می‌کند. اگر از :func:`patch` برای ماک کردن ``a.SomeClass`` استفاده کنیم، تأثیری بر آزمون ما نخواهد داشت؛ ماژول b از قبل ارجاعی به ``SomeClass`` *واقعی* دارد و به نظر می‌رسد وصله کردن ما بی‌اثر بوده است."
@@ -1359,31 +1359,31 @@ msgid "Both patch_ and patch.object_ correctly patch and restore descriptors: cl
 msgstr "هر دو patch_ و patch.object_ توصیف‌گرها را به‌درستی وصله و بازیابی می‌کنند: متدهای کلاس، متدهای ایستا و پراپرتی‌ها. شما باید این‌ها را به‌جای یک نمونه، روی *کلاس* وصله کنید. آن‌ها همچنین با *برخی* اشیایی که دسترسی به ویژگی‌ها را پراکسی می‌کنند، مانند `شیء تنظیمات Django <https://web.archive.org/web/20200603181648/http://www.voidspace.org.uk/python/weblog/arch_d7_2010_12_04.shtml#e1198>`_ نیز کار می‌کنند."
 
 msgid "MagicMock and magic method support"
-msgstr "پشتیبانی از MagicMock و متدهای ویژه"
+msgstr "پشتیبانی از MagicMock و متدهای جادویی"
 
 msgid "Mocking Magic Methods"
-msgstr "ماک کردن متدهای ویژه"
+msgstr "ماک کردن متدهای جادویی"
 
 msgid ":class:`Mock` supports mocking the Python protocol methods, also known as :term:`\"magic methods\" <magic method>`. This allows mock objects to replace containers or other objects that implement Python protocols."
 msgstr ":class:`Mock` از ماک کردن متدهای پروتکل پایتون، که با نام :term:`\"متدهای جادویی\" <magic method>` نیز شناخته می‌شوند، پشتیبانی می‌کند. این کار به اشیاء ماک اجازه می‌دهد جایگزین ظرف‌ها یا اشیاء دیگری شوند که پروتکل‌های پایتون را پیاده‌سازی می‌کنند."
 
 msgid "Because magic methods are looked up differently from normal methods [#]_, this support has been specially implemented. This means that only specific magic methods are supported. The supported list includes *almost* all of them. If there are any missing that you need please let us know."
-msgstr "از آنجا که متدهای ویژه به‌شکل متفاوتی نسبت به متدهای عادی جستجو می‌شوند [#]_، این پشتیبانی به‌طور ویژه پیاده‌سازی شده است. این بدان معناست که تنها متدهای ویژه خاصی پشتیبانی می‌شوند. فهرست پشتیبانی‌شوده شامل *تقریباً* همه‌ی آن‌ها می‌شود. اگر موردی وجود ندارد که به آن نیاز دارید، لطفاً به ما اطلاع دهید."
+msgstr "از آنجا که متدهای جادویی به‌شکل متفاوتی نسبت به متدهای عادی جستجو می‌شوند [#]_، این پشتیبانی به‌طور جادویی پیاده‌سازی شده است. این بدان معناست که تنها متدهای جادویی خاصی پشتیبانی می‌شوند. فهرست پشتیبانی‌شوده شامل *تقریباً* همه‌ی آن‌ها می‌شود. اگر موردی وجود ندارد که به آن نیاز دارید، لطفاً به ما اطلاع دهید."
 
 msgid "You mock magic methods by setting the method you are interested in to a function or a mock instance. If you are using a function then it *must* take ``self`` as the first argument [#]_."
-msgstr "شما متدهای ویژه را با تنظیم متد مورد نظر خود به یک تابع یا یک نمونه ماک، ماک می‌کنید. اگر از یک تابع استفاده می‌کنید، آن تابع *باید* ``self`` را به‌عنوان اولین آرگومان دریافت کند [#]_."
+msgstr "شما متدهای جادویی را با تنظیم متد مورد نظر خود به یک تابع یا یک نمونه ماک، ماک می‌کنید. اگر از یک تابع استفاده می‌کنید، آن تابع *باید* ``self`` را به‌عنوان اولین آرگومان دریافت کند [#]_."
 
 msgid "One use case for this is for mocking objects used as context managers in a :keyword:`with` statement:"
 msgstr "یکی از موارد استفاده‌ی این، ماک کردن اشیایی است که به‌عنوان مدیر زمینه در یک دستور :keyword:`with` استفاده می‌شوند:"
 
 msgid "Calls to magic methods do not appear in :attr:`~Mock.method_calls`, but they are recorded in :attr:`~Mock.mock_calls`."
-msgstr "فراخوانی‌های متدهای ویژه در :attr:`~Mock.method_calls` ظاهر نمی‌شوند، اما در :attr:`~Mock.mock_calls` ثبت می‌شوند."
+msgstr "فراخوانی‌های متدهای جادویی در :attr:`~Mock.method_calls` ظاهر نمی‌شوند، اما در :attr:`~Mock.mock_calls` ثبت می‌شوند."
 
 msgid "If you use the *spec* keyword argument to create a mock then attempting to set a magic method that isn't in the spec will raise an :exc:`AttributeError`."
-msgstr "اگر برای ایجاد یک ماک از آرگومان کلیدواژه‌ای *spec* استفاده کنید، تلاش برای تنظیم یک متد ویژه که در spec وجود ندارد، باعث پرتاب استثنای :exc:`AttributeError` می‌شود."
+msgstr "اگر برای ایجاد یک ماک از آرگومان کلیدواژه‌ای *spec* استفاده کنید، تلاش برای تنظیم یک متد جادویی که در spec وجود ندارد، باعث پرتاب استثنای :exc:`AttributeError` می‌شود."
 
 msgid "The full list of supported magic methods is:"
-msgstr "فهرست کامل متدهای ویژه پشتیبانی‌شده عبارت است از:"
+msgstr "فهرست کامل متدهای جادویی پشتیبانی‌شده عبارت است از:"
 
 msgid "``__hash__``, ``__sizeof__``, ``__repr__`` and ``__str__``"
 msgstr "``__hash__``، ``__sizeof__``، ``__repr__`` و ``__str__``"
@@ -1446,13 +1446,13 @@ msgid "There are two ``MagicMock`` variants: :class:`MagicMock` and :class:`NonC
 msgstr "۲ گونه از ``MagicMock`` وجود دارد: :class:`MagicMock` و :class:`NonCallableMagicMock`."
 
 msgid "``MagicMock`` is a subclass of :class:`Mock` with default implementations of most of the :term:`magic methods <magic method>`. You can use ``MagicMock`` without having to configure the magic methods yourself."
-msgstr "``MagicMock`` زیرکلاسی از :class:`Mock` است که پیاده‌سازی‌های پیش‌فرضی برای بیشتر :term:`متدهای ویژه <magic method>` دارد. می‌توانید بدون اینکه خودتان متدهای ویژه را پیکربندی کنید، از ``MagicMock`` استفاده کنید."
+msgstr "``MagicMock`` زیرکلاسی از :class:`Mock` است که پیاده‌سازی‌های پیش‌فرضی برای بیشتر :term:`متدهای جادویی <magic method>` دارد. می‌توانید بدون اینکه خودتان متدهای جادویی را پیکربندی کنید، از ``MagicMock`` استفاده کنید."
 
 msgid "The constructor parameters have the same meaning as for :class:`Mock`."
 msgstr "پارامترهای سازنده همان معنای پارامترهای :class:`Mock` را دارند."
 
 msgid "If you use the *spec* or *spec_set* arguments then *only* magic methods that exist in the spec will be created."
-msgstr "اگر از آرگومان‌های *spec* یا *spec_set* استفاده کنید، *فقط* متدهای ویژه که در spec وجود دارند ایجاد می‌شوند."
+msgstr "اگر از آرگومان‌های *spec* یا *spec_set* استفاده کنید، *فقط* متدهای جادویی که در spec وجود دارند ایجاد می‌شوند."
 
 msgid "A non-callable version of :class:`MagicMock`."
 msgstr "نسخه‌ای غیرفراخوانی‌پذیر از :class:`MagicMock`."
@@ -1461,7 +1461,7 @@ msgid "The constructor parameters have the same meaning as for :class:`MagicMock
 msgstr "پارامترهای سازنده همان معنایی را دارند که برای :class:`MagicMock` دارند، به استثنای *return_value* و *side_effect* که برای یک ماک غیرفراخوانی‌پذیر معنایی ندارند."
 
 msgid "The magic methods are setup with :class:`MagicMock` objects, so you can configure them and use them in the usual way:"
-msgstr "متدهای ویژه با اشیای :class:`MagicMock` راه‌اندازی شده‌اند، بنابراین می‌توانید آن‌ها را پیکربندی کنید و به روش معمول از آن‌ها استفاده کنید:"
+msgstr "متدهای جادویی با اشیای :class:`MagicMock` راه‌اندازی شده‌اند، بنابراین می‌توانید آن‌ها را پیکربندی کنید و به روش معمول از آن‌ها استفاده کنید:"
 
 msgid "By default many of the protocol methods are required to return objects of a specific type. These methods are preconfigured with a default return value, so that they can be used without you having to do anything if you aren't interested in the return value. You can still *set* the return value manually if you want to change the default."
 msgstr "به‌طور پیش‌فرض، بسیاری از متدهای پروتکل باید اشیایی از یک نوع مشخص را برگردانند. این متدها از پیش با یک مقدار بازگشتی پیش‌فرض پیکربندی شده‌اند، به‌طوری که اگر به مقدار بازگشتی علاقه‌ای ندارید، می‌توانید بدون نیاز به انجام هیچ کاری از آن‌ها استفاده کنید. اگر بخواهید مقدار پیش‌فرض را تغییر دهید، همچنان می‌توانید مقدار بازگشتی را به‌صورت دستی *تنظیم* کنید."
@@ -1552,10 +1552,10 @@ msgid "If the return value *is* an iterator, then iterating over it once will co
 msgstr "اگر مقدار بازگشتی یک پیمایش‌گر *باشد*، آنگاه پیمایش روی آن برای یک بار، آن را مصرف می‌کند و پیمایش‌های بعدی به یک فهرست خالی منجر می‌شوند:"
 
 msgid "``MagicMock`` has all of the supported magic methods configured except for some of the obscure and obsolete ones. You can still set these up if you want."
-msgstr "``MagicMock`` تمام متدهای ویژه پشتیبانی‌شده را به‌صورت پیکربندی‌شده دارد، به‌جز برخی از موارد مبهم و منسوخ. همچنان در صورت تمایل می‌توانید آن‌ها را پیکربندی کنید."
+msgstr "``MagicMock`` تمام متدهای جادویی پشتیبانی‌شده را به‌صورت پیکربندی‌شده دارد، به‌جز برخی از موارد مبهم و منسوخ. همچنان در صورت تمایل می‌توانید آن‌ها را پیکربندی کنید."
 
 msgid "Magic methods that are supported but not setup by default in ``MagicMock`` are:"
-msgstr "متدهای ویژه که پشتیبانی می‌شوند اما به‌طور پیش‌فرض در ``MagicMock`` تنظیم نشده‌اند:"
+msgstr "متدهای جادویی که پشتیبانی می‌شوند اما به‌طور پیش‌فرض در ``MagicMock`` تنظیم نشده‌اند:"
 
 msgid "``__subclasses__``"
 msgstr "``__subclasses__``"

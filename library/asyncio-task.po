@@ -79,7 +79,7 @@ msgid "The :func:`asyncio.run` function to run the top-level entry point \"main(
 msgstr "تابع :func:`asyncio.run` برای اجرای تابع نقطه ورود سطح بالا \"main()\" (مثال بالا را ببینید.)"
 
 msgid "Awaiting on a coroutine.  The following snippet of code will print \"hello\" after waiting for 1 second, and then print \"world\" after waiting for *another* 2 seconds::"
-msgstr "در انتظار یک هم‌روال. قطعه‌کد زیر پس از انتظار برای ۱ ثانیه، «hello» را چاپ می‌کند و سپس «world» را پس از انتظار برای ۲ ثانیه‌ی *دیگر* چاپ خواهد کرد::"
+msgstr "در انتظار یک هم‌روال. قطعه‌کد زیر پس از انتظار برای ۱ ثانیه، «hello» را چاپ می‌کند و سپس «world» را پس از انتظار برای ۲ ثانیه‌ی \*دیگر\* چاپ خواهد کرد::"
 
 msgid ""
 "import asyncio\n"
@@ -134,7 +134,7 @@ msgid "The :func:`asyncio.create_task` function to run coroutines concurrently a
 msgstr "تابع :func:`asyncio.create_task` برای اجرای همزمان هم‌روال‌ها به‌عنوان :class:`Tasks <Task>` در asyncio."
 
 msgid "Let's modify the above example and run two ``say_after`` coroutines *concurrently*::"
-msgstr "بیایید مثال بالا را تغییر دهیم و دو هم‌روال ``say_after`` را *همزمان* اجرا کنیم::"
+msgstr "بیایید مثال بالا را تغییر دهیم و دو هم‌روال ``say_after`` را \*همزمان\* اجرا کنیم::"
 
 msgid ""
 "async def main():\n"
@@ -228,10 +228,10 @@ msgid "We say that an object is an **awaitable** object if it can be used in an 
 msgstr "می‌گوییم که یک شیء در صورتی یک شیء **awaitable** است که بتوان از آن در یک عبارت :keyword:`await` استفاده کرد. بسیاری از APIهای asyncio برای پذیرش awaitableها طراحی شده‌اند."
 
 msgid "There are three main types of *awaitable* objects: **coroutines**, **Tasks**, and **Futures**."
-msgstr "سه نوع اصلی از اشیای *awaitable* وجود دارد: **هم‌روال‌ها**، **Taskها** و **Futureها**."
+msgstr "سه نوع اصلی از اشیای \*awaitable\* وجود دارد: **هم‌روال‌ها**، **Taskها** و **Futureها**."
 
 msgid "Python coroutines are *awaitables* and therefore can be awaited from other coroutines::"
-msgstr "هم‌روال‌های پایتون *awaitables* هستند و بنابراین می‌توان آن‌ها را از هم‌روال‌های دیگر await کرد::"
+msgstr "هم‌روال‌های پایتون \*awaitables\* هستند و بنابراین می‌توان آن‌ها را از هم‌روال‌های دیگر await کرد::"
 
 msgid ""
 "import asyncio\n"
@@ -270,19 +270,19 @@ msgid "In this documentation the term \"coroutine\" can be used for two closely 
 msgstr "در این مستندات، اصطلاح «هم‌روال» می‌تواند برای دو مفهوم بسیار مرتبط به‌کار رود:"
 
 msgid "a *coroutine function*: an :keyword:`async def` function;"
-msgstr "یک *تابع هم‌روال*: یک تابع :keyword:`async def`؛"
+msgstr "یک \*تابع هم‌روال\*: یک تابع :keyword:`async def`؛"
 
 msgid "a *coroutine object*: an object returned by calling a *coroutine function*."
-msgstr "یک *شیء هم‌روال*: شیءای که با فراخوانی یک *تابع هم‌روال* برگردانده می‌شود."
+msgstr "یک \*شیء هم‌روال\*: شیءای که با فراخوانی یک \*تابع هم‌روال\* برگردانده می‌شود."
 
 msgid "Tasks"
 msgstr "وظایف"
 
 msgid "*Tasks* are used to schedule coroutines *concurrently*."
-msgstr "*وظایف* برای زمان‌بندی هم‌روال‌ها به‌صورت همزمان استفاده می‌شوند."
+msgstr "\*وظایف\* برای زمان‌بندی هم‌روال‌ها به‌صورت همزمان استفاده می‌شوند."
 
 msgid "When a coroutine is wrapped into a *Task* with functions like :func:`asyncio.create_task` the coroutine is automatically scheduled to run soon::"
-msgstr "هنگامی که یک هم‌روال با توابعی مانند :func:`asyncio.create_task` در یک *Task* قرار می‌گیرد، آن هم‌روال به‌طور خودکار زمان‌بندی می‌شود تا به‌زودی اجرا شود::"
+msgstr "هنگامی که یک هم‌روال با توابعی مانند :func:`asyncio.create_task` در یک \*Task\* قرار می‌گیرد، آن هم‌روال به‌طور خودکار زمان‌بندی می‌شود تا به‌زودی اجرا شود::"
 
 msgid ""
 "import asyncio\n"
@@ -324,7 +324,7 @@ msgid "A :class:`Future` is a special **low-level** awaitable object that repres
 msgstr ":class:`Future` یک شیء خاص **سطح پایین** قابل await (awaitable) است که نشان‌دهنده‌ی **نتیجه نهایی** یک عملیات ناهمگام است."
 
 msgid "When a Future object is *awaited* it means that the coroutine will wait until the Future is resolved in some other place."
-msgstr "هنگامی که یک شیء Future *await* می‌شود، به این معنا است که هم‌روال منتظر می‌ماند تا Future در جای دیگری حل شود."
+msgstr "هنگامی که یک شیء Future \*await\* می‌شود، به این معنا است که هم‌روال منتظر می‌ماند تا Future در جای دیگری حل شود."
 
 msgid "Future objects in asyncio are needed to allow callback-based code to be used with async/await."
 msgstr "اشیای Future در asyncio لازم هستند تا بتوان از کد مبتنی بر کال‌بک با async/await استفاده کرد."
@@ -364,16 +364,16 @@ msgid "**Source code:** :source:`Lib/asyncio/tasks.py`"
 msgstr "**کد منبع:** :source:`Lib/asyncio/tasks.py`"
 
 msgid "Wrap the *coro* :ref:`coroutine <coroutine>` into a :class:`Task` and schedule its execution.  Return the Task object."
-msgstr ":ref:`هم‌روال <coroutine>` *coro* را در یک :class:`Task` قرار می‌دهد و اجرای آن را زمان‌بندی می‌کند. شیء Task را برمی‌گرداند."
+msgstr ":ref:`هم‌روال <coroutine>` \*coro\* را در یک :class:`Task` قرار می‌دهد و اجرای آن را زمان‌بندی می‌کند. شیء Task را برمی‌گرداند."
 
 msgid "The full function signature is largely the same as that of the :class:`Task` constructor (or factory) - all of the keyword arguments to this function are passed through to that interface."
 msgstr "امضای کامل تابع تا حد زیادی مشابه سازنده‌ی :class:`Task` (یا کارخانه) است؛ تمام آرگومان‌های کلیدواژه‌ای این تابع به آن رابط منتقل می‌شوند."
 
 msgid "An optional keyword-only *context* argument allows specifying a custom :class:`contextvars.Context` for the *coro* to run in. The current context copy is created when no *context* is provided."
-msgstr "یک آرگومان اختیاری فقط کلیدواژه‌ای *context* به شما امکان می‌دهد یک :class:`contextvars.Context` سفارشی برای اجرای *coro* مشخص کنید. اگر *context* ارائه نشود، یک کپی از زمینه فعلی ایجاد می‌شود."
+msgstr "یک آرگومان اختیاری فقط کلیدواژه‌ای \*context\* به شما امکان می‌دهد یک :class:`contextvars.Context` سفارشی برای اجرای \*coro\* مشخص کنید. اگر \*context\* ارائه نشود، یک کپی از زمینه فعلی ایجاد می‌شود."
 
 msgid "An optional keyword-only *eager_start* argument allows specifying if the task should execute eagerly during the call to create_task, or be scheduled later. If *eager_start* is not passed the mode set by :meth:`loop.set_task_factory` will be used."
-msgstr "یک آرگومان اختیاری فقط کلیدواژه‌ای *eager_start* به شما امکان می‌دهد مشخص کنید که آیا وظیفهباید در حین فراخوانی create_task به‌صورت فوری اجرا شود یا بعداً زمان‌بندی شود. اگر *eager_start* ارسال نشود، حالت تنظیم‌شده توسط :meth:`loop.set_task_factory` استفاده خواهد شد."
+msgstr "یک آرگومان اختیاری فقط کلیدواژه‌ای \*eager_start\* به شما امکان می‌دهد مشخص کنید که آیا وظیفهباید در حین فراخوانی create_task به‌صورت فوری اجرا شود یا بعداً زمان‌بندی شود. اگر \*eager_start\* ارسال نشود، حالت تنظیم‌شده توسط :meth:`loop.set_task_factory` استفاده خواهد شد."
 
 msgid "The task is executed in the loop returned by :func:`get_running_loop`, :exc:`RuntimeError` is raised if there is no running loop in current thread."
 msgstr "این وظیفه در حلقه‌ای که :func:`get_running_loop` برمی‌گرداند اجرا می‌شود؛ اگر حلقه‌ی در حال اجرا در نخ جاری وجود نداشته باشد، :exc:`RuntimeError` پرتاب می‌شود."
@@ -412,13 +412,13 @@ msgstr ""
 "    task.add_done_callback(background_tasks.discard)"
 
 msgid "Added the *name* parameter."
-msgstr "پارامتر *name* افزوده شد."
+msgstr "پارامتر \*name\* افزوده شد."
 
 msgid "Added the *context* parameter."
-msgstr "پارامتر *context* افزوده شد."
+msgstr "پارامتر \*context\* افزوده شد."
 
 msgid "Added the *eager_start* parameter by passing on all *kwargs*."
-msgstr "پارامتر *eager_start* با ارسال تمام *kwargs* افزوده شد."
+msgstr "پارامتر \*eager_start\* با ارسال تمام \*kwargs\* افزوده شد."
 
 msgid "Task cancellation"
 msgstr "لغو وظیفه"
@@ -448,7 +448,7 @@ msgid "Close the given coroutine if the task group is not active."
 msgstr "اگر گروه وظیفه فعال نیست، هم‌روال داده‌شده را ببندید."
 
 msgid "Passes on all *kwargs* to :meth:`loop.create_task`"
-msgstr "تمام *kwargs* را به :meth:`loop.create_task` منتقل می‌کند"
+msgstr "تمام \*kwargs\* را به :meth:`loop.create_task` منتقل می‌کند"
 
 msgid "Example::"
 msgstr "مثال::"
@@ -576,10 +576,10 @@ msgid "Sleeping"
 msgstr "توقف"
 
 msgid "Block for *delay* seconds."
-msgstr "به مدت *delay* ثانیه مسدود می‌شود."
+msgstr "به مدت \*delay\* ثانیه مسدود می‌شود."
 
 msgid "If *result* is provided, it is returned to the caller when the coroutine completes."
-msgstr "اگر *result* ارائه شده باشد، پس از تکمیل هم‌روال، به فراخواننده بازگردانده می‌شود."
+msgstr "اگر \*result\* ارائه شده باشد، پس از تکمیل هم‌روال، به فراخواننده بازگردانده می‌شود."
 
 msgid "``sleep()`` always suspends the current task, allowing other tasks to run."
 msgstr "``sleep()`` همیشه وظیفهجاری را معلق می‌کند و به سایر وظایف اجازه اجرا می‌دهد."
@@ -620,37 +620,37 @@ msgstr ""
 "asyncio.run(display_date())"
 
 msgid "Removed the *loop* parameter."
-msgstr "پارامتر *loop* حذف شد."
+msgstr "پارامتر \*loop\* حذف شد."
 
 msgid "Raises :exc:`ValueError` if *delay* is :data:`~math.nan`."
-msgstr "اگر *delay* برابر با :data:`~math.nan` باشد، :exc:`ValueError` پرتاب می‌شود."
+msgstr "اگر \*delay\* برابر با :data:`~math.nan` باشد، :exc:`ValueError` پرتاب می‌شود."
 
 msgid "Running tasks concurrently"
 msgstr "اجرای همزمان وظایف"
 
 msgid "Run :ref:`awaitable objects <asyncio-awaitables>` in the *aws* sequence *concurrently*."
-msgstr ":ref:`اشیاء awaitable <asyncio-awaitables>` را در دنباله‌ی *aws* به‌صورت *همزمان* اجرا کنید."
+msgstr ":ref:`اشیاء awaitable <asyncio-awaitables>` را در دنباله‌ی \*aws\* به‌صورت \*همزمان\* اجرا کنید."
 
 msgid "If any awaitable in *aws* is a coroutine, it is automatically scheduled as a Task."
-msgstr "اگر هر awaitable در *aws* یک هم‌روال باشد، به‌طور خودکار به‌عنوان یک Task زمان‌بندی می‌شود."
+msgstr "اگر هر awaitable در \*aws\* یک هم‌روال باشد، به‌طور خودکار به‌عنوان یک Task زمان‌بندی می‌شود."
 
 msgid "If all awaitables are completed successfully, the result is an aggregate list of returned values.  The order of result values corresponds to the order of awaitables in *aws*."
-msgstr "اگر همه‌ی awaitableها با موفقیت کامل شوند، نتیجه یک فهرست تجمیعی از مقادیر بازگشتی است. ترتیب مقادیر نتیجه با ترتیب awaitableها در *aws* مطابقت دارد."
+msgstr "اگر همه‌ی awaitableها با موفقیت کامل شوند، نتیجه یک فهرست تجمیعی از مقادیر بازگشتی است. ترتیب مقادیر نتیجه با ترتیب awaitableها در \*aws\* مطابقت دارد."
 
 msgid "If *return_exceptions* is ``False`` (default), the first raised exception is immediately propagated to the task that awaits on ``gather()``.  Other awaitables in the *aws* sequence **won't be cancelled** and will continue to run."
-msgstr "اگر *return_exceptions* ``False`` (پیش‌فرض) باشد، نخستین استثنای پرتاب‌شده بلافاصله به وظیفه‌ای که ``gather()`` را await می‌کند، منتشر می‌شود. سایر اشیاء قابل انتظار (awaitable) در دنباله‌ی *aws* **لغو نخواهند شد** و به اجرا ادامه خواهند داد."
+msgstr "اگر \*return_exceptions\* ``False`` (پیش‌فرض) باشد، نخستین استثنای پرتاب‌شده بلافاصله به وظیفه‌ای که ``gather()`` را await می‌کند، منتشر می‌شود. سایر اشیاء قابل انتظار (awaitable) در دنباله‌ی \*aws\* **لغو نخواهند شد** و به اجرا ادامه خواهند داد."
 
 msgid "If *return_exceptions* is ``True``, exceptions are treated the same as successful results, and aggregated in the result list."
-msgstr "اگر *return_exceptions* برابر ``True`` باشد، استثناها همانند نتایج موفق در نظر گرفته می‌شوند و در فهرست نتایج جمع‌آوری می‌شوند."
+msgstr "اگر \*return_exceptions\* برابر ``True`` باشد، استثناها همانند نتایج موفق در نظر گرفته می‌شوند و در فهرست نتایج جمع‌آوری می‌شوند."
 
 msgid "If ``gather()`` is *cancelled*, all submitted awaitables (that have not completed yet) are also *cancelled*."
-msgstr "اگر ``gather()`` *لغو شود*، تمام awaitableهای ارسال‌شده (که هنوز کامل نشده‌اند) نیز *لغو می‌شوند*."
+msgstr "اگر ``gather()`` \*لغو شود\*، تمام awaitableهای ارسال‌شده (که هنوز کامل نشده‌اند) نیز \*لغو می‌شوند\*."
 
 msgid "If any Task or Future from the *aws* sequence is *cancelled*, it is treated as if it raised :exc:`CancelledError` -- the ``gather()`` call is **not** cancelled in this case.  This is to prevent the cancellation of one submitted Task/Future to cause other Tasks/Futures to be cancelled."
-msgstr "اگر هر Task یا Future از دنباله‌ی *aws* *لغوشده* باشد، با آن به‌گونه‌ای رفتار می‌شود که گویی :exc:`CancelledError` را پرتاب کرده است — در این حالت، فراخوانی ``gather()`` لغو **نمی‌شود**. این برای جلوگیری از این است که لغو یک Task/Future ارسال‌شده، باعث لغو سایر Taskها/Futureها شود."
+msgstr "اگر هر Task یا Future از دنباله‌ی \*aws\* \*لغوشده\* باشد، با آن به‌گونه‌ای رفتار می‌شود که گویی :exc:`CancelledError` را پرتاب کرده است — در این حالت، فراخوانی ``gather()`` لغو **نمی‌شود**. این برای جلوگیری از این است که لغو یک Task/Future ارسال‌شده، باعث لغو سایر Taskها/Futureها شود."
 
 msgid "A new alternative to create and run tasks concurrently and wait for their completion is :class:`asyncio.TaskGroup`. *TaskGroup* provides stronger safety guarantees than *gather* for scheduling a nesting of subtasks: if a task (or a subtask, a task scheduled by a task) raises an exception, *TaskGroup* will, while *gather* will not, cancel the remaining scheduled tasks."
-msgstr "یک جایگزین جدید برای ایجاد و اجرای همزمان وظیفه‌ها و انتظار برای تکمیل آن‌ها، :class:`asyncio.TaskGroup` است. *TaskGroup* برای زمان‌بندی زیروظیفه‌های تودرتو، نسبت به *gather* تضمین‌های ایمنی قوی‌تری فراهم می‌کند: اگر یک وظیفه (یا یک زیروظیفه، یعنی وظیفه‌ای که توسط یک وظیفه زمان‌بندی شده است) استثنایی را پرتاب کند، *TaskGroup* وظیفه‌های زمان‌بندی‌شده‌ی باقی‌مانده را لغو می‌کند، در حالی که *gather* این کار را نمی‌کند."
+msgstr "یک جایگزین جدید برای ایجاد و اجرای همزمان وظیفه‌ها و انتظار برای تکمیل آن‌ها، :class:`asyncio.TaskGroup` است. \*TaskGroup\* برای زمان‌بندی زیروظیفه‌های تودرتو، نسبت به \*gather\* تضمین‌های ایمنی قوی‌تری فراهم می‌کند: اگر یک وظیفه (یا یک زیروظیفه، یعنی وظیفه‌ای که توسط یک وظیفه زمان‌بندی شده است) استثنایی را پرتاب کند، \*TaskGroup\* وظیفه‌های زمان‌بندی‌شده‌ی باقی‌مانده را لغو می‌کند، در حالی که \*gather\* این کار را نمی‌کند."
 
 msgid ""
 "import asyncio\n"
@@ -724,10 +724,10 @@ msgstr ""
 "#     [2, 6, 24]"
 
 msgid "If *return_exceptions* is false, cancelling gather() after it has been marked done won't cancel any submitted awaitables. For instance, gather can be marked done after propagating an exception to the caller, therefore, calling ``gather.cancel()`` after catching an exception (raised by one of the awaitables) from gather won't cancel any other awaitables."
-msgstr "اگر *return_exceptions* نادرست باشد، لغو gather() پس از آن‌که به‌عنوان انجام‌شده علامت‌گذاری شده باشد، هیچ‌کدام از موارد قابل await (awaitable) ارسال‌شده را لغو نمی‌کند. برای مثال، gather می‌تواند پس از انتشار یک استثنا به فراخواننده، به‌عنوان انجام‌شده علامت‌گذاری شود؛ بنابراین، فراخوانی ``gather.cancel()`` پس از گرفتن استثنایی از gather (که توسط یکی از موارد قابل await پرتاب‌شده است)، هیچ مورد قابل await دیگری را لغو نمی‌کند."
+msgstr "اگر \*return_exceptions\* نادرست باشد، لغو gather() پس از آن‌که به‌عنوان انجام‌شده علامت‌گذاری شده باشد، هیچ‌کدام از موارد قابل await (awaitable) ارسال‌شده را لغو نمی‌کند. برای مثال، gather می‌تواند پس از انتشار یک استثنا به فراخواننده، به‌عنوان انجام‌شده علامت‌گذاری شود؛ بنابراین، فراخوانی ``gather.cancel()`` پس از گرفتن استثنایی از gather (که توسط یکی از موارد قابل await پرتاب‌شده است)، هیچ مورد قابل await دیگری را لغو نمی‌کند."
 
 msgid "If the *gather* itself is cancelled, the cancellation is propagated regardless of *return_exceptions*."
-msgstr "اگر خود *gather* لغو شود، لغو صرف‌نظر از *return_exceptions* انتشار می‌یابد."
+msgstr "اگر خود \*gather\* لغو شود، لغو صرف‌نظر از \*return_exceptions\* انتشار می‌یابد."
 
 msgid "Deprecation warning is emitted if no positional arguments are provided or not all positional arguments are Future-like objects and there is no running event loop."
 msgstr "در صورتی که هیچ آرگومان جایگاهی ارائه نشده باشد یا همه‌ی آرگومان‌های جایگاهی اشیای Future-مانند نباشند و هیچ حلقه‌ی رویدادی در حال اجرا وجود نداشته باشد، هشدار از رده خارج شدن نشان داده می‌شود."
@@ -748,13 +748,13 @@ msgid "Immediate execution of the coroutine is a semantic change. If the corouti
 msgstr "اجرای فوری هم‌روال یک تغییر معنایی است. اگر هم‌روال مقداری برگرداند یا استثنایی پرتاب کند، وظیفه هرگز در حلقه رویداد زمان‌بندی نمی‌شود. اگر اجرای هم‌روال مسدود شود، وظیفه در حلقه رویداد زمان‌بندی می‌شود. این تغییر ممکن است تغییراتی در رفتار برنامه‌های موجود ایجاد کند. برای مثال، ترتیب اجرای وظایف برنامه احتمالاً تغییر خواهد کرد."
 
 msgid "Create an eager task factory, similar to :func:`eager_task_factory`, using the provided *custom_task_constructor* when creating a new task instead of the default :class:`Task`."
-msgstr "یک کارخانه وظیفه فوری ایجاد کنید، مشابه :func:`eager_task_factory`، که هنگام ایجاد یک وظیفه جدید، به‌جای :class:`Task` پیش‌فرض، از *custom_task_constructor* ارائه‌شده استفاده می‌کند."
+msgstr "یک کارخانه وظیفه فوری ایجاد کنید، مشابه :func:`eager_task_factory`، که هنگام ایجاد یک وظیفه جدید، به‌جای :class:`Task` پیش‌فرض، از \*custom_task_constructor\* ارائه‌شده استفاده می‌کند."
 
 msgid "*custom_task_constructor* must be a *callable* with the signature matching the signature of :class:`Task.__init__ <Task>`. The callable must return a :class:`asyncio.Task`-compatible object."
-msgstr "*custom_task_constructor* باید یک *فراخوانی‌پذیر * با امضایی مطابق با امضای :class:`Task.__init__ <Task>` باشد. این فراخوانی‌پذیر باید یک شیء سازگار با :class:`asyncio.Task` بازگشت دهد."
+msgstr "\*custom_task_constructor\* باید یک \*فراخوانی‌پذیر \* با امضایی مطابق با امضای :class:`Task.__init__ <Task>` باشد. این فراخوانی‌پذیر باید یک شیء سازگار با :class:`asyncio.Task` بازگشت دهد."
 
 msgid "This function returns a *callable* intended to be used as a task factory of an event loop via :meth:`loop.set_task_factory(factory) <loop.set_task_factory>`)."
-msgstr "این تابع یک شیء *فراخوانی‌پذیر* را برمی‌گرداند که برای استفاده به‌عنوان کارخانه‌ی وظیفه یک حلقه‌ی رویداد از طریق :meth:`loop.set_task_factory(factory) <loop.set_task_factory>` در نظر گرفته شده است."
+msgstr "این تابع یک شیء \*فراخوانی‌پذیر\* را برمی‌گرداند که برای استفاده به‌عنوان کارخانه‌ی وظیفه یک حلقه‌ی رویداد از طریق :meth:`loop.set_task_factory(factory) <loop.set_task_factory>` در نظر گرفته شده است."
 
 msgid "Shielding from cancellation"
 msgstr "محافظت در برابر لغو"
@@ -763,7 +763,7 @@ msgid "Protect an :ref:`awaitable object <asyncio-awaitables>` from being :meth:
 msgstr "از یک :ref:`شیء awaitable <asyncio-awaitables>` در برابر :meth:`لغو شدن <Task.cancel>` محافظت کنید."
 
 msgid "If *aw* is a coroutine it is automatically scheduled as a Task."
-msgstr "اگر *aw* یک هم‌روال باشد، به‌طور خودکار به‌عنوان یک Task زمان‌بندی می‌شود."
+msgstr "اگر \*aw\* یک هم‌روال باشد، به‌طور خودکار به‌عنوان یک Task زمان‌بندی می‌شود."
 
 msgid "The statement::"
 msgstr "دستور::"
@@ -782,7 +782,7 @@ msgid "res = await something()"
 msgstr "res = await something()"
 
 msgid "*except* that if the coroutine containing it is cancelled, the Task running in ``something()`` is not cancelled.  From the point of view of ``something()``, the cancellation did not happen. Although its caller is still cancelled, so the \"await\" expression still raises a :exc:`CancelledError`."
-msgstr "*به جز* اینکه اگر هم‌روال حاوی آن لغو شود، Task در حال اجرا در ``something()`` لغو نمی‌شود. از دید ``something()``، لغو رخ نداده است. اگرچه فراخواننده‌ی آن همچنان لغو می‌شود، بنابراین عبارت \"await\" همچنان یک :exc:`CancelledError` را پرتاب می‌کند."
+msgstr "\*به جز\* اینکه اگر هم‌روال حاوی آن لغو شود، Task در حال اجرا در ``something()`` لغو نمی‌شود. از دید ``something()``، لغو رخ نداده است. اگرچه فراخواننده‌ی آن همچنان لغو می‌شود، بنابراین عبارت \"await\" همچنان یک :exc:`CancelledError` را پرتاب می‌کند."
 
 msgid "If ``something()`` is cancelled by other means (i.e. from within itself) that would also cancel ``shield()``."
 msgstr "اگر ``something()`` به روش‌های دیگر لغو شود (یعنی از درون خودش)، این موضوع ``shield()`` را نیز لغو می‌کند."
@@ -807,7 +807,7 @@ msgid "Save a reference to tasks passed to this function, to avoid a task disapp
 msgstr "برای جلوگیری از ناپدید شدن یک وظیفه در میانه‌ی اجرا، ارجاعی به وظایف داده‌شده به این تابع ذخیره کنید. حلقه‌ی رویداد فقط ارجاع‌های ضعیف به وظایف را نگه می‌دارد. وظیفهی که در جای دیگری به آن ارجاع داده نشده است، ممکن است در هر زمانی، حتی پیش از آنکه به پایان برسد، زباله‌روبی شود."
 
 msgid "Deprecation warning is emitted if *aw* is not Future-like object and there is no running event loop."
-msgstr "اگر *aw* یک شیء شبیه Future نباشد و حلقه رویدادی در حال اجرا وجود نداشته باشد، هشدار از رده خارج شدن نشان داده می‌شود."
+msgstr "اگر \*aw\* یک شیء شبیه Future نباشد و حلقه رویدادی در حال اجرا وجود نداشته باشد، هشدار از رده خارج شدن نشان داده می‌شود."
 
 msgid "Timeouts"
 msgstr "مهلت‌های زمانی"
@@ -816,7 +816,7 @@ msgid "Return an :ref:`asynchronous context manager <async-context-managers>` th
 msgstr "یک :ref:`مدیر زمینه ناهمگام <async-context-managers>` برمی‌گرداند که می‌توان از آن برای محدود کردن مدت زمانی که صرف انتظار برای چیزی می‌شود استفاده کرد."
 
 msgid "*delay* can either be ``None``, or a float/int number of seconds to wait. If *delay* is ``None``, no time limit will be applied; this can be useful if the delay is unknown when the context manager is created."
-msgstr "*delay* می‌تواند ``None`` یا عددی از نوع float/int برای تعداد ثانیه‌های انتظار باشد. اگر *delay* برابر ``None`` باشد، هیچ محدودیت زمانی اعمال نخواهد شد؛ این موضوع می‌تواند زمانی مفید باشد که تأخیر در هنگام ایجاد مدیر زمینه نامشخص باشد."
+msgstr "\*delay\* می‌تواند ``None`` یا عددی از نوع float/int برای تعداد ثانیه‌های انتظار باشد. اگر \*delay\* برابر ``None`` باشد، هیچ محدودیت زمانی اعمال نخواهد شد؛ این موضوع می‌تواند زمانی مفید باشد که تأخیر در هنگام ایجاد مدیر زمینه نامشخص باشد."
 
 msgid "In either case, the context manager can be rescheduled after creation using :meth:`Timeout.reschedule`."
 msgstr "در هر صورت، می‌توان مدیر زمینه را پس از ایجاد، با استفاده از :meth:`Timeout.reschedule` دوباره زمان‌بندی کرد."
@@ -834,7 +834,7 @@ msgid "If ``long_running_task`` takes more than 10 seconds to complete, the cont
 msgstr "اگر تکمیل ``long_running_task`` بیش از ۱۰ ثانیه طول بکشد، مدیر زمینه، وظیفه جاری را لغو می‌کند و :exc:`asyncio.CancelledError` حاصل را به‌صورت داخلی مدیریت می‌کند و آن را به :exc:`TimeoutError` تبدیل می‌کند که می‌توان آن را گرفت و مدیریت کرد."
 
 msgid "The :func:`asyncio.timeout` context manager is what transforms the :exc:`asyncio.CancelledError` into a :exc:`TimeoutError`, which means the :exc:`TimeoutError` can only be caught *outside* of the context manager."
-msgstr "مدیر زمینه‌ی :func:`asyncio.timeout` همان چیزی است که :exc:`asyncio.CancelledError` را به :exc:`TimeoutError` تبدیل می‌کند، به این معنا که :exc:`TimeoutError` فقط در *خارج* از مدیر زمینه قابل گرفتن است."
+msgstr "مدیر زمینه‌ی :func:`asyncio.timeout` همان چیزی است که :exc:`asyncio.CancelledError` را به :exc:`TimeoutError` تبدیل می‌کند، به این معنا که :exc:`TimeoutError` فقط در \*خارج\* از مدیر زمینه قابل گرفتن است."
 
 msgid "Example of catching :exc:`TimeoutError`::"
 msgstr "نمونه‌ای از گرفتن :exc:`TimeoutError`::"
@@ -920,7 +920,7 @@ msgid "Timeout context managers can be safely nested."
 msgstr "می‌توان مدیران زمینه‌ی مهلت زمانی را با اطمینان تودرتو کرد."
 
 msgid "Similar to :func:`asyncio.timeout`, except *when* is the absolute time to stop waiting, or ``None``."
-msgstr "مشابه :func:`asyncio.timeout`، با این تفاوت که *when* زمان مطلق برای توقف انتظار است، یا ``None``."
+msgstr "مشابه :func:`asyncio.timeout`، با این تفاوت که \*when\* زمان مطلق برای توقف انتظار است، یا ``None``."
 
 msgid ""
 "async def main():\n"
@@ -946,10 +946,10 @@ msgstr ""
 "    print(\"This statement will run regardless.\")"
 
 msgid "Wait for the *aw* :ref:`awaitable <asyncio-awaitables>` to complete with a timeout."
-msgstr "منتظر بمانید تا *aw* :ref:`awaitable <asyncio-awaitables>` با یک مهلت زمانی کامل شود."
+msgstr "منتظر بمانید تا \*aw\* :ref:`awaitable <asyncio-awaitables>` با یک مهلت زمانی کامل شود."
 
 msgid "*timeout* can either be ``None`` or a float or int number of seconds to wait for.  If *timeout* is ``None``, block until the future completes."
-msgstr "*timeout* می‌تواند ``None`` یا یک عدد float یا int به‌عنوان تعداد ثانیه‌های انتظار باشد. اگر *timeout* برابر ``None`` باشد، تا زمانی که future تکمیل شود، مسدود می‌شود."
+msgstr "\*timeout\* می‌تواند ``None`` یا یک عدد float یا int به‌عنوان تعداد ثانیه‌های انتظار باشد. اگر \*timeout\* برابر ``None`` باشد، تا زمانی که future تکمیل شود، مسدود می‌شود."
 
 msgid "If a timeout occurs, it cancels the task and raises :exc:`TimeoutError`."
 msgstr "در صورت رخ دادن مهلت زمانی، وظیفه لغو می‌شود و :exc:`TimeoutError` پرتاب می‌شود."
@@ -958,10 +958,10 @@ msgid "To avoid the task :meth:`cancellation <Task.cancel>`, wrap it in :func:`s
 msgstr "برای جلوگیری از :meth:`لغو <Task.cancel>` وظیفه، آن را در :func:`shield` بپیچید."
 
 msgid "The function will wait until the future is actually cancelled, so the total wait time may exceed the *timeout*. If an exception happens during cancellation, it is propagated."
-msgstr "این تابع تا زمانی که فیوچر (future) به‌طور واقعی لغو شود، صبر می‌کند، بنابراین کل زمان انتظار ممکن است از *timeout* فراتر رود. اگر در حین لغو استثنایی رخ دهد، آن استثنا انتشار می‌یابد."
+msgstr "این تابع تا زمانی که فیوچر (future) به‌طور واقعی لغو شود، صبر می‌کند، بنابراین کل زمان انتظار ممکن است از \*timeout\* فراتر رود. اگر در حین لغو استثنایی رخ دهد، آن استثنا انتشار می‌یابد."
 
 msgid "If the wait is cancelled, the future *aw* is also cancelled."
-msgstr "اگر انتظار لغو شود، آینده *aw* نیز لغو می‌شود."
+msgstr "اگر انتظار لغو شود، آینده \*aw\* نیز لغو می‌شود."
 
 msgid ""
 "async def eternity():\n"
@@ -1001,7 +1001,7 @@ msgstr ""
 "#     timeout!"
 
 msgid "When *aw* is cancelled due to a timeout, ``wait_for`` waits for *aw* to be cancelled.  Previously, it raised :exc:`TimeoutError` immediately."
-msgstr "هنگامی که *aw* به دلیل مهلت زمانی لغو می‌شود، ``wait_for`` منتظر می‌ماند تا *aw* لغو شود. پیش از این، بلافاصله :exc:`TimeoutError` را پرتاب می‌کرد."
+msgstr "هنگامی که \*aw\* به دلیل مهلت زمانی لغو می‌شود، ``wait_for`` منتظر می‌ماند تا \*aw\* لغو شود. پیش از این، بلافاصله :exc:`TimeoutError` را پرتاب می‌کرد."
 
 msgid "Raises :exc:`TimeoutError` instead of :exc:`asyncio.TimeoutError`."
 msgstr ":exc:`TimeoutError` را به‌جای :exc:`asyncio.TimeoutError` پرتاب می‌کند."
@@ -1010,10 +1010,10 @@ msgid "Waiting primitives"
 msgstr "اولیه‌های انتظار"
 
 msgid "Run :class:`~asyncio.Future` and :class:`~asyncio.Task` instances in the *aws* iterable concurrently and block until the condition specified by *return_when*."
-msgstr "نمونه‌های :class:`~asyncio.Future` و :class:`~asyncio.Task` موجود در پیمایش‌پذیر *aws* را به‌طور همزمان اجرا می‌کند و تا برقراری شرط مشخص‌شده توسط *return_when* مسدود می‌شود."
+msgstr "نمونه‌های :class:`~asyncio.Future` و :class:`~asyncio.Task` موجود در پیمایش‌پذیر \*aws\* را به‌طور همزمان اجرا می‌کند و تا برقراری شرط مشخص‌شده توسط \*return_when\* مسدود می‌شود."
 
 msgid "The *aws* iterable must not be empty."
-msgstr "پیمایش‌پذیر *aws* نباید خالی باشد."
+msgstr "پیمایش‌پذیر \*aws\* نباید خالی باشد."
 
 msgid "Returns two sets of Tasks/Futures: ``(done, pending)``."
 msgstr "دو مجموعه از Tasks/Futures را برمی‌گرداند: ``(done, pending)``."
@@ -1025,13 +1025,13 @@ msgid "done, pending = await asyncio.wait(aws)"
 msgstr "done, pending = await asyncio.wait(aws)"
 
 msgid "*timeout* (a float or int), if specified, can be used to control the maximum number of seconds to wait before returning."
-msgstr "*timeout* (یک float یا int)، در صورت مشخص بودن، می‌تواند برای کنترل حداکثر تعداد ثانیه‌های انتظار پیش از بازگشت استفاده شود."
+msgstr "\*timeout\* (یک float یا int)، در صورت مشخص بودن، می‌تواند برای کنترل حداکثر تعداد ثانیه‌های انتظار پیش از بازگشت استفاده شود."
 
 msgid "Note that this function does not raise :exc:`TimeoutError`. Futures or Tasks that aren't done when the timeout occurs are simply returned in the second set."
 msgstr "توجه داشته باشید که این تابع :exc:`TimeoutError` را پرتاب نمی‌کند. Futureها یا Taskهایی که هنگام فرا رسیدن مهلت زمانی انجام نشده‌اند، به‌سادگی در مجموعه دوم برگردانده می‌شوند."
 
 msgid "*return_when* indicates when this function should return.  It must be one of the following constants:"
-msgstr "*return_when* نشان می‌دهد که این تابع چه زمانی باید بازگشت کند. این مقدار باید یکی از ثابت‌های زیر باشد:"
+msgstr "\*return_when\* نشان می‌دهد که این تابع چه زمانی باید بازگشت کند. این مقدار باید یکی از ثابت‌های زیر باشد:"
 
 msgid "Constant"
 msgstr "ثابت"
@@ -1052,7 +1052,7 @@ msgid "Unlike :func:`~asyncio.wait_for`, ``wait()`` does not cancel the futures 
 msgstr "برخلاف :func:`~asyncio.wait_for`، ``wait()`` در صورت وقوع مهلت زمانی، آینده‌نماها (futures) را لغو نمی‌کند."
 
 msgid "If ``wait()`` is cancelled, the futures in *aws* are not cancelled and continue to run."
-msgstr "اگر ``wait()`` لغو شود، آینده‌نماها (futures) موجود در *aws* لغو نمی‌شوند و به اجرای خود ادامه می‌دهند."
+msgstr "اگر ``wait()`` لغو شود، آینده‌نماها (futures) موجود در \*aws\* لغو نمی‌شوند و به اجرای خود ادامه می‌دهند."
 
 msgid "Passing coroutine objects to ``wait()`` directly is forbidden."
 msgstr "ارسال اشیای هم‌روال به ``wait()`` به‌صورت مستقیم ممنوع است."
@@ -1061,7 +1061,7 @@ msgid "Added support for generators yielding tasks."
 msgstr "پشتیبانی از تولیدگرهایی که وظایف را yield می‌کنند، افزوده شد."
 
 msgid "Run :ref:`awaitable objects <asyncio-awaitables>` in the *aws* iterable concurrently. The returned object can be iterated to obtain the results of the awaitables as they finish."
-msgstr ":ref:`اشیاء awaitable <asyncio-awaitables>` موجود در پیمایش‌پذیر *aws* را به‌صورت همزمان اجرا کنید. می‌توانید شیء برگردانده‌شده را پیمایش کنید تا نتایج اشیاء awaitable را به‌محض اتمام هرکدام از آن‌ها به دست آورید."
+msgstr ":ref:`اشیاء awaitable <asyncio-awaitables>` موجود در پیمایش‌پذیر \*aws\* را به‌صورت همزمان اجرا کنید. می‌توانید شیء برگردانده‌شده را پیمایش کنید تا نتایج اشیاء awaitable را به‌محض اتمام هرکدام از آن‌ها به دست آورید."
 
 msgid "The object returned by ``as_completed()`` can be iterated as an :term:`asynchronous iterator` or a plain :term:`iterator`. When asynchronous iteration is used, the originally-supplied awaitables are yielded if they are tasks or futures. This makes it easy to correlate previously-scheduled tasks with their results. Example::"
 msgstr "می‌توان شیء برگردانده‌شده از ``as_completed()`` را به‌عنوان یک :term:`پیمایش‌گر ناهمگام <asynchronous iterator>` یا یک :term:`پیمایش‌گر <iterator>` ساده پیمایش کرد. هنگامی که از پیمایش ناهمگام استفاده می‌شود، awaitableهایی که در ابتدا ارائه شده‌اند، در صورتی که task یا future باشند، بازگشت داده می‌شوند. این کار مرتبط کردن taskهای از پیش زمان‌بندی‌شده با نتایج آن‌ها را آسان می‌کند. مثال::"
@@ -1129,7 +1129,7 @@ msgid "``as_completed()`` does not cancel the tasks running the supplied awaitab
 msgstr "``as_completed()`` وظایف در حال اجرای awaitableهای ارائه‌شده را لغو نمی‌کند: اگر مهلت به پایان برسد یا پیمایش لغو شود، وظایف باقی‌مانده به اجرا ادامه می‌دهند."
 
 msgid "Deprecation warning is emitted if not all awaitable objects in the *aws* iterable are Future-like objects and there is no running event loop."
-msgstr "اگر تمام اشیای awaitable در پیمایش‌پذیر *aws* اشیای شبه-Future نباشند و حلقه رویدادی در حال اجرا وجود نداشته باشد، هشدار از رده خارج شدن نشان داده می‌شود."
+msgstr "اگر تمام اشیای awaitable در پیمایش‌پذیر \*aws\* اشیای شبه-Future نباشند و حلقه رویدادی در حال اجرا وجود نداشته باشد، هشدار از رده خارج شدن نشان داده می‌شود."
 
 msgid "The result can now be used as either an :term:`asynchronous iterator` or as a plain :term:`iterator` (previously it was only a plain iterator)."
 msgstr "نتیجه اکنون می‌تواند هم به‌عنوان یک :term:`پیمایش‌گر ناهمگام <asynchronous iterator>` و هم به‌عنوان یک :term:`پیمایش‌گر <iterator>` ساده استفاده شود (پیش‌تر فقط یک پیمایش‌گر ساده بود)."
@@ -1138,13 +1138,13 @@ msgid "Running in threads"
 msgstr "اجرا در نخ‌ها"
 
 msgid "Asynchronously run function *func* in a separate thread."
-msgstr "تابع *func* را به‌صورت ناهمگام در یک نخ جداگانه اجرا می‌کند."
+msgstr "تابع \*func\* را به‌صورت ناهمگام در یک نخ جداگانه اجرا می‌کند."
 
 msgid "Any \\*args and \\*\\*kwargs supplied for this function are directly passed to *func*. Also, the current :class:`contextvars.Context` is propagated, allowing context variables from the event loop thread to be accessed in the separate thread."
-msgstr "هرگونه \\*args و \\*\\*kwargs که برای این تابع ارائه شود، مستقیماً به *func* ارسال می‌شود. همچنین :class:`contextvars.Context` جاری منتشر می‌شود تا متغیرهای زمینه از نخ حلقه رویداد در نخ جداگانه قابل دسترسی باشند."
+msgstr "هرگونه \\*args و \\*\\*kwargs که برای این تابع ارائه شود، مستقیماً به \*func\* ارسال می‌شود. همچنین :class:`contextvars.Context` جاری منتشر می‌شود تا متغیرهای زمینه از نخ حلقه رویداد در نخ جداگانه قابل دسترسی باشند."
 
 msgid "Return a coroutine that can be awaited to get the eventual result of *func*."
-msgstr "یک هم‌روال برمی‌گرداند که می‌توان آن را await کرد تا نتیجه نهایی *func* به دست آید."
+msgstr "یک هم‌روال برمی‌گرداند که می‌توان آن را await کرد تا نتیجه نهایی \*func\* به دست آید."
 
 msgid "This coroutine function is primarily intended to be used for executing IO-bound functions/methods that would otherwise block the event loop if they were run in the main thread. For example::"
 msgstr "این تابع هم‌روال عمدتاً برای اجرای توابع/متدهای وابسته به ورودی/خروجی (IO-bound) در نظر گرفته شده است، توابعی که در غیر این صورت، اگر در نخ اصلی اجرا شوند، حلقه رویداد را مسدود می‌کنند. برای مثال::"
@@ -1357,7 +1357,7 @@ msgid "See the :ref:`concurrency and multithreading <asyncio-multithreading>` se
 msgstr "بخش :ref:`همروندی و چندریسمانی <asyncio-multithreading>` مستندات را ببینید."
 
 msgid "Unlike other asyncio functions this function requires the *loop* argument to be passed explicitly."
-msgstr "برخلاف سایر توابع asyncio، این تابع نیاز دارد که آرگومان *loop* به‌صورت صریح ارسال شود."
+msgstr "برخلاف سایر توابع asyncio، این تابع نیاز دارد که آرگومان \*loop\* به‌صورت صریح ارسال شود."
 
 msgid "Introspection"
 msgstr "درون‌نگری"
@@ -1366,16 +1366,16 @@ msgid "Return the currently running :class:`Task` instance, or ``None`` if no ta
 msgstr "نمونه‌ی در حال اجرای :class:`Task` را برمی‌گرداند، یا اگر هیچ وظیفه‌ای در حال اجرا نباشد، ``None`` را برمی‌گرداند."
 
 msgid "If *loop* is ``None`` :func:`get_running_loop` is used to get the current loop."
-msgstr "اگر *loop* برابر ``None`` باشد، از :func:`get_running_loop` برای گرفتن حلقه جاری استفاده می‌شود."
+msgstr "اگر \*loop\* برابر ``None`` باشد، از :func:`get_running_loop` برای گرفتن حلقه جاری استفاده می‌شود."
 
 msgid "Return a set of not yet finished :class:`Task` objects run by the loop."
 msgstr "مجموعه‌ای از اشیاء :class:`Task` که هنوز تمام‌نشده‌اند و توسط حلقه اجرا می‌شوند را برمی‌گرداند."
 
 msgid "If *loop* is ``None``, :func:`get_running_loop` is used for getting current loop."
-msgstr "اگر *loop* برابر ``None`` باشد، برای گرفتن حلقه‌ی جاری از :func:`get_running_loop` استفاده می‌شود."
+msgstr "اگر \*loop\* برابر ``None`` باشد، برای گرفتن حلقه‌ی جاری از :func:`get_running_loop` استفاده می‌شود."
 
 msgid "Return ``True`` if *obj* is a coroutine object."
-msgstr "اگر *obj* یک شیء هم‌روال باشد، ``True`` برمی‌گرداند."
+msgstr "اگر \*obj\* یک شیء هم‌روال باشد، ``True`` برمی‌گرداند."
 
 msgid "Task object"
 msgstr "شیء Task"
@@ -1384,7 +1384,7 @@ msgid "A :class:`Future-like <Future>` object that runs a Python :ref:`coroutine
 msgstr "یک شیء :class:`Future-مانند <Future>` که یک :ref:`هم‌روال <coroutine>` پایتون را اجرا می‌کند. نخ‌ایمن نیست."
 
 msgid "Tasks are used to run coroutines in event loops. If a coroutine awaits on a Future, the Task suspends the execution of the coroutine and waits for the completion of the Future.  When the Future is *done*, the execution of the wrapped coroutine resumes."
-msgstr "از Taskها برای اجرای هم‌روال‌ها در حلقه‌های رویداد استفاده می‌شود. اگر یک هم‌روال روی یک Future await کند، Task اجرای هم‌روال را معلق می‌کند و منتظر کامل شدن Future می‌ماند. هنگامی که Future *انجام‌شده* باشد، اجرای هم‌روال دربرگرفته‌شده از سر گرفته می‌شود."
+msgstr "از Taskها برای اجرای هم‌روال‌ها در حلقه‌های رویداد استفاده می‌شود. اگر یک هم‌روال روی یک Future await کند، Task اجرای هم‌روال را معلق می‌کند و منتظر کامل شدن Future می‌ماند. هنگامی که Future \*انجام‌شده\* باشد، اجرای هم‌روال دربرگرفته‌شده از سر گرفته می‌شود."
 
 msgid "Event loops use cooperative scheduling: an event loop runs one Task at a time.  While a Task awaits for the completion of a Future, the event loop runs other Tasks, callbacks, or performs IO operations."
 msgstr "حلقه‌های رویداد از زمان‌بندی مشارکتی استفاده می‌کنند: یک حلقه رویداد در هر زمان یک Task را اجرا می‌کند. هنگامی که یک Task برای تکمیل شدن یک Future await می‌کند، حلقه رویداد Taskهای دیگر و کال‌بک‌ها را اجرا می‌کند یا عملیات ورودی/خروجی انجام می‌دهد."
@@ -1402,10 +1402,10 @@ msgid ":class:`asyncio.Task` inherits from :class:`Future` all of its APIs excep
 msgstr ":class:`asyncio.Task` از :class:`Future` همه‌ی APIهای آن را به ارث می‌برد، به‌جز :meth:`Future.set_result` و :meth:`Future.set_exception`."
 
 msgid "An optional keyword-only *context* argument allows specifying a custom :class:`contextvars.Context` for the *coro* to run in. If no *context* is provided, the Task copies the current context and later runs its coroutine in the copied context."
-msgstr "یک آرگومان *context* اختیاری فقط کلیدواژه‌ای به شما امکان می‌دهد یک :class:`contextvars.Context` سفارشی را برای اجرای *coro* در آن تعیین کنید. اگر *context* ارائه نشود، Task زمینه جاری را کپی می‌کند و بعداً هم‌روال خود را در زمینه کپی‌شده اجرا می‌کند."
+msgstr "یک آرگومان \*context\* اختیاری فقط کلیدواژه‌ای به شما امکان می‌دهد یک :class:`contextvars.Context` سفارشی را برای اجرای \*coro\* در آن تعیین کنید. اگر \*context\* ارائه نشود، Task زمینه جاری را کپی می‌کند و بعداً هم‌روال خود را در زمینه کپی‌شده اجرا می‌کند."
 
 msgid "An optional keyword-only *eager_start* argument allows eagerly starting the execution of the :class:`asyncio.Task` at task creation time. If set to ``True`` and the event loop is running, the task will start executing the coroutine immediately, until the first time the coroutine blocks. If the coroutine returns or raises without blocking, the task will be finished eagerly and will skip scheduling to the event loop."
-msgstr "یک آرگومان اختیاری و فقط کلیدواژه‌ای به نام *eager_start* امکان شروع فوری اجرای :class:`asyncio.Task` را در زمان ایجاد وظیفه فراهم می‌کند. اگر روی ``True`` تنظیم شده باشد و حلقه رویداد در حال اجرا باشد، وظیفه اجرای هم‌روال را بلافاصله آغاز می‌کند، تا نخستین باری که هم‌روال مسدود شود. اگر هم‌روال بدون مسدود شدن بازگشت کند یا استثنایی پرتاب کند، وظیفه به‌صورت فوری به پایان می‌رسد و در حلقه رویداد زمان‌بندی نمی‌شود."
+msgstr "یک آرگومان اختیاری و فقط کلیدواژه‌ای به نام \*eager_start\* امکان شروع فوری اجرای :class:`asyncio.Task` را در زمان ایجاد وظیفه فراهم می‌کند. اگر روی ``True`` تنظیم شده باشد و حلقه رویداد در حال اجرا باشد، وظیفه اجرای هم‌روال را بلافاصله آغاز می‌کند، تا نخستین باری که هم‌روال مسدود شود. اگر هم‌روال بدون مسدود شدن بازگشت کند یا استثنایی پرتاب کند، وظیفه به‌صورت فوری به پایان می‌رسد و در حلقه رویداد زمان‌بندی نمی‌شود."
 
 msgid "Tasks are :ref:`generic <generics>` over the return type of their wrapped coroutines."
 msgstr "وظایف نسبت به نوع برگشتی هم‌روال‌های دربرگرفته‌شده‌ی خود :ref:`عام <generics>` هستند."
@@ -1414,25 +1414,25 @@ msgid "Added support for the :mod:`contextvars` module."
 msgstr "پشتیبانی از ماژول :mod:`contextvars` افزوده شد."
 
 msgid "Deprecation warning is emitted if *loop* is not specified and there is no running event loop."
-msgstr "اگر *loop* مشخص نشده باشد و هیچ حلقه رویدادی در حال اجرا وجود نداشته باشد، هشدار منسوخ‌شدن نشان داده می‌شود."
+msgstr "اگر \*loop\* مشخص نشده باشد و هیچ حلقه رویدادی در حال اجرا وجود نداشته باشد، هشدار منسوخ‌شدن نشان داده می‌شود."
 
 msgid "Added the *eager_start* parameter."
-msgstr "پارامتر *eager_start* اضافه شد."
+msgstr "پارامتر \*eager_start\* اضافه شد."
 
 msgid "Return ``True`` if the Task is *done*."
-msgstr "اگر Task *انجام‌شده* باشد، ``True`` را برمی‌گرداند."
+msgstr "اگر Task \*انجام‌شده\* باشد، ``True`` را برمی‌گرداند."
 
 msgid "A Task is *done* when the wrapped coroutine either returned a value, raised an exception, or the Task was cancelled."
-msgstr "یک وظیفه زمانی *انجام‌شده* است که هم‌روال دربرگرفته‌شده‌ی آن، یا مقداری را برگردانده باشد، یا استثنایی را پرتاب کرده باشد، یا آن وظیفه لغو شده باشد."
+msgstr "یک وظیفه زمانی \*انجام‌شده\* است که هم‌روال دربرگرفته‌شده‌ی آن، یا مقداری را برگردانده باشد، یا استثنایی را پرتاب کرده باشد، یا آن وظیفه لغو شده باشد."
 
 msgid "Return the result of the Task."
 msgstr "نتیجه‌ی Task را برمی‌گرداند."
 
 msgid "If the Task is *done*, the result of the wrapped coroutine is returned (or if the coroutine raised an exception, that exception is re-raised.)"
-msgstr "اگر Task *انجام‌شده* باشد، نتیجه هم‌روال پوشیده‌شده برگردانده می‌شود (یا اگر هم‌روال استثنایی را پرتاب کرده باشد، آن استثنا دوباره پرتاب می‌شود.)"
+msgstr "اگر Task \*انجام‌شده\* باشد، نتیجه هم‌روال پوشیده‌شده برگردانده می‌شود (یا اگر هم‌روال استثنایی را پرتاب کرده باشد، آن استثنا دوباره پرتاب می‌شود.)"
 
 msgid "If the Task has been *cancelled*, this method raises a :exc:`CancelledError` exception."
-msgstr "اگر Task *لغوشده* باشد، این متد استثنای :exc:`CancelledError` را پرتاب می‌کند."
+msgstr "اگر Task \*لغوشده\* باشد، این متد استثنای :exc:`CancelledError` را پرتاب می‌کند."
 
 msgid "If the Task's result isn't yet available, this method raises an :exc:`InvalidStateError` exception."
 msgstr "اگر نتیجه‌ی Task هنوز در دسترس نباشد، این متد یک استثنای :exc:`InvalidStateError` پرتاب می‌کند."
@@ -1444,10 +1444,10 @@ msgid "If the wrapped coroutine raised an exception that exception is returned. 
 msgstr "اگر هم‌روال پوشیده‌شده استثنایی پرتاب کرد، آن استثنا برگردانده می‌شود. اگر هم‌روال پوشیده‌شده به‌طور عادی بازگشت کرد، این متد ``None`` را برمی‌گرداند."
 
 msgid "If the Task isn't *done* yet, this method raises an :exc:`InvalidStateError` exception."
-msgstr "اگر Task هنوز *انجام‌شده* نباشد، این متد استثنای :exc:`InvalidStateError` را پرتاب می‌کند."
+msgstr "اگر Task هنوز \*انجام‌شده\* نباشد، این متد استثنای :exc:`InvalidStateError` را پرتاب می‌کند."
 
 msgid "Add a callback to be run when the Task is *done*."
-msgstr "یک کال‌بک اضافه کنید تا هنگامی که Task *انجام‌شده* باشد اجرا شود."
+msgstr "یک کال‌بک اضافه کنید تا هنگامی که Task \*انجام‌شده\* باشد اجرا شود."
 
 msgid "This method should only be used in low-level callback-based code."
 msgstr "این متد تنها باید در کد سطح پایین مبتنی بر کال‌بک استفاده شود."
@@ -1456,7 +1456,7 @@ msgid "See the documentation of :meth:`Future.add_done_callback` for more detail
 msgstr "برای جزئیات بیشتر، مستندات :meth:`Future.add_done_callback` را ببینید."
 
 msgid "Remove *callback* from the callbacks list."
-msgstr "*callback* را از فهرست کال‌بک‌ها حذف کنید."
+msgstr "\*callback\* را از فهرست کال‌بک‌ها حذف کنید."
 
 msgid "See the documentation of :meth:`Future.remove_done_callback` for more details."
 msgstr "برای جزئیات بیشتر، به مستندات :meth:`Future.remove_done_callback` مراجعه کنید."
@@ -1474,7 +1474,7 @@ msgid "Only one stack frame is returned for a suspended coroutine."
 msgstr "تنها یک فریم پشته برای یک هم‌روال تعلیق‌شده برگردانده می‌شود."
 
 msgid "The optional *limit* argument sets the maximum number of frames to return; by default all available frames are returned. The ordering of the returned list differs depending on whether a stack or a traceback is returned: the newest frames of a stack are returned, but the oldest frames of a traceback are returned.  (This matches the behavior of the traceback module.)"
-msgstr "آرگومان اختیاری *limit* حداکثر تعداد فریم‌های بازگشتی را تنظیم می‌کند؛ به‌طور پیش‌فرض همه‌ی فریم‌های موجود بازگردانده می‌شوند. ترتیب فهرست بازگشتی بسته به این‌که یک پشته یا یک ردگیری بازگردانده شود، متفاوت است: جدیدترین فریم‌های یک پشته بازگردانده می‌شوند، اما قدیمی‌ترین فریم‌های یک ردگیری بازگردانده می‌شوند. (این با رفتار ماژول traceback مطابقت دارد.)"
+msgstr "آرگومان اختیاری \*limit\* حداکثر تعداد فریم‌های بازگشتی را تنظیم می‌کند؛ به‌طور پیش‌فرض همه‌ی فریم‌های موجود بازگردانده می‌شوند. ترتیب فهرست بازگشتی بسته به این‌که یک پشته یا یک ردگیری بازگردانده شود، متفاوت است: جدیدترین فریم‌های یک پشته بازگردانده می‌شوند، اما قدیمی‌ترین فریم‌های یک ردگیری بازگردانده می‌شوند. (این با رفتار ماژول traceback مطابقت دارد.)"
 
 msgid "Print the stack or traceback for this Task."
 msgstr "پشته یا ردگیری پشته‌ی این Task را چاپ می‌کند."
@@ -1483,10 +1483,10 @@ msgid "This produces output similar to that of the traceback module for the fram
 msgstr "این، خروجی مشابهی با خروجی ماژول traceback برای فریم‌های بازیابی‌شده توسط :meth:`get_stack` تولید می‌کند."
 
 msgid "The *limit* argument is passed to :meth:`get_stack` directly."
-msgstr "آرگومان *limit* مستقیماً به :meth:`get_stack` ارسال می‌شود."
+msgstr "آرگومان \*limit\* مستقیماً به :meth:`get_stack` ارسال می‌شود."
 
 msgid "The *file* argument is an I/O stream to which the output is written; by default output is written to :data:`sys.stdout`."
-msgstr "آرگومان *file* یک جریان ورودی/خروجی است که خروجی به آن نوشته می‌شود؛ به‌طور پیش‌فرض خروجی به :data:`sys.stdout` نوشته می‌شود."
+msgstr "آرگومان \*file\* یک جریان ورودی/خروجی است که خروجی به آن نوشته می‌شود؛ به‌طور پیش‌فرض خروجی به :data:`sys.stdout` نوشته می‌شود."
 
 msgid "Return the coroutine object wrapped by the :class:`Task`."
 msgstr "شیء هم‌روالِ دربرگرفته‌شده توسط :class:`Task` را برمی‌گرداند."
@@ -1510,7 +1510,7 @@ msgid "Set the name of the Task."
 msgstr "نام Task را تنظیم کنید."
 
 msgid "The *value* argument can be any object, which is then converted to a string."
-msgstr "آرگومان *value* می‌تواند هر شیء‌ای باشد که سپس به رشته تبدیل می‌شود."
+msgstr "آرگومان \*value\* می‌تواند هر شیء‌ای باشد که سپس به رشته تبدیل می‌شود."
 
 msgid "In the default Task implementation, the name will be visible in the :func:`repr` output of a task object."
 msgstr "در پیاده‌سازی پیش‌فرض Task، نام در خروجی :func:`repr` یک شیء task قابل مشاهده خواهد بود."
@@ -1519,7 +1519,7 @@ msgid "Request the Task to be cancelled."
 msgstr "درخواست لغو Task را بدهید."
 
 msgid "If the Task is already *done* or *cancelled*, return ``False``, otherwise, return ``True``."
-msgstr "اگر Task از پیش *انجام‌شده* یا *لغوشده* باشد، ``False`` را برمی‌گرداند، در غیر این صورت ``True`` را برمی‌گرداند."
+msgstr "اگر Task از پیش \*انجام‌شده\* یا \*لغوشده\* باشد، ``False`` را برمی‌گرداند، در غیر این صورت ``True`` را برمی‌گرداند."
 
 msgid "The method arranges for a :exc:`CancelledError` exception to be thrown into the wrapped coroutine on the next cycle of the event loop."
 msgstr "این متد ترتیبی می‌دهد که استثنای :exc:`CancelledError` در چرخه‌ی بعدی حلقه‌ی رویداد به هم‌روال پوشیده‌شده پرتاب شود."
@@ -1528,7 +1528,7 @@ msgid "The coroutine then has a chance to clean up or even deny the request by s
 msgstr "سپس هم‌روال این فرصت را دارد که پاک‌سازی کند یا حتی با مهار استثنا از طریق یک بلوک :keyword:`try` ... ... ``except CancelledError`` ... :keyword:`finally`، درخواست را رد کند. بنابراین، برخلاف :meth:`Future.cancel`، :meth:`Task.cancel` تضمین نمی‌کند که Task لغو شود، اگرچه مهار کامل لغو رایج نیست و به‌طور فعال نهی شده است. اگر هم‌روال با این حال تصمیم بگیرد لغو را مهار کند، باید علاوه بر گرفتن استثنا، :meth:`Task.uncancel` را نیز فراخوانی کند."
 
 msgid "Added the *msg* parameter."
-msgstr "پارامتر *msg* اضافه شد."
+msgstr "پارامتر \*msg\* اضافه شد."
 
 msgid "The ``msg`` parameter is propagated from cancelled task to its awaiter."
 msgstr "پارامتر ``msg`` از وظیفه لغوشده به awaitکننده‌ی آن منتقل می‌شود."
@@ -1606,10 +1606,10 @@ msgstr ""
 "#     main(): cancel_me is cancelled now"
 
 msgid "Return ``True`` if the Task is *cancelled*."
-msgstr "اگر Task *لغوشده* باشد، ``True`` را برمی‌گرداند."
+msgstr "اگر Task \*لغوشده\* باشد، ``True`` را برمی‌گرداند."
 
 msgid "The Task is *cancelled* when the cancellation was requested with :meth:`cancel` and the wrapped coroutine propagated the :exc:`CancelledError` exception thrown into it."
-msgstr "Task زمانی *لغو می‌شود* که لغو با :meth:`cancel` درخواست شده باشد و هم‌روال دربرگرفته‌شده، استثنای :exc:`CancelledError` پرتاب‌شده به درون آن را منتشر کرده باشد."
+msgstr "Task زمانی \*لغو می‌شود\* که لغو با :meth:`cancel` درخواست شده باشد و هم‌روال دربرگرفته‌شده، استثنای :exc:`CancelledError` پرتاب‌شده به درون آن را منتشر کرده باشد."
 
 msgid "Decrement the count of cancellation requests to this Task."
 msgstr "شمار درخواست‌های لغو برای این Task را کاهش می‌دهد."
