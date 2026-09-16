@@ -20,7 +20,7 @@
 | character          | نویسه                   |
 | class              | کلاس                    |
 | command line       | خط فرمان                |
-| community          | کامیونیتی، انجمن               |
+| community          | کامیونیتی               |
 | component          | کامپوننت                |
 | context management | مدیریت زمینه            |
 | coroutine          | هم‌روال                  |
