@@ -315,7 +315,6 @@ msgstr "بازگرداندن ``NotImplemented`` از تابع مقایسه‌ی 
 msgid "A singleton object used as a sentinel to reserve a place for positional arguments when calling :func:`partial` and :func:`partialmethod`."
 msgstr "شیء یگانه‌ای که به‌عنوان نشانگر (sentinel) برای رزرو جایگاهی برای آرگومان‌های جایگاهی هنگام فراخوانی :func:`partial` و :func:`partialmethod` استفاده می‌شود."
 
-#, fuzzy
 msgid "Return a new :ref:`partial object<partial-objects>` which when called will behave like *func* called with the positional arguments *args* and keyword arguments *keywords*. If more arguments are supplied to the call, they are appended to *args*. If additional keyword arguments are supplied, they extend and override *keywords*. Roughly equivalent to::"
 msgstr "یک :ref:`شیء partial <partial-objects>` جدید برمی‌گرداند که هنگام فراخوانی، مانند *func* فراخوانی‌شده با آرگومان‌های جایگاهی *args* و آرگومان‌های کلیدواژه‌ای *keywords* رفتار می‌کند. اگر آرگومان‌های بیشتری در فراخوانی ارائه شوند، به *args* افزوده می‌شوند. اگر آرگومان‌های کلیدواژه‌ای اضافی ارائه شوند، *keywords* را گسترش می‌دهند و بازنویسی می‌کنند. تقریباً معادل است با::"
 
@@ -408,9 +407,8 @@ msgstr "یک توصیف‌گر :class:`partialmethod` جدید برمی‌گرد
 msgid "*func* must be a :term:`descriptor` or a callable (objects which are both, like normal functions, are handled as descriptors)."
 msgstr "*func* باید یک :term:`توصیف‌گر <descriptor>` یا فراخوانی‌پذیر باشد (اشیایی که هر دو هستند، مانند توابع معمولی، به‌عنوان توصیف‌گر در نظر گرفته می‌شوند)."
 
-#, fuzzy
 msgid "When *func* is a descriptor (such as a normal Python function, :func:`classmethod`, :func:`staticmethod`, :func:`~abc.abstractmethod` or another instance of :class:`partialmethod`), calls to ``__get__`` are delegated to the underlying descriptor, and an appropriate :ref:`partial object<partial-objects>` returned as the result."
-msgstr "هنگامی که *func* یک توصیف‌گر باشد (مانند یک تابع معمولی پایتون، :func:`classmethod`، :func:`staticmethod`، :func:`~abc.abstractmethod` یا نمونه‌ای دیگر از :class:`partialmethod`)، فراخوانی‌های ``__get__`` به توصیف‌گری زیربنایی محول می‌شوند و یک :ref:`شیء partial <partial-objects>` مناسب به‌عنوان نتیجه برگردانده می‌شود."
+msgstr "هنگامی که *func* یک توصیف‌گر باشد (مانند یک تابع معمولی پایتون، :func:`classmethod`، :func:`staticmethod`، :func:`~abc.abstractmethod` یا نمونه‌ای دیگر از :class:`partialmethod`)، فراخوانی‌های متد ``__get__`` به توصیف‌گر زیرین محول می‌شوند و یک :ref:`شیء partial <partial-objects>` مناسب به‌عنوان نتیجه برگردانده می‌شود."
 
 msgid "When *func* is a non-descriptor callable, an appropriate bound method is created dynamically. This behaves like a normal Python function when used as a method: the *self* argument will be inserted as the first positional argument, even before the *args* and *keywords* supplied to the :class:`partialmethod` constructor."
 msgstr "هنگامی که *func* یک شیء فراخوانی‌پذیر غیرتوصیف‌گر باشد، یک متد مقید مناسب به‌صورت پویا ایجاد می‌شود. این متد هنگامی که به‌عنوان یک متد استفاده شود، مانند یک تابع معمولی پایتون رفتار می‌کند: آرگومان *self* به‌عنوان اولین آرگومان جایگاهی درج می‌شود، حتی پیش از *args* و *keywords* ارائه‌شده به سازنده‌ی :class:`partialmethod`."
@@ -613,9 +611,8 @@ msgstr ""
 msgid "At runtime the function will dispatch on an instance of a list regardless of the type contained within the list i.e. ``[1,2,3]`` will be dispatched the same as ``[\"foo\", \"bar\", \"baz\"]``. The annotation provided in this example is for static type checkers only and has no runtime impact."
 msgstr "در ران‌تایم، تابع بر اساس یک نمونه از فهرست اعزام می‌شود، صرف‌نظر از نوع موجود در فهرست؛ یعنی ``[1,2,3]`` همانند ``[\"foo\", \"bar\", \"baz\"]`` اعزام می‌شود. حاشیه‌نویسی ارائه‌شده در این مثال فقط برای بررسی‌کننده‌های نوع ایستا است و هیچ تأثیری در ران‌تایم ندارد."
 
-#, fuzzy
 msgid "To enable registering :term:`lambdas<lambda>` and pre-existing functions, the :func:`~singledispatch.register` attribute can also be used in a functional form::"
-msgstr "برای امکان‌پذیر کردن ثبت :term:`لامبداها <lambda>` و توابع از پیش موجود، همچنین می‌توان از ویژگی :func:`~singledispatch.register` به‌شکل تابعی استفاده کرد::"
+msgstr "برای فراهم کردن امکان ثبت :term:`لامبداها <lambda>` و توابع از پیش موجود، همچنین می‌توان از ویژگی :func:`~singledispatch.register` به‌شکل تابعی استفاده کرد::"
 
 msgid ""
 ">>> def nothing(arg, verbose=False):\n"

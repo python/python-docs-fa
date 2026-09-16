@@ -1670,9 +1670,8 @@ msgstr "شامل مشخصاتی برای سفارشی‌سازی رفتار :fun
 msgid "Emulating generic types"
 msgstr "شبیه‌سازی انواع عام"
 
-#, fuzzy
 msgid "When using :term:`type annotations<annotation>`, it is often useful to *parameterize* a :term:`generic type` using Python's square-brackets notation. For example, the annotation ``list[int]`` might be used to signify a :class:`list` in which all the elements are of type :class:`int`."
-msgstr "هنگام استفاده از :term:`حاشیه‌نویسی‌های نوع <annotation>`، اغلب مفید است که یک :term:`نوع عام <generic type>` را با استفاده از نماد کروشه‌های مربع پایتون *پارامتری کنید*. برای مثال، ممکن است از حاشیه‌نویسی ``list[int]`` برای نشان دادن یک :class:`list` استفاده شود که در آن همه‌ی عناصر از نوع :class:`int` هستند."
+msgstr "هنگام استفاده از :term:`حاشیه‌نویسی‌های نوع <annotation>`، اغلب مفید است که یک :term:`نوع عام <generic type>` را با استفاده از نماد کروشه‌ای پایتون *پارامتری کنید*. برای مثال، ممکن است از حاشیه‌نویسی ``list[int]`` برای نشان دادن یک :class:`list` استفاده شود که در آن همه‌ی عناصر از نوع :class:`int` هستند."
 
 msgid ":pep:`484` - Type Hints"
 msgstr ":pep:`484` - راهنماهای نوع"
@@ -1680,14 +1679,12 @@ msgstr ":pep:`484` - راهنماهای نوع"
 msgid "Introducing Python's framework for type annotations"
 msgstr "آشنایی با چارچوب پایتون برای حاشیه‌نویسی‌های نوع"
 
-#, fuzzy
 msgid ":ref:`Generic Alias Types<types-genericalias>`"
 msgstr ":ref:`انواع نام مستعار عام <types-genericalias>`"
 
 msgid "Documentation for objects representing parameterized generic classes"
 msgstr "مستندات اشیایی که کلاس‌های عام پارامتریزه را نشان می‌دهند"
 
-#, fuzzy
 msgid ":ref:`Generics`, :ref:`user-defined generics<user-defined-generics>` and :class:`typing.Generic`"
 msgstr ":ref:`عام‌ها <Generics>`، :ref:`عام‌های تعریف‌شده توسط کاربر <user-defined-generics>` و :class:`typing.Generic`"
 
@@ -1706,7 +1703,6 @@ msgstr "هنگامی که روی یک کلاس تعریف شود، ``__class_get
 msgid "The purpose of *__class_getitem__*"
 msgstr "هدف از *__class_getitem__*"
 
-#, fuzzy
 msgid "The purpose of :meth:`~object.__class_getitem__` is to allow runtime parameterization of standard-library generic classes in order to more easily apply :term:`type hints<type hint>` to these classes."
 msgstr "هدف از :meth:`~object.__class_getitem__` این است که امکان پارامتری‌سازی کلاس‌های عام کتابخانه استاندارد در ران‌تایم فراهم شود، تا بتوان :term:`راهنماهای نوع <type hint>` را آسان‌تر به این کلاس‌ها اعمال کرد."
 
@@ -1775,7 +1771,6 @@ msgstr ""
 msgid "In Python, all classes are themselves instances of other classes. The class of a class is known as that class's :term:`metaclass`, and most classes have the :class:`type` class as their metaclass. :class:`type` does not define :meth:`~object.__getitem__`, meaning that expressions such as ``list[int]``, ``dict[str, float]`` and ``tuple[str, bytes]`` all result in :meth:`~object.__class_getitem__` being called::"
 msgstr "در پایتون، همه‌ی کلاس‌ها خود نمونه‌هایی از کلاس‌های دیگر هستند. کلاسِ یک کلاس به عنوان :term:`فراکلاس <metaclass>` آن کلاس شناخته می‌شود، و بیشتر کلاس‌ها کلاس :class:`type` را به عنوان فراکلاس خود دارند. :class:`type` متد :meth:`~object.__getitem__` را تعریف نمی‌کند، به این معنا که عبارت‌هایی مانند ``list[int]``، ``dict[str, float]`` و ``tuple[str, bytes]`` همگی منجر به فراخوانی :meth:`~object.__class_getitem__` می‌شوند::"
 
-#, fuzzy
 msgid ""
 ">>> # list has class \"type\" as its metaclass, like most classes:\n"
 ">>> type(list)\n"
@@ -1792,7 +1787,7 @@ msgstr ""
 ">>> # list has class \"type\" as its metaclass, like most classes:\n"
 ">>> type(list)\n"
 "<class 'type'>\n"
-">>> type(dict) == type(list) == type == type(str) == type(bytes)\n"
+">>> type(dict) == type(list) == type(tuple) == type(str) == type(bytes)\n"
 "True\n"
 ">>> # \"list[int]\" calls \"list.__class_getitem__(int)\"\n"
 ">>> list[int]\n"
@@ -1842,7 +1837,6 @@ msgstr ""
 msgid ":pep:`560` - Core Support for typing module and generic types"
 msgstr ":pep:`560` - پشتیبانی هسته‌ای از ماژول typing و انواع عام"
 
-#, fuzzy
 msgid "Introducing :meth:`~object.__class_getitem__`, and outlining when a :ref:`subscription<subscriptions>` results in ``__class_getitem__()`` being called instead of :meth:`~object.__getitem__`"
 msgstr "معرفی :meth:`~object.__class_getitem__` و شرح اینکه چه زمانی یک :ref:`زیرنویسی <subscriptions>` منجر به فراخوانی ``__class_getitem__()`` به‌جای :meth:`~object.__getitem__` می‌شود"
 
