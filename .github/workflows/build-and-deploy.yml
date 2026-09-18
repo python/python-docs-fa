@@ -2,10 +2,11 @@ name: Build and Deploy to GitHub Pages
 
 on:
   schedule:
-    - cron: '0 2 * * *' 
+    - cron: '0 2 * * *'
   push:
     branches:
       - 3.14
+    paths-ignore: []
   workflow_dispatch:
 
 permissions:
@@ -26,21 +27,17 @@ jobs:
         with:
           repository: python/cpython
           ref: v3.14.7
-          
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
-          
+
       - name: Setup virtual environment
         run: make venv
         working-directory: ./Doc
 
       - name: Pin Sphinx to 9.1.0
-        # make venv may resolve an older Sphinx via requirements.txt; pin
-        # explicitly so we get the reordered-ref / translated-display-text
-        # i18n fixes (sphinx-doc/sphinx#14144). Bump this once #14162 lands
-        # upstream and re-check whether the suppression below is still needed.
         run: ./venv/bin/pip install "sphinx==9.1.0"
         working-directory: ./Doc
 
@@ -56,14 +53,39 @@ jobs:
 
       - name: Setup problem matcher
         uses: sphinx-doc/github-problem-matcher@v1.1
-        
+
       - name: Build documentation
         run: make -e SPHINXERRORHANDLING="" SPHINXOPTS="--color -D language='fa' -D gettext_allow_fuzzy_translations=1 -D html_theme_options.is_rtl=true -D suppress_warnings=i18n.inconsistent_references --keep-going" html
         working-directory: ./Doc
-        
+
+      # ---- Glossary searcher build starts here ----
+      - name: Install glossary build dependencies
+        run: pip install -r glossary-searcher/scripts/requirements.txt
+        working-directory: Doc/locales/fa/LC_MESSAGES
+
+      - name: Build glossary corpus & glossary data
+        run: |
+          python glossary-searcher/scripts/build_corpus.py \
+            --repo-dir . \
+            --glossary-tsv glossary.tsv \
+            --out-dir glossary-searcher/data
+        working-directory: Doc/locales/fa/LC_MESSAGES
+
+      - name: Build glossary site
+        run: |
+          python glossary-searcher/scripts/build_site.py \
+            --site-dir glossary-searcher/site \
+            --data-dir glossary-searcher/data \
+            --out-dir glossary-searcher/dist
+        working-directory: Doc/locales/fa/LC_MESSAGES
+
+      - name: Merge glossary site into docs build
+        run: cp -r Doc/locales/fa/LC_MESSAGES/glossary-searcher/dist Doc/build/html/glossary-searcher
+      # ---- Glossary searcher build ends here ----
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

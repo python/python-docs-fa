@@ -19,7 +19,7 @@
 - [ ] `msgfmt --check` روی پرونده‌های تغییر یافته با موفقیت اجرا شده است
 - [ ] `python3 scripts/check_markup.py` روی پرونده‌های تغییر یافته اجرا شده است
 - [ ] نشانه‌گذاری‌های Sphinx (`:class:`، `:func:`، کد درون‌خطی) و جای‌گذارها (`%s`، `{name}`) دست‌نخورده مانده‌اند
-- [ ] ترجمه‌ها با [واژه‌نامه (GLOSSARY.md)](https://github.com/python/python-docs-fa/blob/3.14/GLOSSARY.md) هماهنگ است
+- [ ] ترجمه‌ها با [واژه‌نامه](http://python.github.io/python-docs-fa/glossary-searcher) هماهنگ است
 - [ ] رشته‌های `fuzzy` بررسی و در صورت لزوم بازنویسی شده‌اند
 - [ ] پرونده [CONTRIBUTING.md](https://github.com/python/python-docs-fa/blob/3.14/CONTRIBUTING.md) با دقت خوانده شده است.
 <!-- یادآوری: بررسی‌های خودکار (sphinx-lint ،msgfmt ،check_markup و ساخت کامل) در GitHub Actions روی پول‌ریکوئست اجرا می‌شوند. -->
