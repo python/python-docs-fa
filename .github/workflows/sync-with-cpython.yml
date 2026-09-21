@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
     inputs:
       cpython_tag:
-        description: 'CPython tag to sync against (e.g. v3.14)'
+        description: 'CPython tag to sync against (e.g. 3.14)'
         required: false
-        default: 'v3.14'
+        default: '3.14'
 
 permissions:
   contents: write
@@ -22,7 +22,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     env:
-      CPYTHON_TAG: ${{ github.event.inputs.cpython_tag || 'v3.14' }}
+      CPYTHON_TAG: ${{ github.event.inputs.cpython_tag || '3.14' }}
     steps:
       - name: Checkout translation repo
         uses: actions/checkout@v4

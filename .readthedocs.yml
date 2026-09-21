@@ -5,7 +5,7 @@ build:
   tools:
     python: "3.12"
   commands:
-    - git clone --depth 1 --branch v3.14 https://github.com/python/cpython venv/cpython
+    - git clone --depth 1 --branch 3.14 https://github.com/python/cpython venv/cpython
     - pip install -r venv/cpython/Doc/requirements.txt
     # Pin Sphinx separately: requirements.txt may resolve to an older version,
     # and 9.1.0+ is needed for the reordered- ref / translated-display-text
