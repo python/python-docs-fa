@@ -57,11 +57,26 @@ jobs:
             --repo ${{ github.repository }} \
             2>/dev/null || true
 
-      - name: Open issue for fuzzy strings
+      - name: Open issue for new and fuzzy strings
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           tmpfile=$(mktemp)
+
+          # --- New PO files (untracked, since nothing is staged yet) ---
+          new_files=$(git ls-files --others --exclude-standard -- '*.po' \
+            ':(exclude).cpython-src' ':(exclude).pot-templates')
+          if [ -n "$new_files" ]; then
+            new_count=$(echo "$new_files" | wc -l)
+            {
+              echo "## 🆕 New PO files ($new_count)"
+              echo "$new_files" | sed 's/^/- `/; s/$/`/'
+              echo ""
+            } >> "$tmpfile"
+          fi
+
+          # --- Fuzzy strings ---
+          fuzzy_out=$(mktemp)
           while IFS= read -r f; do
             fuzzy=$(msgattrib --only-fuzzy --no-obsolete "$f" 2>/dev/null)
             if [ -n "$fuzzy" ]; then
@@ -80,27 +95,35 @@ jobs:
                   next
                 }
               ')
-              count=$(echo "$entries" | grep -c '^- ' || echo 0)
-              if [ "$count" -gt 0 ]; then
-                echo "### $f ($count fuzzy)" >> "$tmpfile"
-                echo "$entries" | head -20 >> "$tmpfile"
-                echo "" >> "$tmpfile"
+              count=$(echo "$entries" | grep -c '^- ' || true)
+              if [ "${count:-0}" -gt 0 ]; then
+                echo "### $f ($count fuzzy)" >> "$fuzzy_out"
+                echo "$entries" | head -20 >> "$fuzzy_out"
+                echo "" >> "$fuzzy_out"
               fi
             fi
           done < <(find . -name "*.po" \
             -not -path "./.git/*" \
             -not -path "./.cpython-src/*" \
             -not -path "./.pot-templates/*")
-          if [ -s "$tmpfile" ]; then
-            gh issue create \
-              --title "🔍 Fuzzy strings need review after CPython sync ($(date +%Y-%m-%d))" \
-              --body "$(cat "$tmpfile")
 
-          Triggered by sync with \`$CPYTHON_TAG\`." \
+          if [ -s "$fuzzy_out" ]; then
+            {
+              echo "## 🔍 Fuzzy strings"
+              cat "$fuzzy_out"
+            } >> "$tmpfile"
+          fi
+
+          # --- One issue for both ---
+          if [ -s "$tmpfile" ]; then
+            echo "Triggered by sync with \`$CPYTHON_TAG\`." >> "$tmpfile"
+            gh issue create \
+              --title "🔍 Translation review needed after CPython sync ($(date +%Y-%m-%d))" \
+              --body-file "$tmpfile" \
               --label "translation" \
               --repo ${{ github.repository }}
           fi
-          rm -f "$tmpfile"
+          rm -f "$tmpfile" "$fuzzy_out"
 
       - name: Stage changes
         run: git add --all
