@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-09-26 04:08+0000\n"
 "PO-Revision-Date: 2026-09-14 07:23+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
@@ -80,7 +80,8 @@ msgstr "https://hugovk.github.io/free-threaded-wheels/"
 msgid "Thread safety"
 msgstr "ایمنی نخ"
 
-msgid "The free-threaded build of CPython aims to provide similar thread-safety behavior at the Python level to the default GIL-enabled build.  Built-in types like :class:`dict`, :class:`list`, and :class:`set` use internal locks to protect against concurrent modifications in ways that behave similarly to the GIL.  However, Python has not historically guaranteed specific behavior for concurrent modifications to these built-in types, so this should be treated as a description of the current implementation, not a guarantee of current or future behavior."
+#, fuzzy
+msgid "The free-threaded build of CPython aims to provide similar thread-safety behavior at the Python level to the default GIL-enabled build.  Built-in types like :class:`dict`, :class:`list`, and :class:`set` use internal locks to protect against concurrent modifications in ways that behave similarly to the GIL.  See :ref:`threadsafety` for the guarantees provided by built-in types."
 msgstr "ساخت نخ‌آزاد  CPython هدف دارد در سطح پایتون، رفتار ایمنی نخی مشابهی با ساخت پیش‌فرض دارای GIL فعال فراهم کند. انواع توکار مانند :class:`dict`، :class:`list` و :class:`set` از قفل‌های داخلی برای محافظت در برابر تغییرات همزمان به روش‌هایی استفاده می‌کنند که رفتاری مشابه GIL دارند. با این حال، پایتون از نظر تاریخی رفتار مشخصی را برای تغییرات همزمان روی این انواع توکار تضمین نکرده است، بنابراین این موضوع باید به‌عنوان توصیفی از پیاده‌سازی کنونی در نظر گرفته شود، نه تضمینی برای رفتار کنونی یا آینده."
 
 msgid "It's recommended to use the :class:`threading.Lock` or other synchronization primitives instead of relying on the internal locks of built-in types, when possible."
