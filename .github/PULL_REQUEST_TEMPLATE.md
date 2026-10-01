@@ -21,5 +21,5 @@
 - [ ] نشانه‌گذاری‌های Sphinx (`:class:`، `:func:`، کد درون‌خطی) و جای‌گذارها (`%s`، `{name}`) دست‌نخورده مانده‌اند
 - [ ] ترجمه‌ها با [واژه‌نامه](http://python.github.io/python-docs-fa/glossary-searcher) هماهنگ است
 - [ ] رشته‌های `fuzzy` بررسی و در صورت لزوم بازنویسی شده‌اند
-- [ ] پرونده [CONTRIBUTING.md](https://github.com/python/python-docs-fa/blob/3.14/CONTRIBUTING.md) با دقت خوانده شده است.
+- [ ] پرونده [CONTRIBUTING.md](https://github.com/python/python-docs-fa/blob/3.15/CONTRIBUTING.md) با دقت خوانده شده است.
 <!-- یادآوری: بررسی‌های خودکار (sphinx-lint ،msgfmt ،check_markup و ساخت کامل) در GitHub Actions روی پول‌ریکوئست اجرا می‌شوند. -->

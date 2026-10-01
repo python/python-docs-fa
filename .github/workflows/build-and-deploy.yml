@@ -5,7 +5,7 @@ on:
     - cron: '0 6 * * *'
   push:
     branches:
-      - 3.14
+      - 3.15
   workflow_dispatch:
 
 permissions:
@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: python/cpython
-          ref: '3.14'
+          ref: '3.15'
 
       - name: Set up Python
         uses: actions/setup-python@v4

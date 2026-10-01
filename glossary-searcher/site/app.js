@@ -106,9 +106,9 @@
 
   function githubContributingDocumentLink(kind, term){
     if (kind === 'report'){ // translation bugs
-      return "https://github.com/python/python-docs-fa/blob/3.14/CONTRIBUTING.md#%DA%AF%D8%B2%D8%A7%D8%B1%D8%B4-%D8%A7%D8%B4%DA%A9%D8%A7%D9%84-%D8%AF%D8%B1-%D8%AA%D8%B1%D8%AC%D9%85%D9%87";
+      return "https://github.com/python/python-docs-fa/blob/3.15/CONTRIBUTING.md#%DA%AF%D8%B2%D8%A7%D8%B1%D8%B4-%D8%A7%D8%B4%DA%A9%D8%A7%D9%84-%D8%AF%D8%B1-%D8%AA%D8%B1%D8%AC%D9%85%D9%87";
     } else {
-      return "https://github.com/python/python-docs-fa/blob/3.14/CONTRIBUTING.md#%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D9%88%D8%A7%DA%98%D9%87-%DB%8C%D8%A7-%D8%A7%D8%B5%D8%B7%D9%84%D8%A7%D8%AD-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A8%D9%87-%D9%88%D8%A7%DA%98%D9%87%E2%80%8C%D9%86%D8%A7%D9%85%D9%87";
+      return "https://github.com/python/python-docs-fa/blob/3.15/CONTRIBUTING.md#%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D9%88%D8%A7%DA%98%D9%87-%DB%8C%D8%A7-%D8%A7%D8%B5%D8%B7%D9%84%D8%A7%D8%AD-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A8%D9%87-%D9%88%D8%A7%DA%98%D9%87%E2%80%8C%D9%86%D8%A7%D9%85%D9%87";
     }
   }
 
