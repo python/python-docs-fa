@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-23 06:56+0330\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 17:37+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -740,15 +740,6 @@ msgstr "این متد مبتنی بر رشته است؛ نه به سامانه �
 
 msgid "Passing additional arguments is deprecated; if supplied, they are joined with *other*."
 msgstr "ارسال آرگومان‌های اضافی منسوخ شده است؛ در صورت ارائه، به *other* پیوست می‌شوند."
-
-msgid "With :class:`PureWindowsPath`, return ``True`` if the path is considered reserved under Windows, ``False`` otherwise.  With :class:`PurePosixPath`, ``False`` is always returned."
-msgstr "در :class:`PureWindowsPath`، اگر مسیر در ویندوز رزروشده محسوب شود، ``True`` و در غیر این صورت ``False`` برمی‌گرداند. در :class:`PurePosixPath`، همیشه ``False`` برگردانده می‌شود."
-
-msgid "Windows path names that contain a colon, or end with a dot or a space, are considered reserved. UNC paths may be reserved."
-msgstr "نام مسیرهای ویندوزی که شامل دونقطه باشند، یا با نقطه یا فاصله پایان یابند، رزروشده محسوب می‌شوند. مسیرهای UNC ممکن است رزروشده باشند."
-
-msgid "This method is deprecated; use :func:`os.path.isreserved` to detect reserved paths on Windows."
-msgstr "این متد منسوخ‌شده است؛ برای تشخیص مسیرهای رزروشده در ویندوز از :func:`os.path.isreserved` استفاده کنید."
 
 msgid "Calling this method is equivalent to combining the path with each of the given *pathsegments* in turn::"
 msgstr "فراخوانی این متد معادل ترکیب مسیر با هر یک از *pathsegments* داده‌شده به‌نوبت است::"
@@ -1696,6 +1687,9 @@ msgstr "یک پوشه جدید در این مسیر داده‌شده ایجاد
 msgid "If *parents* is true, any missing parents of this path are created as needed; they are created with the default permissions without taking *mode* into account (mimicking the POSIX ``mkdir -p`` command)."
 msgstr "اگر *parents* درست باشد، هر والدِ موجودنشده‌ای از این مسیر در صورت نیاز ایجاد می‌شود؛ آن‌ها با دسترسی‌های پیش‌فرض ایجاد می‌شوند، بدون اینکه *mode* در نظر گرفته شود (با تقلید از دستور ``mkdir -p`` در POSIX)."
 
+msgid "If *parent_mode* is not ``None``, it is used as the mode for any newly-created, intermediate-level directories when *parents* is true. Like *mode*, it is combined with the process's ``umask`` value. Otherwise, intermediate directories are created with the default permissions (also subject to the umask)."
+msgstr ""
+
 msgid "If *parents* is false (the default), a missing parent raises :exc:`FileNotFoundError`."
 msgstr "اگر *parents* نادرست باشد (پیش‌فرض)، نبودِ یک والد باعث پرتاب :exc:`FileNotFoundError` می‌شود."
 
@@ -1706,6 +1700,11 @@ msgid "If *exist_ok* is true, :exc:`FileExistsError` will not be raised unless t
 msgstr "اگر *exist_ok* درست باشد، :exc:`FileExistsError` پرتاب نخواهد شد، مگر اینکه مسیر داده‌شده از قبل در سامانه فایل‌بندی وجود داشته باشد و پوشه نباشد (مشابه رفتار دستور POSIX ``mkdir -p``)."
 
 msgid "The *exist_ok* parameter was added."
+msgstr "پارامتر *exist_ok* اضافه شد."
+
+#, fuzzy
+#| msgid "The *exist_ok* parameter was added."
+msgid "The *parent_mode* parameter."
 msgstr "پارامتر *exist_ok* اضافه شد."
 
 msgid "Make this path a symbolic link pointing to *target*."
@@ -2261,6 +2260,15 @@ msgstr "مسیر"
 
 msgid "operations"
 msgstr "عملیات"
+
+#~ msgid "With :class:`PureWindowsPath`, return ``True`` if the path is considered reserved under Windows, ``False`` otherwise.  With :class:`PurePosixPath`, ``False`` is always returned."
+#~ msgstr "در :class:`PureWindowsPath`، اگر مسیر در ویندوز رزروشده محسوب شود، ``True`` و در غیر این صورت ``False`` برمی‌گرداند. در :class:`PurePosixPath`، همیشه ``False`` برگردانده می‌شود."
+
+#~ msgid "Windows path names that contain a colon, or end with a dot or a space, are considered reserved. UNC paths may be reserved."
+#~ msgstr "نام مسیرهای ویندوزی که شامل دونقطه باشند، یا با نقطه یا فاصله پایان یابند، رزروشده محسوب می‌شوند. مسیرهای UNC ممکن است رزروشده باشند."
+
+#~ msgid "This method is deprecated; use :func:`os.path.isreserved` to detect reserved paths on Windows."
+#~ msgstr "این متد منسوخ‌شده است؛ برای تشخیص مسیرهای رزروشده در ویندوز از :func:`os.path.isreserved` استفاده کنید."
 
 #~ msgid ""
 #~ ">>> PurePath()\n"

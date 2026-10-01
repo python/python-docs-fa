@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 07:47+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -104,6 +104,11 @@ msgstr "این کلاس می‌تواند برای تولید گاه‌شمار�
 msgid ":class:`TextCalendar` instances have the following methods:"
 msgstr "نمونه‌های :class:`TextCalendar` متدهای زیر را دارند:"
 
+#, fuzzy
+#| msgid "Print a month's calendar as returned by :meth:`formatmonth`."
+msgid "Print a week's calendar as returned by :meth:`formatweek` and without a final newline."
+msgstr "گاه‌شماری یک ماه را همان‌طور که توسط :meth:`formatmonth` برگردانده می‌شود، چاپ کنید."
+
 msgid "Return a string representing a single day formatted with the given *width*. If *theday* is ``0``, return a string of spaces of the specified width, representing an empty day. The *weekday* parameter is unused."
 msgstr "رشته‌ای را برمی‌گرداند که نمایانگر یک روز واحد است و با *width* داده‌شده قالب‌بندی شده است. اگر *theday* برابر ``0`` باشد، رشته‌ای از فاصله‌ها با عرض مشخص‌شده برمی‌گرداند که نمایانگر یک روز خالی است. پارامتر *weekday* استفاده نمی‌شود."
 
@@ -143,7 +148,9 @@ msgstr "گاه‌شماری یک ماه را به‌صورت یک جدول HTML 
 msgid "Return a year's calendar as an HTML table. *width* (defaulting to 3) specifies the number of months per row."
 msgstr "گاه‌شماری یک سال را به‌صورت یک جدول HTML برمی‌گرداند. *width* (با پیش‌فرض ۳) تعداد ماه‌ها در هر ردیف را مشخص می‌کند."
 
-msgid "Return a year's calendar as a complete HTML page. *width* (defaulting to 3) specifies the number of months per row. *css* is the name for the cascading style sheet to be used. :const:`None` can be passed if no style sheet should be used. *encoding* specifies the encoding to be used for the output (defaulting to the system default encoding)."
+#, fuzzy
+#| msgid "Return a year's calendar as a complete HTML page. *width* (defaulting to 3) specifies the number of months per row. *css* is the name for the cascading style sheet to be used. :const:`None` can be passed if no style sheet should be used. *encoding* specifies the encoding to be used for the output (defaulting to the system default encoding)."
+msgid "Return a year's calendar as a complete HTML page. *width* (defaulting to 3) specifies the number of months per row. *css* is the name for the cascading style sheet to be used. :const:`None` can be passed if no style sheet should be used. *encoding* specifies the encoding to be used for the output (defaulting to ``'utf-8'``)."
 msgstr "گاه‌شماری یک سال را به‌عنوان یک صفحه HTML کامل بازمی‌گرداند. *width* (که پیش‌فرض آن ۳ است) تعداد ماه‌ها در هر ردیف را مشخص می‌کند. *css* نام شیوه‌نامه آبشاری مورد استفاده است. اگر نباید از شیوه‌نامه استفاده شود، می‌توان :const:`None` را ارسال کرد. *encoding* کدگذاری مورد استفاده برای خروجی را مشخص می‌کند (که پیش‌فرض آن کدگذاری پیش‌فرض سیستم است)."
 
 msgid "Return a month name as an HTML table row. If *withyear* is true the year will be included in the row, otherwise just the month name will be used."
@@ -288,7 +295,23 @@ msgstr "شمارشی که روزهای هفته را به‌عنوان ثابت�
 msgid "A sequence that represents the months of the year in the current locale.  This follows normal convention of January being month number 1, so it has a length of 13 and ``month_name[0]`` is the empty string."
 msgstr "یک دنباله که ماه‌های سال را در locale فعلی نشان می‌دهد. این دنباله از قرارداد معمول پیروی می‌کند که بر اساس آن ژانویه ماه شماره‌ی ۱ است، بنابراین طول آن ۱۳ است و ``month_name[0]`` رشته‌ی خالی است."
 
+msgid "In locales with alternative month names forms, the :data:`!month_name` sequence may not be suitable when a month name stands by itself and not as part of a date. For instance, in Greek and in many Slavic and Baltic languages, :data:`!month_name` will produce the month in genitive case. Use :data:`standalone_month_name` for a form suitable for standalone use."
+msgstr ""
+
 msgid "A sequence that represents the abbreviated months of the year in the current locale.  This follows normal convention of January being month number 1, so it has a length of 13 and  ``month_abbr[0]`` is the empty string."
+msgstr "دنباله‌ای که نام‌های مخفف ماه‌های سال را در locale فعلی نشان می‌دهد. این از قرارداد معمول پیروی می‌کند که ژانویه ماه شماره‌ی ۱ است، بنابراین طول آن ۱۳ است و ``month_abbr[0]`` رشته‌ی خالی است."
+
+msgid "In locales with alternative month names forms, the :data:`!month_abbr` sequence may not be suitable when a month name stands by itself and not as part of a date. Use :data:`standalone_month_abbr` for a form suitable for standalone use."
+msgstr ""
+
+#, fuzzy
+#| msgid "A sequence that represents the months of the year in the current locale.  This follows normal convention of January being month number 1, so it has a length of 13 and ``month_name[0]`` is the empty string."
+msgid "A sequence that represents the months of the year in the current locale in the standalone form if the locale provides one. Else it is equivalent to :data:`month_name`."
+msgstr "یک دنباله که ماه‌های سال را در locale فعلی نشان می‌دهد. این دنباله از قرارداد معمول پیروی می‌کند که بر اساس آن ژانویه ماه شماره‌ی ۱ است، بنابراین طول آن ۱۳ است و ``month_name[0]`` رشته‌ی خالی است."
+
+#, fuzzy
+#| msgid "A sequence that represents the abbreviated months of the year in the current locale.  This follows normal convention of January being month number 1, so it has a length of 13 and  ``month_abbr[0]`` is the empty string."
+msgid "A sequence that represents the abbreviated months of the year in the current locale in the standalone form if the locale provides one. Else it is equivalent to :data:`month_abbr`."
 msgstr "دنباله‌ای که نام‌های مخفف ماه‌های سال را در locale فعلی نشان می‌دهد. این از قرارداد معمول پیروی می‌کند که ژانویه ماه شماره‌ی ۱ است، بنابراین طول آن ۱۳ است و ``month_abbr[0]`` رشته‌ی خالی است."
 
 msgid "Aliases for the months of the year, where ``JANUARY`` is ``1`` and ``DECEMBER`` is ``12``."
@@ -443,7 +466,9 @@ msgstr "روز هفته برای شروع هر هفته. باید عددی بی�
 msgid "The year to print the calendar for. Defaults to the current year."
 msgstr "سالی که گاه‌شماری برای آن چاپ می‌شود. پیش‌فرض آن سال جاری است."
 
-msgid "The month of the specified :option:`year` to print the calendar for. Must be a number between 1 and 12, and may only be used in text mode. Defaults to printing a calendar for the full year."
+#, fuzzy
+#| msgid "The month of the specified :option:`year` to print the calendar for. Must be a number between 1 and 12, and may only be used in text mode. Defaults to printing a calendar for the full year."
+msgid "The month of the specified :option:`year` to print the calendar for. Must be a number between 1 and 12. Defaults to printing a calendar for the full year."
 msgstr "ماه از :option:`year` مشخص‌شده برای چاپ گاه‌شماری. باید عددی بین ۱ تا ۱۲ باشد و فقط می‌تواند در حالت متنی استفاده شود. به‌طور پیش‌فرض، گاه‌شماریی برای تمام سال چاپ می‌شود."
 
 msgid "*Text-mode options:*"
@@ -462,6 +487,11 @@ msgid "The number of months printed per row. Defaults to 3."
 msgstr "تعداد ماه‌های چاپ‌شده در هر ردیف. مقدار پیش‌فرض ۳ است."
 
 msgid "By default, today's date is highlighted in color and can be :ref:`controlled using environment variables <using-on-controlling-color>`."
+msgstr "به‌طور پیش‌فرض، تاریخ امروز با رنگ برجسته می‌شود و می‌توان آن را :ref:`با استفاده از متغیرهای محیطی کنترل کرد <using-on-controlling-color>`."
+
+#, fuzzy
+#| msgid "By default, today's date is highlighted in color and can be :ref:`controlled using environment variables <using-on-controlling-color>`."
+msgid "By default, the month is now also highlighted in color, and the days of the week are also in color. This behavior can be :ref:`controlled using environment variables <using-on-controlling-color>`."
 msgstr "به‌طور پیش‌فرض، تاریخ امروز با رنگ برجسته می‌شود و می‌توان آن را :ref:`با استفاده از متغیرهای محیطی کنترل کرد <using-on-controlling-color>`."
 
 msgid "*HTML-mode options:*"

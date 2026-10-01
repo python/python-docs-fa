@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-15 10:11+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -67,7 +67,9 @@ msgstr ":mod:`calendar`: ثابت‌های ``calendar.January`` و ``calendar.Fe
 msgid ":mod:`codecs`: use :func:`open` instead of :func:`codecs.open`. (:gh:`133038`)"
 msgstr ":mod:`codecs`: به جای :func:`codecs.open` از :func:`open` استفاده کنید. (:gh:`133038`)"
 
-msgid ":attr:`codeobject.co_lnotab`: use the :meth:`codeobject.co_lines` method instead."
+#, fuzzy
+#| msgid ":attr:`codeobject.co_lnotab`: use the :meth:`codeobject.co_lines` method instead."
+msgid ":attr:`!codeobject.co_lnotab`: use the :meth:`codeobject.co_lines` method instead."
 msgstr ":attr:`codeobject.co_lnotab`: به‌جای آن از متد :meth:`codeobject.co_lines` استفاده کنید."
 
 msgid ":mod:`datetime`:"
@@ -103,17 +105,19 @@ msgstr ":mod:`logging`: متد ``warn()`` از پایتون 3.3 منسوخ شد�
 msgid ":mod:`mailbox`: Use of StringIO input and text mode is deprecated, use BytesIO and binary mode instead."
 msgstr ":mod:`mailbox`: استفاده از ورودی StringIO و حالت متنی منسوخ شده است؛ به‌جای آن از BytesIO و حالت دودویی استفاده کنید."
 
-msgid ":mod:`os`: Calling :func:`os.register_at_fork` in multi-threaded process."
+#, fuzzy
+#| msgid ":mod:`os`: Calling :func:`os.register_at_fork` in multi-threaded process."
+msgid ":mod:`os`: Calling :func:`os.register_at_fork` in a multi-threaded process."
 msgstr ":mod:`os`: فراخوانی :func:`os.register_at_fork` در فرایند چندنخی."
+
+msgid ":mod:`os.path`: :func:`os.path.commonprefix` is deprecated, use :func:`os.path.commonpath` for path prefixes. The :func:`os.path.commonprefix` function is being deprecated due to having a misleading name and module. The function is not safe to use for path prefixes despite being included in a module about path manipulation, meaning it is easy to accidentally introduce path traversal vulnerabilities into Python programs by using this function."
+msgstr ""
 
 msgid ":class:`!pydoc.ErrorDuringImport`: A tuple value for *exc_info* parameter is deprecated, use an exception instance."
 msgstr ":class:`!pydoc.ErrorDuringImport`: مقدار تاپل برای پارامتر *exc_info* منسوخ شده است؛ از یک نمونه‌ی استثنا استفاده کنید."
 
 msgid ":mod:`re`: More strict rules are now applied for numerical group references and group names in regular expressions.  Only sequence of ASCII digits is now accepted as a numerical reference.  The group name in bytes patterns and replacement strings can now only contain ASCII letters and digits and underscore. (Contributed by Serhiy Storchaka in :gh:`91760`.)"
 msgstr ":mod:`re`: اکنون قواعد سخت‌گیرانه‌تری برای ارجاع‌های عددی به گروه‌ها و نام گروه‌ها در عبارت‌های باقاعده اعمال می‌شود. اکنون فقط دنباله‌ای از ارقام اسکی به‌عنوان ارجاع عددی پذیرفته می‌شود. نام گروه در الگوهای بایتی و رشته‌های جایگزین اکنون فقط می‌تواند شامل حروف و ارقام اسکی و زیرخط باشد. (مشارکت‌شده توسط Serhiy Storchaka در :gh:`91760`.)"
-
-msgid ":mod:`!sre_compile`, :mod:`!sre_constants` and :mod:`!sre_parse` modules."
-msgstr "ماژول‌های :mod:`!sre_compile`، :mod:`!sre_constants` و :mod:`!sre_parse`."
 
 msgid ":mod:`shutil`: :func:`~shutil.rmtree`'s *onerror* parameter is deprecated in Python 3.12; use the *onexc* parameter instead."
 msgstr ":mod:`shutil`: پارامتر *onerror* تابع :func:`~shutil.rmtree` در پایتون 3.12 منسوخ شده است؛ به جای آن از پارامتر *onexc* استفاده کنید."
@@ -231,3 +235,6 @@ msgstr ":mod:`xml.etree.ElementTree`: آزمودن ارزش درستی یک :cla
 
 msgid ":func:`sys._clear_type_cache` is deprecated: use :func:`sys._clear_internal_caches` instead."
 msgstr ":func:`sys._clear_type_cache` منسوخ شده است: به جای آن از :func:`sys._clear_internal_caches` استفاده کنید."
+
+#~ msgid ":mod:`!sre_compile`, :mod:`!sre_constants` and :mod:`!sre_parse` modules."
+#~ msgstr "ماژول‌های :mod:`!sre_compile`، :mod:`!sre_constants` و :mod:`!sre_parse`."

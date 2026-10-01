@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2021-06-28 01:12+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -48,7 +48,9 @@ msgstr "آرگومان *mod_name* باید یک نام ماژول مطلق با�
 msgid "The optional dictionary argument *init_globals* may be used to pre-populate the module's globals dictionary before the code is executed. *init_globals* will not be modified. If any of the special global variables below are defined in *init_globals*, those definitions are overridden by :func:`run_module`."
 msgstr "می‌توان از آرگومان دیکشنری اختیاری *init_globals* برای از پیش پر کردن دیکشنری سراسری‌های ماژول پیش از اجرای کد استفاده کرد. *init_globals* تغییر نخواهد کرد. اگر هر یک از متغیرهای سراسری خاص زیر در *init_globals* تعریف شده باشند، آن تعریف‌ها توسط :func:`run_module` بازنویسی می‌شوند."
 
-msgid "The special global variables ``__name__``, ``__spec__``, ``__file__``, ``__cached__``, ``__loader__`` and ``__package__`` are set in the globals dictionary before the module code is executed. (Note that this is a minimal set of variables - other variables may be set implicitly as an interpreter implementation detail.)"
+#, fuzzy
+#| msgid "The special global variables ``__name__``, ``__spec__``, ``__file__``, ``__cached__``, ``__loader__`` and ``__package__`` are set in the globals dictionary before the module code is executed. (Note that this is a minimal set of variables - other variables may be set implicitly as an interpreter implementation detail.)"
+msgid "The special global variables ``__name__``, ``__spec__``, ``__file__``, ``__loader__`` and ``__package__`` are set in the globals dictionary before the module code is executed. (Note that this is a minimal set of variables - other variables may be set implicitly as an interpreter implementation detail.)"
 msgstr "متغیرهای سراسری ویژه ``__name__``، ``__spec__``، ``__file__``، ``__cached__``، ``__loader__`` و ``__package__`` پیش از اجرای کد ماژول، در دیکشنری سراسری تنظیم می‌شوند. (توجه داشته باشید که این یک مجموعه‌ی حداقلی از متغیرها است — ممکن است متغیرهای دیگری نیز به‌صورت ضمنی به‌عنوان جزئیاتی از پیاده‌سازی مفسر تنظیم شوند.)"
 
 msgid "``__name__`` is set to *run_name* if this optional argument is not :const:`None`, to ``mod_name + '.__main__'`` if the named module is a package and to the *mod_name* argument otherwise."
@@ -57,7 +59,9 @@ msgstr "``__name__`` هنگامی که این آرگومان اختیاری :con
 msgid "``__spec__`` will be set appropriately for the *actually* imported module (that is, ``__spec__.name`` will always be *mod_name* or ``mod_name + '.__main__'``, never *run_name*)."
 msgstr "``__spec__`` برای ماژول *واقعاً* ایمپورت‌شده به‌طور مناسب تنظیم می‌شود (یعنی ``__spec__.name`` همیشه *mod_name* یا ``mod_name + '.__main__'`` خواهد بود، هرگز *run_name* نخواهد بود)."
 
-msgid "``__file__``, ``__cached__``, ``__loader__`` and ``__package__`` are :ref:`set as normal <import-mod-attrs>` based on the module spec."
+#, fuzzy
+#| msgid "``__file__``, ``__cached__``, ``__loader__`` and ``__package__`` are :ref:`set as normal <import-mod-attrs>` based on the module spec."
+msgid "``__file__``, ``__loader__`` and ``__package__`` are :ref:`set as normal <import-mod-attrs>` based on the module spec."
 msgstr "``__file__``، ``__cached__``، ``__loader__`` و ``__package__`` بر اساس مشخصات ماژول :ref:`به‌صورت عادی تنظیم می‌شوند <import-mod-attrs>`."
 
 msgid "If the argument *alter_sys* is supplied and evaluates to :const:`True`, then ``sys.argv[0]`` is updated with the value of ``__file__`` and ``sys.modules[__name__]`` is updated with a temporary module object for the module being executed. Both ``sys.argv[0]`` and ``sys.modules[__name__]`` are restored to their original values before the function returns."
@@ -81,6 +85,9 @@ msgstr "به‌روزرسانی شد تا از ویژگی مشخصات ماژو�
 msgid "The setting of ``__cached__``, ``__loader__``, and ``__package__`` are deprecated. See :class:`~importlib.machinery.ModuleSpec` for alternatives."
 msgstr "تنظیم ``__cached__``، ``__loader__`` و ``__package__`` منسوخ شده است. برای جایگزین‌ها به :class:`~importlib.machinery.ModuleSpec` مراجعه کنید."
 
+msgid "The global variable ``__cached__`` is no longer set."
+msgstr ""
+
 msgid "Execute the code at the named filesystem location and return the resulting module's globals dictionary. As with a script name supplied to the CPython command line, *file_path* may refer to a Python source file, a compiled bytecode file or a valid :data:`sys.path` entry containing a :mod:`__main__` module (e.g. a zipfile containing a top-level :file:`__main__.py` file)."
 msgstr "کد را در موقعیت سامانه فایل‌بندی‌ای نام‌گذاری‌شده اجرا می‌کند و دیکشنری سراسری ماژول حاصل را برمی‌گرداند. همان‌طور که در مورد نام اسکریپت داده‌شده به خط فرمان CPython صدق می‌کند، *file_path* ممکن است به یک پرونده منبع پایتون، یک پرونده بایت‌کد کامپایل‌شده یا یک ورودی معتبر از :data:`sys.path` اشاره کند که حاوی یک ماژول :mod:`__main__` باشد (مثلاً یک پرونده زیپ حاوی یک پرونده :file:`__main__.py` در سطح بالا)."
 
@@ -93,10 +100,14 @@ msgstr "می‌توان از آرگومان دیکشنری اختیاری *init_
 msgid "``__name__`` is set to *run_name* if this optional argument is not :const:`None` and to ``'<run_path>'`` otherwise."
 msgstr "اگر این آرگومان اختیاری :const:`None` نباشد، ``__name__`` به *run_name* تنظیم می‌شود و در غیر این صورت به ``'<run_path>'`` تنظیم می‌شود."
 
-msgid "If *file_path* directly references a script file (whether as source or as precompiled byte code), then ``__file__`` will be set to *file_path*, and ``__spec__``, ``__cached__``, ``__loader__`` and ``__package__`` will all be set to :const:`None`."
+#, fuzzy
+#| msgid "If *file_path* directly references a script file (whether as source or as precompiled byte code), then ``__file__`` will be set to *file_path*, and ``__spec__``, ``__cached__``, ``__loader__`` and ``__package__`` will all be set to :const:`None`."
+msgid "If *file_path* directly references a script file (whether as source or as precompiled byte code), then ``__file__`` will be set to *file_path*, and ``__spec__``, ``__loader__`` and ``__package__`` will all be set to :const:`None`."
 msgstr "اگر *file_path* مستقیماً به یک پرونده اسکریپت اشاره کند (چه به صورت کد منبع و چه به صورت بایت‌کد از پیش کامپایل‌شده)، ``__file__`` به *file_path* تنظیم می‌شود، و ``__spec__``، ``__cached__``، ``__loader__`` و ``__package__`` همگی به :const:`None` تنظیم می‌شوند."
 
-msgid "If *file_path* is a reference to a valid :data:`sys.path` entry, then ``__spec__`` will be set appropriately for the imported :mod:`__main__` module (that is, ``__spec__.name`` will always be ``__main__``). ``__file__``, ``__cached__``, ``__loader__`` and ``__package__`` will be :ref:`set as normal <import-mod-attrs>` based on the module spec."
+#, fuzzy
+#| msgid "If *file_path* is a reference to a valid :data:`sys.path` entry, then ``__spec__`` will be set appropriately for the imported :mod:`__main__` module (that is, ``__spec__.name`` will always be ``__main__``). ``__file__``, ``__cached__``, ``__loader__`` and ``__package__`` will be :ref:`set as normal <import-mod-attrs>` based on the module spec."
+msgid "If *file_path* is a reference to a valid :data:`sys.path` entry, then ``__spec__`` will be set appropriately for the imported :mod:`__main__` module (that is, ``__spec__.name`` will always be ``__main__``). ``__file__``, ``__loader__`` and ``__package__`` will be :ref:`set as normal <import-mod-attrs>` based on the module spec."
 msgstr "اگر *file_path* ارجاعی به یک آیتم معتبر در :data:`sys.path` باشد، آنگاه ``__spec__`` به‌صورت مناسب برای ماژول :mod:`__main__` ایمپورت‌شده تنظیم خواهد شد (یعنی ``__spec__.name`` همیشه ``__main__`` خواهد بود). ``__file__``، ``__cached__``، ``__loader__`` و ``__package__`` بر اساس مشخصات ماژول، :ref:`به‌صورت عادی تنظیم خواهند شد <import-mod-attrs>`."
 
 msgid "A number of alterations are also made to the :mod:`sys` module. Firstly, :data:`sys.path` may be altered as described above. ``sys.argv[0]`` is updated with the value of *file_path* and ``sys.modules[__name__]`` is updated with a temporary module object for the module being executed. All modifications to items in :mod:`sys` are reverted before the function returns."

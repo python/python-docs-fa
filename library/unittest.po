@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 16:06+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -1200,8 +1200,26 @@ msgstr ""
 "self.assertIn('myfile.py', cm.filename)\n"
 "self.assertEqual(320, cm.lineno)"
 
+msgid "The context managers can be nested to test that multiple different warnings are emitted::"
+msgstr ""
+
+#, fuzzy
+#| msgid ""
+#| "with self.assertWarns(SomeWarning):\n"
+#| "    do_something()"
+msgid ""
+"with (self.assertWarns(SomeWarning),\n"
+"      self.assertWarns(OtherWarning)):\n"
+"    do_something()"
+msgstr ""
+"with self.assertWarns(SomeWarning):\n"
+"    do_something()"
+
 msgid "This method works regardless of the warning filters in place when it is called."
 msgstr "این متد صرف‌نظر از فیلترهای هشدارِ برقرار در زمان فراخوانی، عمل می‌کند."
+
+msgid "Warnings that do not match the specified category are no longer swallowed. Nested context managers are now supported."
+msgstr ""
 
 msgid "Like :meth:`assertWarns` but also tests that *regex* matches on the message of the triggered warning.  *regex* may be a regular expression object or a string containing a regular expression suitable for use by :func:`re.search`.  Example::"
 msgstr "مانند :meth:`assertWarns` است، اما همچنین آزمایش می‌کند که *regex* با پیام هشدار فعال‌شده مطابقت دارد. *regex* می‌تواند یک شیء عبارت باقاعده یا رشته‌ای حاوی عبارت باقاعده مناسب برای استفاده توسط :func:`re.search` باشد. مثال::"
@@ -1222,6 +1240,21 @@ msgstr ""
 "with self.assertWarnsRegex(RuntimeWarning, 'unsafe frobnicating'):\n"
 "    frobnicate('/etc/passwd')"
 
+#, fuzzy
+#| msgid ""
+#| "with self.assertWarns(SomeWarning):\n"
+#| "    do_something()"
+msgid ""
+"with (self.assertWarns(SomeWarning, regex1),\n"
+"      self.assertWarns(OtherWarning, regex2)):\n"
+"    do_something()"
+msgstr ""
+"with self.assertWarns(SomeWarning):\n"
+"    do_something()"
+
+msgid "Warnings that do not match the specified category or regex are no longer swallowed. Nested context managers are now supported."
+msgstr ""
+
 msgid "A context manager to test that at least one message is logged on the *logger* or one of its children, with at least the given *level*."
 msgstr "یک مدیر زمینه برای آزمایش اینکه حداقل یک پیام با حداقل *level* داده‌شده، روی *logger* یا یکی از فرزندان آن ثبت شده باشد."
 
@@ -1230,6 +1263,9 @@ msgstr "در صورت ارائه، *logger* باید یک شیء :class:`logging
 
 msgid "If given, *level* should be either a numeric logging level or its string equivalent (for example either ``\"ERROR\"`` or :const:`logging.ERROR`).  The default is :const:`logging.INFO`."
 msgstr "در صورت ارائه، *level* باید یا یک سطح گزارش‌گیری عددی باشد یا معادل رشته‌ای آن (برای مثال یا ``\"ERROR\"`` یا :const:`logging.ERROR`). مقدار پیش‌فرض :const:`logging.INFO` است."
+
+msgid "If given, *formatter* should be a :class:`logging.Formatter` object. The default is a formatter with format string ``\"%(levelname)s:%(name)s:%(message)s\"``"
+msgstr ""
 
 msgid "The test passes if at least one message emitted inside the ``with`` block matches the *logger* and *level* conditions, otherwise it fails."
 msgstr "اگر حداقل یک پیام منتشرشده درون بلوک ``with`` با شرایط *logger* و *level* مطابقت داشته باشد، آزمون موفق می‌شود، در غیر این صورت شکست می‌خورد."
@@ -1258,6 +1294,9 @@ msgstr ""
 "    logging.getLogger('foo.bar').error('second message')\n"
 "self.assertEqual(cm.output, ['INFO:foo:first message',\n"
 "                             'ERROR:foo.bar:second message'])"
+
+msgid "Now accepts a *formatter* to control how messages are formatted."
+msgstr ""
 
 msgid "A context manager to test that no messages are logged on the *logger* or one of its children, with at least the given *level*."
 msgstr "یک مدیر زمینه برای آزمایش اینکه هیچ پیامی با دست‌کم *level* داده‌شده، روی *logger* یا یکی از فرزندان آن ثبت نمی‌شود."

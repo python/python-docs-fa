@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 09:47+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -402,9 +402,6 @@ msgstr "می‌توان از نقاط ``xarr`` و ``yarr`` برای رسم نم�
 msgid "Scatter plot of the estimated probability density function."
 msgstr "نمودار پراکندگی تابع چگالی احتمال تخمینی."
 
-msgid "Because the returned ``f_hat`` function is typically called many times, it caches the *data* for performance. To support dynamic datasets, this cache automatically refreshes whenever the length of the *data* changes. This allows new samples to be added as they become available."
-msgstr "از آنجا که تابع برگردانده‌شده ``f_hat`` معمولاً بارها صدا زده می‌شود، آن *data* را برای عملکرد در نهانگاه می‌ریزد. برای حمایت از مجموعه‌داده‌های پویا، این نهانگاه به‌صورت خودکار هرگاه طول *data* تغییر کند، به‌روزرسانی می‌شود. این کار امکان افزودن نمونه‌های جدید را به محض در دسترس قرار گرفتن آن‌ها فراهم می‌کند."
-
 msgid "Return a function that makes a random selection from the estimated probability density function produced by ``kde(data, h, kernel)``."
 msgstr "تابعی را برمی‌گرداند که یک انتخاب تصادفی از تابع چگالی احتمال برآوردی که توسط ``kde(data, h, kernel)`` تولید شده است، انجام می‌دهد."
 
@@ -774,7 +771,9 @@ msgstr ""
 msgid "No longer raises an exception for an input with only a single data point. This allows quantile estimates to be built up one sample point at a time becoming gradually more refined with each new data point."
 msgstr "دیگر برای ورودی‌ای با تنها یک نقطه داده، استثنایی پرتاب نمی‌کند. این امکان را فراهم می‌کند که برآوردهای چندک (quantile) هر بار با یک نقطه نمونه ساخته شوند و با هر نقطه داده جدید به‌تدریج دقیق‌تر شوند."
 
-msgid "Return the sample covariance of two inputs *x* and *y*. Covariance is a measure of the joint variability of two inputs."
+#, fuzzy
+#| msgid "Return the sample covariance of two inputs *x* and *y*. Covariance is a measure of the joint variability of two inputs."
+msgid "Return the sample covariance of two sequence inputs *x* and *y*. Covariance is a measure of the joint variability of two inputs."
 msgstr "کوواریانس نمونه دو ورودی *x* و *y* را برمی‌گرداند. کوواریانس معیاری از تغییرپذیری مشترک دو ورودی است."
 
 msgid "Both inputs must be of the same length (no less than two), otherwise :exc:`StatisticsError` is raised."
@@ -801,7 +800,9 @@ msgstr ""
 ">>> covariance(z, x)\n"
 "-7.5"
 
-msgid "Return the `Pearson's correlation coefficient <https://en.wikipedia.org/wiki/Pearson_correlation_coefficient>`_ for two inputs. Pearson's correlation coefficient *r* takes values between -1 and +1. It measures the strength and direction of a linear relationship."
+#, fuzzy
+#| msgid "Return the `Pearson's correlation coefficient <https://en.wikipedia.org/wiki/Pearson_correlation_coefficient>`_ for two inputs. Pearson's correlation coefficient *r* takes values between -1 and +1. It measures the strength and direction of a linear relationship."
+msgid "Return the `Pearson's correlation coefficient <https://en.wikipedia.org/wiki/Pearson_correlation_coefficient>`_ for two sequence inputs. Pearson's correlation coefficient *r* takes values between -1 and +1. It measures the strength and direction of a linear relationship."
 msgstr "`ضریب همبستگی پیرسون <https://fa.wikipedia.org/wiki/ضریب_همبستگی_پیرسون>`_ را برای دو ورودی برمی‌گرداند. ضریب همبستگی پیرسون *r* مقادیری بین -۱ و +۱ می‌گیرد. این ضریب، شدت و جهت یک رابطه خطی را اندازه‌گیری می‌کند."
 
 msgid "If *method* is \"ranked\", computes `Spearman's rank correlation coefficient <https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient>`_ for two inputs. The data is replaced by ranks.  Ties are averaged so that equal values receive the same rank.  The resulting coefficient measures the strength of a monotonic relationship."
@@ -869,7 +870,9 @@ msgstr "*y = slope \\* x + intercept + noise*"
 msgid "where ``slope`` and ``intercept`` are the regression parameters that are estimated, and ``noise`` represents the variability of the data that was not explained by the linear regression (it is equal to the difference between predicted and actual values of the dependent variable)."
 msgstr "که در آن ``slope`` و ``intercept`` پارامترهای رگرسیون هستند که برآورد می‌شوند، و ``noise`` تغییرپذیری داده‌ها را که توسط رگرسیون خطی تبیین نشده است نشان می‌دهد (این مقدار برابر با تفاوت بین مقادیر پیش‌بینی‌شده و واقعی متغیر وابسته است)."
 
-msgid "Both inputs must be of the same length (no less than two), and the independent variable *x* cannot be constant; otherwise a :exc:`StatisticsError` is raised."
+#, fuzzy
+#| msgid "Both inputs must be of the same length (no less than two), and the independent variable *x* cannot be constant; otherwise a :exc:`StatisticsError` is raised."
+msgid "Both inputs must be sequences of the same length (no less than two), and the independent variable *x* cannot be constant; otherwise a :exc:`StatisticsError` is raised."
 msgstr "هر دو ورودی باید طول یکسانی داشته باشند (حداقل ۲)، و متغیر مستقل *x* نمی‌تواند ثابت باشد؛ در غیر این صورت :exc:`StatisticsError` پرتاب می‌شود."
 
 msgid "For example, we can use the `release dates of the Monty Python films <https://en.wikipedia.org/wiki/Monty_Python#Films>`_ to predict the cumulative number of Monty Python films that would have been produced by 2019 assuming that they had kept the pace."
@@ -1225,3 +1228,6 @@ msgid ""
 msgstr ""
 ">>> 'male' if posterior_male > posterior_female else 'female'\n"
 "'female'"
+
+#~ msgid "Because the returned ``f_hat`` function is typically called many times, it caches the *data* for performance. To support dynamic datasets, this cache automatically refreshes whenever the length of the *data* changes. This allows new samples to be added as they become available."
+#~ msgstr "از آنجا که تابع برگردانده‌شده ``f_hat`` معمولاً بارها صدا زده می‌شود، آن *data* را برای عملکرد در نهانگاه می‌ریزد. برای حمایت از مجموعه‌داده‌های پویا، این نهانگاه به‌صورت خودکار هرگاه طول *data* تغییر کند، به‌روزرسانی می‌شود. این کار امکان افزودن نمونه‌های جدید را به محض در دسترس قرار گرفتن آن‌ها فراهم می‌کند."

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 20:17+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -41,6 +41,15 @@ msgstr "اگر *p* یک شیء تاپل باشد، اما نمونه‌ای از
 msgid "Return a new tuple object of size *len*, or ``NULL`` with an exception set on failure."
 msgstr "یک شیء تاپل جدید با اندازه‌ی *len* برمی‌گرداند، یا در صورت شکست ``NULL`` را همراه با استثنای تنظیم‌شده برمی‌گرداند."
 
+msgid "Create a tuple of *size* items and copy references from *array* to the new tuple."
+msgstr ""
+
+msgid "*array* can be NULL if *size* is ``0``."
+msgstr ""
+
+msgid "On success, return a new reference. On error, set an exception and return ``NULL``."
+msgstr ""
+
 msgid "Return a new tuple object of size *n*, or ``NULL`` with an exception set on failure. The tuple values are initialized to the subsequent *n* C arguments pointing to Python objects. ``PyTuple_Pack(2, a, b)`` is equivalent to ``Py_BuildValue(\"(OO)\", a, b)``."
 msgstr "یک شیء تاپل جدید با اندازه‌ی *n* برمی‌گرداند، یا در صورت شکست ``NULL`` به همراه یک استثنای تنظیم‌شده برمی‌گرداند. مقادیر تاپل به *n* آرگومان C بعدی که به اشیاء پایتون اشاره می‌کنند، مقداردهی اولیه می‌شوند. ``PyTuple_Pack(2, a, b)`` معادل ``Py_BuildValue(\"(OO)\", a, b)`` است."
 
@@ -65,13 +74,17 @@ msgstr "اسلایس تاپلی را که *p* به آن اشاره می‌کند
 msgid "This is the equivalent of the Python expression ``p[low:high]``. Indexing from the end of the tuple is not supported."
 msgstr "این معادل عبارت پایتونی ``p[low:high]`` است. اندیس‌گذاری از انتهای تاپل پشتیبانی نمی‌شود."
 
-msgid "Insert a reference to object *o* at position *pos* of the tuple pointed to by *p*.  Return ``0`` on success.  If *pos* is out of bounds, return ``-1`` and set an :exc:`IndexError` exception."
+#, fuzzy
+#| msgid "Insert a reference to object *o* at position *pos* of the tuple pointed to by *p*.  Return ``0`` on success.  If *pos* is out of bounds, return ``-1`` and set an :exc:`IndexError` exception."
+msgid "Insert a reference to object *o* at position *pos* of the tuple pointed to by *p*.  Return ``0`` on success.  If *pos* is out of bounds, return ``-1`` and set an :exc:`IndexError` exception. This function should only be used to fill in brand new tuples; using it on an existing tuple is thread-unsafe."
 msgstr "یک ارجاع به شیء *o* در موقعیت *pos* از تاپلی که *p* به آن اشاره می‌کند، درج می‌کند. در صورت موفقیت ``0`` برمی‌گرداند. اگر *pos* خارج از محدوده باشد، ``-1`` برمی‌گرداند و استثنای :exc:`IndexError` را تنظیم می‌کند."
 
 msgid "This function \":term:`steals <steal>`\" a reference to *o* and discards a reference to an item already in the tuple at the affected position (unless it was NULL)."
 msgstr "این تابع ارجاعی به *o* را «:term:`می‌دزدد (steal) <steal>`» و ارجاع به آیتمی را که از قبل در جایگاه مورد تأثیر تاپل قرار دارد، دور می‌ریزد (مگر اینکه NULL بوده باشد)."
 
-msgid "Like :c:func:`PyTuple_SetItem`, but does no error checking, and should *only* be used to fill in brand new tuples."
+#, fuzzy
+#| msgid "Like :c:func:`PyTuple_SetItem`, but does no error checking, and should *only* be used to fill in brand new tuples."
+msgid "Like :c:func:`PyTuple_SetItem`, but does no error checking, and should *only* be used to fill in brand new tuples, using it on an existing tuple is thread-unsafe."
 msgstr "مانند :c:func:`PyTuple_SetItem` است، اما هیچ بررسی خطایی انجام نمی‌دهد و باید *فقط* برای پر کردن تاپل‌های کاملاً جدید استفاده شود."
 
 msgid "Bounds checking is performed as an assertion if Python is built in :ref:`debug mode <debug-build>` or :option:`with assertions <--with-assertions>`."
@@ -89,8 +102,13 @@ msgstr "می‌تواند برای تغییر اندازه‌ی یک تاپل ا
 msgid "Struct Sequence Objects"
 msgstr "اشیاء دنباله ساختاری"
 
-msgid "Struct sequence objects are the C equivalent of :func:`~collections.namedtuple` objects, i.e. a sequence whose items can also be accessed through attributes. To create a struct sequence, you first have to create a specific struct sequence type."
+#, fuzzy
+#| msgid "Struct sequence objects are the C equivalent of :func:`~collections.namedtuple` objects, i.e. a sequence whose items can also be accessed through attributes. To create a struct sequence, you first have to create a specific struct sequence type."
+msgid "A struct sequence object is a :term:`named tuple`, that is, a sequence whose items can also be accessed through attributes. It is similar to :func:`collections.namedtuple`, but provides a slightly different interface."
 msgstr "اشیاء دنباله ساختاری معادل C برای اشیاء :func:`~collections.namedtuple` هستند؛ یعنی دنباله‌ای که به آیتم‌های آن می‌توان از طریق ویژگی‌ها نیز دسترسی داشت. برای ایجاد یک دنباله ساختاری، ابتدا باید یک نوع دنباله ساختاری خاص ایجاد کنید."
+
+msgid "To create a struct sequence, you first have to create a specific struct sequence type."
+msgstr ""
 
 msgid "Create a new struct sequence type from the data in *desc*, described below. Instances of the resulting type can be created with :c:func:`PyStructSequence_New`."
 msgstr "نوع دنباله ساختاری جدیدی از داده‌های موجود در *desc* که در ادامه توضیح داده شده است، ایجاد می‌کند. نمونه‌های نوع حاصل را می‌توان با :c:func:`PyStructSequence_New` ایجاد کرد."
@@ -137,8 +155,8 @@ msgstr "نوع از ``char *`` تغییر یافت."
 msgid "Creates an instance of *type*, which must have been created with :c:func:`PyStructSequence_NewType`."
 msgstr "یک نمونه از *type* ایجاد می‌کند که باید با :c:func:`PyStructSequence_NewType` ایجاد شده باشد."
 
-msgid "Return the object at position *pos* in the struct sequence pointed to by *p*."
-msgstr "شیء موجود در موقعیت *pos* در دنباله ساختاری‌ای که *p* به آن اشاره می‌کند را برمی‌گرداند."
+msgid "Return the object at position *pos* in the struct sequence pointed to by *p*. The returned reference is borrowed from the struct sequence *p* (that is: it is only valid as long as you hold a reference to *p*)."
+msgstr ""
 
 msgid "Alias to :c:func:`PyStructSequence_GetItem`."
 msgstr "نام مستعاری برای :c:func:`PyStructSequence_GetItem` است."
@@ -163,3 +181,6 @@ msgstr "شیء"
 
 msgid "tuple"
 msgstr "تاپل"
+
+#~ msgid "Return the object at position *pos* in the struct sequence pointed to by *p*."
+#~ msgstr "شیء موجود در موقعیت *pos* در دنباله ساختاری‌ای که *p* به آن اشاره می‌کند را برمی‌گرداند."

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2021-06-28 00:50+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -73,8 +73,14 @@ msgstr "یک ماژول توسعه‌ای هرگز نباید ``PyType_ClearWatc
 msgid "Mark *type* as watched. The callback granted *watcher_id* by :c:func:`PyType_AddWatcher` will be called whenever :c:func:`PyType_Modified` reports a change to *type*. (The callback may be called only once for a series of consecutive modifications to *type*, if :c:func:`!_PyType_Lookup` is not called on *type* between the modifications; this is an implementation detail and subject to change.)"
 msgstr "*type* را به‌عنوان تحت نظارت علامت‌گذاری می‌کند. کال‌بکی که :c:func:`PyType_AddWatcher` شناسه‌ی *watcher_id* را به آن اعطا کرده است، هر زمان که :c:func:`PyType_Modified` تغییری در *type* را گزارش کند، فراخوانی خواهد شد. (کال‌بک ممکن است برای یک سری تغییرهای متوالی در *type* تنها یک بار فراخوانی شود، اگر :c:func:`!_PyType_Lookup` بین این تغییرها بر روی *type* فراخوانی نشود؛ این یک جزئیات پیاده‌سازی است و ممکن است تغییر کند.)"
 
+msgid "The callback is also invoked when a watched heap type is deallocated."
+msgstr ""
+
 msgid "An extension should never call ``PyType_Watch`` with a *watcher_id* that was not returned to it by a previous call to :c:func:`PyType_AddWatcher`."
 msgstr "یک ماژول توسعه‌ای هرگز نباید ``PyType_Watch`` را با یک *watcher_id* که پیش‌تر توسط فراخوانی :c:func:`PyType_AddWatcher` به آن بازگردانده نشده است، فراخوانی کند."
+
+msgid "The callback is now also invoked when a watched heap type is deallocated."
+msgstr ""
 
 msgid "Mark *type* as not watched. This undoes a previous call to :c:func:`PyType_Watch`. *type* must not be ``NULL``."
 msgstr "*type* را به‌عنوان نظارت‌نشده علامت‌گذاری می‌کند. این کار، فراخوانی قبلیِ :c:func:`PyType_Watch` را خنثی می‌کند. *type* نباید ``NULL`` باشد."
@@ -90,6 +96,12 @@ msgstr "نوع تابع کال‌بک دیده‌بان نوع (type-watcher)."
 
 msgid "The callback must not modify *type* or cause :c:func:`PyType_Modified` to be called on *type* or any type in its MRO; violating this rule could cause infinite recursion."
 msgstr "کال‌بک نباید *type* را تغییر دهد یا باعث فراخوانی :c:func:`PyType_Modified` روی *type* یا هیچ نوعی در ترتیب حل متد (MRO) آن شود؛ نقض این قاعده می‌تواند منجر به بازگشت بی‌نهایت شود."
+
+msgid "The callback may be called during type deallocation. In this case, the type object is temporarily resurrected (its reference count is at least 1) and all its attributes are still valid. However, the callback should not store new strong references to the type, as this would resurrect the object and prevent its deallocation."
+msgstr ""
+
+msgid "The callback may now be called during deallocation of a watched heap type."
+msgstr ""
 
 msgid "Return non-zero if the type object *o* sets the feature *feature*. Type features are denoted by single bit flags."
 msgstr "اگر شیء نوع *o* ویژگی *feature* را تنظیم کرده باشد، مقدار غیرصفر برمی‌گرداند. ویژگی‌های نوع با پرچم‌های تک‌بیتی نشان داده می‌شوند."
@@ -157,7 +169,9 @@ msgstr "ارجاع بازگردانده‌شده از *type* به‌صورت :te
 msgid "If no module is associated with the given type, sets :py:class:`TypeError` and returns ``NULL``."
 msgstr "اگر هیچ ماژولی با نوع داده‌شده مرتبط نباشد، :py:class:`TypeError` را تنظیم می‌کند و ``NULL`` را برمی‌گرداند."
 
-msgid "This function is usually used to get the module in which a method is defined. Note that in such a method, ``PyType_GetModule(Py_TYPE(self))`` may not return the intended result. ``Py_TYPE(self)`` may be a *subclass* of the intended class, and subclasses are not necessarily defined in the same module as their superclass. See :c:type:`PyCMethod` to get the class that defines the method. See :c:func:`PyType_GetModuleByDef` for cases when :c:type:`!PyCMethod` cannot be used."
+#, fuzzy
+#| msgid "This function is usually used to get the module in which a method is defined. Note that in such a method, ``PyType_GetModule(Py_TYPE(self))`` may not return the intended result. ``Py_TYPE(self)`` may be a *subclass* of the intended class, and subclasses are not necessarily defined in the same module as their superclass. See :c:type:`PyCMethod` to get the class that defines the method. See :c:func:`PyType_GetModuleByDef` for cases when :c:type:`!PyCMethod` cannot be used."
+msgid "This function is usually used to get the module in which a method is defined. Note that in such a method, ``PyType_GetModule(Py_TYPE(self))`` may not return the intended result. ``Py_TYPE(self)`` may be a *subclass* of the intended class, and subclasses are not necessarily defined in the same module as their superclass. See :c:type:`PyCMethod` to get the class that defines the method. See :c:func:`PyType_GetModuleByToken` for cases when :c:type:`!PyCMethod` cannot be used."
 msgstr "این تابع معمولاً برای به‌دست‌آوردن ماژولی که متدی در آن تعریف شده است استفاده می‌شود. توجه داشته باشید که در چنین متدی، ``PyType_GetModule(Py_TYPE(self))`` ممکن است نتیجه‌ی مورد نظر را برنگرداند. ``Py_TYPE(self)`` ممکن است یک *زیرکلاس* از کلاس مورد نظر باشد و زیرکلاس‌ها لزوماً در همان ماژولی که ابرکلاس‌شان در آن تعریف شده است، تعریف نمی‌شوند. برای به‌دست‌آوردن کلاسی که متد را تعریف می‌کند، به :c:type:`PyCMethod` مراجعه کنید. برای مواردی که نمی‌توان از :c:type:`!PyCMethod` استفاده کرد، به :c:func:`PyType_GetModuleByDef` مراجعه کنید."
 
 msgid "Return the state of the module object associated with the given type. This is a shortcut for calling :c:func:`PyModule_GetState()` on the result of :c:func:`PyType_GetModule`."
@@ -166,7 +180,9 @@ msgstr "وضعیت شیء ماژول مرتبط با نوع داده‌شده ر
 msgid "If the *type* has an associated module but its state is ``NULL``, returns ``NULL`` without setting an exception."
 msgstr "اگر *نوع* ماژول مرتبطی داشته باشد اما وضعیت آن ``NULL`` باشد، ``NULL`` را بدون تنظیم استثنا برمی‌گرداند."
 
-msgid "Find the first superclass whose module was created from the given :c:type:`PyModuleDef` *def*, and return that module."
+#, fuzzy
+#| msgid "Find the first superclass whose module was created from the given :c:type:`PyModuleDef` *def*, and return that module."
+msgid "Find the first superclass whose module has the given :ref:`module token <ext-module-token>`, and return that module."
 msgstr "اولین ابرکلاسی را بیابید که ماژول آن از :c:type:`PyModuleDef` *def* داده‌شده ساخته‌شده است و آن ماژول را برگردانید."
 
 msgid "If no module is found, raises a :py:class:`TypeError` and returns ``NULL``."
@@ -175,7 +191,23 @@ msgstr "اگر هیچ ماژولی یافت نشود، یک :py:class:`TypeError
 msgid "This function is intended to be used together with :c:func:`PyModule_GetState()` to get module state from slot methods (such as :c:member:`~PyTypeObject.tp_init` or :c:member:`~PyNumberMethods.nb_add`) and other places where a method's defining class cannot be passed using the :c:type:`PyCMethod` calling convention."
 msgstr "این تابع برای استفاده همراه با :c:func:`PyModule_GetState()` جهت گرفتن وضعیت ماژول از متدهای جایگاه (مانند :c:member:`~PyTypeObject.tp_init` یا :c:member:`~PyNumberMethods.nb_add`) و دیگر جاهایی که کلاس تعریف‌کننده‌ی متد را نمی‌توان با استفاده از قرارداد فراخوانی :c:type:`PyCMethod` ارسال کرد، در نظر گرفته شده است."
 
-msgid "Find the first superclass in *type*'s :term:`method resolution order` whose :c:macro:`Py_tp_token` token is equal to the given one."
+#, fuzzy
+#| msgid "Find the first superclass whose module was created from the given :c:type:`PyModuleDef` *def*, and return that module."
+msgid "Find the first superclass whose module was created from the given :c:type:`PyModuleDef` *def*, or whose :ref:`module token <ext-module-token>` is equal to *def*, and return that module."
+msgstr "اولین ابرکلاسی را بیابید که ماژول آن از :c:type:`PyModuleDef` *def* داده‌شده ساخته‌شده است و آن ماژول را برگردانید."
+
+msgid "Note that modules created from a :c:type:`PyModuleDef` always have their token set to the :c:type:`PyModuleDef`'s address. In other words, this function is equivalent to :c:func:`PyType_GetModuleByToken`, except that it:"
+msgstr ""
+
+msgid "returns a borrowed reference, and"
+msgstr ""
+
+msgid "has a non-``void*`` argument type (which is a cosmetic difference in C)."
+msgstr ""
+
+#, fuzzy
+#| msgid "Find the first superclass in *type*'s :term:`method resolution order` whose :c:macro:`Py_tp_token` token is equal to the given one."
+msgid "Find the first superclass in *type*'s :term:`method resolution order` whose :c:macro:`Py_tp_token` token is equal to *tp_token*."
 msgstr "اولین ابرکلاسی را در :term:`ترتیب حل متد <method resolution order>` *type* می‌یابد که توکن :c:macro:`Py_tp_token` آن با توکن داده‌شده برابر است."
 
 msgid "If found, set *\\*result* to a new :term:`strong reference` to it and return ``1``."
@@ -190,7 +222,9 @@ msgstr "در صورت خطا، *\\*result* را برابر ``NULL`` قرار د�
 msgid "The *result* argument may be ``NULL``, in which case *\\*result* is not set. Use this if you need only the return value."
 msgstr "آرگومان *result* می‌تواند ``NULL`` باشد که در این صورت *\\*result* مقداردهی نمی‌شود. اگر فقط به مقدار بازگشتی نیاز دارید، از این استفاده کنید."
 
-msgid "The *token* argument may not be ``NULL``."
+#, fuzzy
+#| msgid "The *token* argument may not be ``NULL``."
+msgid "The *tp_token* argument may not be ``NULL``."
 msgstr "آرگومان *token* نباید ``NULL`` باشد."
 
 msgid "Attempt to assign a version tag to the given type."
@@ -211,23 +245,13 @@ msgstr ":py:mod:`weakref`"
 msgid "Creating Heap-Allocated Types"
 msgstr "ایجاد نوع‌های تخصیص‌یافته از هیپ"
 
-msgid "The following functions and structs are used to create :ref:`heap types <heap-types>`."
+#, fuzzy
+#| msgid "The following functions and structs are used to create :ref:`heap types <heap-types>`."
+msgid "The following function is used to create :ref:`heap types <heap-types>`:"
 msgstr "توابع و ساختارهای زیر برای ایجاد :ref:`نوع‌های هیپ <heap-types>` استفاده می‌شوند."
 
-msgid "Create and return a :ref:`heap type <heap-types>` from the *spec* (see :c:macro:`Py_TPFLAGS_HEAPTYPE`)."
-msgstr "یک :ref:`نوع هیپ <heap-types>` از *spec* بسازید و بازگردانید (به :c:macro:`Py_TPFLAGS_HEAPTYPE` مراجعه کنید)."
-
-msgid "The metaclass *metaclass* is used to construct the resulting type object. When *metaclass* is ``NULL``, the metaclass is derived from *bases* (or *Py_tp_base[s]* slots if *bases* is ``NULL``, see below)."
-msgstr "فراکلاس *metaclass* برای ساخت شیء نوع حاصل استفاده می‌شود. وقتی *metaclass* برابر ``NULL`` باشد، فراکلاس از *bases* به دست می‌آید (یا از جایگاه‌های *Py_tp_base[s]* اگر *bases* برابر ``NULL`` باشد؛ در ادامه ببینید)."
-
-msgid "Metaclasses that override :c:member:`~PyTypeObject.tp_new` are not supported, except if ``tp_new`` is ``NULL``."
-msgstr "فراکلاس‌هایی که :c:member:`~PyTypeObject.tp_new` را بازنویسی می‌کنند پشتیبانی نمی‌شوند، مگر آنکه ``tp_new`` برابر ``NULL`` باشد."
-
-msgid "The *bases* argument can be used to specify base classes; it can either be only one class or a tuple of classes. If *bases* is ``NULL``, the :c:data:`Py_tp_bases` slot is used instead. If that also is ``NULL``, the :c:data:`Py_tp_base` slot is used instead. If that also is ``NULL``, the new type derives from :class:`object`."
-msgstr "می‌توان از آرگومان *bases* برای تعیین کلاس‌های پایه استفاده کرد؛ این آرگومان می‌تواند تنها یک کلاس یا یک تاپل از کلاس‌ها باشد. اگر *bases* برابر ``NULL`` باشد، در عوض از جایگاه :c:data:`Py_tp_bases` استفاده می‌شود. اگر آن نیز ``NULL`` باشد، در عوض از جایگاه :c:data:`Py_tp_base` استفاده می‌شود. اگر آن نیز ``NULL`` باشد، نوع جدید از :class:`object` مشتق می‌شود."
-
-msgid "The *module* argument can be used to record the module in which the new class is defined. It must be a module object or ``NULL``. If not ``NULL``, the module is associated with the new type and can later be retrieved with :c:func:`PyType_GetModule`. The associated module is not inherited by subclasses; it must be specified for each class individually."
-msgstr "می‌توان از آرگومان *module* برای ثبت ماژولی که کلاس جدید در آن تعریف می‌شود، استفاده کرد. این آرگومان باید یک شیء ماژول یا ``NULL`` باشد. اگر ``NULL`` نباشد، ماژول با نوع جدید مرتبط می‌شود و بعداً می‌توان آن را با :c:func:`PyType_GetModule` بازیابی کرد. ماژول مرتبط به زیرکلاس‌ها به ارث نمی‌رسد؛ باید برای هر کلاس به‌طور جداگانه مشخص شود."
+msgid "Create and return a :ref:`heap type <heap-types>` from a :c:type:`!PySlot` array. See :ref:`capi-slots` for general information on slots, and :ref:`pyslot_type_slot_ids` for slots specific to type creation."
+msgstr ""
 
 msgid "This function calls :c:func:`PyType_Ready` on the new type."
 msgstr "این تابع :c:func:`PyType_Ready` را روی نوع جدید فراخوانی می‌کند."
@@ -246,6 +270,360 @@ msgstr ":py:meth:`~object.__init_subclass__` روی هیچ‌یک از کلاس�
 
 msgid ":py:meth:`~object.__set_name__` is not called on new descriptors."
 msgstr ":py:meth:`~object.__set_name__` روی توصیف‌گرهای جدید فراخوانی نمی‌شود."
+
+msgid "Slots are typically defined as a global static constant arrays. However, sometimes slot values are not statically known at compile time. For example, slots like :c:data:`Py_tp_bases`, :c:data:`Py_tp_metaclass` and :c:data:`Py_tp_module` require live Python objects. In this case, it is recommended to put such slots on the stack, and use :c:macro:`Py_slot_subslots` to refer to an array of static slots. For example::"
+msgstr ""
+
+msgid ""
+"static const PySlot my_slots[] = {\n"
+"   PySlot_STATIC_DATA(Py_tp_name, \"MyClass\"),\n"
+"   PySlot_FUNC(Py_tp_repr, my_repr_func),\n"
+"   ...\n"
+"   PySlot_END\n"
+"};\n"
+"\n"
+"PyObject *make_my_class(PyObject *module) {\n"
+"   PySlot all_slots[] = {\n"
+"      PySlot_STATIC_DATA(Py_slot_subslots, my_slots),\n"
+"      PySlot_DATA(Py_tp_module, module),\n"
+"      PySlot_END\n"
+"   };\n"
+"   return PyType_FromSlots(all_slots);\n"
+"}"
+msgstr ""
+
+msgid "Heap types created without the :c:macro:`Py_TPFLAGS_IMMUTABLETYPE` flag may be modified, for example by setting attributes on them, as with classes defined in Python code. Sometimes, such modifications are necessary to fully initialize a type, but you may wish to prevent users from changing the type after the initialization is done:"
+msgstr ""
+
+msgid "Make a type immutable: set the :c:macro:`Py_TPFLAGS_IMMUTABLETYPE` flag."
+msgstr "برای تغییرناپذیر کردن یک نوع: پرچم :c:macro:`Py_TPFLAGS_IMMUTABLETYPE` را تنظیم کنید."
+
+msgid "All base classes of *type* must be immutable."
+msgstr "همه‌ی کلاس‌های پایه‌ی *نوع* باید تغییرناپذیر باشند."
+
+msgid "On success, return ``0``. On error, set an exception and return ``-1``."
+msgstr "در صورت موفقیت، ``0`` را برمی‌گرداند. در صورت خطا، یک استثنا تنظیم کرده و ``-1`` را برمی‌گرداند."
+
+msgid "The type must not be used before it's made immutable. For example, type instances must not be created before the type is made immutable."
+msgstr "از نوع نباید پیش از تغییرناپذیر شدن آن استفاده شود. برای مثال، نمونه‌های نوع نباید پیش از تغییرناپذیر شدن نوع ایجاد شوند."
+
+#, fuzzy
+#| msgid "A slot ID."
+msgid "Type slot IDs"
+msgstr "شناسه‌ی جایگاه."
+
+#, fuzzy
+#| msgid "Slot IDs are named like the field names of the structures :c:type:`PyTypeObject`, :c:type:`PyNumberMethods`, :c:type:`PySequenceMethods`, :c:type:`PyMappingMethods` and :c:type:`PyAsyncMethods` with an added ``Py_`` prefix. For example, use:"
+msgid "Most type slot IDs are named like the field names of the structures :c:type:`PyTypeObject`, :c:type:`PyNumberMethods`, :c:type:`PySequenceMethods`, :c:type:`PyMappingMethods` and :c:type:`PyAsyncMethods` with an added ``Py_`` prefix. For example, use:"
+msgstr "شناسه‌های جایگاه مانند نام فیلدهای ساختارهای :c:type:`PyTypeObject`، :c:type:`PyNumberMethods`، :c:type:`PySequenceMethods`، :c:type:`PyMappingMethods` و :c:type:`PyAsyncMethods` با افزودن پیشوند ``Py_`` نام‌گذاری می‌شوند. برای مثال، از این استفاده کنید:"
+
+msgid ":c:data:`Py_tp_dealloc` to set :c:member:`PyTypeObject.tp_dealloc`"
+msgstr ":c:data:`Py_tp_dealloc` برای تنظیم :c:member:`PyTypeObject.tp_dealloc`"
+
+msgid ":c:data:`Py_nb_add` to set :c:member:`PyNumberMethods.nb_add`"
+msgstr ":c:data:`Py_nb_add` برای تنظیم :c:member:`PyNumberMethods.nb_add`"
+
+msgid ":c:data:`Py_sq_length` to set :c:member:`PySequenceMethods.sq_length`"
+msgstr ":c:data:`Py_sq_length` برای تنظیم :c:member:`PySequenceMethods.sq_length`"
+
+msgid "The following slots need additional considerations when specified as slots:"
+msgstr ""
+
+#, fuzzy
+#| msgid ":c:data:`Py_tp_token`"
+msgid ":c:data:`Py_tp_name`"
+msgstr ":c:data:`Py_tp_token`"
+
+msgid ":c:data:`Py_tp_basicsize` and :c:data:`Py_tp_extra_basicsize`"
+msgstr ""
+
+#, fuzzy
+#| msgid ":c:data:`Py_tp_token`"
+msgid ":c:data:`Py_tp_itemsize`"
+msgstr ":c:data:`Py_tp_token`"
+
+#, fuzzy
+#| msgid ":c:data:`Py_tp_doc`"
+msgid ":c:data:`Py_tp_flags`"
+msgstr ":c:data:`Py_tp_doc`"
+
+#, fuzzy
+#| msgid "An additional slot is supported that does not correspond to a :c:type:`!PyTypeObject` struct field:"
+msgid "Additional slots do not directly correspond to a :c:type:`!PyTypeObject` struct field:"
+msgstr "یک جایگاه اضافی پشتیبانی می‌شود که با هیچ فیلدی از ساختار :c:type:`!PyTypeObject` مطابق نیست:"
+
+msgid ":c:data:`Py_tp_token`"
+msgstr ":c:data:`Py_tp_token`"
+
+#, fuzzy
+#| msgid ":c:data:`Py_tp_doc`"
+msgid ":c:data:`Py_tp_metaclass`"
+msgstr ":c:data:`Py_tp_doc`"
+
+#, fuzzy
+#| msgid ":c:data:`Py_tp_token`"
+msgid ":c:data:`Py_tp_module`"
+msgstr ":c:data:`Py_tp_token`"
+
+msgid "The following “offset” fields cannot be set using :c:type:`PyType_Slot`:"
+msgstr "فیلدهای «آفست» زیر را نمی‌توان با استفاده از :c:type:`PyType_Slot` تنظیم کرد:"
+
+msgid ":c:member:`~PyTypeObject.tp_weaklistoffset` (use :c:macro:`Py_TPFLAGS_MANAGED_WEAKREF` instead if possible)"
+msgstr ":c:member:`~PyTypeObject.tp_weaklistoffset` (در صورت امکان، به‌جای آن از :c:macro:`Py_TPFLAGS_MANAGED_WEAKREF` استفاده کنید)"
+
+msgid ":c:member:`~PyTypeObject.tp_dictoffset` (use :c:macro:`Py_TPFLAGS_MANAGED_DICT` instead if possible)"
+msgstr ":c:member:`~PyTypeObject.tp_dictoffset` (در صورت امکان، به‌جای آن از :c:macro:`Py_TPFLAGS_MANAGED_DICT` استفاده کنید)"
+
+msgid ":c:member:`~PyTypeObject.tp_vectorcall_offset` (use ``\"__vectorcalloffset__\"`` in :ref:`PyMemberDef <pymemberdef-offsets>`)"
+msgstr ":c:member:`~PyTypeObject.tp_vectorcall_offset` (از ``\"__vectorcalloffset__\"`` در :ref:`PyMemberDef <pymemberdef-offsets>` استفاده کنید)"
+
+msgid "If it is not possible to switch to a ``MANAGED`` flag (for example, for vectorcall or to support Python older than 3.12), specify the offset in :c:data:`Py_tp_members`. See :ref:`PyMemberDef documentation <pymemberdef-offsets>` for details."
+msgstr "اگر تغییر به پرچم ``MANAGED`` ممکن نباشد (برای مثال، برای vectorcall یا برای پشتیبانی از پایتون قدیمی‌تر از 3.12)، آفست را در :c:data:`Py_tp_members` مشخص کنید. برای جزئیات، :ref:`مستندات PyMemberDef <pymemberdef-offsets>` را ببینید."
+
+msgid "The following internal fields cannot be set at all when creating a heap type:"
+msgstr "هنگام ایجاد نوع هیپ، فیلد‌های داخلی زیر به هیچ وجه قابل تنظیم نیستند:"
+
+msgid ":c:member:`~PyTypeObject.tp_dict`, :c:member:`~PyTypeObject.tp_mro`, :c:member:`~PyTypeObject.tp_cache`, :c:member:`~PyTypeObject.tp_subclasses`, and :c:member:`~PyTypeObject.tp_weaklist`."
+msgstr ":c:member:`~PyTypeObject.tp_dict`، :c:member:`~PyTypeObject.tp_mro`، :c:member:`~PyTypeObject.tp_cache`، :c:member:`~PyTypeObject.tp_subclasses`، و :c:member:`~PyTypeObject.tp_weaklist`."
+
+msgid "The :c:data:`Py_tp_base` slot is equivalent to :c:data:`Py_tp_bases`; both may be set either to a type or a tuple of types. If both are specified, the value of :c:data:`Py_tp_bases` is used."
+msgstr ""
+
+#, fuzzy
+#| msgid "*pfunc* values may not be ``NULL``, except for the following slots:"
+msgid "Slot values may not be ``NULL``, except for the following:"
+msgstr "مقادیر *pfunc* نمی‌توانند ``NULL`` باشند، به‌جز جایگاه‌های زیر:"
+
+msgid ":c:data:`Py_tp_doc`"
+msgstr ":c:data:`Py_tp_doc`"
+
+msgid ":c:data:`Py_tp_token` (for clarity, prefer :c:data:`Py_TP_USE_SPEC` rather than ``NULL``)"
+msgstr ":c:data:`Py_tp_token` (برای شفافیت، :c:data:`Py_TP_USE_SPEC` را به‌جای ``NULL`` ترجیح دهید)"
+
+msgid "Slots in :c:type:`PyBufferProcs` may be set in the unlimited API."
+msgstr "جایگاه‌های :c:type:`PyBufferProcs` را می‌توان در API نامحدود تنظیم کرد."
+
+msgid ":c:member:`~PyBufferProcs.bf_getbuffer` and :c:member:`~PyBufferProcs.bf_releasebuffer` are now available under the :ref:`limited API <limited-c-api>`."
+msgstr ":c:member:`~PyBufferProcs.bf_getbuffer` و :c:member:`~PyBufferProcs.bf_releasebuffer` اکنون در :ref:`API محدود <limited-c-api>` در دسترس هستند."
+
+msgid "The field :c:member:`~PyTypeObject.tp_vectorcall` can now be set using :c:data:`Py_tp_vectorcall`.  See the field's documentation for details."
+msgstr "فیلد :c:member:`~PyTypeObject.tp_vectorcall` اکنون می‌تواند با استفاده از :c:data:`Py_tp_vectorcall` تنظیم شود. برای جزئیات، به مستندات این فیلد مراجعه کنید."
+
+msgid "The :c:data:`Py_tp_bases` slot may be set to a single type object, making it equivalent to the :c:data:`Py_tp_base` slot. Previously, a tuple of types was required."
+msgstr ""
+
+msgid "The following slots correspond to fields in the underlying type structure, but need extra remarks for use as slots:"
+msgstr ""
+
+#, fuzzy
+#| msgid "Name of the type, used to set :c:member:`PyTypeObject.tp_name`."
+msgid ":c:member:`Slot ID <PySlot.sl_id>` for the name of the type, used to set :c:member:`PyTypeObject.tp_name`."
+msgstr "نام نوع، که برای تنظیم :c:member:`PyTypeObject.tp_name` استفاده می‌شود."
+
+msgid "This slot (or :c:member:`PyType_Spec.name`) is required to create a type."
+msgstr ""
+
+msgid "This may not be used in :c:member:`PyType_Spec.slots`. Use :c:member:`PyType_Spec.name` instead."
+msgstr ""
+
+msgid "CPython processes slots in order. It is recommended to put ``Py_tp_name`` at the beginning of the slots array, so that if processing of a later slots fails, error messages can include the name."
+msgstr ""
+
+#, fuzzy
+#| msgid "If positive, specifies the size of the instance in bytes. It is used to set :c:member:`PyTypeObject.tp_basicsize`."
+msgid ":c:member:`Slot ID <PySlot.sl_id>` for the size of the instance in bytes. It is used to set :c:member:`PyTypeObject.tp_basicsize`."
+msgstr "اگر مثبت باشد، اندازه‌ی نمونه را بر حسب بایت مشخص می‌کند. از آن برای تنظیم :c:member:`PyTypeObject.tp_basicsize` استفاده می‌شود."
+
+msgid "The value must be positive."
+msgstr ""
+
+msgid "This may not be used in :c:member:`PyType_Spec.slots`. Use :c:member:`PyType_Spec.basicsize` instead."
+msgstr ""
+
+msgid "This slot may not be used with :c:func:`PyType_GetSlot`. Use :c:member:`PyTypeObject.tp_basicsize` instead if needed, but be aware that a type's size is often considered an implementation detail."
+msgstr ""
+
+msgid ":c:member:`Slot ID <PySlot.sl_id>` for type data size in bytes, that is, how much space instances of the class need *in addition* to space needed for superclasses."
+msgstr ""
+
+msgid "The value is used, together with the size of superclasses, to set :c:member:`PyTypeObject.tp_basicsize`. Python will insert padding as needed to meet :c:member:`!tp_basicsize`'s alignment requirements."
+msgstr ""
+
+msgid "Use :c:func:`PyObject_GetTypeData` to get a pointer to subclass-specific memory reserved this way."
+msgstr ""
+
+msgid "The value must be positive. To specify that instances need no additional size (that is, size should be inherited), omit the :c:macro:`!Py_tp_extra_basicsize` slot rather than set it to zero."
+msgstr ""
+
+msgid "Specifying both :c:macro:`Py_tp_basicsize` and :c:macro:`!Py_tp_extra_basicsize` is an error."
+msgstr ""
+
+msgid "This may not be used in :c:member:`PyType_Spec.slots`. Use negative :c:member:`PyType_Spec.basicsize` instead."
+msgstr ""
+
+msgid "This slot may not be used with :c:func:`PyType_GetSlot`."
+msgstr ""
+
+#, fuzzy
+#| msgid "Size of one element of a variable-size type, in bytes. Used to set :c:member:`PyTypeObject.tp_itemsize`. See ``tp_itemsize`` documentation for caveats."
+msgid ":c:member:`Slot ID <PySlot.sl_id>` for the size of one element of a variable-size type, in bytes. Used to set :c:member:`PyTypeObject.tp_itemsize`. See :c:member:`!tp_itemsize` documentation for caveats."
+msgstr "اندازه‌ی یک المان از یک نوع با اندازه‌ی متغیر، بر حسب بایت. برای تنظیم :c:member:`PyTypeObject.tp_itemsize` استفاده می‌شود. برای هشدارها به مستندات ``tp_itemsize`` مراجعه کنید."
+
+#, fuzzy
+#| msgid "If zero, :c:member:`~PyTypeObject.tp_itemsize` is inherited. Extending arbitrary variable-sized classes is dangerous, since some types use a fixed offset for variable-sized memory, which can then overlap fixed-sized memory used by a subclass. To help prevent mistakes, inheriting ``itemsize`` is only possible in the following situations:"
+msgid "If this slot is missing, :c:member:`~PyTypeObject.tp_itemsize` is inherited. Extending arbitrary variable-sized classes is dangerous, since some types use a fixed offset for variable-sized memory, which can then overlap fixed-sized memory used by a subclass. To help prevent mistakes, inheriting ``itemsize`` is only possible in the following situations:"
+msgstr "اگر صفر باشد، :c:member:`~PyTypeObject.tp_itemsize` به ارث برده می‌شود. گسترش کلاس‌های اندازه‌متغیرِ دلخواه خطرناک است، زیرا برخی نوع‌ها برای حافظه‌ی اندازه‌متغیر از آفست ثابت استفاده می‌کنند که در نتیجه می‌تواند با حافظه‌ی اندازه‌ثابتِ استفاده‌شده توسط یک زیرکلاس هم‌پوشانی پیدا کند. برای کمک به جلوگیری از اشتباهات، ارث‌بری ``itemsize`` تنها در شرایط زیر ممکن است:"
+
+msgid "The base is not variable-sized (its :c:member:`~PyTypeObject.tp_itemsize` is zero)."
+msgstr "پایه اندازه‌متغیر نیست (:c:member:`~PyTypeObject.tp_itemsize` آن صفر است)."
+
+msgid "The requested :c:member:`PyType_Spec.basicsize` is positive, suggesting that the memory layout of the base class is known."
+msgstr "مقدار درخواستی :c:member:`PyType_Spec.basicsize` مثبت است، که نشان می‌دهد چیدمان حافظه‌ی کلاس پایه معلوم است."
+
+msgid "The requested :c:member:`PyType_Spec.basicsize` is zero, suggesting that the subclass does not access the instance's memory directly."
+msgstr ":c:member:`PyType_Spec.basicsize` درخواست‌شده صفر است، که نشان می‌دهد زیرکلاس مستقیماً به حافظه‌ی نمونه دسترسی ندارد."
+
+msgid "With the :c:macro:`Py_TPFLAGS_ITEMS_AT_END` flag."
+msgstr "با پرچم :c:macro:`Py_TPFLAGS_ITEMS_AT_END`."
+
+msgid "This may not be used in :c:member:`PyType_Spec.slots`. Use :c:member:`PyType_Spec.itemsize` instead."
+msgstr ""
+
+#, fuzzy
+#| msgid "Type flags, used to set :c:member:`PyTypeObject.tp_flags`."
+msgid ":c:member:`Slot ID <PySlot.sl_id>` for type flags, used to set :c:member:`PyTypeObject.tp_flags`."
+msgstr "پرچم‌های نوع، که برای تنظیم :c:member:`PyTypeObject.tp_flags` به کار می‌روند."
+
+#, fuzzy
+#| msgid "If the ``Py_TPFLAGS_HEAPTYPE`` flag is not set, :c:func:`PyType_FromSpecWithBases` sets it automatically."
+msgid "The ``Py_TPFLAGS_HEAPTYPE`` flag is not set, :c:func:`PyType_FromSpecWithBases` sets it automatically."
+msgstr "اگر پرچم ``Py_TPFLAGS_HEAPTYPE`` تنظیم‌نشده باشد، تابع :c:func:`PyType_FromSpecWithBases` آن را به‌طور خودکار تنظیم می‌کند."
+
+msgid "This slot may not be used with :c:func:`PyType_GetSlot`. Use :c:func:`PyType_GetFlags` instead."
+msgstr ""
+
+#, fuzzy
+#| msgid "Type flags, used to set :c:member:`PyTypeObject.tp_flags`."
+msgid ":c:member:`Slot ID <PySlot.sl_id>` for type flags, used to set :c:member:`PyTypeObject.tp_bases`."
+msgstr "پرچم‌های نوع، که برای تنظیم :c:member:`PyTypeObject.tp_flags` به کار می‌روند."
+
+msgid "The slot can be set to a tuple of type objects which the newly created type should inherit from, like the \"positional arguments\" of a Python :ref:`class definition <class>`."
+msgstr ""
+
+msgid "Alternately, the slot can be set to a single type object to specify a single base. The effect is the same as specifying a one-element tuple."
+msgstr ""
+
+msgid "Previously, :c:macro:`!Py_tp_bases` required a tuple of types."
+msgstr ""
+
+msgid "Equivalent to :c:macro:`Py_tp_bases` (with ``s`` at the end). If both are specified, :c:macro:`!Py_tp_bases` takes priority and this slot is ignored."
+msgstr ""
+
+msgid "Previously, :c:macro:`!Py_tp_base` required a single type, not a tuple."
+msgstr ""
+
+msgid "When not targeting older Python versions, prefer :c:macro:`!Py_tp_bases`."
+msgstr ""
+
+msgid "The following slots do not correspond to public fields in the underlying structures:"
+msgstr ""
+
+#, fuzzy
+#| msgid "The metaclass *metaclass* is used to construct the resulting type object. When *metaclass* is ``NULL``, the metaclass is derived from *bases* (or *Py_tp_base[s]* slots if *bases* is ``NULL``, see below)."
+msgid ":c:member:`Slot ID <PySlot.sl_id>` for the metaclass used to construct the resulting type object. When omitted the metaclass is derived from bases (:c:macro:`Py_tp_bases` or the *bases* argument of :c:func:`PyType_FromMetaclass`)."
+msgstr "فراکلاس *metaclass* برای ساخت شیء نوع حاصل استفاده می‌شود. وقتی *metaclass* برابر ``NULL`` باشد، فراکلاس از *bases* به دست می‌آید (یا از جایگاه‌های *Py_tp_base[s]* اگر *bases* برابر ``NULL`` باشد؛ در ادامه ببینید)."
+
+msgid "Metaclasses that override :c:member:`~PyTypeObject.tp_new` are not supported, except if ``tp_new`` is ``NULL``."
+msgstr "فراکلاس‌هایی که :c:member:`~PyTypeObject.tp_new` را بازنویسی می‌کنند پشتیبانی نمی‌شوند، مگر آنکه ``tp_new`` برابر ``NULL`` باشد."
+
+msgid "This may not be used in :c:member:`PyType_Spec.slots`. Use :c:func:`PyType_FromMetaclass` to specify a metaclass with :c:type:`!PyType_Spec`."
+msgstr ""
+
+msgid "This slot may not be used with :c:func:`PyType_GetSlot`. Use :c:func:`Py_TYPE` on the type object instead."
+msgstr ""
+
+msgid ":c:member:`Slot ID <PySlot.sl_id>` for recording the module in which the new class is defined."
+msgstr ""
+
+#, fuzzy
+#| msgid "The *module* argument can be used to record the module in which the new class is defined. It must be a module object or ``NULL``. If not ``NULL``, the module is associated with the new type and can later be retrieved with :c:func:`PyType_GetModule`. The associated module is not inherited by subclasses; it must be specified for each class individually."
+msgid "The value must be a module object. The module is associated with the new type and can later be retrieved with :c:func:`PyType_GetModule`. The associated module is not inherited by subclasses; it must be specified for each class individually."
+msgstr "می‌توان از آرگومان *module* برای ثبت ماژولی که کلاس جدید در آن تعریف می‌شود، استفاده کرد. این آرگومان باید یک شیء ماژول یا ``NULL`` باشد. اگر ``NULL`` نباشد، ماژول با نوع جدید مرتبط می‌شود و بعداً می‌توان آن را با :c:func:`PyType_GetModule` بازیابی کرد. ماژول مرتبط به زیرکلاس‌ها به ارث نمی‌رسد؛ باید برای هر کلاس به‌طور جداگانه مشخص شود."
+
+msgid "This may not be used in :c:member:`PyType_Spec.slots`. Use :c:func:`PyType_FromMetaclass` to specify a module with :c:type:`!PyType_Spec`."
+msgstr ""
+
+msgid "This slot may not be used with :c:func:`PyType_GetSlot`. Use :c:func:`PyType_GetModule` instead."
+msgstr ""
+
+#, fuzzy
+#| msgid "A :c:member:`~PyType_Slot.slot` that records a static memory layout ID for a class."
+msgid ":c:member:`Slot ID <PySlot.sl_id>` for recording a static memory layout ID for a class."
+msgstr "یک :c:member:`~PyType_Slot.slot` که شناسه‌ی چیدمان حافظه‌ی ایستا را برای یک کلاس ثبت می‌کند."
+
+#, fuzzy
+#| msgid "If the :c:type:`PyType_Spec` of the class is statically allocated, the token can be set to the spec using the special value :c:data:`Py_TP_USE_SPEC`:"
+msgid "If the class is defined using a :c:type:`PyType_Spec`, and that spec is statically allocated, the token can be set to the spec using the special value :c:data:`Py_TP_USE_SPEC`:"
+msgstr "اگر :c:type:`PyType_Spec` کلاس به‌صورت ایستا تخصیص یافته باشد، می‌توان توکن را با استفاده از مقدار ویژه‌ی :c:data:`Py_TP_USE_SPEC` برابر با مشخصه تنظیم کرد:"
+
+msgid ""
+"static PyType_Slot foo_slots[] = {\n"
+"   {Py_tp_token, Py_TP_USE_SPEC},"
+msgstr ""
+"static PyType_Slot foo_slots[] = {\n"
+"   {Py_tp_token, Py_TP_USE_SPEC},"
+
+msgid "It can also be set to an arbitrary pointer, but you must ensure that:"
+msgstr "می‌توان آن را به یک اشاره‌گر دلخواه نیز تنظیم کرد، اما باید مطمئن شوید که:"
+
+msgid "The pointer outlives the class, so it's not reused for something else while the class exists."
+msgstr "عمر اشاره‌گر از عمر کلاس طولانی‌تر است، بنابراین تا زمانی که کلاس وجود دارد، برای چیز دیگری باز‌استفاده نمی‌شود."
+
+msgid "It \"belongs\" to the extension module where the class lives, so it will not clash with other extensions."
+msgstr "آن به ماژول توسعه‌ای «تعلق دارد» که کلاس در آن قرار دارد، بنابراین با سایر توسعه‌ها تداخل نخواهد کرد."
+
+msgid "Use :c:func:`PyType_GetBaseByToken` to check if a class's superclass has a given token -- that is, check whether the memory layout is compatible."
+msgstr "از :c:func:`PyType_GetBaseByToken` برای بررسی این‌که آیا ابرکلاس یک کلاس توکن مشخصی دارد یا نه استفاده کنید — یعنی، بررسی کنید که آیا چیدمان حافظه سازگار است یا خیر."
+
+msgid "To get the token for a given class (without considering superclasses), use :c:func:`PyType_GetSlot` with ``Py_tp_token``."
+msgstr "برای به‌دست‌آوردن توکن یک کلاس معین (بدون در نظر گرفتن کلاس‌های والد)، از :c:func:`PyType_GetSlot` با ``Py_tp_token`` استفاده کنید."
+
+#, fuzzy
+#| msgid "Used as a value with :c:data:`Py_tp_token` to set the token to the class's :c:type:`PyType_Spec`. Expands to ``NULL``."
+msgid "Used as a value with :c:data:`Py_tp_token` to set the token to the class's :c:type:`PyType_Spec`. May only be used for classes defined using :c:type:`!PyType_Spec`."
+msgstr "به عنوان یک مقدار همراه با :c:data:`Py_tp_token` برای تنظیم توکن به :c:type:`PyType_Spec` کلاس استفاده می‌شود. به ``NULL`` بسط می‌یابد."
+
+msgid "Expands to ``NULL``."
+msgstr ""
+
+msgid ":c:member:`Slot ID <PySlot.sl_id>` that works like :c:macro:`Py_slot_subslots`, except it specifies an array of :c:type:`PyType_Slot` structures."
+msgstr ""
+
+msgid "Soft-deprecated API"
+msgstr ""
+
+msgid "The following functions are :term:`soft deprecated`. They will continue to work, but new features will be added as slots for :c:func:`PyType_FromSlots`, not as arguments to new ``PyType_From*`` functions."
+msgstr ""
+
+msgid "Create and return a :ref:`heap type <heap-types>` from the *spec* (see :c:macro:`Py_TPFLAGS_HEAPTYPE`)."
+msgstr "یک :ref:`نوع هیپ <heap-types>` از *spec* بسازید و بازگردانید (به :c:macro:`Py_TPFLAGS_HEAPTYPE` مراجعه کنید)."
+
+msgid "A non-``NULL`` *metaclass* argument corresponds to the :c:macro:`Py_tp_metaclass` slot."
+msgstr ""
+
+msgid "A non-``NULL`` *bases* argument corresponds to the :c:data:`Py_tp_bases` slot, and takes precedence over :c:data:`Py_tp_bases` and :c:data:`Py_tp_bases` slots."
+msgstr ""
+
+msgid "A non-``NULL`` *module* argument corresponds to the :c:macro:`Py_tp_module` slot."
+msgstr ""
+
+#, fuzzy
+#| msgid "Note that this function does *not* fully match the behavior of calling :py:class:`type() <type>` or using the :keyword:`class` statement. With user-provided base types or metaclasses, prefer :ref:`calling <capi-call>` :py:class:`type` (or the metaclass) over ``PyType_From*`` functions. Specifically:"
+msgid "Note that this function does *not* fully match the behavior of calling :py:class:`type() <type>` or using the :keyword:`class` statement. See the note in :c:func:`PyType_FromSlots` documentation for details."
+msgstr "توجه داشته باشید که این تابع به‌طور کامل با رفتار فراخوانی :py:class:`type() <type>` یا استفاده از دستور :keyword:`class` مطابقت *ندارد*. با نوع‌های پایه یا فراکلاس‌های ارائه‌شده از سوی کاربر، :ref:`فراخوانی <capi-call>` :py:class:`type` (یا فراکلاس) را به توابع ``PyType_From*`` ترجیح دهید. به‌طور مشخص:"
+
+msgid "Prefer :c:func:`PyType_FromSlots` in new code."
+msgstr ""
 
 msgid "Equivalent to ``PyType_FromMetaclass(NULL, module, spec, bases)``."
 msgstr "معادل ``PyType_FromMetaclass(NULL, module, spec, bases)`` است."
@@ -271,168 +649,89 @@ msgstr "معادل ``PyType_FromMetaclass(NULL, NULL, spec, NULL)`` است."
 msgid "The function now finds and uses a metaclass corresponding to the base classes provided in *Py_tp_base[s]* slots. Previously, only :class:`type` instances were returned."
 msgstr "این تابع اکنون فراکلاسی متناظر با کلاس‌های پایه‌ی ارائه‌شده در جایگاه‌های *Py_tp_base[s]* را می‌یابد و از آن استفاده می‌کند. پیش‌تر، تنها نمونه‌های :class:`type` برگردانده می‌شدند."
 
-msgid "Make a type immutable: set the :c:macro:`Py_TPFLAGS_IMMUTABLETYPE` flag."
-msgstr "برای تغییرناپذیر کردن یک نوع: پرچم :c:macro:`Py_TPFLAGS_IMMUTABLETYPE` را تنظیم کنید."
+msgid "Structure defining a type's behavior, used for soft-deprecated functions like :c:func:`PyType_FromMetaclass`."
+msgstr ""
 
-msgid "All base classes of *type* must be immutable."
-msgstr "همه‌ی کلاس‌های پایه‌ی *نوع* باید تغییرناپذیر باشند."
+msgid "This structure contains several members that can instead be specified as :ref:`slots <pyslot_type_slot_ids>` for :c:func:`PyType_FromSlots`, and an array of slot entries with a simpler structure."
+msgstr ""
 
-msgid "On success, return ``0``. On error, set an exception and return ``-1``."
-msgstr "در صورت موفقیت، ``0`` را برمی‌گرداند. در صورت خطا، یک استثنا تنظیم کرده و ``-1`` را برمی‌گرداند."
+msgid "Corresponds to :c:macro:`Py_tp_name`."
+msgstr ""
 
-msgid "The type must not be used before it's made immutable. For example, type instances must not be created before the type is made immutable."
-msgstr "از نوع نباید پیش از تغییرناپذیر شدن آن استفاده شود. برای مثال، نمونه‌های نوع نباید پیش از تغییرناپذیر شدن نوع ایجاد شوند."
+msgid "If positive, corresponds to :c:macro:`Py_tp_basicsize`."
+msgstr ""
 
-msgid "Structure defining a type's behavior."
-msgstr "ساختاری که رفتار یک نوع را تعریف می‌کند."
-
-msgid "Name of the type, used to set :c:member:`PyTypeObject.tp_name`."
-msgstr "نام نوع، که برای تنظیم :c:member:`PyTypeObject.tp_name` استفاده می‌شود."
-
-msgid "If positive, specifies the size of the instance in bytes. It is used to set :c:member:`PyTypeObject.tp_basicsize`."
-msgstr "اگر مثبت باشد، اندازه‌ی نمونه را بر حسب بایت مشخص می‌کند. از آن برای تنظیم :c:member:`PyTypeObject.tp_basicsize` استفاده می‌شود."
-
-msgid "If zero, specifies that :c:member:`~PyTypeObject.tp_basicsize` should be inherited."
-msgstr "اگر صفر باشد، مشخص می‌کند که :c:member:`~PyTypeObject.tp_basicsize` باید به ارث برده شود."
-
-msgid "If negative, the absolute value specifies how much space instances of the class need *in addition* to the superclass. Use :c:func:`PyObject_GetTypeData` to get a pointer to subclass-specific memory reserved this way. For negative :c:member:`!basicsize`, Python will insert padding when needed to meet :c:member:`~PyTypeObject.tp_basicsize`'s alignment requirements."
-msgstr "اگر منفی باشد، قدر مطلق آن مشخص می‌کند که نمونه‌های کلاس *علاوه بر* ابرکلاس به چه مقدار فضا نیاز دارند. برای دریافت اشاره‌گر به حافظه‌ی اختصاصی زیرکلاس که به این شیوه رزرو شده است، از :c:func:`PyObject_GetTypeData` استفاده کنید. برای :c:member:`!basicsize` منفی، پایتون در صورت نیاز پدینگ اضافه خواهد کرد تا نیازمندی‌های ترازبندیِ :c:member:`~PyTypeObject.tp_basicsize` را برآورده کند."
+msgid "If negative, corresponds to :c:macro:`Py_tp_extra_basicsize` set to the absolute value."
+msgstr ""
 
 msgid "Previously, this field could not be negative."
 msgstr "پیش‌تر، این فیلد نمی‌توانست منفی باشد."
 
-msgid "Size of one element of a variable-size type, in bytes. Used to set :c:member:`PyTypeObject.tp_itemsize`. See ``tp_itemsize`` documentation for caveats."
-msgstr "اندازه‌ی یک المان از یک نوع با اندازه‌ی متغیر، بر حسب بایت. برای تنظیم :c:member:`PyTypeObject.tp_itemsize` استفاده می‌شود. برای هشدارها به مستندات ``tp_itemsize`` مراجعه کنید."
+msgid "Corresponds to :c:macro:`Py_tp_itemsize`."
+msgstr ""
 
-msgid "If zero, :c:member:`~PyTypeObject.tp_itemsize` is inherited. Extending arbitrary variable-sized classes is dangerous, since some types use a fixed offset for variable-sized memory, which can then overlap fixed-sized memory used by a subclass. To help prevent mistakes, inheriting ``itemsize`` is only possible in the following situations:"
-msgstr "اگر صفر باشد، :c:member:`~PyTypeObject.tp_itemsize` به ارث برده می‌شود. گسترش کلاس‌های اندازه‌متغیرِ دلخواه خطرناک است، زیرا برخی نوع‌ها برای حافظه‌ی اندازه‌متغیر از آفست ثابت استفاده می‌کنند که در نتیجه می‌تواند با حافظه‌ی اندازه‌ثابتِ استفاده‌شده توسط یک زیرکلاس هم‌پوشانی پیدا کند. برای کمک به جلوگیری از اشتباهات، ارث‌بری ``itemsize`` تنها در شرایط زیر ممکن است:"
+msgid "Corresponds to :c:macro:`Py_tp_flags`."
+msgstr ""
 
-msgid "The base is not variable-sized (its :c:member:`~PyTypeObject.tp_itemsize` is zero)."
-msgstr "پایه اندازه‌متغیر نیست (:c:member:`~PyTypeObject.tp_itemsize` آن صفر است)."
+msgid "Array of :c:type:`PyType_Slot` (not :c:type:`PySlot`) structures."
+msgstr ""
 
-msgid "The requested :c:member:`PyType_Spec.basicsize` is positive, suggesting that the memory layout of the base class is known."
-msgstr "مقدار درخواستی :c:member:`PyType_Spec.basicsize` مثبت است، که نشان می‌دهد چیدمان حافظه‌ی کلاس پایه معلوم است."
-
-msgid "The requested :c:member:`PyType_Spec.basicsize` is zero, suggesting that the subclass does not access the instance's memory directly."
-msgstr ":c:member:`PyType_Spec.basicsize` درخواست‌شده صفر است، که نشان می‌دهد زیرکلاس مستقیماً به حافظه‌ی نمونه دسترسی ندارد."
-
-msgid "With the :c:macro:`Py_TPFLAGS_ITEMS_AT_END` flag."
-msgstr "با پرچم :c:macro:`Py_TPFLAGS_ITEMS_AT_END`."
-
-msgid "Type flags, used to set :c:member:`PyTypeObject.tp_flags`."
-msgstr "پرچم‌های نوع، که برای تنظیم :c:member:`PyTypeObject.tp_flags` به کار می‌روند."
-
-msgid "If the ``Py_TPFLAGS_HEAPTYPE`` flag is not set, :c:func:`PyType_FromSpecWithBases` sets it automatically."
-msgstr "اگر پرچم ``Py_TPFLAGS_HEAPTYPE`` تنظیم‌نشده باشد، تابع :c:func:`PyType_FromSpecWithBases` آن را به‌طور خودکار تنظیم می‌کند."
-
-msgid "Array of :c:type:`PyType_Slot` structures. Terminated by the special slot value ``{0, NULL}``."
-msgstr "آرایه‌ای از ساختارهای :c:type:`PyType_Slot`. با مقدار جایگاه ویژه‌ی ``{0, NULL}`` پایان می‌یابد."
-
-msgid "Each slot ID should be specified at most once."
+#, fuzzy
+#| msgid "Each slot ID should be specified at most once."
+msgid "Terminated by the special slot value ``{0, NULL}``. Each slot ID should be specified at most once."
 msgstr "هر شناسه‌ی جایگاه باید حداکثر یک‌بار مشخص شود."
 
-msgid "Structure defining optional functionality of a type, containing a slot ID and a value pointer."
+#, fuzzy
+#| msgid "Structure defining optional functionality of a type, containing a slot ID and a value pointer."
+msgid "Structure defining optional functionality of a type, used for soft-deprecated functions like :c:func:`PyType_FromMetaclass`."
 msgstr "ساختاری که کارکرد اختیاری یک نوع را تعریف می‌کند و شامل شناسه‌ی جایگاه و اشاره‌گر مقدار است."
 
-msgid "A slot ID."
-msgstr "شناسه‌ی جایگاه."
+msgid "Note that a :c:type:`!PyType_Slot` array may be included in a :c:type:`!PySlot` array using :c:macro:`Py_tp_slots`, and vice versa using :c:macro:`Py_slot_subslots`."
+msgstr ""
 
-msgid "Slot IDs are named like the field names of the structures :c:type:`PyTypeObject`, :c:type:`PyNumberMethods`, :c:type:`PySequenceMethods`, :c:type:`PyMappingMethods` and :c:type:`PyAsyncMethods` with an added ``Py_`` prefix. For example, use:"
-msgstr "شناسه‌های جایگاه مانند نام فیلدهای ساختارهای :c:type:`PyTypeObject`، :c:type:`PyNumberMethods`، :c:type:`PySequenceMethods`، :c:type:`PyMappingMethods` و :c:type:`PyAsyncMethods` با افزودن پیشوند ``Py_`` نام‌گذاری می‌شوند. برای مثال، از این استفاده کنید:"
-
-msgid ":c:data:`Py_tp_dealloc` to set :c:member:`PyTypeObject.tp_dealloc`"
-msgstr ":c:data:`Py_tp_dealloc` برای تنظیم :c:member:`PyTypeObject.tp_dealloc`"
-
-msgid ":c:data:`Py_nb_add` to set :c:member:`PyNumberMethods.nb_add`"
-msgstr ":c:data:`Py_nb_add` برای تنظیم :c:member:`PyNumberMethods.nb_add`"
-
-msgid ":c:data:`Py_sq_length` to set :c:member:`PySequenceMethods.sq_length`"
-msgstr ":c:data:`Py_sq_length` برای تنظیم :c:member:`PySequenceMethods.sq_length`"
-
-msgid "An additional slot is supported that does not correspond to a :c:type:`!PyTypeObject` struct field:"
-msgstr "یک جایگاه اضافی پشتیبانی می‌شود که با هیچ فیلدی از ساختار :c:type:`!PyTypeObject` مطابق نیست:"
-
-msgid ":c:data:`Py_tp_token`"
-msgstr ":c:data:`Py_tp_token`"
-
-msgid "The following “offset” fields cannot be set using :c:type:`PyType_Slot`:"
-msgstr "فیلدهای «آفست» زیر را نمی‌توان با استفاده از :c:type:`PyType_Slot` تنظیم کرد:"
-
-msgid ":c:member:`~PyTypeObject.tp_weaklistoffset` (use :c:macro:`Py_TPFLAGS_MANAGED_WEAKREF` instead if possible)"
-msgstr ":c:member:`~PyTypeObject.tp_weaklistoffset` (در صورت امکان، به‌جای آن از :c:macro:`Py_TPFLAGS_MANAGED_WEAKREF` استفاده کنید)"
-
-msgid ":c:member:`~PyTypeObject.tp_dictoffset` (use :c:macro:`Py_TPFLAGS_MANAGED_DICT` instead if possible)"
-msgstr ":c:member:`~PyTypeObject.tp_dictoffset` (در صورت امکان، به‌جای آن از :c:macro:`Py_TPFLAGS_MANAGED_DICT` استفاده کنید)"
-
-msgid ":c:member:`~PyTypeObject.tp_vectorcall_offset` (use ``\"__vectorcalloffset__\"`` in :ref:`PyMemberDef <pymemberdef-offsets>`)"
-msgstr ":c:member:`~PyTypeObject.tp_vectorcall_offset` (از ``\"__vectorcalloffset__\"`` در :ref:`PyMemberDef <pymemberdef-offsets>` استفاده کنید)"
-
-msgid "If it is not possible to switch to a ``MANAGED`` flag (for example, for vectorcall or to support Python older than 3.12), specify the offset in :c:data:`Py_tp_members`. See :ref:`PyMemberDef documentation <pymemberdef-offsets>` for details."
-msgstr "اگر تغییر به پرچم ``MANAGED`` ممکن نباشد (برای مثال، برای vectorcall یا برای پشتیبانی از پایتون قدیمی‌تر از 3.12)، آفست را در :c:data:`Py_tp_members` مشخص کنید. برای جزئیات، :ref:`مستندات PyMemberDef <pymemberdef-offsets>` را ببینید."
-
-msgid "The following internal fields cannot be set at all when creating a heap type:"
-msgstr "هنگام ایجاد نوع هیپ، فیلد‌های داخلی زیر به هیچ وجه قابل تنظیم نیستند:"
-
-msgid ":c:member:`~PyTypeObject.tp_dict`, :c:member:`~PyTypeObject.tp_mro`, :c:member:`~PyTypeObject.tp_cache`, :c:member:`~PyTypeObject.tp_subclasses`, and :c:member:`~PyTypeObject.tp_weaklist`."
-msgstr ":c:member:`~PyTypeObject.tp_dict`، :c:member:`~PyTypeObject.tp_mro`، :c:member:`~PyTypeObject.tp_cache`، :c:member:`~PyTypeObject.tp_subclasses`، و :c:member:`~PyTypeObject.tp_weaklist`."
-
-msgid "Setting :c:data:`Py_tp_bases` or :c:data:`Py_tp_base` may be problematic on some platforms. To avoid issues, use the *bases* argument of :c:func:`PyType_FromSpecWithBases` instead."
-msgstr "تنظیم :c:data:`Py_tp_bases` یا :c:data:`Py_tp_base` ممکن است روی برخی پلتفرم‌ها مشکل‌ساز باشد. برای پرهیز از مشکلات، به‌جای آن از آرگومان *bases* در :c:func:`PyType_FromSpecWithBases` استفاده کنید."
-
-msgid "Slots in :c:type:`PyBufferProcs` may be set in the unlimited API."
-msgstr "جایگاه‌های :c:type:`PyBufferProcs` را می‌توان در API نامحدود تنظیم کرد."
-
-msgid ":c:member:`~PyBufferProcs.bf_getbuffer` and :c:member:`~PyBufferProcs.bf_releasebuffer` are now available under the :ref:`limited API <limited-c-api>`."
-msgstr ":c:member:`~PyBufferProcs.bf_getbuffer` و :c:member:`~PyBufferProcs.bf_releasebuffer` اکنون در :ref:`API محدود <limited-c-api>` در دسترس هستند."
-
-msgid "The field :c:member:`~PyTypeObject.tp_vectorcall` can now be set using :c:data:`Py_tp_vectorcall`.  See the field's documentation for details."
-msgstr "فیلد :c:member:`~PyTypeObject.tp_vectorcall` اکنون می‌تواند با استفاده از :c:data:`Py_tp_vectorcall` تنظیم شود. برای جزئیات، به مستندات این فیلد مراجعه کنید."
-
-msgid "The desired value of the slot. In most cases, this is a pointer to a function."
-msgstr "مقدار موردنظر جایگاه. در بیشتر موارد، این یک اشاره‌گر به تابع است."
-
-msgid "*pfunc* values may not be ``NULL``, except for the following slots:"
-msgstr "مقادیر *pfunc* نمی‌توانند ``NULL`` باشند، به‌جز جایگاه‌های زیر:"
-
-msgid ":c:data:`Py_tp_doc`"
-msgstr ":c:data:`Py_tp_doc`"
-
-msgid ":c:data:`Py_tp_token` (for clarity, prefer :c:data:`Py_TP_USE_SPEC` rather than ``NULL``)"
-msgstr ":c:data:`Py_tp_token` (برای شفافیت، :c:data:`Py_TP_USE_SPEC` را به‌جای ``NULL`` ترجیح دهید)"
-
-msgid "A :c:member:`~PyType_Slot.slot` that records a static memory layout ID for a class."
-msgstr "یک :c:member:`~PyType_Slot.slot` که شناسه‌ی چیدمان حافظه‌ی ایستا را برای یک کلاس ثبت می‌کند."
-
-msgid "If the :c:type:`PyType_Spec` of the class is statically allocated, the token can be set to the spec using the special value :c:data:`Py_TP_USE_SPEC`:"
-msgstr "اگر :c:type:`PyType_Spec` کلاس به‌صورت ایستا تخصیص یافته باشد، می‌توان توکن را با استفاده از مقدار ویژه‌ی :c:data:`Py_TP_USE_SPEC` برابر با مشخصه تنظیم کرد:"
+msgid "Each :c:type:`!PyType_Slot` structure ``tpslot`` is interpreted as the following :c:type:`PySlot` structure::"
+msgstr ""
 
 msgid ""
-"static PyType_Slot foo_slots[] = {\n"
-"   {Py_tp_token, Py_TP_USE_SPEC},"
+"(PySlot){\n"
+"   .sl_id=tpslot.slot,\n"
+"   .sl_flags=PySlot_INTPTR | sub_static,\n"
+"   .sl_ptr=tpslot.func\n"
+"}"
 msgstr ""
-"static PyType_Slot foo_slots[] = {\n"
-"   {Py_tp_token, Py_TP_USE_SPEC},"
 
-msgid "It can also be set to an arbitrary pointer, but you must ensure that:"
-msgstr "می‌توان آن را به یک اشاره‌گر دلخواه نیز تنظیم کرد، اما باید مطمئن شوید که:"
+msgid "where ``sub_static`` is ``PySlot_STATIC`` if the slot requires the flag (such as for :c:macro:`Py_tp_methods`), or if this flag is present on the \"parent\" :c:macro:`!Py_tp_slots` slot (if any)."
+msgstr ""
 
-msgid "The pointer outlives the class, so it's not reused for something else while the class exists."
-msgstr "عمر اشاره‌گر از عمر کلاس طولانی‌تر است، بنابراین تا زمانی که کلاس وجود دارد، برای چیز دیگری باز‌استفاده نمی‌شود."
+msgid "Corresponds to :c:member:`PySlot.sl_id`."
+msgstr ""
 
-msgid "It \"belongs\" to the extension module where the class lives, so it will not clash with other extensions."
-msgstr "آن به ماژول توسعه‌ای «تعلق دارد» که کلاس در آن قرار دارد، بنابراین با سایر توسعه‌ها تداخل نخواهد کرد."
-
-msgid "Use :c:func:`PyType_GetBaseByToken` to check if a class's superclass has a given token -- that is, check whether the memory layout is compatible."
-msgstr "از :c:func:`PyType_GetBaseByToken` برای بررسی این‌که آیا ابرکلاس یک کلاس توکن مشخصی دارد یا نه استفاده کنید — یعنی، بررسی کنید که آیا چیدمان حافظه سازگار است یا خیر."
-
-msgid "To get the token for a given class (without considering superclasses), use :c:func:`PyType_GetSlot` with ``Py_tp_token``."
-msgstr "برای به‌دست‌آوردن توکن یک کلاس معین (بدون در نظر گرفتن کلاس‌های والد)، از :c:func:`PyType_GetSlot` با ``Py_tp_token`` استفاده کنید."
-
-msgid "Used as a value with :c:data:`Py_tp_token` to set the token to the class's :c:type:`PyType_Spec`. Expands to ``NULL``."
-msgstr "به عنوان یک مقدار همراه با :c:data:`Py_tp_token` برای تنظیم توکن به :c:type:`PyType_Spec` کلاس استفاده می‌شود. به ``NULL`` بسط می‌یابد."
+msgid "Corresponds to :c:member:`PySlot.sl_ptr`."
+msgstr ""
 
 msgid "object"
 msgstr "شیء"
 
 msgid "type"
 msgstr "نوع"
+
+#~ msgid "The *bases* argument can be used to specify base classes; it can either be only one class or a tuple of classes. If *bases* is ``NULL``, the :c:data:`Py_tp_bases` slot is used instead. If that also is ``NULL``, the :c:data:`Py_tp_base` slot is used instead. If that also is ``NULL``, the new type derives from :class:`object`."
+#~ msgstr "می‌توان از آرگومان *bases* برای تعیین کلاس‌های پایه استفاده کرد؛ این آرگومان می‌تواند تنها یک کلاس یا یک تاپل از کلاس‌ها باشد. اگر *bases* برابر ``NULL`` باشد، در عوض از جایگاه :c:data:`Py_tp_bases` استفاده می‌شود. اگر آن نیز ``NULL`` باشد، در عوض از جایگاه :c:data:`Py_tp_base` استفاده می‌شود. اگر آن نیز ``NULL`` باشد، نوع جدید از :class:`object` مشتق می‌شود."
+
+#~ msgid "Structure defining a type's behavior."
+#~ msgstr "ساختاری که رفتار یک نوع را تعریف می‌کند."
+
+#~ msgid "If zero, specifies that :c:member:`~PyTypeObject.tp_basicsize` should be inherited."
+#~ msgstr "اگر صفر باشد، مشخص می‌کند که :c:member:`~PyTypeObject.tp_basicsize` باید به ارث برده شود."
+
+#~ msgid "If negative, the absolute value specifies how much space instances of the class need *in addition* to the superclass. Use :c:func:`PyObject_GetTypeData` to get a pointer to subclass-specific memory reserved this way. For negative :c:member:`!basicsize`, Python will insert padding when needed to meet :c:member:`~PyTypeObject.tp_basicsize`'s alignment requirements."
+#~ msgstr "اگر منفی باشد، قدر مطلق آن مشخص می‌کند که نمونه‌های کلاس *علاوه بر* ابرکلاس به چه مقدار فضا نیاز دارند. برای دریافت اشاره‌گر به حافظه‌ی اختصاصی زیرکلاس که به این شیوه رزرو شده است، از :c:func:`PyObject_GetTypeData` استفاده کنید. برای :c:member:`!basicsize` منفی، پایتون در صورت نیاز پدینگ اضافه خواهد کرد تا نیازمندی‌های ترازبندیِ :c:member:`~PyTypeObject.tp_basicsize` را برآورده کند."
+
+#~ msgid "Array of :c:type:`PyType_Slot` structures. Terminated by the special slot value ``{0, NULL}``."
+#~ msgstr "آرایه‌ای از ساختارهای :c:type:`PyType_Slot`. با مقدار جایگاه ویژه‌ی ``{0, NULL}`` پایان می‌یابد."
+
+#~ msgid "Setting :c:data:`Py_tp_bases` or :c:data:`Py_tp_base` may be problematic on some platforms. To avoid issues, use the *bases* argument of :c:func:`PyType_FromSpecWithBases` instead."
+#~ msgstr "تنظیم :c:data:`Py_tp_bases` یا :c:data:`Py_tp_base` ممکن است روی برخی پلتفرم‌ها مشکل‌ساز باشد. برای پرهیز از مشکلات، به‌جای آن از آرگومان *bases* در :c:func:`PyType_FromSpecWithBases` استفاده کنید."
+
+#~ msgid "The desired value of the slot. In most cases, this is a pointer to a function."
+#~ msgstr "مقدار موردنظر جایگاه. در بیشتر موارد، این یک اشاره‌گر به تابع است."

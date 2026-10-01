@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 17:40+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -241,6 +241,11 @@ msgstr "پارامتر *directory* افزوده شد."
 msgid "The *directory* parameter accepts a :term:`path-like object`."
 msgstr "پارامتر *directory* یک :term:`path-like object` را می‌پذیرد."
 
+#, fuzzy
+#| msgid "Added the *directory* parameter."
+msgid "Added *extra_response_headers* parameter."
+msgstr "پارامتر *directory* افزوده شد."
+
 msgid "A lot of the work, such as parsing the request, is done by the base class :class:`BaseHTTPRequestHandler`.  This class implements the :func:`do_GET` and :func:`do_HEAD` functions."
 msgstr "بخش زیادی از کار، مانند تجزیه درخواست، توسط کلاس پایه :class:`BaseHTTPRequestHandler` انجام می‌شود. این کلاس توابع :func:`do_GET` و :func:`do_HEAD` را پیاده‌سازی می‌کند."
 
@@ -249,6 +254,9 @@ msgstr "موارد زیر به‌عنوان ویژگی‌های سطح کلاس 
 
 msgid "This will be ``\"SimpleHTTP/\" + __version__``, where ``__version__`` is defined at the module level."
 msgstr "این مقدار ``\"SimpleHTTP/\" + __version__`` خواهد بود، که ``__version__`` در سطح ماژول تعریف شده است."
+
+msgid "Specifies the Content-Type header value sent when the MIME type cannot be guessed from the file extension of the requested URL. By default, it is set to ``'application/octet-stream'``."
+msgstr ""
 
 msgid "Specifies the filenames that are treated as directory index pages."
 msgstr "نام پرونده‌هایی را مشخص می‌کند که به‌عنوان صفحات اندیس پوشه در نظر گرفته می‌شوند."
@@ -261,6 +269,12 @@ msgstr "یک دیکشنری که پسوندها را به انواع MIME نگا
 
 msgid "This dictionary is no longer filled with the default system mappings, but only contains overrides."
 msgstr "این دیکشنری دیگر با نگاشت‌های پیش‌فرض سیستم پر نمی‌شود، بلکه فقط شامل بازنویسی‌ها است."
+
+msgid "A sequence of ``(name, value)`` pairs containing user-defined extra HTTP response headers to add to each successful HTTP status 200 response. These headers are not included in other status code responses."
+msgstr ""
+
+msgid "Headers that the server sends automatically such as ``Content-Type`` will not be overwritten by :attr:`!extra_response_headers`."
+msgstr ""
 
 msgid "The :class:`SimpleHTTPRequestHandler` class defines the following methods:"
 msgstr "کلاس :class:`SimpleHTTPRequestHandler` متدهای زیر را تعریف می‌کند:"
@@ -279,6 +293,9 @@ msgstr "اگر درخواست به یک پرونده نگاشت شده باشد�
 
 msgid "A ``'Content-type:'`` header with the guessed content type is output, followed by a ``'Content-Length:'`` header with the file's size and a ``'Last-Modified:'`` header with the file's modification time."
 msgstr "یک سرآیند ``'Content-type:'`` با نوع محتوای حدس‌زده‌شده خروجی داده می‌شود و پس از آن، یک سرآیند ``'Content-Length:'`` با اندازه‌ی پرونده و یک سرآیند ``'Last-Modified:'`` با زمان تغییر پرونده خروجی داده می‌شوند."
+
+msgid "The instance attribute :attr:`extra_response_headers` is a sequence of ``(name, value)`` pairs containing user-defined extra response headers."
+msgstr ""
 
 msgid "Then follows a blank line signifying the end of the headers, and then the contents of the file are output."
 msgstr "سپس یک خط خالی می‌آید که پایان سرآیندها را نشان می‌دهد، و سپس محتوای پرونده خروجی داده می‌شود."
@@ -301,7 +318,9 @@ msgstr "نوع پرونده در *path* داده‌شده را حدس می‌ز�
 msgid "This returns a string of the form ``type/subtype``, usable for a MIME Content-type header."
 msgstr "این یک رشته به‌شکل ``type/subtype`` برمی‌گرداند که برای سرآیند MIME Content-type قابل استفاده است."
 
-msgid "The default implementation looks the file's extension up in :attr:`extensions_map`, falling back to :func:`mimetypes.guess_file_type` and then to ``'application/octet-stream'``."
+#, fuzzy
+#| msgid "The default implementation looks the file's extension up in :attr:`extensions_map`, falling back to :func:`mimetypes.guess_file_type` and then to ``'application/octet-stream'``."
+msgid "The default implementation looks the file's extension up in :attr:`extensions_map`, falling back to :func:`mimetypes.guess_file_type` and then to :attr:`default_content_type`."
 msgstr "پیاده‌سازی پیش‌فرض، پسوند پرونده را در :attr:`extensions_map` جست‌وجو می‌کند و در صورت نیافتن، به :func:`mimetypes.guess_file_type` و سپس به ``'application/octet-stream'`` رجوع می‌کند."
 
 msgid "Add :func:`mimetypes.guess_file_type` as a fallback."
@@ -335,36 +354,6 @@ msgstr ""
 
 msgid ":class:`SimpleHTTPRequestHandler` can also be subclassed to enhance behavior, such as using different index file names by overriding the class attribute :attr:`~SimpleHTTPRequestHandler.index_pages`."
 msgstr "همچنین می‌توان از :class:`SimpleHTTPRequestHandler` زیرکلاس ساخت تا رفتار آن بهبود یابد، مانند استفاده از نام‌های متفاوت برای پرونده‌های اندیس با بازنویسی صفت کلاس :attr:`~SimpleHTTPRequestHandler.index_pages`."
-
-msgid "This class is used to serve either files or output of CGI scripts from the current directory and below. Note that mapping HTTP hierarchic structure to local directory structure is exactly as in :class:`SimpleHTTPRequestHandler`."
-msgstr "این کلاس برای سرو کردن پرونده‌ها یا خروجی اسکریپت‌های CGI از پوشه جاری و زیرپوشه‌های آن استفاده می‌شود. توجه داشته باشید که نگاشت ساختار سلسله‌مراتبی HTTP به ساختار پوشه محلی دقیقاً مانند :class:`SimpleHTTPRequestHandler` است."
-
-msgid "CGI scripts run by the :class:`CGIHTTPRequestHandler` class cannot execute redirects (HTTP code 302), because code 200 (script output follows) is sent prior to execution of the CGI script.  This pre-empts the status code."
-msgstr "اسکریپت‌های CGI که توسط کلاس :class:`CGIHTTPRequestHandler` اجرا می‌شوند، نمی‌توانند تغییرمسیرها (redirects، کد HTTP ۳۰۲) را انجام دهند، زیرا کد ۲۰۰ (خروجی اسکریپت در ادامه می‌آید) پیش از اجرای اسکریپت CGI ارسال می‌شود. این موضوع مانع از ارسال کد وضعیت می‌شود."
-
-msgid "The class will however, run the CGI script, instead of serving it as a file, if it guesses it to be a CGI script.  Only directory-based CGI are used --- the other common server configuration is to treat special extensions as denoting CGI scripts."
-msgstr "با این حال، اگر این کلاس حدس بزند که آن یک اسکریپت CGI است، به‌جای ارائه آن به‌عنوان پرونده، اسکریپت CGI را اجرا می‌کند. تنها از CGIهای مبتنی بر پوشه استفاده می‌شود — پیکربندی رایج دیگر سرور این است که پسوندهای خاص را به‌عنوان نشان‌دهنده اسکریپت‌های CGI در نظر بگیرد."
-
-msgid "The :func:`~SimpleHTTPRequestHandler.do_GET` and :func:`~SimpleHTTPRequestHandler.do_HEAD` functions are modified to run CGI scripts and serve the output, instead of serving files, if the request leads to somewhere below the ``cgi_directories`` path."
-msgstr "توابع :func:`~SimpleHTTPRequestHandler.do_GET` و :func:`~SimpleHTTPRequestHandler.do_HEAD` تغییر داده شده‌اند تا در صورتی که درخواست به مکانی در زیر مسیر ``cgi_directories`` منجر شود، به‌جای ارائه پرونده‌ها، اسکریپت‌های CGI را اجرا کرده و خروجی را ارائه دهند."
-
-msgid "The :class:`CGIHTTPRequestHandler` defines the following data member:"
-msgstr "کلاس :class:`CGIHTTPRequestHandler` عضو داده‌ای زیر را تعریف می‌کند:"
-
-msgid "This defaults to ``['/cgi-bin', '/htbin']`` and describes directories to treat as containing CGI scripts."
-msgstr "مقدار پیش‌فرض این، ``['/cgi-bin', '/htbin']`` است و پوشه‌هایی را توصیف می‌کند که باید به‌عنوان حاوی اسکریپت‌های CGI در نظر گرفته شوند."
-
-msgid "The :class:`CGIHTTPRequestHandler` defines the following method:"
-msgstr "کلاس :class:`CGIHTTPRequestHandler` متد زیر را تعریف می‌کند:"
-
-msgid "This method serves the ``'POST'`` request type, only allowed for CGI scripts.  Error 501, \"Can only POST to CGI scripts\", is output when trying to POST to a non-CGI url."
-msgstr "این متد نوع درخواست ``'POST'`` را پاسخ می‌دهد و فقط برای اسکریپت‌های CGI مجاز است. هنگام تلاش برای POST به یک URL غیر CGI، خطای 501، «Can only POST to CGI scripts»، خروجی داده می‌شود."
-
-msgid "Note that CGI scripts will be run with UID of user nobody, for security reasons.  Problems with the CGI script will be translated to error 403."
-msgstr "توجه داشته باشید که اسکریپت‌های CGI به دلایل امنیتی با UID کاربر nobody اجرا می‌شوند. مشکلات اسکریپت CGI به خطای 403 تبدیل می‌شوند."
-
-msgid ":class:`CGIHTTPRequestHandler` is being removed in 3.15.  CGI has not been considered a good way to do things for well over a decade. This code has been unmaintained for a while now and sees very little practical use. Retaining it could lead to further :ref:`security considerations <http.server-security>`."
-msgstr ":class:`CGIHTTPRequestHandler` در 3.15 حذف می‌شود. CGI برای بیش از یک دهه به‌عنوان روش مناسبی برای انجام کارها در نظر گرفته نشده است. این کد مدتی است که نگهداری نمی‌شود و استفاده‌ی عملی بسیار کمی دارد. حفظ آن می‌تواند منجر به :ref:`ملاحظات امنیتی <http.server-security>` بیشتری شود."
 
 msgid "Command-line interface"
 msgstr "رابط خط فرمان"
@@ -405,17 +394,13 @@ msgstr "نسخه HTTP مورد انطباق سرور را مشخص می‌کند
 msgid "python -m http.server --protocol HTTP/1.1"
 msgstr "python -m http.server --protocol HTTP/1.1"
 
-msgid ":class:`CGIHTTPRequestHandler` can be enabled in the command line by passing the ``--cgi`` option::"
-msgstr ":class:`CGIHTTPRequestHandler` را می‌توان در خط فرمان با دادن گزینه‌ی ``--cgi`` فعال کرد::"
+msgid "Specifies the default Content-Type HTTP header used when the MIME type cannot be guessed from the URL's file extension. By default, the server uses ``'application/octet-stream'``:"
+msgstr ""
 
-msgid "python -m http.server --cgi"
-msgstr "python -m http.server --cgi"
-
-msgid ":mod:`!http.server` command line ``--cgi`` support is being removed because :class:`CGIHTTPRequestHandler` is being removed."
-msgstr "پشتیبانی از ``--cgi`` در خط فرمان :mod:`!http.server` در حال حذف شدن است، زیرا :class:`CGIHTTPRequestHandler` در حال حذف شدن است."
-
-msgid ":class:`CGIHTTPRequestHandler` and the ``--cgi`` command-line option are not intended for use by untrusted clients and may be vulnerable to exploitation. Always use within a secure environment."
-msgstr ":class:`CGIHTTPRequestHandler` و گزینه‌ی خط فرمان ``--cgi`` برای استفاده توسط کلاینت‌های غیرقابل‌اعتماد در نظر گرفته نشده‌اند و ممکن است در برابر سوءاستفاده آسیب‌پذیر باشند. همیشه درون یک محیط امن استفاده کنید."
+#, fuzzy
+#| msgid "python -m http.server --directory /tmp/"
+msgid "python -m http.server --content-type text/html"
+msgstr "python -m http.server --directory /tmp/"
 
 msgid "Specifies a TLS certificate chain for HTTPS connections:"
 msgstr "یک زنجیره‌ی گواهی TLS برای اتصال‌های HTTPS مشخص می‌کند:"
@@ -442,6 +427,9 @@ msgstr ""
 "       --tls-cert cert.pem \\\n"
 "       --tls-key key.pem \\\n"
 "       --tls-password-file password.txt"
+
+msgid "Specify an additional HTTP Response Header to send on successful HTTP 200 responses. Can be used multiple times to send additional custom response headers. Headers that are sent automatically by the server (for instance Content-Type) will not be overwritten by the server."
+msgstr ""
 
 msgid "Security considerations"
 msgstr "ملاحظات امنیتی"
@@ -481,3 +469,45 @@ msgstr "http.server"
 
 msgid "security"
 msgstr "امنیت"
+
+#~ msgid "This class is used to serve either files or output of CGI scripts from the current directory and below. Note that mapping HTTP hierarchic structure to local directory structure is exactly as in :class:`SimpleHTTPRequestHandler`."
+#~ msgstr "این کلاس برای سرو کردن پرونده‌ها یا خروجی اسکریپت‌های CGI از پوشه جاری و زیرپوشه‌های آن استفاده می‌شود. توجه داشته باشید که نگاشت ساختار سلسله‌مراتبی HTTP به ساختار پوشه محلی دقیقاً مانند :class:`SimpleHTTPRequestHandler` است."
+
+#~ msgid "CGI scripts run by the :class:`CGIHTTPRequestHandler` class cannot execute redirects (HTTP code 302), because code 200 (script output follows) is sent prior to execution of the CGI script.  This pre-empts the status code."
+#~ msgstr "اسکریپت‌های CGI که توسط کلاس :class:`CGIHTTPRequestHandler` اجرا می‌شوند، نمی‌توانند تغییرمسیرها (redirects، کد HTTP ۳۰۲) را انجام دهند، زیرا کد ۲۰۰ (خروجی اسکریپت در ادامه می‌آید) پیش از اجرای اسکریپت CGI ارسال می‌شود. این موضوع مانع از ارسال کد وضعیت می‌شود."
+
+#~ msgid "The class will however, run the CGI script, instead of serving it as a file, if it guesses it to be a CGI script.  Only directory-based CGI are used --- the other common server configuration is to treat special extensions as denoting CGI scripts."
+#~ msgstr "با این حال، اگر این کلاس حدس بزند که آن یک اسکریپت CGI است، به‌جای ارائه آن به‌عنوان پرونده، اسکریپت CGI را اجرا می‌کند. تنها از CGIهای مبتنی بر پوشه استفاده می‌شود — پیکربندی رایج دیگر سرور این است که پسوندهای خاص را به‌عنوان نشان‌دهنده اسکریپت‌های CGI در نظر بگیرد."
+
+#~ msgid "The :func:`~SimpleHTTPRequestHandler.do_GET` and :func:`~SimpleHTTPRequestHandler.do_HEAD` functions are modified to run CGI scripts and serve the output, instead of serving files, if the request leads to somewhere below the ``cgi_directories`` path."
+#~ msgstr "توابع :func:`~SimpleHTTPRequestHandler.do_GET` و :func:`~SimpleHTTPRequestHandler.do_HEAD` تغییر داده شده‌اند تا در صورتی که درخواست به مکانی در زیر مسیر ``cgi_directories`` منجر شود، به‌جای ارائه پرونده‌ها، اسکریپت‌های CGI را اجرا کرده و خروجی را ارائه دهند."
+
+#~ msgid "The :class:`CGIHTTPRequestHandler` defines the following data member:"
+#~ msgstr "کلاس :class:`CGIHTTPRequestHandler` عضو داده‌ای زیر را تعریف می‌کند:"
+
+#~ msgid "This defaults to ``['/cgi-bin', '/htbin']`` and describes directories to treat as containing CGI scripts."
+#~ msgstr "مقدار پیش‌فرض این، ``['/cgi-bin', '/htbin']`` است و پوشه‌هایی را توصیف می‌کند که باید به‌عنوان حاوی اسکریپت‌های CGI در نظر گرفته شوند."
+
+#~ msgid "The :class:`CGIHTTPRequestHandler` defines the following method:"
+#~ msgstr "کلاس :class:`CGIHTTPRequestHandler` متد زیر را تعریف می‌کند:"
+
+#~ msgid "This method serves the ``'POST'`` request type, only allowed for CGI scripts.  Error 501, \"Can only POST to CGI scripts\", is output when trying to POST to a non-CGI url."
+#~ msgstr "این متد نوع درخواست ``'POST'`` را پاسخ می‌دهد و فقط برای اسکریپت‌های CGI مجاز است. هنگام تلاش برای POST به یک URL غیر CGI، خطای 501، «Can only POST to CGI scripts»، خروجی داده می‌شود."
+
+#~ msgid "Note that CGI scripts will be run with UID of user nobody, for security reasons.  Problems with the CGI script will be translated to error 403."
+#~ msgstr "توجه داشته باشید که اسکریپت‌های CGI به دلایل امنیتی با UID کاربر nobody اجرا می‌شوند. مشکلات اسکریپت CGI به خطای 403 تبدیل می‌شوند."
+
+#~ msgid ":class:`CGIHTTPRequestHandler` is being removed in 3.15.  CGI has not been considered a good way to do things for well over a decade. This code has been unmaintained for a while now and sees very little practical use. Retaining it could lead to further :ref:`security considerations <http.server-security>`."
+#~ msgstr ":class:`CGIHTTPRequestHandler` در 3.15 حذف می‌شود. CGI برای بیش از یک دهه به‌عنوان روش مناسبی برای انجام کارها در نظر گرفته نشده است. این کد مدتی است که نگهداری نمی‌شود و استفاده‌ی عملی بسیار کمی دارد. حفظ آن می‌تواند منجر به :ref:`ملاحظات امنیتی <http.server-security>` بیشتری شود."
+
+#~ msgid ":class:`CGIHTTPRequestHandler` can be enabled in the command line by passing the ``--cgi`` option::"
+#~ msgstr ":class:`CGIHTTPRequestHandler` را می‌توان در خط فرمان با دادن گزینه‌ی ``--cgi`` فعال کرد::"
+
+#~ msgid "python -m http.server --cgi"
+#~ msgstr "python -m http.server --cgi"
+
+#~ msgid ":mod:`!http.server` command line ``--cgi`` support is being removed because :class:`CGIHTTPRequestHandler` is being removed."
+#~ msgstr "پشتیبانی از ``--cgi`` در خط فرمان :mod:`!http.server` در حال حذف شدن است، زیرا :class:`CGIHTTPRequestHandler` در حال حذف شدن است."
+
+#~ msgid ":class:`CGIHTTPRequestHandler` and the ``--cgi`` command-line option are not intended for use by untrusted clients and may be vulnerable to exploitation. Always use within a secure environment."
+#~ msgstr ":class:`CGIHTTPRequestHandler` و گزینه‌ی خط فرمان ``--cgi`` برای استفاده توسط کلاینت‌های غیرقابل‌اعتماد در نظر گرفته نشده‌اند و ممکن است در برابر سوءاستفاده آسیب‌پذیر باشند. همیشه درون یک محیط امن استفاده کنید."

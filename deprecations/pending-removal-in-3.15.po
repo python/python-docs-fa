@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2024-07-20 00:54+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -27,7 +27,9 @@ msgstr "در انتظار حذف در پایتون 3.15"
 msgid "The import system:"
 msgstr "سیستم ایمپورت:"
 
-msgid "Setting :attr:`~module.__cached__` on a module while failing to set :attr:`__spec__.cached <importlib.machinery.ModuleSpec.cached>` is deprecated. In Python 3.15, :attr:`!__cached__` will cease to be set or take into consideration by the import system or standard library. (:gh:`97879`)"
+#, fuzzy
+#| msgid "Setting :attr:`~module.__cached__` on a module while failing to set :attr:`__spec__.cached <importlib.machinery.ModuleSpec.cached>` is deprecated. In Python 3.15, :attr:`!__cached__` will cease to be set or take into consideration by the import system or standard library. (:gh:`97879`)"
+msgid "Setting ``__cached__`` on a module while failing to set :attr:`__spec__.cached <importlib.machinery.ModuleSpec.cached>` is deprecated. In Python 3.15, ``__cached__`` will cease to be set or take into consideration by the import system or standard library. (:gh:`97879`)"
 msgstr "تنظیم :attr:`~module.__cached__` روی یک ماژول در حالی که :attr:`__spec__.cached <importlib.machinery.ModuleSpec.cached>` تنظیم نشده باشد، منسوخ شده است. در پایتون 3.15، :attr:`!__cached__` دیگر توسط سیستم ایمپورت یا کتابخانه استاندارد تنظیم نمی‌شود یا در نظر گرفته نمی‌شود. (:gh:`97879`)"
 
 msgid "Setting :attr:`~module.__package__` on a module while failing to set :attr:`__spec__.parent <importlib.machinery.ModuleSpec.parent>` is deprecated. In Python 3.15, :attr:`!__package__` will cease to be set or take into consideration by the import system or standard library. (:gh:`97879`)"
@@ -42,7 +44,9 @@ msgstr "تابع مستندنشده‌ی :func:`!ctypes.SetPointerType` از پ�
 msgid ":mod:`http.server`:"
 msgstr ":mod:`http.server`:"
 
-msgid "The obsolete and rarely used :class:`~http.server.CGIHTTPRequestHandler` has been deprecated since Python 3.13. No direct replacement exists. *Anything* is better than CGI to interface a web server with a request handler."
+#, fuzzy
+#| msgid "The obsolete and rarely used :class:`~http.server.CGIHTTPRequestHandler` has been deprecated since Python 3.13. No direct replacement exists. *Anything* is better than CGI to interface a web server with a request handler."
+msgid "The obsolete and rarely used :class:`!CGIHTTPRequestHandler` has been deprecated since Python 3.13. No direct replacement exists. *Anything* is better than CGI to interface a web server with a request handler."
 msgstr "کلاس منسوخ و به‌ندرت استفاده‌شده :class:`~http.server.CGIHTTPRequestHandler` از پایتون 3.13 از رده خارج شده است. هیچ جایگزین مستقیمی وجود ندارد. برای برقراری رابط بین وب‌سرور و هندلر درخواست، *هر چیزی* بهتر از CGI است."
 
 msgid "The :option:`!--cgi` flag to the :program:`python -m http.server` command-line interface has been deprecated since Python 3.13."
@@ -57,13 +61,17 @@ msgstr "متد ``load_module()``: به‌جای آن از ``exec_module()`` اس
 msgid ":mod:`pathlib`:"
 msgstr ":mod:`pathlib`:"
 
-msgid ":meth:`.PurePath.is_reserved` has been deprecated since Python 3.13. Use :func:`os.path.isreserved` to detect reserved paths on Windows."
+#, fuzzy
+#| msgid ":meth:`.PurePath.is_reserved` has been deprecated since Python 3.13. Use :func:`os.path.isreserved` to detect reserved paths on Windows."
+msgid ":meth:`!.PurePath.is_reserved` has been deprecated since Python 3.13. Use :func:`os.path.isreserved` to detect reserved paths on Windows."
 msgstr ":meth:`.PurePath.is_reserved` از پایتون 3.13 منسوخ شده است. برای تشخیص مسیرهای رزرو‌شده در ویندوز از :func:`os.path.isreserved` استفاده کنید."
 
 msgid ":mod:`platform`:"
 msgstr ":mod:`platform`:"
 
-msgid ":func:`~platform.java_ver` has been deprecated since Python 3.13. This function is only useful for Jython support, has a confusing API, and is largely untested."
+#, fuzzy
+#| msgid ":func:`~platform.java_ver` has been deprecated since Python 3.13. This function is only useful for Jython support, has a confusing API, and is largely untested."
+msgid ":func:`!platform.java_ver` has been deprecated since Python 3.13. This function is only useful for Jython support, has a confusing API, and is largely untested."
 msgstr ":func:`~platform.java_ver` از پایتون 3.13 منسوخ شده است. این تابع تنها برای پشتیبانی از Jython مفید است، API گیج‌کننده‌ای دارد و عمدتاً آزمون‌نشده است."
 
 msgid ":mod:`sysconfig`:"
@@ -81,7 +89,9 @@ msgstr ":func:`~threading.RLock` در پایتون 3.15 هیچ آرگومانی 
 msgid ":mod:`types`:"
 msgstr ":mod:`types`:"
 
-msgid ":class:`types.CodeType`: Accessing :attr:`~codeobject.co_lnotab` was deprecated in :pep:`626` since 3.10 and was planned to be removed in 3.12, but it only got a proper :exc:`DeprecationWarning` in 3.12. May be removed in 3.15. (Contributed by Nikita Sobolev in :gh:`101866`.)"
+#, fuzzy
+#| msgid ":class:`types.CodeType`: Accessing :attr:`~codeobject.co_lnotab` was deprecated in :pep:`626` since 3.10 and was planned to be removed in 3.12, but it only got a proper :exc:`DeprecationWarning` in 3.12. May be removed in 3.15. (Contributed by Nikita Sobolev in :gh:`101866`.)"
+msgid ":class:`types.CodeType`: Accessing :attr:`!codeobject.co_lnotab` was deprecated in :pep:`626` since 3.10 and was planned to be removed in 3.12, but it only got a proper :exc:`DeprecationWarning` in 3.12. May be removed in 3.15. (Contributed by Nikita Sobolev in :gh:`101866`.)"
 msgstr ":class:`types.CodeType`: دسترسی به :attr:`~codeobject.co_lnotab` در :pep:`626` از نسخه 3.10 منسوخ شد و قرار بود در 3.12 حذف شود، اما تنها در 3.12 یک :exc:`DeprecationWarning` مناسب دریافت کرد. ممکن است در 3.15 حذف شود. (مشارکت‌شده توسط Nikita Sobolev در :gh:`101866`.)"
 
 msgid ":mod:`typing`:"
@@ -93,17 +103,26 @@ msgstr "سینتکس مستندنشده‌ی آرگومان کلیدواژه‌�
 msgid "When using the functional syntax of :class:`~typing.TypedDict`\\s, failing to pass a value to the *fields* parameter (``TD = TypedDict(\"TD\")``) or passing ``None`` (``TD = TypedDict(\"TD\", None)``) has been deprecated since Python 3.13. Use ``class TD(TypedDict): pass`` or ``TD = TypedDict(\"TD\", {})`` to create a TypedDict with zero field."
 msgstr "هنگام استفاده از سینتکس تابعی :class:`~typing.TypedDict`\\s، عدم گذر دادن مقدار به پارامتر *fields* (``TD = TypedDict(\"TD\")``) یا گذر دادن ``None`` (``TD = TypedDict(\"TD\", None)``) از پایتون 3.13 منسوخ شده است. برای ایجاد یک TypedDict بدون هیچ فیلدی، از ``class TD(TypedDict): pass`` یا ``TD = TypedDict(\"TD\", {})`` استفاده کنید."
 
-msgid "The :deco:`typing.no_type_check_decorator` decorator function has been deprecated since Python 3.13. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker."
+#, fuzzy
+#| msgid "The :deco:`typing.no_type_check_decorator` decorator function has been deprecated since Python 3.13. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker."
+msgid "The :deco:`!typing.no_type_check_decorator` decorator function has been deprecated since Python 3.13. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker."
 msgstr "تابع دکوراتور :deco:`typing.no_type_check_decorator` از پایتون 3.13 منسوخ شده است. پس از هشت سال حضور در ماژول :mod:`typing`، هنوز توسط هیچ بررسی‌گر نوع بزرگی پشتیبانی نشده است."
+
+msgid ":mod:`!sre_compile`, :mod:`!sre_constants` and :mod:`!sre_parse` modules."
+msgstr ""
 
 msgid ":mod:`wave`:"
 msgstr ":mod:`wave`:"
 
-msgid "The :meth:`~wave.Wave_read.getmark`, :meth:`!setmark`, and :meth:`~wave.Wave_read.getmarkers` methods of the :class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes have been deprecated since Python 3.13."
+#, fuzzy
+#| msgid "The :meth:`~wave.Wave_read.getmark`, :meth:`!setmark`, and :meth:`~wave.Wave_read.getmarkers` methods of the :class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes have been deprecated since Python 3.13."
+msgid "The ``getmark()``, ``setmark()`` and ``getmarkers()`` methods of the :class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes have been deprecated since Python 3.13."
 msgstr "متد‌های :meth:`~wave.Wave_read.getmark`، :meth:`!setmark` و :meth:`~wave.Wave_read.getmarkers` در کلاس‌های :class:`~wave.Wave_read` و :class:`~wave.Wave_write` از پایتون 3.13 منسوخ شده‌اند."
 
 msgid ":mod:`zipimport`:"
 msgstr ":mod:`zipimport`:"
 
-msgid ":meth:`~zipimport.zipimporter.load_module` has been deprecated since Python 3.10. Use :meth:`~zipimport.zipimporter.exec_module` instead. (Contributed by Jiahao Li in :gh:`125746`.)"
+#, fuzzy
+#| msgid ":meth:`~zipimport.zipimporter.load_module` has been deprecated since Python 3.10. Use :meth:`~zipimport.zipimporter.exec_module` instead. (Contributed by Jiahao Li in :gh:`125746`.)"
+msgid ":meth:`!zipimport.zipimporter.load_module` has been deprecated since Python 3.10. Use :meth:`~zipimport.zipimporter.exec_module` instead. (:gh:`125746`.)"
 msgstr ":meth:`~zipimport.zipimporter.load_module` از پایتون 3.10 منسوخ شده است. به جای آن از :meth:`~zipimport.zipimporter.exec_module` استفاده کنید. (مشارکت‌شده توسط Jiahao Li در :gh:`125746`.)"

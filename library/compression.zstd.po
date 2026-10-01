@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-15 12:11+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: none\n"
@@ -197,8 +197,16 @@ msgstr "این کلاس، برخلاف تابع :func:`decompress` و کلاس :
 msgid "Decompress *data* (a :term:`bytes-like object`), returning uncompressed data as bytes. Some of *data* may be buffered internally, for use in later calls to :meth:`!decompress`. The returned data should be concatenated with the output of any previous calls to :meth:`!decompress`."
 msgstr "*data* (یک :term:`شیء شبه‌بایت <bytes-like object>`) را واگشایی می‌کند و داده‌ی فشرده‌نشده را به‌صورت بایت برمی‌گرداند. ممکن است بخشی از *data* به‌صورت داخلی در حافظه‌ی موقت ذخیره شود تا در فراخوانی‌های بعدی :meth:`!decompress` استفاده شود. داده‌ی برگردانده‌شده باید با خروجی هر یک از فراخوانی‌های قبلی :meth:`!decompress` الحاق شود."
 
-msgid "If *max_length* is non-negative, the method returns at most *max_length* bytes of decompressed data. If this limit is reached and further output can be produced, the :attr:`~.needs_input` attribute will be set to ``False``. In this case, the next call to :meth:`~.decompress` may provide *data* as ``b''`` to obtain more of the output."
+#, fuzzy
+#| msgid "If *max_length* is non-negative, the method returns at most *max_length* bytes of decompressed data. If this limit is reached and further output can be produced, the :attr:`~.needs_input` attribute will be set to ``False``. In this case, the next call to :meth:`~.decompress` may provide *data* as ``b''`` to obtain more of the output."
+msgid "If *max_length* is non-negative, the method returns at most *max_length* bytes of decompressed data. If this limit is reached and further output can be produced (or EOF is reached), the :attr:`~.needs_input` attribute will be set to ``False``. In this case, the next call to :meth:`~.decompress` may provide *data* as ``b''`` to obtain more of the output. The full content can thus be read like::"
 msgstr "اگر *max_length* نامنفی باشد، این متد حداکثر *max_length* بایت از داده‌ی خارج‌شده از حالت فشرده را برمی‌گرداند. اگر این حد حاصل شود و امکان تولید خروجی بیشتر وجود داشته باشد، ویژگی :attr:`~.needs_input` روی ``False`` تنظیم می‌شود. در این حالت، در فراخوانی بعدی :meth:`~.decompress` می‌توان *data* را به‌صورت ``b''`` ارائه کرد تا بخش بیشتری از خروجی به دست آید."
+
+msgid ""
+"process_output(d.decompress(data, max_length))\n"
+"while not d.eof and not d.needs_input:\n"
+"    process_output(d.decompress(b\"\", max_length))"
+msgstr ""
 
 msgid "If all of the input data was decompressed and returned (either because this was less than *max_length* bytes, or because *max_length* was negative), the :attr:`~.needs_input` attribute will be set to ``True``."
 msgstr "اگر تمام داده‌های ورودی واگشایی و برگردانده شده باشند (خواه به این دلیل که کمتر از *max_length* بایت بودند، خواه به این دلیل که *max_length* منفی بود)، ویژگی :attr:`~.needs_input` روی ``True`` تنظیم خواهد شد."

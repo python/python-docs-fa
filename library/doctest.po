@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 19:32+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -1065,7 +1065,9 @@ msgstr "دو تابع اصلی برای ایجاد نمونه‌های :class:`u
 msgid "Convert doctest tests from one or more text files to a :class:`unittest.TestSuite`."
 msgstr "تبدیل آزمون‌های doctest از یک یا چند پرونده‌ی متنی به یک :class:`unittest.TestSuite`."
 
-msgid "The returned :class:`unittest.TestSuite` is to be run by the unittest framework and runs the interactive examples in each file.  If an example in any file fails, then the synthesized unit test fails, and a :exc:`~unittest.TestCase.failureException` exception is raised showing the name of the file containing the test and a (sometimes approximate) line number.  If all the examples in a file are skipped, then the synthesized unit test is also marked as skipped."
+#, fuzzy
+#| msgid "The returned :class:`unittest.TestSuite` is to be run by the unittest framework and runs the interactive examples in each file.  If an example in any file fails, then the synthesized unit test fails, and a :exc:`~unittest.TestCase.failureException` exception is raised showing the name of the file containing the test and a (sometimes approximate) line number.  If all the examples in a file are skipped, then the synthesized unit test is also marked as skipped."
+msgid "The returned :class:`unittest.TestSuite` is to be run by the unittest framework and runs the interactive examples in each file. Each file is run as a separate unit test, and each example in a file is run as a :ref:`subtest <subtests>`. If any example in a file fails, then the synthesized unit test fails. The traceback for failure or error contains the name of the file containing the test and a (sometimes approximate) line number. If all the examples in a file are skipped, then the synthesized unit test is also marked as skipped."
 msgstr ":class:`unittest.TestSuite` بازگشتی برای اجرا توسط چارچوب unittest در نظر گرفته شده است و مثال‌های تعاملی در هر پرونده را اجرا می‌کند. اگر مثالی در هر پرونده‌ای شکست بخورد، آزمون واحد ساخته‌شده شکست می‌خورد و استثنای :exc:`~unittest.TestCase.failureException` پرتاب می‌شود که نام پرونده حاوی آزمون و شماره سطری (گاهی تقریبی) را نشان می‌دهد. اگر تمام مثال‌های یک پرونده رد شده باشند، آزمون واحد ساخته‌شده نیز به‌عنوان ردشده علامت‌گذاری می‌شود."
 
 msgid "Pass one or more paths (as strings) to text files to be examined."
@@ -1101,10 +1103,15 @@ msgstr "آرگومان اختیاری *optionflags*، که با OR کردن پر
 msgid "The global ``__file__`` is added to the globals provided to doctests loaded from a text file using :func:`DocFileSuite`."
 msgstr "متغیر سراسری ``__file__`` به متغیرهای سراسری ارائه‌شده به doctestهایی که از یک پرونده متنی با استفاده از :func:`DocFileSuite` بارگذاری می‌شوند، افزوده می‌شود."
 
+msgid "Run each example as a :ref:`subtest <subtests>`."
+msgstr ""
+
 msgid "Convert doctest tests for a module to a :class:`unittest.TestSuite`."
 msgstr "تبدیل آزمون‌های doctest یک ماژول به :class:`unittest.TestSuite`."
 
-msgid "The returned :class:`unittest.TestSuite` is to be run by the unittest framework and runs each doctest in the module. Each docstring is run as a separate unit test. If any of the doctests fail, then the synthesized unit test fails, and a :exc:`unittest.TestCase.failureException` exception is raised showing the name of the file containing the test and a (sometimes approximate) line number.  If all the examples in a docstring are skipped, then the"
+#, fuzzy
+#| msgid "The returned :class:`unittest.TestSuite` is to be run by the unittest framework and runs each doctest in the module. Each docstring is run as a separate unit test. If any of the doctests fail, then the synthesized unit test fails, and a :exc:`unittest.TestCase.failureException` exception is raised showing the name of the file containing the test and a (sometimes approximate) line number.  If all the examples in a docstring are skipped, then the"
+msgid "The returned :class:`unittest.TestSuite` is to be run by the unittest framework and runs each doctest in the module. Each docstring is run as a separate unit test, and each example in a docstring is run as a :ref:`subtest <subtests>`. If any of the doctests fail, then the synthesized unit test fails. The traceback for failure or error contains the name of the file containing the test and a (sometimes approximate) line number. If all the examples in a docstring are skipped, then the synthesized unit test is also marked as skipped."
 msgstr ":class:`unittest.TestSuite` برگردانده‌شده برای اجرا توسط چارچوب unittest در نظر گرفته شده است و هر doctest را در ماژول اجرا می‌کند. هر رشته مستند به‌عنوان یک آزمون واحد جداگانه اجرا می‌شود. اگر هر یک از doctestها شکست بخورد، آزمون واحد ساخته‌شده شکست می‌خورد و یک استثنای :exc:`unittest.TestCase.failureException` پرتاب می‌شود که نام پرونده حاوی آزمون و شماره سطری (گاهی تقریبی) را نشان می‌دهد.  اگر همه‌ی مثال‌های یک رشته مستند رد شوند، آنگاه"
 
 msgid "Optional argument *module* provides the module to be tested.  It can be a module object or a (possibly dotted) module name.  If not specified, the module calling this function is used."
@@ -1348,7 +1355,9 @@ msgstr "یک کلاس پردازشی که برای اجرا و صحت‌سنجی
 msgid "The comparison between expected outputs and actual outputs is done by an :class:`OutputChecker`.  This comparison may be customized with a number of option flags; see section :ref:`doctest-options` for more information.  If the option flags are insufficient, then the comparison may also be customized by passing a subclass of :class:`!OutputChecker` to the constructor."
 msgstr "مقایسه بین خروجی‌های مورد انتظار و خروجی‌های واقعی توسط یک :class:`OutputChecker` انجام می‌شود. این مقایسه می‌تواند با تعدادی پرچم گزینه سفارشی‌سازی شود؛ برای اطلاعات بیشتر بخش :ref:`doctest-options` را ببینید. اگر پرچم‌های گزینه کافی نباشند، این مقایسه همچنین می‌تواند با ارسال یک زیرکلاس از :class:`!OutputChecker` به سازنده سفارشی‌سازی شود."
 
-msgid "The test runner's display output can be controlled in two ways. First, an output function can be passed to :meth:`run`; this function will be called with strings that should be displayed.  It defaults to ``sys.stdout.write``.  If capturing the output is not sufficient, then the display output can be also customized by subclassing DocTestRunner, and overriding the methods :meth:`report_start`, :meth:`report_success`, :meth:`report_unexpected_exception`, and :meth:`report_failure`."
+#, fuzzy
+#| msgid "The test runner's display output can be controlled in two ways. First, an output function can be passed to :meth:`run`; this function will be called with strings that should be displayed.  It defaults to ``sys.stdout.write``.  If capturing the output is not sufficient, then the display output can be also customized by subclassing DocTestRunner, and overriding the methods :meth:`report_start`, :meth:`report_success`, :meth:`report_unexpected_exception`, and :meth:`report_failure`."
+msgid "The test runner's display output can be controlled in two ways. First, an output function can be passed to :meth:`run`; this function will be called with strings that should be displayed.  It defaults to ``sys.stdout.write``.  If capturing the output is not sufficient, then the display output can be also customized by subclassing DocTestRunner, and overriding the methods :meth:`report_skip`, :meth:`report_start`, :meth:`report_success`, :meth:`report_unexpected_exception`, and :meth:`report_failure`."
 msgstr "خروجی نمایشی اجراکننده‌ی آزمون را می‌توان به دو روش کنترل کرد. نخست، می‌توان یک تابع خروجی به :meth:`run` ارسال کرد؛ این تابع با رشته‌هایی که باید نمایش داده شوند فراخوانی می‌شود. مقدار پیش‌فرض آن ``sys.stdout.write`` است. اگر گرفتن خروجی کافی نباشد، می‌توان خروجی نمایشی را نیز با ایجاد زیرکلاس از DocTestRunner و بازنویسی متدهای :meth:`report_start`، :meth:`report_success`، :meth:`report_unexpected_exception` و :meth:`report_failure` سفارشی‌سازی کرد."
 
 msgid "The optional keyword argument *checker* specifies the :class:`OutputChecker` object (or drop-in replacement) that should be used to compare the expected outputs to the actual outputs of doctest examples."
@@ -1366,11 +1375,16 @@ msgstr "اجراکننده آزمون آمار را گردآوری می‌کند
 msgid ":class:`DocTestRunner` defines the following methods:"
 msgstr ":class:`DocTestRunner` متدهای زیر را تعریف می‌کند:"
 
-msgid "Report that the test runner is about to process the given example. This method is provided to allow subclasses of :class:`DocTestRunner` to customize their output; it should not be called directly."
-msgstr "گزارش می‌دهد که اجراکننده‌ی آزمون در آستانه‌ی پردازش مثال داده‌شده است. این متد ارائه شده است تا زیرکلاس‌های :class:`DocTestRunner` بتوانند خروجی خود را سفارشی‌سازی کنند؛ نباید مستقیماً فراخوانی شود."
+#, fuzzy
+#| msgid "Report that the given example failed.  This method is provided to allow subclasses of :class:`DocTestRunner` to customize their output; it should not be called directly."
+msgid "Report that the given example was skipped.  This method is provided to allow subclasses of :class:`DocTestRunner` to customize their output; it should not be called directly."
+msgstr "گزارش می‌دهد که مثال داده‌شده شکست خورده است. این متد ارائه شده است تا زیرکلاس‌های :class:`DocTestRunner` بتوانند خروجی خود را سفارشی کنند؛ نباید به‌صورت مستقیم فراخوانی شود."
 
 msgid "*example* is the example about to be processed.  *test* is the test containing *example*.  *out* is the output function that was passed to :meth:`DocTestRunner.run`."
 msgstr "*example* مثالی است که در آستانه‌ی پردازش قرار دارد.  *test* آزمونی است که شامل *example* می‌شود.  *out* تابع خروجی است که به :meth:`DocTestRunner.run` پاس داده شده است."
+
+msgid "Report that the test runner is about to process the given example. This method is provided to allow subclasses of :class:`DocTestRunner` to customize their output; it should not be called directly."
+msgstr "گزارش می‌دهد که اجراکننده‌ی آزمون در آستانه‌ی پردازش مثال داده‌شده است. این متد ارائه شده است تا زیرکلاس‌های :class:`DocTestRunner` بتوانند خروجی خود را سفارشی‌سازی کنند؛ نباید مستقیماً فراخوانی شود."
 
 msgid "Report that the given example ran successfully.  This method is provided to allow subclasses of :class:`DocTestRunner` to customize their output; it should not be called directly."
 msgstr "گزارش می‌دهد که مثال داده‌شده با موفقیت اجرا شده است. این متد ارائه شده است تا زیرکلاس‌های :class:`DocTestRunner` بتوانند خروجی خود را سفارشی‌سازی کنند؛ نباید مستقیماً فراخوانی شود."

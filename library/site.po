@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2021-06-28 01:13+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -32,7 +32,9 @@ msgstr "**کد منبع:** :source:`Lib/site.py`"
 msgid "**This module is automatically imported during initialization.** The automatic import can be suppressed using the interpreter's :option:`-S` option."
 msgstr "این ماژول در حین راه‌اندازی به‌طور خودکار ایمپورت می‌شود. می‌توان با استفاده از گزینه‌ی :option:`-S` مفسر، از ایمپورت خودکار جلوگیری کرد."
 
-msgid "Importing this module normally appends site-specific paths to the module search path and adds :ref:`callables <site-consts>`, including :func:`help` to the built-in namespace. However, Python startup option :option:`-S` blocks this and this module can be safely imported with no automatic modifications to the module search path or additions to the builtins.  To explicitly trigger the usual site-specific additions, call the :func:`main` function."
+#, fuzzy
+#| msgid "Importing this module normally appends site-specific paths to the module search path and adds :ref:`callables <site-consts>`, including :func:`help` to the built-in namespace. However, Python startup option :option:`-S` blocks this and this module can be safely imported with no automatic modifications to the module search path or additions to the builtins.  To explicitly trigger the usual site-specific additions, call the :func:`main` function."
+msgid "Importing this module normally appends site-specific paths to the module search path and adds :ref:`callables <site-consts>`, including :func:`help` to the built-in namespace. However, Python startup option :option:`-S` blocks this, and this module can be safely imported with no automatic modifications to the module search path or additions to the builtins.  To explicitly trigger the usual site-specific additions, call the :func:`main` function."
 msgstr "ایمپورت این ماژول معمولاً مسیرهای مختص سایت را به مسیر جستجوی ماژول اضافه می‌کند و :ref:`callables <site-consts>`، از جمله :func:`help`، را به فضای نام توکار می‌افزاید. با این حال، گزینه‌ی راه‌اندازی پایتون :option:`-S` این را مسدود می‌کند و می‌توان این ماژول را به‌صورت امن، بدون هیچ‌گونه تغییر خودکار در مسیر جستجوی ماژول یا افزودن موارد به توکارها، ایمپورت کرد. برای فعال‌سازی صریح افزودن‌های معمول مختص سایت، تابع :func:`main` را فراخوانی کنید."
 
 msgid "Importing the module used to trigger paths manipulation even when using :option:`-S`."
@@ -50,19 +52,82 @@ msgstr "در یونیکس، نصب‌های پایتون :term:`نخ‌آزاد 
 msgid ":mod:`!site` is no longer responsible for updating :data:`sys.prefix` and :data:`sys.exec_prefix` on :ref:`sys-path-init-virtual-environments`. This is now done during the :ref:`path initialization <sys-path-init>`. As a result, under :ref:`sys-path-init-virtual-environments`, :data:`sys.prefix` and :data:`sys.exec_prefix` no longer depend on the :mod:`!site` initialization, and are therefore unaffected by :option:`-S`."
 msgstr ":mod:`!site` دیگر مسئول به‌روزرسانی :data:`sys.prefix` و :data:`sys.exec_prefix` در :ref:`sys-path-init-virtual-environments` نیست. این کار اکنون در حین :ref:`مقداردهی اولیه مسیر <sys-path-init>` انجام می‌شود. در نتیجه، در :ref:`sys-path-init-virtual-environments`، :data:`sys.prefix` و :data:`sys.exec_prefix` دیگر به مقداردهی اولیه :mod:`!site` وابسته نیستند و بنابراین تحت تأثیر :option:`-S` قرار نمی‌گیرند."
 
-msgid "When running under a :ref:`virtual environment <sys-path-init-virtual-environments>`, the ``pyvenv.cfg`` file in :data:`sys.prefix` is checked for site-specific configurations. If the ``include-system-site-packages`` key exists and is set to ``true`` (case-insensitive), the system-level prefixes will be searched for site-packages, otherwise they won't."
+#, fuzzy
+#| msgid "When running under a :ref:`virtual environment <sys-path-init-virtual-environments>`, the ``pyvenv.cfg`` file in :data:`sys.prefix` is checked for site-specific configurations. If the ``include-system-site-packages`` key exists and is set to ``true`` (case-insensitive), the system-level prefixes will be searched for site-packages, otherwise they won't."
+msgid "When running under a :ref:`virtual environment <sys-path-init-virtual-environments>`, the ``pyvenv.cfg`` file in :data:`sys.prefix` is checked for site-specific configurations. If the ``include-system-site-packages`` key exists and is set to ``true`` (case-insensitive), the system-level prefixes will be searched for site-packages, otherwise they won't.  If the system-level prefixes are not searched then the user site prefixes are also implicitly not searched for site-packages."
 msgstr "هنگام اجرا در یک :ref:`محیط مجازی <sys-path-init-virtual-environments>`، پرونده ``pyvenv.cfg`` در :data:`sys.prefix` از نظر پیکربندی‌های خاص سایت بررسی می‌شود. اگر کلید ``include-system-site-packages`` وجود داشته باشد و روی ``true`` تنظیم شده باشد (بدون حساسیت به بزرگی و کوچکی حروف)، پیشوندهای سطح سیستم برای site-packages جستجو خواهند شد، در غیر این صورت جستجو نخواهند شد."
 
-msgid "A path configuration file is a file whose name has the form :file:`{name}.pth` and exists in one of the four directories mentioned above; its contents are additional items (one per line) to be added to ``sys.path``.  Non-existing items are never added to ``sys.path``, and no check is made that the item refers to a directory rather than a file.  No item is added to ``sys.path`` more than once.  Blank lines and lines beginning with ``#`` are skipped.  Lines starting with ``import`` (followed by space or tab) are executed."
+msgid "The :mod:`!site` module recognizes two startup configuration files of the form :file:`{name}.pth` for path configurations, and :file:`{name}.start` for pre-first-line code execution.  Both files can exist in one of the four directories mentioned above.  Within each directory, these files are sorted alphabetically by filename, then parsed in sorted order."
+msgstr ""
+
+msgid "Path extensions (:file:`.pth` files)"
+msgstr ""
+
+#, fuzzy
+#| msgid "A path configuration file is a file whose name has the form :file:`{name}.pth` and exists in one of the four directories mentioned above; its contents are additional items (one per line) to be added to ``sys.path``.  Non-existing items are never added to ``sys.path``, and no check is made that the item refers to a directory rather than a file.  No item is added to ``sys.path`` more than once.  Blank lines and lines beginning with ``#`` are skipped.  Lines starting with ``import`` (followed by space or tab) are executed."
+msgid ":file:`{name}.pth` contains additional items (one per line) to be appended to ``sys.path``.  Items that name non-existing directories are never added to ``sys.path``, and no check is made that the item refers to a directory rather than a file.  No item is added to ``sys.path`` more than once.  Blank lines and lines beginning with ``#`` are skipped."
 msgstr "پرونده پیکربندی مسیر پرونده‌ای است که نام آن به شکل :file:`{name}.pth` است و در یکی از چهار پوشه‌ی ذکرشده در بالا وجود دارد؛ محتویات آن شامل آیتم‌های اضافی (هر کدام در یک خط) برای اضافه شدن به ``sys.path`` است. آیتم‌های ناموجود هرگز به ``sys.path`` اضافه نمی‌شوند و هیچ بررسی‌ای انجام نمی‌شود که آیتم به یک پوشه اشاره می‌کند، نه یک پرونده. هیچ آیتمی بیش از یک بار به ``sys.path`` اضافه نمی‌شود. سطرهای خالی و سطرهایی که با ``#`` شروع می‌شوند، نادیده گرفته می‌شوند. سطرهایی که با ``import`` شروع می‌شوند (و پس از آن یک فاصله یا tab آمده باشد) اجرا می‌شوند."
 
-msgid "An executable line in a :file:`.pth` file is run at every Python startup, regardless of whether a particular module is actually going to be used. Its impact should thus be kept to a minimum. The primary intended purpose of executable lines is to make the corresponding module(s) importable (load 3rd-party import hooks, adjust :envvar:`PATH` etc). Any other initialization is supposed to be done upon a module's actual import, if and when it happens. Limiting a code chunk to a single line is a deliberate measure to discourage putting anything more complex here."
-msgstr "یک خط قابل اجرا در پرونده :file:`.pth` در هر بار راه‌اندازی پایتون اجرا می‌شود، صرف‌نظر از اینکه آیا ماژول خاصی واقعاً استفاده خواهد شد یا خیر. بنابراین باید تأثیر آن در حداقل نگه‌داشته شود. هدف اصلی مورد نظر برای سطرهای قابل اجرا، قابل ایمپورت کردن ماژول(های) مربوطه است (بارگذاری قلاب‌های ایمپورت شخص ثالث، تنظیم :envvar:`PATH` و غیره). هرگونه مقداردهی اولیه دیگر باید هنگام ایمپورت واقعی ماژول انجام شود، اگر و هرگاه رخ دهد. محدود کردن یک قطعه کد به یک خط، تدبیری عمدی برای منصرف کردن از قرار دادن هر چیز پیچیده‌تر در اینجا است."
+msgid "For backward compatibility, lines starting with ``import`` (followed by space or tab) are executed with :func:`exec`."
+msgstr ""
 
 msgid "The :file:`.pth` files are now decoded by UTF-8 at first and then by the :term:`locale encoding` if it fails."
 msgstr "پرونده‌های :file:`.pth` اکنون ابتدا با UTF-8 کدگشایی می‌شوند و در صورت شکست، با :term:`locale encoding` کدگشایی می‌شوند."
 
-msgid "For example, suppose ``sys.prefix`` and ``sys.exec_prefix`` are set to :file:`/usr/local`.  The Python X.Y library is then installed in :file:`/usr/local/lib/python{X.Y}`.  Suppose this has a subdirectory :file:`/usr/local/lib/python{X.Y}/site-packages` with three subsubdirectories, :file:`foo`, :file:`bar` and :file:`spam`, and two path configuration files, :file:`foo.pth` and :file:`bar.pth`.  Assume :file:`foo.pth` contains the following::"
+msgid ":file:`.pth` file lines starting with ``import`` are deprecated.  During the deprecation period, such lines are still executed (except in the case below), but a diagnostic message is emitted only when the :option:`-v` flag is given."
+msgstr ""
+
+msgid "``import`` lines in :file:`{name}.pth` are silently ignored when a :ref:`matching <site-start-files>` :file:`{name}.start` file exists."
+msgstr ""
+
+msgid "Errors on individual lines no longer abort processing of the rest of the file.  Each error is reported and the remaining lines continue to be processed."
+msgstr ""
+
+msgid "Decoding :file:`{name}.pth` files in any encoding other than ``utf-8-sig`` is deprecated in Python 3.15, and support for decoding from the locale encoding will be removed in Python 3.20."
+msgstr ""
+
+msgid "``import`` lines in :file:`{name}.pth` files are deprecated and will be silently ignored in Python 3.18 and 3.19.  In Python 3.20 a warning will be produced for ``import`` lines in :file:`{name}.pth` files."
+msgstr ""
+
+msgid "Startup entry points (:file:`.start` files)"
+msgstr ""
+
+msgid "A startup entry point file is a file whose name has the form :file:`{name}.start` and exists in one of the site-packages directories described above.  Each file specifies entry points to be called during interpreter startup, using the ``pkg.mod:callable`` syntax understood by :func:`pkgutil.resolve_name`."
+msgstr ""
+
+msgid "Each non-blank line that does not begin with ``#`` must contain an entry point reference in the form ``pkg.mod:callable``.  The colon and callable portion are mandatory.  Each callable is invoked with no arguments, and any return value is discarded."
+msgstr ""
+
+msgid ":file:`.start` files are processed after all :file:`.pth` path extensions have been applied to :data:`sys.path`, ensuring that paths are available before any startup code runs."
+msgstr ""
+
+msgid "Unlike :data:`sys.path` extensions from :file:`.pth` files, duplicate entry points are **not** de-duplicated --- if an entry point appears more than once, it will be called more than once."
+msgstr ""
+
+msgid "If an exception occurs during resolution or invocation of an entry point, a traceback is printed to :data:`sys.stderr` and processing continues with the remaining entry points."
+msgstr ""
+
+msgid ":file:`.start` files must be encoded in UTF-8."
+msgstr ""
+
+msgid ":pep:`829` defined the original specification for these features."
+msgstr ""
+
+msgid "If a :file:`{name}.start` file exists alongside a :file:`{name}.pth` file with the same base name, any ``import`` lines in the :file:`.pth` file are ignored in favor of the entry points in the :file:`.start` file."
+msgstr ""
+
+msgid "Executable lines (``import`` lines in :file:`{name}.pth` files and :file:`{name}.start` file entry points) are always run at Python startup (unless :option:`-S` is given to disable the ``site.py`` module entirely), regardless of whether a particular module is actually going to be used."
+msgstr ""
+
+msgid ":file:`{name}.start` files invoke :func:`pkgutil.resolve_name` with ``strict=True``, which requires the full ``pkg.mod:callable`` form."
+msgstr ""
+
+msgid "Startup file examples"
+msgstr ""
+
+#, fuzzy
+#| msgid "For example, suppose ``sys.prefix`` and ``sys.exec_prefix`` are set to :file:`/usr/local`.  The Python X.Y library is then installed in :file:`/usr/local/lib/python{X.Y}`.  Suppose this has a subdirectory :file:`/usr/local/lib/python{X.Y}/site-packages` with three subsubdirectories, :file:`foo`, :file:`bar` and :file:`spam`, and two path configuration files, :file:`foo.pth` and :file:`bar.pth`.  Assume :file:`foo.pth` contains the following::"
+msgid "For example, suppose ``sys.prefix`` and ``sys.exec_prefix`` are set to :file:`/usr/local`.  The Python X.Y library is then installed in :file:`/usr/local/lib/python{X.Y}`.  Suppose this has a subdirectory :file:`/usr/local/lib/python{X.Y}/site-packages` with three sub-subdirectories, :file:`foo`, :file:`bar` and :file:`spam`, and two path configuration files, :file:`foo.pth` and :file:`bar.pth`.  Assume :file:`foo.pth` contains the following::"
 msgstr "برای مثال، فرض کنید ``sys.prefix`` و ``sys.exec_prefix`` روی :file:`/usr/local` تنظیم شده‌اند. در این صورت کتابخانه‌ی پایتون X.Y در :file:`/usr/local/lib/python{X.Y}` نصب می‌شود. فرض کنید این پوشه یک زیرپوشه به نشانی :file:`/usr/local/lib/python{X.Y}/site-packages` دارد که خود دارای سه زیرپوشه به نام‌های :file:`foo`، :file:`bar` و :file:`spam` و دو پرونده پیکربندی مسیر به نام‌های :file:`foo.pth` و :file:`bar.pth` است. فرض کنید :file:`foo.pth` شامل موارد زیر است::"
 
 msgid ""
@@ -102,6 +167,36 @@ msgstr ""
 
 msgid "Note that :file:`bletch` is omitted because it doesn't exist; the :file:`bar` directory precedes the :file:`foo` directory because :file:`bar.pth` comes alphabetically before :file:`foo.pth`; and :file:`spam` is omitted because it is not mentioned in either path configuration file."
 msgstr "توجه داشته باشید که :file:`bletch` کنار گذاشته شده است، زیرا وجود ندارد؛ پوشه‌ی :file:`bar` پیش از پوشه‌ی :file:`foo` قرار می‌گیرد، زیرا :file:`bar.pth` از نظر الفبایی پیش از :file:`foo.pth` می‌آید؛ و :file:`spam` کنار گذاشته شده است، زیرا در هیچ‌کدام از پرونده‌های پیکربندی مسیر ذکر نشده است."
+
+msgid "Let's say that there is also a :file:`foo.start` file containing the following::"
+msgstr ""
+
+msgid ""
+"# foo package startup code\n"
+"\n"
+"foo.submod:initialize"
+msgstr ""
+
+msgid "Now, after ``sys.path`` has been extended as above, and before Python turns control over to user code, the ``foo.submod`` module is imported and the ``initialize()`` function from that module is called."
+msgstr ""
+
+msgid "Migrating from ``import`` lines in ``.pth`` files to ``.start`` files"
+msgstr ""
+
+msgid "If your package currently ships a :file:`{name}.pth` file, you can keep all ``sys.path`` extension lines unchanged.  Only ``import`` lines need to be migrated."
+msgstr ""
+
+msgid "To migrate, create a callable (taking zero arguments) within an importable module in your package.  Reference it as a ``pkg.mod:callable`` entry point in a matching :file:`{name}.start` file.  Move everything on your ``import`` line after the first semi-colon into the ``callable()`` function."
+msgstr ""
+
+msgid "If your package must straddle older Pythons that do not support :pep:`829` and newer Pythons that do, change the ``import`` lines in your :file:`{name}.pth` to use the following form:"
+msgstr ""
+
+msgid "import pkg.mod; pkg.mod.callable()"
+msgstr ""
+
+msgid "Older Pythons will execute these ``import`` lines, while newer Pythons will ignore them in favor of the :file:`{name}.start` file.  After the straddling period, remove all ``import`` lines from your :file:`.pth` files."
+msgstr ""
 
 msgid ":mod:`!sitecustomize`"
 msgstr ":mod:`!sitecustomize`"
@@ -148,8 +243,56 @@ msgstr "همه‌ی پوشه‌های استانداردِ خاصِ سایت ر�
 msgid "This function used to be called unconditionally."
 msgstr "این تابع پیش‌تر به‌طور غیرشرطی فراخوانی می‌شد."
 
-msgid "Add a directory to sys.path and process its :file:`.pth` files.  Typically used in :mod:`sitecustomize` or :mod:`usercustomize` (see above)."
+msgid "Join *paths* with :func:`os.path.join`, attempt to make the result absolute with :func:`os.path.abspath`, and return a 2-tuple containing the absolute path and its case-normalized form as produced by :func:`os.path.normcase`.  If :func:`os.path.abspath` raises :exc:`OSError`, the joined path is used unchanged for the case-normalization step."
+msgstr ""
+
+msgid "The second element of the returned tuple is the form used throughout the :mod:`!site` module to compare paths on case-insensitive file systems, and is what populates the ``known_paths`` sets that prevent duplicate :data:`sys.path` entries in various APIs within this module."
+msgstr ""
+
+msgid "Instances of this class accumulate interpreter startup configuration data from one or more site directories.  They are the preferred interface for batching the processing of :file:`.pth` and :file:`.start` files across multiple site directories, so that every :data:`sys.path` extension is visible before any startup code runs."
+msgstr ""
+
+msgid "The optional *known_paths* argument is a set of case-normalized paths (which can be produced by :func:`makepath`) used to prevent duplicate :data:`sys.path` entries.  When ``None`` (the default), the set is built from the current :data:`sys.path`.  :func:`main` implicitly uses an instance of this class."
+msgstr ""
+
+msgid "Typical use:"
+msgstr ""
+
+msgid ""
+"state = site.StartupState()\n"
+"for sitedir in site_dirs:\n"
+"    state.addsitedir(sitedir)\n"
+"state.process()"
+msgstr ""
+
+msgid "Read the :file:`.pth` and :file:`.start` files in *sitedir* and record their :data:`sys.path` extensions, deprecated :file:`.pth` ``import`` lines, and :file:`.start` entry points on this state. The recorded data is not applied until :meth:`process` is called."
+msgstr ""
+
+msgid "Add the per-user site-packages directory, if enabled and if it exists. The directory's startup data is accumulated for later processing by :meth:`process`."
+msgstr ""
+
+msgid "Add global site-packages directories, computed from *prefixes* or from the global :data:`PREFIXES` when *prefixes* is ``None``.  Each directory's startup data is accumulated for later processing by :meth:`process`."
+msgstr ""
+
+msgid "Apply the accumulated state by first adding the path extensions to :data:`sys.path`, then executing the :file:`.start` file entry points and :file:`.pth` file ``import`` lines (:ref:`deprecated <site-pth-files>`)."
+msgstr ""
+
+msgid "This method is not idempotent and must not be called more than once on the same instance.  Doing so will apply the accumulated state more than once, re-running entry points and ``import`` lines."
+msgstr ""
+
+#, fuzzy
+#| msgid "Add a directory to sys.path and process its :file:`.pth` files.  Typically used in :mod:`sitecustomize` or :mod:`usercustomize` (see above)."
+msgid "Add a directory to sys.path and parse the :file:`.pth` and :file:`.start` files found in that directory.  Typically used in :mod:`sitecustomize` or :mod:`usercustomize` (see above)."
 msgstr "یک پوشه را به sys.path اضافه می‌کند و پرونده‌های :file:`.pth` آن را پردازش می‌کند. معمولاً در :mod:`sitecustomize` یا :mod:`usercustomize` استفاده می‌شود (بالا را ببینید)."
+
+msgid "The *known_paths* argument is an optional set of case-normalized paths used to prevent duplicate :data:`sys.path` entries.  When ``None`` (the default), the set is built from the current :data:`sys.path`."
+msgstr ""
+
+msgid "For batched processing across multiple site directories, build a :class:`StartupState` explicitly and call :meth:`StartupState.addsitedir` on it; that defers :file:`.pth` and :file:`.start` processing until a single :meth:`StartupState.process` call, ensuring every :data:`sys.path` extension is visible before any startup code runs."
+msgstr ""
+
+msgid "Also processes :file:`.start` files.  See :ref:`site-start-files`."
+msgstr ""
 
 msgid "Return a list containing all global site-packages directories."
 msgstr "فهرستی شامل تمام پوشه‌های site-packages سراسری را برمی‌گرداند."
@@ -197,6 +340,9 @@ msgstr "اگر گزینه‌ای داده شود، اسکریپت با یکی ا
 msgid ":pep:`370` -- Per user site-packages directory"
 msgstr ":pep:`370` -- پوشه site-packages برای هر کاربر"
 
+msgid ":pep:`829` -- Startup entry points and the deprecation of import lines in ``.pth`` files"
+msgstr ""
+
 msgid ":ref:`sys-path-init` -- The initialization of :data:`sys.path`."
 msgstr ":ref:`sys-path-init` -- مقداردهی اولیه‌ی :data:`sys.path`."
 
@@ -235,3 +381,6 @@ msgstr "پیکربندی"
 
 msgid "file"
 msgstr "پرونده"
+
+#~ msgid "An executable line in a :file:`.pth` file is run at every Python startup, regardless of whether a particular module is actually going to be used. Its impact should thus be kept to a minimum. The primary intended purpose of executable lines is to make the corresponding module(s) importable (load 3rd-party import hooks, adjust :envvar:`PATH` etc). Any other initialization is supposed to be done upon a module's actual import, if and when it happens. Limiting a code chunk to a single line is a deliberate measure to discourage putting anything more complex here."
+#~ msgstr "یک خط قابل اجرا در پرونده :file:`.pth` در هر بار راه‌اندازی پایتون اجرا می‌شود، صرف‌نظر از اینکه آیا ماژول خاصی واقعاً استفاده خواهد شد یا خیر. بنابراین باید تأثیر آن در حداقل نگه‌داشته شود. هدف اصلی مورد نظر برای سطرهای قابل اجرا، قابل ایمپورت کردن ماژول(های) مربوطه است (بارگذاری قلاب‌های ایمپورت شخص ثالث، تنظیم :envvar:`PATH` و غیره). هرگونه مقداردهی اولیه دیگر باید هنگام ایمپورت واقعی ماژول انجام شود، اگر و هرگاه رخ دهد. محدود کردن یک قطعه کد به یک خط، تدبیری عمدی برای منصرف کردن از قرار دادن هر چیز پیچیده‌تر در اینجا است."

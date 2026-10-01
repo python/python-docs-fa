@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 15:40+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -187,7 +187,9 @@ msgstr "توجه داشته باشید که ``'a:gz'``، ``'a:bz2'`` یا ``'a:x
 msgid "If *fileobj* is specified, it is used as an alternative to a :term:`file object` opened in binary mode for *name*. It is supposed to be at position 0."
 msgstr "اگر *fileobj* مشخص شده باشد، از آن به‌عنوان جایگزینی برای یک :term:`file object` بازشده در حالت دودویی برای *name* استفاده می‌شود. انتظار می‌رود در موقعیت ۰ قرار داشته باشد."
 
-msgid "For modes ``'w:gz'``, ``'x:gz'``, ``'w|gz'``, ``'w:bz2'``, ``'x:bz2'``, ``'w|bz2'``, :func:`tarfile.open` accepts the keyword argument *compresslevel* (default ``9``) to specify the compression level of the file."
+#, fuzzy
+#| msgid "For modes ``'w:gz'``, ``'x:gz'``, ``'w|gz'``, ``'w:bz2'``, ``'x:bz2'``, ``'w|bz2'``, :func:`tarfile.open` accepts the keyword argument *compresslevel* (default ``9``) to specify the compression level of the file."
+msgid "For modes ``'w:gz'``, ``'x:gz'``, ``'w|gz'``, ``'w:bz2'``, ``'x:bz2'``, ``'w|bz2'``, :func:`tarfile.open` accepts the keyword argument *compresslevel* (default ``6``) to specify the compression level of the file."
 msgstr "برای حالت‌های ``'w:gz'``، ``'x:gz'``، ``'w|gz'``، ``'w:bz2'``، ``'x:bz2'``، ``'w|bz2'``، :func:`tarfile.open` آرگومان کلیدواژه‌ای *compresslevel* (پیش‌فرض ``9``) را برای تعیین سطح فشرده‌سازی پرونده می‌پذیرد."
 
 msgid "For modes ``'w:xz'``, ``'x:xz'`` and ``'w|xz'``, :func:`tarfile.open` accepts the keyword argument *preset* to specify the compression level of the file."
@@ -195,6 +197,9 @@ msgstr "برای حالت‌های ``'w:xz'``، ``'x:xz'`` و ``'w|xz'``، تا�
 
 msgid "For modes ``'w:zst'``, ``'x:zst'`` and ``'w|zst'``, :func:`tarfile.open` accepts the keyword argument *level* to specify the compression level of the file. The keyword argument *options* may also be passed, providing advanced Zstandard compression parameters described by :class:`~compression.zstd.CompressionParameter`. The keyword argument *zstd_dict* can be passed to provide a :class:`~compression.zstd.ZstdDict`, a Zstandard dictionary used to improve compression of smaller amounts of data."
 msgstr "برای حالت‌های ``'w:zst'``، ``'x:zst'`` و ``'w|zst'``، :func:`tarfile.open` آرگومان کلیدواژه‌ای *level* را برای تعیین سطح فشرده‌سازی پرونده می‌پذیرد. آرگومان کلیدواژه‌ای *options* نیز می‌تواند ارسال شود تا پارامترهای پیشرفته فشرده‌سازی Zstandard را که در :class:`~compression.zstd.CompressionParameter` توصیف شده‌اند، فراهم کند. آرگومان کلیدواژه‌ای *zstd_dict* می‌تواند ارسال شود تا یک :class:`~compression.zstd.ZstdDict`، یک دیکشنری Zstandard که برای بهبود فشرده‌سازی مقادیر کمتری از داده استفاده می‌شود، فراهم کند."
+
+msgid "For modes ``'w:gz'`` and ``'w|gz'``, :func:`tarfile.open` accepts the keyword argument *mtime* to create a gzip archive header with that mtime. By default, the mtime is set to the time of creation of the archive. Use *mtime* ``0`` to generate a compressed stream that does not depend on creation time, for reproducible output."
+msgstr ""
 
 msgid "For special purposes, there is a second format for *mode*: ``'filemode|[compression]'``.  :func:`tarfile.open` will return a :class:`TarFile` object that processes its data as a stream of blocks.  No random seeking will be done on the file. If given, *fileobj* may be any object that has a :meth:`~io.RawIOBase.read` or :meth:`~io.RawIOBase.write` method (depending on the *mode*) that works with bytes. *bufsize* specifies the blocksize and defaults to ``20 * 512`` bytes. Use this variant in combination with e.g. ``sys.stdin.buffer``, a socket :term:`file object` or a tape device. However, such a :class:`TarFile` object is limited in that it does not allow random access, see :ref:`tar-examples`.  The currently possible modes:"
 msgstr "برای اهداف خاص، قالب دومی برای *mode* وجود دارد: ``'filemode|[compression]'``.  :func:`tarfile.open` یک شیء :class:`TarFile` برمی‌گرداند که داده‌های خود را به‌صورت جریانی از بلوک‌ها پردازش می‌کند.  هیچ مکان‌یابی تصادفی‌ای روی پرونده انجام نخواهد شد. در صورت ارائه، *fileobj* می‌تواند هر شیءای باشد که یک متد :meth:`~io.RawIOBase.read` یا :meth:`~io.RawIOBase.write` (بسته به *mode*) داشته باشد که با بایت‌ها کار می‌کند. *bufsize* اندازه‌ی بلوک را مشخص می‌کند و مقدار پیش‌فرض آن ``20 * 512`` بایت است. از این حالت در ترکیب با مواردی مانند ``sys.stdin.buffer``، یک :term:`file object` برای سوکت یا یک دستگاه نوار استفاده کنید. با این حال، چنین شیء :class:`TarFile` محدود است، زیرا دسترسی تصادفی را اجازه نمی‌دهد؛ :ref:`tar-examples` را ببینید.  حالت‌های ممکن کنونی:"
@@ -282,6 +287,9 @@ msgstr "آرگومان کلیدواژه‌ای *compresslevel* برای جریا
 
 msgid "The *preset* keyword argument also works for streams."
 msgstr "آرگومان کلیدواژه‌ای *preset* برای جریان‌ها نیز کار می‌کند."
+
+msgid "The default compression level was reduced to 6 (down from 9). It is the default level used by most compression tools and a better tradeoff between speed and performance."
+msgstr ""
 
 msgid "Class for reading and writing tar archives. Do not use this class directly: use :func:`tarfile.open` instead. See :ref:`tarfile-objects`."
 msgstr "کلاسی برای خواندن و نوشتن بایگانی‌های tar. از این کلاس به‌طور مستقیم استفاده نکنید: در عوض از :func:`tarfile.open` استفاده کنید. :ref:`tarfile-objects` را ببینید."

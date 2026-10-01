@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-12 14:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -36,7 +36,9 @@ msgstr "بسته‌ی :mod:`!tkinter` («رابط Tk») رابط استاندا�
 msgid "Running ``python -m tkinter`` from the command line should open a window demonstrating a simple Tk interface, letting you know that :mod:`!tkinter` is properly installed on your system, and also showing what version of Tcl/Tk is installed, so you can read the Tcl/Tk documentation specific to that version."
 msgstr "اجرای ``python -m tkinter`` از خط فرمان باید پنجره‌ای را باز کند که یک رابط ساده Tk را نمایش می‌دهد، به شما اطلاع می‌دهد که :mod:`!tkinter` به‌درستی روی سیستم شما نصب شده است، و همچنین نشان می‌دهد چه نسخه‌ای از Tcl/Tk نصب شده است، تا بتوانید مستندات Tcl/Tk مخصوص همان نسخه را بخوانید."
 
-msgid "Tkinter supports a range of Tcl/Tk versions, built either with or without thread support. Tcl/Tk 8.5.12 is the minimum supported version; the official Python binary release bundles Tcl/Tk 8.6. See the source code for the :mod:`_tkinter` module for more information about supported versions."
+#, fuzzy
+#| msgid "Tkinter supports a range of Tcl/Tk versions, built either with or without thread support. Tcl/Tk 8.5.12 is the minimum supported version; the official Python binary release bundles Tcl/Tk 8.6. See the source code for the :mod:`_tkinter` module for more information about supported versions."
+msgid "Tkinter supports a range of Tcl/Tk versions, built either with or without thread support. Tcl/Tk 8.5.12 is the minimum supported version; the official Python binary release bundles Tcl/Tk 9.0. See the source code for the :mod:`_tkinter` module for more information about supported versions."
 msgstr "Tkinter از محدوده‌ای از نسخه‌های Tcl/Tk پشتیبانی می‌کند، که با یا بدون پشتیبانی از نخ ساخته شده‌اند. Tcl/Tk 8.5.12 حداقل نسخه پشتیبانی‌شده است؛ نسخه دودویی رسمی پایتون شامل Tcl/Tk 8.6 می‌شود. برای اطلاعات بیشتر درباره نسخه‌های پشتیبانی‌شده، کد منبع ماژول :mod:`_tkinter` را ببینید."
 
 msgid "Support for Tcl/Tk versions older than 8.5.12 was removed."
@@ -461,7 +463,9 @@ msgstr "اگر مفسر Tcl در حال اجرای حلقه رویداد و پر
 msgid "A number of special cases exist:"
 msgstr "تعدادی حالت خاص وجود دارد:"
 
-msgid "Tcl/Tk libraries built without thread support are now rare: the bundled Tcl/Tk 8.6 is built with thread support, so this case only arises with some older non-threaded builds. When the library is not thread-aware, :mod:`!tkinter` calls the library from the originating Python thread, even if this is different than the thread that created the Tcl interpreter. A global lock ensures only one call occurs at a time."
+#, fuzzy
+#| msgid "Tcl/Tk libraries built without thread support are now rare: the bundled Tcl/Tk 8.6 is built with thread support, so this case only arises with some older non-threaded builds. When the library is not thread-aware, :mod:`!tkinter` calls the library from the originating Python thread, even if this is different than the thread that created the Tcl interpreter. A global lock ensures only one call occurs at a time."
+msgid "Tcl/Tk libraries built without thread support are now rare: Tcl/Tk 9.0 (the bundled version) is always thread-aware, so this case only arises with some older 8.x builds. When the library is not thread-aware, :mod:`!tkinter` calls the library from the originating Python thread, even if this is different than the thread that created the Tcl interpreter. A global lock ensures only one call occurs at a time."
 msgstr "کتابخانه‌های Tcl/Tk که بدون پشتیبانی از نخ ساخته شده‌اند، امروزه نادر هستند: نسخه‌ی همراه Tcl/Tk 8.6 با پشتیبانی از نخ ساخته شده است، بنابراین این حالت تنها در برخی ساخت‌های قدیمی‌تر بدون نخ پیش می‌آید. وقتی کتابخانه آگاه از نخ نباشد، :mod:`!tkinter` کتابخانه را از نخ پایتونی مبدأ فراخوانی می‌کند، حتی اگر این نخ با نخی که مفسر Tcl را ایجاد کرده است متفاوت باشد. یک قفل سراسری تضمین می‌کند که در هر زمان تنها یک فراخوانی انجام شود."
 
 msgid "While :mod:`!tkinter` allows you to create more than one instance of a :class:`Tk` object (with its own interpreter), all interpreters that are part of the same thread share a common event queue, which gets ugly fast. In practice, don't create more than one instance of :class:`Tk` at a time. Otherwise, it's best to create them in separate threads and ensure you're running a thread-aware Tcl/Tk build."
@@ -1263,6 +1267,11 @@ msgstr ":meth:`size` نام مستعاری از :meth:`!grid_size` است، به
 msgid "Return a list of the child widgets managed in this container's grid, most recently managed first. If *row* or *column* is given, only the children in that row or column are returned."
 msgstr "فهرستی از ابزارک‌های فرزند مدیریت‌شده در شبکه‌ی این ظرف را برمی‌گرداند، به‌طوری که آخرین ابزارک مدیریت‌شده در ابتدا قرار دارد. اگر *row* یا *column* داده شود، فقط ابزارک‌های فرزند موجود در آن ردیف یا ستون برگردانده می‌شوند."
 
+#, fuzzy
+#| msgid "Same as :meth:`Misc.grid_slaves`: return the widgets managed in the grid, optionally restricted to a *row* and/or *column*."
+msgid "Same as :meth:`grid_slaves`: return the child widgets managed in this container's grid, optionally restricted to a given *row* or *column*."
+msgstr "همانند :meth:`Misc.grid_slaves`: ابزارک‌های مدیریت‌شده در شبکه را بازمی‌گرداند، که به‌صورت اختیاری به یک *ردیف* و/یا *ستون* محدود شده‌اند."
+
 msgid "Enable or disable geometry propagation for this container when it manages its children with the pack geometry manager. When *flag* is true, the container resizes itself to fit the requested sizes of its children; when it is false, its size is left under your control. Called with no argument, return the current setting as a boolean."
 msgstr "فعال یا غیرفعال کردن انتشار هندسه برای این ظرف (container) هنگامی که فرزندان خود را با مدیر هندسه‌ی pack مدیریت می‌کند. وقتی *flag* درست باشد، ظرف اندازه‌ی خود را متناسب با اندازه‌های درخواستی فرزندان تغییر می‌دهد؛ وقتی نادرست باشد، اندازه‌ی آن تحت کنترل شما باقی می‌ماند. در صورت فراخوانی بدون آرگومان، تنظیم فعلی را به‌صورت یک مقدار بولی برمی‌گرداند."
 
@@ -1275,8 +1284,26 @@ msgstr "فهرستی از ابزارک‌های فرزند مدیریت‌شده
 msgid ":meth:`slaves` is an alias of :meth:`!pack_slaves`."
 msgstr ":meth:`slaves` نام مستعار :meth:`!pack_slaves` است."
 
+#, fuzzy
+#| msgid "Return a list of the child widgets managed by this container with the pack geometry manager, in packing order."
+msgid "Same as :meth:`pack_slaves`: return the child widgets managed by this container with the pack geometry manager, in packing order."
+msgstr "فهرستی از ابزارک‌های فرزند مدیریت‌شده توسط این ظرف با مدیر چیدمان pack را به ترتیب چیدمان pack برمی‌گرداند."
+
+#, fuzzy
+#| msgid ":meth:`propagate` is an alias of :meth:`!pack_propagate`."
+msgid ":meth:`content` is an alias of :meth:`!pack_content`."
+msgstr ":meth:`propagate` نام مستعاری از :meth:`!pack_propagate` است."
+
 msgid "Return a list of the child widgets managed by this container with the place geometry manager."
 msgstr "فهرستی از ابزارک‌های فرزند این ظرف را که با مدیر چیدمان place مدیریت می‌شوند، برمی‌گرداند."
+
+#, fuzzy
+#| msgid "Return a list of the child widgets managed by this container with the place geometry manager."
+msgid "Same as :meth:`place_slaves`: return the child widgets managed by this container with the place geometry manager."
+msgstr "فهرستی از ابزارک‌های فرزند این ظرف را که با مدیر چیدمان place مدیریت می‌شوند، برمی‌گرداند."
+
+msgid "The methods with the ``bind`` and ``unbind`` prefixes associate event patterns with callbacks and remove those associations."
+msgstr ""
 
 msgid "Bind the event pattern *sequence* on this widget to the callable *func*."
 msgstr "الگوی رویداد *sequence* را در این ابزارک به شیء فراخوانی‌پذیر *func* متصل کنید."
@@ -2014,6 +2041,11 @@ msgstr "مانند :meth:`Misc.pack_propagate`، با در نظر گرفتن ا�
 msgid "Same as :meth:`Misc.pack_slaves`: return the list of widgets packed in this widget. :meth:`slaves` is an alias of :meth:`!pack_slaves`."
 msgstr "مشابه :meth:`Misc.pack_slaves`: فهرست ابزارک‌های تعبیه‌شده در این ابزارک را برمی‌گرداند. :meth:`slaves` نام مستعاری از :meth:`!pack_slaves` است."
 
+#, fuzzy
+#| msgid ":meth:`pack`, :meth:`configure` and :meth:`config` are aliases of :meth:`!pack_configure`."
+msgid "Same as :meth:`Misc.pack_content`. :meth:`content` is an alias of :meth:`!pack_content`."
+msgstr ":meth:`pack`، :meth:`configure` و :meth:`config` نام‌های مستعار :meth:`!pack_configure` هستند."
+
 msgid "Geometry manager that places widgets at explicit positions and sizes within their container. The :class:`!Place` mix-in is inherited by all widgets (through :class:`Widget`). See also :ref:`tkinter-geometry-management`."
 msgstr "مدیر چیدمانی که ابزارک‌ها را در موقعیت‌ها و اندازه‌های مشخص درون ظرفشان قرار می‌دهد. همه ابزارک‌ها (از طریق :class:`Widget`) از کلاس میکس‌این  :class:`!Place` ارث می‌برند. همچنین ببینید :ref:`tkinter-geometry-management`."
 
@@ -2067,6 +2099,11 @@ msgstr "یک دیکشنری از گزینه‌های جاری place ابزارک
 
 msgid "Same as :meth:`Misc.place_slaves`: return the list of widgets placed in this widget."
 msgstr "مشابه :meth:`Misc.place_slaves`: فهرست ابزارک‌های قرار گرفته در این ابزارک را برمی‌گرداند."
+
+#, fuzzy
+#| msgid "Same as :meth:`Misc.grid_propagate`."
+msgid "Same as :meth:`Misc.place_content`."
+msgstr "همان :meth:`Misc.grid_propagate` است."
 
 msgid "Geometry manager that arranges widgets in a two-dimensional grid of rows and columns within their container. The :class:`!Grid` mix-in is inherited by all widgets (through :class:`Widget`). See also :ref:`tkinter-geometry-management`."
 msgstr "مدیر چیدمانی که ابزارک‌ها را در یک شبکه‌ی دوبعدی از ردیف‌ها و ستون‌ها درون ظرف آن‌ها می‌چیند. همه‌ی ابزارک‌ها میکس‌این  :class:`!Grid` را (از طریق :class:`Widget`) به ارث می‌برند. همچنین :ref:`tkinter-geometry-management` را ببینید."
@@ -2133,6 +2170,11 @@ msgstr "همان :meth:`Misc.grid_propagate` است."
 
 msgid "Same as :meth:`Misc.grid_slaves`: return the widgets managed in the grid, optionally restricted to a *row* and/or *column*."
 msgstr "همانند :meth:`Misc.grid_slaves`: ابزارک‌های مدیریت‌شده در شبکه را بازمی‌گرداند، که به‌صورت اختیاری به یک *ردیف* و/یا *ستون* محدود شده‌اند."
+
+#, fuzzy
+#| msgid "Same as :meth:`Misc.grid_propagate`."
+msgid "Same as :meth:`Misc.grid_content`."
+msgstr "همان :meth:`Misc.grid_propagate` است."
 
 msgid "Mix-in providing the horizontal-scrolling interface shared by widgets such as :class:`Entry`, :class:`Canvas`, :class:`Listbox`, :class:`Text` and :class:`Spinbox`. A widget's :meth:`xview` method is registered as the *command* of a horizontal :class:`Scrollbar`."
 msgstr "میکس‌اینکه رابط پیمایش افقی مشترک میان ابزارک‌هایی مانند :class:`Entry`، :class:`Canvas`، :class:`Listbox`، :class:`Text` و :class:`Spinbox` را فراهم می‌کند. متد :meth:`xview` یک ابزارک به‌عنوان *command* یک :class:`Scrollbar` افقی ثبت می‌شود."
@@ -3445,8 +3487,18 @@ msgstr "پشته‌های واگرد و بازگرد را پاک کنید."
 msgid "Push a separator onto the undo stack, marking a boundary between edit actions for undo and redo. Has no effect unless the *undo* option is true. Separators are inserted automatically when the *autoseparators* option is true."
 msgstr "یک جداکننده را روی پشته‌ی واگرد (undo) قرار می‌دهد و مرزی میان اقدام‌های ویرایشی برای واگرد و بازانجام (redo) مشخص می‌کند. این کار هیچ تأثیری ندارد، مگر اینکه گزینه‌ی *undo* درست باشد. هنگامی که گزینه‌ی *autoseparators* درست باشد، جداکننده‌ها به‌صورت خودکار درج می‌شوند."
 
-msgid "Search for *pattern* starting at *index* and return the index of the first character of the first match, or an empty string if there is no match. Searching stops at *stopindex* if given; otherwise it wraps around the ends of the text until the starting position is reached again. The following boolean keyword flags control the search: *forwards* or *backwards* select the direction (forward is the default); *exact* (the default) or *regexp* select literal or regular-expression matching; *nocase* makes the match case-insensitive; and *elide* causes hidden text to be searched as well. If *count* is a :class:`Variable`, the number of index positions in the match is stored in it."
+#, fuzzy
+#| msgid "Search for *pattern* starting at *index* and return the index of the first character of the first match, or an empty string if there is no match. Searching stops at *stopindex* if given; otherwise it wraps around the ends of the text until the starting position is reached again. The following boolean keyword flags control the search: *forwards* or *backwards* select the direction (forward is the default); *exact* (the default) or *regexp* select literal or regular-expression matching; *nocase* makes the match case-insensitive; and *elide* causes hidden text to be searched as well. If *count* is a :class:`Variable`, the number of index positions in the match is stored in it."
+msgid "Search for *pattern* starting at *index* and return the index of the first character of the first match, or an empty string if there is no match. Searching stops at *stopindex* if given; otherwise it wraps around the ends of the text until the starting position is reached again. The following boolean keyword flags control the search: *forwards* or *backwards* select the direction (forward is the default); *exact* (the default) or *regexp* select literal or regular-expression matching; *nocase* makes the match case-insensitive; *elide* causes hidden text to be searched as well; *nolinestop* (regexp only) lets ``.`` and ``[^`` match newlines; and *strictlimits* requires the whole match to lie within *index* and *stopindex*. If *count* is a :class:`Variable`, the number of index positions in the match is stored in it."
 msgstr "*pattern* را از *index* جست‌وجو می‌کند و اندیس نخستین نویسه‌ی اولین تطابق را برمی‌گرداند، یا در صورت نبود تطابق، یک رشته خالی برمی‌گرداند. در صورت ارائه *stopindex*، جست‌وجو در *stopindex* متوقف می‌شود؛ در غیر این صورت، جست‌وجو به‌صورت چرخشی میان دو انتهای متن ادامه می‌یابد تا دوباره به موقعیت شروع برسد. پرچم‌های کلیدواژه‌ای بولی زیر، جست‌وجو را کنترل می‌کنند: *forwards* یا *backwards* جهت را انتخاب می‌کنند (پیش‌فرض رو به جلو است)؛ *exact* (پیش‌فرض) یا *regexp* تطبیق لفظی یا تطبیق با عبارت باقاعده را انتخاب می‌کنند؛ *nocase* تطابق را غیرحساس به بزرگی و کوچکی حروف می‌کند؛ و *elide* باعث می‌شود متن پنهان نیز جست‌وجو شود. اگر *count* یک :class:`Variable` باشد، تعداد موقعیت‌های اندیس در تطابق، در آن ذخیره می‌شود."
+
+#, fuzzy
+#| msgid "Added the *background* and *grayscale* parameters."
+msgid "Added the *nolinestop* and *strictlimits* parameters."
+msgstr "پارامترهای *background* و *grayscale* افزوده شدند."
+
+msgid "Like :meth:`search`, but find every match in the searched range and return a tuple of the starting indices of all matches (empty if there are none). By default overlapping matches are not reported; passing a true *overlap* returns every match that is not wholly contained in another. If *count* is a :class:`Variable`, it receives a list with one element per match."
+msgstr ""
 
 msgid "Scroll the widget by 10 times the difference between *x*, *y* and the coordinates passed to the last :meth:`scan_mark` call. This is typically bound to mouse motion events, producing the effect of dragging the text at high speed through the window."
 msgstr "ابزارک را به اندازه‌ی ۱۰ برابر اختلاف بین *x*، *y* و مختصات ارسال‌شده به آخرین فراخوانی :meth:`scan_mark` پیمایش می‌کند. این عمل معمولاً به رویدادهای حرکت ماوس متصل می‌شود و اثر کشیده‌شدن متن با سرعت بالا در پنجره را ایجاد می‌کند."
@@ -3744,6 +3796,12 @@ msgstr "ابزارکی که رویداد بر آن رخ داده است."
 
 msgid "The amount the mouse wheel was rotated (for ``MouseWheel`` events)."
 msgstr "میزان چرخش چرخ ماوس (برای رویدادهای ``MouseWheel``)."
+
+msgid "The data string of a virtual event, as passed to the *data* option of :meth:`Misc.event_generate`. It is ``'??'`` for non-virtual events."
+msgstr ""
+
+msgid "A fixed detail string for ``Enter``, ``Leave``, ``FocusIn``, ``FocusOut`` and ``ConfigureRequest`` events (see the Tcl/Tk documentation). It is ``'??'`` for other events."
+msgstr ""
 
 msgid "An :class:`enum.StrEnum` enumerating the Tk event types, used as the value of :attr:`Event.type`. Its members include, among others, ``KeyPress``, ``KeyRelease``, ``ButtonPress``, ``ButtonRelease``, ``Motion``, ``Enter``, ``Leave``, ``FocusIn``, ``FocusOut``, ``Configure``, ``Map``, ``Unmap``, ``Expose``, ``Destroy`` and ``MouseWheel``."
 msgstr "یک :class:`enum.StrEnum` که انواع رویداد Tk را برمی‌شمارد و به‌عنوان مقدار :attr:`Event.type` استفاده می‌شود. اعضای آن، از میان سایر موارد، شامل ``KeyPress``، ``KeyRelease``، ``ButtonPress``، ``ButtonRelease``، ``Motion``، ``Enter``، ``Leave``، ``FocusIn``، ``FocusOut``، ``Configure``، ``Map``، ``Unmap``، ``Expose``، ``Destroy`` و ``MouseWheel`` هستند."

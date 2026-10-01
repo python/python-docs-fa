@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 20:13+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -1127,11 +1127,8 @@ msgstr "اگر ناصفر باشد، :ref:`حالت UTF-8 پایتون <utf8-mod
 msgid "Set to ``0`` or ``1`` by the :option:`-X utf8 <-X>` command line option and the :envvar:`PYTHONUTF8` environment variable."
 msgstr "توسط گزینه‌ی خط فرمان :option:`-X utf8 <-X>` و متغیر محیطی :envvar:`PYTHONUTF8` روی ``0`` یا ``1`` تنظیم می‌شود."
 
-msgid "Also set to ``1`` if the ``LC_CTYPE`` locale is ``C`` or ``POSIX``."
-msgstr "همچنین اگر locale مربوط به ``LC_CTYPE`` برابر ``C`` یا ``POSIX`` باشد، به ``1`` تنظیم می‌شود."
-
-msgid "Default: ``-1`` in Python config and ``0`` in isolated config."
-msgstr "پیش‌فرض: ``-1`` در پیکربندی پایتون و ``0`` در پیکربندی ایزوله."
+msgid "Default: ``1``."
+msgstr "پیش‌فرض: ``1``."
 
 msgid "Preinitialize Python with PyPreConfig"
 msgstr "پیش‌مقداردهی اولیه‌ی پایتون با PyPreConfig"
@@ -1363,9 +1360,6 @@ msgstr "توسط گزینه‌ی خط فرمان :option:`-u` و متغیر مح
 msgid "stdin is always opened in buffered mode."
 msgstr "stdin همیشه در حالت بافرشده باز می‌شود."
 
-msgid "Default: ``1``."
-msgstr "پیش‌فرض: ``1``."
-
 msgid "If equals to ``1``, issue a warning when comparing :class:`bytes` or :class:`bytearray` with :class:`str`, or comparing :class:`bytes` with :class:`int`."
 msgstr "اگر برابر با ``1`` باشد، هنگام مقایسه‌ی :class:`bytes` یا :class:`bytearray` با :class:`str`، یا مقایسه‌ی :class:`bytes` با :class:`int`، هشداری صادر می‌شود."
 
@@ -1374,6 +1368,9 @@ msgstr "اگر برابر یا بزرگ‌تر از ``2`` باشد، در این
 
 msgid "Incremented by the :option:`-b` command line option."
 msgstr "با گزینه‌ی خط فرمان :option:`-b` افزایش می‌یابد."
+
+msgid "The :option:`-b` and :option:`!-bb` options will become no-op in 3.17. :c:member:`~PyConfig.bytes_warning` member will be removed in 3.17."
+msgstr ""
 
 msgid "If non-zero, emit a :exc:`EncodingWarning` warning when :class:`io.TextIOWrapper` uses its default encoding. See :ref:`io-encoding-warning` for details."
 msgstr "اگر نا‌صفر باشد، هنگامی که :class:`io.TextIOWrapper` از کدگذاری پیش‌فرض خود استفاده می‌کند، هشدار :exc:`EncodingWarning` نشان داده می‌شود. برای جزئیات به :ref:`io-encoding-warning` مراجعه کنید."
@@ -1765,10 +1762,14 @@ msgstr "همچنین گزینه‌ی :c:member:`PyConfig.skip_source_first_line`
 msgid "Value of the :option:`-m` command line option."
 msgstr "مقدار گزینه‌ی خط فرمان :option:`-m`."
 
-msgid "``package.module`` path to module that should be imported before ``site.py`` is run."
+#, fuzzy
+#| msgid "``package.module`` path to module that should be imported before ``site.py`` is run."
+msgid "``module`` or ``module:func`` entry point that should be executed before the :mod:`site` module is imported."
 msgstr "``package.module`` مسیر ماژولی که باید پیش از اجرای ``site.py`` ایمپورت شود."
 
-msgid "Set by the :option:`-X presite=package.module <-X>` command-line option and the :envvar:`PYTHON_PRESITE` environment variable. The command-line option takes precedence."
+#, fuzzy
+#| msgid "Set by the :option:`-X presite=package.module <-X>` command-line option and the :envvar:`PYTHON_PRESITE` environment variable. The command-line option takes precedence."
+msgid "Set by the :option:`-X presite=module:func <-X>` command-line option and the :envvar:`PYTHON_PRESITE` environment variable. The command-line option takes precedence."
 msgstr "توسط گزینه‌ی خط فرمان :option:`-X presite=package.module <-X>` و متغیر محیطی :envvar:`PYTHON_PRESITE` تنظیم می‌شود. گزینه‌ی خط فرمان اولویت دارد."
 
 msgid "Show total reference count at exit (excluding :term:`immortal` objects)?"
@@ -2013,6 +2014,59 @@ msgstr ""
 msgid "More complete example modifying the default configuration, read the configuration, and then override some parameters. Note that since 3.11, many parameters are not calculated until initialization, and so values cannot be read from the configuration structure. Any values set before initialize is called will be left unchanged by initialization::"
 msgstr "مثال کامل‌تری که پیکربندی پیش‌فرض را تغییر می‌دهد، پیکربندی را می‌خواند و سپس برخی از پارامترها را بازنویسی می‌کند. توجه داشته باشید که از نسخه‌ی 3.11، بسیاری از پارامترها تا زمان راه‌اندازی محاسبه نمی‌شوند و بنابراین نمی‌توان مقادیر را از ساختار پیکربندی خواند. هر مقداری که پیش از فراخوانی initialize تنظیم شده باشد، توسط راه‌اندازی بدون تغییر باقی می‌ماند::"
 
+#, fuzzy
+#| msgid ""
+#| "PyStatus init_python(const char *program_name)\n"
+#| "{\n"
+#| "    PyStatus status;\n"
+#| "\n"
+#| "    PyConfig config;\n"
+#| "    PyConfig_InitPythonConfig(&config);\n"
+#| "\n"
+#| "    /* Set the program name before reading the configuration\n"
+#| "       (decode byte string from the locale encoding).\n"
+#| "\n"
+#| "       Implicitly preinitialize Python. */\n"
+#| "    status = PyConfig_SetBytesString(&config, &config.program_name,\n"
+#| "                                     program_name);\n"
+#| "    if (PyStatus_Exception(status)) {\n"
+#| "        goto done;\n"
+#| "    }\n"
+#| "\n"
+#| "    /* Read all configuration at once */\n"
+#| "    status = PyConfig_Read(&config);\n"
+#| "    if (PyStatus_Exception(status)) {\n"
+#| "        goto done;\n"
+#| "    }\n"
+#| "\n"
+#| "    /* Specify sys.path explicitly */\n"
+#| "    /* If you want to modify the default set of paths, finish\n"
+#| "       initialization first and then use PySys_GetObject(\"path\") */\n"
+#| "    config.module_search_paths_set = 1;\n"
+#| "    status = PyWideStringList_Append(&config.module_search_paths,\n"
+#| "                                     L\"/path/to/stdlib\");\n"
+#| "    if (PyStatus_Exception(status)) {\n"
+#| "        goto done;\n"
+#| "    }\n"
+#| "    status = PyWideStringList_Append(&config.module_search_paths,\n"
+#| "                                     L\"/path/to/more/modules\");\n"
+#| "    if (PyStatus_Exception(status)) {\n"
+#| "        goto done;\n"
+#| "    }\n"
+#| "\n"
+#| "    /* Override executable computed by PyConfig_Read() */\n"
+#| "    status = PyConfig_SetString(&config, &config.executable,\n"
+#| "                                L\"/path/to/my_executable\");\n"
+#| "    if (PyStatus_Exception(status)) {\n"
+#| "        goto done;\n"
+#| "    }\n"
+#| "\n"
+#| "    status = Py_InitializeFromConfig(&config);\n"
+#| "\n"
+#| "done:\n"
+#| "    PyConfig_Clear(&config);\n"
+#| "    return status;\n"
+#| "}"
 msgid ""
 "PyStatus init_python(const char *program_name)\n"
 "{\n"
@@ -2039,7 +2093,7 @@ msgid ""
 "\n"
 "    /* Specify sys.path explicitly */\n"
 "    /* If you want to modify the default set of paths, finish\n"
-"       initialization first and then use PySys_GetObject(\"path\") */\n"
+"       initialization first and then use PySys_GetAttrString(\"path\") */\n"
 "    config.module_search_paths_set = 1;\n"
 "    status = PyWideStringList_Append(&config.module_search_paths,\n"
 "                                     L\"/path/to/stdlib\");\n"
@@ -2259,6 +2313,11 @@ msgstr "مقدار :c:member:`~PyConfig.use_environment` را برابر ``0`` �
 msgid "Set :c:member:`~PyConfig.site_import` to ``0``."
 msgstr "مقدار :c:member:`~PyConfig.site_import` را برابر ``0`` قرار دهید."
 
+#, fuzzy
+#| msgid "Set :c:member:`~PyConfig.site_import` to ``0``."
+msgid "Set :c:member:`~PyConfig.user_site_directory` to ``0`` (since 3.15)."
+msgstr "مقدار :c:member:`~PyConfig.site_import` را برابر ``0`` قرار دهید."
+
 msgid "Set :c:member:`~PyConfig.safe_path` to ``1``."
 msgstr "مقدار :c:member:`~PyConfig.safe_path` را برابر ``1`` قرار دهید."
 
@@ -2271,6 +2330,11 @@ msgstr "از متغیر محیطی ``__PYVENV_LAUNCHER__`` برای تنظیم :
 msgid ":c:member:`~PyConfig.prefix`, and :c:member:`~PyConfig.exec_prefix`, are now set to the ``pyvenv.cfg`` directory. This was previously done by :mod:`site`, therefore affected by :option:`-S`."
 msgstr ":c:member:`~PyConfig.prefix` و :c:member:`~PyConfig.exec_prefix` اکنون به پوشه‌ی ``pyvenv.cfg`` تنظیم می‌شوند. این کار پیش‌تر توسط :mod:`site` انجام می‌شد و بنابراین تحت تأثیر :option:`-S` قرار داشت."
 
+#, fuzzy
+#| msgid "Set :c:member:`~PyConfig.user_site_directory` to ``0``: don't add the user site directory to :data:`sys.path`."
+msgid ":c:member:`~PyConfig.user_site_directory` is now set to ``0`` when a ``._pth`` file is present."
+msgstr "مقدار :c:member:`~PyConfig.user_site_directory` را ``0`` قرار دهید: پوشه‌ی site کاربر به :data:`sys.path` اضافه نشود."
+
 msgid "Py_GetArgcArgv()"
 msgstr "Py_GetArgcArgv()"
 
@@ -2280,17 +2344,133 @@ msgstr "آرگومان‌های اصلی خط فرمان را دریافت می�
 msgid "See also :c:member:`PyConfig.orig_argv` member."
 msgstr "همچنین عضو :c:member:`PyConfig.orig_argv` را ببینید."
 
-msgid "Delaying main module execution"
-msgstr "به تأخیر انداختن اجرای ماژول اصلی"
+msgid "Multi-Phase Initialization Private Provisional API"
+msgstr ""
 
-msgid "In some embedding use cases, it may be desirable to separate interpreter initialization from the execution of the main module."
-msgstr "در برخی موارد استفاده از تعبیه، ممکن است مطلوب باشد که مقداردهی اولیه‌ی مفسر از اجرای ماژول اصلی جدا شود."
+msgid "This section is a private provisional API introducing multi-phase initialization, the core feature of :pep:`432`:"
+msgstr ""
 
-msgid "This separation can be achieved by setting ``PyConfig.run_command`` to the empty string during initialization (to prevent the interpreter from dropping into the interactive prompt), and then subsequently executing the desired main module code using ``__main__.__dict__`` as the global namespace."
-msgstr "این جداسازی را می‌توان با تنظیم ``PyConfig.run_command`` به رشته خالی در حین راه‌اندازی (برای جلوگیری از اینکه مفسر وارد اعلان تعاملی شود)، و سپس اجرای کد ماژول اصلی موردنظر با استفاده از ``__main__.__dict__`` به‌عنوان فضای نام سراسری به دست آورد."
+#, fuzzy
+#| msgid "The preinitialization of Python:"
+msgid "\"Core\" initialization phase, \"bare minimum Python\":"
+msgstr "پیش‌مقداردهی اولیه پایتون:"
+
+msgid "Builtin types;"
+msgstr ""
+
+msgid "Builtin exceptions;"
+msgstr ""
+
+msgid "Builtin and frozen modules;"
+msgstr ""
+
+msgid "The :mod:`sys` module is only partially initialized (ex: :data:`sys.path` doesn't exist yet)."
+msgstr ""
+
+msgid "\"Main\" initialization phase, Python is fully initialized:"
+msgstr ""
+
+msgid "Install and configure :mod:`importlib`;"
+msgstr ""
+
+#, fuzzy
+#| msgid "Part of the :ref:`Python Path Configuration <init-path-config>` input."
+msgid "Apply the :ref:`Path Configuration <init-path-config>`;"
+msgstr "بخشی از ورودی :ref:`پیکربندی مسیر پایتون <init-path-config>` است."
+
+#, fuzzy
+#| msgid "Install Python signal handlers?"
+msgid "Install signal handlers;"
+msgstr "نصب هندلر‌های سیگنال پایتون؟"
+
+msgid "Finish :mod:`sys` module initialization (ex: create :data:`sys.stdout` and :data:`sys.path`);"
+msgstr ""
+
+msgid "Enable optional features like :mod:`faulthandler` and :mod:`tracemalloc`;"
+msgstr ""
+
+#, fuzzy
+#| msgid "Import the :mod:`site` module at startup?"
+msgid "Import the :mod:`site` module;"
+msgstr "آیا ماژول :mod:`site` در زمان راه‌اندازی ایمپورت شود؟"
+
+msgid "etc."
+msgstr ""
+
+msgid "Private provisional API:"
+msgstr ""
+
+msgid "If set to ``0``, :c:func:`Py_InitializeFromConfig` stops at the \"Core\" initialization phase."
+msgstr ""
+
+msgid "Move to the \"Main\" initialization phase, finish the Python initialization."
+msgstr ""
+
+msgid "No module is imported during the \"Core\" phase and the ``importlib`` module is not configured: the :ref:`Path Configuration <init-path-config>` is only applied during the \"Main\" phase. It may allow to customize Python in Python to override or tune the :ref:`Path Configuration <init-path-config>`, maybe install a custom :data:`sys.meta_path` importer or an import hook, etc."
+msgstr ""
+
+msgid "It may become possible to calculate the :ref:`Path Configuration <init-path-config>` in Python, after the Core phase and before the Main phase, which is one of the :pep:`432` motivation."
+msgstr ""
+
+msgid "The \"Core\" phase is not properly defined: what should be and what should not be available at this phase is not specified yet. The API is marked as private and provisional: the API can be modified or even be removed anytime until a proper public API is designed."
+msgstr ""
+
+msgid "Example running Python code between \"Core\" and \"Main\" initialization phases::"
+msgstr ""
+
+msgid ""
+"void init_python(void)\n"
+"{\n"
+"    PyStatus status;\n"
+"\n"
+"    PyConfig config;\n"
+"    PyConfig_InitPythonConfig(&config);\n"
+"    config._init_main = 0;\n"
+"\n"
+"    /* ... customize 'config' configuration ... */\n"
+"\n"
+"    status = Py_InitializeFromConfig(&config);\n"
+"    PyConfig_Clear(&config);\n"
+"    if (PyStatus_Exception(status)) {\n"
+"        Py_ExitStatusException(status);\n"
+"    }\n"
+"\n"
+"    /* Use sys.stderr because sys.stdout is only created\n"
+"       by _Py_InitializeMain() */\n"
+"    int res = PyRun_SimpleString(\n"
+"        \"import sys; \"\n"
+"        \"print('Run Python code before _Py_InitializeMain', \"\n"
+"               \"file=sys.stderr)\");\n"
+"    if (res < 0) {\n"
+"        exit(1);\n"
+"    }\n"
+"\n"
+"    /* ... put more configuration code here ... */\n"
+"\n"
+"    status = _Py_InitializeMain();\n"
+"    if (PyStatus_Exception(status)) {\n"
+"        Py_ExitStatusException(status);\n"
+"    }\n"
+"}"
+msgstr ""
 
 msgid "main()"
 msgstr "main()"
 
 msgid "argv (in module sys)"
 msgstr "argv (در ماژول sys)"
+
+#~ msgid "Also set to ``1`` if the ``LC_CTYPE`` locale is ``C`` or ``POSIX``."
+#~ msgstr "همچنین اگر locale مربوط به ``LC_CTYPE`` برابر ``C`` یا ``POSIX`` باشد، به ``1`` تنظیم می‌شود."
+
+#~ msgid "Default: ``-1`` in Python config and ``0`` in isolated config."
+#~ msgstr "پیش‌فرض: ``-1`` در پیکربندی پایتون و ``0`` در پیکربندی ایزوله."
+
+#~ msgid "Delaying main module execution"
+#~ msgstr "به تأخیر انداختن اجرای ماژول اصلی"
+
+#~ msgid "In some embedding use cases, it may be desirable to separate interpreter initialization from the execution of the main module."
+#~ msgstr "در برخی موارد استفاده از تعبیه، ممکن است مطلوب باشد که مقداردهی اولیه‌ی مفسر از اجرای ماژول اصلی جدا شود."
+
+#~ msgid "This separation can be achieved by setting ``PyConfig.run_command`` to the empty string during initialization (to prevent the interpreter from dropping into the interactive prompt), and then subsequently executing the desired main module code using ``__main__.__dict__`` as the global namespace."
+#~ msgstr "این جداسازی را می‌توان با تنظیم ``PyConfig.run_command`` به رشته خالی در حین راه‌اندازی (برای جلوگیری از اینکه مفسر وارد اعلان تعاملی شود)، و سپس اجرای کد ماژول اصلی موردنظر با استفاده از ``__main__.__dict__`` به‌عنوان فضای نام سراسری به دست آورد."

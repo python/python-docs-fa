@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2021-06-28 00:48+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -27,9 +27,6 @@ msgstr "شیءهای توصیف‌گر"
 
 msgid "\"Descriptors\" are objects that describe some attribute of an object. They are found in the dictionary of type objects."
 msgstr "«توصیف‌گرها» اشیایی هستند که ویژگی‌ای از یک شیء را توصیف می‌کنند. آن‌ها در دیکشنری اشیاء نوع یافت می‌شوند."
-
-msgid "The type object for the built-in descriptor types."
-msgstr "شیء نوع برای نوع‌های توصیف‌گر توکار."
 
 msgid "Create a new get-set descriptor for extension type *type* from the :c:type:`PyGetSetDef` structure *getset*."
 msgstr "یک توصیف‌گر دریافت-تنظیم (get-set) جدید برای نوع توسعه‌ای *type* از ساختار :c:type:`PyGetSetDef` با نام *getset* می‌سازد."
@@ -94,8 +91,19 @@ msgstr "این، شکل مقیدِ یک توصیف‌گر پوششی (wrapper de
 msgid "On success, return a :term:`strong reference` to the wrapper object. Return ``NULL`` with an exception set on failure."
 msgstr "در صورت موفقیت، یک :term:`ارجاع قوی <strong reference>` به شیء پوششی برمی‌گرداند. در صورت شکل، ``NULL`` را همراه با یک استثنای تنظیم‌شده برمی‌گرداند."
 
+msgid "This is a macro including the common fields for a descriptor object."
+msgstr ""
+
+msgid "This was included in Python's C API by mistake; do not use it in extensions. For creating custom descriptor objects, create a class implementing the descriptor protocol (:c:member:`~PyTypeObject.tp_descr_get` and :c:member:`~PyTypeObject.tp_descr_set`)."
+msgstr ""
+
 msgid "Built-in descriptors"
 msgstr "توصیف‌گرهای توکار"
+
+#, fuzzy
+#| msgid "The type object for super objects. This is the same object as :class:`super` in the Python layer."
+msgid "The type object for property objects. This is the same object as :class:`property` in the Python layer."
+msgstr "شیء نوع برای اشیای super. این همان شیء :class:`super` در لایه‌ی پایتون است."
 
 msgid "The type object for super objects. This is the same object as :class:`super` in the Python layer."
 msgstr "شیء نوع برای اشیای super. این همان شیء :class:`super` در لایه‌ی پایتون است."
@@ -120,3 +128,6 @@ msgstr "یک شیء :class:`staticmethod` جدید ایجاد می‌کند که
 
 msgid "On success, this function returns a :term:`strong reference` to a new static method descriptor. On failure, this function returns ``NULL`` with an exception set."
 msgstr "در صورت موفقیت، این تابع یک :term:`ارجاع قوی <strong reference>` به توصیف‌گر جدید متد ایستا برمی‌گرداند. در صورت شکست، این تابع ``NULL`` را همراه با یک استثنای تنظیم‌شده برمی‌گرداند."
+
+#~ msgid "The type object for the built-in descriptor types."
+#~ msgstr "شیء نوع برای نوع‌های توصیف‌گر توکار."

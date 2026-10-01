@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2021-06-28 00:50+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -21,7 +21,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "C API Stability"
+#, fuzzy
+#| msgid "C API Stability"
+msgid "C API and ABI Stability"
 msgstr "پایداری API زبان C"
 
 msgid "Unless documented otherwise, Python's C API is covered by the Backwards Compatibility Policy, :pep:`387`. Most changes to it are source-compatible (typically by only adding new API). Changing existing API or removing API is only done after a deprecation period or to fix serious issues."
@@ -57,101 +59,345 @@ msgstr "این به‌طور کلی برای ابزارهای تخصصی و سط
 msgid "Projects that use this API are expected to follow CPython development and spend extra effort adjusting to changes."
 msgstr "انتظار می‌رود پروژه‌هایی که از این API استفاده می‌کنند، توسعه‌ی سی‌پایتون را دنبال کنند و برای سازگاری با تغییرات تلاش اضافی صرف کنند."
 
-msgid "Stable Application Binary Interface"
+#, fuzzy
+#| msgid "Stable Application Binary Interface"
+msgid "Stable Application Binary Interfaces"
 msgstr "رابط دودویی پایدار برنامه (ABI)"
 
-msgid "For simplicity, this document talks about *extensions*, but the Limited API and Stable ABI work the same way for all uses of the API – for example, embedding Python."
+msgid "Python's :dfn:`Stable ABI` allows extensions to be compatible with multiple versions of Python, without recompilation."
+msgstr ""
+
+#, fuzzy
+#| msgid "For simplicity, this document talks about *extensions*, but the Limited API and Stable ABI work the same way for all uses of the API – for example, embedding Python."
+msgid "For simplicity, this document talks about *extensions*, but Stable ABI works the same way for all uses of the API – for example, embedding Python."
 msgstr "برای سادگی، این سند درباره‌ی *افزونه‌ها* صحبت می‌کند، اما API محدود (Limited API) و ABI پایدار برای همه‌ی کاربردهای API به همان شکل کار می‌کنند – برای مثال، تعبیه کردن پایتون."
 
-msgid "Limited C API"
-msgstr "C API محدود"
+msgid "There are two Stable ABIs:"
+msgstr ""
 
-msgid "Python 3.2 introduced the *Limited API*, a subset of Python's C API. Extensions that only use the Limited API can be compiled once and be loaded on multiple versions of Python. Contents of the Limited API are :ref:`listed below <limited-api-list>`."
-msgstr "پایتون 3.2 *API محدود* را معرفی کرد، زیرمجموعه‌ای از C API پایتون. ماژول‌های توسعه‌ای که فقط از API محدود استفاده می‌کنند، می‌توانند یک‌بار کامپایل شوند و روی نسخه‌های متعدد پایتون بارگذاری شوند. محتوای API محدود :ref:`در ادامه فهرست شده‌اند <limited-api-list>`."
+msgid "``abi3``, introduced in Python 3.2, is compatible with **non**-:term:`free-threaded <free-threaded build>` builds of CPython."
+msgstr ""
 
-msgid "Define this macro before including ``Python.h`` to opt in to only use the Limited API, and to select the Limited API version."
-msgstr "این ماکرو را پیش از گنجاندن ``Python.h`` تعریف کنید تا فقط از API محدود استفاده کنید و نسخه‌ی API محدود را انتخاب کنید."
+msgid "``abi3t``, introduced in Python 3.15, is compatible with :term:`free-threaded <free-threaded build>` builds of CPython. It has stricter API limitations than ``abi3``."
+msgstr ""
 
-msgid "Define ``Py_LIMITED_API`` to the value of :c:macro:`PY_VERSION_HEX` corresponding to the lowest Python version your extension supports. The extension will be ABI-compatible with all Python 3 releases from the specified one onward, and can use Limited API introduced up to that version."
-msgstr "``Py_LIMITED_API`` را برابر با مقدار :c:macro:`PY_VERSION_HEX` مربوط به کمترین نسخه‌ی پایتونی که ماژول توسعه‌ای شما از آن پشتیبانی می‌کند، تعریف کنید. ماژول توسعه‌ای از نظر ABI با تمام نسخه‌های پایتون 3 از نسخه‌ی مشخص‌شده به بعد سازگار خواهد بود و می‌تواند از API محدودی که تا آن نسخه معرفی شده است استفاده کند."
+msgid "``abi3t`` was added in :pep:`803`"
+msgstr ""
 
-msgid "Rather than using the ``PY_VERSION_HEX`` macro directly, hardcode a minimum minor version (e.g. ``0x030A0000`` for Python 3.10) for stability when compiling with future Python versions."
-msgstr "به‌جای استفاده‌ی مستقیم از ماکروی ``PY_VERSION_HEX``، برای پایداری هنگام کامپایل با نسخه‌های آینده‌ی پایتون، یک حداقل نسخه‌ی فرعی (مثلاً ``0x030A0000`` برای پایتون 3.10) را به‌صورت هاردکد (hardcode) در کد بنویسید."
+msgid "It is possible for an extension to be compiled for *both* ``abi3`` and ``abi3t`` at the same time; the result will be compatible with both free-threaded and non-free-threaded builds of Python. Currently, this has no downsides compared to compiling for ``abi3t`` only."
+msgstr ""
 
-msgid "You can also define ``Py_LIMITED_API`` to ``3``. This works the same as ``0x03020000`` (Python 3.2, the version that introduced Limited API)."
-msgstr "همچنین می‌توانید ``Py_LIMITED_API`` را با مقدار ``3`` تعریف کنید. این همانند ``0x03020000`` عمل می‌کند (پایتون 3.2، نسخه‌ای که API محدود را معرفی کرد)."
+msgid "Each Stable ABI is versioned using the first two numbers of the Python version. For example, Stable ABI 3.14 corresponds to Python 3.14. An extension compiled for Stable ABI 3.x is ABI-compatible with Python 3.x and above."
+msgstr ""
 
-msgid "Stable ABI"
-msgstr "رابط دودویی کاربردی پایدار"
+msgid "Extensions that target a stable ABI must only use a limited subset of the C API. This subset is known as the :dfn:`Limited API`; its contents are :ref:`listed below <limited-api-list>`."
+msgstr ""
 
-msgid "To enable this, Python provides a *Stable ABI*: a set of symbols that will remain ABI-compatible across Python 3.x versions."
-msgstr "برای فعال‌سازی این، پایتون یک *ABI پایدار* فراهم می‌کند: مجموعه‌ای از نمادها که در تمام نسخه‌های Python 3.x از نظر ABI سازگار باقی خواهند ماند."
-
-msgid "The Stable ABI prevents ABI issues, like linker errors due to missing symbols or data corruption due to changes in structure layouts or function signatures. However, other changes in Python can change the *behavior* of extensions. See Python's Backwards Compatibility Policy (:pep:`387`) for details."
-msgstr "ABI پایدار از بروز مشکلات ABI جلوگیری می‌کند؛ مانند خطاهای پیونددهنده  به دلیل نبود نمادها یا خرابی داده به دلیل تغییرات در چیدمان ساختارها یا امضاهای توابع. با این حال، تغییرات دیگر در پایتون می‌توانند *رفتار* ماژول‌های توسعه‌ای را تغییر دهند. برای جزئیات، سیاست سازگاری رو به عقب پایتون (:pep:`387`) را ببینید."
-
-msgid "The Stable ABI contains symbols exposed in the :ref:`Limited API <limited-c-api>`, but also other ones – for example, functions necessary to support older versions of the Limited API."
-msgstr "ABI پایدار شامل نمادهایی است که در :ref:`API محدود <limited-c-api>` افشا شده‌اند، اما نمادهای دیگری را نیز در بر می‌گیرد – برای مثال، توابعی که برای پشتیبانی از نسخه‌های قدیمی‌ترِ API محدود ضروری‌اند."
-
-msgid "On Windows, extensions that use the Stable ABI should be linked against ``python3.dll`` rather than a version-specific library such as ``python39.dll``."
+#, fuzzy
+#| msgid "On Windows, extensions that use the Stable ABI should be linked against ``python3.dll`` rather than a version-specific library such as ``python39.dll``."
+msgid "On Windows, extensions that use a Stable ABI should be linked against ``python3.dll`` rather than a version-specific library such as ``python39.dll``. This library only exposes the relevant symbols."
 msgstr "در ویندوز، ماژول‌های توسعه‌ای که از رابط دودویی پایدار استفاده می‌کنند، باید به‌جای کتابخانه‌ی خاص نسخه مانند ``python39.dll`` به ``python3.dll`` پیوند داده شوند."
 
-msgid "On some platforms, Python will look for and load shared library files named with the ``abi3`` tag (e.g. ``mymodule.abi3.so``). It does not check if such extensions conform to a Stable ABI. The user (or their packaging tools) need to ensure that, for example, extensions built with the 3.10+ Limited API are not installed for lower versions of Python."
-msgstr "در برخی پلتفرم‌ها، پایتون به دنبال پرونده‌های کتابخانه اشتراکی‌ای که با برچسب ``abi3`` نام‌گذاری شده‌اند می‌گردد و آن‌ها را بارگذاری می‌کند (برای مثال، ``mymodule.abi3.so``). پایتون بررسی نمی‌کند که آیا این‌گونه ماژول‌های توسعه‌ای با ABI پایدار مطابقت دارند یا خیر. کاربر (یا ابزارهای بسته‌بندی او) باید اطمینان حاصل کنند که مثلاً ماژول‌های توسعه‌ای ساخته‌شده با API محدودِ 3.10+ برای نسخه‌های پایین‌تر پایتون نصب نمی‌شوند."
+msgid "On some platforms, Python will look for and load shared library files named with the ``abi3`` or ``abi3t`` tag (for example, ``mymodule.abi3.so``). :term:`Free-threaded <free-threaded build>` interpreters only recognize the ``abi3t`` tag, while non-free-threaded ones will prefer ``abi3`` but fall back to ``abi3t``. Thus, extensions compatible with both ABIs should use the ``abi3t`` tag."
+msgstr ""
 
-msgid "All functions in the Stable ABI are present as functions in Python's shared library, not solely as macros. This makes them usable from languages that don't use the C preprocessor."
+msgid "Python does not necessarily check that extensions it loads have compatible ABI. Extension authors are encouraged to add a check using the :c:macro:`Py_mod_abi` slot or the :c:func:`PyABIInfo_Check` function, but the user (or their packaging tool) is ultimately responsible for ensuring that, for example, extensions built for Stable ABI 3.10 are not installed for lower versions of Python."
+msgstr ""
+
+#, fuzzy
+#| msgid "All functions in the Stable ABI are present as functions in Python's shared library, not solely as macros. This makes them usable from languages that don't use the C preprocessor."
+msgid "All functions in Stable ABI are present as functions in Python's shared library, not solely as macros. This makes them usable in languages that don't use the C preprocessor, including Python's :py:mod:`ctypes`."
 msgstr "تمام توابع موجود در ABI پایدار به‌صورت تابع در کتابخانه‌ی اشتراکی پایتون وجود دارند، نه صرفاً به‌صورت ماکرو. این امر امکان استفاده از آن‌ها را در زبان‌هایی که از پیش‌پردازنده‌ی C استفاده نمی‌کنند، فراهم می‌کند."
 
-msgid "Limited API Scope and Performance"
+msgid "Compiling for Stable ABI"
+msgstr ""
+
+msgid "Build tools (such as, for example, meson-python, scikit-build-core, or Setuptools) often have a mechanism for setting macros and synchronizing them with extension filenames and other metadata. Prefer using such a mechanism, if it exists, over defining the macros manually."
+msgstr ""
+
+msgid "The rest of this section is mainly relevant for tool authors, and for people who compile extensions manually."
+msgstr ""
+
+msgid "`list of recommended tools`_ in the Python Packaging User Guide"
+msgstr ""
+
+msgid "To compile for a Stable ABI, define one or both of the following macros to the lowest Python version your extension should support, in :c:macro:`Py_PACK_VERSION` format. Typically, you should choose a specific value rather than the version of the Python headers you are compiling against."
+msgstr ""
+
+msgid "The macros must be defined before including ``Python.h``. Since :c:macro:`Py_PACK_VERSION` is not available at this point, you will need to use the numeric value directly. For reference, the values for a few recent Python versions are:"
+msgstr ""
+
+msgid ""
+"0x30a0000  /* Py_PACK_VERSION(3,10) */\n"
+"0x30b0000  /* Py_PACK_VERSION(3,11) */\n"
+"0x30c0000  /* Py_PACK_VERSION(3,12) */\n"
+"0x30d0000  /* Py_PACK_VERSION(3,13) */\n"
+"0x30e0000  /* Py_PACK_VERSION(3,14) */\n"
+"0x30f0000  /* Py_PACK_VERSION(3,15) */"
+msgstr ""
+
+msgid "When one of the macros is defined, ``Python.h`` will only expose API that is compatible with the given Stable ABI -- that is, the :ref:`Limited API <limited-api-list>` plus some definitions that need to be visible to the compiler but should not be used directly. When both are defined, ``Python.h`` will only expose API compatible with both Stable ABIs."
+msgstr ""
+
+msgid "Target ``abi3``, that is, non-:term:`free-threaded builds <free-threaded build>` of CPython. See :ref:`above <abi3-compiling>` for common information."
+msgstr ""
+
+msgid "Target ``abi3t``, that is, :term:`free-threaded builds <free-threaded build>` of CPython. See :ref:`above <abi3-compiling>` for common information."
+msgstr ""
+
+msgid "Both macros specify a target ABI; the different naming style is due to backwards compatibility."
+msgstr ""
+
+msgid "Historical note"
+msgstr ""
+
+#, fuzzy
+#| msgid "You can also define ``Py_LIMITED_API`` to ``3``. This works the same as ``0x03020000`` (Python 3.2, the version that introduced Limited API)."
+msgid "You can also define ``Py_LIMITED_API`` as ``3``. This works the same as ``0x03020000`` (Python 3.2, the version that introduced Stable ABI)."
+msgstr "همچنین می‌توانید ``Py_LIMITED_API`` را با مقدار ``3`` تعریف کنید. این همانند ``0x03020000`` عمل می‌کند (پایتون 3.2، نسخه‌ای که API محدود را معرفی کرد)."
+
+msgid "When both are defined, ``Python.h`` may, or may not, redefine :c:macro:`!Py_LIMITED_API` to match :c:macro:`!Py_TARGET_ABI3T`."
+msgstr ""
+
+msgid "On a :term:`free-threaded build` -- that is, when :c:macro:`Py_GIL_DISABLED` is defined -- :c:macro:`!Py_TARGET_ABI3T` defaults to the value of :c:macro:`!Py_LIMITED_API`. This means that there are two ways to build for both ``abi3`` and ``abi3t``:"
+msgstr ""
+
+msgid "define both :c:macro:`!Py_LIMITED_API` and :c:macro:`!Py_TARGET_ABI3T`, or"
+msgstr ""
+
+msgid "define only :c:macro:`!Py_LIMITED_API` and:"
+msgstr ""
+
+msgid "on Windows, define :c:macro:`!Py_GIL_DISABLED`;"
+msgstr ""
+
+msgid "on other systems, use the headers of free-threaded build of Python."
+msgstr ""
+
+#, fuzzy
+#| msgid "Limited API Scope and Performance"
+msgid "Stable ABI Scope and Performance"
 msgstr "محدوده و کارایی API محدود"
 
-msgid "The goal for the Limited API is to allow everything that is possible with the full C API, but possibly with a performance penalty."
+#, fuzzy
+#| msgid "The goal for the Limited API is to allow everything that is possible with the full C API, but possibly with a performance penalty."
+msgid "The goal for Stable ABI is to allow everything that is possible with the full C API, but possibly with a performance penalty. Generally, compatibility with Stable ABI will require some changes to an extension's source code."
 msgstr "هدف API محدود (Limited API) این است که هر آنچه با C API کامل امکان‌پذیر است را ممکن سازد، اما احتمالاً با جریمه‌ای در کارایی (performance penalty)."
 
-msgid "For example, while :c:func:`PyList_GetItem` is available, its “unsafe” macro variant :c:func:`PyList_GET_ITEM` is not. The macro can be faster because it can rely on version-specific implementation details of the list object."
+#, fuzzy
+#| msgid "For example, while :c:func:`PyList_GetItem` is available, its “unsafe” macro variant :c:func:`PyList_GET_ITEM` is not. The macro can be faster because it can rely on version-specific implementation details of the list object."
+msgid "For example, while :c:func:`PyList_GetItem` is available, its \"unsafe\" macro variant :c:func:`PyList_GET_ITEM` is not. The macro can be faster because it can rely on version-specific implementation details of the list object."
 msgstr "برای مثال، در حالی که :c:func:`PyList_GetItem` دسترس‌پذیر است، گونه‌ی ماکروی «ناامن» آن :c:func:`PyList_GET_ITEM` دسترس‌پذیر نیست. این ماکرو می‌تواند سریع‌تر باشد، زیرا می‌تواند به جزئیات پیاده‌سازی وابسته به نسخه‌ی شیء فهرست تکیه کند."
 
-msgid "Without ``Py_LIMITED_API`` defined, some C API functions are inlined or replaced by macros. Defining ``Py_LIMITED_API`` disables this inlining, allowing stability as Python's data structures are improved, but possibly reducing performance."
+#, fuzzy
+#| msgid "Without ``Py_LIMITED_API`` defined, some C API functions are inlined or replaced by macros. Defining ``Py_LIMITED_API`` disables this inlining, allowing stability as Python's data structures are improved, but possibly reducing performance."
+msgid "For another example, when *not* compiling for Stable ABI, some C API functions are inlined or replaced by macros. Compiling for Stable ABI disables this inlining, allowing stability as Python's data structures are improved, but possibly reducing performance."
 msgstr "بدون تعریف ``Py_LIMITED_API``، برخی از توابع C API به‌صورت درون‌خطی  تعریف می‌شوند یا با ماکروها جایگزین می‌گردند. تعریف ``Py_LIMITED_API`` این درون‌خطی‌سازی را غیرفعال می‌کند و همین امر باعث می‌شود با بهبود ساختارهای داده‌ی پایتون، پایداری حفظ شود، هرچند ممکن است کارایی را کاهش دهد."
 
-msgid "By leaving out the ``Py_LIMITED_API`` definition, it is possible to compile a Limited API extension with a version-specific ABI. This can improve performance for that Python version, but will limit compatibility. Compiling with ``Py_LIMITED_API`` will then yield an extension that can be distributed where a version-specific one is not available – for example, for prereleases of an upcoming Python version."
-msgstr "با تعریف ن کردن ``Py_LIMITED_API``، می‌توان یک افزونه‌ی API محدود را با ABI مخصوص نسخه کامپایل کرد. این کار می‌تواند کارایی را برای آن نسخه از پایتون بهبود بخشد، اما سازگاری را محدود خواهد کرد. در مقابل، کامپایل کردن با ``Py_LIMITED_API`` افزونه‌ای به دست می‌دهد که می‌توان آن را در جایی که افزونه‌ی مخصوص نسخه در دسترس نیست، توزیع کرد – برای مثال، برای نسخه‌های پیش‌انتشار یک نسخه‌ی آتی از پایتون."
+msgid "By leaving out the :c:macro:`!Py_LIMITED_API` or :c:macro:`!Py_TARGET_ABI3T` definition, it is possible to compile Stable-ABI-compatible source for a version-specific ABI. A potentially faster version-specific extension can then be distributed alongside a version compiled for Stable ABI -- a slower but more compatible fallback."
+msgstr ""
 
-msgid "Limited API Caveats"
-msgstr "هشدارهای API محدود"
+#, fuzzy
+#| msgid "Stable ABI"
+msgid "Stable ABI Caveats"
+msgstr "رابط دودویی کاربردی پایدار"
 
-msgid "Note that compiling with ``Py_LIMITED_API`` is *not* a complete guarantee that code conforms to the :ref:`Limited API <limited-c-api>` or the :ref:`Stable ABI <stable-abi>`. ``Py_LIMITED_API`` only covers definitions, but an API also includes other issues, such as expected semantics."
-msgstr "توجه داشته باشید که کامپایل با ``Py_LIMITED_API`` تضمین کاملی *نیست* که کد با :ref:`API محدود <limited-c-api>` یا :ref:`ABI پایدار <stable-abi>` مطابقت داشته باشد. ``Py_LIMITED_API`` تنها تعاریف را پوشش می‌دهد، اما یک API همچنین شامل مسائل دیگری مانند معناشناسی مورد انتظار است."
+#, fuzzy
+#| msgid "The Stable ABI prevents ABI issues, like linker errors due to missing symbols or data corruption due to changes in structure layouts or function signatures. However, other changes in Python can change the *behavior* of extensions. See Python's Backwards Compatibility Policy (:pep:`387`) for details."
+msgid "Note that compiling for Stable ABI is *not* a complete guarantee that code will be compatible with the expected Python versions. Stable ABI prevents *ABI* issues, like linker errors due to missing symbols or data corruption due to changes in structure layouts or function signatures. However, other changes in Python can change the *behavior* of extensions."
+msgstr "ABI پایدار از بروز مشکلات ABI جلوگیری می‌کند؛ مانند خطاهای پیونددهنده  به دلیل نبود نمادها یا خرابی داده به دلیل تغییرات در چیدمان ساختارها یا امضاهای توابع. با این حال، تغییرات دیگر در پایتون می‌توانند *رفتار* ماژول‌های توسعه‌ای را تغییر دهند. برای جزئیات، سیاست سازگاری رو به عقب پایتون (:pep:`387`) را ببینید."
 
-msgid "One issue that ``Py_LIMITED_API`` does not guard against is calling a function with arguments that are invalid in a lower Python version. For example, consider a function that starts accepting ``NULL`` for an argument. In Python 3.9, ``NULL`` now selects a default behavior, but in Python 3.8, the argument will be used directly, causing a ``NULL`` dereference and crash. A similar argument works for fields of structs."
+#, fuzzy
+#| msgid "One issue that ``Py_LIMITED_API`` does not guard against is calling a function with arguments that are invalid in a lower Python version. For example, consider a function that starts accepting ``NULL`` for an argument. In Python 3.9, ``NULL`` now selects a default behavior, but in Python 3.8, the argument will be used directly, causing a ``NULL`` dereference and crash. A similar argument works for fields of structs."
+msgid "One issue that the :c:macro:`Py_TARGET_ABI3T` and :c:macro:`Py_LIMITED_API` macros do not guard against is calling a function with arguments that are invalid in a lower Python version. For example, consider a function that starts accepting ``NULL`` for an argument. In Python 3.9, ``NULL`` now selects a default behavior, but in Python 3.8, the argument will be used directly, causing a ``NULL`` dereference and crash. A similar argument works for fields of structs."
 msgstr "یکی از مشکلاتی که ``Py_LIMITED_API`` در برابر آن محافظت نمی‌کند، فراخوانی تابعی با آرگومان‌هایی است که در نسخه‌ی پایین‌تر پایتون نامعتبر هستند. برای مثال، تابعی را در نظر بگیرید که شروع به پذیرش ``NULL`` برای یک آرگومان کرده است. در پایتون 3.9، ``NULL`` اکنون یک رفتار پیش‌فرض را انتخاب می‌کند، اما در پایتون 3.8، آرگومان مستقیماً استفاده خواهد شد که موجب ارجاع‌زدایی (dereference) ``NULL`` و فروپاشی می‌شود. استدلال مشابهی برای فیلدهای ساختارها نیز برقرار است."
 
-msgid "Another issue is that some struct fields are currently not hidden when ``Py_LIMITED_API`` is defined, even though they're part of the Limited API."
-msgstr "مشکل دیگر این است که برخی از فیلدهای ساختار هنگامی که ``Py_LIMITED_API`` تعریف شده باشد، در حال حاضر پنهان نمی‌شوند، هرچند که بخشی از API محدود به شمار می‌روند."
-
-msgid "For these reasons, we recommend testing an extension with *all* minor Python versions it supports, and preferably to build with the *lowest* such version."
+#, fuzzy
+#| msgid "For these reasons, we recommend testing an extension with *all* minor Python versions it supports, and preferably to build with the *lowest* such version."
+msgid "For these reasons, we recommend testing an extension with *all* minor Python versions it supports."
 msgstr "به این دلایل، توصیه می‌کنیم یک ماژول توسعه‌ای را با *همه‌ی* نسخه‌های فرعی پایتون که از آن‌ها پشتیبانی می‌کند آزمایش کنید و ترجیحاً آن را با *پایین‌ترین* نسخه از میان آن‌ها کامپایل کنید."
 
 msgid "We also recommend reviewing documentation of all used API to check if it is explicitly part of the Limited API. Even with ``Py_LIMITED_API`` defined, a few private declarations are exposed for technical reasons (or even unintentionally, as bugs)."
 msgstr "همچنین توصیه می‌کنیم مستندات تمام API‌های استفاده‌شده را بررسی کنید تا مشخص شود که آیا به‌طور صریح بخشی از API محدود هستند یا خیر. حتی با تعریف ``Py_LIMITED_API``، چند اعلان خصوصی به دلایل فنی (یا حتی ناخواسته، به‌عنوان باگ) در دسترس قرار می‌گیرند."
 
-msgid "Also note that the Limited API is not necessarily stable: compiling with ``Py_LIMITED_API`` with Python 3.8 means that the extension will run with Python 3.12, but it will not necessarily *compile* with Python 3.12. In particular, parts of the Limited API may be deprecated and removed, provided that the Stable ABI stays stable."
+#, fuzzy
+#| msgid "Also note that the Limited API is not necessarily stable: compiling with ``Py_LIMITED_API`` with Python 3.8 means that the extension will run with Python 3.12, but it will not necessarily *compile* with Python 3.12. In particular, parts of the Limited API may be deprecated and removed, provided that the Stable ABI stays stable."
+msgid "Also note that while compiling with ``Py_LIMITED_API`` 3.8 means that the extension should *load* on Python 3.12, and *compile* with Python 3.12, the same source will not necessarily compile with ``Py_LIMITED_API`` set to 3.12. In general, parts of the Limited API may be deprecated and removed, provided that Stable ABI stays stable."
 msgstr "همچنین توجه داشته باشید که API محدود لزوماً پایدار نیست: کامپایل کردن با ``Py_LIMITED_API`` در پایتون 3.8 به این معناست که ماژول توسعه‌ای با پایتون 3.12 اجرا خواهد شد، اما لزوماً با پایتون 3.12 *کامپایل* نخواهد شد. به‌ویژه، ممکن است بخش‌هایی از API محدود منسوخ و حذف شوند، به شرط آنکه ABI پایدار پایدار باقی بماند."
 
 msgid "Platform Considerations"
 msgstr "ملاحظات پلتفرم"
 
-msgid "ABI stability depends not only on Python, but also on the compiler used, lower-level libraries and compiler options. For the purposes of the :ref:`Stable ABI <stable-abi>`, these details define a “platform”. They usually depend on the OS type and processor architecture"
+#, fuzzy
+#| msgid "ABI stability depends not only on Python, but also on the compiler used, lower-level libraries and compiler options. For the purposes of the :ref:`Stable ABI <stable-abi>`, these details define a “platform”. They usually depend on the OS type and processor architecture"
+msgid "ABI stability depends not only on Python, but also on the compiler used, lower-level libraries and compiler options. For the purposes of the :ref:`Stable ABIs <stable-abi>`, these details define a “platform”. They usually depend on the OS type and processor architecture"
 msgstr "پایداری ABI نه‌تنها به پایتون، بلکه به کامپایلر استفاده‌شده، کتابخانه‌های سطح پایین‌تر و گزینه‌های کامپایلر نیز بستگی دارد. در چارچوب :ref:`ABI پایدار <stable-abi>`، این جزئیات یک «پلتفرم» را تعریف می‌کنند. این جزئیات معمولاً به نوع سیستم‌عامل و معماری پردازنده بستگی دارند"
 
-msgid "It is the responsibility of each particular distributor of Python to ensure that all Python versions on a particular platform are built in a way that does not break the Stable ABI. This is the case with Windows and macOS releases from ``python.org`` and many third-party distributors."
+#, fuzzy
+#| msgid "It is the responsibility of each particular distributor of Python to ensure that all Python versions on a particular platform are built in a way that does not break the Stable ABI. This is the case with Windows and macOS releases from ``python.org`` and many third-party distributors."
+msgid "It is the responsibility of each particular distributor of Python to ensure that all Python versions on a particular platform are built in a way that does not break the Stable ABIs, or the version-specific ABIs. This is the case with Windows and macOS releases from ``python.org`` and many third-party distributors."
 msgstr "مسئولیت هر توزیع‌کننده‌ی خاص پایتون این است که اطمینان حاصل کند تمام نسخه‌های پایتون روی یک پلتفرم خاص به گونه‌ای ساخته می‌شوند که ABI پایدار را نشکنند. این موضوع درباره‌ی نسخه‌های ویندوز و macOS از ``python.org`` و بسیاری از توزیع‌کنندگان شخص ثالث صادق است."
+
+msgid "ABI Checking"
+msgstr ""
+
+msgid "Python includes a rudimentary check for ABI compatibility."
+msgstr ""
+
+msgid "This check is not comprehensive. It only guards against common cases of incompatible modules being installed for the wrong interpreter. It also does not take :ref:`platform incompatibilities <stable-abi-platform>` into account. It can only be done after an extension is successfully loaded."
+msgstr ""
+
+msgid "Despite these limitations, it is recommended that extension modules use this mechanism, so that detectable incompatibilities raise exceptions rather than crash."
+msgstr ""
+
+msgid "Most modules can use this check via the :c:data:`Py_mod_abi` slot and the :c:macro:`PyABIInfo_VAR` macro, for example like this:"
+msgstr ""
+
+msgid ""
+"PyABIInfo_VAR(abi_info);\n"
+"\n"
+"static PyModuleDef_Slot mymodule_slots[] = {\n"
+"   {Py_mod_abi, &abi_info},\n"
+"   ...\n"
+"};"
+msgstr ""
+
+msgid "The full API is described below for advanced use cases."
+msgstr ""
+
+msgid "Verify that the given *info* is compatible with the currently running interpreter."
+msgstr ""
+
+msgid "Return 0 on success. On failure, raise an exception and return -1."
+msgstr ""
+
+msgid "If the ABI is incompatible, the raised exception will be :py:exc:`ImportError`."
+msgstr ""
+
+msgid "The *module_name* argument can be ``NULL``, or point to a NUL-terminated UTF-8-encoded string used for error messages."
+msgstr ""
+
+msgid "Note that if *info* describes the ABI that the current code uses (as defined by :c:macro:`PyABIInfo_VAR`, for example), using any other Python C API may lead to crashes. In particular, it is not safe to examine the raised exception."
+msgstr ""
+
+msgid "Define a static :c:struct:`PyABIInfo` variable with the given *NAME* that describes the ABI that the current code will use. This macro expands to:"
+msgstr ""
+
+msgid ""
+"static PyABIInfo NAME = {\n"
+"    1, 0,\n"
+"    PyABIInfo_DEFAULT_FLAGS,\n"
+"    PY_VERSION_HEX,\n"
+"    PyABIInfo_DEFAULT_ABI_VERSION\n"
+"}"
+msgstr ""
+
+msgid "The major version of :c:struct:`PyABIInfo`. Can be set to:"
+msgstr ""
+
+msgid "``0`` to skip all checking, or"
+msgstr ""
+
+msgid "``1`` to specify this version of :c:struct:`!PyABIInfo`."
+msgstr ""
+
+msgid "The minor version of :c:struct:`PyABIInfo`. Must be set to ``0``; larger values are reserved for backwards-compatible future versions of :c:struct:`!PyABIInfo`."
+msgstr ""
+
+msgid "This field is usually set to the following macro:"
+msgstr ""
+
+msgid "Default flags, based on current values of macros such as :c:macro:`Py_LIMITED_API` and :c:macro:`Py_GIL_DISABLED`."
+msgstr ""
+
+msgid "Alternately, the field can be set to the following flags, combined by bitwise OR. Unused bits must be set to zero."
+msgstr ""
+
+msgid "ABI variant -- one of:"
+msgstr ""
+
+msgid "Specifies that Stable ABI is used."
+msgstr ""
+
+msgid "Specifies ABI specific to a particular build of CPython. Internal use only."
+msgstr ""
+
+msgid "Free-threading compatibility -- one of:"
+msgstr ""
+
+msgid "Specifies ABI compatible with :term:`free-threaded builds <free-threaded build>` of CPython. (That is, ones compiled with :option:`--disable-gil`; with ``t`` in :py:data:`sys.abiflags`)"
+msgstr ""
+
+msgid "Specifies ABI compatible with non-free-threaded builds of CPython (ones compiled *without* :option:`--disable-gil`)."
+msgstr ""
+
+msgid "Specifies ABI compatible with both free-threaded and non-free-threaded builds of CPython, that is, both ``abi3`` and ``abi3t``."
+msgstr ""
+
+msgid "The version of the Python headers used to build the code, in the format used by :c:macro:`PY_VERSION_HEX`."
+msgstr ""
+
+msgid "This can be set to ``0`` to skip any checks related to this field. This option is meant mainly for projects that do not use the CPython headers directly, and do not emulate a specific version of them."
+msgstr ""
+
+msgid "The ABI version."
+msgstr ""
+
+msgid "For Stable ABI, this field should be the value of :c:macro:`Py_LIMITED_API` or :c:macro:`Py_TARGET_ABI3T`. If both are defined, use the smaller value. (If :c:macro:`Py_LIMITED_API` is ``3``; use :c:expr:`Py_PACK_VERSION(3, 2)` instead of ``3``.)"
+msgstr ""
+
+msgid "Otherwise, it should be set to :c:macro:`PY_VERSION_HEX`."
+msgstr ""
+
+msgid "It can also be set to ``0`` to skip any checks related to this field."
+msgstr ""
+
+msgid "The value that should be used for this field, based on current values of macros such as :c:macro:`Py_LIMITED_API`, :c:macro:`PY_VERSION_HEX` and :c:macro:`Py_GIL_DISABLED`."
+msgstr ""
 
 msgid "Contents of Limited API"
 msgstr "محتویات API محدود"
 
-msgid "Currently, the :ref:`Limited API <limited-c-api>` includes the following items:"
+#, fuzzy
+#| msgid "Currently, the :ref:`Limited API <limited-c-api>` includes the following items:"
+msgid "This is the definitive list of :ref:`Limited API <limited-c-api>` for Python |version|:"
 msgstr "در حال حاضر، :ref:`API محدود <limited-c-api>` شامل موارد زیر است:"
 
 msgid "PyUnstable"
 msgstr "PyUnstable"
+
+#~ msgid "Limited C API"
+#~ msgstr "C API محدود"
+
+#~ msgid "Python 3.2 introduced the *Limited API*, a subset of Python's C API. Extensions that only use the Limited API can be compiled once and be loaded on multiple versions of Python. Contents of the Limited API are :ref:`listed below <limited-api-list>`."
+#~ msgstr "پایتون 3.2 *API محدود* را معرفی کرد، زیرمجموعه‌ای از C API پایتون. ماژول‌های توسعه‌ای که فقط از API محدود استفاده می‌کنند، می‌توانند یک‌بار کامپایل شوند و روی نسخه‌های متعدد پایتون بارگذاری شوند. محتوای API محدود :ref:`در ادامه فهرست شده‌اند <limited-api-list>`."
+
+#~ msgid "Define this macro before including ``Python.h`` to opt in to only use the Limited API, and to select the Limited API version."
+#~ msgstr "این ماکرو را پیش از گنجاندن ``Python.h`` تعریف کنید تا فقط از API محدود استفاده کنید و نسخه‌ی API محدود را انتخاب کنید."
+
+#~ msgid "Define ``Py_LIMITED_API`` to the value of :c:macro:`PY_VERSION_HEX` corresponding to the lowest Python version your extension supports. The extension will be ABI-compatible with all Python 3 releases from the specified one onward, and can use Limited API introduced up to that version."
+#~ msgstr "``Py_LIMITED_API`` را برابر با مقدار :c:macro:`PY_VERSION_HEX` مربوط به کمترین نسخه‌ی پایتونی که ماژول توسعه‌ای شما از آن پشتیبانی می‌کند، تعریف کنید. ماژول توسعه‌ای از نظر ABI با تمام نسخه‌های پایتون 3 از نسخه‌ی مشخص‌شده به بعد سازگار خواهد بود و می‌تواند از API محدودی که تا آن نسخه معرفی شده است استفاده کند."
+
+#~ msgid "Rather than using the ``PY_VERSION_HEX`` macro directly, hardcode a minimum minor version (e.g. ``0x030A0000`` for Python 3.10) for stability when compiling with future Python versions."
+#~ msgstr "به‌جای استفاده‌ی مستقیم از ماکروی ``PY_VERSION_HEX``، برای پایداری هنگام کامپایل با نسخه‌های آینده‌ی پایتون، یک حداقل نسخه‌ی فرعی (مثلاً ``0x030A0000`` برای پایتون 3.10) را به‌صورت هاردکد (hardcode) در کد بنویسید."
+
+#~ msgid "To enable this, Python provides a *Stable ABI*: a set of symbols that will remain ABI-compatible across Python 3.x versions."
+#~ msgstr "برای فعال‌سازی این، پایتون یک *ABI پایدار* فراهم می‌کند: مجموعه‌ای از نمادها که در تمام نسخه‌های Python 3.x از نظر ABI سازگار باقی خواهند ماند."
+
+#~ msgid "The Stable ABI contains symbols exposed in the :ref:`Limited API <limited-c-api>`, but also other ones – for example, functions necessary to support older versions of the Limited API."
+#~ msgstr "ABI پایدار شامل نمادهایی است که در :ref:`API محدود <limited-c-api>` افشا شده‌اند، اما نمادهای دیگری را نیز در بر می‌گیرد – برای مثال، توابعی که برای پشتیبانی از نسخه‌های قدیمی‌ترِ API محدود ضروری‌اند."
+
+#~ msgid "On some platforms, Python will look for and load shared library files named with the ``abi3`` tag (e.g. ``mymodule.abi3.so``). It does not check if such extensions conform to a Stable ABI. The user (or their packaging tools) need to ensure that, for example, extensions built with the 3.10+ Limited API are not installed for lower versions of Python."
+#~ msgstr "در برخی پلتفرم‌ها، پایتون به دنبال پرونده‌های کتابخانه اشتراکی‌ای که با برچسب ``abi3`` نام‌گذاری شده‌اند می‌گردد و آن‌ها را بارگذاری می‌کند (برای مثال، ``mymodule.abi3.so``). پایتون بررسی نمی‌کند که آیا این‌گونه ماژول‌های توسعه‌ای با ABI پایدار مطابقت دارند یا خیر. کاربر (یا ابزارهای بسته‌بندی او) باید اطمینان حاصل کنند که مثلاً ماژول‌های توسعه‌ای ساخته‌شده با API محدودِ 3.10+ برای نسخه‌های پایین‌تر پایتون نصب نمی‌شوند."
+
+#~ msgid "By leaving out the ``Py_LIMITED_API`` definition, it is possible to compile a Limited API extension with a version-specific ABI. This can improve performance for that Python version, but will limit compatibility. Compiling with ``Py_LIMITED_API`` will then yield an extension that can be distributed where a version-specific one is not available – for example, for prereleases of an upcoming Python version."
+#~ msgstr "با تعریف ن کردن ``Py_LIMITED_API``، می‌توان یک افزونه‌ی API محدود را با ABI مخصوص نسخه کامپایل کرد. این کار می‌تواند کارایی را برای آن نسخه از پایتون بهبود بخشد، اما سازگاری را محدود خواهد کرد. در مقابل، کامپایل کردن با ``Py_LIMITED_API`` افزونه‌ای به دست می‌دهد که می‌توان آن را در جایی که افزونه‌ی مخصوص نسخه در دسترس نیست، توزیع کرد – برای مثال، برای نسخه‌های پیش‌انتشار یک نسخه‌ی آتی از پایتون."
+
+#~ msgid "Limited API Caveats"
+#~ msgstr "هشدارهای API محدود"
+
+#~ msgid "Note that compiling with ``Py_LIMITED_API`` is *not* a complete guarantee that code conforms to the :ref:`Limited API <limited-c-api>` or the :ref:`Stable ABI <stable-abi>`. ``Py_LIMITED_API`` only covers definitions, but an API also includes other issues, such as expected semantics."
+#~ msgstr "توجه داشته باشید که کامپایل با ``Py_LIMITED_API`` تضمین کاملی *نیست* که کد با :ref:`API محدود <limited-c-api>` یا :ref:`ABI پایدار <stable-abi>` مطابقت داشته باشد. ``Py_LIMITED_API`` تنها تعاریف را پوشش می‌دهد، اما یک API همچنین شامل مسائل دیگری مانند معناشناسی مورد انتظار است."
+
+#~ msgid "Another issue is that some struct fields are currently not hidden when ``Py_LIMITED_API`` is defined, even though they're part of the Limited API."
+#~ msgstr "مشکل دیگر این است که برخی از فیلدهای ساختار هنگامی که ``Py_LIMITED_API`` تعریف شده باشد، در حال حاضر پنهان نمی‌شوند، هرچند که بخشی از API محدود به شمار می‌روند."

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 14:43+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -595,6 +595,9 @@ msgstr "این ممکن است در صورتی که برچسب زمانی خار
 msgid "Raise :exc:`OverflowError` instead of :exc:`ValueError` if the timestamp is out of the range of values supported by the platform C :c:func:`localtime` function. Raise :exc:`OSError` instead of :exc:`ValueError` on :c:func:`localtime` failure."
 msgstr "اگر برچسب زمانی خارج از محدوده مقادیر پشتیبانی‌شده توسط تابع :c:func:`localtime` در C پلتفرم باشد، :exc:`OverflowError` به جای :exc:`ValueError` پرتاب می‌شود. در صورت شکست :c:func:`localtime`، :exc:`OSError` به جای :exc:`ValueError` پرتاب می‌شود."
 
+msgid "Accepts any real number as *timestamp*, not only integer or float."
+msgstr "هر عدد حقیقی را به‌عنوان *timestamp* می‌پذیرد، نه فقط عدد صحیح یا float."
+
 msgid "Return the date corresponding to the proleptic Gregorian *ordinal*, where January 1 of year 1 has ordinal 1."
 msgstr "تاریخ متناظر با *ordinal* در گاه‌شماری میلادی تعمیم‌یافته (proleptic Gregorian) را برمی‌گرداند؛ به‌طوری‌که ۱ ژانویه سال ۱ دارای شماره ترتیبی ۱ است."
 
@@ -648,7 +651,9 @@ msgstr "date(*(time.strptime(date_string, format)[0:3]))"
 msgid ":exc:`ValueError` is raised if the date_string and format can't be parsed by :func:`time.strptime` or if it returns a value which isn't a time tuple.  See also :ref:`strftime-strptime-behavior` and :meth:`date.fromisoformat`."
 msgstr ":exc:`ValueError` در صورتی پرتاب می‌شود که date_string و format توسط :func:`time.strptime` قابل تجزیه نباشند یا این تابع مقداری برگرداند که یک تاپل زمانیی (time tuple) نیست. همچنین ببینید :ref:`strftime-strptime-behavior` و :meth:`date.fromisoformat`."
 
-msgid "If *format* specifies a day of month without a year a :exc:`DeprecationWarning` is emitted.  This is to avoid a quadrennial leap year bug in code seeking to parse only a month and day as the default year used in absence of one in the format is not a leap year. Such *format* values may raise an error as of Python 3.15.  The workaround is to always include a year in your *format*.  If parsing *date_string* values that do not have a year, explicitly add a year that is a leap year before parsing:"
+#, fuzzy
+#| msgid "If *format* specifies a day of month without a year a :exc:`DeprecationWarning` is emitted.  This is to avoid a quadrennial leap year bug in code seeking to parse only a month and day as the default year used in absence of one in the format is not a leap year. Such *format* values may raise an error as of Python 3.15.  The workaround is to always include a year in your *format*.  If parsing *date_string* values that do not have a year, explicitly add a year that is a leap year before parsing:"
+msgid "If *format* specifies a day of month (``%d``) without a year, :exc:`ValueError` is raised.  This is to avoid a quadrennial leap year bug in code seeking to parse only a month and day as the default year used in absence of one in the format is not a leap year. The workaround is to always include a year in your *format*.  If parsing *date_string* values that do not have a year, explicitly add a year that is a leap year before parsing:"
 msgstr "اگر *format* روزی از ماه را بدون سال تعیین کند، یک :exc:`DeprecationWarning` نشان داده می‌شود. این کار برای اجتناب از یک اشکال چهارساله‌ی مربوط به سال کبیسه در کدی است که فقط به دنبال تجزیه‌ی ماه و روز است، زیرا سال پیش‌فرضی که در نبود سال در قالب استفاده می‌شود، سال کبیسه نیست. چنین مقادیر *format* ممکن است از پایتون 3.15 به بعد خطایی پرتاب کنند. راه‌حل این است که همیشه یک سال را در *format* خود بگنجانید. اگر مقادیر *date_string* را که سال ندارند تجزیه می‌کنید، پیش از تجزیه به‌صراحت یک سال کبیسه اضافه کنید:"
 
 msgid ""
@@ -1118,9 +1123,6 @@ msgstr "از آن‌جا که بسیاری از متدهای ``datetime`` با �
 msgid "Raise :exc:`OverflowError` instead of :exc:`ValueError` if the timestamp is out of the range of values supported by the platform C :c:func:`gmtime` function. Raise :exc:`OSError` instead of :exc:`ValueError` on :c:func:`gmtime` failure."
 msgstr "اگر برچسب زمانی خارج از محدوده مقادیر پشتیبانی‌شده توسط تابع :c:func:`gmtime` در زبان C پلتفرم باشد، :exc:`OverflowError` به‌جای :exc:`ValueError` پرتاب می‌شود. در صورت شکست :c:func:`gmtime`، :exc:`OSError` به‌جای :exc:`ValueError` پرتاب می‌شود."
 
-msgid "Accepts any real number as *timestamp*, not only integer or float."
-msgstr "هر عدد حقیقی را به‌عنوان *timestamp* می‌پذیرد، نه فقط عدد صحیح یا float."
-
 msgid "Use :meth:`datetime.fromtimestamp` with :const:`UTC` instead."
 msgstr "به‌جای آن از :meth:`datetime.fromtimestamp` با :const:`UTC` استفاده کنید."
 
@@ -1208,9 +1210,6 @@ msgstr "datetime(*(time.strptime(date_string, format)[0:6]))"
 
 msgid ":exc:`ValueError` is raised if the date_string and format can't be parsed by :func:`time.strptime` or if it returns a value which isn't a time tuple.  See also :ref:`strftime-strptime-behavior` and :meth:`datetime.fromisoformat`."
 msgstr ":exc:`ValueError` پرتاب می‌شود اگر date_string و format توسط :func:`time.strptime` قابل تجزیه نباشند یا اگر مقداری برگرداند که یک تاپل زمانیی نباشد. همچنین :ref:`strftime-strptime-behavior` و :meth:`datetime.fromisoformat` را ببینید."
-
-msgid "If *format* specifies a day of month without a year a :exc:`DeprecationWarning` is now emitted.  This is to avoid a quadrennial leap year bug in code seeking to parse only a month and day as the default year used in absence of one in the format is not a leap year. Such *format* values may raise an error as of Python 3.15.  The workaround is to always include a year in your *format*.  If parsing *date_string* values that do not have a year, explicitly add a year that is a leap year before parsing:"
-msgstr "اگر *format* روزی از ماه را بدون سال تعیین کند، اکنون یک :exc:`DeprecationWarning` نشان داده می‌شود. این کار برای اجتناب از یک باگ سال کبیسه‌ای چهارساله در کدی است که می‌خواهد فقط ماه و روز را تجزیه کند، زیرا سال پیش‌فرضی که در نبود سال در قالب استفاده می‌شود، سال کبیسه نیست. چنین مقادیری برای *format* ممکن است از پایتون 3.15 به بعد خطایی پرتاب کنند. راه‌حل این است که همیشه یک سال در *format* خود بگنجانید. اگر مقادیر *date_string* بدون سال را تجزیه می‌کنید، پیش از تجزیه به‌صراحت یک سال کبیسه اضافه کنید:"
 
 msgid ""
 ">>> import datetime as dt\n"
@@ -2778,7 +2777,9 @@ msgstr ""
 ">>> _.strftime('%a %d %b %Y, %I:%M%p')\n"
 "'Mon 31 Jan 2022, 11:59PM'"
 
-msgid "The following is a list of all the format codes that the 1989 C standard requires, and these work on all platforms with a standard C implementation."
+#, fuzzy
+#| msgid "The following is a list of all the format codes that the 1989 C standard requires, and these work on all platforms with a standard C implementation."
+msgid "The following is a list of all the format codes that the 2011 C standard requires, and these work on all supported platforms."
 msgstr "فهرست زیر شامل تمام کدهای قالب‌بندی است که استاندارد C سال ۱۹۸۹ آن‌ها را الزامی می‌کند، و این کدها روی تمام سکوهای دارای پیاده‌سازی استاندارد C کار می‌کنند."
 
 msgid "Directive"
@@ -2817,27 +2818,6 @@ msgstr "Sunday, Monday, ..., Saturday (en_US);"
 msgid "Sonntag, Montag, ..., Samstag (de_DE)"
 msgstr "Sonntag, Montag, ..., Samstag (de_DE)"
 
-msgid "``%w``"
-msgstr "``%w``"
-
-msgid "Weekday as a decimal number, where 0 is Sunday and 6 is Saturday."
-msgstr "روز هفته به‌صورت عدد دهدهی، که در آن ۰ یکشنبه و ۶ شنبه است."
-
-msgid "0, 1, ..., 6"
-msgstr "0, 1, ..., 6"
-
-msgid "``%d``"
-msgstr "``%d``"
-
-msgid "Day of the month as a zero-padded decimal number."
-msgstr "روز ماه به‌صورت عدد دهدهی با صفرهای پیشرو."
-
-msgid "01, 02, ..., 31"
-msgstr "01, 02, ..., 31"
-
-msgid "\\(9)"
-msgstr "\\(9)"
-
 msgid "``%b``"
 msgstr "``%b``"
 
@@ -2862,32 +2842,122 @@ msgstr "January, February, ..., December (en_US);"
 msgid "Januar, Februar, ..., Dezember (de_DE)"
 msgstr "Januar, Februar, ..., Dezember (de_DE)"
 
-msgid "``%m``"
-msgstr "``%m``"
+msgid "``%c``"
+msgstr "``%c``"
 
-msgid "Month as a zero-padded decimal number."
-msgstr "ماه به‌صورت عدد دهدهی با صفر پر شده."
+msgid "Locale's appropriate date and time representation."
+msgstr "نمایش مناسب تاریخ و زمان بر اساس تنظیمات locale ."
 
-msgid "01, 02, ..., 12"
-msgstr "01, 02, ..., 12"
+msgid "Tue Aug 16 21:30:00 1988 (en_US);"
+msgstr "Tue Aug 16 21:30:00 1988 (en_US);"
 
-msgid "``%y``"
-msgstr "``%y``"
+msgid "Di 16 Aug 21:30:00 1988 (de_DE)"
+msgstr "Di 16 Aug 21:30:00 1988 (de_DE)"
 
-msgid "Year without century as a zero-padded decimal number."
+msgid "``%C``"
+msgstr ""
+
+#, fuzzy
+#| msgid "Year without century as a zero-padded decimal number."
+msgid "The year divided by 100 and truncated to an integer as a zero-padded decimal number."
 msgstr "سال بدون قرن به‌صورت عدد دهدهی با صفرِ پیش‌رو."
+
+#, fuzzy
+#| msgid "01, 02, ..., 31"
+msgid "01, 02, ..., 99"
+msgstr "01, 02, ..., 31"
+
+msgid "\\(0)"
+msgstr ""
+
+msgid "``%d``"
+msgstr "``%d``"
+
+msgid "Day of the month as a zero-padded decimal number."
+msgstr "روز ماه به‌صورت عدد دهدهی با صفرهای پیشرو."
+
+msgid "01, 02, ..., 31"
+msgstr "01, 02, ..., 31"
+
+#, fuzzy
+#| msgid "\\(4), \\(9)"
+msgid "\\(9), \\(10)"
+msgstr "\\(4), \\(9)"
+
+msgid "``%D``"
+msgstr ""
+
+#, fuzzy
+#| msgid "Equivalent to::"
+msgid "Equivalent to ``%m/%d/%y``."
+msgstr "معادل با::"
+
+msgid "11/28/25"
+msgstr ""
+
+msgid "\\(9)"
+msgstr "\\(9)"
+
+msgid "``%e``"
+msgstr ""
+
+#, fuzzy
+#| msgid "Day of the month as a zero-padded decimal number."
+msgid "The day of the month as a space-padded decimal number."
+msgstr "روز ماه به‌صورت عدد دهدهی با صفرهای پیشرو."
+
+#, fuzzy
+#| msgid "01, 02, ..., 31"
+msgid "␣1, ␣2, ..., 31"
+msgstr "01, 02, ..., 31"
+
+msgid "\\(10)"
+msgstr ""
+
+msgid "``%F``"
+msgstr ""
+
+msgid "Equivalent to ``%Y-%m-%d``, the ISO 8601 format."
+msgstr ""
+
+msgid "2025-10-11, 1001-12-30"
+msgstr ""
+
+msgid "``%g``"
+msgstr ""
+
+#, fuzzy
+#| msgid "ISO 8601 year with century representing the year that contains the greater part of the ISO week (``%V``)."
+msgid "Last 2 digits of ISO 8601 year representing the year that contains the greater part of the ISO week (``%V``)."
+msgstr "سال ISO 8601 همراه با قرن، نشان‌دهنده‌ی سالی که بخش بزرگ‌تر هفته‌ی ISO (``%V``) در آن قرار دارد."
 
 msgid "00, 01, ..., 99"
 msgstr "00, 01, ..., 99"
 
-msgid "``%Y``"
-msgstr "``%Y``"
+msgid "``%G``"
+msgstr "``%G``"
 
-msgid "Year with century as a decimal number."
-msgstr "سال همراه با قرن به‌صورت عدد دهدهی."
+msgid "ISO 8601 year with century representing the year that contains the greater part of the ISO week (``%V``)."
+msgstr "سال ISO 8601 همراه با قرن، نشان‌دهنده‌ی سالی که بخش بزرگ‌تر هفته‌ی ISO (``%V``) در آن قرار دارد."
 
 msgid "0001, 0002, ..., 2013, 2014, ..., 9998, 9999"
 msgstr "0001, 0002, ..., 2013, 2014, ..., 9998, 9999"
+
+msgid "\\(8)"
+msgstr "\\(8)"
+
+msgid "``%h``"
+msgstr ""
+
+#, fuzzy
+#| msgid "Equivalent to::"
+msgid "Equivalent to ``%b``."
+msgstr "معادل با::"
+
+#, fuzzy
+#| msgid "``%b``"
+msgid "See ``%b``."
+msgstr "``%b``"
 
 msgid "``%H``"
 msgstr "``%H``"
@@ -2904,6 +2974,42 @@ msgstr "``%I``"
 msgid "Hour (12-hour clock) as a zero-padded decimal number."
 msgstr "ساعت (ساعت ۱۲ ساعته) به‌صورت عدد دهدهی با صفر پرشده."
 
+msgid "01, 02, ..., 12"
+msgstr "01, 02, ..., 12"
+
+msgid "``%j``"
+msgstr "``%j``"
+
+msgid "Day of the year as a zero-padded decimal number."
+msgstr "روز سال به‌صورت عدد دهدهی با صفر پرشده."
+
+msgid "001, 002, ..., 366"
+msgstr "001, 002, ..., 366"
+
+msgid "``%m``"
+msgstr "``%m``"
+
+msgid "Month as a zero-padded decimal number."
+msgstr "ماه به‌صورت عدد دهدهی با صفر پر شده."
+
+msgid "``%M``"
+msgstr "``%M``"
+
+msgid "Minute as a zero-padded decimal number."
+msgstr "دقیقه به‌صورت یک عدد ده‌دهی پر شده با صفر."
+
+msgid "00, 01, ..., 59"
+msgstr "00, 01, ..., 59"
+
+msgid "``%n``"
+msgstr ""
+
+msgid "The newline character (``'\\n'``). For :meth:`!strptime`, zero or more whitespace."
+msgstr ""
+
+msgid "``\\n``"
+msgstr ""
+
 msgid "``%p``"
 msgstr "``%p``"
 
@@ -2919,14 +3025,30 @@ msgstr "am, pm (de_DE)"
 msgid "\\(1), \\(3)"
 msgstr "\\(1), \\(3)"
 
-msgid "``%M``"
-msgstr "``%M``"
+msgid "``%r``"
+msgstr ""
 
-msgid "Minute as a zero-padded decimal number."
-msgstr "دقیقه به‌صورت یک عدد ده‌دهی پر شده با صفر."
+msgid "Locale's 12-hour clock time."
+msgstr ""
 
-msgid "00, 01, ..., 59"
-msgstr "00, 01, ..., 59"
+msgid "12:00:00 AM"
+msgstr ""
+
+#, fuzzy
+#| msgid "\\(1), \\(3)"
+msgid "\\(1), \\(0)"
+msgstr "\\(1), \\(3)"
+
+msgid "``%R``"
+msgstr ""
+
+#, fuzzy
+#| msgid "Equivalent to::"
+msgid "Equivalent to ``%H:%M``."
+msgstr "معادل با::"
+
+msgid "10:01"
+msgstr ""
 
 msgid "``%S``"
 msgstr "``%S``"
@@ -2937,47 +3059,32 @@ msgstr "ثانیه به‌صورت عدد ده‌دهی با صفر پرشده."
 msgid "\\(4), \\(9)"
 msgstr "\\(4), \\(9)"
 
-msgid "``%f``"
-msgstr "``%f``"
+msgid "``%t``"
+msgstr ""
 
-msgid "Microsecond as a decimal number, zero-padded to 6 digits."
-msgstr "میکروثانیه به‌صورت عدد دهدهی، با صفر پر شده تا ۶ رقم."
+msgid "The tab character (``'\\t'``). For :meth:`!strptime`, zero or more whitespace."
+msgstr ""
 
-msgid "000000, 000001, ..., 999999"
-msgstr "000000, 000001, ..., 999999"
+msgid "``\\t``"
+msgstr ""
 
-msgid "\\(5)"
-msgstr "\\(5)"
+msgid "``%T``"
+msgstr ""
 
-msgid "``%z``"
-msgstr "``%z``"
+msgid "ISO 8601 time format, equivalent to ``%H:%M:%S``."
+msgstr ""
 
-msgid "UTC offset in the form ``±HHMM[SS[.ffffff]]`` (empty string if the object is naive)."
-msgstr "اختلاف از UTC در قالب ``±HHMM[SS[.ffffff]]`` (اگر شیء ساده باشد، رشته خالی)."
+msgid "10:01:59"
+msgstr ""
 
-msgid "(empty), +0000, -0400, +1030, +063415, -030712.345216"
-msgstr "(empty), +0000, -0400, +1030, +063415, -030712.345216"
+msgid "``%u``"
+msgstr "``%u``"
 
-msgid "\\(6)"
-msgstr "\\(6)"
+msgid "ISO 8601 weekday as a decimal number where 1 is Monday."
+msgstr "روز هفته در ISO 8601 به‌صورت عدد دهدهی که در آن ۱ دوشنبه است."
 
-msgid "``%Z``"
-msgstr "``%Z``"
-
-msgid "Time zone name (empty string if the object is naive)."
-msgstr "نام منطقه زمانی (رشته خالی اگر شیء ساده باشد)."
-
-msgid "(empty), UTC, GMT"
-msgstr "(empty), UTC, GMT"
-
-msgid "``%j``"
-msgstr "``%j``"
-
-msgid "Day of the year as a zero-padded decimal number."
-msgstr "روز سال به‌صورت عدد دهدهی با صفر پرشده."
-
-msgid "001, 002, ..., 366"
-msgstr "001, 002, ..., 366"
+msgid "1, 2, ..., 7"
+msgstr "1, 2, ..., 7"
 
 msgid "``%U``"
 msgstr "``%U``"
@@ -2991,23 +3098,32 @@ msgstr "00, 01, ..., 53"
 msgid "\\(7), \\(9)"
 msgstr "\\(7), \\(9)"
 
+msgid "``%V``"
+msgstr "``%V``"
+
+msgid "ISO 8601 week as a decimal number with Monday as the first day of the week. Week 01 is the week containing Jan 4."
+msgstr "هفته‌ی ISO 8601 به‌صورت عدد ده‌دهی با دوشنبه به‌عنوان نخستین روز هفته. هفته‌ی 01 هفته‌ای است که شامل ۴ ژانویه می‌شود."
+
+msgid "01, 02, ..., 53"
+msgstr "01, 02, ..., 53"
+
+msgid "\\(8), \\(9)"
+msgstr "\\(8), \\(9)"
+
+msgid "``%w``"
+msgstr "``%w``"
+
+msgid "Weekday as a decimal number, where 0 is Sunday and 6 is Saturday."
+msgstr "روز هفته به‌صورت عدد دهدهی، که در آن ۰ یکشنبه و ۶ شنبه است."
+
+msgid "0, 1, ..., 6"
+msgstr "0, 1, ..., 6"
+
 msgid "``%W``"
 msgstr "``%W``"
 
 msgid "Week number of the year (Monday as the first day of the week) as a zero-padded decimal number. All days in a new year preceding the first Monday are considered to be in week 0."
 msgstr "شماره‌ی هفته‌ی سال (دوشنبه به‌عنوان نخستین روز هفته) به‌صورت عدد دهدهی با صفر پرشده. همه‌ی روزهای سال جدید پیش از نخستین دوشنبه، در هفته‌ی ۰ در نظر گرفته می‌شوند."
-
-msgid "``%c``"
-msgstr "``%c``"
-
-msgid "Locale's appropriate date and time representation."
-msgstr "نمایش مناسب تاریخ و زمان بر اساس تنظیمات locale ."
-
-msgid "Tue Aug 16 21:30:00 1988 (en_US);"
-msgstr "Tue Aug 16 21:30:00 1988 (en_US);"
-
-msgid "Di 16 Aug 21:30:00 1988 (de_DE)"
-msgstr "Di 16 Aug 21:30:00 1988 (de_DE)"
 
 msgid "``%x``"
 msgstr "``%x``"
@@ -3036,6 +3152,39 @@ msgstr "21:30:00 (en_US);"
 msgid "21:30:00 (de_DE)"
 msgstr "21:30:00 (de_DE)"
 
+msgid "``%y``"
+msgstr "``%y``"
+
+msgid "Year without century as a zero-padded decimal number."
+msgstr "سال بدون قرن به‌صورت عدد دهدهی با صفرِ پیش‌رو."
+
+msgid "``%Y``"
+msgstr "``%Y``"
+
+msgid "Year with century as a decimal number."
+msgstr "سال همراه با قرن به‌صورت عدد دهدهی."
+
+msgid "``%z``"
+msgstr "``%z``"
+
+msgid "UTC offset in the form ``±HHMM[SS[.ffffff]]`` (empty string if the object is naive)."
+msgstr "اختلاف از UTC در قالب ``±HHMM[SS[.ffffff]]`` (اگر شیء ساده باشد، رشته خالی)."
+
+msgid "(empty), +0000, -0400, +1030, +063415, -030712.345216"
+msgstr "(empty), +0000, -0400, +1030, +063415, -030712.345216"
+
+msgid "\\(6)"
+msgstr "\\(6)"
+
+msgid "``%Z``"
+msgstr "``%Z``"
+
+msgid "Time zone name (empty string if the object is naive)."
+msgstr "نام منطقه زمانی (رشته خالی اگر شیء ساده باشد)."
+
+msgid "(empty), UTC, GMT"
+msgstr "(empty), UTC, GMT"
+
 msgid "``%%``"
 msgstr "``%%``"
 
@@ -3045,38 +3194,27 @@ msgstr "یک نویسه‌ی ``'%'`` به‌صورت لفظی."
 msgid "%"
 msgstr "%"
 
-msgid "Several additional directives not required by the C89 standard are included for convenience. These parameters all correspond to ISO 8601 date values."
+#, fuzzy
+#| msgid "These may not be available on all platforms when used with the :meth:`~.datetime.strftime` method. The ISO 8601 year and ISO 8601 week directives are not interchangeable with the year and week number directives above. Calling :meth:`~.datetime.strptime` with incomplete or ambiguous ISO 8601 directives will raise a :exc:`ValueError`."
+msgid "The ISO 8601 year and ISO 8601 week directives are not interchangeable with the year and week number directives above. Calling :meth:`~.datetime.strptime` with incomplete or ambiguous ISO 8601 directives will raise a :exc:`ValueError`."
+msgstr "ممکن است این‌ها هنگام استفاده با متد :meth:`~.datetime.strftime` در همه سکوها در دسترس نباشند. دایرکتیوهای سال ISO 8601 و هفته ISO 8601 با دایرکتیوهای سال و شماره هفته در بالا قابل تعویض نیستند. فراخوانی :meth:`~.datetime.strptime` با دایرکتیوهای ناقص یا مبهم ISO 8601 باعث پرتاب :exc:`ValueError` می‌شود."
+
+#, fuzzy
+#| msgid "Several additional directives not required by the C89 standard are included for convenience. These parameters all correspond to ISO 8601 date values."
+msgid "Several additional directives not required by the C11 standard are included for convenience."
 msgstr "چند دایرکتیو اضافی که استاندارد C89 آن‌ها را الزامی نمی‌داند، برای سهولت گنجانده شده‌اند. این پارامترها همگی با مقادیر تاریخ ISO 8601 مطابقت دارند."
 
-msgid "``%G``"
-msgstr "``%G``"
+msgid "``%f``"
+msgstr "``%f``"
 
-msgid "ISO 8601 year with century representing the year that contains the greater part of the ISO week (``%V``)."
-msgstr "سال ISO 8601 همراه با قرن، نشان‌دهنده‌ی سالی که بخش بزرگ‌تر هفته‌ی ISO (``%V``) در آن قرار دارد."
+msgid "Microsecond as a decimal number, zero-padded to 6 digits."
+msgstr "میکروثانیه به‌صورت عدد دهدهی، با صفر پر شده تا ۶ رقم."
 
-msgid "\\(8)"
-msgstr "\\(8)"
+msgid "000000, 000001, ..., 999999"
+msgstr "000000, 000001, ..., 999999"
 
-msgid "``%u``"
-msgstr "``%u``"
-
-msgid "ISO 8601 weekday as a decimal number where 1 is Monday."
-msgstr "روز هفته در ISO 8601 به‌صورت عدد دهدهی که در آن ۱ دوشنبه است."
-
-msgid "1, 2, ..., 7"
-msgstr "1, 2, ..., 7"
-
-msgid "``%V``"
-msgstr "``%V``"
-
-msgid "ISO 8601 week as a decimal number with Monday as the first day of the week. Week 01 is the week containing Jan 4."
-msgstr "هفته‌ی ISO 8601 به‌صورت عدد ده‌دهی با دوشنبه به‌عنوان نخستین روز هفته. هفته‌ی 01 هفته‌ای است که شامل ۴ ژانویه می‌شود."
-
-msgid "01, 02, ..., 53"
-msgstr "01, 02, ..., 53"
-
-msgid "\\(8), \\(9)"
-msgstr "\\(8), \\(9)"
+msgid "\\(5)"
+msgstr "\\(5)"
 
 msgid "``%:z``"
 msgstr "``%:z``"
@@ -3087,17 +3225,17 @@ msgstr "فاصله زمانی از UTC در قالب ``±HH:MM[:SS[.ffffff]]`` (
 msgid "(empty), +00:00, -04:00, +10:30, +06:34:15, -03:07:12.345216"
 msgstr "(خالی)، +00:00، -04:00، +10:30، +06:34:15، -03:07:12.345216"
 
-msgid "These may not be available on all platforms when used with the :meth:`~.datetime.strftime` method. The ISO 8601 year and ISO 8601 week directives are not interchangeable with the year and week number directives above. Calling :meth:`~.datetime.strptime` with incomplete or ambiguous ISO 8601 directives will raise a :exc:`ValueError`."
-msgstr "ممکن است این‌ها هنگام استفاده با متد :meth:`~.datetime.strftime` در همه سکوها در دسترس نباشند. دایرکتیوهای سال ISO 8601 و هفته ISO 8601 با دایرکتیوهای سال و شماره هفته در بالا قابل تعویض نیستند. فراخوانی :meth:`~.datetime.strptime` با دایرکتیوهای ناقص یا مبهم ISO 8601 باعث پرتاب :exc:`ValueError` می‌شود."
-
 msgid "The full set of format codes supported varies across platforms, because Python calls the platform C library's :c:func:`strftime` function, and platform variations are common. To see the full set of format codes supported on your platform, consult the :manpage:`strftime(3)` documentation. There are also differences between platforms in handling of unsupported format specifiers."
 msgstr "مجموعه کامل کدهای قالب‌بندی پشتیبانی‌شده در پلتفرم‌های مختلف متفاوت است، زیرا پایتون تابع :c:func:`strftime` از کتابخانه C پلتفرم را فراخوانی می‌کند و تفاوت‌های بین پلتفرم‌ها رایج است. برای مشاهده مجموعه کامل کدهای قالب‌بندی پشتیبانی‌شده در پلتفرم شما، به مستندات :manpage:`strftime(3)` مراجعه کنید. همچنین در مدیریت مشخص‌کننده‌های قالب‌بندی پشتیبانی‌نشده، بین پلتفرم‌ها تفاوت‌هایی وجود دارد."
 
 msgid "``%G``, ``%u`` and ``%V`` were added."
 msgstr "``%G``، ``%u`` و ``%V`` افزوده شدند."
 
-msgid "``%:z`` was added."
-msgstr "``%:z`` افزوده شد."
+msgid "``%:z`` was added for :meth:`~.datetime.strftime`."
+msgstr ""
+
+msgid "``%D``, ``%F``, ``%n``, ``%t``, and ``%:z`` were added for :meth:`~.datetime.strptime`."
+msgstr ""
 
 msgid "Technical detail"
 msgstr "جزئیات فنی"
@@ -3148,6 +3286,9 @@ msgstr "برای اشیای :class:`date`، نباید از کدهای قالب 
 msgid "For the same reason, handling of format strings containing Unicode code points that can't be represented in the charset of the current locale is also platform-dependent. On some platforms such code points are preserved intact in the output, while on others ``strftime`` may raise :exc:`UnicodeError` or return an empty string instead."
 msgstr "به همین دلیل، پردازش رشته‌های قالب‌بندی حاوی نقاط کد یونیکد که در مجموعه نویسه‌های locale قابل بازنمایی نیستند نیز وابسته به سکو است. در برخی سکوها چنین نقاط کدی به‌صورت دست‌نخورده در خروجی حفظ می‌شوند، در حالی که در سکوهایی دیگر ``strftime`` ممکن است :exc:`UnicodeError` را پرتاب کند یا در عوض یک رشته‌ی خالی برگرداند."
 
+msgid "This format code is currently unsupported by :meth:`~.datetime.strptime`."
+msgstr ""
+
 msgid "Because the format depends on the current locale, care should be taken when making assumptions about the output value. Field orderings will vary (for example, \"month/day/year\" versus \"day/month/year\"), and the output may contain non-ASCII characters."
 msgstr "از آنجا که قالب به locale بستگی دارد، هنگامی که درباره‌ی مقدار خروجی فرض‌هایی می‌کنید، باید احتیاط کنید. ترتیب فیلدها متفاوت خواهد بود (برای مثال، «ماه/روز/سال» در برابر «روز/ماه/سال»)، و خروجی ممکن است شامل نویسه‌های غیر ASCII باشد."
 
@@ -3178,11 +3319,20 @@ msgstr "برای یک شیء آگاه :"
 msgid ":meth:`~.datetime.utcoffset` is transformed into a string of the form ``±HHMM[SS[.ffffff]]``, where ``HH`` is a 2-digit string giving the number of UTC offset hours, ``MM`` is a 2-digit string giving the number of UTC offset minutes, ``SS`` is a 2-digit string giving the number of UTC offset seconds and ``ffffff`` is a 6-digit string giving the number of UTC offset microseconds. The ``ffffff`` part is omitted when the offset is a whole number of seconds and both the ``ffffff`` and the ``SS`` part is omitted when the offset is a whole number of minutes. For example, if :meth:`~.datetime.utcoffset` returns ``timedelta(hours=-3, minutes=-30)``, ``%z`` is replaced with the string ``'-0330'``."
 msgstr ":meth:`~.datetime.utcoffset` به رشته‌ای به شکل ``±HHMM[SS[.ffffff]]`` تبدیل می‌شود، که در آن ``HH`` رشته‌ای ۲ رقمی است که تعداد ساعت‌های اختلاف از UTC را نشان می‌دهد، ``MM`` رشته‌ای ۲ رقمی است که تعداد دقیقه‌های اختلاف از UTC را نشان می‌دهد، ``SS`` رشته‌ای ۲ رقمی است که تعداد ثانیه‌های اختلاف از UTC را نشان می‌دهد و ``ffffff`` رشته‌ای ۶ رقمی است که تعداد میکروثانیه‌های اختلاف از UTC را نشان می‌دهد. بخش ``ffffff`` زمانی حذف می‌شود که اختلاف، عدد حسابی‌ای بر حسب ثانیه باشد و هنگامی که اختلاف، عدد حسابی‌ای بر حسب دقیقه باشد، هر دو بخش ``ffffff`` و ``SS`` حذف می‌شوند. برای مثال، اگر :meth:`~.datetime.utcoffset` مقدار ``timedelta(hours=-3, minutes=-30)`` را برگرداند، ``%z`` با رشته‌ی ``'-0330'`` جایگزین می‌شود."
 
-msgid "When the ``%z`` directive is provided to the  :meth:`~.datetime.strptime` method, the UTC offsets can have a colon as a separator between hours, minutes and seconds. For example, ``'+01:00:00'`` will be parsed as an offset of one hour. In addition, providing ``'Z'`` is identical to ``'+00:00'``."
+#, fuzzy
+#| msgid "When the ``%z`` directive is provided to the  :meth:`~.datetime.strptime` method, the UTC offsets can have a colon as a separator between hours, minutes and seconds. For example, ``'+01:00:00'`` will be parsed as an offset of one hour. In addition, providing ``'Z'`` is identical to ``'+00:00'``."
+msgid "When the ``%z`` directive is provided to the  :meth:`~.datetime.strptime` method, the UTC offsets can have a colon as a separator between hours, minutes and seconds. For example, both ``'+010000'`` and ``'+01:00:00'`` will be parsed as an offset of one hour. In addition, providing ``'Z'`` is identical to ``'+00:00'``."
 msgstr "هنگامی که دایرکتیو ``%z`` به متد :meth:`~.datetime.strptime` ارائه شود، انحراف‌های UTC می‌توانند دارای علامت دونقطه به‌عنوان جداکننده بین ساعت‌ها، دقیقه‌ها و ثانیه‌ها باشند. برای مثال، ``'+01:00:00'`` به‌عنوان انحرافی به اندازه یک ساعت تجزیه می‌شود. علاوه بر این، ارائه ``'Z'`` معادل ``'+00:00'`` است."
 
-msgid "Behaves exactly as ``%z``, but has a colon separator added between hours, minutes and seconds."
+#, fuzzy
+#| msgid "Behaves exactly as ``%z``, but has a colon separator added between hours, minutes and seconds."
+msgid "When used with :meth:`~.datetime.strftime`, behaves exactly as ``%z``, except that a colon separator is added between hours, minutes and seconds."
 msgstr "دقیقاً مانند ``%z`` رفتار می‌کند، اما یک دونقطه به‌عنوان جداکننده بین ساعت‌ها، دقیقه‌ها و ثانیه‌ها اضافه شده است."
+
+#, fuzzy
+#| msgid "When the ``%z`` directive is provided to the  :meth:`~.datetime.strptime` method, the UTC offsets can have a colon as a separator between hours, minutes and seconds. For example, ``'+01:00:00'`` will be parsed as an offset of one hour. In addition, providing ``'Z'`` is identical to ``'+00:00'``."
+msgid "When used with :meth:`~.datetime.strptime`, the UTC offset is *required* to have a colon as a separator between hours, minutes and seconds. For example, ``'+01:00:00'`` (but *not* ``'+010000'``) will be parsed as an offset of one hour. In addition, providing ``'Z'`` is identical to ``'+00:00'``."
+msgstr "هنگامی که دایرکتیو ``%z`` به متد :meth:`~.datetime.strptime` ارائه شود، انحراف‌های UTC می‌توانند دارای علامت دونقطه به‌عنوان جداکننده بین ساعت‌ها، دقیقه‌ها و ثانیه‌ها باشند. برای مثال، ``'+01:00:00'`` به‌عنوان انحرافی به اندازه یک ساعت تجزیه می‌شود. علاوه بر این، ارائه ``'Z'`` معادل ``'+00:00'`` است."
 
 msgid "In :meth:`~.datetime.strftime`, ``%Z`` is replaced by an empty string if :meth:`~.datetime.tzname` returns ``None``; otherwise ``%Z`` is replaced by the returned value, which must be a string."
 msgstr "در :meth:`~.datetime.strftime`، اگر :meth:`~.datetime.tzname` مقدار ``None`` را برگرداند، ``%Z`` با یک رشته‌ی خالی جایگزین می‌شود؛ در غیر این صورت ``%Z`` با مقدار برگردانده‌شده جایگزین می‌شود، که باید یک رشته باشد."
@@ -3223,7 +3373,12 @@ msgstr ""
 ">>> dt.datetime.strptime(f\"{month_day};1984\", \"%m/%d;%Y\")  # No leap year bug.\n"
 "datetime.datetime(1984, 2, 29, 0, 0)"
 
-msgid ":meth:`~.datetime.strptime` calls using a format string containing a day of month without a year now emit a :exc:`DeprecationWarning`. In 3.15 or later we may change this into an error or change the default year to a leap year. See :gh:`70647`."
+msgid "Using ``%d`` without a year now raises :exc:`ValueError`."
+msgstr ""
+
+#, fuzzy
+#| msgid ":meth:`~.datetime.strptime` calls using a format string containing a day of month without a year now emit a :exc:`DeprecationWarning`. In 3.15 or later we may change this into an error or change the default year to a leap year. See :gh:`70647`."
+msgid ":meth:`~.datetime.strptime` calls using a format string containing ``%e`` without a year now emit a :exc:`DeprecationWarning`."
 msgstr "فراخوانی‌های :meth:`~.datetime.strptime` که از یک رشته قالب شامل روز ماه بدون سال استفاده می‌کنند، اکنون یک :exc:`DeprecationWarning` را نشان می‌دهند. در 3.15 یا بعد از آن ممکن است این را به یک خطا تغییر دهیم یا سال پیش‌فرض را به یک سال کبیسه تغییر دهیم. :gh:`70647` را ببینید."
 
 msgid "Footnotes"
@@ -3243,3 +3398,9 @@ msgstr "% (درصد)"
 
 msgid "datetime format"
 msgstr "قالب datetime"
+
+#~ msgid "If *format* specifies a day of month without a year a :exc:`DeprecationWarning` is now emitted.  This is to avoid a quadrennial leap year bug in code seeking to parse only a month and day as the default year used in absence of one in the format is not a leap year. Such *format* values may raise an error as of Python 3.15.  The workaround is to always include a year in your *format*.  If parsing *date_string* values that do not have a year, explicitly add a year that is a leap year before parsing:"
+#~ msgstr "اگر *format* روزی از ماه را بدون سال تعیین کند، اکنون یک :exc:`DeprecationWarning` نشان داده می‌شود. این کار برای اجتناب از یک باگ سال کبیسه‌ای چهارساله در کدی است که می‌خواهد فقط ماه و روز را تجزیه کند، زیرا سال پیش‌فرضی که در نبود سال در قالب استفاده می‌شود، سال کبیسه نیست. چنین مقادیری برای *format* ممکن است از پایتون 3.15 به بعد خطایی پرتاب کنند. راه‌حل این است که همیشه یک سال در *format* خود بگنجانید. اگر مقادیر *date_string* بدون سال را تجزیه می‌کنید، پیش از تجزیه به‌صراحت یک سال کبیسه اضافه کنید:"
+
+#~ msgid "``%:z`` was added."
+#~ msgstr "``%:z`` افزوده شد."

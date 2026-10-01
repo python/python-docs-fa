@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 15:54+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -109,10 +109,14 @@ msgstr ":func:`mktime`"
 msgid "Functions"
 msgstr "توابع"
 
-msgid "Convert a tuple or :class:`struct_time` representing a time as returned by :func:`gmtime` or :func:`localtime` to a string of the following form: ``'Sun Jun 20 23:21:05 1993'``. The day field is two characters long and is space padded if the day is a single digit, for example: ``'Wed Jun  9 04:26:40 1993'``."
+#, fuzzy
+#| msgid "Convert a tuple or :class:`struct_time` representing a time as returned by :func:`gmtime` or :func:`localtime` to a string of the following form: ``'Sun Jun 20 23:21:05 1993'``. The day field is two characters long and is space padded if the day is a single digit, for example: ``'Wed Jun  9 04:26:40 1993'``."
+msgid "Convert a tuple or :class:`struct_time` representing a time as returned by :func:`gmtime` or :func:`localtime` to a string of the following form: ``'Sun Jun 20 23:21:05 1993'``. The day field is two characters long and is space padded if the day is a single digit, e.g.: ``'Wed Jun  9 04:26:40 1993'``."
 msgstr "یک تاپل یا :class:`struct_time` که زمانی را نشان می‌دهد همان‌طور که توسط :func:`gmtime` یا :func:`localtime` برگردانده شده، به یک رشته با فرمت زیر تبدیل کنید: ``'Sun Jun 20 23:21:05 1993'``. فیلد روز دو نویسه طول دارد و اگر روز یک رقم باشد با فاصله پر می‌شود، برای مثال: ``'Wed Jun  9 04:26:40 1993'``."
 
-msgid "If *time_tuple* is not provided, the current time as returned by :func:`localtime` is used. Locale information is not used by :func:`asctime`."
+#, fuzzy
+#| msgid "If *time_tuple* is not provided, the current time as returned by :func:`localtime` is used. Locale information is not used by :func:`asctime`."
+msgid "If *t* is not provided, the current time as returned by :func:`localtime` is used. Locale information is not used by :func:`asctime`."
 msgstr "اگر *time_tuple* ارائه نشده باشد، زمان فعلی که توسط :func:`localtime` بازگردانده‌می‌شود استفاده‌می‌شود. اطلاعات locale توسط :func:`asctime` استفاده‌نمی‌شود."
 
 msgid "Unlike the C function of the same name, :func:`asctime` does not add a trailing newline."
@@ -151,14 +155,24 @@ msgstr "زمان ساعت مشخص‌شده با *clk_id* را تنظیم کنی
 msgid "Use :func:`clock_settime_ns` to avoid the precision loss caused by the :class:`float` type."
 msgstr "برای اجتناب از کاهش دقت ناشی از نوع :class:`float`، از :func:`clock_settime_ns` استفاده کنید."
 
+msgid "Accepts any real number as *time*, not only integer or float."
+msgstr ""
+
 msgid "Similar to :func:`clock_settime` but set time with nanoseconds."
 msgstr "مشابه :func:`clock_settime` است، اما زمان را با نانوثانیه تنظیم می‌کند."
 
-msgid "Convert a time expressed in seconds since the epoch_ to a string of a form: ``'Sun Jun 20 23:21:05 1993'`` representing local time. The day field is two characters long and is space padded if the day is a single digit, for example: ``'Wed Jun  9 04:26:40 1993'``."
+#, fuzzy
+#| msgid "Convert a time expressed in seconds since the epoch_ to a string of a form: ``'Sun Jun 20 23:21:05 1993'`` representing local time. The day field is two characters long and is space padded if the day is a single digit, for example: ``'Wed Jun  9 04:26:40 1993'``."
+msgid "Convert a time expressed in seconds since the epoch_ to a string of a form: ``'Sun Jun 20 23:21:05 1993'`` representing local time. The day field is two characters long and is space padded if the day is a single digit, e.g.: ``'Wed Jun  9 04:26:40 1993'``."
 msgstr "زمانِ بیان‌شده بر حسب ثانیه از epoch_ را به یک رشته به شکل ``'Sun Jun 20 23:21:05 1993'`` تبدیل کنید که زمان محلی را نشان‌می‌دهد. فیلد روز دو نویسه طول دارد و در صورت تک‌رقمی بودن روز، با فاصله پر‌می‌شود، مثلاً: ``'Wed Jun  9 04:26:40 1993'``."
 
-msgid "If *seconds* is not provided or :const:`None`, the current time as returned by :func:`.time` is used. ``ctime(seconds)`` is equivalent to ``asctime(localtime(seconds))``. Locale information is not used by :func:`ctime`."
+#, fuzzy
+#| msgid "If *seconds* is not provided or :const:`None`, the current time as returned by :func:`.time` is used. ``ctime(seconds)`` is equivalent to ``asctime(localtime(seconds))``. Locale information is not used by :func:`ctime`."
+msgid "If *secs* is not provided or :const:`None`, the current time as returned by :func:`.time` is used. ``ctime(secs)`` is equivalent to ``asctime(localtime(secs))``. Locale information is not used by :func:`ctime`."
 msgstr "اگر *seconds* ارائه نشده باشد یا :const:`None` باشد، زمان فعلی که توسط :func:`.time` بازگردانده‌می‌شود استفاده‌می‌شود. ``ctime(seconds)`` معادل ``asctime(localtime(seconds))`` است. اطلاعات locale توسط :func:`ctime` استفاده‌نمی‌شود."
+
+msgid "Accepts any real number, not only integer or float."
+msgstr ""
 
 msgid "Get information on the specified clock as a namespace object. Supported clock names and the corresponding functions to read their value are:"
 msgstr "اطلاعات مربوط به ساعت مشخص‌شده را به‌عنوان یک شیء فضای نام دریافت کنید. نام‌های ساعت پشتیبانی‌شده و توابع متناظر برای خواندن مقدار آن‌ها عبارتند از:"
@@ -193,10 +207,14 @@ msgstr "*monotonic*: ``True`` اگر ساعت نتواند به عقب برود�
 msgid "*resolution*: The resolution of the clock in seconds (:class:`float`)"
 msgstr "*resolution*: دقت ساعت بر حسب ثانیه (:class:`float`)"
 
-msgid "Convert a time expressed in seconds since the epoch_ to a :class:`struct_time` in UTC in which the dst flag is always zero.  If *seconds* is not provided or :const:`None`, the current time as returned by :func:`.time` is used.  Fractions of a second are ignored.  See above for a description of the :class:`struct_time` object. See :func:`calendar.timegm` for the inverse of this function."
+#, fuzzy
+#| msgid "Convert a time expressed in seconds since the epoch_ to a :class:`struct_time` in UTC in which the dst flag is always zero.  If *seconds* is not provided or :const:`None`, the current time as returned by :func:`.time` is used.  Fractions of a second are ignored.  See above for a description of the :class:`struct_time` object. See :func:`calendar.timegm` for the inverse of this function."
+msgid "Convert a time expressed in seconds since the epoch_ to a :class:`struct_time` in UTC in which the dst flag is always zero.  If *secs* is not provided or :const:`None`, the current time as returned by :func:`.time` is used.  Fractions of a second are ignored.  See above for a description of the :class:`struct_time` object. See :func:`calendar.timegm` for the inverse of this function."
 msgstr "زمانِ بیان‌شده بر حسب ثانیه از epoch_ را به یک :class:`struct_time` در UTC (زمان هماهنگ جهانی) تبدیل کنید که در آن پرچم dst همیشه صفر است. اگر *seconds* ارائه نشده باشد یا :const:`None` باشد، زمان فعلی که توسط :func:`.time` بازگردانده‌می‌شود استفاده‌می‌شود. کسر ثانیه‌ها نادیده‌گرفته می‌شوند. برای توصیف شیء :class:`struct_time` به بالا مراجعه کنید. برای معکوس این تابع به :func:`calendar.timegm` مراجعه کنید."
 
-msgid "Like :func:`gmtime` but converts to local time. If *seconds* is not provided or :const:`None`, the current time as returned by :func:`.time` is used. The dst flag is set to ``1`` when DST applies to the given time."
+#, fuzzy
+#| msgid "Like :func:`gmtime` but converts to local time. If *seconds* is not provided or :const:`None`, the current time as returned by :func:`.time` is used. The dst flag is set to ``1`` when DST applies to the given time."
+msgid "Like :func:`gmtime` but converts to local time.  If *secs* is not provided or :const:`None`, the current time as returned by :func:`.time` is used.  The dst flag is set to ``1`` when DST applies to the given time."
 msgstr "مشابه :func:`gmtime` اما به زمان محلی تبدیل‌می‌کند. اگر *seconds* ارائه نشده باشد یا :const:`None` باشد، زمان فعلی که توسط :func:`.time` بازگردانده‌می‌شود استفاده‌می‌شود. پرچم dst روی ``1`` تنظیم‌می‌شود وقتی زمان صرفه‌جویی در نور روز (DST) بر زمان داده‌شده اعمال‌می‌شود."
 
 msgid ":func:`localtime` may raise :exc:`OverflowError`, if the timestamp is outside the range of values supported by the platform C :c:func:`localtime` or :c:func:`gmtime` functions, and :exc:`OSError` on :c:func:`localtime` or :c:func:`gmtime` failure. It's common for this to be restricted to years between 1970 and 2038."
@@ -265,7 +283,9 @@ msgstr "برای جلوگیری از کاهش دقت ناشی از نوع :class
 msgid "Similar to :func:`process_time` but return time as nanoseconds."
 msgstr "مشابه :func:`process_time` اما زمان را به‌صورت نانوثانیه برمی‌گرداند."
 
-msgid "Suspend execution of the calling thread for the given number of seconds. The argument may be a floating-point number to indicate a more precise sleep time."
+#, fuzzy
+#| msgid "Suspend execution of the calling thread for the given number of seconds. The argument may be a floating-point number to indicate a more precise sleep time."
+msgid "Suspend execution of the calling thread for the given number of seconds. The argument may be a non-integer to indicate a more precise sleep time."
 msgstr "اجرای نخ فراخواننده را برای تعداد ثانیه‌های داده‌شده به حالت تعلیق درمی‌آورد. آرگومان می‌تواند یک عدد ممیز شناور باشد تا زمان توقف دقیق‌تری را مشخص کند."
 
 msgid "If the sleep is interrupted by a signal and no exception is raised by the signal handler, the sleep is restarted with a recomputed timeout."
@@ -277,7 +297,9 @@ msgstr "ممکن است زمان تعلیق، به دلیل زمان‌بندی 
 msgid "Windows implementation"
 msgstr "پیاده‌سازی ویندوز"
 
-msgid "On Windows, if *seconds* is zero, the thread relinquishes the remainder of its time slice to any other thread that is ready to run. If there are no other threads ready to run, the function returns immediately, and the thread continues execution. On Windows 10 and newer the implementation uses a `high-resolution timer <https://learn.microsoft.com/windows/win32/api/synchapi/nf-synchapi-createwaitabletimerexw>`_ which provides resolution of 100 nanoseconds. If *seconds* is zero, ``Sleep(0)`` is used."
+#, fuzzy
+#| msgid "On Windows, if *seconds* is zero, the thread relinquishes the remainder of its time slice to any other thread that is ready to run. If there are no other threads ready to run, the function returns immediately, and the thread continues execution. On Windows 10 and newer the implementation uses a `high-resolution timer <https://learn.microsoft.com/windows/win32/api/synchapi/nf-synchapi-createwaitabletimerexw>`_ which provides resolution of 100 nanoseconds. If *seconds* is zero, ``Sleep(0)`` is used."
+msgid "On Windows, if *secs* is zero, the thread relinquishes the remainder of its time slice to any other thread that is ready to run. If there are no other threads ready to run, the function returns immediately, and the thread continues execution.  On Windows 10 and newer the implementation uses a `high-resolution timer <https://learn.microsoft.com/windows/win32/api/synchapi/nf-synchapi-createwaitabletimerexw>`_ which provides resolution of 100 nanoseconds. If *secs* is zero, ``Sleep(0)`` is used."
 msgstr "در ویندوز، اگر *seconds* صفر باشد، نخ باقی‌مانده اسلایس زمانی خود را به هر نخ دیگری که برای اجرا آماده است رها‌می‌کند. اگر هیچ نخ دیگری برای اجرا آماده نباشد، تابع بلافاصله بازگشت‌می‌دهد و نخ اجرا را ادامه‌می‌دهد. در ویندوز ۱۰ و جدیدتر، پیاده‌سازی از یک `high-resolution timer <https://learn.microsoft.com/windows/win32/api/synchapi/nf-synchapi-createwaitabletimerexw>`_ استفاده‌می‌کند که وضوح ۱۰۰ نانو ثانیه فراهم‌می‌کند. اگر *seconds* صفر باشد، ``Sleep(0)`` استفاده‌می‌شود."
 
 msgid "Unix implementation"
@@ -298,10 +320,14 @@ msgstr "برای شبیه‌سازی یک «عملیات بی‌اثر» (no-op)
 msgid "To voluntarily relinquish the CPU, specify a real-time :ref:`scheduling policy <os-scheduling-policy>` and use :func:`os.sched_yield` instead."
 msgstr "برای رها کردن داوطلبانه‌ی CPU، یک :ref:`سیاست زمان‌بندی بلادرنگ <os-scheduling-policy>` مشخص کنید و در عوض از :func:`os.sched_yield` استفاده کنید."
 
-msgid "Raises an :ref:`auditing event <auditing>` ``time.sleep`` with argument ``seconds``."
+#, fuzzy
+#| msgid "Raises an :ref:`auditing event <auditing>` ``time.sleep`` with argument ``seconds``."
+msgid "Raises an :ref:`auditing event <auditing>` ``time.sleep`` with argument ``secs``."
 msgstr "یک :ref:`auditing event <auditing>` ``time.sleep`` با آرگومان ``seconds`` صادر‌می‌کند."
 
-msgid "The function now sleeps at least *seconds* even if the sleep is interrupted by a signal, except if the signal handler raises an exception (see :pep:`475` for the rationale)."
+#, fuzzy
+#| msgid "The function now sleeps at least *seconds* even if the sleep is interrupted by a signal, except if the signal handler raises an exception (see :pep:`475` for the rationale)."
+msgid "The function now sleeps at least *secs* even if the sleep is interrupted by a signal, except if the signal handler raises an exception (see :pep:`475` for the rationale)."
 msgstr "اکنون تابع حداقل *seconds* توقف‌می‌کند حتی اگر توقف توسط یک سیگنال متوقف‌شود، مگر اگر هندلر سیگنال یک استثنا پرتاب‌کند (برای استدلال به :pep:`475` مراجعه‌کنید)."
 
 msgid "On Unix, the ``clock_nanosleep()`` and ``nanosleep()`` functions are now used if available. On Windows, a waitable timer is now used."
@@ -310,7 +336,9 @@ msgstr "در یونیکس، اکنون در صورت در دسترس بودن، 
 msgid "Raises an auditing event."
 msgstr "یک رویداد حسابرسی را پرتاب می‌کند."
 
-msgid "Convert a tuple or :class:`struct_time` representing a time as returned by :func:`gmtime` or :func:`localtime` to a string as specified by the *format* argument.  If *time_tuple* is not provided, the current time as returned by :func:`localtime` is used.  *format* must be a string.  :exc:`ValueError` is raised if any field in *time_tuple* is outside of the allowed range."
+#, fuzzy
+#| msgid "Convert a tuple or :class:`struct_time` representing a time as returned by :func:`gmtime` or :func:`localtime` to a string as specified by the *format* argument.  If *time_tuple* is not provided, the current time as returned by :func:`localtime` is used.  *format* must be a string.  :exc:`ValueError` is raised if any field in *time_tuple* is outside of the allowed range."
+msgid "Convert a tuple or :class:`struct_time` representing a time as returned by :func:`gmtime` or :func:`localtime` to a string as specified by the *format* argument.  If *t* is not provided, the current time as returned by :func:`localtime` is used.  *format* must be a string.  :exc:`ValueError` is raised if any field in *t* is outside of the allowed range."
 msgstr "یک تاپل یا :class:`struct_time` که زمانی را نشان‌می‌دهد که توسط :func:`gmtime` یا :func:`localtime` بازگردانده‌شده است را به یک رشته همان‌طور که توسط آرگومان *format* مشخص شده است تبدیل‌کنید. اگر *time_tuple* ارائه نشده باشد، زمان فعلی که توسط :func:`localtime` بازگردانده‌می‌شود استفاده‌می‌شود. *format* باید یک رشته باشد. :exc:`ValueError` پرتاب‌می‌شود اگر هر فیلدی در *time_tuple* خارج از محدوده مجاز‌باشد."
 
 msgid "0 is a legal argument for any position in the time tuple; if it is normally illegal the value is forced to a correct one."

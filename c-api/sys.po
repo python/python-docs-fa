@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2021-06-28 00:50+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -162,17 +162,41 @@ msgstr "توابع سیستمی"
 msgid "These are utility functions that make functionality from the :mod:`sys` module accessible to C code.  They all work with the current interpreter thread's :mod:`sys` module's dict, which is contained in the internal thread state structure."
 msgstr "این‌ها توابع کاربردی هستند که کارکردهای ماژول :mod:`sys` را برای کد C در دسترس قرار می‌دهند. همه‌ی آن‌ها با دیکشنری ماژول :mod:`sys` مربوط به نخ فعلی مفسر کار می‌کنند که در ساختار وضعیت داخلی نخ قرار دارد."
 
-msgid "Return the object *name* from the :mod:`sys` module or ``NULL`` if it does not exist, without setting an exception."
-msgstr "شیء *name* را از ماژول :mod:`sys` بازمی‌گرداند، یا اگر وجود نداشته باشد ``NULL`` را برمی‌گرداند، بدون تنظیم استثنا."
+msgid "Get the attribute *name* of the :mod:`sys` module. Return a :term:`strong reference`. Raise :exc:`RuntimeError` and return ``NULL`` if it does not exist or if the :mod:`sys` module cannot be found."
+msgstr ""
+
+msgid "If the non-existing object should not be treated as a failure, you can use :c:func:`PySys_GetOptionalAttr` instead."
+msgstr ""
+
+msgid "This is the same as :c:func:`PySys_GetAttr`, but *name* is specified as a :c:expr:`const char*` UTF-8 encoded bytes string, rather than a :c:expr:`PyObject*`."
+msgstr ""
+
+msgid "If the non-existing object should not be treated as a failure, you can use :c:func:`PySys_GetOptionalAttrString` instead."
+msgstr ""
+
+msgid "Variant of :c:func:`PySys_GetAttr` which doesn't raise exception if the object does not exist."
+msgstr ""
+
+msgid "Set *\\*result* to a new :term:`strong reference` to the object and return ``1`` if the object exists."
+msgstr ""
+
+msgid "Set *\\*result* to ``NULL`` and return ``0`` without setting an exception if the object does not exist."
+msgstr ""
+
+msgid "Set an exception, set *\\*result* to ``NULL``, and return ``-1``, if an error occurred."
+msgstr ""
+
+msgid "This is the same as :c:func:`PySys_GetOptionalAttr`, but *name* is specified as a :c:expr:`const char*` UTF-8 encoded bytes string, rather than a :c:expr:`PyObject*`."
+msgstr ""
+
+msgid "Similar to :c:func:`PySys_GetAttrString`, but return a :term:`borrowed reference` and return ``NULL`` *without* setting exception on failure."
+msgstr ""
+
+msgid "Preserves exception that was set before the call."
+msgstr ""
 
 msgid "Set *name* in the :mod:`sys` module to *v* unless *v* is ``NULL``, in which case *name* is deleted from the sys module. Returns ``0`` on success, ``-1`` on error."
 msgstr "*name* را در ماژول :mod:`sys` برابر *v* قرار می‌دهد، مگر اینکه *v* ``NULL`` باشد که در این صورت *name* از ماژول sys حذف می‌شود. در صورت موفقیت ``0`` و در صورت خطا ``-1`` برمی‌گرداند."
-
-msgid "Reset :data:`sys.warnoptions` to an empty list. This function may be called prior to :c:func:`Py_Initialize`."
-msgstr "بازنشانی :data:`sys.warnoptions` به یک فهرست خالی. این تابع می‌تواند پیش از :c:func:`Py_Initialize` فراخوانی شود."
-
-msgid "Clear :data:`sys.warnoptions` and :data:`!warnings.filters` instead."
-msgstr "به جای آن، :data:`sys.warnoptions` و :data:`!warnings.filters` را پاک کنید."
 
 msgid "Write the output string described by *format* to :data:`sys.stdout`.  No exceptions are raised, even if truncation occurs (see below)."
 msgstr "رشته خروجی توصیف‌شده توسط *format* را در :data:`sys.stdout` می‌نویسد. هیچ استثنایی به‌وجود نمی‌آید، حتی اگر اسلایس رخ دهد (در ادامه ببینید)."
@@ -281,3 +305,12 @@ msgstr "exit (تابع C)"
 
 msgid "cleanup functions"
 msgstr "توابع پاک‌سازی"
+
+#~ msgid "Return the object *name* from the :mod:`sys` module or ``NULL`` if it does not exist, without setting an exception."
+#~ msgstr "شیء *name* را از ماژول :mod:`sys` بازمی‌گرداند، یا اگر وجود نداشته باشد ``NULL`` را برمی‌گرداند، بدون تنظیم استثنا."
+
+#~ msgid "Reset :data:`sys.warnoptions` to an empty list. This function may be called prior to :c:func:`Py_Initialize`."
+#~ msgstr "بازنشانی :data:`sys.warnoptions` به یک فهرست خالی. این تابع می‌تواند پیش از :c:func:`Py_Initialize` فراخوانی شود."
+
+#~ msgid "Clear :data:`sys.warnoptions` and :data:`!warnings.filters` instead."
+#~ msgstr "به جای آن، :data:`sys.warnoptions` و :data:`!warnings.filters` را پاک کنید."

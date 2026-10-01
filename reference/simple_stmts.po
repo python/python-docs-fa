@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 10:28+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -561,6 +561,79 @@ msgstr ":func:`importlib.import_module` برای پشتیبانی از برنا�
 msgid "Raises an :ref:`auditing event <auditing>` ``import`` with arguments ``module``, ``filename``, ``sys.path``, ``sys.meta_path``, ``sys.path_hooks``."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``import`` را با آرگومان‌های ``module``، ``filename``، ``sys.path``، ``sys.meta_path`` و ``sys.path_hooks`` پرتاب می‌کند."
 
+#, fuzzy
+#| msgid "import"
+msgid "Lazy imports"
+msgstr "ایمپورت"
+
+msgid "The :keyword:`lazy` keyword is a :ref:`soft keyword <soft-keywords>` that only has special meaning when it appears immediately before an :keyword:`import` or :keyword:`from` statement. When an import statement is preceded by the :keyword:`lazy` keyword, the import becomes *lazy*: the module is not loaded immediately at the import statement. Instead, a lazy proxy object is created and bound to the name. The actual module is loaded on first use of that name."
+msgstr ""
+
+msgid "Lazy imports are only permitted at module scope. Using :keyword:`lazy` inside a function, class body, or :keyword:`try`/:keyword:`except`/:keyword:`finally` block raises a :exc:`SyntaxError`. Star imports cannot be lazy (``lazy from module import *`` is a syntax error), and :ref:`future statements <future>` cannot be lazy."
+msgstr ""
+
+msgid "When using ``lazy from ... import``, each imported name is bound to a lazy proxy object. The first access to any of these names triggers loading of the entire module and resolves only that specific name to its actual value. Other names remain as lazy proxies until they are accessed."
+msgstr ""
+
+#, fuzzy
+#| msgid "Examples::"
+msgid "Example::"
+msgstr "مثال‌ها::"
+
+msgid ""
+"lazy import json\n"
+"import sys\n"
+"\n"
+"print('json' in sys.modules)  # False - json module not yet loaded\n"
+"\n"
+"# First use triggers loading\n"
+"result = json.dumps({\"hello\": \"world\"})\n"
+"\n"
+"print('json' in sys.modules)  # True - now loaded"
+msgstr ""
+
+msgid "If an error occurs during module loading (such as :exc:`ImportError` or :exc:`SyntaxError`), it is raised at the point where the lazy import is first used, not at the import statement itself."
+msgstr ""
+
+msgid "See :pep:`810` for the full specification of lazy imports."
+msgstr ""
+
+msgid "Compatibility via ``__lazy_modules__``"
+msgstr ""
+
+msgid "As an alternative to using the :keyword:`lazy` keyword, a module can opt into lazy loading for specific imports by defining a module-level :attr:`~module.__lazy_modules__` variable.  When present, it must be a container of fully qualified module name strings.  Any regular (non-``lazy``) :keyword:`import` statement at module scope whose target appears in :attr:`!__lazy_modules__` is treated as a lazy import, exactly as if the :keyword:`lazy` keyword had been used."
+msgstr ""
+
+msgid "This provides a way to enable lazy loading for specific dependencies without changing individual ``import`` statements. This is useful when supporting Python versions older than 3.15 while using lazy imports in 3.15+::"
+msgstr ""
+
+msgid ""
+"__lazy_modules__ = [\"json\", \"pathlib\"]\n"
+"\n"
+"import json     # loaded lazily (name is in __lazy_modules__)\n"
+"import os       # loaded eagerly (name not in __lazy_modules__)\n"
+"\n"
+"import pathlib  # loaded lazily"
+msgstr ""
+
+msgid "Relative imports are resolved to their absolute name before the lookup, so :attr:`!__lazy_modules__` must always contain fully qualified module names."
+msgstr ""
+
+msgid "For ``from``-style imports, the relevant name is the module following ``from``, not the names of its members::"
+msgstr ""
+
+msgid ""
+"# In mypackage/mymodule.py\n"
+"__lazy_modules__ = [\"mypackage\", \"mypackage.sub.utils\"]\n"
+"\n"
+"from . import helper         # loaded lazily: . resolves to mypackage\n"
+"from .sub.utils import func  # loaded lazily: .sub.utils resolves to mypackage.sub.utils\n"
+"import json                  # loaded eagerly (not in __lazy_modules__)"
+msgstr ""
+
+msgid "Imports inside functions, class bodies, or :keyword:`try`/:keyword:`except`/:keyword:`finally` blocks are always eager, regardless of :attr:`!__lazy_modules__`."
+msgstr ""
+
 msgid "Future statements"
 msgstr "دستورهای آینده"
 
@@ -996,6 +1069,9 @@ msgstr "from"
 msgid "as"
 msgstr "as"
 
+msgid "lazy"
+msgstr ""
+
 msgid "ImportError"
 msgstr "ImportError"
 
@@ -1007,6 +1083,14 @@ msgstr "__all__ (ویژگی اختیاری ماژول)"
 
 msgid "relative"
 msgstr "نسبی"
+
+#, fuzzy
+#| msgid "import"
+msgid "lazy import"
+msgstr "ایمپورت"
+
+msgid "__lazy_modules__"
+msgstr ""
 
 msgid "future"
 msgstr "آینده"

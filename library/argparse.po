@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-21 13:27+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -128,7 +128,9 @@ msgstr "allow_abbrev_ - اجازه می‌دهد گزینه‌های بلند م
 msgid "exit_on_error_ - Determines whether or not :class:`!ArgumentParser` exits with error info when an error occurs. (default: ``True``)"
 msgstr "exit_on_error_ - تعیین می‌کند که آیا :class:`!ArgumentParser` هنگام بروز خطا همراه با اطلاعات خطا خارج می‌شود یا خیر. (پیش‌فرض: ``True``)"
 
-msgid "suggest_on_error_ - Enables suggestions for mistyped argument choices and subparser names (default: ``False``)"
+#, fuzzy
+#| msgid "suggest_on_error_ - Enables suggestions for mistyped argument choices and subparser names (default: ``False``)"
+msgid "suggest_on_error_ - Enables suggestions for mistyped argument choices and subparser names (default: ``True``)"
 msgstr "suggest_on_error_ - پیشنهادها را برای گزینه‌های آرگومان و نام‌های زیرپارسر (subparser) که اشتباه تایپ‌شده‌اند، فعال می‌کند (پیش‌فرض: ``False``)"
 
 msgid "color_ - Allow color output (default: ``True``)"
@@ -145,6 +147,9 @@ msgstr "پارامتر *exit_on_error* اضافه شد."
 
 msgid "*suggest_on_error* and *color* parameters were added."
 msgstr "پارامترهای *suggest_on_error* و *color* افزوده شدند."
+
+msgid "*suggest_on_error* default changed to ``True``."
+msgstr ""
 
 msgid "The following sections describe how each of these are used."
 msgstr "بخش‌های زیر چگونگی استفاده از هر یک از این موارد را شرح می‌دهند."
@@ -733,12 +738,11 @@ msgstr ""
 msgid "suggest_on_error"
 msgstr "suggest_on_error"
 
-msgid "By default, when a user passes an invalid argument choice or subparser name, :class:`ArgumentParser` will exit with error info and list the permissible argument choices (if specified) or subparser names as part of the error message."
+#, fuzzy
+#| msgid "By default, when a user passes an invalid argument choice or subparser name, :class:`ArgumentParser` will exit with error info and list the permissible argument choices (if specified) or subparser names as part of the error message."
+msgid "By default, when a user passes an invalid argument choice or subparser name, :class:`ArgumentParser` will exit with error info and provide suggestions for mistyped arguments. The error message will list the permissible argument choices (if specified) or subparser names, along with a \"maybe you meant\" suggestion if a close match is found. Note that this only applies for arguments when the choices specified are strings::"
 msgstr "به‌طور پیش‌فرض، هنگامی که کاربر یک انتخاب نامعتبر برای آرگومان یا یک نام زیرپارسر (subparser) ارائه می‌دهد، :class:`ArgumentParser` با اطلاعات خطا خارج می‌شود و انتخاب‌های مجاز آرگومان (در صورت مشخص بودن) یا نام‌های زیرپارسر را به‌عنوان بخشی از پیام خطا فهرست می‌کند."
 
-msgid "If the user would like to enable suggestions for mistyped argument choices and subparser names, the feature can be enabled by setting ``suggest_on_error`` to ``True``. Note that this only applies for arguments when the choices specified are strings::"
-msgstr "اگر کاربر بخواهد پیشنهادها را برای انتخاب‌های آرگومان و نام‌های زیرپارسر (subparser) که اشتباه تایپ شده‌اند فعال کند، این قابلیت را می‌توان با تنظیم ``suggest_on_error`` روی ``True`` فعال کرد. توجه داشته باشید که این فقط برای آرگومان‌هایی اعمال می‌شود که انتخاب‌های تعیین‌شده برای آن‌ها رشته باشند::"
-
 msgid ""
 ">>> parser = argparse.ArgumentParser(suggest_on_error=True)\n"
 ">>> parser.add_argument('--action', choices=['debug', 'dryrun'])\n"
@@ -752,15 +756,13 @@ msgstr ""
 "usage: tester.py [-h] [--action {debug,dryrun}]\n"
 "tester.py: error: argument --action: invalid choice: 'debugg', maybe you meant 'debug'? (choose from debug, dryrun)"
 
-msgid "If you're writing code that needs to be compatible with older Python versions and want to opportunistically use ``suggest_on_error`` when it's available, you can set it as an attribute after initializing the parser instead of using the keyword argument::"
-msgstr "اگر در حال نوشتن کدی هستید که باید با نسخه‌های قدیمی‌تر پایتون سازگار باشد و می‌خواهید در صورت در دسترس بودن، به‌صورت فرصت‌طلبانه از ``suggest_on_error`` استفاده کنید، می‌توانید به‌جای استفاده از آرگومان کلیدواژه‌ای، آن را پس از مقداردهی اولیه‌ی پارسر به‌عنوان یک ویژگی تنظیم کنید::"
+#, fuzzy
+#| msgid "This feature can be disabled by setting ``allow_abbrev`` to ``False``::"
+msgid "You can disable suggestions by setting ``suggest_on_error`` to ``False``."
+msgstr "این قابلیت را می‌توان با تنظیم ``allow_abbrev`` روی ``False`` غیرفعال کرد::"
 
-msgid ""
-">>> parser = argparse.ArgumentParser(description='Process some integers.')\n"
-">>> parser.suggest_on_error = True"
+msgid "Changed default value of ``suggest_on_error`` from ``False`` to ``True``."
 msgstr ""
-">>> parser = argparse.ArgumentParser(description='Process some integers.')\n"
-">>> parser.suggest_on_error = True"
 
 msgid "color"
 msgstr "رنگ"
@@ -786,8 +788,22 @@ msgstr ""
 msgid "Note that when ``color=True``, colored output depends on both environment variables and terminal capabilities.  However, if ``color=False``, colored output is always disabled, even if environment variables like ``FORCE_COLOR`` are set."
 msgstr "توجه داشته باشید که هنگامی که ``color=True`` باشد، خروجی رنگی هم به متغیرهای محیطی و هم به قابلیت‌های پایانه بستگی دارد. با این حال، اگر ``color=False`` باشد، خروجی رنگی همیشه غیرفعال است، حتی اگر متغیرهای محیطی مانند ``FORCE_COLOR`` تنظیم شده باشند."
 
-msgid "Error messages will include color codes when redirecting stderr to a file. To avoid this, set the |NO_COLOR|_ or :envvar:`PYTHON_COLORS` environment variable (for example, ``NO_COLOR=1 python script.py 2> errors.txt``)."
-msgstr "در صورت هدایت stderr به یک پرونده، پیام‌های خطا شامل کدهای رنگ خواهند بود. برای جلوگیری از این موضوع، متغیر محیطی |NO_COLOR|_ یا :envvar:`PYTHON_COLORS` را تنظیم کنید (برای مثال، ``NO_COLOR=1 python script.py 2> errors.txt``)."
+msgid "To highlight inline code in your description, epilog, or argument ``help`` text, you can use single or double backticks::"
+msgstr ""
+
+msgid ""
+">>> parser = argparse.ArgumentParser(\n"
+"...     formatter_class=argparse.RawDescriptionHelpFormatter,\n"
+"...     description='Run ``python -m myapp`` to start.',\n"
+"...     epilog='''Examples:\n"
+"...   `python -m myapp --verbose`\n"
+"...   ``python -m myapp --config settings.json``\n"
+"... ''')\n"
+">>> parser.add_argument('--foo', help='set the `foo` value')"
+msgstr ""
+
+msgid "When colors are enabled, the text inside backticks will be displayed in a distinct color to help examples stand out. When colors are disabled, backticks are preserved as-is, which is readable in plain text."
+msgstr ""
 
 msgid "The add_argument() method"
 msgstr "متد add_argument()"
@@ -1624,17 +1640,29 @@ msgstr ""
 ">>> parser.parse_args(['XXX'])\n"
 "Namespace(bar='XXX')"
 
-msgid "For optional argument actions, the value of ``dest`` is normally inferred from the option strings.  :class:`ArgumentParser` generates the value of ``dest`` by taking the first long option string and stripping away the initial ``--`` string.  If no long option strings were supplied, ``dest`` will be derived from the first short option string by stripping the initial ``-`` character.  Any internal ``-`` characters will be converted to ``_`` characters to make sure the string is a valid attribute name.  The examples below illustrate this behavior::"
+#, fuzzy
+#| msgid "For optional argument actions, the value of ``dest`` is normally inferred from the option strings.  :class:`ArgumentParser` generates the value of ``dest`` by taking the first long option string and stripping away the initial ``--`` string.  If no long option strings were supplied, ``dest`` will be derived from the first short option string by stripping the initial ``-`` character.  Any internal ``-`` characters will be converted to ``_`` characters to make sure the string is a valid attribute name.  The examples below illustrate this behavior::"
+msgid "For optional argument actions, the value of ``dest`` is normally inferred from the option strings.  :class:`ArgumentParser` generates the value of ``dest`` by taking the first double-dash long option string and stripping away the initial ``-`` characters. If no double-dash long option strings were supplied, ``dest`` will be derived from the first single-dash long option string by stripping the initial ``-`` character. If no long option strings were supplied, ``dest`` will be derived from the first short option string by stripping the initial ``-`` character.  Any internal ``-`` characters will be converted to ``_`` characters to make sure the string is a valid attribute name.  The examples below illustrate this behavior::"
 msgstr "برای کنش‌های آرگومان‌های اختیاری، مقدار ``dest`` معمولاً از رشته‌های گزینه استنباط می‌شود. :class:`ArgumentParser` مقدار ``dest`` را با گرفتن نخستین رشته‌ی گزینه‌ی بلند و حذف رشته‌ی ``--`` ابتدایی تولید می‌کند. اگر هیچ رشته‌ی گزینه‌ی بلندی ارائه نشده باشد، ``dest`` با حذف نویسه‌ی ``-`` ابتدایی از نخستین رشته‌ی گزینه‌ی کوتاه به‌دست می‌آید. هر نویسه‌ی ``-`` داخلی به نویسه‌ی ``_`` تبدیل می‌شود تا اطمینان حاصل شود که رشته یک نام ویژگی معتبر است. مثال‌های زیر این رفتار را نشان می‌دهند::"
 
+#, fuzzy
+#| msgid ""
+#| ">>> parser = argparse.ArgumentParser()\n"
+#| ">>> parser.add_argument('-f', '--foo-bar', '--foo')\n"
+#| ">>> parser.add_argument('-x', '-y')\n"
+#| ">>> parser.parse_args('-f 1 -x 2'.split())\n"
+#| "Namespace(foo_bar='1', x='2')\n"
+#| ">>> parser.parse_args('--foo 1 -y 2'.split())\n"
+#| "Namespace(foo_bar='1', x='2')"
 msgid ""
 ">>> parser = argparse.ArgumentParser()\n"
 ">>> parser.add_argument('-f', '--foo-bar', '--foo')\n"
+">>> parser.add_argument('-q', '-quz')\n"
 ">>> parser.add_argument('-x', '-y')\n"
-">>> parser.parse_args('-f 1 -x 2'.split())\n"
-"Namespace(foo_bar='1', x='2')\n"
-">>> parser.parse_args('--foo 1 -y 2'.split())\n"
-"Namespace(foo_bar='1', x='2')"
+">>> parser.parse_args('-f 1 -q 2 -x 3'.split())\n"
+"Namespace(foo_bar='1', quz='2', x='3')\n"
+">>> parser.parse_args('--foo 1 -quz 2 -y 3'.split())\n"
+"Namespace(foo_bar='1', quz='2', x='2')"
 msgstr ""
 ">>> parser = argparse.ArgumentParser()\n"
 ">>> parser.add_argument('-f', '--foo-bar', '--foo')\n"
@@ -1660,6 +1688,9 @@ msgstr ""
 
 msgid "Multiple arguments may share the same ``dest``.  By default, the value from the last such argument given on the command line wins.  Use ``action='append'`` to collect values from all of them into a list instead.  For conflicting *option strings* rather than ``dest`` names, see conflict_handler_."
 msgstr "آرگومان‌های متعدد می‌توانند ``dest`` یکسانی داشته باشند. به‌صورت پیش‌فرض، مقدار آخرین آرگومان از این نوع که در خط فرمان وارد شود، برنده می‌شود. در عوض، برای جمع‌آوری مقادیر همه‌ی آن‌ها در یک فهرست، از ``action='append'`` استفاده کنید. برای *رشته‌های گزینه* دارای تعارض، نه نام‌های ``dest``، conflict_handler_ را ببینید."
+
+msgid "Single-dash long option now takes precedence over short options."
+msgstr ""
 
 msgid "deprecated"
 msgstr "منسوخ"
@@ -1734,6 +1765,15 @@ msgstr ""
 ">>> parser.add_argument('--foo', action=argparse.BooleanOptionalAction)\n"
 ">>> parser.parse_args(['--no-foo'])\n"
 "Namespace(foo=False)"
+
+msgid "Single-dash long options are also supported. For example, negative option ``-nofoo`` is automatically added for positive option ``-foo``. But no additional options are added for short options such as ``-f``."
+msgstr ""
+
+msgid "Added support for single-dash options."
+msgstr ""
+
+msgid "Added support for alternate prefix_chars_."
+msgstr ""
 
 msgid "The parse_args() method"
 msgstr "متد parse_args()"
@@ -2129,7 +2169,9 @@ msgstr ""
 ">>> parser.parse_args(['--foo', 'b', '--baz', 'Z'])\n"
 "Namespace(baz='Z', foo=True)"
 
-msgid "Note that the object returned by :meth:`parse_args` will only contain attributes for the main parser and the subparser that was selected by the command line (and not any other subparsers).  So in the example above, when the ``a`` command is specified, only the ``foo`` and ``bar`` attributes are present, and when the ``b`` command is specified, only the ``foo`` and ``baz`` attributes are present."
+#, fuzzy
+#| msgid "Note that the object returned by :meth:`parse_args` will only contain attributes for the main parser and the subparser that was selected by the command line (and not any other subparsers).  So in the example above, when the ``a`` command is specified, only the ``foo`` and ``bar`` attributes are present, and when the ``b`` command is specified, only the ``foo`` and ``baz`` attributes are present."
+msgid "Note that the object returned by :meth:`~ArgumentParser.parse_args` will only contain attributes for the main parser and the subparser that was selected by the command line (and not any other subparsers).  So in the example above, when the ``a`` command is specified, only the ``foo`` and ``bar`` attributes are present, and when the ``b`` command is specified, only the ``foo`` and ``baz`` attributes are present."
 msgstr "توجه داشته باشید که شیء برگردانده‌شده از :meth:`parse_args` فقط شامل ویژگی‌هایی برای پارسر اصلی و زیرپارسری خواهد بود که از طریق خط فرمان انتخاب شده است (و نه هیچ زیرپارسر دیگری). بنابراین در مثال بالا، هنگامی که دستور ``a`` مشخص شده باشد، فقط ویژگی‌های ``foo`` و ``bar`` وجود دارند، و هنگامی که دستور ``b`` مشخص شده باشد، فقط ویژگی‌های ``foo`` و ``baz`` وجود دارند."
 
 msgid "If a subparser defines an argument with the same ``dest`` as the parent parser, the two share a single namespace attribute, so the parent's value won't be retained. Users should give them  distinct ``dest`` values to keep both."
@@ -2195,7 +2237,9 @@ msgstr ""
 "  -h, --help     show this help message and exit\n"
 "  --baz {X,Y,Z}  baz help"
 
-msgid "The :meth:`add_subparsers` method also supports ``title`` and ``description`` keyword arguments.  When either is present, the subparser's commands will appear in their own group in the help output.  For example::"
+#, fuzzy
+#| msgid "The :meth:`add_subparsers` method also supports ``title`` and ``description`` keyword arguments.  When either is present, the subparser's commands will appear in their own group in the help output.  For example::"
+msgid "The :meth:`~ArgumentParser.add_subparsers` method also supports ``title`` and ``description`` keyword arguments.  When either is present, the subparser's commands will appear in their own group in the help output.  For example::"
 msgstr "متد :meth:`add_subparsers` همچنین از آرگومان‌های کلیدواژه‌ای ``title`` و ``description`` پشتیبانی می‌کند. هنگامی که هر یک وجود داشته باشد، دستورات زیرپارسر (subparser) در گروه خودشان در خروجی راهنما ظاهر می‌شوند. برای مثال::"
 
 msgid ""
@@ -2233,28 +2277,9 @@ msgstr ""
 "\n"
 "  {foo,bar}   additional help"
 
-msgid "Furthermore, :meth:`~_SubParsersAction.add_parser` supports an additional *aliases* argument, which allows multiple strings to refer to the same subparser. This example, like ``svn``, aliases ``co`` as a shorthand for ``checkout``::"
-msgstr "علاوه بر این، :meth:`~_SubParsersAction.add_parser` از یک آرگومان اضافی *aliases* پشتیبانی می‌کند، که امکان می‌دهد چندین رشته به یک زیرپارسر یکسان ارجاع داده شوند. این مثال، مانند ``svn``، نام مستعار ``co`` را به‌عنوان شکل کوتاهی برای ``checkout`` تعریف می‌کند::"
-
-msgid ""
-">>> parser = argparse.ArgumentParser()\n"
-">>> subparsers = parser.add_subparsers()\n"
-">>> checkout = subparsers.add_parser('checkout', aliases=['co'])\n"
-">>> checkout.add_argument('foo')\n"
-">>> parser.parse_args(['co', 'bar'])\n"
-"Namespace(foo='bar')"
-msgstr ""
-">>> parser = argparse.ArgumentParser()\n"
-">>> subparsers = parser.add_subparsers()\n"
-">>> checkout = subparsers.add_parser('checkout', aliases=['co'])\n"
-">>> checkout.add_argument('foo')\n"
-">>> parser.parse_args(['co', 'bar'])\n"
-"Namespace(foo='bar')"
-
-msgid ":meth:`~_SubParsersAction.add_parser` supports also an additional *deprecated* argument, which allows to deprecate the subparser."
-msgstr ":meth:`~_SubParsersAction.add_parser` همچنین از یک آرگومان اضافی *deprecated* پشتیبانی می‌کند، که به شما امکان می‌دهد زیرپارسر (subparser) را منسوخ کنید."
-
-msgid "One particularly effective way of handling subcommands is to combine the use of the :meth:`add_subparsers` method with calls to :meth:`set_defaults` so that each subparser knows which Python function it should execute.  For example::"
+#, fuzzy
+#| msgid "One particularly effective way of handling subcommands is to combine the use of the :meth:`add_subparsers` method with calls to :meth:`set_defaults` so that each subparser knows which Python function it should execute.  For example::"
+msgid "One particularly effective way of handling subcommands is to combine the use of the :meth:`~ArgumentParser.add_subparsers` method with calls to :meth:`~ArgumentParser.set_defaults` so that each subparser knows which Python function it should execute.  For example::"
 msgstr "یک روش به‌ویژه مؤثر برای مدیریت زیردستورها، ترکیب استفاده از متد :meth:`add_subparsers` با فراخوانی‌های :meth:`set_defaults` است، به‌طوری‌که هر زیرپارسر (subparser) بداند کدام تابع پایتون را باید اجرا کند. برای مثال::"
 
 msgid ""
@@ -2322,7 +2347,9 @@ msgstr ""
 ">>> args.func(args)\n"
 "((XYZYX))"
 
-msgid "This way, you can let :meth:`parse_args` do the job of calling the appropriate function after argument parsing is complete.  Associating functions with actions like this is typically the easiest way to handle the different actions for each of your subparsers.  However, if it is necessary to check the name of the subparser that was invoked, the ``dest`` keyword argument to the :meth:`add_subparsers` call will work::"
+#, fuzzy
+#| msgid "This way, you can let :meth:`parse_args` do the job of calling the appropriate function after argument parsing is complete.  Associating functions with actions like this is typically the easiest way to handle the different actions for each of your subparsers.  However, if it is necessary to check the name of the subparser that was invoked, the ``dest`` keyword argument to the :meth:`add_subparsers` call will work::"
+msgid "This way, you can let :meth:`~ArgumentParser.parse_args` do the job of calling the appropriate function after argument parsing is complete.  Associating functions with actions like this is typically the easiest way to handle the different actions for each of your subparsers.  However, if it is necessary to check the name of the subparser that was invoked, the ``dest`` keyword argument to the :meth:`~ArgumentParser.add_subparsers` call will work::"
 msgstr "به این ترتیب، می‌توانید اجازه دهید :meth:`parse_args` پس از تکمیل تجزیه آرگومان‌ها، کار فراخوانی تابع مناسب را انجام دهد. مرتبط کردن توابع با کنش‌هایی مانند این، معمولاً ساده‌ترین راه برای مدیریت کنش‌های متفاوت هر یک از زیرپارسرهای شما است. با این حال، اگر لازم باشد نام زیرپارسر فراخوانی‌شده بررسی شود، آرگومان کلیدواژه‌ای ``dest`` در فراخوانی :meth:`add_subparsers` کار خواهد کرد::"
 
 msgid ""
@@ -2349,6 +2376,69 @@ msgstr "پارامتر جدید *الزامی* فقط کلیدواژه‌ای."
 
 msgid "Subparser's *prog* is no longer affected by a custom usage message in the main parser."
 msgstr "*prog* زیرپارسر دیگر تحت تأثیر پیام کاربرد سفارشی در پارسر اصلی قرار نمی‌گیرد."
+
+#, fuzzy
+#| msgid "*parser* - The :class:`ArgumentParser` object which contains this action."
+msgid "Create and return a new :class:`ArgumentParser` object for the subcommand *name*."
+msgstr "*parser* - شیء :class:`ArgumentParser` که شامل این اکشناست."
+
+msgid "The *name* argument is the name of the sub-command."
+msgstr ""
+
+msgid "The *help* argument provides a short description for this sub-command."
+msgstr ""
+
+msgid "The *aliases* argument allows providing alternative names for this sub-command. For example::"
+msgstr ""
+
+msgid ""
+">>> parser = argparse.ArgumentParser()\n"
+">>> subparsers = parser.add_subparsers()\n"
+">>> checkout = subparsers.add_parser('checkout', aliases=['co'])\n"
+">>> checkout.add_argument('foo')\n"
+">>> parser.parse_args(['co', 'bar'])\n"
+"Namespace(foo='bar')"
+msgstr ""
+">>> parser = argparse.ArgumentParser()\n"
+">>> subparsers = parser.add_subparsers()\n"
+">>> checkout = subparsers.add_parser('checkout', aliases=['co'])\n"
+">>> checkout.add_argument('foo')\n"
+">>> parser.parse_args(['co', 'bar'])\n"
+"Namespace(foo='bar')"
+
+msgid "The *deprecated* argument, if ``True``, marks the sub-command as deprecated and will issue a warning when used. For example::"
+msgstr ""
+
+#, fuzzy
+#| msgid ""
+#| ">>> parser = argparse.ArgumentParser()\n"
+#| ">>> subparsers = parser.add_subparsers()\n"
+#| ">>> checkout = subparsers.add_parser('checkout', aliases=['co'])\n"
+#| ">>> checkout.add_argument('foo')\n"
+#| ">>> parser.parse_args(['co', 'bar'])\n"
+#| "Namespace(foo='bar')"
+msgid ""
+">>> parser = argparse.ArgumentParser(prog='chicken.py')\n"
+">>> subparsers = parser.add_subparsers()\n"
+">>> fly = subparsers.add_parser('fly', deprecated=True)\n"
+">>> args = parser.parse_args(['fly'])\n"
+"chicken.py: warning: command 'fly' is deprecated\n"
+"Namespace()"
+msgstr ""
+">>> parser = argparse.ArgumentParser()\n"
+">>> subparsers = parser.add_subparsers()\n"
+">>> checkout = subparsers.add_parser('checkout', aliases=['co'])\n"
+">>> checkout.add_argument('foo')\n"
+">>> parser.parse_args(['co', 'bar'])\n"
+"Namespace(foo='bar')"
+
+msgid "All other keyword arguments are passed directly to the :class:`!ArgumentParser` constructor."
+msgstr ""
+
+#, fuzzy
+#| msgid "Added the *encoding* and *errors* parameters."
+msgid "Added the *deprecated* parameter."
+msgstr "پارامترهای *encoding* و *errors* افزوده شدند."
 
 msgid "FileType objects"
 msgstr "اشیای FileType"
@@ -2804,6 +2894,28 @@ msgstr "* (ستاره)"
 
 msgid "+ (plus)"
 msgstr "+ (مثبت)"
+
+#~ msgid "If the user would like to enable suggestions for mistyped argument choices and subparser names, the feature can be enabled by setting ``suggest_on_error`` to ``True``. Note that this only applies for arguments when the choices specified are strings::"
+#~ msgstr "اگر کاربر بخواهد پیشنهادها را برای انتخاب‌های آرگومان و نام‌های زیرپارسر (subparser) که اشتباه تایپ شده‌اند فعال کند، این قابلیت را می‌توان با تنظیم ``suggest_on_error`` روی ``True`` فعال کرد. توجه داشته باشید که این فقط برای آرگومان‌هایی اعمال می‌شود که انتخاب‌های تعیین‌شده برای آن‌ها رشته باشند::"
+
+#~ msgid "If you're writing code that needs to be compatible with older Python versions and want to opportunistically use ``suggest_on_error`` when it's available, you can set it as an attribute after initializing the parser instead of using the keyword argument::"
+#~ msgstr "اگر در حال نوشتن کدی هستید که باید با نسخه‌های قدیمی‌تر پایتون سازگار باشد و می‌خواهید در صورت در دسترس بودن، به‌صورت فرصت‌طلبانه از ``suggest_on_error`` استفاده کنید، می‌توانید به‌جای استفاده از آرگومان کلیدواژه‌ای، آن را پس از مقداردهی اولیه‌ی پارسر به‌عنوان یک ویژگی تنظیم کنید::"
+
+#~ msgid ""
+#~ ">>> parser = argparse.ArgumentParser(description='Process some integers.')\n"
+#~ ">>> parser.suggest_on_error = True"
+#~ msgstr ""
+#~ ">>> parser = argparse.ArgumentParser(description='Process some integers.')\n"
+#~ ">>> parser.suggest_on_error = True"
+
+#~ msgid "Error messages will include color codes when redirecting stderr to a file. To avoid this, set the |NO_COLOR|_ or :envvar:`PYTHON_COLORS` environment variable (for example, ``NO_COLOR=1 python script.py 2> errors.txt``)."
+#~ msgstr "در صورت هدایت stderr به یک پرونده، پیام‌های خطا شامل کدهای رنگ خواهند بود. برای جلوگیری از این موضوع، متغیر محیطی |NO_COLOR|_ یا :envvar:`PYTHON_COLORS` را تنظیم کنید (برای مثال، ``NO_COLOR=1 python script.py 2> errors.txt``)."
+
+#~ msgid "Furthermore, :meth:`~_SubParsersAction.add_parser` supports an additional *aliases* argument, which allows multiple strings to refer to the same subparser. This example, like ``svn``, aliases ``co`` as a shorthand for ``checkout``::"
+#~ msgstr "علاوه بر این، :meth:`~_SubParsersAction.add_parser` از یک آرگومان اضافی *aliases* پشتیبانی می‌کند، که امکان می‌دهد چندین رشته به یک زیرپارسر یکسان ارجاع داده شوند. این مثال، مانند ``svn``، نام مستعار ``co`` را به‌عنوان شکل کوتاهی برای ``checkout`` تعریف می‌کند::"
+
+#~ msgid ":meth:`~_SubParsersAction.add_parser` supports also an additional *deprecated* argument, which allows to deprecate the subparser."
+#~ msgstr ":meth:`~_SubParsersAction.add_parser` همچنین از یک آرگومان اضافی *deprecated* پشتیبانی می‌کند، که به شما امکان می‌دهد زیرپارسر (subparser) را منسوخ کنید."
 
 #~ msgid "Note, the *default* will be ``None`` unless explicitly set to *0*."
 #~ msgstr "توجه داشته باشید، *پیش‌فرض* ``None`` خواهد بود، مگر اینکه به‌صراحت روی *0* تنظیم شود."

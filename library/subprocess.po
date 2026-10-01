@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 12:36+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -178,7 +178,9 @@ msgstr "ویژگی‌های *stdout* و *stderr* افزوده شدند"
 msgid "Subclass of :exc:`SubprocessError`, raised when a process run by :func:`check_call`, :func:`check_output`, or :func:`run` (with ``check=True``) returns a non-zero exit status."
 msgstr "زیرکلاسی از :exc:`SubprocessError`، زمانی پرتاب می‌شود که فرایند اجراشده به‌وسیله‌ی :func:`check_call`، :func:`check_output` یا :func:`run` (با ``check=True``) وضعیت خروجی غیرصفر برگرداند."
 
-msgid "Exit status of the child process, an integer.  If the process exited due to a signal, this will be the negative signal number."
+#, fuzzy
+#| msgid "Exit status of the child process, an integer.  If the process exited due to a signal, this will be the negative signal number."
+msgid "Exit status of the child process.  If the process exited due to a signal, this will be the negative signal number."
 msgstr "وضعیت خروجِ فرایندِ فرزند، یک عدد صحیح. اگر فرایند به دلیل یک سیگنال خارج شده باشد، این مقدار عدد منفیِ شماره‌ی سیگنال خواهد بود."
 
 msgid "Output of the child process if it was captured by :func:`run` or :func:`check_output`.  Otherwise, ``None``."
@@ -541,11 +543,29 @@ msgstr "اگر فرایند پس از *timeout* ثانیه به پایان نر�
 msgid "This will deadlock when using ``stdout=PIPE`` or ``stderr=PIPE`` and the child process generates enough output to a pipe such that it blocks waiting for the OS pipe buffer to accept more data. Use :meth:`Popen.communicate` when using pipes to avoid that."
 msgstr "هنگام استفاده از ``stdout=PIPE`` یا ``stderr=PIPE``، اگر فرایند فرزند آن‌قدر خروجی به یک پایپ تولید کند که در انتظار پذیرش داده‌های بیشتر توسط بافر پایپ سیستم‌عامل مسدود شود، بن‌بست رخ خواهد داد. برای جلوگیری از این حالت، هنگام استفاده از پایپ‌ها از :meth:`Popen.communicate` استفاده کنید."
 
-msgid "When the ``timeout`` parameter is not ``None``, then (on POSIX) the function is implemented using a busy loop (non-blocking call and short sleeps). Use the :mod:`asyncio` module for an asynchronous wait: see :class:`asyncio.create_subprocess_exec`."
-msgstr "هنگامی که پارامتر ``timeout`` برابر ``None`` نباشد، در این صورت (در POSIX) این تابع با استفاده از یک حلقه‌ی مشغول (busy loop) پیاده‌سازی می‌شود (فراخوانی غیرمسدودکننده و توقف‌های کوتاه). برای انتظار ناهمگام، از ماژول :mod:`asyncio` استفاده کنید: :class:`asyncio.create_subprocess_exec` را ببینید."
+msgid "When ``timeout`` is not ``None`` and the platform supports it, an efficient event-driven mechanism is used to wait for process termination:"
+msgstr ""
+
+msgid "Linux >= 5.3 uses :func:`os.pidfd_open` + :func:`select.poll`"
+msgstr ""
+
+msgid "macOS and other BSD variants use :func:`select.kqueue` + ``KQ_FILTER_PROC`` + ``KQ_NOTE_EXIT``"
+msgstr ""
+
+msgid "Windows uses ``WaitForSingleObject``"
+msgstr ""
+
+msgid "If none of these mechanisms are available, the function falls back to a busy loop (non-blocking call and short sleeps)."
+msgstr ""
+
+msgid "Use the :mod:`asyncio` module for an asynchronous wait: see :class:`asyncio.create_subprocess_exec`."
+msgstr ""
 
 msgid "*timeout* was added."
 msgstr "*timeout* افزوده شد."
+
+msgid "if *timeout* is not ``None``, use efficient event-driven implementation on Linux >= 5.3 and macOS / BSD."
+msgstr ""
 
 msgid "Interact with process: Send data to stdin.  Read data from stdout and stderr, until end-of-file is reached.  Wait for process to terminate and set the :attr:`~Popen.returncode` attribute.  The optional *input* argument should be data to be sent to the child process, or ``None``, if no data should be sent to the child.  If streams were opened in text mode, *input* must be a string. Otherwise, it must be bytes."
 msgstr "با فرایند تعامل می‌کند: داده‌ها را به stdin ارسال می‌کند. داده‌ها را از stdout و stderr می‌خواند، تا به پایان پرونده برسد. منتظر می‌ماند تا فرایند خاتمه یابد و ویژگی :attr:`~Popen.returncode` را تنظیم می‌کند. آرگومان اختیاری *input* باید داده‌ای برای ارسال به فرایند فرزند باشد، یا ``None``، اگر نباید هیچ داده‌ای به فرایند فرزند ارسال شود. اگر جریان‌ها در حالت متنی باز شده باشند، *input* باید یک رشته باشد. در غیر این صورت، باید bytes باشد."
@@ -1130,3 +1150,6 @@ msgstr "سطرهای جدید همگانی"
 
 msgid "subprocess module"
 msgstr "ماژول subprocess"
+
+#~ msgid "When the ``timeout`` parameter is not ``None``, then (on POSIX) the function is implemented using a busy loop (non-blocking call and short sleeps). Use the :mod:`asyncio` module for an asynchronous wait: see :class:`asyncio.create_subprocess_exec`."
+#~ msgstr "هنگامی که پارامتر ``timeout`` برابر ``None`` نباشد، در این صورت (در POSIX) این تابع با استفاده از یک حلقه‌ی مشغول (busy loop) پیاده‌سازی می‌شود (فراخوانی غیرمسدودکننده و توقف‌های کوتاه). برای انتظار ناهمگام، از ماژول :mod:`asyncio` استفاده کنید: :class:`asyncio.create_subprocess_exec` را ببینید."

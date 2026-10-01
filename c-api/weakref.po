@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2021-06-28 00:50+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -61,18 +61,6 @@ msgstr "اگر ارجاع مرده باشد، *\\*pobj* را برابر ``NULL``
 msgid "On error, raise an exception and return -1."
 msgstr "در صورت خطا، یک استثنا برانگیخته و -1 بازگردانده می‌شود."
 
-msgid "Return a :term:`borrowed reference` to the referenced object from a weak reference, *ref*.  If the referent is no longer live, returns ``Py_None``."
-msgstr "یک :term:`ارجاع امانتی <borrowed reference>` به شیء ارجاع‌شده را از یک ارجاع ضعیف، *ref*، برمی‌گرداند.  اگر ارجاع‌شونده دیگر زنده نباشد، ``Py_None`` را برمی‌گرداند."
-
-msgid "This function returns a :term:`borrowed reference` to the referenced object. This means that you should always call :c:func:`Py_INCREF` on the object except when it cannot be destroyed before the last usage of the borrowed reference."
-msgstr "این تابع یک :term:`ارجاع امانتی <borrowed reference>` به شیء مورد ارجاع برمی‌گرداند. این بدان معناست که شما باید همیشه :c:func:`Py_INCREF` را روی شیء فراخوانی کنید، مگر اینکه نتوان آن را پیش از آخرین استفاده از ارجاع امانتی نابود کرد."
-
-msgid "Use :c:func:`PyWeakref_GetRef` instead."
-msgstr "به جای آن از :c:func:`PyWeakref_GetRef` استفاده کنید."
-
-msgid "Similar to :c:func:`PyWeakref_GetObject`, but does no error checking."
-msgstr "مشابه :c:func:`PyWeakref_GetObject`، اما هیچ بررسی خطایی انجام نمی‌دهد."
-
 msgid "Test if the weak reference *ref* is dead. Returns 1 if the reference is dead, 0 if it is alive, and -1 with an error set if *ref* is not a weak reference object."
 msgstr "بررسی می‌کند که آیا ارجاع ضعیف *ref* مرده است. اگر ارجاع مرده باشد 1 را برمی‌گرداند، اگر زنده باشد 0 را، و اگر *ref* یک شیء ارجاع ضعیف نباشد، -1 را همراه با تنظیم خطا برمی‌گرداند."
 
@@ -90,3 +78,15 @@ msgstr "این تابع توسط هندلر :c:member:`~PyTypeObject.tp_dealloc`
 
 msgid "In most circumstances, it's more appropriate to use :c:func:`PyObject_ClearWeakRefs` to clear weakrefs instead of this function."
 msgstr "در بیشتر موارد، استفاده از :c:func:`PyObject_ClearWeakRefs` برای پاک کردن ارجاع‌های ضعیف به‌جای این تابع مناسب‌تر است."
+
+#~ msgid "Return a :term:`borrowed reference` to the referenced object from a weak reference, *ref*.  If the referent is no longer live, returns ``Py_None``."
+#~ msgstr "یک :term:`ارجاع امانتی <borrowed reference>` به شیء ارجاع‌شده را از یک ارجاع ضعیف، *ref*، برمی‌گرداند.  اگر ارجاع‌شونده دیگر زنده نباشد، ``Py_None`` را برمی‌گرداند."
+
+#~ msgid "This function returns a :term:`borrowed reference` to the referenced object. This means that you should always call :c:func:`Py_INCREF` on the object except when it cannot be destroyed before the last usage of the borrowed reference."
+#~ msgstr "این تابع یک :term:`ارجاع امانتی <borrowed reference>` به شیء مورد ارجاع برمی‌گرداند. این بدان معناست که شما باید همیشه :c:func:`Py_INCREF` را روی شیء فراخوانی کنید، مگر اینکه نتوان آن را پیش از آخرین استفاده از ارجاع امانتی نابود کرد."
+
+#~ msgid "Use :c:func:`PyWeakref_GetRef` instead."
+#~ msgstr "به جای آن از :c:func:`PyWeakref_GetRef` استفاده کنید."
+
+#~ msgid "Similar to :c:func:`PyWeakref_GetObject`, but does no error checking."
+#~ msgstr "مشابه :c:func:`PyWeakref_GetObject`، اما هیچ بررسی خطایی انجام نمی‌دهد."

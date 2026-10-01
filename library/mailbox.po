@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 09:15+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -62,6 +62,14 @@ msgstr ":term:`پیمایش‌گر <iterator>` پیش‌فرض :class:`!Mailbox`
 
 msgid "Be very cautious when modifying mailboxes that might be simultaneously changed by some other process.  The safest mailbox format to use for such tasks is :class:`Maildir`; try to avoid using single-file formats such as :class:`mbox` for concurrent writing.  If you're modifying a mailbox, you *must* lock it by calling the :meth:`lock` and :meth:`unlock` methods *before* reading any messages in the file or making any changes by adding or deleting a message.  Failing to lock the mailbox runs the risk of losing messages or corrupting the entire mailbox."
 msgstr "هنگام تغییر صندوق‌های پستی که ممکن است همزمان توسط فرایند دیگری تغییر کنند، بسیار محتاط باشید. امن‌ترین قالب صندوق پستی برای استفاده در چنین وظایفی :class:`Maildir` است؛ سعی کنید برای نوشتن همزمان از قالب‌های تک‌پرونده‌ای مانند :class:`mbox` اجتناب کنید. اگر در حال تغییر یک صندوق پستی هستید، *باید* *پیش از* خواندن هر پیامی در پرونده یا ایجاد هرگونه تغییر از طریق افزودن یا حذف یک پیام، آن را با فراخوانی متدهای :meth:`lock` و :meth:`unlock` قفل کنید. عدم قفل کردن صندوق پستی خطر از دست رفتن پیام‌ها یا خراب شدن کل صندوق پستی را به همراه دارد."
+
+msgid "The :class:`!Mailbox` class supports the :keyword:`with` statement.  When used as a context manager, :class:`!Mailbox` calls :meth:`lock` when the context is entered, returns the mailbox object as the context object, and at context end calls :meth:`close`, thereby releasing the lock."
+msgstr ""
+
+#, fuzzy
+#| msgid "Support for binary input was added."
+msgid "Support for the :keyword:`with` statement was added."
+msgstr "پشتیبانی از ورودی دودویی افزوده شد."
 
 msgid ":class:`!Mailbox` instances have the following methods:"
 msgstr "نمونه‌های :class:`!Mailbox` متدهای زیر را دارند:"

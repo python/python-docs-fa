@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 16:26+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -126,6 +126,38 @@ msgstr "پرچمی که همراه چندین تابعِ چاپ‌کننده‌�
 msgid "Print an object *o*, on file *fp*.  Returns ``-1`` on error.  The flags argument is used to enable certain printing options.  The only option currently supported is :c:macro:`Py_PRINT_RAW`; if given, the :func:`str` of the object is written instead of the :func:`repr`."
 msgstr "شیء *o* را در پرونده *fp* چاپ می‌کند. در صورت خطا ``-1`` را برمی‌گرداند. از آرگومان پرچم‌ها برای فعال‌سازی برخی گزینه‌های چاپ استفاده می‌شود. تنها گزینه‌ای که در حال حاضر پشتیبانی می‌شود :c:macro:`Py_PRINT_RAW` است؛ در صورت ارائه این گزینه، :func:`str` شیء به‌جای :func:`repr` آن نوشته می‌شود."
 
+msgid "Dump an object *op* to ``stderr``. This should only be used for debugging."
+msgstr ""
+
+msgid "The output is intended to try dumping objects even after memory corruption:"
+msgstr ""
+
+msgid "Information is written starting with fields that are the least likely to crash when accessed."
+msgstr ""
+
+msgid "This function can be called without an :term:`attached thread state`, but it's not recommended to do so: it can cause deadlocks."
+msgstr ""
+
+msgid "An object that does not belong to the current interpreter may be dumped, but this may also cause crashes or unintended behavior."
+msgstr ""
+
+msgid "Implement a heuristic to detect if the object memory has been freed. Don't display the object contents in this case, only its memory address."
+msgstr ""
+
+msgid "The output format may change at any time."
+msgstr ""
+
+msgid "Example of output:"
+msgstr ""
+
+msgid ""
+"object address  : 0x7f80124702c0\n"
+"object refcount : 2\n"
+"object type     : 0x9902e0\n"
+"object type name: str\n"
+"object repr     : 'abcdef'"
+msgstr ""
+
 msgid "Returns ``1`` if *o* has the attribute *attr_name*, and ``0`` otherwise. This is equivalent to the Python expression ``hasattr(o, attr_name)``. On failure, return ``-1``."
 msgstr "اگر *o* ویژگی *attr_name* را داشته باشد، ``1`` و در غیر این صورت ``0`` برمی‌گرداند. این معادل عبارت پایتونی ``hasattr(o, attr_name)`` است. در صورت شکست، ``-1`` برمی‌گرداند."
 
@@ -173,6 +205,12 @@ msgstr "مقدار ویژگی‌ای با نام *attr_name* را برای شی�
 
 msgid "If *v* is ``NULL``, the attribute is deleted. This behaviour is deprecated in favour of using :c:func:`PyObject_DelAttr`, but there are currently no plans to remove it."
 msgstr "اگر *v* برابر ``NULL`` باشد، ویژگی حذف می‌شود. این رفتار به نفع استفاده از :c:func:`PyObject_DelAttr` منسوخ شده است، اما در حال حاضر هیچ برنامه‌ای برای حذف آن وجود ندارد."
+
+msgid "The function must not be called with a ``NULL`` *v* and an exception set. This case can arise from forgetting ``NULL`` checks and would delete the attribute."
+msgstr ""
+
+msgid "Must not be called with NULL value if an exception is set."
+msgstr ""
 
 msgid "This is the same as :c:func:`PyObject_SetAttr`, but *attr_name* is specified as a :c:expr:`const char*` UTF-8 encoded bytes string, rather than a :c:expr:`PyObject*`."
 msgstr "این همان :c:func:`PyObject_SetAttr` است، اما *attr_name* به‌صورت یک رشته‌ی بایتِ کدگذاری‌شده با UTF-8 از نوع :c:expr:`const char*` مشخص می‌شود، نه :c:expr:`PyObject*`."
@@ -533,6 +571,17 @@ msgstr "در :term:`ساخت‌ نخ‌آزاد <free-threaded build>`، این 
 
 msgid "The caller must hold an :term:`attached thread state`, despite the fact that this function doesn't call into the Python interpreter. This function cannot fail."
 msgstr "فراخوانی‌کننده باید یک :term:`attached thread state` را در اختیار داشته باشد، با وجود اینکه این تابع مفسر پایتون را فراخوانی نمی‌کند. این تابع نمی‌تواند شکست بخورد."
+
+msgid "Marks the object *op* :term:`immortal`. The argument should be uniquely referenced by the calling thread. This is intended to be used for reducing reference counting contention in the :term:`free-threaded build` for objects which are shared across threads."
+msgstr ""
+
+msgid "This is a one-way process: objects can only be made immortal; they cannot be made mortal once again. Immortal objects do not participate in reference counting and will never be garbage collected. If the object is GC-tracked, it is untracked."
+msgstr ""
+
+#, fuzzy
+#| msgid "This function is intended to be used soon after *obj* is created, by the code that creates it, such as in the object's :c:member:`~PyTypeObject.tp_new` slot."
+msgid "This function is intended to be used soon after *op* is created, by the code that creates it, such as in the object's :c:member:`~PyTypeObject.tp_new` slot. Returns 1 if the object was made immortal and returns 0 if it was not. This function cannot fail."
+msgstr "این تابع برای استفاده به‌زودی پس از ایجاد *obj*، توسط کدی که آن را ایجاد می‌کند، در نظر گرفته شده است؛ برای مثال در جایگاه :c:member:`~PyTypeObject.tp_new` شیء."
 
 msgid "built-in function"
 msgstr "تابع توکار"

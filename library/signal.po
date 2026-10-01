@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 14:15+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -312,17 +312,24 @@ msgstr ":data:`SIGKILL` و :data:`SIGSTOP` نمی‌توانند مسدود شو
 msgid "See also :func:`pause`, :func:`sigpending` and :func:`sigwait`."
 msgstr "همچنین :func:`pause`، :func:`sigpending` و :func:`sigwait` را ببینید."
 
-msgid "Sets given interval timer (one of :const:`signal.ITIMER_REAL`, :const:`signal.ITIMER_VIRTUAL` or :const:`signal.ITIMER_PROF`) specified by *which* to fire after *seconds* (float is accepted, different from :func:`alarm`) and after that every *interval* seconds (if *interval* is non-zero). The interval timer specified by *which* can be cleared by setting *seconds* to zero."
+#, fuzzy
+#| msgid "Sets given interval timer (one of :const:`signal.ITIMER_REAL`, :const:`signal.ITIMER_VIRTUAL` or :const:`signal.ITIMER_PROF`) specified by *which* to fire after *seconds* (float is accepted, different from :func:`alarm`) and after that every *interval* seconds (if *interval* is non-zero). The interval timer specified by *which* can be cleared by setting *seconds* to zero."
+msgid "Sets given interval timer (one of :const:`signal.ITIMER_REAL`, :const:`signal.ITIMER_VIRTUAL` or :const:`signal.ITIMER_PROF`) specified by *which* to fire after *seconds* (rounded up to microseconds, different from :func:`alarm`) and after that every *interval* seconds (if *interval* is non-zero). The interval timer specified by *which* can be cleared by setting *seconds* to zero."
 msgstr "تایمر بینابینی مشخص‌شده توسط *which* (یکی از :const:`signal.ITIMER_REAL`، :const:`signal.ITIMER_VIRTUAL` یا :const:`signal.ITIMER_PROF`) را تنظیم می‌کند تا پس از *seconds* ثانیه فعال شود (float پذیرفته می‌شود، برخلاف :func:`alarm`) و پس از آن هر *interval* ثانیه فعال شود (اگر *interval* غیرصفر باشد). تایمر بینابینی مشخص‌شده توسط *which* را می‌توان با تنظیم *seconds* روی صفر پاک کرد."
 
 msgid "When an interval timer fires, a signal is sent to the process. The signal sent is dependent on the timer being used; :const:`signal.ITIMER_REAL` will deliver :const:`SIGALRM`, :const:`signal.ITIMER_VIRTUAL` sends :const:`SIGVTALRM`, and :const:`signal.ITIMER_PROF` will deliver :const:`SIGPROF`."
 msgstr "وقتی یک زمان‌سنج بازه‌ای فعال می‌شود، یک سیگنال به فرایند ارسال می‌شود. سیگنال ارسالی به زمان‌سنج مورد استفاده بستگی دارد؛ :const:`signal.ITIMER_REAL` سیگنال :const:`SIGALRM` را ارسال می‌کند، :const:`signal.ITIMER_VIRTUAL` سیگنال :const:`SIGVTALRM` را ارسال می‌کند، و :const:`signal.ITIMER_PROF` سیگنال :const:`SIGPROF` را ارسال می‌کند."
 
-msgid "The old values are returned as a tuple: (delay, interval)."
+#, fuzzy
+#| msgid "The old values are returned as a tuple: (delay, interval)."
+msgid "The old values are returned as a two-tuple of floats: (``delay``, ``interval``)."
 msgstr "مقادیر قدیمی به‌صورت یک تاپل بازگردانده می‌شوند: (delay, interval)."
 
 msgid "Attempting to pass an invalid interval timer will cause an :exc:`ItimerError`."
 msgstr "تلاش برای ارسال یک زمان‌سنج بازه‌ای (interval timer) نامعتبر باعث بروز :exc:`ItimerError` می‌شود."
+
+msgid "Accepts any real numbers as *seconds* and *interval*, not only integers or floats."
+msgstr ""
 
 msgid "Returns current value of a given interval timer specified by *which*."
 msgstr "مقدار فعلی زمان‌سنج بازه‌ای مشخص‌شده توسط *which* را برمی‌گرداند."
@@ -413,6 +420,9 @@ msgstr "همچنین ببینید :func:`pause`، :func:`sigwait` و :func:`sigw
 
 msgid "The function is now retried with the recomputed *timeout* if interrupted by a signal not in *sigset* and the signal handler does not raise an exception (see :pep:`475` for the rationale)."
 msgstr "این تابع اکنون در صورتی که با سیگنالی خارج از *sigset* قطع شود و هندلر سیگنال استثنایی پرتاب نکند، با *timeout* دوباره محاسبه‌شده مجدداً اجرا می‌شود (برای دلیل، :pep:`475` را ببینید)."
+
+msgid "Accepts any real number as *timeout*, not only integer or float."
+msgstr ""
 
 msgid "Examples"
 msgstr "مثال‌ها"

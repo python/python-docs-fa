@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 16:27+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -48,7 +48,9 @@ msgstr "در صورتی که آرگومان آن یک :c:type:`PyLongObject` ب�
 msgid "Return a new :c:type:`PyLongObject` object from *v*, or ``NULL`` on failure."
 msgstr "یک شیء جدید :c:type:`PyLongObject` از *v* برمی‌گرداند، یا در صورت شکست ``NULL``."
 
-msgid "CPython keeps an array of integer objects for all integers between ``-5`` and ``256``.  When you create an int in that range you actually just get back a reference to the existing object."
+#, fuzzy
+#| msgid "CPython keeps an array of integer objects for all integers between ``-5`` and ``256``.  When you create an int in that range you actually just get back a reference to the existing object."
+msgid "CPython keeps an array of integer objects for all integers between ``-5`` and ``1024``.  When you create an int in that range you actually just get back a reference to the existing object."
 msgstr "سی‌پایتون آرایه‌ای از اشیاء عدد صحیح را برای تمام اعداد صحیح بین ``-5`` و ``256`` نگه می‌دارد. وقتی شما یک int در این بازه ایجاد می‌کنید، در واقع فقط ارجاعی به شیء موجود را دریافت می‌کنید."
 
 msgid "Return a new :c:type:`PyLongObject` object from a C :c:expr:`unsigned long`, or ``NULL`` on failure."
@@ -494,7 +496,9 @@ msgstr "``-1`` برای کم‌ارزش‌ترین بایت در ابتدا (ک�
 msgid "Get the native layout of Python :class:`int` objects."
 msgstr "دریافت چیدمان بومی اشیای :class:`int` پایتون."
 
-msgid "See the :c:struct:`PyLongLayout` structure."
+#, fuzzy
+#| msgid "See the :c:struct:`PyLongLayout` structure."
+msgid "See the :c:type:`PyLongLayout` structure."
 msgstr "ساختار :c:struct:`PyLongLayout` را ببینید."
 
 msgid "The function must not be called before Python initialization nor after Python finalization. The returned layout is valid until Python is finalized. The layout is the same for all Python sub-interpreters in a process, and so it can be cached."
@@ -527,7 +531,9 @@ msgstr "آرایه‌ی فقط خواندنی از ارقام بدون علام�
 msgid "Export a Python :class:`int` object."
 msgstr "یک شیء :class:`int` پایتون را اکسپورت (export) می‌کند."
 
-msgid "*export_long* must point to a :c:struct:`PyLongExport` structure allocated by the caller. It must not be ``NULL``."
+#, fuzzy
+#| msgid "*export_long* must point to a :c:struct:`PyLongExport` structure allocated by the caller. It must not be ``NULL``."
+msgid "*export_long* must point to a :c:type:`PyLongExport` structure allocated by the caller. It must not be ``NULL``."
 msgstr "*export_long* باید به یک ساختار :c:struct:`PyLongExport` که توسط فراخواننده تخصیص داده‌شده است اشاره کند. این نباید ``NULL`` باشد."
 
 msgid "On success, fill in *\\*export_long* and return ``0``. On error, set an exception and return ``-1``."
@@ -575,7 +581,9 @@ msgstr "*digits* نباید NULL باشد."
 msgid "After a successful call to this function, the caller should fill in the array of digits *digits* and then call :c:func:`PyLongWriter_Finish` to get a Python :class:`int`. The layout of *digits* is described by :c:func:`PyLong_GetNativeLayout`."
 msgstr "پس از فراخوانی موفق این تابع، فراخوانی‌کننده باید آرایه‌ی ارقام *digits* را پر کند و سپس :c:func:`PyLongWriter_Finish` را فراخوانی کند تا یک :class:`int` پایتونی به دست آورد. چیدمان *digits* توسط :c:func:`PyLong_GetNativeLayout` توصیف می‌شود."
 
-msgid "Digits must be in the range [``0``; ``(1 << bits_per_digit) - 1``] (where the :c:struct:`~PyLongLayout.bits_per_digit` is the number of bits per digit). Any unused most significant digits must be set to ``0``."
+#, fuzzy
+#| msgid "Digits must be in the range [``0``; ``(1 << bits_per_digit) - 1``] (where the :c:struct:`~PyLongLayout.bits_per_digit` is the number of bits per digit). Any unused most significant digits must be set to ``0``."
+msgid "Digits must be in the range [``0``; ``(1 << bits_per_digit) - 1``] (where the :c:type:`~PyLongLayout.bits_per_digit` is the number of bits per digit). Any unused most significant digits must be set to ``0``."
 msgstr "رقم‌ها باید در بازه‌ی [``0``; ``(1 << bits_per_digit) - 1``] باشند (که در آن :c:struct:`~PyLongLayout.bits_per_digit` تعداد بیت‌های هر رقم است). هر رقم مرتبه‌بالا که استفاده نشده باشد، باید برابر ``0`` قرار داده شود."
 
 msgid "Alternately, call :c:func:`PyLongWriter_Discard` to destroy the writer instance without creating an :class:`~int` object."

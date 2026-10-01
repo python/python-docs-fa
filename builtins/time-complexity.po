@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-19 20:08+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: none\n"
@@ -157,17 +157,26 @@ msgstr "``min(t)``, ``max(t)``"
 msgid "Get length (``len(t)``) [5]_"
 msgstr "دریافت طول (``len(t)``) [5]_"
 
-msgid ":class:`!dict`"
-msgstr ":class:`!dict`"
+#, fuzzy
+#| msgid ":class:`!set`, :class:`!frozenset`"
+msgid ":class:`!dict`, :class:`!frozendict`"
+msgstr ":class:`!set`, :class:`!frozenset`"
 
 msgid "The times listed for dict objects are average-case times, as they assume the hash function for the objects is sufficiently robust to make collisions uncommon. They also assume the keys are well-distributed among the set of possible keys. In the worst case, when every key hashes to the same value, each of the *O*\\ (1) operations below instead takes *O*\\ (*n*) time. They also assume that hashing and comparing a key is *O*\\ (1). For more detail on the implementation, see :ref:`how-are-dictionaries-implemented`."
 msgstr "زمان‌های فهرست‌شده برای شیء‌ها dict زمان‌های حالت‌میانگین هستند، زیرا آن‌ها فرض می‌کنند که تابع هش برای شیء‌ها به‌قدر کافی قوی است تا تصادفات را کم کند. آن‌ها همچنین فرض می‌کنند که کلیدها در میان مجموعه‌ی کلیدهای ممکن به‌خوبی توزیع شده‌اند. در بدترین حالت، وقتی هر کلید به یک مقدار هش می‌شود، هر یک از عملیات‌های *O*\\ (1) در زیر در عوض زمان *O*\\ (*n*) می‌طلبد. آن‌ها همچنین فرض می‌کنند که هش کردن و مقایسه یک کلید *O*\\ (1) است. برای جزئیات بیشتر در مورد پیاده‌سازی، به :ref:`how-are-dictionaries-implemented` مراجعه کنید."
 
+#, fuzzy
+#| msgid "A :class:`frozenset` is :term:`immutable`, so it does not support adding, discarding, or the in-place update operations. The others below apply to it at the same costs."
+msgid "A :class:`frozendict` is immutable, so it does not support setting, deleting, or updating items. The other operations below apply to it at the same costs."
+msgstr "یک :class:`frozenset` :term:`تغییرناپذیر <immutable>` است، بنابراین از افزودن، حذف، یا عملیات‌های به‌روزرسانی درجا پشتیبانی نمی‌کند. موارد دیگر در پایین با همان هزینه‌ها بر آن اعمال می‌شوند."
+
 msgid "``key in d``"
 msgstr "``key in d``"
 
-msgid "Copy (``d.copy()``) [7]_"
-msgstr "کپی (``d.copy()``) [7]_"
+#, fuzzy
+#| msgid "Copy (``s.copy()``) [6]_ [7]_"
+msgid "Copy (``d.copy()``) [6]_ [7]_"
+msgstr "کپی (``s.copy()``) [6]_ [7]_"
 
 msgid "Get item (``d[key]``, ``d.get(key)``)"
 msgstr "دریافت آیتم (``d[key]``, ``d.get(key)``)"
@@ -349,7 +358,9 @@ msgstr "این بدترین حالت است. مرتب‌سازی سازگار ا
 msgid "The number of elements is stored in the object, so ``len()`` does not need to count them."
 msgstr "تعداد المان‌ها در شیء ذخیره شده است، بنابراین ``len()`` نیازی به شمارش آن‌ها ندارد."
 
-msgid "Copying a :class:`frozenset` is *O*\\ (1) as it returns the original object."
+#, fuzzy
+#| msgid "Copying a :class:`frozenset` is *O*\\ (1) as it returns the original object."
+msgid "Copying a :class:`frozendict` or a :class:`frozenset` is *O*\\ (1) as it returns the original object."
 msgstr "کپی کردن یک :class:`frozenset` از مرتبه *O*\\ (1) است، زیرا شیء اصلی را برمی‌گرداند."
 
 msgid "These operations scan the container's internal hash table, which is not shrunk when elements are removed. After removing most elements, they still take time proportional to the container's former size, until a later insertion triggers a resize."
@@ -378,3 +389,9 @@ msgstr "این‌ها هر المان را به‌صورت جداگانه باز
 
 msgid "Assuming :class:`int` or :class:`bool` arguments. For other types, the range is searched like any other sequence in *O*\\ (*n*) time."
 msgstr "با فرض آرگومان‌های :class:`int` یا :class:`bool`. برای سایر نوع‌ها، محدوده مانند هر دنباله‌ی دیگر در زمان *O*\\ (*n*) جستجو می‌شود."
+
+#~ msgid ":class:`!dict`"
+#~ msgstr ":class:`!dict`"
+
+#~ msgid "Copy (``d.copy()``) [7]_"
+#~ msgstr "کپی (``d.copy()``) [7]_"

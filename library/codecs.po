@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 07:00+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -56,8 +56,18 @@ msgstr "همچنین می‌توانید جزئیات کامل هر کدک را 
 msgid "Looks up the codec info in the Python codec registry and returns a :class:`CodecInfo` object as defined below."
 msgstr "اطلاعات کدک را در رجیستری کدک‌های پایتون جستجو می‌کند و یک شیء :class:`CodecInfo` را که در زیر تعریف شده است برمی‌گرداند."
 
-msgid "Encodings are first looked up in the registry's cache. If not found, the list of registered search functions is scanned. If no :class:`CodecInfo` object is found, a :exc:`LookupError` is raised. Otherwise, the :class:`CodecInfo` object is stored in the cache and returned to the caller."
+#, fuzzy
+#| msgid "Encodings are first looked up in the registry's cache. If not found, the list of registered search functions is scanned. If no :class:`CodecInfo` object is found, a :exc:`LookupError` is raised. Otherwise, the :class:`CodecInfo` object is stored in the cache and returned to the caller."
+msgid "This function first normalizes the *encoding*: all ASCII letters are converted to lower case, spaces are replaced with hyphens. Then encoding is looked up in the registry's cache. If not found, the list of registered search functions is scanned. If no :class:`CodecInfo` object is found, a :exc:`LookupError` is raised. Otherwise, the :class:`CodecInfo` object is stored in the cache and returned to the caller."
 msgstr "کدگذاری‌ها ابتدا در نهانگاه رجیستری جستجو می‌شوند. اگر یافت نشوند، فهرست توابع جستجوی ثبت‌شده پویش می‌شود. اگر شیء :class:`CodecInfo` یافت نشود، :exc:`LookupError` پرتاب می‌شود. در غیر این صورت، شیء :class:`CodecInfo` در نهانگاه ذخیره می‌شود و به فراخواننده برگردانده می‌شود."
+
+#, fuzzy
+#| msgid "Hyphens and spaces are converted to underscore."
+msgid "Any characters except ASCII letters and digits and a dot are converted to underscore."
+msgstr "خط‌تیره‌ها و فاصله‌ها به زیرخط تبدیل می‌شوند."
+
+msgid "No characters are converted to underscore anymore. Spaces are converted to hyphens."
+msgstr ""
 
 msgid "Codec details when looking up the codec registry. The constructor arguments are stored in attributes of the same name:"
 msgstr "جزئیات کدک هنگام جستجو در رجیستری کدک (codec registry). آرگومان‌های سازنده در ویژگی‌های هم‌نام ذخیره می‌شوند:"
@@ -107,11 +117,10 @@ msgstr "کدک مربوط به کدگذاری داده‌شده را جستجو 
 msgid "Custom codecs are made available by registering a suitable codec search function:"
 msgstr "کدک‌های سفارشی با ثبت یک تابع جستجوی کدک مناسب در دسترس قرار می‌گیرند:"
 
-msgid "Register a codec search function. Search functions are expected to take one argument, being the encoding name in all lower case letters with hyphens and spaces converted to underscores, and return a :class:`CodecInfo` object. In case a search function cannot find a given encoding, it should return ``None``."
+#, fuzzy
+#| msgid "Register a codec search function. Search functions are expected to take one argument, being the encoding name in all lower case letters with hyphens and spaces converted to underscores, and return a :class:`CodecInfo` object. In case a search function cannot find a given encoding, it should return ``None``."
+msgid "Register a codec search function. Search functions are expected to take one argument, being the encoding name in all lower case letters with spaces converted to hyphens, and return a :class:`CodecInfo` object. In case a search function cannot find a given encoding, it should return ``None``."
 msgstr "یک تابع جست‌وجوی کدک ثبت کنید. انتظار می‌رود توابع جست‌وجو یک آرگومان دریافت کنند و یک شیء :class:`CodecInfo` برگردانند؛ این آرگومان نام کدگذاری است که تماماً با حروف کوچک بوده و سطرهای تیره و فاصله‌های آن به زیرخط تبدیل شده‌اند. در صورتی که یک تابع جست‌وجو نتواند کدگذاری داده‌شده را پیدا کند، باید ``None`` برگرداند."
-
-msgid "Hyphens and spaces are converted to underscore."
-msgstr "خط‌تیره‌ها و فاصله‌ها به زیرخط تبدیل می‌شوند."
 
 msgid "Unregister a codec search function and clear the registry's cache. If the search function is not registered, do nothing."
 msgstr "یک تابع جست‌وجوی کدک را از ثبت خارج می‌کند و نهانگاه رجیستری را پاک می‌کند. اگر تابع جست‌وجو ثبت‌نشده باشد، کاری انجام نمی‌دهد."
@@ -660,13 +669,17 @@ msgstr "در iso-8859-1)، این موضوع احتمال اینکه کدگذا�
 msgid "Standard Encodings"
 msgstr "کدگذاری‌های استاندارد"
 
-msgid "Python comes with a number of codecs built-in, either implemented as C functions or with dictionaries as mapping tables. The following table lists the codecs by name, together with a few common aliases, and the languages for which the encoding is likely used. Neither the list of aliases nor the list of languages is meant to be exhaustive. Notice that spelling alternatives that only differ in case or use a hyphen instead of an underscore are also valid aliases because they are equivalent when normalized by :func:`~encodings.normalize_encoding`. For example, ``'utf-8'`` is a valid alias for the ``'utf_8'`` codec."
+#, fuzzy
+#| msgid "Python comes with a number of codecs built-in, either implemented as C functions or with dictionaries as mapping tables. The following table lists the codecs by name, together with a few common aliases, and the languages for which the encoding is likely used. Neither the list of aliases nor the list of languages is meant to be exhaustive. Notice that spelling alternatives that only differ in case or use a hyphen instead of an underscore are also valid aliases because they are equivalent when normalized by :func:`~encodings.normalize_encoding`. For example, ``'utf-8'`` is a valid alias for the ``'utf_8'`` codec."
+msgid "Python comes with a number of codecs built-in, either implemented as C functions or with dictionaries as mapping tables. The following table lists the codecs by name, together with a few common aliases, and the languages for which the encoding is likely used. Neither the list of aliases nor the list of languages is meant to be exhaustive. Notice that spelling alternatives that only differ in case or use a space or a hyphen instead of an underscore are also valid aliases because they are equivalent when normalized by :func:`~encodings.normalize_encoding`. For example, ``'utf-8'`` is a valid alias for the ``'utf_8'`` codec."
 msgstr "پایتون همراه با تعدادی کدک توکار است که یا به‌صورت توابع C یا با استفاده از دیکشنری‌ها به‌عنوان جداول نگاشت پیاده‌سازی شده‌اند. جدول زیر کدک‌ها را بر اساس نام، به‌همراه چند نام مستعار رایج و زبان‌هایی که احتمالاً کدگذاری برای آن‌ها استفاده می‌شود، فهرست می‌کند. هیچ‌یک از فهرست نام‌های مستعار و فهرست زبان‌ها برای جامع بودن در نظر گرفته نشده است. توجه داشته باشید که نوشتارهای جایگزینی که فقط از نظر بزرگی یا کوچکی حروف تفاوت دارند یا به‌جای زیرخط از خط تیره استفاده می‌کنند نیز نام‌های مستعار معتبر هستند، زیرا وقتی با :func:`~encodings.normalize_encoding` نرمال‌سازی شوند، معادل یکدیگر هستند. برای مثال، ``'utf-8'`` یک نام مستعار معتبر برای کدک ``'utf_8'`` است."
 
 msgid "The below table lists the most common aliases, for a complete list refer to the source :source:`aliases.py <Lib/encodings/aliases.py>` file."
 msgstr "جدول زیر رایج‌ترین نام‌های مستعار را فهرست می‌کند، برای فهرست کامل به پرونده منبع :source:`aliases.py <Lib/encodings/aliases.py>` مراجعه کنید."
 
-msgid "On Windows, ``cpXXX`` codecs are available for all code pages. But only codecs listed in the following table are guarantead to exist on other platforms."
+#, fuzzy
+#| msgid "On Windows, ``cpXXX`` codecs are available for all code pages. But only codecs listed in the following table are guarantead to exist on other platforms."
+msgid "On Windows, ``cpXXX`` codecs are available for all code pages. But only codecs listed in the following table are guaranteed to exist on other platforms."
 msgstr "در ویندوز، کدک‌های ``cpXXX`` برای تمام صفحه‌های کد در دسترس هستند. اما تضمین می‌شود که تنها کدک‌های فهرست‌شده در جدول زیر در سایر پلتفرم‌ها وجود داشته باشند."
 
 msgid "Some common encodings can bypass the codecs lookup machinery to improve performance. These optimization opportunities are only recognized by CPython for a limited set of (case insensitive) aliases: utf-8, utf8, latin-1, latin1, iso-8859-1, iso8859-1, mbcs (Windows only), ascii, us-ascii, utf-16, utf16, utf-32, utf32, and the same using underscores instead of dashes. Using alternative aliases for these encodings may result in slower execution."
@@ -1352,6 +1365,9 @@ msgstr "U8, UTF, utf8, cp65001"
 
 msgid "utf_8_sig"
 msgstr "utf_8_sig"
+
+msgid "utf8-sig"
+msgstr ""
 
 msgid "The utf-16\\* and utf-32\\* encoders no longer allow surrogate code points (``U+D800``--``U+DFFF``) to be encoded. The utf-32\\* decoders no longer decode byte sequences that correspond to surrogate code points."
 msgstr "کدگذارهای utf-16\\* و utf-32\\* دیگر اجازه نمی‌دهند نقاط کد جانشین (``U+D800``--``U+DFFF``) کدگذاری شوند. کدگشاهای utf-32\\* دیگر دنباله‌های بایتی متناظر با نقاط کد جانشین (surrogate code points) را کدگشایی نمی‌کنند."

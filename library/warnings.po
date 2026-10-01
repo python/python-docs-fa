@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 13:23+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -207,13 +207,17 @@ msgstr "``\"once\"``"
 msgid "print only the first occurrence of matching warnings, regardless of location"
 msgstr "فقط اولین رخداد هشدارهای منطبق را چاپ می‌کند، صرف‌نظر از مکان"
 
-msgid "*message* is a string containing a regular expression that the start of the warning message must match, case-insensitively.  In :option:`-W` and :envvar:`PYTHONWARNINGS`, *message* is a literal string that the start of the warning message must contain (case-insensitively), ignoring any whitespace at the start or end of *message*."
+#, fuzzy
+#| msgid "*message* is a string containing a regular expression that the start of the warning message must match, case-insensitively.  In :option:`-W` and :envvar:`PYTHONWARNINGS`, *message* is a literal string that the start of the warning message must contain (case-insensitively), ignoring any whitespace at the start or end of *message*."
+msgid "*message* is a string containing a regular expression that the start of the warning message must match, case-insensitively.  In :option:`-W` and :envvar:`PYTHONWARNINGS`, if *message* starts and ends with a forward slash (``/``), it specifies a regular expression as above; otherwise it is a literal string that the start of the warning message must match (case-insensitively), ignoring any whitespace at the start or end of *message*."
 msgstr "*message* یک رشته حاوی یک عبارت باقاعده است که ابتدای پیام هشدار باید بدون حساسیت به بزرگی و کوچکی حروف با آن مطابقت داشته باشد. در :option:`-W` و :envvar:`PYTHONWARNINGS`، *message* یک رشته‌ی لفظی است که ابتدای پیام هشدار باید شامل آن باشد (بدون حساسیت به بزرگی و کوچکی حروف)، و هر فضای سفید در ابتدا یا انتهای *message* نادیده گرفته می‌شود."
 
 msgid "*category* is a class (a subclass of :exc:`Warning`) of which the warning category must be a subclass in order to match."
 msgstr "*category* یک کلاس (یک زیرکلاس از :exc:`Warning`) است که دسته‌بندی هشدار باید برای تطابق، زیرکلاسی از آن باشد."
 
-msgid "*module* is a string containing a regular expression that the start of the fully qualified module name must match, case-sensitively.  In :option:`-W` and :envvar:`PYTHONWARNINGS`, *module* is a literal string that the fully qualified module name must be equal to (case-sensitively), ignoring any whitespace at the start or end of *module*."
+#, fuzzy
+#| msgid "*module* is a string containing a regular expression that the start of the fully qualified module name must match, case-sensitively.  In :option:`-W` and :envvar:`PYTHONWARNINGS`, *module* is a literal string that the fully qualified module name must be equal to (case-sensitively), ignoring any whitespace at the start or end of *module*."
+msgid "*module* is a string containing a regular expression that the start of the fully qualified module name must match, case-sensitively.  In :option:`-W` and :envvar:`PYTHONWARNINGS`, if *module* starts and ends with a forward slash (``/``), it specifies a regular expression as above; otherwise it is a literal string that the fully qualified module name must be equal to (case-sensitively), ignoring any whitespace at the start or end of *module*."
 msgstr "*module* رشته‌ای حاوی عبارت باقاعده است که آغاز نام کامل ماژول باید با آن مطابقت داشته باشد، و این مطابقت حساس به بزرگی و کوچکی حروف است. در :option:`-W` و :envvar:`PYTHONWARNINGS`، *module* رشته‌ای لفظی است که نام کامل ماژول باید با آن برابر باشد (حساس به بزرگی و کوچکی حروف)، و هرگونه فضای سفید در آغاز یا پایان *module* نادیده گرفته می‌شود."
 
 msgid "*lineno* is an integer that the line number where the warning occurred must match, or ``0`` to match all line numbers."
@@ -513,8 +517,8 @@ msgstr "*skip_file_prefixes* افزوده شد."
 msgid "This is a low-level interface to the functionality of :func:`warn`, passing in explicitly the message, category, filename and line number, and optionally other arguments. *message* must be a string and *category* a subclass of :exc:`Warning` or *message* may be a :exc:`Warning` instance, in which case *category* will be ignored."
 msgstr "این رابطی سطح پایین برای قابلیت :func:`warn` است که پیام، دسته، نام پرونده و شماره خط را به‌صورت صریح و سایر آرگومان‌ها را به‌اختیار دریافت می‌کند. *message* باید یک رشته باشد و *category* یک زیرکلاس از :exc:`Warning`، یا ممکن است *message* یک نمونه از :exc:`Warning` باشد که در این صورت از *category* چشم‌پوشی می‌شود."
 
-msgid "*module*, if supplied, should be the module name. If no module is passed, the filename with ``.py`` stripped is used."
-msgstr "*module*، در صورت ارائه، باید نام ماژول باشد. اگر ماژولی ارسال نشود، از نام پرونده با حذف ``.py`` استفاده می‌شود."
+msgid "*module*, if supplied, should be the module name. If no module is passed, the module regular expression in :ref:`warnings filter <warning-filter>` will be tested against the module names constructed from the path components starting from all parent directories (with ``/__init__.py``, ``.py`` and, on Windows, ``.pyw`` stripped) and against the filename with ``.py`` stripped. For example, when the filename is ``'/path/to/package/module.py'``, it will be tested against  ``'path.to.package.module'``, ``'to.package.module'`` ``'package.module'``, ``'module'``, and ``'/path/to/package/module'``."
+msgstr ""
 
 msgid "*registry*, if supplied, should be the ``__warningregistry__`` dictionary of the module. If no registry is passed, each warning is treated as the first occurrence, that is, filter actions ``\"default\"``, ``\"module\"`` and ``\"once\"`` are handled as ``\"always\"``."
 msgstr "*registry*، در صورت ارائه، باید دیکشنری ``__warningregistry__`` ماژول باشد. اگر هیچ registry ارسال نشود، با هر هشدار به‌عنوان نخستین رخداد رفتار می‌شود، یعنی اقدام‌های فیلتر ``\"default\"``، ``\"module\"`` و ``\"once\"`` به‌صورت ``\"always\"`` مدیریت می‌شوند."
@@ -524,6 +528,9 @@ msgstr "*module_globals*، در صورت ارائه شدن، باید فضای �
 
 msgid "Add the *source* parameter."
 msgstr "پارامتر *source* اضافه شد."
+
+msgid "If no module is passed, test the filter regular expression against module names created from the path, not only the path itself."
+msgstr ""
 
 msgid "Write a warning to a file.  The default implementation calls ``formatwarning(message, category, filename, lineno, line)`` and writes the resulting string to *file*, which defaults to :data:`sys.stderr`.  You may replace this function with any callable by assigning to ``warnings.showwarning``. *line* is a line of source code to be included in the warning message; if *line* is not supplied, :func:`showwarning` will try to read the line specified by *filename* and *lineno*."
 msgstr "هشداری را در یک پرونده می‌نویسد. پیاده‌سازی پیش‌فرض، ``formatwarning(message, category, filename, lineno, line)`` را فراخوانی می‌کند و رشته‌ی حاصل را در *file* می‌نویسد که به‌طور پیش‌فرض :data:`sys.stderr` است. شما می‌توانید این تابع را با هر شیء فراخوانی‌پذیر، از طریق انتساب به ``warnings.showwarning`` جایگزین کنید. *line* یک خط از کد منبع است که در پیام هشدار گنجانده می‌شود؛ اگر *line* ارائه نشده باشد، :func:`showwarning` تلاش می‌کند خط مشخص‌شده توسط *filename* و *lineno* را بخواند."
@@ -620,7 +627,17 @@ msgstr "``line``: سطری از کد منبع (در صورت موجود بودن
 msgid "``source``: the original object that generated the warning (if available), or ``None``"
 msgstr "``source``: شیء اصلی که هشدار را تولید کرده است (در صورت موجود بودن)، یا ``None``"
 
+#, fuzzy
+#| msgid "``filename``: the file name where the warning occurred (:class:`str`)"
+msgid "``module``: the module name where the warning occurred (:class:`str`), or ``None``"
+msgstr "``filename``: نام پرونده‌ای که هشدار در آن رخ داده است (:class:`str`)"
+
 msgid "The ``source`` attribute was added."
+msgstr "ویژگی ``source`` اضافه شد."
+
+#, fuzzy
+#| msgid "The ``source`` attribute was added."
+msgid "The ``module`` attribute was added."
 msgstr "ویژگی ``source`` اضافه شد."
 
 msgid "The type of these objects is not specified and may change; only the presence of these attributes is guaranteed."
@@ -667,3 +684,6 @@ msgstr "پرچم :data:`sys.flags.context_aware_warnings` و استفاده از
 
 msgid "warnings"
 msgstr "هشدارها"
+
+#~ msgid "*module*, if supplied, should be the module name. If no module is passed, the filename with ``.py`` stripped is used."
+#~ msgstr "*module*، در صورت ارائه، باید نام ماژول باشد. اگر ماژولی ارسال نشود، از نام پرونده با حذف ``.py`` استفاده می‌شود."

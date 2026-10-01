@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 15:47+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -352,6 +352,11 @@ msgstr "``IP_FREEBIND``، ``IP_RECVERR``، ``IPV6_RECVERR``، ``IP_RECVTTL`` و 
 msgid "Added support for ``TCP_QUICKACK`` on Windows platforms when available."
 msgstr "پشتیبانی از ``TCP_QUICKACK`` در سکوهای ویندوزی در صورت در دسترس بودن افزوده شد."
 
+#, fuzzy
+#| msgid "Added support for ``TCP_QUICKACK`` on Windows platforms when available."
+msgid "``IPV6_HDRINCL`` was added. Added support for ``SO_PASSRIGHTS`` on Linux platforms when available."
+msgstr "پشتیبانی از ``TCP_QUICKACK`` در سکوهای ویندوزی در صورت در دسترس بودن افزوده شد."
+
 msgid "Many constants of these forms, documented in the Linux documentation, are also defined in the socket module."
 msgstr "بسیاری از ثابت‌های این قالب‌ها، که در مستندات لینوکس مستند شده‌اند، در ماژول socket نیز تعریف شده‌اند."
 
@@ -579,8 +584,22 @@ msgstr "این تابع فهرستی از ۵-تاپل‌ها با ساختار �
 msgid "``(family, type, proto, canonname, sockaddr)``"
 msgstr "``(family, type, proto, canonname, sockaddr)``"
 
-msgid "In these tuples, *family*, *type*, *proto* are all integers and are meant to be passed to the :func:`~socket.socket` function.  *canonname* will be a string representing the canonical name of the *host* if :const:`AI_CANONNAME` is part of the *flags* argument; else *canonname* will be empty.  *sockaddr* is a tuple describing a socket address, whose format depends on the returned *family* (a ``(address, port)`` 2-tuple for :const:`AF_INET`, a ``(address, port, flowinfo, scope_id)`` 4-tuple for :const:`AF_INET6`), and is meant to be passed to the :meth:`socket.connect` method."
+#, fuzzy
+#| msgid "In these tuples, *family*, *type*, *proto* are all integers and are meant to be passed to the :func:`~socket.socket` function.  *canonname* will be a string representing the canonical name of the *host* if :const:`AI_CANONNAME` is part of the *flags* argument; else *canonname* will be empty.  *sockaddr* is a tuple describing a socket address, whose format depends on the returned *family* (a ``(address, port)`` 2-tuple for :const:`AF_INET`, a ``(address, port, flowinfo, scope_id)`` 4-tuple for :const:`AF_INET6`), and is meant to be passed to the :meth:`socket.connect` method."
+msgid "In these tuples, *family*, *type*, *proto* are all integers and are meant to be passed to the :func:`~socket.socket` function.  *canonname* will be a string representing the canonical name of the *host* if :const:`AI_CANONNAME` is part of the *flags* argument; else *canonname* will be empty.  *sockaddr* is a tuple describing a socket address, whose format depends on the returned *family* and flags Python was compiled with, and is meant to be passed to the :meth:`socket.connect` method."
 msgstr "در این تاپل‌ها، *family*، *type* و *proto* همگی اعداد صحیح هستند و باید به تابع :func:`~socket.socket` فرستاده شوند.  اگر :const:`AI_CANONNAME` بخشی از آرگومان *flags* باشد، *canonname* رشته‌ای خواهد بود که نام متعارف *host* را نشان می‌دهد؛ در غیر این صورت *canonname* خالی خواهد بود.  *sockaddr* تاپلی است که نشانی سوکت را توصیف می‌کند و قالب آن به *family* برگردانده‌شده بستگی دارد (یک تاپل ۲تایی ``(address, port)`` برای :const:`AF_INET`، یک تاپل ۴تایی ``(address, port, flowinfo, scope_id)`` برای :const:`AF_INET6`) و باید به متد :meth:`socket.connect` فرستاده شود."
+
+msgid "*sockaddr* can be one of the following:"
+msgstr ""
+
+msgid "a ``(address, port)`` 2-tuple for :const:`AF_INET`"
+msgstr ""
+
+msgid "a ``(address, port, flowinfo, scope_id)`` 4-tuple for :const:`AF_INET6` if Python was compiled with ``--enable-ipv6`` (the default)"
+msgstr ""
+
+msgid "a 2-tuple containing raw data for :const:`AF_INET6` if Python was compiled with ``--disable-ipv6``"
+msgstr ""
 
 msgid "If you intend to use results from :func:`!getaddrinfo` to create a socket (rather than, for example, retrieve *canonname*), consider limiting the results by *type* (e.g. :data:`SOCK_STREAM` or :data:`SOCK_DGRAM`) and/or *proto* (e.g. :data:`IPPROTO_TCP` or :data:`IPPROTO_UDP`) that your application can handle."
 msgstr "اگر قصد دارید از نتایج :func:`!getaddrinfo` برای ایجاد یک سوکت استفاده کنید (نه مثلاً برای بازیابی *canonname*)، در نظر بگیرید که نتایج را بر اساس *type* (مثلاً :data:`SOCK_STREAM` یا :data:`SOCK_DGRAM`) و/یا *proto* (مثلاً :data:`IPPROTO_TCP` یا :data:`IPPROTO_UDP`) که برنامه شما می‌تواند از آن‌ها پشتیبانی کند، محدود کنید."
@@ -739,8 +758,13 @@ msgstr "بیشتر پلتفرم‌های یونیکسی."
 msgid "Return the default timeout in seconds (float) for new socket objects. A value of ``None`` indicates that new socket objects have no timeout. When the socket module is first imported, the default is ``None``."
 msgstr "بازگرداندن مهلت پیش‌فرض بر حسب ثانیه (float) برای اشیاء سوکت جدید. مقدار ``None`` نشان می‌دهد که اشیاء سوکت جدید بدون مهلت هستند. هنگامی که ماژول socket برای نخستین بار ایمپورت می‌شود، مقدار پیش‌فرض ``None`` است."
 
-msgid "Set the default timeout in seconds (float) for new socket objects.  When the socket module is first imported, the default is ``None``.  See :meth:`~socket.settimeout` for possible values and their respective meanings."
+#, fuzzy
+#| msgid "Set the default timeout in seconds (float) for new socket objects.  When the socket module is first imported, the default is ``None``.  See :meth:`~socket.settimeout` for possible values and their respective meanings."
+msgid "Set the default timeout in seconds (real number) for new socket objects.  When the socket module is first imported, the default is ``None``.  See :meth:`~socket.settimeout` for possible values and their respective meanings."
 msgstr "مهلت پیش‌فرض را بر حسب ثانیه (float) برای اشیای جدید سوکت تنظیم کنید. هنگامی که ماژول socket برای اولین بار ایمپورت می‌شود، مقدار پیش‌فرض ``None`` است. برای مقادیر ممکن و معانی مربوط به آن‌ها :meth:`~socket.settimeout` را ببینید."
+
+msgid "Accepts any real number, not only integer or float."
+msgstr ""
 
 msgid "Set the machine's hostname to *name*.  This will raise an :exc:`OSError` if you don't have enough rights."
 msgstr "نام میزبان ماشین را روی *name* تنظیم می‌کند. اگر دسترسی کافی نداشته باشید، این کار یک :exc:`OSError` را پرتاب می‌کند."

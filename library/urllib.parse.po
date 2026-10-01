@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-15 08:24+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -51,11 +51,10 @@ msgstr "تجزیه‌ی URL"
 msgid "The URL parsing functions focus on splitting a URL string into its components, or on combining URL components into a URL string."
 msgstr "توابع تجزیه‌ی URL بر تقسیم یک رشته‌ی URL به کامپوننت‌های آن، یا ترکیب کامپوننت‌های URL در یک رشته‌ی URL تمرکز دارند."
 
-msgid "Parse a URL into five components, returning a 5-item :term:`named tuple` :class:`SplitResult` or :class:`SplitResultBytes`. This corresponds to the general structure of a URL: ``scheme://netloc/path?query#fragment``. Each tuple item is a string, possibly empty."
+#, fuzzy
+#| msgid "Parse a URL into five components, returning a 5-item :term:`named tuple` :class:`SplitResult` or :class:`SplitResultBytes`. This corresponds to the general structure of a URL: ``scheme://netloc/path?query#fragment``. Each tuple item is a string, possibly empty."
+msgid "Parse a URL into five components, returning a 5-item :term:`named tuple` :class:`SplitResult` or :class:`SplitResultBytes`. This corresponds to the general structure of a URL: ``scheme://netloc/path?query#fragment``. Each tuple item is a string, possibly empty, or ``None`` if *missing_as_none* is true. Not defined component are represented an empty string (by default) or ``None`` if *missing_as_none* is true. The delimiters as shown above are not part of the result, except for a leading slash in the *path* component, which is retained if present."
 msgstr "یک URL را به پنج کامپوننت تجزیه می‌کند و یک :term:`named tuple` با ۵ آیتم از نوع :class:`SplitResult` یا :class:`SplitResultBytes` را برمی‌گرداند. این با ساختار کلی یک URL مطابقت دارد: ``scheme://netloc/path?query#fragment``. هر آیتم از تاپل یک رشته است، که ممکن است خالی باشد."
-
-msgid "The delimiters as shown above are not part of the result, except for a leading slash in the *path* component, which is retained if present."
-msgstr "جداکننده‌های نشان‌داده‌شده در بالا بخشی از نتیجه نیستند، به‌جز اسلش آغازین در کامپوننت *path* که در صورت وجود حفظ می‌شود."
 
 msgid "Additionally, the netloc property is broken down into these additional attributes added to the returned object: username, password, hostname, and port."
 msgstr "علاوه بر این، خصوصیت netloc به این ویژگی‌های اضافی که به شیء برگردانده‌شده افزوده شده‌اند، تفکیک می‌شود: username، password، hostname و port."
@@ -66,6 +65,28 @@ msgstr "دنباله‌های کدگذاری‌شده با درصد کدگشای
 msgid "For example:"
 msgstr "برای مثال:"
 
+#, fuzzy
+#| msgid ""
+#| ">>> from urllib.parse import urlsplit\n"
+#| ">>> urlsplit(\"scheme://netloc/path?query#fragment\")\n"
+#| "SplitResult(scheme='scheme', netloc='netloc', path='/path',\n"
+#| "            query='query', fragment='fragment')\n"
+#| ">>> o = urlsplit(\"http://docs.python.org:80/3/library/urllib.parse.html?\"\n"
+#| "...              \"highlight=params#url-parsing\")\n"
+#| ">>> o\n"
+#| "SplitResult(scheme='http', netloc='docs.python.org:80',\n"
+#| "            path='/3/library/urllib.parse.html',\n"
+#| "            query='highlight=params', fragment='url-parsing')\n"
+#| ">>> o.scheme\n"
+#| "'http'\n"
+#| ">>> o.netloc\n"
+#| "'docs.python.org:80'\n"
+#| ">>> o.hostname\n"
+#| "'docs.python.org'\n"
+#| ">>> o.port\n"
+#| "80\n"
+#| ">>> o._replace(fragment=\"\").geturl()\n"
+#| "'http://docs.python.org:80/3/library/urllib.parse.html?highlight=params'"
 msgid ""
 ">>> from urllib.parse import urlsplit\n"
 ">>> urlsplit(\"scheme://netloc/path?query#fragment\")\n"
@@ -86,7 +107,13 @@ msgid ""
 ">>> o.port\n"
 "80\n"
 ">>> o._replace(fragment=\"\").geturl()\n"
-"'http://docs.python.org:80/3/library/urllib.parse.html?highlight=params'"
+"'http://docs.python.org:80/3/library/urllib.parse.html?highlight=params'\n"
+">>> urlsplit(\"http://docs.python.org?\")\n"
+"SplitResult(scheme='http', netloc='docs.python.org', path='',\n"
+"            query='', fragment='')\n"
+">>> urlsplit(\"http://docs.python.org?\", missing_as_none=True)\n"
+"SplitResult(scheme='http', netloc='docs.python.org', path='',\n"
+"            query='', fragment=None)"
 msgstr ""
 ">>> from urllib.parse import urlsplit\n"
 ">>> urlsplit(\"scheme://netloc/path?query#fragment\")\n"
@@ -112,6 +139,18 @@ msgstr ""
 msgid "Following the syntax specifications in :rfc:`1808`, :func:`!urlsplit` recognizes a netloc only if it is properly introduced by '//'.  Otherwise the input is presumed to be a relative URL and thus to start with a path component."
 msgstr "طبق مشخصات سینتکس در :rfc:`1808`، :func:`!urlsplit` تنها در صورتی یک netloc را تشخیص می‌دهد که به‌درستی با '//' معرفی شده باشد. در غیر این صورت، فرض می‌شود ورودی یک URL نسبی است و بنابراین با یک کامپوننت مسیر شروع می‌شود."
 
+#, fuzzy
+#| msgid ""
+#| ">>> from urllib.parse import urlsplit\n"
+#| ">>> urlsplit('//www.cwi.nl:80/%7Eguido/Python.html')\n"
+#| "SplitResult(scheme='', netloc='www.cwi.nl:80', path='/%7Eguido/Python.html',\n"
+#| "            query='', fragment='')\n"
+#| ">>> urlsplit('www.cwi.nl/%7Eguido/Python.html')\n"
+#| "SplitResult(scheme='', netloc='', path='www.cwi.nl/%7Eguido/Python.html',\n"
+#| "            query='', fragment='')\n"
+#| ">>> urlsplit('help/Python.html')\n"
+#| "SplitResult(scheme='', netloc='', path='help/Python.html',\n"
+#| "            query='', fragment='')"
 msgid ""
 ">>> from urllib.parse import urlsplit\n"
 ">>> urlsplit('//www.cwi.nl:80/%7Eguido/Python.html')\n"
@@ -122,7 +161,10 @@ msgid ""
 "            query='', fragment='')\n"
 ">>> urlsplit('help/Python.html')\n"
 "SplitResult(scheme='', netloc='', path='help/Python.html',\n"
-"            query='', fragment='')"
+"            query='', fragment='')\n"
+">>> urlsplit('help/Python.html', missing_as_none=True)\n"
+"SplitResult(scheme=None, netloc=None, path='help/Python.html',\n"
+"            query=None, fragment=None)"
 msgstr ""
 ">>> from urllib.parse import urlsplit\n"
 ">>> urlsplit('//www.cwi.nl:80/%7Eguido/Python.html')\n"
@@ -135,10 +177,14 @@ msgstr ""
 "SplitResult(scheme='', netloc='', path='help/Python.html',\n"
 "            query='', fragment='')"
 
-msgid "The *scheme* argument gives the default addressing scheme, to be used only if the URL does not specify one.  It should be the same type (text or bytes) as *urlstring*, except that the default value ``''`` is always allowed, and is automatically converted to ``b''`` if appropriate."
+#, fuzzy
+#| msgid "The *scheme* argument gives the default addressing scheme, to be used only if the URL does not specify one.  It should be the same type (text or bytes) as *urlstring*, except that the default value ``''`` is always allowed, and is automatically converted to ``b''`` if appropriate."
+msgid "The *scheme* argument gives the default addressing scheme, to be used only if the URL does not specify one.  It should be the same type (text or bytes) as *urlstring* or ``None``, except that the ``''`` is always allowed, and is automatically converted to ``b''`` if appropriate."
 msgstr "آرگومان *scheme* طرح‌واره آدرس‌دهی پیش‌فرض را مشخص می‌کند و فقط زمانی استفاده می‌شود که URL طرح‌واره‌ای را مشخص نکرده باشد. این آرگومان باید هم‌نوع (متن یا بایت) با *urlstring* باشد، به‌جز اینکه مقدار پیش‌فرض ``''`` همیشه مجاز است و در صورت لزوم به‌طور خودکار به ``b''`` تبدیل می‌شود."
 
-msgid "If the *allow_fragments* argument is false, fragment identifiers are not recognized.  Instead, they are parsed as part of the path, parameters or query component, and :attr:`fragment` is set to the empty string in the return value."
+#, fuzzy
+#| msgid "If the *allow_fragments* argument is false, fragment identifiers are not recognized.  Instead, they are parsed as part of the path, parameters or query component, and :attr:`fragment` is set to the empty string in the return value."
+msgid "If the *allow_fragments* argument is false, fragment identifiers are not recognized.  Instead, they are parsed as part of the path or query component, and :attr:`fragment` is set to ``None`` or the empty string (depending on the value of *missing_as_none*) in the return value."
 msgstr "اگر آرگومان *allow_fragments* نادرست باشد، شناسه‌های قطعه (fragment) شناسایی نمی‌شوند. در عوض، آن‌ها به‌عنوان بخشی از مسیر، پارامترها یا کامپوننت پرس‌وجو  تجزیه می‌شوند و :attr:`fragment` در مقدار بازگشتی روی رشته‌ی خالی تنظیم می‌شود."
 
 msgid "The return value is a :term:`named tuple`, which means that its items can be accessed by index or as named attributes, which are:"
@@ -165,7 +211,9 @@ msgstr "0"
 msgid "URL scheme specifier"
 msgstr "مشخص‌کننده‌ی طرح‌واره URL"
 
-msgid "*scheme* parameter"
+#, fuzzy
+#| msgid "*scheme* parameter"
+msgid "*scheme* parameter or empty string [1]_"
 msgstr "پارامتر *scheme*"
 
 msgid ":attr:`netloc`"
@@ -177,8 +225,8 @@ msgstr "1"
 msgid "Network location part"
 msgstr "بخش موقعیت شبکه"
 
-msgid "empty string"
-msgstr "رشته خالی"
+msgid "``None`` or empty string [1]_"
+msgstr ""
 
 msgid ":attr:`path`"
 msgstr ":attr:`path`"
@@ -188,6 +236,9 @@ msgstr "2"
 
 msgid "Hierarchical path"
 msgstr "مسیر سلسله‌مراتبی"
+
+msgid "empty string"
+msgstr "رشته خالی"
 
 msgid ":attr:`query`"
 msgstr ":attr:`query`"
@@ -213,8 +264,8 @@ msgstr ":attr:`username`"
 msgid "User name"
 msgstr "نام کاربری"
 
-msgid ":const:`None`"
-msgstr ":const:`None`"
+msgid "``None``"
+msgstr ""
 
 msgid ":attr:`password`"
 msgstr ":attr:`password`"
@@ -233,6 +284,9 @@ msgstr ":attr:`port`"
 
 msgid "Port number as integer, if present"
 msgstr "شماره‌ی پورت به‌صورت عدد صحیح، در صورت وجود"
+
+msgid "Depending on the value of the *missing_as_none* argument."
+msgstr ""
 
 msgid "Reading the :attr:`port` attribute will raise a :exc:`ValueError` if an invalid port is specified in the URL.  See section :ref:`urlparse-result-object` for more information on the result object."
 msgstr "خواندن ویژگی :attr:`port` در صورتی که پورت نامعتبری در URL مشخص شده باشد، باعث پرتاب یک :exc:`ValueError` می‌شود. برای اطلاعات بیشتر درباره شیء نتیجه، بخش :ref:`urlparse-result-object` را ببینید."
@@ -277,7 +331,9 @@ msgstr "قابلیت‌های تجزیه‌ی URLهای IPv6 افزوده شد."
 msgid "The fragment is now parsed for all URL schemes (unless *allow_fragments* is false), in accordance with :rfc:`3986`.  Previously, an allowlist of schemes that support fragments existed."
 msgstr "قطعه (fragment) اکنون برای همه طرح‌های URL (مگر اینکه *allow_fragments* نادرست باشد)، مطابق با :rfc:`3986` تجزیه می‌شود. پیش‌تر، یک فهرست مجاز از طرح‌هایی که از قطعه‌ها پشتیبانی می‌کردند وجود داشت."
 
-msgid "Out-of-range port numbers now raise :exc:`ValueError`, instead of returning :const:`None`."
+#, fuzzy
+#| msgid "Out-of-range port numbers now raise :exc:`ValueError`, instead of returning :const:`None`."
+msgid "Out-of-range port numbers now raise :exc:`ValueError`, instead of returning ``None``."
 msgstr "شماره‌های پورت خارج از محدوده، اکنون به جای برگرداندن :const:`None`، :exc:`ValueError` پرتاب می‌کنند."
 
 msgid "Characters that affect netloc parsing under NFKC normalization will now raise :exc:`ValueError`."
@@ -288,6 +344,11 @@ msgstr "نویسه‌های خط جدید و تب ASCII از URL حذف می‌�
 
 msgid "Leading WHATWG C0 control and space characters are stripped from the URL."
 msgstr "نویسه‌های کنترلی C0 و فاصله‌ی WHATWG از ابتدای URL حذف می‌شوند."
+
+#, fuzzy
+#| msgid "Added the *quote_via* parameter."
+msgid "Added the *missing_as_none* parameter."
+msgstr "پارامتر *quote_via* افزوده شد."
 
 msgid "Parse a query string given as a string argument (data of type :mimetype:`application/x-www-form-urlencoded`).  Data are returned as a dictionary.  The dictionary keys are the unique query variable names and the values are lists of values for each name."
 msgstr "یک رشته‌ی کوئری داده‌شده به‌عنوان آرگومان رشته‌ای را تجزیه می‌کند (داده‌هایی از نوع :mimetype:`application/x-www-form-urlencoded`). داده‌ها به‌صورت یک دیکشنری بازگردانده می‌شوند. کلیدهای دیکشنری، نام‌های یکتای متغیرهای کوئری هستند و مقادیر، فهرست‌هایی از مقادیر برای هر نام هستند."
@@ -328,8 +389,21 @@ msgstr "یک رشته‌ی پرس‌وجو (query string) را که به‌عن�
 msgid "Use the :func:`urllib.parse.urlencode` function to convert such lists of pairs into query strings."
 msgstr "برای تبدیل چنین فهرست‌هایی از جفت‌ها به رشته‌های پرس‌وجو، از تابع :func:`urllib.parse.urlencode` استفاده کنید."
 
-msgid "Construct a URL from a tuple as returned by ``urlsplit()``. The *parts* argument can be any five-item iterable. This may result in a slightly different, but equivalent URL, if the URL that was parsed originally had unnecessary delimiters (for example, a ``?`` with an empty query; the RFC states that these are equivalent)."
+msgid "Construct a URL from a tuple as returned by :func:`urlsplit`. The *parts* argument can be any five-item iterable."
+msgstr ""
+
+#, fuzzy
+#| msgid "Construct a URL from a tuple as returned by ``urlsplit()``. The *parts* argument can be any five-item iterable. This may result in a slightly different, but equivalent URL, if the URL that was parsed originally had unnecessary delimiters (for example, a ``?`` with an empty query; the RFC states that these are equivalent)."
+msgid "This may result in a slightly different, but equivalent URL, if the URL that was parsed originally had unnecessary delimiters (for example, a ``?`` with an empty query; the RFC states that these are equivalent)."
 msgstr "یک URL را از یک تاپل که توسط ``urlsplit()`` برگردانده می‌شود بسازید. آرگومان *parts* می‌تواند هر پیمایش‌پذیری با پنج آیتم باشد. اگر URL اصلی تجزیه‌شده دارای جداکننده‌های غیرضروری باشد (برای مثال، یک ``?`` با پرس‌وجوی خالی؛ RFC تصریح می‌کند که این‌ها معادل هستند)، ممکن است یک URL کمی متفاوت، اما معادل به دست آید."
+
+msgid "If *keep_empty* is true, empty strings are kept in the result (for example, a ``?`` for an empty query), only ``None`` components are omitted. This allows rebuilding a URL that was parsed with option ``missing_as_none=True``. By default, *keep_empty* is true if *parts* is the result of the :func:`urlsplit` call with ``missing_as_none=True``."
+msgstr ""
+
+#, fuzzy
+#| msgid "Added the *quote_via* parameter."
+msgid "Added the *keep_empty* parameter."
+msgstr "پارامتر *quote_via* افزوده شد."
 
 msgid "This is similar to :func:`urlsplit`, but additionally splits the *path* component on *path* and *params*. This function returns a 6-item :term:`named tuple` :class:`ParseResult` or :class:`ParseResultBytes`. Its items are the same as for the :func:`!urlsplit` result, except that *params* is inserted at index 3, between *path* and *query*."
 msgstr "این تابع مشابه :func:`urlsplit` است، اما علاوه بر آن، کامپوننت *path* را به *path* و *params* تقسیم می‌کند. این تابع یک :term:`named tuple` ۶ آیتمی از نوع :class:`ParseResult` یا :class:`ParseResultBytes` برمی‌گرداند. آیتم‌های آن همان آیتم‌های نتیجه‌ی :func:`!urlsplit` هستند، با این تفاوت که *params* در اندیس ۳، بین *path* و *query* درج شده است."
@@ -337,8 +411,11 @@ msgstr "این تابع مشابه :func:`urlsplit` است، اما علاوه �
 msgid "This function is based on obsoleted :rfc:`1738` and :rfc:`1808`, which listed *params* as the main URL component. The more recent URL syntax allows parameters to be applied to each segment of the *path* portion of the URL (see :rfc:`3986`). :func:`urlsplit` should generally be used instead of :func:`urlparse`. A separate function is needed to separate the path segments and parameters."
 msgstr "این تابع مبتنی بر :rfc:`1738` و :rfc:`1808` منسوخ‌شده است، که *params* را به‌عنوان کامپوننت اصلی URL فهرست کرده بودند. سینتکس جدیدتر URL اجازه می‌دهد پارامترها به هر بخش از قسمت *path* URL اعمال شوند (به :rfc:`3986` مراجعه کنید). به‌طور کلی باید به‌جای :func:`urlparse` از :func:`urlsplit` استفاده شود. برای جدا کردن بخش‌های مسیر و پارامترها، به تابع جداگانه‌ای نیاز است."
 
-msgid "Combine the elements of a tuple as returned by :func:`urlparse` into a complete URL as a string. The *parts* argument can be any six-item iterable. This may result in a slightly different, but equivalent URL, if the URL that was parsed originally had unnecessary delimiters (for example, a ? with an empty query; the RFC states that these are equivalent)."
-msgstr "عناصر یک تاپل برگردانده‌شده توسط :func:`urlparse` را به یک URL کامل به‌صورت یک رشته ترکیب می‌کند. آرگومان *parts* می‌تواند هر پیمایش‌پذیری با شش آیتم باشد. این ممکن است منجر به URLای اندکی متفاوت، اما معادل شود، اگر URLای که در اصل تجزیه شده بود، جداکننده‌های غیرضروری داشته باشد (برای مثال، یک ? با پرس‌وجوی خالی؛ RFC بیان می‌کند که این‌ها معادل هستند)."
+msgid "Combine the elements of a tuple as returned by :func:`urlparse` into a complete URL as a string. The *parts* argument can be any six-item iterable."
+msgstr ""
+
+msgid "If *keep_empty* is true, empty strings are kept in the result (for example, a ``?`` for an empty query), only ``None`` components are omitted. This allows rebuilding a URL that was parsed with option ``missing_as_none=True``. By default, *keep_empty* is true if *parts* is the result of the :func:`urlparse` call with ``missing_as_none=True``."
+msgstr ""
 
 msgid "Construct a full (\"absolute\") URL by combining a \"base URL\" (*base*) with another URL (*url*).  Informally, this uses components of the base URL, in particular the addressing scheme, the network location and (part of) the path, to provide missing components in the relative URL.  For example:"
 msgstr "با ترکیب یک «URL پایه» (*base*) با یک URL دیگر (*url*)، یک URL کامل («مطلق») بسازید. به‌طور غیررسمی، در این کار از کامپوننت‌های URL پایه، به‌ویژه طرح‌واره آدرس‌دهی، موقعیت شبکه و (بخشی از) مسیر، برای فراهم کردن کامپوننت‌های ناموجود در URL نسبی استفاده می‌شود. برای مثال:"
@@ -367,7 +444,9 @@ msgstr "از آنجا که ممکن است یک نشانی وب مطلق (URL) �
 msgid "Behavior updated to match the semantics defined in :rfc:`3986`."
 msgstr "رفتار به‌روزرسانی شد تا با معناشناسی تعریف‌شده در :rfc:`3986` مطابقت کند."
 
-msgid "If *url* contains a fragment identifier, return a modified version of *url* with no fragment identifier, and the fragment identifier as a separate string.  If there is no fragment identifier in *url*, return *url* unmodified and an empty string."
+#, fuzzy
+#| msgid "If *url* contains a fragment identifier, return a modified version of *url* with no fragment identifier, and the fragment identifier as a separate string.  If there is no fragment identifier in *url*, return *url* unmodified and an empty string."
+msgid "If *url* contains a fragment identifier, return a modified version of *url* with no fragment identifier, and the fragment identifier as a separate string.  If there is no fragment identifier in *url*, return *url* unmodified and an empty string (by default) or ``None`` if *missing_as_none* is true."
 msgstr "اگر *url* شامل یک شناسه‌ی قطعه باشد، نسخه‌ی تغییرکرده‌ای از *url* را بدون شناسه‌ی قطعه، و شناسه‌ی قطعه را به‌صورت یک رشته‌ی جداگانه برمی‌گرداند. اگر شناسه‌ی قطعه‌ای در *url* وجود نداشته باشد، *url* را بدون تغییر و یک رشته‌ی خالی برمی‌گرداند."
 
 msgid "The return value is a :term:`named tuple`, its items can be accessed by index or as named attributes:"
@@ -378,6 +457,9 @@ msgstr ":attr:`url`"
 
 msgid "URL with no fragment"
 msgstr "URL بدون قطعه (fragment)"
+
+msgid "``None`` or empty string [3]_"
+msgstr ""
 
 msgid "See section :ref:`urlparse-result-object` for more information on the result object."
 msgstr "برای اطلاعات بیشتر درباره‌ی شیء نتیجه، بخش :ref:`urlparse-result-object` را ببینید."
@@ -394,7 +476,9 @@ msgstr "امنیت تجزیه‌ی URL"
 msgid "The :func:`urlsplit` and :func:`urlparse` APIs do not perform **validation** of inputs.  They may not raise errors on inputs that other applications consider invalid.  They may also succeed on some inputs that might not be considered URLs elsewhere.  Their purpose is for practical functionality rather than purity."
 msgstr "APIهای :func:`urlsplit` و :func:`urlparse` **اعتبارسنجی** ورودی‌ها را انجام نمی‌دهند. ممکن است این APIها برای ورودی‌هایی که سایر برنامه‌ها آن‌ها را نامعتبر می‌دانند، خطا پرتاب نکنند. همچنین ممکن است برای برخی ورودی‌ها که ممکن است در جاهای دیگر به‌عنوان URL در نظر گرفته نشوند، با موفقیت عمل کنند. هدف آن‌ها عملکرد کاربردی است، نه خلوص."
 
-msgid "Instead of raising an exception on unusual input, they may instead return some component parts as empty strings. Or components may contain more than perhaps they should."
+#, fuzzy
+#| msgid "Instead of raising an exception on unusual input, they may instead return some component parts as empty strings. Or components may contain more than perhaps they should."
+msgid "Instead of raising an exception on unusual input, they may instead return some component parts as empty strings or ``None`` (depending on the value of the *missing_as_none* argument). Or components may contain more than perhaps they should."
 msgstr "به‌جای پرتاب یک استثنا برای ورودی غیرمعمول، ممکن است در عوض برخی از اجزای کامپوننت‌ها را به‌صورت رشته‌های خالی برگردانند. یا ممکن است کامپوننت‌ها دارای محتوای بیشتری نسبت به آنچه شاید باید داشته باشند."
 
 msgid "We recommend that users of these APIs where the values may be used anywhere with security implications code defensively. Do some verification within your code before trusting a returned component part.  Does that ``scheme`` make sense?  Is that a sensible ``path``?  Is there anything strange about that ``hostname``?  etc."
@@ -433,7 +517,9 @@ msgstr "نتایج تجزیه‌ی ساختاریافته"
 msgid "The result objects from the :func:`urlsplit`, :func:`urlparse`  and :func:`urldefrag` functions are subclasses of the :class:`tuple` type. These subclasses add the attributes listed in the documentation for those functions, the encoding and decoding support described in the previous section, as well as an additional method:"
 msgstr "اشیاء نتیجه‌ی توابع :func:`urlsplit`، :func:`urlparse` و :func:`urldefrag` زیرکلاس‌هایی از نوع :class:`tuple` هستند. این زیرکلاس‌ها ویژگی‌های فهرست‌شده در مستندات آن توابع، پشتیبانی از کدگذاری و کدگشایی توصیف‌شده در بخش پیشین، و نیز یک متد اضافی را اضافه می‌کنند:"
 
-msgid "Return the re-combined version of the original URL as a string. This may differ from the original URL in that the scheme may be normalized to lower case and empty components may be dropped. Specifically, empty parameters, queries, and fragment identifiers will be removed."
+#, fuzzy
+#| msgid "Return the re-combined version of the original URL as a string. This may differ from the original URL in that the scheme may be normalized to lower case and empty components may be dropped. Specifically, empty parameters, queries, and fragment identifiers will be removed."
+msgid "Return the re-combined version of the original URL as a string. This may differ from the original URL in that the scheme may be normalized to lower case and empty components may be dropped. Specifically, empty parameters, queries, and fragment identifiers will be removed unless the URL was parsed with ``missing_as_none=True``."
 msgstr "نسخه‌ی بازترکیب‌شده‌ی URL اصلی را به‌صورت یک رشته برمی‌گرداند. این ممکن است با URL اصلی متفاوت باشد، به این صورت که طرح‌واره ممکن است به حروف کوچک نرمال‌سازی شود و کامپوننت‌های خالی ممکن است حذف شوند. به‌طور مشخص، پارامترهای خالی، پرس‌وجوهای خالی (queries) و شناسه‌های خالی قطعه (fragment identifiers) حذف خواهند شد."
 
 msgid "For :func:`urldefrag` results, only empty fragment identifiers will be removed. For :func:`urlsplit` and :func:`urlparse` results, all noted changes will be made to the URL returned by this method."
@@ -612,3 +698,12 @@ msgstr "تجزیه"
 
 msgid "relative"
 msgstr "نسبی"
+
+#~ msgid "The delimiters as shown above are not part of the result, except for a leading slash in the *path* component, which is retained if present."
+#~ msgstr "جداکننده‌های نشان‌داده‌شده در بالا بخشی از نتیجه نیستند، به‌جز اسلش آغازین در کامپوننت *path* که در صورت وجود حفظ می‌شود."
+
+#~ msgid ":const:`None`"
+#~ msgstr ":const:`None`"
+
+#~ msgid "Combine the elements of a tuple as returned by :func:`urlparse` into a complete URL as a string. The *parts* argument can be any six-item iterable. This may result in a slightly different, but equivalent URL, if the URL that was parsed originally had unnecessary delimiters (for example, a ? with an empty query; the RFC states that these are equivalent)."
+#~ msgstr "عناصر یک تاپل برگردانده‌شده توسط :func:`urlparse` را به یک URL کامل به‌صورت یک رشته ترکیب می‌کند. آرگومان *parts* می‌تواند هر پیمایش‌پذیری با شش آیتم باشد. این ممکن است منجر به URLای اندکی متفاوت، اما معادل شود، اگر URLای که در اصل تجزیه شده بود، جداکننده‌های غیرضروری داشته باشد (برای مثال، یک ? با پرس‌وجوی خالی؛ RFC بیان می‌کند که این‌ها معادل هستند)."

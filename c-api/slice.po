@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-30 04:09+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2021-06-28 00:50+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -48,7 +48,9 @@ msgstr "احتمالاً نمی‌خواهید از این تابع استفاد
 msgid "The parameter type for the *slice* parameter was ``PySliceObject*`` before."
 msgstr "نوع پارامتر *slice* قبلاً ``PySliceObject*`` بود."
 
-msgid "Usable replacement for :c:func:`PySlice_GetIndices`.  Retrieve the start, stop, and step indices from the slice object *slice* assuming a sequence of length *length*, and store the length of the slice in *slicelength*.  Out of bounds indices are clipped in a manner consistent with the handling of normal slices. *length* must not be negative."
+#, fuzzy
+#| msgid "Usable replacement for :c:func:`PySlice_GetIndices`.  Retrieve the start, stop, and step indices from the slice object *slice* assuming a sequence of length *length*, and store the length of the slice in *slicelength*.  Out of bounds indices are clipped in a manner consistent with the handling of normal slices. *length* must not be negative."
+msgid "Usable replacement for :c:func:`PySlice_GetIndices`.  Retrieve the start, stop, and step indices from the slice object *slice* assuming a sequence of length *length*, and store the length of the slice in *slicelength*.  Out of bounds indices are clipped in a manner consistent with the handling of normal slices."
 msgstr "جایگزین قابل استفاده برای :c:func:`PySlice_GetIndices`. اندیس‌های شروع، توقف و گام را از شیء اسلایس *slice* با فرض دنباله‌ای به طول *length* بازیابی می‌کند و طول اسلایس را در *slicelength* ذخیره می‌کند. اندیس‌های خارج از محدوده به شکلی سازگار با نحوه‌ی برخورد با اسلایس‌های معمولی محدود می‌شوند. *length* نباید منفی باشد."
 
 msgid "Return ``0`` on success and ``-1`` on error with an exception set."
@@ -95,9 +97,6 @@ msgstr "در صورت خطا ``-1`` به همراه استثنای تنظیم‌
 msgid "Adjust start/end slice indices assuming a sequence of the specified length. Out of bounds indices are clipped in a manner consistent with the handling of normal slices."
 msgstr "اندیس‌های شروع/پایان اسلایس را با فرض دنباله‌ای به طول مشخص‌شده تنظیم می‌کند. اندیس‌های خارج از محدوده به شکلی سازگار با نحوه‌ی برخورد با اسلایس‌های معمولی محدود می‌شوند."
 
-msgid "*length* must not be negative. *step* must not be zero and must not be less than ``-PY_SSIZE_T_MAX``, as guaranteed by :c:func:`PySlice_Unpack`."
-msgstr "*length* نباید منفی باشد. *step* نباید صفر باشد و نباید کمتر از ``-PY_SSIZE_T_MAX`` باشد؛ این موضوع توسط :c:func:`PySlice_Unpack` تضمین شده است."
-
 msgid "Return the length of the slice.  Always successful.  Doesn't call Python code."
 msgstr "طول اسلایس را برمی‌گرداند.  همیشه موفق است.  کد پایتون را فراخوانی نمی‌کند."
 
@@ -112,3 +111,6 @@ msgstr "شیء ``Ellipsis`` پایتون. این شیء هیچ متدی ندار
 
 msgid ":c:data:`Py_Ellipsis` is immortal."
 msgstr ":c:data:`Py_Ellipsis` نامیرا است."
+
+#~ msgid "*length* must not be negative. *step* must not be zero and must not be less than ``-PY_SSIZE_T_MAX``, as guaranteed by :c:func:`PySlice_Unpack`."
+#~ msgstr "*length* نباید منفی باشد. *step* نباید صفر باشد و نباید کمتر از ``-PY_SSIZE_T_MAX`` باشد؛ این موضوع توسط :c:func:`PySlice_Unpack` تضمین شده است."

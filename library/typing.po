@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-12 13:34+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -2029,6 +2029,34 @@ msgstr ":pep:`593` - حاشیه‌نویسی‌های انعطاف‌پذیر ب
 msgid "The PEP introducing ``Annotated`` to the standard library."
 msgstr "PEP معرفی‌کننده ``Annotated`` به کتابخانه استاندارد."
 
+msgid "A special form representing the value that results from evaluating a type expression."
+msgstr ""
+
+msgid "This value encodes the information supplied in the type expression, and it represents the type described by that type expression."
+msgstr ""
+
+msgid "When used in a type expression, ``TypeForm`` describes a set of type form objects. It accepts a single type argument, which must be a valid type expression. ``TypeForm[T]`` describes the set of all type form objects that represent the type ``T`` or types assignable to ``T``."
+msgstr ""
+
+msgid "``TypeForm(obj)`` simply returns ``obj`` unchanged. This is useful for explicitly marking a value as a type form for static type checkers."
+msgstr ""
+
+msgid "Example::"
+msgstr "مثال::"
+
+msgid ""
+"from typing import Any, TypeForm\n"
+"\n"
+"def cast[T](typ: TypeForm[T], value: Any) -> T: ...\n"
+"\n"
+"reveal_type(cast(int, \"x\"))  # Revealed type is \"int\""
+msgstr ""
+
+#, fuzzy
+#| msgid "See :pep:`484` for more details."
+msgid "See :pep:`747` for details."
+msgstr "برای جزئیات بیشتر :pep:`484` را ببینید."
+
 msgid "Special typing construct for marking user-defined type predicate functions."
 msgstr "ساختار خاص نوع‌دهی برای علامت‌گذاری توابع محمول نوع تعریف‌شده توسط کاربر."
 
@@ -2666,6 +2694,21 @@ msgstr "برای جزئیات بیشتر درباره تاپل‌های متغی
 msgid "The name of the type variable tuple."
 msgstr "نام تاپل متغیر نوع."
 
+#, fuzzy
+#| msgid "Whether the type var has been explicitly marked as covariant."
+msgid "Whether the type variable tuple has been explicitly marked as covariant."
+msgstr "اینکه آیا متغیر نوع به‌صراحت به‌عنوان هم‌وردا علامت‌گذاری شده است یا خیر."
+
+#, fuzzy
+#| msgid "Whether the type var has been explicitly marked as contravariant."
+msgid "Whether the type variable tuple has been explicitly marked as contravariant."
+msgstr "اینکه آیا متغیر نوع به‌طور صریح به‌عنوان پادوردا (contravariant) علامت‌گذاری شده است یا خیر."
+
+#, fuzzy
+#| msgid "Whether the type variable's variance should be inferred by type checkers."
+msgid "Whether the type variable tuple's variance should be inferred by type checkers."
+msgstr "اینکه آیا واریانس متغیر نوع باید توسط بررسی‌کننده‌های نوع استنباط شود."
+
 msgid "The default value of the type variable tuple, or :data:`typing.NoDefault` if it has no default."
 msgstr "مقدار پیش‌فرض تاپل متغیر نوع، یا :data:`typing.NoDefault` اگر پیش‌فرضی نداشته باشد."
 
@@ -2675,8 +2718,16 @@ msgstr "یک :term:`evaluate function` متناظر با ویژگی :attr:`~Type
 msgid "Return whether or not the type variable tuple has a default value. This is equivalent to checking whether :attr:`__default__` is not the :data:`typing.NoDefault` singleton, except that it does not force evaluation of the :ref:`lazily evaluated <lazy-evaluation>` default value."
 msgstr "بازگشت می‌دهد که آیا تاپل متغیر نوع دارای مقدار پیش‌فرض است یا خیر. این معادل بررسی این است که آیا :attr:`__default__` تک‌نمونه‌ی :data:`typing.NoDefault` نیست یا خیر، با این تفاوت که ارزیابی مقدار پیش‌فرض :ref:`به‌صورت تنبل ارزیابی‌شده <lazy-evaluation>` را اجباری نمی‌کند."
 
+#, fuzzy
+#| msgid "Parameter specification variables created with ``covariant=True`` or ``contravariant=True`` can be used to declare covariant or contravariant generic types.  The ``bound`` argument is also accepted, similar to :class:`TypeVar`.  However the actual semantics of these keywords are yet to be decided."
+msgid "Type variable tuples created with ``covariant=True`` or ``contravariant=True`` can be used to declare covariant or contravariant generic types.  The ``bound`` argument is also accepted, similar to :class:`TypeVar`, but its actual semantics are yet to be decided."
+msgstr "متغیرهای مشخصه پارامتر (parameter specification variables) ایجادشده با ``covariant=True`` یا ``contravariant=True`` می‌توانند برای اعلام انواع عام هم‌وردا یا پادوردا (contravariant) استفاده شوند. آرگومان ``bound`` نیز پذیرفته می‌شود، مشابه :class:`TypeVar`. با این حال، معنای واقعی این کلیدواژه‌ها هنوز تعیین نشده است."
+
 msgid "Type variable tuples can now be declared using the :ref:`type parameter <type-params>` syntax introduced by :pep:`695`."
 msgstr "اکنون می‌توان تاپل‌های متغیر نوع را با استفاده از سینتکس :ref:`پارامتر نوع <type-params>` که در :pep:`695` معرفی‌شده است، اعلام کرد."
+
+msgid "Added support for the ``bound``, ``covariant``, ``contravariant``, and ``infer_variance`` parameters."
+msgstr ""
 
 msgid "Parameter specification variable.  A specialized version of :ref:`type variables <typevar>`."
 msgstr "متغیر مشخصات پارامتر. نسخه‌ای تخصصی از :ref:`متغیرهای نوع <typevar>`."
@@ -2745,6 +2796,21 @@ msgstr "از آن‌جا که ``ParamSpec`` هم پارامترهای جایگا
 msgid "The name of the parameter specification."
 msgstr "نام مشخصه‌ی پارامتر."
 
+#, fuzzy
+#| msgid "Whether the type var has been explicitly marked as covariant."
+msgid "Whether the parameter specification has been explicitly marked as covariant."
+msgstr "اینکه آیا متغیر نوع به‌صراحت به‌عنوان هم‌وردا علامت‌گذاری شده است یا خیر."
+
+#, fuzzy
+#| msgid "Whether the type var has been explicitly marked as contravariant."
+msgid "Whether the parameter specification has been explicitly marked as contravariant."
+msgstr "اینکه آیا متغیر نوع به‌طور صریح به‌عنوان پادوردا (contravariant) علامت‌گذاری شده است یا خیر."
+
+#, fuzzy
+#| msgid "Whether the type variable's variance should be inferred by type checkers."
+msgid "Whether the parameter specification's variance should be inferred by type checkers."
+msgstr "اینکه آیا واریانس متغیر نوع باید توسط بررسی‌کننده‌های نوع استنباط شود."
+
 msgid "The default value of the parameter specification, or :data:`typing.NoDefault` if it has no default."
 msgstr "مقدار پیش‌فرض مشخصات پارامتر، یا :data:`typing.NoDefault` اگر پیش‌فرضی نداشته باشد."
 
@@ -2811,6 +2877,27 @@ msgstr ""
 ">>> Alias.__name__\n"
 "'Alias'"
 
+#, fuzzy
+#| msgid "The name of the type alias:"
+msgid "The :term:`qualified name` of the type alias:"
+msgstr "نام مستعار نوع:"
+
+#, fuzzy
+#| msgid ""
+#| ">>> type Alias = int\n"
+#| ">>> Alias.__name__\n"
+#| "'Alias'"
+msgid ""
+">>> class Class:\n"
+"...     type Alias = int\n"
+"...\n"
+">>> Class.Alias.__qualname__\n"
+"'Class.Alias'"
+msgstr ""
+">>> type Alias = int\n"
+">>> Alias.__name__\n"
+"'Alias'"
+
 msgid "The name of the module in which the type alias was defined::"
 msgstr "نام ماژولی که نام مستعار نوع در آن تعریف شده است::"
 
@@ -2822,6 +2909,12 @@ msgstr ""
 ">>> type Alias = int\n"
 ">>> Alias.__module__\n"
 "'__main__'"
+
+msgid "This attribute is writable."
+msgstr ""
+
+msgid "The attribute is now writable."
+msgstr ""
 
 msgid "The type parameters of the type alias, or an empty tuple if the alias is not generic:"
 msgstr "پارامترهای نوعِ نام مستعار نوع، یا یک تاپل خالی در صورتی که نام مستعار عام نباشد:"
@@ -3042,12 +3135,6 @@ msgstr "پشتیبانی از namedtuples عام افزوده شد."
 msgid "Using :func:`super` (and the ``__class__`` :term:`closure variable`) in methods of ``NamedTuple`` subclasses is unsupported and causes a :class:`TypeError`."
 msgstr "استفاده از :func:`super` (و :term:`متغیر بستار <closure variable>` با نام ``__class__``) در متدهای زیرکلاس‌های ``NamedTuple`` پشتیبانی نمی‌شود و منجر به :class:`TypeError` می‌شود."
 
-msgid "The undocumented keyword argument syntax for creating NamedTuple classes (``NT = NamedTuple(\"NT\", x=int)``) is deprecated, and will be disallowed in 3.15. Use the class-based syntax or the functional syntax instead."
-msgstr "سینتکس آرگومان کلیدواژه‌ای بدون مستند برای ایجاد کلاس‌های NamedTuple (``NT = NamedTuple(\"NT\", x=int)``) منسوخ شده است و در 3.15 غیرمجاز خواهد شد. به‌جای آن، از سینتکس مبتنی بر کلاس یا سینتکس تابعی استفاده کنید."
-
-msgid "When using the functional syntax to create a NamedTuple class, failing to pass a value to the 'fields' parameter (``NT = NamedTuple(\"NT\")``) is deprecated. Passing ``None`` to the 'fields' parameter (``NT = NamedTuple(\"NT\", None)``) is also deprecated. Both will be disallowed in Python 3.15. To create a NamedTuple class with 0 fields, use ``class NT(NamedTuple): pass`` or ``NT = NamedTuple(\"NT\", [])``."
-msgstr "هنگام استفاده از سینتکس تابعی برای ایجاد یک کلاس NamedTuple، ارسال نکردن مقدار به پارامتر 'fields' (``NT = NamedTuple(\"NT\")``) منسوخ است. ارسال ``None`` به پارامتر 'fields' (``NT = NamedTuple(\"NT\", None)``) نیز منسوخ است. هر دو مورد در Python 3.15 غیرمجاز خواهند شد. برای ایجاد یک کلاس NamedTuple با ۰ فیلد، از ``class NT(NamedTuple): pass`` یا ``NT = NamedTuple(\"NT\", [])`` استفاده کنید."
-
 msgid "Helper class to create low-overhead :ref:`distinct types <distinct>`."
 msgstr "کلاس کمکی برای ایجاد :ref:`انواع متمایز <distinct>` با سربار کم."
 
@@ -3141,6 +3228,9 @@ msgstr ""
 "    def meth(self) -> T:\n"
 "        ..."
 
+msgid "It is deprecated to call :func:`isinstance` and :func:`issubclass` checks on protocol classes that were not explicitly decorated with :func:`!runtime_checkable` but that inherit from a runtime-checkable protocol class. This will throw a :exc:`TypeError` in Python 3.20."
+msgstr ""
+
 msgid "Mark a protocol class as a runtime protocol."
 msgstr "یک کلاس پروتکل را به‌عنوان پروتکل ران‌تایم علامت‌گذاری می‌کند."
 
@@ -3173,6 +3263,20 @@ msgstr ""
 "\n"
 "import threading\n"
 "assert isinstance(threading.Thread(name='Bob'), Named)"
+
+msgid "Runtime checkability of protocols is not inherited. A subclass of a runtime-checkable protocol is only runtime-checkable if it is explicitly marked as such, regardless of class hierarchy::"
+msgstr ""
+
+msgid ""
+"@runtime_checkable\n"
+"class Iterable(Protocol):\n"
+"    def __iter__(self): ...\n"
+"\n"
+"# Without @runtime_checkable, Reversible would no longer be runtime-checkable.\n"
+"@runtime_checkable\n"
+"class Reversible(Iterable, Protocol):\n"
+"    def __reversed__(self): ..."
+msgstr ""
 
 msgid "This decorator raises :exc:`TypeError` when applied to a non-protocol class."
 msgstr "این دکوراتور هنگام اعمال روی یک کلاس غیرپروتکلی، استثنای :exc:`TypeError` را پرتاب می‌کند."
@@ -3346,6 +3450,35 @@ msgstr ""
 "    y: int\n"
 "    z: int"
 
+msgid "By default, a ``TypedDict`` is open, meaning that it may contain additional keys at runtime beyond those defined in the class body. The *closed* class argument can be used to control this; if ``closed=True``, the ``TypedDict`` cannot contain additional keys."
+msgstr ""
+
+msgid ""
+"class ClosedPoint(TypedDict, closed=True):\n"
+"    x: int\n"
+"    y: int\n"
+"\n"
+"class ClosedPoint3D(ClosedPoint):  # type checker error: cannot add keys to a closed TypedDict\n"
+"    z: int"
+msgstr ""
+
+msgid "Setting ``closed=False`` explicitly requests the default open behavior. If the argument is not passed, this state is inherited from the parent class."
+msgstr ""
+
+msgid "In addition to being open or closed, a ``TypedDict`` can also be configured to have extra items. If the *extra_items* class argument is set to a type, the ``TypedDict`` can contain arbitrary additional keys, but the values of those keys must be of the specified type."
+msgstr ""
+
+msgid ""
+"class ExtraItemsPoint(TypedDict, extra_items=int):\n"
+"    x: int\n"
+"    y: int\n"
+"\n"
+"point: ExtraItemsPoint = {'x': 1, 'y': 2, 'anything': 3}  # OK"
+msgstr ""
+
+msgid "The *extra_items* argument is also inherited through subclassing. It is unset by default, and it may not be used together with the *closed* argument."
+msgstr ""
+
 msgid "A ``TypedDict`` cannot inherit from a non-\\ ``TypedDict`` class, except for :class:`Generic`. For example::"
 msgstr "یک ``TypedDict`` نمی‌تواند از کلاسی غیر ``TypedDict`` ارث‌بری کند، به‌جز :class:`Generic`. برای مثال::"
 
@@ -3471,14 +3604,17 @@ msgstr ""
 msgid "If ``from __future__ import annotations`` is used or if annotations are given as strings, annotations are not evaluated when the ``TypedDict`` is defined. Therefore, the runtime introspection that ``__required_keys__`` and ``__optional_keys__`` rely on may not work properly, and the values of the attributes may be incorrect."
 msgstr "اگر از ``from __future__ import annotations`` استفاده شود یا اگر حاشیه‌نویسی‌ها به‌صورت رشته ارائه شوند، حاشیه‌نویسی‌ها هنگام تعریف ``TypedDict`` ارزیابی نمی‌شوند. بنابراین، ممکن است درون‌نگری ران‌تایمی که ``__required_keys__`` و ``__optional_keys__`` به آن متکی هستند، به‌درستی کار نکند و مقادیر ویژگی‌ها نادرست باشند."
 
-msgid "Support for :data:`ReadOnly` is reflected in the following attributes:"
-msgstr "پشتیبانی از :data:`ReadOnly` در ویژگی‌های زیر بازتاب یافته است:"
-
 msgid "A :class:`frozenset` containing the names of all read-only keys. Keys are read-only if they carry the :data:`ReadOnly` qualifier."
 msgstr "یک :class:`frozenset` شامل نام تمام کلیدهای فقط‌خواندنی. کلیدها در صورتی فقط‌خواندنی هستند که دارای مشخص‌کننده (qualifier) :data:`ReadOnly` باشند."
 
 msgid "A :class:`frozenset` containing the names of all mutable keys. Keys are mutable if they do not carry the :data:`ReadOnly` qualifier."
 msgstr "یک :class:`frozenset` حاوی نام تمام کلیدهای تغییرپذیر. کلیدها در صورتی تغییرپذیر هستند که فاقد مشخص‌کننده :data:`ReadOnly` باشند."
+
+msgid "The value of the *closed* class argument. It can be ``True``, ``False``, or :data:`None`."
+msgstr ""
+
+msgid "The value of the *extra_items* class argument. It can be a valid type or :data:`NoExtraItems`."
+msgstr ""
 
 msgid "See the `TypedDict <https://typing.python.org/en/latest/spec/typeddict.html#typeddict>`_ section in the typing documentation for more examples and detailed rules."
 msgstr "برای مثال‌های بیشتر و قوانین دقیق، بخش `TypedDict <https://typing.python.org/en/latest/spec/typeddict.html#typeddict>`_ را در مستندات typing ببینید."
@@ -3495,11 +3631,13 @@ msgstr "پشتیبانی از ``TypedDict``\\ های عام افزوده شد."
 msgid "Removed support for the keyword-argument method of creating ``TypedDict``\\ s."
 msgstr "پشتیبانی از روش آرگومان کلیدواژه‌ای برای ایجاد ``TypedDict``\\ s حذف شد."
 
-msgid "Support for the :data:`ReadOnly` qualifier was added."
+#, fuzzy
+#| msgid "Support for the :data:`ReadOnly` qualifier was added."
+msgid "Support for the :data:`ReadOnly` qualifier was added. See :pep:`705`."
 msgstr "پشتیبانی از مشخص‌کننده (qualifier) :data:`ReadOnly` افزوده شد."
 
-msgid "When using the functional syntax to create a TypedDict class, failing to pass a value to the 'fields' parameter (``TD = TypedDict(\"TD\")``) is deprecated. Passing ``None`` to the 'fields' parameter (``TD = TypedDict(\"TD\", None)``) is also deprecated. Both will be disallowed in Python 3.15. To create a TypedDict class with 0 fields, use ``class TD(TypedDict): pass`` or ``TD = TypedDict(\"TD\", {})``."
-msgstr "هنگام استفاده از سینتکس تابعی برای ایجاد یک کلاس TypedDict، عدم ارسال مقدار به پارامتر 'fields' (``TD = TypedDict(\"TD\")``) منسوخ شده است. ارسال ``None`` به پارامتر 'fields' (``TD = TypedDict(\"TD\", None)``) نیز منسوخ شده است. هر دو در Python 3.15 غیرمجاز خواهند شد. برای ایجاد یک کلاس TypedDict با ۰ فیلد، از ``class TD(TypedDict): pass`` یا ``TD = TypedDict(\"TD\", {})`` استفاده کنید."
+msgid "Support for the *closed* and *extra_items* class arguments was added. See :pep:`728`."
+msgstr ""
 
 msgid "Protocols"
 msgstr "پروتکل‌ها"
@@ -3605,9 +3743,6 @@ msgstr ""
 
 msgid "Ask a static type checker to confirm that a line of code is unreachable."
 msgstr "از یک بررسی‌گر نوع ایستا (static type checker) بخواهید تأیید کند که یک خط کد غیرقابل‌دسترس است."
-
-msgid "Example::"
-msgstr "مثال::"
 
 msgid ""
 "def int_or_str(arg: int | str) -> None:\n"
@@ -3934,15 +4069,6 @@ msgstr "این به‌عنوان یک :term:`دکوراتور، آراینده <
 msgid "``@no_type_check`` mutates the decorated object in place."
 msgstr "``@no_type_check`` شیء دکوریت‌شده را به‌صورت درجا تغییر می‌دهد."
 
-msgid "Decorator to give another decorator the :func:`no_type_check` effect."
-msgstr "دکوراتوری که به دکوراتوری دیگر اثر :func:`no_type_check` می‌دهد."
-
-msgid "This wraps the decorator with something that wraps the decorated function in :func:`no_type_check`."
-msgstr "این، دکوراتور را با چیزی می‌پوشاند که تابع دکوریت‌شده را در :func:`no_type_check` می‌پوشاند."
-
-msgid "No type checker ever added support for ``@no_type_check_decorator``. It is therefore deprecated, and will be removed in Python 3.15."
-msgstr "تاکنون هیچ بررسی‌گر نوعی پشتیبانی از ``@no_type_check_decorator`` را اضافه نکرده است. بنابراین منسوخ شده است و در پایتون 3.15 حذف خواهد شد."
-
 msgid "Decorator to indicate that a method in a subclass is intended to override a method or attribute in a superclass."
 msgstr "دکوراتوری برای نشان دادن این که یک متد در زیرکلاس برای بازنویسی یک متد یا ویژگی در ابرکلاس در نظر گرفته شده است."
 
@@ -3984,6 +4110,33 @@ msgstr "دکوراتور تلاش می‌کند ویژگی ``__override__`` را
 
 msgid "See :pep:`698` for more details."
 msgstr "برای جزئیات بیشتر به :pep:`698` مراجعه کنید."
+
+#, fuzzy
+#| msgid "Decorator to mark a class or function as unavailable at runtime."
+msgid "Decorator to mark a class as a disjoint base."
+msgstr "دکوراتوری برای علامت‌گذاری یک کلاس یا تابع به‌عنوان غیرقابل‌دسترس در ران‌تایم."
+
+msgid "Type checkers do not allow child classes of a disjoint base ``C`` to inherit from other disjoint bases that are not parent or child classes of ``C``."
+msgstr ""
+
+msgid ""
+"@disjoint_base\n"
+"class Disjoint1: pass\n"
+"\n"
+"@disjoint_base\n"
+"class Disjoint2: pass\n"
+"\n"
+"class Disjoint3(Disjoint1, Disjoint2): pass  # Type checker error"
+msgstr ""
+
+msgid "Type checkers can use knowledge of disjoint bases to detect unreachable code and determine when two types can overlap."
+msgstr ""
+
+msgid "The corresponding runtime concept is a solid base (see :ref:`multiple-inheritance`). Classes that are solid bases at runtime can be marked with ``@disjoint_base`` in stub files. Users may also mark other classes as disjoint bases to indicate to type checkers that multiple inheritance with other disjoint bases should not be allowed."
+msgstr ""
+
+msgid "Note that the concept of a solid base is a CPython implementation detail, and the exact set of standard library classes that are disjoint bases at runtime may change in future versions of Python."
+msgstr ""
 
 msgid "Decorator to mark a class or function as unavailable at runtime."
 msgstr "دکوراتوری برای علامت‌گذاری یک کلاس یا تابع به‌عنوان غیرقابل‌دسترس در ران‌تایم."
@@ -4231,6 +4384,21 @@ msgstr ""
 ">>> S.__default__ is None\n"
 "True"
 
+#, fuzzy
+#| msgid "A sentinel object used to indicate that a type parameter has no default value. For example:"
+msgid "A :class:`sentinel` object used to indicate that a :class:`TypedDict` does not have the *extra_items* class argument."
+msgstr "یک شیء نشانگر (sentinel) که برای نشان دادن این به کار می‌رود که یک پارامتر نوع مقدار پیش‌فرض ندارد. برای مثال:"
+
+msgid ""
+">>> from typing import TypedDict, NoExtraItems\n"
+">>> class Point(TypedDict):\n"
+"...     x: int\n"
+"...     y: int\n"
+"...\n"
+">>> Point.__extra_items__ is NoExtraItems\n"
+"True"
+msgstr ""
+
 msgid "Constant"
 msgstr "ثابت"
 
@@ -4361,7 +4529,9 @@ msgstr ":class:`collections.deque` اکنون از زیرنویسی با ``[]`` 
 msgid "Aliases to other concrete types"
 msgstr "نام‌های مستعار برای سایر انواع مشخص"
 
-msgid "Deprecated aliases corresponding to the return types from :func:`re.compile` and :func:`re.match`."
+#, fuzzy
+#| msgid "Deprecated aliases corresponding to the return types from :func:`re.compile` and :func:`re.match`."
+msgid "Deprecated aliases corresponding to the return types from :func:`re.compile` and :func:`re.search`."
 msgstr "نام‌های مستعار منسوخ‌شده‌ی متناظر با انواع بازگشتی از :func:`re.compile` و :func:`re.match`."
 
 msgid "These types (and the corresponding functions) are generic over :data:`AnyStr`. ``Pattern`` can be specialised as ``Pattern[str]`` or ``Pattern[bytes]``; ``Match`` can be specialised as ``Match[str]`` or ``Match[bytes]``."
@@ -4665,20 +4835,11 @@ msgstr ":data:`typing.TypeAlias`"
 msgid ":pep:`695`"
 msgstr ":pep:`695`"
 
-msgid ":func:`@typing.no_type_check_decorator <no_type_check_decorator>`"
-msgstr ":func:`@typing.no_type_check_decorator <no_type_check_decorator>`"
+msgid ":data:`typing.AnyStr`"
+msgstr ":data:`typing.AnyStr`"
 
 msgid "3.13"
 msgstr "3.13"
-
-msgid "3.15"
-msgstr "3.15"
-
-msgid ":gh:`106309`"
-msgstr ":gh:`106309`"
-
-msgid ":data:`typing.AnyStr`"
-msgstr ":data:`typing.AnyStr`"
 
 msgid "3.18"
 msgstr "3.18"
@@ -4691,3 +4852,33 @@ msgstr "..."
 
 msgid "ellipsis literal"
 msgstr "لفظی سه‌نقطه (ellipsis)"
+
+#~ msgid "The undocumented keyword argument syntax for creating NamedTuple classes (``NT = NamedTuple(\"NT\", x=int)``) is deprecated, and will be disallowed in 3.15. Use the class-based syntax or the functional syntax instead."
+#~ msgstr "سینتکس آرگومان کلیدواژه‌ای بدون مستند برای ایجاد کلاس‌های NamedTuple (``NT = NamedTuple(\"NT\", x=int)``) منسوخ شده است و در 3.15 غیرمجاز خواهد شد. به‌جای آن، از سینتکس مبتنی بر کلاس یا سینتکس تابعی استفاده کنید."
+
+#~ msgid "When using the functional syntax to create a NamedTuple class, failing to pass a value to the 'fields' parameter (``NT = NamedTuple(\"NT\")``) is deprecated. Passing ``None`` to the 'fields' parameter (``NT = NamedTuple(\"NT\", None)``) is also deprecated. Both will be disallowed in Python 3.15. To create a NamedTuple class with 0 fields, use ``class NT(NamedTuple): pass`` or ``NT = NamedTuple(\"NT\", [])``."
+#~ msgstr "هنگام استفاده از سینتکس تابعی برای ایجاد یک کلاس NamedTuple، ارسال نکردن مقدار به پارامتر 'fields' (``NT = NamedTuple(\"NT\")``) منسوخ است. ارسال ``None`` به پارامتر 'fields' (``NT = NamedTuple(\"NT\", None)``) نیز منسوخ است. هر دو مورد در Python 3.15 غیرمجاز خواهند شد. برای ایجاد یک کلاس NamedTuple با ۰ فیلد، از ``class NT(NamedTuple): pass`` یا ``NT = NamedTuple(\"NT\", [])`` استفاده کنید."
+
+#~ msgid "Support for :data:`ReadOnly` is reflected in the following attributes:"
+#~ msgstr "پشتیبانی از :data:`ReadOnly` در ویژگی‌های زیر بازتاب یافته است:"
+
+#~ msgid "When using the functional syntax to create a TypedDict class, failing to pass a value to the 'fields' parameter (``TD = TypedDict(\"TD\")``) is deprecated. Passing ``None`` to the 'fields' parameter (``TD = TypedDict(\"TD\", None)``) is also deprecated. Both will be disallowed in Python 3.15. To create a TypedDict class with 0 fields, use ``class TD(TypedDict): pass`` or ``TD = TypedDict(\"TD\", {})``."
+#~ msgstr "هنگام استفاده از سینتکس تابعی برای ایجاد یک کلاس TypedDict، عدم ارسال مقدار به پارامتر 'fields' (``TD = TypedDict(\"TD\")``) منسوخ شده است. ارسال ``None`` به پارامتر 'fields' (``TD = TypedDict(\"TD\", None)``) نیز منسوخ شده است. هر دو در Python 3.15 غیرمجاز خواهند شد. برای ایجاد یک کلاس TypedDict با ۰ فیلد، از ``class TD(TypedDict): pass`` یا ``TD = TypedDict(\"TD\", {})`` استفاده کنید."
+
+#~ msgid "Decorator to give another decorator the :func:`no_type_check` effect."
+#~ msgstr "دکوراتوری که به دکوراتوری دیگر اثر :func:`no_type_check` می‌دهد."
+
+#~ msgid "This wraps the decorator with something that wraps the decorated function in :func:`no_type_check`."
+#~ msgstr "این، دکوراتور را با چیزی می‌پوشاند که تابع دکوریت‌شده را در :func:`no_type_check` می‌پوشاند."
+
+#~ msgid "No type checker ever added support for ``@no_type_check_decorator``. It is therefore deprecated, and will be removed in Python 3.15."
+#~ msgstr "تاکنون هیچ بررسی‌گر نوعی پشتیبانی از ``@no_type_check_decorator`` را اضافه نکرده است. بنابراین منسوخ شده است و در پایتون 3.15 حذف خواهد شد."
+
+#~ msgid ":func:`@typing.no_type_check_decorator <no_type_check_decorator>`"
+#~ msgstr ":func:`@typing.no_type_check_decorator <no_type_check_decorator>`"
+
+#~ msgid "3.15"
+#~ msgstr "3.15"
+
+#~ msgid ":gh:`106309`"
+#~ msgstr ":gh:`106309`"

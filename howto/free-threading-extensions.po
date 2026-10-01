@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 16:17+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -59,9 +59,26 @@ msgstr "بسته به اینکه یک ماژول توسعه از مقدارده�
 msgid "Multi-Phase Initialization"
 msgstr "مقداردهی اولیه‌ی چندمرحله‌ای"
 
-msgid "Extensions that use multi-phase initialization (i.e., :c:func:`PyModuleDef_Init`) should add a :c:data:`Py_mod_gil` slot in the module definition.  If your extension supports older versions of CPython, you should guard the slot with a :c:data:`PY_VERSION_HEX` check."
+#, fuzzy
+#| msgid "Extensions that use multi-phase initialization (i.e., :c:func:`PyModuleDef_Init`) should add a :c:data:`Py_mod_gil` slot in the module definition.  If your extension supports older versions of CPython, you should guard the slot with a :c:data:`PY_VERSION_HEX` check."
+msgid "Extensions that use :ref:`multi-phase initialization <multi-phase-initialization>` (functions like :c:func:`PyModuleDef_Init`, :c:func:`PyModExport_* <PyModExport_modulename>` export hook, :c:func:`PyModule_FromSlotsAndSpec`) should add a :c:data:`Py_mod_gil` slot in the module definition. If your extension supports older versions of CPython, you should guard the slot with a :c:data:`PY_VERSION_HEX` check."
 msgstr "افزونه‌هایی که از مقداردهی اولیه چندمرحله‌ای (یعنی :c:func:`PyModuleDef_Init`) استفاده می‌کنند، باید یک جایگاه  :c:data:`Py_mod_gil` در تعریف ماژول اضافه کنند. اگر افزونه‌ی شما از نسخه‌های قدیمی‌تر CPython پشتیبانی می‌کند، باید این جایگاه را با یک بررسی :c:data:`PY_VERSION_HEX` محافظت کنید."
 
+#, fuzzy
+#| msgid ""
+#| "static struct PyModuleDef_Slot module_slots[] = {\n"
+#| "    ...\n"
+#| "#if PY_VERSION_HEX >= 0x030D0000\n"
+#| "    {Py_mod_gil, Py_MOD_GIL_NOT_USED},\n"
+#| "#endif\n"
+#| "    {0, NULL}\n"
+#| "};\n"
+#| "\n"
+#| "static struct PyModuleDef moduledef = {\n"
+#| "    PyModuleDef_HEAD_INIT,\n"
+#| "    .m_slots = module_slots,\n"
+#| "    ...\n"
+#| "};"
 msgid ""
 "static struct PyModuleDef_Slot module_slots[] = {\n"
 "    ...\n"
@@ -69,12 +86,6 @@ msgid ""
 "    {Py_mod_gil, Py_MOD_GIL_NOT_USED},\n"
 "#endif\n"
 "    {0, NULL}\n"
-"};\n"
-"\n"
-"static struct PyModuleDef moduledef = {\n"
-"    PyModuleDef_HEAD_INIT,\n"
-"    .m_slots = module_slots,\n"
-"    ...\n"
 "};"
 msgstr ""
 "static struct PyModuleDef_Slot module_slots[] = {\n"
@@ -94,7 +105,9 @@ msgstr ""
 msgid "Single-Phase Initialization"
 msgstr "مقداردهی اولیه‌ی تک‌مرحله‌ای"
 
-msgid "Extensions that use single-phase initialization (i.e., :c:func:`PyModule_Create`) should call :c:func:`PyUnstable_Module_SetGIL` to indicate that they support running with the GIL disabled.  The function is only defined in the free-threaded build, so you should guard the call with ``#ifdef Py_GIL_DISABLED`` to avoid compilation errors in the regular build."
+#, fuzzy
+#| msgid "Extensions that use single-phase initialization (i.e., :c:func:`PyModule_Create`) should call :c:func:`PyUnstable_Module_SetGIL` to indicate that they support running with the GIL disabled.  The function is only defined in the free-threaded build, so you should guard the call with ``#ifdef Py_GIL_DISABLED`` to avoid compilation errors in the regular build."
+msgid "Extensions that use legacy :ref:`single-phase initialization <single-phase-initialization>` (that is, :c:func:`PyModule_Create`) should call :c:func:`PyUnstable_Module_SetGIL` to indicate that they support running with the GIL disabled.  The function is only defined in the free-threaded build, so you should guard the call with ``#ifdef Py_GIL_DISABLED`` to avoid compilation errors in the regular build."
 msgstr "افزونه‌هایی که از راه‌اندازی تک‌مرحله‌ای (یعنی :c:func:`PyModule_Create`) استفاده می‌کنند، باید :c:func:`PyUnstable_Module_SetGIL` را فراخوانی کنند تا نشان دهند که از اجرا با GIL غیرفعال پشتیبانی می‌کنند. این تابع فقط در ساخت نخ‌آزاد شده است، بنابراین باید فراخوانی را با ``#ifdef Py_GIL_DISABLED`` محافظت کنید تا از خطاهای کامپایل در ساخت معمولی جلوگیری شود."
 
 msgid ""
@@ -229,13 +242,17 @@ msgstr ":c:func:`PyDict_Next`"
 msgid "none (see :ref:`PyDict_Next`)"
 msgstr "هیچ (به :ref:`PyDict_Next` رجوع کنید)"
 
-msgid ":c:func:`PyWeakref_GetObject`"
+#, fuzzy
+#| msgid ":c:func:`PyWeakref_GetObject`"
+msgid ":c:func:`!PyWeakref_GetObject`"
 msgstr ":c:func:`PyWeakref_GetObject`"
 
 msgid ":c:func:`PyWeakref_GetRef`"
 msgstr ":c:func:`PyWeakref_GetRef`"
 
-msgid ":c:func:`PyWeakref_GET_OBJECT`"
+#, fuzzy
+#| msgid ":c:func:`PyWeakref_GET_OBJECT`"
+msgid ":c:func:`!PyWeakref_GET_OBJECT`"
 msgstr ":c:func:`PyWeakref_GET_OBJECT`"
 
 msgid ":c:func:`PyImport_AddModule`"
@@ -271,6 +288,11 @@ msgstr "وضعیت نخ و APIهای GIL"
 msgid "Python provides a set of functions and macros to manage thread state and the GIL, such as:"
 msgstr "پایتون مجموعه‌ای از توابع و ماکروها را برای مدیریت وضعیت نخ و GIL فراهم می‌کند، مانند:"
 
+#, fuzzy
+#| msgid ":c:func:`PyGILState_Ensure` and :c:func:`PyGILState_Release`"
+msgid ":c:func:`PyThreadState_Ensure`, :c:func:`PyThreadState_EnsureFromView`, and :c:func:`PyThreadState_Release`"
+msgstr ":c:func:`PyGILState_Ensure` و :c:func:`PyGILState_Release`"
+
 msgid ":c:func:`PyGILState_Ensure` and :c:func:`PyGILState_Release`"
 msgstr ":c:func:`PyGILState_Ensure` و :c:func:`PyGILState_Release`"
 
@@ -280,7 +302,9 @@ msgstr ":c:func:`PyEval_SaveThread` و :c:func:`PyEval_RestoreThread`"
 msgid ":c:macro:`Py_BEGIN_ALLOW_THREADS` and :c:macro:`Py_END_ALLOW_THREADS`"
 msgstr ":c:macro:`Py_BEGIN_ALLOW_THREADS` و :c:macro:`Py_END_ALLOW_THREADS`"
 
-msgid "These functions should still be used in the free-threaded build to manage thread state even when the :term:`GIL` is disabled.  For example, if you create a thread outside of Python, you must call :c:func:`PyGILState_Ensure` before calling into the Python API to ensure that the thread has a valid Python thread state."
+#, fuzzy
+#| msgid "These functions should still be used in the free-threaded build to manage thread state even when the :term:`GIL` is disabled.  For example, if you create a thread outside of Python, you must call :c:func:`PyGILState_Ensure` before calling into the Python API to ensure that the thread has a valid Python thread state."
+msgid "These functions should still be used in the free-threaded build to manage thread state even when the :term:`GIL` is disabled.  For example, if you create a thread outside of Python, you must call :c:func:`PyThreadState_Ensure` before calling into the Python API to ensure that the thread has a valid Python thread state."
 msgstr "همچنان باید از این توابع در ساخت با نخ‌های آزاد (free-threaded build) برای مدیریت وضعیت نخ استفاده شود، حتی زمانی که :term:`GIL` غیرفعال باشد. برای مثال، اگر نخی خارج از پایتون ایجاد می‌کنید، باید پیش از فراخوانی API پایتون، :c:func:`PyGILState_Ensure` را فراخوانی کنید تا اطمینان حاصل شود که آن نخ دارای وضعیت نخ پایتون معتبری است."
 
 msgid "You should continue to call :c:func:`PyEval_SaveThread` or :c:macro:`Py_BEGIN_ALLOW_THREADS` around blocking operations, such as I/O or lock acquisitions, to allow other threads to run the :term:`cyclic garbage collector <garbage collection>`."
@@ -412,6 +436,21 @@ msgstr "هنگام استفاده از :c:macro:`Py_BEGIN_CRITICAL_SECTION2`، �
 
 msgid "Remember that the critical section macros are primarily for protecting access to *Python objects* that might be involved in internal CPython operations susceptible to the deadlock scenarios described above. For protecting purely internal extension state, standard mutexes or other synchronization primitives might be more appropriate."
 msgstr "به یاد داشته باشید که ماکروهای بخش بحرانی عمدتاً برای محافظت از دسترسی به *اشیای پایتون* به کار می‌روند؛ این اشیاء ممکن است در عملیات داخلی CPython که مستعد سناریوهای بن‌بست توصیف‌شده در بالا هستند، دخیل باشند. برای محافظت از وضعیت کاملاً داخلی افزونه، ممکن است قفل‌های متقابل استاندارد یا دیگر سازوکارهای همگام‌سازی مناسب‌تر باشند."
+
+msgid "Per-Object Locks (``ob_mutex``)"
+msgstr ""
+
+msgid "In the free-threaded build, each Python object contains a :c:member:`~PyObject.ob_mutex` field of type :c:type:`PyMutex`.  This mutex is **reserved for use by the critical section API** (:c:macro:`Py_BEGIN_CRITICAL_SECTION` / :c:macro:`Py_END_CRITICAL_SECTION`)."
+msgstr ""
+
+msgid "Do **not** lock ``ob_mutex`` directly with ``PyMutex_Lock(&obj->ob_mutex)``. Mixing direct ``PyMutex_Lock`` calls with the critical section API on the same mutex can cause deadlocks."
+msgstr ""
+
+msgid "Even if your own code never uses critical sections on a particular object type, **CPython internals may use the critical section API on any Python object**."
+msgstr ""
+
+msgid "If your extension type needs its own lock, add a separate :c:type:`PyMutex` field (or another synchronization primitive) to your object struct. :c:type:`PyMutex` is very lightweight, so there is negligible cost to having an additional one."
+msgstr ""
 
 msgid "Building Extensions for the Free-Threaded Build"
 msgstr "ساخت افزونه‌ها برای ساخت نخ‌آزاد (Free-Threaded Build)"

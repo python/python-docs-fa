@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2022-11-05 19:49+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -58,7 +58,12 @@ msgstr "یک شیء :class:`~importlib.resources.abc.Traversable` را برمی�
 msgid "*anchor* is an optional :class:`Anchor`. If the anchor is a package, resources are resolved from that package. If a module, resources are resolved adjacent to that module (in the same package or the package root). If the anchor is omitted, the caller's module is used."
 msgstr "*anchor* یک :class:`Anchor` اختیاری است. اگر *anchor* یک بسته باشد، منابع از آن بسته یافت می‌شوند. اگر *anchor* یک ماژول باشد، منابع در مجاورت آن ماژول یافت می‌شوند (در همان بسته یا ریشه‌ی بسته). اگر *anchor* حذف شود، از ماژول فراخواننده استفاده می‌شود."
 
-msgid "*package* parameter was renamed to *anchor*. *anchor* can now be a non-package module and if omitted will default to the caller's module. *package* is still accepted for compatibility but will raise a :exc:`DeprecationWarning`. Consider passing the anchor positionally or using ``importlib_resources >= 5.10`` for a compatible interface on older Pythons."
+msgid "*package* parameter was renamed to *anchor*. *package* was still accepted, but deprecated."
+msgstr ""
+
+#, fuzzy
+#| msgid "*package* parameter was renamed to *anchor*. *anchor* can now be a non-package module and if omitted will default to the caller's module. *package* is still accepted for compatibility but will raise a :exc:`DeprecationWarning`. Consider passing the anchor positionally or using ``importlib_resources >= 5.10`` for a compatible interface on older Pythons."
+msgid "*package* parameter was fully removed. *anchor* can now be a non-package module and if omitted will default to the caller's module. *package* is no longer accepted since Python 3.15. Consider passing the anchor positionally or using ``importlib_resources >= 5.10`` for a compatible interface on older Pythons."
 msgstr "پارامتر *package* به *anchor* تغییر نام داده شده است. *anchor* اکنون می‌تواند یک ماژول غیربسته باشد و در صورت حذف، به‌طور پیش‌فرض ماژول فراخوان خواهد بود. *package* همچنان برای سازگاری پذیرفته می‌شود، اما یک :exc:`DeprecationWarning` پرتاب می‌کند. در نظر داشته باشید که anchor را به‌صورت جایگاهی ارسال کنید یا از ``importlib_resources >= 5.10`` برای یک رابط سازگار در پایتون‌های قدیمی‌تر استفاده کنید."
 
 msgid "Given a :class:`~importlib.resources.abc.Traversable` object representing a file or directory, typically from :func:`importlib.resources.files`, return a context manager for use in a :keyword:`with` statement. The context manager provides a :class:`pathlib.Path` object."

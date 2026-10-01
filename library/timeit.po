@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2021-06-28 01:15+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -32,7 +32,9 @@ msgstr "**کد منبع:** :source:`Lib/timeit.py`"
 msgid "This module provides a simple way to time small bits of Python code. It has both a :ref:`timeit-command-line-interface` as well as a :ref:`callable <python-interface>` one.  It avoids a number of common traps for measuring execution times. See also Tim Peters' introduction to the \"Algorithms\" chapter in the second edition of *Python Cookbook*, published by O'Reilly."
 msgstr "این ماژول روش ساده‌ای برای زمان‌سنجی قطعه‌های کوچک کد پایتون فراهم می‌کند. این ماژول هم یک :ref:`timeit-command-line-interface` و هم یک رابط :ref:`فراخوانی‌پذیر <python-interface>` دارد و از شماری از دام‌های رایج در اندازه‌گیری زمان‌های اجرا پرهیز می‌کند. همچنین به مقدمه‌ی Tim Peters بر فصل «Algorithms» در ویرایش دوم *Python Cookbook*، که توسط O'Reilly منتشر شده است، مراجعه کنید."
 
-msgid "Basic Examples"
+#, fuzzy
+#| msgid "Basic Examples"
+msgid "Basic examples"
 msgstr "مثال‌های پایه"
 
 msgid "The following example shows how the :ref:`timeit-command-line-interface` can be used to compare three different expressions:"
@@ -86,7 +88,9 @@ msgstr ""
 msgid "Note however that :func:`.timeit` will automatically determine the number of repetitions only when the command-line interface is used.  In the :ref:`timeit-examples` section you can find more advanced examples."
 msgstr "با این حال توجه داشته باشید که :func:`.timeit` تعداد تکرارها را فقط زمانی که از رابط خط فرمان استفاده شود، به‌طور خودکار تعیین می‌کند. در بخش :ref:`timeit-examples` می‌توانید مثال‌های پیشرفته‌تری پیدا کنید."
 
-msgid "Python Interface"
+#, fuzzy
+#| msgid "Python Interface"
+msgid "Python interface"
 msgstr "رابط پایتون"
 
 msgid "The module defines three convenience functions and a public class:"
@@ -137,11 +141,18 @@ msgstr "timeit.Timer('for i in range(10): oct(i)', 'gc.enable()').timeit()"
 msgid "Automatically determine how many times to call :meth:`.timeit`."
 msgstr "به‌طور خودکار تعیین می‌کند که چند بار :meth:`.timeit` فراخوانی شود."
 
-msgid "This is a convenience function that calls :meth:`.timeit` repeatedly so that the total time >= 0.2 second, returning the eventual (number of loops, time taken for that number of loops). It calls :meth:`.timeit` with increasing numbers from the sequence 1, 2, 5, 10, 20, 50, ... until the time taken is at least 0.2 seconds."
+#, fuzzy
+#| msgid "This is a convenience function that calls :meth:`.timeit` repeatedly so that the total time >= 0.2 second, returning the eventual (number of loops, time taken for that number of loops). It calls :meth:`.timeit` with increasing numbers from the sequence 1, 2, 5, 10, 20, 50, ... until the time taken is at least 0.2 seconds."
+msgid "This is a convenience function that calls :meth:`.timeit` repeatedly so that the total time >= *Timer.target_time* seconds, returning the eventual (number of loops, time taken for that number of loops). It calls :meth:`.timeit` with increasing numbers from the sequence 1, 2, 5, 10, 20, 50, ... until the time taken is at least *target_time* seconds."
 msgstr "این یک تابع کمکی است که :meth:`.timeit` را به‌طور مکرر فراخوانی می‌کند تا زمان کل >= ۰٫۲ ثانیه شود و در نهایت (تعداد حلقه‌ها، زمان صرف‌شده برای آن تعداد حلقه) را برمی‌گرداند. این تابع :meth:`.timeit` را با اعداد فزاینده از دنباله‌ی ۱، ۲، ۵، ۱۰، ۲۰، ۵۰، ... فراخوانی می‌کند تا زمانی که زمان صرف‌شده حداقل ۰٫۲ ثانیه باشد."
 
 msgid "If *callback* is given and is not ``None``, it will be called after each trial with two arguments: ``callback(number, time_taken)``."
 msgstr "اگر *callback* ارائه‌شده باشد و ``None`` نباشد، پس از هر آزمایش با دو آرگومان فراخوانی می‌شود: ``callback(number, time_taken)``."
+
+#, fuzzy
+#| msgid "The optional *globals* parameter was added."
+msgid "The optional *target_time* parameter was added."
+msgstr "پارامتر اختیاری *globals* افزوده شد."
 
 msgid "Call :meth:`.timeit` a few times."
 msgstr ":meth:`.timeit` را چند بار فراخوانی کنید."
@@ -174,7 +185,9 @@ msgstr ""
 msgid "The advantage over the standard traceback is that source lines in the compiled template will be displayed.  The optional *file* argument directs where the traceback is sent; it defaults to :data:`sys.stderr`."
 msgstr "مزیت آن نسبت به ردگیری پشته استاندارد این است که ردیفهای منبع در قالب کامپایل‌شده نمایش داده خواهند شد. آرگومان اختیاری *file* مشخص می‌کند که ردگیری پشته به کجا ارسال می‌شود؛ پیش‌فرض آن :data:`sys.stderr` است."
 
-msgid "Command-Line Interface"
+#, fuzzy
+#| msgid "Command-Line Interface"
+msgid "Command-line interface"
 msgstr "رابط خط فرمان"
 
 msgid "When called as a program from the command line, the following form is used::"
@@ -201,6 +214,9 @@ msgstr "اندازه‌گیری زمان فرایند، نه زمان دیوار
 msgid "specify a time unit for timer output; can select ``nsec``, ``usec``, ``msec``, or ``sec``"
 msgstr "یک واحد زمانی برای خروجی زمان‌سنج مشخص کنید؛ می‌توانید ``nsec``، ``usec``، ``msec`` یا ``sec`` را انتخاب کنید"
 
+msgid "if :option:`--number` is 0, the code will run until it takes at least this many seconds (default: 0.2)"
+msgstr ""
+
 msgid "print raw timing results; repeat for more digits precision"
 msgstr "چاپ نتایج خام زمان‌سنجی؛ برای دقت بیشتر در ارقام تکرار کنید"
 
@@ -210,7 +226,9 @@ msgstr "یک پیام کوتاه کاربرد را چاپ کرده و خارج �
 msgid "A multi-line statement may be given by specifying each line as a separate statement argument; indented lines are possible by enclosing an argument in quotes and using leading spaces.  Multiple :option:`-s` options are treated similarly."
 msgstr "یک دستور چندخطی می‌تواند با مشخص کردن هر خط به‌عنوان یک آرگومان دستور جداگانه داده شود؛ سطرهای دارای تورفتگی با قرار دادن آرگومان در علامت‌های نقل‌قول و استفاده از فاصله‌های ابتدایی امکان‌پذیر است. گزینه‌های متعدد :option:`-s` نیز به‌طور مشابه رفتار می‌شوند."
 
-msgid "If :option:`-n` is not given, a suitable number of loops is calculated by trying increasing numbers from the sequence 1, 2, 5, 10, 20, 50, ... until the total time is at least 0.2 seconds."
+#, fuzzy
+#| msgid "If :option:`-n` is not given, a suitable number of loops is calculated by trying increasing numbers from the sequence 1, 2, 5, 10, 20, 50, ... until the total time is at least 0.2 seconds."
+msgid "If :option:`-n` is not given, a suitable number of loops is calculated by trying increasing numbers from the sequence 1, 2, 5, 10, 20, 50, ... until the total time is at least :option:`--target-time` seconds (default: 0.2)."
 msgstr "اگر :option:`-n` داده نشده باشد، تعداد مناسبی برای حلقه‌ها با امتحان کردن اعداد فزاینده از دنباله‌ی ۱، ۲، ۵، ۱۰، ۲۰، ۵۰، ... محاسبه می‌شود، تا زمانی که زمان کل حداقل ۰.۲ ثانیه شود."
 
 msgid ":func:`default_timer` measurements can be affected by other programs running on the same machine, so the best thing to do when accurate timing is necessary is to repeat the timing a few times and use the best time.  The :option:`-r` option is good for this; the default of 5 repetitions is probably enough in most cases.  You can use :func:`time.process_time` to measure CPU time."
@@ -218,6 +236,9 @@ msgstr "اندازه‌گیری‌های :func:`default_timer` می‌توانن
 
 msgid "There is a certain baseline overhead associated with executing a pass statement. The code here doesn't try to hide it, but you should be aware of it.  The baseline overhead can be measured by invoking the program without arguments, and it might differ between Python versions."
 msgstr "اجرای دستور pass با مقدار مشخصی سربار پایه همراه است. این کد سعی نمی‌کند آن را پنهان کند، اما شما باید از آن آگاه باشید. سربار پایه را می‌توان با فراخوانی برنامه بدون آرگومان اندازه‌گیری کرد، و ممکن است بین نسخه‌های پایتون متفاوت باشد."
+
+msgid "Output is in color by default and can be :ref:`controlled using environment variables <using-on-controlling-color>`."
+msgstr ""
 
 msgid "Examples"
 msgstr "مثال‌ها"

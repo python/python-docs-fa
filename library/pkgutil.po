@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-15 08:19+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -170,11 +170,22 @@ msgstr "``W(.W)*``"
 msgid "``W(.W)*:(W(.W)*)?``"
 msgstr "``W(.W)*:(W(.W)*)?``"
 
+#, fuzzy
+#| msgid "``W(.W)*:(W(.W)*)?``"
+msgid "``W(.W)*:(W(.W)*)``"
+msgstr "``W(.W)*:(W(.W)*)?``"
+
 msgid "The first form is intended for backward compatibility only. It assumes that some part of the dotted name is a package, and the rest is an object somewhere within that package, possibly nested inside other objects. Because the place where the package stops and the object hierarchy starts can't be inferred by inspection, repeated attempts to import must be done with this form."
 msgstr "شکل اول فقط برای سازگاری با نسخه‌های پیشین در نظر گرفته شده است. این شکل فرض می‌کند که بخشی از نام نقطه‌دار یک بسته است و باقی‌مانده، شیءای در جایی درون آن بسته است که ممکن است درون اشیاء دیگر تودرتو شده باشد. از آنجا که نمی‌توان با بازرسی استنتاج کرد که بسته کجا تمام می‌شود و سلسله‌مراتب اشیاء آغاز می‌گردد، تلاش‌های مکرر برای ایمپورت باید با این شکل انجام شوند."
 
 msgid "In the second form, the caller makes the division point clear through the provision of a single colon: the dotted name to the left of the colon is a package to be imported, and the dotted name to the right is the object hierarchy within that package. Only one import is needed in this form. If it ends with the colon, then a module object is returned."
 msgstr "در شکل دوم، فراخواننده با قرار دادن یک دونقطه، نقطه جداسازی را مشخص می‌کند: نام نقطه‌دار سمت چپ دونقطه، بسته‌ای است که باید ایمپورت شود، و نام نقطه‌دار سمت راست، سلسله‌مراتب شیء درون آن بسته است. در این شکل فقط به یک ایمپورت نیاز است. اگر با دونقطه پایان یابد، یک شیء ماژول برگردانده می‌شود."
+
+msgid "The first two forms are accepted when ``strict=False`` (the default)."
+msgstr ""
+
+msgid "The third form requires both the module name and callable, separated by a colon. Only this form is accepted when ``strict=True``."
+msgstr ""
 
 msgid "The function will return an object (which might be a module), or raise one of the following exceptions:"
 msgstr "این تابع یک شیء را برمی‌گرداند (که ممکن است یک ماژول باشد)، یا یکی از استثناهای زیر را پرتاب می‌کند:"
@@ -187,3 +198,6 @@ msgstr ":exc:`ImportError` -- اگر ایمپورتی زمانی که نباید
 
 msgid ":exc:`AttributeError` -- If a failure occurred when traversing the object hierarchy within the imported package to get to the desired object."
 msgstr ":exc:`AttributeError` -- اگر خطایی هنگام پیمایش سلسله‌مراتب اشیاء درون بسته‌ی ایمپورت‌شده برای رسیدن به شیء مورد نظر رخ داد."
+
+msgid "The optional keyword-only ``strict`` flag was added."
+msgstr ""

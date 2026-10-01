@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 16:54+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -293,7 +293,9 @@ msgstr "این تابع تولیدگر از متد :meth:`~codeobject.co_lines` 
 msgid "Line numbers can be decreasing. Before, they were always increasing."
 msgstr "شماره‌های خط می‌توانند کاهشی باشند. پیش از این، همیشه افزایشی بودند."
 
-msgid "The :pep:`626` :meth:`~codeobject.co_lines` method is used instead of the :attr:`~codeobject.co_firstlineno` and :attr:`~codeobject.co_lnotab` attributes of the :ref:`code object <code-objects>`."
+#, fuzzy
+#| msgid "The :pep:`626` :meth:`~codeobject.co_lines` method is used instead of the :attr:`~codeobject.co_firstlineno` and :attr:`~codeobject.co_lnotab` attributes of the :ref:`code object <code-objects>`."
+msgid "The :pep:`626` :meth:`~codeobject.co_lines` method is used instead of the :attr:`~codeobject.co_firstlineno` and :attr:`!codeobject.co_lnotab` attributes of the :ref:`code object <code-objects>`."
 msgstr "متد :meth:`~codeobject.co_lines` مربوط به :pep:`626`، به‌جای ویژگی‌های :attr:`~codeobject.co_firstlineno` و :attr:`~codeobject.co_lnotab` در :ref:`شیء کد <code-objects>` استفاده می‌شود."
 
 msgid "Line numbers can be ``None`` for bytecode that does not map to source lines."
@@ -1062,7 +1064,9 @@ msgstr "``CALL_KW`` تمام آرگومان‌ها، نام‌های کلیدو�
 msgid "Calls a callable object with variable set of positional and keyword arguments.  If the lowest bit of *flags* is set, the top of the stack contains a mapping object containing additional keyword arguments. Before the callable is called, the mapping object and iterable object are each \"unpacked\" and their contents passed in as keyword and positional arguments respectively. ``CALL_FUNCTION_EX`` pops all arguments and the callable object off the stack, calls the callable object with those arguments, and pushes the return value returned by the callable object."
 msgstr "یک شیء فراخوانی‌پذیر را با مجموعه‌ای متغیر از آرگومان‌های جایگاهی و کلیدواژه‌ای فراخوانی می‌کند. اگر پایین‌ترین بیت *flags* تنظیم شده باشد، بالای پشته شامل یک شیء نگاشت است که حاوی آرگومان‌های کلیدواژه‌ای اضافی است. پیش از فراخوانی شیء فراخوانی‌پذیر، شیء نگاشت و شیء پیمایش‌پذیر هرکدام «واگشایی» می‌شوند و محتویات آن‌ها به‌ترتیب به‌عنوان آرگومان‌های کلیدواژه‌ای و جایگاهی ارسال می‌شوند. ``CALL_FUNCTION_EX`` تمام آرگومان‌ها و شیء فراخوانی‌پذیر را از پشته برمی‌دارد، شیء فراخوانی‌پذیر را با آن آرگومان‌ها فراخوانی می‌کند و مقدار بازگشتی برگردانده‌شده توسط شیء فراخوانی‌پذیر را بر پشته می‌گذارد."
 
-msgid "Pushes a ``NULL`` to the stack. Used in the call sequence to match the ``NULL`` pushed by :opcode:`!LOAD_METHOD` for non-method calls."
+#, fuzzy
+#| msgid "Pushes a ``NULL`` to the stack. Used in the call sequence to match the ``NULL`` pushed by :opcode:`!LOAD_METHOD` for non-method calls."
+msgid "Pushes a ``NULL`` to the stack. Used in the call sequence to match the ``NULL`` pushed by :opcode:`LOAD_ATTR` for non-method calls."
 msgstr "یک ``NULL`` را روی پشته قرار می‌دهد. در دنباله‌ی فراخوانی استفاده می‌شود تا با ``NULL``\\ ای که توسط :opcode:`!LOAD_METHOD` برای فراخوانی‌های غیرمتدی روی پشته قرار گرفته است، مطابقت داشته باشد."
 
 msgid "Pushes a new function object on the stack built from the code object at ``STACK[-1]``."
@@ -1383,9 +1387,6 @@ msgstr "این گونه در ساخت‌های :keyword:`with` و :keyword:`asyn
 msgid "Marks the end of the code block associated with the last ``SETUP_FINALLY``, ``SETUP_CLEANUP`` or ``SETUP_WITH``."
 msgstr "پایان بلوک کد مرتبط با آخرین ``SETUP_FINALLY``، ``SETUP_CLEANUP`` یا ``SETUP_WITH`` را مشخص می‌کند."
 
-msgid "Works as :opcode:`LOAD_CONST`, but is more efficient for immortal objects."
-msgstr "مانند :opcode:`LOAD_CONST` عمل می‌کند، اما برای اشیاء نامیرا کارآمدتر است."
-
 msgid "Undirected relative jump instructions which are replaced by their directed (forward/backward) counterparts by the assembler."
 msgstr "دستورهای پرش نسبی بدون جهت که توسط اسمبلر با همتایان جهت‌دار (رو به جلو/رو به عقب) خود جایگزین می‌شوند."
 
@@ -1460,3 +1461,6 @@ msgstr "تابع توکار"
 
 msgid "slice"
 msgstr "اسلایس"
+
+#~ msgid "Works as :opcode:`LOAD_CONST`, but is more efficient for immortal objects."
+#~ msgstr "مانند :opcode:`LOAD_CONST` عمل می‌کند، اما برای اشیاء نامیرا کارآمدتر است."

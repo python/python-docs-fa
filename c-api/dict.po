@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 20:16+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -24,7 +24,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.6\n"
 
-msgid "Dictionary Objects"
+#, fuzzy
+#| msgid "Dictionary Objects"
+msgid "Dictionary objects"
 msgstr "اشیاء دیکشنری"
 
 msgid "This subtype of :c:type:`PyObject` represents a Python dictionary object."
@@ -45,14 +47,26 @@ msgstr "یک دیکشنری خالی جدید برمی‌گرداند، یا د�
 msgid "Return a :class:`types.MappingProxyType` object for a mapping which enforces read-only behavior.  This is normally used to create a view to prevent modification of the dictionary for non-dynamic class types."
 msgstr "یک شیء :class:`types.MappingProxyType` برای نگاشتی که رفتار فقط‌خواندنی را اعمال می‌کند بازمی‌گرداند.  این معمولاً برای ایجاد نمایی استفاده می‌شود که از تغییر دیکشنری در نوع‌های کلاس غیرپویا جلوگیری کند."
 
+msgid "The first argument can be a :class:`dict`, a :class:`frozendict`, or a mapping."
+msgstr ""
+
+msgid "Also accept :class:`frozendict`."
+msgstr ""
+
 msgid "The type object for mapping proxy objects created by :c:func:`PyDictProxy_New` and for the read-only ``__dict__`` attribute of many built-in types. A :c:type:`PyDictProxy_Type` instance provides a dynamic, read-only view of an underlying dictionary: changes to the underlying dictionary are reflected in the proxy, but the proxy itself does not support mutation operations. This corresponds to :class:`types.MappingProxyType` in Python."
 msgstr "شیء نوع برای اشیاء پراکسی نگاشت ایجاد‌شده توسط :c:func:`PyDictProxy_New` و برای ویژگی ``__dict__`` فقط‌خواندنی بسیاری از نوع‌های توکار. یک نمونه‌ی :c:type:`PyDictProxy_Type` نمای پویا و فقط‌خواندنی از یک دیکشنری زیرین ارائه می‌دهد: تغییرات دیکشنری زیرین در پراکسی منعکس می‌شوند، اما خود پراکسی از عملیات تغییر پشتیبانی نمی‌کند. این معادل :class:`types.MappingProxyType` در پایتون است."
 
 msgid "Empty an existing dictionary of all key-value pairs."
 msgstr "یک دیکشنری موجود را از تمام جفت‌های کلید-مقدار خالی می‌کند."
 
+msgid "Do nothing if the argument is not a :class:`dict` or a :class:`!dict` subclass."
+msgstr ""
+
 msgid "Determine if dictionary *p* contains *key*.  If an item in *p* matches *key*, return ``1``, otherwise return ``0``.  On error, return ``-1``. This is equivalent to the Python expression ``key in p``."
 msgstr "تعیین می‌کند که آیا دیکشنری *p* شامل *key* است یا خیر. اگر آیتمی در *p* با *key* مطابقت داشته باشد، ``1`` را برمی‌گرداند، در غیر این صورت ``0`` را برمی‌گرداند. در صورت خطا، ``-1`` را برمی‌گرداند. این معادل عبارت پایتونی ``key in p`` است."
+
+msgid "The first argument can be a :class:`dict` or a :class:`frozendict`."
+msgstr ""
 
 msgid "The operation is atomic on :term:`free threading <free-threaded build>` when *key* is :class:`str`, :class:`int`, :class:`float`, :class:`bool` or :class:`bytes`."
 msgstr "این عملیات در :term:`نخ‌بندی آزاد <free-threaded build>` زمانی که *key* :class:`str`، :class:`int`، :class:`float`، :class:`bool` یا :class:`bytes` باشد، اتمی است."
@@ -159,6 +173,9 @@ msgstr "یک :c:type:`PyListObject` شامل تمام مقادیر دیکشنر�
 msgid "Return the number of items in the dictionary.  This is equivalent to ``len(p)`` on a dictionary."
 msgstr "تعداد آیتم‌های موجود در دیکشنری را برمی‌گرداند. این معادل ``len(p)`` روی یک دیکشنری است."
 
+msgid "The argument can be a :class:`dict` or a :class:`frozendict`."
+msgstr ""
+
 msgid "Similar to :c:func:`PyDict_Size`, but without error checking."
 msgstr "مشابه :c:func:`PyDict_Size`، اما بدون بررسی خطا."
 
@@ -225,7 +242,9 @@ msgstr ""
 "    Py_DECREF(o);\n"
 "}"
 
-msgid "The function is not thread-safe in the :term:`free-threaded <free threading>` build without external synchronization.  You can use :c:macro:`Py_BEGIN_CRITICAL_SECTION` to lock the dictionary while iterating over it::"
+#, fuzzy
+#| msgid "The function is not thread-safe in the :term:`free-threaded <free threading>` build without external synchronization.  You can use :c:macro:`Py_BEGIN_CRITICAL_SECTION` to lock the dictionary while iterating over it::"
+msgid "The function is not thread-safe in the :term:`free-threaded <free threading>` build without external synchronization for a mutable :class:`dict`. You can use :c:macro:`Py_BEGIN_CRITICAL_SECTION` to lock the dictionary while iterating over it::"
 msgstr "این تابع در ساخت‌ِ :term:`نخ‌آزاد <free threading>` بدون همگام‌سازی بیرونی، نخ‌ایمن نیست. می‌توانید از :c:macro:`Py_BEGIN_CRITICAL_SECTION` برای قفل کردن دیکشنری در حین پیمایش آن استفاده کنید::"
 
 msgid ""
@@ -240,6 +259,9 @@ msgstr ""
 "    ...\n"
 "}\n"
 "Py_END_CRITICAL_SECTION();"
+
+msgid "The function is thread-safe on a :class:`frozendict`."
+msgstr ""
 
 msgid "On the free-threaded build, this function can be used safely inside a critical section. However, the references returned for *pkey* and *pvalue* are :term:`borrowed <borrowed reference>` and are only valid while the critical section is held. If you need to use these objects outside the critical section or when the critical section can be suspended, create a :term:`strong reference <strong reference>` (for example, using :c:func:`Py_NewRef`)."
 msgstr "در نسخه‌ی نخ‌آزاد، می‌توان از این تابع به‌طور ایمن درون بخش بحرانی استفاده کرد. با این حال، ارجاع‌های برگردانده‌شده برای *pkey* و *pvalue* :term:`امانتی <borrowed reference>` هستند و تنها تا زمانی که بخش بحرانی برقرار است معتبرند. اگر نیاز دارید از این اشیاء خارج از بخش بحرانی یا در زمانی که بخش بحرانی ممکن است معلق شود استفاده کنید، یک :term:`ارجاع قوی <strong reference>` ایجاد کنید (برای مثال، با استفاده از :c:func:`Py_NewRef`)."
@@ -312,7 +334,9 @@ msgstr "اگر کال‌بک استثنایی تنظیم کند، باید ``-1`
 msgid "There may already be a pending exception set on entry to the callback. In this case, the callback should return ``0`` with the same exception still set. This means the callback may not call any other API that can set an exception unless it saves and clears the exception state first, and restores it before returning."
 msgstr "ممکن است هنگام ورود به کال‌بک، از قبل استثنایی در انتظار تنظیم‌شده باشد. در این حالت، کال‌بک باید ``0`` را بازگرداند، در حالی که همان استثنا همچنان تنظیم‌شده است. این بدان معناست که کال‌بک نمی‌تواند هیچ API دیگری که می‌تواند استثنا تنظیم کند فراخوانی کند، مگر آنکه ابتدا وضعیت استثنا را ذخیره و پاک کند و پیش از بازگشت، آن را بازگردانی کند."
 
-msgid "Dictionary View Objects"
+#, fuzzy
+#| msgid "Dictionary View Objects"
+msgid "Dictionary view objects"
 msgstr "اشیاء نمای دیکشنری"
 
 msgid "Return true if *op* is a view of a set inside a dictionary. This is currently equivalent to :c:expr:`PyDictKeys_Check(op) || PyDictItems_Check(op)`. This function always succeeds."
@@ -336,7 +360,49 @@ msgstr "شیء نوع برای نمای آیتم‌های دیکشنری. در �
 msgid "Return true if *op* is an instance of a dictionary items view. This function always succeeds."
 msgstr "اگر *op* نمونه‌ای از نمای آیتم‌های دیکشنری باشد، مقدار true را برمی‌گرداند. این تابع همیشه با موفقیت اجرا می‌شود."
 
-msgid "Ordered Dictionaries"
+#, fuzzy
+#| msgid "Dictionary Objects"
+msgid "Frozen dictionary objects"
+msgstr "اشیاء دیکشنری"
+
+#, fuzzy
+#| msgid "This instance of :c:type:`PyTypeObject` represents the Python dictionary type.  This is the same object as :class:`dict` in the Python layer."
+msgid "This instance of :c:type:`PyTypeObject` represents the Python frozen dictionary type. This is the same object as :class:`frozendict` in the Python layer."
+msgstr "این نمونه از :c:type:`PyTypeObject` نوع دیکشنری پایتون را نمایندگی می‌کند. این همان شیء :class:`dict` در لایه پایتون است."
+
+#, fuzzy
+#| msgid "Return true if *od* is an ordered dictionary object or an instance of a subtype of the :class:`~collections.OrderedDict` type.  This function always succeeds."
+msgid "Return true if *p* is a :class:`dict` object, a :class:`frozendict` object, or an instance of a subtype of the :class:`!dict` or :class:`!frozendict` type. This function always succeeds."
+msgstr "اگر *od* یک شیء دیکشنری مرتب یا نمونه‌ای از یک زیرنوع از نوع :class:`~collections.OrderedDict` باشد، مقدار true را برمی‌گرداند. این تابع همیشه با موفقیت اجرا می‌شود."
+
+#, fuzzy
+#| msgid "Return true if *od* is an ordered dictionary object, but not an instance of a subtype of the :class:`~collections.OrderedDict` type. This function always succeeds."
+msgid "Return true if *p* is a :class:`dict` object or a :class:`frozendict` object, but not an instance of a subtype of the :class:`!dict` or :class:`!frozendict` type. This function always succeeds."
+msgstr "اگر *od* یک شیء دیکشنری مرتب باشد، اما نمونه‌ای از یک زیرنوع از نوع :class:`~collections.OrderedDict` نباشد، مقدار درست را برمی‌گرداند. این تابع همیشه موفق است."
+
+#, fuzzy
+#| msgid "Return true if *p* is a dict object or an instance of a subtype of the dict type.  This function always succeeds."
+msgid "Return true if *p* is a :class:`frozendict` object or an instance of a subtype of the :class:`!frozendict` type. This function always succeeds."
+msgstr "اگر *p* یک شیء dict یا نمونه‌ای از یک زیرنوع از نوع dict باشد، true را برمی‌گرداند. این تابع همیشه موفق می‌شود."
+
+#, fuzzy
+#| msgid "Return true if *p* is a dict object, but not an instance of a subtype of the dict type.  This function always succeeds."
+msgid "Return true if *p* is a :class:`frozendict` object, but not an instance of a subtype of the :class:`!frozendict` type. This function always succeeds."
+msgstr "در صورتی که *p* یک شیء dict باشد اما نمونه‌ای از یک زیرنوع از نوع dict نباشد، مقدار true را برمی‌گرداند. این تابع همیشه موفق می‌شود."
+
+#, fuzzy
+#| msgid "Return a new empty dictionary, or ``NULL`` on failure."
+msgid "Return a new :class:`frozendict` from an iterable, or ``NULL`` on failure with an exception set."
+msgstr "یک دیکشنری خالی جدید برمی‌گرداند، یا در صورت شکست ``NULL``."
+
+#, fuzzy
+#| msgid "Return a new empty dictionary, or ``NULL`` on failure."
+msgid "Create an empty dictionary if *iterable* is ``NULL``."
+msgstr "یک دیکشنری خالی جدید برمی‌گرداند، یا در صورت شکست ``NULL``."
+
+#, fuzzy
+#| msgid "Ordered Dictionaries"
+msgid "Ordered dictionaries"
 msgstr "دیکشنری‌های ترتیب‌دار"
 
 msgid "Python's C API provides interface for :class:`collections.OrderedDict` from C. Since Python 3.7, dictionaries are ordered by default, so there is usually little need for these functions; prefer ``PyDict*`` where possible."

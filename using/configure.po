@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-29 04:09+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 10:31+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -375,6 +375,23 @@ msgstr "``yes``: :program:`pkg-config` الزامی است"
 msgid "``no``: configure does not use :program:`pkg-config` even when present"
 msgstr "``no``: configure حتی وقتی :program:`pkg-config` موجود باشد، از آن استفاده نمی‌کند"
 
+msgid "Path to a `JSON <https://www.json.org/json-en.html>`_ configuration file containing custom error messages for missing :term:`standard library` modules."
+msgstr ""
+
+msgid "This option is intended for Python distributors who wish to provide distribution-specific guidance when users encounter standard library modules that are missing or packaged separately."
+msgstr ""
+
+msgid "The JSON file should map missing module names to custom error message strings. For example, if your distribution packages :mod:`tkinter` and :mod:`_tkinter` separately and excludes :mod:`!_gdbm` for legal reasons, the configuration could contain:"
+msgstr ""
+
+msgid ""
+"{\n"
+"    \"_gdbm\": \"The '_gdbm' module is not available in this distribution\",\n"
+"    \"tkinter\": \"Install the python-tk package to use tkinter\",\n"
+"    \"_tkinter\": \"Install the python-tk package to use tkinter\",\n"
+"}"
+msgstr ""
+
 msgid "Turn on internal Python performance statistics gathering."
 msgstr "فعال کردن گردآوری آمار کارایی داخلی پایتون."
 
@@ -530,6 +547,9 @@ msgstr "مسیر ابزار ``pkg-config``."
 
 msgid "``pkg-config`` options."
 msgstr "گزینه‌های ``pkg-config``."
+
+msgid "Build without ``epoll``, meaning that :py:func:`select.epoll` will not be present even if the system provides an :manpage:`epoll_create <epoll_create(2)>` function. This may be used on systems where :manpage:`!epoll_create` or :manpage:`epoll_create1 <epoll_create1(2)>` is available but incompatible with Linux semantics."
+msgstr ""
 
 msgid "C compiler options"
 msgstr "گزینه‌های کامپایلر C"
@@ -720,6 +740,30 @@ msgstr "فعال کردن گوتوهای محاسبه‌شده (computed goto) �
 msgid "Enable interpreters using tail calls in CPython. If enabled, enabling PGO (:option:`--enable-optimizations`) is highly recommended. This option specifically requires a C compiler with proper tail call support, and the `preserve_none <https://clang.llvm.org/docs/AttributeReference.html#preserve-none>`_ calling convention. For example, Clang 19 and newer supports this feature."
 msgstr "فعال کردن مفسرهایی که در سی‌پایتون از فراخوانی‌های دمی استفاده می‌کنند. در صورت فعال بودن، فعال‌سازی PGO (:option:`--enable-optimizations`) به‌شدت توصیه می‌شود. این گزینه به‌طور خاص به کامپایلر C با پشتیبانی مناسب از فراخوانی دمی و قرارداد فراخوانی `preserve_none <https://clang.llvm.org/docs/AttributeReference.html#preserve-none>`_ نیاز دارد. برای مثال، Clang 19 و نسخه‌های جدیدتر از این قابلیت پشتیبانی می‌کنند."
 
+msgid "Disable frame pointers, which are enabled by default (see :pep:`831`)."
+msgstr ""
+
+msgid "By default, the build appends flags to generate frame or backchain pointers to ``BASECFLAGS``:"
+msgstr ""
+
+msgid "``-fno-omit-frame-pointer`` and/or ``-mno-omit-leaf-frame-pointer`` are added when the compiler supports them."
+msgstr ""
+
+msgid "``-marm`` and/or ``-mno-thumb`` is added on 32-bit ARM when supported,"
+msgstr ""
+
+msgid "on s390x platforms, when supported, ``-mbackchain`` is added *instead*. of the above frame pointer flags."
+msgstr ""
+
+msgid "on ppc64le platforms, no compiler flags is needed since the power ABI requires that compilers maintain a back chain by default."
+msgstr ""
+
+msgid "Frame pointers enable profilers, debuggers, and system tracing tools (``perf``, ``eBPF``, ``dtrace``, ``gdb``) to walk the C call stack without DWARF metadata. The flags propagate to third-party C extensions through :mod:`sysconfig`. On compilers that do not understand them, the build silently skips them."
+msgstr ""
+
+msgid "Downstream packagers and authors of native libraries built with custom build systems should set the same flags so the unwind chain stays unbroken across all native frames."
+msgstr ""
+
 msgid "Disable the fast :ref:`mimalloc <mimalloc>` allocator (enabled by default)."
 msgstr "غیرفعال کردن تخصیص‌دهنده‌ی سریع :ref:`mimalloc <mimalloc>` (به‌طور پیش‌فرض فعال است)."
 
@@ -731,6 +775,24 @@ msgstr "همچنین متغیر محیطی :envvar:`PYTHONMALLOC` را ببین�
 
 msgid "Disable the specialized Python memory allocator :ref:`pymalloc <pymalloc>` (enabled by default)."
 msgstr "غیرفعال کردن تخصیص‌دهنده حافظه‌ی تخصصی پایتون :ref:`pymalloc <pymalloc>` (که به‌طور پیش‌فرض فعال است)."
+
+msgid "Enable huge page support for :ref:`pymalloc <pymalloc>` arenas (disabled by default). When enabled, the arena size on 64-bit platforms is increased to 2 MiB and arena allocation uses ``MAP_HUGETLB`` (Linux) or ``MEM_LARGE_PAGES`` (Windows) with automatic fallback to regular pages."
+msgstr ""
+
+msgid "Even when compiled with this option, huge pages are **not** used at runtime unless the :envvar:`PYTHON_PYMALLOC_HUGEPAGES` environment variable is set to ``1``. This opt-in is required because huge pages"
+msgstr ""
+
+msgid "carry risks on Linux: if the huge-page pool is exhausted, page faults (including copy-on-write faults after :func:`os.fork`) deliver ``SIGBUS`` and kill the process."
+msgstr ""
+
+msgid "need a special privilege on Windows. See the `Windows documentation for large pages <https://learn.microsoft.com/windows/win32/memory/large-page-support>`_ for details. Python will fail on startup if the required privilege `SeLockMemoryPrivilege <https://learn.microsoft.com/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/lock-pages-in-memory>`_ is not held by the user."
+msgstr ""
+
+msgid "The configure script checks that the platform supports ``MAP_HUGETLB`` and emits a warning if it is not available."
+msgstr ""
+
+msgid "On Windows, use the ``--pymalloc-hugepages`` flag with ``build.bat`` or set the ``UsePymallocHugepages`` MSBuild property."
+msgstr ""
 
 msgid "Disable static documentation strings to reduce the memory footprint (enabled by default). Documentation strings defined in Python are not affected."
 msgstr "غیرفعال‌سازی رشته‌های مستند ایستا برای کاهش مصرف حافظه (به‌صورت پیش‌فرض فعال است). رشته‌های مستند تعریف‌شده در پایتون تحت تأثیر قرار نمی‌گیرند."
@@ -878,6 +940,15 @@ msgstr "فعال‌سازی ساخت کتابخانه‌ی اشتراکی پای
 
 msgid "Do not build ``libpythonMAJOR.MINOR.a`` and do not install ``python.o`` (built and enabled by default)."
 msgstr "``libpythonMAJOR.MINOR.a`` ساخته نمی‌شود و ``python.o`` نصب نمی‌شود (به‌طور پیش‌فرض ساخته و فعال می‌شوند)."
+
+msgid "Do not link the Python interpreter binary (``python3``) against the shared Python library; instead, statically link the interpreter against ``libpython`` as if ``--enable-shared`` had not been used, but continue to build the shared ``libpython`` (for use by other programs)."
+msgstr ""
+
+msgid "This option does nothing if ``--enable-shared`` is not used."
+msgstr ""
+
+msgid "The default (when ``-enable-shared`` is used) is to link the Python interpreter against the built shared library."
+msgstr ""
 
 msgid "Libraries options"
 msgstr "گزینه‌های کتابخانه‌ها"
@@ -1071,7 +1142,9 @@ msgstr "کتابخانه استاندارد پایتون شامل رشته‌ه�
 msgid "iOS Options"
 msgstr "گزینه‌های iOS"
 
-msgid "See :source:`iOS/README.rst`."
+#, fuzzy
+#| msgid "See :source:`iOS/README.rst`."
+msgid "See :source:`Platforms/Apple/iOS/README.md`."
 msgstr "به :source:`iOS/README.rst` مراجعه کنید."
 
 msgid "Create a Python.framework. Unlike macOS, the *INSTALLDIR* argument specifying the installation path is mandatory."
@@ -1441,6 +1514,9 @@ msgstr "مقدار متغیر :envvar:`LDFLAGS_NODIST` که به اسکریپت 
 msgid "Linker flags, e.g. :samp:`-L{lib_dir}` if you have libraries in a nonstandard directory *lib_dir*."
 msgstr "پرچم‌های پیونددهنده، برای مثال :samp:`-L{lib_dir}` اگر کتابخانه‌ها را در پوشه‌ی غیراستاندارد *lib_dir* دارید."
 
+msgid "Please consider using ``EXE_LDFLAGS`` if the supplied linker flags are executable specific, e.g. GCC's ``-pie`` flag."
+msgstr ""
+
 msgid "Linker flags to pass libraries to the linker when linking the Python executable."
 msgstr "پرچم‌های پیونددهنده برای فرستادن کتابخانه‌ها به پیونددهنده هنگام پیوند دادن پرونده اجرایی پایتون."
 
@@ -1467,6 +1543,24 @@ msgstr "پیش‌فرض: ``$(CONFIGURE_LDFLAGS_NODIST) $(LDFLAGS_NODIST)``."
 
 msgid "Linker flags used for building the interpreter object files."
 msgstr "پرچم‌های پیونددهنده که برای ساخت پرونده‌های شیء مفسر استفاده می‌شوند."
+
+msgid "Linker flags used for building executable targets such as the interpreter. If supplied, :envvar:`PY_CORE_EXE_LDFLAGS` will be used in replacement of :envvar:`PY_CORE_LDFLAGS`."
+msgstr ""
+
+#, fuzzy
+#| msgid "Value of :envvar:`LDFLAGS` variable passed to the ``./configure`` script."
+msgid "Value of :envvar:`EXE_LDFLAGS` variable passed to the ``./configure`` script."
+msgstr "مقدار متغیر :envvar:`LDFLAGS` که به اسکریپت ``./configure`` ارسال می‌شود."
+
+#, fuzzy
+#| msgid "Linker flags used for building the interpreter object files."
+msgid "Linker flags used for building the interpreter and executable targets."
+msgstr "پرچم‌های پیونددهنده که برای ساخت پرونده‌های شیء مفسر استفاده می‌شوند."
+
+#, fuzzy
+#| msgid "Default: ``@BLDSHARED@ $(PY_CORE_LDFLAGS)``."
+msgid "Default: ``$(PY_CORE_LDFLAGS)``"
+msgstr "پیش‌فرض: ``@BLDSHARED@ $(PY_CORE_LDFLAGS)``."
 
 msgid "Footnotes"
 msgstr "پانوشت‌ها"

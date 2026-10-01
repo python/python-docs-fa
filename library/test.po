@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 13:15+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -755,12 +755,6 @@ msgstr "هنگامی که یک **کلاس** آراسته می‌شود، کل ک
 msgid "The subprocess inherits the enabled resources (``-u``), memory limit (``-M``) and verbosity (``-v``) of the parent test run, so that :func:`~test.support.requires_resource`, :func:`~test.support.requires`, :func:`~test.support.bigmemtest` and the like behave consistently in both processes."
 msgstr "زیرفرایند، منابع فعال‌شده (``-u``)، محدودیت حافظه (``-M``) و سطح جزئیات (``-v``) را از اجرای آزمون والد به ارث می‌برد، به‌گونه‌ای که :func:`~test.support.requires_resource`، :func:`~test.support.requires`، :func:`~test.support.bigmemtest` و موارد مشابه در هر دو فرایند رفتار یکسانی داشته باشند."
 
-msgid "*options* is a sequence of interpreter command line options to run the subprocess with, and *env* is a mapping of environment variables to set in it, on top of the inherited environment. A value of ``None`` in *env* unsets the variable. Note that :option:`-E` and :option:`-I` make the subprocess ignore the ``PYTHON*`` environment variables, including :envvar:`PYTHONPATH`."
-msgstr "*options* دنباله‌ای از گزینه‌های خط فرمان مفسر برای اجرای زیرفرایند است، و *env* نگاشتی از متغیرهای محیطی برای تنظیم در آن، بر روی محیط ارث‌برده است. مقدار ``None`` در *env* متغیر را حذف می‌کند. توجه داشته باشید که :option:`-E` و :option:`-I` باعث می‌شوند زیرفرایند متغیرهای محیطی ``PYTHON*`` را نادیده بگیرد، از جمله :envvar:`PYTHONPATH`."
-
-msgid "*timeout* is the number of seconds to wait for the subprocess; the test is reported as an error if it does not complete in time. By default there is no timeout, and a hung test is left to the timeout of the test runner."
-msgstr "*timeout* تعداد ثانیه‌های انتظار برای زیرفرایند است؛ اگر در وقت تمام نشود، آزمون به عنوان خطا گزارش می‌شود. به طور پیش‌فرض مهلت زمانی وجود ندارد، و یک آزمون معلق به مهلت زمانیِ اجرای آزمون واگذار می‌شود."
-
 msgid "The test is skipped on platforms without subprocess support."
 msgstr "این آزمون در سکوهای بدون پشتیبانی از subprocess نادیده گرفته می‌شود."
 
@@ -1154,6 +1148,22 @@ msgstr "یک مدیر زمینه که به‌طور موقت umask فرایند 
 msgid "Call :func:`os.unlink` on *filename*.  As with :func:`rmdir`, on Windows platforms, this is wrapped with a wait loop that checks for the existence of the file."
 msgstr ":func:`os.unlink` را روی *filename* فراخوانی کنید. مانند :func:`rmdir`، در پلتفرم‌های ویندوزی، این فراخوانی با یک حلقه انتظار که وجود پرونده را بررسی می‌کند، دربرگرفته شده است."
 
+msgid "A decorator for running tests with the :envvar:`SOURCE_DATE_EPOCH` environment variable set to *epoch*."
+msgstr ""
+
+msgid "A decorator for running tests with the :envvar:`SOURCE_DATE_EPOCH` environment variable unset."
+msgstr ""
+
+msgid "Metaclass wrapping all test methods of the class with :func:`with_source_date_epoch` if the *source_date_epoch* keyword class argument is true, or with :func:`without_source_date_epoch` otherwise. For example::"
+msgstr ""
+
+msgid ""
+"class TestsWithSourceEpoch(Tests,\n"
+"                           metaclass=SourceDateEpochTestMeta,\n"
+"                           source_date_epoch=True):\n"
+"    pass"
+msgstr ""
+
 msgid ":mod:`!test.support.import_helper` --- Utilities for import tests"
 msgstr ":mod:`!test.support.import_helper` --- ابزارهای کمکی برای آزمون‌های ایمپورت"
 
@@ -1327,6 +1337,12 @@ msgstr "آرگومان‌های اختیاری جدید *filters* و *quiet*."
 
 msgid "Class used to record warnings for unit tests. See documentation of :func:`check_warnings` above for more details."
 msgstr "کلاسی که برای ثبت هشدارها در آزمون واحد‌ها استفاده می‌شود. برای جزئیات بیشتر، مستندات :func:`check_warnings` در بالا را ببینید."
+
+#~ msgid "*options* is a sequence of interpreter command line options to run the subprocess with, and *env* is a mapping of environment variables to set in it, on top of the inherited environment. A value of ``None`` in *env* unsets the variable. Note that :option:`-E` and :option:`-I` make the subprocess ignore the ``PYTHON*`` environment variables, including :envvar:`PYTHONPATH`."
+#~ msgstr "*options* دنباله‌ای از گزینه‌های خط فرمان مفسر برای اجرای زیرفرایند است، و *env* نگاشتی از متغیرهای محیطی برای تنظیم در آن، بر روی محیط ارث‌برده است. مقدار ``None`` در *env* متغیر را حذف می‌کند. توجه داشته باشید که :option:`-E` و :option:`-I` باعث می‌شوند زیرفرایند متغیرهای محیطی ``PYTHON*`` را نادیده بگیرد، از جمله :envvar:`PYTHONPATH`."
+
+#~ msgid "*timeout* is the number of seconds to wait for the subprocess; the test is reported as an error if it does not complete in time. By default there is no timeout, and a hung test is left to the timeout of the test runner."
+#~ msgstr "*timeout* تعداد ثانیه‌های انتظار برای زیرفرایند است؛ اگر در وقت تمام نشود، آزمون به عنوان خطا گزارش می‌شود. به طور پیش‌فرض مهلت زمانی وجود ندارد، و یک آزمون معلق به مهلت زمانیِ اجرای آزمون واگذار می‌شود."
 
 #~ msgid "Its default value is 5 seconds."
 #~ msgstr "مقدار پیش‌فرض آن ۵ ثانیه است."

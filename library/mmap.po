@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 09:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -50,7 +50,9 @@ msgstr "ثابت :const:`ACCESS_DEFAULT` اضافه شد."
 msgid "To map anonymous memory, -1 should be passed as the fileno along with the length."
 msgstr "برای نگاشت حافظه‌ی ناشناس، باید -1 به‌عنوان fileno به همراه طول ارسال شود."
 
-msgid "**(Windows version)** Maps *length* bytes from the file specified by the file handle *fileno*, and creates a mmap object.  If *length* is larger than the current size of the file, the file is extended to contain *length* bytes.  If *length* is ``0``, the maximum length of the map is the current size of the file, except that if the file is empty Windows raises an exception (you cannot create an empty mapping on Windows)."
+#, fuzzy
+#| msgid "**(Windows version)** Maps *length* bytes from the file specified by the file handle *fileno*, and creates a mmap object.  If *length* is larger than the current size of the file, the file is extended to contain *length* bytes.  If *length* is ``0``, the maximum length of the map is the current size of the file, except that if the file is empty Windows raises an exception (you cannot create an empty mapping on Windows)."
+msgid "**(Windows version)** Maps *length* bytes from the file specified by the file descriptor *fileno*, and creates a mmap object.  If *length* is larger than the current size of the file, the file is extended to contain *length* bytes.  If *length* is ``0``, the maximum length of the map is the current size of the file, except that if the file is empty Windows raises an exception (you cannot create an empty mapping on Windows)."
 msgstr "**(نسخه‌ی ویندوز)** *length* بایت از پرونده‌ای که با دسته پرونده *fileno* مشخص شده است را نگاشت می‌کند و یک شیء mmap ایجاد می‌کند. اگر *length* بزرگ‌تر از اندازه‌ی فعلی پرونده باشد، پرونده گسترش داده می‌شود تا شامل *length* بایت شود. اگر *length* برابر ``0`` باشد، حداکثر طول نگاشت برابر اندازه‌ی فعلی پرونده است، مگر اینکه پرونده خالی باشد؛ در این صورت ویندوز یک استثنا پرتاب می‌کند (شما نمی‌توانید یک نگاشت خالی در ویندوز ایجاد کنید)."
 
 msgid "*tagname*, if specified and not ``None``, is a string giving a tag name for the mapping.  Windows allows you to have many different mappings against the same file.  If you specify the name of an existing tag, that tag is opened, otherwise a new tag of this name is created.  If this parameter is omitted or ``None``, the mapping is created without a name.  Avoiding the use of the *tagname* parameter will assist in keeping your code portable between Unix and Windows."
@@ -58,6 +60,14 @@ msgstr "*tagname*، اگر مشخص شده باشد و ``None`` نباشد، ر�
 
 msgid "*offset* may be specified as a non-negative integer offset. mmap references will be relative to the offset from the beginning of the file. *offset* defaults to 0.  *offset* must be a multiple of the :const:`ALLOCATIONGRANULARITY`."
 msgstr "*offset* می‌تواند به‌عنوان یک آفست از نوع عدد صحیح غیرمنفی مشخص شود. ارجاع‌های mmap نسبت به آفست از ابتدای پرونده خواهند بود. *offset* به‌طور پیش‌فرض ۰ است. *offset* باید مضربی از :const:`ALLOCATIONGRANULARITY` باشد."
+
+#, fuzzy
+#| msgid "If *trackfd* is ``False``, the file descriptor specified by *fileno* will not be duplicated, and the resulting :class:`!mmap` object will not be associated with the map's underlying file. This means that the :meth:`~mmap.mmap.size` and :meth:`~mmap.mmap.resize` methods will fail. This mode is useful to limit the number of open file descriptors."
+msgid "If *trackfd* is ``False``, the file handle corresponding to *fileno* will not be duplicated, and the resulting :class:`!mmap` object will not be associated with the map's underlying file. This means that the :meth:`~mmap.mmap.size` and :meth:`~mmap.mmap.resize` methods will fail. This mode is useful to limit the number of open file handles. The original file can be renamed (but not deleted) after closing *fileno*."
+msgstr "اگر *trackfd* برابر ``False`` باشد، توصیف‌گر پرونده مشخص‌شده توسط *fileno* تکثیر نخواهد شد و شیء :class:`!mmap` حاصل با پرونده زیربنایی نگاشت مرتبط نخواهد بود. این بدان معناست که متدهای :meth:`~mmap.mmap.size` و :meth:`~mmap.mmap.resize` ناموفق خواهند بود. این حالت برای محدود کردن تعداد توصیف‌گرهای پرونده باز مفید است."
+
+msgid "The *trackfd* parameter was added."
+msgstr "پارامتر *trackfd* افزوده شد."
 
 msgid "Raises an :ref:`auditing event <auditing>` ``mmap.__new__`` with arguments ``fileno``, ``length``, ``access``, ``offset``."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``mmap.__new__`` را با آرگومان‌های ``fileno``، ``length``، ``access``، ``offset`` پرتاب می‌کند."
@@ -82,9 +92,6 @@ msgstr "اگر *trackfd* برابر ``False`` باشد، توصیف‌گر پر�
 
 msgid "To ensure validity of the created memory mapping the file specified by the descriptor *fileno* is internally automatically synchronized with the physical backing store on macOS."
 msgstr "برای اطمینان از اعتبار نگاشت حافظه‌ی ایجادشده، پرونده مشخص‌شده با توصیف‌گر *fileno*، به‌صورت داخلی و به‌طور خودکار با ذخیره‌گاه پشتیبان فیزیکی در macOS همگام‌سازی می‌شود."
-
-msgid "The *trackfd* parameter was added."
-msgstr "پارامتر *trackfd* افزوده شد."
 
 msgid "This example shows a simple way of using :class:`~mmap.mmap`::"
 msgstr "این مثال روش ساده‌ای برای استفاده از :class:`~mmap.mmap` نشان می‌دهد::"
@@ -201,11 +208,23 @@ msgstr "اکنون :term:`bytes-like object` قابل نوشتن پذیرفته 
 msgid "Flushes changes made to the in-memory copy of a file back to disk. Without use of this call there is no guarantee that changes are written back before the object is destroyed.  If *offset* and *size* are specified, only changes to the given range of bytes will be flushed to disk; otherwise, the whole extent of the mapping is flushed.  *offset* must be a multiple of the :const:`PAGESIZE` or :const:`ALLOCATIONGRANULARITY`."
 msgstr "تغییرات اعمال‌شده بر نسخه‌ی درون‌حافظه‌ای یک پرونده را به دیسک می‌نویسد. بدون استفاده از این فراخوانی، هیچ تضمینی وجود ندارد که تغییرات پیش از از بین رفتن شیء به دیسک نوشته شوند. اگر *offset* و *size* مشخص شده باشند، فقط تغییرات در محدوده‌ی مشخص‌شده از بایت‌ها به دیسک نوشته می‌شوند؛ در غیر این صورت، کل محدوده‌ی نگاشت به دیسک نوشته می‌شود. *offset* باید مضربی از :const:`PAGESIZE` یا :const:`ALLOCATIONGRANULARITY` باشد."
 
+msgid "The *flags* parameter specifies the synchronization behavior. *flags* must be one of the :ref:`MS_* constants <ms-constants>` available on the system."
+msgstr ""
+
+msgid "On Windows, the *flags* parameter is ignored."
+msgstr ""
+
 msgid "``None`` is returned to indicate success.  An exception is raised when the call failed."
 msgstr "``None`` برای نشان دادن موفقیت برگردانده می‌شود. در صورت شکست فراخوانی، یک استثنا پرتاب می‌شود."
 
 msgid "Previously, a nonzero value was returned on success; zero was returned on error under Windows.  A zero value was returned on success; an exception was raised on error under Unix."
 msgstr "پیش‌تر، در صورت موفقیت یک مقدار غیرصفر بازگردانده می‌شد؛ در ویندوز، در صورت خطا صفر بازگردانده می‌شد. در یونیکس، در صورت موفقیت یک مقدار صفر بازگردانده می‌شد؛ در صورت خطا یک استثنا پرتاب می‌شد."
+
+msgid "Allow specifying *offset* without *size*. Previously, both *offset* and *size* parameters were required together. Now *offset* can be specified alone, and the flush operation will extend from *offset* to the end of the mmap."
+msgstr ""
+
+msgid "Added *flags* parameter to control synchronization behavior."
+msgstr ""
 
 msgid "Send advice *option* to the kernel about the memory region beginning at *start* and extending *length* bytes.  *option* must be one of the :ref:`MADV_* constants <madvise-constants>` available on the system.  If *start* and *length* are omitted, the entire mapping is spanned.  On some systems (including Linux), *start* must be a multiple of the :const:`PAGESIZE`."
 msgstr "توصیه‌ی *option* را درباره‌ی ناحیه‌ی حافظه‌ای که از *start* شروع می‌شود و به طول *length* بایت ادامه دارد، به هسته ارسال کنید. *option* باید یکی از :ref:`ثابت‌های MADV_* <madvise-constants>` موجود در سیستم باشد. اگر *start* و *length* حذف شوند، کل نگاشت پوشش داده می‌شود. در برخی سیستم‌ها (از جمله لینوکس)، *start* باید مضربی از :const:`PAGESIZE` باشد."
@@ -237,6 +256,11 @@ msgstr "تغییر اندازه‌ی نگاشتی که با *access* برابر 
 msgid "**On Windows**: Resizing the map will raise an :exc:`OSError` if there are other maps against the same named file. Resizing an anonymous map (ie against the pagefile) will silently create a new map with the original data copied over up to the length of the new size."
 msgstr "**در ویندوز**: تغییر اندازه‌ی نگاشت (map) در صورتی که نگاشت‌های دیگری بر روی همان پرونده نام‌دار وجود داشته باشند، باعث پرتاب یک :exc:`OSError` می‌شود. تغییر اندازه‌ی یک نگاشت ناشناس (یعنی بر روی پرونده صفحه‌بندی (pagefile)) بدون هیچ پیامی یک نگاشت جدید با داده‌های اصلی کپی‌شده تا طول اندازه‌ی جدید ایجاد می‌کند."
 
+#, fuzzy
+#| msgid "Availability: Systems with the ``madvise()`` system call."
+msgid "Availability: Windows and systems with the ``mremap()`` system call."
+msgstr "دسترس‌پذیری: سیستم‌های دارای فراخوان سیستمی ``madvise()``."
+
 msgid "Correctly fails if attempting to resize when another map is held Allows resize against an anonymous map on Windows"
 msgstr "در صورت تلاش برای تغییر اندازه زمانی که نگاشت دیگری در اختیار گرفته شده است، به‌درستی شکست می‌خورد. امکان تغییر اندازه‌ی نگاشت ناشناس در ویندوز را فراهم می‌کند"
 
@@ -252,8 +276,16 @@ msgstr "موقعیت مطلق جدید به‌جای ``None`` برگردانده
 msgid "Return whether the file supports seeking, and the return value is always ``True``."
 msgstr "برمی‌گرداند که آیا پرونده از مکان‌یابی (seeking) پشتیبانی می‌کند، و مقدار بازگشتی همیشه ``True`` است."
 
-msgid "Return the length of the file, which can be larger than the size of the memory-mapped area."
+msgid "Annotate the memory mapping with the given *name* for easier identification in ``/proc/<pid>/maps`` if the kernel supports the feature and :option:`-X dev <-X>` is passed to Python or if Python is built in :ref:`debug mode <debug-build>`. The length of *name* must not exceed 67 bytes including the ``'\\0'`` terminator."
+msgstr ""
+
+#, fuzzy
+#| msgid "Return the length of the file, which can be larger than the size of the memory-mapped area."
+msgid "Return the length of the file, which can be larger than the size of the memory-mapped area. For an anonymous mapping, return its size."
 msgstr "طول پرونده را برمی‌گرداند، که می‌تواند بزرگ‌تر از اندازه‌ی ناحیه‌ی نگاشت‌شده به حافظه باشد."
+
+msgid "Anonymous mappings are now supported on Unix."
+msgstr ""
 
 msgid "Returns the current position of the file pointer."
 msgstr "موقعیت فعلی اشاره‌گر پرونده را برمی‌گرداند."
@@ -293,3 +325,20 @@ msgstr "ثابت‌های :data:`MAP_ALIGNED_SUPER` و :data:`MAP_CONCEAL` اف�
 
 msgid "Added :data:`MAP_32BIT`, :data:`MAP_HASSEMAPHORE`, :data:`MAP_JIT`, :data:`MAP_NOCACHE`, :data:`MAP_NOEXTEND`, :data:`MAP_NORESERVE`, :data:`MAP_RESILIENT_CODESIGN`, :data:`MAP_RESILIENT_MEDIA`, :data:`MAP_TPRO`, :data:`MAP_TRANSLATED_ALLOW_EXECUTE`, and :data:`MAP_UNIX03` constants."
 msgstr "ثابت‌های :data:`MAP_32BIT`، :data:`MAP_HASSEMAPHORE`، :data:`MAP_JIT`، :data:`MAP_NOCACHE`، :data:`MAP_NOEXTEND`، :data:`MAP_NORESERVE`، :data:`MAP_RESILIENT_CODESIGN`، :data:`MAP_RESILIENT_MEDIA`، :data:`MAP_TPRO`، :data:`MAP_TRANSLATED_ALLOW_EXECUTE` و :data:`MAP_UNIX03` افزوده شدند."
+
+#, fuzzy
+#| msgid "MAP_* Constants"
+msgid "MS_* Constants"
+msgstr "ثابت‌های MAP_*"
+
+msgid "These flags control the synchronization behavior for :meth:`mmap.flush`:"
+msgstr ""
+
+msgid ":data:`MS_SYNC` - Synchronous flush: writes are scheduled and the call blocks until they are physically written to storage."
+msgstr ""
+
+msgid ":data:`MS_ASYNC` - Asynchronous flush: writes are scheduled but the call returns immediately without waiting for completion."
+msgstr ""
+
+msgid ":data:`MS_INVALIDATE` - Invalidate cached data: invalidates other mappings of the same file so they can see the changes."
+msgstr ""

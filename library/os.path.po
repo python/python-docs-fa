@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-21 13:24+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -106,6 +106,9 @@ msgstr ""
 "\n"
 ">>> os.path.commonpath(['/usr/lib', '/usr/local/lib'])\n"
 "'/usr'"
+
+msgid "Deprecated in favor of :func:`os.path.commonpath` for path prefixes. The :func:`os.path.commonprefix` function is being deprecated due to having a misleading name and module. The function is not safe to use for path prefixes despite being included in a module about path manipulation, meaning it is easy to accidentally introduce path traversal vulnerabilities into Python programs by using this function."
+msgstr ""
 
 msgid "Return the directory name of pathname *path*.  This is the first element of the pair returned by passing *path* to the function :func:`split`."
 msgstr "نام پوشه‌ی مسیر *path* را برمی‌گرداند. این نخستین عنصر از جفتی است که با فرستادن *path* به تابع :func:`split` برگردانده می‌شود."
@@ -258,7 +261,9 @@ msgstr "برخی از خطاهایی که به این روش مدیریت می�
 msgid "This behavior can be modified by keyword arguments:"
 msgstr "این رفتار را می‌توان با آرگومان‌های کلیدواژه‌ای تغییر داد:"
 
-msgid "If *strict* is ``True``, the first error encountered when evaluating the path is re-raised. In particular, :exc:`FileNotFoundError` is raised if *path* does not exist, or another :exc:`OSError` if it is otherwise inaccessible."
+#, fuzzy
+#| msgid "If *strict* is ``True``, the first error encountered when evaluating the path is re-raised. In particular, :exc:`FileNotFoundError` is raised if *path* does not exist, or another :exc:`OSError` if it is otherwise inaccessible."
+msgid "If *strict* is ``True``, the first error encountered when evaluating the path is re-raised. In particular, :exc:`FileNotFoundError` is raised if *path* does not exist, or another :exc:`OSError` if it is otherwise inaccessible. If *strict* is :data:`ALL_BUT_LAST`, the last component of the path is allowed to be missing, but all other errors are raised."
 msgstr "اگر *strict* برابر ``True`` باشد، اولین خطای مواجه‌شده هنگام ارزیابی مسیر دوباره پرتاب می‌شود. به‌ویژه، اگر *path* وجود نداشته باشد، :exc:`FileNotFoundError` پرتاب می‌شود، یا اگر به دلایل دیگر در دسترس نباشد، یک :exc:`OSError` دیگر پرتاب می‌شود."
 
 msgid "If *strict* is :py:data:`os.path.ALLOW_MISSING`, errors other than :exc:`FileNotFoundError` are re-raised (as with ``strict=True``). Thus, the returned path will not contain any symbolic links, but the named file and some of its parent directories may be missing."
@@ -276,7 +281,9 @@ msgstr "پیوندهای نمادین و نقاط اتصال (junctions) اکن�
 msgid "The *strict* parameter was added."
 msgstr "پارامتر *strict* افزوده شد."
 
-msgid "The :py:data:`~os.path.ALLOW_MISSING` value for the *strict* parameter was added."
+#, fuzzy
+#| msgid "The :py:data:`~os.path.ALLOW_MISSING` value for the *strict* parameter was added."
+msgid "The :data:`ALL_BUT_LAST` and :data:`ALLOW_MISSING` values for the *strict* parameter was added."
 msgstr "مقدار :py:data:`~os.path.ALLOW_MISSING` برای پارامتر *strict* افزوده شد."
 
 msgid "Special value used for the *strict* argument in :func:`realpath`."

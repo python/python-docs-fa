@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-08-28 11:34+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -56,8 +56,14 @@ msgstr ":term:`bytes-like object` *s* را با استفاده از Base64 کد�
 msgid "Optional *altchars* must be a :term:`bytes-like object` of length 2 which specifies an alternative alphabet for the ``+`` and ``/`` characters. This allows an application to e.g. generate URL or filesystem safe Base64 strings.  The default is ``None``, for which the standard Base64 alphabet is used."
 msgstr "*altchars* اختیاری باید یک :term:`شیء شبه‌بایت <bytes-like object>` به طول ۲ باشد که الفبای جایگزین را برای نویسه‌های ``+`` و ``/`` مشخص می‌کند. این به یک برنامه اجازه می‌دهد که برای مثال، رشته‌های Base64 امن برای URL یا سیستم پرونده تولید کند. پیش‌فرض ``None`` است، که در این صورت از الفبای استاندارد Base64 استفاده می‌شود."
 
-msgid "May assert or raise a :exc:`ValueError` if the length of *altchars* is not 2.  Raises a :exc:`TypeError` if *altchars* is not a :term:`bytes-like object`."
-msgstr "ممکن است در صورتی که طول *altchars* ۲ نباشد، assert کند یا یک :exc:`ValueError` را پرتاب کند. اگر *altchars* یک :term:`bytes-like object` نباشد، یک :exc:`TypeError` را پرتاب می‌کند."
+msgid "If *padded* is true (default), pad the encoded data with the '=' character to a size multiple of 4. If *padded* is false, do not add the pad characters."
+msgstr ""
+
+msgid "If *wrapcol* is non-zero, insert a newline (``b'\\n'``) character after at most every *wrapcol* characters. If *wrapcol* is zero (default), do not insert any newlines."
+msgstr ""
+
+msgid "Added the *padded* and *wrapcol* parameters."
+msgstr ""
 
 msgid "Decode the Base64 encoded :term:`bytes-like object` or ASCII string *s* and return the decoded :class:`bytes`."
 msgstr ":term:`bytes-like object` یا رشته‌ی ASCII کدگذاری‌شده با Base64 *s* را کدگشایی می‌کند و :class:`bytes` کدگشایی‌شده را برمی‌گرداند."
@@ -65,17 +71,34 @@ msgstr ":term:`bytes-like object` یا رشته‌ی ASCII کدگذاری‌شد
 msgid "Optional *altchars* must be a :term:`bytes-like object` or ASCII string of length 2 which specifies the alternative alphabet used instead of the ``+`` and ``/`` characters."
 msgstr "*altchars* اختیاری باید یک :term:`bytes-like object` یا رشته‌ی ASCII به طول ۲ باشد که الفبای جایگزینی را که به‌جای نویسه‌های ``+`` و ``/`` استفاده می‌شود، مشخص می‌کند."
 
+msgid "If *padded* is true, the last group of 4 base 64 alphabet characters must be padded with the '=' character. If *padded* is false, padding is neither required nor recognized: the '=' character is not treated as padding but as a non-alphabet character, which means it is silently discarded when *validate* is false, or causes an :exc:`~binascii.Error` when *validate* is true unless b'=' is included in *ignorechars*."
+msgstr ""
+
 msgid "A :exc:`binascii.Error` exception is raised if *s* is incorrectly padded."
 msgstr "اگر *s* به‌درستی پدینگ (padding) نشده باشد، استثنای :exc:`binascii.Error` پرتاب می‌شود."
 
-msgid "If *validate* is ``False`` (the default), characters that are neither in the normal base-64 alphabet nor the alternative alphabet are discarded prior to the padding check.  If *validate* is ``True``, these non-alphabet characters in the input result in a :exc:`binascii.Error`."
+msgid "If *ignorechars* is specified, it should be a :term:`bytes-like object` containing characters to ignore from the input when *validate* is true. If *ignorechars* contains the pad character ``'='``,  the pad characters presented before the end of the encoded data and the excess pad characters will be ignored. The default value of *validate* is ``True`` if *ignorechars* is specified, ``False`` otherwise."
+msgstr ""
+
+#, fuzzy
+#| msgid "If *validate* is ``False`` (the default), characters that are neither in the normal base-64 alphabet nor the alternative alphabet are discarded prior to the padding check.  If *validate* is ``True``, these non-alphabet characters in the input result in a :exc:`binascii.Error`."
+msgid "If *validate* is false, characters that are neither in the normal base-64 alphabet nor (if *ignorechars* is not specified) the alternative alphabet are discarded prior to the padding check, but the ``+`` and ``/`` characters keep their meaning if they are not in *altchars* (they will be discarded in future Python versions)."
 msgstr "اگر *validate* برابر ``False`` باشد (پیش‌فرض)، نویسه‌هایی که نه در الفبای عادی base-64 و نه در الفبای جایگزین وجود دارند، پیش از بررسی پرکننده (padding) دور انداخته می‌شوند.  اگر *validate* برابر ``True`` باشد، این نویسه‌های غیرالفبایی در ورودی منجر به پرتاب یک :exc:`binascii.Error` می‌شوند."
+
+msgid "If *validate* is true, these non-alphabet characters in the input result in a :exc:`binascii.Error`."
+msgstr ""
+
+msgid "If *canonical* is true, non-zero padding bits are rejected. See :func:`binascii.a2b_base64` for details."
+msgstr ""
 
 msgid "For more information about the strict base64 check, see :func:`binascii.a2b_base64`"
 msgstr "برای اطلاعات بیشتر درباره بررسی سخت‌گیرانه base64، :func:`binascii.a2b_base64` را ببینید"
 
-msgid "May assert or raise a :exc:`ValueError` if the length of *altchars* is not 2."
-msgstr "ممکن است در صورتی که طول *altchars* برابر ۲ نباشد، assert کند یا یک :exc:`ValueError` را پرتاب کند."
+msgid "Added the *canonical*, *ignorechars*, and *padded* parameters."
+msgstr ""
+
+msgid "Accepting the ``+`` and ``/`` characters with an alternative alphabet is now deprecated."
+msgstr ""
 
 msgid "Encode :term:`bytes-like object` *s* using the standard Base64 alphabet and return the encoded :class:`bytes`."
 msgstr ":term:`bytes-like object` *s* را با استفاده از الفبای استاندارد Base64 کدگذاری می‌کند و :class:`bytes` کدگذاری‌شده را برمی‌گرداند."
@@ -83,14 +106,31 @@ msgstr ":term:`bytes-like object` *s* را با استفاده از الفبای
 msgid "Decode :term:`bytes-like object` or ASCII string *s* using the standard Base64 alphabet and return the decoded :class:`bytes`."
 msgstr ":term:`bytes-like object` یا رشته ASCII *s* را با استفاده از الفبای استاندارد Base64 کدگشایی می‌کند و :class:`bytes` کدگشایی‌شده را برمی‌گرداند."
 
-msgid "Encode :term:`bytes-like object` *s* using the URL- and filesystem-safe alphabet, which substitutes ``-`` instead of ``+`` and ``_`` instead of ``/`` in the standard Base64 alphabet, and return the encoded :class:`bytes`.  The result can still contain ``=``."
+#, fuzzy
+#| msgid "Encode :term:`bytes-like object` *s* using the URL- and filesystem-safe alphabet, which substitutes ``-`` instead of ``+`` and ``_`` instead of ``/`` in the standard Base64 alphabet, and return the encoded :class:`bytes`.  The result can still contain ``=``."
+msgid "Encode :term:`bytes-like object` *s* using the URL- and filesystem-safe alphabet, which substitutes ``-`` instead of ``+`` and ``_`` instead of ``/`` in the standard Base64 alphabet, and return the encoded :class:`bytes`.  The result can still contain ``=`` if *padded* is true (default)."
 msgstr ":term:`bytes-like object` *s* را با استفاده از الفبای امن برای URL و سامانه فایل‌بندی کدگذاری می‌کند، که در الفبای استاندارد Base64، ``-`` را به جای ``+`` و ``_`` را به جای ``/`` جایگزین می‌کند، و :class:`bytes` کدگذاری‌شده را برمی‌گرداند. نتیجه همچنان می‌تواند شامل ``=`` باشد."
+
+msgid "Added the *padded* parameter."
+msgstr ""
 
 msgid "Decode :term:`bytes-like object` or ASCII string *s* using the URL- and filesystem-safe alphabet, which substitutes ``-`` instead of ``+`` and ``_`` instead of ``/`` in the standard Base64 alphabet, and return the decoded :class:`bytes`."
 msgstr "با استفاده از الفبای امن برای URL و سامانه فایل‌بندی، که در الفبای استاندارد Base64 به‌جای ``+`` از ``-`` و به‌جای ``/`` از ``_`` استفاده می‌کند، :term:`bytes-like object` یا رشته‌ی ASCII *s* را کدگشایی کنید و :class:`bytes` کدگشایی‌شده را برگردانید."
 
+msgid "Added the *padded* parameter. Padding of input is no longer required by default."
+msgstr ""
+
+msgid "Accepting the ``+`` and ``/`` characters is now deprecated."
+msgstr ""
+
 msgid "Encode the :term:`bytes-like object` *s* using Base32 and return the encoded :class:`bytes`."
 msgstr ":term:`bytes-like object` *s* را با استفاده از Base32 کدگذاری می‌کند و :class:`bytes` کدگذاری‌شده را برمی‌گرداند."
+
+msgid "If *padded* is true (default), pad the encoded data with the '=' character to a size multiple of 8. If *padded* is false, do not add the pad characters."
+msgstr ""
+
+msgid "If *wrapcol* is non-zero, insert a newline (``b'\\n'``) character after at most every *wrapcol* characters. If *wrapcol* is zero (default), do not add any newlines."
+msgstr ""
 
 msgid "Decode the Base32 encoded :term:`bytes-like object` or ASCII string *s* and return the decoded :class:`bytes`."
 msgstr ":term:`bytes-like object` یا رشته ASCII *s* را که با Base32 کدگذاری‌شده است، کدگشایی می‌کند و :class:`bytes` کدگشایی‌شده را برمی‌گرداند."
@@ -100,6 +140,15 @@ msgstr "*casefold* اختیاری پرچمی است که مشخص می‌کند 
 
 msgid ":rfc:`4648` allows for optional mapping of the digit 0 (zero) to the letter O (oh), and for optional mapping of the digit 1 (one) to either the letter I (eye) or letter L (el).  The optional argument *map01* when not ``None``, specifies which letter the digit 1 should be mapped to (when *map01* is not ``None``, the digit 0 is always mapped to the letter O).  For security purposes the default is ``None``, so that 0 and 1 are not allowed in the input."
 msgstr ":rfc:`4648` امکان نگاشت اختیاری رقم ۰ (صفر) به حرف O (اوه) و نگاشت اختیاری رقم ۱ (یک) به حرف I (آی) یا حرف L (اِل) را فراهم می‌کند. آرگومان اختیاری *map01*، هنگامی که ``None`` نباشد، مشخص می‌کند که رقم ۱ باید به کدام حرف نگاشت شود (هنگامی که *map01* ``None`` نباشد، رقم ۰ همیشه به حرف O نگاشت می‌شود). به‌دلایل امنیتی، مقدار پیش‌فرض ``None`` است، تا ۰ و ۱ در ورودی مجاز نباشند."
+
+msgid "If *padded* is true, the last group of 8 base 32 alphabet characters must be padded with the '=' character. If *padded* is false, padding is neither required nor recognized: the '=' character is not treated as padding but as a non-alphabet character, which means it raises an :exc:`~binascii.Error` unless b'=' is included in *ignorechars*."
+msgstr ""
+
+msgid "*ignorechars* should be a :term:`bytes-like object` containing characters to ignore from the input."
+msgstr ""
+
+msgid "If *canonical* is true, non-zero padding bits are rejected. See :func:`binascii.a2b_base32` for details."
+msgstr ""
 
 msgid "A :exc:`binascii.Error` is raised if *s* is incorrectly padded or if there are non-alphabet characters present in the input."
 msgstr "اگر *s* به‌درستی پد (padding) نشده باشد یا نویسه‌های خارج از الفبا در ورودی وجود داشته باشند، یک :exc:`binascii.Error` پرتاب می‌شود."
@@ -116,8 +165,14 @@ msgstr "این نسخه اجازه‌ی نگاشت رقم ۰ (صفر) به حر�
 msgid "Encode the :term:`bytes-like object` *s* using Base16 and return the encoded :class:`bytes`."
 msgstr "شیء :term:`bytes-like object` *s* را با استفاده از Base16 کدگذاری کنید و :class:`bytes` کدگذاری‌شده را برگردانید."
 
+msgid "Added the *wrapcol* parameter."
+msgstr ""
+
 msgid "Decode the Base16 encoded :term:`bytes-like object` or ASCII string *s* and return the decoded :class:`bytes`."
 msgstr "کدگشایی :term:`bytes-like object` یا رشته‌ی ASCII *s* کدگذاری‌شده با Base16 و برگرداندن :class:`bytes` کدگشایی‌شده."
+
+msgid "Added the *ignorechars* parameter."
+msgstr ""
 
 msgid "Base85 Encodings"
 msgstr "کدگذاری‌های Base85"
@@ -158,9 +213,6 @@ msgstr ":term:`bytes-like object` *b* را با استفاده از Ascii85 کد
 msgid "*foldspaces* is an optional flag that uses the special short sequence 'y' instead of 4 consecutive spaces (ASCII 0x20) as supported by 'btoa'. This feature is not supported by the standard encoding used in PDF."
 msgstr "*foldspaces* یک پرچم اختیاری است که به‌جای ۴ فاصله‌ی متوالی (ASCII 0x20)، از دنباله‌ی کوتاه ویژه‌ی 'y' استفاده می‌کند؛ همان‌طور که توسط 'btoa' پشتیبانی می‌شود. این قابلیت توسط کدگذاری استاندارد استفاده‌شده در PDF پشتیبانی نمی‌شود."
 
-msgid "*wrapcol* controls whether the output should have newline (``b'\\n'``) characters added to it. If this is non-zero, each output line will be at most this many characters long, excluding the trailing newline."
-msgstr "*wrapcol* تعیین می‌کند که آیا باید نویسه‌های خط جدید (``b'\\n'``) به خروجی افزوده شوند یا خیر. اگر این مقدار غیرصفر باشد، طول هر خط خروجی حداکثر این تعداد نویسه خواهد بود، بدون احتساب نویسه خط جدید پایانی."
-
 msgid "*pad* controls whether zero-padding applied to the end of the input is fully retained in the output encoding, as done by ``btoa``, producing an exact multiple of 5 bytes of output. This is not part of the standard encoding used in PDF, as it does not preserve the length of the data."
 msgstr "*pad* مشخص می‌کند که آیا پدینگ صفر (zero-padding) اعمال‌شده به انتهای ورودی به‌طور کامل در کدگذاری خروجی حفظ می‌شوند، همان‌طور که ``btoa`` این کار را انجام می‌دهد و خروجی‌ای تولید می‌کند که دقیقاً مضربی از ۵ بایت است. این بخشی از کدگذاری استاندارد استفاده‌شده در PDF نیست، زیرا طول داده را حفظ نمی‌کند."
 
@@ -176,8 +228,16 @@ msgstr "*foldspaces* پرچمی است که مشخص می‌کند آیا دنب
 msgid "*adobe* controls whether the ``<~`` and ``~>`` markers are present. While the leading ``<~`` is not required, the input must end with ``~>``, or a :exc:`ValueError` is raised."
 msgstr "*adobe* تعیین می‌کند که نشانگرهای ``<~`` و ``~>`` وجود داشته باشند. اگرچه نشانگر ابتدایی ``<~`` الزامی نیست، اما ورودی باید با ``~>`` پایان یابد، در غیر این صورت یک :exc:`ValueError` پرتاب می‌شود."
 
-msgid "*ignorechars* should be a byte string containing characters to ignore from the input. This should only contain whitespace characters, and by default contains all whitespace characters in ASCII."
+#, fuzzy
+#| msgid "*ignorechars* should be a byte string containing characters to ignore from the input. This should only contain whitespace characters, and by default contains all whitespace characters in ASCII."
+msgid "*ignorechars* should be a :term:`bytes-like object` containing characters to ignore from the input. This should only contain whitespace characters, and by default contains all whitespace characters in ASCII."
 msgstr "*ignorechars* باید یک رشته‌ی بایتی شامل نویسه‌هایی باشد که باید از ورودی نادیده گرفته شوند. این رشته باید فقط شامل نویسه‌های فضای سفید باشد، و به‌طور پیش‌فرض شامل تمام نویسه‌های فضای سفید در ASCII است."
+
+msgid "If *canonical* is true, non-canonical encodings are rejected. See :func:`binascii.a2b_ascii85` for details."
+msgstr ""
+
+msgid "Added the *canonical* parameter. Single-character final groups are now always rejected as encoding violations."
+msgstr ""
 
 msgid "Encode the :term:`bytes-like object` *b* using base85 (as used in e.g. git-style binary diffs) and return the encoded :class:`bytes`."
 msgstr "شیء شبه‌بایت (:term:`bytes-like object`) *b* را با استفاده از base85 (که برای مثال در diffهای دودویی به‌سبک git استفاده می‌شود) کدگذاری می‌کند و :class:`bytes` کدگذاری‌شده را برمی‌گرداند."
@@ -188,11 +248,22 @@ msgstr "ورودی با ``b'\\0'`` پر می‌شود تا طول آن پیش ا
 msgid "Decode the base85-encoded :term:`bytes-like object` or ASCII string *b* and return the decoded :class:`bytes`."
 msgstr ":term:`bytes-like object` یا رشته‌ی ASCII *b* را که با base85 کدگذاری‌شده است، کدگشایی می‌کند و :class:`bytes` کدگشایی‌شده را برمی‌گرداند."
 
+msgid "If *canonical* is true, non-canonical encodings are rejected. See :func:`binascii.a2b_base85` for details."
+msgstr ""
+
+msgid "Added the *canonical* and *ignorechars* parameters. Single-character final groups are now always rejected as encoding violations."
+msgstr ""
+
 msgid "Encode the :term:`bytes-like object` *s* using Z85 (as used in ZeroMQ) and return the encoded :class:`bytes`."
 msgstr ":term:`bytes-like object` *s* را با استفاده از Z85 (همان‌طور که در ZeroMQ استفاده می‌شود) کدگذاری کنید و :class:`bytes` کدگذاری‌شده را برگردانید."
 
-msgid "The `ZeroMQ specification <https://rfc.zeromq.org/spec/32/>`_ requires the length of Z85-encoded data to be a multiple of 5 bytes. To produce compliant data frames, you must pad the input data to this function to a multiple of 4 bytes."
-msgstr "`مشخصات ZeroMQ <https://rfc.zeromq.org/spec/32/>`_ الزام می‌کند که طول داده‌های کدگذاری‌شده با Z85 مضربی از ۵ بایت باشد. برای تولید فریم‌های داده‌ی سازگار، باید داده‌های ورودی به این تابع را تا مضربی از ۴ بایت پد کنید."
+#, fuzzy
+#| msgid "The input is padded with ``b'\\0'`` so its length is a multiple of 4 bytes before encoding.  If *pad* is true, all the resulting characters are retained in the output, which will always be a multiple of 5 bytes, and thus the length of the data may not be preserved on decoding."
+msgid "The input is padded with ``b'\\0'`` so its length is a multiple of 4 bytes before encoding.  If *pad* is true, all the resulting characters are retained in the output, which will always be a multiple of 5 bytes, as required by the ZeroMQ standard."
+msgstr "ورودی با ``b'\\0'`` پر می‌شود تا طول آن پیش از کدگذاری مضربی از ۴ بایت باشد. اگر *pad* درست باشد، تمام نویسه‌های حاصل در خروجی نگه داشته می‌شوند؛ خروجی همیشه مضربی از ۵ بایت خواهد بود، و بنابراین ممکن است طول داده هنگام کدگشایی حفظ نشود."
+
+msgid "The *pad* parameter was added."
+msgstr ""
 
 msgid "Decode the Z85-encoded :term:`bytes-like object` or ASCII string *s* and return the decoded :class:`bytes`."
 msgstr ":term:`bytes-like object` یا رشته ASCII *s* کدگذاری‌شده با Z85 را کدگشایی می‌کند و :class:`bytes` کدگشایی‌شده را برمی‌گرداند."
@@ -256,3 +327,15 @@ msgstr "MIME"
 
 msgid "base64 encoding"
 msgstr "کدگذاری base64"
+
+#~ msgid "May assert or raise a :exc:`ValueError` if the length of *altchars* is not 2.  Raises a :exc:`TypeError` if *altchars* is not a :term:`bytes-like object`."
+#~ msgstr "ممکن است در صورتی که طول *altchars* ۲ نباشد، assert کند یا یک :exc:`ValueError` را پرتاب کند. اگر *altchars* یک :term:`bytes-like object` نباشد، یک :exc:`TypeError` را پرتاب می‌کند."
+
+#~ msgid "May assert or raise a :exc:`ValueError` if the length of *altchars* is not 2."
+#~ msgstr "ممکن است در صورتی که طول *altchars* برابر ۲ نباشد، assert کند یا یک :exc:`ValueError` را پرتاب کند."
+
+#~ msgid "*wrapcol* controls whether the output should have newline (``b'\\n'``) characters added to it. If this is non-zero, each output line will be at most this many characters long, excluding the trailing newline."
+#~ msgstr "*wrapcol* تعیین می‌کند که آیا باید نویسه‌های خط جدید (``b'\\n'``) به خروجی افزوده شوند یا خیر. اگر این مقدار غیرصفر باشد، طول هر خط خروجی حداکثر این تعداد نویسه خواهد بود، بدون احتساب نویسه خط جدید پایانی."
+
+#~ msgid "The `ZeroMQ specification <https://rfc.zeromq.org/spec/32/>`_ requires the length of Z85-encoded data to be a multiple of 5 bytes. To produce compliant data frames, you must pad the input data to this function to a multiple of 4 bytes."
+#~ msgstr "`مشخصات ZeroMQ <https://rfc.zeromq.org/spec/32/>`_ الزام می‌کند که طول داده‌های کدگذاری‌شده با Z85 مضربی از ۵ بایت باشد. برای تولید فریم‌های داده‌ی سازگار، باید داده‌های ورودی به این تابع را تا مضربی از ۴ بایت پد کنید."

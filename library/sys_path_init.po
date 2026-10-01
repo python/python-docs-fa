@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 15:53+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -52,10 +52,14 @@ msgstr "پس از یافت شدن، ``prefix`` و ``exec_prefix`` به‌ترت�
 msgid "If :envvar:`PYTHONHOME` is not set, and a ``pyvenv.cfg`` file is found alongside the main executable, or in its parent directory, :data:`sys.prefix` and :data:`sys.exec_prefix` get set to the directory containing ``pyvenv.cfg``, otherwise they are set to the same value as :data:`sys.base_prefix` and :data:`sys.base_exec_prefix`, respectively. This is used by :ref:`sys-path-init-virtual-environments`."
 msgstr "اگر :envvar:`PYTHONHOME` تنظیم‌نشده باشد و یک پرونده ``pyvenv.cfg`` در کنار پرونده اجرایی اصلی یا در پوشه‌ی والد آن پیدا شود، :data:`sys.prefix` و :data:`sys.exec_prefix` به پوشه‌ی حاوی ``pyvenv.cfg`` تنظیم می‌شوند؛ در غیر این صورت، آن‌ها به‌ترتیب به همان مقدار :data:`sys.base_prefix` و :data:`sys.base_exec_prefix` تنظیم می‌شوند. این توسط :ref:`sys-path-init-virtual-environments` استفاده می‌شود."
 
-msgid "Finally, the :mod:`site` module is processed and :file:`site-packages` directories are added to the module search path. A common way to customize the search path is to create :mod:`sitecustomize` or :mod:`usercustomize` modules as described in the :mod:`site` module documentation."
+#, fuzzy
+#| msgid "Finally, the :mod:`site` module is processed and :file:`site-packages` directories are added to the module search path. A common way to customize the search path is to create :mod:`sitecustomize` or :mod:`usercustomize` modules as described in the :mod:`site` module documentation."
+msgid "Finally, the :mod:`site` module is processed and :file:`site-packages` directories are added to the module search path.  The :envvar:`PYTHONUSERBASE` environment variable controls where is searched for user site-packages and the :envvar:`PYTHONNOUSERSITE` environment variable prevents searching for user site-packages all together.  A common way to customize the search path is to create :mod:`sitecustomize` or :mod:`usercustomize` modules as described in the :mod:`site` module documentation."
 msgstr "در نهایت، ماژول :mod:`site` پردازش می‌شود و پوشه‌های :file:`site-packages` به مسیر جستجوی ماژول افزوده می‌شوند. یک روش رایج برای سفارشی‌سازی مسیر جستجو، ایجاد ماژول‌های :mod:`sitecustomize` یا :mod:`usercustomize` است، همان‌طور که در مستندات ماژول :mod:`site` توضیح داده شده است."
 
-msgid "Certain command line options may further affect path calculations. See :option:`-E`, :option:`-I`, :option:`-s` and :option:`-S` for further details."
+#, fuzzy
+#| msgid "Certain command line options may further affect path calculations. See :option:`-E`, :option:`-I`, :option:`-s` and :option:`-S` for further details."
+msgid "The command line options :option:`-E`, :option:`-P`, :option:`-I`, :option:`-S` and :option:`-s` further affect path calculations, see their documentation for details."
 msgstr "برخی گزینه‌های خط فرمان ممکن است بر محاسبات مسیر تأثیر بیشتری بگذارند. برای جزئیات بیشتر، :option:`-E`، :option:`-I`، :option:`-s` و :option:`-S` را ببینید."
 
 msgid ":data:`sys.prefix` and :data:`sys.exec_prefix` are now set to the ``pyvenv.cfg`` directory during the path initialization. This was previously done by :mod:`site`, therefore affected by :option:`-S`."
@@ -76,7 +80,9 @@ msgstr "علاوه بر استفاده به‌عنوان نشانگری برای
 msgid ":envvar:`PYTHONHOME` overrides the ``pyvenv.cfg`` detection."
 msgstr ":envvar:`PYTHONHOME` بر شناسایی ``pyvenv.cfg`` مقدم است."
 
-msgid "There are other ways how \"virtual environments\" could be implemented, this documentation refers implementations based on the ``pyvenv.cfg`` mechanism, such as :mod:`venv`. Most virtual environment implementations follow the model set by :mod:`venv`, but there may be exotic implementations that diverge from it."
+#, fuzzy
+#| msgid "There are other ways how \"virtual environments\" could be implemented, this documentation refers implementations based on the ``pyvenv.cfg`` mechanism, such as :mod:`venv`. Most virtual environment implementations follow the model set by :mod:`venv`, but there may be exotic implementations that diverge from it."
+msgid "There are other ways \"virtual environments\" could be implemented. This documentation refers to implementations based on the ``pyvenv.cfg`` mechanism, such as :mod:`venv`, that many virtual environment implementations follow."
 msgstr "روش‌های دیگری نیز برای پیاده‌سازی «محیط‌های مجازی» وجود دارد؛ این مستندات به پیاده‌سازی‌هایی اشاره می‌کند که بر پایه‌ی سازوکار ``pyvenv.cfg`` هستند، مانند :mod:`venv`. بیشتر پیاده‌سازی‌های محیط مجازی از مدلی پیروی می‌کنند که :mod:`venv` تعیین کرده است، اما ممکن است پیاده‌سازی‌های غیرمتعارفی وجود داشته باشند که از آن منحرف شوند."
 
 msgid "_pth files"

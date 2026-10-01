@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 10:44+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/fa/)\n"
@@ -371,7 +371,9 @@ msgstr "عناصر از یک *پیمایش‌پذیر* یا از یک *نگاش�
 msgid "Compute the sum of the counts."
 msgstr "مجموع شمارش‌ها را محاسبه کنید."
 
-msgid "The usual dictionary methods are available for :class:`Counter` objects except for two which work differently for counters."
+#, fuzzy
+#| msgid "The usual dictionary methods are available for :class:`Counter` objects except for two which work differently for counters."
+msgid "The usual dictionary methods are available for :class:`Counter` objects except for these two which work differently for counters:"
 msgstr "متدهای معمول دیکشنری برای اشیای :class:`Counter` در دسترس هستند، به‌جز دو مورد که برای شمارنده‌ها متفاوت عمل می‌کنند."
 
 msgid "This class method is not implemented for :class:`Counter` objects."
@@ -413,9 +415,27 @@ msgstr ""
 "c.most_common()[:-n-1:-1]       # n least common elements\n"
 "+c                              # remove zero and negative counts"
 
-msgid "Several mathematical operations are provided for combining :class:`Counter` objects to produce multisets (counters that have counts greater than zero). Addition and subtraction combine counters by adding or subtracting the counts of corresponding elements.  Intersection and union return the minimum and maximum of corresponding counts.  Equality and inclusion compare corresponding counts.  Each operation can accept inputs with signed counts, but the output will exclude results with counts of zero or less."
+#, fuzzy
+#| msgid "Several mathematical operations are provided for combining :class:`Counter` objects to produce multisets (counters that have counts greater than zero). Addition and subtraction combine counters by adding or subtracting the counts of corresponding elements.  Intersection and union return the minimum and maximum of corresponding counts.  Equality and inclusion compare corresponding counts.  Each operation can accept inputs with signed counts, but the output will exclude results with counts of zero or less."
+msgid "Several mathematical operations are provided for combining :class:`Counter` objects to produce multisets (counters that have counts greater than zero). Addition and subtraction combine counters by adding or subtracting the counts of corresponding elements.  Intersection and union return the minimum and maximum of corresponding counts.  Symmetric difference returns the difference between the maximum and minimum of the corresponding counts. Equality and inclusion compare corresponding counts.  Each operation can accept inputs with signed counts, but the output will exclude results with counts of zero or below."
 msgstr "چند عملیات ریاضی برای ترکیب اشیای :class:`Counter` و تولید چندمجموعه‌ها (شمارنده‌هایی که شمارش‌های بزرگ‌تر از صفر دارند) ارائه شده است. جمع و تفریق، شمارنده‌ها را با افزودن یا کم کردن شمارش‌های عناصر متناظر ترکیب می‌کنند. اشتراک و اجتماع، کمینه و بیشینه‌ی شمارش‌های متناظر را برمی‌گردانند. برابری و شمول، شمارش‌های متناظر را مقایسه می‌کنند. هر عملیات می‌تواند ورودی‌هایی با شمارش‌های علامت‌دار بپذیرد، اما خروجی، نتایجی را که شمارش آن‌ها صفر یا کمتر است شامل نمی‌شود."
 
+#, fuzzy
+#| msgid ""
+#| ">>> c = Counter(a=3, b=1)\n"
+#| ">>> d = Counter(a=1, b=2)\n"
+#| ">>> c + d                       # add two counters together:  c[x] + d[x]\n"
+#| "Counter({'a': 4, 'b': 3})\n"
+#| ">>> c - d                       # subtract (keeping only positive counts)\n"
+#| "Counter({'a': 2})\n"
+#| ">>> c & d                       # intersection:  min(c[x], d[x])\n"
+#| "Counter({'a': 1, 'b': 1})\n"
+#| ">>> c | d                       # union:  max(c[x], d[x])\n"
+#| "Counter({'a': 3, 'b': 2})\n"
+#| ">>> c == d                      # equality:  c[x] == d[x]\n"
+#| "False\n"
+#| ">>> c <= d                      # inclusion:  c[x] <= d[x]\n"
+#| "False"
 msgid ""
 ">>> c = Counter(a=3, b=1)\n"
 ">>> d = Counter(a=1, b=2)\n"
@@ -427,6 +447,8 @@ msgid ""
 "Counter({'a': 1, 'b': 1})\n"
 ">>> c | d                       # union:  max(c[x], d[x])\n"
 "Counter({'a': 3, 'b': 2})\n"
+">>> c ^ d                       # max(c[x], d[x]) - min(c[x], d[x])\n"
+"Counter({'a': 2, 'b': 1})\n"
 ">>> c == d                      # equality:  c[x] == d[x]\n"
 "False\n"
 ">>> c <= d                      # inclusion:  c[x] <= d[x]\n"
@@ -451,6 +473,11 @@ msgid "Unary addition and subtraction are shortcuts for adding an empty counter 
 msgstr "جمع و تفریق یک‌عملوندی، میان‌برهایی برای افزودن یک شمارنده خالی یا کم کردن از یک شمارنده خالی هستند."
 
 msgid "Added support for unary plus, unary minus, and in-place multiset operations."
+msgstr "پشتیبانی از عملگرهای یک‌عملوندی مثبت و منفی و عملیات‌های چندمجموعه‌ای درجا افزوده شد."
+
+#, fuzzy
+#| msgid "Added support for unary plus, unary minus, and in-place multiset operations."
+msgid "Added support for the symmetric difference multiset operation, ``c ^ d``."
 msgstr "پشتیبانی از عملگرهای یک‌عملوندی مثبت و منفی و عملیات‌های چندمجموعه‌ای درجا افزوده شد."
 
 msgid "Counters were primarily designed to work with positive integers to represent running counts; however, care was taken to not unnecessarily preclude use cases needing other types or negative values.  To help with those use cases, this section documents the minimum range and type restrictions."
@@ -1184,9 +1211,17 @@ msgstr ":class:`OrderedDict` مثال‌ها و دستورهای پخت"
 msgid "It is straightforward to create an ordered dictionary variant that remembers the order the keys were *last* inserted. If a new entry overwrites an existing entry, the original insertion position is changed and moved to the end::"
 msgstr "ایجاد گونه‌ای از دیکشنری مرتب که ترتیب *آخرین بار* درج کلیدها را به خاطر می‌آورد، ساده است. اگر یک آیتم جدید، یک آیتم موجود را بازنویسی کند، موقعیت درج اصلی تغییر می‌کند و به انتها منتقل می‌شود::"
 
+#, fuzzy
+#| msgid ""
+#| "class LastUpdatedOrderedDict(OrderedDict):\n"
+#| "    'Store items in the order the keys were last added'\n"
+#| "\n"
+#| "    def __setitem__(self, key, value):\n"
+#| "        super().__setitem__(key, value)\n"
+#| "        self.move_to_end(key)"
 msgid ""
 "class LastUpdatedOrderedDict(OrderedDict):\n"
-"    'Store items in the order the keys were last added'\n"
+"    'Store items in the order that the keys were last updated.'\n"
 "\n"
 "    def __setitem__(self, key, value):\n"
 "        super().__setitem__(key, value)\n"
@@ -1334,6 +1369,12 @@ msgstr "علاوه بر پشتیبانی از متدها و عملیات نگا�
 
 msgid "A real dictionary used to store the contents of the :class:`UserDict` class."
 msgstr "یک دیکشنری واقعی که برای ذخیره‌ی محتویات کلاس :class:`UserDict` استفاده می‌شود."
+
+msgid ":class:`!UserDict` instances also override the following method:"
+msgstr ""
+
+msgid "Remove and return a ``(key, value)`` pair from the wrapped dictionary. Pairs are returned in the same order as ``data.popitem()``. (For the default :meth:`dict.popitem`, this order is :abbr:`LIFO (last-in, first-out)`.) If the dictionary is empty, raises a :exc:`KeyError`."
+msgstr ""
 
 msgid ":class:`UserList` objects"
 msgstr "اشیاء :class:`UserList`"

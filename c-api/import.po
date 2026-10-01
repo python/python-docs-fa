@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-15 08:30+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -27,15 +27,6 @@ msgstr "ایمپورت کردن ماژول‌ها"
 
 msgid "This is a wrapper around :c:func:`PyImport_Import()` which takes a :c:expr:`const char *` as an argument instead of a :c:expr:`PyObject *`."
 msgstr "این یک دربرگیرنده در اطراف :c:func:`PyImport_Import()` است که به‌جای :c:expr:`PyObject *`، آرگومانی از نوع :c:expr:`const char *` می‌گیرد."
-
-msgid "This function is a deprecated alias of :c:func:`PyImport_ImportModule`."
-msgstr "این تابع یک نام مستعار منسوخ برای :c:func:`PyImport_ImportModule` است."
-
-msgid "This function used to fail immediately when the import lock was held by another thread.  In Python 3.3 though, the locking scheme switched to per-module locks for most purposes, so this function's special behaviour isn't needed anymore."
-msgstr "این تابع پیش‌تر زمانی که قفل ایمپورت توسط نخ دیگری نگه داشته می‌شد، بلافاصله شکست می‌خورد. اما در پایتون 3.3، طرح‌واره قفل‌گذاری در اکثر موارد به قفل‌های جداگانه برای هر ماژول تغییر کرد، بنابراین رفتار خاص این تابع دیگر مورد نیاز نیست."
-
-msgid "Use :c:func:`PyImport_ImportModule` instead."
-msgstr "به جای آن از :c:func:`PyImport_ImportModule` استفاده کنید."
 
 msgid "Import a module.  This is best described by referring to the built-in Python function :func:`__import__`."
 msgstr "ایمپورت کردن یک ماژول.  این کار را به بهترین شکل می‌توان با ارجاع به تابع توکار پایتون :func:`__import__` توصیف کرد."
@@ -91,7 +82,9 @@ msgstr "با دریافت نام یک ماژول (احتمالاً به شکل `
 msgid "The module's :attr:`~module.__spec__` and :attr:`~module.__loader__` will be set, if not set already, with the appropriate values.  The spec's loader will be set to the module's :attr:`!__loader__` (if set) and to an instance of :class:`~importlib.machinery.SourceFileLoader` otherwise."
 msgstr ":attr:`~module.__spec__` و :attr:`~module.__loader__` ماژول، در صورتی که از قبل تنظیم‌نشده باشند، با مقادیر مناسب تنظیم خواهند شد. بارگذار مشخصه به :attr:`!__loader__` ماژول (در صورت تنظیم بودن) و در غیر این صورت به نمونه‌ای از :class:`~importlib.machinery.SourceFileLoader` تنظیم خواهد شد."
 
-msgid "The module's :attr:`~module.__file__` attribute will be set to the code object's :attr:`~codeobject.co_filename`.  If applicable, :attr:`~module.__cached__` will also be set."
+#, fuzzy
+#| msgid "The module's :attr:`~module.__file__` attribute will be set to the code object's :attr:`~codeobject.co_filename`.  If applicable, :attr:`~module.__cached__` will also be set."
+msgid "The module's :attr:`~module.__file__` attribute will be set to the code object's :attr:`~codeobject.co_filename`."
 msgstr "ویژگی :attr:`~module.__file__` ماژول به :attr:`~codeobject.co_filename` شیء کد تنظیم خواهد شد. در صورت وجود، :attr:`~module.__cached__` نیز تنظیم خواهد شد."
 
 msgid "This function will reload the module if it was already imported.  See :c:func:`PyImport_ReloadModule` for the intended way to reload a module."
@@ -103,8 +96,15 @@ msgstr "اگر *name* به نامی نقطه‌گذاری‌شده به شکل `
 msgid "See also :c:func:`PyImport_ExecCodeModuleEx` and :c:func:`PyImport_ExecCodeModuleWithPathnames`."
 msgstr "همچنین ببینید :c:func:`PyImport_ExecCodeModuleEx` و :c:func:`PyImport_ExecCodeModuleWithPathnames`."
 
-msgid "The setting of :attr:`~module.__cached__` and :attr:`~module.__loader__` is deprecated. See :class:`~importlib.machinery.ModuleSpec` for alternatives."
+#, fuzzy
+#| msgid "The setting of :attr:`~module.__cached__` and :attr:`~module.__loader__` is deprecated. See :class:`~importlib.machinery.ModuleSpec` for alternatives."
+msgid "The setting of ``__cached__`` and :attr:`~module.__loader__` is deprecated. See :class:`~importlib.machinery.ModuleSpec` for alternatives."
 msgstr "تنظیم کردن :attr:`~module.__cached__` و :attr:`~module.__loader__` منسوخ شده است. برای جایگزین‌ها به :class:`~importlib.machinery.ModuleSpec` مراجعه کنید."
+
+#, fuzzy
+#| msgid "The ``__file__`` attribute is no longer set on the module."
+msgid "The ``__cached__`` attribute is no longer set."
+msgstr "ویژگی ``__file__`` دیگر بر روی ماژول تنظیم نمی‌شود."
 
 msgid "Like :c:func:`PyImport_ExecCodeModule`, but the :attr:`~module.__file__` attribute of the module object is set to *pathname* if it is non-``NULL``."
 msgstr "مانند :c:func:`PyImport_ExecCodeModule`، اما اگر *مسیرنام* غیر ``NULL`` باشد، ویژگی :attr:`~module.__file__` شیء ماژول به *مسیرنام* تنظیم می‌شود."
@@ -112,11 +112,20 @@ msgstr "مانند :c:func:`PyImport_ExecCodeModule`، اما اگر *مسیرن
 msgid "See also :c:func:`PyImport_ExecCodeModuleWithPathnames`."
 msgstr "همچنین :c:func:`PyImport_ExecCodeModuleWithPathnames` را ببینید."
 
-msgid "Like :c:func:`PyImport_ExecCodeModuleEx`, but the :attr:`~module.__cached__` attribute of the module object is set to *cpathname* if it is non-``NULL``.  Of the three functions, this is the preferred one to use."
+#, fuzzy
+#| msgid "Like :c:func:`PyImport_ExecCodeModuleEx`, but the :attr:`~module.__cached__` attribute of the module object is set to *cpathname* if it is non-``NULL``.  Of the three functions, this is the preferred one to use."
+msgid "Like :c:func:`PyImport_ExecCodeModuleEx`, but the path to any compiled file via *cpathname* is used appropriately when non-``NULL``.  Of the three functions, this is the preferred one to use."
 msgstr "مانند :c:func:`PyImport_ExecCodeModuleEx`، اما ویژگی :attr:`~module.__cached__` شیء ماژول در صورتی که *cpathname* غیر ``NULL`` باشد، برابر *cpathname* تنظیم می‌شود. از میان این سه تابع، استفاده از این تابع ترجیح دارد."
 
-msgid "Setting :attr:`~module.__cached__` is deprecated. See :class:`~importlib.machinery.ModuleSpec` for alternatives."
+#, fuzzy
+#| msgid "Setting :attr:`~module.__cached__` is deprecated. See :class:`~importlib.machinery.ModuleSpec` for alternatives."
+msgid "Setting ``__cached__`` is deprecated. See :class:`~importlib.machinery.ModuleSpec` for alternatives."
 msgstr "تنظیم کردن :attr:`~module.__cached__` منسوخ شده است. برای جایگزین‌ها به :class:`~importlib.machinery.ModuleSpec` مراجعه کنید."
+
+#, fuzzy
+#| msgid "The ``__file__`` attribute is no longer set on the module."
+msgid "The ``__cached__`` attribute no longer set."
+msgstr "ویژگی ``__file__`` دیگر بر روی ماژول تنظیم نمی‌شود."
 
 msgid "Like :c:func:`PyImport_ExecCodeModuleObject`, but *name*, *pathname* and *cpathname* are UTF-8 encoded strings. Attempts are also made to figure out what the value for *pathname* should be from *cpathname* if the former is set to ``NULL``."
 msgstr "مانند :c:func:`PyImport_ExecCodeModuleObject`، اما *name*، *pathname* و *cpathname* رشته‌های کدگذاری‌شده با UTF-8 هستند. اگر *pathname* برابر ``NULL`` قرار داده شده باشد، تلاش‌هایی نیز برای تعیین مقدار *pathname* از روی *cpathname* صورت می‌گیرد."
@@ -190,6 +199,9 @@ msgstr "نام ماژول، به‌صورت یک رشته کدگذاری‌شد�
 msgid "Initialization function for a module built into the interpreter."
 msgstr "تابع مقداردهی اولیه برای ماژولی که به‌صورت توکار در مفسر ساخته‌شده است."
 
+msgid "Note that the inittab uses \"``PyInit``\" :ref:`initialization functions <extension-pyinit>`; there is currently no way to include \"``PyModExport_``\" :ref:`export hooks <extension-export-hook>`."
+msgstr ""
+
 msgid "Add a collection of modules to the table of built-in modules.  The *newtab* array must end with a sentinel entry which contains ``NULL`` for the :c:member:`~_inittab.name` field; failure to provide the sentinel value can result in a memory fault. Returns ``0`` on success or ``-1`` if insufficient memory could be allocated to extend the internal table.  In the event of failure, no modules are added to the internal table.  This must be called before :c:func:`Py_Initialize`."
 msgstr "مجموعه‌ای از ماژول‌ها را به جدول ماژول‌های توکار اضافه می‌کند. آرایه *newtab* باید با یک ورودی نشانگر پایان یابد که برای فیلد :c:member:`~_inittab.name` مقدار ``NULL`` را در بر دارد؛ ارائه‌نکردن مقدار نشانگر می‌تواند به خطای حافظه منجر شود. در صورت موفقیت ``0`` و در صورتی که حافظه کافی برای گسترش جدول داخلی تخصیص داده نشود، ``-1`` برمی‌گرداند. در صورت شکست، هیچ ماژولی به جدول داخلی اضافه نمی‌شود. این باید پیش از :c:func:`Py_Initialize` فراخوانی شود."
 
@@ -210,6 +222,53 @@ msgstr "تابع کمکی که :c:func:`PyImport_Import` و :c:func:`PyObject_Ge
 
 msgid "Similar to :c:func:`PyImport_ImportModuleAttr`, but names are UTF-8 encoded strings instead of Python :class:`str` objects."
 msgstr "مشابه :c:func:`PyImport_ImportModuleAttr` است، اما نام‌ها به‌جای اشیاء :class:`str` پایتون، رشته‌های کدگذاری‌شده با UTF-8 هستند."
+
+msgid "Gets the current lazy imports mode."
+msgstr ""
+
+#, fuzzy
+#| msgid "Return a :term:`strong reference` to the module on success. Return ``NULL`` with an exception set on failure."
+msgid "Return a :term:`strong reference` to the current lazy imports filter, or ``NULL`` if none exists. This function always succeeds."
+msgstr "در صورت موفقیت، یک :term:`strong reference` به ماژول برمی‌گرداند. در صورت شکست، ``NULL`` را همراه با یک استثنای تنظیم‌شده برمی‌گرداند."
+
+#, fuzzy
+#| msgid "This function always uses absolute imports."
+msgid "This function always returns ``0``."
+msgstr "این تابع همیشه از ایمپورت‌های مطلق استفاده می‌کند."
+
+msgid "Sets the current lazy imports filter. The *filter* should be a callable that will receive ``(importing_module_name, imported_module_name, [fromlist])`` when an import can potentially be lazy. The ``imported_module_name`` value is the resolved module name, so ``lazy from .spam import eggs`` passes ``package.spam``. The callable must return ``True`` if the import should be lazy and ``False`` otherwise."
+msgstr ""
+
+#, fuzzy
+#| msgid "Return a :term:`strong reference` to the module on success. Return ``NULL`` with an exception set on failure."
+msgid "Return ``0`` on success and ``-1`` with an exception set otherwise."
+msgstr "در صورت موفقیت، یک :term:`strong reference` به ماژول برمی‌گرداند. در صورت شکست، ``NULL`` را همراه با یک استثنای تنظیم‌شده برمی‌گرداند."
+
+msgid "Enumeration of possible lazy import modes."
+msgstr ""
+
+msgid "Respect the ``lazy`` keyword in source code. This is the default mode."
+msgstr ""
+
+msgid "Make all imports lazy by default."
+msgstr ""
+
+msgid "This function is a building block that enables embedders to implement the :py:meth:`~importlib.abc.Loader.create_module` step of custom static extension importers (e.g. of statically-linked extensions)."
+msgstr ""
+
+#, fuzzy
+#| msgid "Setting :attr:`~module.__cached__` is deprecated. See :class:`~importlib.machinery.ModuleSpec` for alternatives."
+msgid "*spec* must be a :class:`~importlib.machinery.ModuleSpec` object."
+msgstr "تنظیم کردن :attr:`~module.__cached__` منسوخ شده است. برای جایگزین‌ها به :class:`~importlib.machinery.ModuleSpec` مراجعه کنید."
+
+msgid "*initfunc* must be an :ref:`initialization function <extension-export-hook>`, the same as for :c:func:`PyImport_AppendInittab`."
+msgstr ""
+
+msgid "On success, create and return a module object. This module will not be initialized; call :c:func:`PyModule_Exec` to initialize it. (Custom importers should do this in their :py:meth:`~importlib.abc.Loader.exec_module` method.)"
+msgstr ""
+
+msgid "On error, return NULL with an exception set."
+msgstr ""
 
 msgid "package variable"
 msgstr "متغیر بسته"
@@ -234,3 +293,12 @@ msgstr "کامپایل"
 
 msgid "freeze utility"
 msgstr "ابزار انجماد (freeze)"
+
+#~ msgid "This function is a deprecated alias of :c:func:`PyImport_ImportModule`."
+#~ msgstr "این تابع یک نام مستعار منسوخ برای :c:func:`PyImport_ImportModule` است."
+
+#~ msgid "This function used to fail immediately when the import lock was held by another thread.  In Python 3.3 though, the locking scheme switched to per-module locks for most purposes, so this function's special behaviour isn't needed anymore."
+#~ msgstr "این تابع پیش‌تر زمانی که قفل ایمپورت توسط نخ دیگری نگه داشته می‌شد، بلافاصله شکست می‌خورد. اما در پایتون 3.3، طرح‌واره قفل‌گذاری در اکثر موارد به قفل‌های جداگانه برای هر ماژول تغییر کرد، بنابراین رفتار خاص این تابع دیگر مورد نیاز نیست."
+
+#~ msgid "Use :c:func:`PyImport_ImportModule` instead."
+#~ msgstr "به جای آن از :c:func:`PyImport_ImportModule` استفاده کنید."

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 08:51+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -28,7 +28,9 @@ msgstr ""
 msgid ":mod:`!array` --- Efficient arrays of numeric values"
 msgstr ":mod:`!array` --- آرایه‌های کارآمد از مقادیر عددی"
 
-msgid "This module defines an object type which can compactly represent an array of basic values: characters, integers, floating-point numbers.  Arrays are mutable :term:`sequence` types and behave very much like lists, except that the type of objects stored in them is constrained.  The type is specified at object creation time by using a :dfn:`type code`, which is a single character.  The following type codes are defined:"
+#, fuzzy
+#| msgid "This module defines an object type which can compactly represent an array of basic values: characters, integers, floating-point numbers.  Arrays are mutable :term:`sequence` types and behave very much like lists, except that the type of objects stored in them is constrained.  The type is specified at object creation time by using a :dfn:`type code`, which is a single character.  The following type codes are defined:"
+msgid "This module defines an object type which can compactly represent an array of basic values: characters, integers, floating-point numbers, complex numbers.  Arrays are mutable :term:`sequence` types and behave very much like lists, except that the type of objects stored in them is constrained.  The type is specified at object creation time by using a :dfn:`type code`, which is a single character.  The following type codes are defined:"
 msgstr "این ماژول یک نوع شیء را تعریف می‌کند که می‌تواند آرایه‌ای از مقادیر پایه را به‌صورت فشرده بازنمایی کند: نویسه‌ها، اعداد صحیح و اعداد ممیز شناور. آرایه‌ها انواعی از :term:`دنباله <sequence>` تغییرپذیر هستند و بسیار شبیه فهرست‌ها رفتار می‌کنند، با این تفاوت که نوع اشیاء ذخیره‌شده در آن‌ها محدود است. این نوع در زمان ایجاد شیء با استفاده از یک :dfn:`کد نوع (type code)` مشخص می‌شود که یک نویسه واحد است. کدهای نوع زیر تعریف شده‌اند:"
 
 msgid "Type code"
@@ -142,17 +144,57 @@ msgstr "``'Q'``"
 msgid "unsigned long long"
 msgstr "unsigned long long"
 
-msgid "``'f'``"
-msgstr "``'f'``"
+msgid "``'e'``"
+msgstr ""
+
+#, fuzzy
+#| msgid "float"
+msgid "_Float16"
+msgstr "float"
 
 msgid "float"
 msgstr "float"
+
+msgid "\\(3)"
+msgstr ""
+
+msgid "``'f'``"
+msgstr "``'f'``"
 
 msgid "``'d'``"
 msgstr "``'d'``"
 
 msgid "double"
 msgstr "double"
+
+#, fuzzy
+#| msgid "``'f'``"
+msgid "``'Zf'``"
+msgstr "``'f'``"
+
+msgid "float complex"
+msgstr ""
+
+msgid "complex"
+msgstr ""
+
+msgid "\\(4)"
+msgstr ""
+
+#, fuzzy
+#| msgid "``'d'``"
+msgid "``'Zd'``"
+msgstr "``'d'``"
+
+#, fuzzy
+#| msgid "double"
+msgid "double complex"
+msgstr "double"
+
+#, fuzzy
+#| msgid "1"
+msgid "16"
+msgstr "1"
 
 msgid "Notes:"
 msgstr "یادداشت‌ها:"
@@ -166,6 +208,12 @@ msgstr "``array('u')`` اکنون از :c:type:`wchar_t` به‌عنوان نو�
 msgid "Please migrate to ``'w'`` typecode."
 msgstr "لطفاً به کد نوع (typecode) ``'w'`` مهاجرت کنید."
 
+msgid "The IEEE 754 binary16 \"half precision\" type was introduced in the 2008 revision of the `IEEE 754 standard <ieee 754 standard_>`_. This type is not widely supported by C compilers.  It's available as :c:expr:`_Float16` type, if the compiler supports the Annex H of the C23 standard."
+msgstr ""
+
+msgid "Complex types (``Zf`` and ``Zd``) are available unconditionally, regardless on support for complex types (the Annex G of the C11 standard) by the C compiler. As specified in the C11 standard, each complex type is represented by a two-element C array containing, respectively, the real and imaginary parts."
+msgstr ""
+
 msgid "The :ref:`ctypes <ctypes-fundamental-data-types>` and :ref:`struct <format-characters>` modules, as well as third-party modules like `numpy <https://numpy.org/doc/stable/reference/arrays.interface.html#object.__array_interface__>`__, use similar -- but slightly different -- type codes."
 msgstr "ماژول‌های :ref:`ctypes <ctypes-fundamental-data-types>` و :ref:`struct <format-characters>`، و همچنین ماژول‌های شخص ثالث مانند `numpy <https://numpy.org/doc/stable/reference/arrays.interface.html#object.__array_interface__>`__، از کدهای نوع مشابه -- اما کمی متفاوت -- استفاده می‌کنند."
 
@@ -175,8 +223,13 @@ msgstr "نمایش واقعی مقادیر توسط معماری ماشین تع
 msgid "The module defines the following item:"
 msgstr "این ماژول آیتم زیر را تعریف می‌کند:"
 
-msgid "A string with all available type codes."
+#, fuzzy
+#| msgid "A string with all available type codes."
+msgid "A tuple with all available type codes."
 msgstr "رشته‌ای حاوی همه‌ی کدهای نوع موجود."
+
+msgid "The type changed from :class:`str` to :class:`tuple`."
+msgstr ""
 
 msgid "The module defines the following type:"
 msgstr "این ماژول نوع زیر را تعریف می‌کند:"
@@ -211,7 +264,9 @@ msgstr "یک تاپل ``(address, length)`` برمی‌گرداند که نشا�
 msgid "When using array objects from code written in C or C++ (the only way to effectively make use of this information), it makes more sense to use the buffer interface supported by array objects.  This method is maintained for backward compatibility and should be avoided in new code.  The buffer interface is documented in :ref:`bufferobjects`."
 msgstr "هنگام استفاده از اشیای آرایه از کدی که به زبان C یا C++ نوشته‌شده است (تنها راه برای استفاده مؤثر از این اطلاعات)، منطقی‌تر است از رابط بافر (buffer interface) که توسط اشیای آرایه پشتیبانی می‌شود استفاده کنید. این متد برای سازگاری با عقب‌گرد نگهداری می‌شود و باید در کد جدید از آن اجتناب شود. رابط بافر در :ref:`bufferobjects` مستند شده است."
 
-msgid "\"Byteswap\" all items of the array.  This is only supported for values which are 1, 2, 4, or 8 bytes in size; for other types of values, :exc:`RuntimeError` is raised.  It is useful when reading data from a file written on a machine with a different byte order."
+#, fuzzy
+#| msgid "\"Byteswap\" all items of the array.  This is only supported for values which are 1, 2, 4, or 8 bytes in size; for other types of values, :exc:`RuntimeError` is raised.  It is useful when reading data from a file written on a machine with a different byte order."
+msgid "\"Byteswap\" all items of the array.  This is only supported for values which are 1, 2, 4, 8 or 16 bytes in size; for other types of values, :exc:`RuntimeError` is raised.  It is useful when reading data from a file written on a machine with a different byte order.  Note, that for complex types the order of components (the real part, followed by imaginary part) is preserved."
 msgstr "«جابه‌جایی بایت‌ها» (Byteswap) برای تمام آیتم‌های آرایه انجام می‌شود. این عمل فقط برای مقادیری با اندازه‌ی ۱، ۲، ۴ یا ۸ بایت پشتیبانی می‌شود؛ برای سایر انواع مقادیر، :exc:`RuntimeError` پرتاب می‌شود. این عمل هنگام خواندن داده‌ها از پرونده‌ای که روی ماشینی با ترتیب بایت متفاوت نوشته شده است، مفید است."
 
 msgid "Return the number of occurrences of *value* in the array."

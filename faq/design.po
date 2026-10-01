@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 13:33+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -377,7 +377,9 @@ msgstr "فهرست‌ها و تاپل‌ها، با وجود شباهت‌های
 msgid "Lists, on the other hand, are more like arrays in other languages.  They tend to hold a varying number of objects all of which have the same type and which are operated on one-by-one.  For example, :func:`os.listdir('.') <os.listdir>` returns a list of strings representing the files in the current directory.  Functions which operate on this output would generally not break if you added another file or two to the directory."
 msgstr "از سوی دیگر، فهرست‌ها بیشتر به آرایه‌ها در زبان‌های دیگر شبیه‌اند. آن‌ها معمولاً تعداد متغیری از شیءها را نگه می‌دارند که همگی نوع یکسانی دارند و یکی‌یکی روی آن‌ها عمل می‌شود. برای مثال، :func:`os.listdir('.') <os.listdir>` فهرستی از رشته‌ها را برمی‌گرداند که پرونده‌های پوشه جاری را نشان می‌دهند. توابعی که روی این خروجی عمل می‌کنند، معمولاً اگر یک یا دو پرونده دیگر به پوشه اضافه کنید، از کار نمی‌افتند."
 
-msgid "Tuples are immutable, meaning that once a tuple has been created, you can't replace any of its elements with a new value.  Lists are mutable, meaning that you can always change a list's elements.  Only immutable elements can be used as dictionary keys, and hence only tuples and not lists can be used as keys."
+#, fuzzy
+#| msgid "Tuples are immutable, meaning that once a tuple has been created, you can't replace any of its elements with a new value.  Lists are mutable, meaning that you can always change a list's elements.  Only immutable elements can be used as dictionary keys, and hence only tuples and not lists can be used as keys."
+msgid "Tuples are :term:`immutable`, meaning that once a tuple has been created, you can't replace any of its elements with a new value.  Lists are :term:`mutable`, meaning that you can always change a list's elements.  Only :term:`hashable` objects can be used as dictionary keys. Most immutable types are hashable, which is why tuples, but not lists, can be used as keys. Note, however, that a tuple is only hashable if all of its elements are hashable."
 msgstr "تاپل‌ها تغییرناپذیر هستند، به این معنا که پس از ایجاد یک تاپل، نمی‌توانید هیچ‌یک از عناصر آن را با مقدار جدیدی جایگزین کنید. فهرست‌ها تغییرپذیر هستند، به این معنا که همیشه می‌توانید عناصر یک فهرست را تغییر دهید. فقط عناصر تغییرناپذیر می‌توانند به‌عنوان کلیدهای دیکشنری استفاده شوند، و بنابراین فقط تاپل‌ها و نه فهرست‌ها می‌توانند به‌عنوان کلید استفاده شوند."
 
 msgid "How are lists implemented in CPython?"

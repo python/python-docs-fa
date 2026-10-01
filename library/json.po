@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-21 15:40+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -321,6 +321,11 @@ msgstr "اگر تنظیم شود، تابعی است که با نتیجه‌ی �
 msgid "If set, a function that is called with the result of any JSON object literal decoded with an ordered list of pairs. The return value of this function will be used instead of the :class:`dict`. This feature can be used to implement custom decoders. If *object_hook* is also set, *object_pairs_hook* takes priority. Default ``None``."
 msgstr "در صورت تنظیم، تابعی است که با نتیجه‌ی کدگشایی هر شیء JSON به‌صورت یک فهرست مرتب از جفت‌ها فراخوانی می‌شود. مقدار بازگشتی این تابع به‌جای :class:`dict` استفاده خواهد شد. می‌توان از این قابلیت برای پیاده‌سازی کدگشاهای سفارشی استفاده کرد. اگر *object_hook* نیز تنظیم شده باشد، *object_pairs_hook* اولویت دارد. پیش‌فرض ``None``."
 
+#, fuzzy
+#| msgid "If set, a function that is called with the result of any JSON object literal decoded with an ordered list of pairs. The return value of this function will be used instead of the :class:`dict`. This feature can be used to implement custom decoders. If *object_hook* is also set, *object_pairs_hook* takes priority. Default ``None``."
+msgid "If set, a function that is called with the result of any JSON array literal decoded with as a Python list. The return value of this function will be used instead of the :class:`list`. This feature can be used to implement custom decoders. Default ``None``."
+msgstr "در صورت تنظیم، تابعی است که با نتیجه‌ی کدگشایی هر شیء JSON به‌صورت یک فهرست مرتب از جفت‌ها فراخوانی می‌شود. مقدار بازگشتی این تابع به‌جای :class:`dict` استفاده خواهد شد. می‌توان از این قابلیت برای پیاده‌سازی کدگشاهای سفارشی استفاده کرد. اگر *object_hook* نیز تنظیم شده باشد، *object_pairs_hook* اولویت دارد. پیش‌فرض ``None``."
+
 msgid "If set, a function that is called with the string of every JSON float to be decoded. If ``None`` (the default), it is equivalent to ``float(num_str)``. This can be used to parse JSON floats into custom datatypes, for example :class:`decimal.Decimal`."
 msgstr "اگر تنظیم‌شده باشد، تابعی است که با رشته‌ی هر شناور JSON برای کدگشایی فراخوانی می‌شود. اگر ``None`` (پیش‌فرض) باشد، معادل ``float(num_str)`` است. این می‌تواند برای تجزیه‌ی شناورهای JSON به انواع داده سفارشی استفاده شود، برای مثال :class:`decimal.Decimal`."
 
@@ -350,6 +355,11 @@ msgstr "*fp* اکنون می‌تواند یک :term:`پرونده دودویی 
 
 msgid "The default *parse_int* of :func:`int` now limits the maximum length of the integer string via the interpreter's :ref:`integer string conversion length limitation <int_max_str_digits>` to help avoid denial of service attacks."
 msgstr "مقدار پیش‌فرض *parse_int* یعنی :func:`int` اکنون حداکثر طول رشته‌ی عدد صحیح را از طریق :ref:`محدودیت طول تبدیل رشته‌ی عدد صحیح <int_max_str_digits>` مفسر محدود می‌کند تا به جلوگیری از حملات منع سرویس کمک کند."
+
+#, fuzzy
+#| msgid "Added the optional *object_pairs_hook* parameter."
+msgid "Added the optional *array_hook* parameter."
+msgstr "پارامتر اختیاری *object_pairs_hook* اضافه شد."
 
 msgid "Identical to :func:`load`, but instead of a file-like object, deserialize *s* (a :class:`str`, :class:`bytes` or :class:`bytearray` instance containing a JSON document) to a Python object using this :ref:`conversion table <json-to-py-table>`."
 msgstr "کاملاً مشابه :func:`load` است، اما به‌جای یک شیء شبه‌پرونده، *s* (نمونه‌ای از :class:`str`، :class:`bytes` یا :class:`bytearray` که حاوی یک سند JSON است) را با استفاده از این :ref:`جدول تبدیل <json-to-py-table>` به یک شیء پایتون تبدیل (deserialize) می‌کند."
@@ -435,6 +445,16 @@ msgstr "*object_pairs_hook* یک تابع اختیاری است که با نتی
 msgid "Added support for *object_pairs_hook*."
 msgstr "پشتیبانی از *object_pairs_hook* افزوده شد."
 
+#, fuzzy
+#| msgid "*object_pairs_hook* is an optional function that will be called with the result of every JSON object decoded with an ordered list of pairs.  The return value of *object_pairs_hook* will be used instead of the :class:`dict`.  This feature can be used to implement custom decoders.  If *object_hook* is also defined, the *object_pairs_hook* takes priority."
+msgid "*array_hook* is an optional function that will be called with the result of every JSON array decoded as a list. The return value of *array_hook* will be used instead of the :class:`list`. This feature can be used to implement custom decoders."
+msgstr "*object_pairs_hook* یک تابع اختیاری است که با نتیجه‌ی کدگشایی هر شیء JSON به‌صورت یک فهرست مرتب از جفت‌ها فراخوانی می‌شود. مقدار بازگشتی *object_pairs_hook* به‌جای :class:`dict` استفاده خواهد شد. از این قابلیت می‌توان برای پیاده‌سازی کدگشاهای سفارشی استفاده کرد. اگر *object_hook* نیز تعریف شده باشد، *object_pairs_hook* اولویت دارد."
+
+#, fuzzy
+#| msgid "Added support for *object_pairs_hook*."
+msgid "Added support for *array_hook*."
+msgstr "پشتیبانی از *object_pairs_hook* افزوده شد."
+
 msgid "*parse_float* is an optional function that will be called with the string of every JSON float to be decoded.  By default, this is equivalent to ``float(num_str)``.  This can be used to use another datatype or parser for JSON floats (e.g. :class:`decimal.Decimal`)."
 msgstr "*parse_float* یک تابع اختیاری است که با رشته‌ی هر عدد اعشاری JSON که کدگشایی می‌شود، فراخوانی خواهد شد. به‌طور پیش‌فرض، این معادل ``float(num_str)`` است. می‌توان از آن برای استفاده از یک نوع داده یا پارسر دیگر برای اعداد اعشاری JSON استفاده کرد (برای مثال :class:`decimal.Decimal`)."
 
@@ -471,6 +491,9 @@ msgstr "کدگذار JSON توسعه‌پذیر برای ساختارهای دا
 msgid "Supports the following objects and types by default:"
 msgstr "به‌طور پیش‌فرض از اشیاء و انواع زیر پشتیبانی می‌کند:"
 
+msgid "dict, frozendict"
+msgstr ""
+
 msgid "list, tuple"
 msgstr "فهرست، تاپل"
 
@@ -482,6 +505,11 @@ msgstr "عدد"
 
 msgid "Added support for int- and float-derived Enum classes."
 msgstr "پشتیبانی از کلاس‌های Enum مشتق‌شده از int و float افزوده شد."
+
+#, fuzzy
+#| msgid "Added support for *object_pairs_hook*."
+msgid "Added support for :class:`frozendict`."
+msgstr "پشتیبانی از *object_pairs_hook* افزوده شد."
 
 msgid "To extend this to recognize other objects, subclass and implement a :meth:`~JSONEncoder.default` method with another method that returns a serializable object for ``o`` if possible, otherwise it should call the superclass implementation (to raise :exc:`TypeError`)."
 msgstr "برای گسترش آن جهت شناسایی اشیاء دیگر، یک زیرکلاس بسازید و متد :meth:`~JSONEncoder.default` را با متد دیگری پیاده‌سازی کنید که در صورت امکان یک شیء قابل سریال‌سازی برای ``o`` برمی‌گرداند؛ در غیر این صورت باید پیاده‌سازی ابرکلاس را فراخوانی کند (تا :exc:`TypeError` پرتاب شود)."

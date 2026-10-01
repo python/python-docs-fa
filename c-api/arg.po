@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2021-06-28 00:47+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -210,7 +210,9 @@ msgstr "اعداد"
 msgid "These formats allow representing Python numbers or single characters as C numbers. Formats that require :class:`int`, :class:`float` or :class:`complex` can also use the corresponding special methods :meth:`~object.__index__`, :meth:`~object.__float__` or :meth:`~object.__complex__` to convert the Python object to the required type."
 msgstr "این قالب‌ها اجازه می‌دهند اعداد پایتون یا نویسه‌های تکی به‌صورت اعداد C نمایش داده شوند. قالب‌هایی که به :class:`int`، :class:`float` یا :class:`complex` نیاز دارند، می‌توانند برای تبدیل شیء پایتون به نوع موردنیاز از متدهای ویژه‌ی متناظر :meth:`~object.__index__`، :meth:`~object.__float__` یا :meth:`~object.__complex__` نیز استفاده کنند."
 
-msgid "For signed integer formats, :exc:`OverflowError` is raised if the value is out of range for the C type. For unsigned integer formats, no range checking is done --- the most significant bits are silently truncated when the receiving field is too small to receive the value."
+#, fuzzy
+#| msgid "For signed integer formats, :exc:`OverflowError` is raised if the value is out of range for the C type. For unsigned integer formats, no range checking is done --- the most significant bits are silently truncated when the receiving field is too small to receive the value."
+msgid "For signed integer formats, :exc:`OverflowError` is raised if the value is out of range for the C type. For unsigned integer formats, the most significant bits are silently truncated when the receiving field is too small to receive the value, and :exc:`DeprecationWarning` is emitted when the value is larger than the maximal value for the C type or less than the minimal value for the corresponding signed integer type of the same size."
 msgstr "برای قالب‌های عدد صحیح علامت‌دار، اگر مقدار خارج از محدوده نوع C باشد، :exc:`OverflowError` مطرح می‌شود. برای قالب‌های عدد صحیح بدون علامت، هیچ بررسی محدوده‌ای انجام نمی‌شود --- وقتی فیلد دریافت‌کننده برای دریافت مقدار بیش از حد کوچک باشد، بیت‌های پرارزش بدون هیچ هشداری بریده می‌شوند."
 
 msgid "``b`` (:class:`int`) [unsigned char]"
@@ -222,7 +224,9 @@ msgstr "یک عدد صحیح نامنفی پایتون را به یک عدد ص�
 msgid "``B`` (:class:`int`) [unsigned char]"
 msgstr "``B`` (:class:`int`) [unsigned char]"
 
-msgid "Convert a Python integer to a tiny integer without overflow checking, stored in a C :c:expr:`unsigned char`."
+#, fuzzy
+#| msgid "Convert a Python integer to a tiny integer without overflow checking, stored in a C :c:expr:`unsigned char`."
+msgid "Convert a Python integer to a tiny integer without overflow checking, stored in a C :c:expr:`unsigned char`. Convert a Python integer to a C :c:expr:`unsigned char`."
 msgstr "یک عدد صحیح پایتون را بدون بررسی سرریز به یک عدد صحیح کوچک تبدیل می‌کند که در یک :c:expr:`unsigned char` از C ذخیره می‌شود."
 
 msgid "``h`` (:class:`int`) [short int]"
@@ -234,8 +238,10 @@ msgstr "یک عدد صحیح پایتون را به :c:expr:`short int` در ز�
 msgid "``H`` (:class:`int`) [unsigned short int]"
 msgstr "``H`` (:class:`int`) [unsigned short int]"
 
-msgid "Convert a Python integer to a C :c:expr:`unsigned short int`, without overflow checking."
-msgstr "یک عدد صحیح پایتون را بدون بررسی سرریز به یک :c:expr:`unsigned short int` در C تبدیل می‌کند."
+#, fuzzy
+#| msgid "Convert a Python integer to a C :c:expr:`short int`."
+msgid "Convert a Python integer to a C :c:expr:`unsigned short int`."
+msgstr "یک عدد صحیح پایتون را به :c:expr:`short int` در زبان C تبدیل می‌کند."
 
 msgid "``i`` (:class:`int`) [int]"
 msgstr "``i`` (:class:`int`) [int]"
@@ -246,8 +252,10 @@ msgstr "یک عدد صحیح پایتون را به یک :c:expr:`int` ساده�
 msgid "``I`` (:class:`int`) [unsigned int]"
 msgstr "``I`` (:class:`int`) [unsigned int]"
 
-msgid "Convert a Python integer to a C :c:expr:`unsigned int`, without overflow checking."
-msgstr "یک عدد صحیح پایتون را به :c:expr:`unsigned int` در C تبدیل می‌کند، بدون بررسی سرریز."
+#, fuzzy
+#| msgid "Convert a Python integer to a C :c:expr:`long int`."
+msgid "Convert a Python integer to a C :c:expr:`unsigned int`."
+msgstr "یک عدد صحیح پایتون را به یک :c:expr:`long int` در C تبدیل می‌کند."
 
 msgid "``l`` (:class:`int`) [long int]"
 msgstr "``l`` (:class:`int`) [long int]"
@@ -258,8 +266,10 @@ msgstr "یک عدد صحیح پایتون را به یک :c:expr:`long int` در
 msgid "``k`` (:class:`int`) [unsigned long]"
 msgstr "``k`` (:class:`int`) [unsigned long]"
 
-msgid "Convert a Python integer to a C :c:expr:`unsigned long` without overflow checking."
-msgstr "یک عدد صحیح پایتون را بدون بررسی سرریز به یک :c:expr:`unsigned long` در C تبدیل می‌کند."
+#, fuzzy
+#| msgid "Convert a Python integer to a C :c:expr:`long long`."
+msgid "Convert a Python integer to a C :c:expr:`unsigned long`."
+msgstr "تبدیل یک عدد صحیح پایتون به یک :c:expr:`long long` در C."
 
 msgid "Use :meth:`~object.__index__` if available."
 msgstr "در صورت وجود، از :meth:`~object.__index__` استفاده کنید."
@@ -273,8 +283,10 @@ msgstr "تبدیل یک عدد صحیح پایتون به یک :c:expr:`long lon
 msgid "``K`` (:class:`int`) [unsigned long long]"
 msgstr "``K`` (:class:`int`) [unsigned long long]"
 
-msgid "Convert a Python integer to a C :c:expr:`unsigned long long` without overflow checking."
-msgstr "یک عدد صحیح پایتون را بدون بررسی سرریز به یک :c:expr:`unsigned long long` در C تبدیل می‌کند."
+#, fuzzy
+#| msgid "Convert a Python integer to a C :c:expr:`long long`."
+msgid "Convert a Python integer to a C :c:expr:`unsigned long long`."
+msgstr "تبدیل یک عدد صحیح پایتون به یک :c:expr:`long long` در C."
 
 msgid "``n`` (:class:`int`) [:c:type:`Py_ssize_t`]"
 msgstr "``n`` (:class:`int`) [:c:type:`Py_ssize_t`]"
@@ -314,6 +326,9 @@ msgstr "``D`` (:class:`complex`) [Py_complex]"
 
 msgid "Convert a Python complex number to a C :c:type:`Py_complex` structure."
 msgstr "یک عدد مختلط پایتون را به ساختار :c:type:`Py_complex` زبان C تبدیل می‌کند."
+
+msgid "For unsigned integer formats ``B``, ``H``, ``I``, ``k`` and ``K``, :exc:`DeprecationWarning` is emitted when the value is larger than the maximal value for the C type or less than the minimal value for the corresponding signed integer type of the same size."
+msgstr ""
 
 msgid "Other objects"
 msgstr "سایر اشیاء"
@@ -463,6 +478,16 @@ msgstr ""
 "    }\n"
 "    // ... use value ...\n"
 "}"
+
+#, fuzzy
+#| msgid "Parse the parameters of a function that takes only positional parameters into local variables.  Returns true on success; on failure, it returns false and raises the appropriate exception."
+msgid "Parse the parameters of a function that takes only array parameters into local variables (that is, a function using the :c:macro:`METH_FASTCALL` calling convention). Returns true on success; on failure, it returns false and raises the appropriate exception."
+msgstr "پارامترهای تابعی را که فقط پارامترهای جایگاهی می‌پذیرد، به متغیرهای محلی تجزیه می‌کند. در صورت موفقیت true برمی‌گرداند؛ در صورت شکست، false برمی‌گرداند و استثنای مناسب را برمی‌انگیزد."
+
+#, fuzzy
+#| msgid "Parse the parameters of a function that takes only positional parameters into local variables.  Returns true on success; on failure, it returns false and raises the appropriate exception."
+msgid "Parse the parameters of a function that takes both array and keyword parameters into local variables (that is, a function using the :c:macro:`METH_FASTCALL` ``|`` :c:macro:`METH_KEYWORDS` calling convention). Returns true on success; on failure, it returns false and raises the appropriate exception."
+msgstr "پارامترهای تابعی را که فقط پارامترهای جایگاهی می‌پذیرد، به متغیرهای محلی تجزیه می‌کند. در صورت موفقیت true برمی‌گرداند؛ در صورت شکست، false برمی‌گرداند و استثنای مناسب را برمی‌انگیزد."
 
 msgid "A simpler form of parameter retrieval which does not use a format string to specify the types of the arguments.  Functions which use this method to retrieve their parameters should be declared as :c:macro:`METH_VARARGS` in function or method tables.  The tuple containing the actual parameters should be passed as *args*; it must actually be a tuple.  The length of the tuple must be at least *min* and no more than *max*; *min* and *max* may be equal.  Additional arguments must be passed to the function, each of which should be a pointer to a :c:expr:`PyObject*` variable; these will be filled in with the values from *args*; they will contain :term:`borrowed references <borrowed reference>`. The variables which correspond to optional parameters not given by *args* will not be filled in; these should be initialized by the caller. This function returns true on success and false if *args* is not a tuple or contains the wrong number of elements; an exception will be set if there was a failure."
 msgstr "شکل ساده‌تری از بازیابی پارامتر که برای تعیین نوع آرگومان‌ها از رشته قالب استفاده نمی‌کند. توابعی که از این روش برای بازیابی پارامترهای خود استفاده می‌کنند باید در جدول‌های تابع یا متد به‌صورت :c:macro:`METH_VARARGS` اعلان شوند. تاپل حاوی پارامترهای واقعی باید به‌عنوان *args* ارسال شود؛ واقعاً باید یک تاپل باشد. طول تاپل باید حداقل *min* و حداکثر *max* باشد؛ *min* و *max* می‌توانند برابر باشند. آرگومان‌های اضافی باید به تابع ارسال شوند که هر یک باید اشاره‌گری به متغیر :c:expr:`PyObject*` باشد؛ این‌ها با مقادیر *args* پر خواهند شد؛ آن‌ها حاوی :term:`ارجاع‌های امانتی <borrowed reference>` خواهند بود. متغیرهای متناظر با پارامترهای اختیاری که توسط *args* داده نشده‌اند، پر نخواهند شد؛ این متغیرها باید توسط فراخواننده مقداردهی اولیه شوند. این تابع در صورت موفقیت true برمی‌گرداند و اگر *args* یک تاپل نباشد یا تعداد عناصر نادرستی داشته باشد false برمی‌گرداند؛ در صورت شکست، یک استثنا تنظیم خواهد شد."
@@ -682,3 +707,15 @@ msgstr "اگر خطایی در رشته قالب‌بندی وجود داشته 
 
 msgid "Identical to :c:func:`Py_BuildValue`, except that it accepts a va_list rather than a variable number of arguments."
 msgstr "یکسان با :c:func:`Py_BuildValue` است، با این تفاوت که به جای تعداد متغیری از آرگومان‌ها، یک va_list می‌پذیرد."
+
+#~ msgid "Convert a Python integer to a C :c:expr:`unsigned short int`, without overflow checking."
+#~ msgstr "یک عدد صحیح پایتون را بدون بررسی سرریز به یک :c:expr:`unsigned short int` در C تبدیل می‌کند."
+
+#~ msgid "Convert a Python integer to a C :c:expr:`unsigned int`, without overflow checking."
+#~ msgstr "یک عدد صحیح پایتون را به :c:expr:`unsigned int` در C تبدیل می‌کند، بدون بررسی سرریز."
+
+#~ msgid "Convert a Python integer to a C :c:expr:`unsigned long` without overflow checking."
+#~ msgstr "یک عدد صحیح پایتون را بدون بررسی سرریز به یک :c:expr:`unsigned long` در C تبدیل می‌کند."
+
+#~ msgid "Convert a Python integer to a C :c:expr:`unsigned long long` without overflow checking."
+#~ msgstr "یک عدد صحیح پایتون را بدون بررسی سرریز به یک :c:expr:`unsigned long long` در C تبدیل می‌کند."

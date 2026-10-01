@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 08:55+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -45,7 +45,9 @@ msgstr "استثنایی که در صورت شناسایی نشدن تنظیما
 msgid "If *locale* is given and not ``None``, :func:`setlocale` modifies the locale setting for the *category*. The available categories are listed in the data description below. *locale* may be a :ref:`string <locale_name>`, or a pair, language code and encoding. An empty string specifies the user's default settings. If the modification of the locale fails, the exception :exc:`Error` is raised. If successful, the new locale setting is returned."
 msgstr "اگر *locale* داده شده باشد و ``None`` نباشد، :func:`setlocale` تنظیمات locale  را برای *category* تغییر می‌دهد. دسته‌های موجود در توضیحات داده‌های زیر فهرست شده‌اند. *locale* می‌تواند یک :ref:`رشته <locale_name>`، یا جفتی از کد زبان و کدگذاری باشد. یک رشته خالی تنظیمات پیش‌فرض کاربر را مشخص می‌کند. اگر تغییر تنظیمات locale ناموفق باشد، استثنای :exc:`Error` پرتاب می‌شود. در صورت موفقیت، تنظیمات locale جدید برگردانده می‌شود."
 
-msgid "If *locale* is a pair, it is converted to a locale name using the locale aliasing engine. The language code has the same format as a :ref:`locale name <locale_name>`, but without encoding and ``@``-modifier. The language code and encoding can be ``None``."
+#, fuzzy
+#| msgid "If *locale* is a pair, it is converted to a locale name using the locale aliasing engine. The language code has the same format as a :ref:`locale name <locale_name>`, but without encoding and ``@``-modifier. The language code and encoding can be ``None``."
+msgid "If *locale* is a pair, it is converted to a locale name using the locale aliasing engine. The language code has the same format as a :ref:`locale name <locale_name>`, but without encoding. The language code and encoding can be ``None``."
 msgstr "اگر *locale* یک جفت باشد، با استفاده از موتور نام‌مستعارسازی locale به یک نام locale تبدیل می‌شود. کد زبان همان قالب یک :ref:`نام locale <locale_name>` را دارد، اما بدون کدگذاری و اصلاح‌کننده ``@``. کد زبان و کدگذاری می‌توانند ``None`` باشند."
 
 msgid "If *locale* is omitted or ``None``, the current setting for *category* is returned."
@@ -85,6 +87,9 @@ msgstr ""
 
 msgid "This sets the locale for all categories to the user's default setting (typically specified in the :envvar:`LANG` environment variable).  If the locale is not changed thereafter, using multithreading should not cause problems."
 msgstr "این کار تنظیمات locale را برای تمام دسته‌ها روی تنظیم پیش‌فرض کاربر قرار می‌دهد (که معمولاً در متغیر محیطی :envvar:`LANG` مشخص شده است). اگر تنظیمات locale پس از آن تغییر نکند، استفاده از چندنخی نباید مشکلی ایجاد کند."
+
+msgid "Support language codes with ``@``-modifiers."
+msgstr ""
 
 msgid "Returns the database of the local conventions as a dictionary. This dictionary has the following strings as keys:"
 msgstr "پایگاه داده‌ی قراردادهای محلی را به‌صورت یک دیکشنری برمی‌گرداند. این دیکشنری رشته‌های زیر را به‌عنوان کلید دارد:"
@@ -343,6 +348,14 @@ msgstr "کد زبان همان قالب :ref:`locale name <locale_name>` را د
 
 msgid "Returns the current setting for the given locale category as a tuple containing the language code and encoding. *category* may be one of the :const:`!LC_\\*` values except :const:`LC_ALL`.  It defaults to :const:`LC_CTYPE`."
 msgstr "تنظیم فعلی دسته‌بندی locale داده‌شده را به‌صورت یک تاپل شامل کد زبان و کدگذاری برمی‌گرداند. *category* می‌تواند یکی از مقادیر :const:`!LC_\\*`، به‌جز :const:`LC_ALL` باشد. پیش‌فرض آن :const:`LC_CTYPE` است."
+
+#, fuzzy
+#| msgid "The language code has the same format as a :ref:`locale name <locale_name>`, but without encoding and ``@``-modifier. The language code and encoding may be ``None`` if their values cannot be determined. The \"C\" locale is represented as ``(None, None)``."
+msgid "The language code has the same format as a :ref:`locale name <locale_name>`, but without encoding. The language code and encoding may be ``None`` if their values cannot be determined. The \"C\" locale is represented as ``(None, None)``."
+msgstr "کد زبان همان قالب :ref:`locale name <locale_name>` را دارد، اما بدون کدگذاری و اصلاح‌کننده ``@``. کد زبان و کدگذاری ممکن است در صورتی که مقدارشان قابل تعیین نباشد، ``None`` باشند. locale \"C\" به‌صورت ``(None, None)`` نمایش داده می‌شود."
+
+msgid "``@``-modifier are no longer silently removed, but included in the language code."
+msgstr ""
 
 msgid "Return the :term:`locale encoding` used for text data, according to user preferences.  User preferences are expressed differently on different systems, and might not be available programmatically on some systems, so this function only returns a guess."
 msgstr ":term:`locale encoding` مورد استفاده برای داده‌های متنی را، بر اساس ترجیحات کاربر، برمی‌گرداند. ترجیحات کاربر در سیستم‌های مختلف به‌شکل متفاوتی بیان می‌شوند و ممکن است در برخی سیستم‌ها به‌صورت برنامه‌ای در دسترس نباشند، بنابراین این تابع تنها یک حدس را برمی‌گرداند."

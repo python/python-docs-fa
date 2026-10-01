@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 12:55+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: none\n"
@@ -65,9 +65,6 @@ msgstr "بخش‌های بحرانی با تعلیق ضمنی بخش‌های ب
 msgid "Variants that accept :c:type:`PyMutex` pointers rather than Python objects are also available. Use these variants to start a critical section in a situation where there is no :c:type:`PyObject` -- for example, when working with a C type that does not extend or wrap :c:type:`PyObject` but still needs to call into the C API in a manner that might lead to deadlocks."
 msgstr "گونه‌هایی نیز موجود هستند که به‌جای اشیاء پایتون، اشاره‌گرهای :c:type:`PyMutex` را می‌پذیرند. از این گونه‌ها برای آغاز یک بخش بحرانی در موقعیتی که :c:type:`PyObject` وجود ندارد استفاده کنید -- برای مثال، هنگام کار با یک نوع C که :c:type:`PyObject` را بسط نمی‌دهد یا دربر نمی‌گیرد، اما همچنان باید به شکلی که ممکن است به بن‌بست منجر شود، در API زبان C فراخوانی انجام دهد."
 
-msgid "The functions and structs used by the macros are exposed for cases where C macros are not available. They should only be used as in the given macro expansions. Note that the sizes and contents of the structures may change in future Python versions."
-msgstr "توابع و ساختارهایی که ماکروها از آن‌ها استفاده می‌کنند، برای مواردی که ماکروهای C موجود نیستند، در دسترس قرار گرفته‌اند. از آن‌ها باید فقط مطابق با بسط‌های داده‌شده‌ی ماکروها استفاده شود. توجه داشته باشید که اندازه و محتویات ساختارها ممکن است در نسخه‌های آینده پایتون تغییر کنند."
-
 msgid "Operations that need to lock two objects at once must use :c:macro:`Py_BEGIN_CRITICAL_SECTION2`.  You *cannot* use nested critical sections to lock more than one object at once, because the inner critical section may suspend the outer critical sections.  This API does not provide a way to lock more than two objects at once."
 msgstr "عملیاتی که نیاز به قفل کردن دو شیء به‌طور همزمان دارند، باید از :c:macro:`Py_BEGIN_CRITICAL_SECTION2` استفاده کنند.  شما *نمی‌توانید* از بخش‌های بحرانی تودرتو برای قفل کردن بیش از یک شیء به‌طور همزمان استفاده کنید، زیرا بخش بحرانی داخلی ممکن است بخش‌های بحرانی خارجی را تعلیق کند.  این API راهی برای قفل کردن بیش از دو شیء به‌طور همزمان فراهم نمی‌کند."
 
@@ -99,7 +96,9 @@ msgstr "در مثال بالا، :c:macro:`Py_SETREF` :c:macro:`Py_DECREF` را 
 msgid "Acquires the per-object lock for the object *op* and begins a critical section."
 msgstr "قفل مخصوص هر شیء را برای شیء *op* به دست می‌آورد و یک بخش بحرانی را آغاز می‌کند."
 
-msgid "In the free-threaded build, this macro expands to::"
+#, fuzzy
+#| msgid "In the free-threaded build, this macro expands to::"
+msgid "In the free-threaded build, and when building for the :ref:`Stable ABI <stable-abi>`, this macro expands to::"
 msgstr "در ساخت‌ نخ‌آزاد، این ماکرو به صورت زیر بسط می‌یابد::"
 
 msgid ""
@@ -116,6 +115,9 @@ msgstr "در ساخت‌ پیش‌فرض، این ماکرو به ``{`` بسط �
 
 msgid "Locks the mutex *m* and begins a critical section."
 msgstr "قفل متقابل *m* را قفل می‌کند و یک بخش بحرانی را آغاز می‌کند."
+
+msgid "In the free-threaded build, this macro expands to::"
+msgstr "در ساخت‌ نخ‌آزاد، این ماکرو به صورت زیر بسط می‌یابد::"
 
 msgid ""
 "{\n"
@@ -182,11 +184,31 @@ msgstr ""
 "    PyCriticalSection2_End(&_py_cs2);\n"
 "}"
 
+#, fuzzy
+#| msgid "Python critical section API"
+msgid "Low-level critical section API"
+msgstr "API بخش بحرانی پایتون"
+
+msgid "The following functions and structs are exposed for cases where C macros are not available."
+msgstr ""
+
+msgid "To be used only as in the macro expansions listed :ref:`earlier in this section <critical-section-macros>`."
+msgstr ""
+
+msgid "In non-:term:`free-threaded <free threading>` builds of CPython, these functions do nothing."
+msgstr ""
+
+msgid "To be used only as in the macro expansions listed :ref:`earlier in this section <critical-section-macros>`. Note that the contents of the structures are private and their meaning may change in future Python versions."
+msgstr ""
+
 msgid "Legacy locking APIs"
 msgstr "API‌های قدیمی قفل‌گذاری"
 
 msgid "These APIs are obsolete since Python 3.13 with the introduction of :c:type:`PyMutex`."
 msgstr "این API‌ها با معرفی :c:type:`PyMutex` در پایتون 3.13 منسوخ شده‌اند."
+
+msgid "These APIs are now a simple wrapper around ``PyMutex``."
+msgstr ""
 
 msgid "A pointer to a mutual exclusion lock."
 msgstr "اشاره‌گری به قفل متقابل."
@@ -211,6 +233,9 @@ msgstr "در صورت موفقیت، این تابع یک قفل برمی‌گر
 
 msgid "The caller does not need to hold an :term:`attached thread state`."
 msgstr "فراخواننده نیازی به در اختیار داشتن :term:`وضعیت نخ متصل <attached thread state>` ندارد."
+
+msgid "This function now always uses :c:type:`PyMutex`. In prior versions, this would use a lock provided by the operating system."
+msgstr ""
 
 msgid "Destroy *lock*. The lock should not be held by any thread when calling this."
 msgstr "قفل *lock* را از بین می‌برد. هنگام فراخوانی این تابع، قفل نباید در اختیار هیچ نخی باشد."
@@ -241,3 +266,6 @@ msgstr "برخلاف :c:func:`PyThread_acquire_lock_timed`، به‌دست‌آ�
 
 msgid "Release *lock*. If *lock* is not held, then this function issues a fatal error."
 msgstr "*lock* را آزاد می‌کند. اگر *lock* نگه داشته نشده باشد، این تابع خطای مهلک صادر می‌کند."
+
+#~ msgid "The functions and structs used by the macros are exposed for cases where C macros are not available. They should only be used as in the given macro expansions. Note that the sizes and contents of the structures may change in future Python versions."
+#~ msgstr "توابع و ساختارهایی که ماکروها از آن‌ها استفاده می‌کنند، برای مواردی که ماکروهای C موجود نیستند، در دسترس قرار گرفته‌اند. از آن‌ها باید فقط مطابق با بسط‌های داده‌شده‌ی ماکروها استفاده شود. توجه داشته باشید که اندازه و محتویات ساختارها ممکن است در نسخه‌های آینده پایتون تغییر کنند."

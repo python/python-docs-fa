@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 07:23+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -1424,7 +1424,9 @@ msgstr "توابع مستند‌نشده‌ی :func:`!glob0` و :func:`!glob1` �
 msgid ":mod:`http.server`:"
 msgstr ":mod:`http.server`:"
 
-msgid "Deprecate :class:`~http.server.CGIHTTPRequestHandler`, to be removed in Python 3.15. Process-based CGI HTTP servers have been out of favor for a very long time. This code was outdated, unmaintained, and rarely used. It has a high potential for both security and functionality bugs. (Contributed by Gregory P. Smith in :gh:`109096`.)"
+#, fuzzy
+#| msgid "Deprecate :class:`~http.server.CGIHTTPRequestHandler`, to be removed in Python 3.15. Process-based CGI HTTP servers have been out of favor for a very long time. This code was outdated, unmaintained, and rarely used. It has a high potential for both security and functionality bugs. (Contributed by Gregory P. Smith in :gh:`109096`.)"
+msgid "Deprecate :class:`!CGIHTTPRequestHandler`, to be removed in Python 3.15. Process-based CGI HTTP servers have been out of favor for a very long time. This code was outdated, unmaintained, and rarely used. It has a high potential for both security and functionality bugs. (Contributed by Gregory P. Smith in :gh:`109096`.)"
 msgstr "کلاس :class:`~http.server.CGIHTTPRequestHandler` منسوخ شد و در پایتون 3.15 حذف خواهد شد. سرورهای HTTP CGI مبتنی بر فرایند مدت‌هاست از مد افتاده‌اند. این کد قدیمی بود، نگهداری نمی‌شد و به‌ندرت استفاده می‌شد. این کد پتانسیل بالایی برای باگ‌های امنیتی و کارکردی دارد. (مشارکت‌شده توسط Gregory P. Smith در :gh:`109096`.)"
 
 msgid "Deprecate the :option:`!--cgi` flag to the :program:`python -m http.server` command-line interface, to be removed in Python 3.15. (Contributed by Gregory P. Smith in :gh:`109096`.)"
@@ -1445,13 +1447,17 @@ msgstr "ارسال آرگومان‌های اختیاری *maxsplit*، *count* �
 msgid ":mod:`pathlib`:"
 msgstr ":mod:`pathlib`:"
 
-msgid "Deprecate :meth:`.PurePath.is_reserved`, to be removed in Python 3.15. Use :func:`os.path.isreserved` to detect reserved paths on Windows. (Contributed by Barney Gale in :gh:`88569`.)"
+#, fuzzy
+#| msgid "Deprecate :meth:`.PurePath.is_reserved`, to be removed in Python 3.15. Use :func:`os.path.isreserved` to detect reserved paths on Windows. (Contributed by Barney Gale in :gh:`88569`.)"
+msgid "Deprecate :meth:`!.PurePath.is_reserved`, to be removed in Python 3.15. Use :func:`os.path.isreserved` to detect reserved paths on Windows. (Contributed by Barney Gale in :gh:`88569`.)"
 msgstr "متد :meth:`.PurePath.is_reserved` منسوخ شد و در پایتون 3.15 حذف خواهد شد. برای تشخیص مسیرهای رزرو‌شده در ویندوز از :func:`os.path.isreserved` استفاده کنید. (مشارکت‌شده توسط Barney Gale در :gh:`88569`.)"
 
 msgid ":mod:`platform`:"
 msgstr ":mod:`platform`:"
 
-msgid "Deprecate :func:`~platform.java_ver`, to be removed in Python 3.15. This function is only useful for Jython support, has a confusing API, and is largely untested. (Contributed by Nikita Sobolev in :gh:`116349`.)"
+#, fuzzy
+#| msgid "Deprecate :func:`~platform.java_ver`, to be removed in Python 3.15. This function is only useful for Jython support, has a confusing API, and is largely untested. (Contributed by Nikita Sobolev in :gh:`116349`.)"
+msgid "Deprecate :func:`!platform.java_ver`, to be removed in Python 3.15. This function is only useful for Jython support, has a confusing API, and is largely untested. (Contributed by Nikita Sobolev in :gh:`116349`.)"
 msgstr "تابع :func:`~platform.java_ver` منسوخ شد و در پایتون 3.15 حذف خواهد شد. این تابع فقط برای پشتیبانی از Jython مفید است، API گیج‌کننده‌ای دارد و عمدتاً آزمون‌نشده است. (مشارکت Nikita Sobolev در :gh:`116349`.)"
 
 msgid ":mod:`pydoc`:"
@@ -1499,7 +1505,9 @@ msgstr "سینتکس مستندنشده‌ی آرگومان کلیدواژه‌�
 msgid "Deprecate omitting the *fields* parameter when creating a :class:`~typing.NamedTuple` or :class:`typing.TypedDict` class, and deprecate passing ``None`` to the *fields* parameter of both types. Python 3.15 will require a valid sequence for the *fields* parameter. To create a NamedTuple class with zero fields, use ``class NT(NamedTuple): pass`` or ``NT = NamedTuple(\"NT\", ())``. To create a TypedDict class with zero fields, use ``class TD(TypedDict): pass`` or ``TD = TypedDict(\"TD\", {})``. (Contributed by Alex Waygood in :gh:`105566` and :gh:`105570`.)"
 msgstr "استفاده‌نکردن از پارامتر *fields* هنگام ایجاد کلاس :class:`~typing.NamedTuple` یا :class:`typing.TypedDict` منسوخ شد، و ارسال ``None`` به پارامتر *fields* هر دو نوع نیز منسوخ شد. پایتون 3.15 برای پارامتر *fields* یک دنباله معتبر را الزامی خواهد کرد. برای ایجاد یک کلاس NamedTuple بدون هیچ فیلدی، از ``class NT(NamedTuple): pass`` یا ``NT = NamedTuple(\"NT\", ())`` استفاده کنید. برای ایجاد یک کلاس TypedDict بدون هیچ فیلدی، از ``class TD(TypedDict): pass`` یا ``TD = TypedDict(\"TD\", {})`` استفاده کنید. (مشارکت‌شده توسط Alex Waygood در :gh:`105566` و :gh:`105570`.)"
 
-msgid "Deprecate the :deco:`typing.no_type_check_decorator` decorator function, to be removed in Python 3.15. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker. (Contributed by Alex Waygood in :gh:`106309`.)"
+#, fuzzy
+#| msgid "Deprecate the :deco:`typing.no_type_check_decorator` decorator function, to be removed in Python 3.15. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker. (Contributed by Alex Waygood in :gh:`106309`.)"
+msgid "Deprecate the :deco:`!typing.no_type_check_decorator` decorator function, to be removed in Python 3.15. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker. (Contributed by Alex Waygood in :gh:`106309`.)"
 msgstr "تابع دکوراتور :deco:`typing.no_type_check_decorator` منسوخ می‌شود و در Python 3.15 حذف خواهد شد. پس از هشت سال حضور در ماژول :mod:`typing`، هنوز هیچ بررسی‌گر نوع بزرگی از آن پشتیبانی نکرده است. (مشارکت‌شده توسط Alex Waygood در :gh:`106309`.)"
 
 msgid "Deprecate :data:`typing.AnyStr`. In Python 3.16, it will be removed from ``typing.__all__``, and a :exc:`DeprecationWarning` will be emitted at runtime when it is imported or accessed. It will be removed entirely in Python 3.18. Use the new :ref:`type parameter syntax <type-params>` instead. (Contributed by Michael The in :gh:`107116`.)"
@@ -1508,7 +1516,9 @@ msgstr ":data:`typing.AnyStr` منسوخ اعلام شد. در پایتون 3.16
 msgid ":mod:`wave`:"
 msgstr ":mod:`wave`:"
 
-msgid "Deprecate the :meth:`~wave.Wave_read.getmark`, :meth:`!setmark`, and :meth:`~wave.Wave_read.getmarkers` methods of the :class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes, to be removed in Python 3.15. (Contributed by Victor Stinner in :gh:`105096`.)"
+#, fuzzy
+#| msgid "Deprecate the :meth:`~wave.Wave_read.getmark`, :meth:`!setmark`, and :meth:`~wave.Wave_read.getmarkers` methods of the :class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes, to be removed in Python 3.15. (Contributed by Victor Stinner in :gh:`105096`.)"
+msgid "Deprecate the ``getmark()``, ``setmark()`` and ``getmarkers()`` methods of the :class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes, to be removed in Python 3.15. (Contributed by Victor Stinner in :gh:`105096`.)"
 msgstr "متدهای :meth:`~wave.Wave_read.getmark`، :meth:`!setmark` و :meth:`~wave.Wave_read.getmarkers` از کلاس‌های :class:`~wave.Wave_read` و :class:`~wave.Wave_write` منسوخ شدند و در پایتون 3.15 حذف خواهند شد. (مشارکت‌شده توسط Victor Stinner در :gh:`105096`.)"
 
 msgid "Pending removal in Python 3.14"
@@ -1613,7 +1623,9 @@ msgstr "در انتظار حذف در پایتون 3.15"
 msgid "The import system:"
 msgstr "سیستم ایمپورت:"
 
-msgid "Setting :attr:`~module.__cached__` on a module while failing to set :attr:`__spec__.cached <importlib.machinery.ModuleSpec.cached>` is deprecated. In Python 3.15, :attr:`!__cached__` will cease to be set or take into consideration by the import system or standard library. (:gh:`97879`)"
+#, fuzzy
+#| msgid "Setting :attr:`~module.__cached__` on a module while failing to set :attr:`__spec__.cached <importlib.machinery.ModuleSpec.cached>` is deprecated. In Python 3.15, :attr:`!__cached__` will cease to be set or take into consideration by the import system or standard library. (:gh:`97879`)"
+msgid "Setting ``__cached__`` on a module while failing to set :attr:`__spec__.cached <importlib.machinery.ModuleSpec.cached>` is deprecated. In Python 3.15, ``__cached__`` will cease to be set or take into consideration by the import system or standard library. (:gh:`97879`)"
 msgstr "تنظیم :attr:`~module.__cached__` روی یک ماژول در حالی که :attr:`__spec__.cached <importlib.machinery.ModuleSpec.cached>` تنظیم نشده باشد، منسوخ شده است. در پایتون 3.15، :attr:`!__cached__` دیگر توسط سیستم ایمپورت یا کتابخانه استاندارد تنظیم نخواهد شد یا در نظر گرفته نخواهد شد. (:gh:`97879`)"
 
 msgid "Setting :attr:`~module.__package__` on a module while failing to set :attr:`__spec__.parent <importlib.machinery.ModuleSpec.parent>` is deprecated. In Python 3.15, :attr:`!__package__` will cease to be set or take into consideration by the import system or standard library. (:gh:`97879`)"
@@ -1622,7 +1634,9 @@ msgstr "تنظیم :attr:`~module.__package__` روی یک ماژول در حا�
 msgid "The undocumented :func:`!ctypes.SetPointerType` function has been deprecated since Python 3.13."
 msgstr "تابع مستندنشده‌ی :func:`!ctypes.SetPointerType` از پایتون 3.13 منسوخ شده است."
 
-msgid "The obsolete and rarely used :class:`~http.server.CGIHTTPRequestHandler` has been deprecated since Python 3.13. No direct replacement exists. *Anything* is better than CGI to interface a web server with a request handler."
+#, fuzzy
+#| msgid "The obsolete and rarely used :class:`~http.server.CGIHTTPRequestHandler` has been deprecated since Python 3.13. No direct replacement exists. *Anything* is better than CGI to interface a web server with a request handler."
+msgid "The obsolete and rarely used :class:`!CGIHTTPRequestHandler` has been deprecated since Python 3.13. No direct replacement exists. *Anything* is better than CGI to interface a web server with a request handler."
 msgstr ":class:`~http.server.CGIHTTPRequestHandler` که از رده خارج است و به‌ندرت استفاده می‌شود، از پایتون 3.13 منسوخ شده است. هیچ جایگزین مستقیمی وجود ندارد. برای اتصال وب‌سرور به هندلر درخواست، *هر چیزی* بهتر از CGI است."
 
 msgid "The :option:`!--cgi` flag to the :program:`python -m http.server` command-line interface has been deprecated since Python 3.13."
@@ -1634,10 +1648,14 @@ msgstr ":mod:`importlib`:"
 msgid "``load_module()`` method: use ``exec_module()`` instead."
 msgstr "متد ``load_module()``: به‌جای آن از ``exec_module()`` استفاده کنید."
 
-msgid ":meth:`.PurePath.is_reserved` has been deprecated since Python 3.13. Use :func:`os.path.isreserved` to detect reserved paths on Windows."
+#, fuzzy
+#| msgid ":meth:`.PurePath.is_reserved` has been deprecated since Python 3.13. Use :func:`os.path.isreserved` to detect reserved paths on Windows."
+msgid ":meth:`!.PurePath.is_reserved` has been deprecated since Python 3.13. Use :func:`os.path.isreserved` to detect reserved paths on Windows."
 msgstr ":meth:`.PurePath.is_reserved` از پایتون 3.13 منسوخ شده است. برای تشخیص مسیرهای رزرو‌شده در ویندوز از :func:`os.path.isreserved` استفاده کنید."
 
-msgid ":func:`~platform.java_ver` has been deprecated since Python 3.13. This function is only useful for Jython support, has a confusing API, and is largely untested."
+#, fuzzy
+#| msgid ":func:`~platform.java_ver` has been deprecated since Python 3.13. This function is only useful for Jython support, has a confusing API, and is largely untested."
+msgid ":func:`!platform.java_ver` has been deprecated since Python 3.13. This function is only useful for Jython support, has a confusing API, and is largely untested."
 msgstr ":func:`~platform.java_ver` از پایتون 3.13 منسوخ شده است. این تابع فقط برای پشتیبانی از Jython مفید است، API گیج‌کننده‌ای دارد و تا حد زیادی آزمون‌نشده است."
 
 msgid ":mod:`sysconfig`:"
@@ -1655,7 +1673,9 @@ msgstr ":func:`~threading.RLock` در پایتون 3.15 هیچ آرگومانی 
 msgid ":mod:`types`:"
 msgstr ":mod:`types`:"
 
-msgid ":class:`types.CodeType`: Accessing :attr:`~codeobject.co_lnotab` was deprecated in :pep:`626` since 3.10 and was planned to be removed in 3.12, but it only got a proper :exc:`DeprecationWarning` in 3.12. May be removed in 3.15. (Contributed by Nikita Sobolev in :gh:`101866`.)"
+#, fuzzy
+#| msgid ":class:`types.CodeType`: Accessing :attr:`~codeobject.co_lnotab` was deprecated in :pep:`626` since 3.10 and was planned to be removed in 3.12, but it only got a proper :exc:`DeprecationWarning` in 3.12. May be removed in 3.15. (Contributed by Nikita Sobolev in :gh:`101866`.)"
+msgid ":class:`types.CodeType`: Accessing :attr:`!codeobject.co_lnotab` was deprecated in :pep:`626` since 3.10 and was planned to be removed in 3.12, but it only got a proper :exc:`DeprecationWarning` in 3.12. May be removed in 3.15. (Contributed by Nikita Sobolev in :gh:`101866`.)"
 msgstr ":class:`types.CodeType`: دسترسی به :attr:`~codeobject.co_lnotab` مطابق :pep:`626` از نسخه‌ی 3.10 منسوخ شد و قرار بود در 3.12 حذف شود، اما تنها در 3.12 یک :exc:`DeprecationWarning` مناسب دریافت کرد. ممکن است در 3.15 حذف شود. (با مشارکت نیکیتا سوبولف در :gh:`101866`.)"
 
 msgid "The undocumented keyword argument syntax for creating :class:`~typing.NamedTuple` classes (for example, ``Point = NamedTuple(\"Point\", x=int, y=int)``) has been deprecated since Python 3.13. Use the class-based syntax or the functional syntax instead."
@@ -1664,16 +1684,25 @@ msgstr "سینتکس آرگومان کلیدواژه‌ایِ مستندنشده
 msgid "When using the functional syntax of :class:`~typing.TypedDict`\\s, failing to pass a value to the *fields* parameter (``TD = TypedDict(\"TD\")``) or passing ``None`` (``TD = TypedDict(\"TD\", None)``) has been deprecated since Python 3.13. Use ``class TD(TypedDict): pass`` or ``TD = TypedDict(\"TD\", {})`` to create a TypedDict with zero field."
 msgstr "هنگام استفاده از سینتکس تابعی :class:`~typing.TypedDict`، عدم ارسال مقدار به پارامتر *fields* (``TD = TypedDict(\"TD\")``) یا ارسال ``None`` (``TD = TypedDict(\"TD\", None)``) از پایتون 3.13 منسوخ شده است. برای ایجاد یک TypedDict با صفر فیلد، از ``class TD(TypedDict): pass`` یا ``TD = TypedDict(\"TD\", {})`` استفاده کنید."
 
-msgid "The :deco:`typing.no_type_check_decorator` decorator function has been deprecated since Python 3.13. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker."
+#, fuzzy
+#| msgid "The :deco:`typing.no_type_check_decorator` decorator function has been deprecated since Python 3.13. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker."
+msgid "The :deco:`!typing.no_type_check_decorator` decorator function has been deprecated since Python 3.13. After eight years in the :mod:`typing` module, it has yet to be supported by any major type checker."
 msgstr "تابع دکوراتور :deco:`typing.no_type_check_decorator` از پایتون 3.13 منسوخ شده است. پس از هشت سال در ماژول :mod:`typing`، هنوز هیچ‌یک از بررسی‌گرهای نوع اصلی آن را پشتیبانی نکرده‌اند."
 
-msgid "The :meth:`~wave.Wave_read.getmark`, :meth:`!setmark`, and :meth:`~wave.Wave_read.getmarkers` methods of the :class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes have been deprecated since Python 3.13."
+msgid ":mod:`!sre_compile`, :mod:`!sre_constants` and :mod:`!sre_parse` modules."
+msgstr "ماژول‌های :mod:`!sre_compile`، :mod:`!sre_constants` و :mod:`!sre_parse`."
+
+#, fuzzy
+#| msgid "The :meth:`~wave.Wave_read.getmark`, :meth:`!setmark`, and :meth:`~wave.Wave_read.getmarkers` methods of the :class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes have been deprecated since Python 3.13."
+msgid "The ``getmark()``, ``setmark()`` and ``getmarkers()`` methods of the :class:`~wave.Wave_read` and :class:`~wave.Wave_write` classes have been deprecated since Python 3.13."
 msgstr "متدهای :meth:`~wave.Wave_read.getmark`، :meth:`!setmark` و :meth:`~wave.Wave_read.getmarkers` در کلاس‌های :class:`~wave.Wave_read` و :class:`~wave.Wave_write` از پایتون 3.13 منسوخ شده‌اند."
 
 msgid ":mod:`zipimport`:"
 msgstr ":mod:`zipimport`:"
 
-msgid ":meth:`~zipimport.zipimporter.load_module` has been deprecated since Python 3.10. Use :meth:`~zipimport.zipimporter.exec_module` instead. (Contributed by Jiahao Li in :gh:`125746`.)"
+#, fuzzy
+#| msgid ":meth:`~zipimport.zipimporter.load_module` has been deprecated since Python 3.10. Use :meth:`~zipimport.zipimporter.exec_module` instead. (Contributed by Jiahao Li in :gh:`125746`.)"
+msgid ":meth:`!zipimport.zipimporter.load_module` has been deprecated since Python 3.10. Use :meth:`~zipimport.zipimporter.exec_module` instead. (:gh:`125746`.)"
 msgstr ":meth:`~zipimport.zipimporter.load_module` از پایتون 3.10 منسوخ شده است. به جای آن از :meth:`~zipimport.zipimporter.exec_module` استفاده کنید. (مشارکت‌شده توسط Jiahao Li در :gh:`125746`.)"
 
 msgid "Pending removal in Python 3.16"
@@ -1778,6 +1807,12 @@ msgstr "ویژگی مستندنشده و استفاده‌نشده‌ی :attr:`!
 msgid "Pending removal in Python 3.17"
 msgstr "در انتظار حذف در پایتون 3.17"
 
+msgid ":mod:`datetime`:"
+msgstr ":mod:`datetime`:"
+
+msgid ":meth:`~datetime.datetime.strptime` calls using a format string containing ``%e`` (day of month) without a year. This has been deprecated since Python 3.15. (Contributed by Stan Ulbrych in :gh:`70647`.)"
+msgstr ""
+
 msgid ":mod:`collections.abc`:"
 msgstr ":mod:`collections.abc`:"
 
@@ -1793,23 +1828,266 @@ msgstr ":class:`!ByteString` در ابتدا قرار بود یک کلاس پا�
 msgid "See :pep:`PEP 688 <688#current-options>` for more details. (Contributed by Shantanu Jain in :gh:`91896`.)"
 msgstr "برای جزئیات بیشتر به :pep:`PEP 688 <688#current-options>` مراجعه کنید. (مشارکت‌شده توسط شانتانو جین در :gh:`91896`.)"
 
+#, fuzzy
+#| msgid ":mod:`dis`:"
+msgid ":mod:`encodings`:"
+msgstr ":mod:`dis`:"
+
+#, fuzzy
+#| msgid "These functions are no longer deprecated and are not scheduled for removal. (Contributed by Petr Viktorin in :gh:`116608`.)"
+msgid "Passing non-ascii *encoding* names to :func:`encodings.normalize_encoding` is deprecated and scheduled for removal in Python 3.17. (Contributed by Stan Ulbrych in :gh:`136702`.)"
+msgstr "این توابع دیگر منسوخ نیستند و برای حذف برنامه‌ریزی نشده‌اند. (مشارکت‌شده توسط Petr Viktorin در :gh:`116608`.)"
+
+#, fuzzy
+#| msgid ":mod:`tarfile`:"
+msgid ":mod:`profile`:"
+msgstr ":mod:`tarfile`:"
+
+msgid "The :mod:`!profile` module is deprecated and will be removed in Python 3.17. Use :mod:`profiling.tracing` instead, which provides a compatible API. See :pep:`799` for details. (Contributed by Pablo Galindo and László Kiss Kollár in :gh:`138122`.)"
+msgstr ""
+
+#, fuzzy
+#| msgid "webbrowser"
+msgid ":mod:`webbrowser`:"
+msgstr "webbrowser"
+
+msgid ":class:`!webbrowser.MacOSXOSAScript` is deprecated in favour of :class:`!webbrowser.MacOS`. (:gh:`137586`)"
+msgstr ""
+
 msgid "Before Python 3.14, old-style unions were implemented using the private class ``typing._UnionGenericAlias``. This class is no longer needed for the implementation, but it has been retained for backward compatibility, with removal scheduled for Python 3.17. Users should use documented introspection helpers like :func:`typing.get_origin` and :func:`typing.get_args` instead of relying on private implementation details."
 msgstr "پیش از پایتون 3.14، اجتماعهای سبک قدیمی (old-style unions) با استفاده از کلاس خصوصی ``typing._UnionGenericAlias`` پیاده‌سازی می‌شدند. این کلاس دیگر برای پیاده‌سازی مورد نیاز نیست، اما برای سازگاری با نسخه‌های قبلی حفظ شده است و حذف آن برای پایتون 3.17 برنامه‌ریزی شده است. کاربران باید به جای اتکا به جزئیات پیاده‌سازی خصوصی، از ابزارهای کمکی مستند درون‌نگری مانند :func:`typing.get_origin` و :func:`typing.get_args` استفاده کنند."
 
 msgid ":class:`typing.ByteString`, deprecated since Python 3.9, is scheduled for removal in Python 3.17."
 msgstr ":class:`typing.ByteString`، که از پایتون 3.9 منسوخ شده است، برای حذف در پایتون 3.17 برنامه‌ریزی شده است."
 
+#, fuzzy
+#| msgid ":mod:`typing`:"
+msgid ":mod:`tkinter`:"
+msgstr ":mod:`typing`:"
+
+msgid "The :class:`!tkinter.Variable` methods :meth:`!trace_variable`, :meth:`!trace` (an alias of :meth:`!trace_variable`), :meth:`!trace_vdelete` and :meth:`!trace_vinfo`, deprecated since Python 3.14, are scheduled for removal in Python 3.17. Use :meth:`!trace_add`, :meth:`!trace_remove` and :meth:`!trace_info` instead. (Contributed by Serhiy Storchaka in :gh:`120220`.)"
+msgstr ""
+
 msgid "Pending removal in Python 3.18"
 msgstr "در انتظار حذف در پایتون 3.18"
 
+#, fuzzy
+#| msgid "Many functions now emit a warning if a boolean value is passed as a file descriptor argument. This can help catch some errors earlier. (Contributed by Serhiy Storchaka in :gh:`82626`.)"
+msgid "No longer accept a boolean value when a file descriptor is expected. (Contributed by Serhiy Storchaka in :gh:`82626`.)"
+msgstr "بسیاری از توابع اکنون اگر مقدار بولی به‌عنوان آرگومان توصیف‌گر پرونده پاس داده شود، هشداری نشان می‌دهند. این می‌تواند به گرفتن برخی خطاها در مرحله‌ی زودتر کمک کند. (ارائه‌شده توسط سرهی استورچاکا در :gh:`82626`.)"
+
 msgid "The non-standard and undocumented :class:`~decimal.Decimal` format specifier ``'N'``, which is only supported in the :mod:`!decimal` module's C implementation, has been deprecated since Python 3.13. (Contributed by Serhiy Storchaka in :gh:`89902`.)"
 msgstr "مشخصه‌ی قالب‌بندی غیراستاندارد و مستند‌نشده‌ی ``'N'`` در :class:`~decimal.Decimal`، که تنها در پیاده‌سازی C ماژول :mod:`!decimal` پشتیبانی می‌شود، از Python 3.13 منسوخ شده است. (مشارکت‌شده توسط Serhiy Storchaka در :gh:`89902`.)"
+
+msgid "Deprecations defined by :pep:`829`:"
+msgstr ""
+
+msgid "``import`` lines in :file:`{name}.pth` files are silently ignored."
+msgstr ""
+
+#, fuzzy
+#| msgid "(Contributed by Serhiy Storchaka in :gh:`108511`.)"
+msgid "(Contributed by Barry Warsaw in :gh:`148641`.)"
+msgstr "(مشارکت Serhiy Storchaka در :gh:`108511`.)"
 
 msgid "Pending removal in Python 3.19"
 msgstr "در انتظار حذف در پایتون 3.19"
 
 msgid "Implicitly switching to the MSVC-compatible struct layout by setting :attr:`~ctypes.Structure._pack_` but not :attr:`~ctypes.Structure._layout_` on non-Windows platforms."
 msgstr "تغییر ضمنی به چیدمان ساختار سازگار با MSVC از طریق تنظیم :attr:`~ctypes.Structure._pack_` بدون تنظیم :attr:`~ctypes.Structure._layout_` روی پلتفرم‌های غیر ویندوزی."
+
+#, fuzzy
+#| msgid ":mod:`pathlib`:"
+msgid ":mod:`hashlib`:"
+msgstr ":mod:`pathlib`:"
+
+msgid "In hash function constructors such as :func:`~hashlib.new` or the direct hash-named constructors such as :func:`~hashlib.md5` and :func:`~hashlib.sha256`, their optional initial data parameter could also be passed a keyword argument named ``data=`` or ``string=`` in various :mod:`!hashlib` implementations."
+msgstr ""
+
+#, fuzzy
+#| msgid "The following private functions are deprecated and planned for removal in Python 3.18:"
+msgid "Support for the ``string`` keyword argument name is now deprecated and slated for removal in Python 3.19."
+msgstr "توابع خصوصی زیر منسوخ شده‌اند و حذف آن‌ها در Python 3.18 برنامه‌ریزی شده است:"
+
+msgid "Before Python 3.13, the ``string`` keyword parameter was not correctly supported depending on the backend implementation of hash functions. Prefer passing the initial data as a positional argument for maximum backwards compatibility."
+msgstr ""
+
+#, fuzzy
+#| msgid ":mod:`types`:"
+msgid ":mod:`http.cookies`:"
+msgstr ":mod:`types`:"
+
+msgid ":meth:`http.cookies.Morsel.js_output` is deprecated and will be removed in Python 3.19."
+msgstr ""
+
+msgid ":meth:`http.cookies.BaseCookie.js_output` is deprecated and will be removed in Python 3.19."
+msgstr ""
+
+#, fuzzy
+#| msgid ":mod:`importlib`:"
+msgid ":mod:`imaplib`:"
+msgstr ":mod:`importlib`:"
+
+msgid "Altering :attr:`IMAP4.file <imaplib.IMAP4.file>` is now deprecated and slated for removal in Python 3.19. This property is now unused and changing its value does not automatically close the current file."
+msgstr ""
+
+msgid "Before Python 3.14, this property was used to implement the corresponding ``read()`` and ``readline()`` methods for :class:`~imaplib.IMAP4` but this is no longer the case since then."
+msgstr ""
+
+#, fuzzy
+#| msgid "Pending removal in Python 3.14"
+msgid "Pending removal in Python 3.20"
+msgstr "در پایتون 3.14 حذف خواهد شد"
+
+msgid "Calling the ``__new__()`` method of :class:`struct.Struct` without the *format* argument is deprecated and will be removed in Python 3.20.  Calling :meth:`~object.__init__` method on initialized :class:`~struct.Struct` objects is deprecated and will be removed in Python 3.20."
+msgstr ""
+
+#, fuzzy
+#| msgid "(Contributed by Serhiy Storchaka in :gh:`108511`.)"
+msgid "(Contributed by Sergey B Kirpichev and Serhiy Storchaka in :gh:`143715`.)"
+msgstr "(مشارکت Serhiy Storchaka در :gh:`108511`.)"
+
+msgid "The ``__version__``, ``version`` and ``VERSION`` attributes have been deprecated in these standard library modules and will be removed in Python 3.20. Use :py:data:`sys.version_info` instead."
+msgstr ""
+
+#, fuzzy
+#| msgid ":mod:`argparse`:"
+msgid ":mod:`argparse`"
+msgstr ":mod:`argparse`:"
+
+#, fuzzy
+#| msgid ":mod:`!nis`"
+msgid ":mod:`csv`"
+msgstr ":mod:`!nis`"
+
+#, fuzzy
+#| msgid ":mod:`ctypes`:"
+msgid ":mod:`ctypes`"
+msgstr ":mod:`ctypes`:"
+
+#, fuzzy
+#| msgid ":mod:`ctypes`:"
+msgid ":mod:`!ctypes.macholib`"
+msgstr ":mod:`ctypes`:"
+
+msgid ":mod:`decimal` (use :data:`decimal.SPEC_VERSION` instead)"
+msgstr ""
+
+#, fuzzy
+#| msgid ":mod:`http.server`:"
+msgid ":mod:`http.server`"
+msgstr ":mod:`http.server`:"
+
+#, fuzzy
+#| msgid ":mod:`importlib`:"
+msgid ":mod:`imaplib`"
+msgstr ":mod:`importlib`:"
+
+#, fuzzy
+#| msgid "ipaddress"
+msgid ":mod:`ipaddress`"
+msgstr "ipaddress"
+
+#, fuzzy
+#| msgid ":mod:`!sunau`"
+msgid ":mod:`json`"
+msgstr ":mod:`!sunau`"
+
+msgid ":mod:`logging` (``__date__`` also deprecated)"
+msgstr ""
+
+#, fuzzy
+#| msgid ":mod:`argparse`:"
+msgid ":mod:`optparse`"
+msgstr ":mod:`argparse`:"
+
+#, fuzzy
+#| msgid ":mod:`!aifc`"
+msgid ":mod:`pickle`"
+msgstr ":mod:`!aifc`"
+
+#, fuzzy
+#| msgid ":mod:`platform`:"
+msgid ":mod:`platform`"
+msgstr ":mod:`platform`:"
+
+#, fuzzy
+#| msgid ":mod:`re`:"
+msgid ":mod:`re`"
+msgstr ":mod:`re`:"
+
+#, fuzzy
+#| msgid ":mod:`http.server`:"
+msgid ":mod:`socketserver`"
+msgstr ":mod:`http.server`:"
+
+#, fuzzy
+#| msgid ":mod:`array`:"
+msgid ":mod:`tabnanny`"
+msgstr ":mod:`array`:"
+
+#, fuzzy
+#| msgid ":mod:`tarfile`:"
+msgid ":mod:`tarfile`"
+msgstr ":mod:`tarfile`:"
+
+#, fuzzy
+#| msgid ":mod:`gettext`:"
+msgid ":mod:`tkinter.font`"
+msgstr ":mod:`gettext`:"
+
+#, fuzzy
+#| msgid ":mod:`gettext`:"
+msgid ":mod:`tkinter.ttk`"
+msgstr ":mod:`gettext`:"
+
+msgid ":mod:`wsgiref.simple_server`"
+msgstr ""
+
+#, fuzzy
+#| msgid ":meth:`xml.etree.ElementTree.XMLParser.flush`"
+msgid ":mod:`xml.etree.ElementTree`"
+msgstr ":meth:`xml.etree.ElementTree.XMLParser.flush`"
+
+#, fuzzy
+#| msgid ":meth:`!xml.sax.expatreader.ExpatParser.flush`"
+msgid ":mod:`!xml.sax.expatreader`"
+msgstr ":meth:`!xml.sax.expatreader.ExpatParser.flush`"
+
+msgid ":mod:`xml.sax.handler`"
+msgstr ""
+
+#, fuzzy
+#| msgid ":mod:`!msilib`"
+msgid ":mod:`zlib`"
+msgstr ":mod:`!msilib`"
+
+#, fuzzy
+#| msgid "(Contributed by Hugo van Kemenade in :gh:`104835`.)"
+msgid "(Contributed by Hugo van Kemenade and Stan Ulbrych in :gh:`76007`.)"
+msgstr "(مشارکت‌شده توسط هوگو ون کمِناده در :gh:`104835`.)"
+
+msgid "Warnings are produced for ``import`` lines found in :file:`{name}.pth` files."
+msgstr ""
+
+msgid ":file:`{name}.pth` files are no longer decoded in the locale encoding by default.  They **MUST** be encoded in ``utf-8-sig``."
+msgstr ""
+
+#, fuzzy
+#| msgid ":mod:`dis`:"
+msgid ":mod:`ast`:"
+msgstr ":mod:`dis`:"
+
+msgid "Creating instances of abstract AST nodes (such as :class:`ast.AST` or :class:`!ast.expr`) is deprecated and will raise an error in Python 3.20."
+msgstr ""
+
+msgid "It is deprecated to call :func:`isinstance` and :func:`issubclass` checks on protocol classes that were not explicitly decorated with :func:`!runtime_checkable` but that inherit from a runtime-checkable protocol class. This will raise a :exc:`TypeError` in Python 3.20."
+msgstr ""
+
+#, fuzzy
+#| msgid "(Contributed by Inada Naoki in :gh:`81283`.)"
+msgid "(Contributed by Bartosz Sławecki in :gh:`132604`.)"
+msgstr "(مشارکت‌شده توسط Inada Naoki در :gh:`81283`.)"
 
 msgid "Pending removal in future versions"
 msgstr "در انتظار حذف در نسخه‌های آینده"
@@ -1853,11 +2131,10 @@ msgstr ":mod:`calendar`: ثابت‌های ``calendar.January`` و ``calendar.Fe
 msgid ":mod:`codecs`: use :func:`open` instead of :func:`codecs.open`. (:gh:`133038`)"
 msgstr ":mod:`codecs`: به‌جای :func:`codecs.open` از :func:`open` استفاده کنید. (:gh:`133038`)"
 
-msgid ":attr:`codeobject.co_lnotab`: use the :meth:`codeobject.co_lines` method instead."
+#, fuzzy
+#| msgid ":attr:`codeobject.co_lnotab`: use the :meth:`codeobject.co_lines` method instead."
+msgid ":attr:`!codeobject.co_lnotab`: use the :meth:`codeobject.co_lines` method instead."
 msgstr ":attr:`codeobject.co_lnotab`: به جای آن از متد :meth:`codeobject.co_lines` استفاده کنید."
-
-msgid ":mod:`datetime`:"
-msgstr ":mod:`datetime`:"
 
 msgid ":meth:`~datetime.datetime.utcnow`: use ``datetime.datetime.now(tz=datetime.UTC)``."
 msgstr ":meth:`~datetime.datetime.utcnow`: از ``datetime.datetime.now(tz=datetime.UTC)`` استفاده کنید."
@@ -1886,17 +2163,19 @@ msgstr ":mod:`logging`: متد ``warn()`` از پایتون 3.3 منسوخ شد�
 msgid ":mod:`mailbox`: Use of StringIO input and text mode is deprecated, use BytesIO and binary mode instead."
 msgstr ":mod:`mailbox`: استفاده از ورودی StringIO و حالت متنی منسوخ شده است؛ به جای آن از BytesIO و حالت دودویی استفاده کنید."
 
-msgid ":mod:`os`: Calling :func:`os.register_at_fork` in multi-threaded process."
+#, fuzzy
+#| msgid ":mod:`os`: Calling :func:`os.register_at_fork` in multi-threaded process."
+msgid ":mod:`os`: Calling :func:`os.register_at_fork` in a multi-threaded process."
 msgstr ":mod:`os`: فراخوانی :func:`os.register_at_fork` در فرایند چندنخی."
+
+msgid ":mod:`os.path`: :func:`os.path.commonprefix` is deprecated, use :func:`os.path.commonpath` for path prefixes. The :func:`os.path.commonprefix` function is being deprecated due to having a misleading name and module. The function is not safe to use for path prefixes despite being included in a module about path manipulation, meaning it is easy to accidentally introduce path traversal vulnerabilities into Python programs by using this function."
+msgstr ""
 
 msgid ":class:`!pydoc.ErrorDuringImport`: A tuple value for *exc_info* parameter is deprecated, use an exception instance."
 msgstr ":class:`!pydoc.ErrorDuringImport`: مقدار تاپل برای پارامتر *exc_info* منسوخ شده است؛ از یک نمونه استثنا استفاده کنید."
 
 msgid ":mod:`re`: More strict rules are now applied for numerical group references and group names in regular expressions.  Only sequence of ASCII digits is now accepted as a numerical reference.  The group name in bytes patterns and replacement strings can now only contain ASCII letters and digits and underscore. (Contributed by Serhiy Storchaka in :gh:`91760`.)"
 msgstr ":mod:`re`: اکنون قواعد سخت‌گیرانه‌تری برای ارجاع‌های عددی به گروه‌ها و نام گروه‌ها در عبارات باقاعده اعمال می‌شود. اکنون فقط دنباله‌ای از ارقام اسکی به‌عنوان ارجاع عددی پذیرفته می‌شود. نام گروه در الگوهای بایتی و رشته‌های جایگزین اکنون فقط می‌تواند شامل حروف و ارقام اسکی و زیرخط باشد. (مشارکت‌شده توسط Serhiy Storchaka در :gh:`91760`.)"
-
-msgid ":mod:`!sre_compile`, :mod:`!sre_constants` and :mod:`!sre_parse` modules."
-msgstr "ماژول‌های :mod:`!sre_compile`، :mod:`!sre_constants` و :mod:`!sre_parse`."
 
 msgid ":mod:`shutil`: :func:`~shutil.rmtree`'s *onerror* parameter is deprecated in Python 3.12; use the *onexc* parameter instead."
 msgstr ":mod:`shutil`: پارامتر *onerror* در :func:`~shutil.rmtree` در پایتون 3.12 منسوخ شده است؛ به جای آن از پارامتر *onexc* استفاده کنید."
@@ -2210,7 +2489,9 @@ msgstr "تابع :c:func:`PyType_GetModuleName` برای دریافت نام م�
 msgid "Add the :c:func:`PyUnicode_EqualToUTF8AndSize` and :c:func:`PyUnicode_EqualToUTF8` functions to compare a Unicode object with a :c:expr:`const char*` UTF-8 encoded string and ``1`` if they are equal or ``0`` otherwise. These functions do not raise exceptions. (Contributed by Serhiy Storchaka in :gh:`110289`.)"
 msgstr "توابع :c:func:`PyUnicode_EqualToUTF8AndSize` و :c:func:`PyUnicode_EqualToUTF8` برای مقایسه‌ی یک شیء یونیکد با یک رشته‌ی کدگذاری‌شده به UTF-8 از نوع :c:expr:`const char*` و ``1`` اگر برابر باشند یا ``0`` در غیر این صورت اضافه شدند. این توابع استثنا ایجاد نمی‌کنند. (مشارکت‌شده توسط Serhiy Storchaka در :gh:`110289`.)"
 
-msgid "Add the :c:func:`PyWeakref_GetRef` function as an alternative to  :c:func:`PyWeakref_GetObject` that returns a :term:`strong reference` or ``NULL`` if the referent is no longer live. (Contributed by Victor Stinner in :gh:`105927`.)"
+#, fuzzy
+#| msgid "Add the :c:func:`PyWeakref_GetRef` function as an alternative to  :c:func:`PyWeakref_GetObject` that returns a :term:`strong reference` or ``NULL`` if the referent is no longer live. (Contributed by Victor Stinner in :gh:`105927`.)"
+msgid "Add the :c:func:`PyWeakref_GetRef` function as an alternative to  :c:func:`!PyWeakref_GetObject` that returns a :term:`strong reference` or ``NULL`` if the referent is no longer live. (Contributed by Victor Stinner in :gh:`105927`.)"
 msgstr "تابع :c:func:`PyWeakref_GetRef` به‌عنوان جایگزینی برای :c:func:`PyWeakref_GetObject` افزوده شد که اگر مورد ارجاع دیگر زنده نباشد، ``NULL`` و در غیر این صورت یک :term:`ارجاع قوی <strong reference>` برمی‌گرداند. (مشارکت‌شده توسط Victor Stinner در :gh:`105927`.)"
 
 msgid "Add fixed variants of functions which silently ignore errors:"
@@ -2449,25 +2730,39 @@ msgstr "APIهای منسوخ C"
 msgid "Deprecate old Python initialization functions:"
 msgstr "منسوخ کردن توابع قدیمی مقداردهی اولیه پایتون:"
 
-msgid ":c:func:`PySys_ResetWarnOptions`: Clear :data:`sys.warnoptions` and :data:`!warnings.filters` instead."
+#, fuzzy
+#| msgid ":c:func:`PySys_ResetWarnOptions`: Clear :data:`sys.warnoptions` and :data:`!warnings.filters` instead."
+msgid ":c:func:`!PySys_ResetWarnOptions`: Clear :data:`sys.warnoptions` and :data:`!warnings.filters` instead."
 msgstr ":c:func:`PySys_ResetWarnOptions`: در عوض، :data:`sys.warnoptions` و :data:`!warnings.filters` را پاک کنید."
 
-msgid ":c:func:`Py_GetExecPrefix`: Get :data:`sys.exec_prefix` instead."
+#, fuzzy
+#| msgid ":c:func:`Py_GetExecPrefix`: Get :data:`sys.exec_prefix` instead."
+msgid ":c:func:`!Py_GetExecPrefix`: Get :data:`sys.exec_prefix` instead."
 msgstr ":c:func:`Py_GetExecPrefix`: به‌جای آن :data:`sys.exec_prefix` را دریافت کنید."
 
-msgid ":c:func:`Py_GetPath`: Get :data:`sys.path` instead."
+#, fuzzy
+#| msgid ":c:func:`Py_GetPath`: Get :data:`sys.path` instead."
+msgid ":c:func:`!Py_GetPath`: Get :data:`sys.path` instead."
 msgstr ":c:func:`Py_GetPath`: به‌جای آن :data:`sys.path` را دریافت کنید."
 
-msgid ":c:func:`Py_GetPrefix`: Get :data:`sys.prefix` instead."
+#, fuzzy
+#| msgid ":c:func:`Py_GetPrefix`: Get :data:`sys.prefix` instead."
+msgid ":c:func:`!Py_GetPrefix`: Get :data:`sys.prefix` instead."
 msgstr ":c:func:`Py_GetPrefix`: به جای آن، :data:`sys.prefix` را دریافت کنید."
 
-msgid ":c:func:`Py_GetProgramFullPath`: Get :data:`sys.executable` instead."
+#, fuzzy
+#| msgid ":c:func:`Py_GetProgramFullPath`: Get :data:`sys.executable` instead."
+msgid ":c:func:`!Py_GetProgramFullPath`: Get :data:`sys.executable` instead."
 msgstr ":c:func:`Py_GetProgramFullPath`: به جای آن :data:`sys.executable` را دریافت کنید."
 
-msgid ":c:func:`Py_GetProgramName`: Get :data:`sys.executable` instead."
+#, fuzzy
+#| msgid ":c:func:`Py_GetProgramName`: Get :data:`sys.executable` instead."
+msgid ":c:func:`!Py_GetProgramName`: Get :data:`sys.executable` instead."
 msgstr ":c:func:`Py_GetProgramName`: به‌جای آن :data:`sys.executable` را دریافت کنید."
 
-msgid ":c:func:`Py_GetPythonHome`: Get :c:member:`PyConfig.home` or the :envvar:`PYTHONHOME` environment variable instead."
+#, fuzzy
+#| msgid ":c:func:`Py_GetPythonHome`: Get :c:member:`PyConfig.home` or the :envvar:`PYTHONHOME` environment variable instead."
+msgid ":c:func:`!Py_GetPythonHome`: Get :c:member:`PyConfig.home` or the :envvar:`PYTHONHOME` environment variable instead."
 msgstr ":c:func:`Py_GetPythonHome`: به جای آن، :c:member:`PyConfig.home` یا متغیر محیطی :envvar:`PYTHONHOME` را دریافت کنید."
 
 msgid "(Contributed by Victor Stinner in :gh:`105145`.)"
@@ -2476,7 +2771,9 @@ msgstr "(مشارکت‌شده توسط ویکتور استینر در :gh:`1051
 msgid ":term:`Soft deprecate <soft deprecated>` the :c:func:`PyEval_GetBuiltins`, :c:func:`PyEval_GetGlobals`, and :c:func:`PyEval_GetLocals` functions, which return a :term:`borrowed reference`. (Soft deprecated as part of :pep:`667`.)"
 msgstr ":term:`منسوخ‌سازی نرم (soft deprecation) <soft deprecated>` توابع :c:func:`PyEval_GetBuiltins`، :c:func:`PyEval_GetGlobals` و :c:func:`PyEval_GetLocals` که یک :term:`ارجاع امانتی <borrowed reference>` برمی‌گردانند. (منسوخ‌سازی نرم به‌عنوان بخشی از :pep:`667`.)"
 
-msgid "Deprecate the :c:func:`PyImport_ImportModuleNoBlock` function, which is just an alias to :c:func:`PyImport_ImportModule` since Python 3.3. (Contributed by Victor Stinner in :gh:`105396`.)"
+#, fuzzy
+#| msgid "Deprecate the :c:func:`PyImport_ImportModuleNoBlock` function, which is just an alias to :c:func:`PyImport_ImportModule` since Python 3.3. (Contributed by Victor Stinner in :gh:`105396`.)"
+msgid "Deprecate the :c:func:`!PyImport_ImportModuleNoBlock` function, which is just an alias to :c:func:`PyImport_ImportModule` since Python 3.3. (Contributed by Victor Stinner in :gh:`105396`.)"
 msgstr "منسوخ شدن تابع :c:func:`PyImport_ImportModuleNoBlock` که از پایتون 3.3 صرفاً یک نام مستعار برای :c:func:`PyImport_ImportModule` است. (نوشته‌ی Victor Stinner در :gh:`105396`.)"
 
 msgid ":term:`Soft deprecate <soft deprecated>` the :c:func:`PyModule_AddObject` function. It should be replaced with :c:func:`PyModule_Add` or :c:func:`PyModule_AddObjectRef`. (Contributed by Serhiy Storchaka in :gh:`86493`.)"
@@ -2485,7 +2782,9 @@ msgstr ":term:`منسوخ‌سازی نرم <soft deprecated>` تابع :c:func:
 msgid "Deprecate the old ``Py_UNICODE`` and ``PY_UNICODE_TYPE`` types and the :c:macro:`!Py_UNICODE_WIDE` define. Use the :c:type:`wchar_t` type directly instead. Since Python 3.3, ``Py_UNICODE`` and ``PY_UNICODE_TYPE`` are just aliases to :c:type:`!wchar_t`. (Contributed by Victor Stinner in :gh:`105156`.)"
 msgstr "نوع‌های قدیمی ``Py_UNICODE`` و ``PY_UNICODE_TYPE`` و تعریف :c:macro:`!Py_UNICODE_WIDE` منسوخ شدند. به‌جای آن‌ها مستقیماً از نوع :c:type:`wchar_t` استفاده کنید. از پایتون 3.3 به بعد، ``Py_UNICODE`` و ``PY_UNICODE_TYPE`` فقط مستعاری برای :c:type:`!wchar_t` هستند. (مشارکت‌شده توسط Victor Stinner در :gh:`105156`.)"
 
-msgid "Deprecate the :c:func:`PyWeakref_GetObject` and :c:func:`PyWeakref_GET_OBJECT` functions, which return a :term:`borrowed reference`. Replace them with the new :c:func:`PyWeakref_GetRef` function, which returns a :term:`strong reference`. The `pythoncapi-compat project`_ can be used to get :c:func:`PyWeakref_GetRef` on Python 3.12 and older. (Contributed by Victor Stinner in :gh:`105927`.)"
+#, fuzzy
+#| msgid "Deprecate the :c:func:`PyWeakref_GetObject` and :c:func:`PyWeakref_GET_OBJECT` functions, which return a :term:`borrowed reference`. Replace them with the new :c:func:`PyWeakref_GetRef` function, which returns a :term:`strong reference`. The `pythoncapi-compat project`_ can be used to get :c:func:`PyWeakref_GetRef` on Python 3.12 and older. (Contributed by Victor Stinner in :gh:`105927`.)"
+msgid "Deprecate the :c:func:`!PyWeakref_GetObject` and :c:func:`!PyWeakref_GET_OBJECT` functions, which return a :term:`borrowed reference`. Replace them with the new :c:func:`PyWeakref_GetRef` function, which returns a :term:`strong reference`. The `pythoncapi-compat project`_ can be used to get :c:func:`PyWeakref_GetRef` on Python 3.12 and older. (Contributed by Victor Stinner in :gh:`105927`.)"
 msgstr "توابع :c:func:`PyWeakref_GetObject` و :c:func:`PyWeakref_GET_OBJECT` که یک :term:`borrowed reference` برمی‌گردانند، منسوخ شدند. به‌جای آن‌ها می‌توان از تابع جدید :c:func:`PyWeakref_GetRef` استفاده کرد که یک :term:`strong reference` برمی‌گرداند. برای به‌دست‌آوردن :c:func:`PyWeakref_GetRef` در پایتون 3.12 و نسخه‌های قدیمی‌تر می‌توان از `pythoncapi-compat project`_ استفاده کرد. (مشارکت‌شده توسط Victor Stinner در :gh:`105927`.)"
 
 msgid "The ``ma_version_tag`` field in :c:type:`PyDictObject` for extension modules (:pep:`699`; :gh:`101193`)."
@@ -2494,14 +2793,15 @@ msgstr "فیلد ``ma_version_tag`` در :c:type:`PyDictObject` برای ماژ�
 msgid "Creating :c:data:`immutable types <Py_TPFLAGS_IMMUTABLETYPE>` with mutable bases (:gh:`95388`)."
 msgstr "ایجاد :c:data:`نوع‌های تغییر‌ناپذیر <Py_TPFLAGS_IMMUTABLETYPE>` با کلاس‌های پایه‌ی تغییر‌پذیر (:gh:`95388`)."
 
-msgid "The :c:func:`PyImport_ImportModuleNoBlock`: Use :c:func:`PyImport_ImportModule` instead."
+#, fuzzy
+#| msgid "The :c:func:`PyImport_ImportModuleNoBlock`: Use :c:func:`PyImport_ImportModule` instead."
+msgid "The :c:func:`!PyImport_ImportModuleNoBlock`: Use :c:func:`PyImport_ImportModule` instead."
 msgstr ":c:func:`PyImport_ImportModuleNoBlock`: به جای آن از :c:func:`PyImport_ImportModule` استفاده کنید."
 
-msgid ":c:func:`PyWeakref_GetObject` and :c:func:`PyWeakref_GET_OBJECT`: Use :c:func:`PyWeakref_GetRef` instead. The `pythoncapi-compat project <https://github.com/python/pythoncapi-compat/>`__ can be used to get :c:func:`PyWeakref_GetRef` on Python 3.12 and older."
+#, fuzzy
+#| msgid ":c:func:`PyWeakref_GetObject` and :c:func:`PyWeakref_GET_OBJECT`: Use :c:func:`PyWeakref_GetRef` instead. The `pythoncapi-compat project <https://github.com/python/pythoncapi-compat/>`__ can be used to get :c:func:`PyWeakref_GetRef` on Python 3.12 and older."
+msgid ":c:func:`!PyWeakref_GetObject` and :c:func:`!PyWeakref_GET_OBJECT`: Use :c:func:`PyWeakref_GetRef` instead. The `pythoncapi-compat project <https://github.com/python/pythoncapi-compat/>`__ can be used to get :c:func:`PyWeakref_GetRef` on Python 3.12 and older."
 msgstr ":c:func:`PyWeakref_GetObject` و :c:func:`PyWeakref_GET_OBJECT`: به‌جای آن‌ها از :c:func:`PyWeakref_GetRef` استفاده کنید. می‌توان از `پروژه‌ی pythoncapi-compat <https://github.com/python/pythoncapi-compat/>`__ برای به‌دست آوردن :c:func:`PyWeakref_GetRef` در پایتون 3.12 و قدیمی‌تر استفاده کرد."
-
-msgid ":c:type:`Py_UNICODE` type and the :c:macro:`!Py_UNICODE_WIDE` macro: Use :c:type:`wchar_t` instead."
-msgstr "نوع :c:type:`Py_UNICODE` و ماکروی :c:macro:`!Py_UNICODE_WIDE`: به جای آن‌ها از :c:type:`wchar_t` استفاده کنید."
 
 msgid ":c:func:`!PyUnicode_AsDecodedObject`: Use :c:func:`PyCodec_Decode` instead."
 msgstr ":c:func:`!PyUnicode_AsDecodedObject`: به جای آن از :c:func:`PyCodec_Decode` استفاده کنید."
@@ -2518,22 +2818,34 @@ msgstr ":c:func:`!PyUnicode_AsEncodedUnicode`: به‌جای آن از :c:func:`
 msgid "Python initialization functions, deprecated in Python 3.13:"
 msgstr "توابع مقداردهی اولیه پایتون، منسوخ‌شده در پایتون 3.13:"
 
-msgid ":c:func:`Py_GetPath`: Use :c:func:`PyConfig_Get(\"module_search_paths\") <PyConfig_Get>` (:data:`sys.path`) instead."
+#, fuzzy
+#| msgid ":c:func:`Py_GetPath`: Use :c:func:`PyConfig_Get(\"module_search_paths\") <PyConfig_Get>` (:data:`sys.path`) instead."
+msgid ":c:func:`!Py_GetPath`: Use :c:func:`PyConfig_Get(\"module_search_paths\") <PyConfig_Get>` (:data:`sys.path`) instead."
 msgstr ":c:func:`Py_GetPath`: به‌جای آن از :c:func:`PyConfig_Get(\"module_search_paths\") <PyConfig_Get>` (:data:`sys.path`) استفاده کنید."
 
-msgid ":c:func:`Py_GetPrefix`: Use :c:func:`PyConfig_Get(\"base_prefix\") <PyConfig_Get>` (:data:`sys.base_prefix`) instead. Use :c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) if :ref:`virtual environments <venv-def>` need to be handled."
+#, fuzzy
+#| msgid ":c:func:`Py_GetPrefix`: Use :c:func:`PyConfig_Get(\"base_prefix\") <PyConfig_Get>` (:data:`sys.base_prefix`) instead. Use :c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) if :ref:`virtual environments <venv-def>` need to be handled."
+msgid ":c:func:`!Py_GetPrefix`: Use :c:func:`PyConfig_Get(\"base_prefix\") <PyConfig_Get>` (:data:`sys.base_prefix`) instead. Use :c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) if :ref:`virtual environments <venv-def>` need to be handled."
 msgstr ":c:func:`Py_GetPrefix`: به‌جای آن از :c:func:`PyConfig_Get(\"base_prefix\") <PyConfig_Get>` (:data:`sys.base_prefix`) استفاده کنید. اگر لازم باشد :ref:`محیط‌های مجازی <venv-def>` مدیریت شوند، از :c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) استفاده کنید."
 
-msgid ":c:func:`Py_GetExecPrefix`: Use :c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` (:data:`sys.base_exec_prefix`) instead. Use :c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` (:data:`sys.exec_prefix`) if :ref:`virtual environments <venv-def>` need to be handled."
+#, fuzzy
+#| msgid ":c:func:`Py_GetExecPrefix`: Use :c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` (:data:`sys.base_exec_prefix`) instead. Use :c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` (:data:`sys.exec_prefix`) if :ref:`virtual environments <venv-def>` need to be handled."
+msgid ":c:func:`!Py_GetExecPrefix`: Use :c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` (:data:`sys.base_exec_prefix`) instead. Use :c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` (:data:`sys.exec_prefix`) if :ref:`virtual environments <venv-def>` need to be handled."
 msgstr ":c:func:`Py_GetExecPrefix`: به‌جای آن از :c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` (:data:`sys.base_exec_prefix`) استفاده کنید. اگر نیاز به مدیریت :ref:`محیط‌های مجازی <venv-def>` وجود دارد، از :c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` (:data:`sys.exec_prefix`) استفاده کنید."
 
-msgid ":c:func:`Py_GetProgramFullPath`: Use :c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` (:data:`sys.executable`) instead."
+#, fuzzy
+#| msgid ":c:func:`Py_GetProgramFullPath`: Use :c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` (:data:`sys.executable`) instead."
+msgid ":c:func:`!Py_GetProgramFullPath`: Use :c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` (:data:`sys.executable`) instead."
 msgstr ":c:func:`Py_GetProgramFullPath`: به‌جای آن از :c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` (:data:`sys.executable`) استفاده کنید."
 
-msgid ":c:func:`Py_GetProgramName`: Use :c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` (:data:`sys.executable`) instead."
+#, fuzzy
+#| msgid ":c:func:`Py_GetProgramName`: Use :c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` (:data:`sys.executable`) instead."
+msgid ":c:func:`!Py_GetProgramName`: Use :c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` (:data:`sys.executable`) instead."
 msgstr ":c:func:`Py_GetProgramName`: به‌جای آن از :c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` (:data:`sys.executable`) استفاده کنید."
 
-msgid ":c:func:`Py_GetPythonHome`: Use :c:func:`PyConfig_Get(\"home\") <PyConfig_Get>` or the :envvar:`PYTHONHOME` environment variable instead."
+#, fuzzy
+#| msgid ":c:func:`Py_GetPythonHome`: Use :c:func:`PyConfig_Get(\"home\") <PyConfig_Get>` or the :envvar:`PYTHONHOME` environment variable instead."
+msgid ":c:func:`!Py_GetPythonHome`: Use :c:func:`PyConfig_Get(\"home\") <PyConfig_Get>` or the :envvar:`PYTHONHOME` environment variable instead."
 msgstr ":c:func:`Py_GetPythonHome`: به جای آن از :c:func:`PyConfig_Get(\"home\") <PyConfig_Get>` یا متغیر محیطی :envvar:`PYTHONHOME` استفاده کنید."
 
 msgid "The `pythoncapi-compat project <https://github.com/python/pythoncapi-compat/>`__ can be used to get :c:func:`PyConfig_Get` on Python 3.13 and older."
@@ -2978,3 +3290,6 @@ msgstr "تغییرات آزمون‌های رگرسیون"
 
 msgid "Python built with :file:`configure` :option:`--with-pydebug` now supports a :option:`-X presite=package.module <-X>` command-line option. If used, it specifies a module that should be imported early in the lifecycle of the interpreter, before ``site.py`` is executed. (Contributed by Łukasz Langa in :gh:`110769`.)"
 msgstr "پایتونی که با :file:`configure` :option:`--with-pydebug` ساخته شده است، اکنون از گزینه‌ی خط فرمان :option:`-X presite=package.module <-X>` پشتیبانی می‌کند. در صورت استفاده، این گزینه ماژولی را مشخص می‌کند که باید در اوایل چرخه‌ی حیات مفسر، پیش از اجرای ``site.py`` ایمپورت شود. (مشارکت‌شده توسط Łukasz Langa در :gh:`110769`.)"
+
+#~ msgid ":c:type:`Py_UNICODE` type and the :c:macro:`!Py_UNICODE_WIDE` macro: Use :c:type:`wchar_t` instead."
+#~ msgstr "نوع :c:type:`Py_UNICODE` و ماکروی :c:macro:`!Py_UNICODE_WIDE`: به جای آن‌ها از :c:type:`wchar_t` استفاده کنید."

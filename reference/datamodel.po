@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-24 04:09+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-12 16:43+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -270,8 +270,10 @@ msgstr "نگاشت‌ها"
 msgid "These represent finite sets of objects indexed by arbitrary index sets. The subscript notation ``a[k]`` selects the item indexed by ``k`` from the mapping ``a``; this can be used in expressions and as the target of assignments or :keyword:`del` statements. The built-in function :func:`len` returns the number of items in a mapping."
 msgstr "این‌ها نشان‌دهنده مجموعه‌های متناهی از اشیای اندیس‌دهی‌شده با مجموعه‌های اندیس دلخواه هستند. نمادگذاری اندیس‌دهی ``a[k]`` آیتمی را که با ``k`` از نگاشت ``a`` اندیس‌دهی شده است انتخاب می‌کند؛ می‌توان از آن در عبارت‌ها و به‌عنوان هدف انتساب‌ها یا دستورات :keyword:`del` استفاده کرد. تابع توکار :func:`len` تعداد آیتم‌های یک نگاشت را برمی‌گرداند."
 
-msgid "There is currently a single intrinsic mapping type:"
-msgstr "در حال حاضر تنها یک نوع نگاشت ذاتی وجود دارد:"
+#, fuzzy
+#| msgid "There are currently two intrinsic set types:"
+msgid "There are two intrinsic mapping types:"
+msgstr "در حال حاضر دو نوع مجموعه‌ی درونی وجود دارد:"
 
 msgid "Dictionaries"
 msgstr "دیکشنری‌ها"
@@ -290,6 +292,16 @@ msgstr "ماژول‌های توسعه‌ای :mod:`dbm.ndbm` و :mod:`dbm.gnu` 
 
 msgid "Dictionaries did not preserve insertion order in versions of Python before 3.6. In CPython 3.6, insertion order was preserved, but it was considered an implementation detail at that time rather than a language guarantee."
 msgstr "دیکشنری‌ها در نسخه‌های پایتون پیش از 3.6 ترتیب درج را حفظ نمی‌کردند. در CPython 3.6، ترتیب درج حفظ می‌شد، اما در آن زمان این موضوع به‌جای یک تضمین زبانی، یک جزئیات پیاده‌سازی در نظر گرفته می‌شد."
+
+#, fuzzy
+#| msgid "Module dictionaries"
+msgid "Frozen dictionaries"
+msgstr "دیکشنری‌های ماژول"
+
+#, fuzzy
+#| msgid "These represent an immutable set.  They are created by the built-in :func:`frozenset` constructor.  As a frozenset is immutable and :term:`hashable`, it can be used again as an element of another set, or as a dictionary key."
+msgid "These represent an immutable dictionary.  They are created by the built-in :func:`frozendict` constructor.  A frozendict is :term:`hashable` if all of its keys and values are hashable, in which case it can be used as an element of a set, or as a key in another mapping.  :class:`!frozendict` is not a subclass of :class:`dict`; it inherits directly from :class:`object`."
+msgstr "این‌ها نشان‌دهنده‌ی یک مجموعه تغییرناپذیر هستند. آن‌ها به‌وسیله‌ی سازنده‌ی توکار :func:`frozenset` ایجاد می‌شوند. از آنجا که frozenset تغییرناپذیر و :term:`هش‌پذیر <hashable>` است، می‌تواند دوباره به‌عنوان عنصری از مجموعه‌ای دیگر، یا به‌عنوان کلید دیکشنری استفاده شود."
 
 msgid "Callable types"
 msgstr "انواع فراخوانی‌پذیر"
@@ -579,23 +591,20 @@ msgstr "یک :term:`دنباله <sequence>` (احتمالاً خالی) از ر
 msgid "It is **strongly** recommended that you use :attr:`module.__spec__.submodule_search_locations <importlib.machinery.ModuleSpec.submodule_search_locations>` instead of :attr:`!module.__path__`."
 msgstr "**به‌شدت** توصیه می‌شود که به‌جای :attr:`!module.__path__` از :attr:`module.__spec__.submodule_search_locations <importlib.machinery.ModuleSpec.submodule_search_locations>` استفاده کنید."
 
-msgid ":attr:`!__file__` and :attr:`!__cached__` are both optional attributes that may or may not be set. Both attributes should be a :class:`str` when they are available."
+#, fuzzy
+#| msgid ":attr:`!__file__` and :attr:`!__cached__` are both optional attributes that may or may not be set. Both attributes should be a :class:`str` when they are available."
+msgid ":attr:`!__file__` is an optional attribute that may or may not be set. Both attributes should be a :class:`str` when they are available."
 msgstr ":attr:`!__file__` و :attr:`!__cached__` هر دو ویژگی‌های اختیاری هستند که ممکن است مقداردهی شده یا نشده باشند. هر دو ویژگی باید هنگامی که در دسترس باشند، یک :class:`str` باشند."
 
-msgid ":attr:`!__file__` indicates the pathname of the file from which the module was loaded (if loaded from a file), or the pathname of the shared library file for extension modules loaded dynamically from a shared library. It might be missing for certain types of modules, such as C modules that are statically linked into the interpreter, and the :ref:`import system <importsystem>` may opt to leave it unset if it has no semantic meaning (for example, a module loaded from a database)."
+#, fuzzy
+#| msgid ":attr:`!__file__` indicates the pathname of the file from which the module was loaded (if loaded from a file), or the pathname of the shared library file for extension modules loaded dynamically from a shared library. It might be missing for certain types of modules, such as C modules that are statically linked into the interpreter, and the :ref:`import system <importsystem>` may opt to leave it unset if it has no semantic meaning (for example, a module loaded from a database)."
+msgid "An optional attribute, :attr:`!__file__` indicates the pathname of the file from which the module was loaded (if loaded from a file), or the pathname of the shared library file for extension modules loaded dynamically from a shared library. It might be missing for certain types of modules, such as C modules that are statically linked into the interpreter, and the :ref:`import system <importsystem>` may opt to leave it unset if it has no semantic meaning (for example, a module loaded from a database)."
 msgstr ":attr:`!__file__` نام مسیر پرونده‌ای را نشان می‌دهد که ماژول از آن بارگذاری شده است (اگر از یک پرونده بارگذاری شده باشد)، یا نام مسیر پرونده کتابخانه اشتراکی را برای ماژول‌های توسعه‌ای که به‌صورت پویا از یک کتابخانه اشتراکی بارگذاری شده‌اند. ممکن است برای انواع خاصی از ماژول‌ها وجود نداشته باشد، مانند ماژول‌های C که به‌صورت ایستا در مفسر پیوند داده شده‌اند، و :ref:`سیستم ایمپورت <importsystem>` ممکن است در صورتی که معنای مفهومی نداشته باشد، آن را تنظیم‌نشده باقی بگذارد (برای مثال، ماژولی که از یک پایگاه داده بارگذاری شده است)."
 
-msgid "If :attr:`!__file__` is set then the :attr:`!__cached__` attribute might also be set,  which is the path to any compiled version of the code (for example, a byte-compiled file). The file does not need to exist to set this attribute; the path can simply point to where the compiled file *would* exist (see :pep:`3147`)."
-msgstr "اگر :attr:`!__file__` تنظیم شده باشد، ممکن است ویژگی :attr:`!__cached__` نیز تنظیم شده باشد، که مسیر هر نسخه‌ی کامپایل‌شده‌ای از کد است (برای مثال، یک پرونده بایت‌کامپایل‌شده (byte-compiled file)). لازم نیست پرونده برای تنظیم این ویژگی وجود داشته باشد؛ مسیر می‌تواند صرفاً به جایی اشاره کند که پرونده کامپایل‌شده در آن *وجود خواهد داشت* (به :pep:`3147` مراجعه کنید)."
-
-msgid "Note that :attr:`!__cached__` may be set even if :attr:`!__file__` is not set.  However, that scenario is quite atypical.  Ultimately, the :term:`loader` is what makes use of the module spec provided by the :term:`finder` (from which :attr:`!__file__` and :attr:`!__cached__` are derived).  So if a loader can load from a cached module but otherwise does not load from a file, that atypical scenario may be appropriate."
-msgstr "توجه داشته باشید که ممکن است :attr:`!__cached__` تنظیم شده باشد، حتی اگر :attr:`!__file__` تنظیم نشده باشد. با این حال، این حالت بسیار غیرمعمول است. در نهایت، این :term:`بارگذار <loader>` است که از مشخصات ماژول ارائه‌شده توسط :term:`یابنده <finder>` استفاده می‌کند (که :attr:`!__file__` و :attr:`!__cached__` از آن به دست می‌آیند). بنابراین اگر یک بارگذار بتواند از یک ماژول نهانگاه‌شده بارگذاری کند، ولی در غیر این صورت از یک پرونده بارگذاری نکند، آن حالت غیرمعمول ممکن است مناسب باشد."
-
-msgid "It is **strongly** recommended that you use :attr:`module.__spec__.cached <importlib.machinery.ModuleSpec.cached>` instead of :attr:`!module.__cached__`."
-msgstr "**به‌شدت** توصیه می‌شود که شما به‌جای :attr:`!module.__cached__` از :attr:`module.__spec__.cached <importlib.machinery.ModuleSpec.cached>` استفاده کنید."
-
-msgid "Setting :attr:`!__cached__` on a module while failing to set :attr:`!__spec__.cached` is deprecated. In Python 3.15, :attr:`!__cached__` will cease to be set or taken into consideration by the import system or standard library."
-msgstr "تنظیم :attr:`!__cached__` در یک ماژول بدون تنظیم :attr:`!__spec__.cached` منسوخ شده است. در پایتون 3.15، :attr:`!__cached__` دیگر توسط سیستم ایمپورت یا کتابخانه استاندارد تنظیم یا در نظر گرفته نخواهد شد."
+#, fuzzy
+#| msgid ":attr:`!__package__` will cease to be set or taken into consideration by the import system or standard library."
+msgid "The ``__cached__`` attribute is no longer set on modules or taken into consideration by the import system or standard library."
+msgstr ":attr:`!__package__` دیگر توسط سیستم ایمپورت یا کتابخانه استاندارد تنظیم یا در نظر گرفته نخواهد شد."
 
 msgid "Other writable attributes on module objects"
 msgstr "سایر ویژگی‌های قابل‌نوشتن در اشیاء ماژول"
@@ -611,6 +620,14 @@ msgstr "دیکشنری شامل :term:`حاشیه‌نویسی‌های متغی
 
 msgid "The :term:`annotate function` for this module, or ``None`` if the module has no annotations. See also: :attr:`~object.__annotate__` attributes."
 msgstr ":term:`annotate function` این ماژول، یا ``None`` اگر ماژول فاقد هرگونه حاشیه‌نویسی باشد. همچنین ببینید: ویژگی‌های :attr:`~object.__annotate__`."
+
+msgid "A container (an object implementing :meth:`~object.__contains__`) of fully qualified module name strings.  When defined at module scope, any regular :keyword:`import` statement in that module whose target module name appears in this container is treated as a :ref:`lazy import <lazy-imports>`, as if the :keyword:`lazy` keyword had been used.  Imports inside functions, class bodies, or :keyword:`try`/:keyword:`except`/:keyword:`finally` blocks are unaffected."
+msgstr ""
+
+#, fuzzy
+#| msgid "See :ref:`class-object-creation` for more details."
+msgid "See :ref:`lazy-modules-compat` for details and examples."
+msgstr "برای جزئیات بیشتر :ref:`class-object-creation` را ببینید."
 
 msgid "Module dictionaries"
 msgstr "دیکشنری‌های ماژول"
@@ -809,12 +826,6 @@ msgstr "نام پرونده‌ای که کد از آن کامپایل شده ا�
 msgid "The line number of the first line of the function"
 msgstr "شماره‌ی اولین خط تابع"
 
-msgid "A string encoding the mapping from :term:`bytecode` offsets to line numbers. For details, see the source code of the interpreter."
-msgstr "رشته‌ای که نگاشت از آفست‌های :term:`بایت‌کد <bytecode>` به شماره‌های خط را کدگذاری می‌کند. برای جزئیات، به کد منبع مفسر مراجعه کنید."
-
-msgid "This attribute of code objects is deprecated, and may be removed in Python 3.15."
-msgstr "این ویژگی از اشیای کد منسوخ شده است و ممکن است در پایتون 3.15 حذف شود."
-
 msgid "A :class:`bytes` object containing encoded source location information. The exact format is an implementation detail and may change between Python versions. Use :meth:`~codeobject.co_lines` and :meth:`~codeobject.co_positions` for supported access to line and position information. To create a modified copy of a code object, use :meth:`~codeobject.replace`."
 msgstr "یک شیء :class:`bytes` حاوی اطلاعات مکانِ منبع کدگذاری‌شده. فرمت دقیق یک جزئیات پیاده‌سازی است و ممکن است بین نسخه‌های پایتون تغییر کند. برای دسترسی پشتیبانی‌شده به اطلاعات سطر و موقعیت، از :meth:`~codeobject.co_lines` و :meth:`~codeobject.co_positions` استفاده کنید. برای ایجاد یک کپی اصلاح‌شده از یک شیء کد، از :meth:`~codeobject.replace` استفاده کنید."
 
@@ -1010,6 +1021,9 @@ msgstr "اشیای اسلایس"
 msgid "Slice objects are used to represent slices for :meth:`~object.__getitem__` methods.  They are also created by the built-in :func:`slice` function."
 msgstr "از اشیای اسلایسی (slice) برای نمایش اسلایس‌ها در متدهای :meth:`~object.__getitem__` استفاده می‌شود. این اشیاء همچنین توسط تابع توکار :func:`slice` ایجاد می‌شوند."
 
+msgid "The :func:`slice` type now supports :ref:`subscription <subscriptions>`. For example, ``slice[float]`` may be used in type annotations to indicate a slice containing :type:`float` objects."
+msgstr ""
+
 msgid "Special read-only attributes: :attr:`~slice.start` is the lower bound; :attr:`~slice.stop` is the upper bound; :attr:`~slice.step` is the step value; each is ``None`` if omitted.  These attributes can have any type."
 msgstr "ویژگی‌های فقط‌خواندنی ویژه: :attr:`~slice.start` کران پایین است؛ :attr:`~slice.stop` کران بالا است؛ :attr:`~slice.step` مقدار گام است؛ هرکدام در صورت حذف‌شدن ``None`` است. این ویژگی‌ها می‌توانند هر نوعی داشته باشند."
 
@@ -1151,7 +1165,9 @@ msgstr "نسخه‌هایی با آرگومان‌های جابه‌جاشده �
 msgid "When no appropriate method returns any value other than :data:`NotImplemented`, the ``==`` and ``!=`` operators will fall back to ``is`` and ``is not``, respectively."
 msgstr "هرگاه هیچ متد مناسبی مقداری به‌جز :data:`NotImplemented` برنگرداند، عملگرهای ``==`` و ``!=`` به‌ترتیب به ``is`` و ``is not`` بازمی‌گردند."
 
-msgid "Called by built-in function :func:`hash` and for operations on members of hashed collections including :class:`set`, :class:`frozenset`, and :class:`dict`.  The ``__hash__()`` method should return an integer. The only required property is that objects which compare equal have the same hash value; it is advised to mix together the hash values of the components of the object that also play a part in comparison of objects by packing them into a tuple and hashing the tuple. Example::"
+#, fuzzy
+#| msgid "Called by built-in function :func:`hash` and for operations on members of hashed collections including :class:`set`, :class:`frozenset`, and :class:`dict`.  The ``__hash__()`` method should return an integer. The only required property is that objects which compare equal have the same hash value; it is advised to mix together the hash values of the components of the object that also play a part in comparison of objects by packing them into a tuple and hashing the tuple. Example::"
+msgid "Called by built-in function :func:`hash` and for operations on members of hashed collections including :class:`set`, :class:`frozenset`, :class:`dict`, and :class:`frozendict`. The ``__hash__()`` method should return an integer. The only required property is that objects which compare equal have the same hash value; it is advised to mix together the hash values of the components of the object that also play a part in comparison of objects by packing them into a tuple and hashing the tuple. Example::"
 msgstr "توسط تابع توکار :func:`hash` و برای عملیات روی اعضای مجموعه‌های هش‌شده شامل :class:`set`، :class:`frozenset` و :class:`dict` فراخوانی می‌شود. متد ``__hash__()`` باید یک عدد صحیح برگرداند. تنها ویژگی مورد نیاز این است که اشیایی که در مقایسه با هم برابر هستند، مقدار هش یکسانی داشته باشند؛ توصیه می‌شود مقادیر هش اجزای شیء را که در مقایسه کردن اشیاء نیز نقش دارند، با بسته‌بندی آن اجزا در یک تاپل و هش کردن تاپل، با هم ترکیب کنید. مثال::"
 
 msgid ""
@@ -1401,7 +1417,9 @@ msgstr "عملکرد تعریف *__slots__* به کلاسی که در آن تع�
 msgid "If a class defines a slot also defined in a base class, the instance variable defined by the base class slot is inaccessible (except by retrieving its descriptor directly from the base class). This renders the meaning of the program undefined.  In the future, a check may be added to prevent this."
 msgstr "اگر یک کلاس یک جایگاه را تعریف کند که در یک کلاس پایه نیز تعریف شده است، متغیر نمونه‌ای که توسط جایگاه کلاس پایه تعریف شده است، غیرقابل‌دسترس است (مگر با بازیابی توصیف‌گر آن به‌صورت مستقیم از کلاس پایه). این موضوع معنای برنامه را تعریف‌نشده می‌کند. در آینده، ممکن است یک بررسی برای جلوگیری از این حالت اضافه شود."
 
-msgid ":exc:`TypeError` will be raised if nonempty *__slots__* are defined for a class derived from a :c:member:`\"variable-length\" built-in type <PyTypeObject.tp_itemsize>` such as :class:`int`, :class:`bytes`, and :class:`tuple`."
+#, fuzzy
+#| msgid ":exc:`TypeError` will be raised if nonempty *__slots__* are defined for a class derived from a :c:member:`\"variable-length\" built-in type <PyTypeObject.tp_itemsize>` such as :class:`int`, :class:`bytes`, and :class:`tuple`."
+msgid ":exc:`TypeError` will be raised if *__slots__* other than *__dict__* and *__weakref__* are defined for a class derived from a :c:member:`\"variable-length\" built-in type <PyTypeObject.tp_itemsize>` such as :class:`int`, :class:`bytes`, and :class:`type`, except :class:`tuple`."
 msgstr "اگر *__slots__* غیرخالی برای کلاسی مشتق‌شده از :c:member:`\"variable-length\" built-in type <PyTypeObject.tp_itemsize>` مانند :class:`int`، :class:`bytes` و :class:`tuple` تعریف شده باشد، :exc:`TypeError` پرتاب خواهد شد."
 
 msgid "Any non-string :term:`iterable` may be assigned to *__slots__*."
@@ -1413,11 +1431,16 @@ msgstr "اگر از یک :class:`dictionary <dict>` برای انتساب *__slo
 msgid ":attr:`~object.__class__` assignment works only if both classes have the same *__slots__*."
 msgstr "انتساب :attr:`~object.__class__` تنها در صورتی امکان‌پذیر است که هر دو کلاس *__slots__* یکسانی داشته باشند."
 
-msgid ":ref:`Multiple inheritance <tut-multiple>` with multiple slotted parent classes can be used, but only one parent is allowed to have attributes created by slots (the other bases must have empty slot layouts) - violations raise :exc:`TypeError`."
+#, fuzzy
+#| msgid ":ref:`Multiple inheritance <tut-multiple>` with multiple slotted parent classes can be used, but only one parent is allowed to have attributes created by slots (the other bases must have empty slot layouts) - violations raise :exc:`TypeError`."
+msgid ":ref:`Multiple inheritance <multiple-inheritance>` with multiple slotted parent classes can be used, but only one parent is allowed to have attributes created by slots (the other bases must have empty slot layouts) - violations raise :exc:`TypeError`."
 msgstr "می‌توان از :ref:`وراثت چندگانه <tut-multiple>` با چندین کلاس والد دارای جایگاه استفاده کرد، اما فقط یک والد مجاز است ویژگی‌های ایجادشده توسط جایگاه‌ها را داشته باشد (سایر کلاس‌های پایه باید چیدمان‌های جایگاه خالی داشته باشند)؛ موارد نقض، :exc:`TypeError` را پرتاب می‌کنند."
 
 msgid "If an :term:`iterator` is used for *__slots__* then a :term:`descriptor` is created for each of the iterator's values. However, the *__slots__* attribute will be an empty iterator."
 msgstr "اگر یک :term:`پیمایش‌گر <iterator>` برای *__slots__* استفاده شود، آنگاه یک :term:`descriptor` برای هر یک از مقادیر آن iterator ایجاد می‌شود. با این حال، ویژگی *__slots__* یک iterator خالی خواهد بود."
+
+msgid "Allowed defining the *__dict__* and *__weakref__* *__slots__* for any class. Allowed defining any *__slots__* for a class derived from :class:`tuple`."
+msgstr ""
 
 msgid "Customizing class creation"
 msgstr "سفارشی‌سازی ایجاد کلاس"
@@ -2576,6 +2599,11 @@ msgstr "dbm.ndbm"
 msgid "dbm.gnu"
 msgstr "dbm.gnu"
 
+#, fuzzy
+#| msgid "frozenset"
+msgid "frozendict"
+msgstr "frozenset"
+
 msgid "callable"
 msgstr "فراخوانی‌پذیر"
 
@@ -2705,9 +2733,6 @@ msgstr "__path__ (ویژگی ماژول)"
 msgid "__file__ (module attribute)"
 msgstr "__file__ (ویژگی ماژول)"
 
-msgid "__cached__ (module attribute)"
-msgstr "__cached__ (ویژگی ماژول)"
-
 msgid "__doc__ (module attribute)"
 msgstr "__doc__ (ویژگی ماژول)"
 
@@ -2716,6 +2741,11 @@ msgstr "__annotations__ (ویژگی ماژول)"
 
 msgid "__annotate__ (module attribute)"
 msgstr "__annotate__ (ویژگی ماژول)"
+
+#, fuzzy
+#| msgid "__loader__ (module attribute)"
+msgid "__lazy_modules__ (module attribute)"
+msgstr "__loader__ (ویژگی ماژول)"
 
 msgid "__dict__ (module attribute)"
 msgstr "__dict__ (ویژگی ماژول)"
@@ -2842,9 +2872,6 @@ msgstr "co_firstlineno (ویژگی شیء کد)"
 
 msgid "co_flags (code object attribute)"
 msgstr "co_flags (ویژگی شیء کد)"
-
-msgid "co_lnotab (code object attribute)"
-msgstr "co_lnotab (ویژگی شیء کد)"
 
 msgid "co_name (code object attribute)"
 msgstr "co_name (ویژگی شیء کد)"
@@ -3079,3 +3106,30 @@ msgstr "with"
 
 msgid "context manager"
 msgstr "مدیر زمینه"
+
+#~ msgid "There is currently a single intrinsic mapping type:"
+#~ msgstr "در حال حاضر تنها یک نوع نگاشت ذاتی وجود دارد:"
+
+#~ msgid "If :attr:`!__file__` is set then the :attr:`!__cached__` attribute might also be set,  which is the path to any compiled version of the code (for example, a byte-compiled file). The file does not need to exist to set this attribute; the path can simply point to where the compiled file *would* exist (see :pep:`3147`)."
+#~ msgstr "اگر :attr:`!__file__` تنظیم شده باشد، ممکن است ویژگی :attr:`!__cached__` نیز تنظیم شده باشد، که مسیر هر نسخه‌ی کامپایل‌شده‌ای از کد است (برای مثال، یک پرونده بایت‌کامپایل‌شده (byte-compiled file)). لازم نیست پرونده برای تنظیم این ویژگی وجود داشته باشد؛ مسیر می‌تواند صرفاً به جایی اشاره کند که پرونده کامپایل‌شده در آن *وجود خواهد داشت* (به :pep:`3147` مراجعه کنید)."
+
+#~ msgid "Note that :attr:`!__cached__` may be set even if :attr:`!__file__` is not set.  However, that scenario is quite atypical.  Ultimately, the :term:`loader` is what makes use of the module spec provided by the :term:`finder` (from which :attr:`!__file__` and :attr:`!__cached__` are derived).  So if a loader can load from a cached module but otherwise does not load from a file, that atypical scenario may be appropriate."
+#~ msgstr "توجه داشته باشید که ممکن است :attr:`!__cached__` تنظیم شده باشد، حتی اگر :attr:`!__file__` تنظیم نشده باشد. با این حال، این حالت بسیار غیرمعمول است. در نهایت، این :term:`بارگذار <loader>` است که از مشخصات ماژول ارائه‌شده توسط :term:`یابنده <finder>` استفاده می‌کند (که :attr:`!__file__` و :attr:`!__cached__` از آن به دست می‌آیند). بنابراین اگر یک بارگذار بتواند از یک ماژول نهانگاه‌شده بارگذاری کند، ولی در غیر این صورت از یک پرونده بارگذاری نکند، آن حالت غیرمعمول ممکن است مناسب باشد."
+
+#~ msgid "It is **strongly** recommended that you use :attr:`module.__spec__.cached <importlib.machinery.ModuleSpec.cached>` instead of :attr:`!module.__cached__`."
+#~ msgstr "**به‌شدت** توصیه می‌شود که شما به‌جای :attr:`!module.__cached__` از :attr:`module.__spec__.cached <importlib.machinery.ModuleSpec.cached>` استفاده کنید."
+
+#~ msgid "Setting :attr:`!__cached__` on a module while failing to set :attr:`!__spec__.cached` is deprecated. In Python 3.15, :attr:`!__cached__` will cease to be set or taken into consideration by the import system or standard library."
+#~ msgstr "تنظیم :attr:`!__cached__` در یک ماژول بدون تنظیم :attr:`!__spec__.cached` منسوخ شده است. در پایتون 3.15، :attr:`!__cached__` دیگر توسط سیستم ایمپورت یا کتابخانه استاندارد تنظیم یا در نظر گرفته نخواهد شد."
+
+#~ msgid "A string encoding the mapping from :term:`bytecode` offsets to line numbers. For details, see the source code of the interpreter."
+#~ msgstr "رشته‌ای که نگاشت از آفست‌های :term:`بایت‌کد <bytecode>` به شماره‌های خط را کدگذاری می‌کند. برای جزئیات، به کد منبع مفسر مراجعه کنید."
+
+#~ msgid "This attribute of code objects is deprecated, and may be removed in Python 3.15."
+#~ msgstr "این ویژگی از اشیای کد منسوخ شده است و ممکن است در پایتون 3.15 حذف شود."
+
+#~ msgid "__cached__ (module attribute)"
+#~ msgstr "__cached__ (ویژگی ماژول)"
+
+#~ msgid "co_lnotab (code object attribute)"
+#~ msgstr "co_lnotab (ویژگی شیء کد)"

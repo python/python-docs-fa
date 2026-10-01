@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2021-06-28 00:48+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -84,7 +84,9 @@ msgstr "اگر ``endptr`` برابر ``NULL`` باشد، کل رشته تبدی�
 msgid "If endptr is not ``NULL``, convert as much of the string as possible and set ``*endptr`` to point to the first unconverted character.  If no initial segment of the string is the valid representation of a floating-point number, set ``*endptr`` to point to the beginning of the string, raise ValueError, and return ``-1.0``."
 msgstr "اگر endptr برابر ``NULL`` نباشد، تا حد امکان رشته را تبدیل می‌کند و ``*endptr`` را طوری تنظیم می‌کند که به نخستین نویسه‌ی تبدیل‌نشده اشاره کند. اگر هیچ بخش آغازینی از رشته، نمای معتبر یک عدد ممیز شناور نباشد، ``*endptr`` را طوری تنظیم می‌کند که به ابتدای رشته اشاره کند، استثنای ValueError ایجاد می‌کند و ``-1.0`` را برمی‌گرداند."
 
-msgid "If ``s`` represents a value that is too large to store in a float (for example, ``\"1e500\"`` is such a string on many platforms) then if ``overflow_exception`` is ``NULL`` return ``Py_INFINITY`` (with an appropriate sign) and don't set any exception.  Otherwise, ``overflow_exception`` must point to a Python exception object; raise that exception and return ``-1.0``.  In both cases, set ``*endptr`` to point to the first character after the converted value."
+#, fuzzy
+#| msgid "If ``s`` represents a value that is too large to store in a float (for example, ``\"1e500\"`` is such a string on many platforms) then if ``overflow_exception`` is ``NULL`` return ``Py_INFINITY`` (with an appropriate sign) and don't set any exception.  Otherwise, ``overflow_exception`` must point to a Python exception object; raise that exception and return ``-1.0``.  In both cases, set ``*endptr`` to point to the first character after the converted value."
+msgid "If ``s`` represents a value that is too large to store in a float (for example, ``\"1e500\"`` is such a string on many platforms) then if ``overflow_exception`` is ``NULL`` return :c:macro:`!INFINITY` (with an appropriate sign) and don't set any exception.  Otherwise, ``overflow_exception`` must point to a Python exception object; raise that exception and return ``-1.0``.  In both cases, set ``*endptr`` to point to the first character after the converted value."
 msgstr "اگر ``s`` مقداری را بازنمایی کند که برای ذخیره‌سازی در یک عدد اعشاری بیش از حد بزرگ است (برای مثال، ``\"1e500\"`` در بسیاری از پلتفرم‌ها چنین رشته‌ای است)، آنگاه اگر ``overflow_exception`` برابر ``NULL`` باشد، ``Py_INFINITY`` را (با علامت مناسب) بازگردانید و هیچ استثنایی تنظیم نکنید. در غیر این صورت، ``overflow_exception`` باید به یک شیء استثنای پایتون اشاره کند؛ آن استثنا را برانگیزید و ``-1.0`` را بازگردانید. در هر دو حالت، ``*endptr`` را طوری تنظیم کنید که به نخستین نویسه‌ی پس از مقدار تبدیل‌شده اشاره کند."
 
 msgid "If any other error occurs during the conversion (for example an out-of-memory error), set the appropriate Python exception and return ``-1.0``."

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-13 17:33+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -316,8 +316,8 @@ msgstr "رویداد حسابرسی ``sqlite3.connect/handle`` افزوده شد
 msgid "Added the *autocommit* parameter."
 msgstr "پارامتر *autocommit* افزوده شد."
 
-msgid "Positional use of the parameters *timeout*, *detect_types*, *isolation_level*, *check_same_thread*, *factory*, *cached_statements*, and *uri* is deprecated. They will become keyword-only parameters in Python 3.15."
-msgstr "استفاده‌ی جایگاهی از پارامترهای *timeout*، *detect_types*، *isolation_level*، *check_same_thread*، *factory*، *cached_statements* و *uri* منسوخ شده است. این پارامترها در پایتون 3.15 به پارامترهای فقط کلیدواژه‌ای تبدیل خواهند شد."
+msgid "All parameters except *database* are now keyword-only."
+msgstr ""
 
 msgid "Return ``True`` if the string *statement* appears to contain one or more complete SQL statements. No syntactic verification or parsing of any kind is performed, other than checking that there are no unclosed string literals and the statement is terminated by a semicolon."
 msgstr "اگر به نظر برسد که رشته‌ی *statement* حاوی یک یا چند دستور کامل SQL باشد، ``True`` را برمی‌گرداند. هیچ‌گونه صحت‌سنجی سینتکسی یا تجزیه‌ای از هیچ نوع انجام نمی‌شود، به‌جز بررسی اینکه هیچ لفظی رشته‌ای بسته‌نشده‌ای وجود نداشته باشد و دستور با نقطه‌ویرگول پایان یافته باشد."
@@ -420,6 +420,12 @@ msgstr "شماره‌ی نسخه‌ی کتابخانه‌ی SQLite ران‌تا
 
 msgid "Version number of the runtime SQLite library as a :class:`tuple` of :class:`integers <int>`."
 msgstr "شماره نسخه کتابخانه SQLite در ران‌تایم به‌صورت یک :class:`tuple` از :class:`اعداد صحیح <int>`."
+
+msgid "A :class:`tuple` containing all SQLite keywords."
+msgstr ""
+
+msgid "This constant is only available if Python was compiled with SQLite 3.24.0 or greater."
+msgstr ""
 
 msgid "Integer constant required by the DB-API 2.0, stating the level of thread safety the :mod:`!sqlite3` module supports. This attribute is set based on the default `threading mode <https://sqlite.org/threadsafe.html>`_ the underlying SQLite library is compiled with. The SQLite threading modes are:"
 msgstr "ثابت عدد صحیح مورد نیاز DB-API 2.0، که سطح ایمنی نخی را که ماژول :mod:`!sqlite3` پشتیبانی می‌کند، مشخص می‌کند. این ویژگی بر اساس `حالت نخی (threading mode) <https://sqlite.org/threadsafe.html>`_ پیش‌فرضی تنظیم می‌شود که کتابخانه زیربنایی SQLite با آن کامپایل شده است. حالت‌های نخی SQLite عبارتند از:"
@@ -577,6 +583,9 @@ msgstr "اگر ``True`` باشد، تابع SQL ایجادشده به‌عنوا
 msgid "Added the *deterministic* parameter."
 msgstr "پارامتر *deterministic* افزوده شد."
 
+msgid "The first three parameters are now positional-only."
+msgstr ""
+
 msgid "Example:"
 msgstr "مثال:"
 
@@ -600,9 +609,6 @@ msgstr ""
 "...     print(row)\n"
 "('acbd18db4cc2f85cedef654fccc4a4d8',)\n"
 ">>> con.close()"
-
-msgid "Passing *name*, *narg*, and *func* as keyword arguments is deprecated. These parameters will become positional-only in Python 3.15."
-msgstr "ارسال *name*، *narg* و *func* به‌صورت آرگومان‌های کلیدواژه‌ای منسوخ شده است. این پارامترها در پایتون 3.15 فقط جایگاهی خواهند شد."
 
 msgid "Create or remove a user-defined SQL aggregate function."
 msgstr "ایجاد یا حذف یک تابع تجمیعی SQL تعریف‌شده توسط کاربر."
@@ -631,6 +637,9 @@ msgstr "تعداد آرگومان‌هایی که متد ``step()`` باید ب�
 msgid "Set to ``None`` to remove an existing SQL aggregate function."
 msgstr "برای حذف یک تابع تجمیعی SQL موجود، آن را روی ``None`` تنظیم کنید."
 
+msgid "All three parameters are now positional-only."
+msgstr ""
+
 msgid ""
 "class MySum:\n"
 "    def __init__(self):\n"
@@ -671,9 +680,6 @@ msgstr ""
 "print(cur.fetchone()[0])\n"
 "\n"
 "con.close()"
-
-msgid "Passing *name*, *n_arg*, and *aggregate_class* as keyword arguments is deprecated. These parameters will become positional-only in Python 3.15."
-msgstr "ارسال *name*، *n_arg* و *aggregate_class* به‌صورت آرگومان‌های کلیدواژه‌ای منسوخ شده است. این پارامترها در پایتون 3.15 فقط جایگاهی خواهند شد."
 
 msgid "Create or remove a user-defined aggregate window function."
 msgstr "ایجاد یا حذف یک تابع پنجره‌ای تجمیعی تعریف‌شده توسط کاربر."
@@ -875,8 +881,8 @@ msgstr "با ارسال ``None`` به‌عنوان *authorizer_callback*، تأ�
 msgid "Added support for disabling the authorizer using ``None``."
 msgstr "پشتیبانی از غیرفعال‌سازی مجوزدهنده (authorizer) با استفاده از ``None`` افزوده شد."
 
-msgid "Passing *authorizer_callback* as a keyword argument is deprecated. The parameter will become positional-only in Python 3.15."
-msgstr "ارسال *authorizer_callback* به‌عنوان آرگومان کلیدواژه‌ای منسوخ شده است. این پارامتر در پایتون 3.15 فقط جایگاهی خواهد شد."
+msgid "The only parameter is now positional-only."
+msgstr ""
 
 msgid "Register :term:`callable` *progress_handler* to be invoked for every *n* instructions of the SQLite virtual machine. This is useful if you want to get called from SQLite during long-running operations, for example to update a GUI."
 msgstr ":term:`callable` *progress_handler* را ثبت کنید تا به ازای هر *n* دستورالعملِ ماشین مجازی SQLite فراخوانی شود. این قابلیت زمانی مفید است که بخواهید در حین عملیات‌های طولانی‌مدت از SQLite فراخوانی شوید، برای مثال برای به‌روزرسانی رابط کاربری گرافیکی (GUI)."
@@ -887,8 +893,8 @@ msgstr "اگر می‌خواهید هر مدیر پیشرفت (progress handler)
 msgid "Returning a non-zero value from the handler function will terminate the currently executing query and cause it to raise a :exc:`DatabaseError` exception."
 msgstr "بازگرداندن یک مقدار غیرصفر از تابع هندلر، پرس‌وجوی در حال اجرا را خاتمه می‌دهد و باعث می‌شود که یک استثنا :exc:`DatabaseError` پرتاب شود."
 
-msgid "Passing *progress_handler* as a keyword argument is deprecated. The parameter will become positional-only in Python 3.15."
-msgstr "ارسال *progress_handler* به‌عنوان آرگومان کلیدواژه‌ای منسوخ شده است. این پارامتر در Python 3.15 فقط جایگاهی خواهد شد."
+msgid "The first parameter is now positional-only."
+msgstr ""
 
 msgid "Register :term:`callable` *trace_callback* to be invoked for each SQL statement that is actually executed by the SQLite backend."
 msgstr "یک :term:`callable` به نام *trace_callback* را ثبت کنید تا برای هر دستور SQL که به‌طور واقعی توسط بک‌اند SQLite اجرا می‌شود، فراخوانی شود."
@@ -901,9 +907,6 @@ msgstr "با ارسال ``None`` به‌عنوان *trace_callback*، کال‌�
 
 msgid "Exceptions raised in the trace callback are not propagated. As a development and debugging aid, use :meth:`~sqlite3.enable_callback_tracebacks` to enable printing tracebacks from exceptions raised in the trace callback."
 msgstr "استثناهای پرتاب‌شده در کال‌بک ردگیری منتشر نمی‌شوند. به‌عنوان کمکی برای توسعه و اشکال‌زدایی، از :meth:`~sqlite3.enable_callback_tracebacks` برای فعال کردن چاپ ردگیری‌های پشته‌ی استثناهای پرتاب‌شده در کال‌بک ردگیری استفاده کنید."
-
-msgid "Passing *trace_callback* as a keyword argument is deprecated. The parameter will become positional-only in Python 3.15."
-msgstr "ارسال *trace_callback* به‌عنوان آرگومان کلیدواژه‌ای منسوخ شده است. این پارامتر در پایتون 3.15 فقط جایگاهی خواهد شد."
 
 msgid "Enable the SQLite engine to load SQLite extensions from shared libraries if *enabled* is ``True``; else, disallow loading SQLite extensions. SQLite extensions can define new functions, aggregates or whole new virtual table implementations.  One well-known extension is the fulltext-search extension distributed with SQLite."
 msgstr "اگر *enabled* برابر ``True`` باشد، به موتور SQLite اجازه می‌دهد تا افزونه‌های SQLite را از کتابخانه‌های مشترک بارگذاری کند؛ در غیر این صورت، بارگذاری افزونه‌های SQLite را مجاز نمی‌داند. افزونه‌های SQLite می‌توانند توابع جدید، تجمیع‌ها یا پیاده‌سازی‌های کاملاً جدید جدول مجازی را تعریف کنند. یکی از افزونه‌های شناخته‌شده، افزونه جستجوی تمام‌متنی (fulltext-search) است که همراه SQLite توزیع شده است."
@@ -2351,3 +2354,21 @@ msgstr "در دستورات SQL"
 
 msgid ": (colon)"
 msgstr ": (دونقطه)"
+
+#~ msgid "Positional use of the parameters *timeout*, *detect_types*, *isolation_level*, *check_same_thread*, *factory*, *cached_statements*, and *uri* is deprecated. They will become keyword-only parameters in Python 3.15."
+#~ msgstr "استفاده‌ی جایگاهی از پارامترهای *timeout*، *detect_types*، *isolation_level*، *check_same_thread*، *factory*، *cached_statements* و *uri* منسوخ شده است. این پارامترها در پایتون 3.15 به پارامترهای فقط کلیدواژه‌ای تبدیل خواهند شد."
+
+#~ msgid "Passing *name*, *narg*, and *func* as keyword arguments is deprecated. These parameters will become positional-only in Python 3.15."
+#~ msgstr "ارسال *name*، *narg* و *func* به‌صورت آرگومان‌های کلیدواژه‌ای منسوخ شده است. این پارامترها در پایتون 3.15 فقط جایگاهی خواهند شد."
+
+#~ msgid "Passing *name*, *n_arg*, and *aggregate_class* as keyword arguments is deprecated. These parameters will become positional-only in Python 3.15."
+#~ msgstr "ارسال *name*، *n_arg* و *aggregate_class* به‌صورت آرگومان‌های کلیدواژه‌ای منسوخ شده است. این پارامترها در پایتون 3.15 فقط جایگاهی خواهند شد."
+
+#~ msgid "Passing *authorizer_callback* as a keyword argument is deprecated. The parameter will become positional-only in Python 3.15."
+#~ msgstr "ارسال *authorizer_callback* به‌عنوان آرگومان کلیدواژه‌ای منسوخ شده است. این پارامتر در پایتون 3.15 فقط جایگاهی خواهد شد."
+
+#~ msgid "Passing *progress_handler* as a keyword argument is deprecated. The parameter will become positional-only in Python 3.15."
+#~ msgstr "ارسال *progress_handler* به‌عنوان آرگومان کلیدواژه‌ای منسوخ شده است. این پارامتر در Python 3.15 فقط جایگاهی خواهد شد."
+
+#~ msgid "Passing *trace_callback* as a keyword argument is deprecated. The parameter will become positional-only in Python 3.15."
+#~ msgstr "ارسال *trace_callback* به‌عنوان آرگومان کلیدواژه‌ای منسوخ شده است. این پارامتر در پایتون 3.15 فقط جایگاهی خواهد شد."

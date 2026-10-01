@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-15 08:11+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -48,6 +48,15 @@ msgstr "جمع‌آزما Adler-32 برای *data* محاسبه می‌شود. (
 
 msgid "The result is always unsigned."
 msgstr "نتیجه همیشه بدون علامت است."
+
+msgid "Combine two Adler-32 checksums into one."
+msgstr ""
+
+msgid "Given the Adler-32 checksum *adler1* of a sequence ``A`` and the Adler-32 checksum *adler2* of a sequence ``B`` of length *len2*, return the Adler-32 checksum of ``A`` and ``B`` concatenated."
+msgstr ""
+
+msgid "This function is typically useful to combine Adler-32 checksums that were concurrently computed. To compute checksums sequentially, use :func:`adler32` with the running checksum as the ``value`` argument."
+msgstr ""
 
 msgid "Compresses the bytes in *data*, returning a bytes object containing compressed data. *level* is an integer from ``0`` to ``9`` or ``-1`` controlling the level of compression; See :const:`Z_BEST_SPEED` (``1``), :const:`Z_BEST_COMPRESSION` (``9``), :const:`Z_NO_COMPRESSION` (``0``), and the default, :const:`Z_DEFAULT_COMPRESSION` (``-1``) for more information about these values."
 msgstr "بایت‌های موجود در *data* را فشرده می‌کند و یک شیء bytes حاوی داده‌های فشرده را برمی‌گرداند. *level* یک عدد صحیح از ``0`` تا ``9`` یا ``-1`` است که سطح فشرده‌سازی را کنترل می‌کند؛ برای اطلاعات بیشتر درباره این مقادیر، :const:`Z_BEST_SPEED` (``1``)، :const:`Z_BEST_COMPRESSION` (``9``)، :const:`Z_NO_COMPRESSION` (``0``) و مقدار پیش‌فرض، :const:`Z_DEFAULT_COMPRESSION` (``-1``) را ببینید."
@@ -99,6 +108,15 @@ msgstr "پارامتر *zdict* و پشتیبانی از آرگومان‌های 
 
 msgid "Computes a CRC (Cyclic Redundancy Check) checksum of *data*. The result is an unsigned 32-bit integer. If *value* is present, it is used as the starting value of the checksum; otherwise, a default value of 0 is used.  Passing in *value* allows computing a running checksum over the concatenation of several inputs.  The algorithm is not cryptographically strong, and should not be used for authentication or digital signatures.  Since the algorithm is designed for use as a checksum algorithm, it is not suitable for use as a general hash algorithm."
 msgstr "جمع‌آزما CRC (Cyclic Redundancy Check) برای *data* محاسبه می‌شود. نتیجه یک عدد صحیح ۳۲ بیتی بدون علامت است. اگر *value* موجود باشد، از آن به‌عنوان مقدار آغازین جمع‌آزما استفاده می‌شود؛ در غیر این صورت، از مقدار پیش‌فرض ۰ استفاده می‌شود. ارسال *value* امکان محاسبه‌ی جمع‌آزما جاری بر روی الحاق چندین ورودی را فراهم می‌کند. این الگوریتم از نظر رمزنگاری قوی نیست و نباید برای احراز هویت یا امضای دیجیتال استفاده شود. از آنجا که این الگوریتم برای استفاده به‌عنوان الگوریتم جمع‌آزما طراحی شده است، برای استفاده به‌عنوان یک الگوریتم هش عمومی مناسب نیست."
+
+msgid "Combine two CRC-32 checksums into one."
+msgstr ""
+
+msgid "Given the CRC-32 checksum *crc1* of a sequence ``A`` and the CRC-32 checksum *crc2* of a sequence ``B`` of length *len2*, return the CRC-32 checksum of ``A`` and ``B`` concatenated."
+msgstr ""
+
+msgid "This function is typically useful to combine CRC-32 checksums that were concurrently computed. To compute checksums sequentially, use :func:`crc32` with the running checksum as the ``value`` argument."
+msgstr ""
 
 msgid "Decompresses the bytes in *data*, returning a bytes object containing the uncompressed data.  The *wbits* parameter depends on the format of *data*, and is discussed further below. If *bufsize* is given, it is used as the initial size of the output buffer.  Raises the :exc:`error` exception if any error occurs."
 msgstr "بایت‌های موجود در *data* را از حالت فشرده خارج می‌کند و یک شیء بایتی حاوی داده‌های فشرده‌نشده برمی‌گرداند. پارامتر *wbits* به قالب *data* بستگی دارد و در ادامه بیشتر توضیح داده شده است. اگر *bufsize* داده شود، از آن به‌عنوان اندازه اولیه بافر خروجی استفاده می‌شود. در صورت بروز هرگونه خطا، استثنای :exc:`error` را پرتاب می‌کند."
@@ -178,8 +196,16 @@ msgstr "این امر امکان تمایز میان یک جریان فشرده�
 msgid "Decompress *data*, returning a bytes object containing the uncompressed data corresponding to at least part of the data in *string*.  This data should be concatenated to the output produced by any preceding calls to the :meth:`decompress` method.  Some of the input data may be preserved in internal buffers for later processing."
 msgstr "*data* را از حالت فشرده خارج می‌کند و یک شیء bytes حاوی داده‌ی غیرفشرده‌ی متناظر با حداقل بخشی از داده‌های موجود در *string* برمی‌گرداند. این داده باید به خروجی حاصل از هر فراخوانی پیشین متد :meth:`decompress` الحاق شود. ممکن است بخشی از داده‌ی ورودی برای پردازش بعدی در بافرهای داخلی نگه‌داری شود."
 
-msgid "If the optional parameter *max_length* is non-zero then the return value will be no longer than *max_length*. This may mean that not all of the compressed input can be processed; and unconsumed data will be stored in the attribute :attr:`unconsumed_tail`. This bytestring must be passed to a subsequent call to :meth:`decompress` if decompression is to continue.  If *max_length* is zero then the whole input is decompressed, and :attr:`unconsumed_tail` is empty."
+#, fuzzy
+#| msgid "If the optional parameter *max_length* is non-zero then the return value will be no longer than *max_length*. This may mean that not all of the compressed input can be processed; and unconsumed data will be stored in the attribute :attr:`unconsumed_tail`. This bytestring must be passed to a subsequent call to :meth:`decompress` if decompression is to continue.  If *max_length* is zero then the whole input is decompressed, and :attr:`unconsumed_tail` is empty."
+msgid "If the optional parameter *max_length* is non-zero then the return value will be no longer than *max_length*. This may mean that not all of the compressed input can be processed; and unconsumed data will be stored in the attribute :attr:`unconsumed_tail`. This bytestring must be passed to a subsequent call to :meth:`decompress` if decompression is to continue.  If *max_length* is zero then the whole input is decompressed, and :attr:`unconsumed_tail` is empty. For example, the full content could be read like::"
 msgstr "اگر پارامتر اختیاری *max_length* غیرصفر باشد، طول مقدار بازگشتی بیشتر از *max_length* نخواهد بود. این ممکن است به این معنا باشد که تمام ورودی فشرده قابل پردازش نیست؛ و داده مصرف‌نشده در ویژگی :attr:`unconsumed_tail` ذخیره می‌شود. اگر قرار است واگشایی ادامه یابد، این رشته بایتی باید به فراخوانی بعدی :meth:`decompress` ارسال شود. اگر *max_length* صفر باشد، کل ورودی واگشایی می‌شود و :attr:`unconsumed_tail` خالی است."
+
+msgid ""
+"process_output(d.decompress(data, max_length))\n"
+"while chunk := d.decompress(d.unconsumed_tail, max_length):\n"
+"    process_output(chunk)"
+msgstr ""
 
 msgid "*max_length* can be used as a keyword argument."
 msgstr "می‌توان از *max_length* به‌عنوان آرگومان کلیدواژه‌ای استفاده کرد."

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-15 12:49+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -101,6 +101,9 @@ msgstr "همچنین می‌توانید :ref:`شماره نسخه توزیع <v
 msgid "Subclass of :class:`ModuleNotFoundError` raised by several functions in this module when queried for a distribution package which is not installed in the current Python environment."
 msgstr "زیرکلاسی از :class:`ModuleNotFoundError` که توسط چندین تابع در این ماژول، هنگام پرس‌وجو برای بسته توزیعی که در محیط پایتون جاری نصب نیست، پرتاب می‌شود."
 
+msgid "Subclass of :class:`FileNotFoundError` raised when attempting to load metadata from a distribution folder that is empty or otherwise does not contain a metadata file."
+msgstr ""
+
 msgid "Functional API"
 msgstr "API تابعی"
 
@@ -113,7 +116,9 @@ msgstr "نقاط ورود"
 msgid "Returns a :class:`EntryPoints` instance describing entry points for the current environment. Any given keyword parameters are passed to the :meth:`!select` method for comparison to the attributes of the individual entry point definitions."
 msgstr "نمونه‌ای از :class:`EntryPoints` را برمی‌گرداند که نقاط ورود محیط جاری را توصیف می‌کند. هر پارامتر کلیدواژه‌ای که داده شود، به متد :meth:`!select` ارسال می‌شود تا با ویژگی‌های تعریف‌های جداگانه‌ی نقاط ورود مقایسه شود."
 
-msgid "Note: it is not currently possible to query for entry points based on their :attr:`!EntryPoint.dist` attribute (as different :class:`!Distribution` instances do not currently compare equal, even if they have the same attributes)"
+#, fuzzy
+#| msgid "Note: it is not currently possible to query for entry points based on their :attr:`!EntryPoint.dist` attribute (as different :class:`!Distribution` instances do not currently compare equal, even if they have the same attributes)"
+msgid "Note: to query for entry points based on :attr:`!EntryPoint.dist` attribute, use :meth:`Distribution.entry_points` instead (as different :class:`Distribution` instances do not currently compare equal, even if they have the same attributes)"
 msgstr "نکته: در حال حاضر نمی‌توان نقاط ورود را بر اساس ویژگی :attr:`!EntryPoint.dist` آن‌ها جستجو کرد (زیرا نمونه‌های مختلف :class:`!Distribution` در حال حاضر هنگام مقایسه برابر نیستند، حتی اگر ویژگی‌های یکسانی داشته باشند)"
 
 msgid "Details of a collection of installed entry points."
@@ -224,6 +229,11 @@ msgstr "فراداده توزیع مربوط به بسته توزیع نام‌�
 msgid "Raises :exc:`PackageNotFoundError` if the named distribution package is not installed in the current Python environment."
 msgstr "اگر بسته توزیع نام‌برده در محیط پایتون جاری نصب نشده باشد، :exc:`PackageNotFoundError` را پرتاب می‌کند."
 
+#, fuzzy
+#| msgid "Raises :exc:`PackageNotFoundError` if the named distribution package is not installed in the current Python environment."
+msgid "Raises :exc:`MetadataNotFound` if a distribution package is present but no METADATA file is present."
+msgstr "اگر بسته توزیع نام‌برده در محیط پایتون جاری نصب نشده باشد، :exc:`PackageNotFoundError` را پرتاب می‌کند."
+
 msgid "A concrete implementation of the `PackageMetadata protocol <https://importlib-metadata.readthedocs.io/en/latest/api.html#importlib_metadata.PackageMetadata>`_."
 msgstr "یک پیاده‌سازی عینی از `پروتکل PackageMetadata <https://importlib-metadata.readthedocs.io/en/latest/api.html#importlib_metadata.PackageMetadata>`_."
 
@@ -259,6 +269,9 @@ msgstr ""
 msgid "The full set of available metadata is not described here. See the PyPA `Core metadata specification <https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata>`_ for additional details."
 msgstr "مجموعه‌ی کامل فراداده‌های موجود در اینجا توصیف نشده است. برای جزئیات بیشتر، `Core metadata specification <https://packaging.python.org/en/latest/specifications/core-metadata/#core-metadata>`_ در PyPA را ببینید."
 
+msgid "Previously and incidentally, if a METADATA file was missing from a distribution, an empty ``PackageMetadata`` would be returned, indistinguishable from an empty METADATA file. Now, a missing METADATA file triggers a ``MetadataNotFound`` exception."
+msgstr ""
+
 msgid "The ``Description`` is now included in the metadata when presented through the payload. Line continuation characters have been removed."
 msgstr "``Description`` اکنون هنگام ارائه از طریق بار در فراداده گنجانده شده است. نویسه‌های ادامه‌ی خط حذف شده‌اند."
 
@@ -284,16 +297,28 @@ msgstr ""
 msgid "Distribution files"
 msgstr "پرونده‌های توزیع"
 
-msgid "Return the full set of files contained within the named distribution package."
+#, fuzzy
+#| msgid "Return the full set of files contained within the named distribution package."
+msgid "Return the full set of files contained within the named distribution package as :class:`PackagePath` instances."
 msgstr "مجموعه کامل پرونده‌های موجود در بسته توزیع نام‌برده را برمی‌گرداند."
 
 msgid "Returns :const:`None` if the distribution is found but the installation database records reporting the files associated with the distribution package are missing."
 msgstr "اگر توزیع یافت شود اما رکوردهای پایگاه‌داده‌ی نصب که پرونده‌های مرتبط با بسته توزیع را گزارش می‌دهند موجود نباشند، مقدار :const:`None` را برمی‌گرداند."
 
-msgid "A :class:`pathlib.PurePath` derived object with additional ``dist``, ``size``, and ``hash`` properties corresponding to the distribution package's installation metadata for that file."
+#, fuzzy
+#| msgid "A :class:`pathlib.PurePath` derived object with additional ``dist``, ``size``, and ``hash`` properties corresponding to the distribution package's installation metadata for that file."
+msgid "A :class:`pathlib.PurePath` derived object with additional ``dist``, ``size``, and ``hash`` properties corresponding to the distribution package's installation metadata for that file, also:"
 msgstr "یک شیء مشتق‌شده از :class:`pathlib.PurePath` با ویژگی‌های اضافی ``dist``، ``size`` و ``hash`` که با فراداده نصب بسته توزیع برای آن پرونده متناظر هستند."
 
-msgid "The :func:`!files` function takes a `Distribution Package <https://packaging.python.org/en/latest/glossary/#term-Distribution-Package>`_ name and returns all of the files installed by this distribution. Each file is reported as a :class:`PackagePath` instance. For example::"
+msgid "If possible, return the concrete :class:`SimplePath` allowing to access data, or raise a :exc:`NotImplementedError` otherwise."
+msgstr ""
+
+msgid "A protocol representing a minimal subset of :class:`pathlib.Path` that allows to check if it ``exists()``, to traverse using ``joinpath()`` and ``parent``, and to retrieve data using ``read_text()`` and ``read_bytes()``."
+msgstr ""
+
+#, fuzzy
+#| msgid "The :func:`!files` function takes a `Distribution Package <https://packaging.python.org/en/latest/glossary/#term-Distribution-Package>`_ name and returns all of the files installed by this distribution. Each file is reported as a :class:`PackagePath` instance. For example::"
+msgid "The :func:`!files` function takes a `Distribution Package <https://packaging.python.org/en/latest/glossary/#term-Distribution-Package>`_ name and returns all of the files installed by this distribution. For example::"
 msgstr "تابع :func:`!files` نام یک `Distribution Package <https://packaging.python.org/en/latest/glossary/#term-Distribution-Package>`_ را می‌گیرد و تمام پرونده‌های نصب‌شده توسط این توزیع را برمی‌گرداند. هر پرونده به‌عنوان نمونه‌ای از :class:`PackagePath` گزارش می‌شود. برای مثال::"
 
 msgid ""
@@ -393,16 +418,9 @@ msgstr "برخی نصب‌های قابل‌ویرایش، `نام‌های سط
 msgid "Distributions"
 msgstr "توزیع‌ها"
 
-msgid "Return a :class:`Distribution` instance describing the named distribution package."
-msgstr "نمونه‌ای از :class:`Distribution` برمی‌گرداند که بسته توزیع نام‌برده‌شده را توصیف می‌کند."
-
-msgid "Details of an installed distribution package."
-msgstr "جزئیات یک بسته توزیع نصب‌شده."
-
-msgid "Note: different :class:`!Distribution` instances do not currently compare equal, even if they relate to the same installed distribution and accordingly have the same attributes."
-msgstr "توجه: نمونه‌های متفاوت :class:`!Distribution` در حال حاضر هنگام مقایسه برابر در نظر گرفته نمی‌شوند، حتی اگر به همان توزیع نصب‌شده مربوط باشند و بنابراین ویژگی‌های یکسانی داشته باشند."
-
-msgid "While the module level API described above is the most common and convenient usage, you can get all of that information from the :class:`!Distribution` class. :class:`!Distribution` is an abstract object that represents the metadata for a Python `Distribution Package <https://packaging.python.org/en/latest/glossary/#term-Distribution-Package>`_. You can get the concrete :class:`!Distribution` subclass instance for an installed distribution package by calling the :func:`distribution` function::"
+#, fuzzy
+#| msgid "While the module level API described above is the most common and convenient usage, you can get all of that information from the :class:`!Distribution` class. :class:`!Distribution` is an abstract object that represents the metadata for a Python `Distribution Package <https://packaging.python.org/en/latest/glossary/#term-Distribution-Package>`_. You can get the concrete :class:`!Distribution` subclass instance for an installed distribution package by calling the :func:`distribution` function::"
+msgid "While the module level API described above is the most common and convenient usage, all that information is accessible from the :class:`Distribution` class. :class:`!Distribution` is an abstract object that represents the metadata for a Python `Distribution Package <https://packaging.python.org/en/latest/glossary/#term-Distribution-Package>`_. Get the concrete :class:`!Distribution` subclass instance for an installed distribution package by calling the :func:`distribution` function::"
 msgstr "اگرچه API سطح ماژول توصیف‌شده در بالا رایج‌ترین و مناسب‌ترین کاربرد است، می‌توانید تمام آن اطلاعات را از کلاس :class:`!Distribution` دریافت کنید. :class:`!Distribution` یک شیء انتزاعی است که فراداده‌ی یک `بسته توزیع <https://packaging.python.org/en/latest/glossary/#term-Distribution-Package>`_ پایتون را نشان می‌دهد. می‌توانید با فراخوانی تابع :func:`distribution`، نمونه‌ای از زیرکلاس عینی :class:`!Distribution` برای یک بسته توزیع نصب‌شده را دریافت کنید::"
 
 msgid ""
@@ -416,7 +434,12 @@ msgstr ""
 ">>> type(dist)\n"
 "<class 'importlib.metadata.PathDistribution'>"
 
-msgid "Thus, an alternative way to get the version number is through the :class:`!Distribution` instance::"
+msgid "Return a :class:`Distribution` instance describing the named distribution package."
+msgstr "نمونه‌ای از :class:`Distribution` برمی‌گرداند که بسته توزیع نام‌برده‌شده را توصیف می‌کند."
+
+#, fuzzy
+#| msgid "Thus, an alternative way to get the version number is through the :class:`!Distribution` instance::"
+msgid "Thus, an alternative way to get e.g. the version number is through the :attr:`Distribution.version` attribute::"
 msgstr "بنابراین، روشی جایگزین برای دریافت شماره نسخه از طریق نمونه‌ی :class:`!Distribution` است::"
 
 msgid ""
@@ -426,7 +449,34 @@ msgstr ""
 ">>> dist.version\n"
 "'0.32.3'"
 
-msgid "There are all kinds of additional metadata available on :class:`!Distribution` instances::"
+msgid "The same applies for :func:`entry_points` and :func:`files`."
+msgstr ""
+
+msgid "Details of an installed distribution package."
+msgstr "جزئیات یک بسته توزیع نصب‌شده."
+
+msgid "Note: different :class:`!Distribution` instances do not currently compare equal, even if they relate to the same installed distribution and accordingly have the same attributes."
+msgstr "توجه: نمونه‌های متفاوت :class:`!Distribution` در حال حاضر هنگام مقایسه برابر در نظر گرفته نمی‌شوند، حتی اگر به همان توزیع نصب‌شده مربوط باشند و بنابراین ویژگی‌های یکسانی داشته باشند."
+
+#, fuzzy
+#| msgid "Return a :class:`Distribution` instance describing the named distribution package."
+msgid "Return a :class:`!Distribution` instance at the given path or with the given name."
+msgstr "نمونه‌ای از :class:`Distribution` برمی‌گرداند که بسته توزیع نام‌برده‌شده را توصیف می‌کند."
+
+#, fuzzy
+#| msgid "Return a :class:`Distribution` instance describing the named distribution package."
+msgid "Returns an iterable of :class:`!Distribution` instances for all packages (see distribution-discovery_)."
+msgstr "نمونه‌ای از :class:`Distribution` برمی‌گرداند که بسته توزیع نام‌برده‌شده را توصیف می‌کند."
+
+msgid "The optional argument *context* is a :class:`DistributionFinder.Context` instance, used to modify the search for distributions. Alternatively, *kwargs* may contain keyword arguments for constructing a new :class:`!DistributionFinder.Context`."
+msgstr ""
+
+msgid "Raises :exc:`MetadataNotFound` if the METADATA file is not present in the distribution."
+msgstr ""
+
+#, fuzzy
+#| msgid "There are all kinds of additional metadata available on :class:`!Distribution` instances::"
+msgid "There are all kinds of additional metadata available on :class:`!Distribution` instances as a :class:`PackageMetadata` instance::"
 msgstr "انواع مختلفی از فراداده‌های اضافی روی نمونه‌های :class:`!Distribution` در دسترس است::"
 
 msgid ""
@@ -440,7 +490,17 @@ msgstr ""
 ">>> dist.metadata['License']\n"
 "'MIT'"
 
-msgid "For editable packages, an ``origin`` property may present :pep:`610` metadata::"
+msgid "A few metadata fields are also available as shortcut properties."
+msgstr ""
+
+#, fuzzy
+#| msgid "The ``json`` attribute was added."
+msgid "The ``name`` shortcut was added."
+msgstr "ویژگی ``json`` افزوده شد."
+
+#, fuzzy
+#| msgid "For editable packages, an ``origin`` property may present :pep:`610` metadata::"
+msgid "For editable packages, an ``origin`` property may present :pep:`610` metadata (for non-editable packages, ``origin`` is :const:`None`)::"
 msgstr "برای بسته‌های قابل‌ویرایش، ممکن است ویژگی ``origin`` فراداده‌ی :pep:`610` را ارائه دهد::"
 
 msgid ""
@@ -450,8 +510,25 @@ msgstr ""
 ">>> dist.origin.url\n"
 "'file:///path/to/wheel-0.32.3.editable-py3-none-any.whl'"
 
-msgid "The ``.origin`` property was added."
-msgstr "ویژگی ``.origin`` افزوده شد."
+msgid "The ``origin`` object follows the `Direct URL Data Structure <https://packaging.python.org/en/latest/specifications/direct-url-data-structure/>`_."
+msgstr ""
+
+#, fuzzy
+#| msgid "Details of an installed distribution package."
+msgid "The entry points provided by this distribution package."
+msgstr "جزئیات یک بسته توزیع نصب‌شده."
+
+msgid "All files contained in this distribution package. Like :func:`files`, this returns :const:`None` if there are no records."
+msgstr ""
+
+msgid "The following two abstract methods need to be implemented when implementing-custom-providers_:"
+msgstr ""
+
+msgid "Like :meth:`!PackagePath.locate`, return a :class:`SimplePath` for the given path. Takes a :class:`os.PathLike` or a :class:`str`."
+msgstr ""
+
+msgid "A shortcut for ``distribution.locate_file(filename).read_text()``."
+msgstr ""
 
 msgid "Distribution Discovery"
 msgstr "کشف توزیع"
@@ -465,6 +542,44 @@ msgstr "``importlib.metadata`` اشیای :class:`bytes` موجود در ``sys.p
 msgid "``importlib.metadata`` will incidentally honor :py:class:`pathlib.Path` objects on ``sys.path`` even though such values will be ignored for imports."
 msgstr "``importlib.metadata`` به‌طور اتفاقی اشیای :py:class:`pathlib.Path` موجود در ``sys.path`` را معتبر می‌شمارد، حتی اگر چنین مقادیری برای ایمپورت‌ها نادیده گرفته شوند."
 
+msgid "A :class:`~importlib.abc.MetaPathFinder` subclass capable of discovering installed distributions."
+msgstr ""
+
+msgid "Custom providers should implement this interface in order to supply metadata."
+msgstr ""
+
+msgid "A :class:`!Context` gives a custom provider a means to solicit additional details from the callers of distribution discovery functions like :func:`distributions` or :meth:`Distribution.discover` beyond :attr:`!.name` and :attr:`!.path` when searching for distributions."
+msgstr ""
+
+msgid "For example, a provider could expose suites of packages in either a \"public\" or \"private\" ``realm``. A caller of distribution discovery functions may wish to query only for distributions in a particular realm and could call ``distributions(realm=\"private\")`` to signal to the custom provider to only include distributions from that realm."
+msgstr ""
+
+msgid "Each :class:`!DistributionFinder` must expect any parameters and should attempt to honor the canonical parameters defined below when appropriate."
+msgstr ""
+
+msgid "See the section on :ref:`implementing-custom-providers` for more details."
+msgstr ""
+
+msgid "Specific name for which a distribution finder should match."
+msgstr ""
+
+msgid "A :attr:`!.name` of ``None`` matches all distributions."
+msgstr ""
+
+msgid "A property providing the sequence of directory paths that a distribution finder should search."
+msgstr ""
+
+msgid "Typically refers to Python installed package paths such as \"site-packages\" directories and defaults to :attr:`sys.path`."
+msgstr ""
+
+#, fuzzy
+#| msgid "Return a :class:`Distribution` instance describing the named distribution package."
+msgid "Returns an iterable of :class:`Distribution` instances for all packages."
+msgstr "نمونه‌ای از :class:`Distribution` برمی‌گرداند که بسته توزیع نام‌برده‌شده را توصیف می‌کند."
+
+msgid "The *kwargs* argument may contain either a keyword argument ``context``, a :class:`DistributionFinder.Context` instance, or pass keyword arguments for constructing a new :class:`!DistributionFinder.Context`. The :class:`!DistributionFinder.Context` is used to modify the search for distributions."
+msgstr ""
+
 msgid "Implementing Custom Providers"
 msgstr "پیاده‌سازی فراهم‌کنندگان سفارشی"
 
@@ -477,7 +592,9 @@ msgstr "از آن‌جا که فراداده‌ی `بسته توزیعی <https:
 msgid "The implementation has hooks integrated into the ``PathFinder``, serving metadata for distribution packages found on the file system."
 msgstr "این پیاده‌سازی دارای قلاب‌هایی (hooks) است که در ``PathFinder`` ادغام شده‌اند و فراداده بسته‌های توزیع یافت‌شده در سامانه پرونده را ارائه می‌کنند."
 
-msgid "The abstract class :py:class:`importlib.abc.MetaPathFinder` defines the interface expected of finders by Python's import system. ``importlib.metadata`` extends this protocol by looking for an optional ``find_distributions`` callable on the finders from :data:`sys.meta_path` and presents this extended interface as the ``DistributionFinder`` abstract base class, which defines this abstract method::"
+#, fuzzy
+#| msgid "The abstract class :py:class:`importlib.abc.MetaPathFinder` defines the interface expected of finders by Python's import system. ``importlib.metadata`` extends this protocol by looking for an optional ``find_distributions`` callable on the finders from :data:`sys.meta_path` and presents this extended interface as the ``DistributionFinder`` abstract base class, which defines this abstract method::"
+msgid "The abstract class :py:class:`importlib.abc.MetaPathFinder` defines the interface expected of finders by Python's import system. ``importlib.metadata`` extends this protocol by looking for an optional ``find_distributions`` callable on the finders from :data:`sys.meta_path` and presents this extended interface as the :class:`DistributionFinder` abstract base class, which defines this abstract method::"
 msgstr "کلاس انتزاعی :py:class:`importlib.abc.MetaPathFinder` رابطی را تعریف می‌کند که سیستم ایمپورت پایتون از یابنده‌ها انتظار دارد. ``importlib.metadata`` این پروتکل را با جست‌وجوی یک شیء فراخوانی‌پذیر اختیاری ``find_distributions`` در یابنده‌های :data:`sys.meta_path` گسترش می‌دهد و این رابط گسترش‌یافته را به‌عنوان کلاس پایه انتزاعی ``DistributionFinder`` ارائه می‌کند، که این متد انتزاعی را تعریف می‌کند::"
 
 msgid ""
@@ -492,10 +609,14 @@ msgstr ""
 "    \"\"\"پیمایش‌پذیری از همه نمونه‌های Distribution برمی‌گرداند که توانایی بارگذاری فراداده بسته‌ها برای ``context`` مشخص‌شده را دارند.\n"
 "    \"\"\""
 
-msgid "The ``DistributionFinder.Context`` object provides ``.path`` and ``.name`` properties indicating the path to search and name to match and may supply other relevant context sought by the consumer."
+#, fuzzy
+#| msgid "The ``DistributionFinder.Context`` object provides ``.path`` and ``.name`` properties indicating the path to search and name to match and may supply other relevant context sought by the consumer."
+msgid "The :class:`DistributionFinder.Context` object provides :attr:`~DistributionFinder.Context.path` and :attr:`~DistributionFinder.Context.name` properties indicating the path to search and name to match and may supply other relevant context sought by the consumer."
 msgstr "شیء ``DistributionFinder.Context`` ویژگی‌های ``.path`` و ``.name`` را ارائه می‌دهد که مسیر جستجو و نام برای تطبیق را نشان می‌دهند و ممکن است سایر زمینه‌های مرتبط مورد نیاز مصرف‌کننده را نیز فراهم کند."
 
-msgid "In practice, to support finding distribution package metadata in locations other than the file system, subclass ``Distribution`` and implement the abstract methods. Then from a custom finder, return instances of this derived ``Distribution`` in the ``find_distributions()`` method."
+#, fuzzy
+#| msgid "In practice, to support finding distribution package metadata in locations other than the file system, subclass ``Distribution`` and implement the abstract methods. Then from a custom finder, return instances of this derived ``Distribution`` in the ``find_distributions()`` method."
+msgid "In practice, to support finding distribution package metadata in locations other than the file system, subclass :class:`!Distribution` and implement the abstract methods. Then from a custom finder, return instances of this derived :class:`!Distribution` in the ``find_distributions()`` method."
 msgstr "در عمل، برای پشتیبانی از یافتن فراداده‌ی بسته‌ی توزیع در مکان‌هایی غیر از سامانه فایل‌بندی، زیرکلاسی از ``Distribution`` بسازید و متدهای انتزاعی را پیاده‌سازی کنید. سپس از یک یابنده‌ی سفارشی، نمونه‌هایی از این ``Distribution`` مشتق‌شده را در متد ``find_distributions()`` برگردانید."
 
 msgid "Example"
@@ -523,7 +644,9 @@ msgstr ""
 "\n"
 "sys.meta_path.append(DatabaseImporter(connect_db(...)))"
 
-msgid "That importer now presumably provides importable modules from a database, but it provides no metadata or entry points. For this custom importer to provide metadata, it would also need to implement ``DistributionFinder``::"
+#, fuzzy
+#| msgid "That importer now presumably provides importable modules from a database, but it provides no metadata or entry points. For this custom importer to provide metadata, it would also need to implement ``DistributionFinder``::"
+msgid "That importer now presumably provides importable modules from a database, but it provides no metadata or entry points. For this custom importer to provide metadata, it would also need to implement :class:`DistributionFinder`::"
 msgstr "آن ایمپورت‌کننده اکنون احتمالاً ماژول‌های قابل ایمپورت را از یک پایگاه داده فراهم می‌کند، اما هیچ فراداده یا نقطه ورودی ارائه نمی‌دهد. برای اینکه این ایمپورت‌کننده سفارشی فراداده ارائه دهد، همچنین باید ``DistributionFinder`` را پیاده‌سازی کند::"
 
 msgid ""
@@ -600,5 +723,10 @@ msgstr ""
 msgid "This basic implementation should provide metadata and entry points for packages served by the ``DatabaseImporter``, assuming that the ``record`` supplies suitable ``.name``, ``.version``, and ``.entry_points`` attributes."
 msgstr "این پیاده‌سازی اولیه باید فراداده و نقاط ورود را برای بسته‌های ارائه‌شده توسط ``DatabaseImporter`` فراهم کند، با فرض اینکه ``record`` ویژگی‌های مناسب ``.name``، ``.version`` و ``.entry_points`` را فراهم کند."
 
-msgid "The ``DatabaseDistribution`` may also provide other metadata files, like ``RECORD`` (required for ``Distribution.files``) or override the implementation of ``Distribution.files``. See the source for more inspiration."
+#, fuzzy
+#| msgid "The ``DatabaseDistribution`` may also provide other metadata files, like ``RECORD`` (required for ``Distribution.files``) or override the implementation of ``Distribution.files``. See the source for more inspiration."
+msgid "The ``DatabaseDistribution`` may also provide other metadata files, like ``RECORD`` (required for :attr:`!Distribution.files`) or override the implementation of :attr:`!Distribution.files`. See the source for more inspiration."
 msgstr "``DatabaseDistribution`` ممکن است پرونده‌های فراداده دیگری را نیز ارائه کند، مانند ``RECORD`` (که برای ``Distribution.files`` لازم است) یا پیاده‌سازی ``Distribution.files`` را بازنویسی کند. برای ایده‌های بیشتر، منبع را ببینید."
+
+#~ msgid "The ``.origin`` property was added."
+#~ msgstr "ویژگی ``.origin`` افزوده شد."

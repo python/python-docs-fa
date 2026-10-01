@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2021-06-28 00:52+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -24,7 +24,9 @@ msgstr ""
 msgid "Extending and Embedding the Python Interpreter"
 msgstr "توسعه و تعبیه مفسر پایتون"
 
-msgid "This document describes how to write modules in C or C++ to extend the Python interpreter with new modules.  Those modules can not only define new functions but also new object types and their methods.  The document also describes how to embed the Python interpreter in another application, for use as an extension language.  Finally, it shows how to compile and link extension modules so that they can be loaded dynamically (at run time) into the interpreter, if the underlying operating system supports this feature."
+#, fuzzy
+#| msgid "This document describes how to write modules in C or C++ to extend the Python interpreter with new modules.  Those modules can not only define new functions but also new object types and their methods.  The document also describes how to embed the Python interpreter in another application, for use as an extension language.  Finally, it shows how to compile and link extension modules so that they can be loaded dynamically (at run time) into the interpreter, if the underlying operating system supports this feature."
+msgid "This document describes how to write modules in C or C++ to extend the Python interpreter with new modules.  Those modules can do what Python code does -- define functions, object types and methods -- but also interact with native libraries or achieve better performance by avoiding the overhead of an interpreter.  The document also describes how to embed the Python interpreter in another application, for use as an extension language.  Finally, it shows how to compile and link extension modules so that they can be loaded dynamically (at run time) into the interpreter, if the underlying operating system supports this feature."
 msgstr "این سند توضیح می‌دهد که چگونه می‌توان ماژول‌هایی به زبان C یا C++ نوشت تا مفسر پایتون با ماژول‌های جدید توسعه یابد. این ماژول‌ها نه‌تنها توابع جدید، بلکه نوع‌های جدید شیء و متدهای آن‌ها را نیز می‌توانند تعریف کنند. این سند همچنین توضیح می‌دهد که چگونه می‌توان مفسر پایتون را در برنامه‌ای دیگر تعبیه کرد تا به‌عنوان یک زبان توسعه‌ای از آن استفاده شود. در نهایت، نشان می‌دهد که چگونه می‌توان ماژول‌های توسعه‌ای را کامپایل و پیوند داد تا در صورت پشتیبانی سیستم‌عامل زیرین از این قابلیت، به‌صورت پویا (در زمان اجرا) در مفسر بارگذاری شوند."
 
 msgid "This document assumes basic knowledge about C and Python.  For an informal introduction to Python, see :ref:`tutorial-index`.  :ref:`reference-index` gives a more formal definition of the language.  :ref:`builtins-index` documents the built-in functions and object types, and :ref:`library-index` documents the modules (both built-in and written in Python) that give the language its wide application range."
@@ -33,23 +35,64 @@ msgstr "این سند دانش پایه‌ای درباره C و Python را ف�
 msgid "For a detailed description of the whole Python/C API, see the separate :ref:`c-api-index`."
 msgstr "برای شرح دقیق کل Python/C API، به :ref:`c-api-index` جداگانه مراجعه کنید."
 
+msgid "To support extensions, Python's C API (Application Programmers Interface) defines a set of functions, macros and variables that provide access to most aspects of the Python run-time system.  The Python API is incorporated in a C source file by including the header ``\"Python.h\"``."
+msgstr ""
+
+msgid "The C extension interface is specific to CPython, and extension modules do not work on other Python implementations.  In many cases, it is possible to avoid writing C extensions and preserve portability to other implementations. For example, if your use case is calling C library functions or system calls, you should consider using the :mod:`ctypes` module or the `cffi <https://cffi.readthedocs.io/>`_ library rather than writing custom C code. These modules let you write Python code to interface with C code and are more portable between implementations of Python than writing and compiling a C extension module."
+msgstr ""
+
 msgid "Recommended third party tools"
 msgstr "ابزارهای شخص ثالث توصیه‌شده"
 
-msgid "This guide only covers the basic tools for creating extensions provided as part of this version of CPython. Some :ref:`third party tools <c-api-tools>` offer both simpler and more sophisticated approaches to creating C and C++ extensions for Python."
+#, fuzzy
+#| msgid "This guide only covers the basic tools for creating extensions provided as part of this version of CPython. Some :ref:`third party tools <c-api-tools>` offer both simpler and more sophisticated approaches to creating C and C++ extensions for Python."
+msgid "This document only covers the basic tools for creating extensions provided as part of this version of CPython. Some :ref:`third party tools <c-api-tools>` offer both simpler and more sophisticated approaches to creating C and C++ extensions for Python."
 msgstr "این راهنما تنها ابزارهای پایه‌ای را پوشش می‌دهد که به‌عنوان بخشی از این نسخه از سی‌پایتون برای ایجاد افزونه‌ها ارائه شده‌اند. برخی از :ref:`ابزارهای شخص ثالث <c-api-tools>` رویکردهایی هم ساده‌تر و هم پیشرفته‌تر برای ایجاد افزونه‌های C و C++ برای پایتون ارائه می‌دهند."
 
-msgid "Creating extensions without third party tools"
-msgstr "ایجاد توسعه‌ها بدون ابزارهای شخص ثالث"
+msgid "While this document is aimed at extension authors, it should also be helpful to the authors of such tools. For example, the tutorial module can serve as a simple test case for a build tool or sample expected output of a code generator."
+msgstr ""
+
+msgid "C API Tutorial"
+msgstr ""
+
+msgid "This tutorial describes how to write a simple module in C or C++, using the Python C API -- that is, using the basic tools provided as part of this version of CPython."
+msgstr ""
+
+msgid ":ref:`first-extension-module`"
+msgstr ""
+
+msgid "Guides for intermediate topics"
+msgstr ""
 
 msgid "This section of the guide covers creating C and C++ extensions without assistance from third party tools. It is intended primarily for creators of those tools, rather than being a recommended way to create your own C extensions."
 msgstr "این بخش از راهنما به ایجاد توسعه‌های C و C++ بدون کمک گرفتن از ابزارهای شخص ثالث می‌پردازد. این بخش در درجه‌ی اول برای سازندگان آن ابزارها در نظر گرفته شده است، نه اینکه روش توصیه‌شده‌ای برای ایجاد توسعه‌های C خودتان باشد."
 
-msgid ":pep:`489` -- Multi-phase extension module initialization"
-msgstr ":pep:`489` -- مقداردهی اولیه‌ی چندمرحله‌ای ماژول توسعه‌ای"
+msgid ":ref:`extending-intro`"
+msgstr ""
+
+msgid ":ref:`defining-new-types`"
+msgstr ""
+
+msgid ":ref:`new-types-topics`"
+msgstr ""
+
+msgid ":ref:`building`"
+msgstr ""
+
+msgid ":ref:`building-on-windows`"
+msgstr ""
 
 msgid "Embedding the CPython runtime in a larger application"
 msgstr "تعبیه ران‌تایم سی‌پایتون در برنامه‌ای بزرگ‌تر"
 
 msgid "Sometimes, rather than creating an extension that runs inside the Python interpreter as the main application, it is desirable to instead embed the CPython runtime inside a larger application. This section covers some of the details involved in doing that successfully."
 msgstr "گاهی، به‌جای ایجاد افزونه‌ای که درون مفسر پایتون به‌عنوان برنامه اصلی اجرا می‌شود، مطلوب است که ران‌تایم سی‌پایتون درون برنامه‌ای بزرگ‌تر تعبیه شود. این بخش برخی از جزئیات مربوط به انجام موفقیت‌آمیز این کار را در بر می‌گیرد."
+
+msgid ":ref:`embedding`"
+msgstr ""
+
+#~ msgid "Creating extensions without third party tools"
+#~ msgstr "ایجاد توسعه‌ها بدون ابزارهای شخص ثالث"
+
+#~ msgid ":pep:`489` -- Multi-phase extension module initialization"
+#~ msgstr ":pep:`489` -- مقداردهی اولیه‌ی چندمرحله‌ای ماژول توسعه‌ای"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-15 08:29+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: none\n"
@@ -338,6 +338,9 @@ msgstr "برای جزئیات درباره‌ی پیش‌راه‌اندازی �
 msgid "Return true (nonzero) when the Python interpreter has been initialized, false (zero) if not.  After :c:func:`Py_FinalizeEx` is called, this returns false until :c:func:`Py_Initialize` is called again."
 msgstr "هنگامی که مفسر پایتون مقداردهی اولیه شده باشد، true (غیرصفر) را برمی‌گرداند و در غیر این صورت false (صفر) را برمی‌گرداند. پس از فراخوانی :c:func:`Py_FinalizeEx`، این تابع تا زمانی که :c:func:`Py_Initialize` دوباره فراخوانی شود، false برمی‌گرداند."
 
+msgid "This function no longer returns true until initialization has fully completed, including import of the :mod:`site` module.  Previously it could return true while :c:func:`Py_Initialize` was still running."
+msgstr ""
+
 msgid "Return true (non-zero) if the main Python interpreter is :term:`shutting down <interpreter shutdown>`. Return false (zero) otherwise."
 msgstr "اگر مفسر اصلی پایتون در حال :term:`خاموش شدن <interpreter shutdown>` باشد، مقدار true (غیرصفر) را برمی‌گرداند. در غیر این صورت مقدار false (صفر) را برمی‌گرداند."
 
@@ -427,17 +430,136 @@ msgstr "برای مفسر هدف *interp* یک کال‌بک :mod:`atexit` ثب�
 msgid "There must be an :term:`attached thread state` for *interp*."
 msgstr "باید یک :term:`attached thread state` برای *interp* وجود داشته باشد."
 
-msgid "Cautions regarding runtime finalization"
+#, fuzzy
+#| msgid "Cautions regarding runtime finalization"
+msgid "Cautions regarding interpreter finalization"
 msgstr "هشدارهایی درباره‌ی نهایی‌سازی ران‌تایم"
 
-msgid "In the late stage of :term:`interpreter shutdown`, after attempting to wait for non-daemon threads to exit (though this can be interrupted by :class:`KeyboardInterrupt`) and running the :mod:`atexit` functions, the runtime is marked as *finalizing*: :c:func:`Py_IsFinalizing` and :func:`sys.is_finalizing` return true.  At this point, only the *finalization thread* that initiated finalization (typically the main thread) is allowed to acquire the :term:`GIL`."
+#, fuzzy
+#| msgid "In the late stage of :term:`interpreter shutdown`, after attempting to wait for non-daemon threads to exit (though this can be interrupted by :class:`KeyboardInterrupt`) and running the :mod:`atexit` functions, the runtime is marked as *finalizing*: :c:func:`Py_IsFinalizing` and :func:`sys.is_finalizing` return true.  At this point, only the *finalization thread* that initiated finalization (typically the main thread) is allowed to acquire the :term:`GIL`."
+msgid "In the late stage of :term:`interpreter shutdown`, after attempting to wait for non-daemon threads to exit (though this can be interrupted by :class:`KeyboardInterrupt`) and running the :mod:`atexit` functions, the runtime is marked as finalizing, meaning that :c:func:`Py_IsFinalizing` and :func:`sys.is_finalizing` return true.  At this point, only the finalization thread (the thread that initiated finalization; this is typically the main thread) is allowed to :term:`attach <attached thread state>` a thread state."
 msgstr "در مرحله‌ی پایانیِ :term:`خاموشی مفسر <interpreter shutdown>`، پس از تلاش برای منتظر ماندن تا خروج نخ‌های غیر دِیمِن (هرچند این انتظار ممکن است توسط :class:`KeyboardInterrupt` قطع شود) و اجرای توابع :mod:`atexit`، ران‌تایم به‌عنوان *در حال نهایی‌سازی* علامت‌گذاری می‌شود: :c:func:`Py_IsFinalizing` و :func:`sys.is_finalizing` مقدار true را برمی‌گردانند.  در این نقطه، تنها *نخ نهایی‌سازی* که نهایی‌سازی را آغاز کرده است (معمولاً نخ اصلی) مجاز است :term:`قفل مفسر سراسری (GIL) <GIL>` را به دست آورد."
 
-msgid "If any thread, other than the finalization thread, attempts to attach a :term:`thread state` during finalization, either explicitly or implicitly, the thread enters **a permanently blocked state** where it remains until the program exits.  In most cases this is harmless, but this can result in deadlock if a later stage of finalization attempts to acquire a lock owned by the blocked thread, or otherwise waits on the blocked thread."
-msgstr "اگر نخی غیر از نخ نهایی‌سازی، در حین نهایی‌سازی، چه به‌طور صریح و چه به‌طور ضمنی، تلاش کند یک :term:`thread state` را متصل کند، آن نخ وارد **وضعیت مسدود دائمی** می‌شود و تا زمان خروج برنامه در همان وضعیت باقی می‌ماند.  در بیشتر موارد این بی‌ضرر است، اما اگر مرحله‌ای بعدی از نهایی‌سازی تلاش کند قفلی را که در اختیار نخ مسدود است به دست آورد یا به نحوی دیگر منتظر نخ مسدود بماند، این می‌تواند منجر به بن‌بست شود."
+msgid "Other threads that attempt to attach during finalization, either explicitly (such as via :c:func:`PyThreadState_Ensure` or :c:macro:`Py_END_ALLOW_THREADS`) or implicitly (such as in-between bytecode instructions), will enter a **permanently blocked state**. Generally, this is harmless, but this can result in deadlocks. For example, a thread may be permanently blocked while holding a lock, meaning that the finalization thread can never acquire that lock."
+msgstr ""
 
-msgid "Gross? Yes. This prevents random crashes and/or unexpectedly skipped C++ finalizations further up the call stack when such threads were forcibly exited here in CPython 3.13 and earlier. The CPython runtime :term:`thread state` C APIs have never had any error reporting or handling expectations at :term:`thread state` attachment time that would've allowed for graceful exit from this situation. Changing that would require new stable C APIs and rewriting the majority of C code in the CPython ecosystem to use those with error handling."
-msgstr "زشت است؟ بله. این کار از فروپاشی‌های تصادفی و/یا رد شدن غیرمنتظره‌ی نهایی‌سازی‌های C++ در بخش‌های بالاتر پشته فراخوانی جلوگیری می‌کند؛ همان مشکلاتی که در سی‌پایتون 3.13 و نسخه‌های پیشین، هنگامی که چنین نخ‌هایی در اینجا به‌اجبار خارج می‌شدند، پیش می‌آمدند. APIهای C مربوط به :term:`وضعیت نخ <thread state>` در ران‌تایم سی‌پایتون هیچ‌گاه در زمان اتصال :term:`وضعیت نخ <thread state>` هیچ‌گونه انتظاری برای گزارش یا مدیریت خطا نداشته‌اند که خروج منظم از این وضعیت را ممکن می‌ساخت. تغییر این امر نیازمند ایجاد APIهای C پایدار جدید و بازنویسی بخش عمده‌ی کدهای C در اکوسیستم سی‌پایتون برای استفاده از آن‌ها همراه با مدیریت خطا خواهد بود."
+msgid "Prior to CPython 3.13, the thread would exit instead of hanging, which led to other issues (see the warning note at :c:func:`PyThread_exit_thread`)."
+msgstr ""
+
+msgid "Gross? Yes. Starting in Python 3.15, there are a number of C APIs that make it possible to avoid these issues by temporarily preventing finalization:"
+msgstr ""
+
+msgid ":pep:`788` explains the design, motivation and rationale for these APIs."
+msgstr ""
+
+msgid "An opaque interpreter guard structure."
+msgstr ""
+
+msgid "By holding an interpreter guard, the caller can ensure that the interpreter will not finalize until the guard is closed (through :c:func:`PyInterpreterGuard_Close`)."
+msgstr ""
+
+msgid "When a guard is held, a thread attempting to finalize the interpreter will block until the guard is closed before starting finalization. After finalization has started, threads are forever unable to acquire guards for that interpreter. This means that if you forget to close an interpreter guard, the process will **permanently hang** during finalization!"
+msgstr ""
+
+msgid "Holding a guard for an interpreter is similar to holding a :term:`strong reference` to a Python object, except finalization does not happen automatically after all guards are released: it requires an explicit :c:func:`Py_EndInterpreter` call."
+msgstr ""
+
+msgid "Create a finalization guard for the current interpreter. This will prevent finalization until the guard is closed."
+msgstr ""
+
+msgid "For example:"
+msgstr ""
+
+msgid ""
+"// Temporarily prevent finalization.\n"
+"PyInterpreterGuard *guard = PyInterpreterGuard_FromCurrent();\n"
+"if (guard == NULL) {\n"
+"   // Finalization has already started or we're out of memory.\n"
+"   return NULL;\n"
+"}\n"
+"\n"
+"Py_BEGIN_ALLOW_THREADS;\n"
+"// Do some critical processing here. For example, we can safely acquire\n"
+"// locks that might be acquired by the finalization thread.\n"
+"Py_END_ALLOW_THREADS;\n"
+"\n"
+"// Now that we're done with our critical processing, the interpreter is\n"
+"// allowed to finalize again.\n"
+"PyInterpreterGuard_Close(guard);"
+msgstr ""
+
+msgid "On success, this function returns a guard for the current interpreter; on failure, it returns ``NULL`` with an exception set."
+msgstr ""
+
+msgid "This function will fail only if the current interpreter has already started finalizing, or if the process is out of memory."
+msgstr ""
+
+msgid "The guard pointer returned by this function must be eventually closed with :c:func:`PyInterpreterGuard_Close`; failing to do so will result in the Python process infinitely hanging."
+msgstr ""
+
+#, fuzzy
+#| msgid "There must be an :term:`attached thread state` for *interp*."
+msgid "The caller must hold an :term:`attached thread state`."
+msgstr "باید یک :term:`attached thread state` برای *interp* وجود داشته باشد."
+
+msgid "Create a finalization guard for an interpreter through a view."
+msgstr ""
+
+msgid "On success, this function returns a guard to the interpreter represented by *view*. The view is still valid after calling this function. The guard must eventually be closed with :c:func:`PyInterpreterGuard_Close`."
+msgstr ""
+
+msgid "If the interpreter no longer exists, is already finalizing, or out of memory, then this function returns ``NULL`` without setting an exception."
+msgstr ""
+
+#, fuzzy
+#| msgid "There must be an :term:`attached thread state` for *interp*."
+msgid "The caller does not need to hold an :term:`attached thread state`."
+msgstr "باید یک :term:`attached thread state` برای *interp* وجود داشته باشد."
+
+msgid "Close an interpreter guard, allowing the interpreter to start finalization if no other guards remain. If an interpreter guard is never closed, the interpreter will infinitely wait when trying to enter finalization!"
+msgstr ""
+
+msgid "After an interpreter guard is closed, it may not be used in :c:func:`PyThreadState_Ensure`. Doing so will result in undefined behavior."
+msgstr ""
+
+msgid "This function cannot fail, and the caller doesn't need to hold an :term:`attached thread state`."
+msgstr ""
+
+msgid "Interpreter views"
+msgstr ""
+
+msgid "In some cases, it may be necessary to access an interpreter that may have been deleted. This can be done using interpreter views."
+msgstr ""
+
+msgid "An opaque view of an interpreter."
+msgstr ""
+
+msgid "This is a thread-safe way to access an interpreter that may have be finalizing or already destroyed."
+msgstr ""
+
+msgid "Create a view to the current interpreter."
+msgstr ""
+
+msgid "This function is generally meant to be used alongside :c:func:`PyInterpreterGuard_FromView` or :c:func:`PyThreadState_EnsureFromView`."
+msgstr ""
+
+msgid "On success, this function returns a view to the current interpreter; on failure, it returns ``NULL`` with an exception set."
+msgstr ""
+
+msgid "Close an interpreter view."
+msgstr ""
+
+msgid "If an interpreter view is never closed, the view's memory will never be freed, but there are no other consequences. (In contrast, forgetting to close a guard will infinitely hang the main thread during finalization.)"
+msgstr ""
+
+msgid "Create a view for the main interpreter (the first and default interpreter in a Python process; see :c:func:`PyInterpreterState_Main`)."
+msgstr ""
+
+msgid "On success, this function returns a view to the main interpreter; on failure, it returns ``NULL`` without an exception set. Failure indicates that the process is out of memory."
+msgstr ""
+
+msgid "Use this function when an interpreter pointer or view cannot be supplied by the caller, such as when a native threading library does not provide a ``void *arg`` parameter that could carry a :c:type:`PyInterpreterGuard` or :c:type:`PyInterpreterView`. In code that supports subinterpreters, prefer :c:func:`PyInterpreterView_FromCurrent` so the guard tracks the calling interpreter rather than the main one."
+msgstr ""
 
 msgid "Process-wide parameters"
 msgstr "پارامترهای در سطح فرایند"
@@ -445,53 +567,13 @@ msgstr "پارامترهای در سطح فرایند"
 msgid "This API is kept for backward compatibility: setting :c:member:`PyConfig.program_name` should be used instead, see :ref:`Python Initialization Configuration <init-config>`."
 msgstr "این API برای سازگاری با نسخه‌های پیشین حفظ شده است: به جای آن باید :c:member:`PyConfig.program_name` را تنظیم کنید؛ به :ref:`پیکربندی مقدار‌دهی اولیه پایتون <init-config>` مراجعه کنید."
 
-msgid "This function should be called before :c:func:`Py_Initialize` is called for the first time, if it is called at all.  It tells the interpreter the value of the ``argv[0]`` argument to the :c:func:`main` function of the program (converted to wide characters). This is used by :c:func:`Py_GetPath` and some other functions below to find the Python run-time libraries relative to the interpreter executable.  The default value is ``'python'``.  The argument should point to a zero-terminated wide character string in static storage whose contents will not change for the duration of the program's execution.  No code in the Python interpreter will change the contents of this storage."
+#, fuzzy
+#| msgid "This function should be called before :c:func:`Py_Initialize` is called for the first time, if it is called at all.  It tells the interpreter the value of the ``argv[0]`` argument to the :c:func:`main` function of the program (converted to wide characters). This is used by :c:func:`Py_GetPath` and some other functions below to find the Python run-time libraries relative to the interpreter executable.  The default value is ``'python'``.  The argument should point to a zero-terminated wide character string in static storage whose contents will not change for the duration of the program's execution.  No code in the Python interpreter will change the contents of this storage."
+msgid "This function should be called before :c:func:`Py_Initialize` is called for the first time, if it is called at all.  It tells the interpreter the value of the ``argv[0]`` argument to the :c:func:`main` function of the program (converted to wide characters). This is used by some other functions below to find the Python run-time libraries relative to the interpreter executable.  The default value is ``'python'``.  The argument should point to a zero-terminated wide character string in static storage whose contents will not change for the duration of the program's execution.  No code in the Python interpreter will change the contents of this storage."
 msgstr "این تابع، اگر اصلاً فراخوانی شود، باید پیش از آنکه :c:func:`Py_Initialize` برای نخستین بار فراخوانی شود، فراخوانی شود. این تابع مقدار آرگومان ``argv[0]`` تابع :c:func:`main` برنامه را به مفسر اطلاع می‌دهد (تبدیل‌شده به نویسه‌های پهن). این مقدار توسط :c:func:`Py_GetPath` و برخی توابع دیگر در ادامه برای یافتن کتابخانه‌های زمان اجرای پایتون نسبت به پرونده اجرایی مفسر استفاده می‌شود. مقدار پیش‌فرض ``'python'`` است. این آرگومان باید به یک رشته‌ی نویسه‌های پهن خاتمه‌یافته با نویسه‌ی تهی (zero-terminated) در حافظه‌ی ایستا اشاره کند که محتوای آن در طول اجرای برنامه تغییر نخواهد کرد. هیچ کدی در مفسر پایتون محتوای این حافظه را تغییر نخواهد داد."
 
 msgid "Use :c:func:`Py_DecodeLocale` to decode a bytes string to get a :c:expr:`wchar_t*` string."
 msgstr "برای کدگشایی یک رشته بایتی و به‌دست آوردن یک رشته‌ی :c:expr:`wchar_t*` از :c:func:`Py_DecodeLocale` استفاده کنید."
-
-msgid "Return the program name set with :c:member:`PyConfig.program_name`, or the default. The returned string points into static storage; the caller should not modify its value."
-msgstr "نام برنامه‌ی تنظیم‌شده با :c:member:`PyConfig.program_name` یا مقدار پیش‌فرض را برمی‌گرداند. رشته‌ی بازگردانده‌شده به فضای ذخیره‌سازی ایستا اشاره می‌کند؛ فراخواننده نباید مقدار آن را تغییر دهد."
-
-msgid "This function should not be called before :c:func:`Py_Initialize`, otherwise it returns ``NULL``."
-msgstr "این تابع نباید پیش از :c:func:`Py_Initialize` فراخوانی شود، در غیر این صورت ``NULL`` را برمی‌گرداند."
-
-msgid "It now returns ``NULL`` if called before :c:func:`Py_Initialize`."
-msgstr "اکنون اگر پیش از :c:func:`Py_Initialize` فراخوانی شود، ``NULL`` را برمی‌گرداند."
-
-msgid "Use :c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` (:data:`sys.executable`) instead."
-msgstr "به جای آن از :c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` (:data:`sys.executable`) استفاده کنید."
-
-msgid "Return the *prefix* for installed platform-independent files. This is derived through a number of complicated rules from the program name set with :c:member:`PyConfig.program_name` and some environment variables; for example, if the program name is ``'/usr/local/bin/python'``, the prefix is ``'/usr/local'``. The returned string points into static storage; the caller should not modify its value.  This corresponds to the :makevar:`prefix` variable in the top-level :file:`Makefile` and the :option:`--prefix` argument to the :program:`configure` script at build time.  The value is available to Python code as ``sys.base_prefix``. It is only useful on Unix.  See also the next function."
-msgstr "*پیشوند* پرونده‌های نصب‌شده‌ی مستقل از پلتفرم را برمی‌گرداند. این پیشوند بر اساس تعدادی قاعده‌ی پیچیده، از نام برنامه‌ای که با :c:member:`PyConfig.program_name` تنظیم‌شده است و برخی متغیرهای محیطی به دست می‌آید؛ برای نمونه، اگر نام برنامه ``'/usr/local/bin/python'`` باشد، پیشوند ``'/usr/local'`` است. رشته‌ی بازگردانده‌شده به حافظه‌ی ایستا اشاره می‌کند؛ فراخواننده نباید مقدار آن را تغییر دهد. این مقدار با متغیر :makevar:`prefix` در :file:`Makefile` سطح بالا و آرگومان :option:`--prefix` اسکریپت :program:`configure` در زمان ساخت مطابقت دارد. این مقدار برای کد پایتون به‌صورت ``sys.base_prefix`` در دسترس است. فقط روی یونیکس کاربرد دارد. همچنین تابع بعدی را ببینید."
-
-msgid "Use :c:func:`PyConfig_Get(\"base_prefix\") <PyConfig_Get>` (:data:`sys.base_prefix`) instead. Use :c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) if :ref:`virtual environments <venv-def>` need to be handled."
-msgstr "به‌جای آن از :c:func:`PyConfig_Get(\"base_prefix\") <PyConfig_Get>` (:data:`sys.base_prefix`) استفاده کنید. اگر لازم است :ref:`محیط‌های مجازی <venv-def>` مدیریت شوند، از :c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) استفاده کنید."
-
-msgid "Return the *exec-prefix* for installed platform-*dependent* files.  This is derived through a number of complicated rules from the program name set with :c:member:`PyConfig.program_name` and some environment variables; for example, if the program name is ``'/usr/local/bin/python'``, the exec-prefix is ``'/usr/local'``.  The returned string points into static storage; the caller should not modify its value.  This corresponds to the :makevar:`exec_prefix` variable in the top-level :file:`Makefile` and the ``--exec-prefix`` argument to the :program:`configure` script at build  time.  The value is available to Python code as ``sys.base_exec_prefix``.  It is only useful on Unix."
-msgstr "*پیشوند اجرا* (exec-prefix) را برای پرونده‌های نصب‌شده‌ی *وابسته* به پلتفرم برمی‌گرداند. این مقدار بر اساس تعدادی قاعده‌ی پیچیده از نام برنامه‌ی تنظیم‌شده با :c:member:`PyConfig.program_name` و برخی متغیرهای محیطی به دست می‌آید؛ برای مثال، اگر نام برنامه ``'/usr/local/bin/python'`` باشد، پیشوند اجرا ``'/usr/local'`` است. رشته‌ی بازگردانده‌شده به حافظه‌ی ایستا اشاره می‌کند؛ فراخواننده نباید مقدار آن را تغییر دهد. این مقدار با متغیر :makevar:`exec_prefix` در :file:`Makefile` سطح بالا و آرگومان ``--exec-prefix`` اسکریپت :program:`configure` در زمان ساخت مطابقت دارد. این مقدار در کد پایتون به‌صورت ``sys.base_exec_prefix`` در دسترس است. این مقدار فقط در یونیکس کاربرد دارد."
-
-msgid "Background: The exec-prefix differs from the prefix when platform dependent files (such as executables and shared libraries) are installed in a different directory tree.  In a typical installation, platform dependent files may be installed in the :file:`/usr/local/plat` subtree while platform independent may be installed in :file:`/usr/local`."
-msgstr "پیش‌زمینه: پیشوند اجرا هنگامی از پیشوند متفاوت است که پرونده‌های وابسته به پلتفرم (مانند پرونده‌های اجرایی و کتابخانه‌های اشتراکی) در درخت پوشه‌ی متفاوتی نصب شوند.  در یک نصب معمولی، ممکن است پرونده‌های وابسته به پلتفرم در زیردرخت :file:`/usr/local/plat` نصب شوند، در حالی که پرونده‌های مستقل از پلتفرم ممکن است در :file:`/usr/local` نصب شوند."
-
-msgid "Generally speaking, a platform is a combination of hardware and software families, e.g.  Sparc machines running the Solaris 2.x operating system are considered the same platform, but Intel machines running Solaris 2.x are another platform, and Intel machines running Linux are yet another platform.  Different major revisions of the same operating system generally also form different platforms.  Non-Unix operating systems are a different story; the installation strategies on those systems are so different that the prefix and exec-prefix are meaningless, and set to the empty string. Note that compiled Python bytecode files are platform independent (but not independent from the Python version by which they were compiled!)."
-msgstr "به‌طور کلی، یک پلتفرم ترکیبی از خانواده‌های سخت‌افزاری و نرم‌افزاری است؛ برای مثال، ماشین‌های Sparc که سیستم‌عامل Solaris 2.x را اجرا می‌کنند، یک پلتفرم واحد محسوب می‌شوند، اما ماشین‌های Intel که Solaris 2.x را اجرا می‌کنند، پلتفرم دیگری هستند و ماشین‌های Intel که لینوکس را اجرا می‌کنند، پلتفرمی دیگر. نسخه‌های اصلی مختلف یک سیستم‌عامل واحد نیز به‌طور کلی پلتفرم‌های متفاوتی را تشکیل می‌دهند. سیستم‌عامل‌های غیر یونیکسی داستان دیگری دارند؛ راهبردهای نصب در این سیستم‌ها چنان متفاوت است که پیشوند و پیشوند اجرا بی‌معنا هستند و روی رشته خالی تنظیم می‌شوند. توجه داشته باشید که پرونده‌های بایت‌کد کامپایل‌شده پایتون مستقل از پلتفرم هستند (اما از نسخه پایتونی که آن‌ها را کامپایل کرده است، مستقل نیستند!)."
-
-msgid "System administrators will know how to configure the :program:`mount` or :program:`automount` programs to share :file:`/usr/local` between platforms while having :file:`/usr/local/plat` be a different filesystem for each platform."
-msgstr "مدیران سیستم می‌دانند چگونه برنامه‌های :program:`mount` یا :program:`automount` را پیکربندی کنند تا :file:`/usr/local` میان پلتفرم‌ها به اشتراک گذاشته شود، در حالی که :file:`/usr/local/plat` برای هر پلتفرم یک سامانه فایل‌بندی متفاوت باشد."
-
-msgid "Use :c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` (:data:`sys.base_exec_prefix`) instead. Use :c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` (:data:`sys.exec_prefix`) if :ref:`virtual environments <venv-def>` need to be handled."
-msgstr "به‌جای آن از :c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` (:data:`sys.base_exec_prefix`) استفاده کنید. اگر لازم باشد :ref:`محیط‌های مجازی <venv-def>` مدیریت شوند، از :c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` (:data:`sys.exec_prefix`) استفاده کنید."
-
-msgid "Return the full program name of the Python executable; this is  computed as a side-effect of deriving the default module search path  from the program name (set by :c:member:`PyConfig.program_name`). The returned string points into static storage; the caller should not modify its value.  The value is available to Python code as ``sys.executable``."
-msgstr "نام کامل برنامه‌ی اجرایی پایتون را برمی‌گرداند؛ این نام به‌عنوان یک عارضه‌ی جانبی از استخراج مسیر جستجوی پیش‌فرض ماژول از نام برنامه (که توسط :c:member:`PyConfig.program_name` تنظیم می‌شود) محاسبه می‌شود. رشته‌ی بازگردانده‌شده به حافظه‌ی ایستا اشاره می‌کند؛ فراخواننده نباید مقدار آن را تغییر دهد. این مقدار برای کد پایتون به صورت ``sys.executable`` در دسترس است."
-
-msgid "Return the default module search path; this is computed from the program name (set by :c:member:`PyConfig.program_name`) and some environment variables. The returned string consists of a series of directory names separated by a platform dependent delimiter character.  The delimiter character is ``':'`` on Unix and macOS, ``';'`` on Windows.  The returned string points into static storage; the caller should not modify its value.  The list :data:`sys.path` is initialized with this value on interpreter startup; it can be (and usually is) modified later to change the search path for loading modules."
-msgstr "مسیر جستجوی پیش‌فرض ماژول را برمی‌گرداند؛ این مسیر از نام برنامه (که توسط :c:member:`PyConfig.program_name` تنظیم می‌شود) و برخی متغیرهای محیطی محاسبه می‌شود. رشته‌ی بازگردانده‌شده از مجموعه‌ای از نام پوشه‌ها تشکیل شده است که با نویسه‌ی جداکننده‌ای وابسته به پلتفرم از هم جدا شده‌اند. نویسه‌ی جداکننده در یونیکس و مک‌اواس ``':'`` و در ویندوز ``';'`` است. رشته‌ی بازگردانده‌شده به داخل ذخیره‌گاه ایستا اشاره می‌کند؛ فراخوان‌کننده نباید مقدار آن را تغییر دهد. فهرست :data:`sys.path` هنگام راه‌اندازی مفسر با این مقدار مقداردهی اولیه می‌شود؛ این فهرست می‌تواند (و معمولاً نیز چنین می‌شود) بعداً برای تغییر مسیر جستجو جهت بارگذاری ماژول‌ها تغییر کند."
-
-msgid "Use :c:func:`PyConfig_Get(\"module_search_paths\") <PyConfig_Get>` (:data:`sys.path`) instead."
-msgstr "به جای آن از :c:func:`PyConfig_Get(\"module_search_paths\") <PyConfig_Get>` (:data:`sys.path`) استفاده کنید."
 
 msgid "Return the version of this Python interpreter.  This is a string that looks something like ::"
 msgstr "نسخه‌ی این مفسر پایتون را برمی‌گرداند.  این رشته‌ای است که چیزی شبیه به این است ::"
@@ -577,12 +659,6 @@ msgstr "پوشه‌ی «home» پیش‌فرض را تنظیم می‌کند، �
 msgid "The argument should point to a zero-terminated character string in static storage whose contents will not change for the duration of the program's execution.  No code in the Python interpreter will change the contents of this storage."
 msgstr "آرگومان باید به یک رشته‌ی نویسه‌ای پایان‌یافته با نویسه‌ی تهی در حافظه‌ی ایستا اشاره کند که محتوای آن در طول مدت اجرای برنامه تغییر نخواهد کرد. هیچ کدی در مفسر پایتون محتوای این حافظه را تغییر نخواهد داد."
 
-msgid "Return the default \"home\", that is, the value set by :c:member:`PyConfig.home`, or the value of the :envvar:`PYTHONHOME` environment variable if it is set."
-msgstr "بازگرداندن «home» پیش‌فرض، یعنی مقداری که توسط :c:member:`PyConfig.home` تنظیم شده است، یا مقدار متغیر محیطی :envvar:`PYTHONHOME` در صورتی که تنظیم شده باشد."
-
-msgid "Use :c:func:`PyConfig_Get(\"home\") <PyConfig_Get>` or the :envvar:`PYTHONHOME` environment variable instead."
-msgstr "به‌جای آن از :c:func:`PyConfig_Get(\"home\") <PyConfig_Get>` یا متغیر محیطی :envvar:`PYTHONHOME` استفاده کنید."
-
 msgid "PyEval_InitThreads()"
 msgstr "PyEval_InitThreads()"
 
@@ -619,12 +695,6 @@ msgstr "Py_Initialize()"
 msgid "main()"
 msgstr "main()"
 
-msgid "Py_GetPath()"
-msgstr "Py_GetPath()"
-
-msgid "executable (in module sys)"
-msgstr "executable (در ماژول sys)"
-
 msgid "version (in module sys)"
 msgstr "version (در ماژول sys)"
 
@@ -639,3 +709,63 @@ msgstr "Py_FatalError()"
 
 msgid "argv (in module sys)"
 msgstr "argv (در ماژول sys)"
+
+#~ msgid "If any thread, other than the finalization thread, attempts to attach a :term:`thread state` during finalization, either explicitly or implicitly, the thread enters **a permanently blocked state** where it remains until the program exits.  In most cases this is harmless, but this can result in deadlock if a later stage of finalization attempts to acquire a lock owned by the blocked thread, or otherwise waits on the blocked thread."
+#~ msgstr "اگر نخی غیر از نخ نهایی‌سازی، در حین نهایی‌سازی، چه به‌طور صریح و چه به‌طور ضمنی، تلاش کند یک :term:`thread state` را متصل کند، آن نخ وارد **وضعیت مسدود دائمی** می‌شود و تا زمان خروج برنامه در همان وضعیت باقی می‌ماند.  در بیشتر موارد این بی‌ضرر است، اما اگر مرحله‌ای بعدی از نهایی‌سازی تلاش کند قفلی را که در اختیار نخ مسدود است به دست آورد یا به نحوی دیگر منتظر نخ مسدود بماند، این می‌تواند منجر به بن‌بست شود."
+
+#~ msgid "Gross? Yes. This prevents random crashes and/or unexpectedly skipped C++ finalizations further up the call stack when such threads were forcibly exited here in CPython 3.13 and earlier. The CPython runtime :term:`thread state` C APIs have never had any error reporting or handling expectations at :term:`thread state` attachment time that would've allowed for graceful exit from this situation. Changing that would require new stable C APIs and rewriting the majority of C code in the CPython ecosystem to use those with error handling."
+#~ msgstr "زشت است؟ بله. این کار از فروپاشی‌های تصادفی و/یا رد شدن غیرمنتظره‌ی نهایی‌سازی‌های C++ در بخش‌های بالاتر پشته فراخوانی جلوگیری می‌کند؛ همان مشکلاتی که در سی‌پایتون 3.13 و نسخه‌های پیشین، هنگامی که چنین نخ‌هایی در اینجا به‌اجبار خارج می‌شدند، پیش می‌آمدند. APIهای C مربوط به :term:`وضعیت نخ <thread state>` در ران‌تایم سی‌پایتون هیچ‌گاه در زمان اتصال :term:`وضعیت نخ <thread state>` هیچ‌گونه انتظاری برای گزارش یا مدیریت خطا نداشته‌اند که خروج منظم از این وضعیت را ممکن می‌ساخت. تغییر این امر نیازمند ایجاد APIهای C پایدار جدید و بازنویسی بخش عمده‌ی کدهای C در اکوسیستم سی‌پایتون برای استفاده از آن‌ها همراه با مدیریت خطا خواهد بود."
+
+#~ msgid "Return the program name set with :c:member:`PyConfig.program_name`, or the default. The returned string points into static storage; the caller should not modify its value."
+#~ msgstr "نام برنامه‌ی تنظیم‌شده با :c:member:`PyConfig.program_name` یا مقدار پیش‌فرض را برمی‌گرداند. رشته‌ی بازگردانده‌شده به فضای ذخیره‌سازی ایستا اشاره می‌کند؛ فراخواننده نباید مقدار آن را تغییر دهد."
+
+#~ msgid "This function should not be called before :c:func:`Py_Initialize`, otherwise it returns ``NULL``."
+#~ msgstr "این تابع نباید پیش از :c:func:`Py_Initialize` فراخوانی شود، در غیر این صورت ``NULL`` را برمی‌گرداند."
+
+#~ msgid "It now returns ``NULL`` if called before :c:func:`Py_Initialize`."
+#~ msgstr "اکنون اگر پیش از :c:func:`Py_Initialize` فراخوانی شود، ``NULL`` را برمی‌گرداند."
+
+#~ msgid "Use :c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` (:data:`sys.executable`) instead."
+#~ msgstr "به جای آن از :c:func:`PyConfig_Get(\"executable\") <PyConfig_Get>` (:data:`sys.executable`) استفاده کنید."
+
+#~ msgid "Return the *prefix* for installed platform-independent files. This is derived through a number of complicated rules from the program name set with :c:member:`PyConfig.program_name` and some environment variables; for example, if the program name is ``'/usr/local/bin/python'``, the prefix is ``'/usr/local'``. The returned string points into static storage; the caller should not modify its value.  This corresponds to the :makevar:`prefix` variable in the top-level :file:`Makefile` and the :option:`--prefix` argument to the :program:`configure` script at build time.  The value is available to Python code as ``sys.base_prefix``. It is only useful on Unix.  See also the next function."
+#~ msgstr "*پیشوند* پرونده‌های نصب‌شده‌ی مستقل از پلتفرم را برمی‌گرداند. این پیشوند بر اساس تعدادی قاعده‌ی پیچیده، از نام برنامه‌ای که با :c:member:`PyConfig.program_name` تنظیم‌شده است و برخی متغیرهای محیطی به دست می‌آید؛ برای نمونه، اگر نام برنامه ``'/usr/local/bin/python'`` باشد، پیشوند ``'/usr/local'`` است. رشته‌ی بازگردانده‌شده به حافظه‌ی ایستا اشاره می‌کند؛ فراخواننده نباید مقدار آن را تغییر دهد. این مقدار با متغیر :makevar:`prefix` در :file:`Makefile` سطح بالا و آرگومان :option:`--prefix` اسکریپت :program:`configure` در زمان ساخت مطابقت دارد. این مقدار برای کد پایتون به‌صورت ``sys.base_prefix`` در دسترس است. فقط روی یونیکس کاربرد دارد. همچنین تابع بعدی را ببینید."
+
+#~ msgid "Use :c:func:`PyConfig_Get(\"base_prefix\") <PyConfig_Get>` (:data:`sys.base_prefix`) instead. Use :c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) if :ref:`virtual environments <venv-def>` need to be handled."
+#~ msgstr "به‌جای آن از :c:func:`PyConfig_Get(\"base_prefix\") <PyConfig_Get>` (:data:`sys.base_prefix`) استفاده کنید. اگر لازم است :ref:`محیط‌های مجازی <venv-def>` مدیریت شوند، از :c:func:`PyConfig_Get(\"prefix\") <PyConfig_Get>` (:data:`sys.prefix`) استفاده کنید."
+
+#~ msgid "Return the *exec-prefix* for installed platform-*dependent* files.  This is derived through a number of complicated rules from the program name set with :c:member:`PyConfig.program_name` and some environment variables; for example, if the program name is ``'/usr/local/bin/python'``, the exec-prefix is ``'/usr/local'``.  The returned string points into static storage; the caller should not modify its value.  This corresponds to the :makevar:`exec_prefix` variable in the top-level :file:`Makefile` and the ``--exec-prefix`` argument to the :program:`configure` script at build  time.  The value is available to Python code as ``sys.base_exec_prefix``.  It is only useful on Unix."
+#~ msgstr "*پیشوند اجرا* (exec-prefix) را برای پرونده‌های نصب‌شده‌ی *وابسته* به پلتفرم برمی‌گرداند. این مقدار بر اساس تعدادی قاعده‌ی پیچیده از نام برنامه‌ی تنظیم‌شده با :c:member:`PyConfig.program_name` و برخی متغیرهای محیطی به دست می‌آید؛ برای مثال، اگر نام برنامه ``'/usr/local/bin/python'`` باشد، پیشوند اجرا ``'/usr/local'`` است. رشته‌ی بازگردانده‌شده به حافظه‌ی ایستا اشاره می‌کند؛ فراخواننده نباید مقدار آن را تغییر دهد. این مقدار با متغیر :makevar:`exec_prefix` در :file:`Makefile` سطح بالا و آرگومان ``--exec-prefix`` اسکریپت :program:`configure` در زمان ساخت مطابقت دارد. این مقدار در کد پایتون به‌صورت ``sys.base_exec_prefix`` در دسترس است. این مقدار فقط در یونیکس کاربرد دارد."
+
+#~ msgid "Background: The exec-prefix differs from the prefix when platform dependent files (such as executables and shared libraries) are installed in a different directory tree.  In a typical installation, platform dependent files may be installed in the :file:`/usr/local/plat` subtree while platform independent may be installed in :file:`/usr/local`."
+#~ msgstr "پیش‌زمینه: پیشوند اجرا هنگامی از پیشوند متفاوت است که پرونده‌های وابسته به پلتفرم (مانند پرونده‌های اجرایی و کتابخانه‌های اشتراکی) در درخت پوشه‌ی متفاوتی نصب شوند.  در یک نصب معمولی، ممکن است پرونده‌های وابسته به پلتفرم در زیردرخت :file:`/usr/local/plat` نصب شوند، در حالی که پرونده‌های مستقل از پلتفرم ممکن است در :file:`/usr/local` نصب شوند."
+
+#~ msgid "Generally speaking, a platform is a combination of hardware and software families, e.g.  Sparc machines running the Solaris 2.x operating system are considered the same platform, but Intel machines running Solaris 2.x are another platform, and Intel machines running Linux are yet another platform.  Different major revisions of the same operating system generally also form different platforms.  Non-Unix operating systems are a different story; the installation strategies on those systems are so different that the prefix and exec-prefix are meaningless, and set to the empty string. Note that compiled Python bytecode files are platform independent (but not independent from the Python version by which they were compiled!)."
+#~ msgstr "به‌طور کلی، یک پلتفرم ترکیبی از خانواده‌های سخت‌افزاری و نرم‌افزاری است؛ برای مثال، ماشین‌های Sparc که سیستم‌عامل Solaris 2.x را اجرا می‌کنند، یک پلتفرم واحد محسوب می‌شوند، اما ماشین‌های Intel که Solaris 2.x را اجرا می‌کنند، پلتفرم دیگری هستند و ماشین‌های Intel که لینوکس را اجرا می‌کنند، پلتفرمی دیگر. نسخه‌های اصلی مختلف یک سیستم‌عامل واحد نیز به‌طور کلی پلتفرم‌های متفاوتی را تشکیل می‌دهند. سیستم‌عامل‌های غیر یونیکسی داستان دیگری دارند؛ راهبردهای نصب در این سیستم‌ها چنان متفاوت است که پیشوند و پیشوند اجرا بی‌معنا هستند و روی رشته خالی تنظیم می‌شوند. توجه داشته باشید که پرونده‌های بایت‌کد کامپایل‌شده پایتون مستقل از پلتفرم هستند (اما از نسخه پایتونی که آن‌ها را کامپایل کرده است، مستقل نیستند!)."
+
+#~ msgid "System administrators will know how to configure the :program:`mount` or :program:`automount` programs to share :file:`/usr/local` between platforms while having :file:`/usr/local/plat` be a different filesystem for each platform."
+#~ msgstr "مدیران سیستم می‌دانند چگونه برنامه‌های :program:`mount` یا :program:`automount` را پیکربندی کنند تا :file:`/usr/local` میان پلتفرم‌ها به اشتراک گذاشته شود، در حالی که :file:`/usr/local/plat` برای هر پلتفرم یک سامانه فایل‌بندی متفاوت باشد."
+
+#~ msgid "Use :c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` (:data:`sys.base_exec_prefix`) instead. Use :c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` (:data:`sys.exec_prefix`) if :ref:`virtual environments <venv-def>` need to be handled."
+#~ msgstr "به‌جای آن از :c:func:`PyConfig_Get(\"base_exec_prefix\") <PyConfig_Get>` (:data:`sys.base_exec_prefix`) استفاده کنید. اگر لازم باشد :ref:`محیط‌های مجازی <venv-def>` مدیریت شوند، از :c:func:`PyConfig_Get(\"exec_prefix\") <PyConfig_Get>` (:data:`sys.exec_prefix`) استفاده کنید."
+
+#~ msgid "Return the full program name of the Python executable; this is  computed as a side-effect of deriving the default module search path  from the program name (set by :c:member:`PyConfig.program_name`). The returned string points into static storage; the caller should not modify its value.  The value is available to Python code as ``sys.executable``."
+#~ msgstr "نام کامل برنامه‌ی اجرایی پایتون را برمی‌گرداند؛ این نام به‌عنوان یک عارضه‌ی جانبی از استخراج مسیر جستجوی پیش‌فرض ماژول از نام برنامه (که توسط :c:member:`PyConfig.program_name` تنظیم می‌شود) محاسبه می‌شود. رشته‌ی بازگردانده‌شده به حافظه‌ی ایستا اشاره می‌کند؛ فراخواننده نباید مقدار آن را تغییر دهد. این مقدار برای کد پایتون به صورت ``sys.executable`` در دسترس است."
+
+#~ msgid "Return the default module search path; this is computed from the program name (set by :c:member:`PyConfig.program_name`) and some environment variables. The returned string consists of a series of directory names separated by a platform dependent delimiter character.  The delimiter character is ``':'`` on Unix and macOS, ``';'`` on Windows.  The returned string points into static storage; the caller should not modify its value.  The list :data:`sys.path` is initialized with this value on interpreter startup; it can be (and usually is) modified later to change the search path for loading modules."
+#~ msgstr "مسیر جستجوی پیش‌فرض ماژول را برمی‌گرداند؛ این مسیر از نام برنامه (که توسط :c:member:`PyConfig.program_name` تنظیم می‌شود) و برخی متغیرهای محیطی محاسبه می‌شود. رشته‌ی بازگردانده‌شده از مجموعه‌ای از نام پوشه‌ها تشکیل شده است که با نویسه‌ی جداکننده‌ای وابسته به پلتفرم از هم جدا شده‌اند. نویسه‌ی جداکننده در یونیکس و مک‌اواس ``':'`` و در ویندوز ``';'`` است. رشته‌ی بازگردانده‌شده به داخل ذخیره‌گاه ایستا اشاره می‌کند؛ فراخوان‌کننده نباید مقدار آن را تغییر دهد. فهرست :data:`sys.path` هنگام راه‌اندازی مفسر با این مقدار مقداردهی اولیه می‌شود؛ این فهرست می‌تواند (و معمولاً نیز چنین می‌شود) بعداً برای تغییر مسیر جستجو جهت بارگذاری ماژول‌ها تغییر کند."
+
+#~ msgid "Use :c:func:`PyConfig_Get(\"module_search_paths\") <PyConfig_Get>` (:data:`sys.path`) instead."
+#~ msgstr "به جای آن از :c:func:`PyConfig_Get(\"module_search_paths\") <PyConfig_Get>` (:data:`sys.path`) استفاده کنید."
+
+#~ msgid "Return the default \"home\", that is, the value set by :c:member:`PyConfig.home`, or the value of the :envvar:`PYTHONHOME` environment variable if it is set."
+#~ msgstr "بازگرداندن «home» پیش‌فرض، یعنی مقداری که توسط :c:member:`PyConfig.home` تنظیم شده است، یا مقدار متغیر محیطی :envvar:`PYTHONHOME` در صورتی که تنظیم شده باشد."
+
+#~ msgid "Use :c:func:`PyConfig_Get(\"home\") <PyConfig_Get>` or the :envvar:`PYTHONHOME` environment variable instead."
+#~ msgstr "به‌جای آن از :c:func:`PyConfig_Get(\"home\") <PyConfig_Get>` یا متغیر محیطی :envvar:`PYTHONHOME` استفاده کنید."
+
+#~ msgid "Py_GetPath()"
+#~ msgstr "Py_GetPath()"
+
+#~ msgid "executable (in module sys)"
+#~ msgstr "executable (در ماژول sys)"

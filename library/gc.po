@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-14 16:11+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -85,8 +85,23 @@ msgstr "``collections`` تعداد دفعاتی است که این نسل جمع
 msgid "``collected`` is the total number of objects collected inside this generation;"
 msgstr "``collected`` تعداد کل اشیایی است که در این نسل جمع‌آوری شده‌اند؛"
 
-msgid "``uncollectable`` is the total number of objects which were found to be uncollectable (and were therefore moved to the :data:`garbage` list) inside this generation."
+#, fuzzy
+#| msgid "``uncollectable`` is the total number of objects which were found to be uncollectable (and were therefore moved to the :data:`garbage` list) inside this generation."
+msgid "``uncollectable`` is the total number of objects which were found to be uncollectable (and were therefore moved to the :data:`garbage` list) inside this generation;"
 msgstr "``uncollectable`` تعداد کل اشیایی است که در این نسل غیرقابل جمع‌آوری تشخیص داده شدند (و بنابراین به فهرست :data:`garbage` منتقل شدند)."
+
+#, fuzzy
+#| msgid "``collections`` is the number of times this generation was collected;"
+msgid "``candidates`` is the total number of objects in this generation which were considered for collection and traversed;"
+msgstr "``collections`` تعداد دفعاتی است که این نسل جمع‌آوری شده است؛"
+
+#, fuzzy
+#| msgid "``collected`` is the total number of objects collected inside this generation;"
+msgid "``duration`` is the total time in seconds spent in collections for this generation."
+msgstr "``collected`` تعداد کل اشیایی است که در این نسل جمع‌آوری شده‌اند؛"
+
+msgid "Add ``duration`` and ``candidates``."
+msgstr ""
 
 msgid "Set the garbage collection thresholds (the collection frequency). Setting *threshold0* to zero disables collection."
 msgstr "آستانه‌های زباله‌روبی (فرکانس جمع‌آوری) را تنظیم کنید. قرار دادن *threshold0* روی ۰، جمع‌آوری را غیرفعال می‌کند."
@@ -94,10 +109,9 @@ msgstr "آستانه‌های زباله‌روبی (فرکانس جمع‌آو�
 msgid "The GC classifies objects into three generations depending on how many collection sweeps they have survived.  New objects are placed in the youngest generation (generation ``0``).  If an object survives a collection it is moved into the next older generation.  Since generation ``2`` is the oldest generation, objects in that generation remain there after a collection.  In order to decide when to run, the collector keeps track of the number object allocations and deallocations since the last collection.  When the number of allocations minus the number of deallocations exceeds *threshold0*, collection starts.  Initially only generation ``0`` is examined.  If generation ``0`` has been examined more than *threshold1* times since generation ``1`` has been examined, then generation ``1`` is examined as well. With the third generation, things are a bit more complicated, see `Collecting the oldest generation <https://github.com/python/cpython/blob/ff0ef0a54bef26fc507fbf9b7a6009eb7d3f17f5/InternalDocs/garbage_collector.md#collecting-the-oldest-generation>`_ for more information."
 msgstr "GC اشیاء را بسته به اینکه از چند دور زباله‌روبی جان به در برده‌اند، به سه نسل طبقه‌بندی می‌کند. اشیاء جدید در جوان‌ترین نسل (نسل ``0``) قرار می‌گیرند. اگر شیء از یک زباله‌روبی جان به در ببرد، به نسل قدیمی‌تر بعدی منتقل می‌شود. از آنجا که نسل ``2`` قدیمی‌ترین نسل است، اشیاء موجود در آن نسل پس از زباله‌روبی در همان‌جا باقی می‌مانند. جمع‌کننده برای تصمیم‌گیری درباره زمان اجرا، تعداد تخصیص‌ها و آزادسازی‌های اشیاء از آخرین زباله‌روبی را پیگیری می‌کند. هنگامی که تعداد تخصیص‌ها منهای تعداد آزادسازی‌ها از *threshold0* بیشتر شود، زباله‌روبی آغاز می‌شود. در ابتدا فقط نسل ``0`` بررسی می‌شود. اگر نسل ``0`` از زمانی که نسل ``1`` بررسی شده است بیش از *threshold1* بار بررسی شده باشد، نسل ``1`` نیز بررسی می‌شود. در مورد نسل سوم، اوضاع کمی پیچیده‌تر است؛ برای اطلاعات بیشتر `جمع‌آوری قدیمی‌ترین نسل <https://github.com/python/cpython/blob/ff0ef0a54bef26fc507fbf9b7a6009eb7d3f17f5/InternalDocs/garbage_collector.md#collecting-the-oldest-generation>`_ را ببینید."
 
-msgid "In the free-threaded build, the increase in process memory usage is also checked before running the collector.  If the memory usage has not increased by 10% since the last collection and the net number of object allocations has not exceeded 40 times *threshold0*, the collection is not run."
-msgstr "در ساخت نخ‌آزاد (free-threaded build)، افزایش مصرف حافظه‌ی فرایند نیز پیش از اجرای جمع‌آور بررسی می‌شود. اگر مصرف حافظه از زمان آخرین جمع‌آوری ۱۰ درصد افزایش پیدا نکرده باشد و تعداد خالص تخصیص‌های شیء از ۴۰ برابر *threshold0* فراتر نرفته باشد، جمع‌آوری اجرا نمی‌شود."
-
-msgid "See `Garbage collector design <https://github.com/python/cpython/blob/3.14/InternalDocs/garbage_collector.md>`_ for more information."
+#, fuzzy
+#| msgid "See `Garbage collector design <https://github.com/python/cpython/blob/3.14/InternalDocs/garbage_collector.md>`_ for more information."
+msgid "See `Garbage collector design <https://github.com/python/cpython/blob/3.15/InternalDocs/garbage_collector.md>`_ for more information."
 msgstr "برای اطلاعات بیشتر، `طراحی زباله‌رو <https://github.com/python/cpython/blob/3.14/InternalDocs/garbage_collector.md>`_ را ببینید."
 
 msgid "*threshold2* is ignored"
@@ -237,6 +251,16 @@ msgstr "\"collected\": هنگامی که *phase* برابر \"stop\" باشد، 
 msgid "\"uncollectable\": When *phase* is \"stop\", the number of objects that could not be collected and were put in :data:`garbage`."
 msgstr "\"uncollectable\": وقتی *phase* برابر \"stop\" است، تعداد اشیایی که جمع‌آوری نشدند و در :data:`garbage` قرار گرفتند."
 
+#, fuzzy
+#| msgid "\"collected\": When *phase* is \"stop\", the number of objects successfully collected."
+msgid "\"candidates\": When *phase* is \"stop\", the total number of objects in this generation which were considered for collection and traversed."
+msgstr "\"collected\": هنگامی که *phase* برابر \"stop\" باشد، تعداد شیءهایی که با موفقیت جمع‌آوری شده‌اند."
+
+#, fuzzy
+#| msgid "\"collected\": When *phase* is \"stop\", the number of objects successfully collected."
+msgid "\"duration\": When *phase* is \"stop\", the time in seconds spent in the collection."
+msgstr "\"collected\": هنگامی که *phase* برابر \"stop\" باشد، تعداد شیءهایی که با موفقیت جمع‌آوری شده‌اند."
+
 msgid "Applications can add their own callbacks to this list.  The primary use cases are:"
 msgstr "برنامه‌ها می‌توانند کال‌بک‌های خود را به این فهرست اضافه کنند. موارد استفاده اصلی عبارتند از:"
 
@@ -245,6 +269,9 @@ msgstr "جمع‌آوری آمار درباره زباله‌روبی، مانن
 
 msgid "Allowing applications to identify and clear their own uncollectable types when they appear in :data:`garbage`."
 msgstr "اجازه دادن به برنامه‌ها برای شناسایی و پاک‌سازی انواع غیرقابل‌جمع‌آوری خودشان، هنگامی که در :data:`garbage` ظاهر می‌شوند."
+
+msgid "Add \"duration\" and \"candidates\"."
+msgstr ""
 
 msgid "The following constants are provided for use with :func:`set_debug`:"
 msgstr "ثابت‌های زیر برای استفاده با :func:`set_debug` ارائه شده‌اند:"
@@ -266,3 +293,6 @@ msgstr "هنگامی که تنظیم شود، تمام اشیاء غیرقابل
 
 msgid "The debugging flags necessary for the collector to print information about a leaking program (equal to ``DEBUG_COLLECTABLE | DEBUG_UNCOLLECTABLE | DEBUG_SAVEALL``)."
 msgstr "پرچم‌های اشکال‌زدایی مورد نیاز برای جمع‌کننده تا اطلاعات مربوط به برنامه‌ای که نشتی دارد را چاپ کند (برابر با ``DEBUG_COLLECTABLE | DEBUG_UNCOLLECTABLE | DEBUG_SAVEALL``)."
+
+#~ msgid "In the free-threaded build, the increase in process memory usage is also checked before running the collector.  If the memory usage has not increased by 10% since the last collection and the net number of object allocations has not exceeded 40 times *threshold0*, the collection is not run."
+#~ msgstr "در ساخت نخ‌آزاد (free-threaded build)، افزایش مصرف حافظه‌ی فرایند نیز پیش از اجرای جمع‌آور بررسی می‌شود. اگر مصرف حافظه از زمان آخرین جمع‌آوری ۱۰ درصد افزایش پیدا نکرده باشد و تعداد خالص تخصیص‌های شیء از ۴۰ برابر *threshold0* فراتر نرفته باشد، جمع‌آوری اجرا نمی‌شود."

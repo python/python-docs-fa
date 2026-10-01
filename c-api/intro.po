@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2021-06-28 00:49+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -86,6 +86,60 @@ msgstr "برای گنجاندن سرآیندها، هر دو پوشه (در صو
 
 msgid "C++ users should note that although the API is defined entirely using C, the header files properly declare the entry points to be ``extern \"C\"``. As a result, there is no need to do anything special to use the API from C++."
 msgstr "کاربران C++ باید توجه داشته باشند که اگرچه API کاملاً با استفاده از C تعریف شده است، پرونده‌های سرآیند نقاط ورود را به‌درستی به‌صورت ``extern \"C\"`` اعلام می‌کنند. در نتیجه، برای استفاده از API در C++ نیازی به انجام کار خاصی نیست."
+
+msgid "System includes"
+msgstr ""
+
+msgid ":file:`Python.h` includes several standard header files. C extensions should include the standard headers that they use, and should not rely on these implicit includes. The implicit includes are:"
+msgstr ""
+
+msgid "``<assert.h>``"
+msgstr ""
+
+msgid "``<intrin.h>`` (on Windows)"
+msgstr ""
+
+msgid "``<inttypes.h>``"
+msgstr ""
+
+msgid "``<limits.h>``"
+msgstr ""
+
+msgid "``<math.h>``"
+msgstr ""
+
+msgid "``<stdarg.h>``"
+msgstr ""
+
+msgid "``<string.h>``"
+msgstr ""
+
+msgid "``<wchar.h>``"
+msgstr ""
+
+msgid "``<sys/types.h>`` (if present)"
+msgstr ""
+
+msgid "The following are included for backwards compatibility, unless using :ref:`Limited API <limited-c-api>` 3.13 or newer:"
+msgstr ""
+
+msgid "``<ctype.h>``"
+msgstr ""
+
+msgid "``<unistd.h>`` (on POSIX)"
+msgstr ""
+
+msgid "The following are included for backwards compatibility, unless using :ref:`Limited API <limited-c-api>` 3.11 or newer:"
+msgstr ""
+
+msgid "``<errno.h>``"
+msgstr ""
+
+msgid "``<stdio.h>``"
+msgstr ""
+
+msgid "``<stdlib.h>``"
+msgstr ""
 
 msgid "Useful macros"
 msgstr "ماکروهای مفید"
@@ -373,14 +427,21 @@ msgstr "ماکرویی که توسط سی‌پایتون برای اعلان ی�
 msgid "Outdated macros"
 msgstr "ماکروهای منسوخ"
 
-msgid "The following macros have been used to features that have been standardized in C11."
+#, fuzzy
+#| msgid "The following macros have been used to features that have been standardized in C11."
+msgid "The following :term:`soft deprecated` macros have been used to features that have been standardized in C11 (or previous standards)."
 msgstr "از ماکروهای زیر برای ویژگی‌هایی که در C11 استاندارد شده‌اند استفاده شده است."
 
-msgid "Specify alignment to *num* bytes on compilers that support it."
-msgstr "در کامپایلرهایی که از آن پشتیبانی می‌کنند، هم‌ترازی را به *num* بایت مشخص کنید."
+msgid "On some GCC-like compilers, specify alignment to *num* bytes. This does nothing on other compilers."
+msgstr ""
 
-msgid "Consider using the C11 standard ``_Alignas`` specifier over this macro."
+#, fuzzy
+#| msgid "Consider using the C11 standard ``_Alignas`` specifier over this macro."
+msgid "Use the standard ``alignas`` specifier rather than this macro."
 msgstr "استفاده از مشخص‌کننده‌ی ``_Alignas`` استاندارد C11 را به جای این ماکرو در نظر بگیرید."
+
+msgid "The :c:func:`printf` formatting modifier for :c:type:`size_t`. Use ``\"z\"`` directly instead."
+msgstr ""
 
 msgid "Use *number* as a ``long long`` or ``unsigned long long`` integer literal, respectively."
 msgstr "از *number* به ترتیب به عنوان لفظی عدد صحیح ``long long`` یا ``unsigned long long`` استفاده کنید."
@@ -391,11 +452,29 @@ msgstr "به *number* و به ترتیب پس از آن ``LL`` یا ``LLU`` گس
 msgid "Consider using the C99 standard suffixes ``LL`` and ``LLU`` directly."
 msgstr "در نظر بگیرید که مستقیماً از پسوندهای استاندارد C99 یعنی ``LL`` و ``LLU`` استفاده کنید."
 
+msgid "Aliases for the types :c:type:`!long long`, :c:type:`!int32_t`, :c:type:`!uint32_t`. :c:type:`!int64_t` and :c:type:`!uint64_t`, respectively. Historically, these types needed compiler-specific extensions."
+msgstr ""
+
+msgid "Aliases for the values :c:macro:`!LLONG_MIN`, :c:macro:`!LLONG_MAX`, :c:macro:`!ULLONG_MAX`, and :c:macro:`!SIZE_MAX`, respectively. Use these standard names instead."
+msgstr ""
+
+msgid "The required header, ``<limits.h>``, :ref:`is included <capi-system-includes>` in ``Python.h``."
+msgstr ""
+
 msgid "This is an alias to :c:func:`!memcpy`."
 msgstr "این یک نام مستعار برای :c:func:`!memcpy` است."
 
 msgid "Use :c:func:`!memcpy` directly instead."
 msgstr "به‌جای آن، مستقیماً از :c:func:`!memcpy` استفاده کنید."
+
+msgid "Size of the :c:type:`!wchar_t` type. Use ``sizeof(wchar_t)`` or ``WCHAR_WIDTH/8`` instead."
+msgstr ""
+
+msgid "The required header for the latter, ``<limits.h>``, :ref:`is included <capi-system-includes>` in ``Python.h``."
+msgstr ""
+
+msgid "Defined if ``wchar_t`` can hold a Unicode character (UCS-4). Use ``sizeof(wchar_t) >= 4`` instead"
+msgstr ""
 
 msgid "This is an alias to the C99-standard ``va_copy`` function."
 msgstr "این یک نام‌مستعار برای تابع ``va_copy`` مطابق با استاندارد C99 است."
@@ -802,7 +881,9 @@ msgstr "در بیشتر سیستم‌ها (به‌طور خاص در یونیک�
 msgid "For instance, if the Python executable is found in :file:`/usr/local/bin/python`, it will assume that the libraries are in :file:`/usr/local/lib/python{X.Y}`.  (In fact, this particular path is also the \"fallback\" location, used when no executable file named :file:`python` is found along :envvar:`PATH`.)  The user can override this behavior by setting the environment variable :envvar:`PYTHONHOME`, or insert additional directories in front of the standard path by setting :envvar:`PYTHONPATH`."
 msgstr "برای نمونه، اگر پرونده اجرایی پایتون در :file:`/usr/local/bin/python` یافت شود، فرض می‌کند که کتابخانه‌ها در :file:`/usr/local/lib/python{X.Y}` قرار دارند. (در واقع، این مسیر خاص همچنین مکان «جایگزین» است که زمانی استفاده می‌شود که هیچ پرونده اجرایی‌ای با نام :file:`python` در :envvar:`PATH` یافت نشود.) کاربر می‌تواند این رفتار را با تنظیم متغیر محیطی :envvar:`PYTHONHOME` بازتعریف کند، یا با تنظیم :envvar:`PYTHONPATH` پوشه‌های اضافی را در ابتدای مسیر استاندارد درج کند."
 
-msgid "The embedding application can steer the search by setting :c:member:`PyConfig.program_name` *before* calling :c:func:`Py_InitializeFromConfig`. Note that :envvar:`PYTHONHOME` still overrides this and :envvar:`PYTHONPATH` is still inserted in front of the standard path.  An application that requires total control has to provide its own implementation of :c:func:`Py_GetPath`, :c:func:`Py_GetPrefix`, :c:func:`Py_GetExecPrefix`, and :c:func:`Py_GetProgramFullPath` (all defined in :file:`Modules/getpath.c`)."
+#, fuzzy
+#| msgid "The embedding application can steer the search by setting :c:member:`PyConfig.program_name` *before* calling :c:func:`Py_InitializeFromConfig`. Note that :envvar:`PYTHONHOME` still overrides this and :envvar:`PYTHONPATH` is still inserted in front of the standard path.  An application that requires total control has to provide its own implementation of :c:func:`Py_GetPath`, :c:func:`Py_GetPrefix`, :c:func:`Py_GetExecPrefix`, and :c:func:`Py_GetProgramFullPath` (all defined in :file:`Modules/getpath.c`)."
+msgid "The embedding application can steer the search by setting :c:member:`PyConfig.program_name` *before* calling :c:func:`Py_InitializeFromConfig`. Note that :envvar:`PYTHONHOME` still overrides this and :envvar:`PYTHONPATH` is still inserted in front of the standard path."
 msgstr "برنامه جاسازنده می‌تواند با تنظیم :c:member:`PyConfig.program_name` *پیش از* فراخوانی :c:func:`Py_InitializeFromConfig` جستجو را هدایت کند. توجه داشته باشید که :envvar:`PYTHONHOME` همچنان این تنظیم را لغو می‌کند و :envvar:`PYTHONPATH` همچنان در ابتدای مسیر استاندارد درج می‌شود.  برنامه‌ای که به کنترل کامل نیاز دارد، باید پیاده‌سازی خودش از :c:func:`Py_GetPath`، :c:func:`Py_GetPrefix`، :c:func:`Py_GetExecPrefix` و :c:func:`Py_GetProgramFullPath` را فراهم کند (که همگی در :file:`Modules/getpath.c` تعریف شده‌اند)."
 
 msgid "Sometimes, it is desirable to \"uninitialize\" Python.  For instance,  the application may want to start over (make another call to :c:func:`Py_Initialize`) or the application is simply done with its  use of Python and wants to free memory allocated by Python.  This can be accomplished by calling :c:func:`Py_FinalizeEx`.  The function :c:func:`Py_IsInitialized` returns true if Python is currently in the initialized state.  More information about these functions is given in a later chapter. Notice that :c:func:`Py_FinalizeEx` does *not* free all memory allocated by the Python interpreter, e.g. memory allocated by extension modules currently cannot be released."
@@ -817,10 +898,18 @@ msgstr "پایتون را می‌توان با چندین ماکرو ساخت ت
 msgid "A full list of the various types of debugging builds is in the file :file:`Misc/SpecialBuilds.txt` in the Python source distribution. Builds are available that support tracing of reference counts, debugging the memory allocator, or low-level profiling of the main interpreter loop.  Only the most frequently used builds will be described in the remainder of this section."
 msgstr "فهرست کامل انواع مختلف ساخت‌های اشکال‌زدایی در پرونده :file:`Misc/SpecialBuilds.txt` در توزیع کد منبع پایتون قرار دارد. ساخت‌هایی در دسترس هستند که از ردگیری شمارش ارجاع، اشکال‌زدایی تخصیص‌دهنده حافظه یا پروفایل‌گیری سطح پایین حلقه اصلی مفسر پشتیبانی می‌کنند. در ادامه این بخش، تنها پرکاربردترین ساخت‌ها توضیح داده خواهند شد."
 
-msgid "Compiling the interpreter with the :c:macro:`!Py_DEBUG` macro defined produces what is generally meant by :ref:`a debug build of Python <debug-build>`. :c:macro:`!Py_DEBUG` is enabled in the Unix build by adding :option:`--with-pydebug` to the :file:`./configure` command. It is also implied by the presence of the not-Python-specific :c:macro:`!_DEBUG` macro.  When :c:macro:`!Py_DEBUG` is enabled in the Unix build, compiler optimization is disabled."
-msgstr "کامپایل کردن مفسر در حالی که ماکروی :c:macro:`!Py_DEBUG` تعریف‌شده باشد، چیزی را تولید می‌کند که عموماً از :ref:`ساخت‌ دیباگ پایتون <debug-build>` منظور می‌شود. ماکروی :c:macro:`!Py_DEBUG` در ساخت‌ یونیکس با افزودن :option:`--with-pydebug` به دستور :file:`./configure` فعال می‌شود. این ماکرو همچنین با وجود ماکروی :c:macro:`!_DEBUG` که مختص پایتون نیست، به‌طور ضمنی فعال می‌شود. هنگامی که :c:macro:`!Py_DEBUG` در ساخت‌ یونیکس فعال باشد، بهینه‌سازی کامپایلر غیرفعال می‌شود."
+msgid "Compiling the interpreter with the :c:macro:`!Py_DEBUG` macro defined produces what is generally meant by :ref:`a debug build of Python <debug-build>`."
+msgstr ""
 
-msgid "In addition to the reference count debugging described below, extra checks are performed, see :ref:`Python Debug Build <debug-build>`."
+msgid "On Unix, :c:macro:`!Py_DEBUG` can be enabled by adding :option:`--with-pydebug` to the :file:`./configure` command. This will also disable compiler optimization."
+msgstr ""
+
+msgid "On Windows, selecting a debug build (e.g., by passing the :option:`-d` option to :file:`PCbuild/build.bat`) automatically enables :c:macro:`!Py_DEBUG`. Additionally, the presence of the not-Python-specific :c:macro:`!_DEBUG` macro, when defined by the compiler, will also implicitly enable :c:macro:`!Py_DEBUG`."
+msgstr ""
+
+#, fuzzy
+#| msgid "In addition to the reference count debugging described below, extra checks are performed, see :ref:`Python Debug Build <debug-build>`."
+msgid "In addition to the reference count debugging described below, extra checks are performed. See :ref:`Python Debug Build <debug-build>` for more details."
 msgstr "علاوه بر اشکال‌زدایی شمارش ارجاع که در زیر شرح داده شده، بررسی‌های اضافی نیز انجام می‌شود؛ به :ref:`نسخه دیباگ پایتون <debug-build>` مراجعه کنید."
 
 msgid "Defining ``Py_TRACE_REFS`` enables reference tracing (see the :option:`configure --with-trace-refs option <--with-trace-refs>`). When defined, a circular doubly linked list of active objects is maintained by adding two extra fields to every :c:type:`PyObject`.  Total allocations are tracked as well.  Upon exit, all existing references are printed.  (In interactive mode this happens after every statement run by the interpreter.)"
@@ -949,17 +1038,23 @@ msgstr "مسیر"
 msgid "path (in module sys)"
 msgstr "path (در ماژول sys)"
 
-msgid "Py_GetPath (C function)"
-msgstr "Py_GetPath (تابع C)"
-
-msgid "Py_GetPrefix (C function)"
-msgstr "Py_GetPrefix (تابع C)"
-
-msgid "Py_GetExecPrefix (C function)"
-msgstr "Py_GetExecPrefix (تابع C)"
-
-msgid "Py_GetProgramFullPath (C function)"
-msgstr "Py_GetProgramFullPath (تابع C)"
-
 msgid "Py_IsInitialized (C function)"
 msgstr "Py_IsInitialized (تابع C)"
+
+#~ msgid "Specify alignment to *num* bytes on compilers that support it."
+#~ msgstr "در کامپایلرهایی که از آن پشتیبانی می‌کنند، هم‌ترازی را به *num* بایت مشخص کنید."
+
+#~ msgid "Compiling the interpreter with the :c:macro:`!Py_DEBUG` macro defined produces what is generally meant by :ref:`a debug build of Python <debug-build>`. :c:macro:`!Py_DEBUG` is enabled in the Unix build by adding :option:`--with-pydebug` to the :file:`./configure` command. It is also implied by the presence of the not-Python-specific :c:macro:`!_DEBUG` macro.  When :c:macro:`!Py_DEBUG` is enabled in the Unix build, compiler optimization is disabled."
+#~ msgstr "کامپایل کردن مفسر در حالی که ماکروی :c:macro:`!Py_DEBUG` تعریف‌شده باشد، چیزی را تولید می‌کند که عموماً از :ref:`ساخت‌ دیباگ پایتون <debug-build>` منظور می‌شود. ماکروی :c:macro:`!Py_DEBUG` در ساخت‌ یونیکس با افزودن :option:`--with-pydebug` به دستور :file:`./configure` فعال می‌شود. این ماکرو همچنین با وجود ماکروی :c:macro:`!_DEBUG` که مختص پایتون نیست، به‌طور ضمنی فعال می‌شود. هنگامی که :c:macro:`!Py_DEBUG` در ساخت‌ یونیکس فعال باشد، بهینه‌سازی کامپایلر غیرفعال می‌شود."
+
+#~ msgid "Py_GetPath (C function)"
+#~ msgstr "Py_GetPath (تابع C)"
+
+#~ msgid "Py_GetPrefix (C function)"
+#~ msgstr "Py_GetPrefix (تابع C)"
+
+#~ msgid "Py_GetExecPrefix (C function)"
+#~ msgstr "Py_GetExecPrefix (تابع C)"
+
+#~ msgid "Py_GetProgramFullPath (C function)"
+#~ msgstr "Py_GetProgramFullPath (تابع C)"

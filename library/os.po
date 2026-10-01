@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-01 14:41+0330\n"
 "PO-Revision-Date: 2026-09-12 15:04+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -89,6 +89,9 @@ msgstr "حالت UTF-8 پایتون"
 msgid "See :pep:`540` for more details."
 msgstr "برای جزئیات بیشتر به :pep:`540` مراجعه کنید."
 
+msgid "Python UTF-8 mode is now enabled by default (:pep:`686`). It may be disabled by setting :envvar:`PYTHONUTF8=0 <PYTHONUTF8>` as an environment variable or by using the :option:`-X utf8=0 <-X>` command line option."
+msgstr ""
+
 msgid "The Python UTF-8 Mode ignores the :term:`locale encoding` and forces the usage of the UTF-8 encoding:"
 msgstr "حالت UTF-8 پایتون، :term:`locale encoding` را نادیده می‌گیرد و استفاده از کدگذاری UTF-8 را اجباری می‌کند:"
 
@@ -122,26 +125,16 @@ msgstr ":func:`os.fsdecode` و :func:`os.fsencode` از کدگذاری UTF-8 ا�
 msgid ":func:`open`, :func:`io.open`, and :func:`codecs.open` use the UTF-8 encoding by default. However, they still use the strict error handler by default so that attempting to open a binary file in text mode is likely to raise an exception rather than producing nonsense data."
 msgstr ":func:`open`، :func:`io.open` و :func:`codecs.open` به‌طور پیش‌فرض از کدگذاری UTF-8 استفاده می‌کنند. با این حال، آن‌ها همچنان به‌طور پیش‌فرض از هندلر خطای سخت‌گیرانه (strict) استفاده می‌کنند، به‌طوری که تلاش برای باز کردن یک پرونده دودویی در حالت متنی احتمالاً به‌جای تولید داده‌های بی‌معنی، منجر به پرتاب استثنایی می‌شود."
 
-msgid "The :ref:`Python UTF-8 Mode <utf8-mode>` is enabled if the LC_CTYPE locale is ``C`` or ``POSIX`` at Python startup (see the :c:func:`PyConfig_Read` function)."
-msgstr "اگر locale LC_CTYPE در زمان راه‌اندازی پایتون ``C`` یا ``POSIX`` باشد، :ref:`حالت UTF-8 پایتون <utf8-mode>` فعال می‌شود (به تابع :c:func:`PyConfig_Read` مراجعه کنید)."
+msgid "The :ref:`Python UTF-8 Mode <utf8-mode>` is enabled by default. It can be disabled using the :option:`-X utf8=0 <-X>` command line option or the :envvar:`PYTHONUTF8=0 <PYTHONUTF8>` environment variable. The Python UTF-8 Mode can only be disabled at Python startup. Its value can be read from :data:`sys.flags.utf8_mode <sys.flags>`."
+msgstr ""
 
-msgid "It can be enabled or disabled using the :option:`-X utf8 <-X>` command line option and the :envvar:`PYTHONUTF8` environment variable."
-msgstr "می‌توان آن را با استفاده از گزینه‌ی خط فرمان :option:`-X utf8 <-X>` و متغیر محیطی :envvar:`PYTHONUTF8` فعال یا غیرفعال کرد."
-
-msgid "If the :envvar:`PYTHONUTF8` environment variable is not set at all, then the interpreter defaults to using the current locale settings, *unless* the current locale is identified as a legacy ASCII-based locale (as described for :envvar:`PYTHONCOERCECLOCALE`), and locale coercion is either disabled or fails. In such legacy locales, the interpreter will default to enabling UTF-8 mode unless explicitly instructed not to do so."
+#, fuzzy
+#| msgid "If the :envvar:`PYTHONUTF8` environment variable is not set at all, then the interpreter defaults to using the current locale settings, *unless* the current locale is identified as a legacy ASCII-based locale (as described for :envvar:`PYTHONCOERCECLOCALE`), and locale coercion is either disabled or fails. In such legacy locales, the interpreter will default to enabling UTF-8 mode unless explicitly instructed not to do so."
+msgid "If the UTF-8 mode is disabled, the interpreter defaults to using the current locale settings, *unless* the current locale is identified as a legacy ASCII-based locale (as described for :envvar:`PYTHONCOERCECLOCALE`), and locale coercion is either disabled or fails. In such legacy locales, the interpreter will default to enabling UTF-8 mode unless explicitly instructed not to do so."
 msgstr "اگر متغیر محیطی :envvar:`PYTHONUTF8` اصلاً تنظیم نشده باشد، مفسر به‌طور پیش‌فرض از تنظیمات محیط locale فعلی استفاده می‌کند، *مگر اینکه* محیط locale فعلی به‌عنوان یک محیط locale قدیمی مبتنی بر ASCII شناسایی شود (همان‌طور که برای :envvar:`PYTHONCOERCECLOCALE` توضیح داده شده است) و اجبار محیط locale (locale coercion) غیرفعال باشد یا با شکست مواجه شود. در این‌گونه محیط‌های locale قدیمی، مفسر به‌طور پیش‌فرض حالت UTF-8 را فعال می‌کند، مگر اینکه صریحاً دستور داده شود که این کار انجام نشود."
-
-msgid "The Python UTF-8 Mode can only be enabled at the Python startup. Its value can be read from :data:`sys.flags.utf8_mode <sys.flags>`."
-msgstr "حالت UTF-8 پایتون فقط در زمان راه‌اندازی پایتون می‌تواند فعال شود. مقدار آن را می‌توان از :data:`sys.flags.utf8_mode <sys.flags>` خواند."
 
 msgid "See also the :ref:`UTF-8 mode on Windows <win-utf8-mode>` and the :term:`filesystem encoding and error handler`."
 msgstr "همچنین :ref:`حالت UTF-8 در ویندوز <win-utf8-mode>` و :term:`filesystem encoding and error handler` را ببینید."
-
-msgid ":pep:`686`"
-msgstr ":pep:`686`"
-
-msgid "Python 3.15 will make :ref:`utf8-mode` default."
-msgstr "پایتون 3.15 :ref:`utf8-mode` را پیش‌فرض خواهد کرد."
 
 msgid "Process Parameters"
 msgstr "پارامترهای فرایند"
@@ -176,14 +169,30 @@ msgstr "فراخوانی مستقیم :func:`putenv` باعث تغییر :data:`
 msgid "On some platforms, including FreeBSD and macOS, setting ``environ`` may cause memory leaks.  Refer to the system documentation for :c:func:`!putenv`."
 msgstr "در برخی از سکوها، از جمله FreeBSD و macOS، تنظیم ``environ`` ممکن است موجب نشتی حافظه شود. برای :c:func:`!putenv` به مستندات سیستم مراجعه کنید."
 
-msgid "You can delete items in this mapping to unset environment variables. :func:`unsetenv` will be called automatically when an item is deleted from :data:`os.environ`, and when one of the :meth:`pop` or :meth:`clear` methods is called."
+#, fuzzy
+#| msgid "You can delete items in this mapping to unset environment variables. :func:`unsetenv` will be called automatically when an item is deleted from :data:`os.environ`, and when one of the :meth:`pop` or :meth:`clear` methods is called."
+msgid "You can delete items in this mapping to unset environment variables. :func:`unsetenv` will be called automatically when an item is deleted from :data:`os.environ`, and when one of the :meth:`~dict.pop` or :meth:`~dict.clear` methods is called."
 msgstr "شما می‌توانید آیتم‌های این نگاشت را حذف کنید تا متغیرهای محیطی از حالت تنظیم خارج شوند. :func:`unsetenv` به‌طور خودکار هنگامی که آیتمی از :data:`os.environ` حذف شود، و هنگامی که یکی از متدهای :meth:`pop` یا :meth:`clear` فراخوانی شود، فراخوانی می‌شود."
+
+msgid "If the :manpage:`clearenv(3)` function is available, the :meth:`~dict.clear` method uses it and emits a single ``os._clearenv`` audit event. Otherwise, it emits an ``os.unsetenv`` event on each deleted variable."
+msgstr ""
+
+msgid "Raises an :ref:`auditing event <auditing>` ``os.unsetenv`` with argument ``key``."
+msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``os.unsetenv`` را با آرگومان ``key`` پرتاب می‌کند."
+
+#, fuzzy
+#| msgid "Raises an :ref:`auditing event <auditing>` ``os.fork`` with no arguments."
+msgid "Raises an :ref:`auditing event <auditing>` ``os._clearenv`` with no arguments."
+msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``os.fork`` را بدون آرگومان پرتاب می‌کند."
 
 msgid "The :func:`os.reload_environ` function."
 msgstr "تابع :func:`os.reload_environ`."
 
 msgid "Updated to support :pep:`584`'s merge (``|``) and update (``|=``) operators."
 msgstr "به‌روزرسانی شد تا از عملگرهای ادغام (``|``) و به‌روزرسانی (``|=``) در :pep:`584` پشتیبانی کند."
+
+msgid "The :meth:`~dict.clear` method can now emit an ``os._clearenv`` audit event."
+msgstr ""
 
 msgid "Bytes version of :data:`environ`: a :term:`mapping` object where both keys and values are :class:`bytes` objects representing the process environment. :data:`environ` and :data:`environb` are synchronized (modifying :data:`environb` updates :data:`environ`, and vice versa)."
 msgstr "نسخه‌ی بایتی :data:`environ`: یک شیء :term:`mapping` که در آن هم کلیدها و هم مقدارها، اشیای :class:`bytes` نشان‌دهنده‌ی محیط فرایند هستند. :data:`environ` و :data:`environb` همگام هستند (تغییر دادن :data:`environb`، :data:`environ` را به‌روزرسانی می‌کند و بالعکس)."
@@ -263,7 +272,9 @@ msgstr "فهرست شناسه‌های گروه را برمی‌گرداند ک�
 msgid "Return list of supplemental group ids associated with the current process."
 msgstr "فهرستی از شناسه‌های گروه تکمیلی مرتبط با فرایند جاری را برمی‌گرداند."
 
-msgid "On macOS, :func:`getgroups` behavior differs somewhat from other Unix platforms. If the Python interpreter was built with a deployment target of ``10.5`` or earlier, :func:`getgroups` returns the list of effective group ids associated with the current user process; this list is limited to a system-defined number of entries, typically 16, and may be modified by calls to :func:`setgroups` if suitably privileged. If built with a deployment target greater than ``10.5``, :func:`getgroups` returns the current group access list for the user associated with the effective user id of the process; the group access list may change over the lifetime of the process, it is not affected by calls to :func:`setgroups`, and its length is not limited to 16.  The deployment target value, :const:`MACOSX_DEPLOYMENT_TARGET`, can be obtained with :func:`sysconfig.get_config_var`."
+#, fuzzy
+#| msgid "On macOS, :func:`getgroups` behavior differs somewhat from other Unix platforms. If the Python interpreter was built with a deployment target of ``10.5`` or earlier, :func:`getgroups` returns the list of effective group ids associated with the current user process; this list is limited to a system-defined number of entries, typically 16, and may be modified by calls to :func:`setgroups` if suitably privileged. If built with a deployment target greater than ``10.5``, :func:`getgroups` returns the current group access list for the user associated with the effective user id of the process; the group access list may change over the lifetime of the process, it is not affected by calls to :func:`setgroups`, and its length is not limited to 16.  The deployment target value, :const:`MACOSX_DEPLOYMENT_TARGET`, can be obtained with :func:`sysconfig.get_config_var`."
+msgid "On macOS, :func:`getgroups` behavior differs somewhat from other Unix platforms. If the Python interpreter was built with a deployment target of ``10.5`` or earlier, :func:`getgroups` returns the list of effective group ids associated with the current user process; this list is limited to a system-defined number of entries, typically 16, and may be modified by calls to :func:`setgroups` if suitably privileged. If built with a deployment target greater than ``10.5``, :func:`getgroups` returns the current group access list for the user associated with the effective user id of the process; the group access list may change over the lifetime of the process, it is not affected by calls to :func:`setgroups`, and its length is not limited to 16.  The deployment target value can be obtained with :func:`sysconfig.get_config_var('MACOSX_DEPLOYMENT_TARGET') <sysconfig.get_config_var>`."
 msgstr "در macOS، رفتار :func:`getgroups` تا حدی با سایر پلتفرم‌های Unix متفاوت است. اگر مفسر Python با هدف استقرار (deployment target) ``10.5`` یا قدیمی‌تر ساخته شده باشد، :func:`getgroups` فهرست شناسه‌های گروه مؤثر مرتبط با فرایند کاربر جاری را برمی‌گرداند؛ این فهرست به تعداد ورودی‌های تعریف‌شده توسط سیستم محدود است، که معمولاً ۱۶ است، و در صورت داشتن امتیازات کافی ممکن است توسط فراخوانی‌های :func:`setgroups` تغییر کند. اگر با هدف استقرار بزرگ‌تر از ``10.5`` ساخته شده باشد، :func:`getgroups` فهرست دسترسی گروه جاری برای کاربر مرتبط با شناسه کاربر مؤثر فرایند را برمی‌گرداند؛ فهرست دسترسی گروه ممکن است در طول عمر فرایند تغییر کند، تحت تأثیر فراخوانی‌های :func:`setgroups` قرار نمی‌گیرد، و طول آن به ۱۶ محدود نیست. می‌توان مقدار هدف استقرار، :const:`MACOSX_DEPLOYMENT_TARGET`، را با :func:`sysconfig.get_config_var` به دست آورد."
 
 msgid "Return the name of the user logged in on the controlling terminal of the process.  For most purposes, it is more useful to use :func:`getpass.getuser` since the latter checks the environment variables :envvar:`LOGNAME` or :envvar:`USERNAME` to find out who the user is, and falls back to ``pwd.getpwuid(os.getuid())[0]`` to get the login name of the current real user id."
@@ -439,9 +450,6 @@ msgstr "متغیر محیطی با نام *key* را حذف (unset) می‌کن�
 
 msgid "Deletion of items in :data:`os.environ` is automatically translated into a corresponding call to :func:`unsetenv`; however, calls to :func:`unsetenv` don't update :data:`os.environ`, so it is actually preferable to delete items of :data:`os.environ`."
 msgstr "حذف آیتم‌ها از :data:`os.environ` به‌طور خودکار به یک فراخوانی متناظر از :func:`unsetenv` تبدیل می‌شود؛ با این حال، فراخوانی‌های :func:`unsetenv`، :data:`os.environ` را به‌روزرسانی نمی‌کنند، بنابراین در واقع بهتر است آیتم‌های :data:`os.environ` را حذف کنید."
-
-msgid "Raises an :ref:`auditing event <auditing>` ``os.unsetenv`` with argument ``key``."
-msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``os.unsetenv`` را با آرگومان ``key`` پرتاب می‌کند."
 
 msgid "The function is now always available and is also available on Windows."
 msgstr "این تابع اکنون همیشه در دسترس است و در ویندوز نیز در دسترس است."
@@ -795,6 +803,11 @@ msgstr ":data:`RWF_HIPRI`"
 msgid ":data:`RWF_NOWAIT`"
 msgstr ":data:`RWF_NOWAIT`"
 
+#, fuzzy
+#| msgid ":data:`RWF_DSYNC`"
+msgid ":data:`RWF_DONTCACHE`"
+msgstr ":data:`RWF_DSYNC`"
+
 msgid "Return the total number of bytes actually read which can be less than the total capacity of all the objects."
 msgstr "تعداد کل بایت‌های واقعاً خوانده‌شده را برمی‌گرداند که می‌تواند کمتر از ظرفیت کل همه‌ی شیء‌ها باشد."
 
@@ -819,6 +832,12 @@ msgstr "خواندن/نوشتن با اولویت بالا. به سامانه ف
 msgid "Currently, on Linux, this feature is usable only on a file descriptor opened using the :data:`O_DIRECT` flag."
 msgstr "در حال حاضر، در لینوکس، این قابلیت فقط برای توصیف‌گر پرونده‌ای که با پرچم :data:`O_DIRECT` باز شده است، قابل استفاده است."
 
+msgid "Use uncached buffered IO."
+msgstr ""
+
+msgid "Write data atomically. Requires alignment to the device's atomic write unit."
+msgstr ""
+
 msgid "Return the name of the slave pseudo-terminal device associated with the master pseudo-terminal device to which the file descriptor *fd* refers. The file descriptor *fd* is not closed upon failure."
 msgstr "نام دستگاه شبه‌پایانه پیرو (slave pseudo-terminal device) مرتبط با دستگاه شبه‌پایانه اصلی (master pseudo-terminal device) که توصیف‌گر پرونده *fd* به آن اشاره می‌کند را برمی‌گرداند. توصیف‌گر پرونده *fd* در صورت شکست بسته نمی‌شود."
 
@@ -842,6 +861,11 @@ msgstr ":data:`RWF_SYNC`"
 
 msgid ":data:`RWF_APPEND`"
 msgstr ":data:`RWF_APPEND`"
+
+#, fuzzy
+#| msgid ":data:`RWF_NOWAIT`"
+msgid ":data:`RWF_ATOMIC`"
+msgstr ":data:`RWF_NOWAIT`"
 
 msgid "Return the total number of bytes actually written."
 msgstr "تعداد کل بایت‌های واقعاً نوشته‌شده را برمی‌گرداند."
@@ -1318,6 +1342,9 @@ msgstr "پارامتر *path* اختیاری شد."
 msgid "Added support for specifying *path* as an open file descriptor."
 msgstr "پشتیبانی از مشخص کردن *path* به‌عنوان یک توصیف‌گر پرونده باز (open file descriptor) افزوده شد."
 
+msgid "``os.listdir(-1)`` now fails with ``OSError(errno.EBADF)`` rather than listing the current directory."
+msgstr ""
+
 msgid "Return a list containing the names of drives on a Windows system."
 msgstr "فهرستی شامل نام درایوهای یک سیستم ویندوزی را برمی‌گرداند."
 
@@ -1405,6 +1432,9 @@ msgstr "پارامتر *mode* برای ایجاد پوشه برگ به :func:`mk
 msgid "If *exist_ok* is ``False`` (the default), a :exc:`FileExistsError` is raised if the target directory already exists."
 msgstr "اگر *exist_ok* برابر ``False`` (پیش‌فرض) باشد، در صورتی که پوشه هدف از قبل وجود داشته باشد، یک :exc:`FileExistsError` پرتاب می‌شود."
 
+msgid "If *parent_mode* is not ``None``, it is used as the mode for any newly-created, intermediate-level directories.  Like *mode*, it is combined with the process's umask value; see :ref:`the mkdir() description <mkdir_modebits>`.  Otherwise, intermediate directories are created with the default mode, which is also subject to the umask."
+msgstr ""
+
 msgid ":func:`makedirs` will become confused if the path elements to create include :data:`pardir` (eg. \"..\" on UNIX systems)."
 msgstr "اگر عناصر مسیری که باید ایجاد شوند شامل :data:`pardir` باشند (برای مثال \"..\" در سیستم‌های UNIX)، :func:`makedirs` دچار سردرگمی می‌شود."
 
@@ -1420,23 +1450,35 @@ msgstr "پیش از پایتون 3.4.1، اگر *exist_ok* برابر ``True`` �
 msgid "The *mode* argument no longer affects the file permission bits of newly created intermediate-level directories."
 msgstr "آرگومان *mode* دیگر بر بیت‌های مجوز فایلِ پوشه‌های سطح میانی تازه ایجادشده تأثیر نمی‌گذارد."
 
+msgid "The *parent_mode* parameter. To match the behavior from Python 3.6 and earlier (where *mode* was applied to all created directories), pass ``parent_mode=mode``."
+msgstr ""
+
 msgid "Create a FIFO (a named pipe) named *path* with numeric mode *mode*. The current umask value is first masked out from the mode."
 msgstr "یک FIFO (یک پایپ نام‌دار) به نام *path* با حالت عددی *mode* ایجاد می‌کند. مقدار فعلی umask ابتدا از حالت نقاب می‌شود."
 
 msgid "FIFOs are pipes that can be accessed like regular files.  FIFOs exist until they are deleted (for example with :func:`os.unlink`). Generally, FIFOs are used as rendezvous between \"client\" and \"server\" type processes: the server opens the FIFO for reading, and the client opens it for writing.  Note that :func:`mkfifo` doesn't open the FIFO --- it just creates the rendezvous point."
 msgstr "FIFOها پایپ‌هایی هستند که می‌توان مانند پرونده‌های معمولی به آن‌ها دسترسی داشت. FIFOها تا حذف شدنشان وجود دارند (برای مثال با :func:`os.unlink`). به‌طور کلی، FIFOها به‌عنوان محل ملاقات بین فرایندهای نوع «کلاینت» و «سرور» استفاده می‌شوند: سرور FIFO را برای خواندن باز می‌کند و کلاینت آن را برای نوشتن باز می‌کند. توجه داشته باشید که :func:`mkfifo` FIFO را باز نمی‌کند — فقط محل ملاقات را ایجاد می‌کند."
 
-msgid "Create a filesystem node (file, device special file or named pipe) named *path*. *mode* specifies both the permissions to use and the type of node to be created, being combined (bitwise OR) with one of ``stat.S_IFREG``, ``stat.S_IFCHR``, ``stat.S_IFBLK``, and ``stat.S_IFIFO`` (those constants are available in :mod:`stat`).  For ``stat.S_IFCHR`` and ``stat.S_IFBLK``, *device* defines the newly created device special file (probably using :func:`os.makedev`), otherwise it is ignored."
+#, fuzzy
+#| msgid "Create a filesystem node (file, device special file or named pipe) named *path*. *mode* specifies both the permissions to use and the type of node to be created, being combined (bitwise OR) with one of ``stat.S_IFREG``, ``stat.S_IFCHR``, ``stat.S_IFBLK``, and ``stat.S_IFIFO`` (those constants are available in :mod:`stat`).  For ``stat.S_IFCHR`` and ``stat.S_IFBLK``, *device* defines the newly created device special file (probably using :func:`os.makedev`), otherwise it is ignored."
+msgid "Create a filesystem node (file, device special file or named pipe) named *path*. *mode* specifies both the permissions to use and the type of node to be created, being combined (bitwise OR) with one of :const:`stat.S_IFREG`, :const:`stat.S_IFCHR`, :const:`stat.S_IFBLK`, and :const:`stat.S_IFIFO`. For :const:`stat.S_IFCHR` and :const:`stat.S_IFBLK`, *device* defines the newly created device special file (probably using :func:`os.makedev`), otherwise it is ignored."
 msgstr "یک گره سامانه فایل‌بندی (پرونده، پرونده ویژه دستگاه یا پایپ نام‌دار) به نام *path* ایجاد کنید. *mode* هم مجوزهای مورد استفاده و هم نوع گرهی که ایجاد می‌شود را مشخص می‌کند و به‌صورت OR بیتی با یکی از ``stat.S_IFREG``، ``stat.S_IFCHR``، ``stat.S_IFBLK`` و ``stat.S_IFIFO`` ترکیب می‌شود (این ثابت‌ها در :mod:`stat` در دسترس هستند). برای ``stat.S_IFCHR`` و ``stat.S_IFBLK``، *device* پرونده ویژه دستگاهی را که به‌تازگی ایجاد شده است تعریف می‌کند (احتمالاً با استفاده از :func:`os.makedev`)، در غیر این صورت نادیده گرفته می‌شود."
 
-msgid "Extract the device major number from a raw device number (usually the :attr:`st_dev` or :attr:`st_rdev` field from :c:struct:`stat`)."
+#, fuzzy
+#| msgid "Extract the device major number from a raw device number (usually the :attr:`st_dev` or :attr:`st_rdev` field from :c:struct:`stat`)."
+msgid "Extract the device major number from a raw device number (usually the :attr:`~stat_result.st_dev` or :attr:`~stat_result.st_rdev` field from :c:struct:`stat`)."
 msgstr "شماره اصلی دستگاه را از یک شماره خام دستگاه استخراج کنید (معمولاً فیلد :attr:`st_dev` یا :attr:`st_rdev` از :c:struct:`stat`)."
 
-msgid "Extract the device minor number from a raw device number (usually the :attr:`st_dev` or :attr:`st_rdev` field from :c:struct:`stat`)."
+#, fuzzy
+#| msgid "Extract the device minor number from a raw device number (usually the :attr:`st_dev` or :attr:`st_rdev` field from :c:struct:`stat`)."
+msgid "Extract the device minor number from a raw device number (usually the :attr:`~stat_result.st_dev` or :attr:`~stat_result.st_rdev` field from :c:struct:`stat`)."
 msgstr "شماره فرعی دستگاه را از یک شماره خام دستگاه استخراج کنید (معمولاً فیلد :attr:`st_dev` یا :attr:`st_rdev` از :c:struct:`stat`)."
 
 msgid "Compose a raw device number from the major and minor device numbers."
 msgstr "یک شماره‌ی دستگاه خام را از شماره‌های دستگاه اصلی و فرعی تشکیل دهید."
+
+msgid "Non-existent device."
+msgstr ""
 
 msgid "Return system configuration information relevant to a named file. *name* specifies the configuration value to retrieve; it may be a string which is the name of a defined system value; these names are specified in a number of standards (POSIX.1, Unix 95, Unix 98, and others).  Some platforms define additional names as well.  The names known to the host operating system are given in the ``pathconf_names`` dictionary.  For configuration variables not included in that mapping, passing an integer for *name* is also accepted."
 msgstr "اطلاعات پیکربندی سیستم مربوط به یک پرونده نام‌گذاری‌شده را برمی‌گرداند. *name* مقدار پیکربندی برای بازیابی را مشخص می‌کند؛ ممکن است یک رشته باشد که نام یک مقدار سیستمی تعریف‌شده است؛ این نام‌ها در تعدادی از استانداردها مشخص شده‌اند (POSIX.1، Unix 95، Unix 98 و سایر موارد). برخی سکوها نیز نام‌های اضافی تعریف می‌کنند. نام‌های شناخته‌شده برای سیستم‌عامل میزبان در دیکشنری ``pathconf_names`` آمده‌اند. برای متغیرهای پیکربندی که در آن نگاشت گنجانده نشده‌اند، ارسال یک عدد صحیح برای *name* نیز پذیرفته می‌شود."
@@ -1568,6 +1610,9 @@ msgstr "این تابع یک :term:`path-like object` را می‌پذیرد."
 
 msgid "Added support for :ref:`file descriptors <path_fd>` on Unix."
 msgstr "پشتیبانی از :ref:`توصیف‌گرهای پرونده <path_fd>` در یونیکس افزوده شد."
+
+msgid "``os.scandir(-1)`` now fails with ``OSError(errno.EBADF)`` rather than listing the current directory."
+msgstr ""
 
 msgid "Object yielded by :func:`scandir` to expose the file path and other file attributes of a directory entry."
 msgstr "شیء‌ای که توسط :func:`scandir` تولید می‌شود تا مسیر پرونده و سایر ویژگی‌های فایلِ یک ورودیِ پوشه را در دسترس قرار دهد."
@@ -1852,7 +1897,9 @@ msgstr "عضو :attr:`st_fstype` برای Solaris و مشتقات آن افزو�
 msgid "Added the :attr:`st_reparse_tag` member on Windows."
 msgstr "عضو :attr:`st_reparse_tag` در ویندوز اضافه شد."
 
-msgid "On Windows, the :attr:`st_mode` member now identifies special files as :const:`S_IFCHR`, :const:`S_IFIFO` or :const:`S_IFBLK` as appropriate."
+#, fuzzy
+#| msgid "On Windows, the :attr:`st_mode` member now identifies special files as :const:`S_IFCHR`, :const:`S_IFIFO` or :const:`S_IFBLK` as appropriate."
+msgid "On Windows, the :attr:`st_mode` member now identifies special files as :const:`~stat.S_IFCHR`, :const:`~stat.S_IFIFO` or :const:`~stat.S_IFBLK` as appropriate."
 msgstr "در ویندوز، عضو :attr:`st_mode` اکنون پرونده‌های ویژه را حسب مورد به‌عنوان :const:`S_IFCHR`، :const:`S_IFIFO` یا :const:`S_IFBLK` شناسایی می‌کند."
 
 msgid "On Windows, :attr:`st_ctime` is deprecated. Eventually, it will contain the last metadata change time, for consistency with other platforms, but for now still contains creation time. Use :attr:`st_birthtime` for the creation time."
@@ -1866,6 +1913,173 @@ msgstr "در ویندوز، :attr:`st_rdev` دیگر مقداری برنمی‌�
 
 msgid "Added the :attr:`st_birthtime` member on Windows."
 msgstr "عضو :attr:`st_birthtime` در ویندوز افزوده شد."
+
+#, fuzzy
+#| msgid "Get the status of the file descriptor *fd*. Return a :class:`stat_result` object."
+msgid "Get the status of a file or file descriptor by performing a :c:func:`!statx` system call on the given path."
+msgstr "وضعیت توصیف‌گر پرونده *fd* را دریافت می‌کند. یک شیء :class:`stat_result` برمی‌گرداند."
+
+msgid "*path* is a :term:`path-like object` or an open file descriptor. *mask* is a combination of the module-level :const:`STATX_* <STATX_TYPE>` constants specifying the information to retrieve. *flags* is a combination of the module-level :const:`AT_STATX_* <AT_STATX_FORCE_SYNC>` constants and/or :const:`AT_NO_AUTOMOUNT`. Returns a :class:`statx_result` object whose :attr:`~os.statx_result.stx_mask` attribute specifies the information actually retrieved (which may differ from *mask*)."
+msgstr ""
+
+#, fuzzy
+#| msgid "This function can support :ref:`specifying a file descriptor <path_fd>`, :ref:`paths relative to directory descriptors <dir_fd>` and :ref:`not following symlinks <follow_symlinks>`."
+msgid "This function supports :ref:`specifying a file descriptor <path_fd>`, :ref:`paths relative to directory descriptors <dir_fd>`, and :ref:`not following symlinks <follow_symlinks>`."
+msgstr "این تابع می‌تواند از :ref:`مشخص کردن یک توصیف‌گر پرونده <path_fd>`، :ref:`مسیرهای نسبی به توصیف‌گرهای پوشه <dir_fd>` و :ref:`دنبال‌نکردن پیوندهای نمادین <follow_symlinks>` پشتیبانی کند."
+
+#, fuzzy
+#| msgid "The :manpage:`splice(2)` man page."
+msgid "The :manpage:`statx(2)` man page."
+msgstr "صفحه‌ی راهنمای :manpage:`splice(2)`."
+
+msgid "Information about a file returned by :func:`os.statx`."
+msgstr ""
+
+msgid ":class:`!statx_result` has the following attributes:"
+msgstr ""
+
+msgid "Equal to ``None`` if :data:`STATX_ATIME` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+msgid "Maximum iovecs for direct I/O with torn-write protection."
+msgstr ""
+
+msgid "Equal to ``None`` if :data:`STATX_WRITE_ATOMIC` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+msgid "Maximum size for direct I/O with torn-write protection."
+msgstr ""
+
+msgid "Maximum optimized size for direct I/O with torn-write protection."
+msgstr ""
+
+msgid "Minimum size for direct I/O with torn-write protection."
+msgstr ""
+
+msgid "Bitmask of :const:`STATX_ATTR_* <stat.STATX_ATTR_COMPRESSED>` constants specifying the attributes of this file."
+msgstr ""
+
+msgid "A mask indicating which bits in :attr:`stx_attributes` are supported by the VFS and the filesystem."
+msgstr ""
+
+#, fuzzy
+#| msgid "Number of 512-byte blocks allocated for file. This may be smaller than :attr:`st_size`/512 when the file has holes."
+msgid "Number of 512-byte blocks allocated for file. This may be smaller than :attr:`stx_size`/512 when the file has holes."
+msgstr "تعداد بلوک‌های ۵۱۲ بایتی تخصیص‌یافته برای پرونده. این مقدار ممکن است وقتی پرونده حفره‌هایی دارد، کوچک‌تر از :attr:`st_size`/512 باشد."
+
+msgid "Equal to ``None`` if :data:`STATX_BLOCKS` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+#, fuzzy
+#| msgid "Time of most recent access expressed in seconds."
+msgid "Time of file creation expressed in seconds."
+msgstr "زمان آخرین دسترسی، بیان‌شده بر حسب ثانیه."
+
+msgid "Equal to ``None`` if :data:`STATX_BTIME` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+#, fuzzy
+#| msgid "Time of most recent access expressed in nanoseconds as an integer."
+msgid "Time of file creation expressed in nanoseconds as an integer."
+msgstr "زمان آخرین دسترسی بر حسب نانوثانیه به‌صورت عدد صحیح بیان می‌شود."
+
+msgid "Equal to ``None`` if :data:`STATX_CTIME` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+#, fuzzy
+#| msgid "Identifier of the device on which this file resides."
+msgid "Major number of the device on which this file resides."
+msgstr "شناسه‌ی دستگاهی که این پرونده روی آن قرار دارد."
+
+#, fuzzy
+#| msgid "Identifier of the device on which this file resides."
+msgid "Minor number of the device on which this file resides."
+msgstr "شناسه‌ی دستگاهی که این پرونده روی آن قرار دارد."
+
+msgid "Direct I/O memory buffer alignment requirement."
+msgstr ""
+
+msgid "Equal to ``None`` if :data:`STATX_DIOALIGN` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+msgid "Direct I/O file offset alignment requirement."
+msgstr ""
+
+msgid "Direct I/O file offset alignment requirement for reads."
+msgstr ""
+
+msgid "Equal to ``None`` if :data:`STATX_DIO_READ_ALIGN` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+msgid "Equal to ``None`` if :data:`STATX_GID` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+#, fuzzy
+#| msgid "Random numbers"
+msgid "Inode number."
+msgstr "اعداد تصادفی"
+
+msgid "Equal to ``None`` if :data:`STATX_INO` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+msgid "Bitmask of :const:`STATX_* <STATX_TYPE>` constants specifying the information retrieved, which may differ from what was requested."
+msgstr ""
+
+#, fuzzy
+#| msgid "Hardware identifier."
+msgid "Mount identifier."
+msgstr "شناسه‌ی سخت‌افزار."
+
+msgid "Equal to ``None`` if :data:`STATX_MNT_ID` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+msgid "Equal to ``None`` if :data:`STATX_TYPE | STATX_MODE <STATX_TYPE>` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+msgid "Equal to ``None`` if :data:`STATX_MTIME` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+msgid "Equal to ``None`` if :data:`STATX_NLINK` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+#, fuzzy
+#| msgid "Identifier of the device on which this file resides."
+msgid "Major number of the device this file represents."
+msgstr "شناسه‌ی دستگاهی که این پرونده روی آن قرار دارد."
+
+#, fuzzy
+#| msgid "Identifier of the device on which this file resides."
+msgid "Minor number of the device this file represents."
+msgstr "شناسه‌ی دستگاهی که این پرونده روی آن قرار دارد."
+
+msgid "Equal to ``None`` if :data:`STATX_SIZE` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+#, fuzzy
+#| msgid "Hardware identifier."
+msgid "Subvolume identifier."
+msgstr "شناسه‌ی سخت‌افزار."
+
+msgid "Equal to ``None`` if :data:`STATX_SUBVOL` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+msgid "Equal to ``None`` if :data:`STATX_UID` is missing from :attr:`~statx_result.stx_mask`."
+msgstr ""
+
+msgid "Bitflags for use in the *mask* parameter to :func:`os.statx`.  Some of these flags may be available even when their corresponding members in :class:`statx_result` are not available."
+msgstr ""
+
+msgid "A flag for the :func:`os.statx` function.  Requests that the kernel return up-to-date information even when doing so is expensive (for example, requiring a round trip to the server for a file on a network filesystem)."
+msgstr ""
+
+msgid "A flag for the :func:`os.statx` function.  Requests that the kernel return cached information if possible."
+msgstr ""
+
+msgid "A flag for the :func:`os.statx` function.  This flag is defined as ``0``, so it has no effect, but it can be used to explicitly indicate neither :data:`AT_STATX_FORCE_SYNC` nor :data:`AT_STATX_DONT_SYNC` is being passed. In the absence of the other two flags, the kernel will generally return information as fresh as :func:`os.stat` would return."
+msgstr ""
+
+msgid "If the final component of a path is an automount point, operate on the automount point instead of performing the automount.  On Linux, :func:`os.stat`, :func:`os.fstat` and :func:`os.lstat` always behave this way."
+msgstr ""
 
 msgid "Perform a :manpage:`statvfs(3)` system call on the given path.  The return value is a :class:`statvfs_result` whose attributes describe the filesystem on the given path and correspond to the members of the :c:struct:`statvfs` structure."
 msgstr "یک فراخوانی سیستمی :manpage:`statvfs(3)` روی مسیر داده‌شده انجام می‌دهد. مقدار بازگشتی یک :class:`statvfs_result` است که ویژگی‌های آن، سامانه فایل‌بندی در مسیر داده‌شده را توصیف می‌کنند و با اعضای ساختار :c:struct:`statvfs` مطابقت دارند."
@@ -2032,7 +2246,9 @@ msgstr ":func:`utime` دو پارامتر اختیاری می‌پذیرد، *ti
 msgid "If *ns* is specified, it must be a 2-tuple of the form ``(atime_ns, mtime_ns)`` where each member is an int expressing nanoseconds."
 msgstr "اگر *ns* تعیین‌شده باشد، باید یک تاپل دوتایی به شکل ``(atime_ns, mtime_ns)`` باشد که هر عضو آن یک عدد صحیح بیانگر نانوثانیه باشد."
 
-msgid "If *times* is not ``None``, it must be a 2-tuple of the form ``(atime, mtime)`` where each member is an int or float expressing seconds."
+#, fuzzy
+#| msgid "If *times* is not ``None``, it must be a 2-tuple of the form ``(atime, mtime)`` where each member is an int or float expressing seconds."
+msgid "If *times* is not ``None``, it must be a 2-tuple of the form ``(atime, mtime)`` where each member is a real number expressing seconds, rounded down to nanoseconds."
 msgstr "اگر *times* برابر ``None`` نباشد، باید یک تاپل دوتایی به شکل ``(atime, mtime)`` باشد که هر عضو آن یک int یا float بیان‌کننده‌ی ثانیه‌ها است."
 
 msgid "If *times* is ``None`` and *ns* is unspecified, this is equivalent to specifying ``ns=(atime_ns, mtime_ns)`` where both times are the current time."
@@ -2049,6 +2265,9 @@ msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``os.utime`` را ب�
 
 msgid "Added support for specifying *path* as an open file descriptor, and the *dir_fd*, *follow_symlinks*, and *ns* parameters."
 msgstr "پشتیبانی برای مشخص کردن *path* به‌عنوان یک توصیف‌گر پرونده باز، و پارامترهای *dir_fd*، *follow_symlinks* و *ns* افزوده شد."
+
+msgid "Accepts any real numbers as *times*, not only integers or floats."
+msgstr ""
 
 msgid "Generate the file names in a directory tree by walking the tree either top-down or bottom-up. For each directory in the tree rooted at directory *top* (including *top* itself), it yields a 3-tuple ``(dirpath, dirnames, filenames)``."
 msgstr "نام پرونده‌های یک درخت پوشه را با پیمایش درخت از بالا به پایین یا از پایین به بالا تولید می‌کند. برای هر پوشه در درختی که ریشه آن پوشه *top* است (از جمله خود *top*)، یک ۳-تایی ``(dirpath, dirnames, filenames)`` برمی‌گرداند."
@@ -2311,13 +2530,17 @@ msgstr ":const:`time.CLOCK_MONOTONIC`"
 msgid ":const:`time.CLOCK_BOOTTIME` (Since Linux 3.15 for timerfd_create)"
 msgstr ":const:`time.CLOCK_BOOTTIME` (از لینوکس 3.15 برای timerfd_create)"
 
-msgid "If *clockid* is :const:`time.CLOCK_REALTIME`, a settable system-wide real-time clock is used. If the system clock is changed, the timer setting needs to be updated. To cancel the timer when the system clock is changed, see :const:`TFD_TIMER_CANCEL_ON_SET`."
+#, fuzzy
+#| msgid "If *clockid* is :const:`time.CLOCK_REALTIME`, a settable system-wide real-time clock is used. If the system clock is changed, the timer setting needs to be updated. To cancel the timer when the system clock is changed, see :const:`TFD_TIMER_CANCEL_ON_SET`."
+msgid "If *clockid* is :const:`time.CLOCK_REALTIME`, a settable system-wide real-time clock is used. If system clock is changed, timer setting need to be updated. To cancel timer when system clock is changed, see :const:`TFD_TIMER_CANCEL_ON_SET`."
 msgstr "اگر *clockid* برابر با :const:`time.CLOCK_REALTIME` باشد، یک ساعت واقعی‌زمان سیستم‌گسترده قابل تنظیم استفاده می‌شود. اگر ساعت سیستم تغییر کند، تنظیم تایمر نیاز به به‌روزرسانی دارد. برای لغو تایمر هنگام تغییر ساعت سیستم، ببینید :const:`TFD_TIMER_CANCEL_ON_SET`."
 
 msgid "If *clockid* is :const:`time.CLOCK_MONOTONIC`, a non-settable monotonically increasing clock is used. Even if the system clock is changed, the timer setting will not be affected."
 msgstr "اگر *clockid* برابر :const:`time.CLOCK_MONOTONIC` باشد، از ساعتی غیرقابل‌تنظیم استفاده می‌شود که به‌صورت یکنواخت افزایش می‌یابد. حتی اگر ساعت سیستم تغییر کند، تنظیم زمان‌سنج تحت تأثیر قرار نمی‌گیرد."
 
-msgid "If *clockid* is :const:`time.CLOCK_BOOTTIME`, it is the same as :const:`time.CLOCK_MONOTONIC` except it includes any time that the system is suspended."
+#, fuzzy
+#| msgid "If *clockid* is :const:`time.CLOCK_BOOTTIME`, it is the same as :const:`time.CLOCK_MONOTONIC` except it includes any time that the system is suspended."
+msgid "If *clockid* is :const:`time.CLOCK_BOOTTIME`, same as :const:`time.CLOCK_MONOTONIC` except it includes any time that the system is suspended."
 msgstr "اگر *clockid* برابر با :const:`time.CLOCK_BOOTTIME` باشد، همانند :const:`time.CLOCK_MONOTONIC` است، با تفاوت که هر زمانی که سیستم معلق است را نیز شامل می‌شود."
 
 msgid "The file descriptor's behaviour can be modified by specifying a *flags* value. Any of the following variables may be used, combined using bitwise OR (the ``|`` operator):"
@@ -2329,7 +2552,9 @@ msgstr ":const:`TFD_NONBLOCK`"
 msgid ":const:`TFD_CLOEXEC`"
 msgstr ":const:`TFD_CLOEXEC`"
 
-msgid "If :const:`TFD_NONBLOCK` is not set as a flag, :func:`read` blocks until the timer expires. If it is set as a flag, :func:`read` doesn't block, but if there hasn't been an expiration since the last call to read, :func:`read` raises :class:`OSError` with ``errno`` set to :const:`errno.EAGAIN`."
+#, fuzzy
+#| msgid "If :const:`TFD_NONBLOCK` is not set as a flag, :func:`read` blocks until the timer expires. If it is set as a flag, :func:`read` doesn't block, but if there hasn't been an expiration since the last call to read, :func:`read` raises :class:`OSError` with ``errno`` set to :const:`errno.EAGAIN`."
+msgid "If :const:`TFD_NONBLOCK` is not set as a flag, :func:`read` blocks until the timer expires. If it is set as a flag, :func:`read` doesn't block, but If there hasn't been an expiration since the last call to read, :func:`read` raises :class:`OSError` with ``errno`` is set to :const:`errno.EAGAIN`."
 msgstr "اگر :const:`TFD_NONBLOCK` به عنوان پرچم تنظیم نشده باشد، :func:`read` تا انقضای تایمر مسدود می‌ماند. اگر به عنوان پرچم تنظیم شده باشد، :func:`read` مسدود نمی‌شود، اما اگر از آخرین فراخوانی read انقضایی رخ نداده باشد، :func:`read` استثنای :class:`OSError` را با ``errno`` تنظیم‌شده بر :const:`errno.EAGAIN` پرتاب می‌کند."
 
 msgid ":const:`TFD_CLOEXEC` is always set by Python automatically."
@@ -2356,19 +2581,27 @@ msgstr ":const:`TFD_TIMER_ABSTIME`"
 msgid ":const:`TFD_TIMER_CANCEL_ON_SET`"
 msgstr ":const:`TFD_TIMER_CANCEL_ON_SET`"
 
-msgid "The timer is disabled by setting *initial* to zero (``0``). If *initial* is greater than zero, the timer is enabled. If *initial* is less than zero, it raises an :class:`OSError` exception with ``errno`` set to :const:`errno.EINVAL`."
+#, fuzzy
+#| msgid "The timer is disabled by setting *initial* to zero (``0``). If *initial* is greater than zero, the timer is enabled. If *initial* is less than zero, it raises an :class:`OSError` exception with ``errno`` set to :const:`errno.EINVAL`."
+msgid "The timer is disabled by setting *initial* to zero (``0``). If *initial* is equal to or greater than zero, the timer is enabled. If *initial* is less than zero, it raises an :class:`OSError` exception with ``errno`` set to :const:`errno.EINVAL`"
 msgstr "تایمر با تنظیم *initial* بر صفر (``0``) غیرفعال می‌شود. اگر *initial* بزرگتر از صفر باشد، تایمر فعال می‌شود. اگر *initial* کمتر از صفر باشد، یک استثنای :class:`OSError` با ``errno`` تنظیم‌شده بر :const:`errno.EINVAL` پرتاب می‌کند."
 
-msgid "By default the timer will fire when *initial* seconds have elapsed."
+#, fuzzy
+#| msgid "By default the timer will fire when *initial* seconds have elapsed."
+msgid "By default the timer will fire when *initial* seconds have elapsed. (If *initial* is zero, timer will fire immediately.)"
 msgstr "به‌صورت پیش‌فرض تایمر وقتی *initial* ثانیه سپری شود اجرا می‌شود."
 
 msgid "However, if the :const:`TFD_TIMER_ABSTIME` flag is set, the timer will fire when the timer's clock (set by *clockid* in :func:`timerfd_create`) reaches *initial* seconds."
 msgstr "با این حال، اگر پرچم :const:`TFD_TIMER_ABSTIME` تنظیم شده باشد، تایمر زمانی فعال می‌شود که ساعت تایمر (که با *clockid* در :func:`timerfd_create` تنظیم می‌شود) به *initial* ثانیه برسد."
 
-msgid "The timer's interval is set by the *interval* :py:class:`float`. If *interval* is zero, the timer only fires once, on the initial expiration. If *interval* is greater than zero, the timer fires every time *interval* seconds have elapsed since the previous expiration. If *interval* is less than zero, it raises :class:`OSError` with ``errno`` set to :const:`errno.EINVAL`."
+#, fuzzy
+#| msgid "The timer's interval is set by the *interval* :py:class:`float`. If *interval* is zero, the timer only fires once, on the initial expiration. If *interval* is greater than zero, the timer fires every time *interval* seconds have elapsed since the previous expiration. If *interval* is less than zero, it raises :class:`OSError` with ``errno`` set to :const:`errno.EINVAL`."
+msgid "The timer's interval is set by the *interval* real number. If *interval* is zero, the timer only fires once, on the initial expiration. If *interval* is greater than zero, the timer fires every time *interval* seconds have elapsed since the previous expiration. If *interval* is less than zero, it raises :class:`OSError` with ``errno`` set to :const:`errno.EINVAL`"
 msgstr "فاصله‌ی تایمر توسط *interval* :py:class:`float` تنظیم می‌شود. اگر *interval* صفر باشد، تایمر فقط یک‌بار در انقضای اولیه فعال می‌شود. اگر *interval* بزرگتر از صفر باشد، تایمر هر بار که *interval* ثانیه از انقضای قبلی گذشته باشد فعال می‌شود. اگر *interval* کمتر از صفر باشد، :class:`OSError` با ``errno`` تنظیم‌شده بر :const:`errno.EINVAL` پرتاب می‌شود."
 
-msgid "If the :const:`TFD_TIMER_CANCEL_ON_SET` flag is set along with :const:`TFD_TIMER_ABSTIME` and the clock for this timer is :const:`time.CLOCK_REALTIME`, the timer is marked as cancelable if the real-time clock is changed discontinuously. Reading the descriptor is aborted with the error :const:`errno.ECANCELED`."
+#, fuzzy
+#| msgid "If the :const:`TFD_TIMER_CANCEL_ON_SET` flag is set along with :const:`TFD_TIMER_ABSTIME` and the clock for this timer is :const:`time.CLOCK_REALTIME`, the timer is marked as cancelable if the real-time clock is changed discontinuously. Reading the descriptor is aborted with the error :const:`errno.ECANCELED`."
+msgid "If the :const:`TFD_TIMER_CANCEL_ON_SET` flag is set along with :const:`TFD_TIMER_ABSTIME` and the clock for this timer is :const:`time.CLOCK_REALTIME`, the timer is marked as cancelable if the real-time clock is changed discontinuously. Reading the descriptor is aborted with the error ECANCELED."
 msgstr "اگر پرچم :const:`TFD_TIMER_CANCEL_ON_SET` با :const:`TFD_TIMER_ABSTIME` تنظیم شده باشد و ساعت این تایمر :const:`time.CLOCK_REALTIME` باشد، تایمر به‌عنوان قابل‌لغو علامت‌گذاری می‌شود اگر ساعت واقعی به‌صورت ناگهانی تغییر کند. خواندن توصیف‌گر با خطای :const:`errno.ECANCELED` متوقف می‌شود."
 
 msgid "Linux manages system clock as UTC. A daylight-savings time transition is done by changing time offset only and doesn't cause discontinuous system clock change."
@@ -2443,6 +2676,9 @@ msgstr "فهرستی از ویژگی‌های توسعه‌یافته‌ی سا�
 msgid "Raises an :ref:`auditing event <auditing>` ``os.listxattr`` with argument ``path``."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``os.listxattr`` را با آرگومان ``path`` پرتاب می‌کند."
 
+msgid "``os.listxattr(-1)`` now fails with ``OSError(errno.EBADF)`` rather than listing extended attributes of the current directory."
+msgstr ""
+
 msgid "Removes the extended filesystem attribute *attribute* from *path*. *attribute* should be bytes or str (directly or indirectly through the :class:`PathLike` interface). If it is a string, it is encoded with the :term:`filesystem encoding and error handler`."
 msgstr "ویژگی توسعه‌یافته‌ی سامانه فایل‌بندی *attribute* را از *path* حذف می‌کند. *attribute* باید از نوع bytes یا str باشد (مستقیماً یا به‌طور غیرمستقیم از طریق رابط :class:`PathLike`). اگر یک رشته باشد، با :term:`filesystem encoding and error handler` کدگذاری می‌شود."
 
@@ -2476,7 +2712,9 @@ msgstr "می‌توان از این توابع برای ایجاد و مدیری
 msgid "The various :func:`exec\\* <execl>` functions take a list of arguments for the new program loaded into the process.  In each case, the first of these arguments is passed to the new program as its own name rather than as an argument a user may have typed on a command line.  For the C programmer, this is the ``argv[0]`` passed to a program's :c:func:`main`.  For example, ``os.execv('/bin/echo', ['foo', 'bar'])`` will only print ``bar`` on standard output; ``foo`` will seem to be ignored."
 msgstr "توابع گوناگون :func:`exec\\* <execl>` فهرستی از آرگومان‌ها را برای برنامه جدیدی که در فرایند بارگذاری می‌شود دریافت می‌کنند. در هر مورد، نخستین آرگومان از این آرگومان‌ها به‌عنوان نام خود برنامه به برنامه جدید ارسال می‌شود، نه به‌عنوان آرگومانی که کاربر ممکن است در خط فرمان وارد کرده باشد. برای برنامه‌نویس C، این همان ``argv[0]`` است که به :c:func:`main` یک برنامه ارسال می‌شود. برای مثال، ``os.execv('/bin/echo', ['foo', 'bar'])`` تنها ``bar`` را در خروجی استاندارد چاپ می‌کند؛ به نظر می‌رسد که ``foo`` چشم‌پوشی شده است."
 
-msgid "Generate a :const:`SIGABRT` signal to the current process.  On Unix, the default behavior is to produce a core dump; on Windows, the process immediately returns an exit code of ``3``.  Be aware that calling this function will not call the Python signal handler registered for :const:`SIGABRT` with :func:`signal.signal`."
+#, fuzzy
+#| msgid "Generate a :const:`SIGABRT` signal to the current process.  On Unix, the default behavior is to produce a core dump; on Windows, the process immediately returns an exit code of ``3``.  Be aware that calling this function will not call the Python signal handler registered for :const:`SIGABRT` with :func:`signal.signal`."
+msgid "Generate a :const:`~signal.SIGABRT` signal to the current process.  On Unix, the default behavior is to produce a core dump; on Windows, the process immediately returns an exit code of ``3``.  Be aware that calling this function will not call the Python signal handler registered for :const:`~signal.SIGABRT` with :func:`signal.signal`."
 msgstr "یک سیگنال :const:`SIGABRT` به فرایند جاری ارسال می‌کند. در یونیکس، رفتار پیش‌فرض تولید یک برون‌ریزی هسته است؛ در ویندوز، فرایند بلافاصله کد خروجی ``3`` را برمی‌گرداند. توجه داشته باشید که فراخوانی این تابع، هندلر سیگنال پایتونی را که برای :const:`SIGABRT` با :func:`signal.signal` ثبت شده است، فراخوانی نخواهد کرد."
 
 msgid "Add a path to the DLL search path."
@@ -2620,6 +2858,11 @@ msgstr "برای جزئیات فنی درباره‌ی اینکه چرا این 
 msgid "Fork a child process, using a new pseudo-terminal as the child's controlling terminal. Return a pair of ``(pid, fd)``, where *pid* is ``0`` in the child, the new child's process id in the parent, and *fd* is the file descriptor of the master end of the pseudo-terminal.  For a more portable approach, use the :mod:`pty` module.  If an error occurs :exc:`OSError` is raised."
 msgstr "یک فرایند فرزند را با استفاده از یک شبه‌پایانه (pseudo-terminal) جدید به‌عنوان پایانه کنترل‌کننده فرزند fork می‌کند. یک جفت ``(pid, fd)`` را برمی‌گرداند، که در آن *pid* در فرزند ``0`` و در والد شناسه فرایند فرزند جدید است، و *fd* توصیف‌گر پرونده سمت اصلی شبه‌پایانه است. برای رویکرد قابل‌حمل‌تر، از ماژول :mod:`pty` استفاده کنید. در صورت بروز خطا، :exc:`OSError` پرتاب می‌شود."
 
+#, fuzzy
+#| msgid "Return a duplicate of file descriptor *fd*. The new file descriptor is :ref:`non-inheritable <fd_inheritance>`."
+msgid "The returned file descriptor *fd* is :ref:`non-inheritable <fd_inheritance>`."
+msgstr "یک کپی از توصیف‌گر پرونده *fd* برمی‌گرداند. توصیف‌گر پرونده جدید :ref:`غیرقابل ارث‌بردن <fd_inheritance>` است."
+
 msgid "Raises an :ref:`auditing event <auditing>` ``os.forkpty`` with no arguments."
 msgstr ":ref:`رویداد حسابرسی <auditing>` ``os.forkpty`` را بدون آرگومان پرتاب می‌کند."
 
@@ -2628,6 +2871,11 @@ msgstr "فراخوانی ``forkpty()`` در یک زیرمفسر دیگر پشت�
 
 msgid "If Python is able to detect that your process has multiple threads, this now raises a :exc:`DeprecationWarning`. See the longer explanation on :func:`os.fork`."
 msgstr "اگر پایتون بتواند تشخیص دهد که فرایند شما دارای چندین نخ است، این مورد اکنون یک :exc:`DeprecationWarning` پرتاب می‌کند. توضیح طولانی‌تر درباره‌ی :func:`os.fork` را ببینید."
+
+#, fuzzy
+#| msgid "The new file descriptor is now non-inheritable."
+msgid "The returned file descriptor is now made non-inheritable."
+msgstr "توصیف‌گر پرونده جدید اکنون غیرقابل‌ارث‌برداری است."
 
 msgid "Send signal *sig* to the process *pid*.  Constants for the specific signals available on the host platform are defined in the :mod:`signal` module."
 msgstr "سیگنال *sig* را به فرایند *pid* ارسال می‌کند. ثابت‌های مربوط به سیگنال‌های خاصی که روی پلتفرم میزبان در دسترس هستند، در ماژول :mod:`signal` تعریف شده‌اند."
@@ -3421,3 +3669,18 @@ msgstr "جداکننده‌ی مسیر (POSIX)"
 
 msgid "; (semicolon)"
 msgstr "; (نقطه‌ویرگول)"
+
+#~ msgid "The :ref:`Python UTF-8 Mode <utf8-mode>` is enabled if the LC_CTYPE locale is ``C`` or ``POSIX`` at Python startup (see the :c:func:`PyConfig_Read` function)."
+#~ msgstr "اگر locale LC_CTYPE در زمان راه‌اندازی پایتون ``C`` یا ``POSIX`` باشد، :ref:`حالت UTF-8 پایتون <utf8-mode>` فعال می‌شود (به تابع :c:func:`PyConfig_Read` مراجعه کنید)."
+
+#~ msgid "It can be enabled or disabled using the :option:`-X utf8 <-X>` command line option and the :envvar:`PYTHONUTF8` environment variable."
+#~ msgstr "می‌توان آن را با استفاده از گزینه‌ی خط فرمان :option:`-X utf8 <-X>` و متغیر محیطی :envvar:`PYTHONUTF8` فعال یا غیرفعال کرد."
+
+#~ msgid "The Python UTF-8 Mode can only be enabled at the Python startup. Its value can be read from :data:`sys.flags.utf8_mode <sys.flags>`."
+#~ msgstr "حالت UTF-8 پایتون فقط در زمان راه‌اندازی پایتون می‌تواند فعال شود. مقدار آن را می‌توان از :data:`sys.flags.utf8_mode <sys.flags>` خواند."
+
+#~ msgid ":pep:`686`"
+#~ msgstr ":pep:`686`"
+
+#~ msgid "Python 3.15 will make :ref:`utf8-mode` default."
+#~ msgstr "پایتون 3.15 :ref:`utf8-mode` را پیش‌فرض خواهد کرد."
