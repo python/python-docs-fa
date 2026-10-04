@@ -3,7 +3,7 @@
 | Revisto | coordinator | 3984 |
 | sepehr-rs | coordinator | 38277 |
 | danialbehzadi | reviewer | 677 |
-| invincible627 | translator | 358 |
+| invincible627 | translator | 471 |
 | khosro_o | reviewer | 63 |
 | ParhamF | translator | 41 |
 | Ariyan_Bolandi | reviewer | 37 |

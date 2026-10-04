@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-10-02)
+(به‌روزرسانی: 2026-10-04)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -35,7 +35,6 @@
 | c-api/datetime.po | 100.0% | 0.0% | 65 | 0 |
 | c-api/descriptor.po | 100.0% | 0.0% | 33 | 0 |
 | c-api/dict.po | 100.0% | 0.0% | 109 | 0 |
-| c-api/exceptions.po | 100.0% | 0.0% | 274 | 0 |
 | c-api/extension-modules.po | 100.0% | 0.0% | 50 | 0 |
 | c-api/file.po | 100.0% | 0.0% | 31 | 0 |
 | c-api/float.po | 100.0% | 0.0% | 58 | 0 |
@@ -488,6 +487,7 @@
 | reference/lexical_analysis.po | 100.0% | 0.0% | 476 | 0 |
 | reference/simple_stmts.po | 100.0% | 0.0% | 291 | 0 |
 | reference/toplevel_components.po | 100.0% | 0.0% | 32 | 0 |
+| sphinx.po | 100.0% | 0.0% | 858 | 0 |
 | tutorial/appendix.po | 100.0% | 0.0% | 28 | 0 |
 | tutorial/appetite.po | 100.0% | 0.0% | 17 | 0 |
 | tutorial/classes.po | 100.0% | 0.0% | 149 | 0 |
@@ -540,8 +540,8 @@
 | whatsnew/changelog.po | 100.0% | 0.0% | 1 | 0 |
 | whatsnew/index.po | 100.0% | 0.0% | 3 | 0 |
 | library/asyncio-eventloop.po | 99.8% | 0.0% | 426 | 1 |
+| c-api/exceptions.po | 99.3% | 0.0% | 274 | 2 |
 | library/ssl.po | 99.3% | 0.0% | 546 | 4 |
 | library/asyncio-stream.po | 99.1% | 0.0% | 105 | 1 |
-| sphinx.po | 13.3% | 0.0% | 129 | 841 |
-| **مجموع** | **98.8%** | **0.0%** | **70443** | **847** |
+| **مجموع** | **100.0%** | **0.0%** | **71172** | **8** |
 <!-- TRANSLATION_STATUS_END -->
