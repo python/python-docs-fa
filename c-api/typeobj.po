@@ -1082,7 +1082,7 @@ msgid "Each slot has a section describing inheritance.  If :c:func:`PyType_Ready
 msgstr "هر جایگاه بخشی دارد که وراثت را توصیف می‌کند. اگر ممکن است :c:func:`PyType_Ready` هنگامی که فیلد برابر ``NULL`` تنظیم شده باشد، مقداری تعیین کند، آنگاه بخشی نیز با عنوان «پیش‌فرض» وجود خواهد داشت. (توجه داشته باشید که بسیاری از فیلدهای تنظیم‌شده در :c:data:`PyBaseObject_Type` و :c:data:`PyType_Type` عملاً به‌عنوان پیش‌فرض عمل می‌کنند.)"
 
 msgid "See :c:macro:`Py_tp_name` for the corresponding :c:member:`Slot ID <PySlot.sl_id>`."
-msgstr ""
+msgstr "برای :c:member:`شناسه‌ی جایگاه <PySlot.sl_id>` متناظر، به :c:macro:`Py_tp_name` مراجعه کنید."
 
 msgid "Pointer to a NUL-terminated string containing the name of the type. For types that are accessible as module globals, the string should be the full module name, followed by a dot, followed by the type name; for built-in types, it should be just the type name.  If the module is a submodule of a package, the full package name is part of the full module name.  For example, a type named :class:`!T` defined in module :mod:`!M` in subpackage :mod:`!Q` in package :mod:`!P` should have the :c:member:`~PyTypeObject.tp_name` initializer ``\"P.Q.M.T\"``."
 msgstr "اشاره‌گر به رشته‌ی پایان‌یافته با تهی که نام نوع را در بر دارد. برای نوع‌هایی که به‌صورت متغیرهای سراسری ماژول در دسترس‌اند، این رشته باید شامل نام کامل ماژول، سپس یک نقطه و سپس نام نوع باشد؛ برای نوع‌های توکار، باید فقط نام نوع باشد. اگر ماژول، زیرماژولی از یک بسته باشد، نام کامل بسته بخشی از نام کامل ماژول است. برای مثال، نوعی با نام :class:`!T` که در ماژول :mod:`!M` در زیربسته‌ی :mod:`!Q` در بسته‌ی :mod:`!P` تعریف‌شده باشد، باید مقداردهنده‌ی اولیه‌ی :c:member:`~PyTypeObject.tp_name` آن ``\"P.Q.M.T\"`` باشد."
@@ -1103,7 +1103,7 @@ msgid "These fields allow calculating the size in bytes of instances of the type
 msgstr "این فیلد‌ها محاسبه‌ی اندازه‌ی نمونه‌های نوع بر حسب بایت را ممکن می‌سازند."
 
 msgid "See :c:macro:`Py_tp_basicsize`, :c:macro:`Py_tp_extra_basicsize` and :c:macro:`Py_tp_itemsize` for the corresponding :c:member:`Slot IDs <PySlot.sl_id>`."
-msgstr ""
+msgstr "برای :c:member:`شناسه‌های جایگاه <PySlot.sl_id>` متناظر، به :c:macro:`Py_tp_basicsize`، :c:macro:`Py_tp_extra_basicsize` و :c:macro:`Py_tp_itemsize` مراجعه کنید."
 
 msgid "There are two kinds of types: types with fixed-length instances have a zero :c:member:`!tp_itemsize` field, types with variable-length instances have a non-zero :c:member:`!tp_itemsize` field.  For a type with fixed-length instances, all instances have the same size, given in :c:member:`!tp_basicsize`. (Exceptions to this rule can be made using :c:func:`PyUnstable_Object_GC_NewWithExtraData`.)"
 msgstr "دو گونه نوع وجود دارد: نوع‌هایی با نمونه‌های طول ثابت، فیلد :c:member:`!tp_itemsize` صفر دارند و نوع‌هایی با نمونه‌های طول متغیر، فیلد :c:member:`!tp_itemsize` غیرصفر دارند. برای نوعی با نمونه‌های طول ثابت، همه نمونه‌ها اندازه یکسانی دارند که در :c:member:`!tp_basicsize` داده شده است. (می‌توان با استفاده از :c:func:`PyUnstable_Object_GC_NewWithExtraData` برای این قاعده استثنا قائل شد.)"
@@ -1496,7 +1496,7 @@ msgid "The :c:member:`~PyTypeObject.tp_as_buffer` field is not inherited, but th
 msgstr "فیلد :c:member:`~PyTypeObject.tp_as_buffer` به ارث برده نمی‌شود، اما فیلدهای درون آن به‌طور جداگانه به ارث برده می‌شوند."
 
 msgid "See :c:macro:`Py_tp_flags` for the corresponding :c:member:`Slot ID <PySlot.sl_id>`."
-msgstr ""
+msgstr "برای :c:member:`شناسه‌ی جایگاه <PySlot.sl_id>` متناظر، به :c:macro:`Py_tp_flags` مراجعه کنید."
 
 msgid "This field is a bit mask of various flags.  Some flags indicate variant semantics for certain situations; others are used to indicate that certain fields in the type object (or in the extension structures referenced via :c:member:`~PyTypeObject.tp_as_number`, :c:member:`~PyTypeObject.tp_as_sequence`, :c:member:`~PyTypeObject.tp_as_mapping`, and :c:member:`~PyTypeObject.tp_as_buffer`) that were historically not always present are valid; if such a flag bit is clear, the type fields it guards must not be accessed and must be considered to have a zero or ``NULL`` value instead."
 msgstr "این فیلد یک نقاب بیتی از پرچم‌های گوناگون است. برخی پرچم‌ها معناشناسی متفاوتی را برای موقعیت‌های خاص نشان می‌دهند؛ برخی دیگر برای نشان دادن این موضوع به کار می‌روند که فیلدهای خاصی در شیء نوع (یا در ساختارهای توسعه‌ای که از طریق :c:member:`~PyTypeObject.tp_as_number`، :c:member:`~PyTypeObject.tp_as_sequence`، :c:member:`~PyTypeObject.tp_as_mapping` و :c:member:`~PyTypeObject.tp_as_buffer` به آن‌ها ارجاع می‌شود) که به‌طور تاریخی همیشه وجود نداشته‌اند، معتبر هستند؛ اگر چنین بیت پرچمی صفر باشد، نباید به فیلدهای نوعی که این بیت از آن‌ها نگهبانی می‌کند دسترسی پیدا کرد و باید در عوض، آن‌ها را دارای مقدار صفر یا ``NULL`` در نظر گرفت."
@@ -1561,10 +1561,8 @@ msgstr "این پرچم هرگز توسط نوع‌هایی که پرچم :c:mac
 msgid "This bit indicates that instances of the class have a :attr:`~object.__dict__` attribute, and that the space for the dictionary is managed by the VM."
 msgstr "این بیت نشان می‌دهد که نمونه‌های کلاس دارای ویژگی :attr:`~object.__dict__` هستند و فضای دیکشنری توسط ماشین مجازی مدیریت می‌شود."
 
-#, fuzzy
-#| msgid "If this flag is set, :c:macro:`Py_TPFLAGS_HAVE_GC` should also be set."
 msgid "If this flag is set, :c:macro:`Py_TPFLAGS_HAVE_GC` must also be set."
-msgstr "اگر این پرچم تنظیم شده باشد، :c:macro:`Py_TPFLAGS_HAVE_GC` نیز باید تنظیم شود."
+msgstr "اگر این پرچم تنظیم شود، :c:macro:`Py_TPFLAGS_HAVE_GC` نیز باید تنظیم شود."
 
 msgid "The type traverse function must call :c:func:`PyObject_VisitManagedDict` and its clear function must call :c:func:`PyObject_ClearManagedDict`."
 msgstr "تابع پیمایش نوع باید :c:func:`PyObject_VisitManagedDict` را فراخوانی کند و تابع پاک‌سازی آن باید :c:func:`PyObject_ClearManagedDict` را فراخوانی کند."
@@ -1579,10 +1577,10 @@ msgid "This flag is inherited unless the :c:member:`~PyTypeObject.tp_weaklistoff
 msgstr "این پرچم به ارث برده می‌شود مگر اینکه فیلد :c:member:`~PyTypeObject.tp_weaklistoffset` در یک ابرکلاس تنظیم شده باشد."
 
 msgid "These bits indicate that the VM will manage some fields by storing them before the object. Currently, this macro is equivalent to :c:expr:`Py_TPFLAGS_MANAGED_DICT | Py_TPFLAGS_MANAGED_WEAKREF`."
-msgstr ""
+msgstr "این بیت‌ها نشان می‌دهند که ماشین مجازی (VM) برخی از فیلدها را با ذخیره‌سازی آن‌ها پیش از شیء مدیریت خواهد کرد. در حال حاضر، این کلان‌دستور معادل :c:expr:`Py_TPFLAGS_MANAGED_DICT | Py_TPFLAGS_MANAGED_WEAKREF` است."
 
 msgid "This macro value relies on the implementation of the VM, so its value is not stable and may change in a future version. Prefer using individual flags instead."
-msgstr ""
+msgstr "این مقدار کلان‌دستور به پیاده‌سازی ماشین مجازی (VM) وابسته است؛ بنابراین، مقدار آن پایدار نیست و ممکن است در نسخه‌ی آینده تغییر کند. ترجیح بر این است که به‌جای آن از پرچم‌های مجزا استفاده کنید."
 
 msgid "Only usable with variable-size types, i.e. ones with non-zero :c:member:`~PyTypeObject.tp_itemsize`."
 msgstr "فقط با نوع‌های دارای اندازه متغیر قابل استفاده است؛ یعنی نوع‌هایی که :c:member:`~PyTypeObject.tp_itemsize` غیر صفر دارند."
@@ -1698,13 +1696,11 @@ msgstr "یک اشاره‌گر اختیاری به رشته‌ی C پایان‌
 msgid "This field is *not* inherited by subtypes."
 msgstr "این فیلد توسط زیرنوع‌ها به ارث برده *نمی‌شود*."
 
-#, fuzzy
-#| msgid "An optional pointer to a traversal function for the garbage collector.  This is only used if the :c:macro:`Py_TPFLAGS_HAVE_GC` flag bit is set.  The signature is::"
 msgid "An optional pointer to a traversal function for the garbage collector.  This is only used if the :c:macro:`Py_TPFLAGS_HAVE_GC` flag bit is set."
-msgstr "اشاره‌گر اختیاری به تابع پیمایش برای زباله‌روب. این تنها زمانی استفاده می‌شود که بیت پرچم :c:macro:`Py_TPFLAGS_HAVE_GC` تنظیم شده باشد. امضا به این صورت است::"
+msgstr "یک اشاره‌گر اختیاری به یک تابع پیمایش برای جمع‌آوری‌کننده‌ی زباله. این مورد فقط در صورتی استفاده می‌شود که بیت پرچم :c:macro:`Py_TPFLAGS_HAVE_GC` تنظیم شده باشد."
 
 msgid "See :ref:`gc-traversal` for documentation."
-msgstr ""
+msgstr "برای مستندات، :ref:`gc-traversal` را ببینید."
 
 msgid "This field is inherited by subtypes together with :c:member:`~PyTypeObject.tp_clear` and the :c:macro:`Py_TPFLAGS_HAVE_GC` flag bit: the flag bit, :c:member:`~PyTypeObject.tp_traverse`, and :c:member:`~PyTypeObject.tp_clear` are all inherited from the base type if they are all zero in the subtype."
 msgstr "این فیلد به همراه :c:member:`~PyTypeObject.tp_clear` و بیت پرچم :c:macro:`Py_TPFLAGS_HAVE_GC` توسط زیرنوع‌ها به ارث برده می‌شود: بیت پرچم، :c:member:`~PyTypeObject.tp_traverse` و :c:member:`~PyTypeObject.tp_clear` همگی در صورتی از نوع پایه به ارث برده می‌شوند که هر سه در زیرنوع صفر باشند."
@@ -1943,7 +1939,7 @@ msgid "An optional pointer to a base type from which type properties are inherit
 msgstr "اشاره‌گری اختیاری به یک نوع پایه که ویژگی‌های نوع از آن به ارث می‌رسند. در این سطح، تنها ارث‌بری تکی پشتیبانی می‌شود؛ ارث‌بری چندگانه نیازمند ایجاد یک شیء نوع به‌صورت پویا با فراخوانی فرانوع است."
 
 msgid "For the corresponding slot ID, see :c:macro:`Py_tp_base`."
-msgstr ""
+msgstr "برای شناسه‌ی جایگاه متناظر، :c:macro:`Py_tp_base` را ببینید."
 
 msgid "Slot initialization is subject to the rules of initializing globals. C99 requires the initializers to be \"address constants\".  Function designators like :c:func:`PyType_GenericNew`, with implicit conversion to a pointer, are valid C99 address constants."
 msgstr "مقداردهی اولیه جایگاه از قواعد مقداردهی اولیه متغیرهای سراسری پیروی می‌کند. C99 الزام می‌کند که مقداردهنده‌های اولیه «ثابت‌های آدرس» باشند. نشانگرهای تابع (function designator) مانند :c:func:`PyType_GenericNew` که به‌طور ضمنی به اشاره‌گر تبدیل می‌شوند، ثابت‌های آدرس معتبر در C99 هستند."
@@ -2123,7 +2119,7 @@ msgid "This field should be set to ``NULL`` and treated as read-only. Python wil
 msgstr "این فیلد باید روی ``NULL`` تنظیم شود و به‌عنوان فقط‌خواندنی در نظر گرفته شود. پایتون آن را زمانی که نوع :c:func:`مقداردهی اولیه <PyType_Ready>` شود، پر می‌کند."
 
 msgid "For the corresponding slot ID, see :c:macro:`Py_tp_bases`."
-msgstr ""
+msgstr "برای شناسه‌ی جایگاه متناظر، :c:macro:`Py_tp_bases` را ببینید."
 
 msgid "Multiple inheritance does not work well for statically defined types. If you set ``tp_bases`` to a tuple, Python will not raise an error, but some slots will only be inherited from the first base."
 msgstr "وراثت چندگانه برای نوع‌های تعریف‌شده به‌صورت ایستا به‌خوبی کار نمی‌کند. اگر ``tp_bases`` را روی یک تاپل تنظیم کنید، پایتون خطایی ایجاد نمی‌کند، اما برخی جایگاه‌ها فقط از اولین پایه به ارث برده می‌شوند."

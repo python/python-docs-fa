@@ -597,10 +597,8 @@ msgstr ":c:expr:`float complex`"
 msgid ":py:class:`complex`"
 msgstr ":py:class:`complex`"
 
-#, fuzzy
-#| msgid "``'f'``"
 msgid "``'Zf'``"
-msgstr "``'f'``"
+msgstr "``'Zf'``"
 
 msgid ":class:`c_double_complex`"
 msgstr ":class:`c_double_complex`"
@@ -608,10 +606,8 @@ msgstr ":class:`c_double_complex`"
 msgid ":c:expr:`double complex`"
 msgstr ":c:expr:`double complex`"
 
-#, fuzzy
-#| msgid "``'d'``"
 msgid "``'Zd'``"
-msgstr "``'d'``"
+msgstr "``'Zd'``"
 
 msgid ":class:`c_longdouble_complex`"
 msgstr ":class:`c_longdouble_complex`"
@@ -619,13 +615,11 @@ msgstr ":class:`c_longdouble_complex`"
 msgid ":c:expr:`long double complex`"
 msgstr ":c:expr:`long double complex`"
 
-#, fuzzy
-#| msgid "``'Z'``"
 msgid "``'Zg'``"
-msgstr "``'Z'``"
+msgstr "``'Zg'``"
 
 msgid "The :py:attr:`~_SimpleCData._type_` types ``F``, ``D`` and ``G`` have been replaced with ``Zf``, ``Zd`` and ``Zg``."
-msgstr ""
+msgstr "انواع ``F``، ``D`` و ``G`` در :py:attr:`~_SimpleCData._type_` با ``Zf``، ``Zd`` و ``Zg`` جایگزین شده‌اند."
 
 msgid "All these types can be created by calling them with an optional initializer of the correct type and value::"
 msgstr "همه‌ی این نوع‌ها را می‌توان با فراخوانی آن‌ها به‌همراه یک مقدارده اولیه‌ی اختیاری از نوع و مقدار صحیح ایجاد کرد::"
@@ -2110,16 +2104,14 @@ msgstr "توابع این کتابخانه از قرارداد فراخوانی 
 msgid "If you have an existing :py:attr:`handle <ctypes.CDLL._handle>` to an already loaded shared library, it can be passed as the *handle* argument to wrap the opened library in a new :py:class:`!CDLL` object. In this case, *name* is only used to set the :py:attr:`~ctypes.CDLL._name` attribute, but it may be adjusted and/or validated."
 msgstr "اگر یک :py:attr:`handle <ctypes.CDLL._handle>` موجود برای یک کتابخانه اشتراکی از پیش بارگذاری‌شده دارید، می‌توان آن را به‌عنوان آرگومان *handle* برای دربرگرفتن کتابخانه بازشده در قالب یک شیء جدید :py:class:`!CDLL` ارسال کرد. در این حالت، *name* فقط برای تنظیم ویژگی :py:attr:`~ctypes.CDLL._name` استفاده می‌شود، اما ممکن است تنظیم و/یا اعتبارسنجی شود."
 
-#, fuzzy
-#| msgid "If *handle* is ``None``, the underlying platform's :manpage:`dlopen(3)` or :c:func:`!LoadLibrary` function is used to load the library into the process, and to get a handle to it."
 msgid "If *handle* is ``None``, the underlying platform's :manpage:`dlopen(3)` or `LoadLibraryExW`_ function is used to load the library into the process, and to get a handle to it."
-msgstr "اگر *handle* برابر ``None`` باشد، از تابع :manpage:`dlopen(3)` یا :c:func:`!LoadLibrary` پلتفرم زیرین برای بارگذاری کتابخانه در فرایند و دریافت یک دسته برای آن استفاده می‌شود."
+msgstr "اگر *handle* برابر با ``None`` باشد، تابع :manpage:`dlopen(3)` یا `LoadLibraryExW`_ پلتفرم زیرین برای بارگذاری کتابخانه در فرایند و به دست آوردن دسته‌ای به آن استفاده می‌شود."
 
 msgid "*name* is the pathname of the shared library to open. If *name* does not contain a path separator, the library is found in a platform-specific way."
 msgstr "*name* مسیر کتابخانه اشتراکی برای باز کردن است. اگر *name* شامل جداکننده مسیر نباشد، کتابخانه به شیوه‌ای وابسته به پلتفرم یافت می‌شود."
 
 msgid "On Windows, the ``.DLL`` suffix may be missing. (For details, see `LoadLibraryExW`_ documentation.) Other platform-specific prefixes and suffixes (for example, ``lib``, ``.so``, ``.dylib``, or version numbers) must be present in *name*; they are not added automatically. See :ref:`ctypes-finding-shared-libraries` for more information."
-msgstr ""
+msgstr "در ویندوز، پسوند ``.DLL`` ممکن است وجود نداشته باشد. (برای جزئیات، مستندات `LoadLibraryExW`_ را ببینید.) سایر پیشوندها و پسوندهای مختص پلتفرم (به‌عنوان‌مثال، ``lib``، ``.so``، ``.dylib`` یا شماره‌های نسخه) باید در *name* موجود باشند؛ آن‌ها به‌طور خودکار اضافه نمی‌شوند. برای اطلاعات بیشتر :ref:`ctypes-finding-shared-libraries` را ببینید."
 
 msgid "On non-Windows systems, *name* can  be ``None``. In this case, :c:func:`!dlopen` is called with ``NULL``, which opens the main program as a \"library\". (Some systems do the same is *name* is empty; ``None``/``NULL`` is more portable.)"
 msgstr "در سیستم‌های غیرویندوزی، *name* می‌تواند ``None`` باشد. در این حالت، :c:func:`!dlopen` با ``NULL`` فراخوانی می‌شود، که برنامه‌ی اصلی را به‌عنوان یک «کتابخانه» باز می‌کند. (برخی سیستم‌ها اگر *name* خالی باشد نیز همین کار را انجام می‌دهند؛ ``None``/``NULL`` قابل‌حمل‌تر است.)"
@@ -2158,10 +2150,8 @@ msgstr "تابع :func:`ctypes.get_errno` مقدار نسخه خصوصی ctypes 
 msgid "The *use_last_error* parameter, when set to true, enables the same mechanism for the Windows error code which is managed by the :func:`GetLastError` and :func:`!SetLastError` Windows API functions; :func:`ctypes.get_last_error` and :func:`ctypes.set_last_error` are used to request and change the ctypes private copy of the windows error code."
 msgstr "پارامتر *use_last_error*، هنگامی که روی true تنظیم شود، همان سازوکار را برای کد خطای ویندوز، که توسط توابع API ویندوز :func:`GetLastError` و :func:`!SetLastError` مدیریت می‌شود، فعال می‌کند؛ از :func:`ctypes.get_last_error` و :func:`ctypes.set_last_error` برای درخواست و تغییر نسخه‌ی خصوصی ctypes از کد خطای ویندوز استفاده می‌شود."
 
-#, fuzzy
-#| msgid "The *winmode* parameter is used on Windows to specify how the library is loaded (since *mode* is ignored). It takes any value that is valid for the Win32 API ``LoadLibraryEx`` flags parameter. When omitted, the default is to use the flags that result in the most secure DLL load, which avoids issues such as DLL hijacking. Passing the full path to the DLL is the safest way to ensure the correct library and dependencies are loaded."
 msgid "The *winmode* parameter is used on Windows to specify how the library is loaded (since *mode* is ignored). It takes any value that is valid for the Win32 API `LoadLibraryExW`_ flags parameter. When omitted, the default is to use the flags that result in the most secure DLL load, which avoids issues such as DLL hijacking. Passing the full path to the DLL is the safest way to ensure the correct library and dependencies are loaded."
-msgstr "پارامتر *winmode* در ویندوز برای مشخص کردن چگونگی بارگذاری کتابخانه استفاده می‌شود (زیرا *mode* در نظر گرفته نمی‌شود). این پارامتر هر مقداری را می‌پذیرد که برای پارامتر پرچم‌های ``LoadLibraryEx`` در Win32 API معتبر باشد. در صورت حذف، پیش‌فرض استفاده از پرچم‌هایی است که به امن‌ترین بارگذاری DLL منجر می‌شوند و از مسائلی مانند ربایش DLL (DLL hijacking) جلوگیری می‌کنند. ارسال مسیر کامل DLL، امن‌ترین راه برای اطمینان از بارگذاری کتابخانه و وابستگی‌های صحیح است."
+msgstr "پارامتر *winmode* در ویندوز برای مشخص کردن نحوه‌ی بارگذاری کتابخانه استفاده می‌شود (زیرا *mode* نادیده گرفته می‌شود). این پارامتر هر مقداری را که برای پرچم‌های API ویندوز در `LoadLibraryExW`_ معتبر باشد می‌پذیرد. هنگامی که این پارامتر حذف شود، پیش‌فرض استفاده از پرچم‌هایی است که امن‌ترین بارگذاری DLL را به همراه دارند، و این امر از مشکلاتی نظیر ربایش DLL جلوگیری می‌کند. ارسال مسیر کامل به DLL امن‌ترین راه برای اطمینان از بارگذاری کتابخانه و وابستگی‌های درست است."
 
 msgid "On Windows creating a :class:`CDLL` instance may fail even if the DLL name exists. When a dependent DLL of the loaded DLL is not found, a :exc:`OSError` error is raised with the message *\"[WinError 126] The specified module could not be found\".* This error message does not contain the name of the missing DLL because the Windows API does not return this information making this error hard to diagnose. To resolve this error and determine which DLL is not found, you need to find the list of dependent DLLs and determine which one is not found using Windows debugging and tracing tools."
 msgstr "در ویندوز، ایجاد یک نمونه از :class:`CDLL` ممکن است حتی اگر نام DLL وجود داشته باشد شکست بخورد. هنگامی که یک DLL وابسته به DLL بارگذاری‌شده پیدا نشود، یک خطای :exc:`OSError` با پیام *\"[WinError 126] The specified module could not be found\".* پرتاب می‌شود. این پیام خطا حاوی نام DLL مفقود نیست، زیرا API ویندوز این اطلاعات را برنمی‌گرداند و این موضوع، تشخیص این خطا را دشوار می‌کند. برای رفع این خطا و تعیین این‌که کدام DLL پیدا نشده است، باید فهرست DLLهای وابسته را پیدا کنید و با استفاده از ابزارهای اشکال‌زدایی و ردگیری ویندوز مشخص کنید کدام‌یک پیدا نشده است."
@@ -2275,37 +2265,31 @@ msgid "Finding shared libraries"
 msgstr "یافتن کتابخانه‌های مشترک"
 
 msgid "When programming in a compiled language, shared libraries are accessed when compiling/linking a program, and when the program is run. The programmer specifies a short name; the C compiler, linker, and runtime dynamic library loader then interact in system-specific ways to find the filename of the library to load."
-msgstr ""
+msgstr "هنگام برنامه‌نویسی به یک زبان کامپایل‌شده، کتابخانه‌های مشترک هنگام کامپایل/پیوند دادن یک برنامه و همچنین هنگام اجرای برنامه مورد دسترسی قرار می‌گیرند. برنامه‌نویس یک نام کوتاه مشخص می‌کند؛ سپس کامپایلر C، پیونددهنده و بارگذار کتابخانه‌ی پویای ران‌تایم به روش‌های مختص سیستم تعامل می‌کنند تا نام پرونده‌ی کتابخانه را برای بارگذاری پیدا کنند."
 
 msgid "While the mapping from short names to filenames is not consistently exposed by platforms, the :mod:`!ctypes.util` module provides a function, :func:`!find_library`, that attempts to match it. However, as backwards compatibility concerns make it difficult to adjust its behavior for new platforms and configurations, the function is :term:`soft deprecated`."
-msgstr ""
+msgstr "در حالی که نگاشت از نام‌های کوتاه به نام پرونده‌ها به‌طور سازگار توسط پلتفرم‌ها در معرض دید قرار نمی‌گیرد، ماژول :mod:`!ctypes.util` تابعی به نام :func:`!find_library` فراهم می‌کند که تلاش می‌کند آن را مطابقت دهد. با این حال، از آنجا که نگرانی‌های مربوط به سازگاری رو به عقب تنظیم رفتار آن را برای پلتفرم‌ها و پیکربندی‌های جدید دشوار می‌کند، این تابع :term:`به‌طور نرم منسوخ‌شده <soft deprecated>` است."
 
-#, fuzzy
-#| msgid "If wrapping a shared library with :mod:`!ctypes`, it *may* be better to determine the shared library name at development time, and hardcode that into the wrapper module instead of using :func:`~ctypes.util.find_library` to locate the library at runtime."
 msgid "If wrapping a shared library with :mod:`!ctypes`, consider determining the shared library name at development time, and hardcoding it into the wrapper module instead of using :func:`!find_library` to locate the library at runtime. Also consider adding a configuration option or environment variable to let users select a library to use, and then perhaps use :func:`!find_library` as a default or fallback."
-msgstr "اگر در حال پوشش دادن یک کتابخانه اشتراکی با :mod:`!ctypes` هستید، *ممکن است* بهتر باشد نام کتابخانه اشتراکی را در زمان توسعه تعیین کنید و آن را به‌صورت مقدار ثابت (hardcode) در ماژول پوششی قرار دهید، به‌جای استفاده از :func:`~ctypes.util.find_library` برای یافتن کتابخانه در ران‌تایم."
+msgstr "اگر در حال پوشش‌دهی یک کتابخانه‌ی مشترک با :mod:`!ctypes` هستید، به جای استفاده از :func:`!find_library` برای یافتن کتابخانه در زمان اجرای برنامه‌ (ران‌تایم)، تعیین نام کتابخانه‌ی مشترک را در زمان توسعه در نظر بگیرید و آن را به صورت ثابت (سخت‌کد) در ماژول پوششی قرار دهید. همچنین اضافه کردن یک گزینه‌ی پیکربندی یا متغیر محیطی را برای اجازه دادن به کاربران جهت انتخاب کتابخانه‌ی مورد استفاده در نظر بگیرید، و سپس شاید از :func:`!find_library` به عنوان پیش‌فرض یا جایگزین استفاده کنید."
 
 msgid "Try to find a library and return a pathname."
-msgstr ""
+msgstr "تلاش برای یافتن یک کتابخانه و بازگرداندن یک مسرنام."
 
-#, fuzzy
-#| msgid "Try to find a library and return a pathname.  *name* is the library name without any prefix like ``lib``, suffix like ``.so``, ``.dylib`` or version number (this is the form used for the posix linker option :option:`!-l`).  If no library can be found, returns ``None``."
 msgid "*name* is the \"short\" library name without any prefix like ``lib``, suffix like ``.so``, ``.dylib`` or version number. (This is the form used for the posix linker option :option:`!-l`.) The result is in a format suitable for passing to :py:class:`~ctypes.CDLL`."
-msgstr "تلاش می‌کند کتابخانه‌ای را بیابد و یک مسیر نام برگرداند. *name* نام کتابخانه بدون هیچ پیشوندی مانند ``lib``، پسوندی مانند ``.so`` یا ``.dylib``، یا شماره‌ی نسخه است (این قالب برای گزینه‌ی پیونددهنده‌ی POSIX یعنی :option:`!-l` به کار می‌رود). اگر هیچ کتابخانه‌ای یافت نشود، ``None`` برگردانده می‌شود."
+msgstr "*name* نام «کوتاه» کتابخانه بدون هیچ پیشوندی مانند ``lib``، پسوندی مانند ``.so``، ``.dylib`` یا شماره‌ی نسخه است. (این شکلی است که برای گزینه‌ی پیونددهنده‌ی posix یعنی :option:`!-l` استفاده می‌شود.) نتیجه در قالبی مناسب برای ارسال به :py:class:`~ctypes.CDLL` است."
 
 msgid "If no library can be found, return ``None``."
-msgstr ""
+msgstr "اگر هیچ کتابخانه‌ای پیدا نشود، ``None`` را بازمی‌گرداند."
 
 msgid "The exact functionality is system dependent, and is *not guaranteed* to match the behavior of the compiler, linker, and loader used for (or by) Python. It is recommended to only use this function as a default or fallback,"
-msgstr ""
+msgstr "عملکرد دقیق به سیستم وابسته است و *تضمین نمی‌شود* که با رفتار کامپایلر، پیونددهنده و بارگذار مورد استفاده برای (یا توسط) پایتون مطابقت داشته باشد. توصیه می‌شود فقط از این تابع به عنوان پیش‌فرض یا جایگزین استفاده کنید،"
 
 msgid "This function is kept for use in cases where it works, but not expected to be updated for additional platforms and configurations."
-msgstr ""
+msgstr "این تابع برای استفاده در مواردی که کار می‌کند حفظ شده است، اما انتظار نمی‌رود برای پلتفرم‌ها و پیکربندی‌های اضافی به‌روزرسانی شود."
 
-#, fuzzy
-#| msgid "On Linux, :func:`~ctypes.util.find_library` tries to run external programs (``/sbin/ldconfig``, ``gcc``, ``objdump`` and ``ld``) to find the library file. It returns the filename of the library file."
 msgid "On Linux, :func:`!find_library` tries to run external programs (``/sbin/ldconfig``, ``gcc``, ``objdump`` and ``ld``) to find the library file. If the output of these programs does not correspond to the dynamic linker used by Python, the result of this function may be misleading."
-msgstr "در لینوکس، :func:`~ctypes.util.find_library` تلاش می‌کند برنامه‌های خارجی (``/sbin/ldconfig``، ``gcc``، ``objdump`` و ``ld``) را اجرا کند تا پرونده کتابخانه را پیدا کند. نام پرونده کتابخانه را برمی‌گرداند."
+msgstr "در لینوکس، :func:`!find_library` تلاش می‌کند برنامه‌های خارجی (``/sbin/ldconfig``، ``gcc``، ``objdump`` و ``ld``) را اجرا کند تا پرونده‌ی کتابخانه را بیابد. اگر خروجی این برنامه‌ها با پیونددهنده‌ی پویای مورد استفاده‌ی پایتون مطابقت نداشته باشد، ممکن است نتیجه‌ی این تابع گمراه‌کننده باشد."
 
 msgid "On Linux, the value of the environment variable ``LD_LIBRARY_PATH`` is used when searching for libraries, if a library cannot be found by any other means."
 msgstr "در لینوکس، هنگام جست‌وجوی کتابخانه‌ها، اگر کتابخانه‌ای به هیچ روش دیگری یافت نشود، مقدار متغیر محیطی ``LD_LIBRARY_PATH`` استفاده می‌شود."
@@ -2332,10 +2316,8 @@ msgstr ""
 "'libbz2.so.1.0'\n"
 ">>>"
 
-#, fuzzy
-#| msgid "On macOS and Android, :func:`~ctypes.util.find_library` uses the system's standard naming schemes and paths to locate the library, and returns a full pathname if successful::"
 msgid "On macOS and Android, :func:`!find_library` uses the system's standard naming schemes and paths to locate the library, and returns a full pathname if successful::"
-msgstr "در macOS و Android، :func:`~ctypes.util.find_library` از طرح‌های نام‌گذاری و مسیرهای استاندارد سیستم برای پیدا کردن کتابخانه استفاده می‌کند و در صورت موفقیت، یک نام مسیر کامل را برمی‌گرداند::"
+msgstr "در مک‌اواس و اندروید، :func:`!find_library` از الگوها و مسیرهای نام‌گذاری استاندارد سیستم برای یافتن کتابخانه استفاده می‌کند و در صورت موفقیت، یک مسیرنام کامل را برمی‌گرداند::"
 
 msgid ""
 ">>> from ctypes.util import find_library\n"
@@ -2360,18 +2342,14 @@ msgstr ""
 "'/System/Library/Frameworks/AGL.framework/AGL'\n"
 ">>>"
 
-#, fuzzy
-#| msgid "On Windows, :func:`~ctypes.util.find_library` searches along the system search path, and returns the full pathname, but since there is no predefined naming scheme a call like ``find_library(\"c\")`` will fail and return ``None``."
 msgid "On Windows, :func:`!find_library` searches along the system search path, and returns the full pathname, but since there is no predefined naming scheme a call like ``find_library(\"c\")`` will fail and return ``None``."
-msgstr "در ویندوز، :func:`~ctypes.util.find_library` در امتداد مسیر جستجوی سیستم جستجو می‌کند و مسیر کامل را برمی‌گرداند، اما از آنجا که هیچ الگوی نام‌گذاری از پیش تعریف‌شده‌ای وجود ندارد، فراخوانی مانند ``find_library(\"c\")`` با شکست مواجه می‌شود و ``None`` را برمی‌گرداند."
+msgstr "در ویندوز، :func:`!find_library` مسیر جستجوی سیستم را جستجو می‌کند و مسیرنام کامل را برمی‌گرداند، اما از آنجا که هیچ الگوی نام‌گذاری از پیش تعریف‌شده‌ای وجود ندارد، فراخوانی‌ای مانند ``find_library(\"c\")`` با شکست مواجه شده و ``None`` را برمی‌گرداند."
 
-#, fuzzy
-#| msgid "Returns the filename of the VC runtime library used by Python, and by the extension modules.  If the name of the library cannot be determined, ``None`` is returned."
 msgid "Returns the filename of the VC runtime library used by Python, and by the extension modules."
-msgstr "نام پرونده کتابخانه ران‌تایم VC مورد استفاده پایتون و ماژول‌های توسعه را برمی‌گرداند. اگر نام کتابخانه قابل تعیین نباشد، ``None`` برگردانده می‌شود."
+msgstr "نام پرونده‌ی کتابخانه‌ی ران‌تایم VC مورد استفاده‌ی پایتون و ماژول‌های توسعه‌ای را برمی‌گرداند."
 
 msgid "If the name of the library cannot be determined, ``None`` is returned. Notably, this will happen for recent versions of the VC runtime library, which are not directly loadable."
-msgstr ""
+msgstr "اگر نام کتابخانه قابل تشخیص نباشد، مقدار ``None`` برگردانده می‌شود. به طور ویژه، این اتفاق برای نسخه‌های جدیدتر کتابخانه‌ی ران‌تایم VC رخ می‌دهد که مستقیماً قابل بارگذاری نیستند."
 
 msgid "If you need to free memory, for example, allocated by an extension module with a call to the ``free(void *)``, it is important that you use the function in the same library that allocated the memory."
 msgstr "اگر نیاز دارید حافظه‌ای را آزاد کنید، برای مثال حافظه‌ای که توسط یک ماژول توسعه تخصیص داده شده است، با فراخوانی ``free(void *)``، مهم است که از تابع در همان کتابخانه‌ای استفاده کنید که آن حافظه را تخصیص داده است."

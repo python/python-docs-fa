@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-01 14:41+0330\n"
-"PO-Revision-Date: 2026-09-21 13:26+0330\n"
+"PO-Revision-Date: 2026-10-06 20:26+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
 "Language: fa\n"
@@ -62,10 +62,8 @@ msgstr "هنگامی که با آرگومان نام پرونده یا با پر
 msgid "When called with a directory name argument, it reads and executes an appropriately named script from that directory."
 msgstr "هنگامی که با آرگومان نام یک پوشه فراخوانی شود، اسکریپتی با نام مناسب را از آن پوشه می‌خواند و اجرا می‌کند."
 
-#, fuzzy
-#| msgid "When called with ``-c command``, it executes the Python statement(s) given as *command*.  Here *command* may contain multiple statements separated by newlines. Leading whitespace is significant in Python statements!"
 msgid "When called with ``-c command``, it executes the Python statement(s) given as *command*.  Here *command* may contain multiple statements separated by newlines."
-msgstr "هنگامی که با ``-c command`` فراخوانی شود، دستور(های) پایتونِ داده‌شده به‌عنوان *command* را اجرا می‌کند. در اینجا *command* می‌تواند شامل چندین دستور باشد که با سطرهای جدید از هم جدا شده‌اند. فضای سفیدِ ابتدای سطر در دستورهای پایتون معنادار است!"
+msgstr "هنگامی که با ``-c command`` فراخوانی شود، دستور(های) پایتون داده‌شده به عنوان *command* را اجرا می‌کند. در اینجا *command* ممکن است شامل چندین دستور باشد که با خط جدید از یکدیگر جدا شده‌اند."
 
 msgid "When called with ``-m module-name``, the given module is located using the standard import mechanism and executed as a script."
 msgstr "وقتی با ``-m module-name`` فراخوانی شود، ماژول داده‌شده با استفاده از سازوکار استاندارد ایمپورت یافته می‌شود و به‌عنوان یک اسکریپت اجرا می‌شود."
@@ -217,7 +215,7 @@ msgid "Affects also comparisons of :class:`bytes` with :class:`int`."
 msgstr "همچنین بر مقایسه‌های :class:`bytes` با :class:`int` تأثیر می‌گذارد."
 
 msgid "Deprecate :option:`-b` and :option:`!-bb` command line options and schedule them to become no-op in Python 3.17. These were primarily helpers for the Python 2 -> 3 transition. Starting with Python 3.17, no :exc:`BytesWarning` will be raised for these cases; use a type checker instead."
-msgstr ""
+msgstr "گزینه‌های خط فرمان :option:`-b` و :option:`!-bb` منسوخ شده و زمان‌بندی شده‌اند تا در پایتون 3.17 به عملیات بی‌اثر تبدیل شوند. این گزینه‌ها در اصل کمکی برای گذار از پایتون ۲ به ۳ بودند. از پایتون 3.17 به بعد، هیچ :exc:`BytesWarning` برای این موارد ایجاد نخواهد شد؛ به جای آن از یک بررسی‌کننده نوع استفاده کنید."
 
 msgid "If given, Python won't try to write ``.pyc`` files on the import of source modules.  See also :envvar:`PYTHONDONTWRITEBYTECODE`."
 msgstr "در صورت داده شدن، پایتون هنگام ایمپورت ماژول‌های منبع تلاش نمی‌کند پرونده‌های ``.pyc`` را بنویسد. همچنین :envvar:`PYTHONDONTWRITEBYTECODE` را ببینید."
@@ -378,13 +376,13 @@ msgid "The *action* field is as explained above but only applies to warnings tha
 msgstr "فیلد *اکشن* همان‌طور است که در بالا توضیح داده شد، اما فقط بر هشدارهایی اعمال می‌شود که با فیلدهای باقی‌مانده مطابقت داشته باشند."
 
 msgid "The *message* field must match the start of the warning message; this match is case-insensitive. If it starts and ends with a forward slash (``/``), it specifies a regular expression, otherwise it specifies a literal string."
-msgstr ""
+msgstr "فیلد *message* باید با ابتدای پیام هشدار مطابقت داشته باشد؛ این تطابق به بزرگی و کوچکی حروف حساس نیست. اگر با یک اسلش (``/``) شروع و تمام شود، یک عبارت باقاعده را مشخص می‌کند، در غیر این صورت یک رشته‌ی لفظی را مشخص می‌کند."
 
 msgid "The *category* field matches the warning category (ex: ``DeprecationWarning``). This must be a class name; the match test whether the actual warning category of the message is a subclass of the specified warning category."
 msgstr "فیلد *category* با دسته‌ی هشدار مطابقت دارد (مثلاً ``DeprecationWarning``). این باید یک نام کلاس باشد؛ این مطابقت بررسی می‌کند که آیا دسته‌ی هشدار واقعی پیام، زیرکلاسی از دسته‌ی هشدار مشخص‌شده است یا خیر."
 
 msgid "The *module* field matches the (fully qualified) module name; this match is case-sensitive. If it starts and ends with a forward slash (``/``), it specifies a regular expression that the start of the fully qualified module name must match, otherwise it specifies a literal string that the fully qualified module name must be equal to."
-msgstr ""
+msgstr "فیلد *module* با نام ماژول (به‌طور کامل واجد شرایط) مطابقت دارد؛ این تطابق به بزرگی و کوچکی حروف حساس است. اگر با یک اسلش (``/``) شروع و تمام شود، یک عبارت باقاعده را مشخص می‌کند که ابتدای نام ماژولِ کامل باید با آن مطابقت داشته باشد، در غیر این صورت یک رشته‌ی لفظی را مشخص می‌کند که نام ماژولِ کامل باید با آن برابر باشد."
 
 msgid "The *lineno* field matches the line number, where zero matches all line numbers and is thus equivalent to an omitted line number."
 msgstr "فیلد *lineno* با شماره سطر تطبیق می‌کند، که در آن صفر با همه شماره سطرها تطبیق می‌کند و بنابراین معادل شماره سطر ذکرنشده است."
@@ -399,7 +397,7 @@ msgid "See :ref:`warning-filter` and :ref:`describing-warning-filters` for more 
 msgstr "برای جزئیات بیشتر به :ref:`warning-filter` و :ref:`describing-warning-filters` مراجعه کنید."
 
 msgid "Added regular expression support for *message* and *module*."
-msgstr ""
+msgstr "پشتیبانی از عبارت باقاعده برای *message* و *module* اضافه شد."
 
 msgid "Skip the first line of the source, allowing use of non-Unix forms of ``#!cmd``."
 msgstr "از سطر اول منبع بگذرید، که امکان استفاده از فرم‌های غیریونیکس ``#!cmd`` را می‌دهد."
@@ -479,13 +477,11 @@ msgstr "این گزینه تنها در برخی پلتفرم‌ها در دست
 msgid ":samp:`-X cpu_count={n}` overrides :func:`os.cpu_count`, :func:`os.process_cpu_count`, and :func:`multiprocessing.cpu_count`. *n* must be greater than or equal to 1. This option may be useful for users who need to limit CPU resources of a container system. See also :envvar:`PYTHON_CPU_COUNT`. If *n* is ``default``, nothing is overridden."
 msgstr ":samp:`-X cpu_count={n}` :func:`os.cpu_count`، :func:`os.process_cpu_count` و :func:`multiprocessing.cpu_count` را بازنویسی می‌کند. *n* باید بزرگ‌تر یا مساوی ۱ باشد. این گزینه ممکن است برای کاربرانی که نیاز به محدود کردن منابع CPU یک سیستم کانتینری دارند، مفید باشد. همچنین :envvar:`PYTHON_CPU_COUNT` را ببینید. اگر *n* برابر ``default`` باشد، هیچ‌چیز بازنویسی نمی‌شود."
 
-#, fuzzy
-#| msgid ":samp:`-X presite={package.module}` specifies a module that should be imported before the :mod:`site` module is executed and before the :mod:`__main__` module exists.  Therefore, the imported module isn't :mod:`__main__`. This can be used to execute code early during Python initialization. Python needs to be :ref:`built in debug mode <debug-build>` for this option to exist.  See also :envvar:`PYTHON_PRESITE`."
 msgid ":samp:`-X presite={module}` or :samp:`-X presite={module:func}` specifies an entry point that should be executed before the :mod:`site` module is executed and before the :mod:`__main__` module exists.  Therefore, the imported module isn't :mod:`__main__`. This can be used to execute code early during Python initialization. Python needs to be :ref:`built in debug mode <debug-build>` for this option to exist.  See also :envvar:`PYTHON_PRESITE`."
-msgstr ":samp:`-X presite={package.module}` ماژولی را مشخص می‌کند که باید پیش از اجرای ماژول :mod:`site` و پیش از وجود داشتن ماژول :mod:`__main__` ایمپورت شود.  بنابراین، ماژول ایمپورت‌شده :mod:`__main__` نیست. از این می‌توان برای اجرای کد در ابتدای راه‌اندازی پایتون استفاده کرد. پایتون باید :ref:`در حالت اشکال‌زدایی ساخته شده باشد <debug-build>` تا این گزینه وجود داشته باشد.  همچنین :envvar:`PYTHON_PRESITE` را ببینید."
+msgstr ":samp:`-X presite={module}` یا :samp:`-X presite={module:func}` یک نقطه‌ی ورود را مشخص می‌کند که باید پیش از اجرای ماژول :mod:`site` و پیش از ایجاد ماژول :mod:`__main__` اجرا شود. بنابراین، ماژول واردشده :mod:`__main__` نیست. از این گزینه می‌توان برای اجرای زودهنگام کد در جریان مقداردهی اولیه‌ی پایتون استفاده کرد. برای در دسترس بودن این گزینه، پایتون باید در :ref:`حالت اشکال‌زدایی ساخته شده باشد <debug-build>`. همچنین :envvar:`PYTHON_PRESITE` را ببینید."
 
 msgid "Accept also ``module:func`` entry point format."
-msgstr ""
+msgstr "همچنین فرمت نقطه‌ی ورودی ``module:func`` را بپذیرید."
 
 msgid ":samp:`-X gil={0,1}` forces the GIL to be disabled or enabled, respectively. Setting to ``0`` is only available in builds configured with :option:`--disable-gil`. See also :envvar:`PYTHON_GIL` and :ref:`whatsnew313-free-threaded-cpython`."
 msgstr ":samp:`-X gil={0,1}` قفل مفسر سراسری (GIL) را به‌ترتیب مجبور به غیرفعال یا فعال شدن می‌کند. تنظیم به ``0`` تنها در ساخت‌های پیکربندی‌شده با :option:`--disable-gil` در دسترس است. همچنین :envvar:`PYTHON_GIL` و :ref:`whatsnew313-free-threaded-cpython` را ببینید."
@@ -497,13 +493,13 @@ msgid ":samp:`-X context_aware_warnings={0,1}` causes the :class:`warnings.catch
 msgstr ":samp:`-X context_aware_warnings={0,1}` باعث می‌شود مدیر زمینه :class:`warnings.catch_warnings` برای ذخیره وضعیت فیلتر هشدارها از یک :class:`~contextvars.ContextVar` استفاده کند. اگر تنظیم نشده باشد، مقدار این گزینه در ساخت‌های نخ‌آزاد به‌طور پیش‌فرض ``1`` و در غیر این صورت ``0`` است. همچنین :envvar:`PYTHON_CONTEXT_AWARE_WARNINGS` را ببینید."
 
 msgid ":samp:`-X pathconfig_warnings={0,1}` if true (``1``) then :ref:`sys-path-init` is allowed to log warnings into stderr. If false (``0``) suppress these warnings. Set to true by default. See also :envvar:`PYTHON_PATHCONFIG_WARNINGS`."
-msgstr ""
+msgstr ":samp:`-X pathconfig_warnings={0,1}` اگر درست باشد (``1``) آنگاه :ref:`sys-path-init` مجاز است هشدارها را در stderr ثبت کند. اگر نادرست باشد (``0``) این هشدارها را سرکوب کنید. به طور پیش‌فرض روی درست تنظیم شده است. همچنین ببینید :envvar:`PYTHON_PATHCONFIG_WARNINGS`."
 
 msgid ":samp:`-X tlbc={0,1}` enables (1, the default) or disables (0) thread-local bytecode in builds configured with :option:`--disable-gil`.  When disabled, this also disables the specializing interpreter.  See also :envvar:`PYTHON_TLBC`."
 msgstr ":samp:`-X tlbc={0,1}` در ساخت‌هایی که با :option:`--disable-gil` پیکربندی شده‌اند، بایت‌کد نخ‌محلی را فعال (1، پیش‌فرض) یا غیرفعال (0) می‌کند.  در صورت غیرفعال بودن، مفسر تخصص‌ساز (specializing interpreter) نیز غیرفعال می‌شود.  همچنین ببینید: :envvar:`PYTHON_TLBC`."
 
 msgid ":samp:`-X lazy_imports={all,normal}` controls lazy import behavior. ``all`` makes all imports lazy by default, and ``normal`` (the default) respects the ``lazy`` keyword in source code. See also :envvar:`PYTHON_LAZY_IMPORTS`."
-msgstr ""
+msgstr ":samp:`-X lazy_imports={all,normal}` رفتار ایمپورت تنبل را کنترل می‌کند. مقدار ``all`` تمام ایمپورت‌ها را به طور پیش‌فرض تنبل می‌کند، و ``normal`` (پیش‌فرض) به کلیدواژه ``lazy`` در کد منبع احترام می‌گذارد. همچنین ببینید :envvar:`PYTHON_LAZY_IMPORTS`."
 
 msgid "It also allows passing arbitrary values and retrieving them through the :data:`sys._xoptions` dictionary."
 msgstr "این گزینه همچنین امکان ارسال مقادیر دلخواه و بازیابی آن‌ها از طریق دیکشنری :data:`sys._xoptions` را فراهم می‌کند."
@@ -637,16 +633,14 @@ msgstr "بخش ``encodingname`` اکنون اختیاری است."
 msgid "On Windows, the encoding specified by this variable is ignored for interactive console buffers unless :envvar:`PYTHONLEGACYWINDOWSSTDIO` is also specified. Files and pipes redirected through the standard streams are not affected."
 msgstr "در ویندوز، کدگذاری تعیین‌شده توسط این متغیر برای بافرهای کنسول تعاملی نادیده گرفته می‌شود، مگر اینکه :envvar:`PYTHONLEGACYWINDOWSSTDIO` نیز تعیین‌شده باشد. پرونده‌ها و پایپ‌هایی که از طریق جریان‌های استاندارد تغییر مسیر داده‌شده‌اند، تأثیر نمی‌پذیرند."
 
-#, fuzzy
-#| msgid "If this is set, Python won't add the :data:`user site-packages directory <site.USER_SITE>` to :data:`sys.path`."
 msgid "This is equivalent to the :option:`-s` option.  If this is set, Python won't add the :data:`user site-packages directory <site.USER_SITE>` to :data:`sys.path`."
-msgstr "اگر این تنظیم شده باشد، پایتون :data:`پوشه‌ی site-packages کاربر <site.USER_SITE>` را به :data:`sys.path` اضافه نمی‌کند."
+msgstr "این کار معادل گزینه ی :option:`-s` است. اگر این گزینه تنظیم شود، پایتون پوشه ی بسته های سایت کاربر :data:`user site-packages directory <site.USER_SITE>` را به :data:`sys.path` اضافه نمی کند."
 
 msgid "Defines the :data:`user base directory <site.USER_BASE>`, which is used to compute the path of the :data:`user site-packages directory <site.USER_SITE>` and :ref:`installation paths <sysconfig-user-scheme>` for ``python -m pip install --user``."
 msgstr ":data:`پوشه‌ی پایه‌ی کاربر <site.USER_BASE>` را تعریف می‌کند که برای محاسبه‌ی مسیر :data:`پوشه‌ی site-packages کاربر <site.USER_SITE>` و :ref:`مسیر‌های نصب <sysconfig-user-scheme>` برای ``python -m pip install --user`` استفاده می‌شود."
 
 msgid "To disable the user site-packages, see :envvar:`PYTHONNOUSERSITE` or the :option:`-s` option."
-msgstr ""
+msgstr "برای غیرفعال کردن بسته‌های سایت کاربر، :envvar:`PYTHONNOUSERSITE` یا گزینه‌ی :option:`-s` را ببینید."
 
 msgid "If this environment variable is set, ``sys.argv[0]`` will be set to its value instead of the value got through the C runtime.  Only works on macOS."
 msgstr "اگر این متغیر محیطی تنظیم شده باشد، ``sys.argv[0]`` به‌جای مقداری که از ران‌تایم C به دست می‌آید، به مقدار آن تنظیم می‌شود. فقط روی macOS کار می‌کند."
@@ -735,16 +729,16 @@ msgid "This variable can now also be used on Python compiled in release mode. It
 msgstr "اکنون می‌توان از این متغیر روی پایتون کامپایل‌شده در حالت انتشار نیز استفاده کرد. اکنون اگر روی رشته‌ی خالی تنظیم شود، هیچ اثری نخواهد داشت."
 
 msgid "If set to a non-zero integer, enable huge page support for :ref:`pymalloc <pymalloc>` arenas.  Set to ``0`` or unset to disable. Python must be compiled with :option:`--with-pymalloc-hugepages` for this variable to have any effect."
-msgstr ""
+msgstr "اگر روی یک عدد صحیح غیرصفر تنظیم شود، پشتیبانی از صفحات بزرگ را برای ناحیه‌های حافظه یا همان :ref:`pymalloc <pymalloc>` فعال می‌کند. برای غیرفعال کردن، آن را روی ``0`` قرار دهید یا تنظیم نکنید. پایتون باید با گزینه‌ی :option:`--with-pymalloc-hugepages` کامپایل‌شده باشد تا این متغیر تأثیری داشته باشد."
 
 msgid "When enabled, arena allocation uses ``MAP_HUGETLB`` (Linux) or ``MEM_LARGE_PAGES`` (Windows) with automatic fallback to regular pages if huge pages are not available."
-msgstr ""
+msgstr "هنگامی که فعال باشد، تخصیص ناحیه‌ی حافظه از ``MAP_HUGETLB`` (لینوکس) یا ``MEM_LARGE_PAGES`` (ویندوز) استفاده می‌کند و اگر صفحات بزرگ در دسترس نباشند، به‌طور خودکار به صفحات معمولی برمی‌گردد."
 
 msgid "On Linux, if the huge-page pool is exhausted, page faults — including copy-on-write faults triggered by :func:`os.fork` — deliver ``SIGBUS`` and kill the process.  Only enable this in environments where the huge-page pool is properly sized and fork-safety is not a concern."
-msgstr ""
+msgstr "در لینوکس، اگر استخر صفحات بزرگ تمام شود، خطاهای حافظه (page fault) — از جمله خطاهای کپی هنگام نوشتن (copy-on-write) که توسط :func:`os.fork` ایجاد می‌شوند — سیگنال ``SIGBUS`` را صادر کرده و فرایند را متوقف می‌کنند. این ویژگی را فقط در محیط‌هایی فعال کنید که استخر صفحات بزرگ اندازه‌گیری مناسبی داشته باشد و ایمنی انشعاب (fork-safety) دغدغه‌ی نباشد."
 
 msgid "On Windows you need a special privilege. See the `Windows documentation for large pages <https://learn.microsoft.com/windows/win32/memory/large-page-support>`_ for details. Python will fail on startup if the required privilege `SeLockMemoryPrivilege <https://learn.microsoft.com/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/lock-pages-in-memory>`_ is not held by the user."
-msgstr ""
+msgstr "در ویندوز به دسترسی ویژه‌ای نیاز دارید. برای جزئیات بیشتر، `مستندات ویندوز برای صفحات بزرگ <https://learn.microsoft.com/windows/win32/memory/large-page-support>`_ را ببینید. اگر کاربر دسترسی لازم `SeLockMemoryPrivilege <https://learn.microsoft.com/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/lock-pages-in-memory>`_ را نداشته باشد، پایتون هنگام راه‌اندازی با خطا مواجه خواهد شد."
 
 msgid "If set to a non-empty string, the default :term:`filesystem encoding and error handler` mode will revert to their pre-3.6 values of 'mbcs' and 'replace', respectively.  Otherwise, the new defaults 'utf-8' and 'surrogatepass' are used."
 msgstr "اگر روی رشته‌ای غیرخالی تنظیم شود، حالت پیش‌فرض :term:`filesystem encoding and error handler` به‌ترتیب به مقادیر پیش از 3.6 خود یعنی 'mbcs' و 'replace' بازمی‌گردد. در غیر این صورت، پیش‌فرض‌های جدید 'utf-8' و 'surrogatepass' استفاده می‌شوند."
@@ -855,7 +849,7 @@ msgid "If this variable is set to any value, the interpreter will not attempt to
 msgstr "اگر این متغیر به هر مقداری تنظیم شده باشد، مفسر تلاش نخواهد کرد :term:`REPL` مبتنی بر پایتون را که به :mod:`readline` نیاز دارد بارگذاری کند، و در عوض از :term:`REPL` سنتی مبتنی بر پارسر استفاده خواهد کرد."
 
 msgid "If this variable is set to any value, PyREPL will use :mod:`rlcompleter` to implement tab completion, instead of the default one which uses colors."
-msgstr ""
+msgstr "اگر این متغیر روی هر مقداری تنظیم شود، PyREPL به جای مقدار پیش‌فرضی که از رنگ‌ها استفاده می‌کند، از ماژول :mod:`rlcompleter` برای پیاده‌سازی تکمیل خودکار با کلید تب (tab completion) استفاده خواهد کرد."
 
 msgid "This environment variable can be used to set the location of a ``.python_history`` file (by default, it is ``.python_history`` in the user's home directory)."
 msgstr "از این متغیر محیطی می‌توان برای تعیین مکان پرونده ``.python_history`` استفاده کرد (به‌طور پیش‌فرض، این پرونده ``.python_history`` در پوشه خانگی کاربر است)."
@@ -873,7 +867,7 @@ msgid "If set to ``1`` then the :class:`warnings.catch_warnings` context manager
 msgstr "اگر روی ``1`` تنظیم شده باشد، مدیر زمینه‌ی :class:`warnings.catch_warnings` برای ذخیره‌سازی وضعیت فیلتر هشدارها از یک :class:`~contextvars.ContextVar` استفاده خواهد کرد. اگر تنظیم نشده باشد، مقدار پیش‌فرض این متغیر در ساخت‌های نخ‌آزاد ``1`` و در غیر این صورت ``0`` است. به :option:`-X context_aware_warnings<-X>` مراجعه کنید."
 
 msgid "If true (``1``) then :ref:`sys-path-init` is allowed to log warnings into stderr. If false (``0``) suppress these warnings. Set to true by default. See also :option:`-X pathconfig_warnings<-X>`."
-msgstr ""
+msgstr "اگر درست باشد (``1``)، اجازه‌ی ثبت هشدارها توسط :ref:`sys-path-init` در خروجی خطای استاندارد (stderr) داده می‌شود. اگر نادرست باشد (``0``)، این هشدارها سرکوب می‌شوند. به‌طور پیش‌فرض روی درست تنظیم شده است. همچنین نگاه کنید به :option:`-X pathconfig_warnings<-X>`."
 
 msgid "On builds where experimental just-in-time compilation is available, this variable can force the JIT to be disabled (``0``) or enabled (``1``) at interpreter startup."
 msgstr "در ساخت‌هایی (builds) که کامپایل در لحظه (JIT) به‌صورت آزمایشی در دسترس است، این متغیر می‌تواند JIT را هنگام راه‌اندازی مفسر به‌اجبار غیرفعال (``0``) یا فعال (``1``) کند."
@@ -885,12 +879,10 @@ msgid "See also the :option:`-X tlbc <-X>` command-line option."
 msgstr "همچنین گزینه‌ی خط فرمان :option:`-X tlbc <-X>` را ببینید."
 
 msgid "Controls lazy import behavior. Accepts two values: ``all`` makes all imports lazy by default, and ``normal`` (the default) respects the ``lazy`` keyword in source code."
-msgstr ""
+msgstr "رفتار ایمپورت تنبل را کنترل می‌کند. دو مقدار را می‌پذیرد: ``all`` تمام ایمپورت‌ها را به‌طور پیش‌فرض تنبل می‌کند، و ``normal`` (پیش‌فرض) به کلیدواژه ``lazy`` در کد منبع احترام می‌گذارد."
 
-#, fuzzy
-#| msgid "See also the :option:`-X tlbc <-X>` command-line option."
 msgid "See also the :option:`-X lazy_imports <-X>` command-line option."
-msgstr "همچنین گزینه‌ی خط فرمان :option:`-X tlbc <-X>` را ببینید."
+msgstr "همچنین نگاه کنید به گزینه ی خط فرمان :option:`-X lazy_imports <-X>`."
 
 msgid "Debug-mode variables"
 msgstr "متغیرهای حالت اشکال‌زدایی"

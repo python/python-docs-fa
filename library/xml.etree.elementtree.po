@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-01 14:41+0330\n"
-"PO-Revision-Date: 2026-09-21 13:26+0330\n"
+"PO-Revision-Date: 2026-10-06 20:30+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
 "Language: fa\n"
@@ -798,10 +798,8 @@ msgstr "*exclude_tags*: مجموعه‌ای از نام برچسب‌ها که �
 msgid "In the option list above, \"a set\" refers to any collection or iterable of strings, no ordering is expected."
 msgstr "در فهرست گزینه‌های بالا، «یک مجموعه» به هر مجموعه یا پیمایش‌پذیری از رشته‌ها اشاره دارد؛ هیچ ترتیبی مورد انتظار نیست."
 
-#, fuzzy
-#| msgid "Comment element factory.  This factory function creates a special element that will be serialized as an XML comment by the standard serializer. *text* is a string containing the comment string. Returns an element instance representing a comment."
 msgid "Comment element factory.  This factory function creates a special element that will be serialized as an XML comment by the standard serializer.  The comment string can be either a bytestring or a Unicode string.  *text* is a string containing the comment string.  Returns an element instance representing a comment."
-msgstr "کارخانه عنصر کامنت. این تابع کارخانه‌ای یک عنصر ویژه می‌سازد که توسط سریالایزر استاندارد به‌عنوان یک کامنت XML سریال می‌شود. *text* یک رشته است که حاوی رشته کامنت می‌باشد. یک نمونه عنصر بازمی‌گرداند که یک کامنت را نشان می‌دهد."
+msgstr "تابع کارخانه‌ای المان کامنت. این تابع کارخانه‌ای یک المان خاص ایجاد می‌کند که توسط سریالایزر استاندارد به عنوان یک کامنت XML سریالایزشده (serialized) خواهد شد. رشته‌ی کامنت می‌تواند یک بایت‌رشته (bytestring) یا یک رشته‌ی یونیکد باشد. پارامتر *text* رشته‌ای است که حاوی متن کامنت است. یک نمونه‌ی المان را که نماینده‌ی یک کامنت است، برمی‌گرداند."
 
 msgid "Note that :class:`XMLParser` skips over comments in the input instead of creating comment objects for them. An :class:`ElementTree` will only contain comment nodes if they have been inserted into to the tree using one of the :class:`Element` methods."
 msgstr "توجه داشته باشید که :class:`XMLParser` به‌جای ایجاد اشیای کامنت برای توضیح‌های موجود در ورودی، آن‌ها را نادیده می‌گیرد. یک :class:`ElementTree` تنها در صورتی حاوی گره‌های کامنت خواهد بود که آن‌ها با استفاده از یکی از متدهای :class:`Element` در درخت درج‌شده باشند."
@@ -830,10 +828,8 @@ msgstr "فضای خالی را به زیردرخت می‌افزاید تا در
 msgid "Check if an object appears to be a valid element object.  *element* is an element instance.  Return ``True`` if this is an element object."
 msgstr "بررسی می‌کند که آیا یک شیء به‌نظر یک شیء المان معتبر می‌رسد. *element* یک نمونه المان است. اگر این یک شیء المان باشد، ``True`` را بازمی‌گرداند."
 
-#, fuzzy
-#| msgid "Parses an XML section into an element tree incrementally, and reports what's going on to the user.  *source* is a filename or :term:`file object` containing XML data.  *events* is a sequence of events to report back.  The supported events are the strings ``\"start\"``, ``\"end\"``, ``\"comment\"``, ``\"pi\"``, ``\"start-ns\"`` and ``\"end-ns\"`` (the \"ns\" events are used to get detailed namespace information).  If *events* is omitted, only ``\"end\"`` events are reported. *parser* is an optional parser instance. If not given, the standard :class:`XMLParser` parser is used. *parser* must be an instance of :class:`XMLParser` or its subclass and can only use the default :class:`TreeBuilder` as a target. Returns an :term:`iterator` providing ``(event, elem)`` pairs; it has a ``root`` attribute that references the root element of the resulting XML tree once *source* is fully read. The iterator has the :meth:`!close` method that closes the internal file object if *source* is a filename."
 msgid "Parses an XML section into an element tree incrementally, and reports what's going on to the user.  *source* is a filename or :term:`file object` containing XML data.  *events* is a sequence of events to report back.  The supported events are the strings ``\"start\"``, ``\"end\"``, ``\"comment\"``, ``\"pi\"``, ``\"start-ns\"`` and ``\"end-ns\"`` (the \"ns\" events are used to get detailed namespace information).  If *events* is omitted, only ``\"end\"`` events are reported. *parser* is an optional parser instance.  If not given, the standard :class:`XMLParser` parser is used.  *parser* must be a subclass of :class:`XMLParser` and can only use the default :class:`TreeBuilder` as a target. Returns an :term:`iterator` providing ``(event, elem)`` pairs; it has a ``root`` attribute that references the root element of the resulting XML tree once *source* is fully read. The iterator has the :meth:`!close` method that closes the internal file object if *source* is a filename."
-msgstr "یک بخش XML را به‌صورت افزایشی در یک درخت عنصر تجزیه می‌کند و وضعیت را به کاربر گزارش می‌دهد. *source* یک نام پرونده یا :term:`شیء پرونده <file object>` است که حاوی داده‌های XML می‌باشد. *events* یک دنباله از رویدادها برای گزارش است. رویدادهای پشتیبانی‌شده رشته‌های ``\"start\"``، ``\"end\"``، ``\"comment\"``، ``\"pi\"``، ``\"start-ns\"`` و ``\"end-ns\"`` هستند (رویدادهای \"ns\" برای دریافت اطلاعات دقیق فضای نام استفاده می‌شوند). اگر *events* حذف شود، تنها رویدادهای ``\"end\"`` گزارش داده می‌شوند. *parser* یک نمونه پارسر اختیاری است. اگر داده نشود، پارسر استاندارد :class:`XMLParser` استفاده می‌شود. *parser* باید یک نمونه از :class:`XMLParser` یا زیرکلاس آن باشد و تنها می‌تواند از پیش‌فرض :class:`TreeBuilder` به‌عنوان هدف استفاده کند. یک :term:`پیمایش‌گر <iterator>` بازمی‌گرداند که جفت‌های ``(event, elem)`` را فراهم می‌کند؛ این پیمایش‌گر یک ویژگی ``root`` دارد که به عنصر ریشه درخت XML حاصل ارجاع می‌دهد وقتی *source* به‌صورت کامل خوانده شود. پیمایش‌گر متد :meth:`!close` را دارد که شیء پرونده داخلی را می‌بندد اگر *source* یک نام پرونده باشد."
+msgstr "یک بخش XML را به صورت افزایشی در قالب یک درخت المان تجزیه (parse) می‌کند و رویدادهای در حال وقوع را به کاربر گزارش می‌دهد. پارامتر *source* یک نام پرونده یا یک :term:`شیء پرونده <file object>` است که حاوی داده‌های XML است. پارامتر *events* دنباله‌ای از رویدادها است که باید گزارش شوند. رویدادهای پشتیبانی‌شده عبارتند از رشته‌های ``\"start\"``، ``\"end\"``، ``\"comment\"``، ``\"pi\"``، ``\"start-ns\"`` و ``\"end-ns\"`` (رویدادهای \"ns\" برای به دست آوردن اطلاعات دقیق فضای نام استفاده می‌شوند). اگر *events* حذف شود، فقط رویدادهای ``\"end\"`` گزارش می‌شوند. پارامتر *parser* یک نمونه‌ی پارسر اختیاری است. اگر داده نشود، از پارسر استاندارد :class:`XMLParser` استفاده می‌شود. پارامتر *parser* باید زیرکلاسی از :class:`XMLParser` باشد و فقط می‌تواند از :class:`TreeBuilder` پیش‌فرض به عنوان هدف استفاده کند. یک :term:`پیمایش‌گر <iterator>` برمی‌گرداند که جفت‌های ``(event, elem)`` را فراهم می‌کند؛ این پیمایش‌گر دارای یک ویژگی ``root`` است که به المان ریشه‌ی درخت XML حاصل پس از خوانده شدن کامل *source* ارجاع می‌دهد. این پیمایش‌گر دارای متد :meth:`!close` است که اگر *source* یک نام پرونده باشد، شیء پرونده‌ی داخلی را می‌بندد."
 
 msgid "Note that while :func:`iterparse` builds the tree incrementally, it issues blocking reads on *source* (or the file it names).  As such, it's unsuitable for applications where blocking reads can't be made.  For fully non-blocking parsing, see :class:`XMLPullParser`."
 msgstr "توجه داشته باشید که با وجود اینکه :func:`iterparse` درخت را به‌صورت تدریجی می‌سازد، خواندن‌های مسدودکننده روی *source* (یا پرونده‌ای که *source* نام آن را مشخص می‌کند) انجام می‌دهد. بنابراین، برای کاربردهایی که در آن‌ها نمی‌توان خواندن‌های مسدودکننده انجام داد، مناسب نیست. برای تجزیه کاملاً غیرمسدودکننده، :class:`XMLPullParser` را ببینید."
@@ -857,7 +853,7 @@ msgid "Added the :meth:`!close` method."
 msgstr "متد :meth:`!close` افزوده شد."
 
 msgid "A :exc:`ResourceWarning` is now emitted if the iterator opened a file and is not explicitly closed."
-msgstr ""
+msgstr "اگر پیمایش‌گر پرونده‌ای را باز کرده باشد و آن را به‌طور صریح نبندد، اکنون یک :exc:`ResourceWarning` صادر می‌شود."
 
 msgid "Parses an XML section into an element tree.  *source* is a filename or file object containing XML data.  *parser* is an optional parser instance.  If not given, the standard :class:`XMLParser` parser is used.  Returns an :class:`ElementTree` instance."
 msgstr "یک بخش XML را به یک درخت عنصر تجزیه می‌کند. *source* یک نام پرونده یا شیء پرونده حاوی داده‌های XML است. *parser* یک نمونه پارسر اختیاری است. اگر داده نشود، از پارسر استاندارد :class:`XMLParser` استفاده می‌شود. یک نمونه :class:`ElementTree` بازمی‌گرداند."
@@ -874,16 +870,14 @@ msgstr "یک پیشوند فضای نام را ثبت می‌کند. این ثب
 msgid "Subelement factory.  This function creates an element instance, and appends it to an existing element."
 msgstr "کارخانه‌ی زیرالمان. این تابع نمونه‌ای از المان ایجاد می‌کند و آن را به یک المان موجود می‌افزاید."
 
-#, fuzzy
-#| msgid "*parent* is the parent element.  *tag* is the subelement name.  *attrib* is an optional dictionary, containing element attributes.  *extra* contains additional attributes, given as keyword arguments.  Returns an element instance."
 msgid "The element name, attribute names, and attribute values can be either bytestrings or Unicode strings.  *parent* is the parent element.  *tag* is the subelement name.  *attrib* is an optional dictionary, containing element attributes.  *extra* contains additional attributes, given as keyword arguments.  Returns an element instance."
-msgstr "*parent* عنصر والد است. *tag* نام زیرعنصر است. *attrib* یک دیکشنری اختیاری است که حاوی ویژگی‌های عنصر می‌باشد. *extra* ویژگی‌های اضافی را شامل می‌شود که به‌عنوان آرگومان‌های کلیدواژه‌ای داده شده‌اند. یک نمونه عنصر بازمی‌گرداند."
+msgstr "نام المان، نام‌های ویژگی‌ها و مقادیر ویژگی‌ها می‌توانند بایت‌رشته یا رشته‌ی یونیکد باشند. پارامتر *parent* المان والد است. پارامتر *tag* نام زیرالمان است. پارامتر *attrib* یک دیکشنری اختیاری است که حاوی ویژگی‌های المان است. پارامتر *extra* شامل ویژگی‌های اضافی است که به صورت آرگومان‌های کلیدواژه‌ای داده شده‌اند. یک نمونه‌ی المان را برمی‌گرداند."
 
 msgid "*attrib* can now be a :class:`frozendict`."
-msgstr ""
+msgstr "پارامتر *attrib* اکنون می‌تواند یک :class:`frozendict` باشد."
 
 msgid "*parent* and *tag* are now positional-only parameters."
-msgstr ""
+msgstr "پارامترهای *parent* و *tag* اکنون صرفاً جایگاهی هستند."
 
 msgid "Generates a string representation of an XML element, including all subelements.  *element* is an :class:`Element` instance.  *encoding* [1]_ is the output encoding (default is US-ASCII).  Use ``encoding=\"unicode\"`` to generate a Unicode string (otherwise, a bytestring is generated).  *method* is either ``\"xml\"``, ``\"html\"`` or ``\"text\"`` (default is ``\"xml\"``). *xml_declaration*, *default_namespace* and *short_empty_elements* has the same meaning as in :meth:`ElementTree.write`. Returns an (optionally) encoded string containing the XML data."
 msgstr "نمایش رشته‌ای از یک المان XML را تولید می‌کند که شامل تمام زیرالمان‌ها است. *element* یک نمونه از :class:`Element` است. *encoding* [1]_ کدگذاری خروجی است (پیش‌فرض US-ASCII است). برای تولید یک رشته یونیکد، از ``encoding=\"unicode\"`` استفاده کنید (در غیر این صورت، یک رشته بایتی تولید می‌شود). *method* یکی از ``\"xml\"``، ``\"html\"`` یا ``\"text\"`` است (پیش‌فرض ``\"xml\"`` است). *xml_declaration*، *default_namespace* و *short_empty_elements* همان معنایی را دارند که در :meth:`ElementTree.write` آمده است. رشته‌ای (به‌صورت اختیاری) کدگذاری‌شده حاوی داده‌های XML را برمی‌گرداند."
@@ -1006,13 +1000,11 @@ msgstr "اشیای عنصر"
 msgid "Element class.  This class defines the Element interface, and provides a reference implementation of this interface."
 msgstr "کلاس Element. این کلاس رابط Element را تعریف می‌کند و یک پیاده‌سازی مرجع از این رابط ارائه می‌دهد."
 
-#, fuzzy
-#| msgid "*tag* is the element name.  *attrib* is an optional dictionary, containing element attributes.  *extra* contains additional attributes, given as keyword arguments."
 msgid "The element name, attribute names, and attribute values can be either bytestrings or Unicode strings.  *tag* is the element name.  *attrib* is an optional dictionary, containing element attributes.  *extra* contains additional attributes, given as keyword arguments."
-msgstr "*tag* نامِ المان است. *attrib* یک دیکشنریِ اختیاری است که شامل ویژگی‌های المان می‌شود. *extra* ویژگی‌های اضافی را شامل می‌شود که به‌عنوان آرگومان‌های کلیدواژه‌ای داده شده‌اند."
+msgstr "نام المان، نام‌های ویژگی‌ها و مقادیر ویژگی‌ها می‌توانند بایت‌رشته یا رشته‌ی یونیکد باشند. پارامتر *tag* نام المان است. پارامتر *attrib* یک دیکشنری اختیاری است که حاوی ویژگی‌های المان است. پارامتر *extra* شامل ویژگی‌های اضافی است که به صورت آرگومان‌های کلیدواژه‌ای داده شده‌اند."
 
 msgid "*tag* is now a positional-only parameter."
-msgstr ""
+msgstr "*tag* اکنون یک پارامتر فقط-جایگاهی است."
 
 msgid "A string identifying what kind of data this element represents (the element type, in other words)."
 msgstr "رشته‌ای که مشخص می‌کند این المان نمایانگر چه نوع داده‌ای است (به عبارت دیگر، نوع المان)."
@@ -1267,10 +1259,8 @@ msgstr "توابع *comment_factory* و *pi_factory*، در صورت ارائه�
 msgid "Flushes the builder buffers, and returns the toplevel document element.  Returns an :class:`Element` instance."
 msgstr "بافرهای سازنده را تخلیه می‌کند و عنصر سند سطح بالا را بازمی‌گرداند. یک نمونه از :class:`Element` بازمی‌گرداند."
 
-#, fuzzy
-#| msgid "Adds text to the current element.  *data* is a string."
 msgid "Adds text to the current element.  *data* is a string.  This should be either a bytestring, or a Unicode string."
-msgstr "متنی را به المانِ جاری اضافه می‌کند. *data* یک رشته است."
+msgstr "متن را به المان فعلی اضافه می‌کند. پارامتر *data* یک رشته است. این رشته باید یک بایت‌رشته یا یک رشته‌ی یونیکد باشد."
 
 msgid "Closes the current element.  *tag* is the element name.  Returns the closed element."
 msgstr "عنصر جاری را می‌بندد. *tag* نام عنصر است. عنصر بسته‌شده را برمی‌گرداند."
@@ -1311,18 +1301,14 @@ msgstr "پارامترها اکنون :ref:`فقط کلیدواژه‌ای <keyw
 msgid "Finishes feeding data to the parser.  Returns the result of calling the ``close()`` method of the *target* passed during construction; by default, this is the toplevel document element."
 msgstr "وارد کردن داده به پارسر را به پایان می‌رساند. نتیجه‌ی فراخوانی متد ``close()`` برای *target* ارسال‌شده در هنگام ساخت را برمی‌گرداند؛ به‌طور پیش‌فرض، این المان سند سطح بالا است."
 
-#, fuzzy
-#| msgid "Feeds data to the parser.  *data* is a string or encoded data (:class:`bytes` or a :term:`bytes-like object`)."
 msgid "Feeds data to the parser.  *data* is encoded data."
-msgstr "داده را به پارسر می‌دهد. *data* یک رشته یا داده‌ی کدگذاری‌شده است (:class:`bytes` یا یک :term:`شیء شبه‌بایت <bytes-like object>`)."
+msgstr "داده‌ها را به پارسر می‌خوراند. پارامتر *data* داده‌های کدگذاری‌شده است."
 
 msgid "Triggers parsing of any previously fed unparsed data, which can be used to ensure more immediate feedback, in particular with Expat >=2.6.0. The implementation of :meth:`flush` temporarily disables reparse deferral with Expat (if currently enabled) and triggers a reparse. Disabling reparse deferral has security consequences; please see :meth:`xml.parsers.expat.xmlparser.SetReparseDeferralEnabled` for details."
 msgstr "تجزیه‌ی هرگونه داده‌ی تجزیه‌نشده‌ای که پیش‌تر وارد شده است را راه‌اندازی می‌کند، که می‌تواند برای اطمینان از بازخورد فوری‌تر به کار رود، به‌ویژه با Expat >=2.6.0. پیاده‌سازی :meth:`flush` تعویق تجزیه‌ی مجدد در Expat را به‌طور موقت غیرفعال می‌کند (اگر در حال حاضر فعال باشد) و یک تجزیه‌ی مجدد را راه‌اندازی می‌کند. غیرفعال‌سازی تعویق تجزیه‌ی مجدد پیامدهای امنیتی دارد؛ لطفاً برای جزئیات :meth:`xml.parsers.expat.xmlparser.SetReparseDeferralEnabled` را ببینید."
 
-#, fuzzy
-#| msgid "Note that :meth:`flush` has been backported to some prior releases of CPython as a security fix.  Check for availability of :meth:`flush` using :func:`hasattr` if used in code running across a variety of Python versions."
 msgid ":meth:`!flush` has been backported to some prior releases of CPython as a security fix. Check for availability using :func:`hasattr` if used in code running across a variety of Python versions."
-msgstr "توجه داشته باشید که :meth:`flush` به‌عنوان یک اصلاح امنیتی به برخی نسخه‌های پیشین CPython بک‌پورت شده است . در صورت استفاده در کدی که روی نسخه‌های گوناگون پایتون اجرا می‌شود، دسترس‌پذیری :meth:`flush` را با استفاده از :func:`hasattr` بررسی کنید."
+msgstr "متد :meth:`!flush` به عنوان یک اصلاح امنیتی به برخی نسخه‌های قبلی سی‌پایتون (CPython) هم‌پورت (backport) شده است. اگر در کدی استفاده می‌شود که در نسخه‌های مختلف پایتون اجرا می‌شود، با استفاده از :func:`hasattr` وجود آن را بررسی کنید."
 
 msgid ":meth:`XMLParser.feed` calls *target*\\'s ``start(tag, attrs_dict)`` method for each opening tag, its ``end(tag)`` method for each closing tag, and data is processed by method ``data(data)``.  For further supported callback methods, see the :class:`TreeBuilder` class.  :meth:`XMLParser.close` calls *target*\\'s method ``close()``. :class:`XMLParser` can be used not only for building a tree structure. This is an example of counting the maximum depth of an XML file::"
 msgstr ":meth:`XMLParser.feed` برای هر برچسب باز، متد ``start(tag, attrs_dict)`` از *target* و برای هر برچسب بسته، متد ``end(tag)`` آن را فراخوانی می‌کند، و داده با متد ``data(data)`` پردازش می‌شود. برای دیگر متدهای کال‌بک پشتیبانی‌شده، کلاس :class:`TreeBuilder` را ببینید. :meth:`XMLParser.close` متد ``close()`` از *target* را فراخوانی می‌کند. می‌توان از :class:`XMLParser` نه فقط برای ساختن ساختار درختی استفاده کرد. این مثالی برای شمارش بیشینه عمق یک پرونده XML است::"

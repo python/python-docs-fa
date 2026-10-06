@@ -771,10 +771,8 @@ msgstr ""
 msgid "No longer raises an exception for an input with only a single data point. This allows quantile estimates to be built up one sample point at a time becoming gradually more refined with each new data point."
 msgstr "دیگر برای ورودی‌ای با تنها یک نقطه داده، استثنایی پرتاب نمی‌کند. این امکان را فراهم می‌کند که برآوردهای چندک (quantile) هر بار با یک نقطه نمونه ساخته شوند و با هر نقطه داده جدید به‌تدریج دقیق‌تر شوند."
 
-#, fuzzy
-#| msgid "Return the sample covariance of two inputs *x* and *y*. Covariance is a measure of the joint variability of two inputs."
 msgid "Return the sample covariance of two sequence inputs *x* and *y*. Covariance is a measure of the joint variability of two inputs."
-msgstr "کوواریانس نمونه دو ورودی *x* و *y* را برمی‌گرداند. کوواریانس معیاری از تغییرپذیری مشترک دو ورودی است."
+msgstr "کوواریانس نمونه‌ی دو ورودی دنباله‌ای *x* و *y* را بازگردانید. کوواریانس معیاری برای تغییرپذیری مشترک دو ورودی است."
 
 msgid "Both inputs must be of the same length (no less than two), otherwise :exc:`StatisticsError` is raised."
 msgstr "هر دو ورودی باید طول یکسانی داشته باشند (طولشان کمتر از ۲ نباشد)، در غیر این صورت :exc:`StatisticsError` پرتاب می‌شود."
@@ -800,10 +798,8 @@ msgstr ""
 ">>> covariance(z, x)\n"
 "-7.5"
 
-#, fuzzy
-#| msgid "Return the `Pearson's correlation coefficient <https://en.wikipedia.org/wiki/Pearson_correlation_coefficient>`_ for two inputs. Pearson's correlation coefficient *r* takes values between -1 and +1. It measures the strength and direction of a linear relationship."
 msgid "Return the `Pearson's correlation coefficient <https://en.wikipedia.org/wiki/Pearson_correlation_coefficient>`_ for two sequence inputs. Pearson's correlation coefficient *r* takes values between -1 and +1. It measures the strength and direction of a linear relationship."
-msgstr "`ضریب همبستگی پیرسون <https://fa.wikipedia.org/wiki/ضریب_همبستگی_پیرسون>`_ را برای دو ورودی برمی‌گرداند. ضریب همبستگی پیرسون *r* مقادیری بین -۱ و +۱ می‌گیرد. این ضریب، شدت و جهت یک رابطه خطی را اندازه‌گیری می‌کند."
+msgstr "`ضریب همبستگی پیرسون <https://en.wikipedia.org/wiki/Pearson_correlation_coefficient>`_ را برای دو ورودی دنباله‌ای بازگردانید. ضریب همبستگی پیرسون *r* مقادیری بین ۱- و ۱+ می‌گیرد. این ضریب قدرت و جهت یک رابطه‌ی خطی را اندازه‌گیری می‌کند."
 
 msgid "If *method* is \"ranked\", computes `Spearman's rank correlation coefficient <https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient>`_ for two inputs. The data is replaced by ranks.  Ties are averaged so that equal values receive the same rank.  The resulting coefficient measures the strength of a monotonic relationship."
 msgstr "اگر *method* برابر با \"ranked\" باشد، `ضریب همبستگی رتبه‌ای اسپیرمن <https://en.wikipedia.org/wiki/Spearman's_rank_correlation_coefficient>`_ را برای دو ورودی محاسبه می‌کند. داده‌ها با رتبه‌ها جایگزین می‌شوند. برای مقادیر برابر، میانگین رتبه‌ها گرفته می‌شود تا مقادیر مساوی رتبه یکسانی دریافت کنند. ضریب حاصل، شدت رابطه‌ی یکنواخت را می‌سنجد."
@@ -870,10 +866,8 @@ msgstr "*y = slope \\* x + intercept + noise*"
 msgid "where ``slope`` and ``intercept`` are the regression parameters that are estimated, and ``noise`` represents the variability of the data that was not explained by the linear regression (it is equal to the difference between predicted and actual values of the dependent variable)."
 msgstr "که در آن ``slope`` و ``intercept`` پارامترهای رگرسیون هستند که برآورد می‌شوند، و ``noise`` تغییرپذیری داده‌ها را که توسط رگرسیون خطی تبیین نشده است نشان می‌دهد (این مقدار برابر با تفاوت بین مقادیر پیش‌بینی‌شده و واقعی متغیر وابسته است)."
 
-#, fuzzy
-#| msgid "Both inputs must be of the same length (no less than two), and the independent variable *x* cannot be constant; otherwise a :exc:`StatisticsError` is raised."
 msgid "Both inputs must be sequences of the same length (no less than two), and the independent variable *x* cannot be constant; otherwise a :exc:`StatisticsError` is raised."
-msgstr "هر دو ورودی باید طول یکسانی داشته باشند (حداقل ۲)، و متغیر مستقل *x* نمی‌تواند ثابت باشد؛ در غیر این صورت :exc:`StatisticsError` پرتاب می‌شود."
+msgstr "هر دو ورودی باید دنباله‌هایی با طول یکسان (حداقل دو) باشند و متغیر مستقل *x* نمی‌تواند ثابت باشد؛ در غیر این صورت یک :exc:`StatisticsError` بالا آورده می‌شود."
 
 msgid "For example, we can use the `release dates of the Monty Python films <https://en.wikipedia.org/wiki/Monty_Python#Films>`_ to predict the cumulative number of Monty Python films that would have been produced by 2019 assuming that they had kept the pace."
 msgstr "برای مثال، می‌توانیم از `تاریخ‌های انتشار فیلم‌های مانتی پایتون <https://fa.wikipedia.org/wiki/مانتی_پایتان#برنامه‌های_تلویزیونی>`_ برای پیش‌بینی تعداد تجمعی فیلم‌های مانتی پایتون که با فرض حفظ آهنگ تولید، تا سال ۲۰۱۹ تولید شده بودند، استفاده کنیم."

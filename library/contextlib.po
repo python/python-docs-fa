@@ -408,15 +408,11 @@ msgstr "اگر کد درون بلوک :keyword:`!with` یک :exc:`BaseExceptionG
 msgid "``suppress`` now supports suppressing exceptions raised as part of a :exc:`BaseExceptionGroup`."
 msgstr "``suppress`` اکنون از مهار استثناهایی که به‌عنوان بخشی از یک :exc:`BaseExceptionGroup` پرتاب می‌شوند، پشتیبانی می‌کند."
 
-#, fuzzy
-#| msgid "Context manager for temporarily redirecting :data:`sys.stdout` to another file or file-like object."
 msgid "Context manager for temporarily redirecting :data:`sys.stdout` to another :term:`file object`."
-msgstr "مدیر زمینه برای تغییر مسیر موقت :data:`sys.stdout` به یک پرونده یا شیء شبه‌پرونده دیگر."
+msgstr "مدیر زمینه برای هدایت موقت :data:`sys.stdout` به یک :term:`شیء پرونده <file object>` دیگر."
 
-#, fuzzy
-#| msgid "This tool adds flexibility to existing functions or classes whose output is hardwired to stdout."
 msgid "This tool adds flexibility to existing functions or classes whose output is hardwired to :data:`sys.stdout`."
-msgstr "این ابزار، انعطاف‌پذیری را به توابع یا کلاس‌های موجودی می‌افزاید که خروجی آن‌ها به stdout متصل است."
+msgstr "این ابزار انعطاف‌پذیری را به توابع یا کلاس‌های موجودی اضافه می‌کند که خروجی آن‌ها به :data:`sys.stdout` وصل شده است."
 
 msgid "For example, the output of :func:`help` normally is sent to *sys.stdout*. You can capture that output in a string by redirecting the output to an :class:`io.StringIO` object. The replacement stream is returned from the :meth:`~object.__enter__` method and so is available as the target of the :keyword:`with` statement::"
 msgstr "برای مثال، خروجی :func:`help` به‌طور معمول به *sys.stdout* فرستاده می‌شود. شما می‌توانید با هدایت خروجی به یک شیء :class:`io.StringIO`، آن خروجی را در یک رشته ذخیره کنید. جریان جایگزین از متد :meth:`~object.__enter__` بازگردانده می‌شود و بنابراین به‌عنوان هدف دستور :keyword:`with` در دسترس است::"
@@ -455,10 +451,8 @@ msgstr ""
 msgid "Note that the global side effect on :data:`sys.stdout` means that this context manager is not suitable for use in library code and most threaded applications. It also has no effect on the output of subprocesses. However, it is still a useful approach for many utility scripts."
 msgstr "توجه داشته باشید که اثر جانبی سراسری بر :data:`sys.stdout` به این معناست که این مدیر زمینه برای استفاده در کد کتابخانه‌ای و بیشتر برنامه‌های نخی مناسب نیست. همچنین بر خروجی زیرفرایندها اثری ندارد. با این حال، هنوز هم رویکردی مفید برای بسیاری از اسکریپت‌های کاربردی است."
 
-#, fuzzy
-#| msgid "Similar to :func:`~contextlib.redirect_stdout` but redirecting :data:`sys.stderr` to another file or file-like object."
 msgid "Similar to :func:`~contextlib.redirect_stdout` but redirecting the global :data:`sys.stderr` to another :term:`file object`."
-msgstr "مشابه :func:`~contextlib.redirect_stdout` است، اما :data:`sys.stderr` را به پرونده یا شیء شبه‌پرونده دیگری تغییر مسیر می‌دهد."
+msgstr "مشابه :func:`~contextlib.redirect_stdout` اما با هدایت :data:`sys.stderr` سراسری به یک :term:`شیء پرونده <file object>` دیگر."
 
 msgid "Non parallel-safe context manager to change the current working directory. As this changes a global state, the working directory, it is not suitable for use in most threaded or async contexts. It is also not suitable for most non-linear code execution, like generators, where the program execution is temporarily relinquished -- unless explicitly desired, you should not yield when this context manager is active."
 msgstr "مدیر زمینه‌ای که از نظر موازی‌سازی ایمن نیست، برای تغییر پوشه کاری جاری است. از آن‌جا که این کار یک وضعیت سراسری، یعنی پوشه کاری، را تغییر می‌دهد، برای استفاده در بیشتر زمینه‌های نخی یا ناهمگام مناسب نیست. همچنین برای بیشتر اجراهای غیرخطی کد، مانند تولیدگرها، مناسب نیست؛ جاهایی که اجرای برنامه به‌طور موقت واگذار می‌شود -- مگر این‌که صریحاً مورد نظر باشد، نباید هنگامی که این مدیر زمینه فعال است، yield کنید."
@@ -590,19 +584,19 @@ msgid "As the decorated function must be able to be called multiple times, the u
 msgstr "از آنجا که تابع دکورات‌شده باید بتواند چندین بار فراخوانی شود، مدیر زمینه زیربنایی باید از استفاده در چندین دستور :keyword:`with` پشتیبانی کند. در غیر این صورت، باید از ساختار اصلی با دستور صریح :keyword:`!with` درون تابع استفاده شود."
 
 msgid "When the decorated callable is a generator function, coroutine function, or asynchronous generator function, the returned wrapper is of the same kind and keeps the context manager open for the lifetime of the iteration or await rather than only for the call that creates the generator or coroutine object.  Wrapped generators and asynchronous generators are explicitly closed when iteration ends, as if by :func:`closing` or :func:`aclosing`."
-msgstr ""
+msgstr "هنگامی که شیء فراخوانی‌پذیرِ تزئین‌شده یک تابع تولیدگر، تابع هم‌روال یا تابع تولیدگر ناهمگام باشد، پوششِ بازگردانده‌شده از همان نوع است و مدیر زمینه را برای طول عمر پیمایش یا await باز نگه می‌دارد، نه فقط برای فراخوانی‌ای که شیء تولیدگر یا هم‌روال را ایجاد می‌کند. تولیدگرهای پوشش‌داده‌شده و تولیدگرهای ناهمگام، هنگامی که پیمایش به پایان می‌رسد، به‌طور صریح بسته می‌شوند، درست مانند زمانی که توسط :func:`closing` یا :func:`aclosing` بسته می‌شوند."
 
 msgid "For asynchronous generators the wrapper re-yields each value with ``async for``; values sent with :meth:`~agen.asend` and exceptions thrown with :meth:`~agen.athrow` are not forwarded to the wrapped generator."
-msgstr ""
+msgstr "برای تولیدگرهای ناهمگام، پوشش هر مقدار را با ``async for`` دوباره تولید (yield) می‌کند؛ مقادیر ارسال‌شده با :meth:`~agen.asend` و استثناهای پرتاب‌شده با :meth:`~agen.athrow` به تولیدگر پوشش‌داده‌شده فوروارد نمی‌شوند."
 
 msgid "Decorating a generator function, coroutine function, or asynchronous generator function now keeps the context manager open across iteration or await.  Previously the context manager exited as soon as the generator or coroutine object was created."
-msgstr ""
+msgstr "تزئین کردن یک تابع تولیدگر، تابع هم‌روال یا تابع تولیدگر ناهمگام اکنون باعث می‌شود مدیر زمینه در طول پیمایش یا await باز بماند. پیش‌تر، مدیر زمینه به‌محض ایجاد شدن شیء تولیدگر یا هم‌روال خارج می‌شد."
 
 msgid "Similar to :class:`ContextDecorator`, but the context manager is entered and exited with :keyword:`async with`.  Decorate coroutine functions and asynchronous generator functions with this class; the returned wrapper is of the same kind."
-msgstr ""
+msgstr "مشابه :class:`ContextDecorator`، اما ورود و خروج از مدیر زمینه با :keyword:`async with` انجام می‌شود. توابع هم‌روال و توابع تولیدگر ناهمگام را با این کلاس تزئین کنید؛ پوششِ بازگردانده‌شده از همان نوع است."
 
 msgid "Synchronous functions and generators are accepted, but the wrapper is always asynchronous, so the decorated callable must then be awaited or iterated with ``async for``.  If that change of calling convention is not intended, use :class:`ContextDecorator` instead."
-msgstr ""
+msgstr "توابع همگام و تولیدگرها پذیرفته می‌شوند، اما پوشش همیشه ناهمگام است، بنابراین شیء فراخوانی‌پذیرِ تزئین‌شده باید با ``async for`` منتظر بماند (await شود) یا پیمایش شود. اگر آن تغییر در قرارداد فراخوانی مورد نظر نیست، به جای آن از :class:`ContextDecorator` استفاده کنید."
 
 msgid "Example of ``AsyncContextDecorator``::"
 msgstr "مثالی از ``AsyncContextDecorator``::"
@@ -670,7 +664,7 @@ msgstr ""
 "Finishing"
 
 msgid "Decorating an asynchronous generator function now keeps the context manager open across iteration.  Previously the context manager exited as soon as the generator object was created.  Synchronous functions and synchronous generator functions are also now accepted, with an asynchronous wrapper returned."
-msgstr ""
+msgstr "تزئین کردن یک تابع تولیدگر ناهمگام اکنون باعث می‌شود مدیر زمینه در طول پیمایش باز بماند. پیش‌تر، مدیر زمینه به‌محض ایجاد شدن شیء تولیدگر خارج می‌شد. توابع همگام و توابع تولیدگر همگام نیز اکنون پذیرفته می‌شوند و یک پوشش ناهمگام بازگردانده می‌شود."
 
 msgid "A context manager that is designed to make it easy to programmatically combine other context managers and cleanup functions, especially those that are optional or otherwise driven by input data."
 msgstr "یک مدیر زمینه که طراحی شده است تا ترکیب سایر مدیرهای زمینه و توابع پاک‌سازی را به‌صورت برنامه‌ای آسان کند، به‌ویژه آن‌هایی که اختیاری هستند یا به‌نحوی دیگر توسط داده‌های ورودی هدایت می‌شوند."
@@ -716,7 +710,7 @@ msgid "Raises :exc:`TypeError` instead of :exc:`AttributeError` if *cm* is not a
 msgstr "اگر *cm* یک مدیر زمینه نباشد، به‌جای :exc:`AttributeError`، :exc:`TypeError` پرتاب می‌شود."
 
 msgid "Added support for arbitrary descriptors :meth:`!__enter__` and :meth:`!__exit__`."
-msgstr ""
+msgstr "پشتیبانی از توصیف‌گرهای دلخواه :meth:`!__enter__` و :meth:`!__exit__` اضافه شد."
 
 msgid "Adds a context manager's :meth:`~object.__exit__` method to the callback stack."
 msgstr "متد :meth:`~object.__exit__`\\ مدیر زمینه را به پشته‌ی کال‌بک اضافه می‌کند."
@@ -734,7 +728,7 @@ msgid "The passed in object is returned from the function, allowing this method 
 msgstr "شیء داده‌شده از تابع بازگردانده می‌شود و امکان استفاده از این متد به‌عنوان دکوراتور تابع را فراهم می‌کند."
 
 msgid "Added support for arbitrary descriptors :meth:`!__exit__`."
-msgstr ""
+msgstr "پشتیبانی از توصیف‌گرهای دلخواه :meth:`!__exit__` اضافه شد."
 
 msgid "Accepts an arbitrary callback function and arguments and adds it to the callback stack."
 msgstr "یک تابع کال‌بک دلخواه و آرگومان‌ها را می‌پذیرد و آن را به پشته کال‌بک اضافه می‌کند."
@@ -786,13 +780,13 @@ msgid "Raises :exc:`TypeError` instead of :exc:`AttributeError` if *cm* is not a
 msgstr "اگر *cm* یک مدیر زمینه‌ی ناهمگام نباشد، به‌جای :exc:`AttributeError`، :exc:`TypeError` را پرتاب می‌کند."
 
 msgid "Added support for arbitrary descriptors :meth:`!__aenter__` and :meth:`!__aexit__`."
-msgstr ""
+msgstr "پشتیبانی از توصیف‌گرهای دلخواه :meth:`!__aenter__` و :meth:`!__aexit__` اضافه شد."
 
 msgid "Similar to :meth:`ExitStack.push` but expects either an asynchronous context manager or a coroutine function."
 msgstr "مشابه :meth:`ExitStack.push` است، اما انتظار دارد که یا یک مدیر زمینه ناهمگام باشد یا یک تابع هم‌روال."
 
 msgid "Added support for arbitrary descriptors :meth:`!__aexit__`."
-msgstr ""
+msgstr "پشتیبانی از توصیف‌گرهای دلخواه :meth:`!__aexit__` اضافه شد."
 
 msgid "Similar to :meth:`ExitStack.callback` but expects a coroutine function."
 msgstr "مشابه :meth:`ExitStack.callback` است، اما یک تابع هم‌روال انتظار می‌رود."

@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-01 14:41+0330\n"
-"PO-Revision-Date: 2026-09-12 18:45+0330\n"
+"PO-Revision-Date: 2026-10-06 19:51+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
 "Language: fa\n"
@@ -51,19 +51,17 @@ msgstr "برخی قواعد اضافی برای برخی عملگرها و عم�
 msgid "Atoms"
 msgstr "اتم‌ها"
 
-#, fuzzy
-#| msgid "Atoms are the most basic elements of expressions. The simplest atoms are :ref:`names <identifiers>` or literals. Forms enclosed in parentheses, brackets or braces are also categorized syntactically as atoms."
 msgid "Atoms are the most basic elements of expressions. The simplest atoms are :ref:`builtin constants <atom-singletons>`, :ref:`names <identifiers>` and :ref:`literals <atom-literals>`. More complex atoms are enclosed in paired delimiters:"
-msgstr "اتم‌ها بنیادی‌ترین عناصر عبارت‌ها هستند. ساده‌ترین اتم‌ها :ref:`نام‌ها <identifiers>` یا مقادیر لفظی هستند. صورت‌هایی که در پرانتز، کروشه یا آکولاد محصور شده‌اند نیز از نظر نحوی در دسته اتم‌ها قرار می‌گیرند."
+msgstr "اتم‌ها اساسی‌ترین عناصر عبارت‌ها هستند. ساده‌ترین اتم‌ها :ref:`ثابت‌های توکار <atom-singletons>`، :ref:`نام‌ها <identifiers>` و :ref:`لیترال‌ها <atom-literals>` هستند. اتم‌های پیچیده‌تر در درون جفت‌جداکننده‌ها قرار می‌گیرند:"
 
 msgid "``()`` (parentheses): :ref:`groups <parenthesized>`, :ref:`tuple displays <tuple-display>`, :ref:`yield atoms <yieldexpr>`, and :ref:`generator expressions <genexpr>`;"
-msgstr ""
+msgstr "``()`` (پرانتزها): :ref:`گروه‌ها <parenthesized>`، :ref:`نمایش‌های تاپل <tuple-display>`، :ref:`اتم‌های yield <yieldexpr>` و :ref:`عبارت‌های مولد <genexpr>`؛"
 
 msgid "``[]`` (square brackets): :ref:`list displays <lists>`;"
-msgstr ""
+msgstr "``[]`` (براکت‌ها): :ref:`نمایش‌های فهرست <lists>`؛"
 
 msgid "``{}`` (curly braces): :ref:`dictionary <dict>` and :ref:`set <set>` displays."
-msgstr ""
+msgstr "``{}`` (آکولادها): نمایش‌های :ref:`دیکشنری <dict>` و :ref:`مجموعه <set>`."
 
 msgid "Formally, the syntax for atoms is:"
 msgstr "به‌طور رسمی، سینتکس اتم‌ها عبارت است از:"
@@ -93,10 +91,8 @@ msgstr ""
 "   ^^^^^\n"
 "SyntaxError: cannot assign to False"
 
-#, fuzzy
-#| msgid "Formally, the syntax for atoms is:"
 msgid "Formally, the syntax for built-in constants is:"
-msgstr "به‌طور رسمی، سینتکس اتم‌ها عبارت است از:"
+msgstr "به‌طور رسمی، نحوه (سینتکس) ثابت‌های توکار به این صورت است:"
 
 msgid "Identifiers (Names)"
 msgstr "شناسه‌ها (نام‌ها)"
@@ -291,16 +287,14 @@ msgstr ""
 msgid "Formally:"
 msgstr "به‌طور رسمی:"
 
-#, fuzzy
-#| msgid "Parenthesized forms"
 msgid "Parenthesized groups"
-msgstr "قالب‌های پرانتزدار"
+msgstr "گروه‌های پرانتزگذاری‌شده"
 
 msgid "A :dfn:`parenthesized group` is an expression enclosed in parentheses. The group evaluates to the same value as the expression inside."
-msgstr ""
+msgstr "یک :dfn:`گروه پرانتزدار` عبارتی است که در پرانتز محصور شده است. این گروه به همان مقداری ارزیابی می‌شود که عبارت درون آن ارزیابی می‌شود."
 
 msgid "Groups are used to override or clarify :ref:`operator precedence <operator-precedence>`, in the same way as in math notation. For example::"
-msgstr ""
+msgstr "گروه‌ها برای لغو یا شفاف‌سازی :ref:`تقدم عملگر <operator-precedence>`، به همان روش نمادگذاری ریاضی استفاده می‌شوند. برای مثال::"
 
 msgid ""
 ">>> 3 << 2 | 4\n"
@@ -310,27 +304,27 @@ msgid ""
 ">>> (3 << 2) | 4   # Same as without parentheses (but more clear)\n"
 "12"
 msgstr ""
+">>> 3 << 2 | 4\n"
+"12\n"
+">>> 3 << (2 | 4)   # Override precedence of the | (bitwise OR)\n"
+"192\n"
+">>> (3 << 2) | 4   # Same as without parentheses (but more clear)\n"
+"12"
 
 msgid "Note that not everything in parentheses is a *group*. Specifically, a parenthesized group must include exactly one expression, and cannot end with a comma. See :ref:`tuple displays <tuple-display>` and :ref:`generator expressions <genexpr>` for other parenthesized forms."
-msgstr ""
+msgstr "توجه داشته باشید که هر چیزی که در پرانتز قرار دارد یک *گروه* نیست. به‌طور مشخص، یک گروه پرانتزدار باید دقیقا شامل یک عبارت باشد و نمی‌تواند با کاما پایان یابد. برای سایر اشکال پرانتزدار به :ref:`نمایش‌های تاپل <tuple-display>` و :ref:`عبارت‌های مولد <genexpr>` مراجعه کنید."
 
-#, fuzzy
-#| msgid "Formally, the syntax for atoms is:"
 msgid "Formally, the syntax for groups is:"
-msgstr "به‌طور رسمی، سینتکس اتم‌ها عبارت است از:"
+msgstr "به‌طور رسمی، نحوه (سینتکس) گروه‌ها به این صورت است:"
 
-#, fuzzy
-#| msgid "Dictionary displays"
 msgid "Container displays"
-msgstr "نمایش‌های دیکشنری"
+msgstr "نمایش‌های ظروف"
 
 msgid "For constructing builtin containers (lists, sets, tuples or dictionaries), Python provides special syntax called :dfn:`displays`. There are subtle differences between the four kinds of displays, detailed in the following sections. All displays, however, consist of comma-separated items enclosed in paired delimiters."
-msgstr ""
+msgstr "پایتون برای ساخت ظروف توکار (فهرست‌ها، مجموعه‌ها، تاپل‌ها یا دیکشنری‌ها)، نحو ویژه‌ای به نام :dfn:`نمایش‌ها` (displays) فراهم می‌کند. تفاوت‌های ظریفی بین این چهار نوع نمایش وجود دارد که در بخش‌های زیر به تفصیل شرح داده شده است. با این حال، همه نمایش‌ها از آیتم‌های جدا شده با کاما تشکیل شده‌اند که در جداکننده‌های جفت‌شده محصور شده‌اند."
 
-#, fuzzy
-#| msgid "A list display is a possibly empty series of expressions enclosed in square brackets:"
 msgid "For example, a *list display* is a series of expressions enclosed in square brackets::"
-msgstr "نمایش فهرست، دنباله‌ای از عبارت‌ها است که ممکن است خالی باشد و درون کروشه قرار دارد:"
+msgstr "برای نمونه، یک *نمایش فهرست* (list display) مجموعه‌ای از عبارت‌ها است که در داخل کروشه‌ها قرار گرفته‌اند::"
 
 msgid ""
 ">>> [\"one\", \"two\", \"three\"]\n"
@@ -338,9 +332,13 @@ msgid ""
 ">>> [1 + 2, 2 + 3]\n"
 "[3, 5]"
 msgstr ""
+">>> [\"one\", \"two\", \"three\"]\n"
+"['one', 'two', 'three']\n"
+">>> [1 + 2, 2 + 3]\n"
+"[3, 5]"
 
 msgid "In list, tuple and dictionary (but not set) displays, the series may be empty::"
-msgstr ""
+msgstr "در نمایش‌های فهرست، تاپل و دیکشنری (اما نه مجموعه)، دنباله می‌تواند خالی باشد::"
 
 msgid ""
 ">>> []  # empty list\n"
@@ -350,17 +348,25 @@ msgid ""
 ">>> {}  # empty dictionary\n"
 "{}"
 msgstr ""
+">>> []  # empty list\n"
+"[]\n"
+">>> ()  # empty tuple\n"
+"()\n"
+">>> {}  # empty dictionary\n"
+"{}"
 
 msgid "If the series is not empty, the items may be followed by an additional comma, which has no effect::"
-msgstr ""
+msgstr "اگر سری خالی نباشد، پس از آیتم‌ها می‌توان از یک ویرگول اضافی استفاده کرد که هیچ تأثیری ندارد::"
 
 msgid ""
 ">>> [\"one\", \"two\", \"three\",]  # note comma after \"three\"\n"
 "['one', 'two', 'three']"
 msgstr ""
+">>> [\"one\", \"two\", \"three\",]  # note comma after \"three\"\n"
+"['one', 'two', 'three']"
 
 msgid "The trailing comma is often used for displays that span multiple lines (using :ref:`implicit line joining <implicit-joining>`), so when a future programmer adds a new entry at the end, they do not need to modify an existing line::"
-msgstr ""
+msgstr "ویرگول پایانی اغلب برای نمایش‌هایی استفاده می‌شود که چندین سطر را در بر می‌گیرند (با استفاده از :ref:`implicit line joining <implicit-joining>`)؛ بنابراین وقتی برنامه‌نویس آینده‌ای در انتهای آن ورودی جدیدی اضافه می‌کند، نیازی به تغییر سطر موجود ندارد::"
 
 msgid ""
 ">>> [\n"
@@ -370,39 +376,42 @@ msgid ""
 "... ]\n"
 "['one', 'two', 'three']"
 msgstr ""
+">>> [\n"
+"...     'one',\n"
+"...     'two',\n"
+"...     'three',\n"
+"... ]\n"
+"['one', 'two', 'three']"
 
 msgid "At runtime, when a display is evaluated, the listed items are evaluated from left to right and placed into a new container of the appropriate type."
-msgstr ""
+msgstr "در زمان ران‌تایم، هنگامی که یک نمایش ارزیابی می‌شود، آیتم‌های فهرست‌شده از چپ به راست ارزیابی شده و در ظرف جدیدی از نوع مناسب قرار می‌گیرند."
 
 msgid "For tuple, list and set (but not dict) displays, any item in the display may be prefixed with an asterisk (``*``). This denotes :ref:`iterable unpacking  <iterable-unpacking>`. At runtime, the asterisk-prefixed expression must evaluate to an iterable, whose contents are inserted into the container at the location of the unpacking. For example::"
-msgstr ""
+msgstr "برای نمایش‌های تاپل، فهرست و مجموعه (اما نه دیکشنری)، هر آیتمی در نمایش می‌تواند پیشوندی با یک ستاره (``*``) داشته باشد. این موضوع نشان‌دهنده‌ی :ref:`iterable unpacking  <iterable-unpacking>` است. در زمان ران‌تایم، عبارتِ پیشوندگرفته با ستاره باید به یک پیمایش‌پذیر ارزیابی شود که محتویات آن در محل بازکردن بسته در ظرف درج می‌شوند. برای مثال::"
 
 msgid ""
 ">>> numbers = (1, 2)\n"
 ">>> [*numbers, 'word', *numbers]\n"
 "[1, 2, 'word', 1, 2]"
 msgstr ""
+">>> numbers = (1, 2)\n"
+">>> [*numbers, 'word', *numbers]\n"
+"[1, 2, 'word', 1, 2]"
 
 msgid "Dictionary displays use a similar mechanism called *dictionary unpacking*, denoted with a double asterisk (``**``). See :ref:`dict` for details."
-msgstr ""
+msgstr "نمایش‌های دیکشنری از مکانیسم مشابه‌ای به نام *بازکردن بسته‌ی دیکشنری* استفاده می‌کنند که با دو ستاره (``**``) مشخص می‌شود. برای جزئیات بیشتر :ref:`dict` را ببینید."
 
-#, fuzzy
-#| msgid "they are computed via a set of looping and filtering instructions, called a :dfn:`comprehension`."
 msgid "A more advanced form of displays are :dfn:`comprehensions`, where items are computed via a set of looping and filtering instructions. See the :ref:`comprehensions` section for details."
-msgstr "آن‌ها از طریق مجموعه‌ای از دستورهای حلقه و فیلتر کردن، که به آن :dfn:`comprehension` گفته می‌شود، محاسبه می‌شوند."
+msgstr "نوع پیشرفته‌تری از نمایش‌ها، :dfn:`درک‌ها` هستند که در آن‌ها آیتم‌ها از طریق مجموعه‌ای از دستورات حلقه‌ای و فیلترینگ محاسبه می‌شوند. برای جزئیات، بخش :ref:`comprehensions` را ببینید."
 
-#, fuzzy
-#| msgid "Iterable unpacking in expression lists, originally proposed by :pep:`448`."
 msgid "Iterable and dictionary unpacking in displays, originally proposed by :pep:`448`."
-msgstr "واگشایی پیمایش‌پذیرها در فهرست‌های عبارت، که در ابتدا در :pep:`448` پیشنهاد شد."
+msgstr "پیمایش‌پذیر و بازکردن بسته‌ی دیکشنری در نمایش‌ها که ابتدا توسط :pep:`448` پیشنهاد شد."
 
 msgid "List displays"
 msgstr "نمایش‌های فهرست"
 
-#, fuzzy
-#| msgid "A list display is a possibly empty series of expressions enclosed in square brackets:"
 msgid "A :dfn:`list display` is a possibly empty series of expressions enclosed in square brackets. For example::"
-msgstr "نمایش فهرست، دنباله‌ای از عبارت‌ها است که ممکن است خالی باشد و درون کروشه قرار دارد:"
+msgstr "یک :dfn:`نمایش فهرست` (list display) دنباله‌ای احتمالاً خالی از عبارت‌ها است که در داخل کروشه‌ها قرار دارد. برای نمونه::"
 
 msgid ""
 ">>> [\"one\", \"two\", \"three\"]\n"
@@ -412,24 +421,24 @@ msgid ""
 ">>> []       # empty list\n"
 "[]"
 msgstr ""
+">>> [\"one\", \"two\", \"three\"]\n"
+"['one', 'two', 'three']\n"
+">>> [\"one\"]  # One-element list\n"
+"['one']\n"
+">>> []       # empty list\n"
+"[]"
 
-#, fuzzy
-#| msgid "See :ref:`faq-identity-with-is` for more information."
 msgid "See :ref:`displays` for general information on displays."
-msgstr "برای اطلاعات بیشتر، :ref:`faq-identity-with-is` را ببینید."
+msgstr "برای اطلاعات عمومی درباره‌ی نمایش‌ها، :ref:`displays` را ببینید."
 
-#, fuzzy
-#| msgid "The formal grammar for literals is:"
 msgid "The formal grammar for list displays is:"
-msgstr "دستور زبان صوری برای مقادیر لفظی چنین است:"
+msgstr "گرامر رسمی نمایش‌های فهرست عبارت است از:"
 
 msgid "Set displays"
 msgstr "نمایش‌های مجموعه"
 
-#, fuzzy
-#| msgid "A list display is a possibly empty series of expressions enclosed in square brackets:"
 msgid "A :dfn:`set display` is a *non-empty* series of expressions enclosed in curly braces. For example::"
-msgstr "نمایش فهرست، دنباله‌ای از عبارت‌ها است که ممکن است خالی باشد و درون کروشه قرار دارد:"
+msgstr "یک :dfn:`نمایش مجموعه` (set display) دنباله‌ای *غیرخالی* از عبارت‌ها است که در داخل آکولادها قرار دارد. برای نمونه::"
 
 msgid ""
 ">>> {\"one\", \"two\", \"three\"}\n"
@@ -437,24 +446,22 @@ msgid ""
 ">>> {\"one\"}  # One-element set\n"
 "{'one'}"
 msgstr ""
+">>> {\"one\", \"two\", \"three\"}\n"
+"{'one', 'three', 'two'}\n"
+">>> {\"one\"}  # One-element set\n"
+"{'one'}"
 
 msgid "There is no special syntax for the empty set. The ``{}`` literal is a :ref:`dictionary display <dict>` that constructs an empty dictionary. Call :class:`set() <set>` with no arguments to get an empty set."
-msgstr ""
+msgstr "هیچ نحو خاصی برای مجموعه‌ی خالی وجود ندارد. لفظی ``{}`` یک :ref:`dictionary display <dict>` است که یک دیکشنری خالی می‌سازد. برای دریافت یک مجموعه‌ی خالی، :class:`set() <set>` را بدون هیچ آرگومانی فراخوانی کنید."
 
-#, fuzzy
-#| msgid "The formal grammar for literals is:"
 msgid "The formal grammar for set displays is:"
-msgstr "دستور زبان صوری برای مقادیر لفظی چنین است:"
+msgstr "گرامر رسمی نمایش‌های مجموعه عبارت است از:"
 
-#, fuzzy
-#| msgid "tuple display"
 msgid "Tuple displays"
-msgstr "نمایش تاپل"
+msgstr "نمایش‌های تاپل"
 
-#, fuzzy
-#| msgid "A list display is a possibly empty series of expressions enclosed in square brackets:"
 msgid "A :dfn:`tuple display` is a series of expressions enclosed in parentheses. For example::"
-msgstr "نمایش فهرست، دنباله‌ای از عبارت‌ها است که ممکن است خالی باشد و درون کروشه قرار دارد:"
+msgstr "یک :dfn:`نمایش تاپل` (tuple display) دنباله‌ای از عبارت‌ها است که در داخل پرانتزها قرار دارد. برای نمونه::"
 
 msgid ""
 ">>> (1, 2)\n"
@@ -462,9 +469,13 @@ msgid ""
 ">>> ()  # an empty tuple\n"
 "()"
 msgstr ""
+">>> (1, 2)\n"
+"(1, 2)\n"
+">>> ()  # an empty tuple\n"
+"()"
 
 msgid "To avoid ambiguity, if a tuple display has exactly one element, it requires a trailing comma. Without it, you get a :ref:`parenthesized group <parenthesized>`::"
-msgstr ""
+msgstr "برای جلوگیری از ابهام، اگر یک نمایش تاپل دقیقاً یک عنصر داشته باشد، به یک ویرگول پایانی نیاز دارد. بدون آن، یک :ref:`parenthesized group <parenthesized>` دریافت می‌کنید::"
 
 msgid ""
 ">>> ('single',)  # single-element tuple\n"
@@ -472,49 +483,47 @@ msgid ""
 ">>> ('single')   # no comma: single string\n"
 "'single'"
 msgstr ""
+">>> ('single',)  # single-element tuple\n"
+"('single',)\n"
+">>> ('single')   # no comma: single string\n"
+"'single'"
 
 msgid "To put it in other words, a tuple display is a parenthesized list of either:"
-msgstr ""
+msgstr "به عبارت دیگر، نمایش تاپل فهرستی است از موارد زیر که داخل پرانتز قرار گرفته‌اند:"
 
-#, fuzzy
-#| msgid "The subscript can also be given as two or more comma-separated expressions or slices::"
 msgid "two or more comma-separated expressions, or"
-msgstr "همچنین می‌توان زیرنویس را به‌صورت دو یا چند عبارت یا اسلایس جداشده با کاما نیز مشخص کرد::"
+msgstr "دو یا چند عبارت جداشده با کاما، یا"
 
 msgid "zero or more expressions, each followed by a comma."
-msgstr ""
+msgstr "صفر یا چند عبارت که هر کدام با یک ویرگول دنبال می‌شوند."
 
-#, fuzzy
-#| msgid "An empty pair of parentheses yields an empty tuple object.  Since tuples are immutable, the same rules as for literals apply (i.e., two occurrences of the empty tuple may or may not yield the same object)."
 msgid "Since tuples are immutable, :ref:`object identity rules for literals <literals-identity>` also apply to tuples: at runtime, two occurrences of tuples with the same values may or may not yield the same object."
-msgstr "یک جفت پرانتز خالی، یک شیء تاپل خالی را حاصل می‌کند. از آن‌جا که تاپل‌ها تغییرناپذیرند، همان قواعد مربوط به مقادیر لفظی اعمال می‌شود (یعنی ممکن است دو رخداد از تاپل خالی، شیء یکسانی را حاصل دهند یا ندهند)."
+msgstr "از آنجایی که تاپل‌ها تغییرناپذیر هستند، :ref:`قوانین هویت شیء برای مقادیر ثابت <literals-identity>` نیز در مورد تاپل‌ها اعمال می‌شوند: در ران‌تایم، دو وقوع از تاپل‌ها با مقادیر یکسان ممکن است شیء یکسانی را تولید کنند یا نکنند."
 
 msgid "Python's syntax also includes :ref:`expression lists <exprlists>`, where a comma-separated list of expressions is *not* enclosed in parentheses but evaluates to tuple."
-msgstr ""
+msgstr "نحو پایتون همچنین شامل :ref:`expression lists <exprlists>` است که در آن فهرستی از عباراتِ جداشده با ویرگول در پرانتز قرار *نمی‌گیرند* اما به یک تاپل ارزیابی می‌شوند."
 
 msgid "In other words, when it comes to tuple syntax, the comma is more important that the use of parentheses. Only the empty tuple is spelled without a comma."
-msgstr ""
+msgstr "به عبارت دیگر، هنگامی که صحبت از نحو تاپل به میان می‌آید، ویرگول مهم‌تر از استفاده از پرانتز است. فقط تاپل خالی بدون ویرگول نوشته می‌شود."
 
-#, fuzzy
-#| msgid "The formal grammar for literals is:"
 msgid "The formal grammar for tuple displays is:"
-msgstr "دستور زبان صوری برای مقادیر لفظی چنین است:"
+msgstr "گرامر رسمی برای نمایش‌های تاپل عبارت است از:"
 
 msgid "Dictionary displays"
 msgstr "نمایش‌های دیکشنری"
 
 msgid "A :dfn:`dictionary display` is a possibly empty series of :dfn:`dict items` enclosed in curly braces. Each dict item is a colon-separated pair of expressions: the :dfn:`key` and its associated :dfn:`value`. For example::"
-msgstr ""
+msgstr "یک :dfn:`dictionary display` سری احتمالاً خالی از :dfn:`dict items` است که درون آکولاد قرار گرفته‌اند. هر آیتم دیکشنری یک جفت عبارتِ جداشده با دونقطه است: :dfn:`key` و :dfn:`value` مرتبط با آن. برای مثال::"
 
 msgid ""
 ">>> {1: 'one', 2: 'two'}\n"
 "{1: 'one', 2: 'two'}"
 msgstr ""
+">>> {1: 'one', 2: 'two'}\n"
+"{1: 'one', 2: 'two'}"
 
-#, fuzzy
-#| msgid "If a comma-separated sequence of dict items is given, they are evaluated from left to right to define the entries of the dictionary: each key object is used as a key into the dictionary to store the corresponding value.  This means that you can specify the same key multiple times in the dict item list, and the final dictionary's value for that key will be the last one given."
 msgid "At runtime, when a dictionary comprehension is evaluated, the expressions are evaluated from left to right. Each key object is used as a key into the dictionary to store the corresponding value. This means that you can specify the same key multiple times in the comprehension, and the final dictionary's value for a given key will be the last one given. For example::"
-msgstr "اگر دنباله‌ای از آیتم‌های دیکشنری که با کاما از هم جدا شده‌اند داده شود، آن‌ها از چپ به راست ارزیابی می‌شوند تا ورودی‌های دیکشنری را تعریف کنند: هر شیء کلید به‌عنوان کلیدی در دیکشنری برای ذخیره مقدار متناظر استفاده می‌شود. این بدان معناست که شما می‌توانید یک کلید را چندین بار در فهرست آیتم‌های دیکشنری مشخص کنید و مقدار دیکشنری نهایی برای آن کلید، آخرین مقدار داده‌شده خواهد بود."
+msgstr "در ران‌تایم، هنگام ارزیابی یک درک دیکشنری، عبارت‌ها از چپ به راست ارزیابی می‌شوند. هر شیء کلید به عنوان کلیدی در دیکشنری برای ذخیره‌ی مقدار متناظر استفاده می‌شود. این بدان معناست که شما می‌توانید یک کلید را چندین بار در درک مشخص کنید و مقدار دیکشنری نهایی برای یک کلید مشخص، آخرین مقداری خواهد بود که داده شده است. برای مثال::"
 
 msgid ""
 ">>> {\n"
@@ -525,11 +534,16 @@ msgid ""
 "... }\n"
 "{1: 'one', 2: 'two'}"
 msgstr ""
+">>> {\n"
+"...     1: 'this will be overridden',\n"
+"...     2: 'two',\n"
+"...     1: 'also overridden',\n"
+"...     1: 'one',\n"
+"... }\n"
+"{1: 'one', 2: 'two'}"
 
-#, fuzzy
-#| msgid "A double asterisk ``**`` denotes :dfn:`dictionary unpacking`. Its operand must be a :term:`mapping`.  Each mapping item is added to the new dictionary.  Later values replace values already set by earlier dict items and earlier dictionary unpackings."
 msgid "Instead of a key-value pair, a dict item may be an expression prefixed by a double asterisk ``**``. This denotes :dfn:`dictionary unpacking`. At runtime, the expression must evaluate to a :term:`mapping`; each item of the mapping is added to the new dictionary. As with key-value pairs, later values replace values already set by earlier items and unpackings. This may be used to override a set of defaults::"
-msgstr "نماد دو ستاره ``**`` نشان‌دهنده :dfn:`واگشایی دیکشنری (dictionary unpacking)` است. عملوند آن باید یک :term:`نگاشت <mapping>` باشد. هر آیتم از نگاشت به دیکشنری جدید اضافه می‌شود. مقادیر بعدی جایگزین مقادیری می‌شوند که از پیش توسط آیتم‌های دیکشنری پیشین و واگشایی‌های دیکشنری پیشین تعیین شده‌اند."
+msgstr "به‌جای جفت کلید-مقدار، یک آیتم دیکشنری ممکن است عبارتی باشد که با دو ستاره ``**`` پیشوند شده است. این نشان‌دهنده‌ی :dfn:`بازکردن بسته دیکشنری` است. در ران‌تایم، عبارت باید به یک :term:`نگاشت <mapping>` ارزیابی شود؛ هر آیتم از نگاشت به دیکشنری جدید اضافه می‌شود. همانند جفت‌های کلید-مقدار، مقادیر بعدی جایگزین مقادیری می‌شوند که قبلاً توسط آیتم‌ها و بازکردن بسته‌های قبلی تنظیم شده‌اند. این ممکن است برای بازنویسی مجموعه‌ای از مقادیر پیش‌فرض استفاده شود::"
 
 msgid ""
 ">>> defaults = {'color': 'blue', 'count': 8}\n"
@@ -537,50 +551,39 @@ msgid ""
 ">>> {**defaults, **overrides}\n"
 "{'color': 'yellow', 'count': 8}"
 msgstr ""
+">>> defaults = {'color': 'blue', 'count': 8}\n"
+">>> overrides = {'color': 'yellow'}\n"
+">>> {**defaults, **overrides}\n"
+"{'color': 'yellow', 'count': 8}"
 
 msgid "Unpacking into dictionary displays, originally proposed by :pep:`448`."
 msgstr "واگشایی در نمایش‌های دیکشنری، که در ابتدا در :pep:`448` پیشنهاد شده بود."
 
-#, fuzzy
-#| msgid "The formal grammar for literals is:"
 msgid "The formal grammar for dict displays is:"
-msgstr "دستور زبان صوری برای مقادیر لفظی چنین است:"
+msgstr "گرامر رسمی برای نمایش‌های دیکشنری عبارت است از:"
 
-#, fuzzy
-#| msgid "comprehensions"
 msgid "Comprehensions"
 msgstr "درک‌ها"
 
 msgid "List, set and dictionary :dfn:`comprehensions` are a form of :ref:`container displays <displays>` where items are computed via a set of looping and filtering instructions rather than listed explicitly."
-msgstr ""
+msgstr ":dfn:`درک‌کننده‌های` فهرست، مجموعه و دیکشنری فرمی از :ref:`نمایش‌های ظرف <displays>` هستند که در آن‌ها آیتم‌ها به جای فهرست‌شدن صریح، از طریق مجموعه‌ای از دستورالعمل‌های حلقه‌زنی و فیلترینگ محاسبه می‌شوند."
 
 msgid "In its simplest form, a comprehension consists of a single expression followed by a :keyword:`!for` clause. The :keyword:`!for` clause has the same syntax as the header of a :ref:`for statement <for>`, without a trailing colon."
-msgstr ""
+msgstr "در ساده‌ترین شکل، یک درک‌کننده شامل یک عبارت واحد است که پس از آن یک بند :keyword:`!for` قرار دارد. بند :keyword:`!for` دارای همان نحو (سینتکس) سرآیند یک :ref:`دستور for <for>` است، بدون اینکه دو‌نقطه در انتهای آن قرار گیرد."
 
 msgid "For example, a list of the first ten squares is::"
-msgstr ""
+msgstr "برای مثال، فهرستی از ده مربع اول به‌صورت زیر است::"
 
-#, fuzzy
-#| msgid ""
-#| ">>> list(iterator)\n"
-#| "[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]"
 msgid ""
 ">>> [x**2 for x in range(10)]\n"
 "[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]"
 msgstr ""
-">>> list(iterator)\n"
+">>> [x**2 for x in range(10)]\n"
 "[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]"
 
 msgid "At run time, a list comprehension creates a new list. The expression after :keyword:`!in` must evaluate to an :term:`iterable`. For each element of this iterable, the element is bound to the :keyword:`!for` clause's target as in a :keyword:`!for` statement, then the expression before :keyword:`!for` is evaluated with the target in scope and the result is added to the new list. Thus, the example above is roughly equivalent to defining and calling the following function::"
-msgstr ""
+msgstr "در زمان اجرا، یک درک فهرستی یک فهرست جدید ایجاد می‌کند. عبارت پس از :keyword:`!in` باید به یک :term:`پیمایش‌پذیر <iterable>` ارزیابی شود. برای هر عنصر از این پیمایش‌پذیر، عنصر به هدف بند :keyword:`!for` مانند یک دستور :keyword:`!for` متصل می‌شود، سپس عبارت قبل از :keyword:`!for` با هدف در محدوده ارزیابی می‌شود و نتیجه به فهرست جدید اضافه می‌شود. بنابراین، مثال بالا تقریباً معادل تعریف و فراخوانی تابع زیر است::"
 
-#, fuzzy
-#| msgid ""
-#| "def make_generator_of_squares(iterator):\n"
-#| "    for x in iterator:\n"
-#| "        yield x ** 2\n"
-#| "\n"
-#| "make_generator_of_squares(iter(range(10)))"
 msgid ""
 "def make_list_of_squares(iterable):\n"
 "    result = []\n"
@@ -590,22 +593,26 @@ msgid ""
 "\n"
 "make_list_of_squares(range(10))"
 msgstr ""
-"def make_generator_of_squares(iterator):\n"
-"    for x in iterator:\n"
-"        yield x ** 2\n"
+"def make_list_of_squares(iterable):\n"
+"    result = []\n"
+"    for x in iterable:\n"
+"        result.append(x**2)\n"
+"    return result\n"
 "\n"
-"make_generator_of_squares(iter(range(10)))"
+"make_list_of_squares(range(10))"
 
 msgid "Set comprehensions work similarly. For example, here is a set of lowercase letters::"
-msgstr ""
+msgstr "درک‌های مجموعه نیز به همین صورت کار می‌کنند. برای مثال، این هم مجموعه‌ای از حروف کوچک است::"
 
 msgid ""
 ">>> {x.lower() for x in ['a', 'A', 'b', 'C']}\n"
 "{'c', 'a', 'b'}"
 msgstr ""
+">>> {x.lower() for x in ['a', 'A', 'b', 'C']}\n"
+"{'c', 'a', 'b'}"
 
 msgid "At run time, this corresponds roughly to calling this function::"
-msgstr ""
+msgstr "در زمان اجرا، این کار تقریباً معادل فراخوانی این تابع است::"
 
 msgid ""
 "def make_lowercase_set(iterable):\n"
@@ -616,9 +623,16 @@ msgid ""
 "\n"
 "make_lowercase_set(['a', 'A', 'b', 'C'])"
 msgstr ""
+"def make_lowercase_set(iterable):\n"
+"    result = set(iterable)\n"
+"    for x in iterable:\n"
+"        result.append(x.lower())\n"
+"    return result\n"
+"\n"
+"make_lowercase_set(['a', 'A', 'b', 'C'])"
 
 msgid "Dictionary comprehensions start with a colon-separated key-value pair instead of an expression. For example::"
-msgstr ""
+msgstr "درک‌های دیکشنری به جای یک عبارت، با یک جفت کلید-مقدار جدا شده با دو‌نقطه شروع می‌شوند. برای مثال::"
 
 msgid ""
 ">>> {func.__name__: func for func in [print, hex, any]}\n"
@@ -626,9 +640,13 @@ msgid ""
 " 'hex': <built-in function hex>,\n"
 " 'any': <built-in function any>}"
 msgstr ""
+">>> {func.__name__: func for func in [print, hex, any]}\n"
+"{'print': <built-in function print>,\n"
+" 'hex': <built-in function hex>,\n"
+" 'any': <built-in function any>}"
 
 msgid "At run time, this corresponds roughly to::"
-msgstr ""
+msgstr "در زمان اجرا، این تقریباً معادل موارد زیر است::"
 
 msgid ""
 "def make_dict_mapping_names_to_functions(iterable):\n"
@@ -639,45 +657,48 @@ msgid ""
 "\n"
 "iterable([print, hex, any])"
 msgstr ""
+"def make_dict_mapping_names_to_functions(iterable):\n"
+"    result = {}\n"
+"    for func in iterable:\n"
+"        result[func.__name__] = func\n"
+"    return result\n"
+"\n"
+"iterable([print, hex, any])"
 
 msgid "As in other kinds of dictionary displays, the same key may be specified multiple times. Earlier values are overwritten by ones that are evaluated later."
-msgstr ""
+msgstr "مانند سایر انواع نمایش‌های دیکشنری، ممکن است یک کلید چندین بار مشخص شود. مقادیر قبلی توسط مقادیری که بعدها ارزیابی می‌شوند، بازنویسی می‌شوند."
 
 msgid "There are no *tuple comprehensions*. A similar syntax is instead used for :ref:`generator expressions <genexpr>`, from which you can construct a tuple like this::"
-msgstr ""
+msgstr "چیزی به نام *درک تاپل* وجود ندارد. در عوض، نحو مشابهی برای :ref:`عبارت‌های مولد <genexpr>` استفاده می‌شود که از طریق آن‌ها می‌توانید یک تاپل را به این شکل بسازید::"
 
-#, fuzzy
-#| msgid ""
-#| ">>> list(iterator)\n"
-#| "[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]"
 msgid ""
 ">>> tuple(x**2 for x in range(10))\n"
 "(0, 1, 4, 9, 16, 25, 36, 49, 64, 81)"
 msgstr ""
-">>> list(iterator)\n"
-"[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]"
+">>> tuple(x**2 for x in range(10))\n"
+"(0, 1, 4, 9, 16, 25, 36, 49, 64, 81)"
 
 msgid "Prior to Python 3.8, in dict comprehensions, the evaluation order of key and value was not well-defined.  In CPython, the value was evaluated before the key.  Starting with 3.8, the key is evaluated before the value, as proposed by :pep:`572`."
 msgstr "پیش از پایتون 3.8، در درک دیکشنری، ترتیب ارزیابی کلید و مقدار به‌خوبی تعریف‌نشده بود. در CPython، مقدار پیش از کلید ارزیابی می‌شد. از 3.8 به بعد، کلید پیش از مقدار ارزیابی می‌شود، همان‌طور که در :pep:`572` پیشنهاد شده است."
 
-#, fuzzy
-#| msgid "in comprehensions"
 msgid "Filtering in comprehensions"
-msgstr "در درک‌ها"
+msgstr "فیلتر کردن در درک‌ها"
 
 msgid "The :keyword:`!for` clause may be followed by an :keyword:`!if` clause with an expression."
-msgstr ""
+msgstr "ممکن است پس از بند :keyword:`!for` یک بند :keyword:`!if` همراه با یک عبارت بیاید."
 
 msgid "For example, a list of names from the :mod:`math` module that start with ``f`` is::"
-msgstr ""
+msgstr "برای مثال، فهرستی از نام‌های ماژول :mod:`math` که با ``f`` شروع می‌شوند عبارت است از::"
 
 msgid ""
 ">>> [name for name in vars(math) if name.startswith('f')]\n"
 "['fabs', 'factorial', 'floor', 'fma', 'fmod', 'frexp', 'fsum']"
 msgstr ""
+">>> [name for name in vars(math) if name.startswith('f')]\n"
+"['fabs', 'factorial', 'floor', 'fma', 'fmod', 'frexp', 'fsum']"
 
 msgid "At run time, the expression after :keyword:`!if` is evaluated before each element is added to the resulting container, and if it is false, the element is skipped. Thus, the above example roughly corresponds to defining and calling the following function::"
-msgstr ""
+msgstr "در زمان اجرا، عبارت موجود پس از :keyword:`!if` پیش از اضافه شدن هر المان به ظرف حاصل ارزیابی می‌شود و اگر نادرست باشد، آن المان نادیده گرفته می‌شود. بنابراین، مثال بالا تقریباً با تعریف و فراخوانی تابع زیر مطابقت دارد::"
 
 msgid ""
 "def get_math_f_names(iterable):\n"
@@ -689,17 +710,23 @@ msgid ""
 "\n"
 "get_math_f_names(vars(math))"
 msgstr ""
+"def get_math_f_names(iterable):\n"
+"    result = []\n"
+"    for name in iterable:\n"
+"        if name.startswith('f'):\n"
+"           result.append(name)\n"
+"    return result\n"
+"\n"
+"get_math_f_names(vars(math))"
 
 msgid "Filtering is a special case of more complex comprehensions. See the next section for a more formal description."
-msgstr ""
+msgstr "فیلترکردن حالت خاصی از درک‌های پیچیده‌تر است. برای توضیحات رسمی‌تر، بخش بعدی را ببینید."
 
-#, fuzzy
-#| msgid "comprehensions"
 msgid "Complex comprehensions"
-msgstr "درک‌ها"
+msgstr "درک‌های پیچیده"
 
 msgid "Generally, a comprehension's initial :keyword:`!for` clause may be followed by zero or more additional :keyword:`!for` or :keyword:`!if` clauses. For example, here is a list of names exposed by two Python modules, filtered to only include names that start with ``a``::"
-msgstr ""
+msgstr "به‌طور کلی، بند اول :keyword:`!for` در یک درک ممکن است با صفر یا چند بند اضافی :keyword:`!for` یا :keyword:`!if` دنبال شود. برای مثال، در اینجا فهرستی از نام‌های عرضه‌شده توسط دو ماژول پایتون آورده شده است که فیلتر شده‌اند تا فقط نام‌های شروع‌شونده با ``a`` را شامل شوند::"
 
 msgid ""
 ">>> import array\n"
@@ -712,9 +739,18 @@ msgid ""
 "... ]\n"
 "['array', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh']"
 msgstr ""
+">>> import array\n"
+">>> import math\n"
+">>> [\n"
+"...     name\n"
+"...     for module in [array, math]\n"
+"...     for name in vars(module)\n"
+"...     if name.startswith('a')\n"
+"... ]\n"
+"['array', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh']"
 
 msgid "At run time, this roughly corresponds to defining and calling::"
-msgstr ""
+msgstr "در زمان اجرا، این مورد تقریباً با تعریف و فراخوانی زیر مطابقت دارد::"
 
 msgid ""
 "def get_a_names(iterable):\n"
@@ -727,16 +763,21 @@ msgid ""
 "\n"
 "get_a_names([array, math])"
 msgstr ""
+"def get_a_names(iterable):\n"
+"    result = []\n"
+"    for module in iterable:\n"
+"        for name in vars(module):\n"
+"            if name.startswith('a'):\n"
+"                result.append(name)\n"
+"    return result\n"
+"\n"
+"get_a_names([array, math])"
 
-#, fuzzy
-#| msgid "The comprehension consists of a single expression followed by at least one :keyword:`!for` clause and zero or more :keyword:`!for` or :keyword:`!if` clauses. In this case, the elements of the new container are those that would be produced by considering each of the :keyword:`!for` or :keyword:`!if` clauses a block, nesting from left to right, and evaluating the expression to produce an element each time the innermost block is reached."
 msgid "The elements of the new container are those that would be produced by considering each of the :keyword:`!for` or :keyword:`!if` clauses a block, nesting from left to right, and evaluating the expression to produce an element (or dictionary entry) each time the innermost block is reached."
-msgstr "این درک از یک عبارت واحد تشکیل شده است که پس از آن حداقل ۱ بند :keyword:`!for` و ۰ یا چند بند :keyword:`!for` یا :keyword:`!if` قرار می‌گیرد. در این حالت، عناصر ظرف جدید آن‌هایی هستند که با در نظر گرفتن هر یک از بندهای :keyword:`!for` یا :keyword:`!if` به‌عنوان یک بلوک، تودرتو شدن آن‌ها از چپ به راست، و ارزیابی عبارت برای تولید یک عنصر هر بار که به داخلی‌ترین بلوک می‌رسید، تولید می‌شوند."
+msgstr "عناصر ظرف جدید آنهایی هستند که با در نظر گرفتن هر یک از بندهای :keyword:`!for` یا :keyword:`!if` به عنوان یک بلوک، تودرتو کردن از چپ به راست، و ارزیابی عبارت برای تولید یک عنصر (یا ورودی دیکشنری) در هر بار رسیدن به داخلی‌ترین بلوک، تولید می‌شوند."
 
-#, fuzzy
-#| msgid "However, aside from the iterable expression in the leftmost :keyword:`!for` clause, the comprehension is executed in a separate implicitly nested scope. This ensures that names assigned to in the target list don't \"leak\" into the enclosing scope."
 msgid "Aside from the iterable expression in the leftmost :keyword:`!for` clause, the comprehension is executed in a separate implicitly nested scope. This ensures that names assigned to in the target list don't \"leak\" into the enclosing scope. For example::"
-msgstr "با این حال، به‌جز عبارت پیمایش‌پذیر در چپ‌ترین بند :keyword:`!for`، درک در یک محدوده‌ی تودرتوی ضمنی جداگانه اجرا می‌شود. این امر تضمین می‌کند که نام‌هایی که در فهرست هدف به آن‌ها انتساب داده می‌شود، به محدوده‌ی دربرگیرنده «نشت» نمی‌کنند."
+msgstr "به‌جز عبارت پیمایش‌پذیر در سمت چپ‌ترین بند :keyword:`!for`، درک در یک محدوده‌ی تودرتوی ضمنی جداگانه اجرا می‌شود. این تضمین می‌کند که نام‌های تخصیص‌یافته در فهرست هدف به محدوده‌ی احاطه‌کننده «نشت» نکنند. برای مثال::"
 
 msgid ""
 ">>> x = 'old value'\n"
@@ -744,36 +785,34 @@ msgid ""
 ">>> x\n"
 "'old value'"
 msgstr ""
+">>> x = 'old value'\n"
+">>> [x**2 for x in range(10)]  # این `x` نسبت به درک محلی است\n"
+">>> x\n"
+"'old value'"
 
-#, fuzzy
-#| msgid "However, aside from the iterable expression in the leftmost :keyword:`!for` clause, the comprehension is executed in a separate implicitly nested scope. This ensures that names assigned to in the target list don't \"leak\" into the enclosing scope."
 msgid "The iterable expression in the leftmost :keyword:`!for` clause is evaluated directly in the enclosing scope and then passed as an argument to the implicitly nested scope."
-msgstr "با این حال، به‌جز عبارت پیمایش‌پذیر در چپ‌ترین بند :keyword:`!for`، درک در یک محدوده‌ی تودرتوی ضمنی جداگانه اجرا می‌شود. این امر تضمین می‌کند که نام‌هایی که در فهرست هدف به آن‌ها انتساب داده می‌شود، به محدوده‌ی دربرگیرنده «نشت» نمی‌کنند."
+msgstr "عبارت پیمایش‌پذیر در سمت چپ‌ترین بند :keyword:`!for` مستقیماً در محدوده‌ی احاطه‌کننده ارزیابی شده و سپس به عنوان آرگومانی به محدوده‌ی تودرتوی ضمنی ارسال می‌شود."
 
-#, fuzzy
-#| msgid "The iterable expression in the leftmost :keyword:`!for` clause is evaluated directly in the enclosing scope and then passed as an argument to the implicitly nested scope. Subsequent :keyword:`!for` clauses and any filter condition in the leftmost :keyword:`!for` clause cannot be evaluated in the enclosing scope as they may depend on the values obtained from the leftmost iterable. For example: ``[x*y for x in range(10) for y in range(x, x+10)]``."
 msgid "Subsequent :keyword:`!for` clauses and any filter condition in the leftmost :keyword:`!for` clause cannot be evaluated in the enclosing scope as they may depend on the values obtained from the leftmost iterable."
-msgstr "عبارت پیمایش‌پذیر در چپ‌ترین بند :keyword:`!for` مستقیماً در محدوده دربرگیرنده ارزیابی می‌شود و سپس به‌عنوان آرگومان به محدوده تودرتوی ضمنی ارسال می‌شود. بندهای :keyword:`!for` بعدی و هر شرط فیلتر در چپ‌ترین بند :keyword:`!for` نمی‌توانند در محدوده دربرگیرنده ارزیابی شوند، زیرا ممکن است به مقادیر به‌دست‌آمده از چپ‌ترین پیمایش‌پذیر وابسته باشند. برای مثال: ``[x*y for x in range(10) for y in range(x, x+10)]``."
+msgstr "بندهای بعدی :keyword:`!for` و هر شرط فیلتری در سمت چپ‌ترین بند :keyword:`!for` نمی‌توانند در محدوده‌ی احاطه‌کننده ارزیابی شوند زیرا ممکن است به مقادیر به‌دست‌آآمده از پیمایش‌پذیر سمت چپ بستگی داشته باشند."
 
 msgid "To ensure the comprehension always results in a container of the appropriate type, ``yield`` and ``yield from`` expressions are prohibited in the implicitly nested scope."
 msgstr "برای اطمینان از اینکه درک همیشه به ظرفی از نوع مناسب منجر می‌شود، عبارت‌های ``yield`` و ``yield from`` در محدوده‌ی تودرتوی ضمنی ممنوع هستند."
 
 msgid ":ref:`Assignment expressions <assignment-expressions>` are not allowed inside comprehension iterable expressions (that is, the expressions after the :keyword:`!in` keyword), nor anywhere within comprehensions that appear directly in a class definition."
-msgstr ""
+msgstr ":ref:`عبارت‌های انتساب <assignment-expressions>` در عبارت‌های پیمایش‌پذیر درک (یعنی عبارت‌های بعد از کلیدواژهین :keyword:`!in`) و همچنین در هیچ‌یک از درک‌هایی که مستقیماً در تعریف یک کلاس ظاهر می‌شوند، مجاز نیستند."
 
 msgid "``yield`` and ``yield from`` prohibited in the implicitly nested scope."
 msgstr "``yield`` و ``yield from`` در محدوده‌ی تودرتوی ضمنی ممنوع است."
 
-#, fuzzy
-#| msgid "in comprehensions"
 msgid "Unpacking in comprehensions"
-msgstr "در درک‌ها"
+msgstr "بازکردن بسته در درک‌ها"
 
 msgid "If the expression of a list or set comprehension is starred, the result will be :ref:`unpacked <iterable-unpacking>` to produce zero or more elements."
-msgstr ""
+msgstr "اگر عبارت یک فهرست یا درک مجموعه ستاره‌دار باشد، نتیجه :ref:`بازنشود <iterable-unpacking>` تا صفر یا چند عنصر تولید کند."
 
 msgid "This is often used for \"flattening\" lists, for example::"
-msgstr ""
+msgstr "این کار اغلب برای «تخت‌سازی» فهرست‌ها استفاده می‌شود، برای مثال::"
 
 msgid ""
 ">>> students = ['Petr', 'Blaise', 'Jarka']\n"
@@ -782,9 +821,14 @@ msgid ""
 ">>> [*people for people in lists_of_people]\n"
 "['Petr', 'Blaise', 'Jarka', 'Salim', 'Bartosz']"
 msgstr ""
+">>> students = ['Petr', 'Blaise', 'Jarka']\n"
+">>> teachers = ['Salim', 'Bartosz']\n"
+">>> lists_of_people = [students, teachers]\n"
+">>> [*people for people in lists_of_people]\n"
+"['Petr', 'Blaise', 'Jarka', 'Salim', 'Bartosz']"
 
 msgid "At run time, this comprehension roughly corresponds to::"
-msgstr ""
+msgstr "در زمان اجرا، این درک تقریباً با موارد زیر مطابقت دارد::"
 
 msgid ""
 "def flatten_names(lists_of_people):\n"
@@ -793,14 +837,17 @@ msgid ""
 "        result.extend(people)\n"
 "    return result"
 msgstr ""
+"def flatten_names(lists_of_people):\n"
+"    result = []\n"
+"    for people in lists_of_people:\n"
+"        result.extend(people)\n"
+"    return result"
 
 msgid "In dict comprehensions, a double-starred expression will be evaluated and then unpacked using :ref:`dictionary unpacking <dict-unpacking>`, inserting zero or more key/value pairs into the new dictionary. As in other kinds of dictionary displays, if the same key is specified multiple times, the associated value in the resulting dictionary will be the last one specified."
-msgstr ""
+msgstr "در درک‌های دیکشنری، یک عبارت دو ستاره‌دار ارزیابی شده و سپس با استفاده از :ref:`بازکردن دیکشنری <dict-unpacking>` باز می‌شود و صفر یا چند جفت کلید/مقدار را در دیکشنری جدید درج می‌کند. مانند سایر انواع نمایش‌های دیکشنری، اگر یک کلید چندین بار مشخص شود، مقدار مرتبط در دیکشنری حاصل آخرین مقدار مشخص‌شده خواهد بود."
 
-#, fuzzy
-#| msgid "examples"
 msgid "For example::"
-msgstr "مثال‌ها"
+msgstr "برای مثال::"
 
 msgid ""
 ">>> system_defaults = {'color': 'blue', 'count': 8}\n"
@@ -812,42 +859,38 @@ msgid ""
 ">>> {**d for d in configuration_sets}\n"
 "{'color': 'yellow', 'count': 5}"
 msgstr ""
+">>> system_defaults = {'color': 'blue', 'count': 8}\n"
+">>> user_defaults = {'color': 'yellow'}\n"
+">>> overrides = {'count': 5}\n"
+"\n"
+">>> configuration_sets = [system_defaults, user_defaults, overrides]\n"
+"\n"
+">>> {**d for d in configuration_sets}\n"
+"{'color': 'yellow', 'count': 5}"
 
 msgid "Unpacking in comprehensions using the ``*`` and ``**`` operators was introduced in :pep:`798`."
-msgstr ""
+msgstr "بازکردن بسته در درک‌ها با استفاده از عملگرهای ``*`` و ``**`` در :pep:`798` معرفی شد."
 
-#, fuzzy
-#| msgid "Asynchronous comprehensions were introduced."
 msgid "Asynchronous comprehensions"
-msgstr "درک‌های ناهمگام معرفی شدند."
+msgstr "درک‌های ناهمگام"
 
-#, fuzzy
-#| msgid "Since Python 3.6, in an :keyword:`async def` function, an :keyword:`!async for` clause may be used to iterate over a :term:`asynchronous iterator`. A comprehension in an :keyword:`!async def` function may consist of either a :keyword:`!for` or :keyword:`!async for` clause following the leading expression, may contain additional :keyword:`!for` or :keyword:`!async for` clauses, and may also use :keyword:`await` expressions."
 msgid "In an :keyword:`async def` function, an :keyword:`!async for` clause may be used to iterate over a :term:`asynchronous iterator`. A comprehension in an :keyword:`!async def` function may consist of either a :keyword:`!for` or :keyword:`!async for` clause following the leading expression, may contain additional :keyword:`!for` or :keyword:`!async for` clauses, and may also use :keyword:`await` expressions."
-msgstr "از پایتون 3.6، در یک تابع :keyword:`async def`، می‌توان از یک بند :keyword:`!async for` برای تکرار بر روی یک :term:`asynchronous iterator` استفاده کرد. یک درک در یک تابع :keyword:`!async def` می‌تواند شامل یک بند :keyword:`!for` یا :keyword:`!async for` پس از عبارت آغازین باشد، می‌تواند شامل بندهای :keyword:`!for` یا :keyword:`!async for` اضافی باشد، و همچنین می‌تواند از عبارت‌های :keyword:`await` استفاده کند."
+msgstr "در یک تابع :keyword:`async def`، می‌توان از یک بند :keyword:`!async for` برای پیمایش روی یک :term:`پیمایش‌گر ناهمگام <asynchronous iterator>` استفاده کرد. یک درک در یک تابع :keyword:`!async def` ممکن است شامل یک بند :keyword:`!for` یا :keyword:`!async for` به دنبال عبارت پیشرو باشد، ممکن است حاوی بندهای :keyword:`!for` یا :keyword:`!async for` اضافی باشد، و همچنین ممکن است از عبارت‌های :keyword:`await` استفاده کند."
 
-#, fuzzy
-#| msgid "If a comprehension contains :keyword:`!async for` clauses, or if it contains :keyword:`!await` expressions or other asynchronous comprehensions anywhere except the iterable expression in the leftmost :keyword:`!for` clause, it is called an :dfn:`asynchronous comprehension`. An asynchronous comprehension may suspend the execution of the coroutine function in which it appears. See also :pep:`530`."
 msgid "If a comprehension contains :keyword:`!async for` clauses, or if it contains :keyword:`!await` expressions or other asynchronous comprehensions anywhere except the iterable expression in the leftmost :keyword:`!for` clause, it is called an :dfn:`asynchronous comprehension`. An asynchronous comprehension may suspend the execution of the coroutine function in which it appears."
-msgstr "اگر یک درک شامل بندهای :keyword:`!async for` باشد، یا شامل عبارت‌های :keyword:`!await` یا دیگر درک‌های ناهمگام در هر جایی به‌جز عبارت پیمایش‌پذیر در چپ‌ترین بند :keyword:`!for` باشد، به آن :dfn:`درک ناهمگام (asynchronous comprehension)` گفته می‌شود. یک درک ناهمگام ممکن است اجرای تابع هم‌روالی که در آن ظاهر می‌شود را معلق کند. همچنین :pep:`530` را ببینید."
+msgstr "اگر یک درک حاوی بندهای :keyword:`!async for` باشد، یا اگر حاوی عبارت‌های :keyword:`!await` یا سایر درک‌های ناهمگام در هر جایی به‌جز عبارت پیمایش‌پذیر در سمت چپ‌ترین بند :keyword:`!for` باشد، به آن :dfn:`درک ناهمگام` گفته می‌شود. یک درک ناهمگام ممکن است اجرای تابع هم‌روالی را که در آن ظاهر می‌شود، به حالت تعلیق درآورد."
 
-#, fuzzy
-#| msgid "Asynchronous comprehensions were introduced."
 msgid "Asynchronous comprehensions were introduced in :pep:`530`."
-msgstr "درک‌های ناهمگام معرفی شدند."
+msgstr "درک‌های ناهمگام در :pep:`530` معرفی شدند."
 
 msgid "Asynchronous comprehensions are now allowed inside comprehensions in asynchronous functions. Outer comprehensions implicitly become asynchronous."
 msgstr "درک‌های ناهمگام اکنون در داخل درک‌ها در توابع ناهمگام مجاز هستند. درک‌های بیرونی به‌طور ضمنی ناهمگام می‌شوند."
 
-#, fuzzy
-#| msgid "The formal grammar for generator expressions is:"
 msgid "Formal grammar for comprehensions"
-msgstr "دستور زبان صوری عبارت‌های تولیدگر:"
+msgstr "گرامر رسمی برای درک‌ها"
 
-#, fuzzy
-#| msgid "The formal grammar for generator expressions is:"
 msgid "The formal grammar for comprehensions is:"
-msgstr "دستور زبان صوری عبارت‌های تولیدگر:"
+msgstr "گرامر رسمی برای درک‌ها عبارت است از:"
 
 msgid "Generator expressions"
 msgstr "عبارت‌های تولیدگر"
@@ -1931,18 +1974,14 @@ msgstr "مگر وقتی که بخشی از یک نمایش فهرست یا مج�
 msgid "A trailing comma is required only to create a one-item tuple, such as ``1,``; it is optional in all other cases. A single expression without a trailing comma doesn't create a tuple, but rather yields the value of that expression. (To create an empty tuple, use an empty pair of parentheses: ``()``.)"
 msgstr "ویرگول پایانی فقط برای ایجاد یک تاپل تک‌آیتمی، مانند ``1,`` لازم است؛ در تمام موارد دیگر اختیاری است. یک عبارت بدون ویرگول پایانی، تاپل ایجاد نمی‌کند، بلکه مقدار آن عبارت را برمی‌گرداند. (برای ایجاد یک تاپل خالی، از یک جفت پرانتز خالی استفاده کنید: ``()``.)"
 
-#, fuzzy
-#| msgid "unpacking"
 msgid "Iterable unpacking"
-msgstr "واگشایی"
+msgstr "بازکردن بسته‌ی پیمایش‌پذیر"
 
 msgid "In an expression list or tuple, list or set display, any expression may be prefixed with an asterisk (``*``). This denotes :dfn:`iterable unpacking`."
-msgstr ""
+msgstr "در یک فهرست عبارت یا تاپل، نمایش فهرست یا مجموعه، هر عبارتی ممکن است با یک ستاره (``*``) پیشوند شود. این نشان‌دهنده‌ی :dfn:`بازکردن پیمایش‌پذیر` است."
 
-#, fuzzy
-#| msgid "An asterisk ``*`` denotes :dfn:`iterable unpacking`.  Its operand must be an :term:`iterable`.  The iterable is expanded into a sequence of items, which are included in the new tuple, list, or set, at the site of the unpacking."
 msgid "At runtime, the asterisk-prefixed expression must evaluate to an :term:`iterable`. The iterable is expanded into a sequence of items, which are included in the new tuple, list, or set, at the site of the unpacking."
-msgstr "ستاره ``*`` نشان‌دهنده‌ی :dfn:`واگشایی پیمایش‌پذیر (iterable unpacking)` است. عملوند آن باید یک :term:`پیمایش‌پذیر <iterable>` باشد. این پیمایش‌پذیر به دنباله‌ای از آیتم‌ها بسط داده می‌شود که در محل واگشایی، در تاپل، فهرست یا مجموعه‌ی جدید گنجانده می‌شوند."
+msgstr "در ران‌تایم، عبارت پیشوندگرفته با ستاره باید به یک :term:`پیمایش‌پذیر <iterable>` ارزیابی شود. پیمایش‌پذیر به دنباله‌ای از آیتم‌ها گسترش می‌یابد که در تاپل، فهرست یا مجموعه‌ی جدید، در محل بازکردن بسته گنجانده می‌شوند."
 
 msgid "Iterable unpacking in expression lists, originally proposed by :pep:`448`."
 msgstr "واگشایی پیمایش‌پذیرها در فهرست‌های عبارت، که در ابتدا در :pep:`448` پیشنهاد شد."

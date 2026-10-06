@@ -397,10 +397,10 @@ msgid "object being iterated by ``yield from``, or ``None``"
 msgstr "شیئی که ``yield from`` روی آن پیمایش می‌کند، یا ``None``"
 
 msgid "gi_state"
-msgstr ""
+msgstr "gi_state"
 
 msgid "state of the generator, one of ``GEN_CREATED``, ``GEN_RUNNING``, ``GEN_SUSPENDED``, or ``GEN_CLOSED``"
-msgstr ""
+msgstr "وضعیت تولیدگر، یکی از مقادیر ``GEN_CREATED``، ``GEN_RUNNING``، ``GEN_SUSPENDED`` یا ``GEN_CLOSED``"
 
 msgid "async generator"
 msgstr "تولیدگر ناهمگام"
@@ -424,10 +424,10 @@ msgid "ag_code"
 msgstr "ag_code"
 
 msgid "ag_state"
-msgstr ""
+msgstr "ag_state"
 
 msgid "state of the async generator, one of ``AGEN_CREATED``, ``AGEN_RUNNING``, ``AGEN_SUSPENDED``, or ``AGEN_CLOSED``"
-msgstr ""
+msgstr "وضعیت تولیدگر ناهمگام، یکی از موارد ``AGEN_CREATED``، ``AGEN_RUNNING``، ``AGEN_SUSPENDED`` یا ``AGEN_CLOSED``"
 
 msgid "coroutine"
 msgstr "هم‌روال"
@@ -459,13 +459,11 @@ msgstr "cr_origin"
 msgid "where coroutine was created, or ``None``. See |coroutine-origin-link|"
 msgstr "جایی که هم‌روال ایجاد شده است، یا ``None``. ببینید |coroutine-origin-link|"
 
-#, fuzzy
-#| msgid "co_stacksize"
 msgid "cr_state"
-msgstr "co_stacksize"
+msgstr "cr_state"
 
 msgid "state of the coroutine, one of ``CORO_CREATED``, ``CORO_RUNNING``, ``CORO_SUSPENDED``, or ``CORO_CLOSED``"
-msgstr ""
+msgstr "وضعیت هم‌روال، یکی از موارد ``CORO_CREATED``، ``CORO_RUNNING``، ``CORO_SUSPENDED`` یا ``CORO_CLOSED``"
 
 msgid "builtin"
 msgstr "توکار"
@@ -501,7 +499,7 @@ msgid "Add ``f_generator`` attribute to frames."
 msgstr "افزودن ویژگی ``f_generator`` به فریم‌ها."
 
 msgid "Add ``gi_state`` attribute to generators, ``cr_state`` attribute to coroutines, and ``ag_state`` attribute to async generators."
-msgstr ""
+msgstr "افزودن ویژگی ``gi_state`` به تولیدگرها، ویژگی ``cr_state`` به هم‌روال‌ها و ویژگی ``ag_state`` به تولیدگرهای ناهمگام."
 
 msgid "Return all the members of an object in a list of ``(name, value)`` pairs sorted by name. If the optional *predicate* argument—which will be called with the ``value`` object of each member—is supplied, only members for which the predicate returns a true value are included."
 msgstr "تمام اعضای یک شیء را در فهرستی از جفت‌های ``(name, value)`` مرتب‌شده بر اساس نام برمی‌گرداند. اگر آرگومان اختیاری *predicate* — که با شیء ``value`` هر عضو فراخوانی می‌شود — داده شده باشد، تنها اعضایی که predicate برای آن‌ها مقدار درست برگرداند، گنجانده می‌شوند."
@@ -760,30 +758,28 @@ msgid "Retrieving source code"
 msgstr "بازیابی کد منبع"
 
 msgid "Get the documentation string for an object, cleaned up with :func:`cleandoc`. If the documentation string for an object is not provided:"
-msgstr ""
+msgstr "دریافت رشته‌ی مستندات برای یک شیء، که با :func:`cleandoc` پاک‌سازی شده است. اگر رشته‌ی مستندات برای یک شیء فراهم نشده باشد:"
 
 msgid "if the object is a class and *inherit_class_doc* is true (by default), retrieve the documentation string from the inheritance hierarchy;"
-msgstr ""
+msgstr "اگر شیء یک کلاس باشد و *inherit_class_doc* برابر با درست (به‌طور پیش‌فرض) باشد، رشته‌ی مستندات از سلسله‌مراتب ارث‌بری بازیابی می‌شود؛"
 
 msgid "if the object is a method, a property or a descriptor, retrieve the documentation string from the inheritance hierarchy;"
-msgstr ""
+msgstr "اگر شیء یک متد، یک ویژگی یا یک توصیف‌گر باشد، رشته‌ی مستندات از سلسله‌مراتب ارث‌بری بازیابی می‌شود؛"
 
 msgid "otherwise, if *fallback_to_class_doc* is true (by default), retrieve the documentation string from the class of the object."
-msgstr ""
+msgstr "در غیر این صورت، اگر *fallback_to_class_doc* برابر با درست (به‌طور پیش‌فرض) باشد، رشته‌ی مستندات از کلاسِ شیء بازیابی می‌شود."
 
 msgid "Return ``None`` if the documentation string is invalid or missing."
-msgstr ""
+msgstr "اگر رشته‌ی مستندات نامعتبر یا گم شده باشد، مقدار ``None`` را برمی‌گرداند."
 
 msgid "Documentation strings are now inherited if not overridden."
 msgstr "رشته مستندات اکنون در صورتی که بازنویسی نشده باشند، به ارث می‌رسند."
 
 msgid "Added parameters *inherit_class_doc* and *fallback_to_class_doc*."
-msgstr ""
+msgstr "پارامترهای *inherit_class_doc* و *fallback_to_class_doc* اضافه شدند."
 
-#, fuzzy
-#| msgid "Documentation strings are now inherited if not overridden."
 msgid "Documentation strings on :class:`~functools.cached_property` objects are now inherited if not overridden."
-msgstr "رشته مستندات اکنون در صورتی که بازنویسی نشده باشند، به ارث می‌رسند."
+msgstr "رشته‌های مستندسازی روی اشیاء :class:`~functools.cached_property` اکنون در صورت عدم بازنویسی، به ارث برده می‌شوند."
 
 msgid "Return in a single string any lines of comments immediately preceding the object's source code (for a class, function, or method), or at the top of the Python source file (if the object is a module).  If the object's source code is unavailable, return ``None``.  This could happen if the object has been defined in C or the interactive shell."
 msgstr "هر یک از سطرهای کامنت‌ها بلافاصله پیش از کد منبع شیء (برای یک کلاس، تابع یا متد) یا در بالای پرونده منبع پایتون (اگر شیء یک ماژول باشد) را در یک رشته‌ی واحد برمی‌گرداند. اگر کد منبع شیء در دسترس نباشد، ``None`` را برمی‌گرداند. این حالت ممکن است در صورتی رخ دهد که شیء در C یا پوسته‌ی تعاملی تعریف شده باشد."
@@ -1204,7 +1200,7 @@ msgid "Note that :func:`signature` and :ref:`Signature Object <inspect-signature
 msgstr "توجه داشته باشید که :func:`signature` و :ref:`شیء امضا <inspect-signature-object>`، API توصیه‌شده برای درون‌نگری اشیاء فراخوانی‌پذیر را فراهم می‌کنند و از رفتارهای اضافی (مانند آرگومان‌های فقط جایگاهی) پشتیبانی می‌کنند که گاهی در APIهای ماژول‌های توسعه‌ای با آن‌ها مواجه می‌شوید. این تابع عمدتاً برای استفاده در کدی نگه داشته شده است که نیاز دارد سازگاری با API ماژول ``inspect`` در پایتون 2 را حفظ کند."
 
 msgid "A member of the :class:`annotationlib.Format` enum can be passed to the *annotation_format* parameter to control the format of the returned annotations. For example, use ``annotation_format=annotationlib.Format.STRING`` to return annotations in string format. Note that with the default ``VALUE`` format, creation of some argspecs may raise an exception."
-msgstr ""
+msgstr "می‌توان یک عضو از شمارشی :class:`annotationlib.Format` را به پارامتر *annotation_format* ارسال کرد تا قالب حاشیه‌نویسی‌های برگردانده‌شده کنترل شود. برای مثال، از ``annotation_format=annotationlib.Format.STRING`` استفاده کنید تا حاشیه‌نویسی‌ها در قالب رشته برگردانده شوند. توجه داشته باشید که با قالب پیش‌فرض ``VALUE``، ایجاد برخی از مشخصات آرگومان ممکن است یک استثنا ایجاد کند."
 
 msgid "This function is now based on :func:`signature`, but still ignores ``__wrapped__`` attributes and includes the already bound first parameter in the signature output for bound methods."
 msgstr "این تابع اکنون بر پایه‌ی :func:`signature` است، اما همچنان ویژگی‌های ``__wrapped__`` را نادیده می‌گیرد و نخستین پارامتر از پیش مقید را در خروجی امضا برای متدهای مقید قرار می‌دهد."
@@ -1586,16 +1582,14 @@ msgstr "رابط خط فرمان"
 msgid "The :mod:`!inspect` module also provides a basic introspection capability from the command line."
 msgstr "ماژول :mod:`!inspect` همچنین قابلیت مقدماتی درون‌نگری را از خط فرمان فراهم می‌کند."
 
-#, fuzzy
-#| msgid "By default, accepts the name of a module and prints the source of that module. A class or function within the module can be printed instead by appended a colon and the qualified name of the target object."
 msgid "By default, accepts the name of a module and prints the source of that module. A class or function within the module can be printed instead by appending a colon and the qualified name of the target object."
-msgstr "به‌طور پیش‌فرض، نام یک ماژول را می‌پذیرد و کد منبع آن ماژول را چاپ می‌کند. به‌جای آن، با افزودن یک دونقطه و نام کامل شیء هدف، می‌توان یک کلاس یا تابع درون ماژول را چاپ کرد."
+msgstr "به طور پیش‌فرض، نام یک ماژول را می‌پذیرد و سورس آن ماژول را چاپ می‌کند. با الحاق یک دونقطه (colon) و نام کامل شیء هدف، می‌توان یک کلاس یا تابع درون ماژول را به جای آن چاپ کرد."
 
 msgid "Print information about the specified object rather than the source code"
 msgstr "چاپ اطلاعات درباره شیء مشخص به جای کد منبع"
 
 msgid "The ``--details`` option now supports basic introspection for modules without available source code and indicates when modules are frozen. It also indicates when the given target reference is not the canonical name of the referenced object."
-msgstr ""
+msgstr "گزینه‌ی ``--details`` اکنون از درون‌نگری پایه‌ای برای ماژول‌های فاقد کد منبع در دسترس پشتیبانی می‌کند و زمان فریز شدن ماژول‌ها را نشان می‌دهد. همچنین نشان می‌دهد که آیا ارجاع هدف داده‌شده، نام کانونیکال شیء ارجاع‌داده‌شده نیست یا خیر."
 
 #~ msgid "co_lnotab"
 #~ msgstr "co_lnotab"

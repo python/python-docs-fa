@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-01 14:41+0330\n"
-"PO-Revision-Date: 2026-09-12 13:34+0330\n"
+"PO-Revision-Date: 2026-10-06 20:27+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
 "Language: fa\n"
@@ -2030,16 +2030,16 @@ msgid "The PEP introducing ``Annotated`` to the standard library."
 msgstr "PEP معرفی‌کننده ``Annotated`` به کتابخانه استاندارد."
 
 msgid "A special form representing the value that results from evaluating a type expression."
-msgstr ""
+msgstr "یک فرم خاص که نمایانگر مقداری است که از ارزیابی یک عبارت نوع به دست می‌آید."
 
 msgid "This value encodes the information supplied in the type expression, and it represents the type described by that type expression."
-msgstr ""
+msgstr "این مقدار اطلاعات ارائه‌شده در عبارت نوع را کدگذاری می‌کند و نمایانگر نوع توصیف‌شده توسط آن عبارت نوع است."
 
 msgid "When used in a type expression, ``TypeForm`` describes a set of type form objects. It accepts a single type argument, which must be a valid type expression. ``TypeForm[T]`` describes the set of all type form objects that represent the type ``T`` or types assignable to ``T``."
-msgstr ""
+msgstr "هنگنگامی که در یک عبارت نوع استفاده می‌شود، ``TypeForm`` مجموعه‌ای از شیءهای فرم نوع را توصیف می‌کند. این فرم یک آرگومان نوع منفرد را می‌پذیرد که باید یک عبارت نوع معتبر باشد. ``TypeForm[T]`` مجموعه‌ای از تمام شیءهای فرم نوع را توصیف می‌کند که نمایانگر نوع ``T`` یا انواع قابل انتساب به ``T`` هستند."
 
 msgid "``TypeForm(obj)`` simply returns ``obj`` unchanged. This is useful for explicitly marking a value as a type form for static type checkers."
-msgstr ""
+msgstr "``TypeForm(obj)`` به سادگی ``obj`` را بدون تغییر برمی‌گرداند. این کار برای نشانه‌گذاری صریح یک مقدار به عنوان فرم نوع برای بررسی‌کننده‌های ایستای نوع مفید است."
 
 msgid "Example::"
 msgstr "مثال::"
@@ -2051,11 +2051,14 @@ msgid ""
 "\n"
 "reveal_type(cast(int, \"x\"))  # Revealed type is \"int\""
 msgstr ""
+"from typing import Any, TypeForm\n"
+"\n"
+"def cast[T](typ: TypeForm[T], value: Any) -> T: ...\n"
+"\n"
+"reveal_type(cast(int, \"x\"))  # Revealed type is \"int\""
 
-#, fuzzy
-#| msgid "See :pep:`484` for more details."
 msgid "See :pep:`747` for details."
-msgstr "برای جزئیات بیشتر :pep:`484` را ببینید."
+msgstr "برای جزئیات بیشتر به :pep:`747` مراجعه کنید."
 
 msgid "Special typing construct for marking user-defined type predicate functions."
 msgstr "ساختار خاص نوع‌دهی برای علامت‌گذاری توابع محمول نوع تعریف‌شده توسط کاربر."
@@ -2694,20 +2697,14 @@ msgstr "برای جزئیات بیشتر درباره تاپل‌های متغی
 msgid "The name of the type variable tuple."
 msgstr "نام تاپل متغیر نوع."
 
-#, fuzzy
-#| msgid "Whether the type var has been explicitly marked as covariant."
 msgid "Whether the type variable tuple has been explicitly marked as covariant."
-msgstr "اینکه آیا متغیر نوع به‌صراحت به‌عنوان هم‌وردا علامت‌گذاری شده است یا خیر."
+msgstr "اینکه آیا تاپل متغیر نوع صراحتاً به عنوان هم‌وردا علامت‌گذاری شده است یا خیر."
 
-#, fuzzy
-#| msgid "Whether the type var has been explicitly marked as contravariant."
 msgid "Whether the type variable tuple has been explicitly marked as contravariant."
-msgstr "اینکه آیا متغیر نوع به‌طور صریح به‌عنوان پادوردا (contravariant) علامت‌گذاری شده است یا خیر."
+msgstr "اینکه آیا تاپل متغیر نوع صراحتاً به عنوان پادوردا علامت‌گذاری شده است یا خیر."
 
-#, fuzzy
-#| msgid "Whether the type variable's variance should be inferred by type checkers."
 msgid "Whether the type variable tuple's variance should be inferred by type checkers."
-msgstr "اینکه آیا واریانس متغیر نوع باید توسط بررسی‌کننده‌های نوع استنباط شود."
+msgstr "اینکه آیا واریانس تاپل متغیر نوع باید توسط بررسی‌کننده‌های نوع استنتاج شود یا خیر."
 
 msgid "The default value of the type variable tuple, or :data:`typing.NoDefault` if it has no default."
 msgstr "مقدار پیش‌فرض تاپل متغیر نوع، یا :data:`typing.NoDefault` اگر پیش‌فرضی نداشته باشد."
@@ -2718,16 +2715,14 @@ msgstr "یک :term:`evaluate function` متناظر با ویژگی :attr:`~Type
 msgid "Return whether or not the type variable tuple has a default value. This is equivalent to checking whether :attr:`__default__` is not the :data:`typing.NoDefault` singleton, except that it does not force evaluation of the :ref:`lazily evaluated <lazy-evaluation>` default value."
 msgstr "بازگشت می‌دهد که آیا تاپل متغیر نوع دارای مقدار پیش‌فرض است یا خیر. این معادل بررسی این است که آیا :attr:`__default__` تک‌نمونه‌ی :data:`typing.NoDefault` نیست یا خیر، با این تفاوت که ارزیابی مقدار پیش‌فرض :ref:`به‌صورت تنبل ارزیابی‌شده <lazy-evaluation>` را اجباری نمی‌کند."
 
-#, fuzzy
-#| msgid "Parameter specification variables created with ``covariant=True`` or ``contravariant=True`` can be used to declare covariant or contravariant generic types.  The ``bound`` argument is also accepted, similar to :class:`TypeVar`.  However the actual semantics of these keywords are yet to be decided."
 msgid "Type variable tuples created with ``covariant=True`` or ``contravariant=True`` can be used to declare covariant or contravariant generic types.  The ``bound`` argument is also accepted, similar to :class:`TypeVar`, but its actual semantics are yet to be decided."
-msgstr "متغیرهای مشخصه پارامتر (parameter specification variables) ایجادشده با ``covariant=True`` یا ``contravariant=True`` می‌توانند برای اعلام انواع عام هم‌وردا یا پادوردا (contravariant) استفاده شوند. آرگومان ``bound`` نیز پذیرفته می‌شود، مشابه :class:`TypeVar`. با این حال، معنای واقعی این کلیدواژه‌ها هنوز تعیین نشده است."
+msgstr "تاپل‌های متغیر نوع ایجادشده با ``covariant=True`` یا ``contravariant=True`` را می‌توان برای اعلام انواع عام هم‌وردا یا پادوردا استفاده کرد. آرگومان ``bound`` نیز مشابه :class:`TypeVar` پذیرفته می‌شود، اما معناشناسی واقعی آن هنوز مشخص نشده است."
 
 msgid "Type variable tuples can now be declared using the :ref:`type parameter <type-params>` syntax introduced by :pep:`695`."
 msgstr "اکنون می‌توان تاپل‌های متغیر نوع را با استفاده از سینتکس :ref:`پارامتر نوع <type-params>` که در :pep:`695` معرفی‌شده است، اعلام کرد."
 
 msgid "Added support for the ``bound``, ``covariant``, ``contravariant``, and ``infer_variance`` parameters."
-msgstr ""
+msgstr "پشتیبانی از پارامترهای ``bound``، ``covariant``، ``contravariant`` و ``infer_variance`` اضافه شد."
 
 msgid "Parameter specification variable.  A specialized version of :ref:`type variables <typevar>`."
 msgstr "متغیر مشخصات پارامتر. نسخه‌ای تخصصی از :ref:`متغیرهای نوع <typevar>`."
@@ -2796,20 +2791,14 @@ msgstr "از آن‌جا که ``ParamSpec`` هم پارامترهای جایگا
 msgid "The name of the parameter specification."
 msgstr "نام مشخصه‌ی پارامتر."
 
-#, fuzzy
-#| msgid "Whether the type var has been explicitly marked as covariant."
 msgid "Whether the parameter specification has been explicitly marked as covariant."
-msgstr "اینکه آیا متغیر نوع به‌صراحت به‌عنوان هم‌وردا علامت‌گذاری شده است یا خیر."
+msgstr "اینکه آیا مشخصات پارامتر صراحتاً به عنوان هم‌وردا علامت‌گذاری شده است یا خیر."
 
-#, fuzzy
-#| msgid "Whether the type var has been explicitly marked as contravariant."
 msgid "Whether the parameter specification has been explicitly marked as contravariant."
-msgstr "اینکه آیا متغیر نوع به‌طور صریح به‌عنوان پادوردا (contravariant) علامت‌گذاری شده است یا خیر."
+msgstr "اینکه آیا مشخصات پارامتر صراحتاً به عنوان پادوردا علامت‌گذاری شده است یا خیر."
 
-#, fuzzy
-#| msgid "Whether the type variable's variance should be inferred by type checkers."
 msgid "Whether the parameter specification's variance should be inferred by type checkers."
-msgstr "اینکه آیا واریانس متغیر نوع باید توسط بررسی‌کننده‌های نوع استنباط شود."
+msgstr "اینکه آیا واریانس مشخصات پارامتر باید توسط بررسی‌کننده‌های نوع استنتاج شود یا خیر."
 
 msgid "The default value of the parameter specification, or :data:`typing.NoDefault` if it has no default."
 msgstr "مقدار پیش‌فرض مشخصات پارامتر، یا :data:`typing.NoDefault` اگر پیش‌فرضی نداشته باشد."
@@ -2877,16 +2866,9 @@ msgstr ""
 ">>> Alias.__name__\n"
 "'Alias'"
 
-#, fuzzy
-#| msgid "The name of the type alias:"
 msgid "The :term:`qualified name` of the type alias:"
-msgstr "نام مستعار نوع:"
+msgstr ":term:`نام کامل <qualified name>` مستعار نوع:"
 
-#, fuzzy
-#| msgid ""
-#| ">>> type Alias = int\n"
-#| ">>> Alias.__name__\n"
-#| "'Alias'"
 msgid ""
 ">>> class Class:\n"
 "...     type Alias = int\n"
@@ -2894,9 +2876,11 @@ msgid ""
 ">>> Class.Alias.__qualname__\n"
 "'Class.Alias'"
 msgstr ""
-">>> type Alias = int\n"
-">>> Alias.__name__\n"
-"'Alias'"
+">>> class Class:\n"
+"...     type Alias = int\n"
+"...\n"
+">>> Class.Alias.__qualname__\n"
+"'Class.Alias'"
 
 msgid "The name of the module in which the type alias was defined::"
 msgstr "نام ماژولی که نام مستعار نوع در آن تعریف شده است::"
@@ -2911,10 +2895,10 @@ msgstr ""
 "'__main__'"
 
 msgid "This attribute is writable."
-msgstr ""
+msgstr "این ویژگی قابل نوشتن است."
 
 msgid "The attribute is now writable."
-msgstr ""
+msgstr "این ویژگی اکنون قابل نوشتن است."
 
 msgid "The type parameters of the type alias, or an empty tuple if the alias is not generic:"
 msgstr "پارامترهای نوعِ نام مستعار نوع، یا یک تاپل خالی در صورتی که نام مستعار عام نباشد:"
@@ -3229,7 +3213,7 @@ msgstr ""
 "        ..."
 
 msgid "It is deprecated to call :func:`isinstance` and :func:`issubclass` checks on protocol classes that were not explicitly decorated with :func:`!runtime_checkable` but that inherit from a runtime-checkable protocol class. This will throw a :exc:`TypeError` in Python 3.20."
-msgstr ""
+msgstr "انجام بررسی‌های :func:`isinstance` و :func:`issubclass` روی کلاس‌های پروتکلی که صریحاً با :func:`!runtime_checkable` تزئین نشده‌اند اما از یک کلاس پروتکل دارای قابلیت بررسی در ران‌تایم ارث‌بری می‌کنند، منسوخ شده است. این کار در پایتون ۳.۲۰ یک :exc:`TypeError` پرتاب خواهد کرد."
 
 msgid "Mark a protocol class as a runtime protocol."
 msgstr "یک کلاس پروتکل را به‌عنوان پروتکل ران‌تایم علامت‌گذاری می‌کند."
@@ -3265,7 +3249,7 @@ msgstr ""
 "assert isinstance(threading.Thread(name='Bob'), Named)"
 
 msgid "Runtime checkability of protocols is not inherited. A subclass of a runtime-checkable protocol is only runtime-checkable if it is explicitly marked as such, regardless of class hierarchy::"
-msgstr ""
+msgstr "قابلیت بررسی در ران‌تایم پروتکل‌ها ارث‌بری نمی‌شود. زیرکلاس یک پروتکل با قابلیت بررسی در ران‌تایم تنها در صورتی قابلیت بررسی در ران‌تایم را دارد که صریحاً به همین شکل علامت‌گذاری شده باشد، صرف‌نظر از سلسله‌مراتب کلاس::"
 
 msgid ""
 "@runtime_checkable\n"
@@ -3277,6 +3261,14 @@ msgid ""
 "class Reversible(Iterable, Protocol):\n"
 "    def __reversed__(self): ..."
 msgstr ""
+"@runtime_checkable\n"
+"class Iterable(Protocol):\n"
+"    def __iter__(self): ...\n"
+"\n"
+"# Without @runtime_checkable, Reversible would no longer be runtime-checkable.\n"
+"@runtime_checkable\n"
+"class Reversible(Iterable, Protocol):\n"
+"    def __reversed__(self): ..."
 
 msgid "This decorator raises :exc:`TypeError` when applied to a non-protocol class."
 msgstr "این دکوراتور هنگام اعمال روی یک کلاس غیرپروتکلی، استثنای :exc:`TypeError` را پرتاب می‌کند."
@@ -3451,7 +3443,7 @@ msgstr ""
 "    z: int"
 
 msgid "By default, a ``TypedDict`` is open, meaning that it may contain additional keys at runtime beyond those defined in the class body. The *closed* class argument can be used to control this; if ``closed=True``, the ``TypedDict`` cannot contain additional keys."
-msgstr ""
+msgstr "به طور پیش‌فرض، یک ``TypedDict`` باز است، به این معنی که ممکن است حاوی کلیدهای اضافی در ران‌تایم فراتر از کلیدهای تعریف‌شده در بده‌ی کلاس باشد. آرگومان کلاس *closed* می‌تواند برای کنترل این موضوع استفاده شود؛ اگر ``closed=True`` باشد، ``TypedDict`` نمی‌تواند حاوی کلیدهای اضافی باشد."
 
 msgid ""
 "class ClosedPoint(TypedDict, closed=True):\n"
@@ -3461,12 +3453,18 @@ msgid ""
 "class ClosedPoint3D(ClosedPoint):  # type checker error: cannot add keys to a closed TypedDict\n"
 "    z: int"
 msgstr ""
+"class ClosedPoint(TypedDict, closed=True):\n"
+"    x: int\n"
+"    y: int\n"
+"\n"
+"class ClosedPoint3D(ClosedPoint):  # type checker error: cannot add keys to a closed TypedDict\n"
+"    z: int"
 
 msgid "Setting ``closed=False`` explicitly requests the default open behavior. If the argument is not passed, this state is inherited from the parent class."
-msgstr ""
+msgstr "تنظیم صریح ``closed=False`` رفتار پیش‌فرضِ باز را درخواست می‌کند. اگر آرگومان ارسال نشود، این وضعیت از کلاس والد به ارث برده می‌شود."
 
 msgid "In addition to being open or closed, a ``TypedDict`` can also be configured to have extra items. If the *extra_items* class argument is set to a type, the ``TypedDict`` can contain arbitrary additional keys, but the values of those keys must be of the specified type."
-msgstr ""
+msgstr "علاوه بر باز یا بسته بودن، یک ``TypedDict`` را می‌توان به گونه‌ای پیکربندی کرد که آیتم‌های اضافی داشته باشد. اگر آرگومان کلاس *extra_items* روی یک نوع تنظیم شود، ``TypedDict`` می‌تواند کلیدهای اضافی دلخواهی را شامل شود، اما مقادیر آن کلیدها باید از نوع مشخص‌شده باشند."
 
 msgid ""
 "class ExtraItemsPoint(TypedDict, extra_items=int):\n"
@@ -3475,9 +3473,14 @@ msgid ""
 "\n"
 "point: ExtraItemsPoint = {'x': 1, 'y': 2, 'anything': 3}  # OK"
 msgstr ""
+"class ExtraItemsPoint(TypedDict, extra_items=int):\n"
+"    x: int\n"
+"    y: int\n"
+"\n"
+"point: ExtraItemsPoint = {'x': 1, 'y': 2, 'anything': 3}  # OK"
 
 msgid "The *extra_items* argument is also inherited through subclassing. It is unset by default, and it may not be used together with the *closed* argument."
-msgstr ""
+msgstr "آرگومان *extra_items* همچنین از طریق زیرکلاس‌سازی به ارث برده می‌شود. این آرگومان به طور پیش‌فرض تنظیم نشده است و نمی‌توان آن را به همراه آرگومان *closed* استفاده کرد."
 
 msgid "A ``TypedDict`` cannot inherit from a non-\\ ``TypedDict`` class, except for :class:`Generic`. For example::"
 msgstr "یک ``TypedDict`` نمی‌تواند از کلاسی غیر ``TypedDict`` ارث‌بری کند، به‌جز :class:`Generic`. برای مثال::"
@@ -3611,10 +3614,10 @@ msgid "A :class:`frozenset` containing the names of all mutable keys. Keys are m
 msgstr "یک :class:`frozenset` حاوی نام تمام کلیدهای تغییرپذیر. کلیدها در صورتی تغییرپذیر هستند که فاقد مشخص‌کننده :data:`ReadOnly` باشند."
 
 msgid "The value of the *closed* class argument. It can be ``True``, ``False``, or :data:`None`."
-msgstr ""
+msgstr "مقدار آرگومان کلاس *closed*. این مقدار می‌تواند ``True``، ``False`` یا :data:`None` باشد."
 
 msgid "The value of the *extra_items* class argument. It can be a valid type or :data:`NoExtraItems`."
-msgstr ""
+msgstr "مقدار آرگومان کلاس *extra_items*. این مقدار می‌تواند یک نوع معتبر یا :data:`NoExtraItems` باشد."
 
 msgid "See the `TypedDict <https://typing.python.org/en/latest/spec/typeddict.html#typeddict>`_ section in the typing documentation for more examples and detailed rules."
 msgstr "برای مثال‌های بیشتر و قوانین دقیق، بخش `TypedDict <https://typing.python.org/en/latest/spec/typeddict.html#typeddict>`_ را در مستندات typing ببینید."
@@ -3631,13 +3634,11 @@ msgstr "پشتیبانی از ``TypedDict``\\ های عام افزوده شد."
 msgid "Removed support for the keyword-argument method of creating ``TypedDict``\\ s."
 msgstr "پشتیبانی از روش آرگومان کلیدواژه‌ای برای ایجاد ``TypedDict``\\ s حذف شد."
 
-#, fuzzy
-#| msgid "Support for the :data:`ReadOnly` qualifier was added."
 msgid "Support for the :data:`ReadOnly` qualifier was added. See :pep:`705`."
-msgstr "پشتیبانی از مشخص‌کننده (qualifier) :data:`ReadOnly` افزوده شد."
+msgstr "پشتیبانی از مشخص‌کننده :data:`ReadOnly` اضافه شد. به :pep:`705` مراجعه کنید."
 
 msgid "Support for the *closed* and *extra_items* class arguments was added. See :pep:`728`."
-msgstr ""
+msgstr "پشتیبانی از آرگومان‌های کلاس *closed* و *extra_items* اضافه شد. نگاه کنید به :pep:`728`."
 
 msgid "Protocols"
 msgstr "پروتکل‌ها"
@@ -4111,13 +4112,11 @@ msgstr "دکوراتور تلاش می‌کند ویژگی ``__override__`` را
 msgid "See :pep:`698` for more details."
 msgstr "برای جزئیات بیشتر به :pep:`698` مراجعه کنید."
 
-#, fuzzy
-#| msgid "Decorator to mark a class or function as unavailable at runtime."
 msgid "Decorator to mark a class as a disjoint base."
-msgstr "دکوراتوری برای علامت‌گذاری یک کلاس یا تابع به‌عنوان غیرقابل‌دسترس در ران‌تایم."
+msgstr "دکوراتوری برای علامت‌گذاری یک کلاس به عنوان پایه مجزا."
 
 msgid "Type checkers do not allow child classes of a disjoint base ``C`` to inherit from other disjoint bases that are not parent or child classes of ``C``."
-msgstr ""
+msgstr "بررسی‌کننده‌های نوع اجازه نمی‌دهند که کلاس‌های فرزند یک پایه‌ی مجزا ``C`` از پایه‌های مجزای دیگری که کلاس‌های والد یا فرزند ``C`` نیستند، ارث‌بری کنند."
 
 msgid ""
 "@disjoint_base\n"
@@ -4128,15 +4127,22 @@ msgid ""
 "\n"
 "class Disjoint3(Disjoint1, Disjoint2): pass  # Type checker error"
 msgstr ""
+"@disjoint_base\n"
+"class Disjoint1: pass\n"
+"\n"
+"@disjoint_base\n"
+"class Disjoint2: pass\n"
+"\n"
+"class Disjoint3(Disjoint1, Disjoint2): pass  # Type checker error"
 
 msgid "Type checkers can use knowledge of disjoint bases to detect unreachable code and determine when two types can overlap."
-msgstr ""
+msgstr "بررسی‌کننده‌های نوع می‌توانند از دانشِ پایه‌های مجزا برای تشخیص کد دست‌نیافتنی و تعیین زمان همپوشانی دو نوع استفاده کنند."
 
 msgid "The corresponding runtime concept is a solid base (see :ref:`multiple-inheritance`). Classes that are solid bases at runtime can be marked with ``@disjoint_base`` in stub files. Users may also mark other classes as disjoint bases to indicate to type checkers that multiple inheritance with other disjoint bases should not be allowed."
-msgstr ""
+msgstr "مفهوم متناظر در ران‌تایم، پایه‌ی صلب است (نگاه کنید به :ref:`multiple-inheritance`). کلاس‌هایی که در ران‌تایم پایه‌های صلبی هستند را می‌توان با ``@disjoint_base`` در پرونده‌های stub علامت‌گذاری کرد. کاربران همچنین ممکن است کلاس‌های دیگر را به عنوان پایه‌های مجزا علامت‌گذاری کنند تا به بررسی‌کننده‌های نوع نشان دهند که ارث‌بری چندگانه با سایر پایه‌های مجزا نباید مجاز باشد."
 
 msgid "Note that the concept of a solid base is a CPython implementation detail, and the exact set of standard library classes that are disjoint bases at runtime may change in future versions of Python."
-msgstr ""
+msgstr "توجه داشته باشید که مفهوم پایه‌ی صلب یک جزئیات پیاده‌سازی سی‌پایتون است و مجموعه دقیق کلاس‌های کتابخانه‌ی استاندارد که در ران‌تایم پایه‌های مجزایی هستند ممکن است در نسخه‌های آینده‌ی پایتون تغییر کند."
 
 msgid "Decorator to mark a class or function as unavailable at runtime."
 msgstr "دکوراتوری برای علامت‌گذاری یک کلاس یا تابع به‌عنوان غیرقابل‌دسترس در ران‌تایم."
@@ -4384,10 +4390,8 @@ msgstr ""
 ">>> S.__default__ is None\n"
 "True"
 
-#, fuzzy
-#| msgid "A sentinel object used to indicate that a type parameter has no default value. For example:"
 msgid "A :class:`sentinel` object used to indicate that a :class:`TypedDict` does not have the *extra_items* class argument."
-msgstr "یک شیء نشانگر (sentinel) که برای نشان دادن این به کار می‌رود که یک پارامتر نوع مقدار پیش‌فرض ندارد. برای مثال:"
+msgstr "یک شیء :class:`sentinel` که برای نشان دادن این استفاده می‌شود که یک :class:`TypedDict` آرگومان کلاس *extra_items* را ندارد."
 
 msgid ""
 ">>> from typing import TypedDict, NoExtraItems\n"
@@ -4398,6 +4402,13 @@ msgid ""
 ">>> Point.__extra_items__ is NoExtraItems\n"
 "True"
 msgstr ""
+">>> from typing import TypedDict, NoExtraItems\n"
+">>> class Point(TypedDict):\n"
+"...     x: int\n"
+"...     y: int\n"
+"...\n"
+">>> Point.__extra_items__ is NoExtraItems\n"
+"True"
 
 msgid "Constant"
 msgstr "ثابت"
@@ -4529,10 +4540,8 @@ msgstr ":class:`collections.deque` اکنون از زیرنویسی با ``[]`` 
 msgid "Aliases to other concrete types"
 msgstr "نام‌های مستعار برای سایر انواع مشخص"
 
-#, fuzzy
-#| msgid "Deprecated aliases corresponding to the return types from :func:`re.compile` and :func:`re.match`."
 msgid "Deprecated aliases corresponding to the return types from :func:`re.compile` and :func:`re.search`."
-msgstr "نام‌های مستعار منسوخ‌شده‌ی متناظر با انواع بازگشتی از :func:`re.compile` و :func:`re.match`."
+msgstr "نام‌های مستعار منسوخ‌شده مربوط به انواع بازگشتی از :func:`re.compile` و :func:`re.search`."
 
 msgid "These types (and the corresponding functions) are generic over :data:`AnyStr`. ``Pattern`` can be specialised as ``Pattern[str]`` or ``Pattern[bytes]``; ``Match`` can be specialised as ``Match[str]`` or ``Match[bytes]``."
 msgstr "این انواع (و توابع متناظر) نسبت به :data:`AnyStr` عام هستند. ``Pattern`` می‌تواند به‌صورت ``Pattern[str]`` یا ``Pattern[bytes]`` تخصصی شود؛ ``Match`` می‌تواند به‌صورت ``Match[str]`` یا ``Match[bytes]`` تخصصی شود."

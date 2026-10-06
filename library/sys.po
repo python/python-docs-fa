@@ -31,22 +31,22 @@ msgid "This module provides access to some variables used or maintained by the i
 msgstr "این ماژول دسترسی به برخی متغیرهایی که توسط مفسر استفاده یا نگهداری می‌شوند و به توابعی که تعامل قوی با مفسر دارند را فراهم می‌کند. این ماژول همیشه در دسترس است. مگر آن‌که به‌صراحت خلاف آن ذکر شده باشد، همه متغیرها فقط‌خواندنی هستند."
 
 msgid "An object containing information about the ABI of the currently running Python interpreter. It should include information that affect the CPython ABI in ways that require a specific build of the interpreter chosen from variants that can co-exist on a single machine. For example, it does not encode the base OS (Linux or Windows), but does include pointer size since some systems support both 32- and 64-bit builds. The available entries are the same on all platforms; e.g. *pointer_size* is available even on 64-bit-only architectures."
-msgstr ""
+msgstr "شیءای حاوی اطلاعات درباره‌ی رابط دودویی کاربردی (ABI) مفسر در حال اجرای پایتون. این شیء باید شامل اطلاعاتی باشد که روی رابط دودویی کاربردی سی‌پایتون (CPython ABI) به انحایی تأثیر می‌گذارند که نیازمند ساخت (build) خاصی از مفسرِ انتخاب‌شده از میان انواعِ توانمندِ همزیست روی یک ماشین واحد است. برای مثال، سیستم‌عامل پایه (لینوکس یا ویندوز) را رمزگذاری نمی‌کند، اما اندازه‌ی اشاره‌گر را شامل می‌شود زیرا برخی سیستم‌ها از هر دو ساخت ۳۲ بیتی و ۶۴ بیتی پشتیبانی می‌کنند. مدخل‌های موجود در تمام سکوها یکسان هستند؛ برای مثال *pointer_size* حتی روی معماری‌های فقط ۶۴ بیتی نیز در دسترس است."
 
 msgid "The following attributes are available:"
-msgstr ""
+msgstr "ویژگی‌های زیر در دسترس هستند:"
 
 msgid "The width of pointers in bits, as an integer, equivalent to ``8 * sizeof(void *)``. Usually, this is  ``32`` or ``64``."
-msgstr ""
+msgstr "عرض اشاره‌گرها بر حسب بیت، به شکل یک عدد صحیح، معادل ``8 * sizeof(void *)``. معمولاً این مقدار ``32`` یا ``64`` است."
 
 msgid "A Boolean indicating whether the interpreter was built with :term:`free threading` support. This reflects either the presence of the :option:`--disable-gil` :file:`configure` option (on Unix) or setting the ``DisableGil`` property (on Windows)."
-msgstr ""
+msgstr "یک مقدار بولی که نشان می‌دهد آیا مفسر با پشتیبانی از :term:`نخ‌بندی آزاد <free threading>` ساخته شده است یا خیر. این مورد بازتاب‌دهنده‌ی حضور گزینه‌ی :file:`configure` به شکل :option:`--disable-gil` (در یونیکس) یا تنظیم ویژگی ``DisableGil`` (در ویندوز) است."
 
 msgid "A Boolean indicating whether the interpreter was built in :ref:`debug mode <debug-build>`. This reflects either the presence of the :option:`--with-pydebug` :file:`configure` option (on Unix) or the ``Debug`` configuration (on Windows)."
-msgstr ""
+msgstr "یک مقدار بولی که نشان می‌دهد آیا مفسر در :ref:`حالت رفع اشکال <debug-build>` ساخته شده است یا خیر. این مورد بازتاب‌دهنده‌ی حضور گزینه‌ی :file:`configure` به شکل :option:`--with-pydebug` (در یونیکس) یا پیکربندی ``Debug`` (در ویندوز) است."
 
 msgid "A string indicating the native byte order, either ``'big'`` or ``'little'``. This is the same as the :data:`byteorder` attribute."
-msgstr ""
+msgstr "رشته‌ای که ترتیب بایت بومی (native byte order)، یعنی ``'big'`` یا ``'little'`` را مشخص می‌کند. این ویژگی همانند ویژگی :data:`byteorder` است."
 
 msgid "On POSIX systems where Python was built with the standard ``configure`` script, this contains the ABI flags as specified by :pep:`3149`."
 msgstr "در سیستم‌های POSIX که پایتون با اسکریپت استاندارد ``configure`` ساخته شده است، این شامل پرچم‌های ABI می‌شود، همان‌طور که در :pep:`3149` مشخص شده است."
@@ -328,10 +328,8 @@ msgstr "یک استثنای :exc:`SystemExit` را پرتاب می‌کند، ک
 msgid "The optional argument *arg* can be an integer giving the exit status (defaulting to zero), or another type of object.  If it is an integer, zero is considered \"successful termination\" and any nonzero value is considered \"abnormal termination\" by shells and the like.  Most systems require it to be in the range 0--127, and produce undefined results otherwise.  Some systems have a convention for assigning specific meanings to specific exit codes, but these are generally underdeveloped; Unix programs generally use 2 for command line syntax errors and 1 for all other kinds of errors.  If another type of object is passed, ``None`` is equivalent to passing zero, and any other object is printed to :data:`stderr` and results in an exit code of 1.  In particular, ``sys.exit(\"some error message\")`` is a quick way to exit a program when an error occurs."
 msgstr "آرگومان اختیاری *arg* می‌تواند یک عدد صحیح باشد که وضعیت خروج را مشخص می‌کند (پیش‌فرض آن صفر است)، یا شیءای از نوع دیگر. اگر عدد صحیح باشد، صفر از سوی پوسته‌ها و امثال آن «خاتمه‌ی موفق» و هر مقدار ناصفر «خاتمه‌ی غیرعادی» تلقی می‌شود. در بیشتر سیستم‌ها، این مقدار باید در محدوده‌ی ۰ تا ۱۲۷ باشد؛ در غیر این صورت نتایج تعریف‌نشده‌ای تولید می‌شود. برخی سیستم‌ها برای اختصاص معانی خاص به کدهای خروج خاص قراردادی دارند، اما این قراردادها عموماً چندان توسعه‌یافته نیستند؛ برنامه‌های یونیکس معمولاً از ۲ برای خطاهای سینتکس خط فرمان و از ۱ برای تمام انواع دیگر خطاها استفاده می‌کنند. اگر شیءای از نوع دیگر ارسال شود، ``None`` معادل ارسال صفر است و هر شیء دیگری در :data:`stderr` چاپ می‌شود و به کد خروج ۱ منجر می‌شود. به‌ویژه، ``sys.exit(\"some error message\")`` راهی سریع برای خروج از برنامه هنگام وقوع خطا است."
 
-#, fuzzy
-#| msgid "Since :func:`exit` ultimately \"only\" raises an exception, it will only exit the process when called from the main thread, and the exception is not intercepted. Cleanup actions specified by finally clauses of :keyword:`try` statements are honored, and it is possible to intercept the exit attempt at an outer level."
 msgid "Since :func:`exit` ultimately \"only\" raises an exception, it will only exit the process when called from the main thread, and the exception is not intercepted. Cleanup actions specified by :keyword:`finally` clauses of :keyword:`try` statements are honored, and it is possible to intercept the exit attempt at an outer level."
-msgstr "از آنجا که :func:`exit` در نهایت «فقط» یک استثنا پرتاب می‌کند، تنها زمانی فرایند را خاتمه می‌دهد که از نخ اصلی فراخوانی شود و استثنا رهگیری نشده باشد. اقدامات پاک‌سازی مشخص‌شده توسط بندهای finally در دستورات :keyword:`try` اجرا می‌شوند و می‌توان تلاش برای خروج را در سطحی بیرونی رهگیری کرد."
+msgstr "از آنجا که :func:`exit` در نهایت «فقط» یک استثنا ایجاد می‌کند، فرایند را تنها زمانی متوقف می‌کند که از نخ اصلی فراخوانی شود و استثنا رهگیری نشود. کنش‌های پاکسازی مشخص‌شده توسط بندهای :keyword:`finally` از دستورات :keyword:`try` محترم شمرده می‌شوند و امکان رهگیری تلاش برای خروج در سطح بیرونی‌تر وجود دارد."
 
 msgid "If an error occurs in the cleanup after the Python interpreter has caught :exc:`SystemExit` (such as an error flushing buffered data in the standard streams), the exit status is changed to 120."
 msgstr "اگر در پاک‌سازی، پس از آنکه مفسر پایتون :exc:`SystemExit` را گرفته باشد، خطایی رخ دهد (مانند خطا در تخلیه‌ی داده‌های بافری‌شده در جریان‌های استاندارد)، وضعیت خروج به ۱۲۰ تغییر می‌یابد."
@@ -616,22 +614,22 @@ msgid "Returns the current value for the :ref:`integer string conversion length 
 msgstr "مقدار فعلی :ref:`محدودیت طول تبدیل عدد صحیح به رشته <int_max_str_digits>` را برمی‌گرداند. همچنین :func:`set_int_max_str_digits` را ببینید."
 
 msgid "Returns the current lazy imports mode as a string."
-msgstr ""
+msgstr "حالت فعلی ایمپورت‌های تنبل (lazy imports) را به شکل یک رشته برمی‌گرداند."
 
 msgid "``\"normal\"``: Only imports explicitly marked with the ``lazy`` keyword are lazy"
-msgstr ""
+msgstr "``\"normal\"``: فقط ایمپورت‌هایی که صراحتاً با کلیدواژه‌ی ``lazy`` مشخص شده‌اند، تنبل هستند"
 
 msgid "``\"all\"``: All top-level imports are potentially lazy"
-msgstr ""
+msgstr "``\"all\"``: تمام ایمپورت‌های سطح بالا به طور بالقوه تنبل هستند"
 
 msgid "See also :func:`set_lazy_imports` and :pep:`810`."
-msgstr ""
+msgstr "همچنین نگاه کنید به :func:`set_lazy_imports` و :pep:`810`."
 
 msgid "Returns the current lazy imports filter function, or ``None`` if no filter is set."
-msgstr ""
+msgstr "تابع فیلتر فعلی ایمپورت‌های تنبل را برمی‌گرداند، یا اگر هیچ فیلتری تنظیم نشده باشد، ``None`` را برمی‌گرداند."
 
 msgid "The filter function is called for every potentially lazy import to determine whether it should actually be lazy. See :func:`set_lazy_imports_filter` for details on the filter function signature."
-msgstr ""
+msgstr "تابع فیلتر برای هر ایمپورتِ به طور بالقوه تنبلی فراخوانی می‌شود تا مشخص شود که آیا واقعاً باید تنبل باشد یا خیر. برای جزئیات درباره‌ی امضای تابع فیلتر به :func:`set_lazy_imports_filter` مراجعه کنید."
 
 msgid "Return the reference count of the *object*.  The count returned is generally one higher than you might expect, because it includes the (temporary) reference as an argument to :func:`getrefcount`."
 msgstr "تعداد ارجاع به *object* را برمی‌گرداند. تعداد برگردانده‌شده معمولاً یکی بیشتر از مقداری است که ممکن است انتظار داشته باشید، زیرا ارجاع (موقت) به‌عنوان آرگومان به :func:`getrefcount` را شامل می‌شود."
@@ -959,22 +957,22 @@ msgid "These three variables are deprecated; use :data:`sys.last_exc` instead. T
 msgstr "این سه متغیر منسوخ شده‌اند؛ به‌جای آن‌ها از :data:`sys.last_exc` استفاده کنید. آن‌ها نمایش قدیمی ``sys.last_exc`` را نگه می‌دارند، همان‌طور که از :func:`exc_info` در بالا برگردانده شده است."
 
 msgid "A :class:`set` of fully qualified module name strings that have been lazily imported in the current interpreter but not yet loaded. When a lazily imported module is accessed for the first time, its name is typically removed from this set."
-msgstr ""
+msgstr "مجموعه‌ای (:class:`set`) از رشته‌های نام ماژول با نام کامل (fully qualified) که در مفسر فعلی به صورت تنبل ایمپورت شده‌اند اما هنوز بارگذاری نشده‌اند. هنگامی که برای اولین بار به یک ماژولِ به صورت تنبل ایمپورت‌شده دسترسی پیدا می‌شود، نام آن معمولاً از این مجموعه حذف می‌شود."
 
 msgid "The set may contain some additional strings. It is intended for debugging and introspection, and consumers are expected to verify each entry's status."
-msgstr ""
+msgstr "این مجموعه ممکن است حاوی برخی رشته‌های اضافی باشد. این مجموعه برای اشکال‌زدایی و درون‌نگری در نظر گرفته شده است و انتظار می‌رود مصرف‌کنندگان وضعیت هر ورودی را بررسی کنند."
 
 msgid "Currently, :data:`!lazy_modules` may also contain:"
-msgstr ""
+msgstr "در حال حاضر، :data:`!lazy_modules` همچنین ممکن است شامل موارد زیر باشد:"
 
 msgid "names of *attributes* (non-modules), such as ``\"pathlib.Path\"`` after running ``lazy from pathlib import Path``, and"
-msgstr ""
+msgstr "نام‌های *ویژگی‌ها* (غیرماژول‌ها)، مانند ``\"pathlib.Path\"`` پس از اجرای ``lazy from pathlib import Path``، و"
 
 msgid "names of items than have already been accessed."
-msgstr ""
+msgstr "نام آیتم‌هایی که قبلاً به آن‌ها دسترسی پیدا شده است."
 
 msgid "In future versions of Python, these may be removed, and/or additional extras may be added."
-msgstr ""
+msgstr "در نسخه‌های آینده‌ی پایتون، ممکن است این موارد حذف شوند و/یا موارد اضافی دیگری اضافه شوند."
 
 msgid "An integer giving the maximum value a variable of type :c:type:`Py_ssize_t` can take.  It's usually ``2**31 - 1`` on a 32-bit platform and ``2**63 - 1`` on a 64-bit platform."
 msgstr "یک عدد صحیح که بیشینه مقداری را که یک متغیر از نوع :c:type:`Py_ssize_t` می‌تواند بگیرد، مشخص می‌کند. این مقدار معمولاً در پلتفرم ۳۲ بیتی ``2**31 - 1`` و در پلتفرم ۶۴ بیتی ``2**63 - 1`` است."
@@ -1179,51 +1177,53 @@ msgid "Set the :ref:`integer string conversion length limitation <int_max_str_di
 msgstr ":ref:`محدودیت طول تبدیل عدد صحیح به رشته <int_max_str_digits>` را که این مفسر از آن استفاده می‌کند، تنظیم کنید. همچنین :func:`get_int_max_str_digits` را ببینید."
 
 msgid "Sets the global lazy imports mode. The *mode* parameter must be one of the following strings:"
-msgstr ""
+msgstr "حالت سراسری ایمپورت‌های تنبل را تنظیم می‌کند. پارامتر *mode* باید یکی از رشته‌های زیر باشد:"
 
 msgid "``\"all\"``: All top-level imports become potentially lazy"
-msgstr ""
+msgstr "``\"all\"``: تمام ایمپورت‌های سطح بالا به طور بالقوه تنبل می‌شوند"
 
 msgid "This function is intended for advanced users who need to control lazy imports across their entire application. Library developers should generally not use this function as it affects the runtime execution of applications."
-msgstr ""
+msgstr "این تابع برای کاربران پیشرفته‌ای در نظر گرفته شده است که نیاز دارند ایمپورت‌های تنبل را در سرتاسر برنامه‌ی خود کنترل کنند. توسعه‌دهندگان کتابخانه‌ها به‌طور کلی نباید از این تابع استفاده کنند زیرا روی اجرای ران‌تایم برنامه‌ها تأثیر می‌گذارد."
 
 msgid "In addition to the mode, lazy imports can be controlled via the filter provided by :func:`set_lazy_imports_filter`."
-msgstr ""
+msgstr "علاوه بر حالت، ایمپورت‌های تنبل را می‌توان از طریق فیلتر ارائه‌شده توسط :func:`set_lazy_imports_filter` کنترل کرد."
 
 msgid "See also :func:`get_lazy_imports` and :pep:`810`."
-msgstr ""
+msgstr "همچنین نگاه کنید به :func:`get_lazy_imports` و :pep:`810`."
 
 msgid "Sets the lazy imports filter callback. The *filter* parameter must be a callable or ``None`` to clear the filter."
-msgstr ""
+msgstr "کال‌بک فیلتر ایمپورت‌های تنبل را تنظیم می‌کند. پارامتر *filter* باید یک شیء فراخوانی‌پذیر یا برای پاک کردن فیلتر برابر با ``None`` باشد."
 
 msgid "The filter function is called for every potentially lazy import to determine whether it should actually be lazy. It should have the following signature::"
-msgstr ""
+msgstr "تابع فیلتر برای هر ایمپورتِ به طور بالقوه تنبلی فراخوانی می‌شود تا مشخص شود که آیا واقعاً باید تنبل باشد یا خیر. این تابع باید امضای زیر را داشته باشد::"
 
 msgid ""
 "def filter(importing_module: str, imported_module: str,\n"
 "           fromlist: tuple[str, ...] | None) -> bool"
 msgstr ""
+"def filter(importing_module: str, imported_module: str,\n"
+"           fromlist: tuple[str, ...] | None) -> bool"
 
 msgid "The function is called with three positional arguments:"
-msgstr ""
+msgstr "این تابع با سه آرگومان جایگاهی فراخوانی می‌شود:"
 
 msgid "*importing_module* is the name of the module doing the import"
-msgstr ""
+msgstr "*importing_module* نام ماژولی است که ایمپورت را انجام می‌دهد"
 
 msgid "*imported_module* is the resolved name of the module being imported (for example, ``lazy from .spam import eggs`` passes ``package.spam``)"
-msgstr ""
+msgstr "*imported_module* نام تفکیک‌شده‌ی ماژولی است که در حال ایمپورت شدن است (برای مثال، دستور ``lazy from .spam import eggs`` مقدار ``package.spam`` را ارسال می‌کند)"
 
 msgid "*fromlist* is the tuple of names being imported (for ``from ... import`` statements), or ``None`` for regular imports"
-msgstr ""
+msgstr "*fromlist* تاپل نام‌هایی است که در حال ایمپورت شدن هستند (برای دستورات ``from ... import``)، یا برای ایمپورت‌های معمولی مقدار ``None`` است"
 
 msgid "The filter should return ``True`` to allow the import to be lazy, or ``False`` to force an eager import."
-msgstr ""
+msgstr "این فیلتر باید برای مجاز کردن تنبلی ایمپورت، مقدار ``True`` را برگرداند، یا برای وادار کردن به ایمپورت مشتاقانه، مقدار ``False`` را برگرداند."
 
 msgid "This is an advanced feature intended for specialized users who need fine-grained control over lazy import behavior."
-msgstr ""
+msgstr "این یک ویژگی پیشرفته است که برای کاربران متخصصی در نظر گرفته شده است که به کنترل دقیق روی رفتار ایمپورت تنبل نیاز دارند."
 
 msgid "See also :func:`get_lazy_imports_filter` and :pep:`810`."
-msgstr ""
+msgstr "همچنین نگاه کنید به :func:`get_lazy_imports_filter` و :pep:`810`."
 
 msgid "Set the system's profile function, which allows you to implement a Python source code profiler in Python.  See chapter :ref:`profile` for more information on the Python profiler.  The system's profile function is called similarly to the system's trace function (see :func:`settrace`), but it is called with different events, for example it isn't called for each executed line of code (only on call and return, but the return event is reported even when an exception has been set). The function is thread-specific, but there is no way for the profiler to know about context switches between threads, so it does not make sense to use this in the presence of multiple threads. Also, its return value is not used, so it can simply return ``None``.  Error in the profile function will cause itself unset."
 msgstr "تابع پروفایل سیستم را تنظیم کنید، که به شما امکان می‌دهد یک پروفایل‌گیر برای کد منبع پایتون را در پایتون پیاده‌سازی کنید. برای اطلاعات بیشتر درباره پروفایل‌گیر پایتون، فصل :ref:`profile` را ببینید. تابع پروفایل سیستم مشابه تابع ردگیری سیستم فراخوانی می‌شود (به :func:`settrace` مراجعه کنید)، اما با رویدادهای متفاوتی فراخوانی می‌شود؛ برای مثال، به‌ازای هر خط کدی که اجرا می‌شود فراخوانی نمی‌شود (فقط در فراخوانی و بازگشت فراخوانی می‌شود، اما رویداد بازگشت حتی زمانی که استثنایی تنظیم شده باشد گزارش می‌شود). این تابع مختص نخ است، اما راهی برای آگاهی پروفایل‌گیر از تعویض‌های زمینه بین نخ‌ها وجود ندارد، بنابراین استفاده از آن در حضور چند نخ معنادار نیست. همچنین، از مقدار بازگشتی آن استفاده نمی‌شود، بنابراین می‌تواند به‌سادگی ``None`` را برگرداند. خطا در تابع پروفایل باعث می‌شود که این تابع برداشته شود."
@@ -1510,18 +1510,14 @@ msgstr "``\"solaris\"``: نخ‌های Solaris"
 msgid "The name of the lock implementation:"
 msgstr "نام پیاده‌سازی قفل:"
 
-#, fuzzy
-#| msgid "``\"semaphore\"``: a lock uses a semaphore"
 msgid "``\"semaphore\"``: a lock uses a semaphore (Python 3.14 and older)"
-msgstr "``\"semaphore\"``: یک قفل از یک سمافور استفاده می‌کند"
+msgstr "``\"semaphore\"``: یک قفل از یک سمافور استفاده می‌کند (پایتون ۳.۱۴ و قدیمی‌تر)"
 
-#, fuzzy
-#| msgid "``\"mutex+cond\"``: a lock uses a mutex and a condition variable"
 msgid "``\"mutex+cond\"``: a lock uses a mutex and a condition variable (Python 3.14 and older)"
-msgstr "``\"mutex+cond\"``: یک قفل از یک قفل متقابل (mutex) و یک متغیر شرط (condition variable) استفاده می‌کند"
+msgstr "``\"mutex+cond\"``: یک قفل از یک قفل متقابل و یک متغیر شرط استفاده می‌کند (پایتون ۳.۱۴ و قدیمی‌تر)"
 
 msgid "``\"pymutex\"``: a lock uses the :c:type:`PyMutex` implementation (Python 3.15 and newer)"
-msgstr ""
+msgstr "``\"pymutex\"``: یک قفل از پیاده‌سازی :c:type:`PyMutex` استفاده می‌کند (پایتون ۳.۱۵ و جدیدتر)"
 
 msgid "``None`` if this information is unknown"
 msgstr "``None`` اگر این اطلاعات شناخته‌نشده باشد"
@@ -1556,16 +1552,14 @@ msgstr ":attr:`!err_msg`: پیام خطا، می‌تواند ``None`` باشد.
 msgid ":attr:`!object`: Object causing the exception, can be ``None``."
 msgstr ":attr:`!object`: شیء ایجادکننده‌ی استثنا، می‌تواند ``None`` باشد."
 
-#, fuzzy
-#| msgid "The default hook formats :attr:`!err_msg` and :attr:`!object` as: ``f'{err_msg}: {object!r}'``; use \"Exception ignored in\" error message if :attr:`!err_msg` is ``None``."
 msgid "The default hook formats :attr:`!err_msg` and :attr:`!object` as: ``f'{err_msg}: {object!r}'``; use \"Exception ignored in\" error message if :attr:`!err_msg` is ``None``. Similar to the :mod:`traceback` module, this adds color to exceptions by default. This can be disabled using :ref:`environment variables <using-on-controlling-color>`."
-msgstr "قلاب پیش‌فرض، :attr:`!err_msg` و :attr:`!object` را به‌صورت ``f'{err_msg}: {object!r}'`` قالب‌بندی می‌کند؛ اگر :attr:`!err_msg` برابر ``None`` باشد، از پیام خطای \"Exception ignored in\" استفاده می‌کند."
+msgstr "قلاب پیش‌فرض، مقادیر :attr:`!err_msg` و :attr:`!object` را به صورت ``f'{err_msg}: {object!r}'`` قالب‌بندی می‌کند؛ اگر مقدار :attr:`!err_msg` برابر با ``None`` باشد، از پیام خطای \"Exception ignored in\" استفاده کنید. مشابه ماژول :mod:`traceback`، این ویژگی به‌طور پیش‌فرض به استثناها رنگ اضافه می‌کند. این قابلیت را می‌توان با استفاده از :ref:`متغیرهای محیطی <using-on-controlling-color>` غیرفعال کرد."
 
 msgid ":func:`sys.unraisablehook` can be overridden to control how unraisable exceptions are handled."
 msgstr "می‌توان :func:`sys.unraisablehook` را بازنویسی کرد تا چگونگی مدیریت استثناهای غیرقابل‌پرتاب کنترل شود."
 
 msgid "Exceptions are now printed with colorful text."
-msgstr ""
+msgstr "استثناها اکنون با متن رنگی چاپ می‌شوند."
 
 msgid ":func:`excepthook` which handles uncaught exceptions."
 msgstr ":func:`excepthook` که استثناهای گرفته‌نشده را مدیریت می‌کند."

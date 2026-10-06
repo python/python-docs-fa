@@ -163,37 +163,37 @@ msgid "These are utility functions that make functionality from the :mod:`sys` m
 msgstr "این‌ها توابع کاربردی هستند که کارکردهای ماژول :mod:`sys` را برای کد C در دسترس قرار می‌دهند. همه‌ی آن‌ها با دیکشنری ماژول :mod:`sys` مربوط به نخ فعلی مفسر کار می‌کنند که در ساختار وضعیت داخلی نخ قرار دارد."
 
 msgid "Get the attribute *name* of the :mod:`sys` module. Return a :term:`strong reference`. Raise :exc:`RuntimeError` and return ``NULL`` if it does not exist or if the :mod:`sys` module cannot be found."
-msgstr ""
+msgstr "ویژگی *name* ماژول :mod:`sys` را دریافت کنید. یک :term:`ارجاع قوی <strong reference>` برگردانید. اگر وجود نداشته باشد یا ماژول :mod:`sys` پیدا نشود، استثنای :exc:`RuntimeError` را بالا آورده و ``NULL`` برگردانید."
 
 msgid "If the non-existing object should not be treated as a failure, you can use :c:func:`PySys_GetOptionalAttr` instead."
-msgstr ""
+msgstr "اگر شیء ناموجود نباید به عنوان یک خطا تلقی شود، می‌توانید به جای آن از :c:func:`PySys_GetOptionalAttr` استفاده کنید."
 
 msgid "This is the same as :c:func:`PySys_GetAttr`, but *name* is specified as a :c:expr:`const char*` UTF-8 encoded bytes string, rather than a :c:expr:`PyObject*`."
-msgstr ""
+msgstr "این تابع مشابه :c:func:`PySys_GetAttr` است، اما *name* به جای :c:expr:`PyObject*`، به عنوان یک رشته‌ی بایت رمزگذاری‌شده با UTF-8 از نوع :c:expr:`const char*` مشخص می‌شود."
 
 msgid "If the non-existing object should not be treated as a failure, you can use :c:func:`PySys_GetOptionalAttrString` instead."
-msgstr ""
+msgstr "اگر شیء ناموجود نباید به عنوان یک خطا تلقی شود، می‌توانید به جای آن از :c:func:`PySys_GetOptionalAttrString` استفاده کنید."
 
 msgid "Variant of :c:func:`PySys_GetAttr` which doesn't raise exception if the object does not exist."
-msgstr ""
+msgstr "نوع دیگری از :c:func:`PySys_GetAttr` که اگر شیء وجود نداشته باشد، استثنایی بالا نمی‌آورد."
 
 msgid "Set *\\*result* to a new :term:`strong reference` to the object and return ``1`` if the object exists."
-msgstr ""
+msgstr "اگر شیء وجود داشته باشد، *\\*result* را به یک :term:`ارجاع قوی <strong reference>` جدید به شیء تنظیم کرده و ``1`` برگردانید."
 
 msgid "Set *\\*result* to ``NULL`` and return ``0`` without setting an exception if the object does not exist."
-msgstr ""
+msgstr "اگر شیء وجود نداشته باشد، *\\*result* را روی ``NULL`` تنظیم کرده و بدون تنظیم هیچ استثنایی، ``0`` برگردانید."
 
 msgid "Set an exception, set *\\*result* to ``NULL``, and return ``-1``, if an error occurred."
-msgstr ""
+msgstr "اگر خطایی رخ دهد، یک استثنا تنظیم کنید، *\\*result* را روی ``NULL`` قرار دهید و ``-1`` برگردانید."
 
 msgid "This is the same as :c:func:`PySys_GetOptionalAttr`, but *name* is specified as a :c:expr:`const char*` UTF-8 encoded bytes string, rather than a :c:expr:`PyObject*`."
-msgstr ""
+msgstr "این تابع مشابه :c:func:`PySys_GetOptionalAttr` است، اما *name* به جای :c:expr:`PyObject*`، به عنوان یک رشته‌ی بایت رمزگذاری‌شده با UTF-8 از نوع :c:expr:`const char*` مشخص می‌شود."
 
 msgid "Similar to :c:func:`PySys_GetAttrString`, but return a :term:`borrowed reference` and return ``NULL`` *without* setting exception on failure."
-msgstr ""
+msgstr "مشابه :c:func:`PySys_GetAttrString` است، اما یک :term:`ارجاع امانتی <borrowed reference>` برمی‌گرداند و در صورت بروز خطا، *بدون* تنظیم استثنا، ``NULL`` برمی‌گرداند."
 
 msgid "Preserves exception that was set before the call."
-msgstr ""
+msgstr "استثنایی را که قبل از فراخوانی تنظیم شده بود، حفظ می‌کند."
 
 msgid "Set *name* in the :mod:`sys` module to *v* unless *v* is ``NULL``, in which case *name* is deleted from the sys module. Returns ``0`` on success, ``-1`` on error."
 msgstr "*name* را در ماژول :mod:`sys` برابر *v* قرار می‌دهد، مگر اینکه *v* ``NULL`` باشد که در این صورت *name* از ماژول sys حذف می‌شود. در صورت موفقیت ``0`` و در صورت خطا ``-1`` برمی‌گرداند."

@@ -170,28 +170,17 @@ msgid "Drop references that may have created reference cycles.  Immutable object
 msgstr "ارجاع‌هایی را که ممکن است چرخه‌های ارجاع ایجاد کرده باشند رها کنید. اشیاء تغییرناپذیر نیازی به تعریف این متد ندارند، زیرا هرگز نمی‌توانند به‌طور مستقیم چرخه‌های ارجاع ایجاد کنند. توجه داشته باشید که شیء باید پس از فراخوانی این متد همچنان معتبر باشد (تنها :c:func:`Py_DECREF` را روی یک ارجاع فراخوانی نکنید). زباله‌روب در صورتی که تشخیص دهد این شیء در یک چرخه ارجاع درگیر است، این متد را فراخوانی خواهد کرد."
 
 msgid "Traversal"
-msgstr ""
+msgstr "پیمایش"
 
 msgid "The :c:member:`~PyTypeObject.tp_traverse` handler must have the following type:"
 msgstr "هندلر :c:member:`~PyTypeObject.tp_traverse` باید از نوع زیر باشد:"
 
-#, fuzzy
-#| msgid "Traversal function for a container object.  Implementations must call the *visit* function for each object directly contained by *self*, with the parameters to *visit* being the contained object and the *arg* value passed to the handler.  The *visit* function must not be called with a ``NULL`` object argument.  If *visit* returns a non-zero value that value should be returned immediately."
 msgid "Traversal function for a garbage-collected object, used by the garbage collector to detect reference cycles. Implementations must call the *visit* function for each object directly contained by *self*, with the parameters to *visit* being the contained object and the *arg* value passed to the handler.  The *visit* function must not be called with a ``NULL`` object argument.  If *visit* returns a non-zero value, that value should be returned immediately."
-msgstr "تابع پیمایش برای یک شیء ظرف. پیاده‌سازی‌ها باید تابع *visit* را برای هر شیء‌ای که مستقیماً توسط *self* دربرگرفته شده است فراخوانی کنند، به‌طوری که پارامترهای *visit*، شیء دربرگرفته و مقدار *arg*ِ ارسال‌شده به هندلر باشند. تابع *visit* نباید با آرگومان شیء ``NULL`` فراخوانی شود. اگر *visit* مقدار غیرصفر برگرداند، آن مقدار باید بی‌درنگ بازگردانده شود."
+msgstr "تابع پیمایش برای یک شیء جمع‌آوری‌شده در زباله‌جمع‌کن، که توسط زباله‌جمع‌کن برای تشخیص چرخه‌های ارجاع استفاده می‌شود. پیاده‌سازی‌ها باید تابع *visit* را برای هر شیء که مستقیماً توسط *self* دربرگرفته شده است فراخوانی کنند، به طوری که پارامترهای ارسالی به *visit* شامل شیء محصورشده و مقدار *arg* ارسال‌شده به هندلر باشند. تابع *visit* نباید با یک آرگومان شیء ``NULL`` فراخوانی شود. اگر *visit* یک مقدار غیرصفر برگرداند، آن مقدار باید بلافاصله بازگردانده شود."
 
 msgid "A typical :c:member:`!tp_traverse` function calls the :c:func:`Py_VISIT` convenience macro on each of the instance's members that are Python objects that the instance owns. For example, this is a (slightly outdated) traversal function for the :py:class:`threading.local` class::"
-msgstr ""
+msgstr "یک تابع :c:member:`!tp_traverse` معمولی، ماکروی کمکی :c:func:`Py_VISIT` را روی هر یک از اعضای نمونه فراخوانی می‌کند که از اشیای پایتون متعلق به نمونه هستند. برای نمونه، این یک تابع پیمایش (کمی قدیمی‌شده) برای کلاس :py:class:`threading.local` است::"
 
-#, fuzzy
-#| msgid ""
-#| "static int\n"
-#| "my_traverse(Noddy *self, visitproc visit, void *arg)\n"
-#| "{\n"
-#| "    Py_VISIT(self->foo);\n"
-#| "    Py_VISIT(self->bar);\n"
-#| "    return 0;\n"
-#| "}"
 msgid ""
 "static int\n"
 "local_traverse(PyObject *op, visitproc visit, void *arg)\n"
@@ -205,27 +194,30 @@ msgid ""
 "}"
 msgstr ""
 "static int\n"
-"my_traverse(Noddy *self, visitproc visit, void *arg)\n"
+"local_traverse(PyObject *op, visitproc visit, void *arg)\n"
 "{\n"
-"    Py_VISIT(self->foo);\n"
-"    Py_VISIT(self->bar);\n"
+"    localobject *self = (localobject *) op;\n"
+"    Py_VISIT(Py_TYPE(self));\n"
+"    Py_VISIT(self->args);\n"
+"    Py_VISIT(self->kw);\n"
+"    Py_VISIT(self->dict);\n"
 "    return 0;\n"
 "}"
 
 msgid ":c:func:`Py_VISIT` requires the *visit* and *arg* parameters to :c:func:`!local_traverse` to have these specific names; don't name them just anything."
-msgstr ""
+msgstr "تابع :c:func:`Py_VISIT` ایجاب می‌کند که پارامترهای *visit* و *arg* در تابع :c:func:`!local_traverse` دارای این نام‌های مشخص باشند؛ آن‌ها را با هر نام دلخواهی نام‌گذاری نکنید."
 
 msgid "Instances of :ref:`heap-allocated types <heap-types>` hold a reference to their type. Their traversal function must therefore visit the type::"
-msgstr ""
+msgstr "نمونه‌های :ref:`انواع تخصیص‌یافته در هیپ <heap-types>` ارجاعی به نوع خود را نگهداری می‌کنند. بنابراین تابع پیمایش آن‌ها باید نوع را بازدید کند::"
 
 msgid "Py_VISIT(Py_TYPE(self));"
-msgstr ""
+msgstr "Py_VISIT(Py_TYPE(self));"
 
 msgid "Alternately, the type may delegate this responsibility by calling ``tp_traverse`` of a heap-allocated superclass (or another heap-allocated type, if applicable). If they do not, the type object may not be garbage-collected."
-msgstr ""
+msgstr "به‌عنوان جایگزین، نوع ممکن است با فراخوانی ``tp_traverse`` از یک سوپرکلاس تخصیص‌یافته در هیپ (یا یک نوع تخصیص‌یافته‌ی دیگر در هیپ، در صورت لزوم)، این مسئولیت را واگذار کند. اگر این کار را نکنند، ممکن است شیء نوع زباله‌روبی نشود."
 
 msgid "If the :c:macro:`Py_TPFLAGS_MANAGED_DICT` bit is set in the :c:member:`~PyTypeObject.tp_flags` field, the traverse function must call :c:func:`PyObject_VisitManagedDict` like this::"
-msgstr ""
+msgstr "اگر بیت :c:macro:`Py_TPFLAGS_MANAGED_DICT` در فیلد :c:member:`~PyTypeObject.tp_flags` تنظیم شده باشد، تابع پیمایش باید تابع :c:func:`PyObject_VisitManagedDict` را به این شکل فراخوانی کند::"
 
 msgid ""
 "int err = PyObject_VisitManagedDict((PyObject*)self, visit, arg);\n"
@@ -233,53 +225,49 @@ msgid ""
 "    return err;\n"
 "}"
 msgstr ""
+"int err = PyObject_VisitManagedDict((PyObject*)self, visit, arg);\n"
+"if (err) {\n"
+"    return err;\n"
+"}"
 
 msgid "Only the members that the instance *owns* (by having :term:`strong references <strong reference>` to them) must be visited. For instance, if an object supports weak references via the :c:member:`~PyTypeObject.tp_weaklist` slot, the pointer supporting the linked list (what *tp_weaklist* points to) must **not** be visited as the instance does not directly own the weak references to itself."
-msgstr ""
+msgstr "فقط اعضایی که نمونه آن‌ها را *دارد* (با داشتن :term:`ارجاع‌های قوی <strong reference>` به آن‌ها) باید بازدید شوند. برای نمونه، اگر یک شیء از طریق جایگاه :c:member:`~PyTypeObject.tp_weaklist` از ارجاع‌های ضعیف پشتیبانی کند، اشاره‌گری که از فهرست پیوندی پشتیبانی می‌کند (چیزی که *tp_weaklist* به آن اشاره می‌کند) **نباید** بازدید شود، زیرا نمونه مستقیماً مالک ارجاع‌های ضعیف به خودش نیست."
 
 msgid "The traversal function has a limitation:"
-msgstr ""
+msgstr "تابع پیمایش محدودیتی دارد:"
 
-#, fuzzy
-#| msgid "The traversal function must not have any side effects.  Implementations may not modify the reference counts of any Python objects nor create or destroy any Python objects."
 msgid "The traversal function must not have any side effects.  Implementations may not modify the reference counts of any Python objects nor create or destroy any Python objects, directly or indirectly."
-msgstr "تابع پیمایش نباید هیچ اثر جانبی داشته باشد. پیاده‌سازی‌ها نباید شمارش ارجاع هیچ‌یک از اشیاء پایتون را تغییر دهند و نباید هیچ شیء پایتونی ایجاد یا نابود کنند."
+msgstr "تابع پیمایش نباید هیچ اثر جانبی داشته باشد. پیاده‌سازی‌ها نباید شماره‌های ارجاع هیچ‌یک از اشیای پایتون را تغییر دهند و همچنین نباید هیچ شیء پایتونی را، به صورت مستقیم یا غیرمستقیم، ایجاد یا نابود کنند."
 
 msgid "This means that *most* Python C API functions may not be used, since they can raise a new exception, return a new reference to a result object, have internal logic that uses side effects. Also, unless documented otherwise, functions that happen to not have side effects may start having them in future versions, without warning."
-msgstr ""
+msgstr "این یعنی *بیشتر* توابع C API پایتون ممکن است استفاده نشوند، زیرا می‌توانند یک استثنای جدید ایجاد کنند، یک ارجاع جدید به یک شیء نتیجه را برگردانند، یا منطق داخلی داشته باشند که از عوارض جانبی استفاده می‌کند. همچنین، مگر اینکه طور دیگری مستند شده باشد، توابعی که عوارض جانبی ندارند ممکن است در نسخه‌های آینده بدون هشدار پیدا کردن عوارض جانبی را شروع کنند."
 
 msgid "For a list of safe functions, see a :ref:`separate section <duringgc-functions>` below."
-msgstr ""
+msgstr "برای فهرستی از توابع امن، به :ref:`بخش جداگانه <duringgc-functions>` در ادامه مراجعه کنید."
 
 msgid "The :c:func:`Py_VISIT` call may be skipped for those members that provably cannot participate in reference cycles. In the ``local_traverse`` example above, there is also a ``self->key`` member, but it can only be ``NULL`` or a Python string and therefore cannot be part of a reference cycle."
-msgstr ""
+msgstr "فراخوانی :c:func:`Py_VISIT` را می‌توان برای آن دسته از اعضایی که ثابت شده نمی‌توانند در چرخه‌های ارجاع شرکت کنند، رد کرد. در نمونه‌ی ``local_traverse`` در بالا، یک عضو ``self->key`` نیز وجود دارد، اما این عضو فقط می‌تواند ``NULL`` یا یک رشته‌ی پایتون باشد و بنابراین نمی‌تواند بخشی از یک چرخه ارجاع باشد."
 
 msgid "On the other hand, even if you know a member can never be part of a cycle, as a debugging aid you may want to visit it anyway just so the :mod:`gc` module's :func:`~gc.get_referents` function will include it."
-msgstr ""
+msgstr "از سوی دیگر، حتی اگر می‌دانید که یک عضو هرگز نمی‌تواند بخشی از یک چرخه باشد، به عنوان یک ابزار کمکی برای اشکال‌زدایی ممکن است بخواهید به هر حال آن را بازدید کنید تا تابع :func:`~gc.get_referents` در ماژول :mod:`gc` آن را در بر بگیرد."
 
-#, fuzzy
-#| msgid "The :c:member:`~PyTypeObject.tp_traverse` handler must have the following type:"
 msgid "The :c:member:`~PyTypeObject.tp_traverse` function can be called from any thread."
-msgstr "هندلر :c:member:`~PyTypeObject.tp_traverse` باید از نوع زیر باشد:"
+msgstr "تابع :c:member:`~PyTypeObject.tp_traverse` را می‌توان از هر نخی فراخوانی کرد."
 
 msgid "Garbage collection is a \"stop-the-world\" operation: even in :term:`free threading` builds, only one thread state is :term:`attached <attached thread state>` when :c:member:`!tp_traverse` handlers run."
-msgstr ""
+msgstr "زباله‌روبی یک عملیات «متوقف‌کننده‌ی دنیا» است: حتی در پیاده‌سازی‌های دارای :term:`نخ‌بندی آزاد <free threading>`، هنگامی که کنترل‌کننده‌های :c:member:`!tp_traverse` اجرا می‌شوند، فقط یک حالت نخ :term:`متصل <attached thread state>` است."
 
 msgid "Heap-allocated types are expected to visit ``Py_TYPE(self)`` in ``tp_traverse``.  In earlier versions of Python, due to `bug 40217 <https://bugs.python.org/issue40217>`_, doing this may lead to crashes in subclasses."
-msgstr ""
+msgstr "انتظار می‌رود انواع تخصیص‌یافته در هیپ، ``Py_TYPE(self)`` را در ``tp_traverse`` بازدید کنند. در نسخه‌های قبلی پایتون، به دلیل `bug 40217 <https://bugs.python.org/issue40217>`_، انجام این کار ممکن است منجر به فروپاشی در زیرکلاس‌ها شود."
 
-#, fuzzy
-#| msgid "To simplify writing :c:member:`~PyTypeObject.tp_traverse` handlers, a :c:func:`Py_VISIT` macro is provided.  In order to use this macro, the :c:member:`~PyTypeObject.tp_traverse` implementation must name its arguments exactly *visit* and *arg*:"
 msgid "To simplify writing :c:member:`~PyTypeObject.tp_traverse` handlers, a :c:func:`Py_VISIT` macro is provided. In order to use this macro, the :c:member:`~PyTypeObject.tp_traverse` implementation must name its arguments exactly *visit* and *arg*:"
-msgstr "برای ساده‌سازی نوشتن هندلرهای :c:member:`~PyTypeObject.tp_traverse`، ماکروی :c:func:`Py_VISIT` فراهم شده است. برای استفاده از این ماکرو، پیاده‌سازی :c:member:`~PyTypeObject.tp_traverse` باید آرگومان‌های خود را دقیقاً *visit* و *arg* نام‌گذاری کند:"
+msgstr "برای ساده‌تر کردن نوشتن هندلرهای :c:member:`~PyTypeObject.tp_traverse`، یک ماکرو به نام :c:func:`Py_VISIT` فراهم شده است. به منظور استفاده از این ماکرو، پیاده‌سازی :c:member:`~PyTypeObject.tp_traverse` باید آرگومان‌های خود را دقیقاً *visit* و *arg* نام‌گذاری کند:"
 
-#, fuzzy
-#| msgid "If the :c:expr:`PyObject *` *o* is not ``NULL``, call the *visit* callback, with arguments *o* and *arg*.  If *visit* returns a non-zero value, then return it. Using this macro, :c:member:`~PyTypeObject.tp_traverse` handlers look like::"
 msgid "If the :c:expr:`PyObject *` *o* is not ``NULL``, call the *visit* callback, with arguments *o* and *arg*. If *visit* returns a non-zero value, then return it."
-msgstr "اگر :c:expr:`PyObject *` *o* برابر ``NULL`` نباشد، کال‌بک *visit* با آرگومان‌های *o* و *arg* فراخوانی می‌شود. اگر *visit* مقدار غیرصفری برگرداند، همان مقدار برگردانده می‌شود. با استفاده از این ماکرو، هندلرهای :c:member:`~PyTypeObject.tp_traverse` به این شکل هستند::"
+msgstr "اگر عبارت :c:expr:`PyObject *` *o* برابر با ``NULL`` نیست، کال‌بک *visit* را با آرگومان‌های *o* و *arg* فراخوانی کنید. اگر *visit* یک مقدار غیرصفر برگرداند، آنگاه همان مقدار را برگردانید."
 
 msgid "This corresponds roughly to::"
-msgstr ""
+msgstr "این مورد تقریباً با این معادل است::"
 
 msgid ""
 "#define Py_VISIT(o)                             \\\n"
@@ -290,74 +278,73 @@ msgid ""
 "      }                                         \\\n"
 "   }"
 msgstr ""
+"#define Py_VISIT(o)                             \\\n"
+"   if (op) {                                    \\\n"
+"      int visit_result = visit(o, arg);         \\\n"
+"      if (visit_result != 0) {                  \\\n"
+"         return visit_result;                   \\\n"
+"      }                                         \\\n"
+"   }"
 
 msgid "Traversal-safe functions"
-msgstr ""
+msgstr "توابع امن برای پیمایش"
 
 msgid "The following functions and macros are safe to use in a :c:member:`~PyTypeObject.tp_traverse` handler:"
-msgstr ""
+msgstr "استفاده از توابع و ماکروهای زیر در یک هندلر :c:member:`~PyTypeObject.tp_traverse` امن است:"
 
 msgid "the *visit* function passed to ``tp_traverse``"
-msgstr ""
+msgstr "تابع *visit* که به ``tp_traverse`` ارسال می‌شود"
 
-#, fuzzy
-#| msgid ":c:func:`PyObject_GC_Del`"
 msgid ":c:func:`Py_VISIT`"
-msgstr ":c:func:`PyObject_GC_Del`"
+msgstr ":c:func:`Py_VISIT`"
 
-#, fuzzy
-#| msgid ":c:func:`PyObject_GC_Del`"
 msgid ":c:func:`Py_SIZE`"
-msgstr ":c:func:`PyObject_GC_Del`"
+msgstr ":c:func:`Py_SIZE`"
 
 msgid ":c:func:`Py_TYPE`: if called from a :c:member:`!tp_traverse` handler, :c:func:`!Py_TYPE`'s result will be valid for the duration of the handler call"
-msgstr ""
+msgstr ":c:func:`Py_TYPE`: اگر از یک هندلر :c:member:`!tp_traverse` فراخوانی شود، نتیجه‌ی :c:func:`!Py_TYPE` تا زمان پایان فراخوانی هندلر معتبر خواهد ماند"
 
-#, fuzzy
-#| msgid ":c:func:`PyObject_GC_Del`"
 msgid ":c:func:`PyObject_VisitManagedDict`"
-msgstr ":c:func:`PyObject_GC_Del`"
+msgstr ":c:func:`PyObject_VisitManagedDict`"
 
 msgid ":c:func:`PyObject_TypeCheck`, :c:func:`PyType_IsSubtype`, :c:func:`PyType_HasFeature`"
-msgstr ""
+msgstr ":c:func:`PyObject_TypeCheck`, :c:func:`PyType_IsSubtype`, :c:func:`PyType_HasFeature`"
 
 msgid ":samp:`Py{<type>}_Check` and :samp:`Py{<type>}_CheckExact` -- for example, :c:func:`PyTuple_Check`"
-msgstr ""
+msgstr ":samp:`Py{<type>}_Check` و :samp:`Py{<type>}_CheckExact` -- برای نمونه، :c:func:`PyTuple_Check`"
 
 msgid ":ref:`duringgc-functions`"
-msgstr ""
+msgstr ":ref:`duringgc-functions`"
 
 msgid "\"DuringGC\" functions"
-msgstr ""
+msgstr "توابع «DuringGC»"
 
 msgid "The following functions should *only* be used in a :c:member:`~PyTypeObject.tp_traverse` handler; calling them in other contexts may have unintended consequences."
-msgstr ""
+msgstr "توابع زیر *فقط* باید در یک هندلر :c:member:`~PyTypeObject.tp_traverse` استفاده شوند؛ فراخوانی آن‌ها در زمینه‌های دیگر ممکن است پیامدهای ناخواسته‌ای داشته باشد."
 
 msgid "These functions act like their counterparts without the ``_DuringGC`` suffix, but they are guaranteed to not have side effects, they do not set an exception on failure, and they return/set :term:`borrowed references <borrowed reference>` as detailed in the individual documentation."
-msgstr ""
+msgstr "این توابع درست مانند همتایان خود بدون پسوند ``_DuringGC`` عمل می‌کنند، اما تضمین می‌شود که هیچ عارضه‌ی جانبی نداشته باشند، در صورت بروز خطا هیچ استثنایی را تنظیم نمی‌کنند، و همان‌طور که در مستندات هر کدام به تفصیل آمده است، :term:`ارجاع‌های امانتی <borrowed reference>` را برمی‌گردانند/تنظیم می‌کنند."
 
 msgid "Note that these functions may fail (return ``NULL`` or ``-1``), but as they do not set an exception, no error information is available. In some cases, failure is not distinguishable from a successful ``NULL`` result."
-msgstr ""
+msgstr "توجه داشته باشید که این توابع ممکن است با خطا مواجه شوند (مقادیر ``NULL`` یا ``-1`` را برگردانند)، اما از آنجا که استثنایی را تنظیم نمی‌کنند، هیچ اطلاعات خطایی در دسترس نیست. در برخی موارد، خطا از نتیجه‌ی موفقیت‌آمیز ``NULL`` قابل تشخیص نیست."
 
 msgid "See :ref:`duringgc-functions` for common information."
-msgstr ""
+msgstr "برای کسب اطلاعات عمومی به :ref:`duringgc-functions` مراجعه کنید."
 
 msgid ":c:func:`PyObject_GetTypeData`, :c:func:`PyObject_GetItemData`, :c:func:`PyType_GetModuleState`, :c:func:`PyModule_GetState`, :c:func:`PyModule_GetToken`, :c:func:`PyType_GetBaseByToken`"
-msgstr ""
+msgstr ":c:func:`PyObject_GetTypeData`, :c:func:`PyObject_GetItemData`, :c:func:`PyType_GetModuleState`, :c:func:`PyModule_GetState`, :c:func:`PyModule_GetToken`, :c:func:`PyType_GetBaseByToken`"
 
 msgid "Sets *\\*result* to a :term:`borrowed reference` rather than a strong one. The reference is valid for the duration of the :c:member:`!tp_traverse` handler call."
-msgstr ""
+msgstr "مقدار *\\*result* را به‌جای یک ارجاع قوی، روی یک :term:`ارجاع امانتی <borrowed reference>` تنظیم می‌کند. این ارجاع تا زمان پایان فراخوانی هندلر :c:member:`!tp_traverse` معتبر است."
 
-#, fuzzy
-#| msgid ":c:func:`PyType_GenericAlloc`"
 msgid ":c:func:`PyType_GetBaseByToken`"
-msgstr ":c:func:`PyType_GenericAlloc`"
+msgstr ":c:func:`PyType_GetBaseByToken`"
 
 msgid "These functions return a :term:`borrowed reference`, which is valid for the duration of the :c:member:`!tp_traverse` handler call."
-msgstr ""
+msgstr "این توابع یک :term:`ارجاع امانتی <borrowed reference>` برمی‌گردانند که تا زمان پایان فراخوانی هندلر :c:member:`!tp_traverse` معتبر است."
 
 msgid ":c:func:`PyType_GetModule`, :c:func:`PyType_GetModuleByToken`"
-msgstr ""
+msgstr ":c:func:`PyType_GetModule`, :c:func:`PyType_GetModuleByToken`"
 
 msgid "Controlling the Garbage Collector State"
 msgstr "کنترل وضعیت زباله‌روب"

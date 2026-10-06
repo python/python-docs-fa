@@ -41,13 +41,11 @@ msgstr ":mod:`dbm.gnu`"
 msgid ":mod:`dbm.ndbm`"
 msgstr ":mod:`dbm.ndbm`"
 
-#, fuzzy
-#| msgid "If none of these modules are installed, the slow-but-simple implementation in module :mod:`dbm.dumb` will be used.  There is a `third party interface <https://www.jcea.es/programacion/pybsddb.htm>`_ to the Oracle Berkeley DB."
 msgid "If none of these modules are installed, the slow-but-simple implementation in module :mod:`dbm.dumb` will be used. There is a `third party interface <https://www.jcea.es/programacion/pybsddb.htm>`_ to the Oracle Berkeley DB."
-msgstr "اگر هیچ‌کدام از این ماژول‌ها نصب‌نشده باشند، از پیاده‌سازی کند اما ساده در ماژول :mod:`dbm.dumb` استفاده خواهد شد. یک `رابط شخص ثالث <https://www.jcea.es/programacion/pybsddb.htm>`_ برای Oracle Berkeley DB وجود دارد."
+msgstr "اگر هیچ‌یک از این ماژول‌ها نصب نشده باشند، پیاده‌سازی کند-اما-ساده در ماژول :mod:`dbm.dumb` استفاده خواهد شد. یک `رابط شخص ثالث <https://www.jcea.es/programacion/pybsddb.htm>`_ برای پایگاه داده‌ی اوراکل برکلی (Oracle Berkeley DB) وجود دارد."
 
 msgid "None of the underlying modules will automatically shrink the disk space used by the database file. However, :mod:`dbm.sqlite3`, :mod:`dbm.gnu` and :mod:`dbm.dumb` provide a :meth:`!reorganize` method that can be used for this purpose."
-msgstr ""
+msgstr "هیچ‌یک از ماژول‌های زیرین فضای دیسک استفاده‌شده توسط پرونده‌ی پایگاه‌داده را به‌طور خودکار کوچک نمی‌کنند. بااین‌حال، :mod:`dbm.sqlite3`، :mod:`dbm.gnu` و :mod:`dbm.dumb` متدی به نام :meth:`!reorganize` ارائه می‌دهند که می‌توان از آن برای این منظور استفاده کرد."
 
 msgid "A tuple containing the exceptions that can be raised by each of the supported modules, with a unique exception also named :exc:`dbm.error` as the first item --- the latter is used when :exc:`dbm.error` is raised."
 msgstr "تاپلی شامل استثناهایی که هر یک از ماژول‌های پشتیبانی‌شده می‌توانند پرتاب کنند، با یک استثنای یکتا که آن نیز :exc:`dbm.error` نام دارد به‌عنوان اولین آیتم --- این استثنا زمانی استفاده می‌شود که :exc:`dbm.error` پرتاب شود."
@@ -221,13 +219,11 @@ msgstr "متدهای زیر نیز ارائه شده‌اند:"
 msgid "Close the SQLite database."
 msgstr "پایگاه داده‌ی SQLite را ببندید."
 
-#, fuzzy
-#| msgid "If you have carried out a lot of deletions and would like to shrink the space used by the GDBM file, this routine will reorganize the database.  :class:`!gdbm` objects will not shorten the length of a database file except by using this reorganization; otherwise, deleted file space will be kept and reused as new (key, value) pairs are added."
 msgid "If you have carried out a lot of deletions and would like to shrink the space used on disk, this method will reorganize the database; otherwise, deleted file space will be kept and reused as new (key, value) pairs are added."
-msgstr "اگر حذف‌های زیادی انجام داده‌اید و می‌خواهید فضای مصرفی پرونده GDBM را کاهش دهید، این روتین پایگاه داده را بازآرایی می‌کند. اشیای :class:`!gdbm` طول پرونده پایگاه داده را کوتاه نمی‌کنند، مگر با استفاده از این بازآرایی؛ در غیر این صورت، فضای حذف‌شده در پرونده نگه داشته شده و با افزودن جفت‌های جدید (کلید، مقدار) دوباره استفاده می‌شود."
+msgstr "اگر حذف‌های زیادی انجام داده‌اید و می‌خواهید فضای استفاده‌شده روی دیسک را کاهش دهید، این متد پایگاه داده را سازمان‌دهی مجدد خواهد کرد؛ در غیر این صورت، فضای پرونده‌ی حذف‌شده حفظ می‌شود و با اضافه شدن جفت‌های (کلید، مقدار) جدید دوباره مورد استفاده قرار می‌گیرد."
 
 msgid "While reorganizing, as much as two times the size of the original database is required in free disk space. However, be aware that this factor changes for each :mod:`!dbm` submodule."
-msgstr ""
+msgstr "هنگام بازسازمان‌دهی، فضایی آزاد روی دیسک به اندازه‌ی حداکثر دو برابر اندازه‌ی پایگاه‌داده‌ی اصلی مورد نیاز است. بااین‌حال، آگاه باشید که این ضریب برای هر زیرماژول :mod:`!dbm` تغییر می‌کند."
 
 msgid ":mod:`!dbm.gnu` --- GNU database manager"
 msgstr ":mod:`!dbm.gnu` --- مدیر پایگاه‌داده GNU"
@@ -310,7 +306,7 @@ msgid "If you have carried out a lot of deletions and would like to shrink the s
 msgstr "اگر حذف‌های زیادی انجام داده‌اید و می‌خواهید فضای مصرفی پرونده GDBM را کاهش دهید، این روتین پایگاه داده را بازآرایی می‌کند. اشیای :class:`!gdbm` طول پرونده پایگاه داده را کوتاه نمی‌کنند، مگر با استفاده از این بازآرایی؛ در غیر این صورت، فضای حذف‌شده در پرونده نگه داشته شده و با افزودن جفت‌های جدید (کلید، مقدار) دوباره استفاده می‌شود."
 
 msgid "While reorganizing, as much as one time the size of the original database is required in free disk space. However, be aware that this factor changes for each :mod:`!dbm` submodule."
-msgstr ""
+msgstr "هنگام بازسازمان‌دهی، فضایی آزاد روی دیسک به اندازه‌ی حداکثر یک برابر اندازه‌ی پایگاه‌داده‌ی اصلی مورد نیاز است. بااین‌حال، آگاه باشید که این ضریب برای هر زیرماژول :mod:`!dbm` تغییر می‌کند."
 
 msgid "When the database has been opened in fast mode, this method forces any unwritten data to be written to the disk."
 msgstr "هنگامی که پایگاه داده در حالت سریع باز شده باشد، این متد باعث می‌شود هرگونه داده‌ی نوشته‌نشده روی دیسک نوشته شود."
@@ -400,7 +396,7 @@ msgid "It is possible to crash the Python interpreter when loading a database wi
 msgstr "ممکن است بارگذاری پایگاه داده‌ای با یک ورودی به‌اندازه کافی بزرگ/پیچیده، به دلیل محدودیت‌های عمق پشته در کامپایلر AST پایتون، باعث از کار افتادن مفسر پایتون شود."
 
 msgid ":mod:`!dbm.dumb` does not support concurrent read/write access. (Multiple simultaneous read accesses are safe.) When a program has the database open for writing, no other program should have it open for reading or writing."
-msgstr ""
+msgstr "ماژول :mod:`!dbm.dumb` از دسترسی هم‌زمان خواندن/نوشتن پشتیبانی نمی‌کند. (چندین دسترسی خواندن هم‌زمان امن هستند.) هنگامی که یک برنامه پایگاه‌داده را برای نوشتن باز کرده است، هیچ برنامه‌ی دیگری نباید آن را برای خواندن یا نوشتن باز کرده باشد."
 
 msgid ":func:`~dbm.dumb.open` always creates a new database when *flag* is ``'n'``."
 msgstr ":func:`~dbm.dumb.open` همیشه وقتی *flag* برابر ``'n'`` باشد، یک پایگاه داده جدید ایجاد می‌کند."
@@ -414,13 +410,11 @@ msgstr "شیء پایگاه داده‌ی برگردانده‌شده مانند
 msgid "Close the database."
 msgstr "پایگاه داده را ببندید."
 
-#, fuzzy
-#| msgid "If you have carried out a lot of deletions and would like to shrink the space used by the GDBM file, this routine will reorganize the database.  :class:`!gdbm` objects will not shorten the length of a database file except by using this reorganization; otherwise, deleted file space will be kept and reused as new (key, value) pairs are added."
 msgid "If you have carried out a lot of deletions and would like to shrink the space used on disk, this method will reorganize the database; otherwise, deleted file space will not be reused."
-msgstr "اگر حذف‌های زیادی انجام داده‌اید و می‌خواهید فضای مصرفی پرونده GDBM را کاهش دهید، این روتین پایگاه داده را بازآرایی می‌کند. اشیای :class:`!gdbm` طول پرونده پایگاه داده را کوتاه نمی‌کنند، مگر با استفاده از این بازآرایی؛ در غیر این صورت، فضای حذف‌شده در پرونده نگه داشته شده و با افزودن جفت‌های جدید (کلید، مقدار) دوباره استفاده می‌شود."
+msgstr "اگر حذف‌های زیادی انجام داده‌اید و می‌خواهید فضای استفاده‌شده روی دیسک را کاهش دهید، این متد پایگاه داده را سازمان‌دهی مجدد خواهد کرد؛ در غیر این صورت، فضای پرونده‌ی حذف‌شده دوباره مورد استفاده قرار نخواهد گرفت."
 
 msgid "While reorganizing, no additional free disk space is required. However, be aware that this factor changes for each :mod:`!dbm` submodule."
-msgstr ""
+msgstr "هنگام بازسازمان‌دهی، هیچ فضای آزاد اضافه‌ای روی دیسک مورد نیاز نیست. بااین‌حال، آگاه باشید که این ضریب برای هر زیرماژول :mod:`!dbm` تغییر می‌کند."
 
 msgid "Synchronize the on-disk directory and data files.  This method is called by the :meth:`shelve.Shelf.sync` method."
 msgstr "پوشه و پرونده‌های داده روی دیسک را همگام‌سازی می‌کند. این متد توسط متد :meth:`shelve.Shelf.sync` فراخوانی می‌شود."

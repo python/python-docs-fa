@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-01 14:41+0330\n"
-"PO-Revision-Date: 2026-09-15 13:18+0330\n"
+"PO-Revision-Date: 2026-10-06 20:43+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
 "Language: fa\n"
@@ -24,10 +24,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.6\n"
 
-#, fuzzy
-#| msgid ":mod:`!csv` --- CSV File Reading and Writing"
 msgid ":mod:`!csv` --- CSV file reading and writing"
-msgstr ":mod:`!csv` --- خواندن و نوشتن پرونده CSV"
+msgstr ":mod:`!csv` --- خواندن و نوشتن پرونده‌های CSV"
 
 msgid "**Source code:** :source:`Lib/csv.py`"
 msgstr "**کد منبع:** :source:`Lib/csv.py`"
@@ -47,8 +45,6 @@ msgstr ":pep:`305` - API پرونده‌ی CSV"
 msgid "The Python Enhancement Proposal which proposed this addition to Python."
 msgstr "پیشنهاد بهبود پایتون (Python Enhancement Proposal) که این افزوده را برای پایتون پیشنهاد داد."
 
-#, fuzzy
-#| msgid "Module Contents"
 msgid "Module contents"
 msgstr "محتویات ماژول"
 
@@ -348,8 +344,6 @@ msgstr "ماژول :mod:`!csv` استثنای زیر را تعریف می‌کن
 msgid "Raised by any of the functions when an error is detected."
 msgstr "در صورت تشخیص خطا، توسط هر یک از توابع پرتاب می‌شود."
 
-#, fuzzy
-#| msgid "Dialects and Formatting Parameters"
 msgid "Dialects and formatting parameters"
 msgstr "گویش‌ها و پارامترهای قالب‌بندی"
 
@@ -410,10 +404,8 @@ msgstr "هنگامی که :const:`True` باشد، فاصله‌های بلاف�
 msgid "When ``True``, raise exception :exc:`Error` on bad CSV input. The default is ``False``."
 msgstr "هنگامی که ``True`` باشد، در صورت ورودی CSV نامعتبر، استثنای :exc:`Error` پرتاب می‌شود. مقدار پیش‌فرض ``False`` است."
 
-#, fuzzy
-#| msgid "Reader Objects"
 msgid "Reader objects"
-msgstr "اشیاء خواننده (Reader)"
+msgstr "شیءهای خواننده"
 
 msgid "Reader objects (:class:`DictReader` instances and objects returned by the :func:`reader` function) have the following public methods:"
 msgstr "اشیای Reader (نمونه‌های :class:`DictReader` و اشیای برگردانده‌شده از تابع :func:`reader`) دارای متدهای عمومی زیر هستند:"
@@ -436,10 +428,8 @@ msgstr "اشیای DictReader ویژگی عمومی زیر را دارند:"
 msgid "If not passed as a parameter when creating the object, this attribute is initialized upon first access or when the first record is read from the file."
 msgstr "اگر هنگام ایجاد شیء به‌عنوان پارامتر ارسال نشده باشد، این ویژگی در اولین دسترسی یا هنگام خواندن اولین رکورد از پرونده مقداردهی اولیه می‌شود."
 
-#, fuzzy
-#| msgid "Writer Objects"
 msgid "Writer objects"
-msgstr "اشیای نویسنده"
+msgstr "شیءهای نویسنده"
 
 msgid ":class:`writer` objects (:class:`DictWriter` instances and objects returned by the :func:`writer` function) have the following public methods.  A *row* must be an iterable of strings or numbers for :class:`writer` objects and a dictionary mapping fieldnames to strings or numbers (by passing them through :func:`str` first) for :class:`DictWriter` objects.  Note that complex numbers are written out surrounded by parens. This may cause some problems for other programs which read CSV files (assuming they support complex numbers at all)."
 msgstr "اشیای :class:`writer` (نمونه‌های :class:`DictWriter` و اشیایی که تابع :func:`writer` برمی‌گرداند) دارای متدهای عمومی زیر هستند. برای اشیای :class:`writer`، یک *ردیف* باید یک پیمایش‌پذیر از رشته‌ها یا اعداد باشد و برای اشیای :class:`DictWriter` باید یک دیکشنری باشد که نام فیلدها را به رشته‌ها یا اعداد نگاشت می‌کند (با اعمال :func:`str` روی آن‌ها در ابتدا). توجه داشته باشید که اعداد مختلط با پرانتز در اطرافشان نوشته می‌شوند. این موضوع ممکن است برای برنامه‌های دیگری که پرونده‌های CSV را می‌خوانند (اگر اصلاً از اعداد مختلط پشتیبانی کنند) مشکلاتی ایجاد کند."
@@ -517,18 +507,9 @@ msgstr ""
 "    writer = csv.writer(f)\n"
 "    writer.writerows(someiterable)"
 
-#, fuzzy
-#| msgid "Since :func:`open` is used to open a CSV file for reading, the file will by default be decoded into unicode using the system default encoding (see :func:`locale.getencoding`).  To decode a file using a different encoding, use the ``encoding`` argument of open::"
 msgid "Since :func:`open` is used to open a CSV file for reading, the file will by default be decoded into Unicode using UTF-8.  To decode a file using a different encoding, use the ``encoding`` argument of open::"
-msgstr "از آنجا که :func:`open` برای باز کردن یک پرونده CSV جهت خواندن استفاده می‌شود، پرونده به‌طور پیش‌فرض با استفاده از کدگذاری پیش‌فرض سیستم به یونیکد کدگشایی می‌شود (به :func:`locale.getencoding` مراجعه کنید). برای کدگشایی یک پرونده با کدگذاری متفاوت، از آرگومان ``encoding`` در open استفاده کنید::"
+msgstr "از آنجا که تابع :func:`open` برای گشودن یک پرونده‌ی CSV به منظور خواندن استفاده می‌شود، پرونده به طور پیش‌فرض با استفاده از UTF-8 به یونیکد رمزگشایی خواهد شد. برای رمزگشایی یک پرونده با استفاده از یک کدگذاری متفاوت، از آرگومان ``encoding`` در open استفاده کنید::"
 
-#, fuzzy
-#| msgid ""
-#| "import csv\n"
-#| "with open('some.csv', newline='', encoding='utf-8') as f:\n"
-#| "    reader = csv.reader(f)\n"
-#| "    for row in reader:\n"
-#| "        print(row)"
 msgid ""
 "import csv\n"
 "with open('some.csv', newline='', encoding='latin-1') as f:\n"
@@ -537,15 +518,13 @@ msgid ""
 "        print(row)"
 msgstr ""
 "import csv\n"
-"with open('some.csv', newline='', encoding='utf-8') as f:\n"
+"with open('some.csv', newline='', encoding='latin-1') as f:\n"
 "    reader = csv.reader(f)\n"
 "    for row in reader:\n"
 "        print(row)"
 
-#, fuzzy
-#| msgid "The same applies to writing in something other than the system default encoding: specify the encoding argument when opening the output file."
 msgid "The same applies to writing in something other than the default encoding: specify the encoding argument when opening the output file."
-msgstr "همین امر در مورد نوشتن با کدگذاری غیر از کدگذاری پیش‌فرض سیستم نیز صدق می‌کند: هنگام باز کردن پرونده خروجی، آرگومان encoding را مشخص کنید."
+msgstr "همین امر برای نوشتن با کدگذاری‌ای غیر از کدگذاری پیش‌فرض نیز صدق می‌کند: هنگام گشودن پرونده‌ی خروجی، آرگومان encoding را مشخص کنید."
 
 msgid "Registering a new dialect::"
 msgstr "ثبت یک گویش جدید::"

@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-01 14:41+0330\n"
-"PO-Revision-Date: 2021-06-28 00:49+0000\n"
+"PO-Revision-Date: 2026-10-06 20:44+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
 "Language: fa\n"
@@ -21,6 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.6\n"
 
 msgid "Module Objects"
 msgstr "اشیاء ماژول"
@@ -82,60 +83,50 @@ msgstr "بافر بازگشتی تنها تا زمانی معتبر است که 
 msgid ":c:func:`PyModule_GetFilename` raises :exc:`UnicodeEncodeError` on unencodable filenames, use :c:func:`PyModule_GetFilenameObject` instead."
 msgstr ":c:func:`PyModule_GetFilename` برای نام‌های پرونده‌ی غیرقابل کدگذاری، استثنای :exc:`UnicodeEncodeError` را مطرح می‌کند؛ به‌جای آن از :c:func:`PyModule_GetFilenameObject` استفاده کنید."
 
-#, fuzzy
-#| msgid "Module definitions"
 msgid "Module definition"
-msgstr "تعریف‌های ماژول"
+msgstr "تعریف ماژول"
 
 msgid "Modules created using the C API are typically defined using an array of :c:type:`PySlot` structs, which provides a \"description\" of how a module should be created. See :ref:`capi-slots` for more information on slots in general."
-msgstr ""
+msgstr "ماژول‌های ایجادشده با استفاده از API زبان C معمولاً با استفاده از آرایه‌ای از ساختارهای :c:type:`PySlot` تعریف می‌شوند که «توضیحی» درباره‌ی نحوه‌ی ایجاد یک ماژول ارائه می‌دهد. برای اطلاعات بیشتر درباره‌ی جایگاه‌ها به‌طور کلی، به :ref:`capi-slots` مراجعه کنید."
 
 msgid "Previously, a :c:type:`PyModuleDef` struct was necessary to define modules. The older way of defining modules is still available: consult either the :ref:`pymoduledef` section or earlier versions of this documentation if you plan to support earlier Python versions."
-msgstr ""
+msgstr "پیش از این، برای تعریف ماژول‌ها ساختار :c:type:`PyModuleDef` ضروری بود. روش قدیمی‌تر تعریف ماژول‌ها همچنان در دسترس است: اگر قصد دارید از نسخه‌های قبلی پایتون پشتیبانی کنید، به بخش :ref:`pymoduledef` یا نسخه‌های قبلی این مستندات مراجعه کنید."
 
-#, fuzzy
-#| msgid "The definition is usually used to define an extension's “main” module object (see :ref:`extension-modules` for details). It is also used to :ref:`create extension modules dynamically <moduledef-dynamic>`."
 msgid "The slots array is usually used to define an extension module's “main” module object (see :ref:`extension-modules` for details). It can also be used to :ref:`create extension modules dynamically <module-from-slots>`."
-msgstr "این تعریف معمولاً برای تعریف شیء ماژول «اصلی» یک ماژول توسعه‌ای استفاده می‌شود (برای جزئیات به :ref:`extension-modules` مراجعه کنید). همچنین برای :ref:`ایجاد ماژول‌های توسعه‌ای به‌صورت پویا <moduledef-dynamic>` استفاده می‌شود."
+msgstr "آرایه‌ی جایگاه‌ها معمولاً برای تعریف شیء ماژول «اصلی» یک ماژول توسعه‌ای استفاده می‌شود (برای جزئیات به :ref:`extension-modules` مراجعه کنید). همچنین می‌توان از آن برای :ref:`ایجاد پویای ماژول‌های توسعه‌ای <module-from-slots>` استفاده کرد."
 
 msgid "Unless specified otherwise, the same slot ID may not be repeated in an array of slots."
-msgstr ""
+msgstr "مگر اینکه جور دیگری مشخص شده باشد، ممکن است یک شناسه‌ی جایگاه در یک آرایه از جایگاه‌ها تکرار نشود."
 
-#, fuzzy
-#| msgid "Module slots"
 msgid "Metadata slots"
-msgstr "جایگاه‌های ماژول"
+msgstr "جایگاه‌های فراداده"
 
 msgid ":c:member:`Slot ID <PySlot.sl_id>` for the name of the new module, as a NUL-terminated UTF8-encoded ``const char *``."
-msgstr ""
+msgstr ":c:member:`شناسه‌ی جایگاه <PySlot.sl_id>` برای نام ماژول جدید، به شکل یک ``const char *`` کدگذاری‌شده با UTF-8 و پایان‌یافته با NUL."
 
 msgid "Note that modules are typically created using a :py:class:`~importlib.machinery.ModuleSpec`, and when they are, the name from the spec will be used instead of :c:data:`!Py_mod_name`. However, it is still recommended to include this slot for introspection and debugging purposes."
-msgstr ""
+msgstr "توجه داشته باشید که ماژول‌ها معمولاً با استفاده از یک :py:class:`~importlib.machinery.ModuleSpec` ایجاد می‌شوند و در این صورت، نام مشخصات به‌جای :c:data:`!Py_mod_name` استفاده خواهد شد. با این حال، همچنان توصیه می‌شود برای اهداف درون‌نگری و اشکال‌زدایی، این جایگاه را بگنجانید."
 
 msgid "Use :c:member:`PyModuleDef.m_name` instead to support previous versions."
-msgstr ""
+msgstr "برای پشتیبانی از نسخه‌های قبلی، به‌جای آن از :c:member:`PyModuleDef.m_name` استفاده کنید."
 
 msgid ":c:type:`Slot ID <PySlot.sl_id>` for the docstring of the new module, as a NUL-terminated UTF8-encoded ``const char *``."
-msgstr ""
+msgstr ":c:type:`شناسه‌ی شکاف <PySlot.sl_id>` برای رشته مستند ماژول جدید، به شکل یک ``const char *`` با انتهای تهی و کدگذاری‌شده با UTF-8."
 
-#, fuzzy
-#| msgid "Docstring for the module; usually a docstring variable created with :c:macro:`PyDoc_STRVAR` is used."
 msgid "Usually it is set to a variable created with :c:macro:`PyDoc_STRVAR`."
-msgstr "رشته مستند ماژول؛ معمولاً از متغیر رشته مستند ایجاد‌شده با :c:macro:`PyDoc_STRVAR` استفاده می‌شود."
+msgstr "معمولاً این مقدار روی متغیری تنظیم می‌شود که با :c:macro:`PyDoc_STRVAR` ایجاد شده است."
 
 msgid "Use :c:member:`PyModuleDef.m_doc` instead to support previous versions."
-msgstr ""
+msgstr "برای پشتیبانی از نسخه‌های قبلی، به‌جای آن از :c:member:`PyModuleDef.m_doc` استفاده کنید."
 
-#, fuzzy
-#| msgid "Module slots"
 msgid "Feature slots"
-msgstr "جایگاه‌های ماژول"
+msgstr "جایگاه‌های ویژگی"
 
 msgid ":c:member:`Slot ID <PySlot.sl_id>` whose value points to a :c:struct:`PyABIInfo` structure describing the ABI that the extension is using."
-msgstr ""
+msgstr ":c:member:`شناسه‌ی جایگاه <PySlot.sl_id>` که مقدار آن به ساختار :c:struct:`PyABIInfo` اشاره می‌کند و توصیف‌کننده‌ی ABI است که افزونه از آن استفاده می‌کند."
 
 msgid "A suitable :c:struct:`!PyABIInfo` variable can be defined using the :c:macro:`PyABIInfo_VAR` macro, as in:"
-msgstr ""
+msgstr "یک متغیر مناسب :c:struct:`!PyABIInfo` را می‌توان با استفاده از ماکروی :c:macro:`PyABIInfo_VAR` تعریف کرد، مانند:"
 
 msgid ""
 "PyABIInfo_VAR(abi_info);\n"
@@ -145,15 +136,21 @@ msgid ""
 "   ...\n"
 "};"
 msgstr ""
+"PyABIInfo_VAR(abi_info);\n"
+"\n"
+"static PySlot mymodule_slots[] = {\n"
+"   PySlot_DATA(Py_mod_abi, &abi_info),\n"
+"   ...\n"
+"};"
 
 msgid "When creating a module, Python checks the value of this slot using :c:func:`PyABIInfo_Check`."
-msgstr ""
+msgstr "هنگام ایجاد یک ماژول، پایتون مقدار این جایگاه را با استفاده از :c:func:`PyABIInfo_Check` بررسی می‌کند."
 
 msgid "This slot is required, except for modules created from :c:struct:`PyModuleDef`."
-msgstr ""
+msgstr "این جایگاه الزامی است، به جز برای ماژول‌هایی که از :c:struct:`PyModuleDef` ایجاد شده‌اند."
 
 msgid ":c:member:`Slot ID <PySlot.sl_id>` whose value is one of:"
-msgstr ""
+msgstr ":c:member:`Slot ID <PySlot.sl_id>` که مقدار آن یکی از موارد زیر است:"
 
 msgid "The module does not support being imported in subinterpreters."
 msgstr "این ماژول از ایمپورت شدن در زیرمفسرها (subinterpreters) پشتیبانی نمی‌کند."
@@ -171,14 +168,14 @@ msgid "If ``Py_mod_multiple_interpreters`` is not specified, the import machiner
 msgstr "اگر ``Py_mod_multiple_interpreters`` مشخص نشده باشد، سازوکار ایمپورت به‌صورت پیش‌فرض از ``Py_MOD_MULTIPLE_INTERPRETERS_SUPPORTED`` استفاده می‌کند."
 
 msgid "For historical reasons, the values are declared as pointers (``void *``). When using :c:type:`PySlot` arrays, use :c:macro:`PySlot_DATA` for :c:macro:`!Py_mod_multiple_interpreters`:"
-msgstr ""
+msgstr "به دلایل تاریخی، مقادیر به عنوان اشاره‌گر (``void *``) اعلام می‌شوند. هنگام استفاده از آرایه‌های :c:type:`PySlot`، از :c:macro:`PySlot_DATA` برای :c:macro:`!Py_mod_multiple_interpreters` استفاده کنید:"
 
-#, fuzzy
-#| msgid "If ``Py_mod_multiple_interpreters`` is not specified, the import machinery defaults to ``Py_MOD_MULTIPLE_INTERPRETERS_SUPPORTED``."
 msgid ""
 "PySlot_DATA(Py_mod_multiple_interpreters,\n"
 "            Py_MOD_PER_INTERPRETER_GIL_SUPPORTED)"
-msgstr "اگر ``Py_mod_multiple_interpreters`` مشخص نشده باشد، سازوکار ایمپورت به‌صورت پیش‌فرض از ``Py_MOD_MULTIPLE_INTERPRETERS_SUPPORTED`` استفاده می‌کند."
+msgstr ""
+"PySlot_DATA(Py_mod_multiple_interpreters,\n"
+"            Py_MOD_PER_INTERPRETER_GIL_SUPPORTED)"
 
 msgid "The module depends on the presence of the global interpreter lock (GIL), and may access global state without synchronization."
 msgstr "این ماژول به وجود قفل مفسر سراسری (GIL) وابسته است و ممکن است بدون همگام‌سازی به وضعیت سراسری دسترسی داشته باشد."
@@ -193,30 +190,28 @@ msgid "If ``Py_mod_gil`` is not specified, the import machinery defaults to ``Py
 msgstr "اگر ``Py_mod_gil`` مشخص نشده باشد، سازوکار ایمپورت به‌طور پیش‌فرض از ``Py_MOD_GIL_USED`` استفاده می‌کند."
 
 msgid "For historical reasons, the values are declared as pointers (``void *``). When using :c:type:`PySlot` arrays, use :c:macro:`PySlot_DATA` for :c:macro:`!Py_mod_gil`:"
-msgstr ""
+msgstr "به دلایل تاریخی، مقادیر به عنوان اشاره‌گر (``void *``) اعلام می‌شوند. هنگام استفاده از آرایه‌های :c:type:`PySlot`، از :c:macro:`PySlot_DATA` برای :c:macro:`!Py_mod_gil` استفاده کنید:"
 
 msgid "PySlot_DATA(Py_mod_gil, Py_MOD_GIL_NOT_USED)"
-msgstr ""
+msgstr "PySlot_DATA(Py_mod_gil, Py_MOD_GIL_NOT_USED)"
 
 msgid "Creation and initialization slots"
-msgstr ""
+msgstr "جایگاه‌های ایجاد و راه‌اندازی اولیه"
 
-#, fuzzy
-#| msgid "Specifies a function that is called to create the module object itself. The *value* pointer of this slot must point to a function of the signature:"
 msgid ":c:member:`Slot ID <PySlot.sl_id>` for a function that creates the module object itself. The function must have the signature:"
-msgstr "تابعی را مشخص می‌کند که برای ایجاد خودِ شیء ماژول فراخوانی می‌شود. اشاره‌گر *value* این جایگاه باید به تابعی با امضای زیر اشاره کند:"
+msgstr ":c:member:`Slot ID <PySlot.sl_id>` برای تابعی که خود شیء ماژول را ایجاد می‌کند. این تابع باید امضای زیر را داشته باشد:"
 
 msgid "The function will be called with:"
-msgstr ""
+msgstr "این تابع با موارد زیر فراخوانی خواهد شد:"
 
 msgid "*spec*: a ``ModuleSpec``-like object, meaning that any attributes defined for :py:class:`importlib.machinery.ModuleSpec` have matching semantics. However, any of the attributes may be missing."
-msgstr ""
+msgstr "*spec*: یک شیء شبیه به ``ModuleSpec``، به این معنا که هر ویژگی تعریف‌شده برای :py:class:`importlib.machinery.ModuleSpec` دارای معناشناسی منطبق است. با این حال، ممکن است هر یک از ویژگی‌ها وجود نداشته باشند."
 
 msgid "*def*: ``NULL``, or the module definition if the module is created from one."
-msgstr ""
+msgstr "*def*: مقدار ``NULL``، یا تعریف ماژول در صورتی که ماژول از یکی از آن‌ها ایجاد شده باشد."
 
 msgid "The function should return a new module object, or set an error and return ``NULL``."
-msgstr ""
+msgstr "این تابع باید یک شیء ماژول جدید برگرداند، یا یک خطا را تنظیم کرده و ``NULL`` را برگرداند."
 
 msgid "This function should be kept minimal. In particular, it should not call arbitrary Python code, as trying to import the same module again may result in an infinite loop."
 msgstr "این تابع باید در حداقل ممکن نگه داشته شود. به‌ویژه، نباید کد دلخواه پایتون را فراخوانی کند، زیرا تلاش برای ایمپورت کردن مجدد همان ماژول ممکن است به حلقه بی‌نهایت منجر شود."
@@ -225,162 +220,136 @@ msgid "If ``Py_mod_create`` is not specified, the import machinery will create a
 msgstr "اگر ``Py_mod_create`` مشخص نشده باشد، مکانیزم ایمپورت با استفاده از :c:func:`PyModule_New` یک شیء ماژول معمولی ایجاد می‌کند. نام از *مشخصه* گرفته می‌شود، نه از تعریف، تا ماژول‌های توسعه‌ای بتوانند به‌طور پویا با جایگاه خود در سلسله‌مراتب ماژول سازگار شوند و از طریق پیوندهای نمادین با نام‌های مختلف ایمپورت شوند، در حالی که همگی یک تعریف ماژول واحد را به اشتراک می‌گذارند."
 
 msgid "There is no requirement for the returned object to be an instance of :c:type:`PyModule_Type`. However, some slots may only be used with :c:type:`!PyModule_Type` instances; in particular:"
-msgstr ""
+msgstr "هیچ الزامی وجود ندارد که شیء برگردانده‌شده نمونه‌ای از :c:type:`PyModule_Type` باشد. با این حال، برخی از جایگاه‌ها ممکن است فقط با نمونه‌های :c:type:`!PyModule_Type` استفاده شوند؛ به ویژه:"
 
 msgid ":c:macro:`Py_mod_exec`,"
-msgstr ""
+msgstr ":c:macro:`Py_mod_exec`،"
 
 msgid ":ref:`module state slots <ext-module-state-slots>` (``Py_mod_state_*``),"
-msgstr ""
+msgstr ":ref:`جایگاه‌های حالت ماژول <ext-module-state-slots>` (``Py_mod_state_*``)،"
 
 msgid ":c:macro:`Py_mod_token`."
-msgstr ""
+msgstr ":c:macro:`Py_mod_token`."
 
 msgid "The *slots* argument may be a ``ModuleSpec``-like object, rather than a true :py:class:`~importlib.machinery.ModuleSpec` instance. Note that previous versions of CPython did not enforce this."
-msgstr ""
+msgstr "آرگومان *slots* ممکن است یک شیء شبیه به ``ModuleSpec`` باشد، نه یک نمونه‌ی واقعی :py:class:`~importlib.machinery.ModuleSpec`. توجه داشته باشید که نسخه‌های قبلی سی‌پایتون این موضوع را اعمال نمی‌کردند."
 
 msgid "The *def* argument may now be ``NULL``, since modules are not necessarily made from definitions."
-msgstr ""
+msgstr "آرگومان *def* اکنون ممکن است ``NULL`` باشد، زیرا ماژول‌ها لزوماً از تعاریف ساخته نمی‌شوند."
 
-#, fuzzy
-#| msgid "Specifies a function that is called to *execute* the module. This is equivalent to executing the code of a Python module: typically, this function adds classes and constants to the module. The signature of the function is:"
 msgid ":c:member:`Slot ID <PySlot.sl_id>` for a function that will :dfn:`execute`, or initialize, the module. This function does the equivalent to executing the code of a Python module: typically, it adds classes and constants to the module. The signature of the function is:"
-msgstr "تابعی را مشخص می‌کند که برای *اجرا* کردن ماژول فراخوانی می‌شود. این معادل اجرای کد یک ماژول پایتون است: به‌طور معمول، این تابع کلاس‌ها و ثابت‌ها را به ماژول اضافه می‌کند. امضای تابع به این صورت است:"
+msgstr ":c:member:`Slot ID <PySlot.sl_id>` برای تابعی که ماژول را :dfn:`execute` (اجرا) یا مقداردهی اولیه می‌کند. این تابع معادل اجرای کد یک ماژول پایتون عمل می‌کند: معمولاً کلاس‌ها و ثابت‌ها را به ماژول اضافه می‌کند. امضای تابع به صورت زیر است:"
 
 msgid "See the :ref:`capi-module-support-functions` section for some useful functions to call."
-msgstr ""
+msgstr "برای مشاهده‌ی برخی توابع مفید جهت فراخوانی، به بخش :ref:`capi-module-support-functions` مراجعه کنید."
 
 msgid "For backwards compatibility, the :c:type:`PyModuleDef.m_slots` array may contain multiple :c:macro:`!Py_mod_exec` slots; these are processed in the order they appear in the array. Elsewhere (that is, in arguments to :c:func:`PyModule_FromSlotsAndSpec` and in return values of :samp:`PyModExport_{<name>}`), repeating the slot is not allowed."
-msgstr ""
+msgstr "به منظور سازگاری با نسخه‌های قبل، آرایه‌ی :c:type:`PyModuleDef.m_slots` ممکن است حاوی چندین جایگاه :c:macro:`!Py_mod_exec` باشد؛ این موارد به ترتیبی که در آرایه ظاهر می‌شوند پردازش خواهند شد. جاهای دیگر (یعنی در آرگومان‌های :c:func:`PyModule_FromSlotsAndSpec` و مقادیر بازگشتی :samp:`PyModExport_{<name>}`)، تکرار جایگاه مجاز نیست."
 
 msgid "Repeated ``Py_mod_exec`` slots are disallowed, except in :c:type:`PyModuleDef.m_slots`."
-msgstr ""
+msgstr "جایگاه‌های تکراری ``Py_mod_exec`` مجاز نیستند، مگر در :c:type:`PyModuleDef.m_slots`."
 
-#, fuzzy
-#| msgid "A pointer to a table of module-level functions, described by :c:type:`PyMethodDef` values.  Can be ``NULL`` if no functions are present."
 msgid ":c:member:`Slot ID <PySlot.sl_id>` for a table of module-level functions, as an array of :c:type:`PyMethodDef` values suitable as the *functions* argument to :c:func:`PyModule_AddFunctions`."
-msgstr "اشاره‌گری به جدولی از توابع در سطح ماژول که توسط مقادیر :c:type:`PyMethodDef` توصیف می‌شوند. اگر هیچ تابعی وجود نداشته باشد، می‌تواند ``NULL`` باشد."
+msgstr ":c:member:`Slot ID <PySlot.sl_id>` برای جدولی از توابع در سطح ماژول، به صورت آرایه‌ای از مقادیر :c:type:`PyMethodDef` که به عنوان آرگومان *functions* برای :c:func:`PyModule_AddFunctions` مناسب است."
 
 msgid "Like other slot IDs, a slots array may only contain one :c:macro:`!Py_mod_methods` entry. To add functions from multiple :c:type:`PyMethodDef` arrays, call :c:func:`PyModule_AddFunctions` in the :c:macro:`Py_mod_exec` function."
-msgstr ""
+msgstr "مانند سایر شناسه‌های جایگاه، یک آرایه‌ی جایگاه ممکن است فقط حاوی یک ورودی :c:macro:`!Py_mod_methods` باشد. برای افزودن توابع از چندین آرایه‌ی :c:type:`PyMethodDef`، تابع :c:func:`PyModule_AddFunctions` را در تابع :c:macro:`Py_mod_exec` فراخوانی کنید."
 
-#, fuzzy
-#| msgid "The *functions* array must be statically allocated (or otherwise guaranteed to outlive the module object)."
 msgid "The table must be statically allocated (or otherwise guaranteed to outlive the module object)."
-msgstr "آرایه‌ی *functions* باید به‌صورت ایستا تخصیص داده شود (یا به نحوی دیگر تضمین شود که عمرش از شیء ماژول طولانی‌تر باشد)."
+msgstr "این جدول باید به صورت ایستا تخصیص داده شود (یا به نحوی تضمین شود که عمر آن بیشتر از شیء ماژول است)."
 
 msgid "Use :c:member:`PyModuleDef.m_methods` instead to support previous versions."
-msgstr ""
+msgstr "برای پشتیبانی از نسخه‌های قبلی، به‌جای آن از :c:member:`PyModuleDef.m_methods` استفاده کنید."
 
-#, fuzzy
-#| msgid "Module slots"
 msgid "Module state"
-msgstr "جایگاه‌های ماژول"
+msgstr "وضعیت ماژول"
 
 msgid "Extension modules can have *module state* -- a piece of memory that is allocated on module creation, and freed when the module object is deallocated. The module state is specified using :ref:`dedicated slots <ext-module-state-slots>`."
-msgstr ""
+msgstr "ماژول‌های توسعه‌ای می‌توانند *وضعیت ماژول* داشته باشند؛ تکه‌ای از حافظه که هنگام ایجاد ماژول تخصیص داده می‌شود و زمانی که شیء ماژول زدوده‌سازی می‌شود، آزاد می‌گردد. وضعیت ماژول با استفاده از :ref:`جایگاه‌های اختصاصی <ext-module-state-slots>` مشخص می‌شود."
 
 msgid "A typical use of module state is storing an exception type -- or indeed *any* type object defined by the module --"
-msgstr ""
+msgstr "یک کاربرد رایج وضعیت ماژول، ذخیره‌سازی یک نوع استثنا -- یا در واقع *هر* شیء نوع تعریف‌شده توسط ماژول -- است."
 
 msgid "Unlike the module's Python attributes, Python code cannot replace or delete data stored in module state."
-msgstr ""
+msgstr "بر خلاف ویژگی‌های پایتونی ماژول، کد پایتون نمی‌تواند داده‌های ذخیره‌شده در وضعیت ماژول را جایگزین یا حذف کند."
 
 msgid "Keeping per-module information in attributes and module state, rather than in static globals, makes module objects *isolated* and safer for use in multiple sub-interpreters. It also helps Python do an orderly clean-up when it shuts down."
-msgstr ""
+msgstr "نگهداری اطلاعات هر ماژول در ویژگی‌ها و وضعیت ماژول، به‌جای متغیرهای سراسری ایستا، اشیاء ماژول را *ایزوله* و برای استفاده در زیرمفسرهای متعدد امن‌تر می‌کند. همچنین به پایتون کمک می‌کند تا هنگام خاموش شدن، پاکسازی منظمی را انجام دهد."
 
 msgid "Extensions that keep references to Python objects as part of module state must implement :c:macro:`Py_mod_state_traverse` and :c:macro:`Py_mod_state_clear` functions to avoid reference leaks."
-msgstr ""
+msgstr "اکستنشن‌هایی که ارجاع به اشیاء پایتون را به عنوان بخشی از وضعیت ماژول نگه می‌دارند، باید توابع :c:macro:`Py_mod_state_traverse` و :c:macro:`Py_mod_state_clear` را پیاده‌سازی کنند تا از نشت ارجاعات جلوگیری شود."
 
 msgid "To retrieve the state from a given module, use the following functions:"
-msgstr ""
+msgstr "برای بازیابی وضعیت از یک ماژول مشخص، از توابع زیر استفاده کنید:"
 
-#, fuzzy
-#| msgid "Return the \"state\" of the module, that is, a pointer to the block of memory allocated at module creation time, or ``NULL``.  See :c:member:`PyModuleDef.m_size`."
 msgid "Return the \"state\" of the module, that is, a pointer to the block of memory allocated at module creation time, or ``NULL``.  See :c:macro:`Py_mod_state_size`."
-msgstr "«وضعیت» ماژول را برمی‌گرداند، یعنی اشاره‌گری به بلوک حافظه‌ای که در زمان ایجاد ماژول تخصیص یافته است، یا ``NULL``. :c:member:`PyModuleDef.m_size` را ببینید."
+msgstr "برگرداندن «وضعیت» ماژول؛ یعنی یک اشاره‌گر به بلوک حافظه‌ای که در زمان ایجاد ماژول تخصیص داده شده است، یا ``NULL``. به :c:macro:`Py_mod_state_size` مراجعه کنید."
 
-#, fuzzy
-#| msgid "On error, return ``NULL`` with an exception set. Use :c:func:`PyErr_Occurred` to tell this case apart from a missing :c:type:`!PyModuleDef`."
 msgid "On error, return ``NULL`` with an exception set. Use :c:func:`PyErr_Occurred` to tell this case apart from missing module state."
-msgstr "در صورت خطا، ``NULL`` را همراه با استثنای تنظیم‌شده برگردانید. از :c:func:`PyErr_Occurred` برای تمایز این حالت از نبود :c:type:`!PyModuleDef` استفاده کنید."
+msgstr "در صورت بروز خطا، مقدار ``NULL`` را همراه با تنظیم یک استثنا برگردانید. از :c:func:`PyErr_Occurred` استفاده کنید تا این حالت را از وضعیت مفقود ماژول متمایز کنید."
 
 msgid "Set *\\*result* to the size of *module*'s state, as specified using :c:macro:`Py_mod_state_size` (or :c:member:`PyModuleDef.m_size`), and return 0."
-msgstr ""
+msgstr "مقدار *\\*result* را برابر با اندازه‌ی وضعیت *module*، همان‌طور که با استفاده از :c:macro:`Py_mod_state_size` (یا :c:member:`PyModuleDef.m_size`) مشخص شده است، قرار دهید و مقدار 0 را برگردانید."
 
 msgid "On error, set *\\*result* to -1, and return -1 with an exception set."
-msgstr ""
+msgstr "در صورت بروز خطا، *\\*result* را روی 1- تنظیم کنید و با تنظیم یک استثنا، 1- را برگردانید."
 
 msgid "Slots for defining module state"
-msgstr ""
+msgstr "جایگاه‌ها برای تعریف وضعیت ماژول"
 
 msgid "The following :c:member:`slot IDs <PySlot.sl_id>`  are available for defining the module state."
-msgstr ""
+msgstr "شناسه‌های جایگاه :c:member:`slot IDs <PySlot.sl_id>` زیر برای تعریف وضعیت ماژول در دسترس هستند."
 
 msgid ":c:member:`Slot ID <PySlot.sl_id>` for the size of the module state, in bytes."
-msgstr ""
+msgstr ":c:member:`شناسه‌ی جایگاه <PySlot.sl_id>` برای اندازه‌ی وضعیت ماژول، بر حسب بایت."
 
-#, fuzzy
-#| msgid "Setting it to a non-negative value means that the module can be re-initialized and specifies the additional amount of memory it requires for its state."
 msgid "Setting the value to a non-negative value means that the module can be re-initialized and specifies the additional amount of memory it requires for its state."
-msgstr "تنظیم آن به یک مقدار نامنفی به این معناست که ماژول می‌تواند مجدداً مقداردهی اولیه شود و میزان حافظه‌ی اضافی مورد نیاز برای وضعیت خود را مشخص می‌کند."
+msgstr "تنظیم مقدار به یک مقدار غیرمنفی به این معنا است که ماژول می‌تواند دوباره مقداردهی اولیه شود و مقدار حافظه اضافی مورد نیاز برای وضعیت خود را مشخص می‌کند."
 
 msgid "See :PEP:`3121` for more details."
 msgstr "برای جزئیات بیشتر به :PEP:`3121` مراجعه کنید."
 
 msgid "Use :c:func:`PyModule_GetStateSize` to retrieve the size of a given module."
-msgstr ""
+msgstr "برای بازیابی اندازه‌ی یک ماژول مشخص، از :c:func:`PyModule_GetStateSize` استفاده کنید."
 
 msgid "Use :c:member:`PyModuleDef.m_size` instead to support previous versions."
-msgstr ""
+msgstr "برای پشتیبانی از نسخه‌های قبلی، به‌جای آن از :c:member:`PyModuleDef.m_size` استفاده کنید."
 
-#, fuzzy
-#| msgid "A traversal function to call during GC traversal of the module object, or ``NULL`` if not needed."
 msgid ":c:member:`Slot ID <PySlot.sl_id>` for a traversal function to call during GC traversal of the module object."
-msgstr "تابع پیمایشی که در حین پیمایش شیء ماژول توسط GC فراخوانی می‌شود، یا ``NULL`` در صورت عدم نیاز."
+msgstr ":c:member:`Slot ID <PySlot.sl_id>` برای یک تابع پیمایش که در طول پیمایش GC برای شیء ماژول فراخوانی می‌شود."
 
 msgid "The signature of the function, and meanings of the arguments, is similar as for :c:member:`PyTypeObject.tp_traverse`:"
-msgstr ""
+msgstr "امضای تابع و معانی آرگومان‌ها مشابه :c:member:`PyTypeObject.tp_traverse` است:"
 
-#, fuzzy
-#| msgid "This function is not called if the module state was requested but is not allocated yet. This is the case immediately after the module is created and before the module is executed (:c:data:`Py_mod_exec` function). More precisely, this function is not called if :c:member:`~PyModuleDef.m_size` is greater than 0 and the module state (as returned by :c:func:`PyModule_GetState`) is ``NULL``."
 msgid "This function is not called if the module state was requested but is not allocated yet. This is the case immediately after the module is created and before the module is executed (:c:data:`Py_mod_exec` function). More precisely, this function is not called if the state size (:c:data:`Py_mod_state_size`) is greater than 0 and the module state (as returned by :c:func:`PyModule_GetState`) is ``NULL``."
-msgstr "این تابع در صورتی فراخوانی نمی‌شود که وضعیت ماژول درخواست شده باشد اما هنوز تخصیص داده نشده باشد. این حالت بلافاصله پس از ایجاد ماژول و پیش از اجرای ماژول (تابع :c:data:`Py_mod_exec`) برقرار است. دقیق‌تر آنکه، این تابع در صورتی فراخوانی نمی‌شود که :c:member:`~PyModuleDef.m_size` بزرگ‌تر از ۰ باشد و وضعیت ماژول (همان‌طور که :c:func:`PyModule_GetState` برمی‌گرداند) برابر ``NULL`` باشد."
+msgstr "اگر وضعیت ماژول درخواست شده باشد اما هنوز تخصیص نیافته باشد، این تابع فراخوانی نمی‌شود. این حالت بلافاصله پس از ایجاد ماژول و قبل از اجرای ماژول (تابع :c:data:`Py_mod_exec`) رخ می‌دهد. به عبارت دقیق‌تر، اگر اندازه‌ی وضعیت (:c:data:`Py_mod_state_size`) بزرگ‌تر از 0 باشد و وضعیت ماژول (که توسط :c:func:`PyModule_GetState` برگردانده می‌شود) برابر با ``NULL`` باشد، این تابع فراخوانی نمی‌شود."
 
 msgid "Use :c:member:`PyModuleDef.m_traverse` instead to support previous versions."
-msgstr ""
+msgstr "برای پشتیبانی از نسخه‌های قبلی، به‌جای آن از :c:member:`PyModuleDef.m_traverse` استفاده کنید."
 
-#, fuzzy
-#| msgid "A clear function to call during GC clearing of the module object, or ``NULL`` if not needed."
 msgid ":c:member:`Slot ID <PySlot.sl_id>` for a clear function to call during GC clearing of the module object."
-msgstr "تابعی برای پاک‌سازی که در حین پاک‌سازی زباله‌روبی شیء ماژول فراخوانی می‌شود، یا ``NULL`` در صورت عدم نیاز."
+msgstr ":c:member:`Slot ID <PySlot.sl_id>` برای یک تابع پاک‌سازی که در طول پاک‌سازی GC شیء ماژول فراخوانی می‌شود."
 
 msgid "The signature of the function is:"
-msgstr ""
+msgstr "امضای تابع به صورت زیر است:"
 
-#, fuzzy
-#| msgid "Like :c:member:`PyTypeObject.tp_clear`, this function is not *always* called before a module is deallocated. For example, when reference counting is enough to determine that an object is no longer used, the cyclic garbage collector is not involved and :c:member:`~PyModuleDef.m_free` is called directly."
 msgid "Like :c:member:`PyTypeObject.tp_clear`, this function is not *always* called before a module is deallocated. For example, when reference counting is enough to determine that an object is no longer used, the cyclic garbage collector is not involved and the :c:macro:`Py_mod_state_free` function is called directly."
-msgstr "مانند :c:member:`PyTypeObject.tp_clear`، این تابع *همیشه* پیش از آزادسازی یک ماژول فراخوانی نمی‌شود. برای مثال، وقتی شمارش ارجاع برای تعیین اینکه یک شیء دیگر استفاده نمی‌شود کافی باشد، زباله‌روب چرخه‌ای دخالتی ندارد و :c:member:`~PyModuleDef.m_free` مستقیماً فراخوانی می‌شود."
+msgstr "مانند :c:member:`PyTypeObject.tp_clear`، این تابع *همیشه* قبل از واگذاری حافظه (deallocation) یک ماژول فراخوانی نمی‌شود. برای مثال، زمانی که شمارش ارقام برای تشخیص اینکه آیا یک شیء دیگر استفاده نمی‌شود کافی است، جمع‌آور زباله‌ی چرخه‌ای درگیر نمی‌شود و تابع :c:macro:`Py_mod_state_free` مستقیماً فراخوانی می‌شود."
 
 msgid "Use :c:member:`PyModuleDef.m_clear` instead to support previous versions."
-msgstr ""
+msgstr "برای پشتیبانی از نسخه‌های قبلی، به‌جای آن از :c:member:`PyModuleDef.m_clear` استفاده کنید."
 
-#, fuzzy
-#| msgid "A function to call during deallocation of the module object, or ``NULL`` if not needed."
 msgid ":c:member:`Slot ID <PySlot.sl_id>` for a function to call during deallocation of the module object."
-msgstr "تابعی که هنگام آزادسازی شیء ماژول فراخوانی می‌شود، یا ``NULL`` در صورت عدم نیاز."
+msgstr ":c:member:`Slot ID <PySlot.sl_id>` برای تابعی که در طول واگذاری حافظه (deallocation) شیء ماژول فراخوانی می‌شود."
 
 msgid "Use :c:member:`PyModuleDef.m_free` instead to support previous versions."
-msgstr ""
+msgstr "برای پشتیبانی از نسخه‌های قبلی، به‌جای آن از :c:member:`PyModuleDef.m_free` استفاده کنید."
 
-#, fuzzy
-#| msgid "Module definitions"
 msgid "Module token"
-msgstr "تعریف‌های ماژول"
+msgstr "توکن ماژول"
 
 msgid "Each module may have an associated *token*: a pointer-sized value intended to identify of the module state's memory layout. This means that if you have a module object, but you are not sure if it “belongs” to your extension, you can check using code like this:"
-msgstr ""
+msgstr "هر ماژول ممکن است یک *توکن* (token) مرتبط داشته باشد: مقداری به اندازه‌ی اشاره‌گر که برای شناسایی چیدمان حافظه‌ی وضعیت ماژول در نظر گرفته شده است. این یعنی اگر شیء ماژولی دارید، اما مطمئن نیستید که آیا به افزونه‌ی شما «تعلق» دارد یا خیر، می‌توانید با استفاده از کدی شبیه به این آن را بررسی کنید:"
 
 msgid ""
 "PyObject *module = <the module in question>\n"
@@ -397,154 +366,151 @@ msgid ""
 "// This module's state has the expected memory layout; it's safe to cast\n"
 "struct my_state state = (struct my_state*)PyModule_GetState(module)"
 msgstr ""
+"PyObject *module = <the module in question>\n"
+"\n"
+"void *module_token;\n"
+"if (PyModule_GetToken(module, &module_token) < 0) {\n"
+"    return NULL;\n"
+"}\n"
+"if (module_token != your_token) {\n"
+"    PyErr_SetString(PyExc_ValueError, \"unexpected module\")\n"
+"    return NULL;\n"
+"}\n"
+"\n"
+"// This module's state has the expected memory layout; it's safe to cast\n"
+"struct my_state state = (struct my_state*)PyModule_GetState(module)"
 
 msgid "A module's token -- and the *your_token* value to use in the above code -- is:"
-msgstr ""
+msgstr "توکن یک ماژول — و مقداری از *your_token* که باید در کد بالا استفاده شود — به این صورت است:"
 
 msgid "For modules created with :c:type:`PyModuleDef`: the address of that :c:type:`PyModuleDef`;"
-msgstr ""
+msgstr "برای ماژول‌های ایجادشده با :c:type:`PyModuleDef`: آدرس همان :c:type:`PyModuleDef`؛"
 
 msgid "For modules defined with the :c:macro:`Py_mod_token` slot: the value of that slot;"
-msgstr ""
+msgstr "برای ماژول‌های تعریف‌شده با جایگاه :c:macro:`Py_mod_token`: مقدار آن جایگاه؛"
 
 msgid "For modules created from an ``PyModExport_*`` :ref:`export hook <extension-export-hook>`: the slots array that the export hook returned (unless overridden with :c:macro:`Py_mod_token`)."
-msgstr ""
+msgstr "برای ماژول‌های ایجادشده از یک :ref:`قلاب اکسپورت <extension-export-hook>` به نام ``PyModExport_*``: آرایه‌ی جایگاه‌هایی که قلاب اکسپورت برگردانده است (مگر اینکه با :c:macro:`Py_mod_token` بازنشانی شود)."
 
 msgid ":c:member:`Slot ID <PySlot.sl_id>` for the module token."
-msgstr ""
+msgstr "مورد :c:member:`Slot ID <PySlot.sl_id>` برای توکن ماژول."
 
 msgid "If you use this slot to set the module token (rather than rely on the default), you must ensure that:"
-msgstr ""
+msgstr "اگر از این جایگاه برای تنظیم توکن ماژول استفاده می‌کنید (به‌جای اینکه به مقدار پیش‌فرض اتکا کنید)، باید مطمئن شوید که:"
 
 msgid "The pointer outlives the class, so it's not reused for something else while the class exists."
-msgstr ""
+msgstr "اشاره‌گر بیشتر از کلاس عمر می‌کند، بنابراین تا زمانی که کلاس وجود دارد، برای کار دیگری دوباره استفاده نمی‌شود."
 
 msgid "It \"belongs\" to the extension module where the class lives, so it will not clash with other extensions."
-msgstr ""
+msgstr "به ماژول توسعه‌ای که کلاس در آن قرار دارد «تعلق» دارد، بنابراین با سایر افزونه‌ها تداخل نخواهد داشت."
 
 msgid "If the token points to a :c:type:`PyModuleDef` struct, the module should behave as if it was created from that :c:type:`PyModuleDef`. In particular, the module state must have matching layout and semantics."
-msgstr ""
+msgstr "اگر توکن به یک struct از نوع :c:type:`PyModuleDef` اشاره کند، ماژول باید طوری رفتار کند که گویی از همان :c:type:`PyModuleDef` ایجاد شده است. به‌ویژه، وضعیت ماژول باید دارای چیدمان و معناشناسی منطبق باشد."
 
 msgid "Modules created from :c:type:`PyModuleDef` always use the address of the :c:type:`PyModuleDef` as the token. This means that :c:macro:`!Py_mod_token` cannot be used in :c:member:`PyModuleDef.m_slots`."
-msgstr ""
+msgstr "ماژول‌های ایجادشده از :c:type:`PyModuleDef` همیشه از آدرس :c:type:`PyModuleDef` به عنوان توکن استفاده می‌کنند. این یعنی :c:macro:`!Py_mod_token` را نمی‌توان در :c:member:`PyModuleDef.m_slots` استفاده کرد."
 
 msgid "Set *\\*result* to the module token for *module* and return 0."
-msgstr ""
+msgstr "مقدار *\\*result* را روی توکن ماژول برای *module* تنظیم کنید و مقدار 0 را برگردانید."
 
 msgid "On error, set *\\*result* to NULL, and return -1 with an exception set."
-msgstr ""
+msgstr "در صورت بروز خطا، *\\*result* را روی NULL تنظیم کنید و با تنظیم یک استثنا، مقدار 1- را برگردانید."
 
 msgid "See also :c:func:`PyType_GetModuleByToken`."
-msgstr ""
+msgstr "همچنین نگاه کنید به :c:func:`PyType_GetModuleByToken`."
 
 msgid "Creating extension modules dynamically"
 msgstr "ایجاد ماژول‌های توسعه‌ای به‌صورت پویا"
 
 msgid "The following functions may be used to create an extension module dynamically, rather than from an extension's :ref:`export hook <extension-export-hook>`."
-msgstr ""
+msgstr "توابع زیر ممکن است برای ایجاد پویای یک ماژول توسعه‌ای استفاده شوند، به‌جای اینکه از :ref:`قلاب اکسپورت <extension-export-hook>` افزونه استفاده شود."
 
 msgid "Create a new module object, given an array of :ref:`slots <pymoduledef_slot>` and the :py:class:`~importlib.machinery.ModuleSpec` *spec*."
-msgstr ""
+msgstr "یک شیء ماژول جدید ایجاد کنید، با توجه به آرایه‌ای از :ref:`جایگاه‌ها <pymoduledef_slot>` و مشخصات :py:class:`~importlib.machinery.ModuleSpec` به نام *spec*."
 
 msgid "The *slots* argument must point to an array of :c:type:`PySlot` structures, terminated by an entry with slot ID of 0 (typically written as :c:macro:`PySlot_END`). The array must include a :c:data:`Py_mod_abi` entry."
-msgstr ""
+msgstr "آرگومان *slots* باید به آرایه‌ای از ساختارهای :c:type:`PySlot` اشاره کند که با یک درایه با شناسه‌ی جایگاه 0 (که معمولاً به صورت :c:macro:`PySlot_END` نوشته می‌شود) خاتمه می‌یابد. آرایه باید شامل یک درایه‌ی :c:data:`Py_mod_abi` باشد."
 
 msgid "The *spec* argument may be any ``ModuleSpec``-like object, as described in :c:macro:`Py_mod_create` documentation. Currently, the *spec* must have a ``name`` attribute."
-msgstr ""
+msgstr "آرگومان *spec* ممکن است هر شیء شبیه به ``ModuleSpec`` باشد، همان‌طور که در مستندات :c:macro:`Py_mod_create` توصیف شده است. در حال حاضر، *spec* باید دارای ویژگی ``name`` باشد."
 
-#, fuzzy
-#| msgid "On success, return ``0``. On error, raise an exception and return ``-1``."
 msgid "On success, return the new module. On error, return ``NULL`` with an exception set."
-msgstr "در صورت موفقیت، ``0`` را برمی‌گرداند. در صورت خطا، یک استثنا ایجاد می‌کند (raise) و ``-1`` را برمی‌گرداند."
+msgstr "در صورت موفقیت، ماژول جدید را برگردانید. در صورت بروز خطا، مقدار ``NULL`` را همراه با تنظیم یک استثنا برگردانید."
 
-#, fuzzy
-#| msgid "Note that this does not process execution slots (:c:data:`Py_mod_exec`). Both ``PyModule_FromDefAndSpec`` and ``PyModule_ExecDef`` must be called to fully initialize a module."
 msgid "Note that this does not process the module's execution slot (:c:data:`Py_mod_exec`). Both :c:func:`!PyModule_FromSlotsAndSpec` and :c:func:`PyModule_Exec` must be called to fully initialize a module. (See also :ref:`multi-phase-initialization`.)"
-msgstr "توجه داشته باشید که این، جایگاه‌های اجرا (:c:data:`Py_mod_exec`) را پردازش نمی‌کند. برای مقداردهی اولیه‌ی کامل یک ماژول، باید هر دو ``PyModule_FromDefAndSpec`` و ``PyModule_ExecDef`` فراخوانی شوند."
+msgstr "توجه داشته باشید که این کار جایگاه اجرای ماژول (:c:data:`Py_mod_exec`) را پردازش نمی‌کند. برای مقداردهی اولیه کامل یک ماژول، باید هر دو تابع :c:func:`!PyModule_FromSlotsAndSpec` و :c:func:`PyModule_Exec` فراخوانی شوند. (همچنین به :ref:`multi-phase-initialization` مراجعه کنید.)"
 
-#, fuzzy
-#| msgid "Process any execution slots (:c:data:`Py_mod_exec`) given in *def*."
 msgid "Execute the :c:data:`Py_mod_exec` slot(s) of *module*."
-msgstr "پردازش هر جایگاه اجرا (:c:data:`Py_mod_exec`) که در *def* داده شده است."
+msgstr "جایگاه(های) :c:data:`Py_mod_exec` مربوط به *module* را اجرا کنید."
 
-#, fuzzy
-#| msgid "On success, return ``0``. On error, raise an exception and return ``-1``."
 msgid "On success, return 0. On error, return -1 with an exception set."
-msgstr "در صورت موفقیت، ``0`` را برمی‌گرداند. در صورت خطا، یک استثنا ایجاد می‌کند (raise) و ``-1`` را برمی‌گرداند."
+msgstr "در صورت موفقیت، 0 را برگردانید. در صورت بروز خطا، -1 را همراه با تنظیم یک استثنا برگردانید."
 
 msgid "For clarity: If *module* has no slots, for example if it uses :ref:`legacy single-phase initialization <single-phase-initialization>`, this function does nothing and returns 0."
-msgstr ""
+msgstr "برای شفافیت: اگر *module* هیچ جایگاهی نداشته باشد، برای نمونه اگر از :ref:`مقدهی اولیه‌ی تک‌فاز قدیمی <single-phase-initialization>` استفاده کند، این تابع هیچ کاری انجام نمی‌دهد و مقدار 0 را برمی‌گرداند."
 
-#, fuzzy
-#| msgid "Module definitions"
 msgid "Module definition struct"
-msgstr "تعریف‌های ماژول"
+msgstr "ساختار تعریف ماژول"
 
 msgid "Traditionally, extension modules were defined using a *module definition* as the “description\" of how a module should be created. Rather than using an array of :ref:`slots <pymoduledef_slot>` directly, the definition has dedicated members for most common functionality, and allows additional slots as an extension mechanism."
-msgstr ""
+msgstr "به‌طور سنتی، ماژول‌های توسعه‌ای با استفاده از یک *تعریف ماژول* به عنوان «توصیفی» از نحوه‌ی ایجاد یک ماژول تعریف می‌شدند. به جای استفاده‌ی مستقیم از آرایه‌ای از :ref:`جایگاه‌ها <pymoduledef_slot>`، این تعریف اعضای اختصاصی برای بیشتر قابلیت‌های رایج دارد و جایگاه‌های اضافی را به عنوان مکانیزم توسعه‌ای مجاز می‌داند."
 
 msgid "This way of defining modules is still available and there are no plans to remove it."
-msgstr ""
+msgstr "این روش تعریف ماژول‌ها همچنان در دسترس است و هیچ برنامه‌ای برای حذف آن وجود ندارد."
 
 msgid "The module definition struct, which holds information needed to create a module object."
-msgstr ""
+msgstr "ساختار تعریف ماژول (struct) که اطلاعات لازم برای ایجاد یک شیء ماژول را در خود نگه می‌دارد."
 
-#, fuzzy
-#| msgid "The module definition struct, which holds all information needed to create a module object. This structure must be statically allocated (or be otherwise guaranteed to be valid while any modules created from it exist). Usually, there is only one variable of this type for each extension module."
 msgid "This structure must be statically allocated (or be otherwise guaranteed to be valid while any modules created from it exist). Usually, there is only one variable of this type for each extension module defined this way."
-msgstr "ساختار تعریف ماژول که تمام اطلاعات مورد نیاز برای ایجاد یک شیء ماژول را در خود نگه می‌دارد. این ساختار باید به‌صورت ایستا تخصیص داده شود (یا به نحوی تضمین شود که تا زمانی که هر یک از ماژول‌های ایجاد‌شده از روی آن وجود دارد، معتبر بماند). معمولاً برای هر ماژول توسعه‌ای تنها یک متغیر از این نوع وجود دارد."
+msgstr "این ساختار باید به صورت ایستا تخصیص داده شود (یا به نحوی تضمین شود که تا زمانی که هر ماژولی که از آن ایجاد شده است وجود دارد، معتبر باقی می‌ماند). معمولاً برای هر ماژول توسعه‌ای که به این روش تعریف می‌شود، فقط یک متغیر از این نوع وجود دارد."
 
 msgid "The struct, including all members, is part of the :ref:`Stable ABI <stable-abi>` for non-free-threaded builds (``abi3``). In the Stable ABI for free-threaded builds (``abi3t``), this struct is opaque, and unusable in practice; see :ref:`pymoduledef_slot` for a replacement."
-msgstr ""
+msgstr "این ساختار، از جمله تمامی اعضا، بخشی از :ref:`ABI پایدار <stable-abi>` برای نسخه‌های غیر نخ‌آزاد (``abi3``) است. در ABI پایدار برای نسخه‌های ساخت نخ‌آزاد (``abi3t``)، این ساختار کدر است و در عمل قابل استفاده نیست؛ برای جایگزین، به :ref:`pymoduledef_slot` مراجعه کنید."
 
-#, fuzzy
-#| msgid "Always initialize this member to :c:macro:`PyModuleDef_HEAD_INIT`."
 msgid "Always initialize this member to :c:macro:`PyModuleDef_HEAD_INIT`:"
-msgstr "این عضو را همیشه به :c:macro:`PyModuleDef_HEAD_INIT` مقداردهی اولیه کنید."
+msgstr "همیشه این عضو را مقداردهی اولیه کنید به :c:macro:`PyModuleDef_HEAD_INIT`:"
 
-#, fuzzy
-#| msgid "The type of ``PyModuleDef`` objects."
 msgid "The type of :c:member:`!PyModuleDef.m_base`."
-msgstr "نوع اشیاء ``PyModuleDef``."
+msgstr "نوع داده‌ی :c:member:`!PyModuleDef.m_base`."
 
 msgid "The struct is part of the :ref:`Stable ABI <stable-abi>` for non-free-threaded builds (``abi3``). In the Stable ABI for Free-Threaded Builds (``abi3t``), this struct is opaque, and unusable in practice."
-msgstr ""
+msgstr "این ساختار بخشی از :ref:`ABI پایدار <stable-abi>` برای نسخه‌های غیر نخ‌آزاد (``abi3``) است. در ABI پایدار برای نسخه‌های ساخت نخ‌آزاد (``abi3t``)، این ساختار کدر است و در عمل قابل استفاده نیست."
 
 msgid "The required initial value for :c:member:`!PyModuleDef.m_base`."
-msgstr ""
+msgstr "مقدار اولیهی مورد نیاز برای :c:member:`!PyModuleDef.m_base`."
 
 msgid "Corresponds to the :c:macro:`Py_mod_name` slot."
-msgstr ""
+msgstr "متناظر با جایگاه :c:macro:`Py_mod_name`."
 
 msgid "These members correspond to the :c:macro:`Py_mod_doc` slot. Setting this to NULL is equivalent to omitting the slot."
-msgstr ""
+msgstr "این اعضا متناظر با جایگاه :c:macro:`Py_mod_doc` هستند. تنظیم کردن این مورد روی NULL معادل چشم‌پوشی کردن از آن جایگاه است."
 
 msgid "Corresponds to the :c:macro:`Py_mod_state_size` slot. Setting this to zero is equivalent to omitting the slot."
-msgstr ""
+msgstr "متناظر با جایگاه :c:macro:`Py_mod_state_size` است. تنظیم کردن این مورد روی صفر معادل چشم‌پوشی کردن از آن جایگاه است."
 
 msgid "When using :ref:`legacy single-phase initialization <single-phase-initialization>` or when creating modules dynamically using :c:func:`PyModule_Create` or :c:func:`PyModule_Create2`, :c:member:`!m_size` may be set to -1. This indicates that the module does not support sub-interpreters, because it has global state."
-msgstr ""
+msgstr "هنگام استفاده از :ref:`مقدهی اولیه‌ی تک‌فاز قدیمی <single-phase-initialization>` یا هنگام ایجاد پویای ماژول‌ها با استفاده از :c:func:`PyModule_Create` یا :c:func:`PyModule_Create2`، ممکن است :c:member:`!m_size` روی -1 تنظیم شود. این نشان می‌دهد که ماژول از زیرمفسرها پشتیبانی نمی‌کند، زیرا دارای وضعیت سراسری است."
 
 msgid "Corresponds to the :c:macro:`Py_mod_methods` slot. Setting this to NULL is equivalent to omitting the slot."
-msgstr ""
+msgstr "متناظر با جایگاه :c:macro:`Py_mod_methods` است. تنظیم کردن این مورد روی NULL معادل چشم‌پوشی کردن از آن جایگاه است."
 
 msgid "An array of additional slots, terminated by a ``{0, NULL}`` entry. Note that the entries use the older :c:type:`PyModuleDef_Slot` structure, rather than :c:type:`PySlot`."
-msgstr ""
+msgstr "آرایه‌ای از جایگاه‌های اضافی که با یک درایهی ``{0, NULL}`` خاتمه می‌یابد. توجه داشته باشید که درایه‌ها به جای :c:type:`PySlot`، از ساختار قدیمی‌تر :c:type:`PyModuleDef_Slot` استفاده می‌کنند."
 
 msgid "If the array contains slots corresponding to :c:type:`PyModuleDef` members, the values must match. For example, if you use :c:macro:`Py_mod_name` in :c:member:`!m_slots`, :c:member:`PyModuleDef.m_name` must be set to the same pointer (not just an equal string)."
-msgstr ""
+msgstr "اگر آرایه حاوی جایگاه‌های متناظر با اعضای :c:type:`PyModuleDef` باشد، مقادیر باید مطابقت داشته باشند. برای نمونه، اگر از :c:macro:`Py_mod_name` در :c:member:`!m_slots` استفاده می‌کنید، :c:member:`PyModuleDef.m_name` باید روی همان اشاره‌گر (و نه صرفاً یک رشته‌ی برابر) تنظیم شود."
 
 msgid "Prior to version 3.5, this member was always set to ``NULL``, and was defined as:"
 msgstr "پیش از نسخه 3.5، این عضو همیشه روی ``NULL`` تنظیم می‌شد و به این صورت تعریف می‌شد:"
 
 msgid "Older structure defining additional slots of a module."
-msgstr ""
+msgstr "ساختار قدیمی‌تری که جایگاه‌های اضافی یک ماژول را تعریف می‌کند."
 
 msgid "Note that a :c:type:`!PyModuleDef_Slot` array may be included in a :c:type:`!PySlot` array using :c:macro:`Py_mod_slots`, and vice versa using :c:macro:`Py_slot_subslots`."
-msgstr ""
+msgstr "توجه داشته باشید که ممکن است یک آرایه‌ی :c:type:`!PyModuleDef_Slot` با استفاده از :c:macro:`Py_mod_slots` در یک آرایه‌ی :c:type:`!PySlot` گنجانده شود، و بالعکس با استفاده از :c:macro:`Py_slot_subslots`."
 
 msgid "Each :c:type:`!PyModuleDef_Slot` structure ``modslot`` is interpreted as the following :c:type:`PySlot` structure::"
-msgstr ""
+msgstr "هر ساختار :c:type:`!PyModuleDef_Slot` یعنی ``modslot`` به عنوان ساختار :c:type:`PySlot` زیر تفسیر می‌شود::"
 
 msgid ""
 "(PySlot){\n"
@@ -553,33 +519,38 @@ msgid ""
 "   .sl_ptr=modslot.value\n"
 "}"
 msgstr ""
+"(PySlot){\n"
+"   .sl_id=modslot.slot,\n"
+"   .sl_flags=PySlot_INTPTR | sub_static,\n"
+"   .sl_ptr=modslot.value\n"
+"}"
 
 msgid "where ``sub_static`` is ``PySlot_STATIC`` if the slot requires the flag (such as for :c:macro:`Py_mod_methods`), or if this flag is present on the \"parent\" :c:macro:`!Py_mod_slots` slot (if any)."
-msgstr ""
+msgstr "که در آن ``sub_static`` برابر با ``PySlot_STATIC`` است اگر جایگاه به پرچم نیاز داشته باشد (مانند :c:macro:`Py_mod_methods`)، یا اگر این پرچم روی جایگاه «والد» :c:macro:`!Py_mod_slots` (در صورت وجود) حضور داشته باشد."
 
 msgid "Corresponds to :c:member:`PySlot.sl_id`."
-msgstr ""
+msgstr "متناظر با :c:member:`PySlot.sl_id` است."
 
 msgid "Corresponds to :c:member:`PySlot.sl_ptr`."
-msgstr ""
+msgstr "متناظر با :c:member:`PySlot.sl_ptr`."
 
 msgid "These members correspond to the :c:macro:`Py_mod_state_traverse`, :c:macro:`Py_mod_state_clear`, and :c:macro:`Py_mod_state_free` slots, respectively."
-msgstr ""
+msgstr "این اعضا به ترتیب با جایگاه‌های :c:macro:`Py_mod_state_traverse`، :c:macro:`Py_mod_state_clear` و :c:macro:`Py_mod_state_free` مطابقت دارند."
 
 msgid "Setting these members to NULL is equivalent to omitting the corresponding slots."
-msgstr ""
+msgstr "مقداردهی این اعضا به NULL معادل حذف جایگاه‌های مربوطه است."
 
 msgid ":c:member:`m_traverse`, :c:member:`m_clear` and :c:member:`m_free` functions are no longer called before the module state is allocated."
-msgstr ""
+msgstr "توابع :c:member:`m_traverse`، :c:member:`m_clear` و :c:member:`m_free` دیگر قبل از تخصیص یافتن وضعیت ماژول فراخوانی نمی‌شوند."
 
 msgid "The type of ``PyModuleDef`` objects."
 msgstr "نوع اشیاء ``PyModuleDef``."
 
 msgid ":c:member:`Slot ID <PySlot.sl_id>` that works like :c:macro:`Py_slot_subslots`, except it specifies an array of :c:type:`PyModuleDef_Slot` structures."
-msgstr ""
+msgstr ":c:member:`Slot ID <PySlot.sl_id>` که مانند :c:macro:`Py_slot_subslots` کار می‌کند، با این تفاوت که آرایه‌ای از ساختارهای :c:type:`PyModuleDef_Slot` را مشخص می‌کند."
 
 msgid "The following API can be used to create modules from a :c:type:`!PyModuleDef` struct:"
-msgstr ""
+msgstr "برای ایجاد ماژول‌ها از یک struct نوع :c:type:`!PyModuleDef` می‌توانید از API زیر استفاده کنید:"
 
 msgid "Create a new module object, given the definition in *def*. This is a macro that calls :c:func:`PyModule_Create2` with *module_api_version* set to :c:macro:`PYTHON_API_VERSION`, or to :c:macro:`PYTHON_ABI_VERSION` if using the :ref:`limited API <limited-c-api>`."
 msgstr "بر اساس تعریف داده‌شده در *def*، یک شیء ماژول جدید ایجاد می‌کند. این یک ماکرو است که :c:func:`PyModule_Create2` را با *module_api_version* برابر با :c:macro:`PYTHON_API_VERSION`، یا در صورت استفاده از :ref:`API محدود <limited-c-api>` برابر با :c:macro:`PYTHON_ABI_VERSION`، فراخوانی می‌کند."
@@ -597,7 +568,7 @@ msgid "This macro calls :c:func:`PyModule_FromDefAndSpec2` with *module_api_vers
 msgstr "این ماکرو :c:func:`PyModule_FromDefAndSpec2` را با *module_api_version* تنظیم‌شده روی :c:macro:`PYTHON_API_VERSION`، یا روی :c:macro:`PYTHON_ABI_VERSION` در صورت استفاده از :ref:`API محدود <limited-c-api>` فراخوانی می‌کند."
 
 msgid "Prefer :c:func:`PyModule_FromSlotsAndSpec` in new code."
-msgstr ""
+msgstr "در کدهای جدید، :c:func:`PyModule_FromSlotsAndSpec` را ترجیح دهید."
 
 msgid "Create a new module object, given the definition in *def* and the ModuleSpec *spec*, assuming the API version *module_api_version*. If that version does not match the version of the running interpreter, a :exc:`RuntimeWarning` is emitted."
 msgstr "با توجه به تعریف موجود در *def* و ModuleSpec *spec*، و با فرض نسخه API *module_api_version*، یک شیء ماژول جدید ایجاد می‌کند. اگر آن نسخه با نسخه مفسر در حال اجرا مطابقت نداشته باشد، یک :exc:`RuntimeWarning` منتشر می‌شود."
@@ -612,28 +583,22 @@ msgid "Process any execution slots (:c:data:`Py_mod_exec`) given in *def*."
 msgstr "پردازش هر جایگاه اجرا (:c:data:`Py_mod_exec`) که در *def* داده شده است."
 
 msgid "To run a module's own execution slots, prefer :c:func:`PyModule_Exec`, which works on modules that were not created from a :c:type:`PyModuleDef` structure."
-msgstr ""
+msgstr "برای اجرای جایگاه‌های اجرایی خودِ ماژول، :c:func:`PyModule_Exec` را ترجیح دهید که روی ماژول‌هایی که با ساختار :c:type:`PyModuleDef` ایجاد نشده‌اند، کار می‌کند."
 
-#, fuzzy
-#| msgid "The C API version. Defined for backwards compatibility."
 msgid "The C API version, as an integer (``1013``) and string (``\"1013\"``), respectively. Defined for backwards compatibility."
-msgstr "نسخه‌ی C API. برای سازگاری با نسخه‌های پیشین تعریف‌شده است."
+msgstr "نسخه‌ی رابط برنامه‌نویسی کاربردی C، به ترتیب به صورت یک عدد صحیح (``1013``) و رشته (``\"1013\"``). برای سازگاری با نسخه‌های قبلی تعریف شده است."
 
 msgid "Currently, this constant is not updated in new Python versions, and is not useful for versioning. This may change in the future."
 msgstr "در حال حاضر، این ثابت در نسخه‌های جدید پایتون به‌روزرسانی نمی‌شود و برای نسخه‌بندی مفید نیست. این ممکن است در آینده تغییر کند."
 
-#, fuzzy
-#| msgid "Defined as ``3`` for backwards compatibility."
 msgid "Defined as ``3`` and ``\"3\"``, respectively, for backwards compatibility."
-msgstr "برای سازگاری با نسخه‌های پیشین به‌صورت ``3`` تعریف‌شده است."
+msgstr "برای سازگاری با نسخه‌های پیشین، به ترتیب به عنوان ``3`` و ``\"3\"`` تعریف شده است."
 
 msgid "Support functions"
 msgstr "توابع پشتیبانی"
 
-#, fuzzy
-#| msgid "The following functions are provided to help initialize a module state. They are intended for a module's execution slots (:c:data:`Py_mod_exec`), the initialization function for legacy :ref:`single-phase initialization <single-phase-initialization>`, or code that creates modules dynamically."
 msgid "The following functions are provided to help initialize a module object. They are intended for a module's execution slot (:c:data:`Py_mod_exec`), the initialization function for legacy :ref:`single-phase initialization <single-phase-initialization>`, or code that creates modules dynamically."
-msgstr "توابع زیر برای کمک به مقداردهی اولیه وضعیت یک ماژول ارائه شده‌اند. این توابع برای جایگاه‌های اجرای یک ماژول (:c:data:`Py_mod_exec`)، تابع مقداردهی اولیه برای :ref:`مقداردهی اولیه تک‌مرحله‌ای <single-phase-initialization>` قدیمی، یا کدی که ماژول‌ها را به‌صورت پویا ایجاد می‌کند، در نظر گرفته شده‌اند."
+msgstr "توابع زیر برای کمک به مقداردهی اولیه یک شیء ماژول ارائه شده‌اند. آن‌ها برای جایگاه اجرای یک ماژول (:c:data:`Py_mod_exec`)، تابع مقداردهی اولیه برای مقداردهی اولیه‌ی تک‌مرحله‌ای قدیمی (:ref:`single-phase initialization <single-phase-initialization>`)، یا کدی که ماژول‌ها را به صورت پویا ایجاد می‌کند، در نظر گرفته شده‌اند."
 
 msgid "Add an object to *module* as *name*.  This is a convenience function which can be used from the module's initialization function."
 msgstr "یک شیء را با نام *name* به *module* اضافه می‌کند. این تابع برای راحتی کار فراهم شده و می‌توان از آن در تابع مقداردهی اولیه‌ی ماژول استفاده کرد."

@@ -42,7 +42,7 @@ msgid "The members must not be accessed directly; instead use macros such as :c:
 msgstr "اعضا نباید به‌طور مستقیم مورد دسترسی قرار گیرند؛ در عوض از ماکروهایی مانند :c:macro:`Py_REFCNT` و :c:macro:`Py_TYPE` استفاده کنید."
 
 msgid "In the :ref:`Stable ABI <stable-abi>` for Free-Threaded Builds (``abi3t``), this struct is opaque; its size and layout may change between Python versions. In Stable ABI for non-free-threaded builds (``abi3``), the :c:member:`!ob_refcnt` and :c:member:`!ob_type` fields are available, but using them directly is discouraged."
-msgstr ""
+msgstr "در :ref:`ABI پایدار <stable-abi>` برای ساخت‌های نخ‌آزاد (``abi3t``)، این struct کدر است؛ اندازه و چیدمان آن ممکن است بین نسخه‌های پایتون تغییر کند. در ABI پایدار برای ساخت‌های غیرنخ‌آزاد (``abi3``)، فیلدهای :c:member:`!ob_refcnt` و :c:member:`!ob_type` در دسترس هستند، اما استفاده‌ی مستقیم از آن‌ها توصیه نمی‌شود."
 
 msgid "The object's reference count, as returned by :c:macro:`Py_REFCNT`. Do not use this field directly; instead use functions and macros such as :c:macro:`!Py_REFCNT`, :c:func:`Py_INCREF` and :c:func:`Py_DecRef`."
 msgstr "شمارش ارجاع شیء، همان‌طور که توسط :c:macro:`Py_REFCNT` برگردانده می‌شود. از این فیلد مستقیماً استفاده نکنید؛ در عوض از توابع و ماکروهایی مانند :c:macro:`!Py_REFCNT`، :c:func:`Py_INCREF` و :c:func:`Py_DecRef` استفاده کنید."
@@ -54,10 +54,10 @@ msgid "The object's type. Do not use this field directly; use :c:macro:`Py_TYPE`
 msgstr "نوع شیء. از این فیلد مستقیماً استفاده نکنید؛ به‌جای آن از :c:macro:`Py_TYPE` و :c:func:`Py_SET_TYPE` استفاده کنید."
 
 msgid "A :ref:`per-object lock <per-object-locks>`, present only in the :term:`free-threaded <free threading>` build (when :c:macro:`Py_GIL_DISABLED` is defined)."
-msgstr ""
+msgstr "یک :ref:`قفل به ازای شیء <per-object-locks>`، که فقط در ساخت :term:`نخ‌آزاد <free threading>` (هنگامی که :c:macro:`Py_GIL_DISABLED` تعریف شده باشد) وجود دارد."
 
 msgid "This field is **reserved for use by the critical section API** (:c:macro:`Py_BEGIN_CRITICAL_SECTION` / :c:macro:`Py_END_CRITICAL_SECTION`). Do **not** lock it directly with ``PyMutex_Lock``; doing so can cause deadlocks.  If you need your own lock, add a separate :c:type:`PyMutex` field to your object struct."
-msgstr ""
+msgstr "این فیلد **برای استفاده توسط API بخش بحرانی** (:c:macro:`Py_BEGIN_CRITICAL_SECTION` / :c:macro:`Py_END_CRITICAL_SECTION`) **رزرو شده است**. آن را مستقیماً با ``PyMutex_Lock`` قفل **نکنید**؛ انجام این کار می‌تواند باعث بن‌بست شود. اگر به قفل خودتان نیاز دارید، یک فیلد جداگانه‌ی :c:type:`PyMutex` به struct شیء خود اضافه کنید."
 
 msgid "An extension of :c:type:`PyObject` that adds the :c:member:`~PyVarObject.ob_size` field. This is intended for objects that have some notion of *length*."
 msgstr "توسعه‌ای از :c:type:`PyObject` که فیلد :c:member:`~PyVarObject.ob_size` را به آن می‌افزاید. این برای شیءهایی در نظر گرفته شده است که نوعی مفهوم از *طول* دارند."
@@ -66,10 +66,10 @@ msgid "As with :c:type:`!PyObject`, the members must not be accessed directly; i
 msgstr "همان‌طور که در مورد :c:type:`!PyObject` صادق است، نباید به اعضا مستقیماً دسترسی داشته باشید؛ در عوض از ماکروهایی مانند :c:macro:`Py_SIZE`، :c:macro:`Py_REFCNT` و :c:macro:`Py_TYPE` استفاده کنید."
 
 msgid "In the :ref:`Stable ABI <stable-abi>` for Free-Threaded Builds (``abi3t``), this struct is opaque; its size and layout may change between Python versions. In Stable ABI for non-free-threaded builds (``abi3``), the :c:member:`!ob_base` and :c:member:`!ob_size` fields are available, but using them directly is discouraged."
-msgstr ""
+msgstr "در :ref:`ABI پایدار <stable-abi>` برای ساخت‌های نخ‌آزاد (``abi3t``)، این struct کدر است؛ اندازه و چیدمان آن ممکن است بین نسخه‌های پایتون تغییر کند. در ABI پایدار برای ساخت‌های غیرنخ‌آزاد (``abi3``)، فیلدهای :c:member:`!ob_base` و :c:member:`!ob_size` در دسترس هستند، اما استفاده‌ی مستقیم از آن‌ها توصیه نمی‌شود."
 
 msgid "Common object header. Typically, this field is not accessed directly; instead :c:type:`!PyVarObject` can be cast to :c:type:`PyObject`."
-msgstr ""
+msgstr "سرآیند مشترک شیء. معمولاً این فیلد مستقیماً فراخوانی نمی‌شود؛ در عوض می‌توانید :c:type:`!PyVarObject` را به :c:type:`PyObject` تبدیل نوع کنید."
 
 msgid "A size field, whose contents should be considered an object's internal implementation detail."
 msgstr "فیلد اندازه، که محتوای آن باید به‌عنوان جزئیات داخلی پیاده‌سازی یک شیء در نظر گرفته شود."
@@ -245,10 +245,8 @@ msgstr "ساختاری که برای توصیف متد یک نوع توسعه‌
 msgid "Name of the method."
 msgstr "نام متد."
 
-#, fuzzy
-#| msgid "Name of the member. A NULL value marks the end of a ``PyMemberDef[]`` array."
 msgid "A ``NULL`` *ml_name* marks the end of a :c:type:`!PyMethodDef` array."
-msgstr "نام عضو. مقدار NULL پایان یک آرایه ``PyMemberDef[]`` را مشخص می‌کند."
+msgstr "یک مقدار ``NULL`` در *ml_name* پایان یک آرایه‌ی :c:type:`!PyMethodDef` را مشخص می‌کند."
 
 msgid "Pointer to the C implementation."
 msgstr "اشاره‌گر به پیاده‌سازی C."

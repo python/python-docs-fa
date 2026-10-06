@@ -241,10 +241,8 @@ msgstr "پارامتر *directory* افزوده شد."
 msgid "The *directory* parameter accepts a :term:`path-like object`."
 msgstr "پارامتر *directory* یک :term:`path-like object` را می‌پذیرد."
 
-#, fuzzy
-#| msgid "Added the *directory* parameter."
 msgid "Added *extra_response_headers* parameter."
-msgstr "پارامتر *directory* افزوده شد."
+msgstr "پارامتر *extra_response_headers* اضافه شد."
 
 msgid "A lot of the work, such as parsing the request, is done by the base class :class:`BaseHTTPRequestHandler`.  This class implements the :func:`do_GET` and :func:`do_HEAD` functions."
 msgstr "بخش زیادی از کار، مانند تجزیه درخواست، توسط کلاس پایه :class:`BaseHTTPRequestHandler` انجام می‌شود. این کلاس توابع :func:`do_GET` و :func:`do_HEAD` را پیاده‌سازی می‌کند."
@@ -256,7 +254,7 @@ msgid "This will be ``\"SimpleHTTP/\" + __version__``, where ``__version__`` is 
 msgstr "این مقدار ``\"SimpleHTTP/\" + __version__`` خواهد بود، که ``__version__`` در سطح ماژول تعریف شده است."
 
 msgid "Specifies the Content-Type header value sent when the MIME type cannot be guessed from the file extension of the requested URL. By default, it is set to ``'application/octet-stream'``."
-msgstr ""
+msgstr "مقدار سرآیند Content-Type را که هنگام عدم امکان حدس نوع MIME از روی پسوند پرونده‌ی URL درخواست‌شده ارسال می‌شود، مشخص می‌کند. به طور پیش‌فرض، روی ``'application/octet-stream'`` تنظیم شده است."
 
 msgid "Specifies the filenames that are treated as directory index pages."
 msgstr "نام پرونده‌هایی را مشخص می‌کند که به‌عنوان صفحات اندیس پوشه در نظر گرفته می‌شوند."
@@ -271,10 +269,10 @@ msgid "This dictionary is no longer filled with the default system mappings, but
 msgstr "این دیکشنری دیگر با نگاشت‌های پیش‌فرض سیستم پر نمی‌شود، بلکه فقط شامل بازنویسی‌ها است."
 
 msgid "A sequence of ``(name, value)`` pairs containing user-defined extra HTTP response headers to add to each successful HTTP status 200 response. These headers are not included in other status code responses."
-msgstr ""
+msgstr "دنباله‌ای از جفت‌های ``(name, value)`` شامل سرآیند‌های اضافی پاسخ HTTP تعریف‌شده توسط کاربر که به هر پاسخ موفقیت‌آمیز HTTP با وضعیت ۲۰۰ اضافه می‌شود. این سرآیندها در پاسخ‌های با کدهای وضعیت دیگر گنجانده نمی‌شوند."
 
 msgid "Headers that the server sends automatically such as ``Content-Type`` will not be overwritten by :attr:`!extra_response_headers`."
-msgstr ""
+msgstr "سرآیندهایی که سرور به طور خودکار ارسال می‌کند، مانند ``Content-Type``، توسط :attr:`!extra_response_headers` بازنویسی نخواهند شد."
 
 msgid "The :class:`SimpleHTTPRequestHandler` class defines the following methods:"
 msgstr "کلاس :class:`SimpleHTTPRequestHandler` متدهای زیر را تعریف می‌کند:"
@@ -295,7 +293,7 @@ msgid "A ``'Content-type:'`` header with the guessed content type is output, fol
 msgstr "یک سرآیند ``'Content-type:'`` با نوع محتوای حدس‌زده‌شده خروجی داده می‌شود و پس از آن، یک سرآیند ``'Content-Length:'`` با اندازه‌ی پرونده و یک سرآیند ``'Last-Modified:'`` با زمان تغییر پرونده خروجی داده می‌شوند."
 
 msgid "The instance attribute :attr:`extra_response_headers` is a sequence of ``(name, value)`` pairs containing user-defined extra response headers."
-msgstr ""
+msgstr "ویژگی نمونه‌ی :attr:`extra_response_headers` دنباله‌ای از جفت‌های ``(name, value)`` شامل سرآیند‌های اضافی پاسخ تعریف‌شده توسط کاربر است."
 
 msgid "Then follows a blank line signifying the end of the headers, and then the contents of the file are output."
 msgstr "سپس یک خط خالی می‌آید که پایان سرآیندها را نشان می‌دهد، و سپس محتوای پرونده خروجی داده می‌شود."
@@ -318,10 +316,8 @@ msgstr "نوع پرونده در *path* داده‌شده را حدس می‌ز�
 msgid "This returns a string of the form ``type/subtype``, usable for a MIME Content-type header."
 msgstr "این یک رشته به‌شکل ``type/subtype`` برمی‌گرداند که برای سرآیند MIME Content-type قابل استفاده است."
 
-#, fuzzy
-#| msgid "The default implementation looks the file's extension up in :attr:`extensions_map`, falling back to :func:`mimetypes.guess_file_type` and then to ``'application/octet-stream'``."
 msgid "The default implementation looks the file's extension up in :attr:`extensions_map`, falling back to :func:`mimetypes.guess_file_type` and then to :attr:`default_content_type`."
-msgstr "پیاده‌سازی پیش‌فرض، پسوند پرونده را در :attr:`extensions_map` جست‌وجو می‌کند و در صورت نیافتن، به :func:`mimetypes.guess_file_type` و سپس به ``'application/octet-stream'`` رجوع می‌کند."
+msgstr "پیاده‌سازی پیش‌فرض، پسوند پرونده را در :attr:`extensions_map` جستجو می‌کند، و در صورت عدم یافتن، به :func:`mimetypes.guess_file_type` و سپس به :attr:`default_content_type` بازمی‌گردد."
 
 msgid "Add :func:`mimetypes.guess_file_type` as a fallback."
 msgstr ":func:`mimetypes.guess_file_type` را به‌عنوان جایگزین اضافه کنید."
@@ -395,12 +391,10 @@ msgid "python -m http.server --protocol HTTP/1.1"
 msgstr "python -m http.server --protocol HTTP/1.1"
 
 msgid "Specifies the default Content-Type HTTP header used when the MIME type cannot be guessed from the URL's file extension. By default, the server uses ``'application/octet-stream'``:"
-msgstr ""
+msgstr "سرآیند پیش‌فرض HTTP با نام Content-Type را مشخص می‌کند که وقتی نوع MIME از روی پسوند پرونده‌ی URL قابل حدس نباشد، استفاده می‌شود. به طور پیش‌فرض، سرور از ``'application/octet-stream'`` استفاده می‌کند:"
 
-#, fuzzy
-#| msgid "python -m http.server --directory /tmp/"
 msgid "python -m http.server --content-type text/html"
-msgstr "python -m http.server --directory /tmp/"
+msgstr "python -m http.server --content-type text/html"
 
 msgid "Specifies a TLS certificate chain for HTTPS connections:"
 msgstr "یک زنجیره‌ی گواهی TLS برای اتصال‌های HTTPS مشخص می‌کند:"
@@ -429,7 +423,7 @@ msgstr ""
 "       --tls-password-file password.txt"
 
 msgid "Specify an additional HTTP Response Header to send on successful HTTP 200 responses. Can be used multiple times to send additional custom response headers. Headers that are sent automatically by the server (for instance Content-Type) will not be overwritten by the server."
-msgstr ""
+msgstr "یک سرآیند پاسخ HTTP اضافی را برای ارسال در پاسخ‌های موفقیت‌آمیز HTTP 200 مشخص کنید. می‌توان چندین بار از آن برای ارسال سرآیند‌های پاسخ سفارشی اضافی استفاده کرد. سرآیندهایی که به طور خودکار توسط سرور ارسال می‌شوند (مثلاً Content-Type) توسط سرور بازنویسی نخواهند شد."
 
 msgid "Security considerations"
 msgstr "ملاحظات امنیتی"

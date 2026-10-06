@@ -670,10 +670,8 @@ msgstr ""
 msgid "One possibility would be for mock to copy the arguments you pass in. This could then cause problems if you do assertions that rely on object identity for equality."
 msgstr "یکی از امکان‌ها این است که ماک آرگومان‌هایی را که به آن می‌دهید کپی کند. در این صورت، اگر ادعاهایی مطرح کنید که برای برابری به هویت شیء متکی هستند، ممکن است مشکلاتی پیش بیاید."
 
-#, fuzzy
-#| msgid "Here's one solution that uses the :attr:`~Mock.side_effect` functionality. If you provide a ``side_effect`` function for a mock then ``side_effect`` will be called with the same args as the mock. This gives us an opportunity to copy the arguments and store them for later assertions. In this example I'm using *another* mock to store the arguments so that I can use the mock methods for doing the assertion. Again a helper function sets this up for me. ::"
 msgid "Here's one solution that uses the :attr:`~Mock.side_effect` functionality. If you provide a ``side_effect`` function for a mock then ``side_effect`` will be called with the same args as the mock. This gives us an opportunity to copy the arguments and store them for later assertions. In this example we're using *another* mock to store the arguments so that we can use the mock methods for doing the assertion. Again a helper function sets this up for us. ::"
-msgstr "در اینجا راه‌حلی ارائه می‌شود که از قابلیت :attr:`~Mock.side_effect` استفاده می‌کند. اگر یک تابع ``side_effect`` برای یک ماک ارائه کنید، آنگاه ``side_effect`` با همان آرگومان‌هایی که ماک دریافت می‌کند فراخوانی می‌شود. این کار به ما امکان می‌دهد که آرگومان‌ها را کپی کنیم و برای ادعاهای بعدی ذخیره کنیم. در این مثال، من از یک ماک *دیگر* برای ذخیره آرگومان‌ها استفاده می‌کنم تا بتوانم از متدهای ماک برای انجام ادعا استفاده کنم. باز هم یک تابع کمکی این تنظیم را برای من انجام می‌دهد. ::"
+msgstr "این هم یک راه حل که از قابلیت :attr:`~Mock.side_effect` استفاده می‌کند. اگر یک تابع ``side_effect`` برای یک ماک فراهم کنید، ``side_effect`` با همان آرگومان‌های ماک فراخوانی خواهد شد. این موضوع به ما فرصتی می‌دهد تا آرگومان‌ها را کپی کرده و برای بررسی‌های بعدی ذخیره کنیم. در این مثال، ما از *یک ماک دیگر* برای ذخیره کردن آرگومان‌ها استفاده می‌کنیم تا بتوانیم از متدهای ماک برای انجام بررسی (ادعا) بهره ببریم. بار دیگر، یک تابع کمکی این کار را برای ما تنظیم می‌کند. ::"
 
 msgid ""
 ">>> from copy import deepcopy\n"

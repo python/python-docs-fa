@@ -172,10 +172,8 @@ msgstr "تنظیم این رویداد، همه رویدادها را غیرفع
 msgid "Local events"
 msgstr "رویدادهای محلی"
 
-#, fuzzy
-#| msgid "Local events are associated with normal execution of the program and happen at clearly defined locations. All local events can be disabled. The local events are:"
 msgid "Local events are associated with normal execution of the program and happen at clearly defined locations. All local events can be disabled per location. The local events are:"
-msgstr "رویدادهای محلی با اجرای عادی برنامه مرتبط هستند و در مکان‌های به‌وضوح تعریف‌شده رخ می‌دهند. می‌توان تمام رویدادهای محلی را غیرفعال کرد. رویدادهای محلی عبارتند از:"
+msgstr "رویدادهای محلی با اجرای عادی برنامه مرتبط هستند و در مکان‌هایی که به وضوح تعریف شده‌اند رخ می‌دهند. تمام رویدادهای محلی را می‌توان به ازای هر مکان غیرفعال کرد. رویدادهای محلی عبارتند از:"
 
 msgid ":monitoring-event:`PY_START`"
 msgstr ":monitoring-event:`PY_START`"
@@ -237,10 +235,8 @@ msgstr "رویدادهای :monitoring-event:`C_RETURN` و :monitoring-event:`C_
 msgid "Other events"
 msgstr "رویدادهای دیگر"
 
-#, fuzzy
-#| msgid "Other events are not necessarily tied to a specific location in the program and cannot be individually disabled via :data:`DISABLE`."
 msgid "Other events are not necessarily tied to a specific location in the program and cannot be individually disabled per location."
-msgstr "سایر رویدادها لزوماً به مکان مشخصی در برنامه وابسته نیستند و نمی‌توان آن‌ها را به‌صورت جداگانه از طریق :data:`DISABLE` غیرفعال کرد."
+msgstr "سایر رویدادها لزوماً به مکان خاصی در برنامه گره نخورده‌اند و نمی‌توان آن‌ها را به صورت فردی به ازای هر مکان غیرفعال کرد."
 
 msgid "The other events that can be monitored are:"
 msgstr "رویدادهای دیگری که می‌توان آن‌ها را پایش کرد عبارتند از:"
@@ -257,15 +253,11 @@ msgstr ":monitoring-event:`RAISE`"
 msgid ":monitoring-event:`EXCEPTION_HANDLED`"
 msgstr ":monitoring-event:`EXCEPTION_HANDLED`"
 
-#, fuzzy
-#| msgid ":monitoring-event:`RAISE`"
 msgid ":monitoring-event:`RERAISE`"
-msgstr ":monitoring-event:`RAISE`"
+msgstr ":monitoring-event:`RERAISE`"
 
-#, fuzzy
-#| msgid ":ref:`Local events <monitoring-event-local>` can be disabled for a specific code location by returning :data:`sys.monitoring.DISABLE` from a callback function. This does not change which events are set, or any other code locations for the same event."
 msgid "Other events can now be turned on and disabled on a per code object basis. Returning :data:`DISABLE` from a callback disables the event for the entire code object (for the current tool)."
-msgstr ":ref:`رویدادهای محلی <monitoring-event-local>` را می‌توان برای یک موقعیت کد مشخص با برگرداندن :data:`sys.monitoring.DISABLE` از یک تابع کال‌بک غیرفعال کرد. این کار، رویدادهای تنظیم‌شده یا سایر موقعیت‌های کد برای همان رویداد را تغییر نمی‌دهد."
+msgstr "سایر رویدادها اکنون می‌توانند بر اساس شیء کد روشن و غیرفعال شوند. بازگرداندن :data:`DISABLE` از یک کال‌بک، رویداد را برای کل شیء کد (برای ابزار فعلی) غیرفعال می‌کند."
 
 msgid "The STOP_ITERATION event"
 msgstr "رویداد STOP_ITERATION"
@@ -273,10 +265,8 @@ msgstr "رویداد STOP_ITERATION"
 msgid ":pep:`PEP 380 <380#use-of-stopiteration-to-return-values>` specifies that a :exc:`StopIteration` exception is raised when returning a value from a generator or coroutine. However, this is a very inefficient way to return a value, so some Python implementations, notably CPython 3.12+, do not raise an exception unless it would be visible to other code."
 msgstr ":pep:`PEP 380 <380#use-of-stopiteration-to-return-values>` مشخص می‌کند که هنگام برگرداندن یک مقدار از یک تولیدگر یا هم‌روال، استثنای :exc:`StopIteration` پرتاب می‌شود. با این حال، این روش بسیار ناکارآمدی برای برگرداندن یک مقدار است، بنابراین برخی از پیاده‌سازی‌های پایتون، به‌ویژه CPython 3.12+، استثنایی پرتاب نمی‌کنند مگر اینکه برای کد دیگر قابل مشاهده باشد."
 
-#, fuzzy
-#| msgid "To allow tools to monitor for real exceptions without slowing down generators and coroutines, the :monitoring-event:`STOP_ITERATION` event is provided. :monitoring-event:`STOP_ITERATION` can be locally disabled, unlike :monitoring-event:`RAISE`."
 msgid "To allow tools to monitor for real exceptions without slowing down generators and coroutines, the :monitoring-event:`STOP_ITERATION` event is provided. :monitoring-event:`STOP_ITERATION` can be locally disabled."
-msgstr "برای اینکه ابزارها بتوانند استثناهای واقعی را بدون کُند کردن تولیدگرها و هم‌روال‌ها پایش کنند، رویداد :monitoring-event:`STOP_ITERATION` فراهم شده است. :monitoring-event:`STOP_ITERATION` را می‌توان به‌صورت محلی غیرفعال کرد، برخلاف :monitoring-event:`RAISE`."
+msgstr "برای اینکه به ابزارها اجازه داده شود استثناهای واقعی را بدون کند کردن تولیدگرها و هم‌روال‌ها مانیتور کنند، رویداد :monitoring-event:`STOP_ITERATION` فراهم شده است. رویداد :monitoring-event:`STOP_ITERATION` را می‌توان به صورت محلی غیرفعال کرد."
 
 msgid "Note that the :monitoring-event:`STOP_ITERATION` event and the :monitoring-event:`RAISE` event for a :exc:`StopIteration` exception are equivalent, and are treated as interchangeable when generating events. Implementations will favor :monitoring-event:`STOP_ITERATION` for performance reasons, but may generate a :monitoring-event:`RAISE` event with a :exc:`StopIteration`."
 msgstr "توجه داشته باشید که رویداد :monitoring-event:`STOP_ITERATION` و رویداد :monitoring-event:`RAISE` برای استثنای :exc:`StopIteration` معادل هستند و هنگام تولید رویدادها، به‌عنوان قابل تعویض در نظر گرفته می‌شوند. پیاده‌سازی‌ها به دلایل کارایی، :monitoring-event:`STOP_ITERATION` را ترجیح می‌دهند، اما ممکن است یک رویداد :monitoring-event:`RAISE` همراه با یک :exc:`StopIteration` تولید کنند."
@@ -323,10 +313,8 @@ msgstr "مقدار خاصی که می‌توان آن را از یک تابع ک
 msgid ":ref:`Local events <monitoring-event-local>` can be disabled for a specific code location by returning :data:`sys.monitoring.DISABLE` from a callback function. This does not change which events are set, or any other code locations for the same event."
 msgstr ":ref:`رویدادهای محلی <monitoring-event-local>` را می‌توان برای یک موقعیت کد مشخص با برگرداندن :data:`sys.monitoring.DISABLE` از یک تابع کال‌بک غیرفعال کرد. این کار، رویدادهای تنظیم‌شده یا سایر موقعیت‌های کد برای همان رویداد را تغییر نمی‌دهد."
 
-#, fuzzy
-#| msgid ":ref:`Local events <monitoring-event-local>` can be disabled for a specific code location by returning :data:`sys.monitoring.DISABLE` from a callback function. This does not change which events are set, or any other code locations for the same event."
 msgid ":ref:`Other events <monitoring-event-global>` can be disabled on a per code object basis by returning :data:`sys.monitoring.DISABLE` from a callback function. This disables the event for the entire code object (for the current tool)."
-msgstr ":ref:`رویدادهای محلی <monitoring-event-local>` را می‌توان برای یک موقعیت کد مشخص با برگرداندن :data:`sys.monitoring.DISABLE` از یک تابع کال‌بک غیرفعال کرد. این کار، رویدادهای تنظیم‌شده یا سایر موقعیت‌های کد برای همان رویداد را تغییر نمی‌دهد."
+msgstr "سایر :ref:`رویدادها <monitoring-event-global>` را می‌توان با بازگرداندن :data:`sys.monitoring.DISABLE` از یک تابع کال‌بک، به ازای هر شیء کد غیرفعال کرد. این کار رویداد را برای کل شیء کد (برای ابزار فعلی) غیرفعال می‌کند."
 
 msgid "Disabling events for specific locations is very important for high performance monitoring. For example, a program can be run under a debugger with no overhead if the debugger disables all monitoring except for a few breakpoints."
 msgstr "غیرفعال کردن رویدادها برای محل‌های مشخص، برای پایش با کارایی بالا بسیار مهم است. برای مثال، اگر اشکال‌زدا همه پایش را به جز چند نقطه شکست غیرفعال کند، می‌توان یک برنامه را بدون سربار تحت یک اشکال‌زدا اجرا کرد."

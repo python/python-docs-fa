@@ -270,10 +270,8 @@ msgstr "نگاشت‌ها"
 msgid "These represent finite sets of objects indexed by arbitrary index sets. The subscript notation ``a[k]`` selects the item indexed by ``k`` from the mapping ``a``; this can be used in expressions and as the target of assignments or :keyword:`del` statements. The built-in function :func:`len` returns the number of items in a mapping."
 msgstr "این‌ها نشان‌دهنده مجموعه‌های متناهی از اشیای اندیس‌دهی‌شده با مجموعه‌های اندیس دلخواه هستند. نمادگذاری اندیس‌دهی ``a[k]`` آیتمی را که با ``k`` از نگاشت ``a`` اندیس‌دهی شده است انتخاب می‌کند؛ می‌توان از آن در عبارت‌ها و به‌عنوان هدف انتساب‌ها یا دستورات :keyword:`del` استفاده کرد. تابع توکار :func:`len` تعداد آیتم‌های یک نگاشت را برمی‌گرداند."
 
-#, fuzzy
-#| msgid "There are currently two intrinsic set types:"
 msgid "There are two intrinsic mapping types:"
-msgstr "در حال حاضر دو نوع مجموعه‌ی درونی وجود دارد:"
+msgstr "دو نوع نگاشت ذاتی وجود دارد:"
 
 msgid "Dictionaries"
 msgstr "دیکشنری‌ها"
@@ -293,15 +291,11 @@ msgstr "ماژول‌های توسعه‌ای :mod:`dbm.ndbm` و :mod:`dbm.gnu` 
 msgid "Dictionaries did not preserve insertion order in versions of Python before 3.6. In CPython 3.6, insertion order was preserved, but it was considered an implementation detail at that time rather than a language guarantee."
 msgstr "دیکشنری‌ها در نسخه‌های پایتون پیش از 3.6 ترتیب درج را حفظ نمی‌کردند. در CPython 3.6، ترتیب درج حفظ می‌شد، اما در آن زمان این موضوع به‌جای یک تضمین زبانی، یک جزئیات پیاده‌سازی در نظر گرفته می‌شد."
 
-#, fuzzy
-#| msgid "Module dictionaries"
 msgid "Frozen dictionaries"
-msgstr "دیکشنری‌های ماژول"
+msgstr "دیکشنری‌های فریز شده"
 
-#, fuzzy
-#| msgid "These represent an immutable set.  They are created by the built-in :func:`frozenset` constructor.  As a frozenset is immutable and :term:`hashable`, it can be used again as an element of another set, or as a dictionary key."
 msgid "These represent an immutable dictionary.  They are created by the built-in :func:`frozendict` constructor.  A frozendict is :term:`hashable` if all of its keys and values are hashable, in which case it can be used as an element of a set, or as a key in another mapping.  :class:`!frozendict` is not a subclass of :class:`dict`; it inherits directly from :class:`object`."
-msgstr "این‌ها نشان‌دهنده‌ی یک مجموعه تغییرناپذیر هستند. آن‌ها به‌وسیله‌ی سازنده‌ی توکار :func:`frozenset` ایجاد می‌شوند. از آنجا که frozenset تغییرناپذیر و :term:`هش‌پذیر <hashable>` است، می‌تواند دوباره به‌عنوان عنصری از مجموعه‌ای دیگر، یا به‌عنوان کلید دیکشنری استفاده شود."
+msgstr "این‌ها نمایانگر یک دیکشنری تغییرناپذیر هستند. آن‌ها توسط سازنده‌ی توکار :func:`frozendict` ایجاد می‌شوند. یک frozendict در صورتی :term:`هش‌پذیر <hashable>` است که تمام کلیدها و مقادیر آن هش‌پذیر باشند، در این صورت می‌توان از آن به عنوان عضوی از یک مجموعه، یا به عنوان کلیدی در یک نگاشت دیگر استفاده کرد. :class:`!frozendict` زیرکلاسی از :class:`dict` نیست؛ بلکه مستقیماً از :class:`object` ارث‌بری می‌کند."
 
 msgid "Callable types"
 msgstr "انواع فراخوانی‌پذیر"
@@ -591,20 +585,14 @@ msgstr "یک :term:`دنباله <sequence>` (احتمالاً خالی) از ر
 msgid "It is **strongly** recommended that you use :attr:`module.__spec__.submodule_search_locations <importlib.machinery.ModuleSpec.submodule_search_locations>` instead of :attr:`!module.__path__`."
 msgstr "**به‌شدت** توصیه می‌شود که به‌جای :attr:`!module.__path__` از :attr:`module.__spec__.submodule_search_locations <importlib.machinery.ModuleSpec.submodule_search_locations>` استفاده کنید."
 
-#, fuzzy
-#| msgid ":attr:`!__file__` and :attr:`!__cached__` are both optional attributes that may or may not be set. Both attributes should be a :class:`str` when they are available."
 msgid ":attr:`!__file__` is an optional attribute that may or may not be set. Both attributes should be a :class:`str` when they are available."
-msgstr ":attr:`!__file__` و :attr:`!__cached__` هر دو ویژگی‌های اختیاری هستند که ممکن است مقداردهی شده یا نشده باشند. هر دو ویژگی باید هنگامی که در دسترس باشند، یک :class:`str` باشند."
+msgstr ":attr:`!__file__` یک ویژگی اختیاری است که ممکن است تنظیم شده باشد یا نشده باشد. هر دو ویژگی در صورت در دسترس بودن باید از نوع :class:`str` باشند."
 
-#, fuzzy
-#| msgid ":attr:`!__file__` indicates the pathname of the file from which the module was loaded (if loaded from a file), or the pathname of the shared library file for extension modules loaded dynamically from a shared library. It might be missing for certain types of modules, such as C modules that are statically linked into the interpreter, and the :ref:`import system <importsystem>` may opt to leave it unset if it has no semantic meaning (for example, a module loaded from a database)."
 msgid "An optional attribute, :attr:`!__file__` indicates the pathname of the file from which the module was loaded (if loaded from a file), or the pathname of the shared library file for extension modules loaded dynamically from a shared library. It might be missing for certain types of modules, such as C modules that are statically linked into the interpreter, and the :ref:`import system <importsystem>` may opt to leave it unset if it has no semantic meaning (for example, a module loaded from a database)."
-msgstr ":attr:`!__file__` نام مسیر پرونده‌ای را نشان می‌دهد که ماژول از آن بارگذاری شده است (اگر از یک پرونده بارگذاری شده باشد)، یا نام مسیر پرونده کتابخانه اشتراکی را برای ماژول‌های توسعه‌ای که به‌صورت پویا از یک کتابخانه اشتراکی بارگذاری شده‌اند. ممکن است برای انواع خاصی از ماژول‌ها وجود نداشته باشد، مانند ماژول‌های C که به‌صورت ایستا در مفسر پیوند داده شده‌اند، و :ref:`سیستم ایمپورت <importsystem>` ممکن است در صورتی که معنای مفهومی نداشته باشد، آن را تنظیم‌نشده باقی بگذارد (برای مثال، ماژولی که از یک پایگاه داده بارگذاری شده است)."
+msgstr "ویژگی اختیاری :attr:`!__file__` نشان‌دهنده‌ی مسیرنام پرونده‌ای است که ماژول از آن بارگذاری شده است (اگر از روی پرونده بارگذاری شده باشد)، یا مسیرنام پرونده‌ی کتابخانه‌ی مشترک برای ماژول‌های توسعه‌ای که به صورت پویا از یک کتابخانه‌ی مشترک بارگذاری شده‌اند. این ویژگی ممکن است برای انواع خاصی از ماژول‌ها وجود نداشته باشد، مانند ماژول‌های C که به صورت ایستا به مفسر لینک شده‌اند، و سیستم :ref:`import <importsystem>` ممکن است اگر معنای معنایی (semantic) نداشته باشد (برای مثال، ماژول بارگذاری‌شده از یک پایگاه داده)، تصمیم بگیرد آن را تنظیم‌نشده رها کند."
 
-#, fuzzy
-#| msgid ":attr:`!__package__` will cease to be set or taken into consideration by the import system or standard library."
 msgid "The ``__cached__`` attribute is no longer set on modules or taken into consideration by the import system or standard library."
-msgstr ":attr:`!__package__` دیگر توسط سیستم ایمپورت یا کتابخانه استاندارد تنظیم یا در نظر گرفته نخواهد شد."
+msgstr "ویژگی ``__cached__`` دیگر روی ماژول‌ها تنظیم نمی‌شود و توسط سیستم import یا کتابخانه‌ی استاندارد مد نظر قرار نمی‌گیرد."
 
 msgid "Other writable attributes on module objects"
 msgstr "سایر ویژگی‌های قابل‌نوشتن در اشیاء ماژول"
@@ -622,12 +610,10 @@ msgid "The :term:`annotate function` for this module, or ``None`` if the module 
 msgstr ":term:`annotate function` این ماژول، یا ``None`` اگر ماژول فاقد هرگونه حاشیه‌نویسی باشد. همچنین ببینید: ویژگی‌های :attr:`~object.__annotate__`."
 
 msgid "A container (an object implementing :meth:`~object.__contains__`) of fully qualified module name strings.  When defined at module scope, any regular :keyword:`import` statement in that module whose target module name appears in this container is treated as a :ref:`lazy import <lazy-imports>`, as if the :keyword:`lazy` keyword had been used.  Imports inside functions, class bodies, or :keyword:`try`/:keyword:`except`/:keyword:`finally` blocks are unaffected."
-msgstr ""
+msgstr "یک ظرف (عضو پیاده‌سازی‌کننده‌ی :meth:`~object.__contains__`) از رشته‌های نام کامل ماژول. هنگامی که در محدوده‌ی ماژول تعریف می‌شود، هر دستور :keyword:`import` معمولی در آن ماژول که نام ماژول هدفش در این ظرف ظاهر می‌شود، دقیقاً مانند زمانی که از کلیدواژه‌ی :keyword:`lazy` استفاده شده باشد، به عنوان یک :ref:`واردسازی تنبل <lazy-imports>` (lazy import) در نظر گرفته می‌شود. واردسازی‌ها در داخل توابع، بدنه‌ی کلاس‌ها یا بلوک‌های :keyword:`try`/:keyword:`except`/:keyword:`finally` تحت تأثیر قرار نمی‌گیرند."
 
-#, fuzzy
-#| msgid "See :ref:`class-object-creation` for more details."
 msgid "See :ref:`lazy-modules-compat` for details and examples."
-msgstr "برای جزئیات بیشتر :ref:`class-object-creation` را ببینید."
+msgstr "برای جزئیات و مثال‌ها، :ref:`lazy-modules-compat` را ببینید."
 
 msgid "Module dictionaries"
 msgstr "دیکشنری‌های ماژول"
@@ -1022,7 +1008,7 @@ msgid "Slice objects are used to represent slices for :meth:`~object.__getitem__
 msgstr "از اشیای اسلایسی (slice) برای نمایش اسلایس‌ها در متدهای :meth:`~object.__getitem__` استفاده می‌شود. این اشیاء همچنین توسط تابع توکار :func:`slice` ایجاد می‌شوند."
 
 msgid "The :func:`slice` type now supports :ref:`subscription <subscriptions>`. For example, ``slice[float]`` may be used in type annotations to indicate a slice containing :type:`float` objects."
-msgstr ""
+msgstr "نوع :func:`slice` اکنون از :ref:`اشتراک <subscriptions>` پشتیبانی می‌کند. برای مثال، ``slice[float]`` ممکن است در حاشیه‌نویسی‌های نوع برای نشان دادن یک اسلایس حاوی اشیای :type:`float` استفاده شود."
 
 msgid "Special read-only attributes: :attr:`~slice.start` is the lower bound; :attr:`~slice.stop` is the upper bound; :attr:`~slice.step` is the step value; each is ``None`` if omitted.  These attributes can have any type."
 msgstr "ویژگی‌های فقط‌خواندنی ویژه: :attr:`~slice.start` کران پایین است؛ :attr:`~slice.stop` کران بالا است؛ :attr:`~slice.step` مقدار گام است؛ هرکدام در صورت حذف‌شدن ``None`` است. این ویژگی‌ها می‌توانند هر نوعی داشته باشند."
@@ -1165,10 +1151,8 @@ msgstr "نسخه‌هایی با آرگومان‌های جابه‌جاشده �
 msgid "When no appropriate method returns any value other than :data:`NotImplemented`, the ``==`` and ``!=`` operators will fall back to ``is`` and ``is not``, respectively."
 msgstr "هرگاه هیچ متد مناسبی مقداری به‌جز :data:`NotImplemented` برنگرداند، عملگرهای ``==`` و ``!=`` به‌ترتیب به ``is`` و ``is not`` بازمی‌گردند."
 
-#, fuzzy
-#| msgid "Called by built-in function :func:`hash` and for operations on members of hashed collections including :class:`set`, :class:`frozenset`, and :class:`dict`.  The ``__hash__()`` method should return an integer. The only required property is that objects which compare equal have the same hash value; it is advised to mix together the hash values of the components of the object that also play a part in comparison of objects by packing them into a tuple and hashing the tuple. Example::"
 msgid "Called by built-in function :func:`hash` and for operations on members of hashed collections including :class:`set`, :class:`frozenset`, :class:`dict`, and :class:`frozendict`. The ``__hash__()`` method should return an integer. The only required property is that objects which compare equal have the same hash value; it is advised to mix together the hash values of the components of the object that also play a part in comparison of objects by packing them into a tuple and hashing the tuple. Example::"
-msgstr "توسط تابع توکار :func:`hash` و برای عملیات روی اعضای مجموعه‌های هش‌شده شامل :class:`set`، :class:`frozenset` و :class:`dict` فراخوانی می‌شود. متد ``__hash__()`` باید یک عدد صحیح برگرداند. تنها ویژگی مورد نیاز این است که اشیایی که در مقایسه با هم برابر هستند، مقدار هش یکسانی داشته باشند؛ توصیه می‌شود مقادیر هش اجزای شیء را که در مقایسه کردن اشیاء نیز نقش دارند، با بسته‌بندی آن اجزا در یک تاپل و هش کردن تاپل، با هم ترکیب کنید. مثال::"
+msgstr "توسط تابع توکار :func:`hash` و برای عملیات روی اعضای مجموعه‌های هش‌شده شامل :class:`set`، :class:`frozenset`، :class:`dict` و :class:`frozendict` فراخوانی می‌شود. متد ``__hash__()`` باید یک عدد صحیح برگرداند. تنها ویژگی مورد نیاز این است که اشیایی که با هم برابر مقایسه می‌شوند، مقدار هش یکسانی داشته باشند؛ توصیه می‌شود مقادیر هش اجزای شیء را که در مقایسه‌ی اشیاء نیز نقش دارند، با بسته‌بندی کردن آن‌ها در یک تاپل (tuple) و هش کردن آن تاپل، با یکدیگر ترکیب کنید. مثال::"
 
 msgid ""
 "def __hash__(self):\n"
@@ -1417,10 +1401,8 @@ msgstr "عملکرد تعریف *__slots__* به کلاسی که در آن تع�
 msgid "If a class defines a slot also defined in a base class, the instance variable defined by the base class slot is inaccessible (except by retrieving its descriptor directly from the base class). This renders the meaning of the program undefined.  In the future, a check may be added to prevent this."
 msgstr "اگر یک کلاس یک جایگاه را تعریف کند که در یک کلاس پایه نیز تعریف شده است، متغیر نمونه‌ای که توسط جایگاه کلاس پایه تعریف شده است، غیرقابل‌دسترس است (مگر با بازیابی توصیف‌گر آن به‌صورت مستقیم از کلاس پایه). این موضوع معنای برنامه را تعریف‌نشده می‌کند. در آینده، ممکن است یک بررسی برای جلوگیری از این حالت اضافه شود."
 
-#, fuzzy
-#| msgid ":exc:`TypeError` will be raised if nonempty *__slots__* are defined for a class derived from a :c:member:`\"variable-length\" built-in type <PyTypeObject.tp_itemsize>` such as :class:`int`, :class:`bytes`, and :class:`tuple`."
 msgid ":exc:`TypeError` will be raised if *__slots__* other than *__dict__* and *__weakref__* are defined for a class derived from a :c:member:`\"variable-length\" built-in type <PyTypeObject.tp_itemsize>` such as :class:`int`, :class:`bytes`, and :class:`type`, except :class:`tuple`."
-msgstr "اگر *__slots__* غیرخالی برای کلاسی مشتق‌شده از :c:member:`\"variable-length\" built-in type <PyTypeObject.tp_itemsize>` مانند :class:`int`، :class:`bytes` و :class:`tuple` تعریف شده باشد، :exc:`TypeError` پرتاب خواهد شد."
+msgstr "اگر :__slots__* غیر از :__dict__* و :__weakref__* برای کلاسی مشتق‌شده از نوع توکار :c:member:`«با طول متغیر» <PyTypeObject.tp_itemsize>` مانند :class:`int`، :class:`bytes` و :class:`type` (به‌جز :class:`tuple`) تعریف شود، استثنای :exc:`TypeError` بالا خواهد رفت."
 
 msgid "Any non-string :term:`iterable` may be assigned to *__slots__*."
 msgstr "هر :term:`پیمایش‌پذیر <iterable>` غیررشته‌ای را می‌توان به *__slots__* انتساب داد."
@@ -1431,16 +1413,14 @@ msgstr "اگر از یک :class:`dictionary <dict>` برای انتساب *__slo
 msgid ":attr:`~object.__class__` assignment works only if both classes have the same *__slots__*."
 msgstr "انتساب :attr:`~object.__class__` تنها در صورتی امکان‌پذیر است که هر دو کلاس *__slots__* یکسانی داشته باشند."
 
-#, fuzzy
-#| msgid ":ref:`Multiple inheritance <tut-multiple>` with multiple slotted parent classes can be used, but only one parent is allowed to have attributes created by slots (the other bases must have empty slot layouts) - violations raise :exc:`TypeError`."
 msgid ":ref:`Multiple inheritance <multiple-inheritance>` with multiple slotted parent classes can be used, but only one parent is allowed to have attributes created by slots (the other bases must have empty slot layouts) - violations raise :exc:`TypeError`."
-msgstr "می‌توان از :ref:`وراثت چندگانه <tut-multiple>` با چندین کلاس والد دارای جایگاه استفاده کرد، اما فقط یک والد مجاز است ویژگی‌های ایجادشده توسط جایگاه‌ها را داشته باشد (سایر کلاس‌های پایه باید چیدمان‌های جایگاه خالی داشته باشند)؛ موارد نقض، :exc:`TypeError` را پرتاب می‌کنند."
+msgstr "می‌توان از :ref:`چندوراثت‌بری <multiple-inheritance>` با چندین کلاس والد دارای جایگاه استفاده کرد، اما تنها یک والد اجازه دارد ویژگی‌های ایجادشده توسط جایگاه‌ها را داشته باشد (سایر کلاس‌های پایه باید ساختار جایگاه خالی داشته باشند) - تخلف از این قانون باعث بروز خطای :exc:`TypeError` می‌شود."
 
 msgid "If an :term:`iterator` is used for *__slots__* then a :term:`descriptor` is created for each of the iterator's values. However, the *__slots__* attribute will be an empty iterator."
 msgstr "اگر یک :term:`پیمایش‌گر <iterator>` برای *__slots__* استفاده شود، آنگاه یک :term:`descriptor` برای هر یک از مقادیر آن iterator ایجاد می‌شود. با این حال، ویژگی *__slots__* یک iterator خالی خواهد بود."
 
 msgid "Allowed defining the *__dict__* and *__weakref__* *__slots__* for any class. Allowed defining any *__slots__* for a class derived from :class:`tuple`."
-msgstr ""
+msgstr "تعریف *__dict__* و *__weakref__* *__slots__* را برای هر کلاسی مجاز می‌داند. تعریف هر *__slots__* را برای یک کلاس مشتق‌شده از :class:`tuple` مجاز می‌داند."
 
 msgid "Customizing class creation"
 msgstr "سفارشی‌سازی ایجاد کلاس"
@@ -2599,10 +2579,8 @@ msgstr "dbm.ndbm"
 msgid "dbm.gnu"
 msgstr "dbm.gnu"
 
-#, fuzzy
-#| msgid "frozenset"
 msgid "frozendict"
-msgstr "frozenset"
+msgstr "frozendict"
 
 msgid "callable"
 msgstr "فراخوانی‌پذیر"
@@ -2742,10 +2720,8 @@ msgstr "__annotations__ (ویژگی ماژول)"
 msgid "__annotate__ (module attribute)"
 msgstr "__annotate__ (ویژگی ماژول)"
 
-#, fuzzy
-#| msgid "__loader__ (module attribute)"
 msgid "__lazy_modules__ (module attribute)"
-msgstr "__loader__ (ویژگی ماژول)"
+msgstr "__lazy_modules__ (ویژگی ماژول)"
 
 msgid "__dict__ (module attribute)"
 msgstr "__dict__ (ویژگی ماژول)"

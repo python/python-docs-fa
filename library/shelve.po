@@ -42,16 +42,16 @@ msgid "Because of Python semantics, a shelf cannot know when a mutable persisten
 msgstr "به دلیل معناشناسی پایتون، یک shelf نمی‌تواند بداند چه زمانی یک آیتم تغییرپذیر در دیکشنری پایا تغییر می‌کند. به‌طور پیش‌فرض، اشیای تغییرکرده *فقط* زمانی نوشته می‌شوند که به shelf انتساب داده شوند (به :ref:`shelve-example` مراجعه کنید). اگر پارامتر اختیاری *writeback* روی ``True`` تنظیم شود، همه آیتم‌های دسترسی‌یافته نیز در نهانگاه حافظه ذخیره می‌شوند و در :meth:`~Shelf.sync` و :meth:`~Shelf.close` بازنویسی می‌شوند؛ این موضوع می‌تواند تغییر دادن آیتم‌های تغییرپذیر در دیکشنری پایا را آسان‌تر کند، اما اگر به آیتم‌های زیادی دسترسی پیدا شود، می‌تواند حجم بسیار زیادی از حافظه را برای نهانگاه مصرف کند و عملیات close را بسیار کند سازد، زیرا همه آیتم‌های دسترسی‌یافته بازنویسی می‌شوند (هیچ راهی برای تشخیص اینکه کدام آیتم‌های دسترسی‌یافته تغییرپذیرند، و نه اینکه کدام‌یک واقعاً تغییر کرده‌اند، وجود ندارد)."
 
 msgid "By default, :mod:`!shelve` uses :func:`pickle.dumps` and :func:`pickle.loads` for serializing and deserializing. This can be changed by supplying *serializer* and *deserializer*, respectively."
-msgstr ""
+msgstr "به طور پیش‌فرض، :mod:`!shelve` از :func:`pickle.dumps` و :func:`pickle.loads` برای سریال‌سازی و سریال‌زدایی استفاده می‌کند. این کار را می‌توان با ارائه‌ی *serializer* و *deserializer* به ترتیب تغییر داد."
 
 msgid "The *serializer* argument must be a callable which takes an object ``obj`` and the *protocol* as inputs and returns the representation ``obj`` as a :term:`bytes-like object`; the *protocol* value may be ignored by the serializer."
-msgstr ""
+msgstr "آرگومان *serializer* باید یک شیء فراخوانی‌پذیر باشد که یک شیء ``obj`` و *protocol* را به عنوان ورودی دریافت کند و بازنمایی ``obj`` را به عنوان یک :term:`شیء شبه‌بایت <bytes-like object>` برگرداند؛ ممکن است مقدار *protocol* توسط سریال‌ساز نادیده گرفته شود."
 
 msgid "The *deserializer* argument must be a callable which takes a serialized object given as a :class:`bytes` object and returns the corresponding object."
-msgstr ""
+msgstr "آرگومان *deserializer* باید یک شیء فراخوانی‌پذیر باشد که یک شیء سریال‌شده را که به عنوان یک شیء :class:`bytes` داده شده است دریافت کند و شیء متناظر را برگرداند."
 
 msgid "A :exc:`ShelveError` is raised if *serializer* is given but *deserializer* is not, or vice-versa."
-msgstr ""
+msgstr "اگر *serializer* داده شود اما *deserializer* داده نشود یا برعکس، یک :exc:`ShelveError` بالا آورده می‌شود."
 
 msgid ":const:`pickle.DEFAULT_PROTOCOL` is now used as the default pickle protocol."
 msgstr ":const:`pickle.DEFAULT_PROTOCOL` اکنون به‌عنوان پروتکل پیش‌فرض pickle استفاده می‌شود."
@@ -60,7 +60,7 @@ msgid "Accepts :term:`path-like object` for filename."
 msgstr ":term:`path-like object` را برای نام پرونده می‌پذیرد."
 
 msgid "Accepts custom *serializer* and *deserializer* functions in place of :func:`pickle.dumps` and :func:`pickle.loads`."
-msgstr ""
+msgstr "توابع *serializer* و *deserializer* سفارشی را به جای :func:`pickle.dumps` و :func:`pickle.loads` می‌پذیرد."
 
 msgid "Do not rely on the shelf being closed automatically; always call :meth:`~Shelf.close` explicitly when you don't need it any more, or use :func:`shelve.open` as a context manager::"
 msgstr "به بسته شدن خودکار قفسه (shelf) اتکا نکنید؛ همیشه وقتی دیگر به آن نیاز ندارید، :meth:`~Shelf.close` را به‌صراحت فراخوانی کنید، یا از :func:`shelve.open` به‌عنوان مدیر زمینه استفاده کنید::"
@@ -81,13 +81,11 @@ msgstr "اشیای Shelf از بیشتر متدها و عملیات‌هایی �
 msgid "Two additional methods are supported:"
 msgstr "از دو متد اضافی پشتیبانی می‌شود:"
 
-#, fuzzy
-#| msgid "Write back all entries in the cache if the shelf was opened with *writeback* set to :const:`True`.  Also empty the cache and synchronize the persistent dictionary on disk, if feasible.  This is called automatically when the shelf is closed with :meth:`close`."
 msgid "Write back all entries in the cache if the shelf was opened with *writeback* set to :const:`True`.  Also empty the cache and synchronize the persistent dictionary on disk, if feasible.  This is called automatically when :meth:`reorganize` is called or the shelf is closed with :meth:`close`."
-msgstr "اگر قفسه (shelf) با *writeback* برابر با :const:`True` باز شده باشد، تمام ورودی‌های نهانگاه را بازنویسی می‌کند. همچنین در صورت امکان، نهانگاه را خالی می‌کند و دیکشنری پایا روی دیسک را همگام‌سازی می‌کند. این متد به‌طور خودکار هنگامی که قفسه (shelf) با :meth:`close` بسته می‌شود، فراخوانی می‌شود."
+msgstr "اگر قفسه با مقدار *writeback* تنظیم‌شده روی :const:`True` باز شده باشد، تمام درایوهای موجود در نهانگاه را به عقب بازنویسی کنید. همچنین در صورت امکان، نهانگاه را خالی کرده و دیکشنری پایا را روی دیسک همگام‌سازی کنید. این کار به صورت خودکار هنگام فراخوانی :meth:`reorganize` یا بسته شدن قفسه با :meth:`close` انجام می‌شود."
 
 msgid "Calls :meth:`sync` and attempts to shrink space used on disk by removing empty space resulting from deletions."
-msgstr ""
+msgstr "متد :meth:`sync` را فراخوانی می‌کند و تلاش می‌کند با حذف فضای خالی ناشی از حذف‌ها، فضای استفاده‌شده روی دیسک را کاهش دهد."
 
 msgid "Synchronize and close the persistent *dict* object.  Operations on a closed shelf will fail with a :exc:`ValueError`."
 msgstr "همگام‌سازی و بستن شیء *dict* پایا. عملیات روی یک shelf بسته با :exc:`ValueError` شکست خواهد خورد."
@@ -108,7 +106,7 @@ msgid "On macOS :mod:`dbm.ndbm` can silently corrupt the database file on update
 msgstr "در macOS، :mod:`dbm.ndbm` می‌تواند هنگام به‌روزرسانی‌ها بدون هشدار پرونده پایگاه داده را خراب کند، که این می‌تواند هنگام تلاش برای خواندن از پایگاه داده باعث فروپاشی‌های سخت شود."
 
 msgid ":meth:`Shelf.reorganize` may not be available for all database packages and may temporarily increase resource usage (especially disk space) when called. Additionally, it will never run automatically and instead needs to be called explicitly."
-msgstr ""
+msgstr "ممکن است :meth:`Shelf.reorganize` برای همه‌ی بسته‌های پایگاه داده در دسترس نباشد و هنگام فراخوانی ممکن است به طور موقت استفاده از منابع (به ویژه فضای دیسک) را افزایش دهد. علاوه بر این، هرگز به طور خودکار اجرا نمی‌شود و در عوض باید به طور صریح فراخوانی شود."
 
 msgid "A subclass of :class:`collections.abc.MutableMapping` which stores pickled values in the *dict* object."
 msgstr "زیرکلاسی از :class:`collections.abc.MutableMapping` که مقادیر پیکل‌شده را در شیء *dict* ذخیره می‌کند."
@@ -123,7 +121,7 @@ msgid "The *keyencoding* parameter is the encoding used to encode keys before th
 msgstr "پارامتر *keyencoding* کدگذاری‌ای است که برای کدگذاری کلیدها پیش از استفاده از آن‌ها در دیکشنری زیرین به کار می‌رود."
 
 msgid "The *serializer* and *deserializer* parameters have the same interpretation as in :func:`~shelve.open`."
-msgstr ""
+msgstr "پارامترهای *serializer* و *deserializer* همان تفسیری را دارند که در :func:`~shelve.open` وجود دارد."
 
 msgid "A :class:`Shelf` object can also be used as a context manager, in which case it will be automatically closed when the :keyword:`with` block ends."
 msgstr "یک شیء :class:`Shelf` همچنین می‌تواند به‌عنوان مدیر زمینه استفاده شود، که در این صورت با پایان یافتن بلوک :keyword:`with` به‌طور خودکار بسته می‌شود."
@@ -135,17 +133,13 @@ msgid "Added context manager support."
 msgstr "پشتیبانی از مدیر زمینه افزوده شد."
 
 msgid "Added the *serializer* and *deserializer* parameters."
-msgstr ""
+msgstr "پارامترهای *serializer* و *deserializer* اضافه شدند."
 
-#, fuzzy
-#| msgid "A subclass of :class:`Shelf` which exposes :meth:`!first`, :meth:`!next`, :meth:`!previous`, :meth:`!last` and :meth:`!set_location` methods. These are available in the third-party :mod:`!bsddb` module from `pybsddb <https://www.jcea.es/programacion/pybsddb.htm>`_ but not in other database modules.  The *dict* object passed to the constructor must support those methods.  This is generally accomplished by calling one of :func:`!bsddb.hashopen`, :func:`!bsddb.btopen` or :func:`!bsddb.rnopen`.  The optional *protocol*, *writeback*, and *keyencoding* parameters have the same interpretation as for the :class:`Shelf` class."
 msgid "A subclass of :class:`Shelf` which exposes :meth:`!first`, :meth:`!next`, :meth:`!previous`, :meth:`!last` and :meth:`!set_location` methods. These are available in the third-party :mod:`!bsddb` module from `pybsddb <https://www.jcea.es/programacion/pybsddb.htm>`_ but not in other database modules.  The *dict* object passed to the constructor must support those methods.  This is generally accomplished by calling one of :func:`!bsddb.hashopen`, :func:`!bsddb.btopen` or :func:`!bsddb.rnopen`.  The optional *protocol*, *writeback*, *keyencoding*, *serializer* and *deserializer* parameters have the same interpretation as in :func:`~shelve.open`."
-msgstr "یک زیرکلاس از :class:`Shelf` که متدهای :meth:`!first`، :meth:`!next`، :meth:`!previous`، :meth:`!last` و :meth:`!set_location` را ارائه می‌دهد. این متدها در ماژول شخص ثالث :mod:`!bsddb` از `pybsddb <https://www.jcea.es/programacion/pybsddb.htm>`_ در دسترس هستند، اما در سایر ماژول‌های پایگاه داده در دسترس نیستند. شیء *dict* که به سازنده ارسال می‌شود باید از آن متدها پشتیبانی کند. این کار معمولاً با فراخوانی یکی از :func:`!bsddb.hashopen`، :func:`!bsddb.btopen` یا :func:`!bsddb.rnopen` انجام می‌شود. پارامترهای اختیاری *protocol*، *writeback* و *keyencoding* همان تفسیری را دارند که برای کلاس :class:`Shelf` دارند."
+msgstr "زیرکلاسی از :class:`Shelf` که متدهای :meth:`!first`، :meth:`!next`، :meth:`!previous`، :meth:`!last` و :meth:`!set_location` را ارائه می‌دهد. این موارد در ماژول شخص ثالث :mod:`!bsddb` از `pybsddb <https://www.jcea.es/programacion/pybsddb.htm>`_ موجود هستند اما در سایر ماژول‌های پایگاه داده حضور ندارند. شیء *dict* ارسال‌شده به سازنده باید از این متدها پشتیبانی کند. این کار معمولاً با فراخوانی یکی از توابع :func:`!bsddb.hashopen`، :func:`!bsddb.btopen` یا :func:`!bsddb.rnopen` انجام می‌شود. پارامترهای اختیاری *protocol*، *writeback*، *keyencoding*، *serializer* و *deserializer* همان تفسیری را دارند که در :func:`~shelve.open` دیده می‌شود."
 
-#, fuzzy
-#| msgid "A subclass of :class:`Shelf` which accepts a *filename* instead of a dict-like object.  The underlying file will be opened using :func:`dbm.open`.  By default, the file will be created and opened for both read and write.  The optional *flag* parameter has the same interpretation as for the :func:`.open` function.  The optional *protocol* and *writeback* parameters have the same interpretation as for the :class:`Shelf` class."
 msgid "A subclass of :class:`Shelf` which accepts a *filename* instead of a dict-like object.  The underlying file will be opened using :func:`dbm.open`.  By default, the file will be created and opened for both read and write.  The optional *flag* parameter has the same interpretation as for the :func:`.open` function.  The optional *protocol*, *writeback*, *serializer* and *deserializer* parameters have the same interpretation as in :func:`~shelve.open`."
-msgstr "زیرکلاسی از :class:`Shelf` که یک *filename* را به‌جای یک شیء دیکشنری‌مانند می‌پذیرد. پرونده زیربنایی با استفاده از :func:`dbm.open` باز خواهد شد. به‌طور پیش‌فرض، پرونده ایجاد می‌شود و برای خواندن و نوشتن باز می‌شود. پارامتر اختیاری *flag* همان تفسیری را دارد که برای تابع :func:`.open` وجود دارد. پارامترهای اختیاری *protocol* و *writeback* همان تفسیری را دارند که برای کلاس :class:`Shelf` وجود دارد."
+msgstr "زیرکلاسی از :class:`Shelf` که به جای یک شیء دیکشنری‌مانند، یک *filename* را می‌پذیرد. پرونده‌ی زیربنایی با استفاده از :func:`dbm.open` باز خواهد شد. به طور پیش‌فرض، پرونده برای خواندن و نوشتن ایجاد و باز می‌شود. پارامتر اختیاری *flag* همان تفسیری را دارد که برای تابع :func:`.open` در نظر گرفته شده است. پارامترهای اختیاری *protocol*، *writeback*، *serializer* و *deserializer* همان تفسیری را دارند که در :func:`~shelve.open` وجود دارد."
 
 msgid "Example"
 msgstr "مثال"
@@ -215,13 +209,13 @@ msgstr ""
 "d.close()                  # close it"
 
 msgid "Exceptions"
-msgstr ""
+msgstr "استثناها"
 
 msgid "Exception raised when one of the arguments *deserializer* and *serializer* is missing in the :func:`~shelve.open`, :class:`Shelf`, :class:`BsdDbShelf` and :class:`DbfilenameShelf`."
-msgstr ""
+msgstr "استثنایی که وقتی یکی از آرگومان‌های *deserializer* و *serializer* در :func:`~shelve.open`، :class:`Shelf`، :class:`BsdDbShelf` و :class:`DbfilenameShelf` وجود نداشته باشد، بالا آورده می‌شود."
 
 msgid "The *deserializer* and *serializer* arguments must be given together."
-msgstr ""
+msgstr "آرگومان‌های *deserializer* و *serializer* باید با هم داده شوند."
 
 msgid "Module :mod:`dbm`"
 msgstr "ماژول :mod:`dbm`"

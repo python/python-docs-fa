@@ -30,16 +30,14 @@ msgstr ":mod:`!tomllib` --- تجزیه پرونده‌های TOML"
 msgid "**Source code:** :source:`Lib/tomllib`"
 msgstr "**کد منبع:** :source:`Lib/tomllib`"
 
-#, fuzzy
-#| msgid "This module provides an interface for parsing TOML 1.0.0 (Tom's Obvious Minimal Language, `https://toml.io <https://toml.io/en/>`_). This module does not support writing TOML."
 msgid "This module provides an interface for parsing TOML 1.1.0 (Tom's Obvious Minimal Language, `https://toml.io <https://toml.io/en/>`_). This module does not support writing TOML."
-msgstr "این ماژول رابطی برای تجزیه‌ی TOML 1.0.0 (Tom's Obvious Minimal Language، `https://toml.io <https://toml.io/en/>`_) فراهم می‌کند. این ماژول از نوشتن TOML پشتیبانی نمی‌کند."
+msgstr "این ماژول رابطی برای تجزیه کردن TOML 1.1.0 (زبان حداقل آشکار تام، `https://toml.io <https://toml.io/en/>`_) فراهم می‌کند. این ماژول از نوشتن TOML پشتیبانی نمی‌کند."
 
 msgid "The module was added with support for TOML 1.0.0."
-msgstr ""
+msgstr "این ماژول با پشتیبانی از TOML 1.0.0 اضافه شد."
 
 msgid "Added TOML 1.1.0 support. See the :ref:`What's New <whatsnew315-tomllib-1-1-0>` for details."
-msgstr ""
+msgstr "پشتیبانی از TOML 1.1.0 اضافه شد. برای جزئیات، :ref:`بخش چه چیزی جدید است <whatsnew315-tomllib-1-1-0>` را ببینید."
 
 msgid "Be cautious when parsing data from untrusted sources. A malicious TOML string may cause the decoder to consume considerable CPU and memory resources. Limiting the size of data to be parsed is recommended."
 msgstr "هنگام تجزیه داده از منابع غیرقابل‌اعتماد، احتیاط کنید. یک رشته TOML مخرب ممکن است باعث شود کدگشا مقدار قابل‌توجهی از منابع پردازنده و حافظه را مصرف کند. محدود کردن اندازه داده‌ای که تجزیه می‌شود، توصیه می‌شود."
@@ -213,50 +211,46 @@ msgid "list of dicts"
 msgstr "فهرستی از دیکشنری‌ها"
 
 msgid "Limits and interoperability considerations"
-msgstr ""
+msgstr "محدودیت‌ها و ملاحظات سازگاری متقابل"
 
 msgid ":mod:`!tomllib` places some limits on the documents it can handle, and it preserves details that other TOML parsers are allowed to ignore. When writing portable TOML files, only use features that are guaranteed or recommended by the standard."
-msgstr ""
+msgstr ":mod:`!tomllib` محدودیت‌هایی را روی اسنادی که می‌تواند پردازش کند اعمال می‌کند و جزئیاتی را حفظ می‌کند که سایر پارسرهای TOML مجاز به نادیده گرفتن آن‌ها هستند. هنگام نوشتن پرونده‌های TOML قابل‌حمل، فقط از ویژگی‌هایی استفاده کنید که توسط استاندارد تضمین یا توصیه شده‌اند."
 
 msgid "The implementation details listed here may change in future versions of Python."
-msgstr ""
+msgstr "جزئیات پیاده‌سازی ذکر شده در اینجا ممکن است در نسخه‌های آینده‌ی پایتون تغییر کنند."
 
 msgid "Tables/dicts"
-msgstr ""
+msgstr "جداول/دیکشنری‌ها"
 
 msgid "The TOML spec does not guarantee key/value pairs in TOML documents and tables to be in any specific order."
-msgstr ""
+msgstr "مشخصات TOML تضمین نمی‌کند که جفت‌های کلید/مقدار در اسناد و جداول TOML به ترتیب خاصی باشند."
 
 msgid ":mod:`!tomllib` loads dictionary entries in the order they appear in the source."
-msgstr ""
+msgstr ":mod:`!tomllib` درایه‌های دیکشنری را به همان ترتیبی که در منبع ظاهر می‌شوند بارگذاری می‌کند."
 
-#, fuzzy
-#| msgid "integer"
 msgid "Integers"
-msgstr "عدد صحیح"
+msgstr "اعداد صحیح"
 
 msgid "TOML recommends supporting integers in ``range(−2**63, 2**63)``."
-msgstr ""
+msgstr "TOML پشتیبانی از اعداد صحیح در ``range(−2**63, 2**63)`` را توصیه می‌کند."
 
 msgid ":mod:`!tomllib` uses :ref:`Python's limit on integer string conversion <int_max_str_digits>` (4300 digits by default)."
-msgstr ""
+msgstr ":mod:`!tomllib` از :ref:`محدودیت پایتون در تبدیل رشته‌ی عدد صحیح <int_max_str_digits>` (به‌طور پیش‌فرض 4300 رقم) استفاده می‌کند."
 
-#, fuzzy
-#| msgid "float"
 msgid "Floats"
-msgstr "float"
+msgstr "اعداد اعشاری"
 
 msgid "TOML recommends supporting at least IEEE 754 binary64 values, which means that numbers with more than 15 significant decimal digits are likely to be rounded."
-msgstr ""
+msgstr "TOML توصیه می‌کند که حداقل از مقادیر binary64 استاندارد IEEE 754 پشتیبانی شود، به این معنی که اعدادی با بیش از 15 رقم اعشار معنادار احتمالاً گرد خواهند شد."
 
 msgid ":mod:`!tomllib` uses Python :class:`float` by default; on many common platforms this is the recommended binary64. See :data:`sys.float_info` for details."
-msgstr ""
+msgstr ":mod:`!tomllib` به‌طور پیش‌فرض از :class:`float` پایتون استفاده می‌کند؛ در بسیاری از پلتفرم‌های رایج، این همان مقدار binary64 توصیه شده است. برای جزئیات، :data:`sys.float_info` را ببینید."
 
 msgid "Nesting limit"
-msgstr ""
+msgstr "حد تو در تو بودن"
 
 msgid "TOML 1.1.0 does not recommend a limit on how deeply arrays and tables may be nested inside one another. (A limit of 100 has been proposed for a future version of TOML.)"
-msgstr ""
+msgstr "TOML ۱.۱.۰ محدودیتی برای میزان تو در تو بودن آرایه‌ها و جدول‌ها درون یکدیگر پیشنهاد نمی‌کند. (محدودیتی برابر با ۱۰۰ برای نسخه‌ی آینده‌ی TOML پیشنهاد شده است.)"
 
 msgid "In :mod:`!tomllib`, the nesting level is mainly limited by Python's :func:`recursion limit <sys.getrecursionlimit>`. Note that code that calls :mod:`!tomllib` may contribute to the limit."
-msgstr ""
+msgstr "در :mod:`!tomllib`، سطح تو در تو بودن عمدتاً توسط :func:`recursion limit <sys.getrecursionlimit>` پایتون محدود می‌شود. توجه داشته باشید که کدهایی که :mod:`!tomllib` را فراخوانی می‌کنند ممکن است در این محدودیت نقش داشته باشند."

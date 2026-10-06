@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-01 14:41+0330\n"
-"PO-Revision-Date: 2026-09-14 10:31+0330\n"
+"PO-Revision-Date: 2026-10-06 20:27+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
 "Language: fa\n"
@@ -376,13 +376,13 @@ msgid "``no``: configure does not use :program:`pkg-config` even when present"
 msgstr "``no``: configure حتی وقتی :program:`pkg-config` موجود باشد، از آن استفاده نمی‌کند"
 
 msgid "Path to a `JSON <https://www.json.org/json-en.html>`_ configuration file containing custom error messages for missing :term:`standard library` modules."
-msgstr ""
+msgstr "مسیر یک پرونده‌ی پیکربندی `JSON <https://www.json.org/json-en.html>`_ که حاوی پیام‌های خطای سفارشی برای ماژول‌های مفقود :term:`کتابخانه‌ی استاندارد <standard library>` است."
 
 msgid "This option is intended for Python distributors who wish to provide distribution-specific guidance when users encounter standard library modules that are missing or packaged separately."
-msgstr ""
+msgstr "این گزینه‌ی برای توزیع‌کنندگان پایتون در نظر گرفته شده است که می‌خواهند هنگامی که کاربران با ماژول‌های کتابخانه‌ی استاندارد که مفقود شده‌اند یا به‌طور جداگانه بسته‌بندی شده‌اند مواجه می‌شوند، راهنمایی‌های مختصِ آن توزیع را ارائه دهند."
 
 msgid "The JSON file should map missing module names to custom error message strings. For example, if your distribution packages :mod:`tkinter` and :mod:`_tkinter` separately and excludes :mod:`!_gdbm` for legal reasons, the configuration could contain:"
-msgstr ""
+msgstr "پرونده‌ی JSON باید نام ماژول‌های مفقود را به رشته‌های پیام خطای سفارشی نگاشت کند. برای مثال، اگر توزیع شما بسته‌های :mod:`tkinter` و :mod:`_tkinter` را به‌طور جداگانه بسته‌بندی کند و به دلایل قانونی :mod:`!_gdbm` را کنار بگذارد، پیکربندی می‌تواند شامل موارد زیر باشد:"
 
 msgid ""
 "{\n"
@@ -391,6 +391,11 @@ msgid ""
 "    \"_tkinter\": \"Install the python-tk package to use tkinter\",\n"
 "}"
 msgstr ""
+"{\n"
+"    \"_gdbm\": \"The '_gdbm' module is not available in this distribution\",\n"
+"    \"tkinter\": \"Install the python-tk package to use tkinter\",\n"
+"    \"_tkinter\": \"Install the python-tk package to use tkinter\",\n"
+"}"
 
 msgid "Turn on internal Python performance statistics gathering."
 msgstr "فعال کردن گردآوری آمار کارایی داخلی پایتون."
@@ -549,7 +554,7 @@ msgid "``pkg-config`` options."
 msgstr "گزینه‌های ``pkg-config``."
 
 msgid "Build without ``epoll``, meaning that :py:func:`select.epoll` will not be present even if the system provides an :manpage:`epoll_create <epoll_create(2)>` function. This may be used on systems where :manpage:`!epoll_create` or :manpage:`epoll_create1 <epoll_create1(2)>` is available but incompatible with Linux semantics."
-msgstr ""
+msgstr "ساخت بدون ``epoll``، به این معنا که تابع :py:func:`select.epoll` حتی اگر سیستم یک تابع :manpage:`epoll_create <epoll_create(2)>` را فراهم کند، حضور نخواهد داشت. این ممکن است روی سیستم‌هایی استفاده شود که در آن‌ها :manpage:`!epoll_create` یا :manpage:`epoll_create1 <epoll_create1(2)>` موجود است اما با معناشناسی لینوکس سازگار نیست."
 
 msgid "C compiler options"
 msgstr "گزینه‌های کامپایلر C"
@@ -741,28 +746,28 @@ msgid "Enable interpreters using tail calls in CPython. If enabled, enabling PGO
 msgstr "فعال کردن مفسرهایی که در سی‌پایتون از فراخوانی‌های دمی استفاده می‌کنند. در صورت فعال بودن، فعال‌سازی PGO (:option:`--enable-optimizations`) به‌شدت توصیه می‌شود. این گزینه به‌طور خاص به کامپایلر C با پشتیبانی مناسب از فراخوانی دمی و قرارداد فراخوانی `preserve_none <https://clang.llvm.org/docs/AttributeReference.html#preserve-none>`_ نیاز دارد. برای مثال، Clang 19 و نسخه‌های جدیدتر از این قابلیت پشتیبانی می‌کنند."
 
 msgid "Disable frame pointers, which are enabled by default (see :pep:`831`)."
-msgstr ""
+msgstr "غیرفعال کردن اشاره‌گرهای قاب (frame pointer)، که به‌طور پیش‌فرض فعال هستند (به :pep:`831` مراجعه کنید)."
 
 msgid "By default, the build appends flags to generate frame or backchain pointers to ``BASECFLAGS``:"
-msgstr ""
+msgstr "به‌طور پیش‌فرض، فرایند ساخت پرچم‌هایی را برای تولید اشاره‌گرهای قاب یا زنجیره‌ی پشتی به ``BASECFLAGS`` اضافه می‌کند:"
 
 msgid "``-fno-omit-frame-pointer`` and/or ``-mno-omit-leaf-frame-pointer`` are added when the compiler supports them."
-msgstr ""
+msgstr "هنگامی که کامپایلر از آن‌ها پشتیبانی کند، ``-fno-omit-frame-pointer`` و/یا ``-mno-omit-leaf-frame-pointer`` اضافه می‌شوند."
 
 msgid "``-marm`` and/or ``-mno-thumb`` is added on 32-bit ARM when supported,"
-msgstr ""
+msgstr "هنگامی که پشتیبانی شود، ``-marm`` و/یا ``-mno-thumb`` روی معماری ۳۲ بیتی ARM اضافه می‌شوند،"
 
 msgid "on s390x platforms, when supported, ``-mbackchain`` is added *instead*. of the above frame pointer flags."
-msgstr ""
+msgstr "روی پلتفرم‌های s390x، در صورت پشتیبانی، ``-mbackchain`` *به‌جای* پرچم‌های اشاره‌گر قاب ذکر شده در بالا اضافه می‌شود."
 
 msgid "on ppc64le platforms, no compiler flags is needed since the power ABI requires that compilers maintain a back chain by default."
-msgstr ""
+msgstr "روی پلتفرم‌های ppc64le، از آنجا که رابط دودویی کاربردی (ABI) پاور ایجاب می‌کند که کامپایلرها به‌طور پیش‌فرض زنجیره‌ی پشتی را حفظ کنند، نیازی به پرچم کامپایلر نیست."
 
 msgid "Frame pointers enable profilers, debuggers, and system tracing tools (``perf``, ``eBPF``, ``dtrace``, ``gdb``) to walk the C call stack without DWARF metadata. The flags propagate to third-party C extensions through :mod:`sysconfig`. On compilers that do not understand them, the build silently skips them."
-msgstr ""
+msgstr "اشاره‌گرهای قاب به پروفایل‌گیرها، اشکال‌زداها و ابزارهای ردیابی سیستم (مانند ``perf``، ``eBPF``، ``dtrace``، ``gdb``) امکان می‌دهند تا پشته‌ی فراخوانی C را بدون متادیتای DWARF پیمایش کنند. این پرچم‌ها از طریق :mod:`sysconfig` به برنامه‌های افزودنی C شخص ثالث منتقل می‌شوند. روی کامپایلرهایی که آن‌ها را درک نمی‌کنند، فرایند ساخت به‌طور بی‌صدا از آن‌ها عبور می‌کند."
 
 msgid "Downstream packagers and authors of native libraries built with custom build systems should set the same flags so the unwind chain stays unbroken across all native frames."
-msgstr ""
+msgstr "توزیع‌کنندگان پایین‌دست و توسعه‌دهندگان کتابخانه‌های بومی که با سیستم‌های ساخت سفارشی ساخته شده‌اند باید همان پرچم‌ها را تنظیم کنند تا زنجیره‌ی بازگشایی در تمامی قاب‌های بومی دست‌نخورده باقی بماند."
 
 msgid "Disable the fast :ref:`mimalloc <mimalloc>` allocator (enabled by default)."
 msgstr "غیرفعال کردن تخصیص‌دهنده‌ی سریع :ref:`mimalloc <mimalloc>` (به‌طور پیش‌فرض فعال است)."
@@ -777,22 +782,22 @@ msgid "Disable the specialized Python memory allocator :ref:`pymalloc <pymalloc>
 msgstr "غیرفعال کردن تخصیص‌دهنده حافظه‌ی تخصصی پایتون :ref:`pymalloc <pymalloc>` (که به‌طور پیش‌فرض فعال است)."
 
 msgid "Enable huge page support for :ref:`pymalloc <pymalloc>` arenas (disabled by default). When enabled, the arena size on 64-bit platforms is increased to 2 MiB and arena allocation uses ``MAP_HUGETLB`` (Linux) or ``MEM_LARGE_PAGES`` (Windows) with automatic fallback to regular pages."
-msgstr ""
+msgstr "فعال‌سازی پشتیبانی از صفحات بزرگ (huge page) برای آرناهای :ref:`pymalloc <pymalloc>` (به‌طور پیش‌فرض غیرفعال است). هنگامی که فعال باشد، اندازه‌ی آرنا در پلتفرم‌های ۶۴ بیتی به ۲ مگابایت افزایش می‌یابد و تخصیص آرنا از ``MAP_HUGETLB`` (لینوکس) یا ``MEM_LARGE_PAGES`` (ویندوز) با جایگزین خودکار به صفحات معمولی استفاده می‌کند."
 
 msgid "Even when compiled with this option, huge pages are **not** used at runtime unless the :envvar:`PYTHON_PYMALLOC_HUGEPAGES` environment variable is set to ``1``. This opt-in is required because huge pages"
-msgstr ""
+msgstr "حتی هنگام کامپایل‌شده با این گزینه، صفحات بزرگ در طول ران‌تایم **استفاده نمی‌شوند** مگر اینکه متغیر محیطی :envvar:`PYTHON_PYMALLOC_HUGEPAGES` روی ``1`` تنظیم شود. این انتخاب اختیاری لازم است زیرا صفحات بزرگ"
 
 msgid "carry risks on Linux: if the huge-page pool is exhausted, page faults (including copy-on-write faults after :func:`os.fork`) deliver ``SIGBUS`` and kill the process."
-msgstr ""
+msgstr "خطراتی را روی لینوکس به همراه دارند: اگر استخر صفحات بزرگ تخلیه شود، خطاهای صفحه (شامل خطاهای copy-on-write پس از :func:`os.fork`) سیگنال ``SIGBUS`` را تحویل داده و فرایند را متوقف می‌کنند."
 
 msgid "need a special privilege on Windows. See the `Windows documentation for large pages <https://learn.microsoft.com/windows/win32/memory/large-page-support>`_ for details. Python will fail on startup if the required privilege `SeLockMemoryPrivilege <https://learn.microsoft.com/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/lock-pages-in-memory>`_ is not held by the user."
-msgstr ""
+msgstr "روی ویندوز به دسترسی ویژه‌ای نیاز دارند. برای جزئیات، `مستندات ویندوز برای صفحات بزرگ <https://learn.microsoft.com/windows/win32/memory/large-page-support>`_ را ببینید. اگر دسترسی لازم `SeLockMemoryPrivilege <https://learn.microsoft.com/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/lock-pages-in-memory>`_ توسط کاربر وجود نداشته باشد، پایتون هنگام راه‌اندازی با خطا مواجه خواهد شد."
 
 msgid "The configure script checks that the platform supports ``MAP_HUGETLB`` and emits a warning if it is not available."
-msgstr ""
+msgstr "اسکریپت کانفیگ بررسی می‌کند که آیا پلتفرم از ``MAP_HUGETLB`` پشتیبانی می‌کند یا خیر، و در صورت در دسترس نبودن، هشداری صادر می‌کند."
 
 msgid "On Windows, use the ``--pymalloc-hugepages`` flag with ``build.bat`` or set the ``UsePymallocHugepages`` MSBuild property."
-msgstr ""
+msgstr "روی ویندوز، از پرچم ``--pymalloc-hugepages`` به همراه ``build.bat`` استفاده کنید یا ویژگی ``UsePymallocHugepages`` در MSBuild را تنظیم کنید."
 
 msgid "Disable static documentation strings to reduce the memory footprint (enabled by default). Documentation strings defined in Python are not affected."
 msgstr "غیرفعال‌سازی رشته‌های مستند ایستا برای کاهش مصرف حافظه (به‌صورت پیش‌فرض فعال است). رشته‌های مستند تعریف‌شده در پایتون تحت تأثیر قرار نمی‌گیرند."
@@ -942,13 +947,13 @@ msgid "Do not build ``libpythonMAJOR.MINOR.a`` and do not install ``python.o`` (
 msgstr "``libpythonMAJOR.MINOR.a`` ساخته نمی‌شود و ``python.o`` نصب نمی‌شود (به‌طور پیش‌فرض ساخته و فعال می‌شوند)."
 
 msgid "Do not link the Python interpreter binary (``python3``) against the shared Python library; instead, statically link the interpreter against ``libpython`` as if ``--enable-shared`` had not been used, but continue to build the shared ``libpython`` (for use by other programs)."
-msgstr ""
+msgstr "فایل دودویی مفسر پایتون (``python3``) را به کتابخانه‌ی مشترک پایتون لینک نکنید؛ در عوض، مفسر را به‌طور ایستا به ``libpython`` لینک کنید، گویی از ``--enable-shared`` استفاده نشده است، اما به ساخت ``libpython`` مشترک (برای استفاده‌ی سایر برنامه‌ها) ادامه دهید."
 
 msgid "This option does nothing if ``--enable-shared`` is not used."
-msgstr ""
+msgstr "اگر از ``--enable-shared`` استفاده نشود، این گزینه هیچ کاری انجام نمی‌دهد."
 
 msgid "The default (when ``-enable-shared`` is used) is to link the Python interpreter against the built shared library."
-msgstr ""
+msgstr "حالت پیش‌فرض (هنگامی که از ``-enable-shared`` استفاده می‌شود) این است که مفسر پایتون به کتابخانه‌ی مشترک ساخته‌شده لینک شود."
 
 msgid "Libraries options"
 msgstr "گزینه‌های کتابخانه‌ها"
@@ -1142,10 +1147,8 @@ msgstr "کتابخانه استاندارد پایتون شامل رشته‌ه�
 msgid "iOS Options"
 msgstr "گزینه‌های iOS"
 
-#, fuzzy
-#| msgid "See :source:`iOS/README.rst`."
 msgid "See :source:`Platforms/Apple/iOS/README.md`."
-msgstr "به :source:`iOS/README.rst` مراجعه کنید."
+msgstr "نگاه کنید به :source:`Platforms/Apple/iOS/README.md`."
 
 msgid "Create a Python.framework. Unlike macOS, the *INSTALLDIR* argument specifying the installation path is mandatory."
 msgstr "ایجاد یک Python.framework. برخلاف macOS، آرگومان *INSTALLDIR* که مسیر نصب را مشخص می‌کند، الزامی است."
@@ -1515,7 +1518,7 @@ msgid "Linker flags, e.g. :samp:`-L{lib_dir}` if you have libraries in a nonstan
 msgstr "پرچم‌های پیونددهنده، برای مثال :samp:`-L{lib_dir}` اگر کتابخانه‌ها را در پوشه‌ی غیراستاندارد *lib_dir* دارید."
 
 msgid "Please consider using ``EXE_LDFLAGS`` if the supplied linker flags are executable specific, e.g. GCC's ``-pie`` flag."
-msgstr ""
+msgstr "اگر پرچم‌های پیونددهنده‌ی ارائه‌شده مختص فایل اجرایی هستند (مانند پرچم ``-pie`` در GCC)، لطفاً استفاده از ``EXE_LDFLAGS`` را در نظر بگیرید."
 
 msgid "Linker flags to pass libraries to the linker when linking the Python executable."
 msgstr "پرچم‌های پیونددهنده برای فرستادن کتابخانه‌ها به پیونددهنده هنگام پیوند دادن پرونده اجرایی پایتون."
@@ -1545,22 +1548,16 @@ msgid "Linker flags used for building the interpreter object files."
 msgstr "پرچم‌های پیونددهنده که برای ساخت پرونده‌های شیء مفسر استفاده می‌شوند."
 
 msgid "Linker flags used for building executable targets such as the interpreter. If supplied, :envvar:`PY_CORE_EXE_LDFLAGS` will be used in replacement of :envvar:`PY_CORE_LDFLAGS`."
-msgstr ""
+msgstr "پرچم‌های پیونددهنده‌ای که برای ساخت اهداف اجرایی مانند مفسر استفاده می‌شوند. در صورت ارائه، :envvar:`PY_CORE_EXE_LDFLAGS` به جای :envvar:`PY_CORE_LDFLAGS` استفاده خواهد شد."
 
-#, fuzzy
-#| msgid "Value of :envvar:`LDFLAGS` variable passed to the ``./configure`` script."
 msgid "Value of :envvar:`EXE_LDFLAGS` variable passed to the ``./configure`` script."
-msgstr "مقدار متغیر :envvar:`LDFLAGS` که به اسکریپت ``./configure`` ارسال می‌شود."
+msgstr "مقدار متغیر :envvar:`EXE_LDFLAGS` که به اسکریپت ``./configure`` پاس داده می شود."
 
-#, fuzzy
-#| msgid "Linker flags used for building the interpreter object files."
 msgid "Linker flags used for building the interpreter and executable targets."
-msgstr "پرچم‌های پیونددهنده که برای ساخت پرونده‌های شیء مفسر استفاده می‌شوند."
+msgstr "پرچم های پیونددهنده ی مورد استفاده برای ساخت مفسر و اهداف اجرایی."
 
-#, fuzzy
-#| msgid "Default: ``@BLDSHARED@ $(PY_CORE_LDFLAGS)``."
 msgid "Default: ``$(PY_CORE_LDFLAGS)``"
-msgstr "پیش‌فرض: ``@BLDSHARED@ $(PY_CORE_LDFLAGS)``."
+msgstr "پیش فرض: ``$(PY_CORE_LDFLAGS)``"
 
 msgid "Footnotes"
 msgstr "پانوشت‌ها"

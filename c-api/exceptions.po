@@ -385,7 +385,7 @@ msgid "Executing a pending :ref:`remote debugger <remote-debugging>` script."
 msgstr "اجرای یک اسکریپت در انتظار :ref:`اشکال‌زدای راه دور <remote-debugging>`."
 
 msgid "Raise the exception set by :c:func:`PyThreadState_SetAsyncExc`."
-msgstr ""
+msgstr "استثنای تعیین‌شده توسط :c:func:`PyThreadState_SetAsyncExc` را بالا بیاورید."
 
 msgid "If any handler raises an exception, immediately return ``-1`` with that exception set. Any remaining interruptions are left to be processed on the next :c:func:`PyErr_CheckSignals()` invocation, if appropriate."
 msgstr "اگر هر هندلری استثنایی ایجاد کند، بلافاصله ``-1`` همراه با آن استثنای تنظیم‌شده بازگردانده می‌شود. پردازش هر وقفه‌ی باقی‌مانده، در صورت لزوم، به فراخوانی بعدی :c:func:`PyErr_CheckSignals()` موکول می‌شود."
@@ -400,7 +400,7 @@ msgid "This function may now execute a remote debugger script, if remote debuggi
 msgstr "این تابع اکنون ممکن است در صورت فعال بودن اشکال‌زدایی از راه دور، یک اسکریپت اشکال‌زدای از راه دور را اجرا کند."
 
 msgid "The exception set by :c:func:`PyThreadState_SetAsyncExc` is now raised."
-msgstr ""
+msgstr "استثنای تعیین‌شده توسط :c:func:`PyThreadState_SetAsyncExc` اکنون بالا آورده می‌شود."
 
 msgid "Simulate the effect of a :c:macro:`!SIGINT` signal arriving. This is equivalent to ``PyErr_SetInterruptEx(SIGINT)``."
 msgstr "اثر رسیدن سیگنال :c:macro:`!SIGINT` را شبیه‌سازی می‌کند. این معادل ``PyErr_SetInterruptEx(SIGINT)`` است."
@@ -448,10 +448,10 @@ msgid "Return :c:member:`~PyTypeObject.tp_name` of the exception class *ob*."
 msgstr ":c:member:`~PyTypeObject.tp_name` کلاس استثنا *ob* را بازمی‌گرداند."
 
 msgid "This is a macro including the base fields for an exception object."
-msgstr ""
+msgstr "این یک کلان‌دستور است که شامل فیلدهای پایه برای یک شیء استثنا است."
 
 msgid "This was included in Python's C API by mistake and is not designed for use in extensions. For creating custom exception objects, use :c:func:`PyErr_NewException` or otherwise create a class inheriting from :c:data:`PyExc_BaseException`."
-msgstr ""
+msgstr "این مورد به اشتباه در API سی پایتون قرار داده شده است و برای استفاده در افزونه‌ها طراحی نشده است. برای ایجاد شیء‌های استثنای سفارشی، از :c:func:`PyErr_NewException` استفاده کنید یا به روشی دیگر کلاسی ایجاد کنید که از :c:data:`PyExc_BaseException` ارث‌بری کند."
 
 msgid "Exception Objects"
 msgstr "اشیاء استثنا"
@@ -672,10 +672,8 @@ msgstr ":exc:`FloatingPointError`"
 msgid ":exc:`GeneratorExit`"
 msgstr ":exc:`GeneratorExit`"
 
-#, fuzzy
-#| msgid ":exc:`ImportError`"
 msgid ":exc:`ImportCycleError`"
-msgstr ":exc:`ImportError`"
+msgstr ":exc:`ImportCycleError`"
 
 msgid ":exc:`ImportError`"
 msgstr ":exc:`ImportError`"
@@ -885,7 +883,7 @@ msgid "Write the traceback *tb* into the file *f*."
 msgstr "ردگیری *tb* را در پرونده *f* بنویسید."
 
 msgid "Write a trace of the Python stack in *tstate* into the file *fd*.  The format looks like::"
-msgstr ""
+msgstr "ردی از پشته‌ی پایتون در *tstate* را در پرونده‌ی *fd* بنویسید. قالب آن به شکل زیر است::"
 
 msgid ""
 "Traceback (most recent call first):\n"
@@ -894,42 +892,41 @@ msgid ""
 "  ...\n"
 "  File \"xxx\", line xxx in <xxx>"
 msgstr ""
+"Traceback (most recent call first):\n"
+"  File \"xxx\", line xxx in <xxx>\n"
+"  File \"xxx\", line xxx in <xxx>\n"
+"  ...\n"
+"  File \"xxx\", line xxx in <xxx>"
 
 msgid "This function is meant to debug situations such as segfaults, fatal errors, and similar. The file and function names it outputs are encoded to ASCII with backslashreplace and truncated to 500 characters. It writes only the first 100 frames; further frames are truncated with the line ``...``."
-msgstr ""
+msgstr "این تابع برای رفع اشکال موقعیت‌هایی مانند خطاهای حافظه (segfaults)، خطاهای مهلک و موارد مشابه در نظر گرفته شده است. نام‌های پرونده و تابعی که خروجی می‌دهد با استفاده از backslashreplace به اسکی (ASCII) کدگذاری شده و به ۵۰۰ نویسه کوتاه می‌شوند. این تابع فقط ۱۰۰ فریم اول را می‌نویسد؛ فریم‌های بعدی با سطر ``...`` کوتاه می‌شوند."
 
-#, fuzzy
-#| msgid "This function returns ``0`` on success, and returns ``-1`` with an exception set on failure."
 msgid "This function will return ``NULL`` on success, or an error message on error."
-msgstr "این تابع در صورت موفقیت ``0`` را برمی‌گرداند، و در صورت شکست ``-1`` را همراه با یک استثنای تنظیم‌شده برمی‌گرداند."
+msgstr "این تابع در صورت موفقیت ``NULL``، و در صورت بروز خطا، یک پیام خطا برمی‌گرداند."
 
 msgid "This function is intended for use in crash scenarios such as signal handlers for SIGSEGV, where the interpreter may be in an inconsistent state. Given that it reads interpreter data structures that may be partially modified, the function might produce incomplete output or it may even crash itself."
-msgstr ""
+msgstr "این تابع برای استفاده در سناریوهای فروپاشی (crash) مانند هندلرهای سیگنال برای SIGSEGV در نظر گرفته شده است، جایی که مفسر ممکن است در وضعیتی ناهمگون باشد. با توجه به اینکه این تابع ساختارهای داده‌ی مفسر را می‌خواند که ممکن است به‌صورت جزئی تغییر یافته باشند، ممکن است خروجی ناقصی تولید کند یا حتی خودش دچار فروپاشی شود."
 
-#, fuzzy
-#| msgid "The caller must have an :term:`attached thread state`."
 msgid "The caller does not need to hold an :term:`attached thread state`, nor does *tstate* need to be attached."
-msgstr "فراخواننده باید :term:`attached thread state` داشته باشد."
+msgstr "فراخواننده نیازی به نگهداری :term:`وضعیت نخ متصل <attached thread state>` ندارد و همچنین نیازی نیست که *tstate* متصل باشد."
 
-#, fuzzy
-#| msgid "Write the traceback *tb* into the file *f*."
 msgid "Write the traces of all Python threads in *interp* into the file *fd*."
-msgstr "ردگیری *tb* را در پرونده *f* بنویسید."
+msgstr "ردپای تمام نخ‌های پایتون را در *interp* درون پرونده‌ی *fd* بنویسید."
 
 msgid "If *interp* is ``NULL`` then this function will try to identify the current interpreter using thread-specific storage. If it cannot, it will return an error."
-msgstr ""
+msgstr "اگر *interp* مقدار ``NULL`` باشد، این تابع تلاش خواهد کرد تا مفسر فعلی را با استفاده از حافظه‌ی مختص نخ شناسایی کند. اگر نتواند، خطایی را برمی‌گرداند."
 
 msgid "If *current_tstate* is not ``NULL`` then it will be used to identify what the current thread is in the written output. If it is ``NULL`` then this function will identify the current thread using thread-specific storage. It is not an error if the function is unable to get the current Python thread state."
-msgstr ""
+msgstr "اگر *current_tstate* برابر با ``NULL`` نباشد، از آن برای شناسایی اینکه نخ فعلی در خروجی نوشته‌شده چیست، استفاده خواهد شد. اگر برابر با ``NULL`` باشد، این تابع نخ فعلی را با استفاده از حافظه‌ی مختص نخ شناسایی خواهد کرد. اگر تابع نتواند وضعیت نخ فعلی پایتون را دریافت کند، خطا محسوب نمی‌شود."
 
 msgid "This function is meant to debug situations such as segfaults, fatal errors, and similar. It calls :c:func:`PyUnstable_DumpTraceback` for each thread. It only writes the tracebacks of the first *max_threads* threads, further output is truncated with the line ``...``. If *max_threads* is 0, the function will use a default value of 100 for the argument."
-msgstr ""
+msgstr "این تابع برای رفع اشکال موقعیت‌هایی مانند خطاهای حافظه (segfaults)، خطاهای مهلک و موارد مشابه در نظر گرفته شده است. این تابع به ازای هر نخ، :c:func:`PyUnstable_DumpTraceback` را فراخوانی می‌کند. این تابع فقط ردگیری‌های *max_threads* نخ اول را می‌نویسد و خروجی‌های بیشتر با سطر ``...`` کوتاه می‌شوند. اگر *max_threads* برابر با 0 باشد، تابع از مقدار پیش‌فرض 100 برای آرگومان استفاده خواهد کرد."
 
 msgid "The caller does not need to hold an :term:`attached thread state`, nor does *current_tstate* need to be attached."
-msgstr ""
+msgstr "فراخواننده نیازی به نگهداری یک :term:`وضعیت نخ متصل <attached thread state>` ندارد و همچنین *current_tstate* نیازی به متصل بودن ندارد."
 
 msgid "On the :term:`free-threaded build`, this function is not thread-safe. If another thread deletes its :term:`thread state` while this function is being called, the process will likely crash."
-msgstr ""
+msgstr "در :term:`ساخت نخ‌آزاد <free-threaded build>`، این تابع نخ‌ایمن نیست. اگر در حین فراخوانی این تابع، نخ دیگری :term:`وضعیت نخ <thread state>` خود را حذف کند، فرایند احتمالاً دچار فروپاشی خواهد شد."
 
 msgid "strerror (C function)"
 msgstr "strerror (تابع C)"

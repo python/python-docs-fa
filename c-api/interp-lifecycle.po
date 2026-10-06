@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-01 14:41+0330\n"
-"PO-Revision-Date: 2026-09-15 08:29+0330\n"
+"PO-Revision-Date: 2026-10-06 20:24+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: none\n"
 "Language: fa\n"
@@ -339,7 +339,7 @@ msgid "Return true (nonzero) when the Python interpreter has been initialized, f
 msgstr "هنگامی که مفسر پایتون مقداردهی اولیه شده باشد، true (غیرصفر) را برمی‌گرداند و در غیر این صورت false (صفر) را برمی‌گرداند. پس از فراخوانی :c:func:`Py_FinalizeEx`، این تابع تا زمانی که :c:func:`Py_Initialize` دوباره فراخوانی شود، false برمی‌گرداند."
 
 msgid "This function no longer returns true until initialization has fully completed, including import of the :mod:`site` module.  Previously it could return true while :c:func:`Py_Initialize` was still running."
-msgstr ""
+msgstr "این تابع تا زمانی که مقداردهی اولیه به‌طور کامل تکمیل نشده باشد، از جمله ایمپورت ماژول :mod:`site`، دیگر مقدار true را برنمی‌گرداند. پیش‌تر ممکن بود در حالی که :c:func:`Py_Initialize` هنوز در حال اجرا بود، مقدار true را برگرداند."
 
 msgid "Return true (non-zero) if the main Python interpreter is :term:`shutting down <interpreter shutdown>`. Return false (zero) otherwise."
 msgstr "اگر مفسر اصلی پایتون در حال :term:`خاموش شدن <interpreter shutdown>` باشد، مقدار true (غیرصفر) را برمی‌گرداند. در غیر این صورت مقدار false (صفر) را برمی‌گرداند."
@@ -430,45 +430,41 @@ msgstr "برای مفسر هدف *interp* یک کال‌بک :mod:`atexit` ثب�
 msgid "There must be an :term:`attached thread state` for *interp*."
 msgstr "باید یک :term:`attached thread state` برای *interp* وجود داشته باشد."
 
-#, fuzzy
-#| msgid "Cautions regarding runtime finalization"
 msgid "Cautions regarding interpreter finalization"
-msgstr "هشدارهایی درباره‌ی نهایی‌سازی ران‌تایم"
+msgstr "احتیاط‌های مربوط به نهایی‌سازی مفسر"
 
-#, fuzzy
-#| msgid "In the late stage of :term:`interpreter shutdown`, after attempting to wait for non-daemon threads to exit (though this can be interrupted by :class:`KeyboardInterrupt`) and running the :mod:`atexit` functions, the runtime is marked as *finalizing*: :c:func:`Py_IsFinalizing` and :func:`sys.is_finalizing` return true.  At this point, only the *finalization thread* that initiated finalization (typically the main thread) is allowed to acquire the :term:`GIL`."
 msgid "In the late stage of :term:`interpreter shutdown`, after attempting to wait for non-daemon threads to exit (though this can be interrupted by :class:`KeyboardInterrupt`) and running the :mod:`atexit` functions, the runtime is marked as finalizing, meaning that :c:func:`Py_IsFinalizing` and :func:`sys.is_finalizing` return true.  At this point, only the finalization thread (the thread that initiated finalization; this is typically the main thread) is allowed to :term:`attach <attached thread state>` a thread state."
-msgstr "در مرحله‌ی پایانیِ :term:`خاموشی مفسر <interpreter shutdown>`، پس از تلاش برای منتظر ماندن تا خروج نخ‌های غیر دِیمِن (هرچند این انتظار ممکن است توسط :class:`KeyboardInterrupt` قطع شود) و اجرای توابع :mod:`atexit`، ران‌تایم به‌عنوان *در حال نهایی‌سازی* علامت‌گذاری می‌شود: :c:func:`Py_IsFinalizing` و :func:`sys.is_finalizing` مقدار true را برمی‌گردانند.  در این نقطه، تنها *نخ نهایی‌سازی* که نهایی‌سازی را آغاز کرده است (معمولاً نخ اصلی) مجاز است :term:`قفل مفسر سراسری (GIL) <GIL>` را به دست آورد."
+msgstr "در مرحله‌ی پایانی :term:`خاموش شدن مفسر <interpreter shutdown>`، پس از تلاش برای منتظر ماندن تا خروج نخ‌های غیر دِیمِن (هرچند این فرایند ممکن است با :class:`KeyboardInterrupt` قطع شود) و اجرای توابع :mod:`atexit`، زمان اجرا در وضعیت نهایی‌سازی قرار می‌گیرد؛ یعنی :c:func:`Py_IsFinalizing` و :func:`sys.is_finalizing` مقدار true را برمی‌گردانند. در این مرحله، فقط نخ نهایی‌سازی (نخی که فرایند نهایی‌سازی را آغاز کرده است؛ این نخ معمولاً نخ اصلی است) مجاز است یک وضعیت نخ را به :term:`متصل <attached thread state>` کند."
 
 msgid "Other threads that attempt to attach during finalization, either explicitly (such as via :c:func:`PyThreadState_Ensure` or :c:macro:`Py_END_ALLOW_THREADS`) or implicitly (such as in-between bytecode instructions), will enter a **permanently blocked state**. Generally, this is harmless, but this can result in deadlocks. For example, a thread may be permanently blocked while holding a lock, meaning that the finalization thread can never acquire that lock."
-msgstr ""
+msgstr "سایر نخ‌هایی که در طول نهایی‌سازی تلاش می‌کنند متصل شوند، چه به‌طور صریح (مانند طریق :c:func:`PyThreadState_Ensure` یا :c:macro:`Py_END_ALLOW_THREADS`) و چه به‌طور ضمنی (مانند بین دستورالعمل‌های بایت‌کد)، وارد یک **وضعیت مسدودشده‌ی دائمی** خواهند شد. به طور کلی، این بی‌خطر است، اما می‌تواند منجر به بن‌بست شود. به عنوان مثال، ممکن است یک نخ در حالی که قفلی را در اختیار دارد به‌طور دائم مسدود شود، به این معنی که نخ نهایی‌سازی هرگز نمی‌تواند آن قفل را به‌دست آورد."
 
 msgid "Prior to CPython 3.13, the thread would exit instead of hanging, which led to other issues (see the warning note at :c:func:`PyThread_exit_thread`)."
-msgstr ""
+msgstr "پیش از سی‌پایتون ۳.۱۳، نخ به جای معلق ماندن خارج می‌شد که منجر به مشکلات دیگری می‌شد (یادداشت هشدار در :c:func:`PyThread_exit_thread` را ببینید)."
 
 msgid "Gross? Yes. Starting in Python 3.15, there are a number of C APIs that make it possible to avoid these issues by temporarily preventing finalization:"
-msgstr ""
+msgstr "زشت است؟ بله. از پایتون ۳.۱۵ به بعد، تعدادی از رابط‌های برنامه‌نویسی (API) سی وجود دارند که با جلوگیری موقت از نهایی‌سازی، اجتناب از این مشکلات را امکان‌پذیر می‌کنند:"
 
 msgid ":pep:`788` explains the design, motivation and rationale for these APIs."
-msgstr ""
+msgstr ":pep:`788` طراحی، انگیزه و دلیل منطقی این APIها را توضیح می‌دهد."
 
 msgid "An opaque interpreter guard structure."
-msgstr ""
+msgstr "یک ساختار نگهبان مفسر کدر."
 
 msgid "By holding an interpreter guard, the caller can ensure that the interpreter will not finalize until the guard is closed (through :c:func:`PyInterpreterGuard_Close`)."
-msgstr ""
+msgstr "با نگه‌داشتن یک نگهبان مفسر، فراخواننده می‌تواند اطمینان حاصل کند که مفسر تا زمانی که نگهبان بسته نشده است (از طریق :c:func:`PyInterpreterGuard_Close`) نهایی نخواهد شد."
 
 msgid "When a guard is held, a thread attempting to finalize the interpreter will block until the guard is closed before starting finalization. After finalization has started, threads are forever unable to acquire guards for that interpreter. This means that if you forget to close an interpreter guard, the process will **permanently hang** during finalization!"
-msgstr ""
+msgstr "هنگامی که یک نگهبان نگه داشته می‌شود، نخی که تلاش می‌کند مفسر را نهایی کند، تا پیش از شروع نهایی‌سازی، یعنی تا زمان بسته شدن نگهبان، مسدود خواهد شد. پس از شروع نهایی‌سازی، نخ‌ها برای همیشه قادر به به‌دست آوردن نگهبان‌ها برای آن مفسر نیستند. این یعنی اگر فراموش کنید یک نگهبان مفسر را ببندید، فرایند در طول نهایی‌سازی **به‌طور دائم معلق خواهد ماند**!"
 
 msgid "Holding a guard for an interpreter is similar to holding a :term:`strong reference` to a Python object, except finalization does not happen automatically after all guards are released: it requires an explicit :c:func:`Py_EndInterpreter` call."
-msgstr ""
+msgstr "نگه‌داشتن یک نگهبان برای یک مفسر شبیه به نگه‌داشتن یک :term:`ارجاع قوی <strong reference>` به یک شیء پایتون است، با این تفاوت که نهایی‌سازی به‌طور خودکار پس از آزاد شدن همه‌ی نگهبان‌ها اتفاق نمی‌افتد: بلکه نیازمند یک فراخوانی صریح :c:func:`Py_EndInterpreter` است."
 
 msgid "Create a finalization guard for the current interpreter. This will prevent finalization until the guard is closed."
-msgstr ""
+msgstr "یک نگهبان نهایی‌سازی برای مفسر فعلی ایجاد کنید. این کار تا زمان بسته شدن نگهبان، از نهایی‌سازی جلوگیری می‌کند."
 
 msgid "For example:"
-msgstr ""
+msgstr "برای نمونه:"
 
 msgid ""
 "// Temporarily prevent finalization.\n"
@@ -487,79 +483,90 @@ msgid ""
 "// allowed to finalize again.\n"
 "PyInterpreterGuard_Close(guard);"
 msgstr ""
+"// Temporarily prevent finalization.\n"
+"PyInterpreterGuard *guard = PyInterpreterGuard_FromCurrent();\n"
+"if (guard == NULL) {\n"
+"   // Finalization has already started or we're out of memory.\n"
+"   return NULL;\n"
+"}\n"
+"\n"
+"Py_BEGIN_ALLOW_THREADS;\n"
+"// Do some critical processing here. For example, we can safely acquire\n"
+"// locks that might be acquired by the finalization thread.\n"
+"Py_END_ALLOW_THREADS;\n"
+"\n"
+"// Now that we're done with our critical processing, the interpreter is\n"
+"// allowed to finalize again.\n"
+"PyInterpreterGuard_Close(guard);"
 
 msgid "On success, this function returns a guard for the current interpreter; on failure, it returns ``NULL`` with an exception set."
-msgstr ""
+msgstr "این تابع در صورت موفقیت، یک نگهبان برای مفسر فعلی برمی‌گرداند؛ و در صورت شکست، مقدار ``NULL`` را به همراه تنظیم یک استثنا برمی‌گرداند."
 
 msgid "This function will fail only if the current interpreter has already started finalizing, or if the process is out of memory."
-msgstr ""
+msgstr "این تابع تنها زمانی با شکست مواجه خواهد شد که مفسر فعلی از پیش فرآیند نهایی‌سازی را آغاز کرده باشد، یا اینکه حافظه‌ی فرایند به پایان رسیده باشد."
 
 msgid "The guard pointer returned by this function must be eventually closed with :c:func:`PyInterpreterGuard_Close`; failing to do so will result in the Python process infinitely hanging."
-msgstr ""
+msgstr "اشاره‌گر نگهبان بازگردانده‌شده توسط این تابع باید در نهایت با :c:func:`PyInterpreterGuard_Close` بسته شود؛ در غیر این صورت، فرایند پایتون به‌طور بی‌نهایت معلق خواهد ماند."
 
-#, fuzzy
-#| msgid "There must be an :term:`attached thread state` for *interp*."
 msgid "The caller must hold an :term:`attached thread state`."
-msgstr "باید یک :term:`attached thread state` برای *interp* وجود داشته باشد."
+msgstr "فراخواننده باید یک :term:`وضعیت نخ متصل‌شده <attached thread state>` را نگه دارد."
 
 msgid "Create a finalization guard for an interpreter through a view."
-msgstr ""
+msgstr "ایجاد یک نگهبان نهایی‌سازی برای یک مفسر از طریق یک نما."
 
 msgid "On success, this function returns a guard to the interpreter represented by *view*. The view is still valid after calling this function. The guard must eventually be closed with :c:func:`PyInterpreterGuard_Close`."
-msgstr ""
+msgstr "این تابع در صورت موفقیت، نگهبانی را نسبت به مفسر بازنمایی‌شده توسط *view* برمی‌گرداند. نما پس از فراخوانی این تابع هم‌چنان معتبر است. نگهبان باید در نهایت با :c:func:`PyInterpreterGuard_Close` بسته شود."
 
 msgid "If the interpreter no longer exists, is already finalizing, or out of memory, then this function returns ``NULL`` without setting an exception."
-msgstr ""
+msgstr "اگر مفسر دیگر وجود نداشته باشد، از پیش در حال نهایی‌سازی باشد یا حافظه‌اش تمام شده باشد، این تابع ``NULL`` را بدون تنظیم استثنا برمی‌گرداند."
 
-#, fuzzy
-#| msgid "There must be an :term:`attached thread state` for *interp*."
 msgid "The caller does not need to hold an :term:`attached thread state`."
-msgstr "باید یک :term:`attached thread state` برای *interp* وجود داشته باشد."
+msgstr "فراخواننده نیازی به نگه داشتن یک :term:`وضعیت نخ متصل‌شده <attached thread state>` ندارد."
 
 msgid "Close an interpreter guard, allowing the interpreter to start finalization if no other guards remain. If an interpreter guard is never closed, the interpreter will infinitely wait when trying to enter finalization!"
-msgstr ""
+msgstr "بستن یک نگهبان مفسر، به مفسر اجازه می‌دهد اگر نگهبان دیگری باقی نمانده باشد، نهایی‌سازی را آغاز کند. اگر نگهبان مفسری هرگز بسته نشود، مفسر هنگام تلاش برای ورود به مرحله‌ی نهایی‌سازی، به‌طور بی‌نهایت منتظر خواهد ماند!"
 
 msgid "After an interpreter guard is closed, it may not be used in :c:func:`PyThreadState_Ensure`. Doing so will result in undefined behavior."
-msgstr ""
+msgstr "پس از بسته شدن نگهبان مفسر، ممکن است نتوان از آن در :c:func:`PyThreadState_Ensure` استفاده کرد. انجام این کار به رفتار نامشخص منجر خواهد شد."
 
 msgid "This function cannot fail, and the caller doesn't need to hold an :term:`attached thread state`."
-msgstr ""
+msgstr "این تابع نمی‌تواند با شکست مواجه شود و فراخواننده نیازی به نگهداری یک :term:`وضعیت نخ متصل <attached thread state>` ندارد."
 
 msgid "Interpreter views"
-msgstr ""
+msgstr "نماهای مفسر"
 
 msgid "In some cases, it may be necessary to access an interpreter that may have been deleted. This can be done using interpreter views."
-msgstr ""
+msgstr "در برخی موارد، ممکن است دسترسی به مفسری که شاید حذف شده باشد، ضروری باشد. این کار را می‌توان با استفاده از نماهای مفسر انجام داد."
 
 msgid "An opaque view of an interpreter."
-msgstr ""
+msgstr "یک نمای کدر از یک مفسر."
 
 msgid "This is a thread-safe way to access an interpreter that may have be finalizing or already destroyed."
-msgstr ""
+msgstr "این یک روش نخ‌ایمن برای دسترسی به مفسری است که ممکن است در حال نهایی‌سازی بوده یا از پیش نابود شده باشد."
 
 msgid "Create a view to the current interpreter."
-msgstr ""
+msgstr "ایجاد یک نما به مفسر فعلی."
 
 msgid "This function is generally meant to be used alongside :c:func:`PyInterpreterGuard_FromView` or :c:func:`PyThreadState_EnsureFromView`."
-msgstr ""
+msgstr "این تابع عموماً به این منظور استفاده می‌شود که در کنار :c:func:`PyInterpreterGuard_FromView` یا :c:func:`PyThreadState_EnsureFromView` به کار رود."
 
 msgid "On success, this function returns a view to the current interpreter; on failure, it returns ``NULL`` with an exception set."
-msgstr ""
+msgstr "این تابع در صورت موفقیت، نمایی به مفسر فعلی برمی‌گرداند؛ و در صورت شکست، مقدار ``NULL`` را به همراه تنظیم یک استثنا برمی‌گرداند."
 
 msgid "Close an interpreter view."
-msgstr ""
+msgstr "بستن یک نمای مفسر."
 
 msgid "If an interpreter view is never closed, the view's memory will never be freed, but there are no other consequences. (In contrast, forgetting to close a guard will infinitely hang the main thread during finalization.)"
-msgstr ""
+msgstr "اگر نمای مفسری هرگز بسته نشود، حافظه‌ی نما هرگز آزاد نخواهد شد، اما پیامد دیگری ندارد. (در مقابل، فراموش کردن بستن یک نگهبان باعث معلق ماندن بی‌نهایت نخ اصلی در طول نهایی‌سازی خواهد شد.)"
 
 msgid "Create a view for the main interpreter (the first and default interpreter in a Python process; see :c:func:`PyInterpreterState_Main`)."
-msgstr ""
+msgstr "ایجاد یک نما برای مفسر اصلی (اولین مفسر پیش‌فرض در یک فرایند پایتون؛ نگاه کنید به :c:func:`PyInterpreterState_Main`)."
 
 msgid "On success, this function returns a view to the main interpreter; on failure, it returns ``NULL`` without an exception set. Failure indicates that the process is out of memory."
-msgstr ""
+msgstr "این تابع در صورت موفقیت، نمایی به مفسر اصلی برمی‌گرداند؛ و در صورت شکست، ``NULL`` را بدون تنظیم استثنا برمی‌گرداند. شکست نشان‌دهنده‌ی این است که حافظه‌ی فرایند تمام شده است."
 
 msgid "Use this function when an interpreter pointer or view cannot be supplied by the caller, such as when a native threading library does not provide a ``void *arg`` parameter that could carry a :c:type:`PyInterpreterGuard` or :c:type:`PyInterpreterView`. In code that supports subinterpreters, prefer :c:func:`PyInterpreterView_FromCurrent` so the guard tracks the calling interpreter rather than the main one."
-msgstr ""
+msgstr "هنگامی که فراخواننده نتواند یک اشاره‌گر مفسر یا نما را فراهم کند، مانند زمانی که یک کتابخانه‌ی نخ‌کشی بومی پارامتری به شکل ``void *arg`` که بتواند یک :c:type:`PyInterpreterGuard` یا :c:type:`PyInterpreterView` را حمل کند ارائه نمی‌دهد، از این تابع استفاده کنید. در کدهایی که از مفسرهای فرعی پشتیبانی می‌کنند، :c:func:`PyInterpreterView_FromCurrent` را ترجیح دهید تا نگهبان به جای مفسر اصلی، مفسر فراخواننده را پیگیری کند."
 
 msgid "Process-wide parameters"
 msgstr "پارامترهای در سطح فرایند"
@@ -567,10 +574,8 @@ msgstr "پارامترهای در سطح فرایند"
 msgid "This API is kept for backward compatibility: setting :c:member:`PyConfig.program_name` should be used instead, see :ref:`Python Initialization Configuration <init-config>`."
 msgstr "این API برای سازگاری با نسخه‌های پیشین حفظ شده است: به جای آن باید :c:member:`PyConfig.program_name` را تنظیم کنید؛ به :ref:`پیکربندی مقدار‌دهی اولیه پایتون <init-config>` مراجعه کنید."
 
-#, fuzzy
-#| msgid "This function should be called before :c:func:`Py_Initialize` is called for the first time, if it is called at all.  It tells the interpreter the value of the ``argv[0]`` argument to the :c:func:`main` function of the program (converted to wide characters). This is used by :c:func:`Py_GetPath` and some other functions below to find the Python run-time libraries relative to the interpreter executable.  The default value is ``'python'``.  The argument should point to a zero-terminated wide character string in static storage whose contents will not change for the duration of the program's execution.  No code in the Python interpreter will change the contents of this storage."
 msgid "This function should be called before :c:func:`Py_Initialize` is called for the first time, if it is called at all.  It tells the interpreter the value of the ``argv[0]`` argument to the :c:func:`main` function of the program (converted to wide characters). This is used by some other functions below to find the Python run-time libraries relative to the interpreter executable.  The default value is ``'python'``.  The argument should point to a zero-terminated wide character string in static storage whose contents will not change for the duration of the program's execution.  No code in the Python interpreter will change the contents of this storage."
-msgstr "این تابع، اگر اصلاً فراخوانی شود، باید پیش از آنکه :c:func:`Py_Initialize` برای نخستین بار فراخوانی شود، فراخوانی شود. این تابع مقدار آرگومان ``argv[0]`` تابع :c:func:`main` برنامه را به مفسر اطلاع می‌دهد (تبدیل‌شده به نویسه‌های پهن). این مقدار توسط :c:func:`Py_GetPath` و برخی توابع دیگر در ادامه برای یافتن کتابخانه‌های زمان اجرای پایتون نسبت به پرونده اجرایی مفسر استفاده می‌شود. مقدار پیش‌فرض ``'python'`` است. این آرگومان باید به یک رشته‌ی نویسه‌های پهن خاتمه‌یافته با نویسه‌ی تهی (zero-terminated) در حافظه‌ی ایستا اشاره کند که محتوای آن در طول اجرای برنامه تغییر نخواهد کرد. هیچ کدی در مفسر پایتون محتوای این حافظه را تغییر نخواهد داد."
+msgstr "این تابع باید پیش از فراخوانی :c:func:`Py_Initialize` برای نخستین بار (در صورت فراخوانی) فراخوانی شود. این تابع مقدار آرگومان ``argv[0]`` تابع :c:func:`main` برنامه را (که به نویسه‌های پهن تبدیل شده است) به مفسر اعلام می‌کند. این مقدار توسط برخی دیگر از توابع زیر برای یافتن کتابخانه‌های زمان اجرای پایتون نسبت به فایل اجرایی مفسر استفاده می‌شود. مقدار پیش‌فرض ``'python'`` است. آرگومان باید به یک رشته‌ی نویسه پهنِ ختم‌شده به صفر در حافظه ایستا اشاره کند که محتویات آن در طول اجرای برنامه تغییر نخواهد کرد. هیچ کدی در مفسر پایتون محتویات این حافظه را تغییر نخواهد داد."
 
 msgid "Use :c:func:`Py_DecodeLocale` to decode a bytes string to get a :c:expr:`wchar_t*` string."
 msgstr "برای کدگشایی یک رشته بایتی و به‌دست آوردن یک رشته‌ی :c:expr:`wchar_t*` از :c:func:`Py_DecodeLocale` استفاده کنید."

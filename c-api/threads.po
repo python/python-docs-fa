@@ -11,13 +11,14 @@ msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-01 14:41+0330\n"
-"PO-Revision-Date: 2026-07-25 12:59+0330\n"
+"PO-Revision-Date: 2026-10-06 20:44+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: none\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
 
 msgid "Thread states and the global interpreter lock"
 msgstr "وضعیت‌های نخ و قفل مفسر سراسری"
@@ -46,10 +47,8 @@ msgstr "حتی در ساخت‌ نخ‌آزاد، پیوست کردن وضعیت
 msgid "Generally, there will always be an attached thread state when using Python's C API, including during embedding and when implementing methods, so it's uncommon to need to set up a thread state on your own. Only in some specific cases, such as in a :c:macro:`Py_BEGIN_ALLOW_THREADS` block or in a fresh thread, will the thread not have an attached thread state. If uncertain, check if :c:func:`PyThreadState_GetUnchecked` returns ``NULL``."
 msgstr "به‌طور کلی، هنگام استفاده از API زبان C پایتون، همیشه یک وضعیت نخ متصل وجود خواهد داشت، از جمله در حین تعبیه و هنگام پیاده‌سازی متدها؛ بنابراین به‌ندرت پیش می‌آید که لازم باشد خودتان وضعیت نخ ایجاد کنید. تنها در برخی موارد خاص، مانند داخل بلوک :c:macro:`Py_BEGIN_ALLOW_THREADS` یا در یک نخ تازه، نخ وضعیت نخ متصل نخواهد داشت. اگر مطمئن نیستید، بررسی کنید که آیا :c:func:`PyThreadState_GetUnchecked` مقدار ``NULL`` برمی‌گرداند یا خیر."
 
-#, fuzzy
-#| msgid "If it turns out that you do need to create a thread state, call :c:func:`PyThreadState_New` followed by :c:func:`PyThreadState_Swap`, or use the dangerous :c:func:`PyGILState_Ensure` function."
 msgid "If it turns out that you do need to create a thread state, it is recommended to use :c:func:`PyThreadState_Ensure` or :c:func:`PyThreadState_EnsureFromView`, which will manage the thread state for you."
-msgstr "اگر معلوم شد که واقعاً به ایجاد وضعیت نخ نیاز دارید، :c:func:`PyThreadState_New` و سپس :c:func:`PyThreadState_Swap` را فراخوانی کنید، یا از تابع خطرناک :c:func:`PyGILState_Ensure` استفاده کنید."
+msgstr "اگر مشخص شد که واقعاً به ایجاد یک وضعیت نخ نیاز دارید، توصیه می‌شود از :c:func:`PyThreadState_Ensure` یا :c:func:`PyThreadState_EnsureFromView` استفاده کنید، که وضعیت نخ را برای شما مدیریت خواهند کرد."
 
 msgid "Detaching the thread state from extension code"
 msgstr "جدا کردن وضعیت نخ از کد توسعه‌ای"
@@ -137,7 +136,7 @@ msgid "This macro expands to ``_save = PyEval_SaveThread();``: it is equivalent 
 msgstr "این ماکرو به ``_save = PyEval_SaveThread();`` بسط می‌یابد: معادل :c:macro:`Py_BEGIN_ALLOW_THREADS` بدون آکولاد باز و اعلان متغیر است."
 
 msgid "Using the C API from foreign threads"
-msgstr ""
+msgstr "استفاده از API زبان C از نخ‌های خارجی"
 
 msgid "When threads are created using the dedicated Python APIs (such as the :mod:`threading` module), a thread state is automatically associated with them, However, when a thread is created from native code (for example, by a third-party library with its own thread management), it doesn't hold an attached thread state."
 msgstr "وقتی نخ‌ها با استفاده از APIهای اختصاصی پایتون (مانند ماژول :mod:`threading`) ایجاد می‌شوند، یک وضعیت نخ به‌طور خودکار با آن‌ها مرتبط می‌شود؛ با این حال، وقتی یک نخ از کد بومی ایجاد شود (برای مثال، توسط یک کتابخانه شخص ثالث با مدیریت نخ اختصاصی خودش)، وضعیت نخ متصل‌شده‌ای ندارد."
@@ -145,37 +144,15 @@ msgstr "وقتی نخ‌ها با استفاده از APIهای اختصاصی �
 msgid "If you need to call Python code from these threads (often this will be part of a callback API provided by the aforementioned third-party library), you must first register these threads with the interpreter by creating a new thread state and attaching it."
 msgstr "اگر لازم باشد کد پایتون را از این نخ‌ها فراخوانی کنید (اغلب این کار بخشی از یک API کال‌بک ارائه‌شده توسط کتابخانه شخص ثالث مذکور خواهد بود)، باید ابتدا با ایجاد یک وضعیت نخ جدید و پیوست دادن آن، این نخ‌ها را در مفسر ثبت کنید."
 
-#, fuzzy
-#| msgid "The most robust way to do this is through :c:func:`PyThreadState_New` followed by :c:func:`PyThreadState_Swap`."
 msgid "The easiest way to do this is through :c:func:`PyThreadState_Ensure` or :c:func:`PyThreadState_EnsureFromView`."
-msgstr "مقاوم‌ترین راه انجام این کار، استفاده از :c:func:`PyThreadState_New` و سپس :c:func:`PyThreadState_Swap` است."
+msgstr "ساده‌ترین راه برای انجام این کار استفاده از :c:func:`PyThreadState_Ensure` یا :c:func:`PyThreadState_EnsureFromView` است."
 
 msgid "These functions require an argument pointing to the desired interpreter; such a pointer can be acquired via a call to :c:func:`PyInterpreterGuard_FromCurrent` (for ``PyThreadState_Ensure``) or :c:func:`PyInterpreterView_FromCurrent` (for ``PyThreadState_EnsureFromView``) from the function that creates the thread. If no pointer is available (such as when the given native thread library doesn't provide a data argument), :c:func:`PyInterpreterView_FromMain` can be used to get a view for the main interpreter, but note that this will make the code incompatible with subinterpreters."
-msgstr ""
+msgstr "این تابع‌ها به آرگومانی نیاز دارند که به مفسر مورد نظر اشاره کند؛ چنین اشاره‌گری را می‌توان از طریق فراخوانی :c:func:`PyInterpreterGuard_FromCurrent` (برای ``PyThreadState_Ensure``) یا :c:func:`PyInterpreterView_FromCurrent` (برای ``PyThreadState_EnsureFromView``) از تابعی که نخ را ایجاد می‌کند، به‌دست آورد. اگر هیچ اشاره‌گری در دسترس نباشد (مانند زمانی که کتابخانه‌ی نخ بومیِ داده‌شده آرگومان داده‌ای فراهم نمی‌کند)، می‌توانید از :c:func:`PyInterpreterView_FromMain` برای دریافت یک نما برای مفسر اصلی استفاده کنید، اما توجه داشته باشید که این کار کد را با زیرمفسرها ناسازگار می‌کند."
 
 msgid "For example::"
 msgstr "برای مثال::"
 
-#, fuzzy
-#| msgid ""
-#| "/* The return value of PyInterpreterState_Get() from the\n"
-#| "   function that created this thread. */\n"
-#| "PyInterpreterState *interp = thread_data->interp;\n"
-#| "\n"
-#| "/* Create a new thread state for the interpreter. It does not start out\n"
-#| "   attached. */\n"
-#| "PyThreadState *tstate = PyThreadState_New(interp);\n"
-#| "\n"
-#| "/* Attach the thread state, which will acquire the GIL. */\n"
-#| "PyThreadState_Swap(tstate);\n"
-#| "\n"
-#| "/* Perform Python actions here. */\n"
-#| "result = CallSomeFunction();\n"
-#| "/* evaluate result or handle exception */\n"
-#| "\n"
-#| "/* Destroy the thread state. No Python API allowed beyond this point. */\n"
-#| "PyThreadState_Clear(tstate);\n"
-#| "PyThreadState_DeleteCurrent();"
 msgid ""
 "// The return value of PyInterpreterGuard_FromCurrent() from the\n"
 "// function that created this thread.\n"
@@ -197,139 +174,142 @@ msgid ""
 "PyThreadState_Release(token);\n"
 "PyInterpreterGuard_Close(guard);"
 msgstr ""
-"/* مقدار بازگشتی PyInterpreterState_Get() از تابعی که\n"
-"   این نخ را ایجاد کرده است. */\n"
-"PyInterpreterState *interp = thread_data->interp;\n"
+"// The return value of PyInterpreterGuard_FromCurrent() from the\n"
+"// function that created this thread.\n"
+"PyInterpreterGuard *guard = thread_data->guard;\n"
 "\n"
-"/* ایجاد یک وضعیت نخ جدید برای مفسر. این وضعیت در ابتدا\n"
-"   متصل نیست. */\n"
-"PyThreadState *tstate = PyThreadState_New(interp);\n"
+"// Create a new thread state for the interpreter.\n"
+"PyThreadStateToken *token = PyThreadState_Ensure(guard);\n"
+"if (token == NULL) {\n"
+"   PyInterpreterGuard_Close(guard);\n"
+"   return;\n"
+"}\n"
 "\n"
-"/* اتصال وضعیت نخ، که قفل مفسر سراسری را به دست خواهد آورد. */\n"
-"PyThreadState_Swap(tstate);\n"
-"\n"
-"/* اینجا کنش‌های پایتون را انجام دهید. */\n"
+"// We have a valid thread state -- perform Python actions here.\n"
 "result = CallSomeFunction();\n"
-"/* ارزیابی نتیجه یا مدیریت استثنا */\n"
+"// Evaluate result or handle exceptions.\n"
 "\n"
-"/* تخریب وضعیت نخ. پس از این نقطه هیچ API پایتونی مجاز نیست. */\n"
-"PyThreadState_Clear(tstate);\n"
-"PyThreadState_DeleteCurrent();"
+"// Release the thread state. No calls to the C API are allowed beyond this\n"
+"// point.\n"
+"PyThreadState_Release(token);\n"
+"PyInterpreterGuard_Close(guard);"
 
 msgid "Keep in mind that calling ``PyThreadState_Ensure`` might not always create a new thread state, and calling ``PyThreadState_Release`` might not always detach it. These functions may reuse an existing attached thread state, or may re-attach a thread state that was previously attached for the current thread."
-msgstr ""
+msgstr "به خاطر داشته باشید که فراخوانی ``PyThreadState_Ensure`` ممکن است همیشه یک وضعیت نخ جدید ایجاد نکند و فراخوانی ``PyThreadState_Release`` ممکن است همیشه آن را جدا نکند. این تابع‌ها ممکن است یک وضعیت نخ متصلِ موجود را دوباره استفاده کنند، یا وضعیت نخی را که قبلاً برای نخ فعلی متصل شده بود، دوباره متصل کنند."
 
 msgid ":pep:`788`"
-msgstr ""
+msgstr ":pep:`788`"
 
-#, fuzzy
-#| msgid "Detaching the thread state from extension code"
 msgid "Reusing a thread state across repeated calls"
-msgstr "جدا کردن وضعیت نخ از کد توسعه‌ای"
+msgstr "استفاده‌ی مجدد از وضعیت نخ در فراخوانی‌های مکرر"
 
 msgid "Creating and destroying a :c:type:`PyThreadState` is not free, and is more expensive on a :term:`free-threaded build`.  A foreign thread that calls into the interpreter many times -- for example, a worker thread in a native thread pool -- should avoid creating a fresh thread state on every entry and destroying it on every exit.  Instead, set up one thread state when the thread starts (or lazily on its first call into Python), attach and detach it around each call, and tear it down once when the thread exits."
-msgstr ""
+msgstr "ایجاد و نابود کردن یک :c:type:`PyThreadState` رایگان نیست و در یک :term:`ساخت نخ‌آزاد <free-threaded build>` هزینه‌ی بیشتری دارد. یک نخ خارجی که بارها مفسر را فراخوانی می‌کند -- برای مثال، یک نخ کارگر در یک استخر نخ بومی -- باید از ایجاد وضعیت نخ جدید در هر بار ورود و نابود کردن آن در هر بار خروج خودداری کند. در عوض، هنگامی که نخ شروع به کار می‌کند (یا به صورت تنبل در اولین فراخوانی‌اش به پایتون)، یک وضعیت نخ را راه‌اندازی کنید، آن را در اطراف هر فراخوانی متصل و جدا کنید، و هنگامی که نخ خارج می‌شود، آن را یک بار از بین ببرید."
 
 msgid "Manage the thread state explicitly with :c:func:`PyThreadState_New`, attaching and detaching it with :c:func:`PyEval_RestoreThread` and :c:func:`PyEval_SaveThread`.  This happens in three distinct phases, at different points in the thread's life."
-msgstr ""
+msgstr "وضعیت نخ را به صراحت با :c:func:`PyThreadState_New` مدیریت کنید و آن را با :c:func:`PyEval_RestoreThread` و :c:func:`PyEval_SaveThread` متصل و جدا کنید. این کار در سه مرحله‌ی مجزا، در نقاط مختلفی از چرخه‌ی حیات نخ رخ می‌دهد."
 
 msgid "When the thread starts, create one thread state for it.  ``interp`` is the target interpreter, captured by the code that created this thread while it held an attached thread state (for example via :c:func:`PyInterpreterState_Get`)::"
-msgstr ""
+msgstr "هنگامی که نخ شروع به کار می‌کند، یک وضعیت نخ برای آن ایجاد کنید. ``interp`` مفسر هدف است که توسط کدی که این نخ را ایجاد کرده است، در حالی که یک وضعیت نخ متصل را نگه می‌داشت (برای مثال از طریق :c:func:`PyInterpreterState_Get`)، گرفته شده است::"
 
 msgid "PyThreadState *tstate = PyThreadState_New(interp);"
-msgstr ""
+msgstr "PyThreadState *tstate = PyThreadState_New(interp);"
 
 msgid "Then, on each call into Python -- which may happen many times over the thread's life -- attach the thread state, make the Python C API calls that require it, and detach again so the thread does not hold the GIL while off doing non-Python work::"
-msgstr ""
+msgstr "سپس، در هر فراخوانی به پایتون -- که ممکن است بارها در طول چرخه‌ی حیات نخ رخ دهد -- وضعیت نخ را متصل کنید، فراخوانی‌های API زبان C پایتون را که به آن نیاز دارند انجام دهید، و دوباره آن را جدا کنید تا نخ در حالی که کارهای غیرپایتونی انجام می‌دهد، GIL را نگه ندارد::"
 
 msgid ""
 "PyEval_RestoreThread(tstate);\n"
 "result = CallSomeFunction();  /* your Python C API calls go here */\n"
 "PyEval_SaveThread();"
 msgstr ""
+"PyEval_RestoreThread(tstate);\n"
+"result = CallSomeFunction();  /* فراخوانی‌های API زبان C پایتون شما در اینجا قرار می‌گیرند */\n"
+"PyEval_SaveThread();"
 
 msgid "When the thread is finished calling into Python, destroy the thread state once::"
-msgstr ""
+msgstr "هنگامی که کار نخ با فراخوانی پایتون به پایان رسید، وضعیت نخ را یک بار نابود کنید::"
 
 msgid ""
 "PyEval_RestoreThread(tstate);\n"
 "PyThreadState_Clear(tstate);\n"
 "PyThreadState_DeleteCurrent();"
 msgstr ""
+"PyEval_RestoreThread(tstate);\n"
+"PyThreadState_Clear(tstate);\n"
+"PyThreadState_DeleteCurrent();"
 
 msgid "The general-purpose entry points for calling in from a foreign thread -- :c:func:`PyThreadState_Ensure` and the older :c:func:`PyGILState_Ensure` -- do *not* guarantee a persistent thread state: their thread-state lifetime is deliberately implementation-defined, so a matched acquire/release pair may create and destroy a thread state each time.  Use :c:func:`PyThreadState_New`, as shown here, whenever you specifically want to reuse one thread state across calls."
-msgstr ""
+msgstr "نقاط ورودی همه‌منظوره برای فراخوانی از یک نخ خارجی -- یعنی :c:func:`PyThreadState_Ensure` و :c:func:`PyGILState_Ensure` قدیمی -- پایداری وضعیت نخ را تضمین *نمی‌کنند*: طول عمر وضعیت نخِ آن‌ها عمدتاً توسط پیاده‌سازی تعریف می‌شود، بنابراین ممکن است یک جفت به‌دست‌آوردن/آزاد کردنِ منطبق، در هر بار یک وضعیت نخ ایجاد و نابود کند. هر زمان که به‌طور خاص می‌خواهید از یک وضعیت نخ در میان فراخوانی‌ها استفاده مجدد کنید، همان‌طور که در اینجا نشان داده شده است، از :c:func:`PyThreadState_New` استفاده کنید."
 
 msgid "The code that created the foreign thread must arrange for the shutdown sequence to run before the thread exits, and before :c:func:`Py_FinalizeEx` is called. If interpreter finalization begins first, the shutdown :c:func:`PyEval_RestoreThread` call will hang the thread rather than return (see :ref:`cautions-regarding-runtime-finalization`).  If the thread exits without running the shutdown sequence, the thread state is leaked for the remainder of the process."
-msgstr ""
+msgstr "کدی که نخ خارجی را ایجاد کرده است باید ترتیبی دهد که دنباله‌ی خاموشی قبل از خروج نخ و قبل از فراخوانی :c:func:`Py_FinalizeEx` اجرا شود. اگر نهایی‌سازی مفسر ابتدا آغاز شود، فراخوانی خاموشی :c:func:`PyEval_RestoreThread` به جای بازگشت، نخ را معلق می‌کند (نگاه کنید به :ref:`cautions-regarding-runtime-finalization`). اگر نخ بدون اجرای دنباله‌ی خاموشی خارج شود، وضعیت نخ برای بقیه روند پردازش نشت می‌کند."
 
 msgid "Attaching/detaching thread states"
-msgstr ""
+msgstr "اتصال و جداسازی وضعیت‌های نخ"
 
 msgid "Ensure that the thread has an attached thread state for the interpreter protected by *guard*, and thus can safely invoke that interpreter."
-msgstr ""
+msgstr "اطمینان حاصل کنید که نخ دارای یک وضعیت نخ متصل برای مفسری است که توسط *guard* محافظت می‌شود، و بنابراین می‌تواند با خیال راحت آن مفسر را فراخوانی کند."
 
 msgid "It is OK to call this function if the thread already has an attached thread state, as long as there is a subsequent call to :c:func:`PyThreadState_Release` that matches this one (meaning that \"nested\" calls to this function are permitted)."
-msgstr ""
+msgstr "اگر نخ از قبل دارای یک وضعیت نخ متصل باشد، فراخوانی این تابع اشکالی ندارد، به شرطی که فراخوانی بعدی برای :c:func:`PyThreadState_Release` وجود داشته باشد که با این یکی مطابقت داشته باشد (به این معنا که فراخوانی‌های «تودرتو» به این تابع مجاز هستند)."
 
 msgid "The function's effect (if any) will be reversed by the matching call to :c:func:`PyThreadState_Release`."
-msgstr ""
+msgstr "تأثیر تابع (در صورت وجود) توسط فراخوانی منطبق به :c:func:`PyThreadState_Release` معکوس خواهد شد."
 
 msgid "On error, this function returns ``NULL`` *without* an exception set. Do not call :c:func:`!PyThreadState_Release` in this case."
-msgstr ""
+msgstr "هنگام خطا، این تابع ``NULL`` را *بدون* تنظیم هیچ استثنایی برمی‌گرداند. در این صورت :c:func:`!PyThreadState_Release` را فراخوانی نکنید."
 
 msgid "On success, this function returns a pointer value that must be passed to the matching call to :c:func:`!PyThreadState_Release`."
-msgstr ""
+msgstr "در صورت موفقیت، این تابع یک مقدار اشاره‌گر بازمی‌گرداند که باید به فراخوانی متناظر در :c:func:`!PyThreadState_Release` پاس داده شود."
 
 msgid "The conditions in which this function creates a new :term:`thread state` are considered unstable and implementation-dependent. If you need to control the exact lifetime of a thread state, consider using :c:func:`PyThreadState_New`. However, do not avoid this function solely on the basis that the lifetime of the thread state may be inconsistent across versions; changes to this function will be done with caution and in a backwards-compatible manner. In particular, the saving of thread-local variables and similar state will be retained across Python versions."
-msgstr ""
+msgstr "شرایطی که در آن‌ها این تابع یک :term:`وضعیت نخ <thread state>` جدید ایجاد می‌کند، ناپایدار و وابسته به پیاده‌سازی در نظر گرفته می‌شوند. اگر نیاز دارید طول عمر دقیق یک وضعیت نخ را کنترل کنید، استفاده از :c:func:`PyThreadState_New` را در نظر بگیرید. با این حال، صرفاً به این دلیل که ممکن است طول عمر وضعیت نخ در نسخه‌های مختلف ناسازگار باشد، از این تابع اجتناب نکنید؛ تغییرات در این تابع با احتیاط و به شیوه‌ای سازگار با گذشته انجام خواهد شد. به‌ویژه، ذخیره‌سازی متغیرهای نخ‌محلی (thread-local) و وضعیت‌های مشابه در نسخه‌های مختلف پایتون حفظ خواهد شد."
 
 msgid "The exact behavior of whether this function creates a new thread state is described below, but be aware that this may change in the future."
-msgstr ""
+msgstr "رفتار دقیق این که آیا این تابع یک وضعیت نخ جدید ایجاد می‌کند یا خیر، در ادامه شرح داده شده است، اما آگاه باشید که ممکن است در آینده تغییر کند."
 
 msgid "First, this function checks if an attached thread state is present. If there is, this function then checks if the interpreter of that thread state matches the interpreter guarded by *guard*. If that is the case, this function simply marks the thread state as being used by a ``PyThreadState_Ensure`` call and returns."
-msgstr ""
+msgstr "ابتدا، این تابع بررسی می‌کند که آیا یک وضعیت نخ متصل حضور دارد یا خیر. اگر چنین باشد، این تابع سپس بررسی می‌کند که آیا مفسر آن وضعیت نخ با مفسر محافظت‌شده توسط *guard* مطابقت دارد یا خیر. اگر چنین باشد، این تابع صرفاً وضعیت نخ را به عنوان در حال استفاده توسط یک فراخوانی ``PyThreadState_Ensure`` علامت‌گذاری می‌کند و برمی‌گردد."
 
 msgid "If there is no attached thread state, then this function checks if any thread state has been used by the current OS thread. (This is returned by :c:func:`PyGILState_GetThisThreadState`.) If there was, then this function checks if that thread state's interpreter matches *guard*. If it does, it is re-attached and marked as used."
-msgstr ""
+msgstr "اگر هیچ وضعیت نخ متصلی وجود نداشته باشد، این تابع بررسی می‌کند که آیا هیچ وضعیت نخی توسط نخ جاری سیستم‌عامل استفاده شده است یا خیر. (این مقدار توسط :c:func:`PyGILState_GetThisThreadState` بازگردانده می‌شود.) اگر وجود داشته باشد، این تابع بررسی می‌کند که آیا مفسر آن وضعیت نخ با *guard* مطابقت دارد یا خیر. اگر مطابقت داشته باشد، مجدداً متصل شده و به عنوان استفاده‌شده علامت‌گذاری می‌شود."
 
 msgid "Otherwise, if both of the above cases fail, a new thread state is created for *guard*. It is then attached and marked as owned by ``PyThreadState_Ensure``."
-msgstr ""
+msgstr "در غیر این صورت، اگر هر دو مورد بالا با شکست مواجه شوند، یک وضعیت نخ جدید برای *guard* ایجاد می‌شود. سپس متصل شده و به عنوان متعلق به ``PyThreadState_Ensure`` علامت‌گذاری می‌شود."
 
 msgid "Get an attached thread state for the interpreter referenced by *view*."
-msgstr ""
+msgstr "یک وضعیت نخ متصل برای مفسر ارجاع‌داده‌شده توسط *view* را دریافت کنید."
 
 msgid "The behavior and return value are the same as for :c:func:`PyThreadState_Ensure`; additionally, if the function succeeds, the interpreter referenced by *view* will be implicitly guarded. The guard will be released upon the corresponding :c:func:`PyThreadState_Release` call."
-msgstr ""
+msgstr "رفتار و مقدار بازگشتی مشابه :c:func:`PyThreadState_Ensure` است؛ علاوه بر این، اگر تابع موفق باشد، مفسر ارجاع‌داده‌شده توسط *view* به‌طور ضمنی محافظت خواهد شد. این محافظ پس از فراخوانی متناظر :c:func:`PyThreadState_Release` آزاد خواهد شد."
 
 msgid "Undo a :c:func:`PyThreadState_Ensure` or :c:func:`PyThreadState_EnsureFromView` call."
-msgstr ""
+msgstr "یک فراخوانی :c:func:`PyThreadState_Ensure` یا :c:func:`PyThreadState_EnsureFromView` را خنثی کنید."
 
 msgid "This must be called exactly once for each successful *Ensure* call, with *token* set to that call's return value."
-msgstr ""
+msgstr "این تابع باید دقیقاً یک بار برای هر فراخوانی موفق *Ensure*، در حالی که *token* روی مقدار بازگشتی آن فراخوانی تنظیم شده است، فراخوانی شود."
 
 msgid "The state that was attached before the corresponding *Ensure* call (if any) will be attached when :c:func:`PyThreadState_Release` returns."
-msgstr ""
+msgstr "وضعیتی که پیش از فراخوانی متناظر *Ensure* (در صورت وجود) متصل شده بود، هنگام بازگشت :c:func:`PyThreadState_Release` متصل خواهد شد."
 
 msgid "The exact behavior of whether this function deletes a thread state is considered unstable and implementation-dependent."
-msgstr ""
+msgstr "رفتار دقیق این که آیا این تابع یک وضعیت نخ را حذف می‌کند یا خیر، ناپایدار و وابسته به پیاده‌سازی در نظر گرفته می‌شود."
 
 msgid "Currently, this function will decrement an internal counter on the attached thread state. If this counter ever reaches below zero, this function emits a fatal error (via :c:func:`Py_FatalError`)."
-msgstr ""
+msgstr "در حال حاضر، این تابع یک شمارنده‌ی داخلی را در وضعیت نخ متصل کاهش می‌دهد. اگر این شمارنده روزی به زیر صفر برسد، این تابع یک خطای مهلک (از طریق :c:func:`Py_FatalError`) صادر می‌کند."
 
 msgid "If the attached thread state is owned by ``PyThreadState_Ensure``, then the attached thread state will be deallocated and deleted upon the internal counter reaching zero. Otherwise, nothing happens when the counter reaches zero."
-msgstr ""
+msgstr "اگر وضعیت نخ متصل متعلق به ``PyThreadState_Ensure`` باشد، با رسیدن شمارنده‌ی داخلی به صفر، وضعیت نخ متصل از تخصیص خارج و حذف خواهد شد. در غیر این صورت، با رسیدن شمارنده به صفر اتفاقی نمی‌افتد."
 
-#, fuzzy
-#| msgid "The type of the value returned by :c:func:`PyGILState_Ensure` and passed to :c:func:`PyGILState_Release`."
 msgid "An opaque token retrieved from a :c:func:`PyThreadState_Ensure` call and passed to a corresponding :c:func:`PyThreadState_Release` call."
-msgstr "نوع مقداری که توسط :c:func:`PyGILState_Ensure` بازگردانده می‌شود و به :c:func:`PyGILState_Release` پاس داده می‌شود."
+msgstr "یک توکن کدر که از یک فراخوانی :c:func:`PyThreadState_Ensure` بازیابی شده و به یک فراخوانی متناظر :c:func:`PyThreadState_Release` پاس داده می‌شود."
 
 msgid "GIL-state APIs"
 msgstr "APIهای وضعیت قفل مفسر سراسری"
 
 msgid "The following APIs are generally not compatible with subinterpreters and will hang the process during interpreter finalization (see :ref:`cautions-regarding-runtime-finalization`). As such, these APIs were :term:`soft deprecated` in Python 3.15 in favor of the :ref:`new APIs <c-api-foreign-threads>`."
-msgstr ""
+msgstr "رابط‌های برنامه‌نویسی کاربردی (API) زیر به‌طور کلی با زیرمفسرها سازگار نیستند و فرایند را در طول نهایی‌سازی مفسر متوقف (Hang) خواهند کرد (به :ref:`cautions-regarding-runtime-finalization` مراجعه کنید). به همین دلیل، این APIها در پایتون ۳.۱۵ به نفع :ref:`رابط‌های جدید <c-api-foreign-threads>` :term:`به‌طور نرم‌افزاری منسوخ <soft deprecated>` شدند."
 
 msgid "The type of the value returned by :c:func:`PyGILState_Ensure` and passed to :c:func:`PyGILState_Release`."
 msgstr "نوع مقداری که توسط :c:func:`PyGILState_Ensure` بازگردانده می‌شود و به :c:func:`PyGILState_Release` پاس داده می‌شود."
@@ -346,79 +326,59 @@ msgstr "تضمین می‌کند که نخ فعلی، صرف‌نظر از وض�
 msgid "The return value is an opaque \"handle\" to the :term:`attached thread state` when :c:func:`PyGILState_Ensure` was called, and must be passed to :c:func:`PyGILState_Release` to ensure Python is left in the same state. Even though recursive calls are allowed, these handles *cannot* be shared - each unique call to :c:func:`PyGILState_Ensure` must save the handle for its call to :c:func:`PyGILState_Release`."
 msgstr "مقدار بازگشتی، یک «دسته» مات برای :term:`attached thread state` در زمان فراخوانی :c:func:`PyGILState_Ensure` است و باید به :c:func:`PyGILState_Release` پاس داده شود تا اطمینان حاصل شود که پایتون در همان وضعیت باقی می‌ماند. هرچند فراخوانی‌های بازگشتی مجاز هستند، این دسته‌ها *نمی‌توانند* به اشتراک گذاشته شوند؛ هر فراخوانی مجزای :c:func:`PyGILState_Ensure` باید دسته را برای فراخوانی خود به :c:func:`PyGILState_Release` ذخیره کند."
 
-#, fuzzy
-#| msgid "When the function returns, there will be an :term:`attached thread state` and the thread will be able to call arbitrary Python code.  Failure is a fatal error."
 msgid "When the function returns, there will be an :term:`attached thread state` and the thread will be able to call arbitrary Python code."
-msgstr "هنگامی که تابع بازمی‌گردد، یک :term:`attached thread state` وجود خواهد داشت و نخ قادر خواهد بود کد دلخواه پایتون را فراخوانی کند.  شکست یک خطای مهلک است."
+msgstr "هنگامی که تابع برمی‌گردد، یک :term:`وضعیت نخ متصل <attached thread state>` وجود خواهد داشت و نخ قادر خواهد بود کد دلخواه پایتون را فراخوانی کند."
 
 msgid "This function has no way to return an error. As such, errors are either fatal (that is, they send ``SIGABRT`` and crash the process; see :c:func:`Py_FatalError`), or the thread will be permanently blocked (such as during interpreter finalization)."
-msgstr ""
+msgstr "این تابع هیچ راهی برای بازگرداندن خطا ندارد. به همین دلیل، خطاها یا مهلک هستند (یعنی ``SIGABRT`` را ارسال کرده و فرایند را دچار فروپاشی می‌کنند؛ به :c:func:`Py_FatalError` مراجعه کنید)، یا نخ به‌طور دائم مسدود خواهد شد (مانند طول نهایی‌سازی مفسر)."
 
-#, fuzzy
-#| msgid "Calling this function when the runtime is finalizing is unsafe. Doing so will either hang the thread until the program ends, or fully crash the interpreter in rare cases. Refer to :ref:`cautions-regarding-runtime-finalization` for more details."
 msgid "Calling this function when the interpreter is finalizing will infinitely hang the thread, which may cause deadlocks. :ref:`cautions-regarding-runtime-finalization` for more details."
-msgstr "فراخوانی این تابع هنگامی که ران‌تایم در حال نهایی‌سازی است، ناامن است. انجام این کار یا باعث می‌شود نخ تا پایان برنامه معلق بماند، یا در موارد نادر مفسر به‌طور کامل فروپاشی می‌کند. برای جزئیات بیشتر به :ref:`cautions-regarding-runtime-finalization` مراجعه کنید."
+msgstr "فراخوانی این تابع هنگامی که مفسر در حال نهایی‌سازی است، نخ را به طور بی‌نهایت معلق خواهد کرد که ممکن است باعث ایجاد بن‌بست شود. برای جزئیات بیشتر به :ref:`cautions-regarding-runtime-finalization` مراجعه کنید."
 
 msgid "In addition, this function generally does not work with subinterpreters when used from foreign threads, because this function has no way of knowing which interpreter created the thread (and as such, will implicitly pick the main interpreter)."
-msgstr ""
+msgstr "علاوه بر این، این تابع هنگامی که از نخ‌های خارجی استفاده می‌شود، معمولاً با زیرمفسرها کار نمی‌کند، زیرا این تابع راهی برای دانستن اینکه کدام مفسر نخ را ایجاد کرده است ندارد (و به همین دلیل، به‌طور ضمنی مفسر اصلی را انتخاب خواهد کرد)."
 
 msgid "Hangs the current thread, rather than terminating it, if called while the interpreter is finalizing."
 msgstr "اگر در حین نهایی‌سازی مفسر فراخوانی شود، نخ فعلی را معلق می‌کند، نه اینکه آن را خاتمه دهد."
 
 msgid "Use :c:func:`PyThreadState_Ensure` or :c:func:`PyThreadState_EnsureFromView` instead."
-msgstr ""
+msgstr "به‌جای آن از :c:func:`PyThreadState_Ensure` یا :c:func:`PyThreadState_EnsureFromView` استفاده کنید."
 
-#, fuzzy
-#| msgid "Release any resources previously acquired.  After this call, Python's state will be the same as it was prior to the corresponding :c:func:`PyGILState_Ensure` call (but generally this state will be unknown to the caller, hence the use of the GILState API)."
 msgid "Release any resources previously acquired.  After this call, Python's state will be the same as it was prior to the corresponding :c:func:`PyGILState_Ensure` call (but generally this state will be unknown to the caller, hence the use of the GIL-state API)."
-msgstr "هر منبعی که پیش‌تر به‌دست آمده است را آزاد می‌کند. پس از این فراخوانی، وضعیت پایتون همان وضعیتی خواهد بود که پیش از فراخوانی متناظر :c:func:`PyGILState_Ensure` وجود داشت (اما به‌طور کلی این وضعیت برای فراخواننده ناشناخته است، از این رو از GILState API استفاده می‌شود)."
+msgstr "هر منبعی که قبلاً کسب شده است را آزاد کنید. پس از این فراخوانی، وضعیت پایتون همانند وضعیت قبل از فراخوانی متناظر :c:func:`PyGILState_Ensure` خواهد بود (اما به طور کلی این وضعیت برای فراخواننده ناشناخته خواهد بود، از این رو استفاده از API وضعیت GIL توصیه می‌شود)."
 
 msgid "Every call to :c:func:`PyGILState_Ensure` must be matched by a call to :c:func:`PyGILState_Release` on the same thread."
 msgstr "هر فراخوانی :c:func:`PyGILState_Ensure` باید با یک فراخوانی :c:func:`PyGILState_Release` روی همان نخ متناظر باشد."
 
-#, fuzzy
-#| msgid ":c:func:`PyThreadState_Get`"
 msgid "Use :c:func:`PyThreadState_Release` instead."
-msgstr ":c:func:`PyThreadState_Get`"
+msgstr "به جای آن از :c:func:`PyThreadState_Release` استفاده کنید."
 
-#, fuzzy
-#| msgid "Destroy a :term:`thread state` object.  *tstate* should not be :term:`attached <attached thread state>` to any thread. *tstate* must have been reset with a previous call to :c:func:`PyThreadState_Clear`."
 msgid "Get the :term:`thread state` that was most recently :term:`attached <attached thread state>` for this thread. (If the most recent thread state has been deleted, this returns ``NULL``.)"
-msgstr "یک شیء :term:`وضعیت نخ <thread state>` را نابود می‌کند. *tstate* نباید به هیچ نخی :term:`متصل <attached thread state>` باشد. *tstate* باید پیش‌تر با فراخوانی :c:func:`PyThreadState_Clear` بازنشانی شده باشد."
+msgstr "دریافت :term:`وضعیت نخ <thread state>` که اخیراً برای این نخ :term:`متصل <attached thread state>` شده است. (اگر جدیدترین وضعیت نخ حذف شده باشد، این تابع ``NULL`` را برمی‌گرداند.)"
 
-#, fuzzy
-#| msgid "The caller must hold an :term:`attached thread state`."
 msgid "If the caller has an attached thread state, it is returned."
-msgstr "فراخواننده باید یک :term:`attached thread state` را در اختیار داشته باشد."
+msgstr "اگر فراخواننده دارای وضعیت نخ متصلی باشد، آن وضعیت برگردانده می‌شود."
 
 msgid "In other terms, this function returns the thread state that will be used by :c:func:`PyGILState_Ensure`. If this returns ``NULL``, then ``PyGILState_Ensure`` will create a new thread state."
-msgstr ""
+msgstr "به عبارت دیگر، این تابع وضعیت نخی را برمی‌گرداند که توسط :c:func:`PyGILState_Ensure` استفاده خواهد شد. اگر این تابع ``NULL`` را برگرداند، آنگاه ``PyGILState_Ensure`` یک وضعیت نخ جدید ایجاد خواهد کرد."
 
-#, fuzzy
-#| msgid "The function now does nothing."
 msgid "This function cannot fail."
-msgstr "تابع اکنون هیچ کاری انجام نمی‌دهد."
+msgstr "این تابع نمی‌تواند با شکست مواجه شود."
 
-#, fuzzy
-#| msgid "See also :c:func:`PyThreadState_GetUnchecked`."
 msgid "Use :c:func:`PyThreadState_Get` or :c:func:`PyThreadState_GetUnchecked` instead."
-msgstr "همچنین :c:func:`PyThreadState_GetUnchecked` را ببینید."
+msgstr "به‌جای آن از :c:func:`PyThreadState_Get` یا :c:func:`PyThreadState_GetUnchecked` استفاده کنید."
 
 msgid "Return ``1`` if the current thread has an :term:`attached thread state` that matches the thread state returned by :c:func:`PyGILState_GetThisThreadState`. If the caller has no attached thread state or it otherwise doesn't match, then this returns ``0``."
-msgstr ""
+msgstr "اگر نخ فعلی دارای یک :term:`وضعیت نخ متصل <attached thread state>` باشد که با وضعیت نخ بازگردانده‌شده توسط :c:func:`PyGILState_GetThisThreadState` مطابقت دارد، مقدار ``1`` را بازگردانید. اگر فراخواننده هیچ وضعیت نخ متصلی نداشته باشد یا به شکلی دیگر مطابقت نکند، این تابع ``0`` را برمی‌گرداند."
 
-#, fuzzy
-#| msgid "If the current Python process has ever created a subinterpreter, this function will *always* return ``1``. Prefer :c:func:`PyThreadState_GetUnchecked` for most cases."
 msgid "If the current Python process has ever created a subinterpreter, this function will *always* return ``1``."
-msgstr "اگر فرایند فعلی پایتون تا به حال یک زیرمفسر ایجاد کرده باشد، این تابع *همیشه* ``1`` را برمی‌گرداند. در بیشتر موارد، :c:func:`PyThreadState_GetUnchecked` را ترجیح دهید."
+msgstr "اگر فرایند کنونی پایتون تا به حال یک زیرمفسر ایجاد کرده باشد، این تابع *همیشه* مقدار ``1`` را برمی‌گرداند."
 
 msgid "This is mainly a helper/diagnostic function."
-msgstr ""
+msgstr "این تابع عمدتاً یک تابع کمکی/عیب‌یابی است."
 
-#, fuzzy
-#| msgid "See also :c:func:`PyThreadState_GetUnchecked`."
 msgid "Use ``PyThreadState_GetUnchecked() != NULL`` instead."
-msgstr "همچنین :c:func:`PyThreadState_GetUnchecked` را ببینید."
+msgstr "به‌جای آن از ``PyThreadState_GetUnchecked() != NULL`` استفاده کنید."
 
 msgid "Cautions about fork()"
 msgstr "هشدارهایی درباره‌ی fork()"
@@ -612,10 +572,8 @@ msgstr "*func* باید در صورت موفقیت ``0`` و در صورت شکس
 msgid "This function doesn't need an :term:`attached thread state`. However, to call this function in a subinterpreter, the caller must have an :term:`attached thread state`. Otherwise, the function *func* can be scheduled to be called from the wrong interpreter."
 msgstr "این تابع به :term:`وضعیت نخ متصل <attached thread state>` نیاز ندارد. با این حال، برای فراخوانی این تابع در یک زیرمفسر، فراخواننده باید :term:`وضعیت نخ متصل <attached thread state>` داشته باشد. در غیر این صورت، ممکن است تابع *func* برای فراخوانی از مفسر اشتباه زمان‌بندی شود."
 
-#, fuzzy
-#| msgid "This is a low-level function, only useful for very special cases. There is no guarantee that *func* will be called as quick as possible.  If the main thread is busy executing a system call, *func* won't be called before the system call returns.  This function is generally **not** suitable for calling Python code from arbitrary C threads.  Instead, use the :ref:`PyGILState API<gilstate>`."
 msgid "This is a low-level function, only useful for very special cases. There is no guarantee that *func* will be called as quick as possible.  If the main thread is busy executing a system call, *func* won't be called before the system call returns.  This function is generally **not** suitable for calling Python code from arbitrary C threads.  Instead, use :c:func:`PyThreadState_EnsureFromView`."
-msgstr "این یک تابع سطح پایین است که فقط برای موارد بسیار خاص مفید است. هیچ تضمینی وجود ندارد که *func* در سریع‌ترین حالت ممکن فراخوانی شود. اگر نخ اصلی مشغول اجرای یک فراخوانی سیستمی باشد، *func* پیش از بازگشت فراخوانی سیستمی فراخوانی نخواهد شد. این تابع به‌طور کلی برای فراخوانی کد پایتون از نخ‌های C دلخواه مناسب **نیست**. در عوض، از :ref:`PyGILState API<gilstate>` استفاده کنید."
+msgstr "این یک تابع سطح پایین است و فقط برای موارد بسیار خاص مفید است. هیچ تضمینی وجود ندارد که *func* با بیشترین سرعت ممکن فراخوانی شود. اگر نخ اصلی مشغول اجرای یک فراخوانی سیستمی باشد، *func* قبل از بازگشت فراخوانی سیستمی فراخوانی نخواهد شد. این تابع به‌طور کلی برای فراخوانی کد پایتون از نخ‌های دلخواه C **مناسب نیست**. در عوض، از :c:func:`PyThreadState_EnsureFromView` استفاده کنید."
 
 msgid "If this function is called in a subinterpreter, the function *func* is now scheduled to be called from the subinterpreter, rather than being called from the main interpreter. Each subinterpreter now has its own list of scheduled calls."
 msgstr "اگر این تابع در یک زیرمفسر فراخوانی شود، تابع *func* اکنون برای فراخوانی از طریق زیرمفسر زمان‌بندی می‌شود، نه از طریق مفسر اصلی. هر زیرمفسر اکنون فهرست فراخوانی‌های زمان‌بندی‌شده‌ی خود را دارد."
@@ -636,16 +594,16 @@ msgid "This function only runs pending calls in the main interpreter."
 msgstr "این تابع فقط فراخوانی‌های در انتظار را در مفسر اصلی اجرا می‌کند."
 
 msgid "Schedule an exception to be raised asynchronously in a thread. If the thread has a previously scheduled exception, it is overwritten."
-msgstr ""
+msgstr "برنامه‌ریزی برای بالا آوردن یک استثنا به شکل ناهمگام در یک نخ. اگر نخ از قبل استثنایی برنامه‌ریزی‌شده داشته باشد، بازنویسی می‌شود."
 
 msgid "The *id* argument is the thread id of the target thread, as returned by :c:func:`PyThread_get_thread_ident`. *exc* is the class of the exception to be raised, or ``NULL`` to clear the pending exception (if any)."
-msgstr ""
+msgstr "آرگومان *id* شناسه‌ی نخِ نخِ هدف است، همان‌طور که توسط :c:func:`PyThread_get_thread_ident` برگردانده می‌شود. *exc* کلاس استثنایی است که باید بالا برده شود، یا ``NULL`` برای پاک کردن استثنای معلق (در صورت وجود)."
 
 msgid "Return the number of affected thread states. This is normally ``1`` if *id* is found, even when no change was made (the given *exc* was already pending, or *exc* is ``NULL`` but no exception is pending). If the thread id isn't found, return ``0``.  This raises no exceptions."
-msgstr ""
+msgstr "تعداد وضعیت‌های نخِ تحت تأثیر را برگردانید. اگر *id* پیدا شود، این مقدار معمولاً ``1`` است، حتی زمانی که هیچ تغییری ایجاد نشده باشد (مقدار *exc* داده‌شده از قبل معلق بوده است، یا *exc* برابر با ``NULL`` است اما هیچ استثنایی معلق نیست). اگر شناسه‌ی نخ پیدا نشود، ``0`` را برگردانید. این تابع هیچ استثنایی را بالا نمی‌برد."
 
 msgid "To prevent naive misuse, you must write your own C extension to call this. This function must be called with an :term:`attached thread state`. This function does not :term:`steal` any references to *exc*. This function does not necessarily interrupt system calls such as :py:func:`~time.sleep`."
-msgstr ""
+msgstr "برای جلوگیری از سوءاستفاده‌ی ساده‌لوحانه، باید افزونه‌ی C خود را بنویسید تا این تابع را فراخوانی کند. این تابع باید با یک :term:`وضعیت نخ متصل <attached thread state>` فراخوانی شود. این تابع هیچ ارجاعی را به *exc* :term:`نمی‌رباید <steal>` لزوماً فراخوانی‌های سیستمی مانند :py:func:`~time.sleep` را متوقف نمی‌کند."
 
 msgid "The type of the *id* parameter changed from :c:expr:`long` to :c:expr:`unsigned long`."
 msgstr "نوع پارامتر *id* از :c:expr:`long` به :c:expr:`unsigned long` تغییر یافت."
@@ -678,7 +636,7 @@ msgid "This function cannot fail, and the caller does not need to hold an :term:
 msgstr "این تابع نمی‌تواند شکست بخورد و فراخوانی‌کننده نیازی به نگه داشتن :term:`attached thread state` ندارد."
 
 msgid ":py:func:`threading.get_ident` and :py:attr:`threading.Thread.ident` expose this identifier to Python."
-msgstr ""
+msgstr ":py:func:`threading.get_ident` و :py:attr:`threading.Thread.ident` این شناسه را در پایتون در معرض دید قرار می‌دهند."
 
 msgid "Get general information about the current thread in the form of a :ref:`struct sequence <struct-sequence-objects>` object. This information is accessible as :py:attr:`sys.thread_info` in Python."
 msgstr "اطلاعات کلی درباره‌ی نخ فعلی را به شکل یک شیء :ref:`دنباله ساختاری <struct-sequence-objects>` دریافت کنید. این اطلاعات در پایتون به صورت :py:attr:`sys.thread_info` در دسترس است."

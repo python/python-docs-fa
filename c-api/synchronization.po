@@ -96,10 +96,8 @@ msgstr "در مثال بالا، :c:macro:`Py_SETREF` :c:macro:`Py_DECREF` را 
 msgid "Acquires the per-object lock for the object *op* and begins a critical section."
 msgstr "قفل مخصوص هر شیء را برای شیء *op* به دست می‌آورد و یک بخش بحرانی را آغاز می‌کند."
 
-#, fuzzy
-#| msgid "In the free-threaded build, this macro expands to::"
 msgid "In the free-threaded build, and when building for the :ref:`Stable ABI <stable-abi>`, this macro expands to::"
-msgstr "در ساخت‌ نخ‌آزاد، این ماکرو به صورت زیر بسط می‌یابد::"
+msgstr "در ساخت نخ‌آزاد، و هنگام ساخت برای :ref:`Stable ABI <stable-abi>`، این ماکرو به شکل زیر گسترش می‌یابد::"
 
 msgid ""
 "{\n"
@@ -184,22 +182,20 @@ msgstr ""
 "    PyCriticalSection2_End(&_py_cs2);\n"
 "}"
 
-#, fuzzy
-#| msgid "Python critical section API"
 msgid "Low-level critical section API"
-msgstr "API بخش بحرانی پایتون"
+msgstr "API بخش بحرانی سطح پایین"
 
 msgid "The following functions and structs are exposed for cases where C macros are not available."
-msgstr ""
+msgstr "توابع و structهای زیر برای مواردی که ماکروهای C در دسترس نیستند، ارائه شده‌اند."
 
 msgid "To be used only as in the macro expansions listed :ref:`earlier in this section <critical-section-macros>`."
-msgstr ""
+msgstr "فقط برای استفاده همانند گسترش‌های ماکرو فهرست‌شده در :ref:`earlier in this section <critical-section-macros>`."
 
 msgid "In non-:term:`free-threaded <free threading>` builds of CPython, these functions do nothing."
-msgstr ""
+msgstr "در نسخه‌های ساخت :term:`نخ‌بندی آزاد <free threading>` سی‌پایتون، این توابع هیچ کاری انجام نمی‌دهند."
 
 msgid "To be used only as in the macro expansions listed :ref:`earlier in this section <critical-section-macros>`. Note that the contents of the structures are private and their meaning may change in future Python versions."
-msgstr ""
+msgstr "فقط برای استفاده همانند گسترش‌های ماکرو فهرست‌شده در :ref:`earlier in this section <critical-section-macros>`. توجه داشته باشید که محتویات ساختارها خصوصی هستند و معنای آن‌ها ممکن است در نسخه‌های آینده‌ی پایتون تغییر کند."
 
 msgid "Legacy locking APIs"
 msgstr "API‌های قدیمی قفل‌گذاری"
@@ -208,7 +204,7 @@ msgid "These APIs are obsolete since Python 3.13 with the introduction of :c:typ
 msgstr "این API‌ها با معرفی :c:type:`PyMutex` در پایتون 3.13 منسوخ شده‌اند."
 
 msgid "These APIs are now a simple wrapper around ``PyMutex``."
-msgstr ""
+msgstr "این APIها اکنون یک پوشش ساده در اطراف ``PyMutex`` هستند."
 
 msgid "A pointer to a mutual exclusion lock."
 msgstr "اشاره‌گری به قفل متقابل."
@@ -235,7 +231,7 @@ msgid "The caller does not need to hold an :term:`attached thread state`."
 msgstr "فراخواننده نیازی به در اختیار داشتن :term:`وضعیت نخ متصل <attached thread state>` ندارد."
 
 msgid "This function now always uses :c:type:`PyMutex`. In prior versions, this would use a lock provided by the operating system."
-msgstr ""
+msgstr "این تابع اکنون همیشه از :c:type:`PyMutex` استفاده می‌کند. در نسخه‌های قبلی، این تابع از یک قفل ارائه‌شده توسط سیستم‌عامل استفاده می‌کرد."
 
 msgid "Destroy *lock*. The lock should not be held by any thread when calling this."
 msgstr "قفل *lock* را از بین می‌برد. هنگام فراخوانی این تابع، قفل نباید در اختیار هیچ نخی باشد."

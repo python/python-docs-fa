@@ -1688,7 +1688,7 @@ msgid "If *parents* is true, any missing parents of this path are created as nee
 msgstr "اگر *parents* درست باشد، هر والدِ موجودنشده‌ای از این مسیر در صورت نیاز ایجاد می‌شود؛ آن‌ها با دسترسی‌های پیش‌فرض ایجاد می‌شوند، بدون اینکه *mode* در نظر گرفته شود (با تقلید از دستور ``mkdir -p`` در POSIX)."
 
 msgid "If *parent_mode* is not ``None``, it is used as the mode for any newly-created, intermediate-level directories when *parents* is true. Like *mode*, it is combined with the process's ``umask`` value. Otherwise, intermediate directories are created with the default permissions (also subject to the umask)."
-msgstr ""
+msgstr "اگر *parent_mode* برابر با ``None`` نباشد، هنگامی که *parents* برابر با true باشد، به عنوان حالت (mode) برای هر پوشه‌ی سطح میانیِ تازه‌ایجادشده استفاده می‌شود. مانند *mode*، این مقدار با مقدار ``umask`` فرایند ترکیب می‌شود. در غیر این صورت، پوشه‌های میانی با مجوزهای پیش‌فرض ایجاد می‌شوند (که آن‌ها نیز مشمول umask هستند)."
 
 msgid "If *parents* is false (the default), a missing parent raises :exc:`FileNotFoundError`."
 msgstr "اگر *parents* نادرست باشد (پیش‌فرض)، نبودِ یک والد باعث پرتاب :exc:`FileNotFoundError` می‌شود."
@@ -1702,10 +1702,8 @@ msgstr "اگر *exist_ok* درست باشد، :exc:`FileExistsError` پرتاب 
 msgid "The *exist_ok* parameter was added."
 msgstr "پارامتر *exist_ok* اضافه شد."
 
-#, fuzzy
-#| msgid "The *exist_ok* parameter was added."
 msgid "The *parent_mode* parameter."
-msgstr "پارامتر *exist_ok* اضافه شد."
+msgstr "پارامتر *parent_mode*."
 
 msgid "Make this path a symbolic link pointing to *target*."
 msgstr "این مسیر را به یک پیوند نمادین اشاره‌کننده به *target* تبدیل کنید."

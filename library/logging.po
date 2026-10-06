@@ -980,10 +980,8 @@ msgstr "اگر هیچ مقدار عددی یا رشته‌ای متناظری ا
 msgid "Levels are internally integers (as they need to be compared in the logging logic). This function is used to convert between an integer level and the level name displayed in the formatted log output by means of the ``%(levelname)s`` format specifier (see :ref:`logrecord-attributes`), and vice versa."
 msgstr "سطح‌ها به‌صورت داخلی اعداد صحیح هستند (زیرا باید در منطق گزارش‌گیری مقایسه شوند). این تابع برای تبدیل میان یک سطح عدد صحیح و نام سطحی استفاده می‌شود که در خروجی گزارش قالب‌بندی‌شده به‌وسیله‌ی مشخص‌کننده‌ی قالب ``%(levelname)s`` نمایش داده می‌شود (به :ref:`logrecord-attributes` مراجعه کنید)، و برعکس."
 
-#, fuzzy
-#| msgid "In Python versions earlier than 3.4, this function could also be passed a text level, and would return the corresponding numeric value of the level. This undocumented behaviour was considered a mistake, and was removed in Python 3.4, but reinstated in 3.4.2 due to retain backward compatibility."
 msgid "In Python versions earlier than 3.4, this function could also be passed a text level, and would return the corresponding numeric value of the level. This undocumented behaviour was considered a mistake, and was removed in Python 3.4, but reinstated in 3.4.2 in order to retain backward compatibility."
-msgstr "در نسخه‌های پیش از 3.4 پایتون، این تابع همچنین می‌توانست یک سطح متنی را بپذیرد و مقدار عددی متناظر آن سطح را برمی‌گرداند. این رفتار بدون مستند، یک اشتباه تلقی می‌شد و در پایتون 3.4 حذف شد، اما در 3.4.2 برای حفظ سازگاری با نسخه‌های پیشین بازگردانده شد."
+msgstr "در نسخه‌های پایتون قبل از ۳.۴، این تابع می‌توانست یک سطح متنی نیز دریافت کند و مقدار عددی متناظر با آن سطح را بازگرداند. این رفتار مستندسازه‌نشده یک اشتباه در نظر گرفته شد و در پایتون ۳.۴ حذف گردید، اما به منظور حفظ سازگاری عقبگرد در نسخه‌ی ۳.۴.۲ مجدداً بازگردانده شد."
 
 msgid "Returns a handler with the specified *name*, or ``None`` if there is no handler with that name."
 msgstr "یک هندلر با *name* مشخص‌شده برمی‌گرداند، یا اگر هندلری با آن نام وجود نداشته باشد ``None`` برمی‌گرداند."
@@ -994,10 +992,8 @@ msgstr "یک مجموعه تغییرناپذیر از تمام نام‌های �
 msgid "Creates and returns a new :class:`LogRecord` instance whose attributes are defined by *attrdict*. This function is useful for taking a pickled :class:`LogRecord` attribute dictionary, sent over a socket, and reconstituting it as a :class:`LogRecord` instance at the receiving end."
 msgstr "یک نمونه جدید از :class:`LogRecord` را ایجاد می‌کند و برمی‌گرداند که ویژگی‌های آن توسط *attrdict* تعریف شده‌اند. این تابع برای گرفتن یک دیکشنری ویژگی‌های :class:`LogRecord` که پیکل‌شده و از طریق یک سوکت ارسال شده است، و بازسازی آن به‌عنوان یک نمونه از :class:`LogRecord` در سمت گیرنده مفید است."
 
-#, fuzzy
-#| msgid "Does basic configuration for the logging system by creating a :class:`StreamHandler` with a default :class:`Formatter` and adding it to the root logger. The functions :func:`debug`, :func:`info`, :func:`warning`, :func:`error` and :func:`critical` will call :func:`basicConfig` automatically if no handlers are defined for the root logger."
 msgid "Does basic configuration for the logging system by either creating a :class:`StreamHandler` with a default :class:`Formatter` or using the  given *formatter* instance, and adding it to the root logger. The functions :func:`debug`, :func:`info`, :func:`warning`, :func:`error` and :func:`critical` will call :func:`basicConfig` automatically if no handlers are defined for the root logger."
-msgstr "پیکربندی پایه‌ی سیستم گزارش‌گیری را با ایجاد یک :class:`StreamHandler` با یک :class:`Formatter` پیش‌فرض و افزودن آن به گزارش‌گیر ریشه انجام می‌دهد. توابع :func:`debug`، :func:`info`، :func:`warning`، :func:`error` و :func:`critical` اگر هیچ هندلری برای گزارش‌گیر ریشه تعریف نشده باشد، به‌طور خودکار :func:`basicConfig` را فراخوانی می‌کنند."
+msgstr "پیکربندی پایه‌ای را برای سیستم گزارش‌گیری با ایجاد یک :class:`StreamHandler` به همراه یک :class:`Formatter` پیش‌فرض یا با استفاده از نمونه‌ی *formatter* داده‌شده و افزودن آن به گزارش‌گیر ریشه انجام می‌دهد. توابع :func:`debug`، :func:`info`، :func:`warning`، :func:`error` و :func:`critical` در صورتی که هیچ هندلری برای گزارش‌گیر ریشه تعریف نشده باشد، :func:`basicConfig` را به‌طور خودکار فراخوانی خواهند کرد."
 
 msgid "This function does nothing if the root logger already has handlers configured, unless the keyword argument *force* is set to ``True``."
 msgstr "اگر گزارش‌گیر ریشه از قبل هندلرهایی پیکربندی‌شده داشته باشد، این تابع کاری انجام نمی‌دهد، مگر اینکه آرگومان کلیدواژه‌ای *force* بر روی ``True`` تنظیم شده باشد."
@@ -1074,13 +1070,11 @@ msgstr "*errors*"
 msgid "If this keyword argument is specified along with *filename*, its value is used when the :class:`FileHandler` is created, and thus used when opening the output file. If not specified, the value 'backslashreplace' is used. Note that if ``None`` is specified, it will be passed as such to :func:`open`, which means that it will be treated the same as passing 'errors'."
 msgstr "اگر این آرگومان کلیدواژه‌ای به همراه *filename* مشخص شده باشد، مقدار آن در زمان ایجاد :class:`FileHandler` استفاده می‌شود و بنابراین در زمان باز کردن پرونده خروجی نیز استفاده می‌شود. اگر مشخص نشده باشد، مقدار 'backslashreplace' استفاده می‌شود. توجه داشته باشید که اگر ``None`` مشخص شود، به همان صورت به :func:`open` ارسال می‌شود، به این معنا که همانند ارسال 'errors' با آن رفتار خواهد شد."
 
-#, fuzzy
-#| msgid "*format*"
 msgid "*formatter*"
-msgstr "*format*"
+msgstr "*formatter*"
 
 msgid "If specified, set this formatter instance (see :ref:`formatter-objects`) for all involved handlers. If not specified, the default is to create and use an instance of :class:`logging.Formatter` based on arguments *format*, *datefmt* and *style*. When *formatter* is specified together with any of the three arguments *format*, *datefmt* and *style*, a ``ValueError`` is raised to signal that these arguments would lose meaning otherwise."
-msgstr ""
+msgstr "اگر مشخص شود، این نمونه‌ی قالب‌بند (نگاه کنید به :ref:`formatter-objects`) را برای تمام هندلرهای درگیر تنظیم می‌کند. اگر مشخص نشود، رفتار پیش‌فرض این است که یک نمونه از :class:`logging.Formatter` بر اساس آرگومان‌های *format*، *datefmt* و *style* ایجاد و استفاده شود. هنگامی که *formatter* به همراه هر یک از سه آرگومان *format*، *datefmt* و *style* مشخص شود، یک ``ValueError`` بالا آورده می‌شود تا اعلام کند که این آرگومان‌ها در غیر این صورت معنای خود را از دست خواهند داد."
 
 msgid "The *style* argument was added."
 msgstr "آرگومان *style* افزوده شد."
@@ -1094,10 +1088,8 @@ msgstr "آرگومان *force* افزوده شد."
 msgid "The *encoding* and *errors* arguments were added."
 msgstr "آرگومان‌های *encoding* و *errors* افزوده شدند."
 
-#, fuzzy
-#| msgid "The *force* argument was added."
 msgid "The *formatter* argument was added."
-msgstr "آرگومان *force* افزوده شد."
+msgstr "آرگومان *formatter* اضافه شد."
 
 msgid "Informs the logging system to perform an orderly shutdown by flushing and closing all handlers. This should be called at application exit and no further use of the logging system should be made after this call."
 msgstr "به سیستم گزارش‌گیری اطلاع می‌دهد تا با تخلیه و بستن همه‌ی هندلرها، یک خاموش‌سازی منظم را انجام دهد. این باید در زمان خروج برنامه فراخوانی شود و پس از این فراخوانی، نباید هیچ استفاده‌ی دیگری از سیستم گزارش‌گیری صورت گیرد."

@@ -62,10 +62,8 @@ msgstr "توصیف‌گر پرونده جدید اکنون غیرقابل‌ار
 msgid "Return an edge polling object, which can be used as Edge or Level Triggered interface for I/O events."
 msgstr "یک شیء پایش لبه‌ای (edge polling) را برمی‌گرداند، که می‌توان از آن به‌عنوان رابط تحریک لبه‌ای (Edge Triggered) یا تحریک سطحی (Level Triggered) برای رویدادهای ورودی/خروجی استفاده کرد."
 
-#, fuzzy
-#| msgid "*sizehint* informs epoll about the expected number of events to be registered.  It must be positive, or ``-1`` to use the default. It is only used on older systems where :c:func:`!epoll_create1` is not available; otherwise it has no effect (though its value is still checked)."
 msgid "*sizehint* informs epoll about the expected number of events to be registered.  It must be positive, or ``-1`` to use the default. It is only used on older systems where :manpage:`epoll_create1(2)` is not available; otherwise it has no effect (though its value is still checked)."
-msgstr "*sizehint* تعداد مورد انتظار رویدادهای ثبت‌شونده را به epoll اطلاع می‌دهد. این مقدار باید مثبت باشد، یا ``-1`` باشد تا از مقدار پیش‌فرض استفاده شود. این مقدار فقط در سیستم‌های قدیمی‌تری استفاده می‌شود که :c:func:`!epoll_create1` در آن‌ها در دسترس نیست؛ در غیر این صورت هیچ اثری ندارد (هرچند مقدار آن همچنان بررسی می‌شود)."
+msgstr "پارامتر *sizehint* اپول (epoll) را از تعداد رویدادهای مورد انتظار برای ثبت مطلع می‌کند. این پارامتر باید مثبت باشد، یا برای استفاده از مقدار پیش‌فرض برابر با ``-1`` باشد. این پارامتر فقط در سیستم‌های قدیمی‌تر که :manpage:`epoll_create1(2)` در آن‌ها موجود نیست استفاده می‌شود؛ در غیر این صورت هیچ تأثیری ندارد (اگرچه مقدار آن همچنان بررسی می‌شود)."
 
 msgid "*flags* is deprecated and completely ignored.  However, when supplied, its value must be ``0`` or ``select.EPOLL_CLOEXEC``, otherwise ``OSError`` is raised."
 msgstr "*flags* منسوخ شده و به‌طور کامل نادیده گرفته می‌شود. با این حال، در صورتی که ارائه شود، مقدار آن باید ``0`` یا ``select.EPOLL_CLOEXEC`` باشد، در غیر این صورت ``OSError`` پرتاب می‌شود."
@@ -86,7 +84,7 @@ msgid "The *flags* parameter.  ``select.EPOLL_CLOEXEC`` is used by default now. 
 msgstr "پارامتر *flags*. اکنون از ``select.EPOLL_CLOEXEC`` به‌صورت پیش‌فرض استفاده می‌شود. برای اینکه توصیف‌گر پرونده قابل ارث‌بردن شود، از :func:`os.set_inheritable` استفاده کنید."
 
 msgid "When CPython is built, this function may be disabled using :option:`--disable-epoll`."
-msgstr ""
+msgstr "هنگامی که سی‌پایتون ساخته می‌شود، این تابع ممکن است با استفاده از :option:`--disable-epoll` غیرفعال شود."
 
 msgid "Returns a polling object, which supports registering and unregistering file descriptors, and then polling them for I/O events; see section :ref:`poll-objects` below for the methods supported by polling objects."
 msgstr "یک شیء پایش (polling object) برمی‌گرداند که از ثبت و لغو ثبت توصیف‌گرهای پرونده و سپس پایش آن‌ها برای رویدادهای ورودی/خروجی پشتیبانی می‌کند؛ برای متدهای پشتیبانی‌شده توسط اشیای پایش، بخش :ref:`poll-objects` در زیر را ببینید."
@@ -109,10 +107,8 @@ msgstr "*wlist*: صبر کنید تا برای نوشتن آماده شود"
 msgid "*xlist*: wait for an \"exceptional condition\" (see the manual page for what your system considers such a condition)"
 msgstr "*xlist*: منتظر یک «وضعیت استثنایی» باشید (برای آگاهی از اینکه سیستم شما چه چیزی را چنین وضعیتی می‌داند، به صفحه راهنما مراجعه کنید)"
 
-#, fuzzy
-#| msgid "Empty iterables are allowed, but acceptance of three empty iterables is platform-dependent. (It is known to work on Unix but not on Windows.)  The optional *timeout* argument specifies a time-out as a floating-point number in seconds. When the *timeout* argument is omitted or ``None``, the function blocks until at least one file descriptor is ready.  A time-out value of zero specifies a poll and never blocks."
 msgid "Empty iterables are allowed, but acceptance of three empty iterables is platform-dependent. (It is known to work on Unix but not on Windows.)  The optional *timeout* argument specifies a time-out in seconds; it may be a non-integer to specify fractions of seconds. When the *timeout* argument is omitted or ``None``, the function blocks until at least one file descriptor is ready.  A time-out value of zero specifies a poll and never blocks."
-msgstr "پیمایش‌پذیرهای خالی مجاز هستند، اما پذیرش ۳ پیمایش‌پذیر خالی به پلتفرم وابسته است. (شناخته شده است که روی Unix کار می‌کند، اما روی Windows کار نمی‌کند.) آرگومان اختیاری *timeout*، مهلت زمانی را به‌صورت عدد ممیز شناور بر حسب ثانیه مشخص می‌کند. هرگاه آرگومان *timeout* حذف شود یا ``None`` باشد، تابع مسدود می‌شود تا حداقل یک توصیف‌گر پرونده آماده شود. مقدار زمان توقف ۰، یک پایش (poll) را مشخص می‌کند و تابع هرگز مسدود نمی‌شود."
+msgstr "داد‌ه‌های پیمایش‌پذیر خالی مجاز هستند، اما پذیرش سه داد‌ه‌ی پیمایش‌پذیر خالی وابسته به سکو است. (شناخته‌شده است که روی یونیکس کار می‌کند اما روی ویندوز خیر.) آرگومان اختیاری *timeout* یک مهلت زمانی را بر حسب ثانیه مشخص می‌کند؛ برای مشخص کردن کسری از ثانیه می‌تواند یک عدد غیرصحیح باشد. هنگامی که آرگومان *timeout* حذف شود یا ``None`` باشد، تابع تا زمانی که حداقل یک توصیف‌گر پرونده آماده شود، مسدود می‌ماند. مقدار مهلت زمانی صفر، یک پایش را مشخص می‌کند و هرگز مسدود نمی‌شود."
 
 msgid "The return value is a triple of lists of objects that are ready: subsets of the first three arguments.  When the time-out is reached without a file descriptor becoming ready, three empty lists are returned."
 msgstr "مقدار بازگشتی، یک سه‌تایی از فهرست‌هایی از اشیای آماده است: زیرمجموعه‌هایی از سه آرگومان نخست. هنگامی که مهلت زمانی بدون آماده شدن توصیف‌گر پرونده‌ای به پایان برسد، سه فهرست خالی برگردانده می‌شود."
@@ -127,7 +123,7 @@ msgid "The function is now retried with a recomputed timeout when interrupted by
 msgstr "این تابع اکنون هنگامی که یک سیگنال آن را قطع کند، به‌جای پرتاب :exc:`InterruptedError`، با یک مهلت زمانی بازمحاسبه‌شده دوباره اجرا می‌شود، مگر اینکه هندلر سیگنال استثنایی پرتاب کند (برای دلیل آن، :pep:`475` را ببینید)."
 
 msgid "Accepts any real number as *timeout*, not only integer or float."
-msgstr ""
+msgstr "هر عدد حقیقی را به عنوان *timeout* می‌پذیرد، نه فقط عدد صحیح یا عدد اعشاری."
 
 msgid "The minimum number of bytes which can be written without blocking to a pipe when the pipe has been reported as ready for writing by :func:`~select.select`, :func:`!poll` or another interface in this module.  This doesn't apply to other kinds of file-like objects such as sockets."
 msgstr "حداقل تعداد بایت‌هایی که می‌توان بدون مسدود شدن در یک پایپ نوشت، هنگامی که پایپ توسط :func:`~select.select`، :func:`!poll` یا رابط دیگری در این ماژول به‌عنوان آماده برای نوشتن گزارش شده باشد. این موضوع به انواع دیگر اشیاء شبه‌پرونده مانند سوکت‌ها اعمال نمی‌شود."
@@ -310,7 +306,7 @@ msgid "The method no longer ignores the :data:`~errno.EBADF` error."
 msgstr "این متد دیگر خطای :data:`~errno.EBADF` را نادیده نمی‌گیرد."
 
 msgid "Wait for events. If *timeout* is given, it specifies the length of time in seconds (may be non-integer) which the system will wait for events before returning."
-msgstr ""
+msgstr "منتظر رویدادها بمانید. اگر *timeout* داده شود، مدت زمان بر حسب ثانیه (ممکن است غیرصحیح باشد) را مشخص می‌کند که سیستم قبل از بازگشت، منتظر رویدادها خواهد ماند."
 
 msgid "Polling objects"
 msgstr "اشیای پایش (polling)"
@@ -376,7 +372,7 @@ msgid "Polls the set of registered file descriptors, and returns a possibly empt
 msgstr "از مجموعه توصیف‌گرهای پرونده ثبت‌شده پایش می‌کند و فهرستی را برمی‌گرداند که ممکن است خالی باشد و شامل ۲-تایی‌های ``(fd, event)`` برای توصیف‌گرهایی است که رویدادها یا خطاهایی برای گزارش دارند. *fd* توصیف‌گر پرونده است، و *event* یک نقاب بیتی است که بیت‌هایی در آن برای رویدادهای گزارش‌شده برای آن توصیف‌گر تنظیم شده‌اند --- :const:`POLLIN` برای ورودی در انتظار، :const:`POLLOUT` برای نشان دادن اینکه توصیف‌گر قابل نوشتن است، و غیره. یک فهرست خالی نشان می‌دهد که مهلت فراخوانی به پایان رسیده است و هیچ توصیف‌گر پرونده‌ای رویدادی برای گزارش نداشته است. اگر *timeout* داده شده باشد، مدت زمانی را بر حسب میلی‌ثانیه مشخص می‌کند که سیستم برای رویدادها پیش از بازگشت منتظر خواهد ماند. اگر *timeout* داده نشده باشد، منفی باشد، یا :const:`None` باشد، فراخوانی تا زمانی که رویدادی برای این شیء پایش وجود داشته باشد، مسدود خواهد شد."
 
 msgid "Accepts any real number as *timeout*, not only integer or float. If ``ppoll()`` function is available, *timeout* has a resolution of ``1`` ns (``1e-6`` ms) instead of ``1`` ms."
-msgstr ""
+msgstr "هر عدد حقیقی را به عنوان *timeout* می‌پذیرد، و محدود به عدد صحیح یا عدد اعشاری نیست. اگر تابع ``ppoll()`` در دسترس باشد، *timeout* به جای تفکیک‌پذیری ``1`` میلی‌ثانیه، دارای تفکیک‌پذیری ``1`` نانوثانیه (``1e-6`` میلی‌ثانیه) است."
 
 msgid "Kqueue objects"
 msgstr "اشیای Kqueue"
@@ -399,10 +395,8 @@ msgstr "changelist باید یک پیمایش‌پذیر از شیءهای keven
 msgid "max_events must be 0 or a positive integer"
 msgstr "max_events باید ۰ یا یک عدد صحیح مثبت باشد"
 
-#, fuzzy
-#| msgid "timeout in seconds (floats possible); the default is ``None``, to wait forever"
 msgid "timeout in seconds (non-integers are possible); the default is ``None``, to wait forever"
-msgstr "مهلت زمانی به ثانیه (امکان استفاده از مقادیر اعشاری وجود دارد)؛ پیش‌فرض ``None`` است، تا برای همیشه منتظر بماند"
+msgstr "مهلت زمانی بر حسب ثانیه (اعداد غیرصحیح امکان‌پذیر هستند)؛ پیش‌فرض ``None`` است تا برای همیشه منتظر بماند"
 
 msgid "Kevent objects"
 msgstr "اشیای Kevent"

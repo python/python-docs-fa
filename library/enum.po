@@ -682,10 +682,8 @@ msgstr ""
 msgid "Using :class:`auto` with :class:`Enum` results in integers of increasing value, starting with ``1``."
 msgstr "استفاده از :class:`auto` همراه با :class:`Enum` منجر به اعداد صحیحی با مقادیر افزایشی می‌شود که از ``1`` شروع می‌شوند."
 
-#, fuzzy
-#| msgid "Added :ref:`enum-dataclass-support`"
 msgid "Added :ref:`enum-dataclass-support`."
-msgstr ":ref:`enum-dataclass-support` افزوده شد"
+msgstr "پشتیبانی از :ref:`enum-dataclass-support` اضافه شد."
 
 msgid "Adds a new name as an alias to an existing member::"
 msgstr "یک نام جدید را به‌عنوان نام مستعار به یک عضو موجود اضافه می‌کند::"
@@ -1175,10 +1173,8 @@ msgstr "``_add_alias_``، ``_add_value_alias_``، ``_repr_*``"
 msgid "Utilities and decorators"
 msgstr "ابزارهای کاربردی و دکوراتورها"
 
-#, fuzzy
-#| msgid "*auto* can be used in place of a value.  If used, the *Enum* machinery will call an :class:`Enum`'s :meth:`~Enum._generate_next_value_` to get an appropriate value. For :class:`Enum` and :class:`IntEnum` that appropriate value will be the last value plus one; for :class:`Flag` and :class:`IntFlag` it will be the first power-of-two greater than the highest value; for :class:`StrEnum` it will be the lower-cased version of the member's name.  Care must be taken if mixing *auto()* with manually specified values."
 msgid "*auto* can be used in place of a value.  If used, the *Enum* machinery will call an :class:`Enum`'s :meth:`~Enum._generate_next_value_` to get an appropriate value. For :class:`Enum` and :class:`IntEnum` that appropriate value will be the highest value seen plus one; for :class:`Flag` and :class:`IntFlag` it will be the first power-of-two greater than the highest value seen; for :class:`StrEnum` it will be the lower-cased version of the member's name.  Care must be taken if mixing *auto()* with manually specified values."
-msgstr "از *auto* می‌توان به‌جای یک مقدار استفاده کرد. در صورت استفاده، سازوکار *Enum* متد :meth:`~Enum._generate_next_value_` یک :class:`Enum` را فراخوانی می‌کند تا مقدار مناسبی به دست آورد. برای :class:`Enum` و :class:`IntEnum`، آن مقدار مناسب برابر با آخرین مقدار به‌علاوه یک خواهد بود؛ برای :class:`Flag` و :class:`IntFlag`، اولین توانِ ۲ که از بیشترین مقدار بزرگ‌تر باشد خواهد بود؛ برای :class:`StrEnum`، نام عضو با حروف کوچک خواهد بود. هنگام ترکیب *auto()* با مقادیر مشخص‌شده به‌صورت دستی باید دقت کنید."
+msgstr "عبارت *auto* را می‌توان به جای یک مقدار استفاده کرد. در صورت استفاده، سازوکار *Enum* متد :meth:`~Enum._generate_next_value_` از یک :class:`Enum` را برای دریافت مقدار مناسب فراخوانی خواهد کرد. برای :class:`Enum` و :class:`IntEnum` آن مقدار مناسب برابر خواهد بود با بیشترین مقدار دیده‌شده به‌علاوه یک؛ برای :class:`Flag` و :class:`IntFlag` برابر خواهد بود با اولین توانِ دو که از بیشترین مقدار دیده‌شده بزرگ‌تر است؛ برای :class:`StrEnum` نسخه‌ی با حروف کوچک نام عضو خواهد بود. در صورت ترکیب *auto()* با مقادیر مشخص‌شده‌ی دستی باید دقت شود."
 
 msgid "*auto* instances are only resolved when at the top level of an assignment, either by itself or as part of a tuple:"
 msgstr "نمونه‌های *auto* تنها زمانی حل می‌شوند که در بالاترین سطح یک انتساب قرار داشته باشند، چه به‌تنهایی و چه به‌عنوان بخشی از یک تاپل:"
@@ -1189,10 +1185,8 @@ msgstr "``FIRST = auto()`` کار خواهد کرد (auto() با ``1`` جایگ�
 msgid "``SECOND = auto(), -2`` will work (auto is replaced with ``2``, so ``2, -2`` is used to create the ``SECOND`` enum member;"
 msgstr "``SECOND = auto(), -2`` کار خواهد کرد (auto با ``2`` جایگزین می‌شود، بنابراین ``2, -2`` برای ایجاد عضو ``SECOND`` در enum استفاده می‌شود؛"
 
-#, fuzzy
-#| msgid "``THREE = [auto(), -3]`` will *not* work (``[<auto instance>, -3]`` is used to create the ``THREE`` enum member)"
 msgid "``THIRD = [auto(), -3]`` will *not* work (``[<auto instance>, -3]`` is used to create the ``THIRD`` enum member)"
-msgstr "``THREE = [auto(), -3]`` کار *نخواهد کرد* (``[<auto instance>, -3]`` برای ایجاد عضو enum ``THREE`` استفاده می‌شود)"
+msgstr "عبارت ``THIRD = [auto(), -3]`` کار *نخواهد کرد* (از ``[<auto instance>, -3]`` برای ایجاد عضو enum به نام ``THIRD`` استفاده می‌شود)"
 
 msgid "In prior versions, ``auto()`` had to be the only thing on the assignment line to work properly."
 msgstr "در نسخه‌های پیشین، ``auto()`` باید تنها مورد موجود در خط انتساب می‌بود تا به‌درستی کار کند."
@@ -1200,18 +1194,14 @@ msgstr "در نسخه‌های پیشین، ``auto()`` باید تنها مور�
 msgid "``_generate_next_value_`` can be overridden to customize the values used by *auto*."
 msgstr "می‌توان ``_generate_next_value_`` را برای سفارشی‌سازی مقادیر استفاده‌شده توسط *auto* بازنویسی کرد."
 
-#, fuzzy
-#| msgid "in 3.13 the default ``_generate_next_value_`` will always return the highest member value incremented by 1, and will fail if any member is an incompatible type."
 msgid "In version 3.13 the default ``_generate_next_value_`` will always return the highest member value incremented by 1, and will fail if any member is an incompatible type."
-msgstr "در 3.13، ``_generate_next_value_`` پیش‌فرض همیشه بالاترین مقدار عضو را با افزایش ۱ برمی‌گرداند و اگر نوع هر یک از اعضا ناسازگار باشد، شکست خواهد خورد."
+msgstr "در نسخه‌ی ۳.۱۳ مقدار پیش‌فرض ``_generate_next_value_`` همیشه بیشترین مقدار عضو را به علاوه ۱ برمی‌گرداند و اگر هر عضوی از نوع ناسازگاری باشد با خطا مواجه خواهد شد."
 
 msgid "A decorator similar to the built-in :deco:`property`, but specifically for enumerations.  It allows member attributes to have the same names as members themselves."
 msgstr "دکوراتوری مشابه :deco:`property` توکار، اما به‌طور خاص برای شمارش‌ها. این دکوراتور اجازه می‌دهد ویژگی‌های اعضا نام‌هایی مشابه نام خود اعضا داشته باشند."
 
-#, fuzzy
-#| msgid "the *property* and the member must be defined in separate classes; for example, the *value* and *name* attributes are defined in the *Enum* class, and *Enum* subclasses can define members with the names ``value`` and ``name``."
 msgid "The *property* and the member must be defined in separate classes; for example, the *value* and *name* attributes are defined in the *Enum* class, and *Enum* subclasses can define members with the names ``value`` and ``name``."
-msgstr "*پراپرتی* و عضو باید در کلاس‌های جداگانه تعریف شوند؛ برای مثال، ویژگی‌های *value* و *name* در کلاس *Enum* تعریف شده‌اند و زیرکلاس‌های *Enum* می‌توانند اعضایی با نام‌های ``value`` و ``name`` تعریف کنند."
+msgstr "ویژگی (property) و عضو باید در کلاس‌های جداگانه‌ای تعریف شوند؛ برای مثال، ویژگی‌های *value* و *name* در کلاس *Enum* تعریف می‌شوند و زیرکلاس‌های *Enum* می‌توانند اعضایی با نام‌های ``value`` و ``name`` تعریف کنند."
 
 msgid "A :keyword:`class` decorator specifically for enumerations.  It searches an enumeration's :attr:`~EnumType.__members__`, gathering any aliases it finds; if any are found :exc:`ValueError` is raised with the details::"
 msgstr "یک دکوراتور :keyword:`class` به‌طور خاص برای شمارش‌ها. این دکوراتور :attr:`~EnumType.__members__` یک شمارش را جستجو می‌کند و هر نام مستعاری را که بیابد، گردآوری می‌کند؛ در صورت یافتن هر نام مستعار، :exc:`ValueError` همراه با جزئیات پرتاب می‌شود::"

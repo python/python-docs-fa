@@ -108,29 +108,23 @@ msgstr "API جریان خام به‌طور کامل در مستندات :class:
 msgid "Raw I/O is a low-level interface and methods generally must have their return values checked and be explicitly retried to ensure an operation completes. For instance :meth:`~RawIOBase.write` returns the number of bytes written which may be less than the number of bytes provided (a partial write). High-level I/O objects like :ref:`binary-io` and :ref:`text-io` implement retry behavior."
 msgstr "I/O خام یک رابط سطح پایین است و متدها معمولاً باید مقادیر بازگشتی‌شان بررسی شوند و به‌صراحت دوباره فراخوانی شوند تا از تکمیل یک عملیات اطمینان حاصل شود. برای مثال، :meth:`~RawIOBase.write` تعداد بایت‌های نوشته‌شده را برمی‌گرداند که ممکن است کمتر از تعداد بایت‌های ارائه‌شده باشد (یک نوشتن جزئی). اشیاء I/O سطح بالا مانند :ref:`binary-io` و :ref:`text-io` رفتار تلاش مجدد را پیاده‌سازی می‌کنند."
 
-#, fuzzy
-#| msgid "Text Encoding"
 msgid "Text encoding"
 msgstr "کدگذاری متن"
 
-#, fuzzy
-#| msgid "The default encoding of :class:`TextIOWrapper` and :func:`open` is locale-specific (:func:`locale.getencoding`)."
 msgid "The default encoding of :class:`TextIOWrapper` and :func:`open` is UTF-8. If :ref:`Python UTF-8 Mode <utf8-mode>` is disabled, the default encoding is locale-specific (:func:`locale.getencoding`)."
-msgstr "کدگذاری پیش‌فرض :class:`TextIOWrapper` و :func:`open` وابسته به locale است (:func:`locale.getencoding`)."
+msgstr "کدگذاری پیش‌فرض :class:`TextIOWrapper` و :func:`open` برابر با UTF-8 است. اگر :ref:`حالت UTF-8 پایتون <utf8-mode>` غیرفعال باشد، کدگذاری پیش‌فرض وابسته به محلی (locale-specific) است (:func:`locale.getencoding`)."
 
 msgid ":ref:`utf8-mode`"
 msgstr ":ref:`utf8-mode`"
 
 msgid "Python UTF-8 Mode ignores the locale encoding and forces the use of UTF-8."
-msgstr ""
+msgstr "حالت UTF-8 پایتون، کدگذاری locale را نادیده می‌گیرد و استفاده از UTF-8 را اجباری می‌کند."
 
 msgid ":pep:`686`"
 msgstr ":pep:`686`"
 
-#, fuzzy
-#| msgid "Python 3.15 will make :ref:`utf8-mode` default."
 msgid "Python 3.15 made :ref:`utf8-mode` the default."
-msgstr "پایتون 3.15، :ref:`utf8-mode` را پیش‌فرض خواهد کرد."
+msgstr "پایتون ۳.۱۵ گزینه‌ی :ref:`utf8-mode` را به عنوان پیش‌فرض قرار داد."
 
 msgid "Opt-in EncodingWarning"
 msgstr "فعال‌سازی اختیاری هشدار کدگذاری (EncodingWarning)"
@@ -138,18 +132,14 @@ msgstr "فعال‌سازی اختیاری هشدار کدگذاری (EncodingWa
 msgid "See :pep:`597` for more details."
 msgstr "برای جزئیات بیشتر، :pep:`597` را ببینید."
 
-#, fuzzy
-#| msgid "To find where the default locale encoding is used, you can enable the :option:`-X warn_default_encoding <-X>` command line option or set the :envvar:`PYTHONWARNDEFAULTENCODING` environment variable, which will emit an :exc:`EncodingWarning` when the default encoding is used."
 msgid "To find where the default encoding is used, you can enable the :option:`-X warn_default_encoding <-X>` command line option or set the :envvar:`PYTHONWARNDEFAULTENCODING` environment variable, which will emit an :exc:`EncodingWarning` when the default encoding is used."
-msgstr "برای یافتن این‌که کدگذاری پیش‌فرض locale کجا استفاده می‌شود، می‌توانید گزینه‌ی خط فرمان :option:`-X warn_default_encoding <-X>` را فعال کنید یا متغیر محیطی :envvar:`PYTHONWARNDEFAULTENCODING` را تنظیم کنید، که هنگام استفاده از کدگذاری پیش‌فرض، یک :exc:`EncodingWarning` نشان می‌دهد."
+msgstr "برای یافتن جاهایی که از کدگذاری پیش‌فرض استفاده می‌شود، می‌توانید گزینه‌ی خط فرمان :option:`-X warn_default_encoding <-X>` را فعال کنید یا متغیر محیطی :envvar:`PYTHONWARNDEFAULTENCODING` را تنظیم کنید؛ این کار هنگام استفاده از کدگذاری پیش‌فرض، یک :exc:`EncodingWarning` صادر خواهد کرد."
 
 msgid "If you are providing an API that uses :func:`open` or :class:`TextIOWrapper` and passes ``encoding=None`` as a parameter, you can use :func:`text_encoding` so that callers of the API will emit an :exc:`EncodingWarning` if they don't pass an ``encoding``. However, please consider using UTF-8 by default (i.e. ``encoding=\"utf-8\"``) for new APIs."
 msgstr "اگر یک API ارائه می‌دهید که از :func:`open` یا :class:`TextIOWrapper` استفاده می‌کند و ``encoding=None`` را به‌عنوان یک پارامتر ارسال می‌کند، می‌توانید از :func:`text_encoding` استفاده کنید تا فراخوانندگان آن API در صورتی که ``encoding`` را ارسال نکنند، یک :exc:`EncodingWarning` نشان می‌دهند. با این حال، لطفاً برای APIهای جدید استفاده از UTF-8 به‌صورت پیش‌فرض (یعنی ``encoding=\"utf-8\"``) را در نظر بگیرید."
 
-#, fuzzy
-#| msgid "High-level Module Interface"
 msgid "High-level module interface"
-msgstr "رابط سطح‌بالای ماژول"
+msgstr "رابط ماژول سطح بالا"
 
 msgid "An int containing the default buffer size used by the module's buffered I/O classes.  :func:`open` uses the file's blksize (as obtained by :func:`os.stat`) if possible."
 msgstr "یک عدد صحیح شامل اندازه‌ی بافر پیش‌فرضی که کلاس‌های I/O بافرشده‌ی ماژول از آن استفاده می‌کنند. :func:`open` در صورت امکان از blksize پرونده (که توسط :func:`os.stat` به دست می‌آید) استفاده می‌کند."
@@ -285,10 +275,8 @@ msgstr "``detach``، ``read``، ``readline`` و ``write``"
 msgid "Inherited :class:`IOBase` methods, ``encoding``, ``errors``, and ``newlines``"
 msgstr "متدهای به‌ارث‌برده‌شده از :class:`IOBase`، ``encoding``، ``errors`` و ``newlines``"
 
-#, fuzzy
-#| msgid "I/O Base Classes"
 msgid "I/O base classes"
-msgstr "کلاس‌های پایه‌ی I/O"
+msgstr "کلاس‌های پایه‌ی ورودی/خروجی"
 
 msgid "The abstract base class for all I/O classes."
 msgstr "کلاس پایه انتزاعی برای تمام کلاس‌های I/O."
@@ -501,8 +489,6 @@ msgstr "در حالت غیرمسدودکننده، اگر داده‌ای نیا
 msgid "The caller may release or mutate *b* after this method returns, so the implementation should only access *b* during the method call."
 msgstr "فراخواننده ممکن است *b* را پس از بازگشت این متد آزاد کند یا تغییر دهد، بنابراین پیاده‌سازی باید فقط در حین فراخوانی متد به *b* دسترسی داشته باشد."
 
-#, fuzzy
-#| msgid "Raw File I/O"
 msgid "Raw file I/O"
 msgstr "ورودی/خروجی خام پرونده"
 
@@ -548,10 +534,8 @@ msgstr "حالت، همان‌طور که در سازنده داده شده اس
 msgid "The file name.  This is the file descriptor of the file when no name is given in the constructor."
 msgstr "نام پرونده. هنگامی که در سازنده نامی داده نشده باشد، این مقدار توصیف‌گر پرونده است."
 
-#, fuzzy
-#| msgid "Buffered Streams"
 msgid "Buffered streams"
-msgstr "جریان‌های بافرشده"
+msgstr "جریان‌های با میان‌گیر"
 
 msgid "Buffered I/O streams provide a higher-level interface to an I/O device than raw I/O does."
 msgstr "جریان‌های ورودی/خروجی بافرشده، نسبت به ورودی/خروجی خام، رابط سطح بالاتری را برای یک دستگاه ورودی/خروجی فراهم می‌کنند."
@@ -563,7 +547,7 @@ msgid "The optional argument *initial_bytes* is a :term:`bytes-like object` that
 msgstr "آرگومان اختیاری *initial_bytes* یک :term:`bytes-like object` است که حاوی داده‌های اولیه است."
 
 msgid "Methods may be used from multiple threads without external locking in :term:`free-threaded builds <free-threaded build>`."
-msgstr ""
+msgstr "متدها ممکن است در :term:`ساخت‌های نخ‌آزاد <free-threaded build>` بدون قفل‌گذاری خارجی از چندین نخ استفاده شوند."
 
 msgid ":class:`BytesIO` provides or overrides these methods in addition to those from :class:`BufferedIOBase` and :class:`IOBase`:"
 msgstr ":class:`BytesIO` این متدها را علاوه بر متدهای :class:`BufferedIOBase` و :class:`IOBase` ارائه می‌دهد یا بازنویسی می‌کند:"
@@ -731,10 +715,8 @@ msgstr "رشته‌ی *s* را در جریان می‌نویسد و تعداد �
 msgid "A buffered text stream providing higher-level access to a :class:`BufferedIOBase` buffered binary stream.  It inherits from :class:`TextIOBase`."
 msgstr "یک جریان متنی بافرشده که دسترسی سطح بالاتری به یک جریان دودویی بافرشده از :class:`BufferedIOBase` فراهم می‌کند. این جریان از :class:`TextIOBase` ارث‌بری می‌کند."
 
-#, fuzzy
-#| msgid "*encoding* gives the name of the encoding that the stream will be decoded or encoded with.  In :ref:`UTF-8 Mode <utf8-mode>`, this defaults to UTF-8. Otherwise, it defaults to :func:`locale.getencoding`. ``encoding=\"locale\"`` can be used to specify the current locale's encoding explicitly. See :ref:`io-text-encoding` for more information."
 msgid "*encoding* gives the name of the encoding that the stream will be decoded or encoded with.  This defaults to UTF-8; if :ref:`UTF-8 Mode <utf8-mode>` is disabled, it defaults to :func:`locale.getencoding`. ``encoding=\"locale\"`` can be used to specify the current locale's encoding explicitly. See :ref:`io-text-encoding` for more information."
-msgstr "*encoding* نام کدگذاری‌ای را مشخص می‌کند که جریان با آن کدگشایی یا کدگذاری می‌شود. در :ref:`حالت UTF-8 <utf8-mode>`، این مقدار به‌طور پیش‌فرض UTF-8 است. در غیر این صورت، مقدار پیش‌فرض آن :func:`locale.getencoding` است. می‌توان از ``encoding=\"locale\"`` برای مشخص کردن صریح کدگذاری locale استفاده کرد. برای اطلاعات بیشتر :ref:`io-text-encoding` را ببینید."
+msgstr "*encoding* نام کدگذاری‌ای را مشخص می‌کند که جریان با آن رمزگشایی یا رمزگذاری خواهد شد. این مقدار به‌طور پیش‌فرض UTF-8 است؛ اگر :ref:`UTF-8 Mode <utf8-mode>` غیرفعال باشد، به‌طور پیش‌فرض از :func:`locale.getencoding` استفاده می‌کند. برای مشخص کردن صریح کدگذاری locale فعلی می‌توانید از ``encoding=\"locale\"`` استفاده کنید. برای اطلاعات بیشتر :ref:`io-text-encoding` را ببینید."
 
 msgid "*errors* is an optional string that specifies how encoding and decoding errors are to be handled.  Pass ``'strict'`` to raise a :exc:`ValueError` exception if there is an encoding error (the default of ``None`` has the same effect), or pass ``'ignore'`` to ignore errors.  (Note that ignoring encoding errors can lead to data loss.)  ``'replace'`` causes a replacement marker (such as ``'?'``) to be inserted where there is malformed data. ``'backslashreplace'`` causes malformed data to be replaced by a backslashed escape sequence.  When writing, ``'xmlcharrefreplace'`` (replace with the appropriate XML character reference)  or ``'namereplace'`` (replace with ``\\N{...}`` escape sequences) can be used.  Any other error handling name that has been registered with :func:`codecs.register_error` is also valid."
 msgstr "*errors* رشته‌ای اختیاری است که چگونگی مدیریت خطاهای کدگذاری و کدگشایی را مشخص می‌کند. برای پرتاب استثنای :exc:`ValueError` در صورت بروز خطای کدگذاری، ``'strict'`` را ارسال کنید (مقدار پیش‌فرض ``None`` نیز همین اثر را دارد)، یا برای نادیده گرفتن خطاها، ``'ignore'`` را ارسال کنید. (توجه داشته باشید که نادیده گرفتن خطاهای کدگذاری می‌تواند منجر به از دست رفتن داده شود.) ``'replace'`` باعث می‌شود یک نشانگر جایگزینی (مانند ``'?'``) در جایی که داده نادرست وجود دارد درج شود. ``'backslashreplace'`` باعث می‌شود داده نادرست با یک دنباله خنثی‌سازی حاوی بک‌اسلش جایگزین شود. هنگام نوشتن، می‌توان از ``'xmlcharrefreplace'`` (جایگزینی با ارجاع نویسه مناسب XML) یا ``'namereplace'`` (جایگزینی با دنباله‌های خنثی‌سازی ``\\N{...}``) استفاده کرد. هر نام مدیریت خطای دیگری که با :func:`codecs.register_error` ثبت‌شده باشد نیز معتبر است."
@@ -870,10 +852,8 @@ msgstr ""
 msgid "A helper codec that decodes newlines for :term:`universal newlines` mode. It inherits from :class:`codecs.IncrementalDecoder`."
 msgstr "یک کدک کمکی که سطرهای جدید را برای حالت :term:`سطرهای جدید جهان‌شمول (universal newlines) <universal newlines>` کدگشایی می‌کند. این کدک از :class:`codecs.IncrementalDecoder` ارث می‌برد."
 
-#, fuzzy
-#| msgid "Static Typing"
 msgid "Static typing"
-msgstr "نوع‌دهی ایستا"
+msgstr "نوع‌بندی ایستا"
 
 msgid "The following protocols can be used for annotating function and method arguments for simple stream reading or writing operations. They are decorated with :deco:`typing.runtime_checkable`."
 msgstr "پروتکل‌های زیر می‌توانند برای حاشیه‌نویسی آرگومان‌های تابع و متد در عملیات ساده‌ی خواندن یا نوشتن جریان استفاده شوند. این پروتکل‌ها با :deco:`typing.runtime_checkable` آراسته شده‌اند."

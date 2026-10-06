@@ -52,7 +52,7 @@ msgid "Return a new bytes object with a copy of the string *v* as value and leng
 msgstr "در صورت موفقیت، شیء بایت جدیدی برمی‌گرداند که مقدار آن رونوشتی از رشته *v* و طول آن *len* است و در صورت شکست ``NULL`` برمی‌گرداند. اگر *v* برابر ``NULL`` باشد، محتویات شیء بایت مقداردهی‌نشده هستند."
 
 msgid "Use the :c:type:`PyBytesWriter` API instead of ``PyBytes_FromStringAndSize(NULL, len)``."
-msgstr ""
+msgstr "به جای ``PyBytes_FromStringAndSize(NULL, len)`` از API مربوط به :c:type:`PyBytesWriter` استفاده کنید."
 
 msgid "Take a C :c:func:`printf`\\ -style *format* string and a variable number of arguments, calculate the size of the resulting Python bytes object and return a bytes object with the values formatted into it.  The variable arguments must be C types and must correspond exactly to the format characters in the *format* string.  The following format characters are allowed:"
 msgstr "یک رشته‌ی *format* به سبک :c:func:`printf`\\ در C و تعداد متغیری از آرگومان‌ها می‌گیرد، اندازه‌ی شیء bytes پایتون که حاصل می‌شود را محاسبه می‌کند و یک شیء bytes که مقادیر در آن قالب‌بندی شده‌اند برمی‌گرداند. آرگومان‌های متغیر باید از نوع‌های C باشند و باید دقیقاً با نویسه‌های قالب در رشته‌ی *format* مطابقت داشته باشند. نویسه‌های قالب زیر مجاز هستند:"
@@ -232,7 +232,7 @@ msgid "Resize a bytes object. *newsize* will be the new length of the bytes obje
 msgstr "اندازه یک شیء بایت را تغییر می‌دهد. *newsize* طول جدید شیء بایت خواهد بود. می‌توانید آن را به‌صورت ایجاد یک شیء بایت جدید و نابود کردن شیء قدیمی تصور کنید، فقط با کارایی بیشتر. آدرس یک شیء بایت موجود را به‌عنوان یک چپ‌مقدار (lvalue) (که ممکن است در آن نوشته شود) به همراه اندازه جدید موردنظر ارسال کنید. در صورت موفقیت، *\\*bytes* حاوی شیء بایت با اندازه جدید است و ``0`` بازگردانده می‌شود؛ آدرس موجود در *\\*bytes* ممکن است با مقدار ورودی آن متفاوت باشد. اگر تخصیص مجدد شکست بخورد، شیء بایت اصلی موجود در *\\*bytes* آزاد می‌شود، *\\*bytes* برابر ``NULL`` قرار می‌گیرد، :exc:`MemoryError` تنظیم می‌شود و ``-1`` بازگردانده می‌شود."
 
 msgid "Use the :c:type:`PyBytesWriter` API instead."
-msgstr ""
+msgstr "به جای آن از API مربوط به :c:type:`PyBytesWriter` استفاده کنید."
 
 msgid "Get the string representation of *bytes*. This function is currently used to implement :meth:`!bytes.__repr__` in Python."
 msgstr "بازنمایی رشته‌ای *bytes* را برمی‌گرداند. این تابع در حال حاضر برای پیاده‌سازی :meth:`!bytes.__repr__` در پایتون استفاده می‌شود."
@@ -259,136 +259,128 @@ msgid "*unicode* and *recode_encoding* are now unused."
 msgstr "*unicode* و *recode_encoding* اکنون استفاده نمی‌شوند."
 
 msgid "PyBytesWriter"
-msgstr ""
+msgstr "PyBytesWriter"
 
-#, fuzzy
-#| msgid "This subtype of :c:type:`PyObject` represents a Python bytes object."
 msgid "The :c:type:`PyBytesWriter` API can be used to create a Python :class:`bytes` object."
-msgstr "این زیرنوع از :c:type:`PyObject` یک شیء bytes پایتون را نمایش می‌دهد."
+msgstr "رابط برمکی (API) نوع :c:type:`PyBytesWriter` را می‌توان برای ایجاد یک شیء :class:`bytes` در پایتون استفاده کرد."
 
 msgid "A bytes writer instance."
-msgstr ""
+msgstr "یک نمونه‌ی نویسنده‌ی بایت (bytes writer)."
 
 msgid "The API is **not thread safe**: a writer should only be used by a single thread at the same time."
-msgstr ""
+msgstr "این API **ایمن در برابر نخ (thread-safe) نیست**: یک نویسنده باید در هر لحظه تنها توسط یک نخ استفاده شود."
 
 msgid "The instance must be destroyed by :c:func:`PyBytesWriter_Finish` on success, or :c:func:`PyBytesWriter_Discard` on error."
-msgstr ""
+msgstr "نمونه باید در صورت موفقیت توسط :c:func:`PyBytesWriter_Finish` و در صورت بروز خطا توسط :c:func:`PyBytesWriter_Discard` نابود شود."
 
 msgid "Create, Finish, Discard"
-msgstr ""
+msgstr "Create, Finish, Discard"
 
 msgid "Create a :c:type:`PyBytesWriter` to write *size* bytes."
-msgstr ""
+msgstr "ایجاد یک :c:type:`PyBytesWriter` برای نوشتن *size* بایت."
 
 msgid "If *size* is greater than zero, allocate *size* bytes, and set the writer size to *size*. The caller is responsible to write *size* bytes using :c:func:`PyBytesWriter_GetData`. This function does not overallocate."
-msgstr ""
+msgstr "اگر *size* بزرگ‌تر از صفر باشد، *size* بایت تخصیص دهید و اندازه‌ی نویسنده را روی *size* تنظیم کنید. فراخواننده مسئول نوشتن *size* بایت با استفاده از :c:func:`PyBytesWriter_GetData` است. این تابع تخصیص بیش از حد (overallocate) انجام نمی‌دهد."
 
-#, fuzzy
-#| msgid "On success, return a new :class:`bytes` object. On error, set an exception and return ``NULL``."
 msgid "On error, set an exception and return ``NULL``."
-msgstr "در صورت موفقیت، یک شیء :class:`bytes` جدید برمی‌گرداند. در صورت خطا، یک استثنا تنظیم کرده و ``NULL`` برمی‌گرداند."
+msgstr "در صورت بروز خطا، یک استثنا تنظیم کرده و ``NULL`` را برگردانید."
 
 msgid "*size* must be positive or zero."
-msgstr ""
+msgstr "*size* باید مثبت یا صفر باشد."
 
 msgid "Finish a :c:type:`PyBytesWriter` created by :c:func:`PyBytesWriter_Create`."
-msgstr ""
+msgstr "پایان دادن به یک :c:type:`PyBytesWriter` که توسط :c:func:`PyBytesWriter_Create` ایجاد شده است."
 
-#, fuzzy
-#| msgid "On success, return a new :class:`bytes` object. On error, set an exception and return ``NULL``."
 msgid "On success, return a Python :class:`bytes` object. On error, set an exception and return ``NULL``."
-msgstr "در صورت موفقیت، یک شیء :class:`bytes` جدید برمی‌گرداند. در صورت خطا، یک استثنا تنظیم کرده و ``NULL`` برمی‌گرداند."
+msgstr "در صورت موفقیت، یک شیء :class:`bytes` پایتون را برمی‌گرداند. در صورت بروز خطا، یک استثنا تنظیم کرده و ``NULL`` را برگردانید."
 
 msgid "The writer instance is invalid after the call in any case. No API can be called on the writer after :c:func:`PyBytesWriter_Finish`."
-msgstr ""
+msgstr "نمونه‌ی نویسنده در هر صورت پس از این فراخوانی نامعتبر می‌شود. پس از :c:func:`PyBytesWriter_Finish` هیچ API روی نویسنده قابل فراخوانی نیست."
 
 msgid "Similar to :c:func:`PyBytesWriter_Finish`, but resize the writer to *size* bytes before creating the :class:`bytes` object."
-msgstr ""
+msgstr "مشابه :c:func:`PyBytesWriter_Finish`، اما پیش از ایجاد شیء :class:`bytes`، اندازه‌ی نویسنده را به *size* بایت تغییر دهید."
 
 msgid "Similar to :c:func:`PyBytesWriter_Finish`, but resize the writer using *buf* pointer before creating the :class:`bytes` object."
-msgstr ""
+msgstr "مشابه :c:func:`PyBytesWriter_Finish`، اما پیش از ایجاد شیء :class:`bytes`، اندازه‌ی نویسنده را با استفاده از اشاره‌گر *buf* تغییر دهید."
 
 msgid "Set an exception and return ``NULL`` if *buf* pointer is outside the internal buffer bounds."
-msgstr ""
+msgstr "اگر اشاره‌گر *buf* خارج از کران‌های بافر داخلی باشد، یک استثنا تنظیم کرده و ``NULL`` را برگردانید."
 
 msgid "Function pseudo-code::"
-msgstr ""
+msgstr "کد شبه تابع (pseudo-code)::"
 
 msgid ""
 "Py_ssize_t size = (char*)buf - (char*)PyBytesWriter_GetData(writer);\n"
 "return PyBytesWriter_FinishWithSize(writer, size);"
 msgstr ""
+"Py_ssize_t size = (char*)buf - (char*)PyBytesWriter_GetData(writer);\n"
+"return PyBytesWriter_FinishWithSize(writer, size);"
 
 msgid "Discard a :c:type:`PyBytesWriter` created by :c:func:`PyBytesWriter_Create`."
-msgstr ""
+msgstr "دور انداختن یک :c:type:`PyBytesWriter` که توسط :c:func:`PyBytesWriter_Create` ایجاد شده است."
 
 msgid "Do nothing if *writer* is ``NULL``."
-msgstr ""
+msgstr "اگر *writer* برابر با ``NULL`` باشد، هیچ کاری انجام ندهید."
 
 msgid "The writer instance is invalid after the call. No API can be called on the writer after :c:func:`PyBytesWriter_Discard`."
-msgstr ""
+msgstr "نمونه‌ی نویسنده پس از این فراخوانی نامعتبر می‌شود. پس از :c:func:`PyBytesWriter_Discard` هیچ API روی نویسنده قابل فراخوانی نیست."
 
 msgid "High-level API"
-msgstr ""
+msgstr "API رده‌بالا"
 
 msgid "Grow the *writer* internal buffer by *size* bytes, write *size* bytes of *bytes* at the *writer* end, and add *size* to the *writer* size."
-msgstr ""
+msgstr "بافر داخلی *writer* را به اندازه‌ی *size* بایت بزرگ کنید، *size* بایت از *bytes* را در انتهای *writer* بنویسید و *size* را به اندازه‌ی *writer* اضافه کنید."
 
 msgid "If *size* is equal to ``-1``, call ``strlen(bytes)`` to get the string length."
-msgstr ""
+msgstr "اگر *size* برابر با ``-1`` باشد، برای به دست آوردن طول رشته ``strlen(bytes)`` را فراخوانی کنید."
 
-#, fuzzy
-#| msgid "On success, return a new :class:`bytes` object. On error, set an exception and return ``NULL``."
 msgid "On success, return ``0``. On error, set an exception and return ``-1``."
-msgstr "در صورت موفقیت، یک شیء :class:`bytes` جدید برمی‌گرداند. در صورت خطا، یک استثنا تنظیم کرده و ``NULL`` برمی‌گرداند."
+msgstr "در صورت موفقیت، ``0`` را برمی‌گرداند. در صورت بروز خطا، یک استثنا تنظیم کرده و ``-1`` را برگردانید."
 
 msgid "Similar to :c:func:`PyBytes_FromFormat`, but write the output directly at the writer end. Grow the writer internal buffer on demand. Then add the written size to the writer size."
-msgstr ""
+msgstr "مشابه :c:func:`PyBytes_FromFormat`، اما خروجی را مستقیماً در انتهای نویسنده می‌نویسد. بافر داخلی نویسنده را در صورت نیاز بزرگ کنید. سپس اندازه‌ی نوشته‌شده را به اندازه‌ی نویسنده اضافه کنید."
 
 msgid "Getters"
-msgstr ""
+msgstr "getterها"
 
 msgid "Get the writer size."
-msgstr ""
+msgstr "اندازه‌ی نویسنده را دریافت کنید."
 
 msgid "The function does not invalidate pointers returned by :c:func:`PyBytesWriter_GetData`."
-msgstr ""
+msgstr "این تابع اشاره‌گرهای بازگردانده‌شده توسط :c:func:`PyBytesWriter_GetData` را نامعتبر نمی‌کند."
 
 msgid "The function cannot fail."
-msgstr ""
+msgstr "این تابع نمی‌تواند با خطا مواجه شود."
 
 msgid "Get the writer data: start of the internal buffer."
-msgstr ""
+msgstr "داده‌های نویسنده را دریافت کنید: شروع بافر داخلی."
 
 msgid "The pointer remains valid until a :c:type:`PyBytesWriter` function other than :c:func:`PyBytesWriter_GetData` or :c:func:`PyBytesWriter_GetSize` is called on *writer*."
-msgstr ""
+msgstr "این اشاره‌گر تا زمانی که تابعی از :c:type:`PyBytesWriter` غیر از :c:func:`PyBytesWriter_GetData` یا :c:func:`PyBytesWriter_GetSize` روی *writer* فراخوانی شود، معتبر باقی می‌ماند."
 
 msgid "Low-level API"
-msgstr ""
+msgstr "API سطح پایین"
 
 msgid "Resize the writer to *size* bytes. It can be used to enlarge or to shrink the writer. This function typically overallocates to achieve amortized performance when resizing multiple times."
-msgstr ""
+msgstr "اندازه‌ی نویسنده را به *size* بایت تغییر دهید. از آن می‌توان برای بزرگ کردن یا کوچک کردن نویسنده استفاده کرد. این تابع معمولاً برای دستیابی به کارایی سرشکن‌شده هنگام تغییر اندازه‌ی مکرر، حافظه را بیشتر تخصیص می‌دهد."
 
 msgid "Newly allocated bytes are left uninitialized."
-msgstr ""
+msgstr "بایت‌های تازه تخصیص‌یافته مقداردهی اولیه نمی‌شوند."
 
 msgid "Resize the writer by adding *grow* bytes to the current writer size. This function typically overallocates to achieve amortized performance when resizing multiple times."
-msgstr ""
+msgstr "با اضافه کردن *grow* بایت به اندازه‌ی فعلی نویسنده، اندازه‌ی آن را تغییر دهید. این تابع معمولاً برای دستیابی به کارایی سرشکن‌شده هنگام تغییر اندازه‌ی مکرر، حافظه را بیشتر تخصیص می‌دهد."
 
 msgid "*size* can be negative to shrink the writer."
-msgstr ""
+msgstr "برای کوچک کردن نویسنده، *size* می‌تواند منفی باشد."
 
-#, fuzzy
-#| msgid "Similar to :c:func:`PyBytes_Size`, but without error checking."
 msgid "Similar to :c:func:`PyBytesWriter_Grow`, but update also the *buf* pointer."
-msgstr "مشابه :c:func:`PyBytes_Size`، اما بدون بررسی خطا."
+msgstr "مشابه :c:func:`PyBytesWriter_Grow` است، اما اشاره‌گر *buf* را نیز به‌روزرسانی می‌کند."
 
 msgid "The *buf* pointer is moved if the internal buffer is moved in memory. The *buf* relative position within the internal buffer is left unchanged."
-msgstr ""
+msgstr "اگر بافر داخلی در حافظه جابه‌جا شود، اشاره‌گر *buf* نیز جابه‌جا می‌شود. موقعیت نسبی *buf* در داخل بافر داخلی تغییر‌نکرده باقی می‌ماند."
 
 msgid "*buf* must not be ``NULL``."
-msgstr ""
+msgstr "*buf* نباید ``NULL`` باشد."
 
 msgid ""
 "Py_ssize_t pos = (char*)buf - (char*)PyBytesWriter_GetData(writer);\n"
@@ -397,6 +389,11 @@ msgid ""
 "}\n"
 "return (char*)PyBytesWriter_GetData(writer) + pos;"
 msgstr ""
+"Py_ssize_t pos = (char*)buf - (char*)PyBytesWriter_GetData(writer);\n"
+"if (PyBytesWriter_Grow(writer, size) < 0) {\n"
+"    return NULL;\n"
+"}\n"
+"return (char*)PyBytesWriter_GetData(writer) + pos;"
 
 msgid "object"
 msgstr "شیء"

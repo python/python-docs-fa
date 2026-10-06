@@ -27,13 +27,11 @@ msgstr "اشیاء عدد مختلط"
 msgid "This subtype of :c:type:`PyObject` represents a Python complex number object."
 msgstr "این زیرنوع از :c:type:`PyObject` نمایانگر یک شیء عدد مختلط پایتون است."
 
-#, fuzzy
-#| msgid "Return the sum of two complex numbers, using the C :c:type:`Py_complex` representation."
 msgid "The complex number value, using the C :c:type:`Py_complex` representation."
-msgstr "مجموع دو عدد مختلط را با استفاده از نمایش C :c:type:`Py_complex` برمی‌گرداند."
+msgstr "مقدار عدد مختلط، با استفاده از نمایش :c:type:`Py_complex` در C."
 
 msgid "Use :c:func:`PyComplex_AsCComplex` and :c:func:`PyComplex_FromCComplex` to convert a Python complex number to/from the C :c:type:`Py_complex` representation."
-msgstr ""
+msgstr "برای تبدیل یک عدد مختلط پایتون به/از نمایش C در :c:type:`Py_complex`، از :c:func:`PyComplex_AsCComplex` و :c:func:`PyComplex_FromCComplex` استفاده کنید."
 
 msgid "This instance of :c:type:`PyTypeObject` represents the Python complex number type. It is the same object as :class:`complex` in the Python layer."
 msgstr "این نمونه از :c:type:`PyTypeObject` نوع عدد مختلط پایتون را نشان می‌دهد. این همان شیء :class:`complex` در لایه‌ی پایتون است."
@@ -65,10 +63,8 @@ msgstr "بخش موهومی *op* را به‌صورت یک :c:expr:`double` در
 msgid "If *op* is not a Python complex number object but has a :meth:`~object.__complex__` method, this method will first be called to convert *op* to a Python complex number object.  If :meth:`!__complex__` is not defined then it falls back to call :c:func:`PyFloat_AsDouble` and returns ``0.0`` on success."
 msgstr "اگر *op* یک شیء عدد مختلط پایتون نباشد اما متد :meth:`~object.__complex__` را داشته باشد، این متد ابتدا برای تبدیل *op* به یک شیء عدد مختلط پایتون فراخوانی می‌شود. اگر :meth:`!__complex__` تعریف نشده باشد، به فراخوانی :c:func:`PyFloat_AsDouble` روی می‌آورد و در صورت موفقیت مقدار ``0.0`` را برمی‌گرداند."
 
-#, fuzzy
-#| msgid "This subtype of :c:type:`PyObject` represents a Python complex number object."
 msgid "This C structure defines an export format for a Python complex number object."
-msgstr "این زیرنوع از :c:type:`PyObject` نمایانگر یک شیء عدد مختلط پایتون است."
+msgstr "این ساختار C یک قالب صادرات (export) برای یک شیء عدد مختلط پایتون تعریف می‌کند."
 
 msgid "The structure is defined as::"
 msgstr "ساختار به صورت زیر تعریف می‌شود::"
@@ -102,13 +98,11 @@ msgstr "در صورت وجود، از :meth:`~object.__index__` استفاده �
 msgid "Complex Numbers as C Structures"
 msgstr "اعداد مختلط به‌عنوان ساختارهای C"
 
-#, fuzzy
-#| msgid "Note that the functions which accept these structures as parameters and return them as results do so *by value* rather than dereferencing them through pointers.  This is consistent throughout the API."
 msgid "The API also provides functions for working with complex numbers, using the :c:type:`Py_complex` representation.  Note that the functions which accept these structures as parameters and return them as results do so *by value* rather than dereferencing them through pointers."
-msgstr "توجه داشته باشید که توابعی که این ساختارها را به‌عنوان پارامتر می‌پذیرند و آن‌ها را به‌عنوان نتیجه برمی‌گردانند، این کار را *به‌صورت مقدار* انجام می‌دهند، نه با ارجاع‌زدایی (dereferencing) آن‌ها از طریق اشاره‌گرها. این موضوع در سراسر API یکسان است."
+msgstr "این رابط برنامه‌نویسی (API) همچنین توابعی را برای کار با اعداد مختلط، با استفاده از نمایش :c:type:`Py_complex` فراهم می‌کند. توجه داشته باشید توابعی که این ساختارها را به عنوان پارامتر می‌پذیرند و آن‌ها را به عنوان نتیجه برمی‌گردانند، این کار را *به صورت مقداری* (by value) انجام می‌دهند و نه با رفع ارجاع آن‌ها از طریق اشاره‌گرها."
 
 msgid "Please note, that these functions are :term:`soft deprecated` since Python 3.15.  Avoid using this API in a new code to do complex arithmetic: either use the :ref:`Number Protocol <number>` API or use native complex types, like :c:expr:`double complex`."
-msgstr ""
+msgstr "لطفاً توجه داشته باشید که این توابع از نسخه‌ی 3.15 پایتون :term:`مشمول هشدار منسوخ‌شدگی <soft deprecated>` هستند. از استفاده از این API در کدهای جدید برای انجام محاسبات مختلط خودداری کنید: یا از API :ref:`پروتکل اعداد <number>` استفاده کنید یا از انواع مختلط بومی مانند :c:expr:`double complex` بهره ببرید."
 
 msgid "Return the sum of two complex numbers, using the C :c:type:`Py_complex` representation."
 msgstr "مجموع دو عدد مختلط را با استفاده از نمایش C :c:type:`Py_complex` برمی‌گرداند."
@@ -137,10 +131,8 @@ msgstr "اگر *num* صفر باشد و *exp* عدد حقیقی مثبت نبا�
 msgid "Set :c:data:`errno` to :c:macro:`!ERANGE` on overflows."
 msgstr "در صورت سرریز، :c:data:`errno` را برابر :c:macro:`!ERANGE` قرار می‌دهد."
 
-#, fuzzy
-#| msgid "Return the :c:type:`Py_complex` value of the complex number *op*."
 msgid "Return the absolute value of the complex number *num*."
-msgstr "مقدار :c:type:`Py_complex` عدد مختلط *op* را برمی‌گرداند."
+msgstr "مقدار مطلق عدد مختلط *num* را برمی‌گرداند."
 
 msgid "object"
 msgstr "شیء"

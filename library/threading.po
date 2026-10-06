@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-01 14:41+0330\n"
-"PO-Revision-Date: 2026-09-13 16:31+0330\n"
+"PO-Revision-Date: 2026-10-06 19:52+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
 "Language: fa\n"
@@ -199,10 +199,8 @@ msgstr "شناسه‌ی نخ (Thread ID) بومی به‌صورت عدد صحی�
 msgid "Added support for GNU/kFreeBSD."
 msgstr "پشتیبانی از GNU/kFreeBSD افزوده شد."
 
-#, fuzzy
-#| msgid "Added support for GNU/kFreeBSD."
 msgid "Added support for Solaris."
-msgstr "پشتیبانی از GNU/kFreeBSD افزوده شد."
+msgstr "پشتیبانی از سولاریس اضافه شد."
 
 msgid "Return a list of all :class:`Thread` objects currently active.  The list includes daemonic threads and dummy thread objects created by :func:`current_thread`.  It excludes terminated threads and threads that have not yet been started.  However, the main thread is always part of the result, even when terminated."
 msgstr "فهرستی از تمام اشیاء :class:`Thread` که در حال حاضر فعال هستند را برمی‌گرداند. این فهرست شامل نخ‌های daemon و اشیاء نخ ساختگی ایجادشده توسط :func:`current_thread` است. این فهرست، نخ‌های خاتمه‌یافته و نخ‌هایی را که هنوز آغاز نشده‌اند مستثنی می‌کند. با این حال، نخ اصلی همیشه بخشی از نتیجه است، حتی زمانی که خاتمه یافته باشد."
@@ -589,10 +587,8 @@ msgstr ""
 msgid "Wait until the thread terminates. This blocks the calling thread until the thread whose :meth:`~Thread.join` method is called terminates -- either normally or through an unhandled exception -- or until the optional timeout occurs."
 msgstr "صبر کنید تا نخ پایان یابد. این عمل نخ فراخوان را مسدود می‌کند تا زمانی که نخی که متد :meth:`~Thread.join` آن فراخوانی شده است پایان یابد -- چه به‌صورت عادی و چه از طریق استثنای مدیریت‌نشده -- یا تا زمانی که مهلت زمانی اختیاری رخ دهد."
 
-#, fuzzy
-#| msgid "When the *timeout* argument is present and not ``None``, it should be a floating-point number specifying a timeout for the operation in seconds (or fractions thereof). As :meth:`~Thread.join` always returns ``None``, you must call :meth:`~Thread.is_alive` after :meth:`~Thread.join` to decide whether a timeout happened -- if the thread is still alive, the :meth:`~Thread.join` call timed out."
 msgid "When the *timeout* argument is present and not ``None``, it should be a real number specifying a timeout for the operation in seconds (or fractions thereof). As :meth:`~Thread.join` always returns ``None``, you must call :meth:`~Thread.is_alive` after :meth:`~Thread.join` to decide whether a timeout happened -- if the thread is still alive, the :meth:`~Thread.join` call timed out."
-msgstr "هنگامی که آرگومان *timeout* وجود داشته باشد و ``None`` نباشد، باید یک عدد ممیز شناور باشد که مهلت عملیات را بر حسب ثانیه (یا کسری از ثانیه) مشخص می‌کند. از آن‌جا که :meth:`~Thread.join` همیشه ``None`` را برمی‌گرداند، باید پس از :meth:`~Thread.join`، :meth:`~Thread.is_alive` را فراخوانی کنید تا تعیین کنید که آیا پایان مهلت رخ داده است — اگر نخ هنوز زنده است، فراخوانی :meth:`~Thread.join` با پایان مهلت مواجه شده است."
+msgstr "هنگامی که آرگومان *timeout* موجود باشد و برابر با ``None`` نباشد، باید یک عدد حقیقی باشد که مهلت زمانی عملی را برحسب ثانیه (یا کسری از آن) مشخص می‌کند. از آنجا که :meth:`~Thread.join` همواره ``None`` را برمی‌گرداند، باید پس از :meth:`~Thread.join` متد :meth:`~Thread.is_alive` را فراخوانی کنید تا تصمیم بگیرید آیا مهلت زمانی به پایان رسیده است یا خیر — اگر نخ همچنان زنده باشد، فراخوانی :meth:`~Thread.join` با پایان مهلت زمانی مواجه شده است."
 
 msgid "When the *timeout* argument is not present or ``None``, the operation will block until the thread terminates."
 msgstr "هنگامی که آرگومان *timeout* وجود ندارد یا ``None`` است، عملیات تا زمانی که نخ پایان یابد مسدود می‌شود."
@@ -610,7 +606,7 @@ msgid "May raise :exc:`PythonFinalizationError`."
 msgstr "ممکن است :exc:`PythonFinalizationError` را پرتاب کند."
 
 msgid "Accepts any real number as *timeout*, not only integer or float."
-msgstr ""
+msgstr "هر عدد حقیقی را به عنوان *timeout* می‌پذیرد، و محدود به عدد صحیح یا اعشاری نیست."
 
 msgid "A string used for identification purposes only. It has no semantics. Multiple threads may be given the same name.  The initial name is set by the constructor."
 msgstr "رشته‌ای که فقط برای اهداف شناسایی استفاده می‌شود. این رشته هیچ معنایی ندارد. ممکن است به چندین نخ نام یکسانی داده شود. نام اولیه توسط سازنده تنظیم می‌شود."
@@ -681,10 +677,8 @@ msgstr "هنگامی که با آرگومان *blocking* تنظیم‌شده ر�
 msgid "When invoked with the *blocking* argument set to ``False``, do not block. If a call with *blocking* set to ``True`` would block, return ``False`` immediately; otherwise, set the lock to locked and return ``True``."
 msgstr "هنگامی که با آرگومان *blocking* تنظیم‌شده روی ``False`` فراخوانی شود، مسدود نمی‌کند. اگر فراخوانی با *blocking* تنظیم‌شده روی ``True`` قرار باشد مسدود شود، بلافاصله ``False`` را برمی‌گرداند؛ در غیر این صورت، قفل را در وضعیت قفل‌شده قرار می‌دهد و ``True`` را برمی‌گرداند."
 
-#, fuzzy
-#| msgid "When invoked with the floating-point *timeout* argument set to a positive value, block for at most the number of seconds specified by *timeout* and as long as the lock cannot be acquired.  A *timeout* argument of ``-1`` specifies an unbounded wait.  It is forbidden to specify a *timeout* when *blocking* is ``False``."
 msgid "When invoked with the *timeout* argument set to a positive value, block for at most the number of seconds specified by *timeout* and as long as the lock cannot be acquired.  A *timeout* argument of ``-1`` specifies an unbounded wait.  It is forbidden to specify a *timeout* when *blocking* is ``False``."
-msgstr "هنگام فراخوانی با آرگومان *timeout* از نوع ممیز شناور که روی مقدار مثبت تنظیم شده باشد، حداکثر به تعداد ثانیه‌های مشخص‌شده توسط *timeout* و تا زمانی که قفل قابل کسب نباشد، مسدود می‌شود. آرگومان *timeout* با مقدار ``-1`` یک انتظار نامحدود را مشخص می‌کند. تعیین *timeout* زمانی که *blocking* برابر ``False`` باشد ممنوع است."
+msgstr "هنگامی که با آرگومان *timeout* تنظیم‌شده روی یک مقدار مثبت فراخوانی شود، حداکثر به مدت تعداد ثانیه‌های مشخص‌شده توسط *timeout* و تا زمانی که قفل نتواند به‌دست بیاید، مسدود می‌شود. آرگومان *timeout* برابر با ``-1`` یک انتظار نامحدود را مشخص می‌کند. مشخص کردن *timeout* وقتی که *blocking* برابر با ``False`` است، ممنوع است."
 
 msgid "The return value is ``True`` if the lock is acquired successfully, ``False`` if not (for example if the *timeout* expired)."
 msgstr "مقدار بازگشتی ``True`` است اگر قفل با موفقیت گرفته شود، در غیر این صورت ``False`` است (برای مثال اگر *timeout* منقضی شده باشد)."
@@ -749,10 +743,8 @@ msgstr "هنگامی که با آرگومان *blocking* روی ``True`` (پیش
 msgid "If no thread owns the lock, acquire the lock and return immediately."
 msgstr "اگر هیچ نخی مالک قفل نباشد، قفل را به دست می‌آورد و بلافاصله بازمی‌گردد."
 
-#, fuzzy
-#| msgid "If another thread owns the lock, block until we are able to acquire lock, or *timeout*, if set to a positive float value."
 msgid "If another thread owns the lock, block until we are able to acquire lock, or *timeout*, if set to a positive value."
-msgstr "اگر نخ دیگری مالک قفل باشد، مسدود می‌شود تا زمانی که بتوانیم قفل را کسب کنیم، یا تا *timeout*، اگر روی یک مقدار float مثبت تنظیم شده باشد."
+msgstr "اگر نخ دیگری مالک قفل باشد، تا زمانی که بتوانیم قفل را به‌دست آوریم مسدود بمانید، یا اگر *timeout* روی یک مقدار مثبت تنظیم شده باشد، تا فرا رسیدن آن."
 
 msgid "If the same thread owns the lock, acquire the lock again, and return immediately. This is the difference between :class:`Lock` and :class:`!RLock`; :class:`Lock` handles this case the same as the previous, blocking until the lock can be acquired."
 msgstr "اگر همان نخ مالک قفل باشد، قفل را دوباره به دست می‌آورد و بلافاصله بازمی‌گردد. این تفاوت میان :class:`Lock` و :class:`!RLock` است؛ :class:`Lock` این حالت را مانند حالت قبلی مدیریت می‌کند و تا زمانی که قفل بتواند به دست آید، مسدود می‌شود."
@@ -863,10 +855,8 @@ msgstr "تا زمانی که اطلاع داده شود یا مهلت زمانی
 msgid "This method releases the underlying lock, and then blocks until it is awakened by a :meth:`notify` or :meth:`notify_all` call for the same condition variable in another thread, or until the optional timeout occurs.  Once awakened or timed out, it re-acquires the lock and returns."
 msgstr "این متد قفل زیربنایی را آزاد می‌کند و سپس مسدود می‌شود تا با فراخوانی :meth:`notify` یا :meth:`notify_all` برای همان متغیر شرطی در یک نخ دیگر بیدار شود، یا تا زمانی که مهلت اختیاری به پایان برسد. پس از بیدار شدن یا به پایان رسیدن مهلت، قفل را دوباره به دست می‌آورد و بازمی‌گردد."
 
-#, fuzzy
-#| msgid "When the *timeout* argument is present and not ``None``, it should be a floating-point number specifying a timeout for the operation in seconds (or fractions thereof)."
 msgid "When the *timeout* argument is present and not ``None``, it should be a real number specifying a timeout for the operation in seconds (or fractions thereof)."
-msgstr "هنگامی که آرگومان *timeout* وجود دارد و ``None`` نیست، باید یک عدد ممیز شناور باشد که مهلت زمانی‌ای را برای عملیات بر حسب ثانیه (یا کسرهایی از آن) مشخص می‌کند."
+msgstr "هنگامی که آرگومان *timeout* موجود باشد و برابر با ``None`` نباشد، باید یک عدد حقیقی باشد که مهلت زمانی عملیات را برحسب ثانیه (یا کسری از آن) مشخص می‌کند."
 
 msgid "When the underlying lock is an :class:`RLock`, it is not released using its :meth:`release` method, since this may not actually unlock the lock when it was acquired multiple times recursively.  Instead, an internal interface of the :class:`RLock` class is used, which really unlocks it even when it has been recursively acquired several times. Another internal interface is then used to restore the recursion level when the lock is reacquired."
 msgstr "هنگامی که قفل زیربنایی یک :class:`RLock` باشد، با استفاده از متد :meth:`release` آن آزاد نمی‌شود، زیرا اگر قفل چندین بار به‌صورت بازگشتی کسب شده باشد، این کار ممکن است واقعاً قفل را باز نکند. در عوض، از یک رابط داخلی کلاس :class:`RLock` استفاده می‌شود که حتی اگر قفل چندین بار به‌صورت بازگشتی کسب شده باشد، واقعاً آن را باز می‌کند. سپس از یک رابط داخلی دیگر برای بازگرداندن سطح بازگشت، هنگامی که قفل دوباره کسب می‌شود، استفاده می‌شود."
@@ -1022,10 +1012,8 @@ msgstr "پرچم داخلی را روی false بازنشانی می‌کند. پ
 msgid "Block as long as the internal flag is false and the timeout, if given, has not expired. The return value represents the reason that this blocking method returned; ``True`` if returning because the internal flag is set to true, or ``False`` if a timeout is given and the internal flag did not become true within the given wait time."
 msgstr "تا زمانی که پرچم داخلی نادرست است و مهلت، در صورت تعیین شدن، منقضی نشده باشد، مسدود می‌کند. مقدار بازگشتی، دلیل بازگشت این متد مسدودکننده را نشان می‌دهد؛ ``True`` اگر بازگشت به این دلیل باشد که پرچم داخلی روی درست تنظیم شده است، یا ``False`` اگر مهلتی تعیین شده باشد و پرچم داخلی در مهلت زمانی تعیین‌شده درست نشده باشد."
 
-#, fuzzy
-#| msgid "When the timeout argument is present and not ``None``, it should be a floating-point number specifying a timeout for the operation in seconds, or fractions thereof."
 msgid "When the timeout argument is present and not ``None``, it should be a real number specifying a timeout for the operation in seconds, or fractions thereof."
-msgstr "هنگامی که آرگومان timeout وجود دارد و ``None`` نیست، باید یک عدد اعشاری باشد که مهلت زمانی عملیات را بر حسب ثانیه یا کسری از ثانیه مشخص می‌کند."
+msgstr "هنگامی که آرگومان *timeout* موجود باشد و برابر با ``None`` نباشد، باید یک عدد حقیقی باشد که مهلت زمانی عملیات را برحسب ثانیه، یا کسری از آن، مشخص می‌کند."
 
 msgid "Timer objects"
 msgstr "اشیای Timer"
@@ -1187,33 +1175,31 @@ msgid "Currently, :class:`Lock`, :class:`RLock`, :class:`Condition`, :class:`Sem
 msgstr "در حال حاضر، می‌توان از اشیای :class:`Lock`، :class:`RLock`، :class:`Condition`، :class:`Semaphore` و :class:`BoundedSemaphore` به‌عنوان مدیران زمینه‌ی دستور :keyword:`with` استفاده کرد."
 
 msgid "Iterator synchronization"
-msgstr ""
+msgstr "همگام‌سازی پیمایش‌گر"
 
 msgid "By default, Python iterators do not support concurrent access. Most iterators make no guarantees when accessed simultaneously from multiple threads. Generator iterators, for example, raise :exc:`ValueError` if one of their iterator methods is called while the generator is already executing. The tools in this section allow reliable concurrency support to be added to ordinary iterators and iterator-producing callables."
-msgstr ""
+msgstr "به طور پیش‌فرض، پیمایش‌گرهای پایتون از دسترسی هم‌زمان پشتیبانی نمی‌کنند. بیشتر پیمایش‌گرها هنگام دسترسی هم‌زمان از چند نخ هیچ تضمینی ارائه نمی‌دهند. برای مثال، پیمایش‌گرهای تولیدگر اگر یکی از متدهای پیمایش‌گر آن‌ها در حالی که تولیدگر در حال اجراست فراخوانی شود، یک :exc:`ValueError` بالا می‌آورند. ابزارهای این بخش اجازه می‌دهند پشتیبانی قابل‌اعتمادی از هم‌زمانی به پیمایش‌گرهای معمولی و فراخوانی‌پذیرهای تولیدکننده‌ی پیمایش‌گر اضافه شود."
 
 msgid "The :class:`serialize_iterator` wrapper lets multiple threads share a single iterator and take turns consuming from it. While one thread is running ``__next__()``, the others block until the iterator becomes available. Each value produced by the underlying iterator is delivered to exactly one caller."
-msgstr ""
+msgstr "پوششی کلاس :class:`serialize_iterator` به چندین نخ (thread) اجازه می‌دهد تا یک پیمایش‌گر واحد را به اشتراک بگذارند و به نوبت مقادیر را از آن مصرف کنند. در حالی که یک نخ در حال اجرای ``__next__()`` است، نخ‌های دیگر تا زمانی که پیمایش‌گر در دسترس قرار گیرد، مسدود می‌شوند. هر مقدار تولید شده توسط پیمایش‌گر زیرین دقیقاً به یک فراخواننده تحویل داده می‌شود."
 
 msgid "The :func:`concurrent_tee` function lets multiple threads each receive the full stream of values from one underlying iterator. It creates independent iterators that all draw from the same source. Values are buffered until consumed by all of the derived iterators."
-msgstr ""
+msgstr "تابع :func:`concurrent_tee` به چندین نخ اجازه می‌دهد که هر کدام جریان کامل مقادیر را از یک پیمایش‌گر زیرین دریافت کنند. این تابع پیمایش‌گرهای مستقلی ایجاد می‌کند که همه از یک منبع تغذیه می‌شوند. مقادیر تا زمانی که توسط همه پیمایش‌گرهای مشتق‌شده مصرف شوند، در بافر نگهداری می‌شوند."
 
 msgid "Return an iterator wrapper that serializes concurrent calls to :meth:`~iterator.__next__` using a lock."
-msgstr ""
+msgstr "یک پوششی پیمایش‌گر برمی‌گرداند که فراخوانی‌های هم‌زمان به :meth:`~iterator.__next__` را با استفاده از یک قفل (lock) به صورت سری درمی‌آورد."
 
 msgid "If the wrapped iterator also defines :meth:`~generator.send`, :meth:`~generator.throw`, or :meth:`~generator.close`, those calls are serialized as well."
-msgstr ""
+msgstr "اگر پیمایش‌گر پوشش‌داده‌شده متدهای :meth:`~generator.send`، :meth:`~generator.throw` یا :meth:`~generator.close` را نیز تعریف کند، آن فراخوانی‌ها نیز به صورت سری انجام می‌شوند."
 
 msgid "This makes it possible to share a single iterator, including a generator iterator, between multiple threads. A lock ensures that calls are handled one at a time. No values are duplicated or skipped by the wrapper itself. Each item from the underlying iterator is given to exactly one caller."
-msgstr ""
+msgstr "این کار اشتراک‌گذاری یک پیمایش‌گر واحد، از جمله یک پیمایش‌گر تولیدگر (generator iterator)، را بین چندین نخ امکان‌پذیر می‌کند. یک قفل تضمین می‌کند که فراخوانی‌ها یکی پس از دیگری مدیریت شوند. هیچ مقداری توسط خود پوششی تکرار یا رد نمی‌شود. هر آیتم از پیمایش‌گر زیرین دقیقاً به یک فراخواننده داده می‌شود."
 
 msgid "This wrapper does not copy or buffer values. Threads that call :func:`next` while another thread is already advancing the iterator will block until the active call completes."
-msgstr ""
+msgstr "این پوششی مقادیر را کپی یا بافر نمی‌کند. نخ‌هایی که وقتی نخ دیگری در حال پیشروی در پیمایش‌گر است، تابع :func:`next` را فراخوانی می‌کنند، تا زمان اتمام فراخوانی فعال مسدود خواهند شد."
 
-#, fuzzy
-#| msgid "Example::"
 msgid "Example:"
-msgstr "مثال::"
+msgstr "مثال:"
 
 msgid ""
 "import threading\n"
@@ -1235,15 +1221,33 @@ msgid ""
 "t1.join()\n"
 "t2.join()"
 msgstr ""
+"import threading\n"
+"\n"
+"def squares(n):\n"
+"    for x in range(n):\n"
+"        yield x * x\n"
+"\n"
+"def consume(name, iterable):\n"
+"    for item in iterable:\n"
+"        print(name, item)\n"
+"\n"
+"source = threading.serialize_iterator(squares(5))\n"
+"\n"
+"t1 = threading.Thread(target=consume, args=(\"left\", source))\n"
+"t2 = threading.Thread(target=consume, args=(\"right\", source))\n"
+"t1.start()\n"
+"t2.start()\n"
+"t1.join()\n"
+"t2.join()"
 
 msgid "In this example, each number is printed exactly once, but the work is shared between the two threads."
-msgstr ""
+msgstr "در این مثال، هر عدد دقیقاً یک بار چاپ می‌شود، اما کار بین دو نخ به اشتراک گذاشته می‌شود."
 
 msgid "Wrap an iterator-producing callable so that each iterator it returns is automatically passed through :class:`serialize_iterator`."
-msgstr ""
+msgstr "یک شیء فراخوانی‌پذیرِ تولیدکننده‌ی پیمایش‌گر را پوشش می‌دهد تا هر پیمایش‌کری که برمی‌گرداند به طور خودکار از طریق :class:`serialize_iterator` پردازش شود."
 
 msgid "This is especially useful as a :term:`decorator` for generator functions, allowing their generator-iterators to be consumed from multiple threads."
-msgstr ""
+msgstr "این قابلیت به عنوان یک :term:`دکوراتور <decorator>` برای توابع تولیدگر بسیار مفید است و به پیمایش‌گرهای تولیدگر آن‌ها اجازه می‌دهد تا از چندین نخ مصرف شوند."
 
 msgid ""
 "import threading\n"
@@ -1266,24 +1270,43 @@ msgid ""
 "t1.join()\n"
 "t2.join()"
 msgstr ""
+"import threading\n"
+"\n"
+"@threading.synchronized_iterator\n"
+"def squares(n):\n"
+"    for x in range(n):\n"
+"        yield x * x\n"
+"\n"
+"def consume(name, iterable):\n"
+"    for item in iterable:\n"
+"        print(name, item)\n"
+"\n"
+"source = squares(5)\n"
+"\n"
+"t1 = threading.Thread(target=consume, args=(\"left\", source))\n"
+"t2 = threading.Thread(target=consume, args=(\"right\", source))\n"
+"t1.start()\n"
+"t2.start()\n"
+"t1.join()\n"
+"t2.join()"
 
 msgid "The returned wrapper preserves the metadata of *func*, such as its name and wrapped function reference."
-msgstr ""
+msgstr "پوششی بازگردانده‌شده فراداده‌ی (metadata) تابع *func*، مانند نام و ارجاع تابع پوشش‌داده‌شده‌ی آن را حفظ می‌کند."
 
 msgid "Return *n* independent iterators from a single input *iterable*, with guaranteed behavior when the derived iterators are consumed concurrently."
-msgstr ""
+msgstr "تعداد *n* پیمایش‌گر مستقل از یک *iterable* ورودی واحد برمی‌گرداند، با این تضمین که رفتار هنگام مصرف هم‌زمان پیمایش‌گرهای مشتق‌شده حفظ شود."
 
 msgid "This function is similar to :func:`itertools.tee`, but is intended for cases where the source iterator may feed consumers running in different threads. Each returned iterator yields every value from the underlying iterable, in the same order."
-msgstr ""
+msgstr "این تابع شبیه به :func:`itertools.tee` است، اما برای مواردی در نظر گرفته شده است که ممکن است پیمایش‌گر منبع، مصرف‌کنندگانی را که در نخ‌های مختلفی اجرا می‌شوند تغذیه کند. هر پیمایش‌گر بازگردانده‌شده، هر مقدار را از پیمایش‌پذیر زیرین و به همان ترتیب تولید می‌کند."
 
 msgid "Internally, values are buffered until every derived iterator has consumed them."
-msgstr ""
+msgstr "از نظر داخلی، مقادیر در بافر نگهداری می‌شوند تا زمانی که هر پیمایش‌گر مشتق‌شده آن‌ها را مصرف کند."
 
 msgid "The returned iterators share the same underlying synchronization lock. Each individual derived iterator is intended to be consumed by one thread at a time. If a single derived iterator must itself be shared by multiple threads, wrap it with :class:`serialize_iterator`."
-msgstr ""
+msgstr "پیمایش‌گرهای بازگردانده‌شده یک قفل همگام‌سازی زیرین مشترک دارند. هر پیمایش‌گر مشتق‌شده‌ی فردی برای این در نظر گرفته شده است که در هر زمان توسط یک نخ مصرف شود. اگر قرار باشد یک پیمایش‌گر مشتق‌شده‌ی منفرد توسط چندین نخ به اشتراک گذاشته شود، آن را با :class:`serialize_iterator` پوشش دهید."
 
 msgid "If *n* is ``0``, return an empty tuple. If *n* is negative, raise :exc:`ValueError`."
-msgstr ""
+msgstr "اگر *n* برابر با ``0`` باشد، یک تاپل خالی برمی‌گرداند. اگر *n* منفی باشد، استثنای :exc:`ValueError` را بالا می‌آورد."
 
 msgid ""
 "import threading\n"
@@ -1306,9 +1329,28 @@ msgid ""
 "t1.join()\n"
 "t2.join()"
 msgstr ""
+"import threading\n"
+"\n"
+"def squares(n):\n"
+"    for x in range(n):\n"
+"        yield x * x\n"
+"\n"
+"def consume(name, iterable):\n"
+"    for item in iterable:\n"
+"        print(name, item)\n"
+"\n"
+"source = squares(5)\n"
+"left, right = threading.concurrent_tee(source)\n"
+"\n"
+"t1 = threading.Thread(target=consume, args=(\"left\", left))\n"
+"t2 = threading.Thread(target=consume, args=(\"right\", right))\n"
+"t1.start()\n"
+"t2.start()\n"
+"t1.join()\n"
+"t2.join()"
 
 msgid "In this example, both consumer threads see the full sequence of squares from a single generator expression."
-msgstr ""
+msgstr "در این مثال، هر دو نخ مصرف‌کننده، دنباله‌ی کامل مربعات را از یک عبارت تولیدگر واحد مشاهده می‌کنند."
 
 msgid "trace function"
 msgstr "تابع ردگیری"

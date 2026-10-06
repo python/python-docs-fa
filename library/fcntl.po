@@ -68,18 +68,14 @@ msgstr "عملیات *cmd* را روی توصیف‌گر پرونده *fd* ان�
 msgid "When *arg* is an integer, the function returns the integer return value of the C :c:func:`fcntl` call."
 msgstr "هنگامی که *arg* عدد صحیح باشد، تابع مقدار بازگشتی از نوع عدد صحیحِ فراخوانی C :c:func:`fcntl` را برمی‌گرداند."
 
-#, fuzzy
-#| msgid "When the argument is bytes-like object, it represents a binary structure, for example, created by :func:`struct.pack`. A string value is encoded to binary using the UTF-8 encoding. The binary data is copied to a buffer whose address is passed to the C :c:func:`fcntl` call.  The return value after a successful call is the contents of the buffer, converted to a :class:`bytes` object. The length of the returned object will be the same as the length of the *arg* argument. This is limited to 1024 bytes."
 msgid "When the argument is bytes-like object, it represents a binary structure, for example, created by :func:`struct.pack`. A string value is encoded to binary using the UTF-8 encoding. The binary data is copied to a buffer whose address is passed to the C :c:func:`fcntl` call.  The return value after a successful call is the contents of the buffer, converted to a :class:`bytes` object. The length of the returned object will be the same as the length of the *arg* argument."
-msgstr "هنگامی که آرگومان یک شیء شبه‌بایت (bytes-like) باشد، این آرگومان یک ساختار دودویی را نشان می‌دهد؛ برای مثال، ساختاری که با :func:`struct.pack` ایجاد شده است. یک مقدار رشته‌ای با استفاده از کدگذاری UTF-8 به دودویی کدگذاری می‌شود. داده‌های دودویی به یک بافر کپی می‌شوند و نشانی آن به فراخوانی :c:func:`fcntl` در C ارسال می‌شود. مقدار بازگشتی پس از یک فراخوانی موفق، محتوای بافر است که به یک شیء :class:`bytes` تبدیل می‌شود. طول شیء برگردانده‌شده همان طول آرگومان *arg* خواهد بود. این مقدار به ۱۰۲۴ بایت محدود است."
+msgstr "وقتی آرگومان یک شیء شبه‌بایت است، ساختاری دودویی را نشان می‌دهد که مثلاً توسط :func:`struct.pack` ایجاد شده است. مقدار رشته با استفاده از کدگذاری UTF-8 به شکل دودویی کدگذاری می‌شود. داده‌ی دودویی در بافری کپی می‌شود که آدرس آن به فراخوانی C :c:func:`fcntl` ارسال می‌شود. مقدار بازگشتی پس از یک فراخوانی موفق، محتویات بافر است که به یک شیء :class:`bytes` تبدیل شده است. طول شیء بازگشتی برابر با طول آرگومان *arg* خواهد بود."
 
 msgid "If the :c:func:`fcntl` call fails, an :exc:`OSError` is raised."
 msgstr "اگر فراخوانی :c:func:`fcntl` با شکست مواجه شود، یک :exc:`OSError` پرتاب می‌شود."
 
-#, fuzzy
-#| msgid "If the type or the size of *arg* does not match the type or size of the argument of the operation (for example, if an integer is passed when a pointer is expected, or the information returned in the buffer by the operating system is larger than 1024 bytes), this is most likely to result in a segmentation violation or a more subtle data corruption."
 msgid "If the type or size of *arg* does not match the type or size of the operation's argument (for example, if an integer is passed when a pointer is expected, or the information returned in the buffer by the operating system is larger than the size of *arg*), this is most likely to result in a segmentation violation or a more subtle data corruption."
-msgstr "اگر نوع یا اندازه‌ی *arg* با نوع یا اندازه‌ی آرگومان عملیات مطابقت نداشته باشد (برای مثال، اگر زمانی که اشاره‌گر مورد انتظار است، یک عدد صحیح ارسال شود، یا اطلاعاتی که سیستم‌عامل در بافر برمی‌گرداند بزرگ‌تر از ۱۰۲۴ بایت باشد)، این حالت به احتمال زیاد منجر به نقض قطعه‌بندی یا خرابی داده‌ی پنهان‌تر می‌شود."
+msgstr "اگر نوع یا اندازهی *arg* با نوع یا اندازهی آرگومان عملیات مطابقت نداشته باشد (برای مثال، اگر در صورت انتظار یک اشاره‌گر، یک عدد صحیح ارسال شود، یا اطلاعات بازگردانده‌شده در بافر توسط سیستم‌عامل بزرگ‌تر از اندازه‌ی *arg* باشد)، این امر احتمالاً به خطای قطعه‌بندی (segmentation fault) یا خرابی داده‌های ظریف‌تری منجر می‌شود."
 
 msgid "Raises an :ref:`auditing event <auditing>` ``fcntl.fcntl`` with arguments ``fd``, ``cmd``, ``arg``."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``fcntl.fcntl`` را با آرگومان‌های ``fd``، ``cmd`` و ``arg`` پرتاب می‌کند."
@@ -88,7 +84,7 @@ msgid "Add support of arbitrary :term:`bytes-like objects <bytes-like object>`, 
 msgstr "افزودن پشتیبانی از هرگونه :term:`شیء شبه‌بایت (bytes-like object) <bytes-like object>`، نه فقط :class:`bytes`."
 
 msgid "The size of bytes-like objects is no longer limited to 1024 bytes."
-msgstr ""
+msgstr "اندازه‌ی اشیاء شبه‌بایت دیگر به ۱۰۲۴ بایت محدود نیست."
 
 msgid "This function is identical to the :func:`~fcntl.fcntl` function, except that the argument handling is even more complicated."
 msgstr "این تابع با تابع :func:`~fcntl.fcntl` یکسان است، با این تفاوت که مدیریت آرگومان‌ها حتی پیچیده‌تر است."
@@ -141,7 +137,7 @@ msgid "The GIL is always released during a system call. System calls failing wit
 msgstr "GIL همیشه در حین یک فراخوانی سیستمی آزاد می‌شود. فراخوانی‌های سیستمی که با EINTR ناموفق می‌شوند، به‌طور خودکار دوباره تلاش می‌شوند."
 
 msgid "The size of not mutated bytes-like objects is no longer limited to 1024 bytes."
-msgstr ""
+msgstr "اندازه‌ی اشیاء شبه‌بایت تغییرنیافته دیگر به ۱۰۲۴ بایت محدود نیست."
 
 msgid "Perform the lock operation *operation* on file descriptor *fd* (file objects providing a :meth:`~io.IOBase.fileno` method are accepted as well). See the Unix manual :manpage:`flock(2)` for details.  (On some systems, this function is emulated using :c:func:`fcntl`.)"
 msgstr "عملیات قفل *operation* را روی توصیف‌گر پرونده *fd* انجام دهید (اشیاء پرونده‌ای که یک متد :meth:`~io.IOBase.fileno` ارائه می‌دهند نیز پذیرفته می‌شوند). برای جزئیات، صفحه‌ی راهنمای Unix :manpage:`flock(2)` را ببینید. (در برخی سیستم‌ها، این تابع با استفاده از :c:func:`fcntl` شبیه‌سازی می‌شود.)"
