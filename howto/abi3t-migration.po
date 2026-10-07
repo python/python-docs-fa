@@ -17,214 +17,217 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Migrating to Stable ABI for free threading (``abi3t``)"
-msgstr ""
+msgstr "مهاجرت به ABI پایدار برای نخ‌بندی آزاد (``abi3t``)"
 
 msgid "Starting with the 3.15 release, CPython supports a variant of the Stable ABI that supports :term:`free-threaded <free threading>` Python: the Stable ABI for Free-Threaded Builds, or ``abi3t`` for short. This document describes how to adapt C API extensions to support free threading."
-msgstr ""
+msgstr "شروع از نسخه‌ی 3.15، سی‌پایتون از گونه‌ای از ABI پایدار پشتیبانی می‌کند که از پایتون :term:`نخ‌بندی‌آزاد <free threading>` پشتیبانی می‌کند: ABI پایدار برای ساخت‌های نخ‌آزاد، یا به اختصار ``abi3t``. این سند نحوه سازگار کردن افزونه‌های C API را برای پشتیبانی از نخ‌بندی آزاد شرح می‌دهد."
 
 msgid "Why do this"
-msgstr ""
+msgstr "چرا این کار را انجام دهیم"
 
 msgid "The typical reason to use the Stable ABI is to reduce the number of artifacts that you need to build and distribute for each version of your library."
-msgstr ""
+msgstr "دلیل اصلی استفاده از ABI پایدار، کاهش تعداد خروجی‌هایی است که باید برای هر نسخه از کتابخانه‌ی خود بسازید و توزیع کنید."
 
 msgid "Without the Stable ABI, you must build a separate shared library, and typically a *wheel* distribution, for each feature version of CPython you wish to support. For example, each tag in the following table represents a separate library/wheel:"
-msgstr ""
+msgstr "بدون ABI پایدار، باید برای هر نسخه‌ی ویژگی سی‌پایتونی که می‌خواهید از آن پشتیبانی کنید، یک کتابخانه‌ی مشترک جداگانه و معمولاً یک توزیع *ویل* (wheel) بساحید. برای مثال، هر برچسب در جدول زیر نمایانگر یک کتابخانه/ویل جداگانه است:"
 
 msgid "CPython version"
-msgstr ""
+msgstr "نسخه‌ی سی‌پایتون"
 
 msgid "Non-free-threaded"
-msgstr ""
+msgstr "غیر نخ‌آزاد"
 
 msgid "Free-threaded"
-msgstr ""
+msgstr "نخ‌آزاد"
 
 msgid "3.12"
-msgstr ""
+msgstr "3.12"
 
 msgid "``cpython-312``"
-msgstr ""
+msgstr "``cpython-312``"
 
 msgid "---"
-msgstr ""
+msgstr "---"
 
 msgid "3.13"
-msgstr ""
+msgstr "3.13"
 
 msgid "``cpython-313``"
-msgstr ""
+msgstr "``cpython-313``"
 
 msgid "``cpython-313t``"
-msgstr ""
+msgstr "``cpython-313t``"
 
 msgid "3.14"
-msgstr ""
+msgstr "3.14"
 
 msgid "``cpython-314``"
-msgstr ""
+msgstr "``cpython-314``"
 
 msgid "``cpython-314t``"
-msgstr ""
+msgstr "``cpython-314t``"
 
 msgid "3.15"
-msgstr ""
+msgstr "3.15"
 
 msgid "``cpython-315``"
-msgstr ""
+msgstr "``cpython-315``"
 
 msgid "``cpython-315t``"
-msgstr ""
+msgstr "``cpython-315t``"
 
 msgid "3.16"
-msgstr ""
+msgstr "۳.۱۶"
 
 msgid "``cpython-316``"
-msgstr ""
+msgstr "``cpython-316``"
 
 msgid "``cpython-316t``"
-msgstr ""
+msgstr "``cpython-316t``"
 
 msgid "Later versions"
-msgstr ""
+msgstr "نسخه‌های بعدی"
 
 msgid ":samp:`cpython-3{XX}`"
-msgstr ""
+msgstr ":samp:`cpython-3{XX}`"
 
 msgid ":samp:`cpython-3{XX}t`"
-msgstr ""
+msgstr ":samp:`cpython-3{XX}t`"
 
 msgid "That's a lot of builds, especially when multiplied by the number of supported platforms."
-msgstr ""
+msgstr "این تعداد ساخت بسیار زیاد است، به‌ویژه وقتی در تعداد پلتفرم‌های پشتیبانی‌شده ضرب شود."
 
 msgid "With the Stable ABI (``abi3``, introduced in CPython 3.2), a single extension (per platform) can cover all *non-free-threaded* builds of CPython:"
-msgstr ""
+msgstr "با استفاده از Stable ABI (معادل ``abi3``، که در سی‌پایتون ۳.۲ معرفی شد)، یک افزونەی واحد (به ازای هر پلتفرم) می‌تواند تمام ساخت‌های *غیر نخ‌آزاد* سی‌پایتون را پوشش دهد:"
 
 msgid "``abi3``"
-msgstr ""
+msgstr "``abi3``"
 
 msgid "The Stable ABI for free-threaded builds (``abi3t``), introduced in CPython 3.15, does the same for free-threaded builds. And it's compatible with non-free-threaded ones as well:"
-msgstr ""
+msgstr "Stable ABI برای ساخت‌های نخ‌آزاد (``abi3t``) که در سی‌پایتون ۳.۱۵ معرفی شد، همین کار را برای ساخت‌های نخ‌آزاد انجام می‌دهد. همچنین با نسخه‌های غیر نخ‌آزاد نیز سازگار است:"
 
 msgid "``abi3`` *"
-msgstr ""
+msgstr "``abi3`` *"
 
 msgid "``abi3t``"
-msgstr ""
+msgstr "``abi3t``"
 
 msgid "\\* (As above, the ``abi3`` extension is compatible with all non-free-threaded builds; even the 3.15+ ones that this table \"attributes\" to ``abi3t``.)"
-msgstr ""
+msgstr "\\* (همان‌طور که در بالا ذکر شد، افزونەی ``abi3`` با تمام ساخت‌های غیر نخ‌آزاد سازگار است؛ حتی نسخه‌های ۳.۱۵ به بالا که این جدول آن‌ها را به ``abi3t`` «نسبت می‌دهد».)"
 
 msgid "Why *not* do this"
-msgstr ""
+msgstr "چرا این کار را *نکنیم*"
 
 msgid "There are two main downsides to the Stable ABI."
-msgstr ""
+msgstr "Stable ABI دو نقطه‌ی ضعف اصلی دارد."
 
 msgid "First, your extension may become slower, since the Stable ABI prioritizes compatibility over performance. The difference is usually not noticeable, and often can be mitigated by using the same source to build both a Stable ABI build and a few version-specific ones for \"tier 1\" CPython versions."
-msgstr ""
+msgstr "نخست، ممکن است افزونەی شما کندتر شود، زیرا Stable ABI سازگاری را بر کارایی ترجیح می‌دهد. این تفاوت معمولاً محسوس نیست و اغلب می‌توان با استفاده از یک سورس واحد برای ساخت هم یک ساخت Stable ABI و هم چند ساختِ وابستہ به نسخه برای نسخه‌های «رده ۱» سی‌پایتون، آن را کاهش داد."
 
 msgid "Second, not all of the C API is available. Extensions need to be ported to build for the Stable ABI, which may be difficult or, in rare cases, impossible."
-msgstr ""
+msgstr "دوم، همه‌ی C API در دسترس نیست. افزونه‌ها باید برای ساخته شدن با Stable ABI پورت شوند، که ممکن است دشوار یا در موارد نادر، غیرممکن باشد."
 
 msgid "Specifically, ``abi3t`` requires APIs added in CPython 3.15. If you want to build your extension for older versions of CPython from the same source, you have two main options:"
-msgstr ""
+msgstr "به‌طور خاص، ``abi3t`` به APIهای اضافه‌شده در سی‌پایتون ۳.۱۵ نیاز دارد. اگر می‌خواهید افزونەی خود را برای نسخه‌های قدیمی‌تر سی‌پایتون از همان سورس بسازید، دو گزینه‌ی اصلی پیش رو دارید:"
 
 msgid "Use preprocessor conditionals."
-msgstr ""
+msgstr "استفاده از شرط‌های پیش‌پردازنده (preprocessor conditionals)."
 
 msgid "When following this guide, use ``#ifdef Py_TARGET_ABI3T`` blocks whenever you are told to do a change that breaks the build on CPython versions you care about. Keep the pre-existing code in ``#else`` blocks."
-msgstr ""
+msgstr "هنگام پیروی از این راهنما، هر زمان که به شما گفته شد تغییری انجام دهید که ساخت را در نسخه‌های سی‌پایتون مورد نظرتان دچار مشکل می‌کند، از بلوک‌های ``#ifdef Py_TARGET_ABI3T`` استفاده کنید. کد از پیش موجود را در بلوک‌های ``#else`` نگه دارید."
 
 msgid "For hand-written C extensions, this approach is reasonable down to CPython 3.12, due to additions introduced in :pep:`697`. Keeping compatibility with 3.11 and below may be worth it for code generators (for example, Cython)."
-msgstr ""
+msgstr "برای افزونه‌های C دست‌نویس، این رویکرد تا سی‌پایتون ۳.۱۲ منطقی است، به دلیل اضافه‌سازی‌های معرفی‌شده در :pep:`697`. حفظ سازگاری با نسخه‌ی ۳.۱۱ و پایین‌تر ممکن است برای تولیدگرهای کد (مثلاً Cython) ارزش داشته باشد."
 
 msgid "Do not port to ``abi3t``, and continue building separate extensions for each version of CPython, until you can drop support for the older versions."
-msgstr ""
+msgstr "تا زمانی که نتوانید پشتیبانی از نسخه‌های قدیمی‌تر را کنار بگذارید، به ``abi3t`` منتقل نکنید و به ساخت افزونه‌های جداگانه برای هر نسخه‌ی سی‌پایتون ادامه دهید."
 
 msgid "This is a valid approach. Not all extensions need to switch to ``abi3t`` right now."
-msgstr ""
+msgstr "این یک رویکرد معتبر است. لازم نیست همه‌ی افزونه‌ها در حال حاضر به ``abi3t`` تغییر وضعیت دهند."
 
 msgid "Prerequisites"
-msgstr ""
+msgstr "پیش‌نیازها"
 
 msgid "This guide assumes that you have an extension written directly in C (or C++), which you want to port to ``abi3t``."
-msgstr ""
+msgstr "این راهنما فرض می‌کند که شما یک افزونه دارید که مستقیماً به زبان C (یا ++C) نوشته شده است و می‌خواهید آن را به ``abi3t`` منتقل کنید."
 
 msgid "If your extension uses a code generator (like Cython) or language binding (like PyO3), it's best to wait until that tool has support for ``abi3t``. If you maintain such a tool, you might be able to adapt the instructions here for your tool."
-msgstr ""
+msgstr "اگر افزونه‌ی شما از یک تولیدگر کد (مانند Cython) یا اتصال زبانی (مانند PyO3) استفاده می‌کند، بهتر است صبر کنید تا آن ابزار از ``abi3t`` پشتیبانی کند. اگر چنین ابزاری را نگهداری می‌کنید، ممکن است بتوانید دستورالعمل‌های اینجا را برای ابزار خود تطبیق دهید."
 
 msgid "Non-free-threaded Stable ABI"
-msgstr ""
+msgstr "ABI پایدار غیر نخ‌آزاد"
 
 msgid "Your extension should support the non-free-threaded Stable ABI (``abi3``). If not, either port it first, or follow this guide but be prepared to fix issues it does not mention."
-msgstr ""
+msgstr "افزونه‌ی شما باید از ABI پایدار غیر نخ‌آزاد (``abi3``) پشتیبانی کند. اگر این‌طور نیست، یا ابتدا آن را منتقل کنید، یا این راهنما را دنبال کنید اما آماده باشید تا مسائلی را که در آن ذکر نشده است، برطرف کنید."
 
 msgid "Free-threading support"
-msgstr ""
+msgstr "پشتیبانی از نخ‌بندی آزاد"
 
 msgid "While it's technically not a hard prerequisite, you will most likely want to prepare your extension for free threading before you port it to ``abi3t``. See :ref:`freethreading-extensions-howto` for instructions."
-msgstr ""
+msgstr "اگرچه از نظر فنی یک پیش‌نیاز سخت‌گیرانه نیست، اما احتمالاً ترجیح می‌دهید پیش از انتقال افزونه‌ی خود به ``abi3t``، آن را برای نخ‌بندی آزاد آماده کنید. برای دستورالعمل‌ها به :ref:`freethreading-extensions-howto` مراجعه کنید."
 
 msgid "`Porting Extension Modules to Support Free-Threading <https://py-free-threading.github.io/porting/>`__: A community-maintained porting guide for extension authors."
-msgstr ""
+msgstr "`انتقال ماژول‌های افزونه برای پشتیبانی از نخ‌بندی آزاد <https://py-free-threading.github.io/porting/>`__: یک راهنمای انتقال که توسط کامیونیتی برای توسعه‌دهندگان افزونه نگهداری می‌شود."
 
 msgid "Isolating extension modules"
-msgstr ""
+msgstr "ایزوله‌سازی ماژول‌های افزونه"
 
 msgid "Your module should use :ref:`multi-phase initialization <multi-phase-initialization>`, and it should either be isolated or limit itself to be loaded at most once per process. If it is not your case, follow :ref:`isolating-extensions-howto` first. (See the :ref:`opt-out section <isolating-extensions-optout>` for a shortcut.)"
-msgstr ""
+msgstr "ماژول شما باید از :ref:`راه‌اندازی چندفازی <multi-phase-initialization>` استفاده کند و یا باید ایزوله باشد یا بارگذاری خود را به حداکثر یک بار در هر فرایند محدود کند. اگر این‌گونه نیست، ابتدا :ref:`isolating-extensions-howto` را دنبال کنید. (برای میانبر، به :ref:`بخش انصراف <isolating-extensions-optout>` مراجعه کنید.)"
 
 msgid "Avoiding variable-sized types"
-msgstr ""
+msgstr "جلوگیری از انواعی با اندازه‌ی متغیر"
 
 msgid "If your extension defines variable-sized types (using :c:macro:`Py_tp_itemsize` or :c:member:`PyTypeObject.tp_itemsize`), it cannot be ported to ``abi3t`` 3.15."
-msgstr ""
+msgstr "اگر افزونه‌ی شما انواعی با اندازه‌ی متغیر را تعریف می‌کند (با استفاده از :c:macro:`Py_tp_itemsize` یا :c:member:`PyTypeObject.tp_itemsize`)، نمی‌تواند به ``abi3t`` ۳.۱۵ منتقل شود."
 
 msgid "Setting up the build"
-msgstr ""
+msgstr "تنظیم ساخت"
 
 msgid "If you use a build tool (such as setuptools, meson-python, scikit-build-core), search its documentation for a way to select ``abi3t``. At the time of writing, not all of them have this; but if your tool does, use it. You may want to verify that it set the right flag by temporarily adding the following just after ``#include <Python.h>``::"
-msgstr ""
+msgstr "اگر از یک ابزار ساخت (مانند setuptools، meson-python، scikit-build-core) استفاده می‌کنید، مستندات آن را برای یافتن روشی جهت انتخاب ``abi3t`` جستجو کنید. در زمان نگارش این متن، همه آن‌ها این ویژگی را ندارند؛ اما اگر ابزار شما دارد، از آن استفاده کنید. ممکن است بخواهید با افزودن موقت کد زیر بلافاصله پس از ``#include <Python.h>`` بررسی کنید که آیا پرچم مناسب را تنظیم کرده است یا خیر::"
 
 msgid ""
 "#if Py_TARGET_ABI3T+0 <= 0x30f0000\n"
 "#error \"abi3t define is not set!\"\n"
 "#endif"
 msgstr ""
+"#if Py_TARGET_ABI3T+0 <= 0x30f0000\n"
+"#error \"abi3t define is not set!\"\n"
+"#endif"
 
 msgid "This should result in a different error than \"``abi3t`` define is not set\"."
-msgstr ""
+msgstr "این امر باید خطایی متفاوت از \"``abi3t`` define is not set\" ایجاد کند."
 
 msgid "If your build tool doesn't support ``abi3t`` yet, set the following macro before including ``Python.h``::"
-msgstr ""
+msgstr "اگر ابزار ساخت شما هنوز از ``abi3t`` پشتیبانی نمی‌کند، کلان‌دستور زیر را پیش از گنجاندن ``Python.h`` تنظیم کنید::"
 
 msgid "#define Py_TARGET_ABI3T 0x30f0000"
-msgstr ""
+msgstr "#define Py_TARGET_ABI3T 0x30f0000"
 
 msgid "or specify it as a compiler flag, for example::"
-msgstr ""
+msgstr "یا آن را به‌عنوان پرچم کامپایلر مشخص کنید، برای نمونه::"
 
 msgid "-DPy_TARGET_ABI3T=0x30f0000"
-msgstr ""
+msgstr "-DPy_TARGET_ABI3T=0x30f0000"
 
 msgid "Once your extension builds with this setting, it will be compatible with CPython 3.15 and above."
-msgstr ""
+msgstr "هنگامی که افزونه‌ی شما با این تنظیم ساخته شود، با سی‌پایتون ۳.۱۵ و بالاتر سازگار خواهد بود."
 
 msgid "If you set this macro manually, you will later need to name and tag the resulting extension manually as well. This is covered in :ref:`abi3t-migration-tagging` below."
-msgstr ""
+msgstr "اگر این کلان‌دستور را به‌صورت دستی تنظیم کنید، بعدها باید افزونه‌ی حاصل را نیز به‌صورت دستی نام‌گذاری و برچسب‌گذاری کنید. این موضوع در :ref:`abi3t-migration-tagging` در ادامه پوشش داده شده است."
 
 msgid "This guide will ask you to make a series of changes. After each one, verify that your extension still builds in the original (non-``abi3t``) configuration, and ideally run tests on all Python versions you support. This will ensure that nothing breaks as you are porting."
-msgstr ""
+msgstr "این راهنما از شما می‌خواهد مجموعه‌ای از تغییرات را انجام دهید. پس از هر تغییر، بررسی کنید که افزونه‌ی شما همچنان در پیکربندی اصلی (غیر ``abi3t``) ساخته می‌شود و ایده‌آل این است که آزمون‌ها را روی تمام نسخه‌های پایتونی که پشتیبانی می‌کنید اجرا کنید. این کار تضمین می‌کند که هنگام انتقال، چیزی خراب نشود."
 
 msgid "Module export hook"
-msgstr ""
+msgstr "قلاب اکسپورت ماژول"
 
 msgid "Unless you've done this step already, your extension module defines a :ref:`module initialization function <extension-pyinit>` named :samp:`PyInit_{<module_name>}`. You will need to port it to a :ref:`module export hook <extension-export-hook>`, :samp:`PyModExport_{<module name>}`, a feature added in CPython 3.15 in :pep:`793`."
-msgstr ""
+msgstr "مگر اینکه قبلاً این مرحله را انجام داده باشید، ماژول توسعه‌ای شما یک :ref:`تابع مقداردهی اولیه‌ی ماژول <extension-pyinit>` به نام :samp:`PyInit_{<module_name>}` را تعریف می‌کند. لازم است آن را به یک :ref:`قلاب اکسپورت ماژول <extension-export-hook>`، یعنی :samp:`PyModExport_{<module name>}` منتقل کنید که این ویژگی در سی‌پایتون ۳.۱۵ در :pep:`793` اضافه شده است."
 
 msgid "Your existing init function should look like this (with your own names for ``<modname>`` and ``<moddef>``):"
-msgstr ""
+msgstr "تابع اولیه‌ی موجود شما باید به شکل زیر باشد (با نام‌های دلخواه خودتان برای ``<modname>`` و ``<moddef>``):"
 
 msgid ""
 "PyMODINIT_FUNC\n"
@@ -233,12 +236,17 @@ msgid ""
 "    return PyModuleDef_Init(&<moddef>);\n"
 "}"
 msgstr ""
+"PyMODINIT_FUNC\n"
+"PyInit_<modname>(void)\n"
+"{\n"
+"    return PyModuleDef_Init(&<moddef>);\n"
+"}"
 
 msgid "If there is some code before the ``return``, move it to a :c:macro:`Py_mod_create` or :c:macro:`Py_mod_exec` slot function. See the :ref:`PyInit documentation <extension-pyinit>` for related information."
-msgstr ""
+msgstr "اگر کدی پیش از ``return`` وجود دارد، آن را به یک تابع جایگاه :c:macro:`Py_mod_create` یا :c:macro:`Py_mod_exec` منتقل کنید. برای اطلاعات مرتبط، مستندات :ref:`PyInit documentation <extension-pyinit>` را ببینید."
 
 msgid "The function references a ``PyModuleDef`` object (``<moddef>`` in the code above). Its definition should be similar to the following, with different values and perhaps some fields unnnamed or left out:"
-msgstr ""
+msgstr "این تابع به یک شیء ``PyModuleDef`` (که در کد بالا ``<moddef>`` است) ارجاع می‌دهد. تعریف آن باید مشابه موارد زیر باشد، با مقادیر متفاوت و احتمالاً برخی فیلدهای بدون نام یا حذف‌شده:"
 
 msgid ""
 "static PyModuleDef <moddef> = {\n"
@@ -253,9 +261,20 @@ msgid ""
 "    .m_free = my_free,\n"
 "};"
 msgstr ""
+"static PyModuleDef <moddef> = {\n"
+"    PyModuleDef_HEAD_INIT,\n"
+"    .m_name = \"my_module\",\n"
+"    .m_doc = \"my docstring\",\n"
+"    .m_size = sizeof(my_state_struct),\n"
+"    .m_methods = my_methods,\n"
+"    .m_slots = my_slots,\n"
+"    .m_traverse = my_traverse,\n"
+"    .m_clear = my_clear,\n"
+"    .m_free = my_free,\n"
+"};"
 
 msgid "Remove this definition and the ``PyInit`` function (or put them in an ``#ifndef Py_TARGET_ABI3T`` block, to retain backwards compatibility), and replace them with the following:"
-msgstr ""
+msgstr "این تعریف و تابع ``PyInit`` را حذف کنید (یا آن‌ها را در یک بلوک ``#ifndef Py_TARGET_ABI3T`` قرار دهید تا سازگاری با نسخه‌های قبلی حفظ شود) و موارد زیر را جایگزین آن‌ها کنید:"
 
 msgid ""
 "PyABIInfo_VAR(abi_info);\n"
@@ -279,21 +298,41 @@ msgid ""
 "    return my_slot_array;\n"
 "}"
 msgstr ""
+"PyABIInfo_VAR(abi_info);\n"
+"\n"
+"static PySlot my_slot_array[] = {\n"
+"    PySlot_STATIC_DATA(Py_mod_abi, &abi_info),\n"
+"    PySlot_STATIC_DATA(Py_mod_name, \"my_module\"),\n"
+"    PySlot_STATIC_DATA(Py_mod_doc, \"my docstring\"),\n"
+"    PySlot_SIZE(Py_mod_state_size, sizeof(my_state_struct)),\n"
+"    PySlot_STATIC_DATA(Py_mod_methods, my_methods),\n"
+"    PySlot_STATIC_DATA(Py_mod_slots, my_slots),\n"
+"    PySlot_FUNC(Py_mod_state_traverse, my_traverse),\n"
+"    PySlot_FUNC(Py_mod_state_clear, my_clear),\n"
+"    PySlot_FUNC(Py_mod_state_free, my_free),\n"
+"    PySlot_END\n"
+"};\n"
+"\n"
+"PyMODEXPORT_FUNC\n"
+"PyModExport_<modname>(void)\n"
+"{\n"
+"    return my_slot_array;\n"
+"}"
 
 msgid "Leave out any fields that were missing (except the new :c:macro:`Py_mod_abi`), and substitute your own values."
-msgstr ""
+msgstr "هر فیلدی که غایب بوده است را کنار بگذارید (به‌جز :c:macro:`Py_mod_abi` جدید) و مقادیر خود را جایگزین کنید."
 
 msgid "See the :c:type:`PySlot` and :c:ref:`export hook <extension-export-hook>` documentation for details on this API."
-msgstr ""
+msgstr "برای جزئیات این API، مستندات :c:type:`PySlot` و :c:ref:`export hook <extension-export-hook>` را ببینید."
 
 msgid "As in the example, your ``PyModExport_`` function should *only* return a pointer to static data. If you cannot avoid additional code, refer to the :ref:`caveats in PyModExport documentation <pymodexport-api-caveats>`."
-msgstr ""
+msgstr "همانند نمونه، تابع ``PyModExport_`` شما *فقط* باید یک اشاره‌گر به داده‌ی ایستا برگرداند. اگر نمی‌توانید از کد اضافی جلوگیری کنید، به :ref:`موارد احتیاطی در مستندات PyModExport <pymodexport-api-caveats>` مراجعه کنید."
 
 msgid "Existing slots"
-msgstr ""
+msgstr "جایگاه‌های موجود"
 
 msgid "If you have a ``Py_mod_slots`` slot, check the array it refers to. It should be a :c:type:`PyModuleDef_Slot` array like the following:"
-msgstr ""
+msgstr "اگر یک جایگاه (slot) به نام ``Py_mod_slots`` دارید، آرایه‌ای را که به آن اشاره می‌کند بررسی کنید. این آرایه باید مشابه نمونه‌ی زیر یک آرایه‌ی :c:type:`PyModuleDef_Slot` باشد:"
 
 msgid ""
 "static PyObject *create_module(PyObject *spec, PyModuleDef *def) { ... }\n"
@@ -309,24 +348,36 @@ msgid ""
 "   {0, NULL}\n"
 "};"
 msgstr ""
+"static PyObject *create_module(PyObject *spec, PyModuleDef *def) { ... }\n"
+"static int my_first_module_exec(PyObject *module) { ... }\n"
+"static int my_second_module_exec(PyObject *module) { ... }\n"
+"\n"
+"static PyModuleDef_Slot my_slots[] = {\n"
+"   {Py_mod_gil, Py_MOD_GIL_NOT_USED},\n"
+"   {Py_mod_multiple_interpreters, Py_MOD_PER_INTERPRETER_GIL_SUPPORTED},\n"
+"   {Py_mod_create, my_module_create},\n"
+"   {Py_mod_exec, my_first_module_exec},\n"
+"   {Py_mod_exec, my_second_module_exec},\n"
+"   {0, NULL}\n"
+"};"
 
 msgid "``py_mod_create``"
-msgstr ""
+msgstr "``py_mod_create``"
 
 msgid "If you have a :c:macro:`Py_mod_create` entry, make sure the function can be called with ``NULL`` as its second argument (instead of the :c:type:`PyModuleDef`, which you are removing). Often, this argument isn't used at all; you can check by renaming it:"
-msgstr ""
+msgstr "اگر یک ورودی :c:macro:`Py_mod_create` دارید، اطمینان حاصل کنید که تابع می‌تواند با مقدار ``NULL`` به عنوان آرگومان دوم (به‌جای :c:type:`PyModuleDef` که در حال حذف آن هستید) فراخوانی شود. اغلب، از این آرگومان اصلاً استفاده نمی‌شود؛ می‌توانید با تغییر نام آن این موضوع را بررسی کنید:"
 
 msgid "static PyObject *create_module(PyObject *spec, PyModuleDef *_unused) { ... }"
-msgstr ""
+msgstr "static PyObject *create_module(PyObject *spec, PyModuleDef *_unused) { ... }"
 
 msgid "If the argument is used, find a different way to pass in the data. Commonly, the information is static and you can refer to it directly. (If you're reusing a single function for several different modules, consider defining several functions instead.)"
-msgstr ""
+msgstr "اگر از آرگومان استفاده می‌شود، روش دیگری برای ارسال داده‌ها پیدا کنید. معمولاً اطلاعات به صورت ایستا هستند و می‌توانید مستقیماً به آن‌ها ارجاع دهید. (اگر از یک تابع واحد برای چند ماژول مختلف استفاده مجدد می‌کنید، به جای آن تعریف چندین تابع را در نظر بگیرید.)"
 
 msgid "Multiple ``py_mod_exec``"
-msgstr ""
+msgstr "چندین ``py_mod_exec``"
 
 msgid "If you have *more than one* :c:macro:`Py_mod_exec` entry, consolidate them: create a new function that calls the others, and replace existing slots with it."
-msgstr ""
+msgstr "اگر *بیش از یک* ورودی :c:macro:`Py_mod_exec` دارید، آن‌ها را یکپارچه کنید: تابعی جدید ایجاد کنید که بقیه را فراخوانی کند و جایگاه‌های موجود را با آن جایگزین کنید."
 
 msgid ""
 "static int my_module_exec(PyObject *module) {\n"
@@ -342,15 +393,27 @@ msgid ""
 "   {0, NULL}\n"
 "};"
 msgstr ""
+"static int my_module_exec(PyObject *module) {\n"
+"   if (my_first_module_exec(module) < 0) return -1;\n"
+"   if (my_second_module_exec(module) < 0) return -1;\n"
+"}\n"
+"\n"
+"static PyModuleDef_Slot my_slots[] = {\n"
+"   ...\n"
+"   /* (remove other Py_mod_exec slots) */\n"
+"   ...\n"
+"   {Py_mod_exec, my_module_exec},\n"
+"   {0, NULL}\n"
+"};"
 
 msgid "If the functions aren't used elsewhere, you can combine their bodies instead."
-msgstr ""
+msgstr "اگر توابع در جاهای دیگر استفاده نمی‌شوند، می‌توانید به جای آن بدنه‌ی آن‌ها را ترکیب کنید."
 
 msgid "Merging slot arrays"
-msgstr ""
+msgstr "ادغام آرایه‌های جایگاه (slot)"
 
 msgid "Optionally, when you break compatibility with Python 3.14, you may clean up the code by moving slots into the :c:type:`PySlot` array, and converting the definitions to :c:macro:`PySlot_DATA` and :c:macro:`PySlot_FUNC`:"
-msgstr ""
+msgstr "به صورت اختیاری، هنگامی که سازگاری با نسخه‌ی ۳.۱۴ پایتون را قطع می‌کنید، می‌توانید با انتقال جایگاه‌ها به آرایه‌ی :c:type:`PySlot` و تبدیل تعاریف به :c:macro:`PySlot_DATA` و :c:macro:`PySlot_FUNC`، کد را پاکسازی کنید:"
 
 msgid ""
 "static PySlot my_slot_array[] = {\n"
@@ -363,39 +426,48 @@ msgid ""
 "    PySlot_END\n"
 "};"
 msgstr ""
+"static PySlot my_slot_array[] = {\n"
+"    ...\n"
+"    PySlot_DATA(Py_mod_gil, Py_MOD_GIL_NOT_USED),\n"
+"    PySlot_DATA(Py_mod_multiple_interpreters,\n"
+"         Py_MOD_PER_INTERPRETER_GIL_SUPPORTED)\n"
+"    PySlot_FUNC(Py_mod_create, my_module_create),\n"
+"    PySlot_FUNC(Py_mod_exec, my_module_exec),\n"
+"    PySlot_END\n"
+"};"
 
 msgid "If you do this, delete the original :c:type:`PyModuleDef_Slot` array and its ``Py_mod_slots`` entry."
-msgstr ""
+msgstr "اگر این کار را انجام دادید، آرایه‌ی اصلی :c:type:`PyModuleDef_Slot` و ورودی ``Py_mod_slots`` آن را حذف کنید."
 
 msgid "Associated ``PyModuleDef``"
-msgstr ""
+msgstr "شیء ``PyModuleDef`` مرتبط"
 
 msgid "Since the new API does not use a :c:type:`!PyModuleDef` structure, a definition will not be associated with the resulting module. This changes the behavior of the following functions:"
-msgstr ""
+msgstr "از آنجا که رابط برنامه‌نویسی (API) جدید از ساختار :c:type:`!PyModuleDef` استفاده نمی‌کند، هیچ تعریفی به ماژول حاصل مرتبط نخواهد شد. این موضوع رفتار توابع زیر را تغییر می‌دهد:"
 
 msgid ":c:func:`PyModule_GetDef`"
-msgstr ""
+msgstr ":c:func:`PyModule_GetDef`"
 
 msgid ":c:func:`PyType_GetModuleByDef`"
-msgstr ""
+msgstr ":c:func:`PyType_GetModuleByDef`"
 
 msgid "Check your code for these. If you do not use them, you can skip this section."
-msgstr ""
+msgstr "کد خود را برای این موارد بررسی کنید. اگر از آن‌ها استفاده نمی‌کنید، می‌توانید از این بخش رد شوید."
 
 msgid "These functions are typically used for two purposes:"
-msgstr ""
+msgstr "این توابع معمولاً برای دو منظور استفاده می‌شوند:"
 
 msgid "To get the definition the module was created with. This is no longer possible using the new API. Modules no longer keep a reference to the definition, so you will need to figure out a different way to pass the relevant data around."
-msgstr ""
+msgstr "برای دریافت تعریفی که ماژول با آن ایجاد شده است. این کار دیگر با API جدید امکان‌پذیر نیست. ماژول‌ها دیگر ارجاعی به تعریف نگه نمی‌دارند، بنابراین باید روش دیگری برای انتقال داده‌های مربوطه پیدا کنید."
 
 msgid "To check if a given module object is “yours”. This use case is now served by :ref:`module tokens <ext-module-token>` -- opaque pointers that identify a module. To use a token, declare (or reuse) a unique static variable, for example:"
-msgstr ""
+msgstr "برای بررسی اینکه آیا یک شیء ماژول داده‌شده «متعلق به شما» است یا خیر. این کاربرد اکنون توسط :ref:`module tokens <ext-module-token>` پشتیبانی می‌شود -- اشاره‌گرهای کدر که یک ماژول را شناسایی می‌کنند. برای استفاده از یک توکن، یک متغیر ایستا (یا ثابت) منحصر‌به‌فرد را تعریف (یا دوباره استفاده) کنید، برای مثال:"
 
 msgid "static char my_token;"
-msgstr ""
+msgstr "static char my_token;"
 
 msgid "and add a pointer to it in a new entry to your module's ``PySlot`` array:"
-msgstr ""
+msgstr "و یک اشاره‌گر به آن را در یک درایه (عنصر) جدید به آرایه‌ی ``PySlot`` ماژول خود اضافه کنید:"
 
 msgid ""
 "static PySlot my_slot_array[] = {\n"
@@ -404,15 +476,20 @@ msgid ""
 "   PySlot_END\n"
 "}"
 msgstr ""
+"static PySlot my_slot_array[] = {\n"
+"   ...\n"
+"   PySlot_STATIC_DATA(Py_mod_token, &my_token),\n"
+"   PySlot_END\n"
+"}"
 
 msgid "Then, switch from :c:func:`PyModule_GetDef` calls such as:"
-msgstr ""
+msgstr "سپس، از فراخوانی‌های :c:func:`PyModule_GetDef` مانند موارد زیر:"
 
 msgid "PyModuleDef *def = PyModule_GetDef(module);"
-msgstr ""
+msgstr "PyModuleDef *def = PyModule_GetDef(module);"
 
 msgid "to :c:func:`PyModule_GetToken` (which uses an output argument and may fail with an exception):"
-msgstr ""
+msgstr "به :c:func:`PyModule_GetToken` (که از یک آرگومان خروجی استفاده می‌کند و ممکن است با یک استثنا با خطا مواجه شود) تغییر دهید:"
 
 msgid ""
 "void *token;\n"
@@ -420,53 +497,62 @@ msgid ""
 "    /* handle error */\n"
 "}"
 msgstr ""
+"void *token;\n"
+"if (PyModule_GetToken(module, &token) < 0) {\n"
+"    /* handle error */\n"
+"}"
 
 msgid "and from :c:func:`PyType_GetModuleByDef` calls such as:"
-msgstr ""
+msgstr "و از فراخوانی‌های :c:func:`PyType_GetModuleByDef` مانند:"
 
 msgid ""
 "PyObject *module = PyType_GetModuleByDef(type, my_def);\n"
 "/* handle error; use module */"
 msgstr ""
+"PyObject *module = PyType_GetModuleByDef(type, my_def);\n"
+"/* handle error; use module */"
 
 msgid "to :c:func:`PyType_GetModuleByToken` (which returns a strong reference):"
-msgstr ""
+msgstr "به :c:func:`PyType_GetModuleByToken` (که یک ارجاع قوی برمی‌گرداند):"
 
 msgid ""
 "PyObject *module = PyType_GetModuleByToken(type, my_token);\n"
 "/* handle error; use module */\n"
 "Py_XDECREF(module);"
 msgstr ""
+"PyObject *module = PyType_GetModuleByToken(type, my_token);\n"
+"/* handle error; use module */\n"
+"Py_XDECREF(module);"
 
 msgid "``PyObject`` opaqueness"
-msgstr ""
+msgstr "کدر بودن ``PyObject``"
 
 msgid "The :c:type:`PyObject` and :c:type:`PyVarObject` structures are opaque in ``abi3t``."
-msgstr ""
+msgstr "ساختارهای :c:type:`PyObject` و :c:type:`PyVarObject` در ``abi3t`` کدر هستند."
 
 msgid "Accessing their members is prohibited. If you do this, switch to getter/setter functions mentioned in their documentation:"
-msgstr ""
+msgstr "دسترسی به اعضای آن‌ها ممنوع است. اگر این کار را انجام می‌دهید، به توابع getter/setter ذکرشده در مستندات آن‌ها سوئیچ کنید:"
 
 msgid ":c:member:`PyObject.ob_type`"
-msgstr ""
+msgstr ":c:member:`PyObject.ob_type`"
 
 msgid ":c:member:`PyObject.ob_refcnt`"
-msgstr ""
+msgstr ":c:member:`PyObject.ob_refcnt`"
 
 msgid ":c:member:`PyVarObject.ob_size`"
-msgstr ""
+msgstr ":c:member:`PyVarObject.ob_size`"
 
 msgid "Also, the *size* of the :c:type:`PyObject` structures is unknown to the compiler. It can -- and *does* -- change between different CPython builds."
-msgstr ""
+msgstr "همچنین، *اندازه‌ی* ساختارهای :c:type:`PyObject` برای کامپایلر ناشناخته است. این اندازه می‌تواند -- و *واقعاً* -- بین نسخه‌های مختلف سی‌پایتون تغییر می‌کند."
 
 msgid "While the size is available at runtime (for example as ``sys.getsizeof(object())`` in Python code), you should resist the temptation to calculate pointer offsets from it. The object memory layout is subject to change in future ``abi3t`` implementations."
-msgstr ""
+msgstr "اگرچه اندازه‌ی آن در طول ران‌تایم در دسترس است (برای مثال به شکل ``sys.getsizeof(object())`` در کد پایتون)، اما باید در برابر وسوسه‌ی محاسبه‌ی آفست‌های اشاره‌گر بر اساس آن مقاومت کنید. چیدمان حافظه‌ی شیء ممکن است در پیاده‌سازی‌های آینده‌ی ``abi3t`` تغییر کند."
 
 msgid "Custom type definitions"
-msgstr ""
+msgstr "تعاریف نوع سفارشی"
 
 msgid "Since :c:type:`!PyObject` is opaque, the traditional way of defining custom types no longer works:"
-msgstr ""
+msgstr "از آنجا که :c:type:`!PyObject` کدر است، روش سنتی تعریف انواع سفارشی دیگر کار نمی‌کند:"
 
 msgid ""
 "typedef struct {\n"
@@ -481,24 +567,38 @@ msgid ""
 "   ...\n"
 "};"
 msgstr ""
+"typedef struct {\n"
+"   PyObject_HEAD  // expands to `PyObject ob_base;` which has unknown size\n"
+"\n"
+"   int my_data;\n"
+"} CustomObject;\n"
+"\n"
+"static PyType_Spec CustomType_spec = {\n"
+"   ...\n"
+"   .basicsize = sizeof(CustomObject),\n"
+"   ...\n"
+"};"
 
 msgid "Most likely, all your class definitions, *and* all code that accesses your classes' data, will need to be rewritten. This will probably be the biggest change you need to support ``abi3t``."
-msgstr ""
+msgstr "احتمالاً تمام تعاریف کلاس شما، *و* تمام کدهایی که به داده‌ی کلاس‌های شما دسترسی دارند، باید بازنویسی شوند. این احتمالاً بزرگ‌ترین تغییری است که برای پشتیبانی از ``abi3t`` به آن نیاز دارید."
 
 msgid "For each such type, instead of defining a ``struct`` for the entire instance, define one with only the “additional” fields -- ones specific to your class, not its superclasses:"
-msgstr ""
+msgstr "برای هر چنین نوعی، به‌جای تعریف یک ``struct`` برای کل نمونه، یکی را فقط با فیلدهای «اضافی» تعریف کنید -- فیلدهایی که مختص کلاس شما هستند، نه ابرکلاس‌های آن:"
 
 msgid ""
 "typedef struct {\n"
 "   int my_data;\n"
 "} CustomObjectData;"
 msgstr ""
+"typedef struct {\n"
+"   int my_data;\n"
+"} CustomObjectData;"
 
 msgid "Change the name. Almost all code that uses the struct will need to change (notably, pointers to the new structure cannot be cast to/from ``PyObject*``), and changing the name will highlight the usages as compiler errors. (If you use ``typeof``, C++ ``auto``, or similar ways to avoid typing the type name, this won't work. Be extra careful, and consider running tools to detect undefined behavior.)"
-msgstr ""
+msgstr "نام را تغییر دهید. تقریباً تمام کدهایی که از struct استفاده می‌کنند باید تغییر کنند (به‌ویژه اشاره‌گرها به ساختار جدید را نمی‌توان به/از ``PyObject*`` تبدیل نوع داد)، و تغییر نام، کاربردها را به عنوان خطاهای کامپایلر برجسته خواهد کرد. (اگر از ``typeof``، کلمه کلیدی ``auto`` در ++C، یا روش‌های مشابهی برای جلوگیری از تایپ نام نوع استفاده می‌کنید، این کارکرد نخواهد داشت. بسیار مراقب باشید و اجرای ابزارهایی برای تشخیص رفتار تعریف‌نشده را در نظر بگیرید.)"
 
 msgid "Then, to create the class, use *negative* ``basicsize`` to indicate “extra” storage space rather than *total* instance size:"
-msgstr ""
+msgstr "سپس، برای ایجاد کلاس، از ``basicsize`` *منفی* استفاده کنید تا به‌جای اندازه‌ی *کل* نمونه، فضای ذخیره‌سازی «اضافی» را مشخص کنید:"
 
 msgid ""
 "static PyType_Spec CustomType_spec = {\n"
@@ -507,34 +607,43 @@ msgid ""
 "   ...\n"
 "};"
 msgstr ""
+"static PyType_Spec CustomType_spec = {\n"
+"   ...\n"
+"   .basicsize = -sizeof(CustomObjectData), /* note the minus sign */\n"
+"   ...\n"
+"};"
 
 msgid "If you use :c:macro:`Py_tp_members`, set the :c:macro:`Py_RELATIVE_OFFSET` flag on each member and specify the :c:member:`~PyMemberDef.offset` relative to your new struct."
-msgstr ""
+msgstr "اگر از :c:macro:`Py_tp_members` استفاده می‌کنید، پرچم :c:macro:`Py_RELATIVE_OFFSET` را روی هر عضو تنظیم کنید و :c:member:`~PyMemberDef.offset` را نسبت به struct جدید خود مشخص نمایید."
 
 msgid "Custom type data access"
-msgstr ""
+msgstr "دسترسی به داده‌ی نوع سفارشی"
 
 msgid "Then comes the hard part: in all code that needs to access this struct, you will need an additional :c:func:`PyObject_GetTypeData` call to retrieve a ``CustomObjectData *`` pointer from ``PyObject *``:"
-msgstr ""
+msgstr "سپس بخش سخت ماجرا فرا می‌رسد: در تمام کدهایی که نیاز به دسترسی به این struct دارند، به یک فراخوانی اضافی :c:func:`PyObject_GetTypeData` برای بازیابی یک اشاره‌گر ``CustomObjectData *`` از ``PyObject *`` نیاز خواهید داشت:"
 
 msgid ""
 "PyObject *obj = ...;\n"
 "CustomObjectData *data = PyObject_GetTypeData(obj, cls);"
 msgstr ""
+"PyObject *obj = ...;\n"
+"CustomObjectData *data = PyObject_GetTypeData(obj, cls);"
 
 msgid "Note that this call requires the *type object* for your class (``cls``)."
-msgstr ""
+msgstr "توجه داشته باشید که این فراخوانی نیازمند *شیء نوع* برای کلاس شما (``cls``) است."
 
 msgid "If your class is not subclassable (that is, it does not use the :c:macro:`Py_TPFLAGS_BASETYPE` flag), ``cls`` will be ``Py_TYPE(obj)``. Otherwise, **DO NOT USE** ``Py_TYPE`` with :c:func:`!PyObject_GetTypeData`: it might return memory reserved to an unrelated subclass! For example, if a user makes a subclass like this:"
-msgstr ""
+msgstr "اگر کلاس شما قابلیت زیرکلاس‌سازی نداشته باشد (یعنی از پرچم :c:macro:`Py_TPFLAGS_BASETYPE` استفاده نکند)، مقدار ``cls`` برابر با ``Py_TYPE(obj)`` خواهد بود. در غیر این صورت، **از** ``Py_TYPE`` همراه با :c:func:`!PyObject_GetTypeData` **استفاده نکنید**: ممکن است حافظه‌ی رزرو شده برای یک زیرکلاس نامرتبط را برگرداند! برای مثال، اگر کاربری زیرکلاسی به شکل زیر بسازد:"
 
 msgid ""
 "class Sub(YourCustomClass):\n"
 "   __slots__ = ('a', 'b')"
 msgstr ""
+"class Sub(YourCustomClass):\n"
+"   __slots__ = ('a', 'b')"
 
 msgid "then ``Py_TYPE(obj)`` is ``Sub``, and the underlying memory may look like this:"
-msgstr ""
+msgstr "آنگاه ``Py_TYPE(obj)`` برابر با ``Sub`` است و حافظه‌ی زیرین ممکن است به شکل زیر باشد:"
 
 msgid ""
 "╭─ PyObject *obj\n"
@@ -545,18 +654,25 @@ msgid ""
 "│ PyObject │...│ CustomTypeData │...│ PyObject *a │...│ PyObject *b │\n"
 "└──────────┴───┴────────────────┴───┴─────────────┴───┴─────────────┘"
 msgstr ""
+"╭─ PyObject *obj\n"
+"│              ╭─ اشاره‌گری که می‌خواهید\n"
+"│              │                    ╭─ PyObject_GetTypeData(obj, Py_TYPE(obj))\n"
+"▼              ▼                    ▼\n"
+"┌──────────┬───┬────────────────┬───┬─────────────┬───┬─────────────┐\n"
+"│ PyObject │...│ CustomTypeData │...│ PyObject *a │...│ PyObject *b │\n"
+"└──────────┴───┴────────────────┴───┴─────────────┴───┴─────────────┘"
 
 msgid "(Ellipses indicate possible padding. Note that this memory layout is not guaranteed: future versions of Python may add different padding or even switch the order of the structures.)"
-msgstr ""
+msgstr "(نقاط چین نشان‌دهنده‌ی پدینگ احتمالی هستند. توجه داشته باشید که این چیدمان حافظه تضمین نمی‌شود: نسخه‌های آینده‌ی پایتون ممکن است پدینگ متفاوتی اضافه کنند یا حتی ترتیب ساختارها را جابه‌جا کنند.)"
 
 msgid "There are two main ways to get the right class:"
-msgstr ""
+msgstr "برای دریافت کلاس درست دو روش اصلی وجود دارد:"
 
 msgid "In instance methods, your implementation may use the :c:type:`PyCMethod` signature (and the :c:macro:`METH_METHOD` bit in :c:member:`PyMethodDef.ml_flags`), and get the class as the ``defining_class`` argument."
-msgstr ""
+msgstr "در متدهای نمونه، پیاده‌سازی شما ممکن است از امضای :c:type:`PyCMethod` (و بیت :c:macro:`METH_METHOD` در :c:member:`PyMethodDef.ml_flags`) استفاده کند و کلاس را به عنوان آرگومان ``defining_class`` دریافت کند."
 
 msgid "Otherwise, give your class a unique static token using the :c:macro:`Py_tp_token` slot, and use:"
-msgstr ""
+msgstr "در غیر این صورت، با استفاده از جایگاه :c:macro:`Py_tp_token` یک توکن ایستا و یکتا به کلاس خود بدهید و از موارد زیر استفاده کنید:"
 
 msgid ""
 "PyTypeObject cls;\n"
@@ -565,87 +681,92 @@ msgid ""
 "}\n"
 "CustomObjectData *data = PyObject_GetTypeData(obj, cls);"
 msgstr ""
+"PyTypeObject cls;\n"
+"if (PyType_GetBaseByToken(Py_TYPE(obj), my_tp_token, &cls) < 0) {\n"
+"    /* handle error */\n"
+"}\n"
+"CustomObjectData *data = PyObject_GetTypeData(obj, cls);"
 
 msgid "Type tokens work similarly to module tokens covered :ref:`earlier in this guide <abi3t-migration-module-token>`."
-msgstr ""
+msgstr "توکن‌های نوع مشابه‌ توکن‌های ماژول کار می‌کنند که :ref:`پیش‌تر در این راهنما <abi3t-migration-module-token>` بررسی شده‌اند."
 
 msgid "Avoid build-time conditionals"
-msgstr ""
+msgstr "از شرط‌های زمان ساخت اجتناب کنید"
 
 msgid "Check your code for API that identifies the version of Python used to *build* your extension. This no longer corresponds to the Python your extension runs on, so code that uses this information often needs changing. The macros to check for are:"
-msgstr ""
+msgstr "کد خود را برای یافتن APIهایی بررسی کنید که نسخه‌ی پایتون مورد استفاده برای *ساخت* افزونه‌تان را مشخص می‌کنند. این مورد دیگر با پایتونی که افزونه‌تان روی آن اجرا می‌شود مطابقت ندارد، بنابراین کدی که از این اطلاعات استفاده می‌کند اغلب نیازمند تغییر است. ماکروهایی که باید بررسی شوند عبارتند از:"
 
 msgid ":c:macro:`PY_VERSION_HEX`, :c:macro:`PY_MAJOR_VERSION`, :c:macro:`PY_MINOR_VERSION`:"
-msgstr ""
+msgstr ":c:macro:`PY_VERSION_HEX`، :c:macro:`PY_MAJOR_VERSION`، :c:macro:`PY_MINOR_VERSION`:"
 
 msgid "to get the run-time version, use :c:data:`Py_Version`;"
-msgstr ""
+msgstr "برای دریافت نسخه‌ی زمان اجرا، از :c:data:`Py_Version` استفاده کنید؛"
 
 msgid "to determine what C API is available, use :c:macro:`Py_TARGET_ABI3T`. This macro is set to the minimum supported version."
-msgstr ""
+msgstr "برای تعیین این که کدام C API در دسترس است، از :c:macro:`Py_TARGET_ABI3T` استفاده کنید. این ماکرو روی حداقل نسخه‌ی پشتیبانی‌شده تنظیم می‌شود."
 
 msgid ":c:macro:`Py_GIL_DISABLED`: under ``abi3t``, this macro is always defined. Code that works with free-threaded Python *should* also work with the GIL enabled (since the GIL can be enabled at run time), and usually *does* (unless it, for some reason, requires more than one :term:`attached thread state <attached thread state>` at one time)."
-msgstr ""
+msgstr ":c:macro:`Py_GIL_DISABLED`: تحت ``abi3t``، این ماکرو همیشه تعریف می‌شود. کدی که با پایتون نخ‌آزاد کار می‌کند *باید* با GIL فعال نیز کار کند (از آنجا که GIL می‌تواند در زمان اجرا فعال شود) و معمولاً *نیز کار می‌کند* (مگر اینکه بنا به دلیلی، به بیش از یک :term:`وضعیت نخ متصل <attached thread state>` در یک زمان نیاز داشته باشد)."
 
 msgid "Further code changes"
-msgstr ""
+msgstr "تغییرات بیشتر در کد"
 
 msgid "If you are still left with compiler errors or warnings, find a way to fix them. Alas, this guide is limited, and cannot cover all possible code changes extensions may need."
-msgstr ""
+msgstr "اگر همچنان با خطاهای کامپایلر یا هشدارها مواجه شدید، راهی برای رفع آن‌ها پیدا کنید. متأسفانه، این راهنما محدود است و نمی‌تواند تمام تغییرات ممکن کد را که افزونه‌ها ممکن است نیاز داشته باشند پوشش دهد."
 
 msgid "If you find a problem that other extension authors might run into, consider :ref:`reporting an issue <reporting-documentation-bugs>` (or sending a pull request) for this guide."
-msgstr ""
+msgstr "اگر مشکلی را پیدا کردید که سایر توسعه‌دهندگان افزونه ممکن است با آن مواجه شوند، :ref:`گزارش یک مسئله <reporting-documentation-bugs>` (یا ارسال یک پول ریکوئست) را برای این راهنما در نظر بگیرید."
 
 msgid "It is possible your issue cannot be fixed for the current version of ``abi3t``. In that case, reporting it may help it get prioritized for the next version of CPython."
-msgstr ""
+msgstr "این امکان وجود دارد که مشکل شما برای نسخه‌ی فعلی ``abi3t`` قابل رفع نباشد. در این صورت، گزارش دادن آن ممکن است به اولویت‌بندی‌اش برای نسخه‌ی بعدی سی‌پایتون کمک کند."
 
 msgid "Tagging and distribution"
-msgstr ""
+msgstr "برچسب‌گذاری و توزیع"
 
 msgid "If you are using a build tool with ``abi3t`` support, your extension is ready, but you might want to check that it was built correctly."
-msgstr ""
+msgstr "اگر از یک ابزار ساخت با پشتیبانی از ``abi3t`` استفاده می‌کنید، افزونه‌ی شما آماده است، اما ممکن است بخواهید بررسی کنید که آیا به درستی ساخته شده است یا خیر."
 
 msgid "Extensions built with ``abi3t`` should have the following extension:"
-msgstr ""
+msgstr "افزونه‌های ساخته‌شده با ``abi3t`` باید پسوند زیر را داشته باشند:"
 
 msgid "On Windows: ``.pyd`` (like any other extension);"
-msgstr ""
+msgstr "در ویندوز: ``.pyd`` (مانند هر افزونه‌ی دیگری)؛"
 
 msgid "Linux, macOS, and other systems that use the ``.so`` suffix: ``.abi3t.so`` (**not** ``.cpython-315t.so`` or ``.abi3.so``). Note that both free-threaded and non-free-threaded builds will load ``.abi3t.so`` extensions;"
-msgstr ""
+msgstr "لینوکس، مک‌اواس و سایر سیستم‌هایی که از پسوند ``.so`` استفاده می‌کنند: ``.abi3t.so`` (**نه** ``.cpython-315t.so`` یا ``.abi3.so``). توجه داشته باشید که هر دو ساخت‌ نخ‌آزاد و غیرنخ‌آزاد افزونه‌های ``.abi3t.so`` را بارگذاری خواهند کرد؛"
 
 msgid "Other systems: consult your distributor, and perhaps update this guide."
-msgstr ""
+msgstr "سایر سیستم‌ها: با توزیع‌کننده‌ی خود مشورت کنید و احتمالاً این راهنما را به‌روزرسانی کنید."
 
 msgid "If you distribute the extension as a *wheel*, use the following tags:"
-msgstr ""
+msgstr "اگر افزونه را در قالب یک *ویل* (wheel) توزیع می‌کنید، از برچسب‌های زیر استفاده کنید:"
 
 msgid "Python tag: :samp:`cp3{XX}`, where *XX* is the minimum Python version the extension is built for. (For example, ``cp315`` if you set ``Py_TARGET_ABI3T`` to ``0x30f0000``. See :ref:`abi3-compiling` for more values.)"
-msgstr ""
+msgstr "برچسب پایتون: :samp:`cp3{XX}`، که در آن *XX* حداقل نسخه‌ی پایتونی است که افزونه برای آن ساخته شده است. (برای مثال، ``cp315`` اگر مقدار ``Py_TARGET_ABI3T`` را روی ``0x30f0000`` تنظیم کنید. برای مقادیر بیشتر، به :ref:`abi3-compiling` مراجعه کنید.)"
 
 msgid "ABI tag: ``abi3.abi3t``. This is a *compressed tag set* that indicates support for both non-free-threaded and free-threaded builds."
-msgstr ""
+msgstr "برچسب ABI: ``abi3.abi3t``. این یک *مجموعه برچسب فشرده* است که پشتیبانی از ساخت‌های غیرنخ‌آزاد و نخ‌آزاد را نشان می‌دهد."
 
 msgid "For example, the wheel filename may look like this:"
-msgstr ""
+msgstr "برای مثال، نام پرونده‌ی ویل ممکن است شبیه به این باشد:"
 
 msgid "myproject-1.0-cp315-abi3.abi3t-macosx_11_0_arm64.whl"
-msgstr ""
+msgstr "myproject-1.0-cp315-abi3.abi3t-macosx_11_0_arm64.whl"
 
 msgid "`Platform Compatibility Tags <https://packaging.python.org/en/latest/specifications/platform-compatibility-tags/>`__ in the PyPA package distribution metadata."
-msgstr ""
+msgstr "`Platform Compatibility Tags <https://packaging.python.org/en/latest/specifications/platform-compatibility-tags/>`__ در متادیتای توزیع بسته‌ی PyPA."
 
 msgid "If the filename or tags are incorrect, fix them."
-msgstr ""
+msgstr "اگر نام پرونده یا برچسب‌ها نادرست هستند، آن‌ها را اصلاح کنید."
 
 msgid "Testing"
-msgstr ""
+msgstr "آزمون"
 
 msgid "Note that when you build an extension compatible with multiple versions of CPython, you should always *test* it with each version it supports (for example, 3.15, 3.16, and so on). The Stable ABI only guarantees *ABI* compatibility; there may also be behavior changes -- both intentional ones (covered by :pep:`387`) and bugs."
-msgstr ""
+msgstr "توجه داشته باشید که وقتی افزونه‌ای سازگار با چندین نسخه‌ی سی‌پایتون می‌سازید، باید همیشه آن را با هر نسخه‌ای که پشتیبانی می‌کند *آزمون* کنید (برای مثال، ۳.۱۵، ۳.۱۶ و غیره). ABI پایدار فقط سازگاری *ABI* را تضمین می‌کند؛ ممکن است تغییرات رفتاری نیز وجود داشته باشد -- هم تغییرات عمدی (که توسط :pep:`387` پوشش داده شده‌اند) و هم باگ‌ها."
 
 msgid "Be sure to run tests on both free-threaded and non-free-threaded builds of CPython."
-msgstr ""
+msgstr "حتماً آزمون‌ها را روی هر دو ساخت نخ‌آزاد و غیرنخ‌آزاد سی‌پایتون اجرا کنید."
 
 msgid "If they pass, congratulations! You have an ``abi3t`` extension."
-msgstr ""
+msgstr "اگر با موفقیت انجام شدند، تبریک می‌گوییم! شما یک افزونه‌ی ``abi3t`` دارید."

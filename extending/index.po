@@ -24,10 +24,8 @@ msgstr ""
 msgid "Extending and Embedding the Python Interpreter"
 msgstr "توسعه و تعبیه مفسر پایتون"
 
-#, fuzzy
-#| msgid "This document describes how to write modules in C or C++ to extend the Python interpreter with new modules.  Those modules can not only define new functions but also new object types and their methods.  The document also describes how to embed the Python interpreter in another application, for use as an extension language.  Finally, it shows how to compile and link extension modules so that they can be loaded dynamically (at run time) into the interpreter, if the underlying operating system supports this feature."
 msgid "This document describes how to write modules in C or C++ to extend the Python interpreter with new modules.  Those modules can do what Python code does -- define functions, object types and methods -- but also interact with native libraries or achieve better performance by avoiding the overhead of an interpreter.  The document also describes how to embed the Python interpreter in another application, for use as an extension language.  Finally, it shows how to compile and link extension modules so that they can be loaded dynamically (at run time) into the interpreter, if the underlying operating system supports this feature."
-msgstr "این سند توضیح می‌دهد که چگونه می‌توان ماژول‌هایی به زبان C یا C++ نوشت تا مفسر پایتون با ماژول‌های جدید توسعه یابد. این ماژول‌ها نه‌تنها توابع جدید، بلکه نوع‌های جدید شیء و متدهای آن‌ها را نیز می‌توانند تعریف کنند. این سند همچنین توضیح می‌دهد که چگونه می‌توان مفسر پایتون را در برنامه‌ای دیگر تعبیه کرد تا به‌عنوان یک زبان توسعه‌ای از آن استفاده شود. در نهایت، نشان می‌دهد که چگونه می‌توان ماژول‌های توسعه‌ای را کامپایل و پیوند داد تا در صورت پشتیبانی سیستم‌عامل زیرین از این قابلیت، به‌صورت پویا (در زمان اجرا) در مفسر بارگذاری شوند."
+msgstr "این سند شرح می‌دهد که چگونه ماژول‌هایی به زبان C یا C++ بنویسید تا مفسر پایتون را با ماژول‌های جدید توسعه دهید. آن ماژول‌ها می‌توانند کارهایی را که کدهای پایتون انجام می‌دهند -- مانند تعریف توابع، انواع داده‌ی اشیاء و متدها -- انجام دهند، و همچنین با کتابخانه‌های بومی تعامل داشته باشند یا با اجتناب از سربار مفسر، کارایی بهتری به دست آورند. این سند همچنین نحوهی تعبیه‌سازی مفسر پایتون را در برنامه‌ای دیگر، برای استفاده به عنوان یک زبان افزونه، شرح می‌دهد. در نهایت، نشان می‌دهد که چگونه ماژول‌های توسعه‌ای را کامپایل و پیوند (link) دهید تا در صورت پشتیبانی سیستم‌عامل زیربنایی، بتوانند به صورت پویا (در زمان اجرا) در مفسر بارگذاری شوند."
 
 msgid "This document assumes basic knowledge about C and Python.  For an informal introduction to Python, see :ref:`tutorial-index`.  :ref:`reference-index` gives a more formal definition of the language.  :ref:`builtins-index` documents the built-in functions and object types, and :ref:`library-index` documents the modules (both built-in and written in Python) that give the language its wide application range."
 msgstr "این سند دانش پایه‌ای درباره C و Python را فرض می‌کند. برای مقدمه‌ی غیررسمی به Python، به :ref:`tutorial-index` مراجعه کنید. :ref:`reference-index` تعریفی رسمی‌تر از زبان ارائه می‌دهد. :ref:`builtins-index` توابع و انواع شیء توکار را مستند می‌کند، و :ref:`library-index` ماژول‌ها (هر دو توکار و نوشته شده در Python) را که به زبان طیف وسیعی از کاربردها می‌دهند، مستند می‌کند."
@@ -36,51 +34,49 @@ msgid "For a detailed description of the whole Python/C API, see the separate :r
 msgstr "برای شرح دقیق کل Python/C API، به :ref:`c-api-index` جداگانه مراجعه کنید."
 
 msgid "To support extensions, Python's C API (Application Programmers Interface) defines a set of functions, macros and variables that provide access to most aspects of the Python run-time system.  The Python API is incorporated in a C source file by including the header ``\"Python.h\"``."
-msgstr ""
+msgstr "برای پشتیبانی از افزونه‌ها، API زبان C در پایتون (رابط برنامه‌نویسی کاربردی) مجموعه‌ای از توابع، ماکروها و متغیرها را تعریف می‌کند که دسترسی به بیشتر جنبه‌های سیستم زمان اجرای پایتون را فراهم می‌کنند. API پایتون با گنجاندن سرآیند ``\"Python.h\"`` در یک پرونده‌ی سورس C گنجانده می‌شود."
 
 msgid "The C extension interface is specific to CPython, and extension modules do not work on other Python implementations.  In many cases, it is possible to avoid writing C extensions and preserve portability to other implementations. For example, if your use case is calling C library functions or system calls, you should consider using the :mod:`ctypes` module or the `cffi <https://cffi.readthedocs.io/>`_ library rather than writing custom C code. These modules let you write Python code to interface with C code and are more portable between implementations of Python than writing and compiling a C extension module."
-msgstr ""
+msgstr "رابط افزونه‌ی C مختص CPython است و ماژول‌های توسعه‌ای روی سایر پیاده‌سازی‌های پایتون کار نمی‌کنند. در بسیاری از موارد، اجتناب از نوشتن افزونه‌های C و حفظ قابلیت حمل به سایر پیاده‌سازی‌ها امکان‌پذیر است. برای مثال، اگر مورد استفاده‌ی شما فراخوانی عملکردهای کتابخانه‌ی C یا فرایندهای سیستمی است، باید به‌جای نوشتن کد سفارشی C، استفاده از ماژول :mod:`ctypes` یا کتابخانه‌ی `cffi <https://cffi.readthedocs.io/>`_ را در نظر بگیرید. این ماژول‌ها به شما اجازه می‌دهند کدهای پایتون را برای ارتباط با کدهای C بنویسید و نسبت به نوشتن و کامپایل کردن یک ماژول توسعه‌ی C، قابلیت حمل بالاتری بین پیاده‌سازی‌های مختلف پایتون دارند."
 
 msgid "Recommended third party tools"
 msgstr "ابزارهای شخص ثالث توصیه‌شده"
 
-#, fuzzy
-#| msgid "This guide only covers the basic tools for creating extensions provided as part of this version of CPython. Some :ref:`third party tools <c-api-tools>` offer both simpler and more sophisticated approaches to creating C and C++ extensions for Python."
 msgid "This document only covers the basic tools for creating extensions provided as part of this version of CPython. Some :ref:`third party tools <c-api-tools>` offer both simpler and more sophisticated approaches to creating C and C++ extensions for Python."
-msgstr "این راهنما تنها ابزارهای پایه‌ای را پوشش می‌دهد که به‌عنوان بخشی از این نسخه از سی‌پایتون برای ایجاد افزونه‌ها ارائه شده‌اند. برخی از :ref:`ابزارهای شخص ثالث <c-api-tools>` رویکردهایی هم ساده‌تر و هم پیشرفته‌تر برای ایجاد افزونه‌های C و C++ برای پایتون ارائه می‌دهند."
+msgstr "این سند تنها ابزارهای پایه‌ای را برای ایجاد افزونه‌های ارائه‌شده به عنوان بخشی از این نسخه‌ی سی‌پایتون پوشش می‌دهد. برخی از :ref:`ابزارهای شخص ثالث <c-api-tools>` رویکردهای ساده‌تر و پیشرفته‌تری را برای ایجاد افزونه‌های C و C++ برای پایتون ارائه می‌دهند."
 
 msgid "While this document is aimed at extension authors, it should also be helpful to the authors of such tools. For example, the tutorial module can serve as a simple test case for a build tool or sample expected output of a code generator."
-msgstr ""
+msgstr "اگرچه این سند برای نویسندگان افزونه‌ها در نظر گرفته شده است، اما باید برای نویسندگان چنین ابزارهایی نیز مفید باشد. برای مثال، ماژول آموزشی می‌تواند به‌عنوان یک آزمون ساده برای یک ابزار ساخت یا نمونه خروجی مورد انتظار یک تولیدگر کد عمل کند."
 
 msgid "C API Tutorial"
-msgstr ""
+msgstr "آموزش API زبان C"
 
 msgid "This tutorial describes how to write a simple module in C or C++, using the Python C API -- that is, using the basic tools provided as part of this version of CPython."
-msgstr ""
+msgstr "این آموزش نحوه‌ی نوشتن یک ماژول ساده به زبان C یا C++ را با استفاده از API C پایتون شرح می‌دهد — یعنی با استفاده از ابزارهای پایه‌ای که به عنوان بخشی از این نسخه از CPython ارائه شده‌اند."
 
 msgid ":ref:`first-extension-module`"
-msgstr ""
+msgstr ":ref:`first-extension-module`"
 
 msgid "Guides for intermediate topics"
-msgstr ""
+msgstr "راهنماهایی برای مباحث متوسط"
 
 msgid "This section of the guide covers creating C and C++ extensions without assistance from third party tools. It is intended primarily for creators of those tools, rather than being a recommended way to create your own C extensions."
 msgstr "این بخش از راهنما به ایجاد توسعه‌های C و C++ بدون کمک گرفتن از ابزارهای شخص ثالث می‌پردازد. این بخش در درجه‌ی اول برای سازندگان آن ابزارها در نظر گرفته شده است، نه اینکه روش توصیه‌شده‌ای برای ایجاد توسعه‌های C خودتان باشد."
 
 msgid ":ref:`extending-intro`"
-msgstr ""
+msgstr ":ref:`extending-intro`"
 
 msgid ":ref:`defining-new-types`"
-msgstr ""
+msgstr ":ref:`defining-new-types`"
 
 msgid ":ref:`new-types-topics`"
-msgstr ""
+msgstr ":ref:`new-types-topics`"
 
 msgid ":ref:`building`"
-msgstr ""
+msgstr ":ref:`building`"
 
 msgid ":ref:`building-on-windows`"
-msgstr ""
+msgstr ":ref:`building-on-windows`"
 
 msgid "Embedding the CPython runtime in a larger application"
 msgstr "تعبیه ران‌تایم سی‌پایتون در برنامه‌ای بزرگ‌تر"
@@ -89,7 +85,7 @@ msgid "Sometimes, rather than creating an extension that runs inside the Python 
 msgstr "گاهی، به‌جای ایجاد افزونه‌ای که درون مفسر پایتون به‌عنوان برنامه اصلی اجرا می‌شود، مطلوب است که ران‌تایم سی‌پایتون درون برنامه‌ای بزرگ‌تر تعبیه شود. این بخش برخی از جزئیات مربوط به انجام موفقیت‌آمیز این کار را در بر می‌گیرد."
 
 msgid ":ref:`embedding`"
-msgstr ""
+msgstr ":ref:`embedding`"
 
 #~ msgid "Creating extensions without third party tools"
 #~ msgstr "ایجاد توسعه‌ها بدون ابزارهای شخص ثالث"

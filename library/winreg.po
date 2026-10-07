@@ -29,7 +29,7 @@ msgid ":mod:`!winreg` --- Windows registry access"
 msgstr ":mod:`!winreg` --- دسترسی به رجیستری ویندوز"
 
 msgid "**Source code:** :source:`PC/winreg.c`"
-msgstr ""
+msgstr "**کد منبع:** :source:`PC/winreg.c`"
 
 msgid "These functions expose the Windows registry API to Python.  Instead of using an integer as the registry handle, a :ref:`handle object <handle-object>` is used to ensure that the handles are closed correctly, even if the programmer neglects to explicitly close them."
 msgstr "این توابع API رجیستری ویندوز را در اختیار پایتون قرار می‌دهند. به‌جای استفاده از یک عدد صحیح به‌عنوان دسته‌ی رجیستری، از یک :ref:`شیء دسته <handle-object>` استفاده می‌شود تا اطمینان حاصل شود که دسته‌ها به‌درستی بسته شوند، حتی اگر برنامه‌نویس از بستن آن‌ها به‌صورت صریح غفلت کند."
@@ -121,23 +121,17 @@ msgstr "*access* عدد صحیحی است که نقاب دسترسی‌ای را
 msgid "On unsupported Windows versions, :exc:`NotImplementedError` is raised."
 msgstr "در نسخه‌های پشتیبانی‌نشده ویندوز، :exc:`NotImplementedError` پرتاب می‌شود."
 
-#, fuzzy
-#| msgid "Saves the specified key, and all its subkeys to the specified file."
 msgid "Deletes the specified key and all its subkeys and values recursively."
-msgstr "کلید مشخص‌شده و تمام زیرکلیدهای آن را در پرونده مشخص‌شده ذخیره می‌کند."
+msgstr "کلید مشخص‌شده و تمام زیرکلیدها و مقادیر آن را به شکل بازگشتی حذف می‌کند."
 
-#, fuzzy
-#| msgid "*sub_key* is a string that names the subkey with which the value is associated."
 msgid "*sub_key* is a string that names the subkey to delete. If ``None``, deletes all subkeys and values of the specified key."
-msgstr "*sub_key* رشته‌ای است که نام زیرکلیدی را که مقدار با آن مرتبط است، مشخص می‌کند."
+msgstr "پارامتر *sub_key* رشته‌ای است که نام زیرکلید مورد نظر برای حذف را مشخص می‌کند. اگر مقدار آن ``None`` باشد، تمام زیرکلیدها و مقادیر کلید مشخص‌شده را حذف می‌کند."
 
 msgid "This function deletes a key and all its descendants. If *sub_key* is ``None``, all subkeys and values of the specified key are deleted."
-msgstr ""
+msgstr "این تابع یک کلید و تمام زیرکلیدهای آن را حذف می‌کند. اگر پارامتر *sub_key* برابر با ``None`` باشد، تمام زیرکلیدها و مقادیر کلید مشخص‌شده حذف می‌شوند."
 
-#, fuzzy
-#| msgid "Raises an :ref:`auditing event <auditing>` ``winreg.DeleteValue`` with arguments ``key``, ``value``."
 msgid "Raises an :ref:`auditing event <auditing>` ``winreg.DeleteTree`` with arguments ``key``, ``sub_key``."
-msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``winreg.DeleteValue`` را با آرگومان‌های ``key`` و ``value`` پرتاب می‌کند."
+msgstr "یک :ref:`رویداد ممیزی <auditing>` با نام ``winreg.DeleteTree`` و آرگومان‌های ``key`` و ``sub_key`` را بالا می‌آورد (raise می‌کند)."
 
 msgid "Removes a named value from a registry key."
 msgstr "یک مقدار نام‌دار را از یک کلید رجیستری حذف می‌کند."
@@ -547,7 +541,7 @@ msgid "will print ``Yes`` if the handle is currently valid (has not been closed 
 msgstr "اگر دسته در حال حاضر معتبر باشد (بسته یا جدا نشده باشد)، ``Yes`` را چاپ خواهد کرد."
 
 msgid "The object also support equality comparison semantics, so handle objects will compare equal if they both reference the same underlying Windows handle value. Closed handle objects (those with a handle value of zero) always compare equal."
-msgstr ""
+msgstr "این شیء همچنین از معناشناسی مقایسه‌ی برابری پشتیبانی می‌کند؛ بنابراین، اگر دو شیء دسته به یک مقدار دسته‌ی زیرین ویندوز ارجاع دهند، برابر در نظر گرفته می‌شوند. اشیای دسته‌ی بسته‌شده (آن‌هایی که مقدار دسته‌شان صفر است) همیشه برابر مقایسه می‌شوند."
 
 msgid "Handle objects can be converted to an integer (e.g., using the built-in :func:`int` function), in which case the underlying Windows handle value is returned.  You can also use the :meth:`~PyHKEY.Detach` method to return the integer handle, and also disconnect the Windows handle from the handle object."
 msgstr "اشیای دسته را می‌توان به یک عدد صحیح تبدیل کرد (برای مثال، با استفاده از تابع توکار :func:`int`)، که در این صورت مقدار دسته ویندوزی زیرین بازگردانده می‌شود. همچنین می‌توانید از متد :meth:`~PyHKEY.Detach` برای بازگرداندن دسته به‌صورت عدد صحیح و نیز جدا کردن دسته ویندوزی از شیء دسته استفاده کنید."
@@ -584,7 +578,7 @@ msgid "will automatically close *key* when control leaves the :keyword:`with` bl
 msgstr "هنگامی که کنترل از بلوک :keyword:`with` خارج می‌شود، *key* را به‌طور خودکار می‌بندد."
 
 msgid "Handle objects are now compared by their underlying Windows handle value instead of object identity for equality comparisons."
-msgstr ""
+msgstr "برای مقایسه‌ی برابری، اشیای دسته اکنون به‌جای هویت شیء، بر اساس مقدار دسته‌ی زیرین ویندوز خود مقایسه می‌شوند."
 
 msgid "% (percent)"
 msgstr "% (درصد)"

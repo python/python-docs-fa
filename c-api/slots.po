@@ -17,34 +17,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Definition slots"
-msgstr ""
+msgstr "جایگاه‌های تعریف"
 
 msgid "To define :ref:`module objects <moduleobjects>` and :ref:`classes <creating-heap-types>` using the C API, you may use an array of *slots* -- essentially, key-value pairs that describe features of the object to create. This decouples the data from the structures used at runtime, allowing CPython -- and other Python C API implementations -- to update the structures without breaking backwards compatibility."
-msgstr ""
+msgstr "برای تعریف :ref:`اشیای ماژول <moduleobjects>` و :ref:`کلاس‌ها <creating-heap-types>` با استفاده از C API، می‌توانید از آرایه‌ای از *جایگاه‌ها* استفاده کنید — اساساً جفت‌مقادیر کلید-مقداری که ویژگی‌های شیء مورد نظر برای ایجاد را توصیف می‌کنند. این کار داده‌ها را از ساختارهای استفاده‌شده در زمان اجرا جدا می‌کند و به CPython — و سایر پیاده‌سازی‌های C API پایتون — اجازه می‌دهد تا ساختارها را بدون شکستن سازگاری با نسخه‌های قبلی به‌روزرسانی کنند."
 
 msgid "This section documents slots in general. For object-specific behavior and slot values, see documentation for functions that apply slots:"
-msgstr ""
+msgstr "این بخش جایگاه‌ها را به طور کلی مستند می‌کند. برای رفتارها و مقادیر جایگاه‌های خاصِ هر شیء، به مستندات توابعی که جایگاه‌ها را اعمال می‌کنند مراجعه کنید:"
 
 msgid ":c:func:`PyType_FromSlots` for types;"
-msgstr ""
+msgstr "تابع :c:func:`PyType_FromSlots` برای انواع؛"
 
 msgid ":c:func:`PyModule_FromSlotsAndSpec` and :ref:`extension-export-hook` for modules."
-msgstr ""
+msgstr "توابع :c:func:`PyModule_FromSlotsAndSpec` و :ref:`extension-export-hook` برای ماژول‌ها."
 
 msgid "When slots are passed to a function that applies them, the function will not modify the slot array, nor any data it points to (recursively). After the function is done, the caller is allowed to modify or deallocate the array and any data it points to (recursively), except data explicitly marked with :c:macro:`PySlot_STATIC`."
-msgstr ""
+msgstr "هنگامی که جایگاه‌ها به تابعی که آن‌ها را اعمال می‌کند ارسال می‌شوند، آن تابع آرایه‌ی جایگاه‌ها و هیچ‌یک از داده‌هایی را که به آن‌ها اشاره می‌کند (به صورت بازگشتی) تغییر نخواهد داد. پس از اتمام کار تابع، فراخواننده مجاز است آرایه و هر داده‌ای را که به آن اشاره می‌کند (به صورت بازگشتی) تغییر دهد یا حافظه‌ی آن‌ها را آزاد کند، به جز داده‌هایی که صراحتاً با :c:macro:`PySlot_STATIC` علامت‌گذاری شده‌اند."
 
 msgid "Except when documented otherwise, multiple slots with the same ID (:c:member:`~PySlot.sl_id`) may not occur in a single slots array."
-msgstr ""
+msgstr "به جز در مواردی که خلاف آن مستند شده باشد، چندین جایگاه با یک شناسه (:c:member:`~PySlot.sl_id`) نمی‌توانند در یک آرایه‌ی جایگاه واحد وجود داشته باشند."
 
 msgid "Slot arrays generalize an earlier way of defining objects: using :c:type:`PyType_Spec` with :c:type:`PyType_Slot` for types, and :c:type:`PyModuleDef` with :c:type:`PyModuleDef_Slot` for modules. The earlier API is :term:`soft deprecated`; there are no plans to remove it."
-msgstr ""
+msgstr "آرایه‌های جایگاه، روش قدیمی‌تر تعریف اشیا را عمومی‌سازی می‌کنند: استفاده از :c:type:`PyType_Spec` همراه با :c:type:`PyType_Slot` برای انواع، و :c:type:`PyModuleDef` همراه با :c:type:`PyModuleDef_Slot` برای ماژول‌ها. API قدیمی‌تر :term:`منسوخ، از رده خارج شده نرم <soft deprecated>` است؛ هیچ برنامه‌ای برای حذف آن وجود ندارد."
 
 msgid "Entries of the slots array use the following structure:"
-msgstr ""
+msgstr "درایه‌های آرایه‌ی جایگاه از ساختار زیر استفاده می‌کنند:"
 
 msgid "An entry in a slots array. Defined as:"
-msgstr ""
+msgstr "یک درایه در آرایه‌ی جایگاه. تعریف‌شده به صورت:"
 
 msgid ""
 "typedef struct {\n"
@@ -60,69 +60,81 @@ msgid ""
 "    };\n"
 "} PySlot;"
 msgstr ""
+"typedef struct {\n"
+"    uint16_t sl_id;\n"
+"    uint16_t sl_flags;\n"
+"    uint32_t _reserved;  // must be 0\n"
+"    union {\n"
+"        void *sl_ptr;\n"
+"        void (*sl_func)(void);\n"
+"        Py_ssize_t sl_size;\n"
+"        int64_t sl_int64;\n"
+"        uint64_t sl_uint64;\n"
+"    };\n"
+"} PySlot;"
 
 msgid "A slot ID, chosen from:"
-msgstr ""
+msgstr "شناسه‌ی جایگاه، انتخاب‌شده از:"
 
 msgid "``Py_slot_*`` values documented in :ref:`pyslot-common-ids` below;"
-msgstr ""
+msgstr "مقادیر ``Py_slot_*`` که در بخش :ref:`pyslot-common-ids` در ادامه مستند شده‌اند؛"
 
 msgid "``Py_mod_*`` values for modules, as documented in :ref:`c_module_slots`;"
-msgstr ""
+msgstr "مقادیر ``Py_mod_*`` برای ماژول‌ها، همان‌طور که در :ref:`c_module_slots` مستند شده است؛"
 
 msgid "Values for types, as documented in :ref:`pyslot_type_slot_ids`."
-msgstr ""
+msgstr "مقادیر برای نوع‌ها، همان‌طور که در :ref:`pyslot_type_slot_ids` مستند شده است."
 
 msgid "A :c:member:`!sl_id` of zero (:c:macro:`Py_slot_end`) marks the end of a slots array."
-msgstr ""
+msgstr "یک :c:member:`!sl_id` برابر با صفر (:c:macro:`Py_slot_end`) پایان یک آرایه جایگاه را نشان می‌دهد."
 
 msgid "The data for the slot. These members are part of an anonymous union; the member to use depends on which data type is required by the slot ID: data pointer, function pointer, size, signed or unsigned integer, respectively."
-msgstr ""
+msgstr "داده‌های مربوط به جایگاه. این اعضا بخشی از یک union ناشناس هستند؛ عضوی که باید استفاده شود بستگی به این دارد که شناسه جایگاه چه نوع داده‌ای را نیاز دارد: به ترتیب اشاره‌گر داده، اشاره‌گر تابع، اندازه، عدد صحیح علامت‌دار یا بدون علامت."
 
 msgid "Except when documented otherwise for a specific slot ID, pointers (that is :c:member:`!sl_ptr` and :c:member:`!sl_func`) may not be NULL."
-msgstr ""
+msgstr "به‌جز مواردی که برای یک شناسه جایگاه خاص به شکل دیگری مستند شده باشد، اشاره‌گرها (یعنی :c:member:`!sl_ptr` و :c:member:`!sl_func`) نباید NULL باشند."
 
 msgid "Zero or more of the following flags, OR-ed together:"
-msgstr ""
+msgstr "صفر یا چند مورد از پرچم‌های زیر که با عملگر OR ترکیب شده‌اند:"
 
 msgid "All data the slot points to is statically allocated and constant. Thus, the interpreter does not need to copy the information."
-msgstr ""
+msgstr "تمام داده‌هایی که جایگاه به آن‌ها اشاره می‌کند به صورت ایستا تخصیص یافته و ثابت هستند. بنابراین، مفسر نیازی به کپی کردن اطلاعات ندارد."
 
 msgid "This flag is implied for function pointers."
-msgstr ""
+msgstr "این پرچم برای اشاره‌گرهای تابع ضمنی است."
 
 msgid "The flag applies even to data the slot points to “indirectly”, except for slots nested via :c:macro:`Py_slot_subslots` which may have their own :c:macro:`!PySlot_STATIC` flags. For example, if applied to a :c:macro:`Py_tp_members` slot that points to an array of :c:type:`PyMemberDef` structures, then the entire array, as well as the name and doc strings in its elements, must be static and constant."
-msgstr ""
+msgstr "این پرچم حتی برای داده‌هایی که جایگاه به‌طور «غیرمستقیم» به آن‌ها اشاره می‌کند نیز اعمال می‌شود، به استثنای جایگاه‌هایی که از طریق :c:macro:`Py_slot_subslots` تو در تو قرار گرفته‌اند و ممکن است پرچم‌های :c:macro:`!PySlot_STATIC` خود را داشته باشند. برای مثال، اگر روی جایگاه :c:macro:`Py_tp_members` اعمال شود که به آرایه‌ای از ساختارهای :c:type:`PyMemberDef` اشاره می‌کند، آنگاه کل آرایه و همچنین رشته‌های نام و مستندات در عناصر آن باید ایستا و ثابت باشند."
 
 msgid "The data is stored in ``sl_ptr``; CPython will cast it to the appropriate type."
-msgstr ""
+msgstr "داده‌ها در ``sl_ptr`` ذخیره می‌شوند؛ سی‌پایتون آن را به نوع مناسب تبدیل نوع خواهد داد."
 
 msgid "This flag can simplify porting from the older :c:type:`PyType_Slot` and :c:type:`PyModuleDef_Slot` structures."
-msgstr ""
+msgstr "این پرچم می‌تواند انتقال از ساختارهای قدیمی‌تر :c:type:`PyType_Slot` و :c:type:`PyModuleDef_Slot` را ساده‌تر کند."
 
 msgid "If the slot ID is unknown, the interpreter should ignore the slot, rather than fail."
-msgstr ""
+msgstr "اگر شناسه جایگاه ناشناخته باشد، مفسر باید به‌جای خطا دادن، جایگاه را نادیده بگیرد."
 
 msgid "For example, if Python 3.16 adds a new feature with a new slot ID,attr the corresponding slot may be marked :c:macro:`!PySlot_OPTIONAL` so that Python 3.15 ignores it."
-msgstr ""
+msgstr "برای مثال، اگر پایتون 3.16 ویژگی جدیدی با یک شناسه جایگاه جدید اضافه کند،attr جایگاه متناظر ممکن است به صورت :c:macro:`!PySlot_OPTIONAL` علامت‌گذاری شود تا پایتون 3.15 آن را نادیده بگیرد."
 
 msgid "Note that the \"optionality\" only applies to unknown slot IDs. This flag does not make Python skip invalid values of known slots."
-msgstr ""
+msgstr "توجه داشته باشید که «اختیاری بودن» فقط برای شناسه‌های جایگاه ناشناخته اعمال می‌شود. این پرچم باعث نمی‌شود پایتون مقادیر نامعتبر جایگاه‌های شناخته‌شده را نادیده بگیرد."
 
 msgid "Convenience macros"
-msgstr ""
+msgstr "ماکروهای کمکی"
 
 msgid "Convenience macros to define :c:type:`!PySlot` structures with :c:member:`~PySlot.sl_id` and a particular union member set."
-msgstr ""
+msgstr "ماکروهای کمکی برای تعریف ساختارهای :c:type:`!PySlot` با :c:member:`~PySlot.sl_id` و یک مجموعه عضو union مشخص."
 
 msgid ":c:macro:`!PySlot_STATIC_DATA` sets the :c:macro:`PySlot_STATIC` flag; others set no flags."
-msgstr ""
+msgstr "ماکروی :c:macro:`!PySlot_STATIC_DATA` پرچم :c:macro:`PySlot_STATIC` را تنظیم می‌کند؛ بقیه هیچ پرچمی را تنظیم نمی‌کنند."
 
 msgid "Note that these macros use *designated initializers*, a C language feature that C++ added in the 2020 version of the standard. If your code needs to be compatible with C++11 or older, use :c:macro:`PySlot_PTR` instead."
-msgstr ""
+msgstr "توجه داشته باشید که این ماکروها از *تعیین‌کننده‌های مقداردهی اولیه* (designated initializers) استفاده می‌کنند، که ویژگی زبان C است که C++ آن را در نسخه 2020 استاندارد اضافه کرده است. اگر کد شما باید با C++11 یا قدیمی‌تر سازگار باشد، در عوض از :c:macro:`PySlot_PTR` استفاده کنید."
 
 msgid "Defined as::"
-msgstr ""
+msgstr "به صورت زیر تعریف شده است::"
 
 msgid ""
 "#define PySlot_DATA(NAME, VALUE) \\\n"
@@ -143,15 +155,32 @@ msgid ""
 "#define PySlot_STATIC_DATA(NAME, VALUE) \\\n"
 "   {.sl_id=NAME, .sl_flags=PySlot_STATIC, .sl_ptr=(VALUE)}"
 msgstr ""
+"#define PySlot_DATA(NAME, VALUE) \\\n"
+"   {.sl_id=NAME, .sl_ptr=(void*)(VALUE)}\n"
+"\n"
+"#define PySlot_FUNC(NAME, VALUE) \\\n"
+"   {.sl_id=NAME, .sl_func=(VALUE)}\n"
+"\n"
+"#define PySlot_SIZE(NAME, VALUE) \\\n"
+"   {.sl_id=NAME, .sl_size=(VALUE)}\n"
+"\n"
+"#define PySlot_INT64(NAME, VALUE) \\\n"
+"   {.sl_id=NAME, .sl_int64=(VALUE)}\n"
+"\n"
+"#define PySlot_UINT64(NAME, VALUE) \\\n"
+"   {.sl_id=NAME, .sl_uint64=(VALUE)}\n"
+"\n"
+"#define PySlot_STATIC_DATA(NAME, VALUE) \\\n"
+"   {.sl_id=NAME, .sl_flags=PySlot_STATIC, .sl_ptr=(VALUE)}"
 
 msgid "Convenience macro to mark the end of a :c:type:`!PySlot` array."
-msgstr ""
+msgstr "ماکروی کمکی برای نشانه‌گذاری پایان یک آرایه‌ی :c:type:`!PySlot`."
 
 msgid "#define PySlot_END {0}"
-msgstr ""
+msgstr "#define PySlot_END {0}"
 
 msgid "Convenience macros for use in C++11-compatible code. This version of C++ does not allow setting arbitrary union members in literals; instead, these macros set the :c:macro:`PySlot_INTPTR` flag and cast the value to ``(void*)``."
-msgstr ""
+msgstr "ماکروهای کمکی برای استفاده در کدهای سازگار با C++11. این نسخه‌ی C++ اجازه نمی‌دهد اعضای اتحادی دلخواه را در مقادیر لفظی تنظیم کنید؛ در عوض، این ماکروها پرچم :c:macro:`PySlot_INTPTR` را تنظیم کرده و مقدار را به ``(void*)`` تبدیل نوع می‌دهند."
 
 msgid ""
 "#define PySlot_PTR(NAME, VALUE) \\\n"
@@ -160,27 +189,32 @@ msgid ""
 "#define PySlot_PTR_STATIC(NAME, VALUE) \\\n"
 "   {NAME, PySlot_INTPTR|Py_SLOT_STATIC, {0}, {(void*)(VALUE)}}"
 msgstr ""
+"#define PySlot_PTR(NAME, VALUE) \\\n"
+"   {NAME, PySlot_INTPTR, {0}, {(void*)(VALUE)}}\n"
+"\n"
+"#define PySlot_PTR_STATIC(NAME, VALUE) \\\n"
+"   {NAME, PySlot_INTPTR|Py_SLOT_STATIC, {0}, {(void*)(VALUE)}}"
 
 msgid "Common slot IDs"
-msgstr ""
+msgstr "شناسه‌های رایج جایگاه"
 
 msgid "The following slot IDs may be used in both type and module definitions."
-msgstr ""
+msgstr "شناسه‌های جایگاه زیر ممکن است در تعاریف نوع و ماژول استفاده شوند."
 
 msgid "Marks the end of a slots array. Defined as zero."
-msgstr ""
+msgstr "پایان یک آرایه‌ی جایگاه را نشانه‌گذاری می‌کند. به عنوان صفر تعریف شده است."
 
 msgid "Nested slots array."
-msgstr ""
+msgstr "آرایه‌ی جایگاه تو در تو."
 
 msgid "The value (:c:member:`~PySlot.sl_ptr`) should point to an array of :c:type:`PySlot` structures. The slots in the array (up to but not including the zero-ID terminator) will be treated as if they were inserted if the current slot array, at the point :c:macro:`!Py_slot_subslots` appears."
-msgstr ""
+msgstr "مقدار (:c:member:`~PySlot.sl_ptr`) باید به آرایه‌ای از ساختارهای :c:type:`PySlot` اشاره کند. جایگاه‌های موجود در آرایه (تا پیش از پایان‌دهنده‌ی شناسه-صفر که شامل آن نمی‌شود) طوری پردازش خواهند شد که انگار در جایگاه فعلی، در نقطه‌ای که :c:macro:`!Py_slot_subslots` ظاهر می‌شود، درج شده‌اند."
 
 msgid "Slot nesting depth is limited to 5 levels. This restriction may be lifted in the future."
-msgstr ""
+msgstr "عمق تو در تو بودن جایگاه به ۵ سطح محدود شده است. ممکن است این محدودیت در آینده برداشته شود."
 
 msgid "Reserved; will always be treated as an unknown slot ID. Defined as ``UINT16_MAX`` (``0xFFFF``)."
-msgstr ""
+msgstr "رزروشده؛ همیشه به عنوان یک شناسه‌ی جایگاه ناشناخته در نظر گرفته خواهد شد. به عنوان ``UINT16_MAX`` (``0xFFFF``) تعریف شده است."
 
 msgid "When used with the :c:macro:`PySlot_OPTIONAL` flag, defines a slot with no effect. Without the flag, processing a slot with this ID will fail."
-msgstr ""
+msgstr "هنگامی که با پرچم :c:macro:`PySlot_OPTIONAL` استفاده شود، جایگاهی بدون اثر را تعریف می‌کند. بدون این پرچم، پردازش جایگاهی با این شناسه با خطا مواجه خواهد شد."

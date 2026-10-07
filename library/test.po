@@ -1149,13 +1149,13 @@ msgid "Call :func:`os.unlink` on *filename*.  As with :func:`rmdir`, on Windows 
 msgstr ":func:`os.unlink` را روی *filename* فراخوانی کنید. مانند :func:`rmdir`، در پلتفرم‌های ویندوزی، این فراخوانی با یک حلقه انتظار که وجود پرونده را بررسی می‌کند، دربرگرفته شده است."
 
 msgid "A decorator for running tests with the :envvar:`SOURCE_DATE_EPOCH` environment variable set to *epoch*."
-msgstr ""
+msgstr "یک آراینده برای اجرای آزمون‌ها با متغیر محیطی :envvar:`SOURCE_DATE_EPOCH` که روی *epoch* تنظیم شده است."
 
 msgid "A decorator for running tests with the :envvar:`SOURCE_DATE_EPOCH` environment variable unset."
-msgstr ""
+msgstr "یک آراینده برای اجرای آزمون‌ها در حالی که متغیر محیطی :envvar:`SOURCE_DATE_EPOCH` تنظیم نشده است."
 
 msgid "Metaclass wrapping all test methods of the class with :func:`with_source_date_epoch` if the *source_date_epoch* keyword class argument is true, or with :func:`without_source_date_epoch` otherwise. For example::"
-msgstr ""
+msgstr "فراکلاسی که تمام متدهای آزمون کلاس را با :func:`with_source_date_epoch` احاطه می‌کند، اگر آرگومان کلیدواژه‌ای کلاس *source_date_epoch* برابر با True باشد، و در غیر این صورت با :func:`without_source_date_epoch`. برای مثال::"
 
 msgid ""
 "class TestsWithSourceEpoch(Tests,\n"
@@ -1163,6 +1163,10 @@ msgid ""
 "                           source_date_epoch=True):\n"
 "    pass"
 msgstr ""
+"class TestsWithSourceEpoch(Tests,\n"
+"                           metaclass=SourceDateEpochTestMeta,\n"
+"                           source_date_epoch=True):\n"
+"    pass"
 
 msgid ":mod:`!test.support.import_helper` --- Utilities for import tests"
 msgstr ":mod:`!test.support.import_helper` --- ابزارهای کمکی برای آزمون‌های ایمپورت"

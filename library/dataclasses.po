@@ -247,10 +247,8 @@ msgstr ""
 "c = C()\n"
 "c.mylist += [1, 2, 3]"
 
-#, fuzzy
-#| msgid "As shown above, the :const:`MISSING` value is a sentinel object used to detect if some parameters are provided by the user. This sentinel is used because ``None`` is a valid value for some parameters with a distinct meaning.  No code should directly use the :const:`MISSING` value."
 msgid "As shown above, the :const:`MISSING` value is a :class:`sentinel` object used to detect if some parameters are provided by the user. This sentinel is used because ``None`` is a valid value for some parameters with a distinct meaning.  No code should directly use the :const:`MISSING` value."
-msgstr "همان‌طور که در بالا نشان داده شد، مقدار :const:`MISSING` یک شیء نشانگر (sentinel) است که برای تشخیص این‌که آیا برخی پارامترها توسط کاربر ارائه شده‌اند، استفاده می‌شود. این نشانگر به این دلیل استفاده می‌شود که ``None`` برای برخی پارامترها یک مقدار معتبر با معنایی متمایز است. هیچ کدی نباید به‌طور مستقیم از مقدار :const:`MISSING` استفاده کند."
+msgstr "همان‌طور که در بالا نشان داده شد، مقدار :const:`MISSING` یک شیء :class:`نشانگر <sentinel>` است که برای تشخیص اینکه آیا برخی پارامترها توسط کاربر فراهم شده‌اند یا خیر، استفاده می‌شود. این نشانگر به این دلیل استفاده می‌شود که ``None`` یک مقدار معتبر برای برخی پارامترها با معنایی متمایز است. هیچ کدی نباید مستقیماً از مقدار :const:`MISSING` استفاده کند."
 
 msgid "The parameters to :func:`!field` are:"
 msgstr "پارامترهای :func:`!field` عبارتند از:"
@@ -310,7 +308,7 @@ msgid "The class attribute :attr:`!C.z` will be ``10``, the class attribute :att
 msgstr "صفت کلاس :attr:`!C.z` برابر ``10`` خواهد بود، صفت کلاس :attr:`!C.t` برابر ``20`` خواهد بود، و صفات کلاس :attr:`!C.x` و :attr:`!C.y` تنظیم نخواهند شد."
 
 msgid "If *metadata* is ``None``, use an empty :class:`frozendict`, instead of a :func:`~types.MappingProxyType` of an empty :class:`dict`."
-msgstr ""
+msgstr "اگر *metadata* برابر با ``None`` باشد، به جای :func:`~types.MappingProxyType` یک :class:`dict` خالی، از یک :class:`frozendict` خالی استفاده کنید."
 
 msgid ":class:`!Field` objects describe each defined field. These objects are created internally, and are returned by the :func:`fields` module-level method (see below).  Users should never instantiate a :class:`!Field` object directly.  Its documented attributes are:"
 msgstr "اشیای :class:`!Field` هر فیلد تعریف‌شده را توصیف می‌کنند. این اشیاء به‌صورت داخلی ایجاد می‌شوند و توسط متد :func:`fields` در سطح ماژول برگردانده می‌شوند (در زیر ببینید). کاربران هرگز نباید یک شیء :class:`!Field` را مستقیماً نمونه‌سازی کنند. ویژگی‌های مستندشده‌ی آن عبارت‌اند از:"
@@ -333,10 +331,8 @@ msgstr "حاشیه‌نویسی‌های نوع ``InitVar[T]`` متغیرهای�
 msgid "Returns a tuple of :class:`Field` objects that define the fields for this dataclass.  Accepts either a dataclass, or an instance of a dataclass. Raises :exc:`TypeError` if not passed a dataclass or instance of one. Does not return pseudo-fields which are ``ClassVar`` or ``InitVar``."
 msgstr "تاپلی از اشیای :class:`Field` برمی‌گرداند که فیلدهای این دیتاکلاس را تعریف می‌کنند. یک دیتاکلاس یا نمونه‌ای از دیتاکلاس را می‌پذیرد. اگر دیتاکلاس یا نمونه‌ای از آن پاس داده نشود، :exc:`TypeError` را پرتاب می‌کند. شبه‌فیلدهایی که ``ClassVar`` یا ``InitVar`` باشند را برنمی‌گرداند."
 
-#, fuzzy
-#| msgid "Converts the dataclass *obj* to a dict (by using the factory function *dict_factory*).  Each dataclass is converted to a dict of its fields, as ``name: value`` pairs.  dataclasses, dicts, lists, and tuples are recursed into.  Other objects are copied with :func:`copy.deepcopy`."
 msgid "Converts the dataclass *obj* to a dict (by using the factory function *dict_factory*).  Each dataclass is converted to a dict of its fields, as ``name: value`` pairs.  dataclasses, dicts, frozendicts, lists, and tuples are recursed into.  Other objects are copied with :func:`copy.deepcopy`."
-msgstr "دیتاکلاس *obj* را به یک دیکشنری تبدیل می‌کند (با استفاده از تابع کارخانه‌ای *dict_factory*). هر دیتاکلاس به دیکشنری از فیلدهای آن، به‌صورت جفت‌های ``name: value`` تبدیل می‌شود. دیتاکلاس‌ها، دیکشنری‌ها، فهرست‌ها و تاپل‌ها به‌صورت بازگشتی پردازش می‌شوند. سایر اشیاء با :func:`copy.deepcopy` کپی می‌شوند."
+msgstr "دیتاکلاس *obj* را به یک دیکشنری تبدیل می‌کند (با استفاده از تابع کارخانه‌ای *dict_factory*). هر دیتاکلاس به دیکشنری‌ای از فیلدهای خود به صورت جفت‌های ``name: value`` تبدیل می‌شود. درون دیتاکلاس‌ها، دیکشنری‌ها، frozendictها، فهرست‌ها و تاپل‌ها بازگشت انجام می‌شود (بازگشتی پیمایش می‌شوند). سایر شیءها با :func:`copy.deepcopy` کپی می‌شوند."
 
 msgid "Example of using :func:`!asdict` on nested dataclasses::"
 msgstr "مثالی از استفاده از :func:`!asdict` روی دیتاکلاس‌های تودرتو::"
@@ -381,10 +377,8 @@ msgstr "{field.name: getattr(obj, field.name) for field in fields(obj)}"
 msgid ":func:`!asdict` raises :exc:`TypeError` if *obj* is not a dataclass instance."
 msgstr ":func:`!asdict` در صورتی که *obj* نمونه‌ای از دیتاکلاس نباشد، :exc:`TypeError` را پرتاب می‌کند."
 
-#, fuzzy
-#| msgid "Converts the dataclass *obj* to a tuple (by using the factory function *tuple_factory*).  Each dataclass is converted to a tuple of its field values.  dataclasses, dicts, lists, and tuples are recursed into. Other objects are copied with :func:`copy.deepcopy`."
 msgid "Converts the dataclass *obj* to a tuple (by using the factory function *tuple_factory*).  Each dataclass is converted to a tuple of its field values.  dataclasses, dicts, frozendicts, lists, and tuples are recursed into. Other objects are copied with :func:`copy.deepcopy`."
-msgstr "دیتاکلاس *obj* را به یک تاپل تبدیل می‌کند (با استفاده از تابع کارخانه‌ای *tuple_factory*). هر دیتاکلاس به یک تاپل از مقادیر فیلدهای آن تبدیل می‌شود. دیتاکلاس‌ها، دیکشنری‌ها، فهرست‌ها و تاپل‌ها به‌صورت بازگشتی پیمایش می‌شوند. سایر اشیاء با :func:`copy.deepcopy` کپی می‌شوند."
+msgstr "دیتاکلاس *obj* را به یک تاپل تبدیل می‌کند (با استفاده از تابع کارخانه‌ای *tuple_factory*). هر دیتاکلاس به تاپلی از مقدارهای فیلد خود تبدیل می‌شود. درون دیتاکلاس‌ها، دیکشنری‌ها، frozendictها، فهرست‌ها و تاپل‌ها بازگشت انجام می‌شود (بازگشتی پیمایش می‌شوند). سایر شیءها با :func:`copy.deepcopy` کپی می‌شوند."
 
 msgid "Continuing from the previous example::"
 msgstr "در ادامه از مثال پیشین::"
@@ -483,18 +477,14 @@ msgstr ""
 "def is_dataclass_instance(obj):\n"
 "    return is_dataclass(obj) and not isinstance(obj, type)"
 
-#, fuzzy
-#| msgid "A sentinel value signifying a missing default or default_factory."
 msgid "A :class:`sentinel` object signifying a missing default or *default_factory*."
-msgstr "یک مقدار نشانگر (sentinel) که نشان‌دهنده‌ی نبود default یا default_factory است."
+msgstr "یک شیء :class:`نشانگر <sentinel>` که نشان‌دهنده‌ی یک پیش‌فرضِ گم‌شده یا *default_factory* است."
 
 msgid ":const:`!MISSING` is now a :class:`sentinel` object."
-msgstr ""
+msgstr ":const:`!MISSING` اکنون یک شیء :class:`sentinel` است."
 
-#, fuzzy
-#| msgid "A sentinel value used as a type annotation.  Any fields after a pseudo-field with the type of :const:`!KW_ONLY` are marked as keyword-only fields.  Note that a pseudo-field of type :const:`!KW_ONLY` is otherwise completely ignored.  This includes the name of such a field.  By convention, a name of ``_`` is used for a :const:`!KW_ONLY` field.  Keyword-only fields signify :meth:`~object.__init__` parameters that must be specified as keywords when the class is instantiated."
 msgid "A :class:`sentinel` object used as a type annotation.  Any fields after a pseudo-field with the type of :const:`!KW_ONLY` are marked as keyword-only fields.  Note that a pseudo-field of type :const:`!KW_ONLY` is otherwise completely ignored.  This includes the name of such a field.  By convention, a name of ``_`` is used for a :const:`!KW_ONLY` field.  Keyword-only fields signify :meth:`~object.__init__` parameters that must be specified as keywords when the class is instantiated."
-msgstr "یک مقدار نشانگر (sentinel value) که به‌عنوان حاشیه‌نویسی نوع استفاده می‌شود. هر فیلدی که پس از یک شبه‌فیلد (pseudo-field) با نوع :const:`!KW_ONLY` قرار گیرد، به‌عنوان فیلد فقط کلیدواژه‌ای علامت‌گذاری می‌شود. توجه داشته باشید که یک شبه‌فیلد از نوع :const:`!KW_ONLY` در موارد دیگر به‌طور کامل نادیده گرفته می‌شود. این موضوع شامل نام چنین فیلدی نیز می‌شود. طبق قرارداد، برای یک فیلد :const:`!KW_ONLY` از نام ``_`` استفاده می‌شود. فیلدهای فقط کلیدواژه‌ای نشان می‌دهند که پارامترهای :meth:`~object.__init__` باید هنگام نمونه‌سازی از کلاس به‌صورت کلیدواژه مشخص شوند."
+msgstr "یک شیء :class:`sentinel` که به‌عنوان حاشیه‌نویسی نوع استفاده می‌شود. هر فیلدی پس از یک فیلد کاذب با نوع :const:`!KW_ONLY` به‌عنوان فیلد فقط-کلیدواژه علامت‌گذاری می‌شود. توجه داشته باشید که فیلد کاذب با نوع :const:`!KW_ONLY` در غیر این صورت کاملاً نادیده گرفته می‌شود. این شامل نام چنین فیلدی نیز می‌شود. طبق قرارداد، نام ``_`` برای یک فیلد :const:`!KW_ONLY` استفاده می‌شود. فیلدهای فقط-کلیدواژه نمایانگر :meth:`~object.__init__` پارامترهایی هستند که هنگام نمونه‌سازی کلاس باید به‌عنوان کلیدواژه مشخص شوند."
 
 msgid "In this example, the fields ``y`` and ``z`` will be marked as keyword-only fields::"
 msgstr "در این مثال، فیلدهای ``y`` و ``z`` به‌عنوان فیلدهای فقط کلیدواژه‌ای علامت‌گذاری خواهند شد::"
@@ -522,7 +512,7 @@ msgid "In a single dataclass, it is an error to specify more than one field whos
 msgstr "در یک دیتاکلاس واحد، مشخص کردن بیش از یک فیلد که نوع آن :const:`!KW_ONLY` باشد، خطا است."
 
 msgid ":const:`!KW_ONLY` is now a :class:`sentinel` object."
-msgstr ""
+msgstr ":const:`!KW_ONLY` اکنون یک شیء :class:`sentinel` است."
 
 msgid "Raised when an implicitly defined :meth:`~object.__setattr__` or :meth:`~object.__delattr__` is called on a dataclass which was defined with ``frozen=True``. It is a subclass of :exc:`AttributeError`."
 msgstr "هنگامی پرتاب می‌شود که یک :meth:`~object.__setattr__` یا :meth:`~object.__delattr__` تعریف‌شده به‌صورت ضمنی، روی یک دیتاکلاس  که با ``frozen=True`` تعریف شده باشد، فراخوانی شود. این استثنا زیرکلاسی از :exc:`AttributeError` است."

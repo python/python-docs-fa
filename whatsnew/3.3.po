@@ -868,10 +868,8 @@ msgstr "(با مشارکت Benjamin Peterson.)"
 msgid "A Finer-Grained Import Lock"
 msgstr "قفل ایمپورت با دانه‌بندی ریزتر"
 
-#, fuzzy
-#| msgid "Previous versions of CPython have always relied on a global import lock. This led to unexpected annoyances, such as deadlocks when importing a module would trigger code execution in a different thread as a side-effect. Clumsy workarounds were sometimes employed, such as the :c:func:`PyImport_ImportModuleNoBlock` C API function."
 msgid "Previous versions of CPython have always relied on a global import lock. This led to unexpected annoyances, such as deadlocks when importing a module would trigger code execution in a different thread as a side-effect. Clumsy workarounds were sometimes employed, such as the :c:func:`!PyImport_ImportModuleNoBlock` C API function."
-msgstr "نسخه‌های قبلی سی‌پایتون همیشه به یک قفل سراسری ایمپورت تکیه داشته‌اند. این امر به مزاحمت‌های غیرمنتظره‌ای منجر می‌شد، مانند بن‌بست‌ها در مواردی که ایمپورت کردن یک ماژول، به‌عنوان یک اثر جانبی، اجرای کد را در نخ دیگری فعال می‌کرد. گاهی راه‌حل‌های ناشیانه‌ای به کار گرفته می‌شد، مانند تابع :c:func:`PyImport_ImportModuleNoBlock` در C API."
+msgstr "نسخه‌های قبلی سی‌پایتون همیشه به قفل ایمپورت سراسری متکی بودند. این امر منجر به بروز مشکلات غیرمنتظره‌ای می‌شد؛ مانند بن‌بست‌هایی که در آن‌ها ایمپورت کردن یک ماژول به‌عنوان اثر جانبی، باعث اجرای کد در یک نخ متفاوت می‌شد. گاهی اوقات از راه‌حل‌های ناخوشایندی مانند تابع C API به نام :c:func:`!PyImport_ImportModuleNoBlock` استفاده می‌شد."
 
 msgid "In Python 3.3, importing a module takes a per-module lock.  This correctly serializes importation of a given module from multiple threads (preventing the exposure of incompletely initialized modules), while eliminating the aforementioned annoyances."
 msgstr "در پایتون 3.3، هنگام ایمپورت کردن یک ماژول، قفلی مخصوص همان ماژول گرفته می‌شود. این کار، ایمپورت یک ماژول معین از چندین نخ را به‌درستی متوالی می‌سازد (و مانع از نمایان شدن ماژول‌های ناقص مقداردهی‌شده می‌شود) و در عین حال مزاحمت‌های پیش‌گفته را از بین می‌برد."

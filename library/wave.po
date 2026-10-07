@@ -29,27 +29,23 @@ msgstr ":mod:`!wave` --- خواندن و نوشتن پرونده‌های WAV"
 msgid "**Source code:** :source:`Lib/wave.py`"
 msgstr "**کد منبع:** :source:`Lib/wave.py`"
 
-#, fuzzy
-#| msgid "The :mod:`!wave` module provides a convenient interface to the Waveform Audio \"WAVE\" (or \"WAV\") file format. Only uncompressed PCM encoded wave files are supported."
 msgid "The :mod:`!wave` module provides a convenient interface to the Waveform Audio \"WAVE\" (or \"WAV\") file format."
-msgstr "ماژول :mod:`!wave` رابط مناسبی برای قالب پرونده Waveform Audio با نام «WAVE» (یا «WAV») فراهم می‌کند. فقط پرونده‌های wave کدگذاری‌شده با PCM و فشرده‌نشده پشتیبانی می‌شوند."
+msgstr "ماژول :mod:`!wave` یک رابط کاربرپسند برای فرمت پرونده‌ی صوتی Waveform Audio با نام «WAVE» (یا «WAV») فراهم می‌کند."
 
 msgid "The module supports uncompressed PCM and IEEE floating-point WAV formats."
-msgstr ""
+msgstr "این ماژول از فرمت‌های صوتی PCM فشرده‌نشده و ممیز شناور IEEE پشتیبانی می‌کند."
 
 msgid "Support for ``WAVE_FORMAT_EXTENSIBLE`` headers was added, provided that the extended format is ``KSDATAFORMAT_SUBTYPE_PCM``."
 msgstr "پشتیبانی از سرآیندهای ``WAVE_FORMAT_EXTENSIBLE`` افزوده شد، مشروط بر اینکه قالب گسترش‌یافته ``KSDATAFORMAT_SUBTYPE_PCM`` باشد."
 
 msgid "Support for reading and writing ``WAVE_FORMAT_IEEE_FLOAT`` files was added."
-msgstr ""
+msgstr "پشتیبانی از خواندن و نوشتن پرونده‌های ``WAVE_FORMAT_IEEE_FLOAT`` اضافه شد."
 
 msgid "The :mod:`!wave` module defines the following function and exception:"
 msgstr "ماژول :mod:`!wave` تابع و استثنای زیر را تعریف می‌کند:"
 
-#, fuzzy
-#| msgid "If *file* is a string, open the file by that name, otherwise treat it as a file-like object.  *mode* can be:"
 msgid "If *file* is a string, a :term:`path-like object` or a :term:`bytes-like object` open the file by that name, otherwise treat it as a file-like object.  *mode* can be:"
-msgstr "اگر *file* یک رشته باشد، پرونده با آن نام باز می‌شود؛ در غیر این صورت، با آن به‌عنوان یک شیء شبه‌پرونده رفتار می‌شود. *mode* می‌تواند یکی از موارد زیر باشد:"
+msgstr "اگر *file* یک رشته، یک :term:`شیء شبه‌مسیر <path-like object>` یا یک :term:`شیء شبه‌بایت <bytes-like object>` باشد، پرونده را با آن نام باز کنید، در غیر این صورت با آن مانند یک شیء شبه‌پرونده رفتار کنید. *mode* می‌تواند به صورت زیر باشد:"
 
 msgid "``'rb'``"
 msgstr "``'rb'``"
@@ -79,19 +75,19 @@ msgid "Added support for unseekable files."
 msgstr "پشتیبانی از پرونده‌های غیرقابل مکان‌یابی (unseekable) افزوده شد."
 
 msgid "Added support for :term:`path-like objects <path-like object>` and :term:`bytes-like objects <bytes-like object>`."
-msgstr ""
+msgstr "پشتیبانی از :term:`شیء شبه‌مسیر <path-like object>` و :term:`شیء شبه‌بایت <bytes-like object>` اضافه شد."
 
 msgid "An error raised when something is impossible because it violates the WAV specification or hits an implementation deficiency."
 msgstr "خطایی که هنگامی پرتاب می‌شود که انجام کاری به دلیل نقض مشخصات WAV یا مواجهه با نقصی در پیاده‌سازی غیرممکن باشد."
 
 msgid "Format code for uncompressed PCM audio."
-msgstr ""
+msgstr "کد فرمت برای صوتی PCM فشرده‌نشده."
 
 msgid "Format code for IEEE floating-point audio."
-msgstr ""
+msgstr "کد فرمت برای صوتی ممیز شناور IEEE."
 
 msgid "Format code for WAVE extensible headers."
-msgstr ""
+msgstr "کد فرمت برای سرآیندهای قابل‌توسعه‌ی WAVE."
 
 msgid "Wave_read Objects"
 msgstr "اشیای Wave_read"
@@ -117,13 +113,11 @@ msgstr "فرکانس نمونه‌برداری را برمی‌گرداند."
 msgid "Returns number of audio frames."
 msgstr "تعداد فریم‌های صوتی را برمی‌گرداند."
 
-#, fuzzy
-#| msgid "Return the frame rate."
 msgid "Returns the frame format code."
-msgstr "نرخ فریم را برمی‌گرداند."
+msgstr "کد فرمت قاب را برمی‌گرداند."
 
 msgid "This is one of :data:`WAVE_FORMAT_PCM`, :data:`WAVE_FORMAT_IEEE_FLOAT`, or :data:`WAVE_FORMAT_EXTENSIBLE`."
-msgstr ""
+msgstr "این مورد یکی از مقادیر :data:`WAVE_FORMAT_PCM`، :data:`WAVE_FORMAT_IEEE_FLOAT` یا :data:`WAVE_FORMAT_EXTENSIBLE` است."
 
 msgid "Returns compression type (``'NONE'`` is the only supported type)."
 msgstr "نوع فشرده‌سازی را برمی‌گرداند (``'NONE'`` تنها نوع پشتیبانی‌شده است)."
@@ -177,7 +171,7 @@ msgid "Set the sample width to *n* bytes."
 msgstr "عرض نمونه را روی *n* بایت تنظیم کنید."
 
 msgid "For :data:`WAVE_FORMAT_IEEE_FLOAT`, only 4-byte (32-bit) and 8-byte (64-bit) sample widths are supported."
-msgstr ""
+msgstr "برای :data:`WAVE_FORMAT_IEEE_FLOAT`، فقط پهنای نمونه‌ی ۴ بایتی (۳۲ بیتی) و ۸ بایتی (۶۴ بیتی) پشتیبانی می‌شوند."
 
 msgid "Return the sample width in bytes."
 msgstr "عرض نمونه را بر حسب بایت برمی‌گرداند."
@@ -206,32 +200,26 @@ msgstr "نوع فشرده‌سازی را برمی‌گرداند (``'NONE'``)."
 msgid "Return the human-readable compression type name."
 msgstr "نام نوع فشرده‌سازی قابل‌خواندن برای انسان را برمی‌گرداند."
 
-#, fuzzy
-#| msgid "Set the frame rate to *n*."
 msgid "Set the frame format code."
-msgstr "نرخ فریم را روی *n* تنظیم کنید."
+msgstr "کد قالب قاب را تنظیم کنید."
 
 msgid "Supported values are :data:`WAVE_FORMAT_PCM` and :data:`WAVE_FORMAT_IEEE_FLOAT`."
-msgstr ""
+msgstr "مقادیر پشتیبانی‌شده عبارتند از :data:`WAVE_FORMAT_PCM` و :data:`WAVE_FORMAT_IEEE_FLOAT`."
 
 msgid "When setting :data:`WAVE_FORMAT_IEEE_FLOAT`, the sample width must be 4 or 8 bytes."
-msgstr ""
+msgstr "هنگام تنظیم :data:`WAVE_FORMAT_IEEE_FLOAT`، پهنای نمونه باید ۴ یا ۸ بایت باشد."
 
-#, fuzzy
-#| msgid "Return the frame rate."
 msgid "Return the current frame format code."
-msgstr "نرخ فریم را برمی‌گرداند."
+msgstr "کد قالب قاب فعلی را برمی‌گرداند."
 
-#, fuzzy
-#| msgid "The *tuple* should be ``(nchannels, sampwidth, framerate, nframes, comptype, compname)``, with values valid for the ``set*()`` methods.  Sets all parameters."
 msgid "The *tuple* should be ``(nchannels, sampwidth, framerate, nframes, comptype, compname, format)``, with values valid for the ``set*()`` methods. Sets all parameters."
-msgstr "*تاپل* باید به‌صورت ``(nchannels, sampwidth, framerate, nframes, comptype, compname)`` باشد، با مقادیری معتبر برای متدهای ``set*()``. تمام پارامترها را تنظیم می‌کند."
+msgstr "تاپل باید به شکل ``(nchannels, sampwidth, framerate, nframes, comptype, compname, format)`` باشد و مقادیر آن برای متدهای ``set*()`` معتبر باشند. تمام پارامترها را تنظیم می‌کند."
 
 msgid "For backwards compatibility, a 6-item tuple without *format* is also accepted and defaults to :data:`WAVE_FORMAT_PCM`."
-msgstr ""
+msgstr "برای سازگاری با نسخه‌های قبلی، یک تاپل ۶ آیتمی بدون *format* نیز پذیرفته می‌شود و به‌طور پیش‌فرض به :data:`WAVE_FORMAT_PCM` تنظیم می‌شود."
 
 msgid "For ``format=WAVE_FORMAT_IEEE_FLOAT``, *sampwidth* must be 4 or 8."
-msgstr ""
+msgstr "برای ``format=WAVE_FORMAT_IEEE_FLOAT``، پارامتر *sampwidth* باید ۴ یا ۸ باشد."
 
 msgid "Return a :func:`~collections.namedtuple` ``(nchannels, sampwidth, framerate, nframes, comptype, compname)`` containing the current output parameters."
 msgstr "یک :func:`~collections.namedtuple` شامل ``(nchannels, sampwidth, framerate, nframes, comptype, compname)`` برمی‌گرداند که حاوی پارامترهای خروجی فعلی است."
@@ -252,7 +240,7 @@ msgid "Note that it is invalid to set any parameters after calling :meth:`writef
 msgstr "توجه داشته باشید که تنظیم هر پارامتری پس از فراخوانی :meth:`writeframes` یا :meth:`writeframesraw` نامعتبر است، و هرگونه تلاش برای این کار باعث پرتاب :exc:`wave.Error` خواهد شد."
 
 msgid "For :data:`WAVE_FORMAT_IEEE_FLOAT` output, a ``fact`` chunk is written as required by the WAVE specification for non-PCM formats."
-msgstr ""
+msgstr "برای خروجی :data:`WAVE_FORMAT_IEEE_FLOAT`، یک تکه (chunk) از نوع ``fact`` همان‌طور که مشخصات WAVE برای فرمت‌های غیر PCM الزام کرده است، نوشته می‌شود."
 
 #~ msgid "The following two methods are defined for compatibility with the old :mod:`!aifc` module, and don't do anything interesting."
 #~ msgstr "دو متد زیر برای سازگاری با ماژول قدیمی :mod:`!aifc` تعریف شده‌اند و کار جالبی انجام نمی‌دهند."

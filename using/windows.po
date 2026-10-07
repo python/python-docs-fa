@@ -1045,30 +1045,22 @@ msgid "UTF-8 mode"
 msgstr "حالت UTF-8"
 
 msgid "Python UTF-8 mode is now enabled by default (:pep:`686`)."
-msgstr ""
+msgstr "حالت UTF-8 پایتون اکنون به‌طور پیش‌فرض فعال است (:pep:`686`)."
 
-#, fuzzy
-#| msgid "Windows still uses legacy encodings for the system encoding (the ANSI Code Page).  Python uses it for the default encoding of text files (e.g. :func:`locale.getencoding`)."
 msgid "Windows still uses legacy encodings for the system encoding (the ANSI Code Page).  When the :ref:`Python UTF-8 Mode <utf8-mode>` is disabled, Python uses the ANSI Code Page as the default encoding of text files, as returned by :func:`locale.getencoding`."
-msgstr "ویندوز همچنان از کدگذاری‌های قدیمی برای کدگذاری سیستم (صفحه‌ی کد ANSI) استفاده می‌کند. پایتون از آن برای کدگذاری پیش‌فرض پرونده‌های متنی استفاده می‌کند (برای مثال :func:`locale.getencoding`)."
+msgstr "ویندوز همچنان از کدگذاری‌های قدیمی برای کدگذاری سیستم (صفحه کد ANSI) استفاده می‌کند. وقتی :ref:`حالت UTF-8 پایتون <utf8-mode>` غیرفعال است، پایتون از صفحه‌ی کد ANSI به عنوان کدگذاری پیش‌فرض پرونده‌های متنی استفاده می‌کند، همان‌طور که :func:`locale.getencoding` آن را برمی‌گرداند."
 
 msgid "This may cause issues because UTF-8 is widely used on the internet and most Unix systems, including WSL (Windows Subsystem for Linux)."
 msgstr "این ممکن است مشکلاتی ایجاد کند، زیرا UTF-8 به‌طور گسترده در اینترنت و بیشتر سیستم‌های یونیکس، از جمله WSL (زیرسیستم ویندوز برای لینوکس)، استفاده می‌شود."
 
-#, fuzzy
-#| msgid "When the :ref:`Python UTF-8 Mode <utf8-mode>` is enabled, you can still use the system encoding (the ANSI Code Page) via the \"mbcs\" codec."
 msgid "The :ref:`Python UTF-8 Mode <utf8-mode>`, enabled by default, ignores the system encoding and uses UTF-8 as the default text encoding. When the :ref:`UTF-8 mode <utf8-mode>` is enabled, you can still use the system encoding (the ANSI Code Page) via the \"mbcs\" codec."
-msgstr "وقتی :ref:`حالت UTF-8 پایتون <utf8-mode>` فعال باشد، شما همچنان می‌توانید از کدگذاری سیستم (صفحه‌ی کد ANSI) از طریق کدک «mbcs» استفاده کنید."
+msgstr ":ref:`حالت UTF-8 پایتون <utf8-mode>` که به‌طور پیش‌فرض فعال است، کدگذاری سیستم را نادیده می‌گیرد و از UTF-8 به عنوان کدگذاری پیش‌فرض متن استفاده می‌کند. هنگامی که :ref:`حالت UTF-8 <utf8-mode>` فعال است، همچنان می‌توانید از طریق کُدک «mbcs» از کدگذاری سیستم (صفحه کد ANSI) استفاده کنید."
 
-#, fuzzy
-#| msgid "You can use the :ref:`Python UTF-8 Mode <utf8-mode>` to change the default text encoding to UTF-8. You can enable the :ref:`Python UTF-8 Mode <utf8-mode>` via the ``-X utf8`` command line option, or the ``PYTHONUTF8=1`` environment variable.  See :envvar:`PYTHONUTF8` for enabling UTF-8 mode, and :ref:`setting-envvars` for how to modify environment variables."
 msgid "You can disable the :ref:`Python UTF-8 Mode <utf8-mode>` via the ``-X utf8=0`` command line option, or the ``PYTHONUTF8=0`` environment variable.  See :envvar:`PYTHONUTF8` for disabling UTF-8 mode, and :ref:`setting-envvars` for how to modify environment variables."
-msgstr "می‌توانید از :ref:`حالت UTF-8 پایتون <utf8-mode>` برای تغییر کدگذاری متن پیش‌فرض به UTF-8 استفاده کنید. می‌توانید :ref:`حالت UTF-8 پایتون <utf8-mode>` را از طریق گزینه‌ی خط فرمان ``-X utf8`` یا متغیر محیطی ``PYTHONUTF8=1`` فعال کنید. برای فعال کردن حالت UTF-8 به :envvar:`PYTHONUTF8` و برای نحوه‌ی تغییر متغیرهای محیطی به :ref:`setting-envvars` مراجعه کنید."
+msgstr "می‌توانید :ref:`حالت UTF-8 پایتون <utf8-mode>` را از طریق گزینه‌ی خط فرمان ``-X utf8=0`` یا متغیر محیطی ``PYTHONUTF8=0`` غیرفعال کنید. برای غیرفعال کردن حالت UTF-8 به :envvar:`PYTHONUTF8` و برای نحوه‌ی اصلاح متغیرهای محیطی به :ref:`setting-envvars` مراجعه کنید."
 
-#, fuzzy
-#| msgid "Note that adding ``PYTHONUTF8=1`` to the default environment variables will affect all Python 3.7+ applications on your system. If you have any Python 3.7+ applications which rely on the legacy system encoding, it is recommended to set the environment variable temporarily or use the ``-X utf8`` command line option."
 msgid "Adding ``PYTHONUTF8={0,1}`` to the default environment variables will affect all Python 3.7+ applications on your system. If you have any Python 3.7+ applications which rely on the legacy system encoding, it is recommended to set the environment variable temporarily or use the ``-X utf8`` command line option."
-msgstr "توجه داشته باشید که افزودن ``PYTHONUTF8=1`` به متغیرهای محیطی پیش‌فرض، بر تمام برنامه‌های Python 3.7+ در سیستم شما تأثیر می‌گذارد. اگر برنامه‌هایی از Python 3.7+ دارید که به کدگذاری قدیمی سیستم متکی هستند، توصیه می‌شود متغیر محیطی را به‌صورت موقت تنظیم کنید یا از گزینه‌ی خط فرمان ``-X utf8`` استفاده کنید."
+msgstr "افزودن ``PYTHONUTF8={0,1}`` به متغیرهای محیطی پیش‌فرض، روی تمام برنامه‌های پایتون 3.7 به بالا روی سیستم شما تأثیر خواهد گذاشت. اگر برنامه‌ای به زبان پایتون 3.7 یا بالاتر دارید که به کدگذاری قدیمی سیستم وابسته است، توصیه می‌شود متغیر محیطی را به صورت موقت تنظیم کنید یا از گزینه‌ی خط فرمان ``-X utf8`` استفاده کنید."
 
 msgid "Even when UTF-8 mode is disabled, Python uses UTF-8 by default on Windows for:"
 msgstr "حتی زمانی که حالت UTF-8 غیرفعال است، پایتون به‌طور پیش‌فرض در ویندوز برای موارد زیر از UTF-8 استفاده می‌کند:"

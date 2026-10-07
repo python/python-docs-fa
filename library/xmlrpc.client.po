@@ -167,10 +167,8 @@ msgstr "مشخصات رسمی."
 msgid "ServerProxy Objects"
 msgstr "اشیای ServerProxy"
 
-#, fuzzy
-#| msgid "A :class:`ServerProxy` instance has a method corresponding to each remote procedure call accepted by the XML-RPC server.  Calling the method performs an RPC, dispatched by both name and argument signature (e.g. the same method name can be overloaded with multiple argument signatures).  The RPC finishes by returning a value, which may be either returned data in a conformant type or a :class:`Fault` or :class:`ProtocolError` object indicating an error."
 msgid "A :class:`ServerProxy` instance has a method corresponding to each remote procedure call accepted by the XML-RPC server.  Calling the method performs an RPC, dispatched by both name and argument signature (e.g. the same method name can be overloaded with multiple argument signatures).  The RPC finishes either by returning data in a conformant type or by raising a :class:`Fault` or :class:`ProtocolError` exception indicating an error."
-msgstr "یک نمونه :class:`ServerProxy` دارای یک متد متناظر با هر فراخوانی رویه‌ی راه دور پذیرفته‌شده توسط سرور XML-RPC است. فراخوانی این متد یک RPC انجام می‌دهد که بر اساس هر دو نام و امضای آرگومان اعزام (dispatch) می‌شود (برای مثال، همان نام متد می‌تواند با چندین امضای آرگومان سربارگذاری (overload) شود). این RPC با برگرداندن یک مقدار پایان می‌یابد، که ممکن است داده‌ی برگردانده‌شده در یک نوع منطبق باشد یا یک شیء :class:`Fault` یا :class:`ProtocolError` که نشان‌دهنده‌ی یک خطا است."
+msgstr "یک نمونه از :class:`ServerProxy` دارای متدی متناظر با هر فراخوانی روش راه دور (RPC) پذیرفته‌شده توسط سرور XML-RPC است. فراخوانی این متد یک RPC را اجرا می‌کند که هم بر اساس نام و هم بر اساس امضای آرگومان‌ها دیسپچ می‌شود (مثلاً یک نام متد واحد را می‌توان با چند امضای آرگومان سربارگذاری‌کرد). اجرای RPC یا با بازگرداندن داده در یک نوع سازگار و یا با بالا آوردن یک استثنای :class:`Fault` یا :class:`ProtocolError` که نشان‌دهنده‌ی یک خطا است، به پایان می‌رسد."
 
 msgid "Servers that support the XML introspection API support some common methods grouped under the reserved :attr:`~ServerProxy.system` attribute:"
 msgstr "سرورهایی که از API درون‌نگری XML پشتیبانی می‌کنند، از برخی متدهای رایج پشتیبانی می‌کنند که زیر ویژگی محفوظ :attr:`~ServerProxy.system` گروه‌بندی شده‌اند:"
@@ -488,10 +486,8 @@ msgstr "اشیای MultiCall"
 msgid "The :class:`MultiCall` object provides a way to encapsulate multiple calls to a remote server into a single request [#]_."
 msgstr "شیء :class:`MultiCall` راهی برای کپسوله‌کردن چندین فراخوانی به یک سرور دوردست در قالب یک درخواست فراهم می‌کند [#]_."
 
-#, fuzzy
-#| msgid "Create an object used to boxcar method calls. *server* is the eventual target of the call. Calls can be made to the result object, but they will immediately return ``None``, and only store the call name and parameters in the :class:`MultiCall` object. Calling the object itself causes all stored calls to be transmitted as a single ``system.multicall`` request. The result of this call is a :term:`generator`; iterating over this generator yields the individual results."
 msgid "Create an object used to boxcar method calls. *server* is the eventual target of the call. Calls can be made to the result object, but they will immediately return ``None``, and only store the call name and arguments in the :class:`MultiCall` object. Calling the object itself causes all stored calls to be transmitted as a single ``system.multicall`` request. The result of this call is a :term:`generator`; iterating over this generator yields the individual results."
-msgstr "یک شیء برای دسته‌بندی (boxcar) فراخوانی‌های متد ایجاد می‌کند. *server* هدف نهایی فراخوانی است. می‌توان فراخوانی‌هایی را روی شیء نتیجه انجام داد، اما آن‌ها بلافاصله ``None`` را بازمی‌گردانند و فقط نام و پارامترهای فراخوانی را در شیء :class:`MultiCall` ذخیره می‌کنند. فراخوانی خود شیء باعث می‌شود همه‌ی فراخوانی‌های ذخیره‌شده در قالب یک درخواست ``system.multicall`` ارسال شوند. نتیجه‌ی این فراخوانی یک :term:`تولیدگر <generator>` است؛ پیمایش روی این تولیدگر نتایج جداگانه را بازمی‌گرداند."
+msgstr "یک شیء برای جعبه‌گذاری (boxcar) فراخوانی‌های متد ایجاد کنید. *server* هدف نهایی این فراخوانی است. فراخوانی‌ها را می‌توان روی شیء نتیجه انجام داد، اما آن‌ها بلافاصله مقدار ``None`` را برمی‌گردانند و فقط نام فراخوانی و آرگومان‌ها را در شیء :class:`MultiCall` ذخیره می‌کنند. فراخوانی خودِ شیء باعث می‌شود تمام فراخوانی‌های ذخیره‌شده به شکل یک درخواست منفرد ``system.multicall`` منتقل شوند. نتیجه‌ی این فراخوانی یک :term:`تولیدگر <generator>` است؛ پیمایش روی این تولیدگر، نتایج فردی را به دست می‌دهد."
 
 msgid "A usage example of this class follows.  The server code::"
 msgstr "در ادامه مثالی از استفاده از این کلاس آمده است. کد سرور::"

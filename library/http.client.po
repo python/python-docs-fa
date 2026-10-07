@@ -48,10 +48,8 @@ msgstr "این ماژول روی WebAssembly کار نمی‌کند یا در د
 msgid "The module provides the following classes:"
 msgstr "این ماژول کلاس‌های زیر را فراهم می‌کند:"
 
-#, fuzzy
-#| msgid "An :class:`HTTPConnection` instance represents one transaction with an HTTP server.  It should be instantiated by passing it a host and optional port number.  If no port number is passed, the port is extracted from the host string if it has the form ``host:port``, else the default HTTP port (80) is used.  If the optional *timeout* parameter is given, blocking operations (like connection attempts) will timeout after that many seconds (if it is not given, the global default timeout setting is used). The optional *source_address* parameter may be a tuple of a (host, port) to use as the source address the HTTP connection is made from. The optional *blocksize* parameter sets the buffer size in bytes for sending a file-like message body."
 msgid "An :class:`HTTPConnection` instance represents one transaction with an HTTP server.  It should be instantiated by passing it a host and optional port number.  If no port number is passed, the port is extracted from the host string if it has the form ``host:port``, else the default HTTP port (80) is used.  If the optional *timeout* parameter is given, blocking operations (like connection attempts) will timeout after that many seconds (if it is not given, the global default timeout setting is used). The optional *source_address* parameter may be a tuple of a (host, port) to use as the source address the HTTP connection is made from. The optional *blocksize* parameter sets the buffer size in bytes for sending a file-like message body. The optional *max_response_headers* parameter sets the maximum number of allowed response headers to help prevent denial-of-service attacks, otherwise the default value (100) is used."
-msgstr "یک نمونه :class:`HTTPConnection` نشان‌دهنده یک تراکنش با یک سرور HTTP است. نمونه‌سازی آن باید با دادن یک میزبان و شماره پورت اختیاری انجام شود. اگر شماره پورتی داده نشود، پورت از رشته میزبان استخراج می‌شود، به شرطی که به شکل ``host:port`` باشد، در غیر این صورت از پورت پیش‌فرض HTTP (۸۰) استفاده می‌شود. اگر پارامتر اختیاری *timeout* داده شود، عملیات‌های مسدودکننده (مانند تلاش‌های اتصال) پس از آن تعداد ثانیه منقضی می‌شوند (اگر داده نشود، از تنظیم سراسری پیش‌فرض timeout استفاده می‌شود). پارامتر اختیاری *source_address* می‌تواند یک تاپل (host, port) باشد که به‌عنوان آدرس مبدأ برای برقراری اتصال HTTP استفاده می‌شود. پارامتر اختیاری *blocksize* اندازه بافر را بر حسب بایت برای ارسال بدنه پیام شبه‌پرونده تنظیم می‌کند."
+msgstr "یک نمونه‌ی :class:`HTTPConnection` نمایانگر یک تراکنش با یک سرور HTTP است. این کلاس باید با ارسال یک میزبان و شماره پورت اختیاری مقداردهی اولیه شود. اگر هیچ شماره پورتی ارسال نشود، پورت از رشته‌ی میزبان استخراج می‌شود (اگر دارای قالب ``host:port`` باشد)، در غیر این صورت از پورت پیش‌فرض HTTP (یعنی ۸۰) استفاده می‌شود. اگر پارامتر اختیاری *timeout* داده شود، عملیات مسدودکننده (مانند تلاش برای اتصال) پس از گذشت آن تعداد ثانیه متوقف خواهند شد (اگر داده نشود، از تنظیم مهلت زمانی پیش‌فرض سراسری استفاده می‌شود). پارامتر اختیاری *source_address* می‌تواند یک چندتایی از (میزبان، پورت) باشد تا به‌عنوان آدرس مبدأیی که اتصال HTTP از آن برقرار می‌شود استفاده شود. پارامتر اختیاری *blocksize* اندازه‌ی بافر را بر حسب بایت برای ارسال بدنه‌ی پیامی شبیه به پرونده تنظیم می‌کند. پارامتر اختیاری *max_response_headers* حداکثر تعداد سرآیندهای پاسخ مجاز را برای کمک به جلوگیری از حملات انکار خدمت تنظیم می‌کند، در غیر این صورت از مقدار پیش‌فرض (۱۰۰) استفاده می‌شود."
 
 msgid "For example, the following calls all create instances that connect to the server at the same host and port::"
 msgstr "برای مثال، فراخوانی‌های زیر همگی نمونه‌هایی ایجاد می‌کنند که به سرور در همان میزبان و پورت متصل می‌شوند::"
@@ -76,10 +74,8 @@ msgstr "پارامتر *strict* حذف شده است. «پاسخ‌های ساد
 msgid "*blocksize* parameter was added."
 msgstr "پارامتر *blocksize* افزوده شد."
 
-#, fuzzy
-#| msgid "*blocksize* parameter was added."
 msgid "*max_response_headers* parameter was added."
-msgstr "پارامتر *blocksize* افزوده شد."
+msgstr "پارامتر *max_response_headers* اضافه شد."
 
 msgid "A subclass of :class:`HTTPConnection` that uses SSL for communication with secure servers.  Default port is ``443``.  If *context* is specified, it must be a :class:`ssl.SSLContext` instance describing the various SSL options."
 msgstr "زیرکلاسی از :class:`HTTPConnection` که از SSL برای ارتباط با سرورهای امن استفاده می‌کند. پورت پیش‌فرض ``443`` است. اگر *context* مشخص شده باشد، باید نمونه‌ای از :class:`ssl.SSLContext` باشد که گزینه‌های مختلف SSL را توصیف می‌کند."
@@ -284,7 +280,7 @@ msgid "Buffer size in bytes for sending a file-like message body."
 msgstr "اندازه‌ی بافر بر حسب بایت برای ارسال بدنه‌ی پیام شبه‌پرونده."
 
 msgid "The maximum number of allowed response headers to help prevent denial-of-service attacks. By default, the maximum number of allowed headers is set to 100. The same limit applies to the trailer section of a chunked response."
-msgstr ""
+msgstr "حداکثر تعداد سرآیند‌های پاسخ مجاز برای کمک به جلوگیری از حملات محرومیت از سرویس. به طور پیش‌فرض، حداکثر تعداد سرآیند‌های مجاز روی ۱۰۰ تنظیم شده است. همین محدودیت برای بخش پایانی (trailer) یک پاسخ بخش‌بندی‌شده نیز اعمال می‌شود."
 
 msgid "As an alternative to using the :meth:`~HTTPConnection.request` method described above, you can also send your request step by step, by using the four functions below."
 msgstr "به‌عنوان جایگزینی برای استفاده از متد :meth:`~HTTPConnection.request` که در بالا توضیح داده شد، می‌توانید با استفاده از چهار تابع زیر، درخواست خود را گام‌به‌گام ارسال کنید."

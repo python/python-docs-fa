@@ -40,15 +40,13 @@ msgid "This module does not work or is not available on WebAssembly. See :ref:`w
 msgstr "این ماژول روی WebAssembly کار نمی‌کند یا در دسترس نیست. برای اطلاعات بیشتر :ref:`wasm-availability` را ببینید."
 
 msgid "An :class:`SMTP` instance encapsulates an SMTP connection.  It has methods that support a full repertoire of SMTP and ESMTP operations."
-msgstr ""
+msgstr "یک نمونه‌ی :class:`SMTP` کپسوله‌کننده‌ی یک اتصال SMTP است. این نمونه متدهایی دارد که از مجموعه کاملی از عملیات‌های SMTP و ESMTP پشتیبانی می‌کنند."
 
 msgid "If the host parameter is set to a truthy value, :meth:`SMTP.connect` is called with host and port automatically when the object is created; otherwise, :meth:`!connect` must be called manually."
-msgstr ""
+msgstr "اگر پارامتر host روی یک مقادیر درستی (truthy) تنظیم شود، :meth:`SMTP.connect` به طور خودکار هنگام ایجاد شیء با host و port فراخوانی می‌شود؛ در غیر این صورت، :meth:`!connect` باید به صورت دستی فراخوانی شود."
 
-#, fuzzy
-#| msgid "An :class:`SMTP` instance encapsulates an SMTP connection.  It has methods that support a full repertoire of SMTP and ESMTP operations. If the optional *host* and *port* parameters are given, the SMTP :meth:`connect` method is called with those parameters during initialization.  If specified, *local_hostname* is used as the FQDN of the local host in the HELO/EHLO command.  Otherwise, the local hostname is found using :func:`socket.getfqdn`.  If the :meth:`connect` call returns anything other than a success code, an :exc:`SMTPConnectError` is raised. The optional *timeout* parameter specifies a timeout in seconds for blocking operations like the connection attempt (if not specified, the global default timeout setting will be used).  If the timeout expires, :exc:`TimeoutError` is raised.  The optional *source_address* parameter allows binding to some specific source address in a machine with multiple network interfaces, and/or to some specific source TCP port. It takes a 2-tuple ``(host, port)``, for the socket to bind to as its source address before connecting. If omitted (or if *host* or *port* are ``''`` and/or ``0`` respectively) the OS default behavior will be used."
 msgid "If specified, *local_hostname* is used as the FQDN of the local host in the HELO/EHLO command.  Otherwise, the local hostname is found using :func:`socket.getfqdn`.  If the :meth:`connect` call returns anything other than a success code, an :exc:`SMTPConnectError` is raised. The optional *timeout* parameter specifies a timeout in seconds for blocking operations like the connection attempt (if not specified, the global default timeout setting will be used).  If the timeout expires, :exc:`TimeoutError` is raised.  The optional *source_address* parameter allows binding to some specific source address in a machine with multiple network interfaces, and/or to some specific source TCP port. It takes a 2-tuple ``(host, port)``, for the socket to bind to as its source address before connecting. If omitted (or if *host* or *port* are ``''`` and/or ``0`` respectively) the OS default behavior will be used."
-msgstr "یک نمونه از :class:`SMTP` یک اتصال SMTP را در بر می‌گیرد. این کلاس متدهایی دارد که از مجموعه کاملی از عملیات SMTP و ESMTP پشتیبانی می‌کنند. اگر پارامترهای اختیاری *host* و *port* داده شوند، متد :meth:`connect` SMTP در حین مقداردهی اولیه با آن پارامترها فراخوانی می‌شود. در صورت مشخص بودن، از *local_hostname* به‌عنوان FQDN میزبان محلی در دستور HELO/EHLO استفاده می‌شود. در غیر این صورت، نام میزبان محلی با استفاده از :func:`socket.getfqdn` یافت می‌شود. اگر فراخوانی :meth:`connect` هر مقداری غیر از یک کد موفقیت برگرداند، استثنای :exc:`SMTPConnectError` پرتاب می‌شود. پارامتر اختیاری *timeout* مهلتی به ثانیه برای عملیات‌های مسدودکننده مانند تلاش برای اتصال مشخص می‌کند (اگر مشخص نشود، از تنظیم پیش‌فرض سراسری مهلت استفاده خواهد شد). اگر مهلت منقضی شود، استثنای :exc:`TimeoutError` پرتاب می‌شود. پارامتر اختیاری *source_address* امکان مقیدسازی به یک نشانی مبدأ خاص در ماشینی با چندین رابط شبکه و/یا به یک پورت TCP مبدأ خاص را فراهم می‌کند. این پارامتر یک تاپل دوتایی ``(host, port)`` را می‌گیرد تا سوکت پیش از اتصال، به‌عنوان نشانی مبدأ خود به آن مقید شود. در صورت حذف این پارامتر (یا اگر *host* یا *port* به ترتیب ``''`` و/یا ``0`` باشند) از رفتار پیش‌فرض سیستم‌عامل استفاده خواهد شد."
+msgstr "اگر مشخص شود، *local_hostname* به عنوان FQDN میزبان محلی در دستور HELO/EHLO استفاده می‌شود. در غیر این صورت، نام میزبان محلی با استفاده از :func:`socket.getfqdn` پیدا می‌شود. اگر فراخوانی :meth:`connect` چیزی غیر از کد موفقیت‌آمیز برگرداند، یک استثنای :exc:`SMTPConnectError` بالا آورده می‌شود. پارامتر اختیاری *timeout* یک مهلت زمانی بر حسب ثانیه برای عملیات مسدودکننده‌ای مانند تلاش برای اتصال مشخص می‌کند (اگر مشخص نشود، از تنظیمات مهلت زمانی پیش‌فرض سراسری استفاده خواهد شد). اگر مهلت زمانی منقضی شود، استثنای :exc:`TimeoutError` بالا آورده می‌شود. پارامتر اختیاری *source_address* امکان اتصال به یک آدرس مبدأ خاص در ماشینی با چندین رابط شبکه، و/یا به یک پورت TCP مبدأ خاص را فراهم می‌کند. این پارامتر یک ۲-تایی ``(host, port)`` را برای سوکت می‌پذیرد تا پیش از اتصال، به عنوان آدرس مبدأ خود به آن متصل شود. اگر حذف شود (یا اگر *host* یا *port* به ترتیب ``''`` و/یا ``0`` باشند) از رفتار پیش‌فرض سیستم‌عامل استفاده خواهد شد."
 
 msgid "For normal use, you should only require the initialization/connect, :meth:`sendmail`, and :meth:`SMTP.quit` methods. An example is included below."
 msgstr "برای استفاده‌ی عادی، تنها باید به متدهای راه‌اندازی/اتصال، :meth:`sendmail` و :meth:`SMTP.quit` نیاز داشته باشید. یک نمونه در زیر آمده است."
@@ -75,7 +73,7 @@ msgid "All commands will raise an :ref:`auditing event <auditing>` ``smtplib.SMT
 msgstr "تمام دستورات یک :ref:`رویداد حسابرسی <auditing>` ``smtplib.SMTP.send`` را با آرگومان‌های ``self`` و ``data`` پرتاب می‌کنند، که ``data`` بایت‌هایی است که قرار است به میزبان راه دور ارسال شوند."
 
 msgid "The default port used for SMTP connections (25)."
-msgstr ""
+msgstr "پورت پیش‌فرض مورد استفاده برای اتصالات SMTP (25)."
 
 msgid "Support for the :keyword:`with` statement was added."
 msgstr "پشتیبانی از دستور :keyword:`with` افزوده شد."
@@ -90,18 +88,16 @@ msgid "If the *timeout* parameter is set to be zero, it will raise a :class:`Val
 msgstr "اگر پارامتر *timeout* روی صفر تنظیم شود، یک :class:`ValueError` پرتاب می‌شود تا از ایجاد یک سوکت غیرمسدودکننده جلوگیری شود."
 
 msgid "An :class:`SMTP_SSL` instance behaves exactly the same as instances of :class:`SMTP`. :class:`SMTP_SSL` should be used for situations where SSL is required from the beginning of the connection and using :meth:`SMTP.starttls` is not appropriate."
-msgstr ""
+msgstr "یک نمونه‌ی :class:`SMTP_SSL` دقیقاً مانند نمونه‌های :class:`SMTP` رفتار می‌کند. :class:`SMTP_SSL` باید برای موقعیت‌هایی استفاده شود که SSL از آغاز اتصال مورد نیاز است و استفاده از :meth:`SMTP.starttls` مناسب نیست."
 
 msgid "If the host parameter is set to a truthy value, :meth:`SMTP.connect` is called with host and port automatically when the object is created; otherwise, :meth:`!SMTP.connect` must be called manually."
-msgstr ""
+msgstr "اگر پارامتر host روی یک مقادیر درستی (truthy) تنظیم شود، :meth:`SMTP.connect` به طور خودکار هنگام ایجاد شیء با host و port فراخوانی می‌شود؛ در غیر این صورت، :meth:`!SMTP.connect` باید به صورت دستی فراخوانی شود."
 
-#, fuzzy
-#| msgid "An :class:`SMTP_SSL` instance behaves exactly the same as instances of :class:`SMTP`. :class:`SMTP_SSL` should be used for situations where SSL is required from the beginning of the connection and using :meth:`~SMTP.starttls` is not appropriate. If *host* is not specified, the local host is used. If *port* is zero, the standard SMTP-over-SSL port (465) is used.  The optional arguments *local_hostname*, *timeout* and *source_address* have the same meaning as they do in the :class:`SMTP` class.  *context*, also optional, can contain a :class:`~ssl.SSLContext` and allows configuring various aspects of the secure connection.  Please read :ref:`ssl-security` for best practices."
 msgid "The optional arguments *local_hostname*, *timeout* and *source_address* have the same meaning as they do in the :class:`SMTP` class.  *context*, also optional, can contain a :class:`~ssl.SSLContext` and allows configuring various aspects of the secure connection.  Please read :ref:`ssl-security` for best practices."
-msgstr "یک نمونه از :class:`SMTP_SSL` دقیقاً مانند نمونه‌های :class:`SMTP` رفتار می‌کند. :class:`SMTP_SSL` باید برای موقعیت‌هایی استفاده شود که SSL از ابتدای اتصال مورد نیاز باشد و استفاده از :meth:`~SMTP.starttls` مناسب نباشد. اگر *host* مشخص نشده باشد، از میزبان محلی استفاده می‌شود. اگر *port* صفر باشد، از درگاه استاندارد SMTP-over-SSL (۴۶۵) استفاده می‌شود. آرگومان‌های اختیاری *local_hostname*، *timeout* و *source_address* همان معنایی را دارند که در کلاس :class:`SMTP` دارند. *context*، که آن هم اختیاری است، می‌تواند شامل یک :class:`~ssl.SSLContext` باشد و به شما امکان می‌دهد که جنبه‌های مختلف اتصال امن را پیکربندی کنید. لطفاً برای بهترین شیوه‌ها، :ref:`ssl-security` را بخوانید."
+msgstr "آرگومان‌های اختیاری *local_hostname*، *timeout* و *source_address* همان معنایی را دارند که در کلاس :class:`SMTP` دارند. *context* که آن نیز اختیاری است، می‌تواند حاوی یک :class:`~ssl.SSLContext` باشد و امکان پیکربندی جنبه‌های مختلف اتصال امن را فراهم می‌کند. لطفاً برای بهترین روش‌ها :ref:`ssl-security` را مطالعه کنید."
 
 msgid "The default port used for SMTP-over-SSL connections (465)."
-msgstr ""
+msgstr "پورت پیش‌فرض مورد استفاده برای اتصالات SMTP-over-SSL (465)."
 
 msgid "*context* was added."
 msgstr "*context* اضافه شد."
@@ -212,7 +208,7 @@ msgid "Connect to a host on a given port.  The defaults are to connect to the lo
 msgstr "به یک میزبان در یک پورت مشخص متصل می‌شود. پیش‌فرض این است که به میزبان محلی در پورت استاندارد SMTP (۲۵) متصل شود. اگر نام میزبان با یک دونقطه (``':'``) و به دنبال آن یک عدد پایان یابد، آن پسوند حذف می‌شود و عدد به‌عنوان شماره پورتی که باید استفاده شود تفسیر می‌شود. اگر در هنگام نمونه‌سازی یک میزبان مشخص شده باشد، این متد به‌طور خودکار توسط سازنده فراخوانی می‌شود. یک تاپل ۲تایی شامل کد پاسخ و پیامی که سرور در پاسخ اتصال خود ارسال کرده است برمی‌گرداند."
 
 msgid "If port is not changed from its default value of 0, the value of the :attr:`default_port` attribute is used."
-msgstr ""
+msgstr "اگر پورت از مقدار پیش‌فرض خود یعنی 0 تغییر نکند، از مقدار ویژگی :attr:`default_port` استفاده می‌شود."
 
 msgid "Raises an :ref:`auditing event <auditing>` ``smtplib.connect`` with arguments ``self``, ``host``, ``port``."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``smtplib.connect`` را با آرگومان‌های ``self``، ``host``، ``port`` پرتاب می‌کند."

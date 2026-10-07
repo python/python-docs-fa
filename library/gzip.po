@@ -74,7 +74,7 @@ msgid "Accepts a :term:`path-like object`."
 msgstr "یک :term:`path-like object` را می‌پذیرد."
 
 msgid "The default compression level was reduced to 6 (down from 9). It is the default level used by most compression tools and a better tradeoff between speed and performance."
-msgstr ""
+msgstr "سطح فشرده‌سازی پیش‌فرض به ۶ (کاهش‌یافته از ۹) کاهش یافت. این سطح پیش‌فرضی است که توسط بیشتر ابزارهای فشرده‌سازی استفاده می‌شود و توازن بهتری بین سرعت و کارایی برقرار می‌کند."
 
 msgid "An exception raised for invalid gzip files.  It inherits from :exc:`OSError`. :exc:`EOFError` and :exc:`zlib.error` can also be raised for invalid gzip files."
 msgstr "استثنایی که برای پرونده‌های gzip نامعتبر پرتاب می‌شود. این استثنا از :exc:`OSError` ارث‌بری می‌کند. :exc:`EOFError` و :exc:`zlib.error` نیز ممکن است برای پرونده‌های gzip نامعتبر پرتاب شوند."
@@ -97,10 +97,8 @@ msgstr "توجه داشته باشید که پرونده همیشه در حال�
 msgid "The *compresslevel* argument is an integer from ``0`` to ``9`` controlling the level of compression; ``1`` is fastest and produces the least compression, and ``9`` is slowest and produces the most compression. ``0`` is no compression. The default is ``9``."
 msgstr "آرگومان *compresslevel* یک عدد صحیح از ``0`` تا ``9`` است که سطح فشرده‌سازی را کنترل می‌کند؛ ``1`` سریع‌ترین است و کمترین میزان فشرده‌سازی را تولید می‌کند، و ``9`` کندترین است و بیشترین میزان فشرده‌سازی را تولید می‌کند. ``0`` بدون فشرده‌سازی است. مقدار پیش‌فرض ``9`` است."
 
-#, fuzzy
-#| msgid "The optional *mtime* argument is the timestamp requested by gzip. The time is in Unix format, i.e., seconds since 00:00:00 UTC, January 1, 1970. If *mtime* is omitted or ``None``, the current time is used. Use *mtime* = 0 to generate a compressed stream that does not depend on creation time."
 msgid "The optional *mtime* argument is the timestamp requested by gzip. The time is in Unix format, i.e., seconds since 00:00:00 UTC, January 1, 1970. Set *mtime* to ``0`` to generate a compressed stream that does not depend on creation time. If *mtime* is omitted or ``None``, the current time is used; however, if the current time is outside the range 00:00:00 UTC, January 1, 1970 through 06:28:15 UTC, February 7, 2106, or explicitly passed *mtime* argument is outside the range ``0`` to ``2**32-1``, then the value ``0`` is used instead."
-msgstr "آرگومان اختیاری *mtime* برچسب زمانی است که gzip درخواست می‌کند. این زمان در قالب Unix است، یعنی ثانیه‌های سپری‌شده از ۰۰:۰۰:۰۰ UTC، ۱ ژانویه ۱۹۷۰. اگر *mtime* حذف شود یا ``None`` باشد، از زمان جاری استفاده می‌شود. برای تولید یک جریان فشرده که به زمان ایجاد وابسته نباشد، از *mtime* = 0 استفاده کنید."
+msgstr "آرگومان اختیاری *mtime* برچسب زمانی درخواست‌شده توسط gzip است. زمان در قالب یونیکس است، یعنی تعداد ثانیه‌های سپری‌شده از 00:00:00 UTC، ۱ ژانویه‌ی ۱۹۷۰. برای تولید یک جریان فشرده‌شده که به زمان ایجاد وابسته نباشد، *mtime* را روی ``0`` تنظیم کنید. اگر *mtime* حذف شود یا ``None`` باشد، از زمان فعلی استفاده می‌شود؛ با این حال، اگر زمان فعلی خارج از بازه‌ی 00:00:00 UTC، ۱ ژانویه‌ی ۱۹۷۰ تا 06:28:15 UTC، ۷ فوریه‌ی ۲۱۰۶ باشد، یا آرگومان *mtime* به‌طور صریح خارج از بازه‌ی ``0`` تا ``2**32-1`` داده شود، به‌جای آن از مقدار ``0`` استفاده می‌شود."
 
 msgid "See below for the :attr:`mtime` attribute that is set when decompressing."
 msgstr "در زیر ویژگی :attr:`mtime` را ببینید که هنگام از حالت فشرده خارج کردن تنظیم می‌شود."

@@ -8,25 +8,26 @@ msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-01 14:41+0330\n"
-"PO-Revision-Date: 2026-10-01 14:41+0330\n"
+"PO-Revision-Date: 2026-10-06 20:27+0330\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
 
 msgid ":mod:`!profiling.tracing` --- Deterministic profiler"
-msgstr ""
+msgstr ":mod:`!profiling.tracing` --- پروفایل‌گیر قطعی"
 
 msgid "**Source code:** :source:`Lib/profiling/tracing/`"
-msgstr ""
+msgstr "**کد منبع:** :source:`Lib/profiling/tracing/`"
 
 msgid "The :mod:`!profiling.tracing` module provides deterministic profiling of Python programs. It monitors every function call, function return, and exception event, recording precise timing for each. This approach provides exact call counts and complete visibility into program execution, making it ideal for development and testing scenarios."
-msgstr ""
+msgstr "ماژول :mod:`!profiling.tracing` امکان پروفایل‌گیری قطعی از برنامه‌های پایتون را فراهم می‌کند. این ماژول هر فراخوانی تابع، بازگشت تابع و رویداد استثنا را مانیتور کرده و زمان‌بندی دقیق هر کدام را ثبت می‌کند. این رویکرد تعداد دقیق فراخوانی‌ها و دید کامل نسبت به اجرای برنامه را فراهم می‌کند که آن را برای سناریوهای توسعه و تست ایده‌آل می‌سازد."
 
 msgid "This module is also available as ``cProfile`` for backward compatibility. The ``cProfile`` name will continue to work in all future Python versions. Use whichever import style suits your codebase::"
-msgstr ""
+msgstr "این ماژول همچنین به عنوان ``cProfile`` برای سازگاری عقبگرد در دسترس است. نام ``cProfile`` در تمام نسخه‌های آینده‌ی پایتون به کار خود ادامه خواهد داد. از هر سبک ایمپورتی که با پایگاه کُد شما سازگار است استفاده کنید::"
 
 msgid ""
 "# Preferred (new style)\n"
@@ -37,92 +38,101 @@ msgid ""
 "import cProfile\n"
 "cProfile.run('my_function()')"
 msgstr ""
+"# Preferred (new style)\n"
+"import profiling.tracing\n"
+"profiling.tracing.run('my_function()')\n"
+"\n"
+"# Also works (backward compatible)\n"
+"import cProfile\n"
+"cProfile.run('my_function()')"
 
 msgid "What is deterministic profiling?"
-msgstr ""
+msgstr "پروفایل‌گیری قطعی چیست؟"
 
 msgid ":dfn:`Deterministic profiling` captures every function call, function return, and exception event during program execution. The profiler measures the precise time intervals between these events, providing exact statistics about how the program behaves."
-msgstr ""
+msgstr ":dfn:`پروفایل‌گیری قطعی` هر فراخوانی تابع، بازگشت تابع و رویداد استثنا را در طول اجرای برنامه ثبت می‌کند. پروفایل‌گیر فاصله‌های زمانی دقیق بین این رویدادها را اندازه‌گیری می‌کند و آمارهای دقیقی درباره‌ی نحوه‌ی رفتار برنامه ارائه می‌دهد."
 
 msgid "In contrast to :ref:`statistical profiling <profiling-sampling>`, which samples the call stack periodically to estimate where time is spent, deterministic profiling records every event. This means you get exact call counts rather than statistical approximations. The trade-off is that instrumenting every event introduces overhead that can slow down program execution."
-msgstr ""
+msgstr "برخلاف :ref:`پروفایل‌گیری آماری <profiling-sampling>` که پشته‌ی فراخوانی را به طور دوره‌ای نمونه‌برداری می‌کند تا تخمین بزند زمان صرف کجا می‌شود، پروفایل‌گیری قطعی هر رویداد را ثبت می‌کند. این یعنی به‌جای تخمین‌های آماری، تعداد فراخوانی‌های دقیقی دریافت می‌کنید. هزینه‌ی مبادله این است که ابزارگذاری روی هر رویدادی سرباری ایجاد می‌کند که می‌تواند اجرای برنام را کند کند."
 
 msgid "Python's interpreted nature makes deterministic profiling practical. The interpreter already dispatches events for function calls and returns, so the profiler can hook into this mechanism without requiring code modification. The overhead tends to be moderate relative to the inherent cost of interpretation, making deterministic profiling suitable for most development workflows."
-msgstr ""
+msgstr "ماهیت تفسیرشده‌ی پایتون، پروفایل‌گیری قطعی را کاربردی می‌سازد. مفسر از پیش رویدادها را برای فراخوانی‌ها و بازگشت‌های تابع ارسال می‌کند، بنابراین پروفایل‌گیر می‌تواند بدون نیاز به تغییر کد، به این مکانیسم متصل شود. سربار این کار معمولاً نسبت به هزینه‌ی ذاتی تفسیر معتدل است و پروفایل‌گیری قطعی را برای بیشتر چرخه‌های کاری توسعه مناسب می‌سازد."
 
 msgid "Deterministic profiling helps answer questions like:"
-msgstr ""
+msgstr "پروفایل‌گیری قطعی به پاسخ دادن به سوالاتی مانند موارد زیر کمک می‌کند:"
 
 msgid "How many times was this function called?"
-msgstr ""
+msgstr "این تابع چند بار فراخوانی شده است؟"
 
 msgid "What is the complete call graph of my program?"
-msgstr ""
+msgstr "گراف فراخوانی کامل برنامه‌ی من چیست؟"
 
 msgid "Which functions are called by a particular function?"
-msgstr ""
+msgstr "کدام تابع‌ها توسط یک تابع خاص فراخوانی می‌شوند؟"
 
 msgid "Are there unexpected function calls happening?"
-msgstr ""
+msgstr "آیا فراخوانی‌های تابع غیرمنتظره‌ای در حال رخ دادن است؟"
 
 msgid "Call count statistics can identify bugs (surprising counts) and inline expansion opportunities (high call counts). Internal time statistics reveal \"hot loops\" that warrant optimization. Cumulative time statistics help identify algorithmic inefficiencies. The handling of cumulative times in this profiler allows direct comparison of recursive and iterative implementations."
-msgstr ""
+msgstr "آمارهای تعداد فراخوانی می‌توانند اشکالات (تعداد تعجب‌آور) و فرصت‌های گسترش درون‌خطی (تعداد فراخوانی بالا) را شناسایی کنند. آمارهای زمان داخلی، «حلقه‌های داغ» را آشکار می‌کنند که مستحق بهینه‌سازی هستند. آمارهای زمان تجمعی به شناسایی ناکارآمدی‌های الگوریتمی کمک می‌کنند. نحوه‌ی مدیریت زمان‌های تجمعی در این پروفایل‌گیر امکان مقایسه‌ی مستقیم پیاده‌سازی‌های بازگشتی و تکراری را فراهم می‌کند."
 
 msgid "Command-line interface"
-msgstr ""
+msgstr "رابط خط فرمان"
 
 msgid "The :mod:`!profiling.tracing` module can be invoked as a script to profile another script or module:"
-msgstr ""
+msgstr "ماژول :mod:`!profiling.tracing` را می‌توان به عنوان یک اسکریپت برای پروفایل‌گیری یک اسکریپت یا ماژول دیگر فراخوانی کرد:"
 
 msgid "python -m profiling.tracing [-o output_file] [-s sort_order] (-m module | script.py)"
-msgstr ""
+msgstr "python -m profiling.tracing [-o output_file] [-s sort_order] (-m module | script.py)"
 
 msgid "This runs the specified script or module under the profiler and prints the results to standard output (or saves them to a file)."
-msgstr ""
+msgstr "این کار اسکریپت یا ماژول مشخص‌شده را تحت پروفایل‌گیر اجرا می‌کند و نتایج را در خروجی استاندارد چاپ می‌کند (یا آن‌ها را در یک پرونده ذخیره می‌کند)."
 
 msgid "Write the profile results to a file instead of standard output. The output file can be read by the :mod:`pstats` module for later analysis."
-msgstr ""
+msgstr "نتایج پروفایل‌گیری را به‌جای خروجی استاندارد در یک پرونده بنویسید. پرونده‌ی خروجی را می‌توان توسط ماژول :mod:`pstats` برای تحلیل‌های بعدی خواند."
 
 msgid "Sort the output by the specified key. This accepts any of the sort keys recognized by :meth:`pstats.Stats.sort_stats`, such as ``cumulative``, ``time``, ``calls``, or ``name``. This option only applies when :option:`-o <profiling.tracing -o>` is not specified."
-msgstr ""
+msgstr "خروجی را بر اساس کلید مشخص‌شده مرتب کنید. این گزینه هر یک از کلیدهای مرتب‌سازی شناخته‌شده توسط :meth:`pstats.Stats.sort_stats` مانند ``cumulative``، ``time``، ``calls`` یا ``name`` را می‌پذیرد. این گزینه فقط زمانی اعمال می‌شود که :option:`-o <profiling.tracing -o>` مشخص نشده باشد."
 
 msgid "Profile a module instead of a script. The module is located using the standard import mechanism."
-msgstr ""
+msgstr "یک ماژول را به‌جای یک اسکریپت پروفایل‌گیری کنید. ماژول با استفاده از مکانیسم ایمپورت استاندارد پیدا می‌شود."
 
 msgid "The ``-m`` option for ``cProfile``."
-msgstr ""
+msgstr "گزینه‌ی ``-m`` برای ``cProfile``."
 
 msgid "The ``-m`` option for :mod:`profile`."
-msgstr ""
+msgstr "گزینه‌ی ``-m`` برای :mod:`profile`."
 
 msgid "Programmatic usage examples"
-msgstr ""
+msgstr "نمونه‌های استفاده‌ی برنامه‌نویسی"
 
 msgid "For more control over profiling, use the module's functions and classes directly."
-msgstr ""
+msgstr "برای کنترل بیشتر روی پروفایل‌گیری، از توابع و کلاس‌های ماژول به‌طور مستقیم استفاده کنید."
 
 msgid "Basic profiling"
-msgstr ""
+msgstr "پروفایل‌گیری پایه‌ای"
 
 msgid "The simplest approach uses the :func:`!run` function::"
-msgstr ""
+msgstr "ساده‌ترین رویکرد استفاده از تابع :func:`!run` است::"
 
 msgid ""
 "import profiling.tracing\n"
 "profiling.tracing.run('my_function()')"
 msgstr ""
+"import profiling.tracing\n"
+"profiling.tracing.run('my_function()')"
 
 msgid "This profiles the given code string and prints a summary to standard output. To save results for later analysis::"
-msgstr ""
+msgstr "این کار رشته‌ی کد داده‌شده را پروفایل کرده و خلاصه‌ای را به خروجی استاندارد چاپ می‌کند. برای ذخیره‌ی نتایج جهت تحلیل‌های بعدی::"
 
 msgid "profiling.tracing.run('my_function()', 'output.prof')"
-msgstr ""
+msgstr "profiling.tracing.run('my_function()', 'output.prof')"
 
 msgid "Using the :class:`!Profile` class"
-msgstr ""
+msgstr "استفاده از کلاس :class:`!Profile`"
 
 msgid "The :class:`!Profile` class provides fine-grained control::"
-msgstr ""
+msgstr "کلاس :class:`!Profile` کنترل دقیق‌تری را فراهم می‌کند::"
 
 msgid ""
 "import profiling.tracing\n"
@@ -140,9 +150,23 @@ msgid ""
 "ps.print_stats()\n"
 "print(s.getvalue())"
 msgstr ""
+"import profiling.tracing\n"
+"import pstats\n"
+"from io import StringIO\n"
+"\n"
+"pr = profiling.tracing.Profile()\n"
+"pr.enable()\n"
+"# ... code to profile ...\n"
+"pr.disable()\n"
+"\n"
+"# Print results\n"
+"s = StringIO()\n"
+"ps = pstats.Stats(pr, stream=s).sort_stats(pstats.SortKey.CUMULATIVE)\n"
+"ps.print_stats()\n"
+"print(s.getvalue())"
 
 msgid "The :class:`!Profile` class also works as a context manager::"
-msgstr ""
+msgstr "کلاس :class:`!Profile` همچنین به عنوان یک مدیر زمینه کار می‌کند::"
 
 msgid ""
 "import profiling.tracing\n"
@@ -152,149 +176,157 @@ msgid ""
 "\n"
 "pr.print_stats()"
 msgstr ""
+"import profiling.tracing\n"
+"\n"
+"with profiling.tracing.Profile() as pr:\n"
+"    # ... code to profile ...\n"
+"\n"
+"pr.print_stats()"
 
 msgid "Module reference"
-msgstr ""
+msgstr "ارجاع به ماژول"
 
 msgid "Profile execution of a command and print or save the results."
-msgstr ""
+msgstr "اجرای یک دستور را پروفایل کرده و نتایج را چاپ یا ذخیره کنید."
 
 msgid "This function executes the *command* string using :func:`exec` in the ``__main__`` module's namespace::"
-msgstr ""
+msgstr "این تابع رشته‌ی *command* را با استفاده از :func:`exec` در فضای نام ماژول ``__main__`` اجرا می‌کند::"
 
 msgid "exec(command, __main__.__dict__, __main__.__dict__)"
-msgstr ""
+msgstr "exec(command, __main__.__dict__, __main__.__dict__)"
 
 msgid "If *filename* is not provided, the function creates a :class:`pstats.Stats` instance and prints a summary to standard output. If *filename* is provided, the raw profile data is saved to that file for later analysis with :mod:`pstats`."
-msgstr ""
+msgstr "اگر *filename* فراهم نشده باشد، این تابع یک نمونه از :class:`pstats.Stats` ایجاد کرده و خلاصه‌ای را به خروجی استاندارد چاپ می‌کند. اگر *filename* فراهم شده باشد، داده‌های خام پروفایل برای تحلیل بعدی با :mod:`pstats` در آن پرونده ذخیره می‌شوند."
 
 msgid "The *sort* argument specifies the sort order for printed output, accepting any value recognized by :meth:`pstats.Stats.sort_stats`."
-msgstr ""
+msgstr "آرگومان *sort* ترتیب مرتب‌سازی خروجی چاپ‌شده را مشخص می‌کند و هر مقداری را که توسط :meth:`pstats.Stats.sort_stats` شناخته شود، می‌پذیرد."
 
 msgid "Profile execution of a command with explicit namespaces."
-msgstr ""
+msgstr "اجرای پروفایل یک دستور با فضاهای نام صریح."
 
 msgid "Like :func:`run`, but executes the command with the specified *globals* and *locals* mappings instead of using the ``__main__`` module's namespace::"
-msgstr ""
+msgstr "مانند :func:`run` است، اما دستور را با نگاشت‌های *globals* و *locals* مشخص‌شده به‌جای استفاده از فضای نام ماژول ``__main__`` اجرا می‌کند::"
 
 msgid "exec(command, globals, locals)"
-msgstr ""
+msgstr "exec(command, globals, locals)"
 
 msgid "A profiler object that collects execution statistics."
-msgstr ""
+msgstr "یک شیء پروفایل‌گیر که آمارهای اجرای برنامه را جمع‌آوری می‌کند."
 
 msgid "The optional *timer* argument specifies a custom timing function. If not provided, the profiler uses a platform-appropriate default timer. When supplying a custom timer, it must return a single number representing the current time. If the timer returns integers, use *timeunit* to specify the duration of one time unit (for example, ``0.001`` for milliseconds)."
-msgstr ""
+msgstr "آرگومان اختیاری *timer* یک تابع زمان‌سنج سفارشی را مشخص می‌کند. اگر ارائه نشود، پروفایل‌گیر از یک زمان‌سنج پیش‌فرض مناسب با سکو استفاده می‌کند. هنگام ارائه دادن یک زمان‌سنج سفارشی، این تابع باید یک عدد واحد که نشان‌دهنده‌ی زمان فعلی است برگرداند. اگر زمان‌سنج اعداد صحیح برمی‌گرداند، از *timeunit* برای مشخص کردن مدت‌زمان یک واحد زمانی استفاده کنید (برای مثال، ``0.001`` برای میلی‌ثانیه‌ها)."
 
 msgid "The *subcalls* argument controls whether the profiler tracks call relationships between functions. The *builtins* argument controls whether built-in functions are profiled."
-msgstr ""
+msgstr "آرگومان *subcalls* کنترل می‌کند که آیا پروفایل‌گیر روابط فراخوانی بین تابع‌ها را ردگیری می‌کند یا خیر. آرگومان *builtins* کنترل می‌کند که آیا تابع‌های توکار پروفایل می‌شوند یا خیر."
 
 msgid "Added context manager support."
-msgstr ""
+msgstr "پشتیبانی از مدیر زمینه اضافه شد."
 
 msgid "Start collecting profiling data."
-msgstr ""
+msgstr "شروع جمع‌آوری داده‌های پروفایل‌گیری."
 
 msgid "Stop collecting profiling data."
-msgstr ""
+msgstr "توقف جمع‌آوری داده‌های پروفایل‌گیری."
 
 msgid "Stop collecting data and record the results internally as the current profile."
-msgstr ""
+msgstr "جمع‌آوری داده‌ها را متوقف کرده و نتایج را به‌طور داخلی به عنوان پروفایل فعلی ثبت کنید."
 
 msgid "Create a :class:`pstats.Stats` object from the current profile and print the results to standard output."
-msgstr ""
+msgstr "یک شیء از :class:`pstats.Stats` از پروفایل فعلی ایجاد کنید و نتایج را در خروجی استاندارد چاپ کنید."
 
 msgid "The *sort* argument specifies the sorting order. It accepts a single key or a tuple of keys for multi-level sorting, using the same values as :meth:`pstats.Stats.sort_stats`."
-msgstr ""
+msgstr "آرگومان *sort* ترتیب مرتب‌سازی را مشخص می‌کند. این آرگومان یک کلید واحد یا یک چندتایی از کلیدها را برای مرتب‌سازی چندسطحی می‌پذیرد و از مقادیر مشابھی با :meth:`pstats.Stats.sort_stats` استفاده می‌کند."
 
 msgid "Support for a tuple of sort keys."
-msgstr ""
+msgstr "پشتیبانی از یک چندتایی از کلیدهای مرتب‌سازی."
 
 msgid "Write the current profile data to *filename*. The file can be read by :class:`pstats.Stats` for later analysis."
-msgstr ""
+msgstr "داده‌های پروفایل فعلی را در *filename* بنویسید. این پرونده می‌تواند توسط :class:`pstats.Stats` برای تحلیل بعدی خوانده شود."
 
 msgid "Profile the command string via :func:`exec`."
-msgstr ""
+msgstr "رشته‌ی دستور را از طریق :func:`exec` پروفایل کنید."
 
 msgid "Profile the command string via :func:`exec` with the specified namespaces."
-msgstr ""
+msgstr "رشته‌ی دستور را از طریق :func:`exec` با فضاهای نام مشخص‌شده پروفایل کنید."
 
 msgid "Profile a function call. Returns whatever *func* returns::"
-msgstr ""
+msgstr "یک فراخوانی تابع را پروفایل کنید. هر چه که *func* برمی‌گرداند را برمی‌گرداند::"
 
 msgid "result = pr.runcall(my_function, arg1, arg2, keyword=value)"
-msgstr ""
+msgstr "result = pr.runcall(my_function, arg1, arg2, keyword=value)"
 
 msgid "Profiling requires that the profiled code returns normally. If the interpreter terminates (for example, via :func:`sys.exit`) during profiling, no results will be available."
-msgstr ""
+msgstr "پروفایل‌گیری مستلزم این است که کد پروفایل‌شده به‌طور عادی برگردد. اگر مفسر در طول پروفایل‌گیری خاتمه یابد (برای مثال، از طریق :func:`sys.exit`)، هیچ نتیجه‌ای در دسترس نخواهد بود."
 
 msgid "Using a custom timer"
-msgstr ""
+msgstr "استفاده از یک زمان‌سنج سفارشی"
 
 msgid "The :class:`Profile` class accepts a custom timing function, allowing you to measure different aspects of execution such as wall-clock time or CPU time. Pass the timing function to the constructor::"
-msgstr ""
+msgstr "کلاس :class:`Profile` یک تابع زمان‌سنج سفارشی را می‌پذیرد و به شما اجازه می‌دهد جنبه‌های مختلف اجرا مانند زمان ساعت دیواری یا زمان پردازنده را اندازه‌گیری کنید. تابع زمان‌سنج را به سازنده ارسال کنید::"
 
 msgid "pr = profiling.tracing.Profile(my_timer_function)"
-msgstr ""
+msgstr "pr = profiling.tracing.Profile(my_timer_function)"
 
 msgid "The timer function must return a single number representing the current time. If it returns integers, also specify *timeunit* to indicate the duration of one unit::"
-msgstr ""
+msgstr "تابع زمان‌سنج باید یک عدد واحد که نشان‌دهنده‌ی زمان فعلی است برگرداند. اگر این تابع اعداد صحیح برمی‌گرداند، همچنین *timeunit* را برای نشان دادن مدت‌زمان یک واحد مشخص کنید::"
 
 msgid ""
 "# Timer returns time in milliseconds\n"
 "pr = profiling.tracing.Profile(my_ms_timer, 0.001)"
 msgstr ""
+"# Timer returns time in milliseconds\n"
+"pr = profiling.tracing.Profile(my_ms_timer, 0.001)"
 
 msgid "For best performance, the timer function should be as fast as possible. The profiler calls it frequently, so timer overhead directly affects profiling overhead."
-msgstr ""
+msgstr "برای بهترین عملکرد، تابع تایمر باید تا حد امکان سریع باشد. پروفایل‌گیر آن را مکرراً فراخوانی می‌کند، بنابراین سربار تایمر مستقیماً روی سربار پروفایل‌گیری تأثیر می‌گذارد."
 
 msgid "The :mod:`time` module provides several functions suitable for use as custom timers:"
-msgstr ""
+msgstr "ماژول :mod:`time` چندین تابع مناسب برای استفاده به عنوان تایمرهای سفارشی فراهم می‌کند:"
 
 msgid ":func:`time.perf_counter` for high-resolution wall-clock time"
-msgstr ""
+msgstr ":func:`time.perf_counter` برای زمان ساعت دیواری با دقت بالا"
 
 msgid ":func:`time.process_time` for CPU time (excluding sleep)"
-msgstr ""
+msgstr ":func:`time.process_time` برای زمان CPU (به‌جز زمان توقف)"
 
 msgid ":func:`time.monotonic` for monotonic clock time"
-msgstr ""
+msgstr ":func:`time.monotonic` برای زمان ساعت یکنواخت"
 
 msgid "Limitations"
-msgstr ""
+msgstr "محدودیت‌ها"
 
 msgid "Deterministic profiling has inherent limitations related to timing accuracy."
-msgstr ""
+msgstr "پروفایل‌گیری قطعی دارای محدودیت‌های ذاتی مربوط به دقت زمان‌بندی است."
 
 msgid "The underlying timer typically has a resolution of about one millisecond. Measurements cannot be more accurate than this resolution. With enough measurements, timing errors tend to average out, but individual measurements may be imprecise."
-msgstr ""
+msgstr "تایمر زیرین معمولاً وضوحی در حدود یک میلی‌ثانیه دارد. اندازه‌گیری‌ها نمی‌توانند دقیق‌تر از این وضوح باشند. با انجام اندازه‌گیری‌های کافی، خطاهای زمان‌بندی معمولاً خنثی می‌شوند، اما اندازه‌گیری‌های منفرد ممکن است دقیق نباشند."
 
 msgid "There is also latency between when an event occurs and when the profiler captures the timestamp. Similarly, there is latency after reading the timestamp before user code resumes. Functions called frequently accumulate this latency, which can make them appear slower than they actually are. This error is typically less than one clock tick per call but can become significant for functions called many times."
-msgstr ""
+msgstr "همچنین بین زمان وقوع یک رویداد و زمان ثبت برچسب زمانی توسط پروفایل‌گیر، تاخیر وجود دارد. به همین صورت، پس از خواندن برچسب زمانی و پیش از ازسرگیری کدهای کاربر نیز تاخیر وجود دارد. توابعی که مکرراً فراخوانی می‌شوند این تاخیر را انباشته می‌کنند، که می‌تواند باعث شود کندتر از آنچه واقعاً هستند به نظر برسند. این خطا معمولاً کمتر از یک تیک ساعت در هر فراخوانی است اما می‌تواند برای توابعی که بارها فراخوانی می‌شوند قابل توجه باشد."
 
 msgid "The :mod:`!profiling.tracing` module (and its ``cProfile`` alias) is implemented as a C extension with low overhead, so these timing issues are less pronounced than with the deprecated pure Python :mod:`profile` module."
-msgstr ""
+msgstr "ماژول :mod:`!profiling.tracing` (و نام مستعار ``cProfile`` آن) به عنوان یک افزونه‌ی C با سربار کم پیاده‌سازی شده است، بنابراین این مسائل مربوط به زمان‌بندی در مقایسه با ماژول منسوخ :mod:`profile` که کاملاً به زبان پایتون است، کمتر به چشم می‌آیند."
 
 msgid ":mod:`profiling`"
-msgstr ""
+msgstr ":mod:`profiling`"
 
 msgid "Overview of Python profiling tools and guidance on choosing a profiler."
-msgstr ""
+msgstr "نمای کلی از ابزارهای پروفایل‌گیری پایتون و راهنمایی درباره‌ی انتخاب یک پروفایل‌گیر."
 
 msgid ":mod:`profiling.sampling`"
-msgstr ""
+msgstr ":mod:`profiling.sampling`"
 
 msgid "Statistical sampling profiler for production use."
-msgstr ""
+msgstr "پروفایل‌گیر نمونه‌برداری آماری برای استفاده در محیط تولید."
 
 msgid ":mod:`pstats`"
-msgstr ""
+msgstr ":mod:`pstats`"
 
 msgid "Statistics analysis and formatting for profile data."
-msgstr ""
+msgstr "تجزیه‌وتحلیل آمار و قالب‌بندی برای داده‌های پروفایل."
 
 msgid ":mod:`profile`"
-msgstr ""
+msgstr ":mod:`profile`"
 
 msgid "Deprecated pure Python profiler (includes calibration documentation)."
-msgstr ""
+msgstr "پروفایل‌گیر کاملاً پایتونی منسوخ (شامل مستندات کالیبراسیون)."

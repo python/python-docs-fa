@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-01 14:41+0330\n"
-"PO-Revision-Date: 2026-09-21 13:27+0330\n"
+"PO-Revision-Date: 2026-10-06 20:43+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
 "Language: fa\n"
@@ -462,28 +462,28 @@ msgid "Passes on all *kwargs* to :meth:`loop.create_task`"
 msgstr "تمام *kwargs* را به :meth:`loop.create_task` منتقل می‌کند"
 
 msgid "Cancel the task group.  This is a non-exceptional, early exit of the task group's lifetime -- useful once the group's goal has been met or its services no longer needed."
-msgstr ""
+msgstr "گروه وظیفه را لغو کنید. این یک خروج زودهنگام و غیرخطایی از چرخه‌ی عمر گروه وظیفه است؛ و زمانی مفید است که هدف گروه برآورده شده باشد یا خدمات آن دیگر نیازی نباشد."
 
 msgid ":meth:`~asyncio.Task.cancel` will be called on any tasks in the group that aren't yet done, as well as the parent (body) of the group.  The task group context manager will exit *without* :exc:`asyncio.CancelledError` being raised."
-msgstr ""
+msgstr "متد :meth:`~asyncio.Task.cancel` روی هر وظیفه‌ای در گروه که هنوز تمام نشده است و همچنین والد (بدنه) گروه فراخوانی خواهد شد. مدیر زمینه‌ی گروه وظیفه بدون بالا آمدن :exc:`asyncio.CancelledError` خارج خواهد شد."
 
 msgid "If :meth:`cancel` is called before entering the task group, the group will be cancelled upon entry.  This is useful for patterns where one piece of code passes an unused :class:`asyncio.TaskGroup` instance to another in order to have the ability to cancel anything run within the group."
-msgstr ""
+msgstr "اگر متد :meth:`cancel` قبل از ورود به گروه وظیفه فراخوانی شود، گروه پس از ورود لغو خواهد شد. این کار برای الگوهایی مفید است که در آن یک تکه کد یک نمونه‌ی :class:`asyncio.TaskGroup` استفاده‌نشده را به تکه‌ی دیگری منتقل می‌کند تا توانایی لغو هر چیز در حال اجرا درون گروه را داشته باشد."
 
 msgid ":meth:`cancel` is idempotent and may be called after the task group has already exited."
-msgstr ""
+msgstr ":meth:`cancel` هم‌توان است و ممکن است پس از خروج گروه وظیفه نیز فراخوانی شود."
 
 msgid "Some ways to use :meth:`cancel`:"
-msgstr ""
+msgstr "برخی از راه‌ها برای استفاده از متد :meth:`cancel`:"
 
 msgid "call it from the task group body based on some condition or event"
-msgstr ""
+msgstr "آن را بر اساس برخی شرایط یا رویداد از بدنهه‌ی گروه وظیفه فراخوانی کنید"
 
 msgid "pass the task group instance to child tasks via :meth:`create_task`, allowing a child task to conditionally cancel the entire group"
-msgstr ""
+msgstr "نمونه‌ی گروه وظیفه را از طریق :meth:`create_task` به وظایف فرزند ارسال کنید، که به وظیفه‌ی فرزند اجازه می‌دهد کل گروه را به طور شرطی لغو کند"
 
 msgid "pass the task group instance or bound :meth:`cancel` method to some other task *before* opening the task group, allowing remote cancellation"
-msgstr ""
+msgstr "نمونه‌ی گروه وظیفه یا متد متصل :meth:`cancel` را *پیش* از گشودن گروه وظیفه به وظیفه‌ی دیگری ارسال کنید، که امکان لغو از راه دور را فراهم می‌کند"
 
 msgid "Example::"
 msgstr "مثال::"
@@ -501,10 +501,8 @@ msgstr ""
 "        task2 = tg.create_task(another_coro(...))\n"
 "    print(f\"Both tasks have completed now: {task1.result()}, {task2.result()}\")"
 
-#, fuzzy
-#| msgid "The ``async with`` statement will wait for all tasks in the group to finish. While waiting, new tasks may still be added to the group (for example, by passing ``tg`` into one of the coroutines and calling ``tg.create_task()`` in that coroutine). Once the last task has finished and the ``async with`` block is exited, no new tasks may be added to the group."
 msgid "The ``async with`` statement will wait for all tasks in the group to finish. While waiting, new tasks may still be added to the group (for example, by passing ``tg`` into one of the coroutines and calling ``tg.create_task()`` in that coroutine).  There is also opportunity to request termination of the entire task group with ``tg.cancel()``, based on some condition. Once the last task has finished and the ``async with`` block is exited, no new tasks may be added to the group."
-msgstr "دستور ``async with`` منتظر می‌ماند تا تمام وظایف گروه به پایان برسند. در حین انتظار، همچنان ممکن است وظایف جدیدی به گروه اضافه شوند (برای مثال، با پاس دادن ``tg`` به یکی از هم‌روال‌ها و فراخوانی ``tg.create_task()`` در آن هم‌روال). پس از پایان آخرین وظیفه و خروج از بلوک ``async with``، دیگر نمی‌توان وظیفه جدیدی به گروه اضافه کرد."
+msgstr "دستور ``async with`` منتظر می‌ماند تا تمام وظایف موجود در گروه به پایان برسند. در حین انتظار، همچنان ممکن است وظایف جدیدی به گروه اضافه شوند (برای مثال، با ارسال ``tg`` به یکی از هم‌روال‌ها و فراخوانی ``tg.create_task()`` در آن هم‌روال). همچنین این فرصت وجود دارد که بر اساس شرایطی، درخواست خاتمه‌ی کل گروه وظایف با ``tg.cancel()`` داده شود. هنگامی که آخرین وظیفه به پایان رسید و از بلوک ``async with`` خارج شد، هیچ وظیفه‌ی جدیدی نمی‌تواند به گروه اضافه شود."
 
 msgid "The first time any of the tasks belonging to the group fails with an exception other than :exc:`asyncio.CancelledError`, the remaining tasks in the group are cancelled. No further tasks can then be added to the group. At this point, if the body of the ``async with`` statement is still active (i.e., :meth:`~object.__aexit__` hasn't been called yet), the task directly containing the ``async with`` statement is also cancelled. The resulting :exc:`asyncio.CancelledError` will interrupt an ``await``, but it will not bubble out of the containing ``async with`` statement."
 msgstr "اولین باری که هر وظیفهیمتعلق به گروه با استثنایی غیر از :exc:`asyncio.CancelledError` شکست بخورد، وظایف باقی‌مانده در گروه لغو می‌شوند. پس از آن، دیگر نمی‌توان وظیفه دیگری به گروه افزود. در این نقطه، اگر بدنه دستور ``async with`` هنوز فعال باشد (یعنی :meth:`~object.__aexit__` هنوز فراخوانی نشده باشد)، وظیفهی که مستقیماً دربرگیرنده دستور ``async with`` است نیز لغو می‌شود. :exc:`asyncio.CancelledError` حاصل، یک ``await`` را قطع می‌کند، اما از دستور ``async with`` دربرگیرنده بیرون نخواهد زد."
@@ -515,10 +513,8 @@ msgstr "پس از پایان یافتن همه وظایف، اگر هر یک ا�
 msgid "Two base exceptions are treated specially: If any task fails with :exc:`KeyboardInterrupt` or :exc:`SystemExit`, the task group still cancels the remaining tasks and waits for them, but then the initial :exc:`KeyboardInterrupt` or :exc:`SystemExit` is re-raised instead of :exc:`ExceptionGroup` or :exc:`BaseExceptionGroup`."
 msgstr "دو استثنای پایه به‌صورت ویژه مدیریت می‌شوند: اگر هر وظیفه‌ای  با :exc:`KeyboardInterrupt` یا :exc:`SystemExit` شکست بخورد، گروه وظیفه (task group) همچنان وظایف باقی‌مانده را لغو می‌کند و منتظر آن‌ها می‌ماند، اما سپس :exc:`KeyboardInterrupt` یا :exc:`SystemExit` اولیه به‌جای :exc:`ExceptionGroup` یا :exc:`BaseExceptionGroup` دوباره پرتاب می‌شود."
 
-#, fuzzy
-#| msgid "If the body of the ``async with`` statement exits with an exception (so :meth:`~object.__aexit__` is called with an exception set), this is treated the same as if one of the tasks failed: the remaining tasks are cancelled and then waited for, and non-cancellation exceptions are grouped into an exception group and raised. The exception passed into :meth:`~object.__aexit__`, unless it is :exc:`asyncio.CancelledError`, is also included in the exception group. The same special case is made for :exc:`KeyboardInterrupt` and :exc:`SystemExit` as in the previous paragraph."
 msgid "If the body of the ``async with`` statement exits with an exception (so :meth:`~object.__aexit__` is called with an exception set), this is treated the same as if one of the tasks failed: the remaining tasks are cancelled and then waited for, and non-cancellation exceptions are grouped into an exception group and raised. The exception passed into :meth:`~object.__aexit__`, unless it is :exc:`asyncio.CancelledError`, is also included in the exception group. The same special case is made for :exc:`KeyboardInterrupt` and :exc:`SystemExit` as in the previous paragraph. There is an additional special case made only for the body of the ``async with``: if it raises :exc:`GeneratorExit` and none of the other tasks raise exceptions that would be reported, then the :exc:`GeneratorExit` is reraised."
-msgstr "اگر بدنه‌ی دستور ``async with`` با یک استثنا خارج شود (بنابراین :meth:`~object.__aexit__` در حالی فراخوانی می‌شود که یک استثنا تنظیم شده است)، با این مورد مانند حالتی رفتار می‌شود که یکی از وظایف شکست خورده باشد: وظایف باقی‌مانده لغو می‌شوند و سپس برای آن‌ها انتظار می‌رود، و استثناهای غیر از لغو در یک گروه استثنا دسته‌بندی و پرتاب می‌شوند. استثنایی که به :meth:`~object.__aexit__` داده می‌شود، مگر آنکه :exc:`asyncio.CancelledError` باشد، نیز در گروه استثنا گنجانده می‌شود. همان حالت خاص پاراگراف قبلی برای :exc:`KeyboardInterrupt` و :exc:`SystemExit` نیز اعمال می‌شود."
+msgstr "اگر بدنه‌ی دستور ``async with`` با یک استثنا خارج شود (بنابراین :meth:`~object.__aexit__` با یک مجموعه‌استثنا فراخوانی می‌شود)، این حالت دقیقاً مانند زمانی رفتار می‌شود که یکی از وظایف با شکست مواجه شده باشد: وظایف باقی‌مانده لغو شده و سپس منتظر آن‌ها می‌ماند، و استثناهای غیرلغو به شکل یک گروه استثنا گروه‌بندی شده و بالا برده می‌شوند. استثنایی که به :meth:`~object.__aexit__` ارسال می‌شود، مگر اینکه :exc:`asyncio.CancelledError` باشد، در گروه استثنا نیز گنجانده می‌شود. همان حالت خاص برای :exc:`KeyboardInterrupt` و :exc:`SystemExit` مانند پاراگراف قبلی اعمال می‌شود. یک حالت خاص اضافی نیز فقط برای بدنه‌ی ``async with`` در نظر گرفته شده است: اگر این بخش :exc:`GeneratorExit` را بالا ببرد و هیچ‌کدام از وظایف دیگر استثناهایی که باید گزارش شوند را بالا نبرند، آنگاه :exc:`GeneratorExit` دوباره بالا برده می‌شود."
 
 msgid "Task groups are careful not to mix up the internal cancellation used to \"wake up\" their :meth:`~object.__aexit__` with cancellation requests for the task in which they are running made by other parties. In particular, when one task group is syntactically nested in another, and both experience an exception in one of their child tasks simultaneously, the inner task group will process its exceptions, and then the outer task group will receive another cancellation and process its own exceptions."
 msgstr "گروه‌های وظیفه مراقب هستند که لغو داخلیِ استفاده‌شده برای «بیدار کردن» :meth:`~object.__aexit__` خود را با درخواست‌های لغو برای وظیفهی که در آن در حال اجرا هستند و از سوی طرف‌های دیگر مطرح شده‌اند، اشتباه نگیرند. به‌ویژه، هنگامی که یک گروه وظیفه از نظر نحوی در گروه دیگری تودرتو شده باشد و هر دو همزمان در یکی از وظایف فرزند خود با استثنا مواجه شوند، گروه وظیفه داخلی استثناهای خود را پردازش می‌کند و سپس گروه وظیفه خارجی لغو دیگری را دریافت می‌کند و استثناهای خود را پردازش می‌کند."
@@ -533,7 +529,7 @@ msgid "Improved handling of simultaneous internal and external cancellations and
 msgstr "مدیریت بهتر لغوهای همزمان داخلی و خارجی و حفظ صحیح تعداد لغوها."
 
 msgid "Addition of the special case for :exc:`GeneratorExit`."
-msgstr ""
+msgstr "افزودن حالت خاص برای :exc:`GeneratorExit`."
 
 msgid "Sleeping"
 msgstr "توقف"
@@ -1358,10 +1354,8 @@ msgstr "حلقه‌های رویداد از زمان‌بندی مشارکتی �
 msgid "Use the high-level :func:`asyncio.create_task` function to create Tasks, or the low-level :meth:`loop.create_task` or :func:`ensure_future` functions.  Manual instantiation of Tasks is discouraged."
 msgstr "برای ایجاد Taskها، از تابع سطح بالای :func:`asyncio.create_task` یا توابع سطح پایین :meth:`loop.create_task` یا :func:`ensure_future` استفاده کنید. نمونه‌سازی دستی Taskها توصیه نمی‌شود."
 
-#, fuzzy
-#| msgid "To cancel a running Task use the :meth:`cancel` method.  Calling it will cause the Task to throw a :exc:`CancelledError` exception into the wrapped coroutine.  If a coroutine is awaiting on a Future object during cancellation, the Future object will be cancelled."
 msgid "To cancel a running Task use the :meth:`cancel` method.  Calling it will cause the Task to throw a :exc:`CancelledError` exception into the wrapped coroutine.  If a coroutine is awaiting on a future-like object during cancellation, the awaited object will be cancelled."
-msgstr "برای لغو یک Task در حال اجرا، از متد :meth:`cancel` استفاده کنید. فراخوانی آن موجب می‌شود که Task استثنای :exc:`CancelledError` را به درون هم‌روال پوشیده‌شده پرتاب کند. اگر یک هم‌روال در حین لغو، روی یک شیء Future در حال await باشد، شیء Future لغو خواهد شد."
+msgstr "برای لغو یک Task در حال اجرا، از متد :meth:`cancel` استفاده کنید. فراخوانی آن باعث می‌شود Task یک استثنای :exc:`CancelledError` را در coroutine پوشانده‌شده ایجاد کند. اگر یک coroutine هنگام لغو در حال انتظار برای یک شیء شبه‌future باشد، شیء مورد انتظار لغو خواهد شد."
 
 msgid ":meth:`cancelled` can be used to check if the Task was cancelled. The method returns ``True`` if the wrapped coroutine did not suppress the :exc:`CancelledError` exception and was actually cancelled."
 msgstr "می‌توانید از :meth:`cancelled` برای بررسی این‌که Task لغو شده است یا خیر استفاده کنید. اگر هم‌روال پوشیده‌شده استثنای :exc:`CancelledError` را سرکوب نکرده باشد و واقعاً لغو شده باشد، این متد ``True`` برمی‌گرداند."
@@ -1496,7 +1490,7 @@ msgid "The coroutine then has a chance to clean up or even deny the request by s
 msgstr "سپس هم‌روال این فرصت را دارد که پاک‌سازی کند یا حتی با مهار استثنا از طریق یک بلوک :keyword:`try` ... ... ``except CancelledError`` ... :keyword:`finally`، درخواست را رد کند. بنابراین، برخلاف :meth:`Future.cancel`، :meth:`Task.cancel` تضمین نمی‌کند که Task لغو شود، اگرچه مهار کامل لغو رایج نیست و به‌طور فعال نهی شده است. اگر هم‌روال با این حال تصمیم بگیرد لغو را مهار کند، باید علاوه بر گرفتن استثنا، :meth:`Task.uncancel` را نیز فراخوانی کند."
 
 msgid "If the Task being cancelled is currently awaiting on a future-like object, that awaited object will also be cancelled. This cancellation propagates down the entire chain of awaited objects."
-msgstr ""
+msgstr "اگر وظیفه‌ای که در حال لغو شدن است در حال حاضر در انتظار یک شیء آینده‌نما باشد، آن شیء مورد انتظار نیز لغو خواهد شد. این لغو شدن در سراسر زنجیره‌ی اشیای مورد انتظار به پایین منتقل می‌شود."
 
 msgid "Added the *msg* parameter."
 msgstr "پارامتر *msg* اضافه شد."

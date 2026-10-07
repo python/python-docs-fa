@@ -36,10 +36,8 @@ msgstr "ماژول :mod:`!xml.parsers.expat` یک رابط پایتون برای
 msgid "This module uses the :mod:`pyexpat` module to provide access to the Expat parser.  Direct use of the :mod:`pyexpat` module is deprecated."
 msgstr "این ماژول از ماژول :mod:`pyexpat` برای فراهم کردن دسترسی به پارسرٔ Expat استفاده می‌کند. استفاده‌ی مستقیم از ماژول :mod:`pyexpat` منسوخ شده است."
 
-#, fuzzy
-#| msgid "This module provides the following exception, type object and data items:"
 msgid "This module provides one exception and one type object:"
-msgstr "این ماژول استثنا، شیء نوع و آیتم‌های داده‌ی زیر را فراهم می‌کند:"
+msgstr "این ماژول یک استثنا و یک شیء نوع ارائه می‌دهد:"
 
 msgid "The exception raised when Expat reports an error.  See section :ref:`expaterror-objects` for more information on interpreting Expat errors."
 msgstr "استثنایی که وقتی Expat خطایی را گزارش می‌دهد، پرتاب می‌شود. برای اطلاعات بیشتر در مورد تفسیر خطاهای Expat، بخش :ref:`expaterror-objects` را ببینید."
@@ -110,15 +108,11 @@ msgstr "اشیاء XMLParser"
 msgid ":class:`xmlparser` objects have the following methods:"
 msgstr "اشیای :class:`xmlparser` متدهای زیر را دارند:"
 
-#, fuzzy
-#| msgid "Parses the contents of *data*, calling the appropriate handler functions to process the parsed data. *data* can be a :term:`bytes-like object` or a string. If it is a string, the encoding declaration in the XML data is ignored, and the data is parsed as already decoded text. *isfinal* must be true on the final call to this method; it allows the parsing of a single file in fragments, not the submission of multiple files. *data* can be empty at any time."
 msgid "Parses the contents of the string *data*, calling the appropriate handler functions to process the parsed data.  *isfinal* must be true on the final call to this method; it allows the parsing of a single file in fragments, not the submission of multiple files. *data* can be the empty string at any time."
-msgstr "محتویات *data* را تجزیه می‌کند، با فراخوانی توابع هندلر مناسب برای پردازش داده‌های تجزیه‌شده. *data* می‌تواند یک :term:`شیء شبه‌بایت <bytes-like object>` یا یک رشته باشد. اگر رشته باشد، اعلام کدگذاری در داده‌های XML نادیده گرفته می‌شود، و داده‌ها به عنوان متنِ کدگشایی‌شده‌ی قبلی تجزیه می‌شوند. *isfinal* باید در فراخوانی نهایی این متد true باشد؛ این امکان تجزیه یک پرونده تکی به صورت قطعات را می‌دهد، نه ارائه چندین پرونده. *data* می‌تواند در هر زمان خالی باشد."
+msgstr "محتویات رشته‌ی *data* را تجزیه کرده و توابع هندلر مناسب را برای پردازش داده‌های تجزیه‌شده فراخوانی می‌کند. *isfinal* باید در آخرین فراخوانی این متد برابر با true باشد؛ این امکان تجزیه‌ی یک پرونده‌ی واحد را در قالب تکه‌ها فراهم می‌کند، نه ارسال چندین پرونده را. *data* می‌تواند در هر زمانی رشته‌ی خالی باشد."
 
-#, fuzzy
-#| msgid "Parse XML data reading from the object *file*. *file* only needs to provide the ``read(nbytes)`` method, which returns bytes, and an empty bytes object when there's no more data. Text files are not supported; use :meth:`Parse` for data which is already decoded."
 msgid "Parse XML data reading from the object *file*.  *file* only needs to provide the ``read(nbytes)`` method, returning the empty string when there's no more data."
-msgstr "داده‌های XML را از شیء *file* خوانده و تجزیه کنید. *file* تنها نیاز است که متد ``read(nbytes)`` را فراهم کند، که بایت‌ها را برمی‌گرداند، و یک شیء بایت خالی وقتی داده‌ای بیشتر وجود نداشته باشد. پرونده‌های متنی پشتیبانی نمی‌شوند؛ برای داده‌هایی که قبلاً کدگشایی شده‌اند از :meth:`Parse` استفاده کنید."
+msgstr "داده‌های XML را با خواندن از شیء *file* تجزیه می‌کند. *file* فقط نیازمند فراهم کردن متد ``read(nbytes)`` است و هنگامی که داده‌ی دیگری وجود ندارد، رشته‌ی خالی را برمی‌گرداند."
 
 msgid "Sets the base to be used for resolving relative URIs in system identifiers in declarations.  Resolving relative identifiers is left to the application: this value will be passed through as the *base* argument to the :func:`ExternalEntityRefHandler`, :func:`NotationDeclHandler`, and :func:`UnparsedEntityDeclHandler` functions."
 msgstr "پایه‌ای را تنظیم می‌کند که برای حل URIهای نسبی در شناسه‌های سیستم در اعلان‌ها استفاده می‌شود. حل شناسه‌های نسبی بر عهده برنامه گذاشته شده است: این مقدار به‌عنوان آرگومان *base* به توابع :func:`ExternalEntityRefHandler`، :func:`NotationDeclHandler` و :func:`UnparsedEntityDeclHandler` ارسال می‌شود."
@@ -126,10 +120,8 @@ msgstr "پایه‌ای را تنظیم می‌کند که برای حل URIها
 msgid "Returns a string containing the base set by a previous call to :meth:`SetBase`, or ``None`` if  :meth:`SetBase` hasn't been called."
 msgstr "رشته‌ای شامل پایه‌ی تنظیم‌شده توسط فراخوانی پیشین :meth:`SetBase`، یا در صورتی که  :meth:`SetBase` فراخوانی نشده باشد، ``None`` برمی‌گرداند."
 
-#, fuzzy
-#| msgid "Returns the input data which generated the current event as a :class:`bytes` object. The data is in the encoding of the entity which contains the text. It extends to the end of the currently buffered input, therefore it can contain also the data of the following events, and if the event was generated by a large amount of text, not all of it may be available. When called while an event handler is not active, the return value is ``None``."
 msgid "Returns the input data that generated the current event as a string. The data is in the encoding of the entity which contains the text. When called while an event handler is not active, the return value is ``None``."
-msgstr "داده‌های ورودی که رویداد جاری را تولید کرده‌اند را به عنوان یک شیء :class:`bytes` برمی‌گرداند. داده‌ها در کدگذاری موجودیتی که متن را در بر می‌گیرد هستند. این داده‌ها تا پایان ورودی بافرشده‌ی جاری گسترش می‌یابد، بنابراین می‌تواند داده‌های رویدادهای بعدی را نیز در بر بگیرد، و اگر رویداد توسط مقدار زیادی متن تولید شده باشد، ممکن است همه‌ی آن در دسترس نباشد. وقتی در حالی که هیچ هندلر رویدادی فعال نیست فراخوانی شود، مقدار بازگشتی ``None`` است."
+msgstr "داده‌ی ورودی را که رویداد فعلی را تولید کرده است به عنوان یک رشته برمی‌گرداند. این داده در کدگذاری موجودیتی است که متن را در بر دارد. وقتی این متد در زمانی که هندلر رویداد فعال نیست فراخوانی شود، مقدار بازگشتی ``None`` است."
 
 msgid "Create a \"child\" parser which can be used to parse an external parsed entity referred to by content parsed by the parent parser.  The *context* parameter should be the string passed to the :meth:`ExternalEntityRefHandler` handler function, described below. The child parser is created with the :attr:`ordered_attributes` and :attr:`specified_attributes` set to the values of this parser."
 msgstr "یک پارسر «فرزند» ایجاد کنید که می‌توان از آن برای تجزیه‌ی یک موجودیت تجزیه‌شده‌ی خارجی که محتوای تجزیه‌شده توسط پارسر والد به آن ارجاع می‌دهد، استفاده کرد. پارامتر *context* باید رشته‌ای باشد که به تابع هندلر :meth:`ExternalEntityRefHandler`، که در ادامه توضیح داده شده است، ارسال می‌شود. پارسر فرزند با :attr:`ordered_attributes` و :attr:`specified_attributes` که به مقادیر این پارسر تنظیم شده‌اند، ایجاد می‌شود."
@@ -152,10 +144,8 @@ msgstr "فراخوانی ``SetReparseDeferralEnabled(False)`` پیامدهای �
 msgid "Expat 2.6.0 introduced a security mechanism called \"reparse deferral\" where instead of causing denial of service through quadratic runtime from reparsing large tokens, reparsing of unfinished tokens is now delayed by default until a sufficient amount of input is reached. Due to this delay, registered handlers may — depending of the sizing of input chunks pushed to Expat — no longer be called right after pushing new input to the parser.  Where immediate feedback and taking over responsibility of protecting against denial of service from large tokens are both wanted, calling ``SetReparseDeferralEnabled(False)`` disables reparse deferral for the current Expat parser instance, temporarily or altogether. Calling ``SetReparseDeferralEnabled(True)`` allows re-enabling reparse deferral."
 msgstr "Expat 2.6.0 یک سازوکار امنیتی به نام «تعویق تجزیه‌ی مجدد» (reparse deferral) معرفی کرد که در آن به جای ایجاد منع سرویس از طریق ران‌تایم درجه‌ی دوم ناشی از تجزیه‌ی مجدد توکن‌های بزرگ، تجزیه‌ی مجدد توکن‌های ناتمام اکنون به‌طور پیش‌فرض تا دریافت مقدار کافی ورودی به تعویق می‌افتد. به دلیل این تأخیر، ممکن است هندلرهای ثبت‌شده — بسته به اندازه‌ی تکه‌های ورودی ارسال‌شده به Expat — دیگر بلافاصله پس از ارسال ورودی جدید به پارسر فراخوانی نشوند. در مواردی که بازخورد فوری و بر عهده گرفتن مسئولیت محافظت در برابر منع سرویس ناشی از توکن‌های بزرگ هر دو مطلوب باشند، فراخوانی ``SetReparseDeferralEnabled(False)`` تعویق تجزیه‌ی مجدد را برای نمونه‌ی جاری پارسر Expat، به‌طور موقت یا به‌طور کامل غیرفعال می‌کند. فراخوانی ``SetReparseDeferralEnabled(True)`` امکان فعال‌سازی مجدد تعویق تجزیه‌ی مجدد را فراهم می‌کند."
 
-#, fuzzy
-#| msgid "Note that :meth:`SetReparseDeferralEnabled` has been backported to some prior releases of CPython as a security fix.  Check for availability of :meth:`SetReparseDeferralEnabled` using :func:`hasattr` if used in code running across a variety of Python versions."
 msgid ":meth:`!SetReparseDeferralEnabled` has been backported to some prior releases of CPython as a security fix. Check for availability using :func:`hasattr` if used in code running across a variety of Python versions."
-msgstr "توجه داشته باشید که :meth:`SetReparseDeferralEnabled` به‌عنوان یک اصلاحیه امنیتی به برخی انتشارهای پیشین CPython بک‌پورت شده است. اگر در کدی استفاده می‌شود که روی نسخه‌های مختلف پایتون اجرا می‌شود، با استفاده از :func:`hasattr` دسترس‌پذیری :meth:`SetReparseDeferralEnabled` را بررسی کنید."
+msgstr "متد :meth:`!SetReparseDeferralEnabled` به عنوان یک اصلاح امنیتی به برخی از نسخه‌های قبلی سی‌پایتون پورتِ معکوس (backport) شده است. اگر در کدی که در نسخه‌های مختلف پایتون اجرا می‌شود استفاده می‌کنید، با استفاده از :func:`hasattr` دسترس‌پذیری آن را بررسی کنید."
 
 msgid "Returns whether reparse deferral is currently enabled for the given Expat parser instance."
 msgstr "برمی‌گرداند که آیا تعویق تجزیه مجدد (reparse deferral) در حال حاضر برای نمونه پارسر Expat داده‌شده فعال است یا خیر."
@@ -175,10 +165,8 @@ msgstr "اشیای پارسر معمولاً دارای آستانه فعال‌
 msgid "An :exc:`ExpatError` is raised if this method is called on a |xml-non-root-parser| parser. The corresponding :attr:`~ExpatError.lineno` and :attr:`~ExpatError.offset` should not be used as they may have no special meaning."
 msgstr "اگر این متد را روی یک پارسر |xml-non-root-parser| فراخوانی کنید، یک :exc:`ExpatError` پرتاب می‌شود. نباید از :attr:`~ExpatError.lineno` و :attr:`~ExpatError.offset` مربوطه استفاده کنید، زیرا ممکن است معنای خاصی نداشته باشند."
 
-#, fuzzy
-#| msgid "Note that :meth:`SetReparseDeferralEnabled` has been backported to some prior releases of CPython as a security fix.  Check for availability of :meth:`SetReparseDeferralEnabled` using :func:`hasattr` if used in code running across a variety of Python versions."
 msgid ":meth:`!SetBillionLaughsAttackProtectionActivationThreshold` has been backported to some prior releases of CPython as a security fix. Check for availability using :func:`hasattr` if used in code running across a variety of Python versions."
-msgstr "توجه داشته باشید که :meth:`SetReparseDeferralEnabled` به‌عنوان یک اصلاحیه امنیتی به برخی انتشارهای پیشین CPython بک‌پورت شده است. اگر در کدی استفاده می‌شود که روی نسخه‌های مختلف پایتون اجرا می‌شود، با استفاده از :func:`hasattr` دسترس‌پذیری :meth:`SetReparseDeferralEnabled` را بررسی کنید."
+msgstr "متد :meth:`!SetBillionLaughsAttackProtectionActivationThreshold` به عنوان یک اصلاح امنیتی به برخی از نسخه‌های قبلی سی‌پایتون پورتِ معکوس (backport) شده است. اگر در کدی که در نسخه‌های مختلف پایتون اجرا می‌شود استفاده می‌کنید، با استفاده از :func:`hasattr` دسترس‌پذیری آن را بررسی کنید."
 
 msgid "Activation thresholds below 4 MiB are known to break support for DITA 1.3 payload and are hence not recommended."
 msgstr "آستانه‌های فعال‌سازی کمتر از ۴ MiB، پشتیبانی از بار DITA 1.3 را مختل می‌کنند و بنابراین توصیه نمی‌شوند."
@@ -198,10 +186,8 @@ msgstr "اشیای پارسر معمولاً دارای حداکثر ضریب ت
 msgid "An :exc:`ExpatError` is raised if this method is called on a |xml-non-root-parser| parser or if *max_factor* is outside the valid range. The corresponding :attr:`~ExpatError.lineno` and :attr:`~ExpatError.offset` should not be used as they may have no special meaning."
 msgstr "اگر این متد بر روی یک پارسر |xml-non-root-parser| فراخوانی شود یا *max_factor* خارج از محدوده معتبر باشد، یک استثنای :exc:`ExpatError` پرتاب می‌شود. نباید از :attr:`~ExpatError.lineno` و :attr:`~ExpatError.offset` متناظر استفاده شود، زیرا ممکن است معنای خاصی نداشته باشند."
 
-#, fuzzy
-#| msgid "Note that :meth:`SetReparseDeferralEnabled` has been backported to some prior releases of CPython as a security fix.  Check for availability of :meth:`SetReparseDeferralEnabled` using :func:`hasattr` if used in code running across a variety of Python versions."
 msgid ":meth:`!SetBillionLaughsAttackProtectionMaximumAmplification` has been backported to some prior releases of CPython as a security fix. Check for availability using :func:`hasattr` if used in code running across a variety of Python versions."
-msgstr "توجه داشته باشید که :meth:`SetReparseDeferralEnabled` به‌عنوان یک اصلاحیه امنیتی به برخی انتشارهای پیشین CPython بک‌پورت شده است. اگر در کدی استفاده می‌شود که روی نسخه‌های مختلف پایتون اجرا می‌شود، با استفاده از :func:`hasattr` دسترس‌پذیری :meth:`SetReparseDeferralEnabled` را بررسی کنید."
+msgstr "متد :meth:`!SetBillionLaughsAttackProtectionMaximumAmplification` به عنوان یک اصلاح امنیتی به برخی از نسخه‌های قبلی سی‌پایتون پورتِ معکوس (backport) شده است. اگر در کدی که در نسخه‌های مختلف پایتون اجرا می‌شود استفاده می‌کنید، با استفاده از :func:`hasattr` دسترس‌پذیری آن را بررسی کنید."
 
 msgid "The maximum amplification factor is only considered if the threshold that can be adjusted by :meth:`.SetBillionLaughsAttackProtectionActivationThreshold` is exceeded."
 msgstr "حداکثر ضریب تقویت تنها در صورتی در نظر گرفته می‌شود که از آستانه‌ای که می‌توان آن را با :meth:`.SetBillionLaughsAttackProtectionActivationThreshold` تنظیم کرد، عبور شود."
@@ -212,10 +198,8 @@ msgstr "تعداد بایت‌های تخصیص‌یافته از حافظه پ�
 msgid "Parser objects usually have an allocation activation threshold of 64 MiB, but the actual default value depends on the underlying Expat library."
 msgstr "اشیای پارسر معمولاً آستانه فعال‌سازی تخصیص ۶۴ MiB دارند، اما مقدار پیش‌فرض واقعی به کتابخانه Expat زیرین بستگی دارد."
 
-#, fuzzy
-#| msgid "Note that :meth:`SetReparseDeferralEnabled` has been backported to some prior releases of CPython as a security fix.  Check for availability of :meth:`SetReparseDeferralEnabled` using :func:`hasattr` if used in code running across a variety of Python versions."
 msgid ":meth:`!SetAllocTrackerActivationThreshold` has been backported to some prior releases of CPython as a security fix. Check for availability using :func:`hasattr` if used in code running across a variety of Python versions."
-msgstr "توجه داشته باشید که :meth:`SetReparseDeferralEnabled` به‌عنوان یک اصلاحیه امنیتی به برخی انتشارهای پیشین CPython بک‌پورت شده است. اگر در کدی استفاده می‌شود که روی نسخه‌های مختلف پایتون اجرا می‌شود، با استفاده از :func:`hasattr` دسترس‌پذیری :meth:`SetReparseDeferralEnabled` را بررسی کنید."
+msgstr "متد :meth:`!SetAllocTrackerActivationThreshold` به عنوان یک اصلاح امنیتی به برخی از نسخه‌های قبلی سی‌پایتون پورتِ معکوس (backport) شده است. اگر در کدی که در نسخه‌های مختلف پایتون اجرا می‌شود استفاده می‌کنید، با استفاده از :func:`hasattr` دسترس‌پذیری آن را بررسی کنید."
 
 msgid "Sets the maximum amplification factor between direct input and bytes of dynamic memory allocated."
 msgstr "حداکثر ضریب تقویت بین ورودی مستقیم و بایت‌های حافظه پویای تخصیص‌یافته را تنظیم می‌کند."
@@ -226,10 +210,8 @@ msgstr "ضریب تقویت در حین تجزیه به‌صورت ``allocated /
 msgid "The *max_factor* value must be a non-NaN :class:`float` value greater than or equal to 1.0. Amplification factors greater than 100.0 can be observed near the start of parsing even with benign files in practice. In particular, the activation threshold should be carefully chosen to avoid false positives."
 msgstr "مقدار *max_factor* باید مقداری از نوع :class:`float`، غیر NaN و بزرگ‌تر یا مساوی 1.0 باشد. در عمل، حتی با پرونده‌های بی‌خطر نیز می‌توان ضرایب تقویت بزرگ‌تر از 100.0 را در نزدیکی شروع تجزیه مشاهده کرد. به‌ویژه، آستانه فعال‌سازی باید با دقت انتخاب شود تا از مثبت‌های کاذب اجتناب شود."
 
-#, fuzzy
-#| msgid "Note that :meth:`SetReparseDeferralEnabled` has been backported to some prior releases of CPython as a security fix.  Check for availability of :meth:`SetReparseDeferralEnabled` using :func:`hasattr` if used in code running across a variety of Python versions."
 msgid ":meth:`!SetAllocTrackerMaximumAmplification` has been backported to some prior releases of CPython as a security fix. Check for availability using :func:`hasattr` if used in code running across a variety of Python versions."
-msgstr "توجه داشته باشید که :meth:`SetReparseDeferralEnabled` به‌عنوان یک اصلاحیه امنیتی به برخی انتشارهای پیشین CPython بک‌پورت شده است. اگر در کدی استفاده می‌شود که روی نسخه‌های مختلف پایتون اجرا می‌شود، با استفاده از :func:`hasattr` دسترس‌پذیری :meth:`SetReparseDeferralEnabled` را بررسی کنید."
+msgstr "متد :meth:`!SetAllocTrackerMaximumAmplification` به عنوان یک اصلاح امنیتی به برخی از نسخه‌های قبلی سی‌پایتون پورتِ معکوس (backport) شده است. اگر در کدی که در نسخه‌های مختلف پایتون اجرا می‌شود استفاده می‌کنید، با استفاده از :func:`hasattr` دسترس‌پذیری آن را بررسی کنید."
 
 msgid "The maximum amplification factor is only considered if the threshold that can be adjusted by :meth:`.SetAllocTrackerActivationThreshold` is exceeded."
 msgstr "حداکثر ضریب تقویت تنها در صورتی در نظر گرفته می‌شود که از آستانه‌ای که با :meth:`.SetAllocTrackerActivationThreshold` قابل تنظیم است، فراتر رود."
@@ -282,28 +264,20 @@ msgstr "شماره خط جاری در ورودی پارسر ."
 msgid "Here is the list of handlers that can be set.  To set a handler on an :class:`xmlparser` object *o*, use ``o.handlername = func``.  *handlername* must be taken from the following list, and *func* must be a callable object accepting the correct number of arguments.  The arguments are all strings, unless otherwise stated."
 msgstr "در اینجا فهرستی از هندلرها که می‌توان آن‌ها را تنظیم کرد آمده است. برای تنظیم یک هندلر روی یک شیء :class:`xmlparser` به نام *o*، از ``o.handlername = func`` استفاده کنید. *handlername* باید از فهرست زیر انتخاب شود، و *func* باید یک شیء فراخوانی‌پذیر باشد که تعداد صحیح آرگومان‌ها را بپذیرد. همه آرگومان‌ها رشته هستند، مگر آنکه خلاف آن ذکر شده باشد."
 
-#, fuzzy
-#| msgid "Called when the XML declaration is parsed.  The XML declaration is the (optional) declaration of the applicable version of the XML recommendation, the encoding of the document text, and an optional \"standalone\" declaration. *version* and *encoding* will be strings, and *standalone* will be ``1`` if the document is declared standalone, ``0`` if it is declared not to be standalone, or ``-1`` if the standalone clause was omitted."
 msgid "Called when the XML declaration is parsed.  The XML declaration is the (optional) declaration of the applicable version of the XML recommendation, the encoding of the document text, and an optional \"standalone\" declaration. *version* and *encoding* will be strings, and *standalone* will be ``1`` if the document is declared standalone, ``0`` if it is declared not to be standalone, or ``-1`` if the standalone clause was omitted. This is only available with Expat version 1.95.0 or newer."
-msgstr "فراخوانی می‌شود وقتی اعلان XML تجزیه می‌شود. اعلان XML اعلانِ (اختیاری) نسخه‌ی قابل اعمال توصیه XML، کدگذاری متن سند، و یک اعلان \"standalone\" اختیاری است. *version* و *encoding* رشته‌ها خواهند بود، و *standalone* برابر با ``1`` خواهد بود اگر سند به صورت standalone اعلام شده باشد، ``0`` اگر اعلام شده باشد که standalone نیست، یا ``-1`` اگر بند standalone حذف شده باشد."
+msgstr "هنگامی که اعلان XML تجزیه می‌شود فراخوانی می‌شود. اعلان XML عبارت است از اعلان (اختیاری) نسخه‌ی قابل‌اجرای توصیه‌نامه‌ی XML، کدگذاری متن سند، و یک اعلان «standalone» اختیاری. *version* و *encoding* رشته خواهند بود و اگر سند به صورت مستقل اعلام شده باشد *standalone* برابر با ``1``، اگر به صورت غیرمستقل اعلام شده باشد برابر با ``0``، و اگر بند مستقل حذف شده باشد برابر با ``-1`` خواهد بود. این ویژگی فقط با Expat نسخه‌ی 1.95.0 یا جدیدتر در دسترس است."
 
-#, fuzzy
-#| msgid "Called when Expat begins parsing the document type declaration (``<!DOCTYPE ...``).  The *doctypeName* is provided exactly as presented.  The *systemId* and *publicId* parameters give the system and public identifiers if specified, or ``None`` if omitted.  *has_internal_subset* will be true if the document contains an internal document declaration subset."
 msgid "Called when Expat begins parsing the document type declaration (``<!DOCTYPE ...``).  The *doctypeName* is provided exactly as presented.  The *systemId* and *publicId* parameters give the system and public identifiers if specified, or ``None`` if omitted.  *has_internal_subset* will be true if the document contains an internal document declaration subset. This requires Expat version 1.2 or newer."
-msgstr "فراخوانی می‌شود وقتی Expat تجزیه اعلان نوع سند (``<!DOCTYPE ...``) را آغاز می‌کند. *doctypeName* دقیقاً همان‌گونه که ارائه شده است فراهم می‌شود. پارامترهای *systemId* و *publicId* شناسه‌های سیستمی و عمومی را در صورت تعیین شده ارائه می‌دهند، یا ``None`` در صورت حذف. *has_internal_subset* برابر true خواهد بود اگر سند زیرمجموعه‌ی اعلان داخلی سند را داشته باشد."
+msgstr "هنگامی که Expat شروع به تجزیه‌ی اعلان نوع سند (``<!DOCTYPE ...``) می‌کند، فراخوانی می‌شود. پارامتر *doctypeName* دقیقا همان‌طور که ارائه شده است، فراهم می‌شود. پارامترهای *systemId* و *publicId* شناساگرهای سیستم و عمومی را در صورت مشخص شدن، یا در صورت حذف، مقدار ``None`` را ارائه می‌دهند. اگر سند حاوی زیرمجموعه اعلان سند داخلی باشد، *has_internal_subset* برابر با true خواهد بود. این امر نیازمند Expat نسخه‌ی 1.2 یا جدیدتر است."
 
-#, fuzzy
-#| msgid "Called when Expat is done parsing the document type declaration."
 msgid "Called when Expat is done parsing the document type declaration. This requires Expat version 1.2 or newer."
-msgstr "فراخوانی می‌شود وقتی Expat تجزیه اعلان نوع سند را تمام می‌کند."
+msgstr "هنگامی فراخوانی می‌شود که Expat تجزیه‌ی اعلامیه‌ی نوع سند را به پایان برساند. این کار به نسخه‌ی ۱.۲ یا جدیدتر Expat نیاز دارد."
 
 msgid "Called once for each element type declaration.  *name* is the name of the element type, and *model* is a representation of the content model."
 msgstr "برای هر اعلامیه‌ی نوع عنصر یک بار فراخوانی می‌شود. *name* نام نوع عنصر است، و *model* نمایشی از مدل محتوا است."
 
-#, fuzzy
-#| msgid "Called for each declared attribute for an element type.  If an attribute list declaration declares three attributes, this handler is called three times, once for each attribute.  *elname* is the name of the element to which the declaration applies and *attname* is the name of the attribute declared.  The The attribute type is a string passed as *type*: ``'CDATA'``, ``'ID'``, ``'IDREF'``, ``'IDREFS'``, ``'ENTITY'``, ``'ENTITIES'``, ``'NMTOKEN'`` or ``'NMTOKENS'``, an enumeration like ``'(x|y)'``, or a notation list like ``'NOTATION(n1|n2)'``. *default* gives the default value for the attribute used when the attribute is not specified by the document instance, or ``None`` if there is no default value (``#IMPLIED`` values).  If the attribute is required to be given in the document instance, *required* will be true."
 msgid "Called for each declared attribute for an element type.  If an attribute list declaration declares three attributes, this handler is called three times, once for each attribute.  *elname* is the name of the element to which the declaration applies and *attname* is the name of the attribute declared.  The attribute type is a string passed as *type*; the possible values are ``'CDATA'``, ``'ID'``, ``'IDREF'``, ... *default* gives the default value for the attribute used when the attribute is not specified by the document instance, or ``None`` if there is no default value (``#IMPLIED`` values).  If the attribute is required to be given in the document instance, *required* will be true. This requires Expat version 1.95.0 or newer."
-msgstr "برای هر ویژگی اعلام‌شده برای یک نوع المان فراخوانی می‌شود. اگر یک اعلان فهرست ویژگی سه ویژگی اعلام کند، این هندلر سه بار فراخوانی می‌شود، یک بار برای هر ویژگی. *elname* نام المانی است که اعلان بر روی آن اعمال می‌شود و *attname* نام ویژگی اعلام‌شده است. نوع ویژگی یک رشته است که به عنوان *type* پاس داده می‌شود: ``'CDATA'``، ``'ID'``، ``'IDREF'``، ``'IDREFS'``، ``'ENTITY'``، ``'ENTITIES'``، ``'NMTOKEN'`` یا ``'NMTOKENS'``، یک شمارش مانند ``'(x|y)'``، یا یک فهرست نمادگذاری مانند ``'NOTATION(n1|n2)'``. *default* مقدار پیش‌فرض ویژگی را برای زمانی که ویژگی توسط نمونه سند مشخص نشده است ارائه می‌دهد، یا ``None`` اگر هیچ مقدار پیش‌فرضی وجود نداشته باشد (مقادیر ``#IMPLIED``). اگر ویژگی در نمونه سند لازم باشد داده شود، *required* برابر true خواهد بود."
+msgstr "برای هر صفت اعلام‌شده برای یک نوع عنصر فراخوانی می‌شود. اگر یک اعلامیه‌ی فهرست صفت، سه صفت را اعلام کند، این هندلر سه بار، یک بار برای هر صفت فراخوانی می‌شود. پارامتر *elname* نام عنصری است که اعلامیه به آن اعمال می‌شود و *attname* نام صفت اعلام‌شده است. نوع صفت یک رشته است که به عنوان *type* ارسال می‌شود؛ مقادیر ممکن عبارتند از ``'CDATA'``، ``'ID'``، ``'IDREF'``، ... پارامتر *default* مقدار پیش‌فرض صفت را که وقتی صفت توسط نمونه‌ی سند مشخص نشده است استفاده می‌شود، یا اگر مقدار پیش‌فرضی وجود نداشته باشد (مقادیر ``#IMPLIED``) مقدار ``None`` را ارائه می‌دهد. اگر صفت ملزم به ارائه در نمونه‌ی سند باشد، *required* برابر با درست (true) خواهد بود. این کار به نسخه‌ی ۱.۹۵.۰ یا جدیدتر Expat نیاز دارد."
 
 msgid "Called for the start of every element.  *name* is a string containing the element name, and *attributes* is the element attributes. If :attr:`ordered_attributes` is true, this is a list (see :attr:`ordered_attributes` for a full description). Otherwise it's a dictionary mapping names to values."
 msgstr "برای آغاز هر عنصر فراخوانی می‌شود. *name* یک رشته حاوی نام عنصر است، و *attributes* صفات عنصر است. اگر :attr:`ordered_attributes` برابر true باشد، این یک فهرست است (برای توضیح کامل :attr:`ordered_attributes` را ببینید). در غیر این صورت، یک دیکشنری است که نام‌ها را به مقدارها نگاشت می‌کند."
@@ -317,15 +291,11 @@ msgstr "برای هر دستور پردازشی فراخوانی می‌شود."
 msgid "Called for character data.  This will be called for normal character data, CDATA marked content, and ignorable whitespace.  Applications which must distinguish these cases can use the :attr:`StartCdataSectionHandler`, :attr:`EndCdataSectionHandler`, and :attr:`ElementDeclHandler` callbacks to collect the required information. Note that the character data may be chunked even if it is short and so you may receive more than one call to :meth:`CharacterDataHandler`. Set the :attr:`buffer_text` instance attribute to ``True`` to avoid that."
 msgstr "برای داده‌های نویسه‌ای فراخوانی می‌شود. این متد برای داده‌های نویسه‌ای عادی، محتوای علامت‌گذاری‌شده CDATA و فضای خالی قابل‌چشم‌پوشی فراخوانی خواهد شد. برنامه‌هایی که باید این حالت‌ها را از هم تشخیص دهند، می‌توانند از کال‌بک‌های :attr:`StartCdataSectionHandler`، :attr:`EndCdataSectionHandler` و :attr:`ElementDeclHandler` برای جمع‌آوری اطلاعات مورد نیاز استفاده کنند. توجه داشته باشید که داده‌های نویسه‌ای ممکن است حتی در صورت کوتاه بودن بخش‌بندی (chunking) شوند و بنابراین ممکن است بیش از یک فراخوانی برای :meth:`CharacterDataHandler` دریافت کنید. برای جلوگیری از این موضوع، ویژگی نمونه :attr:`buffer_text` را روی ``True`` تنظیم کنید."
 
-#, fuzzy
-#| msgid "Called for unparsed (NDATA) entity declarations. If this handler is not set, such declarations are reported by :attr:`EntityDeclHandler`, which is preferred for new code. (The underlying function in the Expat library has been declared obsolete.)"
 msgid "Called for unparsed (NDATA) entity declarations.  This is only present for version 1.2 of the Expat library; for more recent versions, use :attr:`EntityDeclHandler` instead.  (The underlying function in the Expat library has been declared obsolete.)"
-msgstr "برای اعلان‌های موجودیت تجزیه‌نشده (NDATA) فراخوانی می‌شود. اگر این هندلر تنظیم نشده باشد، چنین اعلان‌هایی توسط :attr:`EntityDeclHandler` گزارش داده می‌شوند، که برای کد جدید ترجیح داده می‌شود. (تابع زیرین در کتابخانه Expat منسوخ اعلام شده است.)"
+msgstr "برای اعلامیه‌های موجودیت تجزیه‌نشده (NDATA) فراخوانی می‌شود. این مورد فقط در نسخه‌ی ۱.۲ از کتابخانه‌ی Expat وجود دارد؛ برای نسخه‌های جدیدتر، به جای آن از :attr:`EntityDeclHandler` استفاده کنید. (تابع زیرین در کتابخانه‌ی Expat منسوخ اعلام شده است.)"
 
-#, fuzzy
-#| msgid "Called for all entity declarations.  For parameter and internal entities, *value* will be a string giving the declared contents of the entity; this will be ``None`` for external entities.  The *notationName* parameter will be ``None`` for parsed entities, and the name of the notation for unparsed entities. *is_parameter_entity* will be true if the entity is a parameter entity or false for general entities (most applications only need to be concerned with general entities)."
 msgid "Called for all entity declarations.  For parameter and internal entities, *value* will be a string giving the declared contents of the entity; this will be ``None`` for external entities.  The *notationName* parameter will be ``None`` for parsed entities, and the name of the notation for unparsed entities. *is_parameter_entity* will be true if the entity is a parameter entity or false for general entities (most applications only need to be concerned with general entities). This is only available starting with version 1.95.0 of the Expat library."
-msgstr "برای تمام اعلان‌های موجودیت فراخوانی می‌شود. برای موجودیت‌های پارامتر و داخلی، *value* یک رشته خواهد بود که محتوای اعلام‌شده موجودیت را می‌دهد؛ این برای موجودیت‌های خارجی ``None`` خواهد بود. پارامتر *notationName* برای موجودیت‌های تجزیه‌شده ``None`` خواهد بود، و نام نمادگذاری برای موجودیت‌های تجزیه‌نشده. *is_parameter_entity* برابر true خواهد بود اگر موجودیت یک موجودیت پارامتر باشد یا false برای موجودیت‌های عمومی (اکثر برنامه‌ها فقط نیاز دارند به موجودیت‌های عمومی توجه کنند)."
+msgstr "برای تمام اعلامیه‌های موجودیت فراخوانی می‌شود. برای موجودیت‌های پارامتر و داخلی، *value* رشته‌ای خواهد بود که محتویات اعلام‌شده‌ی موجودیت را ارائه می‌دهد؛ این مقدار برای موجودیت‌های خارجی ``None`` خواهد بود. پارامتر *notationName* برای موجودیت‌های تجزیه‌شده برابر با ``None`` و برای موجودیت‌های تجزیه‌نشده نام نمادگذاری خواهد بود. پارامتر *is_parameter_entity* اگر موجودیت یک موجودیت پارامتر باشد درست و برای موجودیت‌های عمومی نادرست خواهد بود (بیشتر برنامه‌ها فقط نیاز دارند با موجودیت‌های عمومی سر و کار داشته باشند). این مورد فقط از نسخه‌ی ۱.۹۵.۰ کتابخانه‌ی Expat به بعد در دسترس است."
 
 msgid "Called for notation declarations.  *notationName*, *base*, and *systemId*, and *publicId* are strings if given.  If the public identifier is omitted, *publicId* will be ``None``."
 msgstr "برای اعلان‌های نمادگذاری (notation declarations) فراخوانی می‌شود. *notationName*، *base*، *systemId* و *publicId* در صورت ارائه شدن، رشته هستند. اگر شناسه عمومی ذکر نشده باشد، *publicId* برابر ``None`` خواهد بود."
@@ -348,10 +318,8 @@ msgstr "در پایان یک بخش CDATA فراخوانی می‌شود."
 msgid "Called for any characters in the XML document for which no applicable handler has been specified.  This means characters that are part of a construct which could be reported, but for which no handler has been supplied."
 msgstr "برای هر نویسه‌ای در سند XML که هیچ هندلری قابل‌اعمالی برای آن مشخص نشده باشد، فراخوانی می‌شود. این به معنای نویسه‌هایی است که بخشی از ساختاری هستند که می‌تواند گزارش شود، اما هیچ هندلری برای آن تأمین نشده است."
 
-#, fuzzy
-#| msgid "This is the same as the :attr:`DefaultHandler`, but doesn't inhibit expansion of internal entities. The entity reference will not be passed to the default handler."
 msgid "This is the same as the :func:`DefaultHandler`,  but doesn't inhibit expansion of internal entities. The entity reference will not be passed to the default handler."
-msgstr "این همانند :attr:`DefaultHandler` است، اما گسترش موجودیت‌های داخلی را بازدار نمی‌کند. ارجاع موجودیت به هندلر پیش‌فرض پاس داده نمی‌شود."
+msgstr "این متد مشابه :func:`DefaultHandler` است، اما مانع انبساط موجودیت‌های داخلی نمی‌شود. ارجاع موجودیت به هندلر پیش‌فرض ارسال نخواهد شد."
 
 msgid "Called if the XML document hasn't been declared as being a standalone document. This happens when there is an external subset or a reference to a parameter entity, but the XML declaration does not set standalone to ``yes`` in an XML declaration.  If this handler returns ``0``, then the parser will raise an :const:`XML_ERROR_NOT_STANDALONE` error.  If this handler is not set, no exception is raised by the parser for this condition."
 msgstr "اگر سند XML به‌عنوان یک سند مستقل اعلام نشده باشد، فراخوانی می‌شود. این حالت زمانی رخ می‌دهد که یک زیرمجموعه خارجی یا ارجاعی به یک موجودیت پارامتری وجود داشته باشد، اما در اعلامیه XML مقدار standalone روی ``yes`` تنظیم نشده باشد. اگر این هندلر ``0`` را برگرداند، پارسر یک خطای :const:`XML_ERROR_NOT_STANDALONE` پرتاب خواهد کرد. اگر این هندلر تنظیم نشده باشد، پارسر برای این وضعیت هیچ استثنایی پرتاب نمی‌کند."
@@ -553,10 +521,8 @@ msgstr "پس از عنصر سند، چیزی جز فضای سفید رخ داد.
 msgid "An XML declaration was found somewhere other than the start of the input data."
 msgstr "یک اعلان XML در جایی غیر از ابتدای داده ورودی یافت شد."
 
-#, fuzzy
-#| msgid "The document contains no elements (XML requires all documents to contain exactly one top-level element)."
 msgid "The document contains no elements (XML requires all documents to contain exactly one top-level element).."
-msgstr "سند هیچ المانی ندارد (XML می‌طلبد که همه‌ی اسناد دقیقاً یک المان سطح‌بالا داشته باشند)."
+msgstr "سند شامل هیچ عنصری نیست (XML نیاز دارد تمام اسناد دقیقاً حاوی یک عنصر ریشه باشند).."
 
 msgid "Expat was not able to allocate memory internally."
 msgstr "Expat نتوانست حافظه را به‌صورت داخلی تخصیص دهد."

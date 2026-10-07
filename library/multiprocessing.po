@@ -1192,24 +1192,20 @@ msgstr "اکنون در POSIX در صورتی پشتیبانی می‌شود ک�
 msgid "Accepts a :term:`path-like object`."
 msgstr "یک :term:`شیء شبه‌مسیر <path-like object>` را می‌پذیرد."
 
-#, fuzzy
-#| msgid "Set a list of module names for the forkserver main process to attempt to import so that their already imported state is inherited by forked processes. Any :exc:`ImportError` when doing so is silently ignored. This can be used as a performance enhancement to avoid repeated work in every process."
 msgid "Set a list of module names for the forkserver main process to attempt to import so that their already imported state is inherited by forked processes. This can be used as a performance enhancement to avoid repeated work in every process."
-msgstr "فهرستی از نام ماژول‌ها را برای فرایند اصلی forkserver تنظیم کنید تا تلاش کند آن‌ها را ایمپورت کند، به‌طوری که وضعیت از پیش ایمپورت‌شده‌ی آن‌ها توسط فرایندهای forkشده به ارث برده شود. هرگونه :exc:`ImportError` هنگام انجام این کار به‌صورت بی‌سر و صدا نادیده گرفته می‌شود. از این می‌توان به‌عنوان بهبود کارایی برای اجتناب از کار تکراری در هر فرایند استفاده کرد."
+msgstr "فهرستی از نام‌های ماژول را برای فرایند اصلی forkserver تنظیم می‌کند تا تلاش کند آن‌ها را ایمپورت کند؛ به طوری که وضعیت ازپیش‌ایمپورت‌شده‌ی آن‌ها توسط فرایند‌های منشعب‌شده به ارث برده شود. از این قابلیت می‌توان به عنوان بهبود کارایی برای جلوگیری از کارهای تکراری در هر فرایند استفاده کرد."
 
 msgid "For this to work, it must be called before the forkserver process has been launched (before creating a :class:`Pool` or starting a :class:`Process`)."
 msgstr "برای این که این کار کند، باید پیش از راه‌اندازی فرایند forkserver فراخوانی شود (پیش از ایجاد یک :class:`Pool` یا آغاز یک :class:`Process`)."
 
 msgid "The *on_error* parameter controls how :exc:`ImportError` exceptions during module preloading are handled: ``\"ignore\"`` (default) silently ignores failures, ``\"warn\"`` causes the forkserver subprocess to emit an :exc:`ImportWarning` to stderr, and ``\"fail\"`` causes the forkserver subprocess to exit with the exception traceback on stderr, making subsequent process creation fail with :exc:`EOFError` or :exc:`ConnectionError`."
-msgstr ""
+msgstr "پارامتر *on_error* نحوه‌ی مدیریت استثناهای :exc:`ImportError` را در طول پیش‌بارگذاری ماژول کنترل می‌کند: گزینه‌ی ``\"ignore\"`` (پیش‌فرض) خطاهای شکست را به‌طور بی‌صدا نادیده می‌گیرد، ``\"warn\"`` باعث می‌شود که زیرفرایند forkserver یک :exc:`ImportWarning` روی stderr صادر کند، و ``\"fail\"`` باعث می‌شود زیرفرایند forkserver با ردگیری استثنا روی stderr خارج شود و در نتیجه ایجاد فرایند بعدی با :exc:`EOFError` یا :exc:`ConnectionError` با شکست مواجه شود."
 
 msgid "Only meaningful when using the ``'forkserver'`` start method. See :ref:`multiprocessing-start-methods`."
 msgstr "تنها زمانی معنا دارد که از متد شروع ``'forkserver'`` استفاده شود. :ref:`multiprocessing-start-methods` را ببینید."
 
-#, fuzzy
-#| msgid "Added the *context* parameter."
 msgid "Added the *on_error* parameter."
-msgstr "پارامتر *context* افزوده شد."
+msgstr "پارامتر *on_error* اضافه شد."
 
 msgid "Set the method which should be used to start child processes. The *method* argument can be ``'fork'``, ``'spawn'`` or ``'forkserver'``. Raises :exc:`RuntimeError` if the start method has already been set and *force* is not ``True``.  If *method* is ``None`` and *force* is ``True`` then the start method is set to ``None``.  If *method* is ``None`` and *force* is ``False`` then the context is set to the default context."
 msgstr "متدی را که باید برای شروع فرآیندهای فرزند استفاده شود، تنظیم کنید. آرگومان *method* می‌تواند ``'fork'``، ``'spawn'`` یا ``'forkserver'`` باشد. اگر متد شروع از قبل تنظیم‌شده باشد و *force* برابر ``True`` نباشد، :exc:`RuntimeError` پرتاب می‌شود. اگر *method* برابر ``None`` و *force* برابر ``True`` باشد، متد شروع به ``None`` تنظیم می‌شود. اگر *method* برابر ``None`` و *force* برابر ``False`` باشد، زمینه به زمینه پیش‌فرض تنظیم می‌شود."

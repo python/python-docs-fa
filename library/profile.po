@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-01 14:41+0330\n"
-"PO-Revision-Date: 2026-09-14 16:13+0330\n"
+"PO-Revision-Date: 2026-10-06 20:42+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
 "Language: fa\n"
@@ -24,35 +24,31 @@ msgstr ""
 "X-Generator: Poedit 3.6\n"
 
 msgid ":mod:`!profile` --- Pure Python profiler"
-msgstr ""
+msgstr ":mod:`!profile` --- پروفایل‌گیر خالص پایتون"
 
-#, fuzzy
-#| msgid "**Source code:** :source:`Lib/profile.py` and :source:`Lib/pstats.py`"
 msgid "**Source code:** :source:`Lib/profile.py`"
-msgstr "**کد منبع:** :source:`Lib/profile.py` و :source:`Lib/pstats.py`"
+msgstr "**کد منبع:** :source:`Lib/profile.py`"
 
 msgid "The :mod:`!profile` module is deprecated and will be removed in Python 3.17. Use :mod:`profiling.tracing` instead."
-msgstr ""
+msgstr "ماژول :mod:`!profile` منسوخ شده است و در پایتون ۳.۱۷ حذف خواهد شد. به جای آن از :mod:`profiling.tracing` استفاده کنید."
 
 msgid "The :mod:`!profile` module provides a pure Python implementation of a deterministic profiler. While useful for understanding profiler internals or extending profiler behavior through subclassing, its pure Python implementation introduces significant overhead compared to the C-based :mod:`profiling.tracing` module."
-msgstr ""
+msgstr "ماژول :mod:`!profile` یک پیاده‌سازی خالص پایتون از یک پروفایل‌گیر قطعی ارائه می‌دهد. اگرچه این پیاده‌سازی برای درک جزئیات داخلی پروفایل‌گیر یا گسترش رفتار آن از طریق زیرکلاس‌سازی مفید است، اما پیاده‌سازی خالص پایتون آن در مقایسه با ماژول مبتنی بر C و :mod:`profiling.tracing` سربار قابل‌توجهی را ایجاد می‌کند."
 
 msgid "For most profiling tasks, use:"
-msgstr ""
+msgstr "برای اکثر وظایف پروفایل‌گیری، از موارد زیر استفاده کنید:"
 
 msgid ":mod:`profiling.sampling` for production debugging with zero overhead"
-msgstr ""
+msgstr ":mod:`profiling.sampling` برای اشکال‌زدایی در محیط تولید با سربار صفر"
 
 msgid ":mod:`profiling.tracing` for development and testing"
-msgstr ""
+msgstr ":mod:`profiling.tracing` برای توسعه و تست"
 
-#, fuzzy
-#| msgid "Calibration"
 msgid "Migration"
-msgstr "کالیبراسیون"
+msgstr "مهاجرت"
 
 msgid "Migrating from :mod:`!profile` to :mod:`profiling.tracing` is straightforward. The APIs are compatible::"
-msgstr ""
+msgstr "مهاجرت از :mod:`!profile` به :mod:`profiling.tracing` بسیار ساده است. رابط‌های برنامه‌نویسی (APIها) سازگار هستند::"
 
 msgid ""
 "# Old (deprecated)\n"
@@ -63,22 +59,25 @@ msgid ""
 "import profiling.tracing\n"
 "profiling.tracing.run('my_function()')"
 msgstr ""
+"# Old (deprecated)\n"
+"import profile\n"
+"profile.run('my_function()')\n"
+"\n"
+"# New (recommended)\n"
+"import profiling.tracing\n"
+"profiling.tracing.run('my_function()')"
 
 msgid "For most code, replacing ``import profile`` with ``import profiling.tracing`` (and using ``profiling.tracing`` instead of ``profile`` throughout) provides a straightforward migration path."
-msgstr ""
+msgstr "برای اکثر کدها، جایگزین کردن ``import profile`` با ``import profiling.tracing`` (و استفاده از ``profiling.tracing`` به‌جای ``profile`` در سراسر کد) یک مسیر مهاجرت ساده را فراهم می‌کند."
 
 msgid "The ``cProfile`` module remains available as a backward-compatible alias to :mod:`profiling.tracing`. Existing code using ``import cProfile`` will continue to work without modification."
-msgstr ""
+msgstr "ماژول ``cProfile`` به عنوان یک نام مستعار سازگار با گذشته برای :mod:`profiling.tracing` در دسترس باقی می‌ماند. کدهای موجودی که از ``import cProfile`` استفاده می‌کنند، بدون هیچ‌گونه تغییری به کار خود ادامه خواهند داد."
 
-#, fuzzy
-#| msgid ":mod:`profile` and :mod:`!cProfile` Module Reference"
 msgid ":mod:`!profile` and :mod:`!profiling.tracing` module reference"
-msgstr "مرجع ماژول‌های :mod:`profile` و :mod:`!cProfile`"
+msgstr "ارجاع به ماژول‌های :mod:`!profile` و :mod:`!profiling.tracing`"
 
-#, fuzzy
-#| msgid "Both the :mod:`profile` and :mod:`!cProfile` modules provide the following functions:"
 msgid "Both the :mod:`!profile` and :mod:`profiling.tracing` modules provide the following functions:"
-msgstr "هر دو ماژول :mod:`profile` و :mod:`!cProfile` توابع زیر را ارائه می‌دهند:"
+msgstr "هر دو ماژول :mod:`!profile` و :mod:`profiling.tracing` توابع زیر را فراهم می‌کنند:"
 
 msgid "This function takes a single argument that can be passed to the :func:`exec` function, and an optional file name.  In all cases this routine executes::"
 msgstr "این تابع یک آرگومان واحد را که می‌توان آن را به تابع :func:`exec` ارسال کرد، و یک نام پرونده اختیاری می‌پذیرد. در همه موارد، این روال کد زیر را اجرا می‌کند::"
@@ -98,10 +97,8 @@ msgstr "exec(command, globals, locals)"
 msgid "and gathers profiling statistics as in the :func:`run` function above."
 msgstr "و آمارهای پروفایل‌گیری را همان‌طور که در تابع :func:`run` بالا آمده است، جمع‌آوری می‌کند."
 
-#, fuzzy
-#| msgid "This class is normally only used if more precise control over profiling is needed than what the :func:`cProfile.run` function provides."
 msgid "This class is normally only used if more precise control over profiling is needed than what the :func:`profiling.tracing.run` function provides."
-msgstr "این کلاس معمولاً تنها زمانی استفاده می‌شود که به کنترل دقیق‌تری بر پروفایل‌گیری  نسبت به آنچه تابع :func:`cProfile.run` فراهم می‌کند، نیاز باشد."
+msgstr "این کلاس معمولاً فقط زمانی استفاده می‌شود که به کنترل دقیق‌تری روی پروفایل‌گیری نیاز باشد، فراتر از آنچه تابع :func:`profiling.tracing.run` فراهم می‌کند."
 
 msgid "A custom timer can be supplied for measuring how long code takes to run via the *timer* argument. This must be a function that returns a single number representing the current time. If the number is an integer, the *timeunit* specifies a multiplier that specifies the duration of each unit of time. For example, if the timer returns times measured in thousands of seconds, the time unit would be ``.001``."
 msgstr "می‌توان از طریق آرگومان *timer*، یک زمان‌سنج سفارشی برای اندازه‌گیری مدت‌زمان اجرای کد فراهم کرد. این باید تابعی باشد که یک عدد واحد را برمی‌گرداند و نشان‌دهنده‌ی زمان جاری است. اگر این عدد یک عدد صحیح باشد، *timeunit* ضریبی را مشخص می‌کند که مدت‌زمان هر واحد زمان را تعیین می‌کند. برای مثال، اگر زمان‌سنج زمان‌هایی را برگرداند که بر حسب هزاران ثانیه اندازه‌گیری شده‌اند، واحد زمان ``.001`` خواهد بود."
@@ -109,19 +106,6 @@ msgstr "می‌توان از طریق آرگومان *timer*، یک زمان‌�
 msgid "Directly using the :class:`Profile` class allows formatting profile results without writing the profile data to a file::"
 msgstr "استفاده مستقیم از کلاس :class:`Profile` امکان قالب‌بندی نتایج پروفایل را بدون نوشتن داده‌های پروفایل در یک پرونده فراهم می‌کند::"
 
-#, fuzzy
-#| msgid ""
-#| "import cProfile, pstats, io\n"
-#| "from pstats import SortKey\n"
-#| "pr = cProfile.Profile()\n"
-#| "pr.enable()\n"
-#| "# ... do something ...\n"
-#| "pr.disable()\n"
-#| "s = io.StringIO()\n"
-#| "sortby = SortKey.CUMULATIVE\n"
-#| "ps = pstats.Stats(pr, stream=s).sort_stats(sortby)\n"
-#| "ps.print_stats()\n"
-#| "print(s.getvalue())"
 msgid ""
 "import profiling.tracing\n"
 "import pstats\n"
@@ -138,9 +122,12 @@ msgid ""
 "ps.print_stats()\n"
 "print(s.getvalue())"
 msgstr ""
-"import cProfile, pstats, io\n"
+"import profiling.tracing\n"
+"import pstats\n"
+"import io\n"
 "from pstats import SortKey\n"
-"pr = cProfile.Profile()\n"
+"\n"
+"pr = profiling.tracing.Profile()\n"
 "pr.enable()\n"
 "# ... do something ...\n"
 "pr.disable()\n"
@@ -150,19 +137,9 @@ msgstr ""
 "ps.print_stats()\n"
 "print(s.getvalue())"
 
-#, fuzzy
-#| msgid "The :class:`Profile` class can also be used as a context manager (supported only in :mod:`!cProfile` module. see :ref:`typecontextmanager`)::"
 msgid "The :class:`Profile` class can also be used as a context manager (supported only in :mod:`profiling.tracing`, not in the deprecated :mod:`!profile` module; see :ref:`typecontextmanager`)::"
-msgstr "کلاس :class:`Profile` همچنین می‌تواند به‌عنوان یک مدیر زمینه استفاده شود (فقط در ماژول :mod:`!cProfile` پشتیبانی می‌شود. به :ref:`typecontextmanager` مراجعه کنید)::"
+msgstr "کلاس :class:`Profile` همچنین می‌تواند به عنوان یک مدیر زمینه (فقط پشتیبانی‌شده در :mod:`profiling.tracing` و نه در ماژول منسوخ :mod:`!profile`؛ نگاه کنید به :ref:`typecontextmanager`) استفاده شود::"
 
-#, fuzzy
-#| msgid ""
-#| "import cProfile\n"
-#| "\n"
-#| "with cProfile.Profile() as pr:\n"
-#| "    # ... do something ...\n"
-#| "\n"
-#| "    pr.print_stats()"
 msgid ""
 "import profiling.tracing\n"
 "\n"
@@ -171,9 +148,9 @@ msgid ""
 "\n"
 "    pr.print_stats()"
 msgstr ""
-"import cProfile\n"
+"import profiling.tracing\n"
 "\n"
-"with cProfile.Profile() as pr:\n"
+"with profiling.tracing.Profile() as pr:\n"
 "    # ... do something ...\n"
 "\n"
 "    pr.print_stats()"
@@ -181,15 +158,11 @@ msgstr ""
 msgid "Added context manager support."
 msgstr "پشتیبانی از مدیر زمینه افزوده شد."
 
-#, fuzzy
-#| msgid "Start collecting profiling data. Only in :mod:`!cProfile`."
 msgid "Start collecting profiling data. Only in :mod:`profiling.tracing`."
-msgstr "جمع‌آوری داده‌های پروفایل‌گیری را آغاز کنید. فقط در :mod:`!cProfile`."
+msgstr "شروع جمع‌آوری داده‌های پروفایل‌گیری. فقط در :mod:`profiling.tracing`."
 
-#, fuzzy
-#| msgid "Stop collecting profiling data. Only in :mod:`!cProfile`."
 msgid "Stop collecting profiling data. Only in :mod:`profiling.tracing`."
-msgstr "توقف جمع‌آوری داده‌های پروفایل‌سازی. فقط در :mod:`!cProfile`."
+msgstr "توقف جمع‌آوری داده‌های پروفایل‌گیری. فقط در :mod:`profiling.tracing`."
 
 msgid "Stop collecting profiling data and record the results internally as the current profile."
 msgstr "جمع‌آوری داده‌های پروفایل‌گیری را متوقف کنید و نتایج را به‌صورت داخلی به‌عنوان پروفایل فعلی ثبت کنید."
@@ -197,10 +170,8 @@ msgstr "جمع‌آوری داده‌های پروفایل‌گیری را مت�
 msgid "Create a :class:`~pstats.Stats` object based on the current profile and print the results to stdout."
 msgstr "یک شیء :class:`~pstats.Stats` بر اساس پروفایل فعلی ایجاد کنید و نتایج را در stdout چاپ کنید."
 
-#, fuzzy
-#| msgid "The *sort* parameter specifies the sorting order of the displayed statistics. It accepts a single key or a tuple of keys to enable multi-level sorting, as in :func:`Stats.sort_stats <pstats.Stats.sort_stats>`."
 msgid "The *sort* parameter specifies the sorting order of the displayed statistics. It accepts a single key or a tuple of keys to enable multi-level sorting, as in :meth:`pstats.Stats.sort_stats`."
-msgstr "پارامتر *sort* ترتیب مرتب‌سازی آمار نمایش‌یافته را تعیین می‌کند. این پارامتر یک کلید واحد یا تاپلی از کلیدها را برای فعال‌سازی مرتب‌سازی چندسطحی می‌پذیرد، همان‌طور که در :func:`Stats.sort_stats <pstats.Stats.sort_stats>` آمده است."
+msgstr "پارامتر *sort* ترتیب مرتب‌سازی آمارهای نمایش‌داده‌شده را مشخص می‌کند. این پارامتر یک کلید منفرد یا تاپلی از کلیدها را برای فعال‌سازی مرتب‌سازی چندسطحی می‌پذیرد، درست مانند :meth:`pstats.Stats.sort_stats`."
 
 msgid ":meth:`~Profile.print_stats` now accepts a tuple of keys."
 msgstr ":meth:`~Profile.print_stats` اکنون یک تاپل از کلیدها را می‌پذیرد."
@@ -221,32 +192,28 @@ msgid "Note that profiling will only work if the called command/function actuall
 msgstr "توجه داشته باشید که پروفایل‌گیری تنها در صورتی کار می‌کند که فرمان/تابع فراخوانی‌شده واقعاً بازگشت داشته باشد. اگر مفسر خاتمه یابد (مثلاً از طریق فراخوانی :func:`sys.exit` در حین اجرای فرمان/تابع فراخوانی‌شده)، هیچ نتیجه‌ای از پروفایل‌گیری چاپ نخواهد شد."
 
 msgid "Differences from :mod:`!profiling.tracing`"
-msgstr ""
+msgstr "تفاوت‌ها با :mod:`!profiling.tracing`"
 
 msgid "The :mod:`!profile` module differs from :mod:`profiling.tracing` in several ways:"
-msgstr ""
+msgstr "ماژول :mod:`!profile` در چند مورد با :mod:`profiling.tracing` متفاوت است:"
 
 msgid "**Higher overhead.** The pure Python implementation is significantly slower than the C implementation, making it unsuitable for profiling long-running programs or performance-sensitive code."
-msgstr ""
+msgstr "**سربار بالاتر.** پیاده‌سازی خالص پایتون به‌طور قابل‌توجهی کندتر از پیاده‌سازی C است و این امر آن را برای پروفایل‌گیری برنامه‌های طولانی‌مدت یا کدهای حساس به عملکرد نامناسب می‌سازد."
 
 msgid "**Calibration support.** The :mod:`!profile` module supports calibration to compensate for profiling overhead. This is not needed in :mod:`profiling.tracing` because the C implementation has negligible overhead."
-msgstr ""
+msgstr "**پشتیبانی از کالیبراسیون.** ماژول :mod:`!profile` از کالیبراسیون برای جبران سربار پروفایل‌گیری پشتیبانی می‌کند. این کار در :mod:`profiling.tracing` نیازی نیست زیرا پیاده‌سازی C سربار ناچیزی دارد."
 
 msgid "**Custom timers.** Both modules support custom timers, but :mod:`!profile` accepts timer functions that return tuples (like :func:`os.times`), while :mod:`profiling.tracing` requires a function returning a single number."
-msgstr ""
+msgstr "**تایمرهای سفارشی.** هر دو ماژول از تایمرهای سفارشی پشتیبانی می‌کنند، اما :mod:`!profile` توابع تایمری را می‌پذیرد که تاپل برمی‌گردانند (مانند :func:`os.times`)، در حالی که :mod:`profiling.tracing` به تابعی نیاز دارد که یک عدد واحد برگرداند."
 
 msgid "**Subclassing.** The pure Python implementation is easier to subclass and extend for custom profiling behavior."
-msgstr ""
+msgstr "**زیرکلاس‌سازی.** پیاده‌سازی خالص پایتون برای زیرکلاس‌سازی و گسترش جهت رفتار سفارشی پروفایل‌گیری آسان‌تر است."
 
-#, fuzzy
-#| msgid "What Is Deterministic Profiling?"
 msgid "What is deterministic profiling?"
-msgstr "پروفایل‌گیری قطعی (Deterministic Profiling) چیست؟"
+msgstr "پروفایل‌گیری قطعی (deterministic profiling) چیست؟"
 
-#, fuzzy
-#| msgid ":dfn:`Deterministic profiling` is meant to reflect the fact that all *function call*, *function return*, and *exception* events are monitored, and precise timings are made for the intervals between these events (during which time the user's code is executing).  In contrast, :dfn:`statistical profiling` (which is not done by this module) randomly samples the effective instruction pointer, and deduces where time is being spent.  The latter technique traditionally involves less overhead (as the code does not need to be instrumented), but provides only relative indications of where time is being spent."
 msgid ":dfn:`Deterministic profiling` is meant to reflect the fact that all *function call*, *function return*, and *exception* events are monitored, and precise timings are made for the intervals between these events (during which time the user's code is executing).  In contrast, :dfn:`statistical profiling` (which is provided by the :mod:`profiling.sampling` module) periodically samples the effective instruction pointer, and deduces where time is being spent.  The latter technique traditionally involves less overhead (as the code does not need to be instrumented), but provides only relative indications of where time is being spent."
-msgstr ":dfn:`پروفایل‌گیری قطعی (deterministic profiling)` برای بازتاب این واقعیت در نظر گرفته شده است که تمام رویدادهای *فراخوانی تابع*، *بازگشت تابع* و *استثنا* پایش می‌شوند و زمان‌سنجی‌های دقیقی برای فاصله‌های زمانی بین این رویدادها (که در این فاصله، کد کاربر در حال اجراست) انجام می‌شود.  در مقابل، :dfn:`پروفایل‌گیری آماری (statistical profiling)` (که این ماژول آن را انجام نمی‌دهد) به‌صورت تصادفی از اشاره‌گر دستور مؤثر (effective instruction pointer) نمونه‌برداری می‌کند و استنتاج می‌کند که زمان کجا صرف می‌شود.  روش دوم به‌طور سنتی سربار کمتری به همراه دارد (زیرا نیازی به ابزارمندسازی کد نیست)، اما فقط نشانه‌های نسبی درباره‌ی محل صرف زمان ارائه می‌دهد."
+msgstr ":dfn:`پروفایل‌گیری قطعی` برای بازتاب این واقعیت در نظر گرفته شده است که تمامی رویدادهای *function call*، *function return* و *exception* نظارت می‌شوند و زمان‌بندی‌های دقیقی برای بازه‌های بین این رویدادها (زمانی که کد کاربر در حال اجراست) انجام می‌شود. در مقابل، :dfn:`پروفایل‌گیری آماری` (که توسط ماژول :mod:`profiling.sampling` ارائه می‌شود) به‌طور دوره‌ای اشاره‌گر دستورالعمل مؤثر را نمونه‌برداری می‌کند و استنباط می‌کند که زمان صرف کجا می‌شود. روش دوم به‌طور سنتی سربار کمتری دارد (چرا که نیازی به ابزارگذاری کد نیست)، اما تنها نشانه‌های نسبی از میزان صرف زمان را ارائه می‌دهد."
 
 msgid "In Python, since there is an interpreter active during execution, the presence of instrumented code is not required in order to do deterministic profiling. Python automatically provides a :dfn:`hook` (optional callback) for each event. In addition, the interpreted nature of Python tends to add so much overhead to execution, that deterministic profiling tends to only add small processing overhead in typical applications.  The result is that deterministic profiling is not that expensive, yet provides extensive run time statistics about the execution of a Python program."
 msgstr "در پایتون، از آن‌جا که در حین اجرا یک مفسر فعال است، برای انجام پروفایل‌گیری قطعی (deterministic profiling) نیازی به وجود کد ابزاربندی‌شده (instrumented code) نیست. پایتون به‌طور خودکار یک :dfn:`hook` (کال‌بک اختیاری) برای هر رویداد فراهم می‌کند. علاوه بر این، ماهیت تفسیری پایتون معمولاً آن‌قدر سربار زیادی به اجرا اضافه می‌کند، به‌طوری که پروفایل‌گیری قطعی معمولاً فقط سربار پردازشی اندکی در برنامه‌های کاربردی معمولی اضافه می‌کند. نتیجه این است که پروفایل‌گیری قطعی چندان پرهزینه نیست، اما آمار گسترده‌ای از زمان اجرا درباره اجرای یک برنامه پایتون ارائه می‌دهد."
@@ -263,18 +230,14 @@ msgstr "یکی از محدودیت‌ها به دقت اطلاعات زمان‌
 msgid "The second problem is that it \"takes a while\" from when an event is dispatched until the profiler's call to get the time actually *gets* the state of the clock.  Similarly, there is a certain lag when exiting the profiler event handler from the time that the clock's value was obtained (and then squirreled away), until the user's code is once again executing.  As a result, functions that are called many times, or call many functions, will typically accumulate this error. The error that accumulates in this fashion is typically less than the accuracy of the clock (less than one clock tick), but it *can* accumulate and become very significant."
 msgstr "دومین مشکل این است که از لحظه‌ای که یک رویداد ارسال می‌شود تا زمانی که فراخوانی پروفایل‌گیر برای گرفتن زمان واقعاً وضعیت ساعت را *دریافت می‌کند*، «مدتی طول می‌کشد». به‌طور مشابه، هنگام خروج از هندلر رویداد پروفایل‌گیر، از زمانی که مقدار ساعت گرفته شده (و سپس ذخیره شده است) تا زمانی که کد کاربر دوباره در حال اجرا است، تأخیر مشخصی وجود دارد. در نتیجه، توابعی که بارها فراخوانی می‌شوند یا توابع زیادی را فراخوانی می‌کنند، معمولاً این خطا را انباشته می‌کنند. خطایی که به این شکل انباشته می‌شود، معمولاً کمتر از دقت ساعت است (کمتر از یک تیک ساعت)، اما *می‌تواند* انباشته شود و بسیار قابل‌توجه شود."
 
-#, fuzzy
-#| msgid "The problem is more important with :mod:`profile` than with the lower-overhead :mod:`cProfile`.  For this reason, :mod:`profile` provides a means of calibrating itself for a given platform so that this error can be probabilistically (on the average) removed. After the profiler is calibrated, it will be more accurate (in a least square sense), but it will sometimes produce negative numbers (when call counts are exceptionally low, and the gods of probability work against you :-). )  Do *not* be alarmed by negative numbers in the profile.  They should *only* appear if you have calibrated your profiler, and the results are actually better than without calibration."
 msgid "The problem is more important with the deprecated :mod:`!profile` module than with the lower-overhead :mod:`profiling.tracing`.  For this reason, :mod:`!profile` provides a means of calibrating itself for a given platform so that this error can be probabilistically (on the average) removed. After the profiler is calibrated, it will be more accurate (in a least square sense), but it will sometimes produce negative numbers (when call counts are exceptionally low, and the gods of probability work against you :-). )  Do *not* be alarmed by negative numbers in the profile.  They should *only* appear if you have calibrated your profiler, and the results are actually better than without calibration."
-msgstr "این مشکل در :mod:`profile` نسبت به :mod:`cProfile` با سربار کمتر، جدی‌تر است. به همین دلیل، :mod:`profile` امکانی برای کالیبره کردن خود برای یک پلتفرم مشخص فراهم می‌کند تا بتوان این خطا را به‌صورت احتمالی (به‌طور میانگین) برطرف کرد. پس از کالیبره شدن، پروفایل‌گیر دقیق‌تر خواهد بود (از نظر کمترین مربعات)، اما گاهی اعداد منفی تولید می‌کند (وقتی تعداد فراخوانی‌ها به‌طور استثنایی کم باشد و خدایان احتمال علیه شما کار کنند :-). ) از اعداد منفی در پروفایل نگران *نباشید*. آن‌ها باید *فقط* زمانی ظاهر شوند که پروفایل‌گیر خود را کالیبره کرده باشید، و نتایج در واقع بهتر از حالت بدون کالیبراسیون هستند."
+msgstr "این مسئله در ماژول منسوخ‌شده :mod:`!profile` در مقایسه با ماژول کم‌سربار :mod:`profiling.tracing` اهمیت بیشتری دارد. به همین دلیل، :mod:`!profile` ابزاری برای کالیبره‌کردن خود برای یک پلتفرم مشخص فراهم می‌کند تا بتوان این خطا را به روش احتمالی (به طور میانگین) برطرف کرد. پس از کالیبره‌شدن پروفایل‌گیر، دقت آن بیشتر خواهد شد (به معنای کمترین مربعات)، اما گاهی اوقات اعداد منفی تولید خواهد کرد (زمانی که تعداد فراخوانی‌ها به طرز استثنایی کم باشد و قوانین احتمال علیه شما کار کنند :-)). از اعداد منفی در پروفایل **نگران** نشوید. آن‌ها *فقط* زمانی باید ظاهر شوند که پروفایل‌گیر خود را کالیبره کرده باشید و نتایج در واقع بهتر از حالت بدون کالیبره باشند."
 
 msgid "Calibration"
 msgstr "کالیبراسیون"
 
-#, fuzzy
-#| msgid "The profiler of the :mod:`profile` module subtracts a constant from each event handling time to compensate for the overhead of calling the time function, and socking away the results.  By default, the constant is 0. The following procedure can be used to obtain a better constant for a given platform (see :ref:`profile-limitations`). ::"
 msgid "The profiler of the :mod:`!profile` module subtracts a constant from each event handling time to compensate for the overhead of calling the time function, and socking away the results.  By default, the constant is 0. The following procedure can be used to obtain a better constant for a given platform (see :ref:`profile-limitations`). ::"
-msgstr "پروفایل‌گیر ماژول :mod:`profile`، یک ثابت را از زمان رسیدگی به هر رویداد کم می‌کند تا سربار فراخوانی تابع زمان و ذخیره‌سازی نتایج را جبران کند. به‌طور پیش‌فرض، این ثابت ۰ است. می‌توانید از روش زیر برای به‌دست آوردن ثابتی بهتر برای یک پلتفرم مشخص استفاده کنید (به :ref:`profile-limitations` مراجعه کنید). ::"
+msgstr "پروفایل‌گیر ماژول :mod:`!profile` یک مقدار ثابت را از زمان پردازش هر رویداد کم می‌کند تا سربارِ فراخوانی تابع زمان و ذخیره‌سازی نتایج را جبران کند. به طور پیش‌فرض، این مقدار ثابت 0 است. از روش زیر می‌توان برای به دست آوردن مقدار ثابت بهتری برای یک پلتفرم مشخص استفاده کرد (به :ref:`profile-limitations` مراجعه کنید). ::"
 
 msgid ""
 "import profile\n"
@@ -333,10 +296,8 @@ msgstr "اگر می‌خواهید نحوه تعیین زمان جاری را ت
 msgid "pr = profile.Profile(your_time_func)"
 msgstr "pr = profile.Profile(your_time_func)"
 
-#, fuzzy
-#| msgid "The resulting profiler will then call ``your_time_func``. Depending on whether you are using :class:`profile.Profile` or :class:`cProfile.Profile`, ``your_time_func``'s return value will be interpreted differently:"
 msgid "The resulting profiler will then call ``your_time_func``. Depending on whether you are using :class:`profile.Profile` or :class:`profiling.tracing.Profile`, ``your_time_func``'s return value will be interpreted differently:"
-msgstr "سپس پروفایل‌گیر حاصل، ``your_time_func`` را فراخوانی خواهد کرد. بسته به این‌که از :class:`profile.Profile` یا :class:`cProfile.Profile` استفاده می‌کنید، مقدار بازگشتی ``your_time_func`` به‌صورت متفاوتی تفسیر خواهد شد:"
+msgstr "سپس پروفایل‌گیر حاصل، ``your_time_func`` را فراخوانی خواهد کرد. بسته به اینکه از :class:`profile.Profile` یا :class:`profiling.tracing.Profile` استفاده می‌کنید، مقدار بازگشتی ``your_time_func`` به شکل متفاوتی تفسیرشده خواهد شد:"
 
 msgid ":class:`profile.Profile`"
 msgstr ":class:`profile.Profile`"
@@ -347,44 +308,38 @@ msgstr "``your_time_func`` باید یک عدد زمانی واحد، یا فه�
 msgid "Be warned that you should calibrate the profiler class for the timer function that you choose (see :ref:`profile-calibration`).  For most machines, a timer that returns a lone integer value will provide the best results in terms of low overhead during profiling.  (:func:`os.times` is *pretty* bad, as it returns a tuple of floating-point values).  If you want to substitute a better timer in the cleanest fashion, derive a class and hardwire a replacement dispatch method that best handles your timer call, along with the appropriate calibration constant."
 msgstr "توجه داشته باشید که باید کلاس پروفایل‌گیر را برای تابع زمان‌سنجی که انتخاب می‌کنید کالیبره کنید (به :ref:`profile-calibration` مراجعه کنید). در بیشتر ماشین‌ها، زمان‌سنجی که تنها یک مقدار عدد صحیح برمی‌گرداند، بهترین نتایج را از نظر سربار کم در حین پروفایل‌کردن فراهم می‌کند. (:func:`os.times` *نسبتاً* بد است، زیرا یک تاپل از مقادیر ممیز شناور برمی‌گرداند). اگر می‌خواهید یک زمان‌سنج بهتر را به تمیزترین روش جایگزین کنید، یک کلاس مشتق کنید و یک متد اعزام (dispatch) جایگزین را که فراخوانی زمان‌سنج شما را به بهترین شکل مدیریت می‌کند، به‌همراه ثابت کالیبراسیون مناسب، به‌صورت سخت‌کد (hardwire) پیاده‌سازی کنید."
 
-#, fuzzy
-#| msgid ":class:`profile.Profile`"
 msgid ":class:`profiling.tracing.Profile`"
-msgstr ":class:`profile.Profile`"
+msgstr ":class:`profiling.tracing.Profile`"
 
 msgid "``your_time_func`` should return a single number.  If it returns integers, you can also invoke the class constructor with a second argument specifying the real duration of one unit of time.  For example, if ``your_integer_time_func`` returns times measured in thousands of seconds, you would construct the :class:`Profile` instance as follows::"
 msgstr "``your_time_func`` باید یک عدد واحد برگرداند. اگر این تابع اعداد صحیح برگرداند، همچنین می‌توانید سازنده‌ی کلاس را با یک آرگومان دوم برای مشخص کردن مدت‌زمان واقعی یک واحد زمان فراخوانی کنید. برای مثال، اگر ``your_integer_time_func`` مقادیر زمانی را برگرداند که بر حسب هزاران ثانیه اندازه‌گیری شده‌اند، باید نمونه‌ی :class:`Profile` را به‌صورت زیر بسازید::"
 
-#, fuzzy
-#| msgid "pr = cProfile.Profile(your_integer_time_func, 0.001)"
 msgid "pr = profiling.tracing.Profile(your_integer_time_func, 0.001)"
-msgstr "pr = cProfile.Profile(your_integer_time_func, 0.001)"
+msgstr "pr = profiling.tracing.Profile(your_integer_time_func, 0.001)"
 
-#, fuzzy
-#| msgid "As the :class:`cProfile.Profile` class cannot be calibrated, custom timer functions should be used with care and should be as fast as possible.  For the best results with a custom timer, it might be necessary to hard-code it in the C source of the internal :mod:`!_lsprof` module."
 msgid "As the :class:`profiling.tracing.Profile` class cannot be calibrated, custom timer functions should be used with care and should be as fast as possible. For the best results with a custom timer, it might be necessary to hard-code it in the C source of the internal :mod:`!_lsprof` module."
-msgstr "از آن‌جا که کلاس :class:`cProfile.Profile` قابل کالیبره نیست، توابع زمان‌سنج سفارشی باید با احتیاط استفاده شوند و تا حد ممکن سریع باشند. برای بهترین نتایج با یک زمان‌سنج سفارشی، ممکن است لازم باشد آن را در کد منبع C ماژول درونی :mod:`!_lsprof` به‌صورت سخت‌کد (hard-code) پیاده‌سازی کنید."
+msgstr "از آنجا که کلاس :class:`profiling.tracing.Profile` قابل کالیبره‌شدن نیست، توابع تایمر سفارشی باید با احتیاط استفاده شوند و تا حد امکان سریع باشند. برای کسب بهترین نتایج با یک تایمر سفارشی، ممکن است لازم باشد آن را در کد C ماژول داخلی :mod:`!_lsprof` به صورت سخت‌کد شده قرار دهید."
 
 msgid "Python 3.3 adds several new functions in :mod:`time` that can be used to make precise measurements of process or wall-clock time. For example, see :func:`time.perf_counter`."
 msgstr "پایتون 3.3 چندین تابع جدید به :mod:`time` اضافه می‌کند که می‌توان از آن‌ها برای اندازه‌گیری‌های دقیق زمان فرایند یا زمان دیواری استفاده کرد. برای مثال، :func:`time.perf_counter` را ببینید."
 
 msgid ":mod:`profiling`"
-msgstr ""
+msgstr ":mod:`profiling`"
 
 msgid "Overview of Python profiling tools."
-msgstr ""
+msgstr "نمای کلی ابزارهای پروفایل‌گیری پایتون."
 
 msgid ":mod:`profiling.tracing`"
-msgstr ""
+msgstr ":mod:`profiling.tracing`"
 
 msgid "Recommended replacement for this module."
-msgstr ""
+msgstr "جایگزین پیشنهادی برای این ماژول."
 
 msgid ":mod:`pstats`"
-msgstr ""
+msgstr ":mod:`pstats`"
 
 msgid "Statistical analysis and formatting for profile data."
-msgstr ""
+msgstr "تحلیل آماری و قالب‌بندی برای داده‌های پروفایل."
 
 #~ msgid "The Python Profilers"
 #~ msgstr "پروفایل‌گیرهای پایتون"

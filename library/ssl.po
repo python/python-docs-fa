@@ -215,18 +215,20 @@ msgid "The context now uses :data:`VERIFY_X509_PARTIAL_CHAIN` and :data:`VERIFY_
 msgstr "این زمینه اکنون از :data:`VERIFY_X509_PARTIAL_CHAIN` و :data:`VERIFY_X509_STRICT` در پرچم‌های تأیید پیش‌فرض خود استفاده می‌کند."
 
 msgid "Signature algorithms"
-msgstr ""
+msgstr "الگوریتم‌های امضا"
 
 msgid "Return a list of available TLS signature algorithm names used by servers to complete the TLS handshake or clients requesting certificate-based authentication. For example::"
-msgstr ""
+msgstr "فهرستی از نام‌های الگوریتم‌های امضای TLS موجود را برمی‌گرداند که توسط سرورها برای تکمیل دست‌دهی TLS یا کلاینت‌هایی که درخواست احراز هویت مبتنی بر گواهی دارند، استفاده می‌شوند. برای مثال::"
 
 msgid ""
 ">>> ssl.get_sigalgs()\n"
 "['ecdsa_secp256r1_sha256', 'ecdsa_secp384r1_sha384', ...]"
 msgstr ""
+">>> ssl.get_sigalgs()\n"
+"['ecdsa_secp256r1_sha256', 'ecdsa_secp384r1_sha384', ...]"
 
 msgid "These names can be used when building string values to pass to the :meth:`SSLContext.set_client_sigalgs` and :meth:`SSLContext.set_server_sigalgs` methods."
-msgstr ""
+msgstr "این نام‌ها را می‌توان هنگام ساخت مقادیر رشته‌ای برای ارسال به متدهای :meth:`SSLContext.set_client_sigalgs` و :meth:`SSLContext.set_server_sigalgs` استفاده کرد."
 
 msgid "Exceptions"
 msgstr "استثناها"
@@ -285,10 +287,8 @@ msgstr "برای تقریباً همه‌ی کاربردها، :func:`os.urandom
 msgid "Read the Wikipedia article, `Cryptographically secure pseudorandom number generator (CSPRNG) <https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator>`_, to get the requirements of a cryptographically strong generator."
 msgstr "برای به دست آوردن الزامات یک تولیدگر قوی از نظر رمزنگاری، مقاله‌ی ویکی‌پدیا، `Cryptographically secure pseudorandom number generator (CSPRNG) <https://fa.wikipedia.org/wiki/مولد_امن_اعداد_شبه‌تصادفی_در_رمزنگاری>`_ را بخوانید."
 
-#, fuzzy
-#| msgid "Return ``True`` if the SSL pseudo-random number generator has been seeded with 'enough' randomness, and ``False`` otherwise.  You can use :func:`ssl.RAND_egd` and :func:`ssl.RAND_add` to increase the randomness of the pseudo-random number generator."
 msgid "Return ``True`` if the SSL pseudo-random number generator has been seeded with 'enough' randomness, and ``False`` otherwise.  Use :func:`ssl.RAND_add` to increase the randomness of the pseudo-random number generator."
-msgstr "اگر تولیدگر اعداد شبه‌تصادفی SSL با میزان «کافی» تصادفی‌بودن بذرگذاری شده باشد، ``True`` را برمی‌گرداند و در غیر این صورت ``False`` را برمی‌گرداند. می‌توانید از :func:`ssl.RAND_egd` و :func:`ssl.RAND_add` برای افزایش تصادفی‌بودن تولیدگر اعداد شبه‌تصادفی استفاده کنید."
+msgstr "اگر مولد اعداد شبه‌تصادفی SSL با مقدار «کافی» از تصادفی بودن مقداردهی اولیه شده باشد، مقدار ``True`` را بازمی‌گرداند و در غیر این صورت ``False`` را برمی‌گرداند.  برای افزایش تصادفی بودن مولد اعداد شبه‌تصادفی، از :func:`ssl.RAND_add` استفاده کنید."
 
 msgid "Mix the given *bytes* into the SSL pseudo-random number generator.  The parameter *entropy* (a float) is a lower bound on the entropy contained in string (so you can always use ``0.0``).  See :rfc:`1750` for more information on sources of entropy."
 msgstr "*bytes* داده‌شده را در مولد اعداد شبه‌تصادفی SSL مخلوط کنید. پارامتر *entropy* (یک عدد اعشاری) کران پایینی برای آنتروپی موجود در رشته است (بنابراین همیشه می‌توانید از ``0.0`` استفاده کنید). برای اطلاعات بیشتر درباره منابع آنتروپی، :rfc:`1750` را ببینید."
@@ -607,10 +607,8 @@ msgstr "اینکه کتابخانه OpenSSL از پروتکل TLS 1.3 به‌ص�
 msgid "Whether the OpenSSL library has built-in support for TLS-PSK."
 msgstr "اینکه آیا کتابخانه‌ی OpenSSL پشتیبانی توکار از TLS-PSK دارد یا خیر."
 
-#, fuzzy
-#| msgid "Whether the OpenSSL library has built-in support for the *Application-Layer Protocol Negotiation* TLS extension as described in :rfc:`7301`."
 msgid "Whether the OpenSSL library has built-in support for External PSKs in TLS 1.3 as described in :rfc:`9258`."
-msgstr "اینکه کتابخانه OpenSSL پشتیبانی توکار از افزونه TLS با نام *Application-Layer Protocol Negotiation*، همان‌طور که در :rfc:`7301` توضیح داده شده است، دارد یا خیر."
+msgstr "اینکه آیا کتابخانه‌ی OpenSSL پشتیبانی درون‌ساخته‌ای برای External PSKها در TLS 1.3 همان‌طور که در :rfc:`9258` توصیف شده است دارد یا خیر."
 
 msgid "Whether the OpenSSL library has built-in support for TLS-PHA."
 msgstr "اینکه کتابخانه OpenSSL پشتیبانی توکار از TLS-PHA دارد یا خیر."
@@ -727,10 +725,8 @@ msgstr ":meth:`~socket.socket.recv`، :meth:`~socket.socket.recv_into` (اما �
 msgid ":meth:`~socket.socket.send`, :meth:`~socket.socket.sendall` (with the same limitation)"
 msgstr ":meth:`~socket.socket.send`، :meth:`~socket.socket.sendall` (با همان محدودیت)"
 
-#, fuzzy
-#| msgid ":meth:`~socket.socket.sendfile` (but :mod:`os.sendfile` will be used for plain-text sockets only, else :meth:`~socket.socket.send` will be used)"
 msgid ":meth:`~socket.socket.sendfile` (it may be high-performant only when the kernel TLS is enabled by setting :data:`~ssl.OP_ENABLE_KTLS` or when a socket is plain-text, else :meth:`~socket.socket.send` will be used)"
-msgstr ":meth:`~socket.socket.sendfile` (اما :mod:`os.sendfile` فقط برای سوکت‌های متن ساده استفاده خواهد شد، در غیر این صورت :meth:`~socket.socket.send` استفاده خواهد شد)"
+msgstr ":meth:`~socket.socket.sendfile` (ممکن است فقط زمانی کارایی بالایی داشته باشد که TLS هسته با تنظیم :data:`~ssl.OP_ENABLE_KTLS` فعال شده باشد یا زمانی که یک سوکت متن‌ساده است، در غیر این صورت از :meth:`~socket.socket.send` استفاده خواهد شد)"
 
 msgid ":meth:`~socket.socket.shutdown`"
 msgstr ":meth:`~socket.socket.shutdown`"
@@ -757,7 +753,7 @@ msgid "Python now uses ``SSL_read_ex`` and ``SSL_write_ex`` internally. The func
 msgstr "پایتون اکنون به‌صورت داخلی از ``SSL_read_ex`` و ``SSL_write_ex`` استفاده می‌کند. این توابع از خواندن و نوشتن داده‌های بزرگ‌تر از ۲ GB پشتیبانی می‌کنند. نوشتن داده با طول صفر دیگر با خطای نقض پروتکل شکست نمی‌خورد."
 
 msgid "Python now uses ``SSL_sendfile`` internally when possible. The function sends a file more efficiently because it performs TLS encryption in the kernel to avoid additional context switches."
-msgstr ""
+msgstr "پایتون اکنون در صورت امکان به‌طور داخلی از ``SSL_sendfile`` استفاده می‌کند. این تابع یک پرونده را با کارایی بیشتری ارسال می‌کند زیرا رمزگذاری TLS را در هسته (kernel) انجام می‌دهد تا از تعویض زمینه‌ی اضافی جلوگیری کند."
 
 msgid "SSL sockets also have the following additional methods and attributes:"
 msgstr "سوکت‌های SSL همچنین دارای متدها و ویژگی‌های اضافی زیر هستند:"
@@ -895,13 +891,13 @@ msgid "Return the list of ciphers available in both the client and server.  Each
 msgstr "فهرست رمزنگارهای موجود در هر دو کلاینت و سرور (server) را برمی‌گرداند. هر آیتم از فهرست برگردانده‌شده، یک تاپل سه‌مقداری است که شامل نام رمزنگار، نسخه‌ی پروتکل SSL که استفاده از آن را تعریف می‌کند، و تعداد بیت‌های محرمانه‌ای است که رمزنگار از آن‌ها استفاده می‌کند. :meth:`~SSLSocket.shared_ciphers` در صورتی که هیچ اتصالی برقرار نشده باشد یا سوکت از نوع کلاینت باشد، ``None`` را برمی‌گرداند."
 
 msgid "Return the group used for doing key agreement on this connection. If no connection has been established, returns ``None``."
-msgstr ""
+msgstr "گروه مورد استفاده برای توافق کلید روی این اتصال را برمی‌گرداند. اگر هیچ اتصالی برقرار نشده باشد، ``None`` را برمی‌گرداند."
 
 msgid "Return the signature algorithm used for performing certificate-based client authentication on this connection, or ``None`` if no connection has been established or client authentication didn't occur."
-msgstr ""
+msgstr "الگوریتم امضای مورد استفاده برای انجام احراز هویت کلاینت مبتنی بر گواهی روی این اتصال را برمی‌گرداند، یا اگر هیچ اتصالی برقرار نشده باشد یا احراز هویت کلاینت انجام نشده باشد، ``None`` را برمی‌گرداند."
 
 msgid "Return the signature algorithm used by the server to complete the TLS handshake on this connection, or ``None`` if no connection has been established or the cipher suite has no signature."
-msgstr ""
+msgstr "الگوریتم امضای مورد استفاده توسط سرور برای تکمیل دست‌دهی TLS روی این اتصال را برمی‌گرداند، یا اگر هیچ اتصالی برقرار نشده باشد یا مجموعه رمز امضایی نداشته باشد، ``None`` را برمی‌گرداند."
 
 msgid "Return the compression algorithm being used as a string, or ``None`` if the connection isn't compressed."
 msgstr "الگوریتم فشرده‌سازی مورد استفاده را به‌صورت یک رشته برمی‌گرداند، یا اگر اتصال فشرده‌نشده باشد ``None`` برمی‌گرداند."
@@ -1174,10 +1170,8 @@ msgstr ""
 "  'strength_bits': 128,\n"
 "  'symmetric': 'aes-128-gcm'}]"
 
-#, fuzzy
-#| msgid "The option is deprecated since OpenSSL 1.1.0, use the new :attr:`SSLContext.minimum_version` and :attr:`SSLContext.maximum_version` instead."
 msgid "Get a list of groups implemented for key agreement, taking into account the current TLS :attr:`~SSLContext.minimum_version` and :attr:`~SSLContext.maximum_version` values.  For example::"
-msgstr "این گزینه از OpenSSL 1.1.0 منسوخ شده است، به‌جای آن از :attr:`SSLContext.minimum_version` و :attr:`SSLContext.maximum_version` جدید استفاده کنید."
+msgstr "فهرستی از گروه‌های پیاده‌سازی‌شده برای توافق کلید را با در نظر گرفتن مقادیر کنونی :attr:`~SSLContext.minimum_version` و :attr:`~SSLContext.maximum_version` مربوط به TLS دریافت کنید.  برای نمونه::"
 
 msgid ""
 ">>> ctx = ssl.create_default_context()\n"
@@ -1186,56 +1180,47 @@ msgid ""
 ">>> ctx.get_groups()\n"
 "['secp256r1', 'secp384r1', 'secp521r1', 'x25519', 'x448', ...]"
 msgstr ""
+">>> ctx = ssl.create_default_context()\n"
+">>> ctx.minimum_version = ssl.TLSVersion.TLSv1_3\n"
+">>> ctx.maximum_version = ssl.TLSVersion.TLSv1_3\n"
+">>> ctx.get_groups()\n"
+"['secp256r1', 'secp384r1', 'secp521r1', 'x25519', 'x448', ...]"
 
 msgid "By default, this method returns only the preferred IANA names for the available groups. However, if the ``include_aliases`` parameter is set to :const:`True` this method will also return any associated aliases such as the ECDH curve names supported in older versions of OpenSSL."
-msgstr ""
+msgstr "به طور پیش‌فرض، این متد فقط نام‌های ترجیحی IANA را برای گروه‌های موجود برمی‌گرداند. با این حال، اگر پارامتر ``include_aliases`` روی :const:`True` تنظیم شود، این متد هرگونه نام مستعار مرتبط مانند نام‌های منحنی ECDH پشتیبانی‌شده در نسخه‌های قدیمی‌تر OpenSSL را نیز برخواهد گرداند."
 
 msgid "Load a set of default \"certification authority\" (CA) certificates from a filesystem path defined when building the OpenSSL library.  Unfortunately, there's no easy way to know whether this method succeeds: no error is returned if no certificates are to be found.  When the OpenSSL library is provided as part of the operating system, though, it is likely to be configured properly."
 msgstr "بارگذاری مجموعه‌ای از گواهی‌های پیش‌فرض «مرجع صدور گواهی» (CA) از یک مسیر سامانه فایل‌بندی که هنگام ساخت کتابخانه OpenSSL تعریف شده است. متأسفانه، راه آسانی برای اطلاع از موفقیت این متد وجود ندارد: اگر هیچ گواهی‌ای یافت نشود، هیچ خطایی بازگردانده نمی‌شود. با این حال، وقتی کتابخانه OpenSSL به‌عنوان بخشی از سیستم‌عامل ارائه شده باشد، احتمالاً به‌درستی پیکربندی شده است."
 
-#, fuzzy
-#| msgid "Set the available ciphers for sockets created with this context. It should be a string in the `OpenSSL cipher list format <https://docs.openssl.org/master/man1/ciphers/>`_. If no cipher can be selected (because compile-time options or other configuration forbids use of all the specified ciphers), an :class:`SSLError` will be raised."
 msgid "Set the allowed ciphers for sockets created with this context when connecting using TLS 1.2 and earlier.  The *ciphers* argument should be a string in the `OpenSSL cipher list format <https://docs.openssl.org/master/man1/ciphers/>`_. To set allowed TLS 1.3 ciphers, use :meth:`SSLContext.set_ciphersuites`."
-msgstr "رمزهای در دسترس را برای سوکت‌های ایجادشده با این زمینه تنظیم می‌کند. این باید رشته‌ای در `قالب فهرست رمزها در OpenSSL <https://docs.openssl.org/master/man1/ciphers/>`_ باشد. اگر هیچ رمزی قابل انتخاب نباشد (زیرا گزینه‌های زمان کامپایل یا پیکربندی دیگر استفاده از همه رمزهای مشخص‌شده را ممنوع می‌کند)، یک :class:`SSLError` پرتاب خواهد شد."
+msgstr "رمزهای مجاز را برای سوکت‌های ایجادشده با این زمینه هنگام اتصال با استفاده از TLS 1.2 و نسخه‌های پیشین تنظیم کنید.  آرگومان *ciphers* باید رشته‌ای در قالب `OpenSSL cipher list format <https://docs.openssl.org/master/man1/ciphers/>`_ باشد. برای تنظیم رمزهای مجاز TLS 1.3، از :meth:`SSLContext.set_ciphersuites` استفاده کنید."
 
-#, fuzzy
-#| msgid "Set the available ciphers for sockets created with this context. It should be a string in the `OpenSSL cipher list format <https://docs.openssl.org/master/man1/ciphers/>`_. If no cipher can be selected (because compile-time options or other configuration forbids use of all the specified ciphers), an :class:`SSLError` will be raised."
 msgid "If no cipher can be selected (because compile-time options or other configuration forbids use of all the specified ciphers), an :class:`SSLError` will be raised."
-msgstr "رمزهای در دسترس را برای سوکت‌های ایجادشده با این زمینه تنظیم می‌کند. این باید رشته‌ای در `قالب فهرست رمزها در OpenSSL <https://docs.openssl.org/master/man1/ciphers/>`_ باشد. اگر هیچ رمزی قابل انتخاب نباشد (زیرا گزینه‌های زمان کامپایل یا پیکربندی دیگر استفاده از همه رمزهای مشخص‌شده را ممنوع می‌کند)، یک :class:`SSLError` پرتاب خواهد شد."
+msgstr "اگر هیچ رمز (cipher) قابل انتخابی وجود نداشته باشد (به این دلیل که گزینه‌های زمان کامپایل یا پیکربندی‌های دیگر استفاده از تمام رمزهای مشخص‌شده را ممنوع کرده‌اند)، یک :class:`SSLError` بالا برده می‌شود."
 
-#, fuzzy
-#| msgid "when connected, the :meth:`SSLSocket.cipher` method of SSL sockets will give the currently selected cipher."
 msgid "When connected, the :meth:`SSLSocket.cipher` method of SSL sockets will return details about the negotiated cipher."
-msgstr "پس از اتصال، متد :meth:`SSLSocket.cipher` در سوکت‌های SSL، رمزنگار انتخاب‌شده‌ی کنونی را برمی‌گرداند."
+msgstr "هنگام اتصال، متد :meth:`SSLSocket.cipher` سوکت‌های SSL جزئیاتی را درباره‌ی رمز مذاکره‌شده بازخواهد گرداند."
 
-#, fuzzy
-#| msgid "Set the available ciphers for sockets created with this context. It should be a string in the `OpenSSL cipher list format <https://docs.openssl.org/master/man1/ciphers/>`_. If no cipher can be selected (because compile-time options or other configuration forbids use of all the specified ciphers), an :class:`SSLError` will be raised."
 msgid "Set the allowed ciphers for sockets created with this context when connecting using TLS 1.3.  The *ciphersuites* argument should be a colon-separate string of TLS 1.3 cipher names.  If no cipher can be selected (because compile-time options or other configuration forbids use of all the specified ciphers), an :class:`SSLError` will be raised."
-msgstr "رمزهای در دسترس را برای سوکت‌های ایجادشده با این زمینه تنظیم می‌کند. این باید رشته‌ای در `قالب فهرست رمزها در OpenSSL <https://docs.openssl.org/master/man1/ciphers/>`_ باشد. اگر هیچ رمزی قابل انتخاب نباشد (زیرا گزینه‌های زمان کامپایل یا پیکربندی دیگر استفاده از همه رمزهای مشخص‌شده را ممنوع می‌کند)، یک :class:`SSLError` پرتاب خواهد شد."
+msgstr "رمزهای مجاز را برای سوکت‌های ایجادشده با این زمینه هنگام اتصال با استفاده از TLS 1.3 تنظیم کنید. آرگومان *ciphersuites* باید رشته‌ای جدا شده با دو نقطه از نام رمزهای TLS 1.3 باشد. اگر هیچ رمزی انتخاب نشود (به‌دلیل اینکه گزینه‌های زمان کامپایل یا پیکربندی‌های دیگر استفاده از تمام رمزهای مشخص‌شده را ممنوع می‌کنند)، یک :class:`SSLError` بالا آورده خواهد شد."
 
 msgid "Set the groups allowed for key agreement for sockets created with this context.  It should be a string in the `OpenSSL group list format <https://docs.openssl.org/master/man3/SSL_CTX_set1_groups_list/>`_."
-msgstr ""
+msgstr "گروه‌های مجاز برای توافق کلید را برای سوکت‌های ایجادشده با این زمینه تنظیم کنید. این مقدار باید یک رشته در قالب `OpenSSL group list format <https://docs.openssl.org/master/man3/SSL_CTX_set1_groups_list/>`_ باشد."
 
-#, fuzzy
-#| msgid "when connected, the :meth:`SSLSocket.cipher` method of SSL sockets will give the currently selected cipher."
 msgid "When connected, the :meth:`SSLSocket.group` method of SSL sockets will return the group used for key agreement on that connection."
-msgstr "پس از اتصال، متد :meth:`SSLSocket.cipher` در سوکت‌های SSL، رمزنگار انتخاب‌شده‌ی کنونی را برمی‌گرداند."
+msgstr "هنگام اتصال، متد :meth:`SSLSocket.group` سوکت‌های SSL گروه استفاده‌شده برای توافق کلید روی آن اتصال را بازخواهد گرداند."
 
 msgid "Set the signature algorithms allowed for certificate-based client authentication. It should be a string in the `OpenSSL client sigalgs list format <https://docs.openssl.org/master/man3/SSL_CTX_set1_client_sigalgs_list/>`_."
-msgstr ""
+msgstr "الگوریتم‌های امضای مجاز برای احراز هویت کلاینت مبتنی بر گواهی را تنظیم کنید. این مقدار باید یک رشته در قالب `OpenSSL client sigalgs list format <https://docs.openssl.org/master/man3/SSL_CTX_set1_client_sigalgs_list/>`_ باشد."
 
-#, fuzzy
-#| msgid "when connected, the :meth:`SSLSocket.cipher` method of SSL sockets will give the currently selected cipher."
 msgid "When connected, the :meth:`SSLSocket.client_sigalg` method of SSL sockets will return the signature algorithm used for performing certificate-based client authentication on that connection."
-msgstr "پس از اتصال، متد :meth:`SSLSocket.cipher` در سوکت‌های SSL، رمزنگار انتخاب‌شده‌ی کنونی را برمی‌گرداند."
+msgstr "هنگام اتصال، متد :meth:`SSLSocket.client_sigalg` سوکت‌های SSL الگوریتم امضای استفاده‌شده برای انجام احراز هویت کلاینت مبتنی بر گواهی روی آن اتصال را بازخواهد گرداند."
 
 msgid "Set the signature algorithms allowed for the server to complete the TLS handshake. It should be a string in the `OpenSSL sigalgs list format <https://docs.openssl.org/master/man3/SSL_CTX_set1_sigalgs_list/>`_."
-msgstr ""
+msgstr "الگوریتم‌های امضای مجاز برای سرور جهت تکمیل دست‌دهی TLS را تنظیم کنید. این مقدار باید یک رشته در قالب `OpenSSL sigalgs list format <https://docs.openssl.org/master/man3/SSL_CTX_set1_sigalgs_list/>`_ باشد."
 
-#, fuzzy
-#| msgid "when connected, the :meth:`SSLSocket.cipher` method of SSL sockets will give the currently selected cipher."
 msgid "When connected, the :meth:`SSLSocket.server_sigalg` method of SSL sockets will return the signature algorithm used by the server to complete the TLS handshake on that connection."
-msgstr "پس از اتصال، متد :meth:`SSLSocket.cipher` در سوکت‌های SSL، رمزنگار انتخاب‌شده‌ی کنونی را برمی‌گرداند."
+msgstr "هنگام اتصال، متد :meth:`SSLSocket.server_sigalg` سوکت‌های SSL الگوریتم امضای استفاده‌شده توسط سرور برای تکمیل دست‌دهی TLS روی آن اتصال را بازخواهد گرداند."
 
 msgid "Specify which protocols the socket should advertise during the SSL/TLS handshake. It should be a list of ASCII strings, like ``['http/1.1', 'spdy/2']``, ordered by preference. The selection of a protocol will happen during the handshake, and will play out according to :rfc:`7301`. After a successful handshake, the :meth:`SSLSocket.selected_alpn_protocol` method will return the agreed-upon protocol."
 msgstr "مشخص کنید که سوکت باید در طول دست‌دهی SSL/TLS کدام پروتکل‌ها را اعلام کند. این باید فهرستی از رشته‌های ASCII، مانند ``['http/1.1', 'spdy/2']``، مرتب‌شده بر اساس ترجیح باشد. انتخاب یک پروتکل در طول دست‌دهی انجام خواهد شد و مطابق :rfc:`7301` صورت خواهد گرفت. پس از یک دست‌دهی موفق، متد :meth:`SSLSocket.selected_alpn_protocol` پروتکل توافق‌شده را برمی‌گرداند."
@@ -1262,7 +1247,7 @@ msgid "A typical use of this callback is to change the :class:`ssl.SSLSocket`'s 
 msgstr "یک کاربرد رایج این کال‌بک، تغییر ویژگی :attr:`SSLSocket.context` مربوط به :class:`ssl.SSLSocket` به شیء جدیدی از نوع :class:`SSLContext` است که نشان‌دهنده‌ی زنجیره‌ی گواهی‌ای است که با نام سرور مطابقت دارد."
 
 msgid "If the callback assigns a new context to :attr:`SSLSocket.context`, any further ClientHello message on the same connection (for example after a TLS 1.3 HelloRetryRequest) is dispatched to the new context's *sni_callback*, if it has one; the original callback is not called again for that connection."
-msgstr ""
+msgstr "اگر کال‌بک یک زمینه‌ی جدید به :attr:`SSLSocket.context` اختصاص دهد، هرگونه پیام ClientHello بعدی روی همان اتصال (برای مثال پس از یک TLS 1.3 HelloRetryRequest) به *sni_callback* زمینه‌ی جدید فرستاده می‌شود، اگر زمینه‌ی مذکور آن را داشته باشد؛ کال‌بک اصلی دیگر برای آن اتصال فراخوانی نمی‌شود."
 
 msgid "Due to the early negotiation phase of the TLS connection, only limited methods and attributes are usable like :meth:`SSLSocket.selected_alpn_protocol` and :attr:`SSLSocket.context`. The :meth:`SSLSocket.getpeercert`, :meth:`SSLSocket.get_verified_chain`, :meth:`SSLSocket.get_unverified_chain` :meth:`SSLSocket.cipher` and :meth:`SSLSocket.compression` methods require that the TLS connection has progressed beyond the TLS Client Hello and therefore will not return meaningful values nor can they be called safely."
 msgstr "به دلیل مرحله‌ی اولیه‌ی مذاکره‌ی اتصال TLS، تنها متدها و ویژگی‌های محدودی قابل استفاده هستند، مانند :meth:`SSLSocket.selected_alpn_protocol` و :attr:`SSLSocket.context`. متدهای :meth:`SSLSocket.getpeercert`، :meth:`SSLSocket.get_verified_chain`، :meth:`SSLSocket.get_unverified_chain`، :meth:`SSLSocket.cipher` و :meth:`SSLSocket.compression` نیاز دارند که اتصال TLS از TLS Client Hello فراتر رفته باشد؛ بنابراین نه مقادیر معناداری برمی‌گردانند و نه می‌توان آن‌ها را به‌طور امن فراخوانی کرد."
@@ -1277,7 +1262,7 @@ msgid "This method will raise :exc:`NotImplementedError` if the OpenSSL library 
 msgstr "اگر OPENSSL_NO_TLSEXT هنگام ساخت کتابخانه OpenSSL تعریف‌شده باشد، این متد :exc:`NotImplementedError` را پرتاب خواهد کرد."
 
 msgid "After the callback assigns a new :attr:`SSLSocket.context`, later ClientHello messages on the connection are dispatched to the new context's *sni_callback*."
-msgstr ""
+msgstr "پس از اینکه کال‌بک یک :attr:`SSLSocket.context` جدید اختصاص داد، پیام‌های ClientHello بعدی روی اتصال به *sni_callback* زمینه‌ی جدید فرستاده می‌شوند."
 
 msgid "This is a legacy API retained for backwards compatibility. When possible, you should use :attr:`sni_callback` instead. The given *server_name_callback* is similar to *sni_callback*, except that when the server hostname is an IDN-encoded internationalized domain name, the *server_name_callback* receives a decoded U-label (``\"pythön.org\"``)."
 msgstr "این یک API قدیمی است که برای سازگاری با نسخه‌های قبلی حفظ شده است. در صورت امکان، باید به‌جای آن از :attr:`sni_callback` استفاده کنید. *server_name_callback* داده‌شده مشابه *sni_callback* است، با این تفاوت که وقتی نام میزبان سرور یک IDN کدگذاری‌شده با IDN باشد، *server_name_callback* یک U-label کدگشایی‌شده را دریافت می‌کند (``\"pythön.org\"``)."
@@ -1346,13 +1331,13 @@ msgid "Wrap the BIO objects *incoming* and *outgoing* and return an instance of 
 msgstr "اشیای BIO *incoming* و *outgoing* را دربرمی‌گیرد و نمونه‌ای از :attr:`SSLContext.sslobject_class` (پیش‌فرض :class:`SSLObject`) برمی‌گرداند. روال‌های SSL داده‌های ورودی را از BIO ورودی می‌خوانند و داده‌ها را در BIO خروجی می‌نویسند."
 
 msgid "The *server_side*, *server_hostname* and *session* parameters have the same meaning as in :meth:`SSLContext.wrap_socket`, and are validated in the same way: in particular a :exc:`ValueError` is raised when :attr:`~SSLContext.check_hostname` is enabled but no *server_hostname* is given, since there would be no name to match the peer's certificate against."
-msgstr ""
+msgstr "پارامترهای *server_side*، *server_hostname* و *session* معنایی مشابه با :meth:`SSLContext.wrap_socket` دارند و به همان شکل اعتبارسنجی می‌شوند: به‌ویژه هنگامی که :attr:`~SSLContext.check_hostname` فعال است اما هیچ *server_hostname*ی داده نشده است، یک :exc:`ValueError` بالا آورده می‌شود، زیرا هیچ نامی برای مطابقت دادن با گواهی همتا وجود نخواهد داشت."
 
 msgid "The method returns an instance of :attr:`SSLContext.sslobject_class` instead of hard-coded :class:`SSLObject`."
 msgstr "این متد به‌جای :class:`SSLObject` سخت‌کد، نمونه‌ای از :attr:`SSLContext.sslobject_class` را برمی‌گرداند."
 
 msgid "The *server_side*, *server_hostname* and *session* parameters are now validated as :meth:`SSLContext.wrap_socket` validates them. Previously a context with :attr:`~SSLContext.check_hostname` enabled and no *server_hostname* was accepted, and verified the certificate chain but never the peer's identity."
-msgstr ""
+msgstr "پارامترهای *server_side*، *server_hostname* و *session* اکنون مانند روشی که :meth:`SSLContext.wrap_socket` آن‌ها را اعتبارسنجی می‌کند، اعتبارسنجی می‌شوند. پیش‌تر، یک زمینه با :attr:`~SSLContext.check_hostname` فعال و بدون *server_hostname* پذیرفته می‌شد و زنجیره‌ی گواهی را تأیید می‌کرد اما هرگز هویت همتا را بررسی نمی‌کرد."
 
 msgid "The return type of :meth:`SSLContext.wrap_bio`, defaults to :class:`SSLObject`. The attribute can be overridden on instance of class in order to return a custom subclass of :class:`SSLObject`."
 msgstr "نوع بازگشتی :meth:`SSLContext.wrap_bio`، به‌طور پیش‌فرض :class:`SSLObject` است. می‌توان این ویژگی را در نمونه‌ای از کلاس بازنویسی کرد تا یک زیرکلاس سفارشی از :class:`SSLObject` بازگردانده شود."
@@ -2246,7 +2231,7 @@ msgid "The TLS 1.3 protocol behaves slightly differently than previous version o
 msgstr "پروتکل TLS 1.3 نسبت به نسخه‌ی قبلی TLS/SSL کمی متفاوت عمل می‌کند. برخی ویژگی‌های جدید TLS 1.3 هنوز در دسترس نیستند."
 
 msgid "TLS 1.3 uses a disjunct set of cipher suites.  All AES-GCM and ChaCha20 cipher suites are enabled by default.  To restrict which TLS 1.3 ciphers are allowed, the :meth:`SSLContext.set_ciphersuites` method should be called instead of :meth:`SSLContext.set_ciphers`, which only affects ciphers in older TLS versions.  The :meth:`SSLContext.get_ciphers` method returns information about ciphers for both TLS 1.3 and earlier versions and the method :meth:`SSLSocket.cipher` returns information about the negotiated cipher for both TLS 1.3 and earlier versions once a connection is established."
-msgstr ""
+msgstr "پروتکل TLS 1.3 از مجموعه رمزهای مجزایی استفاده می‌کند. تمام مجموعه‌های رمز AES-GCM و ChaCha20 به‌طور پیش‌فرض فعال هستند. برای محدود کردن رمزهای مجاز TLS 1.3، باید متد :meth:`SSLContext.set_ciphersuites` فراخوانی شود، نه :meth:`SSLContext.set_ciphers` که فقط روی رمزهای موجود در نسخه‌های قدیمی‌تر TLS تأثیر می‌گذارد. متد :meth:`SSLContext.get_ciphers` اطلاعاتی درباره‌ی رمزها برای هر دو نسخه‌ی TLS 1.3 و نسخه‌های پیشین برمی‌گرداند و متد :meth:`SSLSocket.cipher` پس از برقراری اتصال، اطلاعاتی را درباره‌ی رمز توافق‌شده برای هر دو نسخه‌ی TLS 1.3 و نسخه‌های پیشین برمی‌گرداند."
 
 msgid "Session tickets are no longer sent as part of the initial handshake and are handled differently.  :attr:`SSLSocket.session` and :class:`SSLSession` are not compatible with TLS 1.3."
 msgstr "تیکت‌های نشست (session tickets) دیگر به‌عنوان بخشی از دست‌دهی اولیه ارسال نمی‌شوند و به‌شکل متفاوتی مدیریت می‌شوند. :attr:`SSLSocket.session` و :class:`SSLSession` با TLS 1.3 سازگار نیستند."
@@ -2254,10 +2239,8 @@ msgstr "تیکت‌های نشست (session tickets) دیگر به‌عنوان 
 msgid "Client-side certificates are also no longer verified during the initial handshake.  A server can request a certificate at any time.  Clients process certificate requests while they send or receive application data from the server."
 msgstr "گواهی‌های سمت کلاینت نیز دیگر در حین دست‌دهی اولیه تأیید نمی‌شوند. یک سرور می‌تواند در هر زمان یک گواهی درخواست کند. کلاینت‌ها درخواست‌های گواهی را هنگامی که داده‌های کاربردی را ارسال می‌کنند یا از سرور دریافت می‌کنند، پردازش می‌کنند."
 
-#, fuzzy
-#| msgid "TLS 1.3 features like early data, deferred TLS client cert request, signature algorithm configuration, and rekeying are not supported yet."
 msgid "TLS 1.3 features like early data, deferred TLS client cert request, and rekeying are not supported yet."
-msgstr "قابلیت‌های TLS 1.3 مانند داده‌های زودهنگام (early data)، درخواست به‌تعویق‌افتاده‌ی گواهی کلاینت TLS (deferred TLS client cert request)، پیکربندی الگوریتم امضا و تولید مجدد کلید (rekeying) هنوز پشتیبانی نمی‌شوند."
+msgstr "ویژگی‌های TLS 1.3 مانند داده‌ی زودهنگام، درخواست گواهی کلاینت با تأخیر TLS و بازنشانی کلید هنوز پشتیبانی نمی‌شوند."
 
 msgid "Class :class:`socket.socket`"
 msgstr "کلاس :class:`socket.socket`"

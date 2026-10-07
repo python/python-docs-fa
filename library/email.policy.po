@@ -269,16 +269,14 @@ msgstr "علاوه بر ویژگی‌های قابل تنظیم فهرست‌ش�
 msgid "[1]_"
 msgstr "[1]_"
 
-#, fuzzy
-#| msgid "If ``False``, follow :rfc:`5322`, supporting non-ASCII characters in headers by encoding them as \"encoded words\".  If ``True``, follow :rfc:`6532` and use ``utf-8`` encoding for headers.  Messages formatted in this way may be passed to SMTP servers that support the ``SMTPUTF8`` extension (:rfc:`6531`)."
 msgid "If ``False``, follow :rfc:`5322`, supporting non-ASCII characters in headers by encoding them as :rfc:`2047` \"encoded words\".  If ``True``, follow :rfc:`6532` and use ``utf-8`` encoding for headers.  Messages formatted in this way may be passed to SMTP servers that support the ``SMTPUTF8`` extension (:rfc:`6531`)."
-msgstr "اگر ``False`` باشد، از :rfc:`5322` پیروی می‌کند و با کدگذاری نویسه‌های غیر ASCII موجود در سرآیندها به‌عنوان «کلمات کدگذاری‌شده»، از آن‌ها پشتیبانی می‌کند. اگر ``True`` باشد، از :rfc:`6532` پیروی می‌کند و برای سرآیندها از کدگذاری ``utf-8`` استفاده می‌کند. پیام‌هایی که به این شکل قالب‌بندی شده‌اند، می‌توانند به سرورهای SMTP که از افزونه ``SMTPUTF8`` پشتیبانی می‌کنند (:rfc:`6531`) ارسال شوند."
+msgstr "اگر ``False`` باشد، از :rfc:`5322` پیروی کنید و با کدگذاری نویسه‌های غیر-اسکی به عنوان «کدگذاری‌شده‌های» :rfc:`2047`، از آن‌ها در سرآیندها پشتیبانی کنید. اگر ``True`` باشد، از :rfc:`6532` پیروی کنید و از کدگذاری ``utf-8`` برای سرآیندها استفاده کنید. پیام‌های قالب‌بندی‌شده به این روش ممکن است به سرورهای SMTP که از پسوند ``SMTPUTF8`` پشتیبانی می‌کنند (:rfc:`6531`) ارسال شوند."
 
 msgid "When ``False``, the generator will raise :exc:`~email.errors.HeaderWriteError` if any header includes non-ASCII characters in a context where :rfc:`2047` does not permit encoded words. This particularly applies to mailboxes (\"addr-spec\") with non-ASCII characters, which can be created via :class:`~email.headerregistry.Address`. To use a mailbox with a non-ASCII domain name with ``utf8=False``, first encode the domain using the third-party :pypi:`idna` or :pypi:`uts46` module or with :mod:`encodings.idna`. It is not possible to use a non-ASCII username (\"local-part\") in a mailbox when ``utf8=False``."
-msgstr ""
+msgstr "هنگامی که روی ``False`` تنظیم شود، اگر هر سرآیندی شامل نویسه‌های غیر اسکی در زمینه‌ای باشد که :rfc:`2047` کلمات کدگذاری‌شده را مجاز نمی‌داند، تولیدگر خطای :exc:`~email.errors.HeaderWriteError` را بالا می‌آورد. این موضوع به‌ویژه در مورد صندوق‌های پستی («addr-spec») دارای نویسه‌های غیر اسکی صدق می‌کند که می‌توانند از طریق :class:`~email.headerregistry.Address` ایجاد شوند. برای استفاده از یک صندوق پستی با نام دامنه‌ی غیر اسکی همراه با ``utf8=False``، ابتدا دامنه را با استفاده از ماژول شخص ثالث :pypi:`idna` یا :pypi:`uts46` یا با :mod:`encodings.idna` کدگذاری کنید. استفاده از نام کاربری غیر اسکی («local-part») در یک صندوق پستی هنگامی که ``utf8=False`` است، امکان‌پذیر نیست."
 
 msgid "Can trigger the raising of :exc:`~email.errors.HeaderWriteError`. (Earlier versions incorrectly applied :rfc:`2047` in certain contexts, mostly notably in addr-specs.)"
-msgstr ""
+msgstr "می‌تواند باعث بالا آمدن خطای :exc:`~email.errors.HeaderWriteError` شود. (نسخه‌های قبلی به اشتباه :rfc:`2047` را در زمینه‌های خاصی، به‌ویژه در مشخصات آدرس‌ها (addr-specs)، اعمال می‌کردند.)"
 
 msgid "If the value for a header in the ``Message`` object originated from a :mod:`~email.parser` (as opposed to being set by a program), this attribute indicates whether or not a generator should refold that value when transforming the message back into serialized form.  The possible values are:"
 msgstr "اگر مقدار یک سرآیند در شیء ``Message`` از :mod:`~email.parser` آمده باشد (در مقابل تنظیم شدن توسط یک برنامه)، این ویژگی نشان می‌دهد که آیا یک تولیدگر باید آن مقدار را هنگام بازگرداندن پیام به قالب سریالی‌شده دوباره تا بزند (refold) یا خیر. مقادیر ممکن عبارت‌اند از:"

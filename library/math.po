@@ -63,21 +63,17 @@ msgstr ":func:`fma(x, y, z) <fma>`"
 msgid "Fused multiply-add operation: ``(x * y) + z``"
 msgstr "عملیات ضرب-جمع ادغام‌شده (fused multiply-add): ``(x * y) + z``"
 
-#, fuzzy
-#| msgid ":func:`fma(x, y, z) <fma>`"
 msgid ":func:`fmax(x, y) <fmax>`"
-msgstr ":func:`fma(x, y, z) <fma>`"
+msgstr ":func:`fmax(x, y) <fmax>`"
 
 msgid "Maximum of two floating-point values"
-msgstr ""
+msgstr "بیشترین مقدار بین دو مقدار اعشاری"
 
-#, fuzzy
-#| msgid ":func:`fmod(x, y) <fmod>`"
 msgid ":func:`fmin(x, y) <fmin>`"
-msgstr ":func:`fmod(x, y) <fmod>`"
+msgstr ":func:`fmin(x, y) <fmin>`"
 
 msgid "Minimum of two floating-point values"
-msgstr ""
+msgstr "کمترین مقدار بین دو مقدار اعشاری"
 
 msgid ":func:`fmod(x, y) <fmod>`"
 msgstr ":func:`fmod(x, y) <fmod>`"
@@ -130,25 +126,17 @@ msgstr ":func:`isfinite(x) <isfinite>`"
 msgid "Check if *x* is neither an infinity nor a NaN"
 msgstr "بررسی می‌کند که *x* نه بی‌نهایت است و نه NaN"
 
-#, fuzzy
-#| msgid ":func:`isnan(x) <isnan>`"
 msgid ":func:`isnormal(x) <isnormal>`"
-msgstr ":func:`isnan(x) <isnan>`"
+msgstr ":func:`isnormal(x) <isnormal>`"
 
-#, fuzzy
-#| msgid "Check if *x* is a NaN  (not a number)"
 msgid "Check if *x* is a normal number"
-msgstr "بررسی کنید که آیا *x* یک NaN (نه یک عدد) است"
+msgstr "بررسی کنید که آیا *x* یک عدد نرمال است یا خیر."
 
-#, fuzzy
-#| msgid ":func:`isnan(x) <isnan>`"
 msgid ":func:`issubnormal(x) <issubnormal>`"
-msgstr ":func:`isnan(x) <isnan>`"
+msgstr ":func:`issubnormal(x) <issubnormal>`"
 
-#, fuzzy
-#| msgid "Check if *x* is a NaN  (not a number)"
 msgid "Check if *x* is a subnormal number"
-msgstr "بررسی کنید که آیا *x* یک NaN (نه یک عدد) است"
+msgstr "بررسی کنید که آیا *x* یک عدد زیرنرمال است یا خیر."
 
 msgid ":func:`isinf(x) <isinf>`"
 msgstr ":func:`isinf(x) <isinf>`"
@@ -174,15 +162,11 @@ msgstr ":func:`nextafter(x, y, steps) <nextafter>`"
 msgid "Floating-point value *steps* steps after *x* towards *y*"
 msgstr "مقدار ممیز شناور *steps* گام پس از *x* به سمت *y*"
 
-#, fuzzy
-#| msgid ":func:`sin(x) <sin>`"
 msgid ":func:`signbit(x) <signbit>`"
-msgstr ":func:`sin(x) <sin>`"
+msgstr ":func:`signbit(x) <signbit>`"
 
-#, fuzzy
-#| msgid "Check if *x* is a NaN  (not a number)"
 msgid "Check if *x* is a negative number"
-msgstr "بررسی کنید که آیا *x* یک NaN (نه یک عدد) است"
+msgstr "بررسی کنید که آیا *x* یک عدد منفی است یا خیر."
 
 msgid ":func:`ulp(x) <ulp>`"
 msgstr ":func:`ulp(x) <ulp>`"
@@ -464,16 +448,16 @@ msgid "This function follows the specification of the fusedMultiplyAdd operation
 msgstr "این تابع از مشخصات عملیات fusedMultiplyAdd پیروی می‌کند که در استاندارد IEEE 754 توصیف شده است. این استاندارد یک حالت را به‌صورت تعریف‌شده توسط پیاده‌سازی باقی گذاشته است، یعنی نتیجه‌ی ``fma(0, inf, nan)`` و ``fma(inf, 0, nan)``. در این حالت‌ها، ``math.fma`` یک NaN برمی‌گرداند و هیچ استثنایی را پرتاب نمی‌کند."
 
 msgid "Get the larger of two floating-point values, treating NaNs as missing data."
-msgstr ""
+msgstr "بزرگ‌ترین مقدار بین دو مقدار اعشاری را به دست می‌آورد و NaNها را به عنوان داده‌ی مفقود در نظر می‌گیرد."
 
 msgid "When both operands are (signed) NaNs or zeroes, return ``nan`` and ``0`` respectively and the sign of the result is implementation-defined, that is, :func:`!fmax` is not required to be sensitive to the sign of such operands (see Annex F of the C11 standard, §F.10.0.3 and §F.10.9.2)."
-msgstr ""
+msgstr "وقتی هر دو عملوند (علامت‌دار) NaN یا صفر باشند، به ترتیب ``nan`` و ``0`` را برمی‌گرداند و علامت نتیجه توسط پیاده‌سازی تعریف می‌شود؛ یعنی :func:`!fmax` نیازی به حساسیت نسبت به علامت چنین عملوندهایی ندارد (به ضمیمه F استاندارد C11، بندهای §F.10.0.3 و §F.10.9.2 مراجعه کنید)."
 
 msgid "Get the smaller of two floating-point values, treating NaNs as missing data."
-msgstr ""
+msgstr "کوچک‌ترین مقدار بین دو مقدار اعشاری را به دست آورید و مقادیر NaN را به عنوان داده‌ی گم‌شده در نظر بگیرید."
 
 msgid "When both operands are (signed) NaNs or zeroes, return ``nan`` and ``0`` respectively and the sign of the result is implementation-defined, that is, :func:`!fmin` is not required to be sensitive to the sign of such operands (see Annex F of the C11 standard, §F.10.0.3 and §F.10.9.3)."
-msgstr ""
+msgstr "هنگامی که هر دو عملوند (علامت‌دار) NaN یا صفر باشند، به ترتیب ``nan`` و ``0`` را برمی‌گرداند و علامت نتیجه وابسته به پیاده‌سازی است؛ یعنی :func:`!fmin` نیازی نیست نسبت به علامت چنین عملوندهایی حساس باشد (به ضمیمه‌ی F استاندارد C11، بخش‌های §F.10.0.3 و §F.10.9.3 مراجعه کنید)."
 
 msgid "Return the floating-point remainder of ``x / y``, as defined by the platform C library function ``fmod(x, y)``. Note that the Python expression ``x % y`` may not return the same result.  The intent of the C standard is that ``fmod(x, y)`` be exactly (mathematically; to infinite precision) equal to ``x - n*y`` for some integer *n* such that the result has the same sign as *x* and magnitude less than ``abs(y)``.  Python's ``x % y`` returns a result with the sign of *y* instead, and may not be exactly computable for float arguments. For example, ``fmod(-1e-100, 1e100)`` is ``-1e-100``, but the result of Python's ``-1e-100 % 1e100`` is ``1e100-1e-100``, which cannot be represented exactly as a float, and rounds to the surprising ``1e100``.  For this reason, function :func:`fmod` is generally preferred when working with floats, while Python's ``x % y`` is preferred when working with integers."
 msgstr "باقی‌مانده‌ی ممیز شناور ``x / y`` را، همان‌طور که توسط تابع ``fmod(x, y)`` کتابخانه‌ی C سکو تعریف‌شده است، برمی‌گرداند. توجه داشته باشید که عبارت ``x % y`` در پایتون ممکن است همان نتیجه را برنگرداند. منظور استاندارد C این است که ``fmod(x, y)`` دقیقاً (از نظر ریاضی؛ با دقت نامتناهی) برابر با ``x - n*y`` برای عدد صحیحی *n* باشد، به‌گونه‌ای که نتیجه همان علامت *x* را داشته باشد و قدر مطلق آن کمتر از ``abs(y)`` باشد. در عوض، ``x % y`` در پایتون نتیجه‌ای با علامت *y* برمی‌گرداند و ممکن است برای آرگومان‌های ممیز شناور به‌طور دقیق قابل محاسبه نباشد. برای مثال، ``fmod(-1e-100, 1e100)`` برابر ``-1e-100`` است، اما نتیجه‌ی ``-1e-100 % 1e100`` در پایتون ``1e100-1e-100`` است که نمی‌توان آن را دقیقاً به‌عنوان یک عدد ممیز شناور بازنمایی کرد و به مقدار شگفت‌آور ``1e100`` گرد می‌شود. به همین دلیل، معمولاً هنگام کار با اعداد ممیز شناور تابع :func:`fmod` ترجیح داده می‌شود، در حالی که هنگام کار با اعداد صحیح، ``x % y`` در پایتون ترجیح داده می‌شود."
@@ -533,10 +517,10 @@ msgid "Return ``True`` if *x* is neither an infinity nor a NaN, and ``False`` ot
 msgstr "اگر *x* نه بی‌نهایت و نه NaN باشد، ``True`` را برمی‌گرداند و در غیر این صورت ``False`` را برمی‌گرداند. (توجه داشته باشید که ``0.0`` *متناهی* در نظر گرفته می‌شود.)"
 
 msgid "Return ``True`` if *x* is a normal number, that is a finite nonzero number that is not a subnormal (see :func:`issubnormal`). Return ``False`` otherwise."
-msgstr ""
+msgstr "اگر *x* یک عدد نرمال باشد، یعنی یک عدد متناهی غیرصفر که زیرنرمال نباشد (به :func:`issubnormal` مراجعه کنید)، ``True`` را برمی‌گرداند. در غیر این صورت ``False`` را برمی‌گرداند."
 
 msgid "Return ``True`` if *x* is a subnormal number, that is a finite nonzero number with a magnitude smaller than :data:`sys.float_info.min`. Return ``False`` otherwise."
-msgstr ""
+msgstr "اگر *x* یک عدد زیرنرمال باشد، یعنی یک عدد متناهی غیرصفر با بزرگی کوچک‌تر از :data:`sys.float_info.min`، ``True`` را برمی‌گرداند. در غیر این صورت ``False`` را برمی‌گرداند."
 
 msgid "Return ``True`` if *x* is a positive or negative infinity, and ``False`` otherwise."
 msgstr "اگر *x* بی‌نهایت مثبت یا منفی باشد، ``True`` برمی‌گرداند و در غیر این صورت ``False`` برمی‌گرداند."
@@ -574,13 +558,11 @@ msgstr "همچنین ببینید :func:`math.ulp`."
 msgid "Added the *steps* argument."
 msgstr "آرگومان *steps* افزوده شد."
 
-#, fuzzy
-#| msgid "Return ``True`` if *x* is a positive or negative infinity, and ``False`` otherwise."
 msgid "Return ``True`` if the sign of *x* is negative and ``False`` otherwise."
-msgstr "اگر *x* بی‌نهایت مثبت یا منفی باشد، ``True`` برمی‌گرداند و در غیر این صورت ``False`` برمی‌گرداند."
+msgstr "اگر علامت *x* منفی باشد مقدار ``True`` و در غیر این صورت ``False`` را برمی‌گرداند."
 
 msgid "This is useful to detect the sign bit of zeroes, infinities and NaNs."
-msgstr ""
+msgstr "این کار برای تشخیص بیت علامت اعداد صفر، بی‌نهایت‌ها و NaNها مفید است."
 
 msgid "Return the value of the least significant bit of the float *x*:"
 msgstr "مقدار کم‌ارزش‌ترین بیت شناور *x* را برمی‌گرداند:"
@@ -663,10 +645,8 @@ msgstr "فاصله اقلیدسی بین دو نقطه *p* و *q* را برمی�
 msgid "Roughly equivalent to::"
 msgstr "تقریباً معادل با::"
 
-#, fuzzy
-#| msgid "sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q)))"
 msgid "sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q, strict=True)))"
-msgstr "sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q)))"
+msgstr "sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q, strict=True)))"
 
 msgid "Return an accurate floating-point sum of values in the iterable.  Avoids loss of precision by tracking multiple intermediate partial sums."
 msgstr "مجموع دقیق ممیز شناور مقادیر موجود در پیمایش‌پذیر را برمی‌گرداند. با پیگیری چندین مجموع جزئی میانی، از کاهش دقت جلوگیری می‌کند."
@@ -795,77 +775,61 @@ msgid "Number-theoretic functions"
 msgstr "توابع نظریه اعداد"
 
 msgid "For backward compatibility, the :mod:`!math` module provides also aliases of the following functions from the :mod:`math.integer` module:"
-msgstr ""
+msgstr "برای سازگاری عقبگرد، ماژول :mod:`!math` همچنین نام‌های مستعاری از توابع زیر از ماژول :mod:`math.integer` را فراهم می‌کند:"
 
-#, fuzzy
-#| msgid ":func:`comb(n, k) <comb>`"
 msgid ":func:`comb(n, k) <math.integer.comb>`"
-msgstr ":func:`comb(n, k) <comb>`"
+msgstr ":func:`comb(n, k) <math.integer.comb>`"
 
 msgid "Number of ways to choose *k* items from *n* items without repetition and without order"
 msgstr "تعداد راه‌های انتخاب *k* آیتم از *n* آیتم بدون تکرار و بدون ترتیب"
 
-#, fuzzy
-#| msgid ":func:`factorial(n) <factorial>`"
 msgid ":func:`factorial(n) <math.integer.factorial>`"
-msgstr ":func:`factorial(n) <factorial>`"
+msgstr ":func:`factorial(n) <math.integer.factorial>`"
 
 msgid "*n* factorial"
 msgstr "فاکتوریل *n*"
 
-#, fuzzy
-#| msgid ":func:`gcd(*integers) <gcd>`"
 msgid ":func:`gcd(*integers) <math.integer.gcd>`"
-msgstr ":func:`gcd(*integers) <gcd>`"
+msgstr ":func:`gcd(*integers) <math.integer.gcd>`"
 
 msgid "Greatest common divisor of the integer arguments"
 msgstr "بزرگ‌ترین مقسوم‌علیه مشترک آرگومان‌های عدد صحیح"
 
-#, fuzzy
-#| msgid ":func:`isqrt(n) <isqrt>`"
 msgid ":func:`isqrt(n) <math.integer.isqrt>`"
-msgstr ":func:`isqrt(n) <isqrt>`"
+msgstr ":func:`isqrt(n) <math.integer.isqrt>`"
 
 msgid "Integer square root of a nonnegative integer *n*"
 msgstr "جذر صحیح عدد صحیح نامنفی *n*"
 
-#, fuzzy
-#| msgid ":func:`lcm(*integers) <lcm>`"
 msgid ":func:`lcm(*integers) <math.integer.lcm>`"
-msgstr ":func:`lcm(*integers) <lcm>`"
+msgstr ":func:`lcm(*integers) <math.integer.lcm>`"
 
 msgid "Least common multiple of the integer arguments"
 msgstr "کمترین مضرب مشترک آرگومان‌های عدد صحیح"
 
-#, fuzzy
-#| msgid ":func:`perm(n, k) <perm>`"
 msgid ":func:`perm(n, k) <math.integer.perm>`"
-msgstr ":func:`perm(n, k) <perm>`"
+msgstr ":func:`perm(n, k) <math.integer.perm>`"
 
 msgid "Number of ways to choose *k* items from *n* items without repetition and with order"
 msgstr "تعداد راه‌های انتخاب *k* آیتم از *n* آیتم بدون تکرار و با ترتیب"
 
 msgid "The :func:`gcd` function."
-msgstr ""
+msgstr "تابع :func:`gcd`."
 
 msgid "The :func:`comb`, :func:`perm` and :func:`isqrt` functions."
-msgstr ""
+msgstr "توابع :func:`comb`، :func:`perm` و :func:`isqrt`."
 
 msgid "The :func:`lcm` function."
-msgstr ""
+msgstr "تابع :func:`lcm`."
 
-#, fuzzy
-#| msgid "Added support for an arbitrary number of arguments. Formerly, only two arguments were supported."
 msgid "Added support for an arbitrary number of arguments in the :func:`gcd` function. Formerly, only two arguments were supported."
-msgstr "پشتیبانی از تعداد دلخواهی از آرگومان‌ها افزوده شد. پیش‌تر، تنها از دو آرگومان پشتیبانی می‌شد."
+msgstr "پشتیبانی از تعداد دلخواهی از آرگومان‌ها به تابع :func:`gcd` اضافه شد. پیش‌تر، فقط از دو آرگومان پشتیبانی می‌شد."
 
-#, fuzzy
-#| msgid "Floats with integral values (like ``5.0``) are no longer accepted."
 msgid "Floats with integral values (like ``5.0``) are no longer accepted in the :func:`factorial` function."
-msgstr "شناورهایی با مقادیر صحیح (مانند ``5.0``) دیگر پذیرفته نمی‌شوند."
+msgstr "اعداد اعشاری با مقادیر صحیح (مانند ``5.0``) دیگر در تابع :func:`factorial` پذیرفته نمی‌شوند."
 
 msgid "Use the :mod:`math.integer` functions instead of these aliases."
-msgstr ""
+msgstr "به جای این نام‌های مستعار، از توابع ماژول :mod:`math.integer` استفاده کنید."
 
 msgid "Constants"
 msgstr "ثابت‌ها"
@@ -900,13 +864,11 @@ msgstr "ماژول :mod:`cmath`"
 msgid "Complex number versions of many of these functions."
 msgstr "نسخه‌هایی از بسیاری از این توابع برای اعداد مختلط."
 
-#, fuzzy
-#| msgid "Module :mod:`cmath`"
 msgid "Module :mod:`math.integer`"
-msgstr "ماژول :mod:`cmath`"
+msgstr "ماژول :mod:`math.integer`"
 
 msgid "Integer-specific mathematics functions."
-msgstr ""
+msgstr "توابع ریاضی مخصوص اعداد صحیح."
 
 #~ msgid "**Number-theoretic functions**"
 #~ msgstr "توابع نظریه‌ی اعداد"

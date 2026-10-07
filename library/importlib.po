@@ -166,7 +166,7 @@ msgid "If you are dynamically importing a module that was created since the inte
 msgstr "اگر ماژولی را که از زمان آغاز اجرای مفسر ایجاد شده است (برای مثال، یک پرونده منبع پایتون ایجاد کرده‌اید)، به‌صورت پویا ایمپورت می‌کنید، ممکن است لازم باشد :func:`invalidate_caches` را فراخوانی کنید تا ماژول جدید توسط سامانه‌ی ایمپورت شناسایی شود."
 
 msgid "If the module cannot be imported, :func:`import_module` will raise :exc:`ImportError` or an appropriate subclass like :exc:`ModuleNotFoundError`."
-msgstr ""
+msgstr "اگر ماژول نتواند وارد شود، :func:`import_module` استثنای :exc:`ImportError` یا یک زیرکلاس مناسب مانند :exc:`ModuleNotFoundError` را بالا خواهد آورد."
 
 msgid "Parent packages are automatically imported."
 msgstr "بسته‌های والد به‌طور خودکار ایمپورت می‌شوند."
@@ -276,19 +276,19 @@ msgid "Returns ``None`` when called instead of :data:`NotImplemented`."
 msgstr "هنگام فراخوانی، به جای :data:`NotImplemented`، ``None`` را بازمی‌گرداند."
 
 msgid "An optional method which searches for possible specs with given *parent* module spec. If *parent* is *None*, :meth:`MetaPathFinder.discover` will search for top-level modules."
-msgstr ""
+msgstr "یک متد اختیاری که به دنبال مشخصات احتمالی با مشخصه‌ی ماژول *parent* داده‌شده می‌گردد. اگر *parent* مقدار *None* باشد، :meth:`MetaPathFinder.discover` به دنبال ماژول‌های رده‌بالا خواهد گشت."
 
 msgid "Returns an iterable of possible specs."
-msgstr ""
+msgstr "یک شیء پیمایش‌پذیر از مشخصات احتمالی را برمی‌گرداند."
 
 msgid "Raises :exc:`ValueError` if *parent* is not a package module."
-msgstr ""
+msgstr "اگر *parent* یک ماژول بسته نباشد، استثنای :exc:`ValueError` را بالا می‌آورد."
 
 msgid "This method can potentially yield a very large number of objects, and it may carry out IO operations when computing these values."
-msgstr ""
+msgstr "این متد به‌طور بالقوه می‌تواند تعداد بسیار زیادی از اشیاء را تولید کند، و ممکن است هنگام محاسبه‌ی این مقادیر، عملیات‌های ورودی/خروجی (IO) انجام دهد."
 
 msgid "Because of this, it will generally be desirable to compute the result values on-the-fly, as they are needed. As such, the returned object is only guaranteed to be an :class:`iterable <collections.abc.Iterable>`, instead of a :class:`list` or other :class:`collection <collections.abc.Collection>` type."
-msgstr ""
+msgstr "به همین دلیل، معمولاً مطلوب است که مقادیر نتیجه به‌صورت در لحظه (on-the-fly) و در زمان نیاز محاسبه شوند. به همین خاطر، فقط تضمین می‌شود که شیء بازگردانده‌شده یک :class:`iterable <collections.abc.Iterable>` باشد، نه یک :class:`list` یا سایر انواع :class:`collection <collections.abc.Collection>`."
 
 msgid "An abstract base class representing a :term:`path entry finder`.  Though it bears some similarities to :class:`MetaPathFinder`, ``PathEntryFinder`` is meant for use only within the path-based import subsystem provided by :class:`importlib.machinery.PathFinder`."
 msgstr "یک کلاس پایه انتزاعی که نشان‌دهنده‌ی یک :term:`path entry finder` است. اگرچه این کلاس شباهت‌هایی به :class:`MetaPathFinder` دارد، اما ``PathEntryFinder`` تنها برای استفاده در زیرسیستم ایمپورت مبتنی بر مسیر که توسط :class:`importlib.machinery.PathFinder` ارائه می‌شود، در نظر گرفته شده است."
@@ -300,7 +300,7 @@ msgid "An optional method which, when called, should invalidate any internal cac
 msgstr "یک متد اختیاری که هرگاه فراخوانی شود، باید هر نهانگاه داخلی به‌کاررفته توسط یابنده را نامعتبر کند. این متد توسط :meth:`importlib.machinery.PathFinder.invalidate_caches` هنگام نامعتبر کردن نهانگاه‌های همه‌ی یابنده‌های موجود در نهانگاه استفاده می‌شود."
 
 msgid "An optional method which searches for possible specs with given *parent* module spec. If *parent* is *None*, :meth:`PathEntryFinder.discover` will search for top-level modules."
-msgstr ""
+msgstr "یک متد اختیاری که به دنبال مشخصات احتمالی با مشخصه ماژول *parent* داده‌شده می‌گردد. اگر *parent* برابر با *None* باشد، :meth:`PathEntryFinder.discover` به دنبال ماژول‌های رده‌بالا (top-level) خواهد گشت."
 
 msgid "An abstract base class for a :term:`loader`. See :pep:`302` for the exact definition for a loader."
 msgstr "یک کلاس پایه انتزاعی برای :term:`بارگذار <loader>`. برای تعریف دقیق بارگذار، :pep:`302` را ببینید."
@@ -311,10 +311,8 @@ msgstr "بارگذارهایی که مایلند از خواندن منبع پش
 msgid "Introduced the optional :meth:`!get_resource_reader` method."
 msgstr "متد اختیاری :meth:`!get_resource_reader` معرفی شد."
 
-#, fuzzy
-#| msgid "Calls super's ``load_module()``."
 msgid "Removed the ``load_module()`` method."
-msgstr "متد ``load_module()`` ابرکلاس را فراخوانی می‌کند."
+msgstr "متد ``load_module()`` حذف شد."
 
 msgid "A method that returns the module object to use when importing a module.  This method may return ``None``, indicating that default module creation semantics should take place."
 msgstr "متدی که شیء ماژول را برای استفاده هنگام ایمپورت یک ماژول برمی‌گرداند. این متد ممکن است ``None`` را برگرداند، که نشان می‌دهد باید معناشناسی پیش‌فرض ایجاد ماژول صورت گیرد."
@@ -374,13 +372,13 @@ msgid "With the subsequent code object one can execute it in a module by running
 msgstr "با استفاده از شیء کد متعاقب، می‌توان آن را در یک ماژول با اجرای ``exec(code, module.__dict__)`` اجرا کرد."
 
 msgid "The optional argument *fullname* specifies the module name. It is needed to unambiguous :ref:`filter <warning-filter>` syntax warnings by module name."
-msgstr ""
+msgstr "آرگومان اختیاری *fullname* نام ماژول را مشخص می‌کند. این آرگومان برای رفع ابهام در هشدار‌های :ref:`filter <warning-filter>` نحو (syntax) بر اساس نام ماژول مورد نیاز است."
 
 msgid "Made the method static."
 msgstr "متد را ایستا کرد."
 
 msgid "Added the *fullname* parameter."
-msgstr ""
+msgstr "پارامتر *fullname* اضافه شد."
 
 msgid "Implementation of :meth:`Loader.exec_module`."
 msgstr "پیاده‌سازی :meth:`Loader.exec_module`."
@@ -569,31 +567,31 @@ msgid "If the argument to the closure is not an existing directory, :exc:`Import
 msgstr "اگر آرگومانِ بسته یک پوشه‌ی موجود نباشد، :exc:`ImportError` پرتاب می‌شود."
 
 msgid "Represents a :term:`namespace package`'s path (:attr:`module.__path__`)."
-msgstr ""
+msgstr "نشان‌دهنده‌ی مسیر یک :term:`بسته فضای نام <namespace package>` است (:attr:`module.__path__`)."
 
 msgid "When its ``__path__`` value is accessed it will be recomputed if necessary. This keeps it in-sync with the global state (:attr:`sys.modules`)."
-msgstr ""
+msgstr "هنگامی که به مقدار ``__path__`` آن دسترسی پیدا می‌شود، در صورت نیاز دوباره محاسبه خواهد شد. این کار باعث می‌شود تا با وضعیت سراسری (:attr:`sys.modules`) همگام بماند."
 
 msgid "The *name* argument is the name of the namespace module."
-msgstr ""
+msgstr "آرگومان *name* نام ماژول فضای نام است."
 
 msgid "The *path* argument is the initial path value."
-msgstr ""
+msgstr "آرگومان *path* مقدار مسیر اولیه است."
 
 msgid "The *path_finder* argument is the callable used to recompute the path value. The callable has the same signature as :meth:`importlib.abc.MetaPathFinder.find_spec`."
-msgstr ""
+msgstr "آرگومان *path_finder* شیء فراخوانی‌پذیری است که برای محاسبه‌ی مجدد مقدار مسیر استفاده می‌شود. این شیء فراخوانی‌پذیر دارای همان امضا (signature) :meth:`importlib.abc.MetaPathFinder.find_spec` است."
 
 msgid "When the parent's :attr:`module.__path__` attribute is updated, the path value is recomputed."
-msgstr ""
+msgstr "هنگامی که ویژگی :attr:`module.__path__` متعلق به والد به‌روزرسانی می‌شود، مقدار مسیر مجدداً محاسبه می‌شود."
 
 msgid "If the parent module is missing from :data:`sys.modules`, then :exc:`ModuleNotFoundError` will be raised."
-msgstr ""
+msgstr "اگر ماژول والد در :data:`sys.modules` وجود نداشته باشد، استثنای :exc:`ModuleNotFoundError` بالا خواهد آمد."
 
 msgid "For top-level modules, the parent module's path is :data:`sys.path`."
-msgstr ""
+msgstr "برای ماژول‌های رده‌بالا (top-level)، مسیر ماژول والد برابر با :data:`sys.path` است."
 
 msgid ":meth:`PathFinder.invalidate_caches` invalidates :class:`NamespacePath`, forcing the path value to be recomputed next time it is accessed."
-msgstr ""
+msgstr "متد :meth:`PathFinder.invalidate_caches` اعتبار :class:`NamespacePath` را باطل می‌کند و باعث می‌شود در دفعه‌ی بعدی که به مسیر دسترسی پیدا می‌شود، مقدار آن مجدداً محاسبه شود."
 
 msgid "A concrete implementation of :class:`importlib.abc.SourceLoader` by subclassing :class:`importlib.abc.FileLoader` and providing some concrete implementations of other methods."
 msgstr "یک پیاده‌سازی عینی از :class:`importlib.abc.SourceLoader` با زیرکلاس‌سازی از :class:`importlib.abc.FileLoader` و ارائه پیاده‌سازی‌های عینی برای برخی متدهای دیگر."
@@ -708,10 +706,8 @@ msgstr ":term:`یابنده <finder>` باید این ویژگی را روی ی�
 msgid "The :term:`finder` may set this attribute to an object containing additional, module-specific data to use when loading the module.  Otherwise it should be set to ``None``."
 msgstr ":term:`یابنده <finder>` ممکن است این ویژگی را روی شیءای حاوی داده‌های اضافی و مختص ماژول برای استفاده هنگام بارگذاری ماژول تنظیم کند. در غیر این صورت باید روی ``None`` تنظیم شود."
 
-#, fuzzy
-#| msgid "The filename of a compiled version of the module's code (see :attr:`module.__cached__`). The :term:`finder` should always set this attribute but it may be ``None`` for modules that do not need compiled code stored."
 msgid "The filename of a compiled version of the module's code. The :term:`finder` should always set this attribute but it may be ``None`` for modules that do not need compiled code stored."
-msgstr "نام پرونده‌ی یک نسخه‌ی کامپایل‌شده از کد ماژول (ببینید :attr:`module.__cached__`). :term:`finder` باید همیشه این ویژگی را تنظیم کند، اما ممکن است برای ماژول‌هایی که نیازی به ذخیره‌ی کد کامپایل‌شده ندارند، ``None`` باشد."
+msgstr "نام پرونده‌ی نسخه‌ی کامپایل‌شده‌ی کد ماژول. :term:`یابنده <finder>` باید همیشه این ویژگی را تنظیم کند اما ممکن است برای ماژول‌هایی که نیازی به ذخیره‌ی کد کامپایل‌شده ندارند ``None`` باشد."
 
 msgid "(Read-only) The fully qualified name of the package the module is in (or the empty string for a top-level module). See :attr:`module.__package__`. If the module is a package then this is the same as :attr:`name`."
 msgstr "(فقط‌خواندنی) نام کامل بسته‌ای که ماژول در آن قرار دارد (یا رشته‌ی خالی برای یک ماژول سطح بالا). به :attr:`module.__package__` مراجعه کنید. اگر ماژول یک بسته باشد، این با :attr:`name` یکسان است."
@@ -767,10 +763,8 @@ msgstr "پارامتر *optimization* افزوده شد و پارامتر *debug
 msgid "Accepts a :term:`path-like object`."
 msgstr "یک :term:`شیء شبه‌مسیر <path-like object>` را می‌پذیرد."
 
-#, fuzzy
-#| msgid "The *optimization* parameter was added and the *debug_override* parameter was deprecated."
 msgid "The *debug_override* parameter was removed."
-msgstr "پارامتر *optimization* افزوده شد و پارامتر *debug_override* منسوخ شد."
+msgstr "پارامتر *debug_override* حذف شد."
 
 msgid "Given the *path* to a :pep:`3147` file name, return the associated source code file path.  For example, if *path* is ``/foo/bar/__pycache__/baz.cpython-32.pyc`` the returned path would be ``/foo/bar/baz.py``.  *path* need not exist, however if it does not conform to :pep:`3147` or :pep:`488` format, a :exc:`ValueError` is raised. If :attr:`sys.implementation.cache_tag <sys.implementation>` is not defined, :exc:`NotImplementedError` is raised."
 msgstr "با دادن *path* به نام پرونده‌ی :pep:`3147`، مسیر پرونده‌ی کد منبع مرتبط را برگردانید. برای مثال، اگر *path* برابر با ``/foo/bar/__pycache__/baz.cpython-32.pyc`` باشد، مسیر برگردانده‌شده ``/foo/bar/baz.py`` خواهد بود. *path* لزوماً وجود ندارد، اما اگر با فرمت :pep:`3147` یا :pep:`488` مطابقت نداشته باشد، یک :exc:`ValueError` پرتاب می‌شود. اگر :attr:`sys.implementation.cache_tag <sys.implementation>` تعریف نشده باشد، :exc:`NotImplementedError` پرتاب می‌شود."

@@ -20,10 +20,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.6\n"
 
-#, fuzzy
-#| msgid "A Conceptual Overview of :mod:`!asyncio`"
 msgid "A conceptual overview of :mod:`!asyncio`"
-msgstr "مروری مفهومی بر :mod:`!asyncio`"
+msgstr "نمای کلی مفهومی از :mod:`!asyncio`"
 
 msgid "This :ref:`HOWTO <how-tos>` article seeks to help you build a sturdy mental model of how :mod:`asyncio` fundamentally works, helping you understand the how and why behind the recommended patterns."
 msgstr "این مقاله‌ی :ref:`HOWTO <how-tos>` در پی آن است که به شما کمک کند مدلی ذهنی مستحکم از اینکه :mod:`asyncio` در بنیاد چگونه کار می‌کند بسازید و چگونگی و چرایی پشت الگوهای توصیه‌شده را درک کنید."
@@ -55,20 +53,14 @@ msgstr "مرور مفهومی بخش ۱: سطح بالا"
 msgid "In part 1, we'll cover the main, high-level building blocks of :mod:`!asyncio`: the event loop, coroutine functions, coroutine objects, tasks, and ``await``."
 msgstr "در بخش ۱، اجزای سازنده‌ی اصلی و سطح بالای :mod:`!asyncio` را پوشش خواهیم داد: حلقه‌ی رویداد، توابع هم‌روال، اشیاء هم‌روال، وظایف و ``await``."
 
-#, fuzzy
-#| msgid "Event Loop"
 msgid "Event loop"
 msgstr "حلقه رویداد"
 
-#, fuzzy
-#| msgid "Everything in :mod:`!asyncio` happens relative to the event loop. It's the star of the show. It's like an orchestra conductor. It's behind the scenes managing resources. Some power is explicitly granted to it, but a lot of its ability to get things done comes from the respect and cooperation of its worker bees."
 msgid "Everything in :mod:`!asyncio` happens relative to the event loop. It's the star of the show, but prefers to work behind the scenes, managing and coordinating resources. It's like an orchestra conductor. Some power is explicitly granted to it, but a lot of its ability to get things done comes from the respect and cooperation of its band members."
-msgstr "همه‌چیز در :mod:`!asyncio` نسبت به حلقه رویداد رخ می‌دهد. آن ستاره نمایش است. مانند رهبر ارکستر است. پشت صحنه منابع را مدیریت می‌کند. برخی قدرت‌ها به‌طور صریح به آن اعطا شده‌اند، اما بخش زیادی از توانایی آن برای انجام کارها از احترام و همکاری زنبورهای کارگرش ناشی می‌شود."
+msgstr "همه‌چیز در :mod:`!asyncio` نسبت به حلقه رویداد اتفاق می‌افتد. این بخش ستاره‌ی نمایش است، اما ترجیح می‌دهد پشت صحنه کار کند و منابع را مدیریت و هماهنگ کند. این بخش مانند رهبر ارکستر است. مقداری قدرت به صراحت به آن اعطا شده است، اما بسیاری از توانایی‌های آن در انجام کارها از احترام و همکاری اعضای گروهش سرچشمه می‌گیرد."
 
-#, fuzzy
-#| msgid "In more technical terms, the event loop contains a collection of jobs to be run. Some jobs are added directly by you, and some indirectly by :mod:`!asyncio`. The event loop takes a job from its backlog of work and invokes it (or \"gives it control\"), similar to calling a function, and then that job runs. Once it pauses or completes, it returns control to the event loop. The event loop will then select another job from its pool and invoke it. You can *roughly* think of the collection of jobs as a queue: jobs are added and then processed one at a time, generally (but not always) in order. This process repeats indefinitely, with the event loop cycling endlessly onwards. If there are no more jobs pending execution, the event loop is smart enough to rest and avoid needlessly wasting CPU cycles, and will come back when there's more work to be done."
 msgid "In more technical terms, the event loop contains a collection of jobs to be run. Some jobs are added directly by you, and some indirectly by :mod:`!asyncio`. The event loop takes a job from its backlog of work and invokes it (or \"gives it control\"), similar to calling a function, and then that job runs. Once it pauses or completes, it returns control to the event loop. The event loop will then select another job from its pool and invoke it. You can *roughly* think of the collection of jobs as a queue: jobs are added and then processed one at a time, generally (but not always) in order. This process repeats indefinitely, with the event loop cycling endlessly onwards. If there are no more jobs pending execution, the event loop is smart enough to rest and avoid needlessly wasting CPU cycles, and will come back when there's more work to be done, such as when I/O operations complete or timers expire."
-msgstr "به بیان فنی‌تر، حلقه رویداد شامل مجموعه‌ای از کارها برای اجراست. برخی کارها مستقیماً توسط شما و برخی به‌صورت غیرمستقیم توسط :mod:`!asyncio` اضافه می‌شوند. حلقه رویداد یک کار را از فهرست کارهای معوق خود می‌گیرد و آن را فراخوانی می‌کند (یا «کنترل را به آن می‌دهد»)، شبیه به فراخوانی یک تابع، و سپس آن کار اجرا می‌شود. هنگامی که آن کار مکث کند یا به پایان برسد، کنترل را به حلقه رویداد بازمی‌گرداند. سپس حلقه رویداد کار دیگری را از استخر خود انتخاب می‌کند و آن را فراخوانی می‌کند. شما *تقریباً* می‌توانید مجموعه کارها را یک صف در نظر بگیرید: کارها اضافه می‌شوند و سپس یکی‌یکی پردازش می‌شوند، معمولاً (اما نه همیشه) به‌ترتیب. این فرآیند به‌طور نامحدود تکرار می‌شود، در حالی که حلقه رویداد بی‌پایان به چرخه خود ادامه می‌دهد. اگر دیگر کاری در انتظار اجرا نباشد، حلقه رویداد به‌اندازه کافی هوشمند است که استراحت کند و از هدر دادن بیهوده چرخه‌های CPU جلوگیری کند، و هنگامی که کار بیشتری برای انجام وجود داشته باشد بازمی‌گردد."
+msgstr "به بیان فنی‌تر، حلقه رویداد شامل مجموعه‌ای از کارهای در حال اجرا است. برخی کارها مستقیماً توسط شما و برخی غیرمستقیم توسط :mod:`!asyncio` اضافه می‌شوند. حلقه رویداد کاری را از عقب‌ماندگی کارهای خود برمی‌دارد و آن را فراخوانی می‌کند (یا «به آن کنترل می‌دهد»)، که شبیه به فراخوانی یک تابع است، و سپس آن کار اجرا می‌شود. هنگامی که متوقف شود یا کامل شود، کنترل را به حلقه رویداد بازمی‌گرداند. سپس حلقه رویداد کار دیگری را از استخر خود انتخاب کرده و آن را فراخوانی می‌کند. شما می‌توانید *تقریباً* مجموعه کارها را مانند یک صف در نظر بگیرید: کارها اضافه شده و سپس یکی‌یکی پردازش می‌شوند، عموماً (اما نه همیشه) به ترتیب. این فرایند به طور نامحدود تکرار می‌شود و حلقه رویداد به طور بی‌پایان به چرخش خود ادامه می‌دهد. اگر کار دیگری در انتظار اجرا نباشد، حلقه رویداد به اندازه کافی هوشمند است که استراحت کند و از هدر رفتن بی‌دلیل چرخه‌های پردازنده جلوگیری کند، و هر زمان که کار بیشتری برای انجام وجود داشته باشد، مانند زمان اتمام عملیات ورودی/خروجی یا انقضای زمان‌سنج‌ها، برمی‌گردد."
 
 msgid "Effective execution relies on jobs sharing well and cooperating; a greedy job could hog control and leave the other jobs to starve, rendering the overall event loop approach rather useless."
 msgstr "اجرای کارآمد به اشتراک‌گذاری و همکاری مناسب کارها وابسته است؛ یک کار حریص می‌تواند کنترل را تصاحب کند و سایر کارها را محروم نگه دارد، و در نتیجه رویکرد کلی حلقه رویداد را عملاً بی‌فایده می‌سازد."
@@ -210,15 +202,11 @@ msgstr ""
 msgid "Tasks"
 msgstr "وظایف"
 
-#, fuzzy
-#| msgid "Roughly speaking, :ref:`tasks <asyncio-task-obj>` are coroutines (not coroutine functions) tied to an event loop. A task also maintains a list of callback functions whose importance will become clear in a moment when we discuss :keyword:`await`. The recommended way to create tasks is via :func:`asyncio.create_task`."
 msgid "Roughly speaking, :ref:`tasks <asyncio-task-obj>` are coroutines (not coroutine functions) tied to an event loop. A task also maintains a list of callback functions whose importance will become clear in a moment when we discuss :keyword:`await`."
-msgstr "به‌طور تقریبی، :ref:`وظایف <asyncio-task-obj>` هم‌روال‌هایی (نه توابع هم‌روال) هستند که به یک حلقه رویداد وابسته‌اند. یک وظیفه نیز فهرستی از توابع کال‌بک را نگه‌داری می‌کند که اهمیت آن‌ها لحظه‌ای دیگر، هنگامی که درباره :keyword:`await` بحث می‌کنیم، روشن خواهد شد. روش توصیه‌شده برای ایجاد وظایف، استفاده از :func:`asyncio.create_task` است."
+msgstr "به طور تقریبی، :ref:`وظایف <asyncio-task-obj>` همان هم‌روال‌ها (و نه توابع هم‌روال) هستند که به یک حلقه رویداد متصل شده‌اند. یک وظیفه همچنین فهرستی از توابع بازگشتی (کال‌بک) را نگه می‌دارد که اهمیت آن‌ها لحظه‌ای دیگر هنگام بحث درباره‌ی :keyword:`await` مشخص خواهد شد."
 
-#, fuzzy
-#| msgid "Creating a task automatically schedules it for execution (by adding a callback to run it in the event loop's to-do list, that is, collection of jobs)."
 msgid "Creating a task automatically schedules it for execution (by adding a callback to run it in the event loop's to-do list, that is, collection of jobs). The recommended way to create tasks is via :func:`asyncio.create_task`."
-msgstr "ایجاد یک وظیفهبه‌طور خودکار آن را برای اجرا زمان‌بندی می‌کند (با افزودن یک کال‌بک برای اجرای آن در فهرست کارهای حلقه رویداد، یعنی مجموعه‌ای از کارها)."
+msgstr "ایجاد یک وظیفه به طور خودکار آن را برای اجرا زمان‌بندی می‌کند (با افزودن یک تابع بازگشتی برای اجرای آن در فهرست کارهای انجام‌نشدنی حلقه رویداد، یعنی مجموعه کارها). روش توصیه‌شده برای ایجاد وظایف از طریق :func:`asyncio.create_task` است."
 
 msgid ":mod:`!asyncio` automatically associates tasks with the event loop for you. This automatic association was purposely designed into :mod:`!asyncio` for the sake of simplicity. Without it, you'd have to keep track of the event loop object and pass it to any coroutine function that wants to create tasks, adding redundant clutter to your code."
 msgstr ":mod:`!asyncio` به‌طور خودکار وظایف را برای شما به حلقه رویداد مرتبط می‌کند. این ارتباط خودکار عمداً برای سادگی در :mod:`!asyncio` طراحی شده است. بدون آن، شما باید شیء حلقه رویداد را پیگیری کنید و آن را به هر تابع هم‌روالی که بخواهد وظایف را ایجاد کند، بفرستید، که این کار باعث ایجاد شلوغی اضافی در کد شما می‌شود."
@@ -306,7 +294,7 @@ msgid "In a crucial way, the behavior of ``await`` depends on the type of object
 msgstr "به‌شکلی اساسی، رفتار ``await`` به نوع شیء‌ای که await می‌شود بستگی دارد."
 
 msgid "Awaiting tasks"
-msgstr ""
+msgstr "وظایف در انتظار"
 
 msgid "Awaiting a task will cede control from the current task or coroutine to the event loop. In the process of relinquishing control, a few important things happen. We'll use the following code example to illustrate::"
 msgstr "await کردن یک task، کنترل را از task یا هم‌روال فعلی به حلقه رویداد واگذار می‌کند. در فرآیند واگذاری کنترل، چند اتفاق مهم رخ می‌دهد. برای نشان دادن این موضوع از مثال کد زیر استفاده می‌کنیم::"
@@ -335,14 +323,8 @@ msgstr "به‌طور کلی، هنگامی که وظیفه awaitشده (``dig_t
 msgid "This is a basic, yet reliable mental model. In practice, the control handoffs are slightly more complex, but not by much. In part 2, we'll walk through the details that make this possible."
 msgstr "این یک مدل ذهنی پایه‌ای، اما قابل‌اتکا است. در عمل، انتقال‌های کنترل کمی پیچیده‌تر هستند، اما نه چندان زیاد. در بخش ۲، جزئیاتی را که این امر را ممکن می‌سازند، بررسی خواهیم کرد."
 
-#, fuzzy
-#| msgid ""
-#| "await task\n"
-#| "await coroutine"
 msgid "Awaiting coroutines"
-msgstr ""
-"await task\n"
-"await coroutine"
+msgstr "انتظار کشیدن برای هم‌روال‌ها"
 
 msgid "**Unlike tasks, awaiting a coroutine does not hand control back to the event loop!** Wrapping a coroutine in a task first, then awaiting that would cede control. The behavior of ``await coroutine`` is effectively the same as invoking a regular, synchronous Python function. Consider this program::"
 msgstr "برخلاف وظایف، await کردن یک هم‌روال کنترل را به حلقه رویداد بازنمی‌گرداند! قرار دادن یک هم‌روال در یک وظیفه و سپس await کردن آن، کنترل را واگذار می‌کند. رفتار ``await coroutine`` عملاً همانند فراخوانی یک تابع پایتون عادی و همگام است. این برنامه را در نظر بگیرید::"
@@ -413,10 +395,8 @@ msgstr ""
 msgid "This behavior of ``await coroutine`` can trip a lot of people up! That example highlights how using only ``await coroutine`` could unintentionally hog control from other tasks and effectively stall the event loop. :func:`asyncio.run` can help you detect such occurrences via the ``debug=True`` flag, which enables :ref:`debug mode <asyncio-debug-mode>`. Among other things, it will log any coroutines that monopolize execution for 100ms or longer."
 msgstr "این رفتار ``await coroutine`` می‌تواند بسیاری از افراد را دچار اشتباه کند! آن مثال نشان می‌دهد که چگونه استفاده‌ی صرف از ``await coroutine`` می‌تواند به‌طور غیرعمدی کنترل را از سایر وظایف تصاحب کند و عملاً حلقه رویداد را متوقف کند. :func:`asyncio.run` می‌تواند به شما کمک کند تا چنین مواردی را از طریق پرچم ``debug=True`` تشخیص دهید، که :ref:`حالت اشکال‌زدایی <asyncio-debug-mode>` را فعال می‌کند. در میان سایر موارد، این حالت هر هم‌روالی را که اجرا را برای ۱۰۰ میلی‌ثانیه یا بیشتر در انحصار خود می‌گیرد، ثبت می‌کند."
 
-#, fuzzy
-#| msgid "The design intentionally trades off some conceptual clarity around usage of ``await`` for improved performance. Each time a task is awaited, control needs to be passed all the way up the call stack to the event loop. That might sound minor, but in a large program with many ``await`` statements and a deep call stack, that overhead can add up to a meaningful performance drag."
 msgid "The design intentionally trades off some conceptual clarity around usage of ``await`` for improved performance. Each time a task is awaited, control needs to be passed all the way up the call stack to the event loop. Then, the event loop needs to manage its internal state and work through its processing logic to resume the next job. That might sound minor, but in a large program with many ``await``\\ s, that overhead can add up to a non-negligible performance drag."
-msgstr "طراحی عمداً تا حدی وضوح مفهومی پیرامون استفاده از ``await`` را با بهبود عملکرد معاوضه می‌کند. هر بار که یک وظیفه در انتظار قرار می‌گیرد، کنترل باید از کل پشته فراخوانی به حلقه رویداد منتقل شود. ممکن است این موضوع جزئی به نظر برسد، اما در یک برنامه بزرگ با تعداد زیادی دستور ``await`` و پشته فراخوانی عمیق، این سربار می‌تواند به افت عملکرد قابل‌توجهی منجر شود."
+msgstr "طراحی این بخش عمدتاً برای بهبود عملکرد، مقداری از وضوح مفهومی پیرامون استفاده از ``await`` را فدا می‌کند. هر بار که برای یک وظیفه انتظار کشیده می‌شود، لازم است کنترل تمام مسیر را در پشته‌ی فراخوانی تا حلقه رویداد بالا ببرد. سپس، حلقه رویداد باید وضعیت داخلی خود را مدیریت کرده و منطق پردازش خود را طی کند تا کار بعدی را از سر بگیرد. ممکن است این موضوع جزئی به نظر برسد، اما در یک برنامه‌ی بزرگ با تعداد زیادی ``await``، این سربار می‌تواند به افت عملکرد قابل‌توجهی منجر شود."
 
 msgid "A conceptual overview part 2: the nuts and bolts"
 msgstr "مرور کلی مفهومی، بخش ۲: جزئیات عملی"
@@ -427,10 +407,8 @@ msgstr "بخش ۲ به تفصیل به سازوکارهایی می‌پرداز�
 msgid "The inner workings of coroutines"
 msgstr "سازوکار درونی هم‌روال‌ها"
 
-#, fuzzy
-#| msgid ":mod:`!asyncio` leverages four components to pass around control."
 msgid ":mod:`!asyncio` leverages four components of Python to pass around control."
-msgstr ":mod:`!asyncio` برای جابه‌جایی کنترل از چهار کامپوننت بهره می‌گیرد."
+msgstr ":mod:`!asyncio` از چهار مؤلفه‌ی پایتون برای انتقال کنترل استفاده می‌کند."
 
 msgid ":meth:`coroutine.send(arg) <generator.send>` is the method used to start or resume a coroutine. If the coroutine was paused and is now being resumed, the argument ``arg`` will be sent in as the return value of the ``yield`` statement which originally paused it. If the coroutine is being used for the first time (as opposed to being resumed), ``arg`` must be ``None``."
 msgstr ":meth:`coroutine.send(arg) <generator.send>` متدی است که برای آغاز یا از سر گرفتن یک هم‌روال به کار می‌رود. اگر هم‌روال متوقف شده باشد و اکنون از سر گرفته شود، آرگومان ``arg`` به‌عنوان مقدار بازگشتی دستور ``yield`` که در ابتدا آن را متوقف کرده بود، فرستاده می‌شود. اگر هم‌روال برای اولین بار استفاده شود (نه اینکه از سر گرفته شود)، ``arg`` باید ``None`` باشد."
@@ -521,10 +499,8 @@ msgstr "تنها راه برای yield کردن از یک هم‌روال (یا 
 msgid "1. What about a ``yield`` directly within the coroutine function? The coroutine function becomes an :ref:`async generator function <asynchronous-generator-functions>`, a different beast entirely."
 msgstr "۱. اگر یک ``yield`` به‌طور مستقیم درون تابع هم‌روال باشد چطور؟ تابع هم‌روال به یک :ref:`تابع تولیدگر ناهمگام <asynchronous-generator-functions>` تبدیل می‌شود، که به‌کلی مقوله‌ای متفاوت است."
 
-#, fuzzy
-#| msgid "2. What about a :ref:`yield from <yieldexpr>` within the coroutine function to a (plain) generator? That causes the error: ``SyntaxError: yield from not allowed in a coroutine.`` This was intentionally designed for the sake of simplicity -- mandating only one way of using coroutines. Initially ``yield`` was barred as well, but was re-accepted to allow for async generators. Despite that, ``yield from`` and ``await`` effectively do the same thing."
 msgid "2. What about a :ref:`yield from <yieldexpr>` within the coroutine function to a (plain) generator? That causes the error: ``SyntaxError: yield from not allowed in a coroutine.`` This was intentionally designed for the sake of simplicity -- mandating only one way of using coroutines. Despite that, ``yield from`` and ``await`` effectively do the same thing. Initially ``yield`` was barred as well, but was re-accepted to allow for async generators."
-msgstr "۲. اگر درون تابع هم‌روال، یک :ref:`yield from <yieldexpr>` به یک تولیدگر (ساده) داشته باشید، چه؟ این باعث خطای زیر می‌شود: ``SyntaxError: yield from not allowed in a coroutine.`` این به‌عمد به‌خاطر سادگی طراحی شده است — تا تنها یک روش برای استفاده از هم‌روال‌ها الزامی باشد. در ابتدا ``yield`` نیز ممنوع بود، اما برای امکان‌پذیر شدن تولیدگرهای ناهمگام دوباره پذیرفته شد. با وجود این، ``yield from`` و ``await`` عملاً کار یکسانی انجام می‌دهند."
+msgstr "۲. درباره‌ی استفاده از :ref:`yield from <yieldexpr>` درون تابع هم‌روال به یک تولیدگر (ساده) چطور؟ این کار خطای زیر را ایجاد می‌کند: ``SyntaxError: yield from not allowed in a coroutine.`` این موضوع به خاطر سادگی -- یعنی الزامی کردن تنها یک روش برای استفاده از هم‌روال‌ها -- به طور عمدی طراحی شده است. با وجود این، ``yield from`` و ``await`` عملاً کار مشابهی انجام می‌دهند. در ابتدا ``yield`` نیز ممنوع بود، اما برای امکان‌پذیر شدن استفاده از تولیدگرهای ناهمگام مجدداً پذیرفته شد."
 
 msgid "Futures"
 msgstr "آینده‌نماها (Futures)"

@@ -2629,10 +2629,8 @@ msgstr "این‌ها بخشی از :ref:`API محدود <limited-api-list>` ن�
 msgid "(Contributed by Victor Stinner in :issue:`45474`.)"
 msgstr "(مشارکت‌شده توسط Victor Stinner در :issue:`45474`.)"
 
-#, fuzzy
-#| msgid "Exclude :c:func:`PyWeakref_GET_OBJECT` from the limited C API. It never worked since the :c:type:`!PyWeakReference` structure is opaque in the limited C API. (Contributed by Victor Stinner in :issue:`35134`.)"
 msgid "Exclude :c:func:`!PyWeakref_GET_OBJECT` from the limited C API. It never worked since the :c:type:`!PyWeakReference` structure is opaque in the limited C API. (Contributed by Victor Stinner in :issue:`35134`.)"
-msgstr "حذف :c:func:`PyWeakref_GET_OBJECT` از C API محدود. این تابع هرگز کار نمی‌کرد، زیرا ساختار :c:type:`!PyWeakReference` در C API محدود مات است. (مشارکت‌شده توسط Victor Stinner در :issue:`35134`.)"
+msgstr "تابع :c:func:`!PyWeakref_GET_OBJECT` از API محدود C حذف شد. این تابع هیچ‌وقت کار نمی‌کرد زیرا ساختار :c:type:`!PyWeakReference` در API محدود C به صورت کدر (opaque) است. (مشارکت‌کرده توسط Victor Stinner در :issue:`35134`.)"
 
 msgid "Remove the ``PyHeapType_GET_MEMBERS()`` macro. It was exposed in the public C API by mistake, it must only be used by Python internally. Use the ``PyTypeObject.tp_members`` member instead. (Contributed by Victor Stinner in :issue:`40170`.)"
 msgstr "ماکرو ``PyHeapType_GET_MEMBERS()`` حذف شد. این ماکرو به اشتباه در API عمومی C افشا شده بود و تنها باید به‌صورت داخلی توسط پایتون استفاده شود. در عوض از عضو ``PyTypeObject.tp_members`` استفاده کنید. (مشارکت‌شده توسط Victor Stinner در :issue:`40170`.)"

@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-01 14:41+0330\n"
-"PO-Revision-Date: 2026-09-14 08:51+0330\n"
+"PO-Revision-Date: 2026-10-06 20:30+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
 "Language: fa\n"
@@ -28,10 +28,8 @@ msgstr ""
 msgid ":mod:`!array` --- Efficient arrays of numeric values"
 msgstr ":mod:`!array` --- آرایه‌های کارآمد از مقادیر عددی"
 
-#, fuzzy
-#| msgid "This module defines an object type which can compactly represent an array of basic values: characters, integers, floating-point numbers.  Arrays are mutable :term:`sequence` types and behave very much like lists, except that the type of objects stored in them is constrained.  The type is specified at object creation time by using a :dfn:`type code`, which is a single character.  The following type codes are defined:"
 msgid "This module defines an object type which can compactly represent an array of basic values: characters, integers, floating-point numbers, complex numbers.  Arrays are mutable :term:`sequence` types and behave very much like lists, except that the type of objects stored in them is constrained.  The type is specified at object creation time by using a :dfn:`type code`, which is a single character.  The following type codes are defined:"
-msgstr "این ماژول یک نوع شیء را تعریف می‌کند که می‌تواند آرایه‌ای از مقادیر پایه را به‌صورت فشرده بازنمایی کند: نویسه‌ها، اعداد صحیح و اعداد ممیز شناور. آرایه‌ها انواعی از :term:`دنباله <sequence>` تغییرپذیر هستند و بسیار شبیه فهرست‌ها رفتار می‌کنند، با این تفاوت که نوع اشیاء ذخیره‌شده در آن‌ها محدود است. این نوع در زمان ایجاد شیء با استفاده از یک :dfn:`کد نوع (type code)` مشخص می‌شود که یک نویسه واحد است. کدهای نوع زیر تعریف شده‌اند:"
+msgstr "این ماژول یک نوع شیء تعریف می‌کند که می‌تواند آرایه‌ای از مقادیر پایه را به‌صورت فشرده نمایش دهد: نویسه‌ها، اعداد صحیح، اعداد ممیز شناور و اعداد مختلط. آرایه‌ها نوع‌های :term:`دنباله <sequence>` تغییرپذیر هستند و بسیار شبیه فهرست‌ها رفتار می‌کنند، با این تفاوت که نوع اشیای ذخیره‌شده در آن‌ها محدود است. نوع در زمان ایجاد شیء، با استفاده از یک :dfn:`کد نوع` که یک نویسه‌ی منفرد است، مشخص می‌شود. کدهای نوع زیر تعریف شده‌اند:"
 
 msgid "Type code"
 msgstr "کد نوع"
@@ -145,18 +143,16 @@ msgid "unsigned long long"
 msgstr "unsigned long long"
 
 msgid "``'e'``"
-msgstr ""
+msgstr "``'e'``"
 
-#, fuzzy
-#| msgid "float"
 msgid "_Float16"
-msgstr "float"
+msgstr "_Float16"
 
 msgid "float"
 msgstr "float"
 
 msgid "\\(3)"
-msgstr ""
+msgstr "\\(3)"
 
 msgid "``'f'``"
 msgstr "``'f'``"
@@ -167,34 +163,26 @@ msgstr "``'d'``"
 msgid "double"
 msgstr "double"
 
-#, fuzzy
-#| msgid "``'f'``"
 msgid "``'Zf'``"
-msgstr "``'f'``"
+msgstr "``'Zf'``"
 
 msgid "float complex"
-msgstr ""
+msgstr "عدد اعشاری مختلط"
 
 msgid "complex"
-msgstr ""
+msgstr "مختلط"
 
 msgid "\\(4)"
-msgstr ""
+msgstr "\\(4)"
 
-#, fuzzy
-#| msgid "``'d'``"
 msgid "``'Zd'``"
-msgstr "``'d'``"
+msgstr "``'Zd'``"
 
-#, fuzzy
-#| msgid "double"
 msgid "double complex"
-msgstr "double"
+msgstr "ممیز شناور با دقت مضاعف مختلط"
 
-#, fuzzy
-#| msgid "1"
 msgid "16"
-msgstr "1"
+msgstr "۱۶"
 
 msgid "Notes:"
 msgstr "یادداشت‌ها:"
@@ -209,10 +197,10 @@ msgid "Please migrate to ``'w'`` typecode."
 msgstr "لطفاً به کد نوع (typecode) ``'w'`` مهاجرت کنید."
 
 msgid "The IEEE 754 binary16 \"half precision\" type was introduced in the 2008 revision of the `IEEE 754 standard <ieee 754 standard_>`_. This type is not widely supported by C compilers.  It's available as :c:expr:`_Float16` type, if the compiler supports the Annex H of the C23 standard."
-msgstr ""
+msgstr "نوع «نیم‌دقت» دودویی IEEE 754 با نام binary16 در بازبینی سال ۲۰۰۸ از :ieee 754 standard <استاندارد IEEE 754>_ معرفی شد. این نوع داده به‌طور گسترده توسط کامپایلرهای C پشتیبانی نمی‌شود. اگر کامپایلر از ضمیمه‌ی H استاندارد C23 پشتیبانی کند، این نوع داده به عنوان نوع :c:expr:`_Float16` در دسترس است."
 
 msgid "Complex types (``Zf`` and ``Zd``) are available unconditionally, regardless on support for complex types (the Annex G of the C11 standard) by the C compiler. As specified in the C11 standard, each complex type is represented by a two-element C array containing, respectively, the real and imaginary parts."
-msgstr ""
+msgstr "انواع مختلط (``Zf`` و ``Zd``) بدون قید و شرط و صرف‌نظر از پشتیبانی کامپایلر C از انواع مختلط (ضمیمه‌ی G استاندارد C11) در دسترس هستند. همان‌طور که در استاندارد C11 مشخص شده است، هر نوع داده‌ی مختلط توسط یک آرایه‌ی C دو عضوی نمایش داده می‌شود که به ترتیب شامل بخش‌های حقیقی و موهمی است."
 
 msgid "The :ref:`ctypes <ctypes-fundamental-data-types>` and :ref:`struct <format-characters>` modules, as well as third-party modules like `numpy <https://numpy.org/doc/stable/reference/arrays.interface.html#object.__array_interface__>`__, use similar -- but slightly different -- type codes."
 msgstr "ماژول‌های :ref:`ctypes <ctypes-fundamental-data-types>` و :ref:`struct <format-characters>`، و همچنین ماژول‌های شخص ثالث مانند `numpy <https://numpy.org/doc/stable/reference/arrays.interface.html#object.__array_interface__>`__، از کدهای نوع مشابه -- اما کمی متفاوت -- استفاده می‌کنند."
@@ -223,13 +211,11 @@ msgstr "نمایش واقعی مقادیر توسط معماری ماشین تع
 msgid "The module defines the following item:"
 msgstr "این ماژول آیتم زیر را تعریف می‌کند:"
 
-#, fuzzy
-#| msgid "A string with all available type codes."
 msgid "A tuple with all available type codes."
-msgstr "رشته‌ای حاوی همه‌ی کدهای نوع موجود."
+msgstr "یک تاپل با تمام کدهای نوع موجود."
 
 msgid "The type changed from :class:`str` to :class:`tuple`."
-msgstr ""
+msgstr "نوع داده از :class:`str` به :class:`tuple` تغییر یافت."
 
 msgid "The module defines the following type:"
 msgstr "این ماژول نوع زیر را تعریف می‌کند:"
@@ -264,10 +250,8 @@ msgstr "یک تاپل ``(address, length)`` برمی‌گرداند که نشا�
 msgid "When using array objects from code written in C or C++ (the only way to effectively make use of this information), it makes more sense to use the buffer interface supported by array objects.  This method is maintained for backward compatibility and should be avoided in new code.  The buffer interface is documented in :ref:`bufferobjects`."
 msgstr "هنگام استفاده از اشیای آرایه از کدی که به زبان C یا C++ نوشته‌شده است (تنها راه برای استفاده مؤثر از این اطلاعات)، منطقی‌تر است از رابط بافر (buffer interface) که توسط اشیای آرایه پشتیبانی می‌شود استفاده کنید. این متد برای سازگاری با عقب‌گرد نگهداری می‌شود و باید در کد جدید از آن اجتناب شود. رابط بافر در :ref:`bufferobjects` مستند شده است."
 
-#, fuzzy
-#| msgid "\"Byteswap\" all items of the array.  This is only supported for values which are 1, 2, 4, or 8 bytes in size; for other types of values, :exc:`RuntimeError` is raised.  It is useful when reading data from a file written on a machine with a different byte order."
 msgid "\"Byteswap\" all items of the array.  This is only supported for values which are 1, 2, 4, 8 or 16 bytes in size; for other types of values, :exc:`RuntimeError` is raised.  It is useful when reading data from a file written on a machine with a different byte order.  Note, that for complex types the order of components (the real part, followed by imaginary part) is preserved."
-msgstr "«جابه‌جایی بایت‌ها» (Byteswap) برای تمام آیتم‌های آرایه انجام می‌شود. این عمل فقط برای مقادیری با اندازه‌ی ۱، ۲، ۴ یا ۸ بایت پشتیبانی می‌شود؛ برای سایر انواع مقادیر، :exc:`RuntimeError` پرتاب می‌شود. این عمل هنگام خواندن داده‌ها از پرونده‌ای که روی ماشینی با ترتیب بایت متفاوت نوشته شده است، مفید است."
+msgstr "تمام آیتم‌های آرایه را «Byteswap» کنید. این کار فقط برای مقادیری پشتیبانی می‌شود که اندازه‌ی آن‌ها ۱، ۲، ۴، ۸ یا ۱۶ بایت باشد؛ برای سایر انواع مقادیر، استثنای :exc:`RuntimeError` بالا می‌رود. این کار هنگام خواندن داده از پرونده‌ای که روی ماشینی با ترتیب بایت متفاوت نوشته شده است، مفید است. توجه داشته باشید که برای انواع مختلط، ترتیب اجزا (بخش حقیقی، و به دنبال آن بخش موهومی) حفظ می‌شود."
 
 msgid "Return the number of occurrences of *value* in the array."
 msgstr "تعداد تکرارهای *value* را در آرایه برمی‌گرداند."
