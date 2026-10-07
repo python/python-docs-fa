@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-07 04:46+0000\n"
 "PO-Revision-Date: 2026-10-01 14:41+0330\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -223,7 +223,9 @@ msgstr "این راهنما از شما می‌خواهد مجموعه‌ای ا
 msgid "Module export hook"
 msgstr "قلاب اکسپورت ماژول"
 
-msgid "Unless you've done this step already, your extension module defines a :ref:`module initialization function <extension-pyinit>` named :samp:`PyInit_{<module_name>}`. You will need to port it to a :ref:`module export hook <extension-export-hook>`, :samp:`PyModExport_{<module name>}`, a feature added in CPython 3.15 in :pep:`793`."
+#, fuzzy
+#| msgid "Unless you've done this step already, your extension module defines a :ref:`module initialization function <extension-pyinit>` named :samp:`PyInit_{<module_name>}`. You will need to port it to a :ref:`module export hook <extension-export-hook>`, :samp:`PyModExport_{<module name>}`, a feature added in CPython 3.15 in :pep:`793`."
+msgid "Unless you've done this step already, your extension module defines a :ref:`module initialization function <extension-pyinit>` named :samp:`PyInit_{<modname>}` (where ``modname`` is the name of your module). You will need to port it to a :ref:`module export hook <extension-export-hook>`, :samp:`PyModExport_{<modname>}`, a feature added in CPython 3.15 in :pep:`793`."
 msgstr "مگر اینکه قبلاً این مرحله را انجام داده باشید، ماژول توسعه‌ای شما یک :ref:`تابع مقداردهی اولیه‌ی ماژول <extension-pyinit>` به نام :samp:`PyInit_{<module_name>}` را تعریف می‌کند. لازم است آن را به یک :ref:`قلاب اکسپورت ماژول <extension-export-hook>`، یعنی :samp:`PyModExport_{<module name>}` منتقل کنید که این ویژگی در سی‌پایتون ۳.۱۵ در :pep:`793` اضافه شده است."
 
 msgid "Your existing init function should look like this (with your own names for ``<modname>`` and ``<moddef>``):"
@@ -327,6 +329,23 @@ msgstr "برای جزئیات این API، مستندات :c:type:`PySlot` و :c
 
 msgid "As in the example, your ``PyModExport_`` function should *only* return a pointer to static data. If you cannot avoid additional code, refer to the :ref:`caveats in PyModExport documentation <pymodexport-api-caveats>`."
 msgstr "همانند نمونه، تابع ``PyModExport_`` شما *فقط* باید یک اشاره‌گر به داده‌ی ایستا برگرداند. اگر نمی‌توانید از کد اضافی جلوگیری کنید، به :ref:`موارد احتیاطی در مستندات PyModExport <pymodexport-api-caveats>` مراجعه کنید."
+
+msgid "When building for Windows using the Setuptools_ build tool, removing the :samp:`PyInit_{<modname>}` function may result in the linker error :samp:`LINK : error LNK2001: unresolved external symbol PyInit_{<modname>}`. This is caused by Setuptools passing an ``/EXPORT`` linker flag, which is redundant since Python 3.15 (see :gh:`141671`). A workaround is to add a dummy :samp:`PyInit_{<modname>}` function to your code. Python 3.15+ will never call this function if :samp:`PyModExport_{<modname>}` is present, so it can always fail:"
+msgstr ""
+
+msgid ""
+"// Workaround for https://github.com/pypa/distutils/issues/387\n"
+"PyMODINIT_FUNC\n"
+"PyInit_<modname>(void)\n"
+"{\n"
+"    PyErr_SetString(PyExc_SystemError,\n"
+"                    \"PyInit_* called for module with PyModExport_*\");\n"
+"    return NULL;\n"
+"}"
+msgstr ""
+
+msgid "(This issue is present in Setuptools 84.0.0; it might be fixed in newer versions.)"
+msgstr ""
 
 msgid "Existing slots"
 msgstr "جایگاه‌های موجود"

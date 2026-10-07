@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-07 04:46+0000\n"
 "PO-Revision-Date: 2026-09-14 15:36+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -140,6 +140,12 @@ msgstr "پوشه را می‌توان با فراخوانی متد :meth:`!clean
 
 msgid "The *delete* parameter can be used to disable cleanup of the directory tree upon exiting the context.  While it may seem unusual for a context manager to disable the action taken when exiting the context, it can be useful during debugging or when you need your cleanup behavior to be conditional based on other logic."
 msgstr "می‌توان از پارامتر *delete* برای غیرفعال کردن پاک‌سازی درخت پوشه‌ها هنگام خروج از زمینه استفاده کرد. اگرچه ممکن است غیرعادی به نظر برسد که یک مدیر زمینه عملیات انجام‌شده هنگام خروج از زمینه را غیرفعال کند، اما این کار می‌تواند در حین اشکال‌زدایی یا زمانی که نیاز دارید رفتار پاک‌سازی شما بر اساس منطق دیگری مشروط باشد، مفید باشد."
+
+msgid "Cleanup is not robust against the tree being modified while it is removed. Files outside of the tree may have their permissions and file flags reset."
+msgstr ""
+
+msgid "On systems where :data:`shutil.rmtree.avoids_symlink_attacks` is false, manipulating symbolic links during cleanup may cause files outside of the tree to be removed."
+msgstr ""
 
 msgid "Raises an :ref:`auditing event <auditing>` ``tempfile.mkdtemp`` with argument ``fullpath``."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``tempfile.mkdtemp`` را با آرگومان ``fullpath`` پرتاب می‌کند."
