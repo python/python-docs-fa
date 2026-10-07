@@ -1,10 +1,10 @@
 name: Scheduled Maintenance
 
 on:
-  # schedule:
+  schedule:
     # Runs after the 04:00 CPython sync so the status table and headers
     # reflect today's msgids instead of yesterday's.
-    # - cron: '0 5 * * *'
+    - cron: '0 5 * * *'
   workflow_dispatch: {}
 
 permissions:

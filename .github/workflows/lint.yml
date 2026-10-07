@@ -1,10 +1,10 @@
 name: Lint Check
 
 on:
-  # schedule:
+  schedule:
     # After the 04:00 sync and 05:00 maintenance, so it lints tonight's result.
     # (Pushes made with GITHUB_TOKEN do not trigger this workflow.)
-    # - cron: '0 7 * * *'
+    - cron: '0 7 * * *'
   push:
     branches:
       - '**'   # '*' does not match branch names containing a slash
