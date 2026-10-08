@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 04:46+0000\n"
+"POT-Creation-Date: 2026-10-08 04:19+0000\n"
 "PO-Revision-Date: 2026-10-06 19:50+0330\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -510,11 +510,13 @@ msgstr "تغییر از یک تابع ``PyInit_`` به یک قلاب اکسپو�
 msgid "Note that Stable ABI does not offer all the functionality that CPython has to offer. Extensions that cannot switch to ``abi3t`` should continue to build for the existing Stable ABI (``abi3``) and the version-specific ABI for free-threading (``cp315t``) separately."
 msgstr "توجه داشته باشید که رابط دودویی کاربردی (ABI) پایدار تمام قابلیت‌هایی را که سی‌پایتون ارائه می‌دهد، فراهم نمی‌کند. افزونه‌هایی که نمی‌توانند به ``abi3t`` تغییر وضعیت دهند، باید به ساخت برای رابط دودویی کاربردی پایدار موجود (``abi3``) و رابط دودویی کاربردی مخصوص نسخه‌ی نخ‌آزاد (``cp315t``) به صورت جداگانه ادامه دهند."
 
-msgid "Stable ABI for Free-Threaded Builds should typically be selected in a build tool (such as, for example, Setuptools, meson-python, scikit-build-core, or Maturin). At the time of writing, these tools do **not** support ``abi3t``. If this is the case for your tool, compile for ``cp315t`` separately. If not using a build tool -- or when writing such a tool -- you can select ``abi3t`` by setting the macro :c:macro:`!Py_TARGET_ABI3T` as discussed in :ref:`abi3-compiling`."
+#, fuzzy
+#| msgid "Stable ABI for Free-Threaded Builds should typically be selected in a build tool (such as, for example, Setuptools, meson-python, scikit-build-core, or Maturin). At the time of writing, these tools do **not** support ``abi3t``. If this is the case for your tool, compile for ``cp315t`` separately. If not using a build tool -- or when writing such a tool -- you can select ``abi3t`` by setting the macro :c:macro:`!Py_TARGET_ABI3T` as discussed in :ref:`abi3-compiling`."
+msgid "Stable ABI for Free-Threaded Builds should typically be selected in a build tool. Tools with ``abi3t`` support include meson-python, scikit-build-core, and Maturin; see :ref:`abi3t-migration-build` for links to their documentation on ``abi3t`` builds. If your build tool does not support ``abi3t``, compile for ``cp315t`` separately. If not using a build tool -- or when writing such a tool -- you can select ``abi3t`` by setting the macro :c:macro:`!Py_TARGET_ABI3T` as discussed in :ref:`abi3-compiling`."
 msgstr "رابط دودویی کاربردی پایدار برای ساخت‌های نخ‌آزاد معمولاً باید در یک ابزار ساخت (مانند Setuptools، meson-python، scikit-build-core، یا Maturin) انتخاب شود. در زمان نگارش این متن، این ابزارها از ``abi3t`` پشتیبانی **نمی‌کنند**. اگر ابزار شما نیز چنین است، برای ``cp315t`` به صورت جداگانه کامپایل کنید. اگر از ابزار ساخت استفاده نمی‌کنید — یا هنگام نوشتن چنین ابزاری — می‌توانید با تنظیم کلان‌دستور :c:macro:`!Py_TARGET_ABI3T` همان‌طور که در :ref:`abi3-compiling` بحث شد، ``abi3t`` را انتخاب کنید."
 
-msgid "A practical :ref:`migration guide <abi3t-migration-howto>` for switching to ``abi3t`` is available."
-msgstr "یک :ref:`راهنمای مهاجرت <abi3t-migration-howto>` کاربردی برای تغییر به ``abi3t`` در دسترس است."
+msgid "A practical :ref:`migration guide <abi3t-migration-howto>` for switching to ``abi3t`` is available. The community-maintained `Python Free-Threading Guide <https://py-free-threading.github.io/abi3t/>`__ provides examples of building and testing ``abi3t`` wheels."
+msgstr ""
 
 msgid ":pep:`803` for further details."
 msgstr "برای جزئیات بیشتر به :pep:`803` مراجعه کنید."
@@ -2784,3 +2786,6 @@ msgstr "پُرکننده (padding) ورودی دیگر در :func:`base64.urlsaf
 
 msgid "Since :meth:`unittest.TestCase.assertWarns` and :meth:`unittest.TestCase.assertWarnsRegex` no longer swallow warnings that do not match the specified category or regex, your tests may start leaking some warnings that were previously masked. Use warning filters to silence them or additional :meth:`!assertWarns*` to catch and check them. (Contributed by Serhiy Storchaka in :gh:`143231`.)"
 msgstr "از آنجا که :meth:`unittest.TestCase.assertWarns` و :meth:`unittest.TestCase.assertWarnsRegex` دیگر اخطارهایی را که با دسته‌بندی یا عبارت منظم مشخص‌شده مطابقت ندارند نادیده نمی‌گیرند، ممکن است آزمون‌های شما شروع به نشت دادن برخی اخطارها کنند که پیش‌تر پنهان شده بودند. برای بی‌صدا کردن آن‌ها از صافی‌های اخطار (warning filters) یا از متدهای اضافی :meth:`!assertWarns*` برای گرفتن و بررسی آن‌ها استفاده کنید. (مشارکت‌شده توسط Serhiy Storchaka در :gh:`143231`.)"
+
+#~ msgid "A practical :ref:`migration guide <abi3t-migration-howto>` for switching to ``abi3t`` is available."
+#~ msgstr "یک :ref:`راهنمای مهاجرت <abi3t-migration-howto>` کاربردی برای تغییر به ``abi3t`` در دسترس است."

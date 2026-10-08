@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-07 04:46+0000\n"
+"POT-Creation-Date: 2026-10-08 04:19+0000\n"
 "PO-Revision-Date: 2026-10-01 14:41+0330\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -188,8 +188,20 @@ msgstr "اگر افزونه‌ی شما انواعی با اندازه‌ی مت
 msgid "Setting up the build"
 msgstr "تنظیم ساخت"
 
-msgid "If you use a build tool (such as setuptools, meson-python, scikit-build-core), search its documentation for a way to select ``abi3t``. At the time of writing, not all of them have this; but if your tool does, use it. You may want to verify that it set the right flag by temporarily adding the following just after ``#include <Python.h>``::"
-msgstr "اگر از یک ابزار ساخت (مانند setuptools، meson-python، scikit-build-core) استفاده می‌کنید، مستندات آن را برای یافتن روشی جهت انتخاب ``abi3t`` جستجو کنید. در زمان نگارش این متن، همه آن‌ها این ویژگی را ندارند؛ اما اگر ابزار شما دارد، از آن استفاده کنید. ممکن است بخواهید با افزودن موقت کد زیر بلافاصله پس از ``#include <Python.h>`` بررسی کنید که آیا پرچم مناسب را تنظیم کرده است یا خیر::"
+msgid "If you use a build tool, search its documentation for \"``abi3t``\", and follow any instructions to select the ABI. For reference, here are direct links for several popular build tools:"
+msgstr ""
+
+msgid "`meson-python <https://mesonbuild.com/meson-python/how-to-guides/limited-api.html#the-abi3t-stable-abi>`__"
+msgstr ""
+
+msgid "`scikit-build-core <https://scikit-build-core.readthedocs.io/en/stable/configuration/#customizing-the-output-wheel>`__"
+msgstr ""
+
+msgid "`Maturin <https://www.maturin.rs/bindings#py_limited_apiabi3>`__"
+msgstr ""
+
+msgid "You may want to verify that the tool set the right flag by temporarily adding the following just after ``#include <Python.h>``::"
+msgstr ""
 
 msgid ""
 "#if Py_TARGET_ABI3T+0 <= 0x30f0000\n"
@@ -202,6 +214,9 @@ msgstr ""
 
 msgid "This should result in a different error than \"``abi3t`` define is not set\"."
 msgstr "این امر باید خطایی متفاوت از \"``abi3t`` define is not set\" ایجاد کند."
+
+msgid "`Building and distributing abi3t extensions <https://py-free-threading.github.io/abi3t/>`__: Build configuration and wheel testing examples in the community-maintained Python Free-Threading Guide."
+msgstr ""
 
 msgid "If your build tool doesn't support ``abi3t`` yet, set the following macro before including ``Python.h``::"
 msgstr "اگر ابزار ساخت شما هنوز از ``abi3t`` پشتیبانی نمی‌کند، کلان‌دستور زیر را پیش از گنجاندن ``Python.h`` تنظیم کنید::"
@@ -793,3 +808,6 @@ msgstr "حتماً آزمون‌ها را روی هر دو ساخت نخ‌آز�
 
 msgid "If they pass, congratulations! You have an ``abi3t`` extension."
 msgstr "اگر با موفقیت انجام شدند، تبریک می‌گوییم! شما یک افزونه‌ی ``abi3t`` دارید."
+
+#~ msgid "If you use a build tool (such as setuptools, meson-python, scikit-build-core), search its documentation for a way to select ``abi3t``. At the time of writing, not all of them have this; but if your tool does, use it. You may want to verify that it set the right flag by temporarily adding the following just after ``#include <Python.h>``::"
+#~ msgstr "اگر از یک ابزار ساخت (مانند setuptools، meson-python، scikit-build-core) استفاده می‌کنید، مستندات آن را برای یافتن روشی جهت انتخاب ``abi3t`` جستجو کنید. در زمان نگارش این متن، همه آن‌ها این ویژگی را ندارند؛ اما اگر ابزار شما دارد، از آن استفاده کنید. ممکن است بخواهید با افزودن موقت کد زیر بلافاصله پس از ``#include <Python.h>`` بررسی کنید که آیا پرچم مناسب را تنظیم کرده است یا خیر::"
