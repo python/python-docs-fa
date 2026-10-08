@@ -8,7 +8,7 @@ checkout. Used by both:
   - scripts/update_python_version.py  (manual, deliberate version bumps,
     full clone, creates new .po files for brand-new pages)
   - .github/workflows/sync-with-cpython.yml (nightly automated msgid sync,
-    sparse checkout, merge-only by default, opens an issue for fuzzy strings)
+    merge-only by default, opens an issue for fuzzy strings)
 
 Keeping this logic in one place means both paths build .pot files and run
 msgmerge/msgfmt identically -- no more silent flag drift (e.g. one path
@@ -20,6 +20,23 @@ extraction (which includes template strings from indexcontent.html etc.)
 AND Sphinx's own internal UI-string catalog (sphinx/locale/sphinx.pot).
 sync_sphinx_catalog() combines both into one POT before merging, so
 neither set of strings clobbers the other.
+
+Changelog (whatsnew/changelog.po)
+---------------------------------
+The "Changelog" page is not written by hand: CPython's `make gettext`
+first runs `blurb merge`, which assembles Doc/build/NEWS from the entries in
+Misc/NEWS.d, and only then runs Sphinx. Two things follow:
+
+  - the checkout must be a complete CPython checkout (blurb refuses to run
+    outside one, so a sparse Doc/Include/Misc checkout fails), and
+  - the .pot must be built with `make -C Doc gettext`, not by calling
+    sphinx-build directly, otherwise whatsnew/changelog.pot only contains
+    the page title.
+
+build_gettext() therefore uses `make`, exactly like the translations
+dashboard does, and verify_changelog_pot() refuses to continue if the
+changelog template looks truncated (merging against a truncated template
+would turn every changelog translation into an obsolete `#~` entry).
 
 New upstream pages
 ------------------
@@ -68,6 +85,13 @@ DEFAULT_LOCALE = "fa"
 
 IGNORED_DIR_NAMES = {".git", ".cpython-src", ".pot-templates"}
 
+# whatsnew/changelog.pot is generated from Misc/NEWS.d by blurb. A healthy
+# build has many thousands of entries (~15k for 3.15); a build where blurb
+# did not run has exactly one (the page title). Anything below this threshold
+# is treated as a broken build.
+CHANGELOG_POT = Path("whatsnew") / "changelog.pot"
+MIN_CHANGELOG_MSGIDS = 1000
+
 
 def run(
     cmd: list, cwd: Path | None = None, check: bool = True
@@ -92,9 +116,11 @@ def iter_po_files(repo_root: Path = REPO_ROOT):
 
 
 def fetch_cpython_full(tag: str, workdir: Path) -> None:
-    """Full clone of CPython at `tag`. Used by the version-bump script,
-    which needs the full doc tree to build every .pot (including ones for
-    brand-new pages that a sparse checkout might not anticipate)."""
+    """Shallow, full-tree clone of CPython at `tag` (a tag or a branch name,
+    e.g. "3.15"). Needed for every sync because `make gettext` runs blurb,
+    which only works inside a complete CPython checkout, and because the
+    full doc tree is needed to build every .pot (including ones for brand-new
+    pages)."""
     if workdir.exists():
         shutil.rmtree(workdir)
     run(
@@ -112,9 +138,12 @@ def fetch_cpython_full(tag: str, workdir: Path) -> None:
 
 
 def fetch_cpython_sparse(tag: str, workdir: Path) -> None:
-    """Sparse, blobless clone of just Doc/ + Include/. Used by the nightly
-    workflow. Doc/ contains everything needed to build every .pot, including
-    ones for brand-new pages, so this is enough for --create-new too."""
+    """Sparse, blobless clone of Doc/ + Include/ + Misc/.
+
+    NOT used by sync-only any more: blurb (run by `make gettext` to build the
+    changelog) rejects this layout with "You're not inside a CPython repo
+    right now!". Kept only so other scripts that import it keep working; it
+    can build every .pot *except* a complete whatsnew/changelog.pot."""
     if workdir.exists():
         shutil.rmtree(workdir)
     run(
@@ -131,19 +160,50 @@ def fetch_cpython_sparse(tag: str, workdir: Path) -> None:
             str(workdir),
         ]
     )
-    run(["git", "sparse-checkout", "set", "Doc", "Include"], cwd=workdir)
+    run(["git", "sparse-checkout", "set", "Doc", "Include", "Misc"], cwd=workdir)
 
 
 def build_gettext(doc_dir: Path) -> Path:
-    """Build .pot templates from a CPython Doc/ checkout, return their root dir."""
-    venv_dir = doc_dir / "venv"
-    run([sys.executable, "-m", "venv", str(venv_dir)])
-    pip = venv_dir / "bin" / "pip"
-    sphinx_build = venv_dir / "bin" / "sphinx-build"
-    run([str(pip), "install", "-r", "requirements.txt"], cwd=doc_dir)
+    """Build .pot templates from a CPython Doc/ checkout, return their root dir.
+
+    Uses CPython's own Makefile (same as the translations dashboard) so that
+    `blurb merge` runs first and the changelog page has real content.
+    `make venv` creates Doc/venv with the exact pinned Sphinx that CPython's
+    docs build with."""
+    run(["make", "-C", str(doc_dir), "venv"])
+    run(["make", "-C", str(doc_dir), "gettext"])
     pot_root = doc_dir / "build" / "gettext"
-    run([str(sphinx_build), "-b", "gettext", ".", str(pot_root)], cwd=doc_dir)
+    verify_changelog_pot(pot_root)
     return pot_root
+
+
+def count_msgids(pot_path: Path) -> int:
+    """Number of real entries in a .pot/.po file (the header is not counted)."""
+    count = 0
+    with pot_path.open(encoding="utf-8") as f:
+        for line in f:
+            # "msgid " (with the space) excludes msgid_plural lines.
+            if line.startswith("msgid "):
+                count += 1
+    return max(count - 1, 0)
+
+
+def verify_changelog_pot(pot_root: Path) -> None:
+    """Fail loudly if whatsnew/changelog.pot was built without blurb.
+
+    Merging an almost-empty template into a translated changelog.po would
+    mark every entry obsolete, so it is far safer to stop here."""
+    pot_path = pot_root / CHANGELOG_POT
+    if not pot_path.exists():
+        raise RuntimeError(f"{pot_path} was not generated by `make gettext`")
+    entries = count_msgids(pot_path)
+    print(f"  {CHANGELOG_POT}: {entries} entries")
+    if entries < MIN_CHANGELOG_MSGIDS:
+        raise RuntimeError(
+            f"{CHANGELOG_POT} has only {entries} entries (expected thousands). "
+            "`blurb merge` probably did not run or Misc/NEWS.d is missing; "
+            "refusing to merge against a truncated changelog template."
+        )
 
 
 # ---------------------------------------------------------------------------
@@ -279,9 +339,9 @@ def merge_all(
 
 def find_sphinx_pot(venv_dir: Path) -> Path:
     """Locate sphinx.pot inside the sphinx version installed in `venv_dir`
-    (the same venv build_gettext() creates from Doc/requirements.txt, so
-    this stays pinned to whatever Sphinx version CPython's docs actually
-    build with -- not whatever sphinx happens to be on the runner)."""
+    (the same venv build_gettext() creates via `make venv`, so this stays
+    pinned to whatever Sphinx version CPython's docs actually build with --
+    not whatever sphinx happens to be on the runner)."""
     python = venv_dir / "bin" / "python"
     result = subprocess.run(
         [
@@ -366,8 +426,9 @@ def check_po_files(repo_root: Path = REPO_ROOT) -> list:
 
 
 def _cli_sync_only(args: argparse.Namespace) -> int:
-    """Sparse clone + build gettext + merge into existing .po files +
-    (optionally) create .po files for new upstream pages + validate.
+    """Shallow clone + build gettext (incl. the changelog) + merge into
+    existing .po files + (optionally) create .po files for new upstream
+    pages + validate.
 
     Without --create-new this is report-only for new upstream pages.
     With --create-new, empty .po files are created for them, so they show up
@@ -378,8 +439,8 @@ def _cli_sync_only(args: argparse.Namespace) -> int:
     tag = args.tag
     doc_venv_dir = workdir / "Doc" / "venv"
 
-    print(f"== Sparse-fetching CPython {tag} ==")
-    fetch_cpython_sparse(tag, workdir)
+    print(f"== Fetching CPython {tag} ==")
+    fetch_cpython_full(tag, workdir)
 
     print("\n== Building gettext templates ==")
     pot_root = build_gettext(workdir / "Doc")
@@ -427,11 +488,15 @@ def main() -> None:
 
     sync = sub.add_parser(
         "sync-only",
-        help="Sparse-checkout sync used by the nightly workflow: fetch, "
-        "build gettext, merge into existing .po files, report (or create) "
-        "new upstream pages, validate.",
+        help="Fetch CPython, build gettext (including the changelog), merge "
+        "into existing .po files, report (or create) new upstream pages, "
+        "validate. Used by the nightly workflow.",
     )
-    sync.add_argument("tag", help="CPython git tag to sync against, e.g. v3.14.7")
+    sync.add_argument(
+        "tag",
+        help="CPython git tag or branch to sync against, e.g. v3.14.7 or 3.15 "
+        "(use the branch name to match the translations dashboard)",
+    )
     sync.add_argument(
         "--create-new",
         action="store_true",
