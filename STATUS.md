@@ -1,13 +1,12 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-10-08)
+(به‌روزرسانی: 2026-10-09)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|
 | about.po | 100.0% | 0.0% | 10 | 0 |
 | bugs.po | 100.0% | 0.0% | 31 | 0 |
 | builtins/constants.po | 100.0% | 0.0% | 22 | 0 |
-| builtins/exceptions.po | 100.0% | 0.0% | 206 | 0 |
 | builtins/functions.po | 100.0% | 0.0% | 539 | 0 |
 | builtins/index.po | 100.0% | 0.0% | 5 | 0 |
 | builtins/stdtypes.po | 100.0% | 0.0% | 1608 | 0 |
@@ -172,7 +171,6 @@
 | library/archiving.po | 100.0% | 0.0% | 2 | 0 |
 | library/argparse.po | 100.0% | 0.0% | 421 | 0 |
 | library/array.po | 100.0% | 0.0% | 102 | 0 |
-| library/ast.po | 100.0% | 0.0% | 345 | 0 |
 | library/asynchat.po | 100.0% | 0.0% | 4 | 0 |
 | library/asyncio-api-index.po | 100.0% | 0.0% | 100 | 0 |
 | library/asyncio-dev.po | 100.0% | 0.0% | 84 | 0 |
@@ -489,12 +487,10 @@
 | library/zipimport.po | 100.0% | 0.0% | 38 | 0 |
 | library/zlib.po | 100.0% | 0.0% | 103 | 0 |
 | library/zoneinfo.po | 100.0% | 0.0% | 84 | 0 |
-| license.po | 100.0% | 0.0% | 138 | 0 |
 | reference/compound_stmts.po | 100.0% | 0.0% | 499 | 0 |
 | reference/datamodel.po | 100.0% | 0.0% | 915 | 0 |
 | reference/executionmodel.po | 100.0% | 0.0% | 145 | 0 |
 | reference/expressions.po | 100.0% | 0.0% | 674 | 0 |
-| reference/grammar.po | 100.0% | 0.0% | 6 | 0 |
 | reference/import.po | 100.0% | 0.0% | 203 | 0 |
 | reference/index.po | 100.0% | 0.0% | 4 | 0 |
 | reference/introduction.po | 100.0% | 0.0% | 56 | 0 |
@@ -551,11 +547,15 @@
 | whatsnew/3.7.po | 100.0% | 0.0% | 568 | 0 |
 | whatsnew/3.8.po | 100.0% | 0.0% | 513 | 0 |
 | whatsnew/3.9.po | 100.0% | 0.0% | 380 | 0 |
-| whatsnew/changelog.po | 100.0% | 0.0% | 1 | 0 |
 | whatsnew/index.po | 100.0% | 0.0% | 3 | 0 |
+| library/ast.po | 99.7% | 0.3% | 345 | 0 |
 | whatsnew/3.15.po | 99.6% | 0.2% | 816 | 1 |
+| builtins/exceptions.po | 99.5% | 0.0% | 206 | 1 |
 | c-api/exceptions.po | 99.3% | 0.0% | 291 | 2 |
+| license.po | 99.3% | 0.7% | 138 | 0 |
 | library/tempfile.po | 97.8% | 0.0% | 88 | 2 |
 | howto/abi3t-migration.po | 94.4% | 0.6% | 169 | 9 |
-| **مجموع** | **100.0%** | **0.0%** | **74811** | **14** |
+| reference/grammar.po | 85.7% | 14.3% | 6 | 0 |
+| whatsnew/changelog.po | 0.0% | 0.0% | 1 | 15434 |
+| **مجموع** | **82.9%** | **0.0%** | **74811** | **15449** |
 <!-- TRANSLATION_STATUS_END -->
