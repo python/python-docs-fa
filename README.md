@@ -49,6 +49,6 @@
 
 <!-- STATS_START -->
 ### مشارکت‌های کاربران
-![نمودار مشارکت‌های کاربران؛ sepehr-rs 38277، arman mohebali 5830، Revisto 3984، danialbehzadi 677، invincible627 358، khosro_o 63، ParhamF 41، Ariyan_Bolandi 37، mahdyaralipor 21، nikovinix7878 13](reports/contributor_stats_latest.png)
-(به‌روزرسانی: 2026-10-07)
+![نمودار مشارکت‌های کاربران؛ sepehr-rs 41724، arman mohebali 5830، Revisto 3984، danialbehzadi 677، invincible627 358، khosro_o 63، ParhamF 41، Ariyan_Bolandi 37، mahdyaralipor 21، nikovinix7878 13](reports/contributor_stats_latest.png)
+(به‌روزرسانی: 2026-10-09)
 <!-- STATS_END -->

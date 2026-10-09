@@ -7,6 +7,7 @@
 | about.po | 100.0% | 0.0% | 10 | 0 |
 | bugs.po | 100.0% | 0.0% | 31 | 0 |
 | builtins/constants.po | 100.0% | 0.0% | 22 | 0 |
+| builtins/exceptions.po | 100.0% | 0.0% | 207 | 0 |
 | builtins/functions.po | 100.0% | 0.0% | 539 | 0 |
 | builtins/index.po | 100.0% | 0.0% | 5 | 0 |
 | builtins/stdtypes.po | 100.0% | 0.0% | 1608 | 0 |
@@ -34,6 +35,7 @@
 | c-api/datetime.po | 100.0% | 0.0% | 67 | 0 |
 | c-api/descriptor.po | 100.0% | 0.0% | 35 | 0 |
 | c-api/dict.po | 100.0% | 0.0% | 123 | 0 |
+| c-api/exceptions.po | 100.0% | 0.0% | 293 | 0 |
 | c-api/extension-modules.po | 100.0% | 0.0% | 74 | 0 |
 | c-api/file.po | 100.0% | 0.0% | 31 | 0 |
 | c-api/float.po | 100.0% | 0.0% | 55 | 0 |
@@ -423,6 +425,7 @@
 | library/tabnanny.po | 100.0% | 0.0% | 11 | 0 |
 | library/tarfile.po | 100.0% | 0.0% | 367 | 0 |
 | library/telnetlib.po | 100.0% | 0.0% | 4 | 0 |
+| library/tempfile.po | 100.0% | 0.0% | 90 | 0 |
 | library/termios.po | 100.0% | 0.0% | 25 | 0 |
 | library/test.po | 100.0% | 0.0% | 341 | 0 |
 | library/text.po | 100.0% | 0.0% | 3 | 0 |
@@ -548,14 +551,11 @@
 | whatsnew/3.8.po | 100.0% | 0.0% | 513 | 0 |
 | whatsnew/3.9.po | 100.0% | 0.0% | 380 | 0 |
 | whatsnew/index.po | 100.0% | 0.0% | 3 | 0 |
+| whatsnew/3.15.po | 99.9% | 0.1% | 818 | 0 |
 | library/ast.po | 99.7% | 0.3% | 345 | 0 |
-| whatsnew/3.15.po | 99.6% | 0.2% | 816 | 1 |
-| builtins/exceptions.po | 99.5% | 0.0% | 206 | 1 |
-| c-api/exceptions.po | 99.3% | 0.0% | 291 | 2 |
+| howto/abi3t-migration.po | 99.4% | 0.6% | 178 | 0 |
 | license.po | 99.3% | 0.7% | 138 | 0 |
-| library/tempfile.po | 97.8% | 0.0% | 88 | 2 |
-| howto/abi3t-migration.po | 94.4% | 0.6% | 169 | 9 |
 | reference/grammar.po | 85.7% | 14.3% | 6 | 0 |
-| whatsnew/changelog.po | 0.0% | 0.0% | 1 | 15434 |
-| **مجموع** | **82.9%** | **0.0%** | **74811** | **15449** |
+| whatsnew/changelog.po | 45.7% | 0.4% | 7056 | 8317 |
+| **مجموع** | **90.7%** | **0.1%** | **81882** | **8317** |
 <!-- TRANSLATION_STATUS_END -->
