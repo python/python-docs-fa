@@ -189,19 +189,19 @@ msgid "Setting up the build"
 msgstr "تنظیم ساخت"
 
 msgid "If you use a build tool, search its documentation for \"``abi3t``\", and follow any instructions to select the ABI. For reference, here are direct links for several popular build tools:"
-msgstr ""
+msgstr "اگر از ابزار ساختی استفاده می‌کنید، مستندات آن را برای عبارت «``abi3t``» جستجو کنید و هرگونه دستورالعملی را برای انتخاب ABI دنبال کنید. برای ارجاع، در اینجا پیوندهای مستقیمی برای چند ابزار ساخت محبوب آورده شده است:"
 
 msgid "`meson-python <https://mesonbuild.com/meson-python/how-to-guides/limited-api.html#the-abi3t-stable-abi>`__"
-msgstr ""
+msgstr "`meson-python <https://mesonbuild.com/meson-python/how-to-guides/limited-api.html#the-abi3t-stable-abi>`__"
 
 msgid "`scikit-build-core <https://scikit-build-core.readthedocs.io/en/stable/configuration/#customizing-the-output-wheel>`__"
-msgstr ""
+msgstr "`scikit-build-core <https://scikit-build-core.readthedocs.io/en/stable/configuration/#customizing-the-output-wheel>`__"
 
 msgid "`Maturin <https://www.maturin.rs/bindings#py_limited_apiabi3>`__"
-msgstr ""
+msgstr "`Maturin <https://www.maturin.rs/bindings#py_limited_apiabi3>`__"
 
 msgid "You may want to verify that the tool set the right flag by temporarily adding the following just after ``#include <Python.h>``::"
-msgstr ""
+msgstr "ممکن است بخواهید با افزودن موقت کد زیر درست پس از ``#include <Python.h>`` تأیید کنید که ابزار پرچم درست را تنظیم کرده است::"
 
 msgid ""
 "#if Py_TARGET_ABI3T+0 <= 0x30f0000\n"
@@ -216,7 +216,7 @@ msgid "This should result in a different error than \"``abi3t`` define is not se
 msgstr "این امر باید خطایی متفاوت از \"``abi3t`` define is not set\" ایجاد کند."
 
 msgid "`Building and distributing abi3t extensions <https://py-free-threading.github.io/abi3t/>`__: Build configuration and wheel testing examples in the community-maintained Python Free-Threading Guide."
-msgstr ""
+msgstr "`Building and distributing abi3t extensions <https://py-free-threading.github.io/abi3t/>`__: پیکربندی ساخت و نمونه‌های آزمایش ویل (wheel) در راهنمای پایتون بدون قفل (Free-Threading) که توسط کامیونیتی نگهداری می‌شود."
 
 msgid "If your build tool doesn't support ``abi3t`` yet, set the following macro before including ``Python.h``::"
 msgstr "اگر ابزار ساخت شما هنوز از ``abi3t`` پشتیبانی نمی‌کند، کلان‌دستور زیر را پیش از گنجاندن ``Python.h`` تنظیم کنید::"
@@ -242,10 +242,8 @@ msgstr "این راهنما از شما می‌خواهد مجموعه‌ای ا
 msgid "Module export hook"
 msgstr "قلاب اکسپورت ماژول"
 
-#, fuzzy
-#| msgid "Unless you've done this step already, your extension module defines a :ref:`module initialization function <extension-pyinit>` named :samp:`PyInit_{<module_name>}`. You will need to port it to a :ref:`module export hook <extension-export-hook>`, :samp:`PyModExport_{<module name>}`, a feature added in CPython 3.15 in :pep:`793`."
 msgid "Unless you've done this step already, your extension module defines a :ref:`module initialization function <extension-pyinit>` named :samp:`PyInit_{<modname>}` (where ``modname`` is the name of your module). You will need to port it to a :ref:`module export hook <extension-export-hook>`, :samp:`PyModExport_{<modname>}`, a feature added in CPython 3.15 in :pep:`793`."
-msgstr "مگر اینکه قبلاً این مرحله را انجام داده باشید، ماژول توسعه‌ای شما یک :ref:`تابع مقداردهی اولیه‌ی ماژول <extension-pyinit>` به نام :samp:`PyInit_{<module_name>}` را تعریف می‌کند. لازم است آن را به یک :ref:`قلاب اکسپورت ماژول <extension-export-hook>`، یعنی :samp:`PyModExport_{<module name>}` منتقل کنید که این ویژگی در سی‌پایتون ۳.۱۵ در :pep:`793` اضافه شده است."
+msgstr "مگر اینکه قبلاً این مرحله را انجام داده باشید، ماژول توسعه‌ای شما یک :ref:`تابع مقداردهی اولیه‌ی ماژول <extension-pyinit>` به نام :samp:`PyInit_{<modname>}` (که در آن ``modname`` نام ماژول شما است) تعریف می‌کند. شما باید آن را به یک :ref:`هوک صادر کردن ماژول <extension-export-hook>` به نام :samp:`PyModExport_{<modname>}` منتقل کنید که این ویژگی در نسخه‌ی ۳.۱۵ سی‌پایتون در :pep:`793` اضافه شده است."
 
 msgid "Your existing init function should look like this (with your own names for ``<modname>`` and ``<moddef>``):"
 msgstr "تابع اولیه‌ی موجود شما باید به شکل زیر باشد (با نام‌های دلخواه خودتان برای ``<modname>`` و ``<moddef>``):"
@@ -350,8 +348,9 @@ msgid "As in the example, your ``PyModExport_`` function should *only* return a 
 msgstr "همانند نمونه، تابع ``PyModExport_`` شما *فقط* باید یک اشاره‌گر به داده‌ی ایستا برگرداند. اگر نمی‌توانید از کد اضافی جلوگیری کنید، به :ref:`موارد احتیاطی در مستندات PyModExport <pymodexport-api-caveats>` مراجعه کنید."
 
 msgid "When building for Windows using the Setuptools_ build tool, removing the :samp:`PyInit_{<modname>}` function may result in the linker error :samp:`LINK : error LNK2001: unresolved external symbol PyInit_{<modname>}`. This is caused by Setuptools passing an ``/EXPORT`` linker flag, which is redundant since Python 3.15 (see :gh:`141671`). A workaround is to add a dummy :samp:`PyInit_{<modname>}` function to your code. Python 3.15+ will never call this function if :samp:`PyModExport_{<modname>}` is present, so it can always fail:"
-msgstr ""
+msgstr "هنگام ساخت برای ویندوز با استفاده از ابزار ساخت Setuptools_، حذف کردن تابع :samp:`PyInit_{<modname>}` ممکن است منجر به خطای پیونددهنده‌ی :samp:`LINK : error LNK2001: unresolved external symbol PyInit_{<modname>}` شود. این مشکل به این دلیل رخ می‌دهد که Setuptools یک پرچم پیونددهنده‌ی ``/EXPORT`` را ارسال می‌کند که از پایتون ۳.۱۵ به بعد اضافی است (نگاه کنید به :gh:`141671`). یک راه حل جایگزین این است که یک تابع :samp:`PyInit_{<modname>}` نمایشی (dummy) به کد خود اضافه کنید. پایتون ۳.۱۵ به بعد هرگز این تابع را در صورت وجود :samp:`PyModExport_{<modname>}` فراخوانی نخواهد کرد، بنابراین همیشه می‌تواند با خطا مواجه شود:"
 
+#, fuzzy
 msgid ""
 "// Workaround for https://github.com/pypa/distutils/issues/387\n"
 "PyMODINIT_FUNC\n"
@@ -362,9 +361,17 @@ msgid ""
 "    return NULL;\n"
 "}"
 msgstr ""
+"// Workaround for https://github.com/pypa/distutils/issues/387\n"
+"PyMODINIT_FUNC\n"
+"PyInit_<modname>(void)\n"
+"{\n"
+"    PyErr_SetString(PyExc_SystemError,\n"
+"                    \"PyInit_* called for module with PyModExport_*\");\n"
+"    return NULL;\n"
+"}"
 
 msgid "(This issue is present in Setuptools 84.0.0; it might be fixed in newer versions.)"
-msgstr ""
+msgstr "(این مسئله در نسخه‌ی ۸۴.۰.۰ از Setuptools وجود دارد؛ ممکن است در نسخه‌های جدیدتر رفع شده باشد.)"
 
 msgid "Existing slots"
 msgstr "جایگاه‌های موجود"

@@ -168,10 +168,10 @@ msgstr ""
 "lazy import json\n"
 "lazy from pathlib import Path\n"
 "\n"
-"print(\"Starting up...\")  # json and pathlib not loaded yet\n"
+"print(\"Starting up...\")  # json and pathlib are not fully imported yet\n"
 "\n"
-"data = json.loads('{\"key\": \"value\"}')  # json loads here\n"
-"p = Path(\".\")  # pathlib loads here"
+"data = json.loads('{\"key\": \"value\"}')  # json gets fully imported here\n"
+"p = Path(\".\")  # pathlib gets fully imported here"
 
 msgid "This mechanism is particularly useful for applications that import many modules at the top level but may only use a subset of them in any given run. The deferred loading reduces startup latency without requiring code restructuring or conditional imports scattered throughout the codebase."
 msgstr "این مکانیزم به‌ویژه برای برنامه‌هایی مفید است که ماژول‌های زیادی را در سطح بالا ایمپورت می‌کنند اما ممکن است فقط زیرمجموعه‌ای از آن‌ها را در هر اجرای مشخصی استفاده کنند. بارگذاری به تعویق افتاده، تأخیر راه‌اندازی را بدون نیاز به بازسازی ساختار کد یا ایمپورت‌های شرطی پراکنده در سراسر پایگاه کد کاهش می‌دهد."
@@ -510,13 +510,11 @@ msgstr "تغییر از یک تابع ``PyInit_`` به یک قلاب اکسپو�
 msgid "Note that Stable ABI does not offer all the functionality that CPython has to offer. Extensions that cannot switch to ``abi3t`` should continue to build for the existing Stable ABI (``abi3``) and the version-specific ABI for free-threading (``cp315t``) separately."
 msgstr "توجه داشته باشید که رابط دودویی کاربردی (ABI) پایدار تمام قابلیت‌هایی را که سی‌پایتون ارائه می‌دهد، فراهم نمی‌کند. افزونه‌هایی که نمی‌توانند به ``abi3t`` تغییر وضعیت دهند، باید به ساخت برای رابط دودویی کاربردی پایدار موجود (``abi3``) و رابط دودویی کاربردی مخصوص نسخه‌ی نخ‌آزاد (``cp315t``) به صورت جداگانه ادامه دهند."
 
-#, fuzzy
-#| msgid "Stable ABI for Free-Threaded Builds should typically be selected in a build tool (such as, for example, Setuptools, meson-python, scikit-build-core, or Maturin). At the time of writing, these tools do **not** support ``abi3t``. If this is the case for your tool, compile for ``cp315t`` separately. If not using a build tool -- or when writing such a tool -- you can select ``abi3t`` by setting the macro :c:macro:`!Py_TARGET_ABI3T` as discussed in :ref:`abi3-compiling`."
 msgid "Stable ABI for Free-Threaded Builds should typically be selected in a build tool. Tools with ``abi3t`` support include meson-python, scikit-build-core, and Maturin; see :ref:`abi3t-migration-build` for links to their documentation on ``abi3t`` builds. If your build tool does not support ``abi3t``, compile for ``cp315t`` separately. If not using a build tool -- or when writing such a tool -- you can select ``abi3t`` by setting the macro :c:macro:`!Py_TARGET_ABI3T` as discussed in :ref:`abi3-compiling`."
-msgstr "رابط دودویی کاربردی پایدار برای ساخت‌های نخ‌آزاد معمولاً باید در یک ابزار ساخت (مانند Setuptools، meson-python، scikit-build-core، یا Maturin) انتخاب شود. در زمان نگارش این متن، این ابزارها از ``abi3t`` پشتیبانی **نمی‌کنند**. اگر ابزار شما نیز چنین است، برای ``cp315t`` به صورت جداگانه کامپایل کنید. اگر از ابزار ساخت استفاده نمی‌کنید — یا هنگام نوشتن چنین ابزاری — می‌توانید با تنظیم کلان‌دستور :c:macro:`!Py_TARGET_ABI3T` همان‌طور که در :ref:`abi3-compiling` بحث شد، ``abi3t`` را انتخاب کنید."
+msgstr "رابط دودویی کاربردی (ABI) پایدار برای ساخت‌های نخ‌آزاد معمولاً باید در یک ابزار ساخت انتخاب شود. ابزارهایی که از ``abi3t`` پشتیبانی می‌کنند شامل meson-python، scikit-build-core و Maturin می‌شوند؛ برای پیوندها به مستندات آن‌ها درباره‌ی ساخت‌های ``abi3t`` به :ref:`abi3t-migration-build` مراجعه کنید. اگر ابزار ساخت شما از ``abi3t`` پشتیبانی نمی‌کند، برای ``cp315t`` به‌طور جداگانه کامپایل کنید. اگر از ابزار ساخت استفاده نمی‌کنید — یا هنگام نوشتن چنین ابزاری — می‌توانید با تنظیم کلان‌دستور :c:macro:`!Py_TARGET_ABI3T` همان‌طور که در :ref:`abi3-compiling` بحث شد، ``abi3t`` را انتخاب کنید."
 
 msgid "A practical :ref:`migration guide <abi3t-migration-howto>` for switching to ``abi3t`` is available. The community-maintained `Python Free-Threading Guide <https://py-free-threading.github.io/abi3t/>`__ provides examples of building and testing ``abi3t`` wheels."
-msgstr ""
+msgstr "یک :ref:`راهنمای مهاجرت <abi3t-migration-howto>` کاربردی برای انتقال به ``abi3t`` در دسترس است. `راهنمای نخ‌زنی آزاد پایتون <https://py-free-threading.github.io/abi3t/>`__ که توسط کامیونیتی نگهداری می‌شود، نمونه‌هایی از ساخت و آزمایش چرخ‌های (wheels) ``abi3t`` را فراهم می‌کند."
 
 msgid ":pep:`803` for further details."
 msgstr "برای جزئیات بیشتر به :pep:`803` مراجعه کنید."
