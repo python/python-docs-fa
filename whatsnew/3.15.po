@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.15\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-08 09:24+0330\n"
+"POT-Creation-Date: 2026-10-10 04:18+0000\n"
 "PO-Revision-Date: 2026-10-06 19:50+0330\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -30,19 +30,18 @@ msgstr "ویرایشگر"
 msgid "Hugo van Kemenade"
 msgstr "Hugo van Kemenade"
 
-msgid "This article explains the new features in Python 3.15, compared to 3.14."
-msgstr "این مقاله ویژگی‌های جدید پایتون ۳.۱۵ را در مقایسه با ۳.۱۴ توضیح می‌دهد."
+msgid "This article explains the new features in Python 3.15, compared to 3.14. Python 3.15 was released on 9 October 2026. For full details, see the :ref:`changelog <changelog>`."
+msgstr ""
 
-msgid "For full details, see the :ref:`changelog <changelog>`."
-msgstr "برای جزئیات کامل، به :ref:`فهرست تغییرات <changelog>` مراجعه کنید."
-
-msgid "Prerelease users should be aware that this document is currently in draft form. It will be updated substantially as Python 3.15 moves towards release, so it's worth checking back even after reading earlier versions."
-msgstr "کاربران نسخه‌های پیش‌انتشار باید آگاه باشند که این سند در حال حاضر به صورت پیش‌نویس است. این سند هم‌زمان با نزدیک شدن پایتون ۳.۱۵ به مرحله‌ی انتشار به میزان قابل‌توجهی به‌روزرسانی خواهد شد، بنابراین حتی پس از خواندن نسخه‌های قبلی، ارزش بررسی مجدد را دارد."
+msgid ":pep:`790` -- Python 3.15 release schedule"
+msgstr ""
 
 msgid "Summary -- Release highlights"
 msgstr "خلاصه -- نکات برجسته‌ی انتشار"
 
-msgid "Python 3.15 will be the latest stable release of the Python programming language, with a mix of changes to the language, the implementation, and the standard library. The biggest changes include :ref:`lazy imports <whatsnew315-lazy-imports>`, :ref:`frozendict <whatsnew315-frozendict>` and :ref:`sentinel <whatsnew315-sentinel>` builtins, :ref:`UTF-8 as the default encoding <whatsnew315-utf8-default>`, :ref:`unpacking in comprehensions <whatsnew315-unpacking-in-comprehensions>`, and a :ref:`stable ABI for free-threaded builds <whatsnew315-abi3t>`."
+#, fuzzy
+#| msgid "Python 3.15 will be the latest stable release of the Python programming language, with a mix of changes to the language, the implementation, and the standard library. The biggest changes include :ref:`lazy imports <whatsnew315-lazy-imports>`, :ref:`frozendict <whatsnew315-frozendict>` and :ref:`sentinel <whatsnew315-sentinel>` builtins, :ref:`UTF-8 as the default encoding <whatsnew315-utf8-default>`, :ref:`unpacking in comprehensions <whatsnew315-unpacking-in-comprehensions>`, and a :ref:`stable ABI for free-threaded builds <whatsnew315-abi3t>`."
+msgid "Python 3.15 is the latest stable release of the Python programming language, with a mix of changes to the language, the implementation, and the standard library. The biggest changes include :ref:`lazy imports <whatsnew315-lazy-imports>`, :ref:`frozendict <whatsnew315-frozendict>` and :ref:`sentinel <whatsnew315-sentinel>` builtins, :ref:`UTF-8 as the default encoding <whatsnew315-utf8-default>`, :ref:`unpacking in comprehensions <whatsnew315-unpacking-in-comprehensions>`, and a :ref:`stable ABI for free-threaded builds <whatsnew315-abi3t>`."
 msgstr "پایتون ۳.۱۵ آخرین نسخه‌ی پایدار زبان برنامه‌نویسی پایتون خواهد بود که شامل ترکیبی از تغییرات در زبان، پیاده‌سازی و کتابخانه‌ی استاندارد است. بزرگ‌ترین تغییرات شامل :ref:`واردسازی تنبل <whatsnew315-lazy-imports>`، :ref:`فرهنگ لغت‌های فریز شده <whatsnew315-frozendict>` و توابع توکار :ref:`نگهبان <whatsnew315-sentinel>`، :ref:`استفاده از UTF-8 به عنوان کدگذاری پیش‌فرض <whatsnew315-utf8-default>`، :ref:`باز کردن بسته‌بندی در درک مجموعه‌ها <whatsnew315-unpacking-in-comprehensions>`، و یک :ref:`ای‌بی‌آی پایدار برای بیز‌های رایگان از قفل (free-threaded) <whatsnew315-abi3t>` می‌شود."
 
 msgid "The library changes include a new :ref:`profiling package <whatsnew315-profiling-package>` with :ref:`Tachyon <whatsnew315-sampling-profiler>`, a high-frequency statistical sampling profiler, :ref:`more color <whatsnew315-more-color>` in command-line output, as well as the usual deprecations and removals, and improvements in user-friendliness and correctness."
@@ -128,6 +127,9 @@ msgstr "تغییرات نسخه‌ی جدید:"
 
 msgid ":ref:`The official Windows 64-bit binaries now use the tail-calling interpreter <whatsnew315-windows-tail-calling-interpreter>`"
 msgstr ":ref:`نسخه‌های رسمی ۶۴ بیتی ویندوز اکنون از مفسر فراخوانی تهی استفاده می‌کنند <whatsnew315-windows-tail-calling-interpreter>`"
+
+msgid "The official macOS binaries now install free-threading support by default"
+msgstr ""
 
 msgid "New features"
 msgstr "ویژگی‌های جدید"
@@ -2784,6 +2786,15 @@ msgstr "پُرکننده (padding) ورودی دیگر در :func:`base64.urlsaf
 
 msgid "Since :meth:`unittest.TestCase.assertWarns` and :meth:`unittest.TestCase.assertWarnsRegex` no longer swallow warnings that do not match the specified category or regex, your tests may start leaking some warnings that were previously masked. Use warning filters to silence them or additional :meth:`!assertWarns*` to catch and check them. (Contributed by Serhiy Storchaka in :gh:`143231`.)"
 msgstr "از آنجا که :meth:`unittest.TestCase.assertWarns` و :meth:`unittest.TestCase.assertWarnsRegex` دیگر اخطارهایی را که با دسته‌بندی یا عبارت منظم مشخص‌شده مطابقت ندارند نادیده نمی‌گیرند، ممکن است آزمون‌های شما شروع به نشت دادن برخی اخطارها کنند که پیش‌تر پنهان شده بودند. برای بی‌صدا کردن آن‌ها از صافی‌های اخطار (warning filters) یا از متدهای اضافی :meth:`!assertWarns*` برای گرفتن و بررسی آن‌ها استفاده کنید. (مشارکت‌شده توسط Serhiy Storchaka در :gh:`143231`.)"
+
+#~ msgid "This article explains the new features in Python 3.15, compared to 3.14."
+#~ msgstr "این مقاله ویژگی‌های جدید پایتون ۳.۱۵ را در مقایسه با ۳.۱۴ توضیح می‌دهد."
+
+#~ msgid "For full details, see the :ref:`changelog <changelog>`."
+#~ msgstr "برای جزئیات کامل، به :ref:`فهرست تغییرات <changelog>` مراجعه کنید."
+
+#~ msgid "Prerelease users should be aware that this document is currently in draft form. It will be updated substantially as Python 3.15 moves towards release, so it's worth checking back even after reading earlier versions."
+#~ msgstr "کاربران نسخه‌های پیش‌انتشار باید آگاه باشند که این سند در حال حاضر به صورت پیش‌نویس است. این سند هم‌زمان با نزدیک شدن پایتون ۳.۱۵ به مرحله‌ی انتشار به میزان قابل‌توجهی به‌روزرسانی خواهد شد، بنابراین حتی پس از خواندن نسخه‌های قبلی، ارزش بررسی مجدد را دارد."
 
 #~ msgid "A practical :ref:`migration guide <abi3t-migration-howto>` for switching to ``abi3t`` is available."
 #~ msgstr "یک :ref:`راهنمای مهاجرت <abi3t-migration-howto>` کاربردی برای تغییر به ``abi3t`` در دسترس است."

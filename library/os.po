@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-10 04:18+0000\n"
 "PO-Revision-Date: 2026-09-12 15:04+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -2483,13 +2483,17 @@ msgstr ":const:`time.CLOCK_MONOTONIC`"
 msgid ":const:`time.CLOCK_BOOTTIME` (Since Linux 3.15 for timerfd_create)"
 msgstr ":const:`time.CLOCK_BOOTTIME` (از لینوکس 3.15 برای timerfd_create)"
 
-msgid "If *clockid* is :const:`time.CLOCK_REALTIME`, a settable system-wide real-time clock is used. If system clock is changed, timer setting need to be updated. To cancel timer when system clock is changed, see :const:`TFD_TIMER_CANCEL_ON_SET`."
+#, fuzzy
+#| msgid "If *clockid* is :const:`time.CLOCK_REALTIME`, a settable system-wide real-time clock is used. If system clock is changed, timer setting need to be updated. To cancel timer when system clock is changed, see :const:`TFD_TIMER_CANCEL_ON_SET`."
+msgid "If *clockid* is :const:`time.CLOCK_REALTIME`, a settable system-wide real-time clock is used. If the system clock is changed, the timer setting needs to be updated. To cancel the timer when the system clock is changed, see :const:`TFD_TIMER_CANCEL_ON_SET`."
 msgstr "اگر *clockid* برابر با :const:`time.CLOCK_REALTIME` باشد، از یک ساعت زمان واقعیِ سراسریِ سیستمِ قابل‌تنظیم استفاده می‌شود. اگر ساعت سیستم تغییر کند، باید تنظیمات تایمر به‌روزرسانی شود. برای لغو تایمر هنگامی که ساعت سیستم تغییر می‌کند، :const:`TFD_TIMER_CANCEL_ON_SET` را ببینید."
 
 msgid "If *clockid* is :const:`time.CLOCK_MONOTONIC`, a non-settable monotonically increasing clock is used. Even if the system clock is changed, the timer setting will not be affected."
 msgstr "اگر *clockid* برابر :const:`time.CLOCK_MONOTONIC` باشد، از ساعتی غیرقابل‌تنظیم استفاده می‌شود که به‌صورت یکنواخت افزایش می‌یابد. حتی اگر ساعت سیستم تغییر کند، تنظیم زمان‌سنج تحت تأثیر قرار نمی‌گیرد."
 
-msgid "If *clockid* is :const:`time.CLOCK_BOOTTIME`, same as :const:`time.CLOCK_MONOTONIC` except it includes any time that the system is suspended."
+#, fuzzy
+#| msgid "If *clockid* is :const:`time.CLOCK_BOOTTIME`, same as :const:`time.CLOCK_MONOTONIC` except it includes any time that the system is suspended."
+msgid "If *clockid* is :const:`time.CLOCK_BOOTTIME`, it is the same as :const:`time.CLOCK_MONOTONIC` except it includes any time that the system is suspended."
 msgstr "اگر *clockid* برابر با :const:`time.CLOCK_BOOTTIME` باشد، مشابه :const:`time.CLOCK_MONOTONIC` است با این تفاوت که شامل هر زمانی که سیستم به حالت تعلیق درآمده نیز می‌شود."
 
 msgid "The file descriptor's behaviour can be modified by specifying a *flags* value. Any of the following variables may be used, combined using bitwise OR (the ``|`` operator):"
@@ -2501,7 +2505,9 @@ msgstr ":const:`TFD_NONBLOCK`"
 msgid ":const:`TFD_CLOEXEC`"
 msgstr ":const:`TFD_CLOEXEC`"
 
-msgid "If :const:`TFD_NONBLOCK` is not set as a flag, :func:`read` blocks until the timer expires. If it is set as a flag, :func:`read` doesn't block, but If there hasn't been an expiration since the last call to read, :func:`read` raises :class:`OSError` with ``errno`` is set to :const:`errno.EAGAIN`."
+#, fuzzy
+#| msgid "If :const:`TFD_NONBLOCK` is not set as a flag, :func:`read` blocks until the timer expires. If it is set as a flag, :func:`read` doesn't block, but If there hasn't been an expiration since the last call to read, :func:`read` raises :class:`OSError` with ``errno`` is set to :const:`errno.EAGAIN`."
+msgid "If :const:`TFD_NONBLOCK` is not set as a flag, :func:`read` blocks until the timer expires. If it is set as a flag, :func:`read` doesn't block, but if there hasn't been an expiration since the last call to read, :func:`read` raises :class:`OSError` with ``errno`` set to :const:`errno.EAGAIN`."
 msgstr "اگر :const:`TFD_NONBLOCK` به عنوان یک پرچم تنظیم نشده باشد، :func:`read` تا زمان سررسیدن تایمر مسدود می‌ماند. اگر به عنوان یک پرچم تنظیم شده باشد، :func:`read` مسدود نمی‌شود، اما اگر از آخرین فراخوانی به read سررسیدی اتفاق نیفتاده باشد، :func:`read` یک استثنای :class:`OSError` با مقدار ``errno`` برابر با :const:`errno.EAGAIN` بالا می‌آورد."
 
 msgid ":const:`TFD_CLOEXEC` is always set by Python automatically."
@@ -2528,19 +2534,27 @@ msgstr ":const:`TFD_TIMER_ABSTIME`"
 msgid ":const:`TFD_TIMER_CANCEL_ON_SET`"
 msgstr ":const:`TFD_TIMER_CANCEL_ON_SET`"
 
-msgid "The timer is disabled by setting *initial* to zero (``0``). If *initial* is equal to or greater than zero, the timer is enabled. If *initial* is less than zero, it raises an :class:`OSError` exception with ``errno`` set to :const:`errno.EINVAL`"
+#, fuzzy
+#| msgid "The timer is disabled by setting *initial* to zero (``0``). If *initial* is equal to or greater than zero, the timer is enabled. If *initial* is less than zero, it raises an :class:`OSError` exception with ``errno`` set to :const:`errno.EINVAL`"
+msgid "The timer is disabled by setting *initial* to zero (``0``). If *initial* is greater than zero, the timer is enabled. If *initial* is less than zero, it raises an :class:`OSError` exception with ``errno`` set to :const:`errno.EINVAL`."
 msgstr "تایمر با صفر کردن *initial* (``0``) غیرفعال می‌شود. اگر *initial* بزرگ‌تر یا مساوی صفر باشد، تایمر فعال می‌شود. اگر *initial* کمتر از صفر باشد، یک استثنای :class:`OSError` با مقدار ``errno`` برابر با :const:`errno.EINVAL` بالا می‌آورد."
 
-msgid "By default the timer will fire when *initial* seconds have elapsed. (If *initial* is zero, timer will fire immediately.)"
+#, fuzzy
+#| msgid "By default the timer will fire when *initial* seconds have elapsed. (If *initial* is zero, timer will fire immediately.)"
+msgid "By default the timer will fire when *initial* seconds have elapsed."
 msgstr "به طور پیش‌فرض، تایمر پس از سپری شدن *initial* ثانیه آتش می‌گیرد. (اگر *initial* صفر باشد، تایمر بلافاصله آتش می‌گیرد.)"
 
 msgid "However, if the :const:`TFD_TIMER_ABSTIME` flag is set, the timer will fire when the timer's clock (set by *clockid* in :func:`timerfd_create`) reaches *initial* seconds."
 msgstr "با این حال، اگر پرچم :const:`TFD_TIMER_ABSTIME` تنظیم شده باشد، تایمر زمانی فعال می‌شود که ساعت تایمر (که با *clockid* در :func:`timerfd_create` تنظیم می‌شود) به *initial* ثانیه برسد."
 
-msgid "The timer's interval is set by the *interval* real number. If *interval* is zero, the timer only fires once, on the initial expiration. If *interval* is greater than zero, the timer fires every time *interval* seconds have elapsed since the previous expiration. If *interval* is less than zero, it raises :class:`OSError` with ``errno`` set to :const:`errno.EINVAL`"
+#, fuzzy
+#| msgid "The timer's interval is set by the *interval* real number. If *interval* is zero, the timer only fires once, on the initial expiration. If *interval* is greater than zero, the timer fires every time *interval* seconds have elapsed since the previous expiration. If *interval* is less than zero, it raises :class:`OSError` with ``errno`` set to :const:`errno.EINVAL`"
+msgid "The timer's interval is set by the *interval* real number. If *interval* is zero, the timer only fires once, on the initial expiration. If *interval* is greater than zero, the timer fires every time *interval* seconds have elapsed since the previous expiration. If *interval* is less than zero, it raises :class:`OSError` with ``errno`` set to :const:`errno.EINVAL`."
 msgstr "بازهه‌ی تایمر توسط عدد حقیقی *interval* تنظیم می‌شود. اگر *interval* صفر باشد، تایمر فقط یک بار، در سررسید اولیه، آتش می‌گیرد. اگر *interval* بزرگ‌تر از صفر باشد، تایمر هر بار که پس از سررسید قبلی، *interval* ثانیه سپری شود، آتش می‌گیرد. اگر *interval* کمتر از صفر باشد، :class:`OSError` را با ``errno`` تنظیم‌شده روی :const:`errno.EINVAL` بالا می‌آورد."
 
-msgid "If the :const:`TFD_TIMER_CANCEL_ON_SET` flag is set along with :const:`TFD_TIMER_ABSTIME` and the clock for this timer is :const:`time.CLOCK_REALTIME`, the timer is marked as cancelable if the real-time clock is changed discontinuously. Reading the descriptor is aborted with the error ECANCELED."
+#, fuzzy
+#| msgid "If the :const:`TFD_TIMER_CANCEL_ON_SET` flag is set along with :const:`TFD_TIMER_ABSTIME` and the clock for this timer is :const:`time.CLOCK_REALTIME`, the timer is marked as cancelable if the real-time clock is changed discontinuously. Reading the descriptor is aborted with the error ECANCELED."
+msgid "If the :const:`TFD_TIMER_CANCEL_ON_SET` flag is set along with :const:`TFD_TIMER_ABSTIME` and the clock for this timer is :const:`time.CLOCK_REALTIME`, the timer is marked as cancelable if the real-time clock is changed discontinuously. Reading the descriptor is aborted with the error :const:`errno.ECANCELED`."
 msgstr "اگر پرچم :const:`TFD_TIMER_CANCEL_ON_SET` به همراه :const:`TFD_TIMER_ABSTIME` تنظیم شود و ساعت این تایمر :const:`time.CLOCK_REALTIME` باشد، در صورتی که ساعت زمان واقعی به طور ناپیوسته تغییر کند، تایمر به عنوان قابل‌لغو علامت‌گذاری می‌شود. خواندن توصیف‌گر با خطای ECANCELED متوقف می‌شود."
 
 msgid "Linux manages system clock as UTC. A daylight-savings time transition is done by changing time offset only and doesn't cause discontinuous system clock change."

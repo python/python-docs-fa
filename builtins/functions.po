@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-10 04:18+0000\n"
 "PO-Revision-Date: 2026-09-24 07:55+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: none\n"
@@ -494,8 +494,8 @@ msgstr "آرگومان *optimize* سطح بهینه‌سازی کامپایلر 
 msgid "The optional argument *module* specifies the module name. It is needed to unambiguous :ref:`filter <warning-filter>` syntax warnings by module name."
 msgstr "آرگومان اختیاری *module* نام ماژول را مشخص می‌کند. این آرگومان برای رفع ابهام در هشدار‌های نحو (نحو :ref:`filter <warning-filter>`) بر اساس نام ماژول مورد نیاز است."
 
-msgid "This function raises :exc:`SyntaxError` or :exc:`ValueError` if the compiled source is invalid."
-msgstr "اگر کد منبع کامپایل‌شده نامعتبر باشد، این تابع استثنای :exc:`SyntaxError` یا :exc:`ValueError` پرتاب می‌کند."
+msgid "This function raises :exc:`SyntaxError` if the compiled source is invalid, including a *source* containing a null character or that cannot be decoded; :exc:`ValueError` if *mode* or *flags* is invalid, or if a string *source* contains surrogate characters; :exc:`MemoryError` or :exc:`RecursionError` if *source* is too complex to parse or compile, for example an expression with many thousands of nested operators; and :exc:`OverflowError` if *source* is too large."
+msgstr "این تابع :exc:`SyntaxError` را پرتاب میکند اگر منبعِ کامپایل‌شده نامعتبر باشد، از جمله یک *source* که حاوی نویسه‌ی null است یا که قابل رمزگشایی نیست؛ :exc:`ValueError` اگر *حالت* یا *پرچم‌ها* نامعتبر باشند، یا اگر یک رشته *source* حاوی نویسه‌های جایگزین باشد؛ :exc:`MemoryError` یا :exc:`RecursionError` اگر *source* برای تجزیه یا کامپایل بیش از حد پیچیده باشد، برای مثال یک عبارت با هزاران عملگر تو در تو؛ و :exc:`OverflowError` اگر *source* بیش از حد بزرگ باشد."
 
 msgid "If you want to parse Python code into its AST representation, see :func:`ast.parse`."
 msgstr "اگر می‌خواهید کد پایتون را به نمایش AST آن تجزیه کنید، به :func:`ast.parse` مراجعه کنید."
@@ -517,6 +517,9 @@ msgstr "پیش از این، هنگام برخورد با بایت‌های ته
 
 msgid "``ast.PyCF_ALLOW_TOP_LEVEL_AWAIT`` can now be passed in flags to enable support for top-level ``await``, ``async for``, and ``async with``."
 msgstr "اکنون می‌توان ``ast.PyCF_ALLOW_TOP_LEVEL_AWAIT`` را در پرچم‌ها ارسال کرد تا از ``await``، ``async for`` و ``async with`` در سطح بالای کد (top-level) پشتیبانی شود."
+
+msgid ":exc:`SyntaxError` is raised instead of :exc:`ValueError` when null bytes are encountered in *source*."
+msgstr "هنگامی که بایت‌های تهی در *source* یافت شوند، :exc:`SyntaxError` به‌جای :exc:`ValueError` پرتاب می‌شود."
 
 msgid "Added the *module* parameter."
 msgstr "پارامتر *module* اضافه شد."
@@ -1986,11 +1989,8 @@ msgstr "ایمپورت"
 msgid "builtins"
 msgstr "توکارها"
 
-#~ msgid "This function raises :exc:`SyntaxError` if the compiled source is invalid, including a *source* containing a null character or that cannot be decoded; :exc:`ValueError` if *mode* or *flags* is invalid, or if a string *source* contains surrogate characters; :exc:`MemoryError` or :exc:`RecursionError` if *source* is too complex to parse or compile, for example an expression with many thousands of nested operators; and :exc:`OverflowError` if *source* is too large."
-#~ msgstr "این تابع :exc:`SyntaxError` را پرتاب میکند اگر منبعِ کامپایل‌شده نامعتبر باشد، از جمله یک *source* که حاوی نویسه‌ی null است یا که قابل رمزگشایی نیست؛ :exc:`ValueError` اگر *حالت* یا *پرچم‌ها* نامعتبر باشند، یا اگر یک رشته *source* حاوی نویسه‌های جایگزین باشد؛ :exc:`MemoryError` یا :exc:`RecursionError` اگر *source* برای تجزیه یا کامپایل بیش از حد پیچیده باشد، برای مثال یک عبارت با هزاران عملگر تو در تو؛ و :exc:`OverflowError` اگر *source* بیش از حد بزرگ باشد."
-
-#~ msgid ":exc:`SyntaxError` is raised instead of :exc:`ValueError` when null bytes are encountered in *source*."
-#~ msgstr "هنگامی که بایت‌های تهی در *source* یافت شوند، :exc:`SyntaxError` به‌جای :exc:`ValueError` پرتاب می‌شود."
+#~ msgid "This function raises :exc:`SyntaxError` or :exc:`ValueError` if the compiled source is invalid."
+#~ msgstr "اگر کد منبع کامپایل‌شده نامعتبر باشد، این تابع استثنای :exc:`SyntaxError` یا :exc:`ValueError` پرتاب می‌کند."
 
 #~ msgid "``'strict'`` to raise a :exc:`ValueError` exception if there is an encoding error.  The default value of ``None`` has the same effect."
 #~ msgstr "``'strict'`` در صورت بروز خطای کدگذاری، استثنای :exc:`ValueError` پرتاب می‌کند. مقدار پیش‌فرض ``None`` نیز همین رفتار را دارد."

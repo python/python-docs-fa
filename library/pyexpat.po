@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-10 04:18+0000\n"
 "PO-Revision-Date: 2026-09-15 12:23+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -37,7 +37,9 @@ msgstr "ماژول :mod:`!xml.parsers.expat` یک رابط پایتون برای
 msgid "This module uses the :mod:`pyexpat` module to provide access to the Expat parser.  Direct use of the :mod:`pyexpat` module is deprecated."
 msgstr "این ماژول از ماژول :mod:`pyexpat` برای فراهم کردن دسترسی به پارسرٔ Expat استفاده می‌کند. استفاده‌ی مستقیم از ماژول :mod:`pyexpat` منسوخ شده است."
 
-msgid "This module provides one exception and one type object:"
+#, fuzzy
+#| msgid "This module provides one exception and one type object:"
+msgid "This module provides the following exception, type object and data items:"
 msgstr "این ماژول یک استثنا و یک شیء نوع ارائه می‌دهد:"
 
 msgid "The exception raised when Expat reports an error.  See section :ref:`expaterror-objects` for more information on interpreting Expat errors."
@@ -48,6 +50,15 @@ msgstr "نام مستعار برای :exc:`ExpatError`."
 
 msgid "The type of the return values from the :func:`ParserCreate` function."
 msgstr "نوع مقادیر بازگشتی تابع :func:`ParserCreate`."
+
+msgid "The version string of the Expat library loaded by the interpreter, like ``'expat_2.8.4'``."
+msgstr "رشته‌ی نسخه‌ی کتابخانه‌ی Expat که توسط مفسر بارگذاری شده است، مانند ``'expat_2.8.4'``."
+
+msgid "The version of the Expat library loaded by the interpreter, as a tuple of three integers: major, minor and micro version."
+msgstr "نسخه‌ی کتابخانه‌ی Expat که توسط مفسر بارگذاری شده است، به صورت یک تاپل از سه عدد صحیح: نسخه‌ی اصلی، فرعی و ریز."
+
+msgid "The list of the features with which the loaded Expat library was compiled, as ``(name, value)`` pairs. The value is only meaningful for features which have one, like ``'XML_CONTEXT_BYTES'`` or the default protection limits ``'XML_BLAP_ACT_THRES'`` and ``'XML_AT_MAX_AMP'``; for other features, like ``'XML_DTD'`` and ``'XML_NS'``, the value is ``0`` and only the presence of the name is significant."
+msgstr "فهرست ویژگی‌هایی که کتابخانه‌ی Expat بارگذاری‌شده با آن‌ها کامپایل‌شده است، به صورت جفت‌های ``(name, value)``. مقدار تنها برای ویژگی‌هایی که دارای مقدار هستند معنا دارد، مانند ``'XML_CONTEXT_BYTES'`` یا محدودیت‌های پیش‌فرض حفاظت ``'XML_BLAP_ACT_THRES'`` و ``'XML_AT_MAX_AMP'``؛ برای سایر ویژگی‌ها، مانند ``'XML_DTD'`` و ``'XML_NS'``، مقدار ``0`` است و تنها حضور نام مهم است."
 
 msgid "The :mod:`!xml.parsers.expat` module contains two functions:"
 msgstr "ماژول :mod:`!xml.parsers.expat` شامل دو تابع است:"
@@ -94,6 +105,9 @@ msgstr ""
 "http://www.python.org/ns/ elem1\n"
 "elem2"
 
+msgid "*intern*, if given, must be a dictionary. It is used to intern the names of elements and attributes, and is available as the :attr:`~xmlparser.intern` attribute. By default a new empty dictionary is created for every parser."
+msgstr "*intern*، در صورت داده شدن، باید یک دیکشنری باشد. این برای درونی‌سازی کردن نام‌های المان‌ها و ویژگی‌ها استفاده می‌شود، و به عنوان ویژگی :attr:`~xmlparser.intern` در دسترس است. به طور پیش‌فرض یک دیکشنری جدید خالی برای هر پارسر ایجاد می‌شود."
+
 msgid "Due to limitations in the ``Expat`` library used by :mod:`pyexpat`, the :class:`xmlparser` instance returned can only be used to parse a single XML document.  Call ``ParserCreate`` for each document to provide unique parser instances."
 msgstr "به دلیل محدودیت‌هایی در کتابخانه ``Expat`` که :mod:`pyexpat` از آن استفاده می‌کند، نمونه‌ی :class:`xmlparser` برگردانده‌شده فقط می‌تواند برای تجزیه‌ی یک سند XML استفاده شود. برای فراهم کردن نمونه‌های پارسر یکتا، ``ParserCreate`` را برای هر سند فراخوانی کنید."
 
@@ -109,10 +123,14 @@ msgstr "اشیاء XMLParser"
 msgid ":class:`xmlparser` objects have the following methods:"
 msgstr "اشیای :class:`xmlparser` متدهای زیر را دارند:"
 
-msgid "Parses the contents of the string *data*, calling the appropriate handler functions to process the parsed data.  *isfinal* must be true on the final call to this method; it allows the parsing of a single file in fragments, not the submission of multiple files. *data* can be the empty string at any time."
+#, fuzzy
+#| msgid "Parses the contents of the string *data*, calling the appropriate handler functions to process the parsed data.  *isfinal* must be true on the final call to this method; it allows the parsing of a single file in fragments, not the submission of multiple files. *data* can be the empty string at any time."
+msgid "Parses the contents of *data*, calling the appropriate handler functions to process the parsed data. *data* can be a :term:`bytes-like object` or a string. If it is a string, the encoding declaration in the XML data is ignored, and the data is parsed as already decoded text. *isfinal* must be true on the final call to this method; it allows the parsing of a single file in fragments, not the submission of multiple files. *data* can be empty at any time."
 msgstr "محتویات رشته‌ی *data* را تجزیه کرده و توابع هندلر مناسب را برای پردازش داده‌های تجزیه‌شده فراخوانی می‌کند. *isfinal* باید در آخرین فراخوانی این متد برابر با true باشد؛ این امکان تجزیه‌ی یک پرونده‌ی واحد را در قالب تکه‌ها فراهم می‌کند، نه ارسال چندین پرونده را. *data* می‌تواند در هر زمانی رشته‌ی خالی باشد."
 
-msgid "Parse XML data reading from the object *file*.  *file* only needs to provide the ``read(nbytes)`` method, returning the empty string when there's no more data."
+#, fuzzy
+#| msgid "Parse XML data reading from the object *file*.  *file* only needs to provide the ``read(nbytes)`` method, returning the empty string when there's no more data."
+msgid "Parse XML data reading from the object *file*. *file* only needs to provide the ``read(nbytes)`` method, which returns bytes, and an empty bytes object when there's no more data. Text files are not supported; use :meth:`Parse` for data which is already decoded."
 msgstr "داده‌های XML را با خواندن از شیء *file* تجزیه می‌کند. *file* فقط نیازمند فراهم کردن متد ``read(nbytes)`` است و هنگامی که داده‌ی دیگری وجود ندارد، رشته‌ی خالی را برمی‌گرداند."
 
 msgid "Sets the base to be used for resolving relative URIs in system identifiers in declarations.  Resolving relative identifiers is left to the application: this value will be passed through as the *base* argument to the :func:`ExternalEntityRefHandler`, :func:`NotationDeclHandler`, and :func:`UnparsedEntityDeclHandler` functions."
@@ -121,7 +139,9 @@ msgstr "پایه‌ای را تنظیم می‌کند که برای حل URIها
 msgid "Returns a string containing the base set by a previous call to :meth:`SetBase`, or ``None`` if  :meth:`SetBase` hasn't been called."
 msgstr "رشته‌ای شامل پایه‌ی تنظیم‌شده توسط فراخوانی پیشین :meth:`SetBase`، یا در صورتی که  :meth:`SetBase` فراخوانی نشده باشد، ``None`` برمی‌گرداند."
 
-msgid "Returns the input data that generated the current event as a string. The data is in the encoding of the entity which contains the text. When called while an event handler is not active, the return value is ``None``."
+#, fuzzy
+#| msgid "Returns the input data that generated the current event as a string. The data is in the encoding of the entity which contains the text. When called while an event handler is not active, the return value is ``None``."
+msgid "Returns the input data which generated the current event as a :class:`bytes` object. The data is in the encoding of the entity which contains the text. It extends to the end of the currently buffered input, therefore it can contain also the data of the following events, and if the event was generated by a large amount of text, not all of it may be available. When called while an event handler is not active, the return value is ``None``."
 msgstr "داده‌ی ورودی را که رویداد فعلی را تولید کرده است به عنوان یک رشته برمی‌گرداند. این داده در کدگذاری موجودیتی است که متن را در بر دارد. وقتی این متد در زمانی که هندلر رویداد فعال نیست فراخوانی شود، مقدار بازگشتی ``None`` است."
 
 msgid "Create a \"child\" parser which can be used to parse an external parsed entity referred to by content parsed by the parent parser.  The *context* parameter should be the string passed to the :meth:`ExternalEntityRefHandler` handler function, described below. The child parser is created with the :attr:`ordered_attributes` and :attr:`specified_attributes` set to the values of this parser."
@@ -235,6 +255,12 @@ msgstr "تنظیم این ویژگی روی یک عدد صحیح غیرصفر ب
 msgid "If set to a non-zero integer, the parser will report only those attributes which were specified in the document instance and not those which were derived from attribute declarations.  Applications which set this need to be especially careful to use what additional information is available from the declarations as needed to comply with the standards for the behavior of XML processors.  By default, this attribute is false; it may be changed at any time."
 msgstr "اگر روی یک عدد صحیح غیرصفر تنظیم شود، پارسر فقط آن ویژگی‌هایی را گزارش می‌کند که در نمونه سند مشخص شده‌اند و نه آن‌هایی که از اعلامیه‌های ویژگی به دست آمده‌اند. برنامه‌هایی که این ویژگی را تنظیم می‌کنند باید به‌ویژه مراقب باشند که از اطلاعات تکمیلی موجود در اعلامیه‌ها، در صورت نیاز، برای رعایت استانداردهای رفتار پردازنده‌های XML استفاده کنند. به‌طور پیش‌فرض، این ویژگی false است؛ می‌توان آن را در هر زمان تغییر داد."
 
+msgid "The dictionary used to intern the names of elements and attributes. It is either the dictionary passed as the *intern* argument of :func:`ParserCreate`, or a new dictionary created for this parser."
+msgstr "دیکشنریِ مورد استفاده برای درونی‌سازی کردن نام‌های المان‌ها و ویژگی‌ها. این دیکشنری یا همان دیکشنری است که به عنوان آرگومان *intern* تابع :func:`ParserCreate` پاس داده شده است، یا یک دیکشنری جدید که برای این پارسر ایجاد شده است."
+
+msgid "If set to a true value, and namespace processing is enabled, the namespace prefix is reported as the third part of the expanded name, separated by the namespace separator. Names which have no prefix are not affected. By default, this attribute is false; it may be changed at any time."
+msgstr "اگر به یک مقدار واقعی تنظیم شود، و پردازش فضای نام فعال باشد، پیشوند فضای نام به عنوان بخش سوم نام گسترش‌یافته گزارش می‌شود، جدا شده با جداکننده‌ی فضای نام. نام‌هایی که پیشوند ندارند تحت تأثیر قرار نمی‌گیرند. به طور پیش‌فرض، این ویژگی false است؛ می‌تواند در هر زمان تغییر کند."
+
 msgid "The following attributes contain values relating to the most recent error encountered by an :class:`xmlparser` object, and will only have correct values once a call to :meth:`Parse` or :meth:`ParseFile` has raised an :exc:`xml.parsers.expat.ExpatError` exception."
 msgstr "ویژگی‌های زیر شامل مقادیری مربوط به آخرین خطایی هستند که یک شیء :class:`xmlparser` با آن مواجه شده است، و تنها زمانی مقادیر صحیح خواهند داشت که یک فراخوانی :meth:`Parse` یا :meth:`ParseFile` یک استثنا :exc:`xml.parsers.expat.ExpatError` را پرتاب کرده باشد."
 
@@ -265,19 +291,27 @@ msgstr "شماره خط جاری در ورودی پارسر ."
 msgid "Here is the list of handlers that can be set.  To set a handler on an :class:`xmlparser` object *o*, use ``o.handlername = func``.  *handlername* must be taken from the following list, and *func* must be a callable object accepting the correct number of arguments.  The arguments are all strings, unless otherwise stated."
 msgstr "در اینجا فهرستی از هندلرها که می‌توان آن‌ها را تنظیم کرد آمده است. برای تنظیم یک هندلر روی یک شیء :class:`xmlparser` به نام *o*، از ``o.handlername = func`` استفاده کنید. *handlername* باید از فهرست زیر انتخاب شود، و *func* باید یک شیء فراخوانی‌پذیر باشد که تعداد صحیح آرگومان‌ها را بپذیرد. همه آرگومان‌ها رشته هستند، مگر آنکه خلاف آن ذکر شده باشد."
 
-msgid "Called when the XML declaration is parsed.  The XML declaration is the (optional) declaration of the applicable version of the XML recommendation, the encoding of the document text, and an optional \"standalone\" declaration. *version* and *encoding* will be strings, and *standalone* will be ``1`` if the document is declared standalone, ``0`` if it is declared not to be standalone, or ``-1`` if the standalone clause was omitted. This is only available with Expat version 1.95.0 or newer."
+#, fuzzy
+#| msgid "Called when the XML declaration is parsed.  The XML declaration is the (optional) declaration of the applicable version of the XML recommendation, the encoding of the document text, and an optional \"standalone\" declaration. *version* and *encoding* will be strings, and *standalone* will be ``1`` if the document is declared standalone, ``0`` if it is declared not to be standalone, or ``-1`` if the standalone clause was omitted. This is only available with Expat version 1.95.0 or newer."
+msgid "Called when the XML declaration is parsed.  The XML declaration is the (optional) declaration of the applicable version of the XML recommendation, the encoding of the document text, and an optional \"standalone\" declaration. *version* and *encoding* will be strings, and *standalone* will be ``1`` if the document is declared standalone, ``0`` if it is declared not to be standalone, or ``-1`` if the standalone clause was omitted."
 msgstr "هنگامی که اعلان XML تجزیه می‌شود فراخوانی می‌شود. اعلان XML عبارت است از اعلان (اختیاری) نسخه‌ی قابل‌اجرای توصیه‌نامه‌ی XML، کدگذاری متن سند، و یک اعلان «standalone» اختیاری. *version* و *encoding* رشته خواهند بود و اگر سند به صورت مستقل اعلام شده باشد *standalone* برابر با ``1``، اگر به صورت غیرمستقل اعلام شده باشد برابر با ``0``، و اگر بند مستقل حذف شده باشد برابر با ``-1`` خواهد بود. این ویژگی فقط با Expat نسخه‌ی 1.95.0 یا جدیدتر در دسترس است."
 
-msgid "Called when Expat begins parsing the document type declaration (``<!DOCTYPE ...``).  The *doctypeName* is provided exactly as presented.  The *systemId* and *publicId* parameters give the system and public identifiers if specified, or ``None`` if omitted.  *has_internal_subset* will be true if the document contains an internal document declaration subset. This requires Expat version 1.2 or newer."
+#, fuzzy
+#| msgid "Called when Expat begins parsing the document type declaration (``<!DOCTYPE ...``).  The *doctypeName* is provided exactly as presented.  The *systemId* and *publicId* parameters give the system and public identifiers if specified, or ``None`` if omitted.  *has_internal_subset* will be true if the document contains an internal document declaration subset. This requires Expat version 1.2 or newer."
+msgid "Called when Expat begins parsing the document type declaration (``<!DOCTYPE ...``).  The *doctypeName* is provided exactly as presented.  The *systemId* and *publicId* parameters give the system and public identifiers if specified, or ``None`` if omitted.  *has_internal_subset* will be true if the document contains an internal document declaration subset."
 msgstr "هنگامی که Expat شروع به تجزیه‌ی اعلان نوع سند (``<!DOCTYPE ...``) می‌کند، فراخوانی می‌شود. پارامتر *doctypeName* دقیقا همان‌طور که ارائه شده است، فراهم می‌شود. پارامترهای *systemId* و *publicId* شناساگرهای سیستم و عمومی را در صورت مشخص شدن، یا در صورت حذف، مقدار ``None`` را ارائه می‌دهند. اگر سند حاوی زیرمجموعه اعلان سند داخلی باشد، *has_internal_subset* برابر با true خواهد بود. این امر نیازمند Expat نسخه‌ی 1.2 یا جدیدتر است."
 
-msgid "Called when Expat is done parsing the document type declaration. This requires Expat version 1.2 or newer."
+#, fuzzy
+#| msgid "Called when Expat is done parsing the document type declaration. This requires Expat version 1.2 or newer."
+msgid "Called when Expat is done parsing the document type declaration."
 msgstr "هنگامی فراخوانی می‌شود که Expat تجزیه‌ی اعلامیه‌ی نوع سند را به پایان برساند. این کار به نسخه‌ی ۱.۲ یا جدیدتر Expat نیاز دارد."
 
 msgid "Called once for each element type declaration.  *name* is the name of the element type, and *model* is a representation of the content model."
 msgstr "برای هر اعلامیه‌ی نوع عنصر یک بار فراخوانی می‌شود. *name* نام نوع عنصر است، و *model* نمایشی از مدل محتوا است."
 
-msgid "Called for each declared attribute for an element type.  If an attribute list declaration declares three attributes, this handler is called three times, once for each attribute.  *elname* is the name of the element to which the declaration applies and *attname* is the name of the attribute declared.  The attribute type is a string passed as *type*; the possible values are ``'CDATA'``, ``'ID'``, ``'IDREF'``, ... *default* gives the default value for the attribute used when the attribute is not specified by the document instance, or ``None`` if there is no default value (``#IMPLIED`` values).  If the attribute is required to be given in the document instance, *required* will be true. This requires Expat version 1.95.0 or newer."
+#, fuzzy
+#| msgid "Called for each declared attribute for an element type.  If an attribute list declaration declares three attributes, this handler is called three times, once for each attribute.  *elname* is the name of the element to which the declaration applies and *attname* is the name of the attribute declared.  The attribute type is a string passed as *type*; the possible values are ``'CDATA'``, ``'ID'``, ``'IDREF'``, ... *default* gives the default value for the attribute used when the attribute is not specified by the document instance, or ``None`` if there is no default value (``#IMPLIED`` values).  If the attribute is required to be given in the document instance, *required* will be true. This requires Expat version 1.95.0 or newer."
+msgid "Called for each declared attribute for an element type.  If an attribute list declaration declares three attributes, this handler is called three times, once for each attribute.  *elname* is the name of the element to which the declaration applies and *attname* is the name of the attribute declared.  The The attribute type is a string passed as *type*: ``'CDATA'``, ``'ID'``, ``'IDREF'``, ``'IDREFS'``, ``'ENTITY'``, ``'ENTITIES'``, ``'NMTOKEN'`` or ``'NMTOKENS'``, an enumeration like ``'(x|y)'``, or a notation list like ``'NOTATION(n1|n2)'``. *default* gives the default value for the attribute used when the attribute is not specified by the document instance, or ``None`` if there is no default value (``#IMPLIED`` values).  If the attribute is required to be given in the document instance, *required* will be true."
 msgstr "برای هر صفت اعلام‌شده برای یک نوع عنصر فراخوانی می‌شود. اگر یک اعلامیه‌ی فهرست صفت، سه صفت را اعلام کند، این هندلر سه بار، یک بار برای هر صفت فراخوانی می‌شود. پارامتر *elname* نام عنصری است که اعلامیه به آن اعمال می‌شود و *attname* نام صفت اعلام‌شده است. نوع صفت یک رشته است که به عنوان *type* ارسال می‌شود؛ مقادیر ممکن عبارتند از ``'CDATA'``، ``'ID'``، ``'IDREF'``، ... پارامتر *default* مقدار پیش‌فرض صفت را که وقتی صفت توسط نمونه‌ی سند مشخص نشده است استفاده می‌شود، یا اگر مقدار پیش‌فرضی وجود نداشته باشد (مقادیر ``#IMPLIED``) مقدار ``None`` را ارائه می‌دهد. اگر صفت ملزم به ارائه در نمونه‌ی سند باشد، *required* برابر با درست (true) خواهد بود. این کار به نسخه‌ی ۱.۹۵.۰ یا جدیدتر Expat نیاز دارد."
 
 msgid "Called for the start of every element.  *name* is a string containing the element name, and *attributes* is the element attributes. If :attr:`ordered_attributes` is true, this is a list (see :attr:`ordered_attributes` for a full description). Otherwise it's a dictionary mapping names to values."
@@ -292,10 +326,14 @@ msgstr "برای هر دستور پردازشی فراخوانی می‌شود."
 msgid "Called for character data.  This will be called for normal character data, CDATA marked content, and ignorable whitespace.  Applications which must distinguish these cases can use the :attr:`StartCdataSectionHandler`, :attr:`EndCdataSectionHandler`, and :attr:`ElementDeclHandler` callbacks to collect the required information. Note that the character data may be chunked even if it is short and so you may receive more than one call to :meth:`CharacterDataHandler`. Set the :attr:`buffer_text` instance attribute to ``True`` to avoid that."
 msgstr "برای داده‌های نویسه‌ای فراخوانی می‌شود. این متد برای داده‌های نویسه‌ای عادی، محتوای علامت‌گذاری‌شده CDATA و فضای خالی قابل‌چشم‌پوشی فراخوانی خواهد شد. برنامه‌هایی که باید این حالت‌ها را از هم تشخیص دهند، می‌توانند از کال‌بک‌های :attr:`StartCdataSectionHandler`، :attr:`EndCdataSectionHandler` و :attr:`ElementDeclHandler` برای جمع‌آوری اطلاعات مورد نیاز استفاده کنند. توجه داشته باشید که داده‌های نویسه‌ای ممکن است حتی در صورت کوتاه بودن بخش‌بندی (chunking) شوند و بنابراین ممکن است بیش از یک فراخوانی برای :meth:`CharacterDataHandler` دریافت کنید. برای جلوگیری از این موضوع، ویژگی نمونه :attr:`buffer_text` را روی ``True`` تنظیم کنید."
 
-msgid "Called for unparsed (NDATA) entity declarations.  This is only present for version 1.2 of the Expat library; for more recent versions, use :attr:`EntityDeclHandler` instead.  (The underlying function in the Expat library has been declared obsolete.)"
+#, fuzzy
+#| msgid "Called for unparsed (NDATA) entity declarations.  This is only present for version 1.2 of the Expat library; for more recent versions, use :attr:`EntityDeclHandler` instead.  (The underlying function in the Expat library has been declared obsolete.)"
+msgid "Called for unparsed (NDATA) entity declarations. If this handler is not set, such declarations are reported by :attr:`EntityDeclHandler`, which is preferred for new code. (The underlying function in the Expat library has been declared obsolete.)"
 msgstr "برای اعلامیه‌های موجودیت تجزیه‌نشده (NDATA) فراخوانی می‌شود. این مورد فقط در نسخه‌ی ۱.۲ از کتابخانه‌ی Expat وجود دارد؛ برای نسخه‌های جدیدتر، به جای آن از :attr:`EntityDeclHandler` استفاده کنید. (تابع زیرین در کتابخانه‌ی Expat منسوخ اعلام شده است.)"
 
-msgid "Called for all entity declarations.  For parameter and internal entities, *value* will be a string giving the declared contents of the entity; this will be ``None`` for external entities.  The *notationName* parameter will be ``None`` for parsed entities, and the name of the notation for unparsed entities. *is_parameter_entity* will be true if the entity is a parameter entity or false for general entities (most applications only need to be concerned with general entities). This is only available starting with version 1.95.0 of the Expat library."
+#, fuzzy
+#| msgid "Called for all entity declarations.  For parameter and internal entities, *value* will be a string giving the declared contents of the entity; this will be ``None`` for external entities.  The *notationName* parameter will be ``None`` for parsed entities, and the name of the notation for unparsed entities. *is_parameter_entity* will be true if the entity is a parameter entity or false for general entities (most applications only need to be concerned with general entities). This is only available starting with version 1.95.0 of the Expat library."
+msgid "Called for all entity declarations.  For parameter and internal entities, *value* will be a string giving the declared contents of the entity; this will be ``None`` for external entities.  The *notationName* parameter will be ``None`` for parsed entities, and the name of the notation for unparsed entities. *is_parameter_entity* will be true if the entity is a parameter entity or false for general entities (most applications only need to be concerned with general entities)."
 msgstr "برای تمام اعلامیه‌های موجودیت فراخوانی می‌شود. برای موجودیت‌های پارامتر و داخلی، *value* رشته‌ای خواهد بود که محتویات اعلام‌شده‌ی موجودیت را ارائه می‌دهد؛ این مقدار برای موجودیت‌های خارجی ``None`` خواهد بود. پارامتر *notationName* برای موجودیت‌های تجزیه‌شده برابر با ``None`` و برای موجودیت‌های تجزیه‌نشده نام نمادگذاری خواهد بود. پارامتر *is_parameter_entity* اگر موجودیت یک موجودیت پارامتر باشد درست و برای موجودیت‌های عمومی نادرست خواهد بود (بیشتر برنامه‌ها فقط نیاز دارند با موجودیت‌های عمومی سر و کار داشته باشند). این مورد فقط از نسخه‌ی ۱.۹۵.۰ کتابخانه‌ی Expat به بعد در دسترس است."
 
 msgid "Called for notation declarations.  *notationName*, *base*, and *systemId*, and *publicId* are strings if given.  If the public identifier is omitted, *publicId* will be ``None``."
@@ -319,7 +357,9 @@ msgstr "در پایان یک بخش CDATA فراخوانی می‌شود."
 msgid "Called for any characters in the XML document for which no applicable handler has been specified.  This means characters that are part of a construct which could be reported, but for which no handler has been supplied."
 msgstr "برای هر نویسه‌ای در سند XML که هیچ هندلری قابل‌اعمالی برای آن مشخص نشده باشد، فراخوانی می‌شود. این به معنای نویسه‌هایی است که بخشی از ساختاری هستند که می‌تواند گزارش شود، اما هیچ هندلری برای آن تأمین نشده است."
 
-msgid "This is the same as the :func:`DefaultHandler`,  but doesn't inhibit expansion of internal entities. The entity reference will not be passed to the default handler."
+#, fuzzy
+#| msgid "This is the same as the :func:`DefaultHandler`,  but doesn't inhibit expansion of internal entities. The entity reference will not be passed to the default handler."
+msgid "This is the same as the :attr:`DefaultHandler`, but doesn't inhibit expansion of internal entities. The entity reference will not be passed to the default handler."
 msgstr "این متد مشابه :func:`DefaultHandler` است، اما مانع انبساط موجودیت‌های داخلی نمی‌شود. ارجاع موجودیت به هندلر پیش‌فرض ارسال نخواهد شد."
 
 msgid "Called if the XML document hasn't been declared as being a standalone document. This happens when there is an external subset or a reference to a parameter entity, but the XML declaration does not set standalone to ``yes`` in an XML declaration.  If this handler returns ``0``, then the parser will raise an :const:`XML_ERROR_NOT_STANDALONE` error.  If this handler is not set, no exception is raised by the parser for this condition."
@@ -336,6 +376,9 @@ msgstr "برای این که موجودیت‌های خارجی تجزیه شو�
 
 msgid "If this handler is not provided, external entities are reported by the :attr:`DefaultHandler` callback, if provided."
 msgstr "اگر این هندلر فراهم نشده باشد، موجودیت‌های خارجی توسط کال‌بک :attr:`DefaultHandler` گزارش داده می‌شوند، در صورتی که فراهم شده باشد."
+
+msgid "Called for entity references which are not expanded, because the parser did not read the declaration of the entity. This happens when the external DTD subset or an external parameter entity is not parsed. *is_parameter_entity* is true for a parameter entity and false for a general entity."
+msgstr "برای ارجاع‌های موجودیت که گسترش داده نشده‌اند فراخوانی می‌شود، زیرا پارسر اعلان موجودیت را نخوانده است. این اتفاق می‌افتد وقتی که زیرمجموعه‌ی خارجی DTD یا یک موجودیت پارامتر خارجی تجزیه نشده باشد. *is_parameter_entity* برای یک موجودیت پارامتر true و برای یک موجودیت عمومی false است."
 
 msgid "ExpatError Exceptions"
 msgstr "استثناهای ExpatError"
@@ -468,6 +511,12 @@ msgstr "عنصر نام‌دار امکان انتخاب از میان تعدا�
 msgid "Elements which are declared to be ``EMPTY`` have this model type."
 msgstr "عناصری که به‌صورت ``EMPTY`` اعلام شده‌اند، این نوع مدل را دارند."
 
+msgid "The named element allows character data, optionally interspersed with the named children; this is used for content models such as ``(#PCDATA)`` and ``(#PCDATA | A | B)*``."
+msgstr "المان نام‌گذاری‌شده داده‌ی نویسه را مجاز می‌دارد، به‌صورت اختیاری درهم‌تنیده با فرزندان نام‌گذاری‌شده؛ این برای مدل‌های محتوا مانند ``(#PCDATA)`` و ``(#PCDATA | A | B)*`` استفاده می‌شود."
+
+msgid "The model names a single element, as for ``A``."
+msgstr "مدل یک المان منفرد را نام‌گذاری می‌کند، همانند ``A``."
+
 msgid "Models which represent a series of models which follow one after the other are indicated with this model type.  This is used for models such as ``(A, B, C)``."
 msgstr "مدل‌هایی که یک رشته از مدل‌های متوالی را نشان می‌دهند، با این نوع مدل مشخص می‌شوند. این برای مدل‌هایی مانند ``(A, B, C)`` به کار می‌رود."
 
@@ -522,7 +571,9 @@ msgstr "پس از عنصر سند، چیزی جز فضای سفید رخ داد.
 msgid "An XML declaration was found somewhere other than the start of the input data."
 msgstr "یک اعلان XML در جایی غیر از ابتدای داده ورودی یافت شد."
 
-msgid "The document contains no elements (XML requires all documents to contain exactly one top-level element).."
+#, fuzzy
+#| msgid "The document contains no elements (XML requires all documents to contain exactly one top-level element).."
+msgid "The document contains no elements (XML requires all documents to contain exactly one top-level element)."
 msgstr "سند شامل هیچ عنصری نیست (XML نیاز دارد تمام اسناد دقیقاً حاوی یک عنصر ریشه باشند).."
 
 msgid "Expat was not able to allocate memory internally."
@@ -573,8 +624,8 @@ msgstr "سند تلاش کرد اعلامیه‌ی فضای نام مرتبط ب
 msgid "A parameter entity contained incomplete markup."
 msgstr "یک موجودیت پارامتر (parameter entity) شامل نمادگذاری ناقص بود."
 
-msgid "The document contained no document element at all."
-msgstr "این سند به‌هیچ‌وجه شامل هیچ عنصر سندی نبود."
+msgid "There was an error parsing the XML declaration."
+msgstr "خطایی در تجزیه اعلان XML رخ داد."
 
 msgid "There was an error parsing a text declaration in an external entity."
 msgstr "هنگام تجزیه‌ی یک اعلامیه‌ی متنی در یک موجودیت خارجی، خطایی رخ داد."
@@ -624,32 +675,5 @@ msgstr "ماژول"
 msgid "pyexpat"
 msgstr "pyexpat"
 
-#~ msgid "The version string of the Expat library loaded by the interpreter, like ``'expat_2.8.4'``."
-#~ msgstr "رشته‌ی نسخه‌ی کتابخانه‌ی Expat که توسط مفسر بارگذاری شده است، مانند ``'expat_2.8.4'``."
-
-#~ msgid "The version of the Expat library loaded by the interpreter, as a tuple of three integers: major, minor and micro version."
-#~ msgstr "نسخه‌ی کتابخانه‌ی Expat که توسط مفسر بارگذاری شده است، به صورت یک تاپل از سه عدد صحیح: نسخه‌ی اصلی، فرعی و ریز."
-
-#~ msgid "The list of the features with which the loaded Expat library was compiled, as ``(name, value)`` pairs. The value is only meaningful for features which have one, like ``'XML_CONTEXT_BYTES'`` or the default protection limits ``'XML_BLAP_ACT_THRES'`` and ``'XML_AT_MAX_AMP'``; for other features, like ``'XML_DTD'`` and ``'XML_NS'``, the value is ``0`` and only the presence of the name is significant."
-#~ msgstr "فهرست ویژگی‌هایی که کتابخانه‌ی Expat بارگذاری‌شده با آن‌ها کامپایل‌شده است، به صورت جفت‌های ``(name, value)``. مقدار تنها برای ویژگی‌هایی که دارای مقدار هستند معنا دارد، مانند ``'XML_CONTEXT_BYTES'`` یا محدودیت‌های پیش‌فرض حفاظت ``'XML_BLAP_ACT_THRES'`` و ``'XML_AT_MAX_AMP'``؛ برای سایر ویژگی‌ها، مانند ``'XML_DTD'`` و ``'XML_NS'``، مقدار ``0`` است و تنها حضور نام مهم است."
-
-#~ msgid "*intern*, if given, must be a dictionary. It is used to intern the names of elements and attributes, and is available as the :attr:`~xmlparser.intern` attribute. By default a new empty dictionary is created for every parser."
-#~ msgstr "*intern*، در صورت داده شدن، باید یک دیکشنری باشد. این برای درونی‌سازی کردن نام‌های المان‌ها و ویژگی‌ها استفاده می‌شود، و به عنوان ویژگی :attr:`~xmlparser.intern` در دسترس است. به طور پیش‌فرض یک دیکشنری جدید خالی برای هر پارسر ایجاد می‌شود."
-
-#~ msgid "The dictionary used to intern the names of elements and attributes. It is either the dictionary passed as the *intern* argument of :func:`ParserCreate`, or a new dictionary created for this parser."
-#~ msgstr "دیکشنریِ مورد استفاده برای درونی‌سازی کردن نام‌های المان‌ها و ویژگی‌ها. این دیکشنری یا همان دیکشنری است که به عنوان آرگومان *intern* تابع :func:`ParserCreate` پاس داده شده است، یا یک دیکشنری جدید که برای این پارسر ایجاد شده است."
-
-#~ msgid "If set to a true value, and namespace processing is enabled, the namespace prefix is reported as the third part of the expanded name, separated by the namespace separator. Names which have no prefix are not affected. By default, this attribute is false; it may be changed at any time."
-#~ msgstr "اگر به یک مقدار واقعی تنظیم شود، و پردازش فضای نام فعال باشد، پیشوند فضای نام به عنوان بخش سوم نام گسترش‌یافته گزارش می‌شود، جدا شده با جداکننده‌ی فضای نام. نام‌هایی که پیشوند ندارند تحت تأثیر قرار نمی‌گیرند. به طور پیش‌فرض، این ویژگی false است؛ می‌تواند در هر زمان تغییر کند."
-
-#~ msgid "Called for entity references which are not expanded, because the parser did not read the declaration of the entity. This happens when the external DTD subset or an external parameter entity is not parsed. *is_parameter_entity* is true for a parameter entity and false for a general entity."
-#~ msgstr "برای ارجاع‌های موجودیت که گسترش داده نشده‌اند فراخوانی می‌شود، زیرا پارسر اعلان موجودیت را نخوانده است. این اتفاق می‌افتد وقتی که زیرمجموعه‌ی خارجی DTD یا یک موجودیت پارامتر خارجی تجزیه نشده باشد. *is_parameter_entity* برای یک موجودیت پارامتر true و برای یک موجودیت عمومی false است."
-
-#~ msgid "The named element allows character data, optionally interspersed with the named children; this is used for content models such as ``(#PCDATA)`` and ``(#PCDATA | A | B)*``."
-#~ msgstr "المان نام‌گذاری‌شده داده‌ی نویسه را مجاز می‌دارد، به‌صورت اختیاری درهم‌تنیده با فرزندان نام‌گذاری‌شده؛ این برای مدل‌های محتوا مانند ``(#PCDATA)`` و ``(#PCDATA | A | B)*`` استفاده می‌شود."
-
-#~ msgid "The model names a single element, as for ``A``."
-#~ msgstr "مدل یک المان منفرد را نام‌گذاری می‌کند، همانند ``A``."
-
-#~ msgid "There was an error parsing the XML declaration."
-#~ msgstr "خطایی در تجزیه اعلان XML رخ داد."
+#~ msgid "The document contained no document element at all."
+#~ msgstr "این سند به‌هیچ‌وجه شامل هیچ عنصر سندی نبود."
