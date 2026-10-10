@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-10-09)
+(به‌روزرسانی: 2026-10-10)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -8,7 +8,7 @@
 | bugs.po | 100.0% | 0.0% | 31 | 0 |
 | builtins/constants.po | 100.0% | 0.0% | 22 | 0 |
 | builtins/exceptions.po | 100.0% | 0.0% | 207 | 0 |
-| builtins/functions.po | 100.0% | 0.0% | 539 | 0 |
+| builtins/functions.po | 100.0% | 0.0% | 540 | 0 |
 | builtins/index.po | 100.0% | 0.0% | 5 | 0 |
 | builtins/stdtypes.po | 100.0% | 0.0% | 1608 | 0 |
 | builtins/threadsafety.po | 100.0% | 0.0% | 118 | 0 |
@@ -74,7 +74,6 @@
 | c-api/sentinel.po | 100.0% | 0.0% | 6 | 0 |
 | c-api/sequence.po | 100.0% | 0.0% | 32 | 0 |
 | c-api/set.po | 100.0% | 0.0% | 35 | 0 |
-| c-api/slice.po | 100.0% | 0.0% | 25 | 0 |
 | c-api/slots.po | 100.0% | 0.0% | 45 | 0 |
 | c-api/stable.po | 100.0% | 0.0% | 97 | 0 |
 | c-api/structures.po | 100.0% | 0.0% | 212 | 0 |
@@ -213,7 +212,6 @@
 | library/cmd.po | 100.0% | 0.0% | 50 | 0 |
 | library/cmdline.po | 100.0% | 0.0% | 54 | 0 |
 | library/cmdlinelibs.po | 100.0% | 0.0% | 3 | 0 |
-| library/code.po | 100.0% | 0.0% | 33 | 0 |
 | library/codecs.po | 100.0% | 0.0% | 569 | 0 |
 | library/codeop.po | 100.0% | 0.0% | 14 | 0 |
 | library/collections.abc.po | 100.0% | 0.0% | 142 | 0 |
@@ -353,7 +351,6 @@
 | library/operator.po | 100.0% | 0.0% | 189 | 0 |
 | library/optparse.po | 100.0% | 0.0% | 532 | 0 |
 | library/os.path.po | 100.0% | 0.0% | 113 | 0 |
-| library/os.po | 100.0% | 0.0% | 1135 | 0 |
 | library/ossaudiodev.po | 100.0% | 0.0% | 3 | 0 |
 | library/pathlib.po | 100.0% | 0.0% | 444 | 0 |
 | library/pdb.po | 100.0% | 0.0% | 179 | 0 |
@@ -377,7 +374,6 @@
 | library/py_compile.po | 100.0% | 0.0% | 30 | 0 |
 | library/pyclbr.po | 100.0% | 0.0% | 26 | 0 |
 | library/pydoc.po | 100.0% | 0.0% | 25 | 0 |
-| library/pyexpat.po | 100.0% | 0.0% | 169 | 0 |
 | library/python.po | 100.0% | 0.0% | 3 | 0 |
 | library/queue.po | 100.0% | 0.0% | 58 | 0 |
 | library/quopri.po | 100.0% | 0.0% | 13 | 0 |
@@ -413,7 +409,6 @@
 | library/string.templatelib.po | 100.0% | 0.0% | 56 | 0 |
 | library/stringprep.po | 100.0% | 0.0% | 25 | 0 |
 | library/struct.po | 100.0% | 0.0% | 206 | 0 |
-| library/subprocess.po | 100.0% | 0.0% | 320 | 0 |
 | library/sunau.po | 100.0% | 0.0% | 3 | 0 |
 | library/superseded.po | 100.0% | 0.0% | 4 | 0 |
 | library/symtable.po | 100.0% | 0.0% | 76 | 0 |
@@ -427,7 +422,7 @@
 | library/telnetlib.po | 100.0% | 0.0% | 4 | 0 |
 | library/tempfile.po | 100.0% | 0.0% | 90 | 0 |
 | library/termios.po | 100.0% | 0.0% | 25 | 0 |
-| library/test.po | 100.0% | 0.0% | 341 | 0 |
+| library/test.po | 100.0% | 0.0% | 343 | 0 |
 | library/text.po | 100.0% | 0.0% | 3 | 0 |
 | library/textwrap.po | 100.0% | 0.0% | 58 | 0 |
 | library/threading.po | 100.0% | 0.0% | 308 | 0 |
@@ -541,7 +536,6 @@
 | whatsnew/3.11.po | 100.0% | 0.0% | 776 | 0 |
 | whatsnew/3.12.po | 100.0% | 0.0% | 914 | 0 |
 | whatsnew/3.13.po | 100.0% | 0.0% | 991 | 0 |
-| whatsnew/3.14.po | 100.0% | 0.0% | 1111 | 0 |
 | whatsnew/3.2.po | 100.0% | 0.0% | 576 | 0 |
 | whatsnew/3.3.po | 100.0% | 0.0% | 682 | 0 |
 | whatsnew/3.4.po | 100.0% | 0.0% | 517 | 0 |
@@ -551,11 +545,17 @@
 | whatsnew/3.8.po | 100.0% | 0.0% | 513 | 0 |
 | whatsnew/3.9.po | 100.0% | 0.0% | 380 | 0 |
 | whatsnew/index.po | 100.0% | 0.0% | 3 | 0 |
-| whatsnew/3.15.po | 99.9% | 0.1% | 818 | 0 |
+| whatsnew/3.14.po | 99.9% | 0.1% | 1110 | 0 |
 | library/ast.po | 99.7% | 0.3% | 345 | 0 |
+| library/subprocess.po | 99.7% | 0.3% | 319 | 0 |
 | howto/abi3t-migration.po | 99.4% | 0.6% | 178 | 0 |
+| whatsnew/3.15.po | 99.4% | 0.2% | 814 | 3 |
+| library/os.po | 99.4% | 0.6% | 1128 | 0 |
 | license.po | 99.3% | 0.7% | 138 | 0 |
+| library/code.po | 97.0% | 3.0% | 32 | 0 |
+| c-api/slice.po | 96.2% | 3.8% | 25 | 0 |
+| library/pyexpat.po | 93.3% | 6.7% | 166 | 0 |
 | reference/grammar.po | 85.7% | 14.3% | 6 | 0 |
-| whatsnew/changelog.po | 45.7% | 0.4% | 7056 | 8317 |
-| **مجموع** | **90.7%** | **0.1%** | **81882** | **8317** |
+| whatsnew/changelog.po | 45.5% | 0.5% | 7056 | 8366 |
+| **مجموع** | **90.6%** | **0.1%** | **81868** | **8369** |
 <!-- TRANSLATION_STATUS_END -->
