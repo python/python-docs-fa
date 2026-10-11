@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-11 04:18+0000\n"
 "PO-Revision-Date: 2026-09-14 13:59+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -74,10 +74,15 @@ msgstr "true: نام‌های اصلی دارای پیشوند و ویژگی‌�
 msgid "false: Do not report attributes used for Namespace declarations, and optionally do not report original prefixed names (default)."
 msgstr "false: ویژگی‌های استفاده‌شده برای اعلان‌های فضای نام را گزارش نمی‌کند، و به‌صورت اختیاری نام‌های پیشونددار اصلی را گزارش نمی‌کند (پیش‌فرض)."
 
+msgid "The parser based on :mod:`xml.parsers.expat` does not support this feature."
+msgstr "پارسرِ مبتنی بر :mod:`xml.parsers.expat` این ویژگی را پشتیبانی نمی‌کند."
+
 msgid "value: ``\"http://xml.org/sax/features/string-interning\"``"
 msgstr "مقدار: ``\"http://xml.org/sax/features/string-interning\"``"
 
-msgid "true: All element names, prefixes, attribute names, Namespace URIs, and local names are interned using the built-in intern function."
+#, fuzzy
+#| msgid "true: All element names, prefixes, attribute names, Namespace URIs, and local names are interned using the built-in intern function."
+msgid "true: All element names, prefixes, attribute names, Namespace URIs, and local names are interned in a dictionary (see :data:`property_interning_dict`)."
 msgstr "مقدار درست (true): تمام نام‌های المان، پیشوندها، نام‌های ویژگی، URIهای فضای نام و نام‌های محلی با استفاده از تابع توکار intern درونی‌سازی می‌شوند."
 
 msgid "false: Names are not necessarily interned, although they may be (default)."
@@ -91,6 +96,9 @@ msgstr "true: تمام خطاهای اعتبارسنجی را گزارش می‌
 
 msgid "false: Do not report validation errors."
 msgstr "false: خطاهای اعتبارسنجی گزارش داده نمی‌شوند."
+
+msgid "The parser based on :mod:`xml.parsers.expat` does not support this feature, because Expat is a non-validating parser."
+msgstr "پارسرِ مبتنی بر :mod:`xml.parsers.expat` این ویژگی را پشتیبانی نمی‌کند، زیرا Expat یک پارسرِ غیراعتبارسنجی است."
 
 msgid "Enabling opens a vulnerability to `external entity attacks <https://en.wikipedia.org/wiki/XML_external_entity_attack>`_ if the parser is used with user-provided XML content. Please reflect on your `threat model <https://en.wikipedia.org/wiki/Threat_model>`_ before enabling this feature."
 msgstr "فعال‌سازی این قابلیت، در صورتی که پارسر با محتوای XML ارائه‌شده توسط کاربر استفاده شود، آسیب‌پذیری در برابر `حملات موجودیت خارجی <https://fa.wikipedia.org/wiki/حمله_موجودیت_خارجی_اکس‌ام‌ال>`_ ایجاد می‌کند. لطفاً پیش از فعال‌سازی این قابلیت، `مدل تهدید <https://en.wikipedia.org/wiki/Threat_model>`_ خود را بررسی کنید."
@@ -119,8 +127,8 @@ msgstr "فهرست تمام قابلیت‌ها."
 msgid "value: ``\"http://xml.org/sax/properties/lexical-handler\"``"
 msgstr "مقدار: ``\"http://xml.org/sax/properties/lexical-handler\"``"
 
-msgid "data type: xml.sax.handler.LexicalHandler (not supported in Python 2)"
-msgstr "نوع داده: xml.sax.handler.LexicalHandler (در پایتون ۲ پشتیبانی نمی‌شود)"
+msgid "data type: :class:`~xml.sax.handler.LexicalHandler`"
+msgstr "نوع داده: :class:`~xml.sax.handler.LexicalHandler`"
 
 msgid "description: An optional extension handler for lexical events like comments."
 msgstr "توضیحات: یک هندلر افزونه‌ای اختیاری برای رویدادهای واژگانی مانند کامنت‌ها."
@@ -131,20 +139,26 @@ msgstr "دسترسی: خواندن/نوشتن"
 msgid "value: ``\"http://xml.org/sax/properties/declaration-handler\"``"
 msgstr "مقدار: ``\"http://xml.org/sax/properties/declaration-handler\"``"
 
-msgid "data type: xml.sax.sax2lib.DeclHandler (not supported in Python 2)"
-msgstr "نوع داده: xml.sax.sax2lib.DeclHandler (در Python 2 پشتیبانی نمی‌شود)"
+msgid "data type: an object implementing the SAX2 ``DeclHandler`` interface"
+msgstr "نوع داده: یک شیء که رابط SAX2 ``DeclHandler`` را پیاده‌سازی می‌کند"
 
 msgid "description: An optional extension handler for DTD-related events other than notations and unparsed entities."
 msgstr "توضیحات: یک هندلر افزونه‌ای اختیاری برای رویدادهای مرتبط با DTD، به‌جز نشان‌گذاری‌ها و موجودیت‌های تجزیه‌نشده."
 
+msgid "No parser in the standard library supports this property, and the standard library provides no such handler."
+msgstr "هیچ پارسرِ در کتابخانه‌ی استاندارد این ویژگی را پشتیبانی نمی‌کند، و کتابخانه‌ی استاندارد چنین هندلری ارائه نمی‌دهد."
+
 msgid "value: ``\"http://xml.org/sax/properties/dom-node\"``"
 msgstr "مقدار: ``\"http://xml.org/sax/properties/dom-node\"``"
 
-msgid "data type: org.w3c.dom.Node (not supported in Python 2)"
-msgstr "نوع داده: org.w3c.dom.Node (در پایتون 2 پشتیبانی نمی‌شود)"
+msgid "data type: :class:`xml.dom.Node`"
+msgstr "نوع داده: :class:`xml.dom.Node`"
 
 msgid "description: When parsing, the current DOM node being visited if this is a DOM iterator; when not parsing, the root DOM node for iteration."
 msgstr "توضیح: هنگام تجزیه، گره DOM جاری که بازدید می‌شود، اگر این یک پیمایش‌گر DOM باشد؛ هنگامی که تجزیه انجام نمی‌شود، گره DOM ریشه برای پیمایش."
+
+msgid "No parser in the standard library supports this property."
+msgstr "هیچ پارسرِ در کتابخانه‌ی استاندارد این ویژگی را پشتیبانی نمی‌کند."
 
 msgid "value: ``\"http://xml.org/sax/properties/xml-string\"``"
 msgstr "مقدار: ``\"http://xml.org/sax/properties/xml-string\"``"
@@ -155,8 +169,26 @@ msgstr "نوع داده: بایت‌ها"
 msgid "description: The literal string of characters that was the source for the current event."
 msgstr "توضیح: رشته‌ای لفظی از نویسه‌ها که منبع رویداد جاری بود."
 
-msgid "access: read-only"
-msgstr "دسترسی: فقط‌خواندنی"
+msgid "access: read-only, and only during a handler callback"
+msgstr "دسترسی: فقط‌خواندنی، و تنها در طول یک کال‌بک هندلر"
+
+msgid "value: ``\"http://www.python.org/sax/properties/encoding\"``"
+msgstr "مقدار: ``\"http://www.python.org/sax/properties/encoding\"``"
+
+msgid "data type: String"
+msgstr "نوع داده: رشته"
+
+msgid "description: The name of the encoding to assume for input data."
+msgstr "توضیح: نام کدگذاری که برای داده‌های ورودی فرض می‌شود."
+
+msgid "value: ``\"http://www.python.org/sax/properties/interning-dict\"``"
+msgstr "مقدار: ``\"http://www.python.org/sax/properties/interning-dict\"``"
+
+msgid "data type: Dictionary"
+msgstr "نوع داده: دیکشنری"
+
+msgid "description: The dictionary used to intern names, or ``None`` if names are not interned. Setting it enables interning, as does the :data:`feature_string_interning` feature."
+msgstr "توضیح: دیکشنری‌ی مورد استفاده برای درونی‌سازی کردن نام‌ها، یا ``None`` اگر نام‌ها درونی‌سازی‌شده نباشند. تنظیم آن درونی‌سازی را فعال می‌کند، همان‌طور که ویژگی :data:`feature_string_interning` نیز می‌کند."
 
 msgid "List of all known property names."
 msgstr "فهرست تمام نام‌های ویژگی‌های شناخته‌شده."
@@ -335,44 +367,14 @@ msgstr "محتوای بخش علامت‌گذاری‌شده CDATA از طریق
 msgid "Reports the end of a CDATA marked section."
 msgstr "پایان یک بخش نمادگذاری‌شده CDATA را گزارش می‌دهد."
 
-#~ msgid "The parser based on :mod:`xml.parsers.expat` does not support this feature."
-#~ msgstr "پارسرِ مبتنی بر :mod:`xml.parsers.expat` این ویژگی را پشتیبانی نمی‌کند."
+#~ msgid "data type: xml.sax.handler.LexicalHandler (not supported in Python 2)"
+#~ msgstr "نوع داده: xml.sax.handler.LexicalHandler (در پایتون ۲ پشتیبانی نمی‌شود)"
 
-#~ msgid "The parser based on :mod:`xml.parsers.expat` does not support this feature, because Expat is a non-validating parser."
-#~ msgstr "پارسرِ مبتنی بر :mod:`xml.parsers.expat` این ویژگی را پشتیبانی نمی‌کند، زیرا Expat یک پارسرِ غیراعتبارسنجی است."
+#~ msgid "data type: xml.sax.sax2lib.DeclHandler (not supported in Python 2)"
+#~ msgstr "نوع داده: xml.sax.sax2lib.DeclHandler (در Python 2 پشتیبانی نمی‌شود)"
 
-#~ msgid "data type: :class:`~xml.sax.handler.LexicalHandler`"
-#~ msgstr "نوع داده: :class:`~xml.sax.handler.LexicalHandler`"
+#~ msgid "data type: org.w3c.dom.Node (not supported in Python 2)"
+#~ msgstr "نوع داده: org.w3c.dom.Node (در پایتون 2 پشتیبانی نمی‌شود)"
 
-#~ msgid "data type: an object implementing the SAX2 ``DeclHandler`` interface"
-#~ msgstr "نوع داده: یک شیء که رابط SAX2 ``DeclHandler`` را پیاده‌سازی می‌کند"
-
-#~ msgid "No parser in the standard library supports this property, and the standard library provides no such handler."
-#~ msgstr "هیچ پارسرِ در کتابخانه‌ی استاندارد این ویژگی را پشتیبانی نمی‌کند، و کتابخانه‌ی استاندارد چنین هندلری ارائه نمی‌دهد."
-
-#~ msgid "data type: :class:`xml.dom.Node`"
-#~ msgstr "نوع داده: :class:`xml.dom.Node`"
-
-#~ msgid "No parser in the standard library supports this property."
-#~ msgstr "هیچ پارسرِ در کتابخانه‌ی استاندارد این ویژگی را پشتیبانی نمی‌کند."
-
-#~ msgid "access: read-only, and only during a handler callback"
-#~ msgstr "دسترسی: فقط‌خواندنی، و تنها در طول یک کال‌بک هندلر"
-
-#~ msgid "value: ``\"http://www.python.org/sax/properties/encoding\"``"
-#~ msgstr "مقدار: ``\"http://www.python.org/sax/properties/encoding\"``"
-
-#~ msgid "data type: String"
-#~ msgstr "نوع داده: رشته"
-
-#~ msgid "description: The name of the encoding to assume for input data."
-#~ msgstr "توضیح: نام کدگذاری که برای داده‌های ورودی فرض می‌شود."
-
-#~ msgid "value: ``\"http://www.python.org/sax/properties/interning-dict\"``"
-#~ msgstr "مقدار: ``\"http://www.python.org/sax/properties/interning-dict\"``"
-
-#~ msgid "data type: Dictionary"
-#~ msgstr "نوع داده: دیکشنری"
-
-#~ msgid "description: The dictionary used to intern names, or ``None`` if names are not interned. Setting it enables interning, as does the :data:`feature_string_interning` feature."
-#~ msgstr "توضیح: دیکشنری‌ی مورد استفاده برای درونی‌سازی کردن نام‌ها، یا ``None`` اگر نام‌ها درونی‌سازی‌شده نباشند. تنظیم آن درونی‌سازی را فعال می‌کند، همان‌طور که ویژگی :data:`feature_string_interning` نیز می‌کند."
+#~ msgid "access: read-only"
+#~ msgstr "دسترسی: فقط‌خواندنی"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-11 04:18+0000\n"
 "PO-Revision-Date: 2026-09-13 15:35+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -608,6 +608,9 @@ msgstr "همچنین برای متدهای مقید ایجادشده از توا
 msgid "Functions wrapped in :func:`functools.partial` now return ``True`` if the wrapped function is a Python generator function."
 msgstr "توابع پوشیده‌شده با :func:`functools.partial` اکنون اگر تابع پوشیده‌شده یک تابع تولیدگر پایتون باشد، ``True`` را برمی‌گردانند."
 
+msgid ":term:`Duck-typed <duck-typing>` function-like objects now return ``True`` if their code object has the :data:`CO_GENERATOR` flag."
+msgstr ":term:`نوع‌دهی اردکی <duck-typing>` شیءهای شبیه‌تابع اکنون ``True`` برمی‌گردانند اگر شیء کد آن‌ها پرچم :data:`CO_GENERATOR` را داشته باشد."
+
 msgid "Functions wrapped in :func:`functools.partialmethod` now return ``True`` if the wrapped function is a Python generator function."
 msgstr "توابعی که در :func:`functools.partialmethod` پوشیده شده‌اند، اکنون در صورتی که تابع پوشیده‌شده یک تابع تولیدگر پایتون باشد، ``True`` برمی‌گردانند."
 
@@ -619,6 +622,9 @@ msgstr "اگر شیء یک :term:`تابع هم‌روال <coroutine function>`
 
 msgid "Functions wrapped in :func:`functools.partial` now return ``True`` if the wrapped function is a :term:`coroutine function`."
 msgstr "توابع پوشش‌داده‌شده توسط :func:`functools.partial` اکنون در صورتی ``True`` را برمی‌گردانند که تابع پوشش‌داده‌شده یک :term:`تابع هم‌روال <coroutine function>` باشد."
+
+msgid ":term:`Duck-typed <duck-typing>` function-like objects now return ``True`` if their code object has the :data:`CO_COROUTINE` flag."
+msgstr ":term:`نوع‌دهی اردکی <duck-typing>` شیءهای شبیه‌تابع اکنون ``True`` برمی‌گردانند اگر شیء کد آن‌ها پرچم :data:`CO_COROUTINE` را داشته باشد."
 
 msgid "Sync functions marked with :func:`markcoroutinefunction` now return ``True``."
 msgstr "توابع همگامی که با :func:`markcoroutinefunction` علامت‌گذاری شده‌اند، اکنون ``True`` برمی‌گردانند."
@@ -685,6 +691,9 @@ msgstr ""
 
 msgid "Functions wrapped in :func:`functools.partial` now return ``True`` if the wrapped function is an :term:`asynchronous generator` function."
 msgstr "توابعی که با :func:`functools.partial` پوشیده‌شده‌اند، اکنون اگر تابع پوشیده‌شده یک تابع :term:`تولیدگر ناهمگام <asynchronous generator>` باشد، ``True`` برمی‌گردانند."
+
+msgid ":term:`Duck-typed <duck-typing>` function-like objects now return ``True`` if their code object has the :data:`CO_ASYNC_GENERATOR` flag."
+msgstr ":term:`نوع‌دهی اردکی <duck-typing>` شیءهای شبیه‌به‌تابع اکنون ``True`` را برمی‌گردانند اگر شیء کد آن‌ها پرچم :data:`CO_ASYNC_GENERATOR` را داشته باشد."
 
 msgid "Functions wrapped in :func:`functools.partialmethod` now return ``True`` if the wrapped function is a :term:`asynchronous generator` function."
 msgstr "توابع پوشش‌داده‌شده با :func:`functools.partialmethod` اکنون در صورتی ``True`` برمی‌گردانند که تابع پوشش‌داده‌شده یک تابع :term:`تولیدگر ناهمگام <asynchronous generator>` باشد."
@@ -1597,15 +1606,6 @@ msgstr "گزینه‌ی ``--details`` اکنون از درون‌نگری پای
 
 #~ msgid "encoded mapping of line numbers to bytecode indices"
 #~ msgstr "نگاشت کدگذاری‌شده از شماره سطرها به اندیس‌های بایت‌کد"
-
-#~ msgid ":term:`Duck-typed <duck-typing>` function-like objects now return ``True`` if their code object has the :data:`CO_GENERATOR` flag."
-#~ msgstr ":term:`نوع‌دهی اردکی <duck-typing>` شیءهای شبیه‌تابع اکنون ``True`` برمی‌گردانند اگر شیء کد آن‌ها پرچم :data:`CO_GENERATOR` را داشته باشد."
-
-#~ msgid ":term:`Duck-typed <duck-typing>` function-like objects now return ``True`` if their code object has the :data:`CO_COROUTINE` flag."
-#~ msgstr ":term:`نوع‌دهی اردکی <duck-typing>` شیءهای شبیه‌تابع اکنون ``True`` برمی‌گردانند اگر شیء کد آن‌ها پرچم :data:`CO_COROUTINE` را داشته باشد."
-
-#~ msgid ":term:`Duck-typed <duck-typing>` function-like objects now return ``True`` if their code object has the :data:`CO_ASYNC_GENERATOR` flag."
-#~ msgstr ":term:`نوع‌دهی اردکی <duck-typing>` شیءهای شبیه‌به‌تابع اکنون ``True`` را برمی‌گردانند اگر شیء کد آن‌ها پرچم :data:`CO_ASYNC_GENERATOR` را داشته باشد."
 
 #~ msgid "Get the documentation string for an object, cleaned up with :func:`cleandoc`. If the documentation string for an object is not provided and the object is a class, a method, a property or a descriptor, retrieve the documentation string from the inheritance hierarchy. Return ``None`` if the documentation string is invalid or missing."
 #~ msgstr "رشته مستندات یک شیء را، پاک‌سازی‌شده با :func:`cleandoc`، دریافت کنید. اگر رشته مستندات یک شیء فراهم‌نشده باشد و آن شیء یک کلاس، یک متد، یک ویژگی یا یک توصیف‌گر  باشد، رشته مستندات را از سلسله‌مراتب وراثت بازیابی کنید. اگر رشته مستندات نامعتبر یا موجود نباشد، ``None`` را برگردانید."

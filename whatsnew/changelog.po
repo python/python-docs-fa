@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 04:18+0000\n"
+"POT-Creation-Date: 2026-10-11 04:18+0000\n"
 "PO-Revision-Date: 2026-08-28 10:52+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -38,6 +38,11 @@ msgstr "*تاریخ انتشار: ۲۰۲۶-۱۰-۰۲*"
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
 
+#, fuzzy
+#| msgid ":gh:`151295`: Fixed a crash (use-after-free) in :meth:`bytes.join` and :meth:`bytearray.join` that could occur if an item's :meth:`~object.__buffer__` concurrently mutates the sequence being joined. The mutation is now reported as a :exc:`RuntimeError` instead."
+msgid ":gh:`158803`: Fix a crash in :meth:`bytes.join` and :meth:`bytearray.join` in the :term:`free-threaded build` when another thread concurrently mutates the list being joined. Patch by Christian Aurich Zanettini Martins."
+msgstr ":gh:`151295`: رفع یک فروپاشی (استفاده پس از آزادسازی) در :meth:`bytes.join` و :meth:`bytearray.join` که ممکن است رخ دهد اگر متد :meth:`~object.__buffer__` یک آیتم، دنباله‌ی در حال الحاق را به طور هم‌زمان تغییر دهد. این تغییر اکنون به عنوان یک :exc:`RuntimeError` گزارش می‌شود."
+
 msgid ":gh:`158820`: Fix a crash when a :ref:`lazy import <lazy-imports>` is declared or resolved by a finalizer running during interpreter shutdown."
 msgstr ""
 
@@ -50,7 +55,33 @@ msgstr ""
 msgid ":gh:`158486`: Fix the PowerSort mask calculation in :meth:`list.sort` for very large lists."
 msgstr ""
 
+msgid ":gh:`156091`: Fix a crash when compiling deeply nested inlined list, set, or dict comprehensions. A :exc:`SyntaxError` is now raised when the nesting exceeds the compiler's static block limit."
+msgstr ""
+
+msgid ":gh:`156459`: Fix cleanup on error in ``compiler_set_qualname``. Previously it was called in ``_PyCompile_EnterScope``, after the scope had been entered, and this was not reversed in case of an error."
+msgstr ""
+
 msgid ":gh:`156371`: Fix missing ``PyRefTracer_DESTROY`` events for trashcan deferred objects. Patch by Donghee Na."
+msgstr ""
+
+msgid ":gh:`155504`: Fix a crash when thread state creation fails before the thread state is fully initialized."
+msgstr ""
+
+msgid ":gh:`155315`: Fix :mod:`marshal` so that a ``frozendict`` referenced more than once in the serialized data round-trips correctly, instead of failing to load with :exc:`ValueError`. Patch by tonghuaroot."
+msgstr ""
+
+msgid ":gh:`154937`: Fix a data race on thread handle identifiers when ``_thread._shutdown()`` runs concurrently with the startup of non-daemon threads in the :term:`free-threaded build`."
+msgstr ""
+
+msgid ":gh:`152075`: Reduced lock contention during LOAD_GLOBAL bytecode specialization under free threading."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`153570`: Fix a use-after-free in :meth:`bytearray.take_bytes` when the argument's :meth:`~object.__index__` method resizes the bytearray. Patch by tonghuaroot."
+msgid ":gh:`153578`: Fix an out-of-bounds write in :meth:`bytearray.extend` when the bytearray is resized while the argument's :meth:`~object.__buffer__` is being acquired, for example by another thread. Patch by tonghuaroot."
+msgstr ":gh:`153570`: رفع یک خطای استفاده پس از آزادی (use-after-free) در :meth:`bytearray.take_bytes` وقتی که متد :meth:`~object.__index__` آرگومان، اندازه‌ی آرایه‌ی بایت را تغییر می‌دهد. وصله (patch) توسط tonghuaroot."
+
+msgid ":gh:`151895`: Fixed a crash in :func:`marshal.loads` when an allocation failed while loading a reference-tracked dictionary; it now raises :exc:`MemoryError`."
 msgstr ""
 
 msgid "Library"
@@ -59,8 +90,30 @@ msgstr "کتابخانه"
 msgid ":gh:`87720`: Fixed error in :mod:`email` new policies where header folding failed to detect the need to re-quote text obtained from encoded words in certain cases."
 msgstr ""
 
+msgid ":gh:`158929`: Fix crash when calling :func:`syslog.syslog` while a subinterpreter in another thread calls :func:`syslog.openlog` or :func:`syslog.closelog`."
+msgstr ""
+
 msgid ":gh:`158936`: :func:`~dataclasses.dataclass` no longer fails when a string annotation names a :ref:`lazy import <lazy-imports>` that cannot be resolved, matching the behavior for non-string annotations."
 msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`139322`: Fix :func:`os.getlogin` error handling: fix the error number. Patch by Victor Stinner."
+msgid ":gh:`158893`: Make :func:`os.strerror` thread-safe: use the reentrant ``strerror_r()`` function if available. Patch by Victor Stinner."
+msgstr ":gh:`139322`: اصلاح مدیریت خطای :func:`os.getlogin`: رفع شماره‌ی خطا. وصله‌ای از Victor Stinner."
+
+msgid ":gh:`156321`: Fix :func:`asyncio.shield` reporting an exception from the inner future through the loop exception handler as soon as it completes after the shield was cancelled, even when the exception is retrieved afterwards. The exception is now reported only if it is never retrieved, as with any other future."
+msgstr ""
+
+msgid ":gh:`158563`: Fix :func:`turtle.undo` after :func:`turtle.teleport` and after an exception in :func:`turtle.circle`, :func:`turtle.dot` or :func:`turtle.write`. Fix :func:`turtle.stamp`, :func:`turtle.clearstamp`, :func:`turtle.clear` and :func:`turtle.reset` when the undo buffer is disabled."
+msgstr ""
+
+msgid ":gh:`158169`: Fix :attr:`zlib.Decompress.unconsumed_tail` duplicating :attr:`~zlib.Decompress.unused_data` after end of stream when *max_length* was used."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`90848`: Fixed :func:`unittest.mock.create_autospec` to configure parent mock with keyword arguments."
+msgid ":gh:`153888`: Fix :func:`unittest.mock.patch` with ``autospec``, ``spec``, or ``spec_set`` when used with lazy-imported objects."
+msgstr ":gh:`90848`: رفع مشکل :func:`unittest.mock.create_autospec` برای پیکربندی ماک والد با آرگومان‌های کلیدواژه‌ای."
 
 msgid ":gh:`157672`: Fix :mod:`tkinter` on macOS: creating a :class:`~tkinter.Tk` instance no longer replaces the Python handlers of SIGINT, SIGHUP and SIGTERM with Tk's handler which exits the process, so Ctrl-C raises :exc:`KeyboardInterrupt` again."
 msgstr ""
@@ -71,10 +124,31 @@ msgstr ""
 msgid ":gh:`69919`: :meth:`code.InteractiveInterpreter.runsource` and the REPL now report any exception raised by compiling the source, such as :exc:`MemoryError` or :exc:`RecursionError` for too deeply nested source, instead of propagating it or printing a traceback of the REPL internals."
 msgstr ""
 
+msgid ":gh:`157451`: Fix :mod:`gettext` plural form selection when the ``Plural-Forms`` expression combines the unary ``!`` operator with a binary operator, for example ``!n + 1`` or ``2 * !n``.  The latter raised :exc:`SyntaxError`."
+msgstr ""
+
 msgid ":gh:`157406`: Fix the Python implementation of :class:`xml.etree.ElementTree.XMLParser`: the ``doctype()`` method of the target is now called for a document type declaration without an external identifier, like ``<!DOCTYPE html>``, as in the C implementation."
 msgstr ""
 
+msgid ":gh:`157325`: Fix an out-of-bounds read in the ``hz`` incremental decoder when the input ends with ``~``."
+msgstr ""
+
+msgid ":gh:`123018`: Fix :func:`readline.write_history_file` and :func:`readline.append_history_file` producing a history file that :func:`readline.read_history_file` could not load when a limit was set with :func:`readline.set_history_length` and Python was built against ``libedit``.  This works around `NetBSD PR 60322 <https://gnats.netbsd.org/60322>`_."
+msgstr ""
+
+msgid ":gh:`157146`: :mod:`linecache` can now read the source of a module that was imported from a zip archive on :data:`sys.path` when given only the file name, as :mod:`pdb`, :mod:`warnings` and :mod:`doctest` do."
+msgstr ""
+
+msgid ":gh:`157048`: Preserve the position and contents of :class:`io.BytesIO` when :meth:`!BytesIO.__init__` fails because a buffer is exported."
+msgstr ""
+
 msgid ":gh:`156961`: Fix :func:`tkinter.font.nametofont` and the :class:`tkinter.font.Font` constructor for a font name returned by Tk as a Tcl object, for example by :meth:`ttk.Style.lookup() <tkinter.ttk.Style.lookup>`."
+msgstr ""
+
+msgid ":gh:`156946`: Fix a crash in :mod:`curses.panel` when the finalizer of a panel's user pointer runs while the panel is being deallocated.  The panel is now taken off the panel stack before its user pointer is dropped."
+msgstr ""
+
+msgid ":gh:`156797`: Fix :class:`xml.sax.saxutils.XMLGenerator`: the namespace URI is now escaped in the namespace declaration.  Previously a URI containing ``&``, ``<`` or a quote character produced a document which cannot be parsed."
 msgstr ""
 
 msgid ":gh:`83895`: :mod:`xml.etree.ElementTree` now accepts input larger than 2 GiB in the C implementation. The data is fed to Expat in chunks, as :mod:`xml.parsers.expat` already did, instead of raising :exc:`OverflowError`."
@@ -83,7 +157,25 @@ msgstr ""
 msgid ":gh:`99064`: Fix :func:`xml.etree.ElementTree.parse` with a text file or other source of :class:`str` data in the C implementation. The encoding declared in the document was applied to the already decoded text, which produced mojibake. It is now ignored, as when parsing with :meth:`!XMLParser.feed` or :func:`~xml.etree.ElementTree.fromstring`."
 msgstr ""
 
+msgid ":gh:`156713`: Fix :func:`!nturl2path.pathname2url` and :func:`!nturl2path.url2pathname`: the filesystem encoding and error handler are now used for percent-encoding and decoding, as in :mod:`urllib.request`.  Previously paths containing surrogate characters raised :exc:`UnicodeEncodeError`."
+msgstr ""
+
+msgid ":gh:`156658`: :mod:`xml.dom` and :mod:`xml.etree.ElementTree` no longer treat characters which are not white space in XML (such as U+00A0) as white space. Previously they could be lost in :func:`~xml.etree.ElementTree.indent`, :func:`~xml.etree.ElementTree.canonicalize` with ``strip_text=True``, and when parsing with the ``whitespace-in-element-content`` feature turned off."
+msgstr ""
+
+msgid ":gh:`156476`: The pure Python implementation of :meth:`queue.SimpleQueue.get` now ignores *timeout* when *block* is false, matching the documented behavior and the C implementation. It previously raised :exc:`ValueError`."
+msgstr ""
+
+msgid ":gh:`156444`: Fix matching of a negated character set in a bytes pattern compiled with both :const:`re.IGNORECASE` and :const:`re.LOCALE`.  The case closure is now applied to the members of the set, so that ``[^bc]`` no longer matches ``b'B'``."
+msgstr ""
+
 msgid ":gh:`156180`: :func:`zlib.adler32_combine` and :func:`zlib.crc32_combine` now raise :exc:`ValueError` if the *len2* argument is negative, instead of returning rubbish or hanging indefinitely, respectively."
+msgstr ""
+
+msgid ":gh:`156166`: :mod:`ssl`: A failed assignment or deletion of the ``_msg_callback`` attribute of :class:`ssl.SSLContext` no longer removes the current callback. Deleting it now raises :exc:`AttributeError` instead of :exc:`TypeError`."
+msgstr ""
+
+msgid ":gh:`156173`: Calling :meth:`zlib.Decompress.flush` on invalid compressed data now raises :exc:`zlib.error` instead of being silently ignored."
 msgstr ""
 
 #, fuzzy
@@ -91,7 +183,33 @@ msgstr ""
 msgid ":gh:`152817`: :mod:`sqlite3`: Disallow removing the ``row_factory`` attribute of a cursor to prevent a crash on a query."
 msgstr ":gh:`149738`: :mod:`sqlite3`: عدم اجازه برای حذف ویژگی‌های ``row_factory`` و ``text_factory`` یک اتصال به منظور جلوگیری از فروپاشی (crash) در یک پرس‌وجو."
 
+#, fuzzy
+#| msgid ":gh:`124470`: Fix crash in free-threaded builds when replacing object dictionary while reading attribute on another thread"
+msgid ":gh:`156124`: Fix a crash in the free-threaded build when deleting the :attr:`!contents` attribute of a :mod:`ctypes` pointer."
+msgstr ":gh:`124470`: رفع فروپاشی در ساخت‌های نخ‌آزاد (free-threaded) هنگام جایگزینی دیکشنری شیء در حین خواندن صفت روی نخی دیگر"
+
+msgid ":gh:`156101`: Fix :attr:`sqlite3.Cursor.arraysize` being set to 0 if the assigned value is too large. The attribute is now left unchanged if the assignment fails."
+msgstr ""
+
+msgid ":gh:`156100`: Fix crashes in :class:`sqlite3.Connection` when deleting the :attr:`~sqlite3.Connection.autocommit` attribute or setting it to an integer which does not fit in C :c:expr:`long`. Both now raise an exception."
+msgstr ""
+
 msgid ":gh:`156099`: Fix a crash when deleting the ``keylog_filename`` attribute of :class:`ssl.SSLContext`. It now raises :exc:`AttributeError`."
+msgstr ""
+
+msgid ":gh:`156067`: Fix error handling in the :mod:`zoneinfo` accelerator module when a transition index is ``-1`` or a TZ string's ``__bool__`` raises."
+msgstr ""
+
+msgid ":gh:`155997`: Fix :func:`concurrent.interpreters.list_all`.  It failed if an interpreter was destroyed during the call, in particular by a garbage collection which finalized the object owning the last reference to it."
+msgstr ""
+
+msgid ":gh:`155941`: Fix :func:`asyncio.start_server` when a plain-function *client_connected_cb* raises: the error is now reported like the coroutine case and the transport is closed, instead of leaving the connection open forever (which also made :meth:`asyncio.Server.wait_closed` hang)."
+msgstr ""
+
+msgid ":gh:`155717`: :mod:`multiprocessing`'s default start method on systems with non-writeable tempfile filesystem is now :ref:`\"spawn\" <multiprocessing-start-methods>` instead of ``\"forkserver\"``. Patch by Bénédikt Tran."
+msgstr ""
+
+msgid ":gh:`155775`: Fix a regression in :mod:`imaplib` introduced in the fix for :gh:`63121`: refreshing the capabilities after a successful :meth:`~imaplib.IMAP4.login` or :meth:`~imaplib.IMAP4.authenticate` consumed the ``CAPABILITY`` response, so it could no longer be read with :meth:`~imaplib.IMAP4.response`."
 msgstr ""
 
 msgid ":gh:`113318`: Fix crashes when deleting an attribute whose setter is generated by Argument Clinic and is not prepared for deletion, among them :attr:`frame.f_trace_opcodes` and the ``context``, ``owner`` and ``session`` attributes of ``_ssl._SSLSocket``. Deleting such attribute now raises :exc:`AttributeError`."
@@ -100,16 +218,51 @@ msgstr ""
 msgid ":gh:`150449`: Fix :class:`sqlite3.Blob` slices with a negative step. Reading or writing such a slice raised :exc:`SystemError`. It now raises :exc:`ValueError`."
 msgstr ""
 
+msgid ":gh:`155336`: Fix error handling in :func:`socket.gethostbyaddr` and :func:`socket.gethostbyname_ex` when hostname resolution fails."
+msgstr ""
+
+msgid ":gh:`102475`: Fix :func:`os.path.realpath` on Windows: the unresolved part of the path is now appended, not joined, so a file name which looks like a drive (e.g. ``spam:eggs``) no longer discards the resolved part.  A path relative to another drive is now resolved against the root directory of that drive."
+msgstr ""
+
 msgid ":gh:`89760`: Fix :func:`os.path.realpath` on Windows: the ``\\\\?\\`` prefix is no longer stripped from a volume GUID path, which made the result invalid."
 msgstr ""
 
 msgid ":gh:`84419`: Fix :func:`os.stat` on Windows: trailing dots and spaces, which are ignored by the operating system, are no longer taken into account when the execute permissions are guessed from the file extension."
 msgstr ""
 
+msgid ":gh:`155319`: :func:`warnings.warn_explicit` now displays the source line taken from the loader of the module whose globals are passed as *module_globals*.  It also no longer raises :exc:`IndexError` if *lineno* is out of the range of the module source."
+msgstr ""
+
+msgid ":gh:`123011`: :func:`warnings.warn_explicit` no longer emits a spurious :exc:`DeprecationWarning` or raises :exc:`ImportError` when it is called with the globals of the :mod:`__main__` module."
+msgstr ""
+
+msgid ":gh:`69370`: :program:`python -m inspect --details` no longer fails with :exc:`UnicodeEncodeError` if the path of the module contains characters unencodable in the encoding of :data:`sys.stdout`.  Such characters are now escaped with backslashes."
+msgstr ""
+
+msgid ":gh:`69371`: Fix :mod:`pydoc` for modules whose path contains undecodable bytes. :func:`!pydoc.writedoc` and the pydoc HTTP server no longer fail with :exc:`UnicodeEncodeError`: the file URL is now percent-encoded using the filesystem encoding, and characters unencodable in the generated HTML page are escaped with backslashes."
+msgstr ""
+
 msgid ":gh:`154855`: Fix :meth:`curses.window.instr` returning one character too few when the :mod:`curses` module is built against a curses library that counts the terminator in the requested length, such as the NetBSD one."
 msgstr ""
 
+msgid ":gh:`135683`: :class:`logging.FileHandler` and :class:`logging.handlers.WatchedFileHandler` now honor :data:`logging.raiseExceptions` for errors that occur while opening the file, like for other errors during logging."
+msgstr ""
+
+msgid ":gh:`82535`: :class:`logging.handlers.SysLogHandler` no longer fails if the address cannot be resolved when the handler is created. The address is resolved again when a record is emitted."
+msgstr ""
+
 msgid ":gh:`153970`: Calling :func:`str` on a :exc:`subprocess.CalledProcessError` no longer raises :exc:`TypeError` when its :attr:`!returncode` is not an integer, such as ``None``."
+msgstr ""
+
+msgid ":gh:`153005`: :meth:`!concurrent.interpreters.Queue.get` and :meth:`!concurrent.interpreters.Queue.put` now compute their ``timeout`` deadline from :func:`time.monotonic` instead of the wall clock, so adjusting the system clock during the call no longer makes them over- or under-wait."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`122334`: Fix crash when importing :mod:`ssl` after the main interpreter restarts."
+msgid ":gh:`81241`: Fix :exc:`OSError` when importing :mod:`ctypes` from a statically linked interpreter."
+msgstr ":gh:`122334`: مشکل فروپاشی هنگام ایمپورت کردن :mod:`ssl` پس از راه‌اندازی مجدد مفسر اصلی را برطرف کنید."
+
+msgid ":gh:`153603`: Fix a crash in the ISO-2022 decoders when decoding a byte after an unknown charset designation is set via the decoder's ``setstate`` method. Patch by tonghuaroot."
 msgstr ""
 
 msgid ":gh:`153539`: Fix a crash in the C implementation of :meth:`io.TextIOWrapper.tell` when the decoder's ``getstate`` method triggers a reentrant seek, or when another thread seeks the same stream concurrently. Patch by tonghuaroot."
@@ -120,19 +273,81 @@ msgstr ""
 msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when passing :class:`ctypes.Structure` or :class:`ctypes.Union` instances by value to ctypes foreign functions."
 msgstr ":gh:`151126`: رفع فروپاشی در اثر تنظیم‌نشدن :exc:`MemoryError` هنگام شکست تخصیص حافظه در :func:`ctypes.get_errno`."
 
+msgid ":gh:`152204`: Fix the pure-Python implementations of :meth:`datetime.date.fromisoformat`, :meth:`datetime.time.fromisoformat` and :meth:`datetime.datetime.fromisoformat` silently accepting some malformed ISO 8601 strings, such as non-ASCII digits or a sign in a fixed-width field (for example ``'2020+12'`` or ``'20201212T0102٣٤'``). Each field is now required to be exactly *N* ASCII digits, matching the C implementation."
+msgstr ""
+
+msgid ":gh:`117807`: Fix :mod:`mimetypes` initialization from MIME map files containing invalid UTF-8 bytes."
+msgstr ""
+
+msgid ":gh:`145856`: Fix :func:`plistlib.dumps` and :func:`plistlib.dump` so that ``skipkeys=True`` together with ``sort_keys=True`` correctly drops non-string keys when the dictionary contains a mix of string and non-string keys.  Previously the sort ran before the filter and raised :exc:`TypeError`."
+msgstr ""
+
+msgid ":gh:`102967`: A bug in :func:`!doctest._SpoofOut.truncate` was causing None to be passed to :func:`!StringIO.seek` when no size was given. A simple fix skips the seek call when no size is given so the buffer can be truncated from the current position."
+msgstr ""
+
+msgid ":gh:`82039`: :meth:`http.cookiejar.FileCookieJar.load` now checks the first, format signature line in a case-insensitive manner. Patch by Ashley Harvey."
+msgstr ""
+
+msgid ":gh:`70758`: Creating a new :mod:`turtle` screen after the previous one was closed no longer raises ``turtle.Terminator`` on the first turtle command."
+msgstr ""
+
+msgid ":issue:`44012`: The ``exploded`` attribute of :class:`ipaddress.IPv6Address` and :class:`ipaddress.IPv6Interface` now supports addresses with a scope ID (link-local addresses). Previously the former raised :exc:`~ipaddress.AddressValueError` and the latter omitted the scope ID."
+msgstr ""
+
+msgid ":gh:`83869`: Fix :mod:`tarfile` reading an archive with a GNU sparse 1.0 member whose size is set in the pax extended header. The offset of the next header was computed from the offset of the data, which is already past the sparse map, and from the size of the member, which can be the apparent size of the sparse file. All following members were unreachable."
+msgstr ""
+
+msgid ":gh:`61366`: :class:`http.cookiejar.MozillaCookieJar` now reads session cookies written by curl and Wget, which use ``0`` in the expiration time field. Contributed by Jérémie Detrey."
+msgstr ""
+
 msgid "Tests"
 msgstr "آزمون‌ها"
 
 msgid ":gh:`157628`: In regrtest, only consider that a test leaks if all test runs leak at least one file descriptor. For example, ignore \"[0, 1, -1] file descriptors, sum=0\" deltas, instead of reporting a leak. Patch by Victor Stinner."
 msgstr ""
 
+msgid ":gh:`140550`: Enable limited C API tests on Free Threading in test_cext and test_cppext: test the :c:macro:`Py_TARGET_ABI3T` macro. Patch by Victor Stinner."
+msgstr ""
+
+msgid ":gh:`75876`: A test decorated with :func:`~test.support.bigmemtest` now runs in a subprocess if it really allocates the memory it asks for (that is, if the ``-M`` option is used), so that the memory it uses and the address space it fragments are released when it ends.  A dummy run stays in the process.  The separate memory watchdog process is no longer needed: the parent process watches the memory usage of the subprocess."
+msgstr ""
+
+msgid ":gh:`155411`: Fix :func:`!test.support.subTests` for asynchronous test methods.  They were wrapped in a synchronous function, which discarded the coroutine without awaiting it, so the test silently did not run at all."
+msgstr ""
+
+msgid ":gh:`132581`: The list of tests which altered the execution environment now includes the reasons why the environment was considered altered, for example an unraisable exception or a modified :data:`sys.path`.  The final result no longer repeats the same state twice (like ``ENV CHANGED then ENV CHANGED``)."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`154211`: Add ``test.support.skip_if_huge_c_stack()`` and use it to skip tests that exhaust the C stack if the stack limit is very large (e.g. on DragonFly BSD or with ``ulimit -s unlimited``)."
+msgid ":gh:`155109`: Add ``test.support.run_with_limited_c_stack()`` and use it in tests that exhaust the C stack with a fixed number of recursive calls, so that their outcome no longer depends on the C stack size."
+msgstr ":gh:`154211`: افزودن ``test.support.skip_if_huge_c_stack()`` و استفاده از آن برای پرش از آزمون‌هایی که اگر محدودیت پشته بسیار بزرگ باشد (مثلاً روی DragonFly BSD یا با ``ulimit -s unlimited``) پشته‌ی C را تخلیه می‌کنند."
+
 msgid "Build"
 msgstr "ساخت"
+
+msgid ":gh:`157142`: Fix the link of ``Programs/_freeze_module`` when extension modules are built in (``MODULE_BUILDTYPE=static``) and the test modules are enabled: ``Modules/getpath_noop.c`` now defines ``_Py_Get_Getpath_CodeObject()``, which ``_testinternalcapi`` uses."
+msgstr ""
 
 #, fuzzy
 #| msgid ":gh:`140594`: Fix an out of bounds read when a single NUL character is read from the standard input. Patch by Shamil Abdulaev."
 msgid ":gh:`155911`: Fix curses detection when a curses library is already in ``LIBS``. Patch by Shamil Abdulaev."
 msgstr ":gh:`140594`: رفع یک خطای خواندن خارج از کران (out of bounds) زمانی که یک نویسه‌ی NUL واحد از ورودی استاندارد خوانده می‌شود. وصله توسط Shamil Abdulaev."
+
+msgid "Windows"
+msgstr "ویندوز"
+
+msgid ":gh:`157789`: Use compiler option ``-Og`` in case of clang-cl debug builds on Windows to reduce stack usage. Patch by Chris Eibl."
+msgstr ""
+
+msgid ":gh:`72353`: Reading from the console on Windows now continues if the read was cancelled by Ctrl+C, but the :const:`~signal.SIGINT` handler did not raise an exception.  Previously the read ended as if at end of file."
+msgstr ""
+
+msgid ":gh:`86427`: Fix the encoding of the standard streams in the legacy Windows stdio mode (:envvar:`PYTHONLEGACYWINDOWSSTDIO`).  It is now the code page of the console, as in Python 3.7, not the ANSI code page."
+msgstr ""
+
+msgid ":gh:`87587`: :func:`os.device_encoding` on Windows now returns the code page of any console file descriptor, not only 0, 1 and 2, and returns ``None`` for other character devices like ``NUL``.  The UTF-8 code page is now reported as ``\"utf-8\"`` instead of ``\"cp65001\"``."
+msgstr ""
 
 msgid "IDLE"
 msgstr "IDLE"
@@ -213,10 +428,19 @@ msgstr "Tools/Demos"
 msgid ":gh:`158451`: ``python-gdb.py`` is now able to format an invalid Unicode string: render invalid characters as ``\\Uhhhhhhhh`` instead of raising an exception. Patch by Victor Stinner."
 msgstr ""
 
+msgid ":gh:`156219`: Fix Argument Clinic generating code which reads an optional positional argument which was not passed, if the function has a ``**kwds`` parameter."
+msgstr ""
+
 msgid ":gh:`113318`: Fix Argument Clinic for ``@getter`` and ``@setter`` in a preprocessor conditional block. It failed with an internal error. Argument Clinic now also rejects the accessors of the same attribute with different C basenames, and the same accessor defined twice, which silently generated invalid or duplicated entries of :c:type:`PyGetSetDef`."
 msgstr ""
 
 msgid ":gh:`155218`: Fix Argument Clinic generating the flags of the optional groups in different order on 32-bit and 64-bit platforms."
+msgstr ""
+
+msgid ":gh:`155207`: Argument Clinic now supports the ``--dry-run`` and ``--diff`` options. They list the files which would be changed, or write a unified diff of the changes to the standard output, without modifying any file."
+msgstr ""
+
+msgid ":gh:`64502`: Fix Argument Clinic support of parameters with a default value used together with optional groups. Such parameters were always required in the generated parsing code."
 msgstr ""
 
 msgid "C API"
@@ -226,6 +450,9 @@ msgstr "رابط C API"
 #| msgid ":gh:`107249`: Implement the :c:macro:`Py_UNUSED` macro for Windows MSVC compiler. Patch by Victor Stinner."
 msgid ":gh:`149044`: Fix the :c:macro:`PySlot_END` macro for C++: initialize all members to avoid compiler warnings. Patch by Victor Stinner."
 msgstr ":gh:`107249`: پیاده‌سازی کلان‌دستور :c:macro:`Py_UNUSED` برای کامپایلر MSVC ویندوز. این وصله توسط Victor Stinner تهیه شده است."
+
+msgid ":gh:`157649`: Fix :c:macro:`Py_CLEAR` and :c:macro:`Py_SETREF` macros on C++: implement them using ``auto`` instead of ``decltype()``. Using ``decltype()`` produced invalid code when clearing/setting an array item. Patch by Victor Stinner."
+msgstr ""
 
 #, fuzzy
 #| msgid ":gh:`129149`: Add fast path for small and medium-size integers in :c:func:`PyLong_FromInt32`, :c:func:`PyLong_FromUInt32`, :c:func:`PyLong_FromInt64` and :c:func:`PyLong_FromUInt64`. Patch by Chris Eibl."
@@ -441,9 +668,6 @@ msgstr ":gh:`157549`: استفاده از ``sysconf(_SC_PAGESIZE)`` به جای 
 
 msgid ":gh:`152023`: Update Android builds to SQLite 3.53.4. Additionally, enable the ``median()`` and ``percentile()`` functions."
 msgstr ":gh:`152023`: به‌روزرسانی ساخت‌های اندروید به SQLite 3.53.4. علاوه بر این، توابع ``median()`` و ``percentile()`` فعال شدند."
-
-msgid "Windows"
-msgstr "ویندوز"
 
 msgid ":gh:`158010`: Updated Windows builds to use OpenSSL 3.5.9."
 msgstr ":gh:`158010`: به‌روزرسانی ساخت‌های ویندوز برای استفاده از OpenSSL 3.5.9."
