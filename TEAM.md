@@ -18,3 +18,4 @@
 | ashykng | translator | 1 |
 | arman mohebali | translator | 5830 |
 | mahdyaralipor | translator | 21 |
+| Farid Farahani | translator | 2 |

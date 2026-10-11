@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-10-10)
+(به‌روزرسانی: 2026-10-11)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -20,7 +20,6 @@
 | c-api/bool.po | 100.0% | 0.0% | 11 | 0 |
 | c-api/buffer.po | 100.0% | 0.0% | 119 | 0 |
 | c-api/bytearray.po | 100.0% | 0.0% | 24 | 0 |
-| c-api/bytes.po | 100.0% | 0.0% | 121 | 0 |
 | c-api/call.po | 100.0% | 0.0% | 99 | 0 |
 | c-api/capsule.po | 100.0% | 0.0% | 36 | 0 |
 | c-api/cell.po | 100.0% | 0.0% | 11 | 0 |
@@ -212,6 +211,7 @@
 | library/cmd.po | 100.0% | 0.0% | 50 | 0 |
 | library/cmdline.po | 100.0% | 0.0% | 54 | 0 |
 | library/cmdlinelibs.po | 100.0% | 0.0% | 3 | 0 |
+| library/code.po | 100.0% | 0.0% | 33 | 0 |
 | library/codecs.po | 100.0% | 0.0% | 569 | 0 |
 | library/codeop.po | 100.0% | 0.0% | 14 | 0 |
 | library/collections.abc.po | 100.0% | 0.0% | 142 | 0 |
@@ -232,7 +232,6 @@
 | library/crypt.po | 100.0% | 0.0% | 4 | 0 |
 | library/crypto.po | 100.0% | 0.0% | 3 | 0 |
 | library/csv.po | 100.0% | 0.0% | 133 | 0 |
-| library/ctypes.po | 100.0% | 0.0% | 678 | 0 |
 | library/curses.ascii.po | 100.0% | 0.0% | 69 | 0 |
 | library/curses.panel.po | 100.0% | 0.0% | 25 | 0 |
 | library/curses.po | 100.0% | 0.0% | 510 | 0 |
@@ -303,7 +302,7 @@
 | library/http.server.po | 100.0% | 0.0% | 135 | 0 |
 | library/i18n.po | 100.0% | 0.0% | 3 | 0 |
 | library/idle.po | 100.0% | 0.0% | 297 | 0 |
-| library/imaplib.po | 100.0% | 0.0% | 135 | 0 |
+| library/imaplib.po | 100.0% | 0.0% | 138 | 0 |
 | library/imghdr.po | 100.0% | 0.0% | 4 | 0 |
 | library/imp.po | 100.0% | 0.0% | 4 | 0 |
 | library/importlib.metadata.po | 100.0% | 0.0% | 149 | 0 |
@@ -311,7 +310,7 @@
 | library/importlib.resources.abc.po | 100.0% | 0.0% | 37 | 0 |
 | library/importlib.resources.po | 100.0% | 0.0% | 54 | 0 |
 | library/index.po | 100.0% | 0.0% | 6 | 0 |
-| library/inspect.po | 100.0% | 0.0% | 433 | 0 |
+| library/inspect.po | 100.0% | 0.0% | 436 | 0 |
 | library/internet.po | 100.0% | 0.0% | 7 | 0 |
 | library/intro.po | 100.0% | 0.0% | 28 | 0 |
 | library/io.po | 100.0% | 0.0% | 287 | 0 |
@@ -409,6 +408,7 @@
 | library/string.templatelib.po | 100.0% | 0.0% | 56 | 0 |
 | library/stringprep.po | 100.0% | 0.0% | 25 | 0 |
 | library/struct.po | 100.0% | 0.0% | 206 | 0 |
+| library/subprocess.po | 100.0% | 0.0% | 320 | 0 |
 | library/sunau.po | 100.0% | 0.0% | 3 | 0 |
 | library/superseded.po | 100.0% | 0.0% | 4 | 0 |
 | library/symtable.po | 100.0% | 0.0% | 76 | 0 |
@@ -426,7 +426,6 @@
 | library/text.po | 100.0% | 0.0% | 3 | 0 |
 | library/textwrap.po | 100.0% | 0.0% | 58 | 0 |
 | library/threading.po | 100.0% | 0.0% | 308 | 0 |
-| library/time.po | 100.0% | 0.0% | 282 | 0 |
 | library/timeit.po | 100.0% | 0.0% | 71 | 0 |
 | library/tk.po | 100.0% | 0.0% | 8 | 0 |
 | library/tkinter.colorchooser.po | 100.0% | 0.0% | 8 | 0 |
@@ -457,7 +456,6 @@
 | library/urllib.request.po | 100.0% | 0.0% | 298 | 0 |
 | library/urllib.robotparser.po | 100.0% | 0.0% | 19 | 0 |
 | library/uu.po | 100.0% | 0.0% | 4 | 0 |
-| library/uuid.po | 100.0% | 0.0% | 79 | 0 |
 | library/venv.po | 100.0% | 0.0% | 139 | 0 |
 | library/warnings.po | 100.0% | 0.0% | 165 | 0 |
 | library/wave.po | 100.0% | 0.0% | 73 | 0 |
@@ -471,12 +469,9 @@
 | library/xml.dom.minidom.po | 100.0% | 0.0% | 60 | 0 |
 | library/xml.dom.po | 100.0% | 0.0% | 302 | 0 |
 | library/xml.dom.pulldom.po | 100.0% | 0.0% | 31 | 0 |
-| library/xml.etree.elementtree.po | 100.0% | 0.0% | 277 | 0 |
 | library/xml.po | 100.0% | 0.0% | 32 | 0 |
-| library/xml.sax.handler.po | 100.0% | 0.0% | 104 | 0 |
-| library/xml.sax.po | 100.0% | 0.0% | 32 | 0 |
-| library/xml.sax.reader.po | 100.0% | 0.0% | 75 | 0 |
-| library/xml.sax.utils.po | 100.0% | 0.0% | 15 | 0 |
+| library/xml.sax.reader.po | 100.0% | 0.0% | 76 | 0 |
+| library/xml.sax.utils.po | 100.0% | 0.0% | 17 | 0 |
 | library/xmlrpc.client.po | 100.0% | 0.0% | 113 | 0 |
 | library/xmlrpc.po | 100.0% | 0.0% | 5 | 0 |
 | library/xmlrpc.server.po | 100.0% | 0.0% | 57 | 0 |
@@ -546,16 +541,21 @@
 | whatsnew/3.9.po | 100.0% | 0.0% | 380 | 0 |
 | whatsnew/index.po | 100.0% | 0.0% | 3 | 0 |
 | whatsnew/3.14.po | 99.9% | 0.1% | 1110 | 0 |
+| library/ctypes.po | 99.9% | 0.1% | 678 | 0 |
 | library/ast.po | 99.7% | 0.3% | 345 | 0 |
-| library/subprocess.po | 99.7% | 0.3% | 319 | 0 |
 | howto/abi3t-migration.po | 99.4% | 0.6% | 178 | 0 |
 | whatsnew/3.15.po | 99.4% | 0.2% | 814 | 3 |
 | library/os.po | 99.4% | 0.6% | 1128 | 0 |
 | license.po | 99.3% | 0.7% | 138 | 0 |
-| library/code.po | 97.0% | 3.0% | 32 | 0 |
+| library/xml.sax.handler.po | 99.1% | 0.9% | 113 | 0 |
+| library/xml.etree.elementtree.po | 97.8% | 2.2% | 272 | 0 |
+| library/time.po | 96.5% | 3.5% | 272 | 0 |
 | c-api/slice.po | 96.2% | 3.8% | 25 | 0 |
+| library/uuid.po | 94.9% | 5.1% | 75 | 0 |
+| library/xml.sax.po | 94.1% | 5.9% | 32 | 0 |
 | library/pyexpat.po | 93.3% | 6.7% | 166 | 0 |
+| c-api/bytes.po | 89.6% | 0.7% | 121 | 13 |
 | reference/grammar.po | 85.7% | 14.3% | 6 | 0 |
-| whatsnew/changelog.po | 45.5% | 0.5% | 7056 | 8366 |
-| **مجموع** | **90.6%** | **0.1%** | **81868** | **8369** |
+| whatsnew/changelog.po | 45.3% | 0.5% | 7056 | 8429 |
+| **مجموع** | **90.5%** | **0.1%** | **81869** | **8445** |
 <!-- TRANSLATION_STATUS_END -->
