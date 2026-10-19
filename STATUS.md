@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-10-18)
+(به‌روزرسانی: 2026-10-19)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -330,7 +330,6 @@
 | library/logging.handlers.po | 100.0% | 0.0% | 276 | 0 |
 | library/logging.po | 100.0% | 0.0% | 375 | 0 |
 | library/lzma.po | 100.0% | 0.0% | 128 | 0 |
-| library/mailbox.po | 100.0% | 0.0% | 309 | 0 |
 | library/mailcap.po | 100.0% | 0.0% | 3 | 0 |
 | library/markup.po | 100.0% | 0.0% | 2 | 0 |
 | library/marshal.po | 100.0% | 0.0% | 60 | 0 |
@@ -446,7 +445,7 @@
 | library/tokenize.po | 100.0% | 0.0% | 53 | 0 |
 | library/tomllib.po | 100.0% | 0.0% | 69 | 0 |
 | library/trace.po | 100.0% | 0.0% | 43 | 0 |
-| library/traceback.po | 100.0% | 0.0% | 118 | 0 |
+| library/traceback.po | 100.0% | 0.0% | 117 | 0 |
 | library/tracemalloc.po | 100.0% | 0.0% | 156 | 0 |
 | library/tty.po | 100.0% | 0.0% | 17 | 0 |
 | library/turtle.po | 100.0% | 0.0% | 573 | 0 |
@@ -556,6 +555,7 @@
 | whatsnew/3.9.po | 100.0% | 0.0% | 380 | 0 |
 | whatsnew/index.po | 100.0% | 0.0% | 3 | 0 |
 | whatsnew/changelog.po | 100.0% | 0.0% | 15625 | 1 |
+| library/mailbox.po | 99.7% | 0.0% | 309 | 1 |
 | library/calendar.po | 99.2% | 0.8% | 122 | 0 |
-| **مجموع** | **100.0%** | **0.0%** | **90549** | **1** |
+| **مجموع** | **100.0%** | **0.0%** | **90548** | **2** |
 <!-- TRANSLATION_STATUS_END -->
