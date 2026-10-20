@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-15 04:16+0000\n"
+"POT-Creation-Date: 2026-10-20 04:16+0000\n"
 "PO-Revision-Date: 2026-10-06 20:48+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -242,17 +242,31 @@ msgstr "این تابع یک بلوک ساختاری است که به تعبیه
 msgid "*spec* must be a :class:`~importlib.machinery.ModuleSpec` object."
 msgstr "*spec* باید یک شیء :class:`~importlib.machinery.ModuleSpec` باشد."
 
-msgid "*initfunc* must be an :ref:`initialization function <extension-export-hook>`, the same as for :c:func:`PyImport_AppendInittab`."
+#, fuzzy
+#| msgid "*initfunc* must be an :ref:`initialization function <extension-export-hook>`, the same as for :c:func:`PyImport_AppendInittab`."
+msgid "*initfunc* must be an :ref:`initialization function <extension-pyinit>`, the same as for :c:func:`PyImport_AppendInittab`."
 msgstr "*initfunc* باید یک :ref:`تابع مقداردهی اولیه <extension-export-hook>` باشد، درست مانند :c:func:`PyImport_AppendInittab`."
 
 msgid "On success, create and return a module object. This module will not be initialized; call :c:func:`PyModule_Exec` to initialize it. (Custom importers should do this in their :py:meth:`~importlib.abc.Loader.exec_module` method.)"
 msgstr "در صورت موفقیت، یک شیء ماژول ایجاد کرده و برمی‌گرداند. این ماژول مقداردهی اولیه نخواهد شد؛ برای مقداردهی اولیه آن، :c:func:`PyModule_Exec` را فراخوانی کنید. (ایمپورت‌کننده‌های سفارشی باید این کار را در متد :py:meth:`~importlib.abc.Loader.exec_module` خود انجام دهند.)"
 
-msgid "If the spec's name is dotted and *initfunc* creates the module using only the last component of the name, the module's :attr:`~module.__name__` is set to the full name from the spec."
-msgstr "اگر نام مشخصات (spec) نقطه‌گذاری‌شده باشد و *initfunc* ماژول را فقط با استفاده از آخرین جزء نام ایجاد کند، مقدار :attr:`~module.__name__` ماژول روی نام کامل مشخصات تنظیم می‌شود."
-
 msgid "On error, return NULL with an exception set."
 msgstr "در صورت بروز خطا، مقدار NULL را همراه با تنظیم یک استثنا برمی‌گرداند."
+
+msgid "For modules using :ref:`legacy single-phase initialization <single-phase-initialization>`, most of the import process is done in this function, rather than in extra steps that importers typically take after :py:meth:`~importlib.abc.Loader.create_module`. Specifically:"
+msgstr ""
+
+msgid "The module is added to :data:`sys.modules` under the *spec*'s :py:attr:`~importlib.machinery.ModuleSpec.name` as part of initialization."
+msgstr ""
+
+msgid "If a single-phase module was previously imported under the same :py:attr:`~importlib.machinery.ModuleSpec.name` by this function or as a built-in module (for example, one registered with :c:func:`PyImport_AppendInittab`), Python may reuse the previous module's contents instead of calling *initfunc* again."
+msgstr ""
+
+msgid "The module will be fully initialized by *initfunc*. Calling :c:func:`PyModule_Exec` on it will have no effect, though it is still recommended, in case the module later switches to :ref:`multi-phase initialization <multi-phase-initialization>`."
+msgstr ""
+
+msgid "Also, if the *spec*'s :py:attr:`!name` contains dots, this name is used for prepending a parent package to the new module's :attr:`~module.__name__`."
+msgstr ""
 
 msgid "package variable"
 msgstr "متغیر بسته"
@@ -277,6 +291,9 @@ msgstr "کامپایل"
 
 msgid "freeze utility"
 msgstr "ابزار انجماد (freeze)"
+
+#~ msgid "If the spec's name is dotted and *initfunc* creates the module using only the last component of the name, the module's :attr:`~module.__name__` is set to the full name from the spec."
+#~ msgstr "اگر نام مشخصات (spec) نقطه‌گذاری‌شده باشد و *initfunc* ماژول را فقط با استفاده از آخرین جزء نام ایجاد کند، مقدار :attr:`~module.__name__` ماژول روی نام کامل مشخصات تنظیم می‌شود."
 
 #~ msgid "This function is a deprecated alias of :c:func:`PyImport_ImportModule`."
 #~ msgstr "این تابع یک نام مستعار منسوخ برای :c:func:`PyImport_ImportModule` است."

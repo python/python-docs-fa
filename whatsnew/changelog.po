@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-18 04:16+0000\n"
+"POT-Creation-Date: 2026-10-20 04:16+0000\n"
 "PO-Revision-Date: 2026-08-28 10:52+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -43,6 +43,14 @@ msgstr ":gh:`159428`: ماژول :mod:`mimetypes` دیگر به‌طور پیش�
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
 
+msgid ":gh:`159739`: Fix memory leaks during interpreter startup when a path configuration file is empty or too large, or when an audit hook rejects a command."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`109823`: Fix bug where compiler does not adjust labels when removing an empty basic block which is a jump target."
+msgid ":gh:`130279`: Fix bug where compiler did not set the right exception handler for some jump instructions."
+msgstr ":gh:`109823`: رفع باگی که در آن کامپایلر هنگام حذف یک بلوک پایه خالی که هدف پرش است، برچسب‌ها را تنظیم نمی‌کند."
+
 msgid ":gh:`159430`: Report the correct exception if looking up :meth:`~object.__bytes__` raises an exception while performing %-formatting of :class:`bytes`."
 msgstr ":gh:`159430`: اگر جستجوی :meth:`~object.__bytes__` هنگام انجام قالب‌بندی با % برای :class:`bytes` استثنایی را بالا بیاورد، استثنای درست را گزارش کنید."
 
@@ -54,6 +62,14 @@ msgstr ":gh:`159288`: رفع خرابی هنگام پیمایش زنجیره‌�
 
 msgid ":gh:`159285`: Fix a crash in a debug build when copying an empty :class:`dict` fails with :exc:`MemoryError`. Patch by Christian Aurich Zanettini Martins."
 msgstr ":gh:`159285`: رفع خرابی در بیلد دیباگ زمانی که کپی کردن یک :class:`dict` خالی با :exc:`MemoryError` مواجه می‌شود. وصله توسط Christian Aurich Zanettini Martins."
+
+#, fuzzy
+#| msgid ":gh:`145244`: Fixed a use-after-free in :mod:`json` encoder when a ``default`` callback mutates the dictionary being serialized."
+msgid ":gh:`159041`: Fix a use-after-free in :mod:`asyncio` task bookkeeping when a finalizer creates a task during thread shutdown."
+msgstr ":gh:`145244`: رفع خطای استفاده پس از آزادسازی (use-after-free) در رمزگذار :mod:`json` هنگامی که یک کال‌بک ``default`` دیکشنری در حال سریال‌سازی را تغییر می‌دهد."
+
+msgid ":gh:`158973`: Reset the warnings lock in the child after :func:`os.fork`, before clearing other threads' states, to avoid deadlocks when their finalizers issue warnings. Preserve the lock's recursion depth if the forking thread owns it."
+msgstr ""
 
 msgid ":gh:`158918`: Reduce C stack usage of ``_PyModule_IsPossiblyShadowing``, which could potentially cause stack overflows during module attribute access while deeply recursing in agressively optimized builds."
 msgstr ":gh:`158918`: کاهش مصرف پشته‌ی C در ``_PyModule_IsPossiblyShadowing`` که می‌توانست به‌طور بالقوه باعث سرریز پشته در طول دسترسی به ویژگی ماژول هنگام بازگشت عمیق در بیلدهای به‌شدت بهینه‌شده شود."
@@ -78,6 +94,9 @@ msgstr ":gh:`158592`: عبارت ``del list[index]`` اکنون کوچک کرد�
 
 msgid ":gh:`158486`: Fix the PowerSort mask calculation in :meth:`list.sort` for very large lists."
 msgstr ":gh:`158486`: رفع محاسبه‌ی نقاب PowerSort در :meth:`list.sort` برای فهرست‌های بسیار بزرگ."
+
+msgid ":gh:`158121`: Fix missing :mod:`sys.monitoring` ``INSTRUCTION`` events when a ``LINE`` callback returns :data:`sys.monitoring.DISABLE`."
+msgstr ""
 
 msgid ":gh:`158219`: Fix :class:`bytearray` constructor: do not use a bytes object if its hash value is already computed. Patch by Cody Maloney and Victor Stinner."
 msgstr ":gh:`158219`: رفع سازنده‌ی :class:`bytearray`: اگر مقدار هش یک شیء bytes از پیش محاسبه شده باشد، از آن استفاده نکنید. وصله توسط Cody Maloney و Victor Stinner."
@@ -136,6 +155,12 @@ msgstr ":gh:`149816`: برطرف کردن حالت‌های رقابت (race con
 msgid "Library"
 msgstr "کتابخانه"
 
+msgid ":gh:`159739`: Fix resource leaks in :mod:`ssl` when certificate conversion or key log setup fails."
+msgstr ""
+
+msgid ":gh:`149015`: Fix :meth:`bdb.Bdb.clear_all_file_breaks` leaving breakpoints behind when multiple breakpoints are set on the same line."
+msgstr ""
+
 #, fuzzy
 #| msgid ":gh:`158522`: Fix :mod:`profiling.sampling` showing a single frame for a task whose coroutine recurses. Patch by Timofei Ivankov."
 msgid ":gh:`159620`: Fix ``python -m asyncio ps``, ``pstree`` and async-aware :mod:`profiling.sampling` stacks stopping at asynchronous generators. Patch by Timofei Ivankov."
@@ -155,6 +180,9 @@ msgstr ":gh:`159184`: رفع خطایی که باعث می‌شد :func:`marshal
 
 msgid ":gh:`159185`: Fix a crash in :func:`marshal.dumps` and :func:`marshal.dump` when a set is modified while its elements are serialized, for example by the :meth:`~object.__buffer__` method of one of its elements. :exc:`RuntimeError` is now raised."
 msgstr ":gh:`159185`: رفع یک فروپاشی در :func:`marshal.dumps` و :func:`marshal.dump` هنگامی که یک مجموعه در حین سریال‌سازی عناصرش تغییر می‌کند، برای مثال توسط متد :meth:`~object.__buffer__` یکی از عناصر آن. اکنون :exc:`RuntimeError` بالا آورده می‌شود."
+
+msgid ":gh:`159049`: Fix reference cycles in :meth:`asyncio.loop.create_connection` and :meth:`asyncio.loop.start_tls` after a failed TLS handshake. Patch by Timofei Ivankov."
+msgstr ""
 
 msgid ":gh:`87720`: Fixed error in :mod:`email` new policies where header folding failed to detect the need to re-quote text obtained from encoded words in certain cases."
 msgstr ":gh:`87720`: رفع خطا در سیاست‌های جدید :mod:`email` که در آن تا کردن سرآیند در برخی موارد موفق به تشخیص نیاز به نقل‌قول مجدد متن به دست آمده از کلمات کدگذاری‌شده نشد."
@@ -312,6 +340,16 @@ msgstr ":gh:`155843`: :mod:`hmac`: اطمینان حاصل کنید که اشی�
 msgid ":gh:`155835`: :mod:`hashlib`: Fix data races when accessing :attr:`~hashlib.hash.digest_size` and :attr:`~hashlib.hash.block_size` on SHA-3 objects. Patch by Bénédikt Tran."
 msgstr ":gh:`155835`: :mod:`hashlib`: رفع رقابت‌های داده‌ای (data races) هنگام دسترسی به :attr:`~hashlib.hash.digest_size` و :attr:`~hashlib.hash.block_size` روی اشیاء SHA-3. وصله توسط Bénédikt Tran."
 
+#, fuzzy
+#| msgid ":gh:`155843`: :mod:`hmac`: ensure that HMAC objects are properly initialized to prevent rare crashes on allocation failures. Patch by Bénédikt Tran."
+msgid ":gh:`155830`: :mod:`!_blake2`: Ensure that BLAKE-2 objects are correctly initialized before being tracked by the garbage collector. Patch by Bénédikt Tran."
+msgstr ":gh:`155843`: :mod:`hmac`: اطمینان حاصل کنید که اشیاء HMAC به درستی مقداردهی اولیه می‌شوند تا از فروپاشی‌های نادر در زمان شکست‌های تخصیص حافظه جلوگیری شود. وصله (patch) توسط Bénédikt Tran."
+
+#, fuzzy
+#| msgid ":gh:`142516`: :mod:`ssl`: fix reference leaks in :class:`ssl.SSLContext` objects. Patch by Bénédikt Tran."
+msgid ":gh:`155782`: :mod:`ssl`: prevent a crash in :meth:`~ssl.SSLSocket.group` for session-less objects on OpenSSL 3.2 and later. Patch by Bénédikt Tran."
+msgstr ":gh:`142516`: :mod:`ssl`: رفع نشت ارجاع در اشیای :class:`ssl.SSLContext`. وصله‌ای از Bénédikt Tran."
+
 msgid ":gh:`155811`: Add a sequence counter to GC statistics to prevent :mod:`!_remote_debugging` returning inconsistent snapshots caused by non-atomic reads. Patch by Maurycy Pawłowski-Wieroński."
 msgstr ":gh:`155811`: افزودن یک شمارنده‌ی دنباله به آمارهای زباله‌روب (GC) برای جلوگیری از بازگرداندن تصاویر لحظه‌ای (snapshots) ناسازگار توسط :mod:`!_remote_debugging` که ناشی از خواندن‌های غیراتمی است. وصله توسط Maurycy Pawłowski-Wieroński."
 
@@ -329,6 +367,9 @@ msgstr ":gh:`150449`: رفع اسلایس‌های :class:`sqlite3.Blob` با ی
 
 msgid ":gh:`155336`: Fix error handling in :func:`socket.gethostbyaddr` and :func:`socket.gethostbyname_ex` when hostname resolution fails."
 msgstr ":gh:`155336`: رفع مدیریت خطا در :func:`socket.gethostbyaddr` و :func:`socket.gethostbyname_ex` هنگامی که تفکیک نام میزبان (hostname resolution) با شکست مواجه می‌شود."
+
+msgid ":gh:`155426`: Make sure that the pure Python fallback of :func:`hmac.digest` rejects keys that are neither :class:`bytes` or :class:`bytearray`. Previously, an :exc:`AttributeError` was raised instead of :exc:`TypeError`. Patch by Bénédikt Tran."
+msgstr ""
 
 msgid ":gh:`102475`: Fix :func:`os.path.realpath` on Windows: the unresolved part of the path is now appended, not joined, so a file name which looks like a drive (e.g. ``spam:eggs``) no longer discards the resolved part.  A path relative to another drive is now resolved against the root directory of that drive."
 msgstr ":gh:`102475`: رفع تابع :func:`os.path.realpath` در ویندوز: بخش حل‌نشده‌ی مسیر اکنون الحاق (append) می‌شود نه ترکیب (join)، بنابراین نام پرونده‌ای که شبیه به یک درایو است (مانند ``spam:eggs``) دیگر بخش حل‌شده را دور نمی‌اندازد. یک مسیر نسبی نسبت به درایو دیگر اکنون در برابر پوشه‌ی ریشه‌ی آن درایو حل می‌شود."
@@ -383,6 +424,9 @@ msgstr ":gh:`81241`: رفع :exc:`OSError` هنگام ایمپورت کردن :m
 
 msgid ":gh:`153838`: Skip non-regular files in the ``profiling.sampling`` heatmap exporter instead of reading them unconditionally.  Patch by tonghuaroot."
 msgstr ":gh:`153838`: پرش از پرونده‌های غیرعادی در صادرکننده‌ی نقشه‌ی حرارتی ``profiling.sampling`` به‌جای خواندن آن‌ها بدون قید و شرط. وصله توسط tonghuaroot."
+
+msgid ":gh:`141276`: Fix duplicate :exc:`SyntaxWarning` messages when importing source modules from ZIP archives. :meth:`zipimport.zipimporter.get_filename`, and therefore :meth:`~zipimport.zipimporter.find_spec`, no longer compile source modules. A :exc:`SyntaxError` in a zipped source module is now raised when the module is executed rather than when it is found, matching the behavior of filesystem-based loaders."
+msgstr ""
 
 msgid ":gh:`153603`: Fix a crash in the ISO-2022 decoders when decoding a byte after an unknown charset designation is set via the decoder's ``setstate`` method. Patch by tonghuaroot."
 msgstr ":gh:`153603`: رفع فروپاشی در رمزگشاهای ISO-2022 هنگام رمزگشایی یک بایت پس از تنظیم تعیین مجموعه‌نویسه‌های ناشناخته از طریق متد ``setstate`` رمزگشا. وصله توسط tonghuaroot."
@@ -605,6 +649,14 @@ msgstr ":gh:`64502`: رفع پشتیبانی Argument Clinic از پارامتر
 
 msgid "C API"
 msgstr "رابط C API"
+
+msgid ":gh:`159739`: :c:func:`PyInitConfig_SetStr` now releases a previously configured value and preserves it if conversion of the replacement fails."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`145376`: Fix reference leaks in various unusual error scenarios."
+msgid ":gh:`159739`: Fix a reference leak when :c:func:`_PyTuple_Resize` fails."
+msgstr ":gh:`145376`: رفع نشتی‌های ارجاع در سناریوهای خطای مختلف و غیرمعمول."
 
 msgid ":gh:`149044`: Fix the :c:macro:`PySlot_END` macro for C++: initialize all members to avoid compiler warnings. Patch by Victor Stinner."
 msgstr ":gh:`149044`: رفع ماکروی :c:macro:`PySlot_END` برای C++: مقداردهی اولیه‌ی همه‌ی اعضا برای جلوگیری از هشدارهای کامپایلر. وصله توسط ویکتور استینر (Victor Stinner)."

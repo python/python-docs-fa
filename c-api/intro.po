@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-20 04:16+0000\n"
 "PO-Revision-Date: 2021-06-28 00:49+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -273,6 +273,9 @@ msgstr "این ماکرو اکنون برای همه‌ی نوع‌های عدد
 
 msgid "Argument must be a character or an integer in the range [-128, 127] or [0, 255].  This macro returns ``c`` cast to an ``unsigned char``."
 msgstr "آرگومان باید یک نویسه یا یک عدد صحیح در محدوده‌ی [-128, 127] یا [0, 255] باشد. این ماکرو ``c`` را پس از تبدیل نوع به ``unsigned char`` برمی‌گرداند."
+
+msgid "Constants describing the byte order of the platform that Python was built for. Exactly one of them is ``1`` and the other is ``0``."
+msgstr ""
 
 msgid "Assertion utilities"
 msgstr "ابزارهای ادعا"
@@ -725,8 +728,13 @@ msgstr "نوع‌ها"
 msgid "There are few other data types that play a significant role in  the Python/C API; most are simple C types such as :c:expr:`int`,  :c:expr:`long`, :c:expr:`double` and :c:expr:`char*`.  A few structure types  are used to describe static tables used to list the functions exported  by a module or the data attributes of a new object type, and another is used to describe the value of a complex number.  These will  be discussed together with the functions that use them."
 msgstr "چند نوع داده‌ی دیگر نیز نقش مهمی در Python/C API ایفا می‌کنند؛ بیشتر آن‌ها نوع‌های ساده‌ی C مانند :c:expr:`int`، :c:expr:`long`، :c:expr:`double` و :c:expr:`char*` هستند. چند نوع ساختاری برای توصیف جدول‌های ایستایی که توابع اکسپورتشده توسط یک ماژول یا ویژگی‌های داده‌ی یک نوع شیء جدید را فهرست می‌کنند، به کار می‌روند، و نوع دیگری برای توصیف مقدار یک عدد مختلط استفاده می‌شود. این موارد همراه با توابعی که از آن‌ها استفاده می‌کنند بحث خواهند شد."
 
-msgid "A signed integral type such that ``sizeof(Py_ssize_t) == sizeof(size_t)``. C99 doesn't define such a thing directly (size_t is an unsigned integral type). See :pep:`353` for details. ``PY_SSIZE_T_MAX`` is the largest positive value of type :c:type:`Py_ssize_t`."
+#, fuzzy
+#| msgid "A signed integral type such that ``sizeof(Py_ssize_t) == sizeof(size_t)``. C99 doesn't define such a thing directly (size_t is an unsigned integral type). See :pep:`353` for details. ``PY_SSIZE_T_MAX`` is the largest positive value of type :c:type:`Py_ssize_t`."
+msgid "A signed integral type such that ``sizeof(Py_ssize_t) == sizeof(size_t)``. C99 doesn't define such a thing directly (size_t is an unsigned integral type). See :pep:`353` for details."
 msgstr "یک نوع صحیح علامت‌دار به‌گونه‌ای که ``sizeof(Py_ssize_t) == sizeof(size_t)`` باشد. استاندارد C99 چنین چیزی را مستقیماً تعریف نمی‌کند (size_t یک نوع صحیح بدون علامت است). برای جزئیات به :pep:`353` مراجعه کنید. ``PY_SSIZE_T_MAX`` بزرگ‌ترین مقدار مثبت از نوع :c:type:`Py_ssize_t` است."
+
+msgid "The limit values (largest positive one and smallest negative one, respecitvely) of type :c:type:`Py_ssize_t`."
+msgstr ""
 
 msgid "Exceptions"
 msgstr "استثناها"
