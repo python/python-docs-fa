@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-10-19)
+(به‌روزرسانی: 2026-10-20)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -36,20 +36,14 @@
 | c-api/descriptor.po | 100.0% | 0.0% | 35 | 0 |
 | c-api/dict.po | 100.0% | 0.0% | 123 | 0 |
 | c-api/exceptions.po | 100.0% | 0.0% | 293 | 0 |
-| c-api/extension-modules.po | 100.0% | 0.0% | 74 | 0 |
-| c-api/file.po | 100.0% | 0.0% | 31 | 0 |
-| c-api/float.po | 100.0% | 0.0% | 55 | 0 |
 | c-api/frame.po | 100.0% | 0.0% | 60 | 0 |
 | c-api/function.po | 100.0% | 0.0% | 44 | 0 |
 | c-api/gcsupport.po | 100.0% | 0.0% | 107 | 0 |
 | c-api/gen.po | 100.0% | 0.0% | 18 | 0 |
 | c-api/hash.po | 100.0% | 0.0% | 40 | 0 |
-| c-api/import.po | 100.0% | 0.0% | 81 | 0 |
 | c-api/index.po | 100.0% | 0.0% | 2 | 0 |
 | c-api/init.po | 100.0% | 0.0% | 8 | 0 |
-| c-api/init_config.po | 100.0% | 0.0% | 660 | 0 |
 | c-api/interp-lifecycle.po | 100.0% | 0.0% | 217 | 0 |
-| c-api/intro.po | 100.0% | 0.0% | 240 | 0 |
 | c-api/iter.po | 100.0% | 0.0% | 12 | 0 |
 | c-api/iterator.po | 100.0% | 0.0% | 24 | 0 |
 | c-api/lifecycle.po | 100.0% | 0.0% | 45 | 0 |
@@ -77,7 +71,6 @@
 | c-api/slice.po | 100.0% | 0.0% | 26 | 0 |
 | c-api/slots.po | 100.0% | 0.0% | 45 | 0 |
 | c-api/stable.po | 100.0% | 0.0% | 97 | 0 |
-| c-api/structures.po | 100.0% | 0.0% | 212 | 0 |
 | c-api/subinterpreters.po | 100.0% | 0.0% | 90 | 0 |
 | c-api/synchronization.po | 100.0% | 0.0% | 65 | 0 |
 | c-api/sys.po | 100.0% | 0.0% | 95 | 0 |
@@ -235,7 +228,6 @@
 | library/crypt.po | 100.0% | 0.0% | 4 | 0 |
 | library/crypto.po | 100.0% | 0.0% | 3 | 0 |
 | library/csv.po | 100.0% | 0.0% | 133 | 0 |
-| library/ctypes.po | 100.0% | 0.0% | 679 | 0 |
 | library/curses.ascii.po | 100.0% | 0.0% | 69 | 0 |
 | library/curses.panel.po | 100.0% | 0.0% | 25 | 0 |
 | library/curses.po | 100.0% | 0.0% | 510 | 0 |
@@ -285,7 +277,6 @@
 | library/ftplib.po | 100.0% | 0.0% | 98 | 0 |
 | library/functional.po | 100.0% | 0.0% | 3 | 0 |
 | library/functools.po | 100.0% | 0.0% | 128 | 0 |
-| library/gc.po | 100.0% | 0.0% | 72 | 0 |
 | library/getopt.po | 100.0% | 0.0% | 37 | 0 |
 | library/getpass.po | 100.0% | 0.0% | 25 | 0 |
 | library/gettext.po | 100.0% | 0.0% | 129 | 0 |
@@ -314,7 +305,6 @@
 | library/importlib.resources.abc.po | 100.0% | 0.0% | 37 | 0 |
 | library/importlib.resources.po | 100.0% | 0.0% | 54 | 0 |
 | library/index.po | 100.0% | 0.0% | 6 | 0 |
-| library/inspect.po | 100.0% | 0.0% | 436 | 0 |
 | library/internet.po | 100.0% | 0.0% | 7 | 0 |
 | library/intro.po | 100.0% | 0.0% | 28 | 0 |
 | library/io.po | 100.0% | 0.0% | 287 | 0 |
@@ -487,12 +477,10 @@
 | library/xmlrpc.server.po | 100.0% | 0.0% | 57 | 0 |
 | library/zipapp.po | 100.0% | 0.0% | 77 | 0 |
 | library/zipfile.po | 100.0% | 0.0% | 216 | 0 |
-| library/zipimport.po | 100.0% | 0.0% | 38 | 0 |
 | library/zlib.po | 100.0% | 0.0% | 103 | 0 |
 | library/zoneinfo.po | 100.0% | 0.0% | 84 | 0 |
 | license.po | 100.0% | 0.0% | 139 | 0 |
 | reference/compound_stmts.po | 100.0% | 0.0% | 499 | 0 |
-| reference/datamodel.po | 100.0% | 0.0% | 915 | 0 |
 | reference/executionmodel.po | 100.0% | 0.0% | 145 | 0 |
 | reference/expressions.po | 100.0% | 0.0% | 651 | 0 |
 | reference/grammar.po | 100.0% | 0.0% | 7 | 0 |
@@ -554,8 +542,20 @@
 | whatsnew/3.8.po | 100.0% | 0.0% | 513 | 0 |
 | whatsnew/3.9.po | 100.0% | 0.0% | 380 | 0 |
 | whatsnew/index.po | 100.0% | 0.0% | 3 | 0 |
-| whatsnew/changelog.po | 100.0% | 0.0% | 15625 | 1 |
+| whatsnew/changelog.po | 99.9% | 0.0% | 15625 | 10 |
+| reference/datamodel.po | 99.9% | 0.1% | 914 | 0 |
+| c-api/init_config.po | 99.8% | 0.0% | 660 | 1 |
+| library/inspect.po | 99.8% | 0.2% | 435 | 0 |
 | library/mailbox.po | 99.7% | 0.0% | 309 | 1 |
 | library/calendar.po | 99.2% | 0.8% | 122 | 0 |
-| **مجموع** | **100.0%** | **0.0%** | **90548** | **2** |
+| c-api/intro.po | 98.8% | 0.4% | 239 | 2 |
+| library/gc.po | 98.6% | 1.4% | 72 | 0 |
+| c-api/structures.po | 98.6% | 0.5% | 211 | 2 |
+| library/zipimport.po | 97.4% | 2.6% | 37 | 0 |
+| c-api/float.po | 96.4% | 3.6% | 53 | 0 |
+| c-api/import.po | 92.9% | 1.2% | 79 | 5 |
+| c-api/extension-modules.po | 88.8% | 6.2% | 71 | 4 |
+| c-api/file.po | 88.6% | 0.0% | 31 | 4 |
+| library/ctypes.po | 86.2% | 7.4% | 675 | 50 |
+| **مجموع** | **99.8%** | **0.1%** | **90532** | **79** |
 <!-- TRANSLATION_STATUS_END -->
