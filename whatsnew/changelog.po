@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-20 04:16+0000\n"
+"POT-Creation-Date: 2026-10-21 04:17+0000\n"
 "PO-Revision-Date: 2026-08-28 10:52+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -37,14 +37,55 @@ msgstr "*تاریخ انتشار: XXXX-XX-XX*"
 msgid "Security"
 msgstr "امنیت"
 
+#, fuzzy
+#| msgid ":gh:`155063`: Bump the version of pip bundled in ensurepip to version 26.2.1"
+msgid ":gh:`159894`: Bump the version of :pypi:`pip` bundled in :mod:`ensurepip` to version 26.2.2."
+msgstr ":gh:`155063`: نسخه‌ی pip بسته‌بندی‌شده در ensurepip را به نسخه‌ی 26.2.1 ارتقا می‌دهد."
+
 msgid ":gh:`159428`: :mod:`mimetypes` no longer reads the files listed in :data:`mimetypes.knownfiles` by default on Windows, and uses only the registry."
 msgstr ":gh:`159428`: ماژول :mod:`mimetypes` دیگر به‌طور پیش‌فرض در ویندوز پرونده‌های فهرست‌شده در :data:`mimetypes.knownfiles` را نمی‌خواند و تنها از رجیستری استفاده می‌کند."
+
+#, fuzzy
+#| msgid ":gh:`157953`: Update bundled `libexpat <https://libexpat.github.io/>`_ to version 2.8.5."
+msgid ":gh:`157953`: Update bundled `libexpat <https://libexpat.github.io/>`_ to version 2.9.0."
+msgstr ":gh:`157953`: به‌روزرسانی `libexpat <https://libexpat.github.io/>`_ بسته‌بندی‌شده به نسخه‌ی ۲.۸.۵."
 
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
 
+msgid ":gh:`159739`: Avoid a crash if allocation fails while creating a :class:`string.templatelib.Template` iterator."
+msgstr ""
+
+msgid ":gh:`159739`: Propagate errors during generic class construction and avoid a crash after failed generic alias substitution."
+msgstr ""
+
+msgid ":gh:`159739`: Raise :exc:`OverflowError` when the absolute value of a dynamic printf-style formatting width is too large."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`125859`: Fix a crash in the free threading build when :func:`gc.get_objects` or :func:`gc.get_referrers` is called during an in-progress garbage collection."
+msgid ":gh:`159739`: Fix a reference leak in :func:`gc.get_objects` and :func:`gc.get_referrers` when an internal allocation fails in the free-threaded build."
+msgstr ":gh:`125859`: رفع فروپاشی در ساخت نخ‌بندی آزاد هنگامی که :func:`gc.get_objects` یا :func:`gc.get_referrers` در جریان یک عملیات زباله‌روبی فراخوانی می‌شود."
+
 msgid ":gh:`159739`: Fix memory leaks during interpreter startup when a path configuration file is empty or too large, or when an audit hook rejects a command."
 msgstr ""
+
+msgid ":gh:`159739`: Avoid a crash when an interpreter configuration string cannot be encoded as UTF-8."
+msgstr ""
+
+msgid ":gh:`159739`: Preserve the original :exc:`SyntaxError` if allocating optional error metadata fails."
+msgstr ""
+
+msgid ":gh:`159739`: Avoid a crash if formatting an integer with the ``c`` presentation type runs out of memory."
+msgstr ""
+
+msgid ":gh:`159739`: Avoid a crash when a module filename cannot be encoded as UTF-8."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`59705`: On Linux, :class:`threading.Thread` now sets the thread name to the operating system. Patch by Victor Stinner."
+msgid ":gh:`159603`: On FreeBSD, call ``pthread_attr_get_np()`` to get the stack size (and guard size) of the current thread. Patch by Victor Stinner."
+msgstr ":gh:`59705`: روی لینوکس، کلاس :class:`threading.Thread` اکنون نام نخ را روی سیستم‌عامل تنظیم می‌کند. وصله توسط Victor Stinner."
 
 #, fuzzy
 #| msgid ":gh:`109823`: Fix bug where compiler does not adjust labels when removing an empty basic block which is a jump target."
@@ -89,6 +130,9 @@ msgstr ":gh:`158592`: از تخصیص مجدد آرایه هنگام کوچک ک
 msgid ":gh:`158583`: :meth:`bytes.fromhex` and :meth:`bytearray.fromhex`: Fix uninitialized memory read. Patch by Victor Stinner."
 msgstr ":gh:`158583`: متدهای :meth:`bytes.fromhex` و :meth:`bytearray.fromhex`: رفع خواندن حافظه‌ی مقداردهی‌نشده. وصله توسط Victor Stinner."
 
+msgid ":gh:`158197`: Fix crashes and debug-build assertion failures in the :term:`free-threaded build` when iterating over a split dictionary while another thread deletes entries or clears it. Publish insertion-order updates atomically so readers cannot observe an increased size before the corresponding order entry is initialized."
+msgstr ""
+
 msgid ":gh:`158592`: ``del list[index]`` now triggers shrinking the list's internal array."
 msgstr ":gh:`158592`: عبارت ``del list[index]`` اکنون کوچک کردن آرایه‌ی داخلی فهرست را فعال می‌کند."
 
@@ -112,6 +156,9 @@ msgstr ":gh:`157242`: اگر :meth:`bytearray.resize` یا :meth:`bytearray.take
 
 msgid ":gh:`156091`: Fix a crash when compiling deeply nested inlined list, set, or dict comprehensions. A :exc:`SyntaxError` is now raised when the nesting exceeds the compiler's static block limit."
 msgstr ":gh:`156091`: رفع خرابی هنگام کامپایل درک‌های فهرست، مجموعه یا دیکشنری تو در تو و عمیق. اگر میزان تو در تو بودن از حد بلوک ایستا‌ی کامپایلر فراتر رود، اکنون یک استثنای :exc:`SyntaxError` بالا آورده می‌شود."
+
+msgid ":gh:`106045`: Fix standard library discovery in virtual environments created from a Python executable symlink located outside its base installation."
+msgstr ""
 
 msgid ":gh:`156459`: Fix cleanup on error in ``compiler_set_qualname``. Previously it was called in ``_PyCompile_EnterScope``, after the scope had been entered, and this was not reversed in case of an error."
 msgstr ":gh:`156459`: رفع پاکسازی خطا در ``compiler_set_qualname``. پیش‌تر این تابع در ``_PyCompile_EnterScope`` و پس از ورود به محدوده فراخوانی می‌شد و در صورت بروز خطا، این کار معکوس نمی‌شد."
@@ -152,8 +199,51 @@ msgstr ":gh:`149816`: برطرف کردن یک حالت رقابت (race conditi
 msgid ":gh:`149816`: Fix race conditions in ``invoke_gc_callback`` iterating ``gc.callbacks`` in free-threading mode."
 msgstr ":gh:`149816`: برطرف کردن حالت‌های رقابت (race conditions) در تابع ``invoke_gc_callback`` هنگام پیمایش ``gc.callbacks`` در حالت نخ‌آزاد (free-threading)."
 
+msgid ":gh:`69605`: Fix :term:`REPL` completions inserted incorrectly when there was spaces in import statements."
+msgstr ""
+
 msgid "Library"
 msgstr "کتابخانه"
+
+msgid ":gh:`138641`: Ignore :func:`pdb.set_trace` when called directly at the :mod:`pdb` prompt."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`145142`: Fix a crash in the free-threaded build when the dictionary argument to :meth:`str.maketrans` is concurrently modified."
+msgid ":gh:`159864`: Fix a crash in :func:`syslog.openlog` under the free-threaded build when :data:`sys.argv` is modified concurrently."
+msgstr ":gh:`145142`: رفع فروپاشی در ساخت نخ‌آزاد (free-threaded build) هنگامی که آرگومان دیکشنری به :meth:`str.maketrans` به شکل هم‌زمان تغییر می‌کند."
+
+msgid ":gh:`159811`: Fix a crash in :mod:`hashlib` when the OpenSSL routine used by :meth:`hash.update() <hashlib.hash.update>` or by hash object constructors fails on data larger than 2048 bytes. Patch by Bénédikt Tran."
+msgstr ""
+
+msgid ":gh:`159811`: Fix a crash in :mod:`hmac` when the OpenSSL routine used by :meth:`hmac.HMAC.update` or by :func:`hmac.new` fails on data larger than 2048 bytes. Patch by Bénédikt Tran."
+msgstr ""
+
+msgid ":gh:`159786`: Fix the error handling of the HACL* routine used by :func:`hmac.new` and :meth:`hmac.HMAC.update`. If the maximum input length of the underlying hash function is exceeded, an :exc:`OverflowError` is now raised on all builds, instead of crashing on DEBUG builds and being silently ignored otherwise. Code correctness. Realistically this can only happen at implausible sizes. Patch by Bénédikt Tran."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`112050`: Convert :class:`collections.deque` to use Argument Clinic."
+msgid ":gh:`159739`: Fix copying :class:`collections.deque` subclasses with a large maximum length."
+msgstr ":gh:`112050`: تبدیل :class:`collections.deque` برای استفاده از Argument Clinic."
+
+msgid ":gh:`159739`: Allow cyclic garbage collection to reclaim group records returned by :mod:`grp`."
+msgstr ""
+
+msgid ":gh:`159739`: Fix :class:`io.BytesIO` reads into overlapping views of the same buffer."
+msgstr ""
+
+msgid ":gh:`159739`: Avoid a crash when memory allocation fails while creating a :class:`collections.OrderedDict` items iterator."
+msgstr ""
+
+msgid ":gh:`159739`: Avoid reading past the end of an encoding name when the ``surrogatepass`` error handler receives a truncated UTF-16 or UTF-32 name."
+msgstr ""
+
+msgid ":gh:`159739`: Fix incorrect :mod:`ctypes` scalar values after :func:`ctypes.resize` enlarges the object."
+msgstr ""
+
+msgid ":gh:`159739`: Fix a memory leak when Unicode normalization cannot grow its temporary buffer."
+msgstr ""
 
 msgid ":gh:`159739`: Fix resource leaks in :mod:`ssl` when certificate conversion or key log setup fails."
 msgstr ""
@@ -165,6 +255,11 @@ msgstr ""
 #| msgid ":gh:`158522`: Fix :mod:`profiling.sampling` showing a single frame for a task whose coroutine recurses. Patch by Timofei Ivankov."
 msgid ":gh:`159620`: Fix ``python -m asyncio ps``, ``pstree`` and async-aware :mod:`profiling.sampling` stacks stopping at asynchronous generators. Patch by Timofei Ivankov."
 msgstr ":gh:`158522`: رفع نمایش یک فریم واحد برای وظیفه‌ای که هم‌روال آن بازگشتی (recursive) است توسط :mod:`profiling.sampling`. وصله توسط Timofei Ivankov."
+
+#, fuzzy
+#| msgid ":gh:`150858`: Fix a data race while changing ``__qualname__`` of a type concurrently on free-threaded builds."
+msgid ":gh:`159458`: Fix a ThreadSanitizer data race on the static cache in ``normalize_century()`` of the datetime module under the free-threaded build."
+msgstr ":gh:`150858`: یک مشکل رقابت داده (data race) را هنگام تغییر هم‌زمان ``__qualname__`` یک نوع در ساخت‌های نخ‌آزاد (free-threaded builds) برطرف می‌کند."
 
 msgid ":gh:`159430`: Report the correct exception if looking up ``__name__`` raises an exception when calling :func:`repr` on a :class:`weakref.ref`."
 msgstr ":gh:`159430`: اگر جستجوی ``__name__`` هنگام فراخوانی :func:`repr` روی یک :class:`weakref.ref` باعث بروز استثنایی شود، استثنای درست گزارش می‌شود."
@@ -222,6 +317,11 @@ msgstr ":gh:`158522`: رفع نمایش یک فریم واحد برای وظیف
 
 msgid ":gh:`158169`: Fix :attr:`zlib.Decompress.unconsumed_tail` duplicating :attr:`~zlib.Decompress.unused_data` after end of stream when *max_length* was used."
 msgstr ":gh:`158169`: رفع مشکل تکرار شدن :attr:`~zlib.Decompress.unused_data` توسط :attr:`zlib.Decompress.unconsumed_tail` پس از پایان جریان داده هنگامی که از *max_length* استفاده می‌شد."
+
+#, fuzzy
+#| msgid ":gh:`156523`: Fix :func:`asyncio.as_completed` not recording the awaiting task in the call graph."
+msgid ":gh:`158004`: Fix :func:`asyncio.as_completed` to continue yielding every awaitable after a pending iteration step is cancelled."
+msgstr ":gh:`156523`: رفع مشکل ضبط نشدن وظیفه‌ی در حال انتظار در گراف فراخوانی توسط :func:`asyncio.as_completed`."
 
 msgid ":gh:`153888`: Fix :func:`unittest.mock.patch` with ``autospec``, ``spec``, or ``spec_set`` when used with lazy-imported objects."
 msgstr ":gh:`153888`: رفع مشکل :func:`unittest.mock.patch` با ``autospec``، ``spec`` یا ``spec_set`` هنگام استفاده با اشیاء واردشده‌ی تنبل (lazy-imported)."
@@ -440,6 +540,11 @@ msgstr ":gh:`152754`: رفع یک فروپاشی هنگامی که همان پی
 msgid ":gh:`153364`: Make frame, coroutine and task-waiter walks iterative and bounded, avoiding potential hangs and stack overflows. Fix asyncio task inspection when awaited-by sets contain removed entries. Patch by Maurycy Pawłowski-Wieroński."
 msgstr ":gh:`153364`: ساخت پیمایش قاب، هم‌روال (coroutine) و انتظارساز وظیفه به صورت تکرارشونده و کران‌دار، و جلوگیری از توقف‌های احتمالی و سرریزهای پشته. رفع بررسی وظیفه‌ی asyncio هنگامی که مجموعه‌های منتظرمانده شامل ورودی‌های حذف‌شده هستند. وصله توسط Maurycy Pawłowski-Wieroński."
 
+#, fuzzy
+#| msgid ":gh:`146080`: :mod:`ssl`: fix a crash when an SNI callback tries to use an SSL object that has already been garbage-collected. Patch by Bénédikt Tran."
+msgid ":gh:`149816`: :mod:`hashlib`: fix a crash arising from a race condition when looking up an OpenSSL hash algorithm by name the first time. Patch by Bénédikt Tran."
+msgstr ":gh:`146080`: ماژول :mod:`ssl`: رفع یک فروپاشی هنگامی که یک کال‌بک SNI تلاش می‌کند از شیء SSLای استفاده کند که از پیش زباله‌روبی (garbage-collected) شده است. اصلاحیه از Bénédikt Tran."
+
 msgid ":gh:`151292`: Fix ``profiling.sampling --binary`` leaving unreadable profile files when the binary format reaches a size limit. Preserve collected samples when the writer can still finalize safely. Patch by Maurycy Pawłowski-Wieroński."
 msgstr ":gh:`151292`: رفع مشکل ``profiling.sampling --binary`` که پرونده‌های پروفایل غیرقابل خواندنی را باقی می‌گذاشت وقتی که قالب دودویی به حدکثر اندازه می‌رسید. حفظ نمونه‌های جمع‌آوری‌شده زمانی که نویسنده همچنان می‌تواند با ایمنی نهایی‌سازی کند. وصله توسط Maurycy Pawłowski-Wieroński."
 
@@ -451,6 +556,9 @@ msgstr ":gh:`151126`: رفع فروپاشی ناشی از تنظیم‌نشدن 
 
 msgid ":gh:`152692`: Fix :func:`annotationlib.type_repr` returning a string such as ``None.list.append`` for bound built-in methods, whose ``__module__`` is ``None``.  It now returns the qualified name, as it already did for other builtins."
 msgstr ":gh:`152692`: رفع بازگردانی رشته‌ای مانند ``None.list.append`` توسط :func:`annotationlib.type_repr` برای متدهای توکار کران‌دار که ویژگی ``__module__`` آن‌ها برابر با ``None`` است. این تابع اکنون نام کامل را برمی‌گرداند، همان‌طور که از پیش برای سایر موارد توکار انجام می‌داد."
+
+msgid ":gh:`152373`: Fix the :mod:`pdb` ``until`` command not stepping over a list comprehension when a breakpoint is set on it. Patch by tonghuaroot."
+msgstr ""
 
 msgid ":gh:`152204`: Fix the pure-Python implementations of :meth:`datetime.date.fromisoformat`, :meth:`datetime.time.fromisoformat` and :meth:`datetime.datetime.fromisoformat` silently accepting some malformed ISO 8601 strings, such as non-ASCII digits or a sign in a fixed-width field (for example ``'2020+12'`` or ``'20201212T0102٣٤'``). Each field is now required to be exactly *N* ASCII digits, matching the C implementation."
 msgstr ":gh:`152204`: رفع پذیرش بی‌صدای برخی رشته‌های معیوب ISO 8601، مانند ارقام غیر ASCII یا وجود علامت در یک فیلد با عرض ثابت (برای نمونه ``'2020+12'`` یا ``'20201212T0102٣٤'``) توسط پیاده‌سازی‌های خالص پایتون متدهای :meth:`datetime.date.fromisoformat`، :meth:`datetime.time.fromisoformat` و :meth:`datetime.datetime.fromisoformat`. اکنون هر فیلد، مطابق با پیاده‌سازی C، باید دقیقاً شامل *N* رقم ASCII باشد."
@@ -467,8 +575,19 @@ msgstr ":gh:`143008`: اصلاح شرایط رقابت هنگام مقدارده
 msgid ":gh:`145856`: Fix :func:`plistlib.dumps` and :func:`plistlib.dump` so that ``skipkeys=True`` together with ``sort_keys=True`` correctly drops non-string keys when the dictionary contains a mix of string and non-string keys.  Previously the sort ran before the filter and raised :exc:`TypeError`."
 msgstr ":gh:`145856`: رفع :func:`plistlib.dumps` و :func:`plistlib.dump` به‌گونه‌ای که ``skipkeys=True`` همراه با ``sort_keys=True`` به‌درستی کلیدهای غیررشته‌ای را هنگامی که دیکشنری شامل ترکیبی از کلیدهای رشته‌ای و غیررشته‌ای است، حذف کند. پیش‌تر مرتب‌سازی پیش از فیلتر اجرا می‌شد و خطای :exc:`TypeError` را ایجاد می‌کرد."
 
+#, fuzzy
+#| msgid ":gh:`143310`: :mod:`tkinter`: fix a crash when a Python :class:`list` is mutated during the conversion to a Tcl object (e.g., when setting a Tcl variable). Patch by Bénédikt Tran."
+msgid ":gh:`143376`: :mod:`concurrent.interpreters`: fix a crash when internal cross-interpreter channel ends have incorrect channel IDs. Patch by Bénédikt Tran."
+msgstr ":gh:`143310`: :mod:`tkinter`: رفع یک فروپاشی هنگامی که یک :class:`list` پایتون در طول تبدیل به یک شیء Tcl (برای مثال، هنگام تنظیم یک متغیر Tcl) تغییر داده می‌شود. وصله توسط Bénédikt Tran."
+
+msgid ":gh:`146065`: Fix a crash in asyncio.Future iterator when send() is called after throw() or close()."
+msgstr ""
+
 msgid ":gh:`143008`: Fix crash in :class:`io.TextIOWrapper` when reentrant :meth:`io.TextIOBase.detach` is called reentrantly from the underlying buffer."
 msgstr ":gh:`143008`: رفع فروپاشی در :class:`io.TextIOWrapper` هنگامی که متد بازورودپذیر :meth:`io.TextIOBase.detach` به شکل بازورودپذیر از بافر زیرین فراخوانی می‌شود."
+
+msgid ":gh:`129605`: Improve exception handling when computing suggestions in traceback.py. This fixes a bug that could cause PyREPL to exit unexpectedly."
+msgstr ""
 
 msgid ":gh:`102967`: A bug in :func:`!doctest._SpoofOut.truncate` was causing None to be passed to :func:`!StringIO.seek` when no size was given. A simple fix skips the seek call when no size is given so the buffer can be truncated from the current position."
 msgstr ":gh:`102967`: یک باگ در :func:`!doctest._SpoofOut.truncate` باعث می‌شد وقتی هیچ اندازه‌ای داده نشده بود، مقدار None به :func:`!StringIO.seek` ارسال شود. یک اصلاح ساده، فراخوانی مکان‌یابی را زمانی که هیچ اندازه‌ای مشخص نشده است نادیده می‌گیرد تا بافر بتواند از موقعیت فعلی برش داده شود."
@@ -493,6 +612,11 @@ msgstr "مستندات"
 
 msgid ":gh:`142083`: Document the ``'w'`` type code in the :class:`array.array` docstring, so that it lists the same type codes as :data:`array.typecodes` and the :mod:`array` module documentation."
 msgstr ":gh:`142083`: کد نوع ``'w'`` در رشته‌مستند :class:`array.array` مستندسازی شد، به‌طوری‌که همان کدهای نوع را مانند :data:`array.typecodes` و مستندات ماژول :mod:`array` فهرست می‌کند."
+
+#, fuzzy
+#| msgid ":issue:`23216`: Add docstrings to IDLE search modules."
+msgid ":gh:`107689`: Added docstrings to abstract ctypes."
+msgstr ":issue:`23216`: رشته‌های مستند (docstrings) به ماژول‌های جستجوی IDLE اضافه شدند."
 
 msgid "Tests"
 msgstr "آزمون‌ها"
@@ -524,6 +648,12 @@ msgstr ":gh:`155109`: اضافه کردن ``test.support.run_with_limited_c_stac
 msgid "Build"
 msgstr "ساخت"
 
+msgid ":gh:`143632`: Fix the check that disables ``PR_SET_VMA_ANON_NAME`` on musl libc: it tested an unset variable, so it never had any effect and the build could fail with a redefinition of ``struct prctl_mm_map``."
+msgstr ""
+
+msgid ":gh:`159759`: Fix the ``libpython.static`` path in :pep:`739` ``build-details.json``, which pointed to a file that is not installed when building with :option:`--enable-shared`, and no longer list a static library for framework builds, which do not install one."
+msgstr ""
+
 msgid ":gh:`159440`: The version string reported by ``sys.version`` no longer carries a spurious ``-dirty`` suffix when CPython is built out-of-tree from a clean git checkout: the build stamp now checks the source tree instead of the build directory."
 msgstr ":gh:`159440`: رشته‌ی نسخه‌ی گزارش‌شده توسط ``sys.version`` هنگامی که CPython خارج از درخت (out-of-tree) از یک نسخه‌ی پاک git ساخته می‌شود، دیگر پسوند ساختگی ``-dirty`` را ندارد: برچسب ساخت اکنون به‌جای پوشه‌ی ساخت، درخت منبع را بررسی می‌کند."
 
@@ -539,6 +669,9 @@ msgstr ":gh:`155911`: رفع تشخیص curses هنگامی که یک کتابخ
 msgid "Windows"
 msgstr "Windows"
 
+msgid ":gh:`159880`: Fix a key handle leak in :func:`winreg.CreateKey`, :func:`winreg.CreateKeyEx` and :func:`winreg.OpenKey` when the ``winreg.OpenKey/result`` audit hook fails."
+msgstr ""
+
 msgid ":gh:`157906`: Fix an incorrect architecture macro check that prevented CPU prefetching in the free-threaded garbage collector on 32-bit Windows builds."
 msgstr ":gh:`157906`: اصلاح بررسی نادرست ماکروی معماری که مانع از پیش‌بارگذاری پردازنده (CPU prefetching) در جمع‌آور زباله‌ی نخ‌آزاد روی نسخه‌های ۳۲ بیتی ویندوز می‌شد."
 
@@ -553,6 +686,12 @@ msgstr ":gh:`86427`: اصلاح کدگذاری جریان‌های استاند�
 
 msgid ":gh:`87587`: :func:`os.device_encoding` on Windows now returns the code page of any console file descriptor, not only 0, 1 and 2, and returns ``None`` for other character devices like ``NUL``.  The UTF-8 code page is now reported as ``\"utf-8\"`` instead of ``\"cp65001\"``."
 msgstr ":gh:`87587`: :func:`os.device_encoding` در ویندوز اکنون کدپیج هر توصیف‌گر پرونده‌ی کنسولی را برمی‌گرداند، نه فقط ۰، ۱ و ۲، و برای سایر دستگاه‌های نویسه‌ای مانند ``NUL`` مقدار ``None`` را برمی‌گرداند. کدپیج UTF-8 اکنون به‌جای ``\"cp65001\"`` به شکل ``\"utf-8\"`` گزارش می‌شود."
+
+msgid "macOS"
+msgstr "مک‌اواس"
+
+msgid ":gh:`159739`: Propagate errors that occur while converting macOS system proxy settings."
+msgstr ""
 
 msgid "IDLE"
 msgstr "IDLE"
@@ -649,6 +788,9 @@ msgstr ":gh:`64502`: رفع پشتیبانی Argument Clinic از پارامتر
 
 msgid "C API"
 msgstr "رابط C API"
+
+msgid ":gh:`159739`: Fix a crash in :c:func:`_PyTuple_Resize` when resizing a non-empty tuple to a negative or too large size. It now raises :exc:`SystemError` or :exc:`MemoryError` respectively."
+msgstr ""
 
 msgid ":gh:`159739`: :c:func:`PyInitConfig_SetStr` now releases a previously configured value and preserves it if conversion of the replacement fails."
 msgstr ""
@@ -891,9 +1033,6 @@ msgstr ":gh:`157212`: رفع مشکل کامپایل ``_Py_ThreadId()`` روی �
 
 msgid ":gh:`152023`: Update Windows builds to SQLite 3.53.4. Additionally, enable the ``median()`` and ``percentile()`` functions."
 msgstr ":gh:`152023`: به‌روزرسانی ساخت‌های ویندوز به SQLite 3.53.4. علاوه بر این، توابع ``median()`` و ``percentile()`` فعال شدند."
-
-msgid "macOS"
-msgstr "مک‌اواس"
 
 msgid ":gh:`158010`: Update macOS installer to use OpenSSL 3.5.9."
 msgstr ":gh:`158010`: به‌روزرسانی برنامه‌ی نصب مک‌اواس برای استفاده از OpenSSL 3.5.9."
@@ -2014,7 +2153,9 @@ msgstr "*تاریخ انتشار: ۲۰۲۶-۰۶-۰۲*"
 msgid ":gh:`149698`: Update bundled `libexpat <https://libexpat.github.io/>`_ to version 2.8.1 for the fix for :cve:`2026-45186`."
 msgstr ":gh:`149698`: به‌روزرسانی `libexpat <https://libexpat.github.io/>`_ بسته‌بندی‌شده به نسخه‌ی ۲.۸.۱ برای رفع آسیب‌پذیری :cve:`2026-45186`."
 
-msgid ":gh:`87451`: The :mod:`ftplib` module's undocumented ``ftpcp`` function no longer trusts the IPv4 address value returned from the source server in response to the ``PASV`` command by default, completing the fix for CVE-2021-4189.  As with :class:`ftplib.FTP`, the former behavior can be re-enabled by setting the ``trust_server_pasv_ipv4_address`` attribute on the source :class:`ftplib.FTP` instance to ``True``.  Thanks to Qi Deng at Aurascape AI for the report."
+#, fuzzy
+#| msgid ":gh:`87451`: The :mod:`ftplib` module's undocumented ``ftpcp`` function no longer trusts the IPv4 address value returned from the source server in response to the ``PASV`` command by default, completing the fix for CVE-2021-4189.  As with :class:`ftplib.FTP`, the former behavior can be re-enabled by setting the ``trust_server_pasv_ipv4_address`` attribute on the source :class:`ftplib.FTP` instance to ``True``.  Thanks to Qi Deng at Aurascape AI for the report."
+msgid ":gh:`87451`: The :mod:`ftplib` module's undocumented ``ftpcp`` function no longer trusts the IPv4 address value returned from the source server in response to the ``PASV`` command by default, completing the fix for :cve:`2021-4189`.  As with :class:`ftplib.FTP`, the former behavior can be re-enabled by setting the ``trust_server_pasv_ipv4_address`` attribute on the source :class:`ftplib.FTP` instance to ``True``.  Thanks to Qi Deng at Aurascape AI for the report."
 msgstr ":gh:`87451`: تابع مستندسازنشده‌ی ``ftpcp`` در ماژول :mod:`ftplib` دیگر به طور پیش‌فرض به مقدار آدرس IPv4 بازگردانده شده از سرور مبدأ در پاسخ به فرمان ``PASV`` اعتماد نمی‌کند، که این امر رفع کامل آسیب‌پذیری CVE-2021-4189 را تکمیل می‌کند. درست مانند :class:`ftplib.FTP`، رفتار قبلی را می‌توان با تنظیم ویژگی ``trust_server_pasv_ipv4_address`` روی نمونه‌ی :class:`ftplib.FTP` مبدأ به مقدار ``True`` مجدداً فعال کرد. با تشکر از Qi Deng در Aurascape AI برای گزارش."
 
 msgid ":gh:`149474`: Fix the binary writer in :mod:`profiling.sampling` not firing the audit (:pep:`578`) when creating the output file. The writer and the reader now accept any path-like object. Patch by Maurycy Pawłowski-Wieroński."
