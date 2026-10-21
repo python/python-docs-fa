@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-10-20)
+(به‌روزرسانی: 2026-10-21)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -43,7 +43,6 @@
 | c-api/hash.po | 100.0% | 0.0% | 40 | 0 |
 | c-api/index.po | 100.0% | 0.0% | 2 | 0 |
 | c-api/init.po | 100.0% | 0.0% | 8 | 0 |
-| c-api/interp-lifecycle.po | 100.0% | 0.0% | 217 | 0 |
 | c-api/iter.po | 100.0% | 0.0% | 12 | 0 |
 | c-api/iterator.po | 100.0% | 0.0% | 24 | 0 |
 | c-api/lifecycle.po | 100.0% | 0.0% | 45 | 0 |
@@ -234,7 +233,6 @@
 | library/custominterp.po | 100.0% | 0.0% | 3 | 0 |
 | library/dataclasses.po | 100.0% | 0.0% | 165 | 0 |
 | library/datatypes.po | 100.0% | 0.0% | 4 | 0 |
-| library/datetime.po | 100.0% | 0.0% | 698 | 0 |
 | library/dbm.po | 100.0% | 0.0% | 115 | 0 |
 | library/debug.po | 100.0% | 0.0% | 2 | 0 |
 | library/decimal.po | 100.0% | 0.0% | 387 | 0 |
@@ -345,7 +343,6 @@
 | library/os.path.po | 100.0% | 0.0% | 113 | 0 |
 | library/os.po | 100.0% | 0.0% | 1136 | 0 |
 | library/ossaudiodev.po | 100.0% | 0.0% | 3 | 0 |
-| library/pathlib.po | 100.0% | 0.0% | 444 | 0 |
 | library/pdb.po | 100.0% | 0.0% | 179 | 0 |
 | library/persistence.po | 100.0% | 0.0% | 3 | 0 |
 | library/pickle.po | 100.0% | 0.0% | 251 | 0 |
@@ -438,7 +435,6 @@
 | library/traceback.po | 100.0% | 0.0% | 117 | 0 |
 | library/tracemalloc.po | 100.0% | 0.0% | 156 | 0 |
 | library/tty.po | 100.0% | 0.0% | 17 | 0 |
-| library/turtle.po | 100.0% | 0.0% | 573 | 0 |
 | library/types.po | 100.0% | 0.0% | 110 | 0 |
 | library/typing.po | 100.0% | 0.0% | 861 | 0 |
 | library/unicodedata.po | 100.0% | 0.0% | 100 | 0 |
@@ -542,20 +538,24 @@
 | whatsnew/3.8.po | 100.0% | 0.0% | 513 | 0 |
 | whatsnew/3.9.po | 100.0% | 0.0% | 380 | 0 |
 | whatsnew/index.po | 100.0% | 0.0% | 3 | 0 |
-| whatsnew/changelog.po | 99.9% | 0.0% | 15625 | 10 |
 | reference/datamodel.po | 99.9% | 0.1% | 914 | 0 |
+| library/datetime.po | 99.9% | 0.0% | 698 | 1 |
 | c-api/init_config.po | 99.8% | 0.0% | 660 | 1 |
 | library/inspect.po | 99.8% | 0.2% | 435 | 0 |
 | library/mailbox.po | 99.7% | 0.0% | 309 | 1 |
+| whatsnew/changelog.po | 99.6% | 0.1% | 15624 | 38 |
 | library/calendar.po | 99.2% | 0.8% | 122 | 0 |
 | c-api/intro.po | 98.8% | 0.4% | 239 | 2 |
 | library/gc.po | 98.6% | 1.4% | 72 | 0 |
 | c-api/structures.po | 98.6% | 0.5% | 211 | 2 |
+| library/pathlib.po | 98.2% | 0.4% | 442 | 6 |
 | library/zipimport.po | 97.4% | 2.6% | 37 | 0 |
+| c-api/interp-lifecycle.po | 97.3% | 0.0% | 217 | 6 |
 | c-api/float.po | 96.4% | 3.6% | 53 | 0 |
 | c-api/import.po | 92.9% | 1.2% | 79 | 5 |
+| library/turtle.po | 90.4% | 7.9% | 518 | 10 |
 | c-api/extension-modules.po | 88.8% | 6.2% | 71 | 4 |
 | c-api/file.po | 88.6% | 0.0% | 31 | 4 |
 | library/ctypes.po | 86.2% | 7.4% | 675 | 50 |
-| **مجموع** | **99.8%** | **0.1%** | **90532** | **79** |
+| **مجموع** | **99.7%** | **0.2%** | **90474** | **130** |
 <!-- TRANSLATION_STATUS_END -->
