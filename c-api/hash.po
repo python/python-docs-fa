@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-22 14:54+0000\n"
 "PO-Revision-Date: 2024-02-23 14:15+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -39,10 +39,17 @@ msgstr "یک مقدار عددی که الگوریتم هش‌کردنِ :class:
 msgid "The algorithm name is exposed by :data:`sys.hash_info.algorithm`."
 msgstr "نام الگوریتم توسط :data:`sys.hash_info.algorithm` در دسترس قرار می‌گیرد."
 
-msgid "Numerical values to compare to :c:macro:`Py_HASH_ALGORITHM` to determine which algorithm is used for hashing. The hash algorithm can be configured via the configure :option:`--with-hash-algorithm` option."
+#, fuzzy
+#| msgid "Numerical values to compare to :c:macro:`Py_HASH_ALGORITHM` to determine which algorithm is used for hashing. The hash algorithm can be configured via the configure :option:`--with-hash-algorithm` option."
+msgid "Numerical values to compare to :c:macro:`Py_HASH_ALGORITHM` to determine which algorithm is used for hashing. The built-in hash algorithm can be configured via the configure :option:`--with-hash-algorithm` option."
 msgstr "مقادیر عددی برای مقایسه با :c:macro:`Py_HASH_ALGORITHM` به‌منظور تعیین اینکه کدام الگوریتم برای هش‌کردن استفاده می‌شود. الگوریتم هش را می‌توان از طریق گزینه‌ی :option:`--with-hash-algorithm` در configure پیکربندی کرد."
 
-msgid "Add :c:macro:`!Py_HASH_FNV` and :c:macro:`!Py_HASH_SIPHASH24`."
+msgid ":c:macro:`!Py_HASH_EXTERNAL` has value ``0`` and indicates a hash implementation supplied by the application embedding Python; see :c:var:`PyHash_Func`."
+msgstr ""
+
+#, fuzzy
+#| msgid "Add :c:macro:`!Py_HASH_FNV` and :c:macro:`!Py_HASH_SIPHASH24`."
+msgid "Add :c:macro:`!Py_HASH_FNV`, :c:macro:`!Py_HASH_SIPHASH24`, and :c:macro:`!Py_HASH_EXTERNAL`."
 msgstr "افزودن :c:macro:`!Py_HASH_FNV` و :c:macro:`!Py_HASH_SIPHASH24`."
 
 msgid "Add :c:macro:`!Py_HASH_SIPHASH13`."
@@ -110,6 +117,12 @@ msgstr "اندازه‌ی ورودی بذر بر حسب بیت."
 
 msgid "This corresponds to the :data:`sys.hash_info.seed_bits` constant."
 msgstr "این با ثابت :data:`sys.hash_info.seed_bits` مطابق است."
+
+msgid "When Python is built with :c:macro:`Py_HASH_ALGORITHM` set to :c:macro:`Py_HASH_EXTERNAL`, the application embedding Python must define this variable to supply a hash implementation instead of using one of Python's built-in hash algorithms."
+msgstr ""
+
+msgid "Use one of the built-in hash algorithms instead."
+msgstr ""
 
 msgid "Get the hash function definition."
 msgstr "گرفتن تعریف تابع هش."

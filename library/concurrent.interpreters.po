@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-22 14:54+0000\n"
 "PO-Revision-Date: 2026-07-25 12:59+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: none\n"
@@ -199,6 +199,9 @@ msgstr "یک مفسر پایتون جدید (بی‌کار) را راه‌اند
 msgid "Initialize a new cross-interpreter queue and return a :class:`Queue` object for it."
 msgstr "یک صف بین‌مفسری جدید را مقداردهی اولیه می‌کند و یک شیء :class:`Queue` برای آن برمی‌گرداند."
 
+msgid "*maxsize* is an integer that sets the upperbound limit on the number of items that can be placed in the queue. Insertion will be blocked once this size has been reached, until queue items are consumed. If *maxsize* is less than or equal to zero, the queue size is infinite."
+msgstr ""
+
 msgid "Interpreter objects"
 msgstr "اشیای مفسر"
 
@@ -259,16 +262,45 @@ msgstr "این استثنا، که زیرکلاسی از :exc:`TypeError` است
 msgid "Communicating Between Interpreters"
 msgstr "ارتباط بین مفسرها"
 
-msgid "A wrapper around a low-level, cross-interpreter queue, which implements the :class:`queue.Queue` interface.  The underlying queue can only be created through :func:`create_queue`."
+#, fuzzy
+#| msgid "A wrapper around a low-level, cross-interpreter queue, which implements the :class:`queue.Queue` interface.  The underlying queue can only be created through :func:`create_queue`."
+msgid "A wrapper around a low-level, cross-interpreter queue, which implements all the methods of :class:`queue.Queue` except for :meth:`~queue.Queue.task_done`, :meth:`~queue.Queue.join` and :meth:`~queue.Queue.shutdown`.  The underlying queue can only be created through :func:`create_queue`."
 msgstr "پوششی برای یک صف بین‌مفسری سطح پایین، که رابط :class:`queue.Queue` را پیاده‌سازی می‌کند. صف زیرین فقط از طریق :func:`create_queue` قابل ایجاد است."
 
 msgid "The queue's ID."
 msgstr "شناسه‌ی صف."
 
-msgid "This exception, a subclass of :exc:`queue.Empty`, is raised from :meth:`!Queue.get` and :meth:`!Queue.get_nowait` when the queue is empty."
+msgid "Return the number of items in the queue."
+msgstr ""
+
+msgid "Return ``True`` if the queue is empty, ``False`` otherwise."
+msgstr ""
+
+#, fuzzy
+#| msgid "Return ``True`` if the interpreter is currently executing code in its :mod:`!__main__` module and ``False`` otherwise."
+msgid "Return ``True`` if the queue is full, ``False`` otherwise."
+msgstr "اگر مفسر هم‌اکنون در حال اجرای کد در ماژول :mod:`!__main__` خود باشد، ``True`` و در غیر این صورت ``False`` برمی‌گرداند."
+
+msgid "Put *obj* into the queue.  If optional args *block* is true and *timeout* is ``None`` (the default), block if necessary until a free slot is available.  If *timeout* is a positive number, it blocks at most *timeout* seconds and raises the :exc:`QueueFull` exception if no free slot was available within that time.  Otherwise (*block* is false), put an object on the queue if a free slot is immediately available, else raise the :exc:`QueueFull` exception (*timeout* is ignored in that case)."
+msgstr ""
+
+msgid "Equivalent to ``put(obj, block=False)``."
+msgstr ""
+
+msgid "Remove and return an object from the queue.  If optional args *block* is true and *timeout* is ``None`` (the default), block if necessary until an object is available.  If *timeout* is a positive number, it blocks at most *timeout* seconds and raises the :exc:`QueueEmpty` exception if no object was available within that time.  Otherwise (*block* is false), return an object if one is immediately available, else raise the :exc:`QueueEmpty` exception (*timeout* is ignored in that case)."
+msgstr ""
+
+msgid "Equivalent to ``get(block=False)``."
+msgstr ""
+
+#, fuzzy
+#| msgid "This exception, a subclass of :exc:`queue.Empty`, is raised from :meth:`!Queue.get` and :meth:`!Queue.get_nowait` when the queue is empty."
+msgid "This exception, a subclass of :exc:`queue.Empty`, is raised from :meth:`Queue.get` and :meth:`Queue.get_nowait` when the queue is empty."
 msgstr "این استثنا، زیرکلاسی از :exc:`queue.Empty`، زمانی از :meth:`!Queue.get` و :meth:`!Queue.get_nowait` پرتاب می‌شود که صف خالی باشد."
 
-msgid "This exception, a subclass of :exc:`queue.Full`, is raised from :meth:`!Queue.put` and :meth:`!Queue.put_nowait` when the queue is full."
+#, fuzzy
+#| msgid "This exception, a subclass of :exc:`queue.Full`, is raised from :meth:`!Queue.put` and :meth:`!Queue.put_nowait` when the queue is full."
+msgid "This exception, a subclass of :exc:`queue.Full`, is raised from :meth:`Queue.put` and :meth:`Queue.put_nowait` when the queue is full."
 msgstr "این استثنا، زیرکلاسی از :exc:`queue.Full`، هنگامی از :meth:`!Queue.put` و :meth:`!Queue.put_nowait` پرتاب می‌شود که صف پر باشد."
 
 msgid "Basic usage"
@@ -343,3 +375,22 @@ msgstr ""
 "\n"
 "t = interp.call_in_thread(run)\n"
 "t.join()"
+
+#, fuzzy
+#| msgid "Communicating Between Interpreters"
+msgid "Communicating between interpreters with a queue::"
+msgstr "ارتباط بین مفسرها"
+
+msgid ""
+"from concurrent import interpreters\n"
+"\n"
+"interp = interpreters.create()\n"
+"queue = interpreters.create_queue()\n"
+"\n"
+"def worker(queue):\n"
+"    queue.put('spam!')\n"
+"\n"
+"t = interp.call_in_thread(worker, queue)\n"
+"print(queue.get())\n"
+"t.join()"
+msgstr ""

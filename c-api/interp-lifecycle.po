@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-22 14:54+0000\n"
 "PO-Revision-Date: 2026-09-15 08:29+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: none\n"
@@ -403,6 +403,21 @@ msgstr ""
 msgid "In normal usage, an embedding application will call this function *instead* of calling :c:func:`Py_Initialize`, :c:func:`Py_InitializeEx` or :c:func:`Py_InitializeFromConfig` directly, and all settings will be applied as described elsewhere in this documentation. If this function is instead called *after* a preceding runtime initialization API call, then exactly which environmental and command line configuration settings will be updated is version dependent (as it depends on which settings correctly support being modified after they have already been set once when the runtime was first initialized)."
 msgstr "در استفاده‌ی معمول، یک برنامه تعبیه‌کننده این تابع را *به‌جای* فراخوانی مستقیم :c:func:`Py_Initialize`، :c:func:`Py_InitializeEx` یا :c:func:`Py_InitializeFromConfig` فراخوانی می‌کند و تمام تنظیمات همان‌گونه که در جای دیگر این مستندات توضیح داده شده است، اعمال خواهند شد. اگر این تابع در عوض *پس از* یک فراخوانی قبلی از API مقداردهی اولیه‌ی ران‌تایم فراخوانی شود، دقیقاً اینکه کدام تنظیمات پیکربندی محیطی و خط فرمان به‌روزرسانی خواهند شد، وابسته به نسخه است (زیرا به این بستگی دارد که کدام تنظیمات به‌درستی از این پشتیبانی می‌کنند که پس از آن‌که یک‌بار در نخستین مقداردهی اولیه‌ی ران‌تایم تنظیم شده‌اند، تغییر کنند)."
 
+msgid "The main program for a \"frozen\" Python program (an executable that embeds the interpreter together with the bytecode of the program's modules, as produced by the :program:`freeze` utility; see :source:`Tools/freeze`)."
+msgstr ""
+
+msgid "This function initializes the interpreter, imports the frozen module named ``__main__``, and finalizes the interpreter. The frozen modules must have been registered in :c:var:`PyImport_FrozenModules` before calling this function; it is a fatal error if ``__main__`` is not among them."
+msgstr ""
+
+msgid "*argc* and *argv* are byte strings like the arguments of a C program's ``main`` function, and are passed to the interpreter with :c:func:`PyConfig_SetBytesArgv`. Unlike :c:func:`Py_Main`, the arguments are not parsed as Python command line options (:c:member:`PyConfig.parse_argv` is ``0``), so all of them are made available to the program in :data:`sys.argv`. Apart from that, the interpreter uses the :ref:`Python Configuration <init-python-config>`, so environment variables such as :envvar:`PYTHONPATH` are honored. Warnings about the path configuration (:c:member:`PyConfig.pathconfig_warnings`) are suppressed. If :envvar:`PYTHONINSPECT` is set and standard input is a terminal, an interactive prompt is run after ``__main__`` has finished, as with the :option:`-i` option."
+msgstr ""
+
+msgid "Return ``0`` if ``__main__`` ran without an unhandled exception, ``1`` otherwise, and ``120`` if finalizing the interpreter failed (see :c:func:`Py_FinalizeEx`). An unhandled :exc:`SystemExit` terminates the process. If the interpreter cannot be initialized, the process exits via :c:func:`Py_ExitStatusException`."
+msgstr ""
+
+msgid "On Windows, this function is not exported by the Python DLL. The :program:`freeze` utility compiles :file:`Python/frozenmain.c` into the frozen program instead, together with the Windows-specific hooks that the function requires."
+msgstr ""
+
 msgid "Executes the main module in a fully configured CPython runtime."
 msgstr "ماژول اصلی را در یک ران‌تایم سی‌پایتون کاملاً پیکربندی‌شده اجرا می‌کند."
 
@@ -612,6 +627,9 @@ msgstr "مسیر"
 
 msgid "Py_FinalizeEx (C function)"
 msgstr "Py_FinalizeEx (تابع C)"
+
+msgid "freeze utility"
+msgstr ""
 
 msgid "Py_Initialize()"
 msgstr "Py_Initialize()"

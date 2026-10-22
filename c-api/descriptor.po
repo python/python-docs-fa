@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-22 14:54+0000\n"
 "PO-Revision-Date: 2021-06-28 00:48+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -61,20 +61,22 @@ msgstr "توصیف‌گرهای متد، توابع C را به‌صورت مت�
 msgid "The type object for method descriptor objects created from :c:type:`PyMethodDef` structures. These descriptors expose C functions as methods on a type, and correspond to :class:`types.MethodDescriptorType` objects in Python."
 msgstr "شیء نوع برای اشیاء توصیف‌گر متد که از ساختارهای :c:type:`PyMethodDef` ایجاد شده‌اند. این توصیف‌گرها توابع C را به‌عنوان متدهایی روی یک نوع در دسترس قرار می‌دهند و معادل اشیاء :class:`types.MethodDescriptorType` در پایتون هستند."
 
-msgid "Describes a slot wrapper used by :c:func:`PyDescr_NewWrapper`."
-msgstr "یک دربرگیرنده‌ی جایگاه را توصیف می‌کند که توسط :c:func:`PyDescr_NewWrapper` استفاده می‌شود."
+msgid "The type object for wrapper descriptor objects created by :c:func:`PyDescr_NewWrapper` and :c:func:`PyWrapper_New`."
+msgstr ""
 
-msgid "Each ``wrapperbase`` record stores the Python-visible name and metadata for a special method implemented by a type slot, together with the wrapper function used to adapt that slot to Python's calling convention."
-msgstr "هر رکورد ``wrapperbase`` نام قابل‌مشاهده در پایتون و فراداده‌ی متد ویژه‌ای را که توسط یک جایگاه نوع پیاده‌سازی شده است، به همراه تابع پوششی‌ای که برای تطبیق آن جایگاه با قرارداد فراخوانی پایتون استفاده می‌شود، ذخیره می‌کند."
-
-msgid "Create a new wrapper descriptor for extension type *type* from the :c:struct:`wrapperbase` structure *base* and the wrapped slot function pointer *wrapped*."
-msgstr "یک توصیف‌گر پوششی جدید برای نوع توسعه‌ای *type* از ساختار :c:struct:`wrapperbase` به نام *base* و اشاره‌گر تابع جایگاه دربرگرفته‌شده به نام *wrapped* می‌سازد."
-
-msgid "Wrapper descriptors expose special methods implemented by type slots. This is the same kind of descriptor that CPython creates for slot-based special methods such as ``__repr__`` or ``__add__``, and it appears in Python as a :class:`types.WrapperDescriptorType` object."
+#, fuzzy
+#| msgid "Wrapper descriptors expose special methods implemented by type slots. This is the same kind of descriptor that CPython creates for slot-based special methods such as ``__repr__`` or ``__add__``, and it appears in Python as a :class:`types.WrapperDescriptorType` object."
+msgid "Wrapper descriptors are used internally to expose special methods such as ``__repr__`` or ``__add__``, which are implemented by type slots. The type is exposed in Python as  :class:`types.WrapperDescriptorType`."
 msgstr "توصیف‌گرهای پوششی، متدهای ویژه‌ای را که توسط جایگاه‌های نوع پیاده‌سازی شده‌اند، در دسترس قرار می‌دهند. این همان نوع توصیف‌گری است که سی‌پایتون برای متدهای ویژه‌ی مبتنی بر جایگاه مانند ``__repr__`` یا ``__add__`` ایجاد می‌کند و در پایتون به‌صورت یک شیء :class:`types.WrapperDescriptorType` ظاهر می‌شود."
 
-msgid "The type object for wrapper descriptor objects created by :c:func:`PyDescr_NewWrapper` and :c:func:`PyWrapper_New`. Wrapper descriptors are used internally to expose special methods implemented via wrapper structures, and appear in Python as :class:`types.WrapperDescriptorType` objects."
-msgstr "شیء نوع برای اشیاء توصیف‌گر پوششی که توسط :c:func:`PyDescr_NewWrapper` و :c:func:`PyWrapper_New` ایجاد می‌شوند. توصیف‌گرهای پوششی به‌طور داخلی برای در دسترس قرار دادن متدهای ویژه‌ای که از طریق ساختارهای پوششی پیاده‌سازی شده‌اند استفاده می‌شوند و در پایتون به‌صورت اشیاء :class:`types.WrapperDescriptorType` ظاهر می‌شوند."
+msgid "Create a new wrapper descriptor of type :c:var:`PyWrapperDescr_Type`."
+msgstr ""
+
+msgid "This function is meant for internal use only; it and related API (``struct wrapperbase`` and the ``PyWrapperFlag_KEYWORDS`` flag) are exposed publicly for backwards compatibility reasons."
+msgstr ""
+
+msgid "See :c:func:`PyCMethod_New` for wrapping a C function."
+msgstr ""
 
 msgid "Create a new class method descriptor for extension type *type* from the :c:type:`PyMethodDef` structure *method*."
 msgstr "یک توصیف‌گر متد کلاس جدید برای نوع توسعه‌ای *type* از ساختار :c:type:`PyMethodDef` به نام *method* ایجاد می‌کند."
@@ -93,6 +95,18 @@ msgstr "این، شکل مقیدِ یک توصیف‌گر پوششی (wrapper de
 
 msgid "On success, return a :term:`strong reference` to the wrapper object. Return ``NULL`` with an exception set on failure."
 msgstr "در صورت موفقیت، یک :term:`ارجاع قوی <strong reference>` به شیء پوششی برمی‌گرداند. در صورت شکل، ``NULL`` را همراه با یک استثنای تنظیم‌شده برمی‌گرداند."
+
+msgid "Return a :term:`borrowed reference` to the type that the descriptor *descr* belongs to. This is accessible as :attr:`~object.__objclass__` in Python."
+msgstr ""
+
+msgid "*descr* must be a descriptor object created by one of the ``PyDescr_New*`` functions (an instance of :c:var:`PyMethodDescr_Type`, :c:var:`PyClassMethodDescr_Type`, :c:var:`PyMemberDescr_Type`, :c:var:`PyGetSetDescr_Type`, or :c:var:`PyWrapperDescr_Type`). If the passed descriptor is not an instance of one of these types, the behavior is undefined."
+msgstr ""
+
+msgid "Return the name of the descriptor *descr* as a :term:`borrowed reference` to a :class:`str` object. This is available as :attr:`~definition.__name__` in Python."
+msgstr ""
+
+msgid "*descr* must be a descriptor object created by one of the ``PyDescr_New*`` functions. If not, the behavior is undefined."
+msgstr ""
 
 msgid "Built-in descriptors"
 msgstr "توصیف‌گرهای توکار"
@@ -120,3 +134,15 @@ msgstr "یک شیء :class:`staticmethod` جدید ایجاد می‌کند که
 
 msgid "On success, this function returns a :term:`strong reference` to a new static method descriptor. On failure, this function returns ``NULL`` with an exception set."
 msgstr "در صورت موفقیت، این تابع یک :term:`ارجاع قوی <strong reference>` به توصیف‌گر جدید متد ایستا برمی‌گرداند. در صورت شکست، این تابع ``NULL`` را همراه با یک استثنای تنظیم‌شده برمی‌گرداند."
+
+#~ msgid "Describes a slot wrapper used by :c:func:`PyDescr_NewWrapper`."
+#~ msgstr "یک دربرگیرنده‌ی جایگاه را توصیف می‌کند که توسط :c:func:`PyDescr_NewWrapper` استفاده می‌شود."
+
+#~ msgid "Each ``wrapperbase`` record stores the Python-visible name and metadata for a special method implemented by a type slot, together with the wrapper function used to adapt that slot to Python's calling convention."
+#~ msgstr "هر رکورد ``wrapperbase`` نام قابل‌مشاهده در پایتون و فراداده‌ی متد ویژه‌ای را که توسط یک جایگاه نوع پیاده‌سازی شده است، به همراه تابع پوششی‌ای که برای تطبیق آن جایگاه با قرارداد فراخوانی پایتون استفاده می‌شود، ذخیره می‌کند."
+
+#~ msgid "Create a new wrapper descriptor for extension type *type* from the :c:struct:`wrapperbase` structure *base* and the wrapped slot function pointer *wrapped*."
+#~ msgstr "یک توصیف‌گر پوششی جدید برای نوع توسعه‌ای *type* از ساختار :c:struct:`wrapperbase` به نام *base* و اشاره‌گر تابع جایگاه دربرگرفته‌شده به نام *wrapped* می‌سازد."
+
+#~ msgid "The type object for wrapper descriptor objects created by :c:func:`PyDescr_NewWrapper` and :c:func:`PyWrapper_New`. Wrapper descriptors are used internally to expose special methods implemented via wrapper structures, and appear in Python as :class:`types.WrapperDescriptorType` objects."
+#~ msgstr "شیء نوع برای اشیاء توصیف‌گر پوششی که توسط :c:func:`PyDescr_NewWrapper` و :c:func:`PyWrapper_New` ایجاد می‌شوند. توصیف‌گرهای پوششی به‌طور داخلی برای در دسترس قرار دادن متدهای ویژه‌ای که از طریق ساختارهای پوششی پیاده‌سازی شده‌اند استفاده می‌شوند و در پایتون به‌صورت اشیاء :class:`types.WrapperDescriptorType` ظاهر می‌شوند."

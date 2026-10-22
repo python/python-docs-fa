@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-22 14:54+0000\n"
 "PO-Revision-Date: 2021-06-28 00:49+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -42,8 +42,14 @@ msgstr "یک عدد صحیح :c:expr:`long` به نام *value* را در *file*
 msgid "This function can fail, in which case it sets the error indicator. Use :c:func:`PyErr_Occurred` to check for that."
 msgstr "این تابع می‌تواند شکست بخورد، که در این صورت نشانگر خطا را تنظیم می‌کند. برای بررسی این موضوع از :c:func:`PyErr_Occurred` استفاده کنید."
 
+msgid "In Python 3.15 and earlier, this function does not set the error indicator if writing to *file* fails. The same caveat applies as for :c:func:`PyMarshal_WriteObjectToFile`."
+msgstr ""
+
 msgid "Marshal a Python object, *value*, to *file*. *version* indicates the file format."
 msgstr "یک شیء پایتون، *value*، را به *file* مارشال کنید. *version* قالب پرونده را مشخص می‌کند."
+
+msgid "In Python 3.15 and earlier, this function can write only part of the data to *file* and return without setting the error indicator, for example if *value* contains an object which cannot be marshalled or if writing to *file* fails (see :gh:`155907`). Code which has to support these versions cannot rely on :c:func:`PyErr_Occurred` alone to know that all the data was written. It can use :c:func:`PyMarshal_WriteObjectToString` and write the result itself, or validate what was written."
+msgstr ""
 
 msgid "Return a bytes object containing the marshalled representation of *value*. *version* indicates the file format."
 msgstr "یک شیء bytes حاوی نمایش مارشال‌شده‌ی *value* را برمی‌گرداند. *version* قالب پرونده را مشخص می‌کند."

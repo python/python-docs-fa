@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-22 14:54+0000\n"
 "PO-Revision-Date: 2026-09-15 13:21+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -145,7 +145,9 @@ msgstr "در پلتفرم‌های غیر IEEE که دقتی بیشتر از آ�
 msgid "Pack functions"
 msgstr "توابع بسته‌بندی"
 
-msgid "The pack routines write 2, 4 or 8 bytes, starting at *p*. *le* is an :c:expr:`int` argument, non-zero if you want the bytes string in little-endian format (exponent last, at ``p+1``, ``p+3``, or ``p+6`` and ``p+7``), zero if you want big-endian format (exponent first, at *p*). The :c:macro:`PY_BIG_ENDIAN` constant can be used to use the native endian: it is equal to ``1`` on big endian processor, or ``0`` on little endian processor."
+#, fuzzy
+#| msgid "The pack routines write 2, 4 or 8 bytes, starting at *p*. *le* is an :c:expr:`int` argument, non-zero if you want the bytes string in little-endian format (exponent last, at ``p+1``, ``p+3``, or ``p+6`` and ``p+7``), zero if you want big-endian format (exponent first, at *p*). The :c:macro:`PY_BIG_ENDIAN` constant can be used to use the native endian: it is equal to ``1`` on big endian processor, or ``0`` on little endian processor."
+msgid "The pack routines write 2, 4 or 8 bytes, starting at *p*. *le* is an :c:expr:`int` argument, non-zero if you want the bytes string in little-endian format (exponent last, at ``p+1``, ``p+3``, or ``p+6`` and ``p+7``), zero if you want big-endian format (exponent first, at *p*). Use the :c:macro:`PY_LITTLE_ENDIAN` constant to select the native endian: it is equal to ``0`` on big endian processor, or ``1`` on little endian processor."
 msgstr "روال‌های بسته‌بندی ۲، ۴ یا ۸ بایت را با شروع از *p* می‌نویسند. *le* یک آرگومان :c:expr:`int` است؛ اگر می‌خواهید رشته بایتی در قالب کوچک‌اندیان باشد، ناصفر است (توان در انتها، در ``p+1``، ``p+3``، یا ``p+6`` و ``p+7``)، و اگر قالب بزرگ‌اندیان را می‌خواهید، صفر است (توان در ابتدا، در *p*). برای استفاده از اندیان بومی می‌توان از ثابت :c:macro:`PY_BIG_ENDIAN` بهره گرفت: این ثابت روی پردازنده‌های بزرگ‌اندیان برابر ``1`` و روی پردازنده‌های کوچک‌اندیان برابر ``0`` است."
 
 msgid "Return value: ``0`` if all is OK, ``-1`` if error (and an exception is set, most likely :exc:`OverflowError`)."
@@ -172,7 +174,9 @@ msgstr "یک double زبان C را به قالب دقت مضاعف binary64 ا�
 msgid "Unpack functions"
 msgstr "توابع واگشایی"
 
-msgid "The unpack routines read 2, 4 or 8 bytes, starting at *p*.  *le* is an :c:expr:`int` argument, non-zero if the bytes string is in little-endian format (exponent last, at ``p+1``, ``p+3`` or ``p+6`` and ``p+7``), zero if big-endian (exponent first, at *p*). The :c:macro:`PY_BIG_ENDIAN` constant can be used to use the native endian: it is equal to ``1`` on big endian processor, or ``0`` on little endian processor."
+#, fuzzy
+#| msgid "The unpack routines read 2, 4 or 8 bytes, starting at *p*.  *le* is an :c:expr:`int` argument, non-zero if the bytes string is in little-endian format (exponent last, at ``p+1``, ``p+3`` or ``p+6`` and ``p+7``), zero if big-endian (exponent first, at *p*). The :c:macro:`PY_BIG_ENDIAN` constant can be used to use the native endian: it is equal to ``1`` on big endian processor, or ``0`` on little endian processor."
+msgid "The unpack routines read 2, 4 or 8 bytes, starting at *p*.  *le* is an :c:expr:`int` argument, non-zero if the bytes string is in little-endian format (exponent last, at ``p+1``, ``p+3`` or ``p+6`` and ``p+7``), zero if big-endian (exponent first, at *p*). Use the :c:macro:`PY_LITTLE_ENDIAN` constant to select the native endian: it is equal to ``0`` on big endian processor, or ``1`` on little endian processor."
 msgstr "روال‌های واگشایی ۲، ۴ یا ۸ بایت را با شروع از *p* می‌خوانند. *le* یک آرگومان :c:expr:`int` است؛ اگر رشته بایتی در قالب کوچک‌اندیان باشد، ناصفر است (نما در انتها، در ``p+1``، ``p+3`` یا ``p+6`` و ``p+7``)، و اگر بزرگ‌اندیان باشد، صفر است (نما در ابتدا، در *p*). می‌توان ثابت :c:macro:`PY_BIG_ENDIAN` را برای بهره‌گیری از اندیان بومی به کار برد: این ثابت روی پردازنده‌ی بزرگ‌اندیان برابر ``1``، یا روی پردازنده‌ی کوچک‌اندیان برابر ``0`` است."
 
 msgid "Return value: The unpacked double.  On error, this is ``-1.0`` and :c:func:`PyErr_Occurred` is true (and an exception is set, most likely :exc:`OverflowError`)."

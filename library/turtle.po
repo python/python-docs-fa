@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-29 04:09+0000\n"
+"POT-Creation-Date: 2026-10-22 14:54+0000\n"
 "PO-Revision-Date: 2026-09-21 13:27+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -79,6 +79,17 @@ msgstr "from turtle import *"
 msgid "If you run into a ``No module named '_tkinter'`` error, you'll have to install the :mod:`Tk interface package <tkinter>` on your system."
 msgstr "اگر با خطای ``No module named '_tkinter'`` مواجه شدید، باید :mod:`بسته‌ی رابط Tk <tkinter>` را روی سیستم خود نصب کنید."
 
+msgid "Nothing appears yet. To open the turtle window, make the turtle visible::"
+msgstr ""
+
+#, fuzzy
+#| msgid ">>> turtle.showturtle()"
+msgid "showturtle()"
+msgstr ">>> turtle.showturtle()"
+
+msgid "A new window opens, with the turtle in the middle, shown as an arrow heading East."
+msgstr ""
+
 msgid "Basic drawing"
 msgstr "ترسیم مقدماتی"
 
@@ -88,7 +99,9 @@ msgstr "لاک‌پشت را ۱۰۰ گام به جلو بفرستید::"
 msgid "forward(100)"
 msgstr "forward(100)"
 
-msgid "You should see (most likely, in a new window on your display) a line drawn by the turtle, heading East. Change the direction of the turtle, so that it turns 120 degrees left (anti-clockwise)::"
+#, fuzzy
+#| msgid "You should see (most likely, in a new window on your display) a line drawn by the turtle, heading East. Change the direction of the turtle, so that it turns 120 degrees left (anti-clockwise)::"
+msgid "You should see a line drawn by the turtle, heading East. Change the direction of the turtle, so that it turns 120 degrees left (anti-clockwise)::"
 msgstr "باید (به‌احتمال زیاد، در یک پنجره‌ی جدید روی نمایشگر شما) سطری را ببینید که لاک‌پشت آن را رو به شرق رسم کرده است. جهت لاک‌پشت را تغییر دهید تا ۱۲۰ درجه به چپ (خلاف جهت عقربه‌های ساعت) بچرخد::"
 
 msgid "left(120)"
@@ -342,8 +355,11 @@ msgstr ""
 msgid "a boolean"
 msgstr "یک بولی"
 
-msgid "Move turtle to an absolute position. Unlike goto(x, y), a line will not be drawn. The turtle's orientation does not change. If currently filling, the polygon(s) teleported from will be filled after leaving, and filling will begin again after teleporting. This can be disabled with fill_gap=True, which makes the imaginary line traveled during teleporting act as a fill barrier like in goto(x, y)."
-msgstr "لاک‌پشت را به یک موقعیت مطلق منتقل می‌کند. برخلاف goto(x, y)، سطری رسم نخواهد شد. جهت لاک‌پشت تغییر نمی‌کند. اگر در حال حاضر در حال پر کردن باشید، چندضلعی(هایی) که انتقال فوری از آن‌ها انجام شده است پس از ترک آن‌ها پر خواهند شد، و پر کردن پس از انتقال فوری دوباره آغاز می‌شود. این رفتار را می‌توان با fill_gap=True غیرفعال کرد، که باعث می‌شود خط فرضی طی‌شده در حین انتقال فوری مانند goto(x, y) به‌عنوان سد پر کردن عمل کند."
+msgid "Teleport, or instantly move, the turtle to an absolute position. Unlike :func:`goto`, no line is drawn. If *x* or *y* is not given, that coordinate is kept as it is. The turtle's heading does not change."
+msgstr ""
+
+msgid "If the turtle is filling a shape, the shape drawn so far is finished and filled before teleporting, and filling starts again at the new position. Pass ``fill_gap=True`` to keep filling one shape instead. The teleport then counts as an edge of the shape, as it would with :func:`goto`."
+msgstr ""
 
 msgid ""
 ">>> tp = turtle.pos()\n"
@@ -512,13 +528,17 @@ msgstr ""
 ">>> turtle.heading()\n"
 "180.0"
 
-msgid "an integer >= 1 (if given)"
-msgstr "یک عدد صحیح بزرگ‌تر یا مساوی ۱ (در صورت داده شدن)"
+#, fuzzy
+#| msgid "an integer or ``None``"
+msgid "a positive integer or ``None``"
+msgstr "یک عدد صحیح یا ``None``"
 
 msgid "a colorstring or a numeric color tuple"
 msgstr "یک رشته‌ی رنگ یا یک تاپل عددی رنگ"
 
-msgid "Draw a circular dot with diameter *size*, using *color*.  If *size* is not given, the maximum of ``pensize+4`` and ``2*pensize`` is used."
+#, fuzzy
+#| msgid "Draw a circular dot with diameter *size*, using *color*.  If *size* is not given, the maximum of ``pensize+4`` and ``2*pensize`` is used."
+msgid "Draw a circular dot with diameter *size*, using *color*. If *size* is not given, the larger of ``pensize + 4`` and ``2 * pensize`` is used. If *color* is not given, the current pencolor is used."
 msgstr "با استفاده از *color*، یک نقطه‌ی دایره‌ای به قطر *size* رسم کنید. اگر *size* داده نشود، از بیشینه‌ی ``pensize+4`` و ``2*pensize`` استفاده می‌شود."
 
 msgid ""
@@ -616,34 +636,42 @@ msgstr ""
 ">>> for i in range(8):\n"
 "...     turtle.undo()"
 
-msgid "an integer in the range 0..10 or a speedstring (see below)"
-msgstr "یک عدد صحیح در بازه‌ی ۰..۱۰ یا یک رشته‌ی سرعت (speedstring) (در زیر ببینید)"
+#, fuzzy
+#| msgid "an integer or ``None``"
+msgid "an integer, a string or ``None``"
+msgstr "یک عدد صحیح یا ``None``"
 
-msgid "Set the turtle's speed to an integer value in the range 0..10.  If no argument is given, return current speed."
-msgstr "سرعت لاک‌پشت را روی یک مقدار عدد صحیح در بازه‌ی ۰ تا ۱۰ تنظیم می‌کند. اگر آرگومانی داده نشود، سرعت فعلی را برمی‌گرداند."
+msgid "Return or set the turtle's speed. If *speed* is not given, return the current speed. Otherwise set the turtle's speed to an integer from 0 to 10. If *speed* is a number greater than 10 or smaller than 0.5, the speed is set to 0. You can also use these names instead of numbers:"
+msgstr ""
 
-msgid "If input is a number greater than 10 or smaller than 0.5, speed is set to 0.  Speedstrings are mapped to speedvalues as follows:"
-msgstr "اگر ورودی عددی بزرگ‌تر از ۱۰ یا کوچک‌تر از ۰٫۵ باشد، سرعت روی ۰ تنظیم می‌شود. رشته‌های سرعت به مقدارهای سرعت به‌صورت زیر نگاشت می‌شوند:"
-
-msgid "\"fastest\":  0"
+#, fuzzy
+#| msgid "\"fastest\":  0"
+msgid "\"fastest\": 0"
 msgstr "\"fastest\":  0"
 
-msgid "\"fast\":  10"
+#, fuzzy
+#| msgid "\"fast\":  10"
+msgid "\"fast\": 10"
 msgstr "\"fast\":  10"
 
-msgid "\"normal\":  6"
+#, fuzzy
+#| msgid "\"normal\":  6"
+msgid "\"normal\": 6"
 msgstr "\"normal\":  6"
 
-msgid "\"slow\":  3"
+#, fuzzy
+#| msgid "\"slow\":  3"
+msgid "\"slow\": 3"
 msgstr "\"slow\":  3"
 
-msgid "\"slowest\":  1"
+#, fuzzy
+#| msgid "\"slowest\":  1"
+msgid "\"slowest\": 1"
 msgstr "\"slowest\":  1"
 
-msgid "Speeds from 1 to 10 enforce increasingly faster animation of line drawing and turtle turning."
-msgstr "سرعت‌های ۱ تا ۱۰، پویانمایی رسم خط و چرخش لاک‌پشت را به‌طور فزاینده‌ای سریع‌تر می‌کنند."
-
-msgid "Attention: *speed* = 0 means that *no* animation takes place. forward/back makes turtle jump and likewise left/right make the turtle turn instantly."
+#, fuzzy
+#| msgid "Attention: *speed* = 0 means that *no* animation takes place. forward/back makes turtle jump and likewise left/right make the turtle turn instantly."
+msgid "Speeds from 1 to 10 give increasingly faster animation of line drawing and turtle turning. A speed of 0 means that no animation takes place: :func:`forward` and :func:`back` make the turtle jump, and likewise :func:`left` and :func:`right` make the turtle turn instantly."
 msgstr "توجه: *speed* = ۰ به این معناست که *هیچ* پویانمایی‌ای رخ نمی‌دهد. forward/back باعث پرش لاک‌پشت می‌شود و به همین ترتیب left/right باعث چرخش آنی لاک‌پشت می‌شود."
 
 msgid ""
@@ -832,16 +860,22 @@ msgstr ""
 msgid "Drawing state"
 msgstr "وضعیت ترسیم"
 
-msgid "Pull the pen down -- drawing when moving."
-msgstr "قلم را پایین بکشید -- هنگام حرکت ترسیم می‌کند."
+msgid "Lower the pen. The turtle draws a line when it moves."
+msgstr ""
 
-msgid "Pull the pen up -- no drawing when moving."
+#, fuzzy
+#| msgid "Pull the pen up -- no drawing when moving."
+msgid "Lift the pen. The turtle does not draw when it moves."
 msgstr "قلم را بالا بکشید — هنگام حرکت، ترسیمی انجام نمی‌شود."
 
-msgid "a positive number"
-msgstr "یک عدد مثبت"
+#, fuzzy
+#| msgid "a number or ``None``"
+msgid "a positive number or ``None``"
+msgstr "یک عدد یا ``None``"
 
-msgid "Set the line thickness to *width* or return it.  If resizemode is set to \"auto\" and turtleshape is a polygon, that polygon is drawn with the same line thickness.  If no argument is given, the current pensize is returned."
+#, fuzzy
+#| msgid "Set the line thickness to *width* or return it.  If resizemode is set to \"auto\" and turtleshape is a polygon, that polygon is drawn with the same line thickness.  If no argument is given, the current pensize is returned."
+msgid "Return or set the line thickness. If *width* is not given, return the current pensize. If resizemode is set to \"auto\" and the turtle shape is a polygon, that polygon is drawn with the same line thickness."
 msgstr "ضخامت خط را روی *width* تنظیم می‌کند یا آن را بازمی‌گرداند. اگر resizemode روی \"auto\" تنظیم شده باشد و turtleshape یک چندضلعی باشد، آن چندضلعی با همان ضخامت خط رسم می‌شود. اگر آرگومانی داده نشود، pensize فعلی بازگردانده می‌شود."
 
 msgid ""
@@ -926,7 +960,9 @@ msgstr ""
 ">>> sorted(turtle.pen().items())[:3]\n"
 "[('fillcolor', 'green'), ('outline', 1), ('pencolor', 'red')]"
 
-msgid "Return ``True`` if pen is down, ``False`` if it's up."
+#, fuzzy
+#| msgid "Return ``True`` if pen is down, ``False`` if it's up."
+msgid "Return ``True`` if the pen is down, ``False`` if it's up."
 msgstr "اگر قلم پایین باشد، ``True`` و اگر بالا باشد، ``False`` برمی‌گرداند."
 
 msgid ""
@@ -956,28 +992,38 @@ msgstr "۴ قالب ورودی مجاز است:"
 msgid "``pencolor()``"
 msgstr "``pencolor()``"
 
-msgid "Return the current pencolor as color specification string or as a tuple (see example).  May be used as input to another color/pencolor/fillcolor/bgcolor call."
+#, fuzzy
+#| msgid "Return the current pencolor as color specification string or as a tuple (see example).  May be used as input to another color/pencolor/fillcolor/bgcolor call."
+msgid "Return the current pencolor as color specification string or as a tuple (see example).  May be used as input to another :func:`color`, :func:`pencolor`, :func:`fillcolor` or :func:`bgcolor` call."
 msgstr "رنگ قلم فعلی را به‌صورت رشته مشخصه رنگ یا تاپل برمی‌گرداند (مثال را ببینید). می‌تواند به‌عنوان ورودی برای فراخوانی دیگری از color/pencolor/fillcolor/bgcolor استفاده شود."
 
 msgid "``pencolor(colorstring)``"
 msgstr "``pencolor(colorstring)``"
 
-msgid "Set pencolor to *colorstring*, which is a Tk color specification string, such as ``\"red\"``, ``\"yellow\"``, or ``\"#33cc8c\"``."
+#, fuzzy
+#| msgid "Set pencolor to *colorstring*, which is a Tk color specification string, such as ``\"red\"``, ``\"yellow\"``, or ``\"#33cc8c\"``."
+msgid "Set the pencolor to *colorstring*, which is a Tk color specification string, such as ``\"red\"``, ``\"yellow\"``, or ``\"#33cc8c\"``."
 msgstr "pencolor را به *colorstring* تنظیم می‌کند، که یک رشته‌ی مشخصه‌ی رنگ Tk است، مانند ``\"red\"``، ``\"yellow\"``، یا ``\"#33cc8c\"``."
 
 msgid "``pencolor((r, g, b))``"
 msgstr "``pencolor((r, g, b))``"
 
-msgid "Set pencolor to the RGB color represented by the tuple of *r*, *g*, and *b*.  Each of *r*, *g*, and *b* must be in the range 0..colormode, where colormode is either 1.0 or 255 (see :func:`colormode`)."
+#, fuzzy
+#| msgid "Set pencolor to the RGB color represented by the tuple of *r*, *g*, and *b*.  Each of *r*, *g*, and *b* must be in the range 0..colormode, where colormode is either 1.0 or 255 (see :func:`colormode`)."
+msgid "Set the pencolor to the RGB color represented by the tuple of *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be between 0 and colormode, where colormode is either 1.0 or 255 (see :func:`colormode`)."
 msgstr "رنگ قلم (pencolor) را به رنگ RGB نشان‌داده‌شده با تاپل *r*، *g* و *b* تنظیم می‌کند. هر یک از *r*، *g* و *b* باید در بازه‌ی 0..colormode باشند، که در آن colormode برابر با 1.0 یا 255 است (به :func:`colormode` مراجعه کنید)."
 
 msgid "``pencolor(r, g, b)``"
 msgstr "``pencolor(r, g, b)``"
 
-msgid "Set pencolor to the RGB color represented by *r*, *g*, and *b*.  Each of *r*, *g*, and *b* must be in the range 0..colormode."
+#, fuzzy
+#| msgid "Set pencolor to the RGB color represented by *r*, *g*, and *b*.  Each of *r*, *g*, and *b* must be in the range 0..colormode."
+msgid "Set the pencolor to the RGB color represented by *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be between 0 and colormode."
 msgstr "pencolor را روی رنگ RGB متناظر با *r*، *g* و *b* تنظیم کنید. هر یک از *r*، *g* و *b* باید در بازه‌ی 0..colormode باشند."
 
-msgid "If turtleshape is a polygon, the outline of that polygon is drawn with the newly set pencolor."
+#, fuzzy
+#| msgid "If turtleshape is a polygon, the outline of that polygon is drawn with the newly set pencolor."
+msgid "If the turtle shape is a polygon, the outline of that polygon is drawn with the newly set pencolor."
 msgstr "اگر turtleshape یک چندضلعی باشد، خط دور آن چندضلعی با pencolor تازه تنظیم‌شده رسم می‌شود."
 
 msgid ""
@@ -1023,28 +1069,38 @@ msgstr "fillcolor را برمی‌گرداند یا تنظیم می‌کند."
 msgid "``fillcolor()``"
 msgstr "``fillcolor()``"
 
-msgid "Return the current fillcolor as color specification string, possibly in tuple format (see example).  May be used as input to another color/pencolor/fillcolor/bgcolor call."
+#, fuzzy
+#| msgid "Return the current fillcolor as color specification string, possibly in tuple format (see example).  May be used as input to another color/pencolor/fillcolor/bgcolor call."
+msgid "Return the current fillcolor as color specification string, possibly in tuple format (see example).  May be used as input to another :func:`color`, :func:`pencolor`, :func:`fillcolor` or :func:`bgcolor` call."
 msgstr "fillcolor فعلی را به‌عنوان رشته مشخصات رنگ برمی‌گرداند، احتمالاً در قالب تاپل (به مثال مراجعه کنید). ممکن است به‌عنوان ورودی برای فراخوانی دیگری از color/pencolor/fillcolor/bgcolor استفاده شود."
 
 msgid "``fillcolor(colorstring)``"
 msgstr "``fillcolor(colorstring)``"
 
-msgid "Set fillcolor to *colorstring*, which is a Tk color specification string, such as ``\"red\"``, ``\"yellow\"``, or ``\"#33cc8c\"``."
+#, fuzzy
+#| msgid "Set fillcolor to *colorstring*, which is a Tk color specification string, such as ``\"red\"``, ``\"yellow\"``, or ``\"#33cc8c\"``."
+msgid "Set the fillcolor to *colorstring*, which is a Tk color specification string, such as ``\"red\"``, ``\"yellow\"``, or ``\"#33cc8c\"``."
 msgstr "fillcolor را روی *colorstring* تنظیم کنید، که یک رشته مشخص‌کننده رنگ Tk است، مانند ``\"red\"``، ``\"yellow\"`` یا ``\"#33cc8c\"``."
 
 msgid "``fillcolor((r, g, b))``"
 msgstr "``fillcolor((r, g, b))``"
 
-msgid "Set fillcolor to the RGB color represented by the tuple of *r*, *g*, and *b*.  Each of *r*, *g*, and *b* must be in the range 0..colormode, where colormode is either 1.0 or 255 (see :func:`colormode`)."
+#, fuzzy
+#| msgid "Set fillcolor to the RGB color represented by the tuple of *r*, *g*, and *b*.  Each of *r*, *g*, and *b* must be in the range 0..colormode, where colormode is either 1.0 or 255 (see :func:`colormode`)."
+msgid "Set the fillcolor to the RGB color represented by the tuple of *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be between 0 and colormode, where colormode is either 1.0 or 255 (see :func:`colormode`)."
 msgstr "fillcolor را روی رنگ RGB نشان‌داده‌شده با تاپلِ *r*، *g* و *b* تنظیم کنید. هر یک از *r*، *g* و *b* باید در بازه‌ی 0..colormode باشد، که colormode برابر 1.0 یا 255 است (به :func:`colormode` مراجعه کنید)."
 
 msgid "``fillcolor(r, g, b)``"
 msgstr "``fillcolor(r, g, b)``"
 
-msgid "Set fillcolor to the RGB color represented by *r*, *g*, and *b*.  Each of *r*, *g*, and *b* must be in the range 0..colormode."
+#, fuzzy
+#| msgid "Set fillcolor to the RGB color represented by *r*, *g*, and *b*.  Each of *r*, *g*, and *b* must be in the range 0..colormode."
+msgid "Set the fillcolor to the RGB color represented by *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be between 0 and colormode."
 msgstr "fillcolor را روی رنگ RGB متناظر با *r*، *g* و *b* تنظیم کنید. هر یک از *r*، *g* و *b* باید در بازه‌ی 0..colormode باشد."
 
-msgid "If turtleshape is a polygon, the interior of that polygon is drawn with the newly set fillcolor."
+#, fuzzy
+#| msgid "If turtleshape is a polygon, the interior of that polygon is drawn with the newly set fillcolor."
+msgid "If the turtle shape is a polygon, the interior of that polygon is drawn with the newly set fillcolor."
 msgstr "اگر شکل لاک‌پشت یک چندضلعی باشد، فضای داخلی آن چندضلعی با fillcolor به‌تازگی تنظیم‌شده رسم می‌شود."
 
 msgid ""
@@ -1072,10 +1128,14 @@ msgstr ""
 ">>> turtle.fillcolor()\n"
 "(255.0, 255.0, 255.0)"
 
-msgid "Return or set pencolor and fillcolor."
+#, fuzzy
+#| msgid "Return or set pencolor and fillcolor."
+msgid "Return or set the pencolor and fillcolor."
 msgstr "pencolor و fillcolor را برمی‌گرداند یا تنظیم می‌کند."
 
-msgid "Several input formats are allowed.  They use 0 to 3 arguments as follows:"
+#, fuzzy
+#| msgid "Several input formats are allowed.  They use 0 to 3 arguments as follows:"
+msgid "Several input formats are allowed. They use 0 to 3 arguments as follows:"
 msgstr "چندین قالب ورودی مجاز است. آن‌ها از ۰ تا ۳ آرگومان به‌صورت زیر استفاده می‌کنند:"
 
 msgid "``color()``"
@@ -1087,7 +1147,9 @@ msgstr "رنگ قلم فعلی و رنگ پر کردن فعلی را به‌صو
 msgid "``color(colorstring)``, ``color((r,g,b))``, ``color(r,g,b)``"
 msgstr "``color(colorstring)``, ``color((r,g,b))``, ``color(r,g,b)``"
 
-msgid "Inputs as in :func:`pencolor`, set both, fillcolor and pencolor, to the given value."
+#, fuzzy
+#| msgid "Inputs as in :func:`pencolor`, set both, fillcolor and pencolor, to the given value."
+msgid "Inputs as in :func:`pencolor`. Set both the pencolor and the fillcolor to the given value."
 msgstr "ورودی‌ها مانند :func:`pencolor`، هر دو، fillcolor و pencolor، به مقدار داده‌شده تنظیم می‌شوند."
 
 msgid "``color(colorstring1, colorstring2)``, ``color((r1,g1,b1), (r2,g2,b2))``"
@@ -1096,7 +1158,9 @@ msgstr "``color(colorstring1, colorstring2)``, ``color((r1,g1,b1), (r2,g2,b2))``
 msgid "Equivalent to ``pencolor(colorstring1)`` and ``fillcolor(colorstring2)`` and analogously if the other input format is used."
 msgstr "معادل ``pencolor(colorstring1)`` و ``fillcolor(colorstring2)`` است و اگر از قالب ورودی دیگر استفاده شود، به‌طور مشابه عمل می‌کند."
 
-msgid "If turtleshape is a polygon, outline and interior of that polygon is drawn with the newly set colors."
+#, fuzzy
+#| msgid "If turtleshape is a polygon, outline and interior of that polygon is drawn with the newly set colors."
+msgid "If the turtle shape is a polygon, the outline and interior of that polygon are drawn with the newly set colors."
 msgstr "اگر turtleshape یک چندضلعی باشد، خط دور و داخل آن چندضلعی با رنگ‌های تازه‌تنظیم‌شده رسم می‌شود."
 
 msgid ""
@@ -1120,8 +1184,10 @@ msgstr "همچنین ببینید: متد Screen به نام :func:`colormode`."
 msgid "Filling"
 msgstr "پر کردن"
 
-msgid "Return fillstate (``True`` if filling, ``False`` else)."
-msgstr "وضعیت پر کردن را برمی‌گرداند (اگر در حال پر کردن باشد ``True``، در غیر این صورت ``False``)."
+#, fuzzy
+#| msgid "Return ``True`` if the Turtle is shown, ``False`` if it's hidden."
+msgid "Return ``True`` if the turtle is filling, ``False`` otherwise."
+msgstr "اگر Turtle نمایش داده شده باشد، ``True`` و اگر پنهان باشد، ``False`` را برمی‌گرداند."
 
 msgid ""
 ">>> turtle.begin_fill()\n"
@@ -1174,7 +1240,9 @@ msgstr "پر شدن یا پر نشدن ناحیه‌های هم‌پوشانی �
 msgid "More drawing control"
 msgstr "کنترل بیشتر ترسیم"
 
-msgid "Delete the turtle's drawings from the screen, re-center the turtle and set variables to the default values."
+#, fuzzy
+#| msgid "Delete the turtle's drawings from the screen, re-center the turtle and set variables to the default values."
+msgid "Delete the turtle's drawings and re-center the turtle. The turtle's settings are restored to their default values."
 msgstr "نقاشی‌های لاک‌پشت را از صفحه پاک می‌کند، لاک‌پشت را دوباره در مرکز قرار می‌دهد و متغیرها را روی مقادیر پیش‌فرض تنظیم می‌کند."
 
 msgid ""
@@ -1202,7 +1270,9 @@ msgstr ""
 ">>> turtle.heading()\n"
 "0.0"
 
-msgid "Delete the turtle's drawings from the screen.  Do not move turtle.  State and position of the turtle as well as drawings of other turtles are not affected."
+#, fuzzy
+#| msgid "Delete the turtle's drawings from the screen.  Do not move turtle.  State and position of the turtle as well as drawings of other turtles are not affected."
+msgid "Delete the turtle's drawings from the screen. The state and position of the turtle as well as the drawings of other turtles are not affected."
 msgstr "ترسیمات لاک‌پشت را از صفحه حذف می‌کند. لاک‌پشت را حرکت نمی‌دهد. وضعیت و موقعیت لاک‌پشت و همچنین ترسیمات سایر لاک‌پشت‌ها تحت تأثیر قرار نمی‌گیرند."
 
 msgid "object to be written to the TurtleScreen"
@@ -1233,19 +1303,15 @@ msgstr "وضعیت Turtle"
 msgid "Visibility"
 msgstr "قابلیت مشاهده"
 
-msgid "Make the turtle invisible.  It's a good idea to do this while you're in the middle of doing some complex drawing, because hiding the turtle speeds up the drawing observably."
-msgstr "لاک‌پشت را نامرئی کنید. بهتر است این کار را هنگامی که در میانه‌ی انجام یک ترسیم پیچیده هستید انجام دهید، زیرا پنهان کردن لاک‌پشت سرعت ترسیم را به‌طور محسوسی افزایش می‌دهد."
-
-msgid ">>> turtle.hideturtle()"
-msgstr ">>> turtle.hideturtle()"
+msgid "Make the turtle invisible. If the pen is down, movement still draws."
+msgstr ""
 
 msgid "Make the turtle visible."
 msgstr "لاک‌پشت را نمایان کنید."
 
-msgid ">>> turtle.showturtle()"
-msgstr ">>> turtle.showturtle()"
-
-msgid "Return ``True`` if the Turtle is shown, ``False`` if it's hidden."
+#, fuzzy
+#| msgid "Return ``True`` if the Turtle is shown, ``False`` if it's hidden."
+msgid "Return ``True`` if the turtle is visible, ``False`` if it's hidden."
 msgstr "اگر Turtle نمایش داده شده باشد، ``True`` و اگر پنهان باشد، ``False`` را برمی‌گرداند."
 
 msgid ""
@@ -1266,10 +1332,14 @@ msgstr ""
 msgid "Appearance"
 msgstr "ظاهر"
 
-msgid "a string which is a valid shapename"
-msgstr "رشته‌ای که یک نام شکل (shapename) معتبر باشد"
+#, fuzzy
+#| msgid "an integer or ``None``"
+msgid "a string or ``None``"
+msgstr "یک عدد صحیح یا ``None``"
 
-msgid "Set turtle shape to shape with given *name* or, if name is not given, return name of current shape.  Shape with *name* must exist in the TurtleScreen's shape dictionary.  Initially there are the following polygon shapes: \"arrow\", \"turtle\", \"circle\", \"square\", \"triangle\", \"classic\".  To learn about how to deal with shapes see Screen method :func:`register_shape`."
+#, fuzzy
+#| msgid "Set turtle shape to shape with given *name* or, if name is not given, return name of current shape.  Shape with *name* must exist in the TurtleScreen's shape dictionary.  Initially there are the following polygon shapes: \"arrow\", \"turtle\", \"circle\", \"square\", \"triangle\", \"classic\".  To learn about how to deal with shapes see Screen method :func:`register_shape`."
+msgid "Set the turtle shape to the named shape. If *name* is not given, return the name of the current shape. The shape must exist in the :class:`TurtleScreen`'s shape dictionary. Initially there are the following shapes: \"arrow\", \"turtle\", \"circle\", \"square\", \"triangle\" and \"classic\". To add shapes, see the :class:`Screen` method :func:`register_shape`."
 msgstr "شکل لاک‌پشت را به شکل با *name* داده‌شده تنظیم می‌کند یا اگر name داده نشده باشد، نام شکل جاری را برمی‌گرداند. شکل با *name* باید در دیکشنری شکل‌های TurtleScreen وجود داشته باشد. در ابتدا، شکل‌های چندضلعی زیر وجود دارند: \"arrow\"، \"turtle\"، \"circle\"، \"square\"، \"triangle\"، \"classic\". برای آشنایی با نحوه‌ی کار با شکل‌ها، متد :func:`register_shape` از Screen را ببینید."
 
 msgid ""
@@ -1285,20 +1355,23 @@ msgstr ""
 ">>> turtle.shape()\n"
 "'turtle'"
 
-msgid "one of the strings \"auto\", \"user\", \"noresize\""
-msgstr "یکی از رشته‌های \"auto\"، \"user\"، \"noresize\""
-
-msgid "Set resizemode to one of the values: \"auto\", \"user\", \"noresize\".  If *rmode* is not given, return current resizemode.  Different resizemodes have the following effects:"
+#, fuzzy
+#| msgid "Set resizemode to one of the values: \"auto\", \"user\", \"noresize\".  If *rmode* is not given, return current resizemode.  Different resizemodes have the following effects:"
+msgid "Set the resizemode to \"auto\", \"user\" or \"noresize\". If *rmode* is not given, return the current resizemode. The different resizemodes have the following effects:"
 msgstr "resizemode را روی یکی از مقادیر زیر تنظیم کنید: \"auto\"، \"user\"، \"noresize\". اگر *rmode* داده نشود، resizemode فعلی برگردانده می‌شود. حالت‌های مختلف resizemode پیامدهای زیر را دارند:"
 
-msgid "\"auto\": adapts the appearance of the turtle corresponding to the value of pensize."
+#, fuzzy
+#| msgid "\"auto\": adapts the appearance of the turtle corresponding to the value of pensize."
+msgid "\"auto\": the turtle is resized according to the value of :func:`pensize`."
 msgstr "\"auto\": ظاهر لاک‌پشت را متناسب با مقدار pensize تطبیق می‌دهد."
 
-msgid "\"user\": adapts the appearance of the turtle according to the values of stretchfactor and outlinewidth (outline), which are set by :func:`shapesize`."
+#, fuzzy
+#| msgid "\"user\": adapts the appearance of the turtle according to the values of stretchfactor and outlinewidth (outline), which are set by :func:`shapesize`."
+msgid "\"user\": the turtle is resized according to the stretch factors and outline width, which are set by :func:`shapesize`."
 msgstr "\"user\": ظاهر لاک‌پشت را مطابق با مقادیر stretchfactor و outlinewidth (outline)، که توسط :func:`shapesize` تنظیم می‌شوند، تطبیق می‌دهد."
 
-msgid "\"noresize\": no adaption of the turtle's appearance takes place."
-msgstr "\"noresize\": هیچ سازگاری‌ای برای ظاهر لاک‌پشت انجام نمی‌شود."
+msgid "\"noresize\": the turtle is not resized."
+msgstr ""
 
 msgid "``resizemode(\"user\")`` is called by :func:`shapesize` when used with arguments."
 msgstr "``resizemode(\"user\")`` توسط :func:`shapesize` در صورتی که با آرگومان‌ها استفاده شود، فراخوانی می‌شود."
@@ -1316,11 +1389,22 @@ msgstr ""
 ">>> turtle.resizemode()\n"
 "'auto'"
 
-msgid "positive number"
-msgstr "عدد مثبت"
+msgid "Return or set the turtle's stretch factors and outline width. If no arguments are given, return the current values. Otherwise set resizemode to \"user\", so that the turtle is displayed stretched according to its stretch factors:"
+msgstr ""
 
-msgid "Return or set the pen's attributes x/y-stretchfactors and/or outline.  Set resizemode to \"user\".  If and only if resizemode is set to \"user\", the turtle will be displayed stretched according to its stretchfactors: *stretch_wid* is stretchfactor perpendicular to its orientation, *stretch_len* is stretchfactor in direction of its orientation, *outline* determines the width of the shape's outline."
-msgstr "ویژگی‌های قلم، یعنی ضریب‌های کشیدگی x/y (x/y-stretchfactors) و/یا خط دور (outline)، را برمی‌گرداند یا تنظیم می‌کند. resizemode را روی \"user\" تنظیم می‌کند. اگر و فقط اگر resizemode روی \"user\" تنظیم شده باشد، لاک‌پشت بر اساس ضریب‌های کشیدگی خود به‌صورت کشیده‌شده نمایش داده می‌شود: *stretch_wid* ضریب کشیدگی عمود بر جهت آن است، *stretch_len* ضریب کشیدگی در راستای جهت آن است، و *outline* عرض خط دور شکل را تعیین می‌کند."
+msgid "*stretch_wid*: the stretch factor perpendicular to the turtle's heading"
+msgstr ""
+
+#, fuzzy
+#| msgid "Move the turtle forward by the specified *distance*, in the direction the turtle is headed."
+msgid "*stretch_len*: the stretch factor in the direction of the turtle's heading"
+msgstr "لاکی‌پشت را به اندازه‌ی *distance* مشخص‌شده، در جهتی که لاکی‌پشت رو به آن دارد، به جلو حرکت می‌دهد."
+
+msgid "*outline*: the width of the shape's outline"
+msgstr ""
+
+msgid "For example, ``shapesize(2, 1)`` makes the turtle twice as wide without changing its length. If only *stretch_wid* is given, *stretch_len* is set to the same value."
+msgstr ""
 
 msgid ""
 ">>> turtle.shapesize()\n"
@@ -1441,17 +1525,23 @@ msgstr ""
 msgid "Using events"
 msgstr "استفاده از رویدادها"
 
-msgid "a function with two arguments which will be called with the coordinates of the clicked point on the canvas"
-msgstr "تابعی با دو آرگومان که با مختصات نقطه‌ی کلیک‌شده روی بوم فراخوانی خواهد شد"
+#, fuzzy
+#| msgid "a function with no arguments or ``None``"
+msgid "a function with two arguments or ``None``"
+msgstr "تابعی بدون آرگومان یا ``None``"
 
-msgid "number of the mouse-button, defaults to 1 (left mouse button)"
-msgstr "شماره‌ی دکمه‌ی ماوس، پیش‌فرض ۱ (دکمه‌ی چپ ماوس)"
+#, fuzzy
+#| msgid "an integer or ``None``"
+msgid "an integer"
+msgstr "یک عدد صحیح یا ``None``"
 
-msgid "``True`` or ``False`` -- if ``True``, a new binding will be added, otherwise it will replace a former binding"
-msgstr "``True`` یا ``False`` — اگر ``True`` باشد، یک اتصال جدید افزوده خواهد شد، در غیر این صورت جایگزین یک اتصال پیشین خواهد شد"
+#, fuzzy
+#| msgid "a number or ``None``"
+msgid "a boolean or ``None``"
+msgstr "یک عدد یا ``None``"
 
-msgid "Bind *fun* to mouse-click events on this turtle.  If *fun* is ``None``, existing bindings are removed.  Example for the anonymous turtle, i.e. the procedural way:"
-msgstr "*fun* را به رویدادهای کلیک ماوس روی این لاک‌پشت متصل می‌کند. اگر *fun* برابر ``None`` باشد، اتصالات موجود حذف می‌شوند. مثال برای لاک‌پشت ناشناس، یعنی روش رویه‌ای:"
+msgid "Bind *fun* to mouse-click events on this turtle. *fun* is called with the coordinates of the clicked point on the canvas. If *fun* is ``None``, existing bindings are removed. *btn* is the number of the mouse button and defaults to 1, the left mouse button. If *add* is ``True``, a new binding is added, otherwise it replaces a former binding. Example for the anonymous turtle, that is, the procedural way:"
+msgstr ""
 
 msgid ""
 ">>> def turn(x, y):\n"
@@ -1465,6 +1555,15 @@ msgstr ""
 "...\n"
 ">>> onclick(turn)  # Now clicking into the turtle will turn it.\n"
 ">>> onclick(None)  # event-binding will be removed"
+
+msgid "a function with two arguments which will be called with the coordinates of the clicked point on the canvas"
+msgstr "تابعی با دو آرگومان که با مختصات نقطه‌ی کلیک‌شده روی بوم فراخوانی خواهد شد"
+
+msgid "number of the mouse-button, defaults to 1 (left mouse button)"
+msgstr "شماره‌ی دکمه‌ی ماوس، پیش‌فرض ۱ (دکمه‌ی چپ ماوس)"
+
+msgid "``True`` or ``False`` -- if ``True``, a new binding will be added, otherwise it will replace a former binding"
+msgstr "``True`` یا ``False`` — اگر ``True`` باشد، یک اتصال جدید افزوده خواهد شد، در غیر این صورت جایگزین یک اتصال پیشین خواهد شد"
 
 msgid "Bind *fun* to mouse-button-release events on this turtle.  If *fun* is ``None``, existing bindings are removed."
 msgstr "*fun* را به رویدادهای رها کردن دکمه ماوس روی این لاک‌پشت متصل کنید. اگر *fun* برابر ``None`` باشد، اتصال‌های موجود حذف می‌شوند."
@@ -1519,10 +1618,14 @@ msgstr ""
 "...     turtle.right(60)\n"
 "...     turtle.forward(100)"
 
-msgid "Start recording the vertices of a polygon.  Current turtle position is first vertex of polygon."
+#, fuzzy
+#| msgid "Start recording the vertices of a polygon.  Current turtle position is first vertex of polygon."
+msgid "Start recording the vertices of a polygon. The current turtle position is the first vertex of the polygon."
 msgstr "ثبت رأس‌های یک چندضلعی را آغاز کنید. موقعیت فعلی لاک‌پشت، اولین رأس چندضلعی است."
 
-msgid "Stop recording the vertices of a polygon.  Current turtle position is last vertex of polygon.  This will be connected with the first vertex."
+#, fuzzy
+#| msgid "Stop recording the vertices of a polygon.  Current turtle position is last vertex of polygon.  This will be connected with the first vertex."
+msgid "Stop recording the vertices of a polygon. The current turtle position is the last vertex of the polygon. This will be connected with the first vertex."
 msgstr "ثبت رأس‌های یک چندضلعی را متوقف می‌کند. موقعیت فعلی لاک‌پشت آخرین رأس چندضلعی است. این به اولین رأس متصل خواهد شد."
 
 msgid "Return the last recorded polygon."
@@ -1551,18 +1654,29 @@ msgstr ""
 ">>> p = turtle.get_poly()\n"
 ">>> register_shape(\"myFavouriteShape\", p)"
 
-msgid "Create and return a clone of the turtle with same position, heading and turtle properties."
+#, fuzzy
+#| msgid "Create and return a clone of the turtle with same position, heading and turtle properties."
+msgid "Create and return a clone of the turtle. The clone has the same position, heading and turtle properties."
 msgstr "یک رونوشت (clone) از لاک‌پشت با همان موقعیت، جهت و ویژگی‌های لاک‌پشت ایجاد کرده و بازمی‌گرداند."
 
+#, fuzzy
+#| msgid ""
+#| ">>> mick = Turtle()\n"
+#| ">>> joe = mick.clone()"
 msgid ""
-">>> mick = Turtle()\n"
-">>> joe = mick.clone()"
+">>> leonel = Turtle()\n"
+">>> marco = leonel.clone()"
 msgstr ""
 ">>> mick = Turtle()\n"
 ">>> joe = mick.clone()"
 
-msgid "Return the Turtle object itself.  Only reasonable use: as a function to return the \"anonymous turtle\":"
-msgstr "خود شیء Turtle را برمی‌گرداند. تنها استفاده معقول: به‌عنوان تابعی برای برگرداندن «لاک‌پشت ناشناس»:"
+#, fuzzy
+#| msgid "Return the turtle's x coordinate."
+msgid "Return the Turtle object itself."
+msgstr "مختصات x لاک‌پشت را برمی‌گرداند."
+
+msgid "Call ``getturtle()`` to get the turtle used by functions such as :func:`forward` and :func:`left`:"
+msgstr ""
 
 msgid ""
 ">>> pet = getturtle()\n"
@@ -1589,13 +1703,17 @@ msgstr ""
 "<turtle._Screen object at 0x...>\n"
 ">>> ts.bgcolor(\"pink\")"
 
-msgid "Set or disable undobuffer.  If *size* is an integer, an empty undobuffer of given size is installed.  *size* gives the maximum number of turtle actions that can be undone by the :func:`undo` method/function.  If *size* is ``None``, the undobuffer is disabled."
+#, fuzzy
+#| msgid "Set or disable undobuffer.  If *size* is an integer, an empty undobuffer of given size is installed.  *size* gives the maximum number of turtle actions that can be undone by the :func:`undo` method/function.  If *size* is ``None``, the undobuffer is disabled."
+msgid "Set or disable the undo buffer. If *size* is an integer, an empty undo buffer of the given size is installed. *size* is the maximum number of turtle actions that can be undone by :func:`undo`. If *size* is ``None``, the undo buffer is disabled."
 msgstr "بافر لغو (undobuffer) را تنظیم یا غیرفعال کنید. اگر *size* یک عدد صحیح باشد، یک بافر لغو (undobuffer) خالی با اندازه‌ی داده‌شده نصب می‌شود. *size* حداکثر تعداد کنش‌های لاک‌پشت را که می‌توان با متد/تابع :func:`undo` آن‌ها را واگرد کرد، مشخص می‌کند. اگر *size* برابر ``None`` باشد، بافر لغو (undobuffer) غیرفعال می‌شود."
 
 msgid ">>> turtle.setundobuffer(42)"
 msgstr ">>> turtle.setundobuffer(42)"
 
-msgid "Return number of entries in the undobuffer."
+#, fuzzy
+#| msgid "Return number of entries in the undobuffer."
+msgid "Return the number of entries in the undo buffer."
 msgstr "تعداد ورودی‌های موجود در بافر لغو (undobuffer) را برمی‌گرداند."
 
 msgid ""
@@ -1604,47 +1722,6 @@ msgid ""
 msgstr ""
 ">>> while undobufferentries():\n"
 "...     undo()"
-
-msgid "Compound shapes"
-msgstr "شکل‌های ترکیبی"
-
-msgid "To use compound turtle shapes, which consist of several polygons of different color, you must use the helper class :class:`Shape` explicitly as described below:"
-msgstr "برای استفاده از شکل‌های ترکیبی turtle، که از چندین چندضلعی با رنگ‌های متفاوت تشکیل شده‌اند، باید به‌صراحت از کلاس کمکی :class:`Shape` استفاده کنید، همان‌طور که در زیر توضیح داده شده است:"
-
-msgid "Create an empty Shape object of type \"compound\"."
-msgstr "یک شیء Shape خالی از نوع \"compound\" ایجاد کنید."
-
-msgid "Add as many components to this object as desired, using the :meth:`~Shape.addcomponent` method."
-msgstr "هر تعداد کامپوننت که بخواهید، با استفاده از متد :meth:`~Shape.addcomponent` به این شیء اضافه کنید."
-
-msgid "For example:"
-msgstr "برای مثال:"
-
-msgid ""
-">>> s = Shape(\"compound\")\n"
-">>> poly1 = ((0,0),(10,-5),(0,10),(-10,-5))\n"
-">>> s.addcomponent(poly1, \"red\", \"blue\")\n"
-">>> poly2 = ((0,0),(10,-5),(-10,-5))\n"
-">>> s.addcomponent(poly2, \"blue\", \"red\")"
-msgstr ""
-">>> s = Shape(\"compound\")\n"
-">>> poly1 = ((0,0),(10,-5),(0,10),(-10,-5))\n"
-">>> s.addcomponent(poly1, \"red\", \"blue\")\n"
-">>> poly2 = ((0,0),(10,-5),(-10,-5))\n"
-">>> s.addcomponent(poly2, \"blue\", \"red\")"
-
-msgid "Now add the Shape to the Screen's shapelist and use it:"
-msgstr "اکنون Shape را به shapelistِ Screen اضافه کنید و از آن استفاده کنید:"
-
-msgid ""
-">>> register_shape(\"myshape\", s)\n"
-">>> shape(\"myshape\")"
-msgstr ""
-">>> register_shape(\"myshape\", s)\n"
-">>> shape(\"myshape\")"
-
-msgid "The :class:`Shape` class is used internally by the :func:`register_shape` method in different ways.  The application programmer has to deal with the Shape class *only* when using compound shapes like shown above!"
-msgstr "کلاس :class:`Shape` به‌صورت داخلی توسط متد :func:`register_shape` به روش‌های مختلفی استفاده می‌شود. برنامه‌نویس برنامه *فقط* هنگام استفاده از شکل‌های ترکیبی مانند آنچه در بالا نشان داده شد، باید با کلاس Shape سروکار داشته باشد!"
 
 msgid "Screen methods and functions"
 msgstr "متدها و توابع Screen"
@@ -1661,7 +1738,9 @@ msgstr "رنگ پس‌زمینه‌ی TurtleScreen را برمی‌گرداند 
 msgid "``bgcolor()``"
 msgstr "``bgcolor()``"
 
-msgid "Return the current background color as color specification string or as a tuple (see example).  May be used as input to another color/pencolor/fillcolor/bgcolor call."
+#, fuzzy
+#| msgid "Return the current background color as color specification string or as a tuple (see example).  May be used as input to another color/pencolor/fillcolor/bgcolor call."
+msgid "Return the current background color as a color specification string or as a tuple (see example).  May be used as input to another :func:`color`, :func:`pencolor`, :func:`fillcolor` or :func:`bgcolor` call."
 msgstr "رنگ پس‌زمینه‌ی جاری را به‌صورت یک رشته‌ی مشخصه‌ی رنگ یا یک تاپل  برمی‌گرداند (مثال را ببینید). می‌تواند به‌عنوان ورودی در فراخوانی دیگری از color/pencolor/fillcolor/bgcolor استفاده شود."
 
 msgid "``bgcolor(colorstring)``"
@@ -1673,13 +1752,17 @@ msgstr "رنگ پس‌زمینه را روی *colorstring* تنظیم کنید،
 msgid "``bgcolor((r, g, b))``"
 msgstr "``bgcolor((r, g, b))``"
 
-msgid "Set the background color to the RGB color represented by the tuple of *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be in the range 0..colormode, where colormode is either 1.0 or 255 (see :func:`colormode`)."
+#, fuzzy
+#| msgid "Set the background color to the RGB color represented by the tuple of *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be in the range 0..colormode, where colormode is either 1.0 or 255 (see :func:`colormode`)."
+msgid "Set the background color to the RGB color represented by the tuple of *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be between 0 and colormode, where colormode is either 1.0 or 255 (see :func:`colormode`)."
 msgstr "رنگ پس‌زمینه را روی رنگ RGB بیان‌شده با تاپل *r*، *g* و *b* تنظیم کنید. هر یک از *r*، *g* و *b* باید در بازه‌ی ۰..colormode باشند، که colormode می‌تواند ۱.۰ یا ۲۵۵ باشد (به :func:`colormode` مراجعه کنید)."
 
 msgid "``bgcolor(r, g, b)``"
 msgstr "``bgcolor(r, g, b)``"
 
-msgid "Set the background color to the RGB color represented by *r*, *g*, and *b*.  Each of *r*, *g*, and *b* must be in the range 0..colormode."
+#, fuzzy
+#| msgid "Set the background color to the RGB color represented by *r*, *g*, and *b*.  Each of *r*, *g*, and *b* must be in the range 0..colormode."
+msgid "Set the background color to the RGB color represented by *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be between 0 and colormode."
 msgstr "رنگ پس‌زمینه را روی رنگ RGB نشان‌داده‌شده با *r*، *g* و *b* تنظیم کنید. هر یک از *r*، *g* و *b* باید در بازه‌ی 0..colormode باشد."
 
 msgid ""
@@ -1725,7 +1808,9 @@ msgstr "تمام ترسیم‌ها و تمام لاک‌پشت‌ها را از 
 msgid "This TurtleScreen method is available as a global function only under the name ``resetscreen``.  The global function ``reset`` is another one derived from the Turtle method ``reset``."
 msgstr "این متد TurtleScreen فقط با نام ``resetscreen`` به‌عنوان یک تابع سراسری در دسترس است. تابع سراسری ``reset`` تابع دیگری است که از متد ``reset`` در Turtle مشتق شده است."
 
-msgid "Reset all Turtles on the Screen to their initial state."
+#, fuzzy
+#| msgid "Reset all Turtles on the Screen to their initial state."
+msgid "Reset all turtles on the screen to their initial state."
 msgstr "بازنشانی همه‌ی لاک‌پشت‌های روی صفحه به وضعیت اولیه‌شان."
 
 msgid "positive integer, new width of canvas in pixels"
@@ -1756,23 +1841,8 @@ msgstr ""
 msgid "e.g. to search for an erroneously escaped turtle ;-)"
 msgstr "مثلاً برای جستجوی لاک‌پشتی که به‌اشتباه فرار کرده است ;-)"
 
-msgid "a number, x-coordinate of lower left corner of canvas"
-msgstr "یک عدد، مختصات x گوشه‌ی پایین سمت چپ بوم"
-
-msgid "a number, y-coordinate of lower left corner of canvas"
-msgstr "یک عدد، مختصات y گوشه‌ی پایین سمت چپ بوم"
-
-msgid "a number, x-coordinate of upper right corner of canvas"
-msgstr "یک عدد، مختصات x گوشه‌ی بالا سمت راست بوم"
-
-msgid "a number, y-coordinate of upper right corner of canvas"
-msgstr "یک عدد، مختصات y گوشه‌ی بالا سمت راست بوم"
-
-msgid "Set up user-defined coordinate system and switch to mode \"world\" if necessary.  This performs a ``screen.reset()``.  If mode \"world\" is already active, all drawings are redrawn according to the new coordinates."
-msgstr "دستگاه مختصات تعریف‌شده توسط کاربر را تنظیم می‌کند و در صورت لزوم به حالت \"world\" تغییر می‌کند. این کار ``screen.reset()`` را انجام می‌دهد. اگر حالت \"world\" از قبل فعال باشد، همه ترسیم‌ها بر اساس مختصات جدید دوباره ترسیم می‌شوند."
-
-msgid "**ATTENTION**: in user-defined coordinate systems angles may appear distorted."
-msgstr "**توجه**: در دستگاه‌های مختصات تعریف‌شده توسط کاربر، ممکن است زاویه‌ها تحریف‌شده به نظر برسند."
+msgid "Set up a user-defined coordinate system. *llx* and *lly* are the x and y coordinates of the lower left corner of the canvas. *urx* and *ury* are the x and y coordinates of the upper right corner. Switch to mode \"world\" if necessary, which performs a reset. If mode \"world\" is already active, all drawings are redrawn according to the new coordinates. In user-defined coordinate systems, angles may appear distorted, see :func:`mode`."
+msgstr ""
 
 msgid ""
 ">>> screen.reset()\n"
@@ -1794,7 +1864,9 @@ msgstr ""
 msgid "Animation control"
 msgstr "کنترل پویانمایی"
 
-msgid "Temporarily disable turtle animation. The code written inside the ``no_animation`` block will not be animated; once the code block is exited, the drawing will appear."
+#, fuzzy
+#| msgid "Temporarily disable turtle animation. The code written inside the ``no_animation`` block will not be animated; once the code block is exited, the drawing will appear."
+msgid "Temporarily turn off turtle animation. The code inside the :keyword:`with` block is not animated. Once the block is exited, the drawing appears. This is useful for drawing complex shapes where even the fastest speed setting is too slow."
 msgstr "پویانمایی turtle را به‌طور موقت غیرفعال می‌کند. کد نوشته‌شده درون بلوک ``no_animation`` پویانمایی نخواهد شد؛ پس از خروج از بلوک کد، ترسیم ظاهر می‌شود."
 
 msgid ""
@@ -1808,14 +1880,15 @@ msgstr ""
 "...         fd(dist)\n"
 "...         rt(90)"
 
-msgid "positive integer"
-msgstr "عدد صحیح مثبت"
+#, fuzzy
+#| msgid "an integer or ``None``"
+msgid "a nonnegative integer or ``None``"
+msgstr "یک عدد صحیح یا ``None``"
 
-msgid "Set or return the drawing *delay* in milliseconds.  (This is approximately the time interval between two consecutive canvas updates.)  The longer the drawing delay, the slower the animation."
+#, fuzzy
+#| msgid "Set or return the drawing *delay* in milliseconds.  (This is approximately the time interval between two consecutive canvas updates.)  The longer the drawing delay, the slower the animation."
+msgid "Return or set the drawing delay in milliseconds. This is approximately the time interval between two consecutive canvas updates. The longer the drawing delay, the slower the animation."
 msgstr "*تأخیر* ترسیم را بر حسب میلی‌ثانیه تنظیم می‌کند یا برمی‌گرداند. (این مقدار تقریباً بازه‌ی زمانی بین دو به‌روزرسانی متوالی بوم است.) هرچه تأخیر ترسیم طولانی‌تر باشد، پویانمایی کندتر خواهد بود."
-
-msgid "Optional argument:"
-msgstr "آرگومان اختیاری:"
 
 msgid ""
 ">>> screen.delay()\n"
@@ -1830,10 +1903,9 @@ msgstr ""
 ">>> screen.delay()\n"
 "5"
 
-msgid "nonnegative integer"
-msgstr "عدد صحیح نامنفی"
-
-msgid "Turn turtle animation on/off and set delay for update drawings.  If *n* is given, only each n-th regular screen update is really performed.  (Can be used to accelerate the drawing of complex graphics.)  When called without arguments, returns the currently stored value of n. Second argument sets delay value (see :func:`delay`)."
+#, fuzzy
+#| msgid "Turn turtle animation on/off and set delay for update drawings.  If *n* is given, only each n-th regular screen update is really performed.  (Can be used to accelerate the drawing of complex graphics.)  When called without arguments, returns the currently stored value of n. Second argument sets delay value (see :func:`delay`)."
+msgid "Turn turtle animation on or off and set the drawing delay. If *n* is given, only every n-th regular screen update is performed, which can be used to speed up the drawing of complex graphics. If *n* is 0, animation is turned off and the screen is only updated by calling :func:`update`. If *delay* is given, it sets the drawing delay, see :func:`delay`. When called without arguments, return the current value of *n*."
 msgstr "روشن/خاموش کردن پویانمایی turtle و تنظیم تأخیر برای به‌روزرسانی ترسیم‌ها. اگر *n* داده شود، تنها هر n-امین به‌روزرسانی منظم صفحه واقعاً انجام می‌شود. (می‌تواند برای تسریع ترسیم گرافیک‌های پیچیده استفاده شود.) هنگامی که بدون آرگومان فراخوانی شود، مقدار ذخیره‌شده‌ی کنونی n را برمی‌گرداند. آرگومان دوم مقدار تأخیر را تنظیم می‌کند (به :func:`delay` مراجعه کنید)."
 
 msgid ""
@@ -1903,8 +1975,8 @@ msgstr ""
 ">>> screen.onkey(f, \"Up\")\n"
 ">>> screen.listen()"
 
-msgid "Bind *fun* to mouse-click events on this screen.  If *fun* is ``None``, existing bindings are removed."
-msgstr "*fun* را به رویدادهای کلیک ماوس روی این صفحه متصل کنید. اگر *fun* برابر ``None`` باشد، اتصالات موجود حذف می‌شوند."
+msgid "Bind *fun* to mouse-click events on this screen. *fun* is called with the coordinates of the clicked point on the canvas. If *fun* is ``None``, existing bindings are removed. *btn* is the number of the mouse button and defaults to 1, the left mouse button. If *add* is ``True``, a new binding is added, otherwise it replaces a former binding."
+msgstr ""
 
 msgid "Example for a TurtleScreen instance named ``screen`` and a Turtle instance named ``turtle``:"
 msgstr "مثالی برای نمونه‌ای از TurtleScreen به نام ``screen`` و نمونه‌ای از Turtle به نام ``turtle``:"
@@ -1949,25 +2021,30 @@ msgstr ""
 ">>> f()   ### makes the turtle march around\n"
 ">>> running = False"
 
-msgid "Starts event loop - calling Tkinter's mainloop function. Must be the last statement in a turtle graphics program. Must *not* be used if a script is run from within IDLE in -n mode (No subprocess) - for interactive use of turtle graphics. ::"
+#, fuzzy
+#| msgid "Starts event loop - calling Tkinter's mainloop function. Must be the last statement in a turtle graphics program. Must *not* be used if a script is run from within IDLE in -n mode (No subprocess) - for interactive use of turtle graphics. ::"
+msgid "Start the event loop by calling Tkinter's :meth:`~tkinter.Misc.mainloop` method. Must be the last statement in a turtle graphics program. Must *not* be used if a script is run from within IDLE in -n mode (see :ref:`idle-no-subprocess`)."
 msgstr "حلقه‌ی رویداد را با فراخوانی تابع mainloop از Tkinter آغاز می‌کند. باید آخرین دستور در یک برنامه‌ی گرافیک turtle باشد. برای استفاده‌ی تعاملی از گرافیک turtle، اگر یک اسکریپت از داخل IDLE در حالت -n (بدون subprocess) اجرا شود، *نباید* از آن استفاده شود. ::"
-
-msgid ">>> screen.mainloop()"
-msgstr ">>> screen.mainloop()"
 
 msgid "Input methods"
 msgstr "متدهای ورودی"
 
-msgid "string"
+#, fuzzy
+#| msgid "string"
+msgid "a string"
 msgstr "رشته"
 
-msgid "Pop up a dialog window for input of a string. Parameter title is the title of the dialog window, prompt is a text mostly describing what information to input. Return the string input. If the dialog is canceled, return ``None``. ::"
+#, fuzzy
+#| msgid "Pop up a dialog window for input of a string. Parameter title is the title of the dialog window, prompt is a text mostly describing what information to input. Return the string input. If the dialog is canceled, return ``None``. ::"
+msgid "Pop up a dialog window for input of a string. *title* is the title of the dialog window and *prompt* is a text describing what information to input. Return the string entered. If the dialog is canceled, return ``None``. ::"
 msgstr "یک پنجره‌ی محاوره برای دریافت یک رشته باز می‌کند. پارامتر title عنوان پنجره‌ی محاوره است و prompt متنی است که عمدتاً توضیح می‌دهد چه اطلاعاتی باید وارد شود. رشته‌ی ورودی را برمی‌گرداند. اگر پنجره‌ی محاوره لغو شود، ``None`` برمی‌گرداند. ::"
 
 msgid ">>> screen.textinput(\"NIM\", \"Name of first player:\")"
 msgstr ">>> screen.textinput(\"NIM\", \"Name of first player:\")"
 
-msgid "Pop up a dialog window for input of a number. title is the title of the dialog window, prompt is a text mostly describing what numerical information to input. default: default value, minval: minimum value for input, maxval: maximum value for input. The number input must be in the range minval .. maxval if these are given. If not, a hint is issued and the dialog remains open for correction. Return the number input. If the dialog is canceled,  return ``None``. ::"
+#, fuzzy
+#| msgid "Pop up a dialog window for input of a number. title is the title of the dialog window, prompt is a text mostly describing what numerical information to input. default: default value, minval: minimum value for input, maxval: maximum value for input. The number input must be in the range minval .. maxval if these are given. If not, a hint is issued and the dialog remains open for correction. Return the number input. If the dialog is canceled,  return ``None``. ::"
+msgid "Pop up a dialog window for input of a number. *title* is the title of the dialog window and *prompt* is a text describing what numerical information to input. *default* is the default value, *minval* and *maxval* are the minimum and maximum values for input. If these are given, the number entered must be between *minval* and *maxval*. If not, a hint is issued and the dialog remains open for correction. Return the number entered. If the dialog is canceled, return ``None``. ::"
 msgstr "یک پنجره محاوره برای دریافت یک عدد باز می‌کند. title عنوان پنجره محاوره است، prompt متنی است که عمدتاً توضیح می‌دهد چه اطلاعات عددی باید وارد شود. default: مقدار پیش‌فرض، minval: حداقل مقدار برای ورودی، maxval: حداکثر مقدار برای ورودی. اگر این مقادیر داده شده باشند، عدد ورودی باید در بازه minval .. maxval باشد. در غیر این صورت، یک راهنمایی نمایش داده می‌شود و پنجره محاوره برای اصلاح باز می‌ماند. عدد ورودی را برمی‌گرداند. اگر پنجره محاوره لغو شود، ``None`` برگردانده می‌شود. ::"
 
 msgid ">>> screen.numinput(\"Poker\", \"Your stakes:\", 1000, minval=10, maxval=10000)"
@@ -1976,13 +2053,14 @@ msgstr ">>> screen.numinput(\"Poker\", \"Your stakes:\", 1000, minval=10, maxval
 msgid "Settings and special methods"
 msgstr "تنظیمات و متدهای ویژه"
 
-msgid "one of the strings \"standard\", \"logo\" or \"world\""
-msgstr "یکی از رشته‌های \"standard\"، \"logo\" یا \"world\""
-
-msgid "Set turtle mode (\"standard\", \"logo\" or \"world\") and perform reset.  If mode is not given, current mode is returned."
+#, fuzzy
+#| msgid "Set turtle mode (\"standard\", \"logo\" or \"world\") and perform reset.  If mode is not given, current mode is returned."
+msgid "Set the turtle mode and perform a reset. *mode* is one of the strings \"standard\", \"logo\" or \"world\". If *mode* is not given, return the current mode."
 msgstr "حالت turtle را (\"standard\"، \"logo\" یا \"world\") تنظیم کنید و بازنشانی را انجام دهید. اگر حالتی داده نشود، حالت کنونی برگردانده می‌شود."
 
-msgid "Mode \"standard\" is compatible with old :mod:`!turtle`.  Mode \"logo\" is compatible with most Logo turtle graphics.  Mode \"world\" uses user-defined \"world coordinates\". **Attention**: in this mode angles appear distorted if ``x/y`` unit-ratio doesn't equal 1."
+#, fuzzy
+#| msgid "Mode \"standard\" is compatible with old :mod:`!turtle`.  Mode \"logo\" is compatible with most Logo turtle graphics.  Mode \"world\" uses user-defined \"world coordinates\". **Attention**: in this mode angles appear distorted if ``x/y`` unit-ratio doesn't equal 1."
+msgid "Mode \"standard\" is compatible with the old :mod:`!turtle` module. Mode \"logo\" is compatible with most Logo turtle graphics. Mode \"world\" uses user-defined world coordinates, see :func:`setworldcoordinates`. In this mode, angles appear distorted if the x and y units are not of equal length."
 msgstr "حالت «standard» با ماژول قدیمی :mod:`!turtle` سازگار است.  حالت «logo» با بیشتر گرافیک‌های لاک‌پشتی Logo سازگار است.  حالت «world» از «مختصات جهان» تعریف‌شده توسط کاربر استفاده می‌کند. **توجه**: در این حالت، اگر نسبت واحد ``x/y`` برابر با ۱ نباشد، زاویه‌ها اعوجاج‌یافته به نظر می‌رسند."
 
 msgid "Mode"
@@ -2012,8 +2090,13 @@ msgstr "رو به بالا    (شمال)"
 msgid "clockwise"
 msgstr "در جهت عقربه‌های ساعت"
 
+#, fuzzy
+#| msgid ""
+#| ">>> mode(\"logo\")   # resets turtle heading to north\n"
+#| ">>> mode()\n"
+#| "'logo'"
 msgid ""
-">>> mode(\"logo\")   # resets turtle heading to north\n"
+">>> mode(\"logo\")  # resets turtle heading to north\n"
 ">>> mode()\n"
 "'logo'"
 msgstr ""
@@ -2021,10 +2104,9 @@ msgstr ""
 ">>> mode()\n"
 "'logo'"
 
-msgid "one of the values 1.0 or 255"
-msgstr "یکی از مقدارهای ۱.۰ یا ۲۵۵"
-
-msgid "Return the colormode or set it to 1.0 or 255.  Subsequently *r*, *g*, *b* values of color triples have to be in the range 0..*cmode*."
+#, fuzzy
+#| msgid "Return the colormode or set it to 1.0 or 255.  Subsequently *r*, *g*, *b* values of color triples have to be in the range 0..*cmode*."
+msgid "Return the colormode or set it to 1.0 or 255. After setting it, the *r*, *g* and *b* values of color triples have to be between 0 and *cmode*."
 msgstr "colormode را برمی‌گرداند یا آن را روی 1.0 یا 255 تنظیم می‌کند. پس از آن، مقادیر *r*، *g* و *b* در سه‌تایی‌های رنگ باید در بازه‌ی 0..*cmode* باشند."
 
 msgid ""
@@ -2074,17 +2156,19 @@ msgstr ""
 ">>> screen.getshapes()\n"
 "['arrow', 'blank', 'circle', ..., 'turtle']"
 
-msgid "There are four different ways to call this function:"
-msgstr "چهار روش مختلف برای فراخوانی این تابع وجود دارد:"
+msgid "a string, a tuple of pairs of numbers, a :class:`Shape` object or ``None``"
+msgstr ""
+
+#, fuzzy
+#| msgid "Now add the Shape to the Screen's shapelist and use it:"
+msgid "Add a turtle shape to the TurtleScreen's shape list. It can be called in four different ways:"
+msgstr "اکنون Shape را به shapelistِ Screen اضافه کنید و از آن استفاده کنید:"
 
 msgid "*name* is the name of an image file (PNG, GIF, PGM, and PPM) and *shape* is ``None``: Install the corresponding image shape. ::"
 msgstr "*name* نام یک پرونده تصویری (PNG، GIF، PGM و PPM) است و *shape* برابر ``None`` است: شکل تصویری متناظر نصب می‌شود. ::"
 
 msgid ">>> screen.register_shape(\"turtle.gif\")"
 msgstr ">>> screen.register_shape(\"turtle.gif\")"
-
-msgid "Image shapes *do not* rotate when turning the turtle, so they do not display the heading of the turtle!"
-msgstr "شکل‌های تصویری هنگام چرخاندن لاک‌پشت *نمی‌چرخند*، بنابراین جهت لاک‌پشت را نمایش نمی‌دهند!"
 
 msgid "*name* is an arbitrary string and *shape* is the name of an image file (PNG, GIF, PGM, and PPM): Install the corresponding image shape. ::"
 msgstr "*name* یک رشته دلخواه است و *shape* نام یک پرونده تصویری (PNG، GIF، PGM و PPM) است: شکل تصویری متناظر را نصب کنید. ::"
@@ -2101,8 +2185,10 @@ msgstr ">>> screen.register_shape(\"triangle\", ((5,-3), (0,5), (-5,-3)))"
 msgid "*name* is an arbitrary string and *shape* is a (compound) :class:`Shape` object: Install the corresponding compound shape."
 msgstr "*name* یک رشته دلخواه است و *shape* یک شیء :class:`Shape` (مرکب) است: شکل مرکب متناظر نصب می‌شود."
 
-msgid "Add a turtle shape to TurtleScreen's shapelist.  Only thusly registered shapes can be used by issuing the command ``shape(shapename)``."
-msgstr "یک شکل لاک‌پشت را به فهرست شکل‌های TurtleScreen اضافه می‌کند. تنها می‌توان از شکل‌های ثبت‌شده بدین‌ترتیب با صدور دستور ``shape(shapename)`` استفاده کرد."
+#, fuzzy
+#| msgid "Image shapes *do not* rotate when turning the turtle, so they do not display the heading of the turtle!"
+msgid "Image shapes do not rotate when turning the turtle, so they do not display the heading of the turtle. To use a registered shape, call :func:`shape` with its name."
+msgstr "شکل‌های تصویری هنگام چرخاندن لاک‌پشت *نمی‌چرخند*، بنابراین جهت لاک‌پشت را نمایش نمی‌دهند!"
 
 msgid "Added support for PNG, PGM, and PPM image formats. Both a shape name and an image file name can be specified."
 msgstr "پشتیبانی از قالب‌های تصویری PNG، PGM و PPM افزوده شد. می‌توان هم نام شکل و هم نام پرونده تصویر را مشخص کرد."
@@ -2140,7 +2226,9 @@ msgstr ""
 msgid "Screen-only methods"
 msgstr "متدهای مختص Screen"
 
-msgid "Shut the turtlegraphics window."
+#, fuzzy
+#| msgid "Shut the turtlegraphics window."
+msgid "Close the turtle graphics window."
 msgstr "پنجره‌ی گرافیک لاک‌پشتی را ببندید."
 
 msgid "Bind ``bye()`` method to mouse clicks on the Screen."
@@ -2191,11 +2279,10 @@ msgstr ""
 ">>> screen.setup(width=.75, height=0.5, startx=None, starty=None)\n"
 ">>>              # sets window to 75% of screen by 50% of screen and centers"
 
-msgid "a string that is shown in the titlebar of the turtle graphics window"
+#, fuzzy
+#| msgid "a string that is shown in the titlebar of the turtle graphics window"
+msgid "Set the title of the turtle window to *titlestring*. The title is shown in the title bar of the turtle graphics window."
 msgstr "رشته‌ای که در نوار عنوان پنجره‌ی گرافیک لاک‌پشتی نمایش داده می‌شود"
-
-msgid "Set title of turtle window to *titlestring*."
-msgstr "عنوان پنجره‌ی turtle را به *titlestring* تنظیم می‌کند."
 
 msgid ">>> screen.title(\"Welcome to the turtle zoo!\")"
 msgstr ">>> screen.title(\"Welcome to the turtle zoo!\")"
@@ -2218,8 +2305,8 @@ msgstr "یک :class:`!tkinter.Canvas`"
 msgid "Provides screen oriented methods like :func:`bgcolor` etc. that are described above."
 msgstr "متدهای صفحه‌محوری مانند :func:`bgcolor` و غیره را فراهم می‌کند که در بالا توضیح داده شده‌اند."
 
-msgid "Subclass of TurtleScreen, with :ref:`four methods added <screenspecific>`."
-msgstr "زیرکلاسی از TurtleScreen، با :ref:`چهار متد افزوده‌شده <screenspecific>`."
+msgid "Subclass of :class:`TurtleScreen`, with :ref:`four methods added <screenspecific>`. Calling ``Screen()`` returns the single screen object. If it does not exist yet, it is created. Otherwise the existing one is returned."
+msgstr ""
 
 msgid "some Tkinter widget to contain the ScrolledCanvas, i.e. a Tkinter-canvas with scrollbars added"
 msgstr "یک ابزارک Tkinter برای دربرگرفتن ScrolledCanvas، یعنی یک بوم Tkinter با نوارهای پیمایش افزوده‌شده"
@@ -2227,50 +2314,39 @@ msgstr "یک ابزارک Tkinter برای دربرگرفتن ScrolledCanvas، �
 msgid "Used by class Screen, which thus automatically provides a ScrolledCanvas as playground for the turtles."
 msgstr "توسط کلاس Screen استفاده می‌شود، که بنابراین به‌طور خودکار یک ScrolledCanvas را به‌عنوان زمین بازی برای لاک‌پشت‌ها فراهم می‌کند."
 
-msgid "one of the strings \"polygon\", \"image\", \"compound\""
-msgstr "یکی از رشته‌های \"polygon\"، \"image\"، \"compound\""
+msgid "depends on *type_*"
+msgstr ""
 
-msgid "Data structure modeling shapes.  The pair ``(type_, data)`` must follow this specification:"
-msgstr "ساختار داده‌ای برای مدل‌سازی شکل‌ها. جفت ``(type_, data)`` باید این مشخصات را رعایت کند:"
+msgid "Data structure modeling shapes. *type_* is one of the strings \"polygon\", \"image\" or \"compound\". What *data* must be depends on *type_*: for \"polygon\" a tuple of pairs of coordinates, for \"image\" an image (only used internally), and for \"compound\" ``None``, as a compound shape is built up using the :meth:`addcomponent` method."
+msgstr ""
 
-msgid "*type_*"
-msgstr "*type_*"
-
-msgid "*data*"
-msgstr "*data*"
-
-msgid "\"polygon\""
-msgstr "\"چندضلعی\""
-
-msgid "a polygon-tuple, i.e. a tuple of pairs of coordinates"
-msgstr "یک تاپل چندضلعی، یعنی یک تاپل از جفت‌های مختصات"
-
-msgid "\"image\""
-msgstr "\"image\""
-
-msgid "an image  (in this form only used internally!)"
-msgstr "یک تصویر (در این قالب فقط به‌صورت داخلی استفاده می‌شود!)"
-
-msgid "\"compound\""
-msgstr "\"compound\""
-
-msgid "``None`` (a compound shape has to be constructed using the :meth:`addcomponent` method)"
-msgstr "``None`` (یک شکل ترکیبی باید با استفاده از متد :meth:`addcomponent` ساخته شود)"
-
-msgid "a polygon, i.e. a tuple of pairs of numbers"
+#, fuzzy
+#| msgid "a polygon, i.e. a tuple of pairs of numbers"
+msgid "a tuple of pairs of numbers"
 msgstr "یک چندضلعی، یعنی یک تاپل از جفت‌های عددی"
 
-msgid "a color the *poly* will be filled with"
-msgstr "رنگی که *poly* با آن پر خواهد شد"
+msgid "a color"
+msgstr ""
 
-msgid "a color for the poly's outline (if given)"
-msgstr "رنگی برای خط دور poly (در صورت داده‌شدن)"
+#, fuzzy
+#| msgid "a number or ``None``"
+msgid "a color or ``None``"
+msgstr "یک عدد یا ``None``"
+
+msgid "Add a component to a shape of type \"compound\". *poly* is a polygon, a tuple of pairs of numbers. *fill* is the color the polygon is filled with and *outline* is the color of its outline. If *outline* is not given, *fill* is used for it as well."
+msgstr ""
 
 msgid "Example:"
 msgstr "مثال:"
 
+#, fuzzy
+#| msgid ""
+#| ">>> poly = ((0,0),(10,-5),(0,10),(-10,-5))\n"
+#| ">>> s = Shape(\"compound\")\n"
+#| ">>> s.addcomponent(poly, \"red\", \"blue\")\n"
+#| ">>> # ... add more components and then use register_shape()"
 msgid ""
-">>> poly = ((0,0),(10,-5),(0,10),(-10,-5))\n"
+">>> poly = ((0,0), (10,-5), (0,10), (-10,-5))\n"
 ">>> s = Shape(\"compound\")\n"
 ">>> s.addcomponent(poly, \"red\", \"blue\")\n"
 ">>> # ... add more components and then use register_shape()"
@@ -2333,7 +2409,9 @@ msgstr "راهنماهای عملی"
 msgid "This section covers some typical turtle use-cases and approaches."
 msgstr "این بخش برخی از موارد استفاده و رویکردهای رایج turtle را پوشش می‌دهد."
 
-msgid "Automatically begin and end filling"
+#, fuzzy
+#| msgid "Automatically begin and end filling"
+msgid "How to automatically begin and end filling"
 msgstr "آغاز و پایان پر کردن به‌صورت خودکار"
 
 msgid "Starting with Python 3.14, you can use the :func:`fill` :term:`context manager` instead of :func:`begin_fill` and :func:`end_fill` to automatically begin and end fill. Here is an example::"
@@ -2374,7 +2452,58 @@ msgstr ""
 "\n"
 "forward(200)"
 
-msgid "Use the ``turtle`` module namespace"
+#, fuzzy
+#| msgid "Compound shapes"
+msgid "How to use compound shapes"
+msgstr "شکل‌های ترکیبی"
+
+msgid "To use compound turtle shapes, which consist of several polygons of different color, you must use the helper class :class:`Shape` explicitly as described below:"
+msgstr "برای استفاده از شکل‌های ترکیبی turtle، که از چندین چندضلعی با رنگ‌های متفاوت تشکیل شده‌اند، باید به‌صراحت از کلاس کمکی :class:`Shape` استفاده کنید، همان‌طور که در زیر توضیح داده شده است:"
+
+#, fuzzy
+#| msgid "Create an empty Shape object of type \"compound\"."
+msgid "Create an empty :class:`Shape` object of type \"compound\"."
+msgstr "یک شیء Shape خالی از نوع \"compound\" ایجاد کنید."
+
+msgid "Add as many components to this object as desired, using the :meth:`~Shape.addcomponent` method."
+msgstr "هر تعداد کامپوننت که بخواهید، با استفاده از متد :meth:`~Shape.addcomponent` به این شیء اضافه کنید."
+
+msgid "For example:"
+msgstr "برای مثال:"
+
+#, fuzzy
+#| msgid ""
+#| ">>> s = Shape(\"compound\")\n"
+#| ">>> poly1 = ((0,0),(10,-5),(0,10),(-10,-5))\n"
+#| ">>> s.addcomponent(poly1, \"red\", \"blue\")\n"
+#| ">>> poly2 = ((0,0),(10,-5),(-10,-5))\n"
+#| ">>> s.addcomponent(poly2, \"blue\", \"red\")"
+msgid ""
+">>> s = Shape(\"compound\")\n"
+">>> poly1 = ((0,0), (10,-5), (0,10), (-10,-5))\n"
+">>> s.addcomponent(poly1, \"red\", \"blue\")\n"
+">>> poly2 = ((0,0), (10,-5), (-10,-5))\n"
+">>> s.addcomponent(poly2, \"blue\", \"red\")"
+msgstr ""
+">>> s = Shape(\"compound\")\n"
+">>> poly1 = ((0,0),(10,-5),(0,10),(-10,-5))\n"
+">>> s.addcomponent(poly1, \"red\", \"blue\")\n"
+">>> poly2 = ((0,0),(10,-5),(-10,-5))\n"
+">>> s.addcomponent(poly2, \"blue\", \"red\")"
+
+msgid "Now add the Shape to the Screen's shapelist and use it:"
+msgstr "اکنون Shape را به shapelistِ Screen اضافه کنید و از آن استفاده کنید:"
+
+msgid ""
+">>> register_shape(\"myshape\", s)\n"
+">>> shape(\"myshape\")"
+msgstr ""
+">>> register_shape(\"myshape\", s)\n"
+">>> shape(\"myshape\")"
+
+#, fuzzy
+#| msgid "Use the ``turtle`` module namespace"
+msgid "How to use the ``turtle`` module namespace"
 msgstr "از فضای نام ماژول ``turtle`` استفاده کنید"
 
 msgid "Using ``from turtle import *`` is convenient - but be warned that it imports a rather large collection of objects, and if you're doing anything but turtle graphics you run the risk of a name conflict (this becomes even more an issue if you're using turtle graphics in a script where other modules might be imported)."
@@ -2383,7 +2512,9 @@ msgstr "استفاده از ``from turtle import *`` مناسب است، اما 
 msgid "The solution is to use ``import turtle`` - ``fd()`` becomes ``turtle.fd()``, ``width()`` becomes ``turtle.width()`` and so on. (If typing \"turtle\" over and over again becomes tedious, use for example ``import turtle as t`` instead.)"
 msgstr "راه‌حل استفاده از ``import turtle`` است - ``fd()`` به ``turtle.fd()`` تبدیل می‌شود، ``width()`` به ``turtle.width()`` تبدیل می‌شود و به همین ترتیب. (اگر تایپ کردن مکرر \"turtle\" خسته‌کننده شد، برای مثال به‌جای آن از ``import turtle as t`` استفاده کنید.)"
 
-msgid "Use turtle graphics in a script"
+#, fuzzy
+#| msgid "Use turtle graphics in a script"
+msgid "How to use turtle graphics in a script"
 msgstr "استفاده از گرافیک لاک‌پشتی (turtle graphics) در یک اسکریپت"
 
 msgid "It's recommended to use the ``turtle`` module namespace as described immediately above, for example::"
@@ -2417,7 +2548,9 @@ msgstr "t.mainloop()"
 msgid "to the end of the script. The script will now wait to be dismissed and will not exit until it is terminated, for example by closing the turtle graphics window."
 msgstr "به انتهای اسکریپت. اسکریپت اکنون منتظر می‌ماند تا بسته شود و تا زمانی که پایان داده نشود، خارج نخواهد شد، برای مثال با بستن پنجره‌ی گرافیک turtle."
 
-msgid "Use object-oriented turtle graphics"
+#, fuzzy
+#| msgid "Use object-oriented turtle graphics"
+msgid "How to use object-oriented turtle graphics"
 msgstr "استفاده از گرافیک لاک‌پشتی شیءگرا"
 
 msgid ":ref:`Explanation of the object-oriented interface <turtle-explanation>`"
@@ -2470,7 +2603,9 @@ msgstr ""
 "t.screen.title('Object-oriented turtle demo')\n"
 "t.screen.bgcolor(\"orange\")"
 
-msgid "How to use help"
+#, fuzzy
+#| msgid "How to use help"
+msgid "How to use :func:`!help`"
 msgstr "نحوه استفاده از help"
 
 msgid "The public methods of the Screen and Turtle classes are documented extensively via docstrings.  So these can be used as online-help via the Python help facilities:"
@@ -2952,6 +3087,150 @@ msgstr ":func:`circle`"
 
 msgid "Have fun!"
 msgstr "لذت ببرید!"
+
+#~ msgid "Move turtle to an absolute position. Unlike goto(x, y), a line will not be drawn. The turtle's orientation does not change. If currently filling, the polygon(s) teleported from will be filled after leaving, and filling will begin again after teleporting. This can be disabled with fill_gap=True, which makes the imaginary line traveled during teleporting act as a fill barrier like in goto(x, y)."
+#~ msgstr "لاک‌پشت را به یک موقعیت مطلق منتقل می‌کند. برخلاف goto(x, y)، سطری رسم نخواهد شد. جهت لاک‌پشت تغییر نمی‌کند. اگر در حال حاضر در حال پر کردن باشید، چندضلعی(هایی) که انتقال فوری از آن‌ها انجام شده است پس از ترک آن‌ها پر خواهند شد، و پر کردن پس از انتقال فوری دوباره آغاز می‌شود. این رفتار را می‌توان با fill_gap=True غیرفعال کرد، که باعث می‌شود خط فرضی طی‌شده در حین انتقال فوری مانند goto(x, y) به‌عنوان سد پر کردن عمل کند."
+
+#~ msgid "an integer >= 1 (if given)"
+#~ msgstr "یک عدد صحیح بزرگ‌تر یا مساوی ۱ (در صورت داده شدن)"
+
+#~ msgid "an integer in the range 0..10 or a speedstring (see below)"
+#~ msgstr "یک عدد صحیح در بازه‌ی ۰..۱۰ یا یک رشته‌ی سرعت (speedstring) (در زیر ببینید)"
+
+#~ msgid "Set the turtle's speed to an integer value in the range 0..10.  If no argument is given, return current speed."
+#~ msgstr "سرعت لاک‌پشت را روی یک مقدار عدد صحیح در بازه‌ی ۰ تا ۱۰ تنظیم می‌کند. اگر آرگومانی داده نشود، سرعت فعلی را برمی‌گرداند."
+
+#~ msgid "If input is a number greater than 10 or smaller than 0.5, speed is set to 0.  Speedstrings are mapped to speedvalues as follows:"
+#~ msgstr "اگر ورودی عددی بزرگ‌تر از ۱۰ یا کوچک‌تر از ۰٫۵ باشد، سرعت روی ۰ تنظیم می‌شود. رشته‌های سرعت به مقدارهای سرعت به‌صورت زیر نگاشت می‌شوند:"
+
+#~ msgid "Speeds from 1 to 10 enforce increasingly faster animation of line drawing and turtle turning."
+#~ msgstr "سرعت‌های ۱ تا ۱۰، پویانمایی رسم خط و چرخش لاک‌پشت را به‌طور فزاینده‌ای سریع‌تر می‌کنند."
+
+#~ msgid "Pull the pen down -- drawing when moving."
+#~ msgstr "قلم را پایین بکشید -- هنگام حرکت ترسیم می‌کند."
+
+#~ msgid "a positive number"
+#~ msgstr "یک عدد مثبت"
+
+#~ msgid "Return fillstate (``True`` if filling, ``False`` else)."
+#~ msgstr "وضعیت پر کردن را برمی‌گرداند (اگر در حال پر کردن باشد ``True``، در غیر این صورت ``False``)."
+
+#~ msgid "Make the turtle invisible.  It's a good idea to do this while you're in the middle of doing some complex drawing, because hiding the turtle speeds up the drawing observably."
+#~ msgstr "لاک‌پشت را نامرئی کنید. بهتر است این کار را هنگامی که در میانه‌ی انجام یک ترسیم پیچیده هستید انجام دهید، زیرا پنهان کردن لاک‌پشت سرعت ترسیم را به‌طور محسوسی افزایش می‌دهد."
+
+#~ msgid ">>> turtle.hideturtle()"
+#~ msgstr ">>> turtle.hideturtle()"
+
+#~ msgid "a string which is a valid shapename"
+#~ msgstr "رشته‌ای که یک نام شکل (shapename) معتبر باشد"
+
+#~ msgid "one of the strings \"auto\", \"user\", \"noresize\""
+#~ msgstr "یکی از رشته‌های \"auto\"، \"user\"، \"noresize\""
+
+#~ msgid "\"noresize\": no adaption of the turtle's appearance takes place."
+#~ msgstr "\"noresize\": هیچ سازگاری‌ای برای ظاهر لاک‌پشت انجام نمی‌شود."
+
+#~ msgid "positive number"
+#~ msgstr "عدد مثبت"
+
+#~ msgid "Return or set the pen's attributes x/y-stretchfactors and/or outline.  Set resizemode to \"user\".  If and only if resizemode is set to \"user\", the turtle will be displayed stretched according to its stretchfactors: *stretch_wid* is stretchfactor perpendicular to its orientation, *stretch_len* is stretchfactor in direction of its orientation, *outline* determines the width of the shape's outline."
+#~ msgstr "ویژگی‌های قلم، یعنی ضریب‌های کشیدگی x/y (x/y-stretchfactors) و/یا خط دور (outline)، را برمی‌گرداند یا تنظیم می‌کند. resizemode را روی \"user\" تنظیم می‌کند. اگر و فقط اگر resizemode روی \"user\" تنظیم شده باشد، لاک‌پشت بر اساس ضریب‌های کشیدگی خود به‌صورت کشیده‌شده نمایش داده می‌شود: *stretch_wid* ضریب کشیدگی عمود بر جهت آن است، *stretch_len* ضریب کشیدگی در راستای جهت آن است، و *outline* عرض خط دور شکل را تعیین می‌کند."
+
+#~ msgid "Bind *fun* to mouse-click events on this turtle.  If *fun* is ``None``, existing bindings are removed.  Example for the anonymous turtle, i.e. the procedural way:"
+#~ msgstr "*fun* را به رویدادهای کلیک ماوس روی این لاک‌پشت متصل می‌کند. اگر *fun* برابر ``None`` باشد، اتصالات موجود حذف می‌شوند. مثال برای لاک‌پشت ناشناس، یعنی روش رویه‌ای:"
+
+#~ msgid "Return the Turtle object itself.  Only reasonable use: as a function to return the \"anonymous turtle\":"
+#~ msgstr "خود شیء Turtle را برمی‌گرداند. تنها استفاده معقول: به‌عنوان تابعی برای برگرداندن «لاک‌پشت ناشناس»:"
+
+#~ msgid "The :class:`Shape` class is used internally by the :func:`register_shape` method in different ways.  The application programmer has to deal with the Shape class *only* when using compound shapes like shown above!"
+#~ msgstr "کلاس :class:`Shape` به‌صورت داخلی توسط متد :func:`register_shape` به روش‌های مختلفی استفاده می‌شود. برنامه‌نویس برنامه *فقط* هنگام استفاده از شکل‌های ترکیبی مانند آنچه در بالا نشان داده شد، باید با کلاس Shape سروکار داشته باشد!"
+
+#~ msgid "a number, x-coordinate of lower left corner of canvas"
+#~ msgstr "یک عدد، مختصات x گوشه‌ی پایین سمت چپ بوم"
+
+#~ msgid "a number, y-coordinate of lower left corner of canvas"
+#~ msgstr "یک عدد، مختصات y گوشه‌ی پایین سمت چپ بوم"
+
+#~ msgid "a number, x-coordinate of upper right corner of canvas"
+#~ msgstr "یک عدد، مختصات x گوشه‌ی بالا سمت راست بوم"
+
+#~ msgid "a number, y-coordinate of upper right corner of canvas"
+#~ msgstr "یک عدد، مختصات y گوشه‌ی بالا سمت راست بوم"
+
+#~ msgid "Set up user-defined coordinate system and switch to mode \"world\" if necessary.  This performs a ``screen.reset()``.  If mode \"world\" is already active, all drawings are redrawn according to the new coordinates."
+#~ msgstr "دستگاه مختصات تعریف‌شده توسط کاربر را تنظیم می‌کند و در صورت لزوم به حالت \"world\" تغییر می‌کند. این کار ``screen.reset()`` را انجام می‌دهد. اگر حالت \"world\" از قبل فعال باشد، همه ترسیم‌ها بر اساس مختصات جدید دوباره ترسیم می‌شوند."
+
+#~ msgid "**ATTENTION**: in user-defined coordinate systems angles may appear distorted."
+#~ msgstr "**توجه**: در دستگاه‌های مختصات تعریف‌شده توسط کاربر، ممکن است زاویه‌ها تحریف‌شده به نظر برسند."
+
+#~ msgid "positive integer"
+#~ msgstr "عدد صحیح مثبت"
+
+#~ msgid "Optional argument:"
+#~ msgstr "آرگومان اختیاری:"
+
+#~ msgid "nonnegative integer"
+#~ msgstr "عدد صحیح نامنفی"
+
+#~ msgid "Bind *fun* to mouse-click events on this screen.  If *fun* is ``None``, existing bindings are removed."
+#~ msgstr "*fun* را به رویدادهای کلیک ماوس روی این صفحه متصل کنید. اگر *fun* برابر ``None`` باشد، اتصالات موجود حذف می‌شوند."
+
+#~ msgid ">>> screen.mainloop()"
+#~ msgstr ">>> screen.mainloop()"
+
+#~ msgid "one of the strings \"standard\", \"logo\" or \"world\""
+#~ msgstr "یکی از رشته‌های \"standard\"، \"logo\" یا \"world\""
+
+#~ msgid "one of the values 1.0 or 255"
+#~ msgstr "یکی از مقدارهای ۱.۰ یا ۲۵۵"
+
+#~ msgid "There are four different ways to call this function:"
+#~ msgstr "چهار روش مختلف برای فراخوانی این تابع وجود دارد:"
+
+#~ msgid "Add a turtle shape to TurtleScreen's shapelist.  Only thusly registered shapes can be used by issuing the command ``shape(shapename)``."
+#~ msgstr "یک شکل لاک‌پشت را به فهرست شکل‌های TurtleScreen اضافه می‌کند. تنها می‌توان از شکل‌های ثبت‌شده بدین‌ترتیب با صدور دستور ``shape(shapename)`` استفاده کرد."
+
+#~ msgid "Set title of turtle window to *titlestring*."
+#~ msgstr "عنوان پنجره‌ی turtle را به *titlestring* تنظیم می‌کند."
+
+#~ msgid "Subclass of TurtleScreen, with :ref:`four methods added <screenspecific>`."
+#~ msgstr "زیرکلاسی از TurtleScreen، با :ref:`چهار متد افزوده‌شده <screenspecific>`."
+
+#~ msgid "one of the strings \"polygon\", \"image\", \"compound\""
+#~ msgstr "یکی از رشته‌های \"polygon\"، \"image\"، \"compound\""
+
+#~ msgid "Data structure modeling shapes.  The pair ``(type_, data)`` must follow this specification:"
+#~ msgstr "ساختار داده‌ای برای مدل‌سازی شکل‌ها. جفت ``(type_, data)`` باید این مشخصات را رعایت کند:"
+
+#~ msgid "*type_*"
+#~ msgstr "*type_*"
+
+#~ msgid "*data*"
+#~ msgstr "*data*"
+
+#~ msgid "\"polygon\""
+#~ msgstr "\"چندضلعی\""
+
+#~ msgid "a polygon-tuple, i.e. a tuple of pairs of coordinates"
+#~ msgstr "یک تاپل چندضلعی، یعنی یک تاپل از جفت‌های مختصات"
+
+#~ msgid "\"image\""
+#~ msgstr "\"image\""
+
+#~ msgid "an image  (in this form only used internally!)"
+#~ msgstr "یک تصویر (در این قالب فقط به‌صورت داخلی استفاده می‌شود!)"
+
+#~ msgid "\"compound\""
+#~ msgstr "\"compound\""
+
+#~ msgid "``None`` (a compound shape has to be constructed using the :meth:`addcomponent` method)"
+#~ msgstr "``None`` (یک شکل ترکیبی باید با استفاده از متد :meth:`addcomponent` ساخته شود)"
+
+#~ msgid "a color the *poly* will be filled with"
+#~ msgstr "رنگی که *poly* با آن پر خواهد شد"
+
+#~ msgid "a color for the poly's outline (if given)"
+#~ msgstr "رنگی برای خط دور poly (در صورت داده‌شدن)"
 
 #~ msgid "In the following documentation the argument list for functions is given. Methods, of course, have the additional first argument *self* which is omitted here."
 #~ msgstr "در مستندات زیر، فهرست آرگومان‌های توابع داده شده است. متدها، البته، آرگومان اول اضافه‌ای به نام *self* دارند که در اینجا حذف شده است."
