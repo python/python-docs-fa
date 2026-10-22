@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-10-21)
+(به‌روزرسانی: 2026-10-22)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -24,54 +24,42 @@
 | c-api/call.po | 100.0% | 0.0% | 99 | 0 |
 | c-api/capsule.po | 100.0% | 0.0% | 36 | 0 |
 | c-api/cell.po | 100.0% | 0.0% | 11 | 0 |
-| c-api/code.po | 100.0% | 0.0% | 82 | 0 |
 | c-api/codec.po | 100.0% | 0.0% | 30 | 0 |
 | c-api/complex.po | 100.0% | 0.0% | 37 | 0 |
 | c-api/concrete.po | 100.0% | 0.0% | 16 | 0 |
 | c-api/contextvars.po | 100.0% | 0.0% | 38 | 0 |
-| c-api/conversion.po | 100.0% | 0.0% | 55 | 0 |
 | c-api/coro.po | 100.0% | 0.0% | 6 | 0 |
 | c-api/curses.po | 100.0% | 0.0% | 28 | 0 |
 | c-api/datetime.po | 100.0% | 0.0% | 67 | 0 |
-| c-api/descriptor.po | 100.0% | 0.0% | 35 | 0 |
-| c-api/dict.po | 100.0% | 0.0% | 123 | 0 |
-| c-api/exceptions.po | 100.0% | 0.0% | 293 | 0 |
 | c-api/frame.po | 100.0% | 0.0% | 60 | 0 |
-| c-api/function.po | 100.0% | 0.0% | 44 | 0 |
 | c-api/gcsupport.po | 100.0% | 0.0% | 107 | 0 |
 | c-api/gen.po | 100.0% | 0.0% | 18 | 0 |
-| c-api/hash.po | 100.0% | 0.0% | 40 | 0 |
 | c-api/index.po | 100.0% | 0.0% | 2 | 0 |
 | c-api/init.po | 100.0% | 0.0% | 8 | 0 |
 | c-api/iter.po | 100.0% | 0.0% | 12 | 0 |
 | c-api/iterator.po | 100.0% | 0.0% | 24 | 0 |
 | c-api/lifecycle.po | 100.0% | 0.0% | 45 | 0 |
 | c-api/list.po | 100.0% | 0.0% | 38 | 0 |
-| c-api/long.po | 100.0% | 0.0% | 179 | 0 |
 | c-api/mapping.po | 100.0% | 0.0% | 23 | 0 |
 | c-api/marshal.po | 100.0% | 0.0% | 19 | 0 |
 | c-api/memory.po | 100.0% | 0.0% | 219 | 0 |
 | c-api/memoryview.po | 100.0% | 0.0% | 15 | 0 |
 | c-api/method.po | 100.0% | 0.0% | 20 | 0 |
 | c-api/module.po | 100.0% | 0.0% | 225 | 0 |
-| c-api/monitoring.po | 100.0% | 0.0% | 55 | 0 |
 | c-api/none.po | 100.0% | 0.0% | 7 | 0 |
 | c-api/number.po | 100.0% | 0.0% | 48 | 0 |
 | c-api/object.po | 100.0% | 0.0% | 161 | 0 |
 | c-api/objimpl.po | 100.0% | 0.0% | 2 | 0 |
 | c-api/perfmaps.po | 100.0% | 0.0% | 24 | 0 |
 | c-api/picklebuffer.po | 100.0% | 0.0% | 16 | 0 |
-| c-api/profiling.po | 100.0% | 0.0% | 46 | 0 |
 | c-api/refcounting.po | 100.0% | 0.0% | 50 | 0 |
 | c-api/reflection.po | 100.0% | 0.0% | 17 | 0 |
 | c-api/sentinel.po | 100.0% | 0.0% | 6 | 0 |
 | c-api/sequence.po | 100.0% | 0.0% | 32 | 0 |
 | c-api/set.po | 100.0% | 0.0% | 35 | 0 |
 | c-api/slice.po | 100.0% | 0.0% | 26 | 0 |
-| c-api/slots.po | 100.0% | 0.0% | 45 | 0 |
 | c-api/stable.po | 100.0% | 0.0% | 97 | 0 |
 | c-api/subinterpreters.po | 100.0% | 0.0% | 90 | 0 |
-| c-api/synchronization.po | 100.0% | 0.0% | 65 | 0 |
 | c-api/sys.po | 100.0% | 0.0% | 95 | 0 |
 | c-api/threads.po | 100.0% | 0.0% | 213 | 0 |
 | c-api/time.po | 100.0% | 0.0% | 27 | 0 |
@@ -82,8 +70,6 @@
 | c-api/typeobj.po | 100.0% | 0.0% | 754 | 0 |
 | c-api/unicode.po | 100.0% | 0.0% | 425 | 0 |
 | c-api/utilities.po | 100.0% | 0.0% | 2 | 0 |
-| c-api/veryhigh.po | 100.0% | 0.0% | 86 | 0 |
-| c-api/weakref.po | 100.0% | 0.0% | 19 | 0 |
 | contents.po | 100.0% | 0.0% | 1 | 0 |
 | copyright.po | 100.0% | 0.0% | 7 | 0 |
 | deprecations/c-api-pending-removal-in-3.14.po | 100.0% | 0.0% | 3 | 0 |
@@ -110,7 +96,6 @@
 | extending/extending.po | 100.0% | 0.0% | 166 | 0 |
 | extending/first-extension-module.po | 100.0% | 0.0% | 146 | 0 |
 | extending/index.po | 100.0% | 0.0% | 22 | 0 |
-| extending/newtypes.po | 100.0% | 0.0% | 118 | 0 |
 | extending/newtypes_tutorial.po | 100.0% | 0.0% | 180 | 0 |
 | extending/windows.po | 100.0% | 0.0% | 28 | 0 |
 | faq/design.po | 100.0% | 0.0% | 174 | 0 |
@@ -325,7 +310,6 @@
 | library/math.po | 100.0% | 0.0% | 280 | 0 |
 | library/mimetypes.po | 100.0% | 0.0% | 68 | 0 |
 | library/mm.po | 100.0% | 0.0% | 2 | 0 |
-| library/mmap.po | 100.0% | 0.0% | 78 | 0 |
 | library/modulefinder.po | 100.0% | 0.0% | 16 | 0 |
 | library/modules.po | 100.0% | 0.0% | 3 | 0 |
 | library/msilib.po | 100.0% | 0.0% | 3 | 0 |
@@ -356,7 +340,6 @@
 | library/pprint.po | 100.0% | 0.0% | 54 | 0 |
 | library/profile.po | 100.0% | 0.0% | 78 | 0 |
 | library/profiling.po | 100.0% | 0.0% | 89 | 0 |
-| library/profiling.sampling.po | 100.0% | 0.0% | 466 | 0 |
 | library/profiling.tracing.po | 100.0% | 0.0% | 84 | 0 |
 | library/pstats.po | 100.0% | 0.0% | 129 | 0 |
 | library/pty.po | 100.0% | 0.0% | 23 | 0 |
@@ -414,7 +397,6 @@
 | library/telnetlib.po | 100.0% | 0.0% | 4 | 0 |
 | library/tempfile.po | 100.0% | 0.0% | 90 | 0 |
 | library/termios.po | 100.0% | 0.0% | 25 | 0 |
-| library/test.po | 100.0% | 0.0% | 343 | 0 |
 | library/text.po | 100.0% | 0.0% | 3 | 0 |
 | library/textwrap.po | 100.0% | 0.0% | 58 | 0 |
 | library/threading.po | 100.0% | 0.0% | 308 | 0 |
@@ -451,7 +433,6 @@
 | library/uuid.po | 100.0% | 0.0% | 79 | 0 |
 | library/venv.po | 100.0% | 0.0% | 139 | 0 |
 | library/warnings.po | 100.0% | 0.0% | 165 | 0 |
-| library/wave.po | 100.0% | 0.0% | 73 | 0 |
 | library/weakref.po | 100.0% | 0.0% | 96 | 0 |
 | library/webbrowser.po | 100.0% | 0.0% | 93 | 0 |
 | library/windows.po | 100.0% | 0.0% | 2 | 0 |
@@ -506,7 +487,6 @@
 | tutorial/whatnow.po | 100.0% | 0.0% | 18 | 0 |
 | using/android.po | 100.0% | 0.0% | 27 | 0 |
 | using/cmdline.po | 100.0% | 0.0% | 284 | 0 |
-| using/configure.po | 100.0% | 0.0% | 496 | 0 |
 | using/editors.po | 100.0% | 0.0% | 6 | 0 |
 | using/index.po | 100.0% | 0.0% | 2 | 0 |
 | using/ios.po | 100.0% | 0.0% | 91 | 0 |
@@ -541,21 +521,42 @@
 | reference/datamodel.po | 99.9% | 0.1% | 914 | 0 |
 | library/datetime.po | 99.9% | 0.0% | 698 | 1 |
 | c-api/init_config.po | 99.8% | 0.0% | 660 | 1 |
+| library/profiling.sampling.po | 99.8% | 0.2% | 465 | 0 |
 | library/inspect.po | 99.8% | 0.2% | 435 | 0 |
 | library/mailbox.po | 99.7% | 0.0% | 309 | 1 |
-| whatsnew/changelog.po | 99.6% | 0.1% | 15624 | 38 |
+| c-api/exceptions.po | 99.7% | 0.0% | 293 | 1 |
+| whatsnew/changelog.po | 99.5% | 0.2% | 15624 | 54 |
+| using/configure.po | 99.4% | 0.4% | 494 | 1 |
+| c-api/dict.po | 99.2% | 0.0% | 123 | 1 |
 | library/calendar.po | 99.2% | 0.8% | 122 | 0 |
-| c-api/intro.po | 98.8% | 0.4% | 239 | 2 |
+| extending/newtypes.po | 99.2% | 0.8% | 117 | 0 |
+| c-api/code.po | 98.8% | 0.0% | 82 | 1 |
+| library/wave.po | 98.6% | 0.0% | 73 | 1 |
 | library/gc.po | 98.6% | 1.4% | 72 | 0 |
-| c-api/structures.po | 98.6% | 0.5% | 211 | 2 |
+| c-api/long.po | 98.4% | 0.0% | 179 | 3 |
 | library/pathlib.po | 98.2% | 0.4% | 442 | 6 |
+| c-api/intro.po | 98.0% | 0.4% | 239 | 4 |
+| c-api/function.po | 97.8% | 0.0% | 44 | 1 |
+| c-api/slots.po | 97.8% | 2.2% | 44 | 0 |
 | library/zipimport.po | 97.4% | 2.6% | 37 | 0 |
 | c-api/interp-lifecycle.po | 97.3% | 0.0% | 217 | 6 |
+| library/test.po | 97.1% | 1.2% | 335 | 6 |
+| c-api/structures.po | 96.8% | 0.5% | 211 | 6 |
+| c-api/monitoring.po | 96.5% | 1.8% | 55 | 1 |
 | c-api/float.po | 96.4% | 3.6% | 53 | 0 |
-| c-api/import.po | 92.9% | 1.2% | 79 | 5 |
+| c-api/synchronization.po | 95.6% | 0.0% | 65 | 3 |
+| c-api/conversion.po | 94.8% | 0.0% | 55 | 3 |
+| c-api/profiling.po | 93.9% | 0.0% | 46 | 3 |
+| c-api/veryhigh.po | 92.3% | 2.2% | 84 | 5 |
+| c-api/import.po | 90.6% | 3.5% | 77 | 5 |
+| c-api/weakref.po | 90.5% | 0.0% | 19 | 2 |
 | library/turtle.po | 90.4% | 7.9% | 518 | 10 |
 | c-api/extension-modules.po | 88.8% | 6.2% | 71 | 4 |
-| c-api/file.po | 88.6% | 0.0% | 31 | 4 |
-| library/ctypes.po | 86.2% | 7.4% | 675 | 50 |
-| **مجموع** | **99.7%** | **0.2%** | **90474** | **130** |
+| c-api/hash.po | 88.4% | 4.7% | 38 | 3 |
+| library/mmap.po | 86.9% | 8.3% | 73 | 4 |
+| c-api/file.po | 86.1% | 0.0% | 31 | 5 |
+| library/ctypes.po | 85.5% | 7.8% | 670 | 53 |
+| c-api/descriptor.po | 76.9% | 2.6% | 30 | 8 |
+| c-api/pyexpat.po | 0.0% | 0.0% | 0 | 14 |
+| **مجموع** | **99.6%** | **0.2%** | **90440** | **217** |
 <!-- TRANSLATION_STATUS_END -->
