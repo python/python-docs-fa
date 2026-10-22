@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-17 04:15+0000\n"
+"POT-Creation-Date: 2026-10-22 04:16+0000\n"
 "PO-Revision-Date: 2026-09-13 13:15+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -446,8 +446,8 @@ msgstr "مقدار مشخص‌شده برای *resource* را برمی‌گرد�
 msgid "Return ``True`` if Python was not built with ``-O0`` or ``-Og``."
 msgstr "اگر پایتون با ``-O0`` یا ``-Og`` ساخته نشده باشد، ``True`` را برمی‌گرداند."
 
-msgid "Return :const:`_testcapi.WITH_PYMALLOC`."
-msgstr ":const:`_testcapi.WITH_PYMALLOC` را برمی‌گرداند."
+msgid "Return ``True`` if Python was built with :ref:`pymalloc <pymalloc>` enabled and is not a :term:`free-threaded build`."
+msgstr ""
 
 msgid "Raise :exc:`ResourceDenied` if *resource* is not available. *msg* is the argument to :exc:`ResourceDenied` if it is raised. Always returns ``True`` if called by a function whose ``__name__`` is ``'__main__'``. Used when tests are executed by :mod:`test.regrtest`."
 msgstr "اگر *resource* در دسترس نباشد، :exc:`ResourceDenied` را پرتاب می‌کند. اگر این استثنا پرتاب شود، *msg* آرگومان :exc:`ResourceDenied` خواهد بود. اگر توسط تابعی فراخوانی شود که ``__name__`` آن ``'__main__'`` است، همیشه ``True`` را برمی‌گرداند. هنگامی که آزمون‌ها توسط :mod:`test.regrtest` اجرا می‌شوند، استفاده می‌شود."
@@ -827,7 +827,9 @@ msgstr ""
 "        support.check__all__(self, bar, ('bar', '_bar'),\n"
 "                             extra=extra, not_exported=not_exported)"
 
-msgid "Skip tests if the :mod:`multiprocessing.synchronize` module is missing, if there is no available semaphore implementation, or if creating a lock raises an :exc:`OSError`."
+#, fuzzy
+#| msgid "Skip tests if the :mod:`multiprocessing.synchronize` module is missing, if there is no available semaphore implementation, or if creating a lock raises an :exc:`OSError`."
+msgid "Skip tests if the :mod:`!multiprocessing.synchronize` module is missing, if there is no available semaphore implementation, or if creating a lock raises an :exc:`OSError`."
 msgstr "در صورتی که ماژول :mod:`multiprocessing.synchronize` موجود نبود، هیچ پیاده‌سازی سمافور در دسترس نبود، یا ایجاد یک قفل باعث پرتاب :exc:`OSError` شد، از آزمون‌ها صرف‌نظر کنید."
 
 msgid "Assert that type *tp* cannot be instantiated using *args* and *kwds*."
@@ -911,7 +913,9 @@ msgstr "این برای استفاده با ``@unittest.skipIf()`` طراحی ش
 msgid "A normal build & test does not run into this situation but it can happen when trying to run the standard library test suite from an interpreter that doesn't have an obvious home with Python's current home finding logic."
 msgstr "یک ساخت و آزمون عادی با این موقعیت مواجه نمی‌شود، اما این حالت ممکن است هنگامی رخ دهد که تلاش می‌کنید بدنه‌ی آزمون‌های کتابخانه استاندارد را از مفسری اجرا کنید که با منطق فعلی پایتون در یافتن خانه (home)، خانه‌ی مشخصی ندارد."
 
-msgid "Setting :envvar:`PYTHONHOME` is one way to get most of the testsuite to run in that situation.  :envvar:`PYTHONPATH` or :envvar:`PYTHONUSERSITE` are other common environment variables that might impact whether or not the interpreter can start."
+#, fuzzy
+#| msgid "Setting :envvar:`PYTHONHOME` is one way to get most of the testsuite to run in that situation.  :envvar:`PYTHONPATH` or :envvar:`PYTHONUSERSITE` are other common environment variables that might impact whether or not the interpreter can start."
+msgid "Setting :envvar:`PYTHONHOME` is one way to get most of the testsuite to run in that situation.  :envvar:`PYTHONPATH` or :envvar:`PYTHONNOUSERSITE` are other common environment variables that might impact whether or not the interpreter can start."
 msgstr "تنظیم :envvar:`PYTHONHOME` یکی از راه‌ها برای اجرای بیشتر مجموعه‌آزمون در آن شرایط است. :envvar:`PYTHONPATH` یا :envvar:`PYTHONUSERSITE` متغیرهای محیطی رایج دیگری هستند که ممکن است بر اینکه مفسر بتواند آغاز شود یا نه تأثیر بگذارند."
 
 msgid "Set up the environment based on *env_vars* for running the interpreter in a subprocess.  The values can include ``__isolated``, ``__cleanenv``, ``__cwd``, and ``TERM``."
@@ -1184,7 +1188,9 @@ msgstr "ماژول :mod:`!test.support.import_helper` پشتیبانی برای 
 msgid "Remove the module named *module_name* from ``sys.modules`` and delete any byte-compiled files of the module."
 msgstr "ماژول با نام *module_name* را از ``sys.modules`` حذف کنید و هرگونه پرونده کامپایل‌شده به بایت آن ماژول را پاک کنید."
 
-msgid "This function imports and returns a fresh copy of the named Python module by removing the named module from ``sys.modules`` before doing the import. Note that unlike :func:`reload`, the original module is not affected by this operation."
+#, fuzzy
+#| msgid "This function imports and returns a fresh copy of the named Python module by removing the named module from ``sys.modules`` before doing the import. Note that unlike :func:`reload`, the original module is not affected by this operation."
+msgid "This function imports and returns a fresh copy of the named Python module by removing the named module from ``sys.modules`` before doing the import. Note that unlike :func:`importlib.reload`, the original module is not affected by this operation."
 msgstr "این تابع با حذف ماژول نام‌برده‌شده از ``sys.modules`` پیش از انجام ایمپورت، یک نسخه‌ی تازه از ماژول پایتون نام‌برده‌شده را ایمپورت می‌کند و برمی‌گرداند. توجه داشته باشید که برخلاف :func:`reload`، ماژول اصلی تحت تأثیر این عملیات قرار نمی‌گیرد."
 
 msgid "*fresh* is an iterable of additional module names that are also removed from the ``sys.modules`` cache before doing the import."
@@ -1293,11 +1299,8 @@ msgstr "check_warnings((\"\", Warning), quiet=True)"
 msgid "In this case all warnings are caught and no errors are raised."
 msgstr "در این حالت، همه‌ی هشدارها گرفته می‌شوند و هیچ خطایی پرتاب نمی‌شود."
 
-msgid "On entry to the context manager, a :class:`WarningRecorder` instance is returned. The underlying warnings list from :func:`~warnings.catch_warnings` is available via the recorder object's :attr:`warnings` attribute.  As a convenience, the attributes of the object representing the most recent warning can also be accessed directly through the recorder object (see example below).  If no warning has been raised, then any of the attributes that would otherwise be expected on an object representing a warning will return ``None``."
-msgstr "در هنگام ورود به مدیر زمینه، یک نمونه از :class:`WarningRecorder` بازگردانده می‌شود. فهرست هشدارهای زیربنایی حاصل از :func:`~warnings.catch_warnings` از طریق ویژگی :attr:`warnings` شیء ضبط‌کننده در دسترس است. برای سهولت، می‌توان به ویژگی‌های شیء نمایانگر آخرین هشدار نیز مستقیماً از طریق شیء ضبط‌کننده دسترسی پیدا کرد (مثال زیر را ببینید). اگر هیچ هشداری پرتاب نشده باشد، هر یک از ویژگی‌هایی که در حالت عادی انتظار می‌رود در شیء نمایانگر هشدار وجود داشته باشد، ``None`` را برمی‌گرداند."
-
-msgid "The recorder object also has a :meth:`reset` method, which clears the warnings list."
-msgstr "شیء ضبط‌کننده همچنین یک متد :meth:`reset` دارد که فهرست هشدارها را پاک می‌کند."
+msgid "On entry to the context manager, a :class:`WarningsRecorder` instance is returned. The recorded warnings are available via its :attr:`~WarningsRecorder.warnings` attribute, and its :meth:`~WarningsRecorder.reset` method discards previously recorded warnings."
+msgstr ""
 
 msgid "The context manager is designed to be used like this::"
 msgstr "این مدیر زمینه به‌گونه‌ای طراحی شده است که به این شکل استفاده شود::"
@@ -1319,14 +1322,25 @@ msgstr "در این حالت، اگر هر یک از هشدارها پرتاب �
 msgid "When a test needs to look more deeply into the warnings, rather than just checking whether or not they occurred, code like this can be used::"
 msgstr "هنگامی که یک آزمون نیاز دارد به‌جای بررسی صرف اینکه هشدارها رخ داده‌اند یا خیر، آن‌ها را عمیق‌تر بررسی کند، می‌توان از کدی مانند این استفاده کرد::"
 
+#, fuzzy
+#| msgid ""
+#| "with check_warnings(quiet=True) as w:\n"
+#| "    warnings.warn(\"foo\")\n"
+#| "    assert str(w.args[0]) == \"foo\"\n"
+#| "    warnings.warn(\"bar\")\n"
+#| "    assert str(w.args[0]) == \"bar\"\n"
+#| "    assert str(w.warnings[0].args[0]) == \"foo\"\n"
+#| "    assert str(w.warnings[1].args[0]) == \"bar\"\n"
+#| "    w.reset()\n"
+#| "    assert len(w.warnings) == 0"
 msgid ""
 "with check_warnings(quiet=True) as w:\n"
 "    warnings.warn(\"foo\")\n"
-"    assert str(w.args[0]) == \"foo\"\n"
+"    assert str(w.message) == \"foo\"\n"
 "    warnings.warn(\"bar\")\n"
-"    assert str(w.args[0]) == \"bar\"\n"
-"    assert str(w.warnings[0].args[0]) == \"foo\"\n"
-"    assert str(w.warnings[1].args[0]) == \"bar\"\n"
+"    assert str(w.message) == \"bar\"\n"
+"    assert str(w.warnings[0].message) == \"foo\"\n"
+"    assert str(w.warnings[1].message) == \"bar\"\n"
 "    w.reset()\n"
 "    assert len(w.warnings) == 0"
 msgstr ""
@@ -1346,8 +1360,29 @@ msgstr "در اینجا تمام هشدارها گرفته خواهند شد و 
 msgid "New optional arguments *filters* and *quiet*."
 msgstr "آرگومان‌های اختیاری جدید *filters* و *quiet*."
 
-msgid "Class used to record warnings for unit tests. See documentation of :func:`check_warnings` above for more details."
-msgstr "کلاسی که برای ثبت هشدارها در آزمون واحد‌ها استفاده می‌شود. برای جزئیات بیشتر، مستندات :func:`check_warnings` در بالا را ببینید."
+msgid "Class used to record warnings for unit tests. Wraps the warnings list returned by :func:`warnings.catch_warnings` when recording is enabled. :func:`check_warnings` returns an instance of this class."
+msgstr ""
+
+msgid "As a convenience, the attributes of the object representing the most recent warning can also be accessed directly through the recorder object. If no warning has been raised since the recorder was created or last reset, these attributes return ``None``."
+msgstr ""
+
+msgid "A list of warnings recorded since the recorder was created or last reset."
+msgstr ""
+
+msgid "Discard previously recorded warnings from the recorder's view. The underlying warnings list is not modified."
+msgstr ""
+
+#~ msgid "Return :const:`_testcapi.WITH_PYMALLOC`."
+#~ msgstr ":const:`_testcapi.WITH_PYMALLOC` را برمی‌گرداند."
+
+#~ msgid "On entry to the context manager, a :class:`WarningRecorder` instance is returned. The underlying warnings list from :func:`~warnings.catch_warnings` is available via the recorder object's :attr:`warnings` attribute.  As a convenience, the attributes of the object representing the most recent warning can also be accessed directly through the recorder object (see example below).  If no warning has been raised, then any of the attributes that would otherwise be expected on an object representing a warning will return ``None``."
+#~ msgstr "در هنگام ورود به مدیر زمینه، یک نمونه از :class:`WarningRecorder` بازگردانده می‌شود. فهرست هشدارهای زیربنایی حاصل از :func:`~warnings.catch_warnings` از طریق ویژگی :attr:`warnings` شیء ضبط‌کننده در دسترس است. برای سهولت، می‌توان به ویژگی‌های شیء نمایانگر آخرین هشدار نیز مستقیماً از طریق شیء ضبط‌کننده دسترسی پیدا کرد (مثال زیر را ببینید). اگر هیچ هشداری پرتاب نشده باشد، هر یک از ویژگی‌هایی که در حالت عادی انتظار می‌رود در شیء نمایانگر هشدار وجود داشته باشد، ``None`` را برمی‌گرداند."
+
+#~ msgid "The recorder object also has a :meth:`reset` method, which clears the warnings list."
+#~ msgstr "شیء ضبط‌کننده همچنین یک متد :meth:`reset` دارد که فهرست هشدارها را پاک می‌کند."
+
+#~ msgid "Class used to record warnings for unit tests. See documentation of :func:`check_warnings` above for more details."
+#~ msgstr "کلاسی که برای ثبت هشدارها در آزمون واحد‌ها استفاده می‌شود. برای جزئیات بیشتر، مستندات :func:`check_warnings` در بالا را ببینید."
 
 #~ msgid "Its default value is 5 seconds."
 #~ msgstr "مقدار پیش‌فرض آن ۵ ثانیه است."

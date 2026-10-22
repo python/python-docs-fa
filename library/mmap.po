@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-22 04:16+0000\n"
 "PO-Revision-Date: 2026-09-14 09:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -33,7 +33,9 @@ msgstr "دسترس‌پذیری"
 msgid "This module does not work or is not available on WebAssembly. See :ref:`wasm-availability` for more information."
 msgstr "این ماژول روی WebAssembly کار نمی‌کند یا در دسترس نیست. برای اطلاعات بیشتر، :ref:`wasm-availability` را ببینید."
 
-msgid "Memory-mapped file objects behave like both :class:`bytearray` and like :term:`file objects <file object>`.  You can use mmap objects in most places where :class:`bytearray` are expected; for example, you can use the :mod:`re` module to search through a memory-mapped file.  You can also change a single byte by doing ``obj[index] = 97``, or change a subsequence by assigning to a slice: ``obj[i1:i2] = b'...'``.  You can also read and write data starting at the current file position, and :meth:`seek` through the file to different positions."
+#, fuzzy
+#| msgid "Memory-mapped file objects behave like both :class:`bytearray` and like :term:`file objects <file object>`.  You can use mmap objects in most places where :class:`bytearray` are expected; for example, you can use the :mod:`re` module to search through a memory-mapped file.  You can also change a single byte by doing ``obj[index] = 97``, or change a subsequence by assigning to a slice: ``obj[i1:i2] = b'...'``.  You can also read and write data starting at the current file position, and :meth:`seek` through the file to different positions."
+msgid "Memory-mapped file objects behave like both :class:`bytearray` and like :term:`file objects <file object>`.  You can use mmap objects in most places where :class:`bytearray` are expected; for example, you can use the :mod:`re` module to search through a memory-mapped file.  You can also change a single byte by doing ``obj[index] = 97``, or change a subsequence by assigning to a slice: ``obj[i1:i2] = b'...'``.  You can also read and write data starting at the current file position, and :meth:`~mmap.mmap.seek` through the file to different positions."
 msgstr "اشیای پرونده نگاشت‌شده به حافظه، هم مانند :class:`bytearray` و هم مانند :term:`اشیای پرونده <file object>` رفتار می‌کنند. شما می‌توانید از اشیای mmap در بیشتر مواردی استفاده کنید که انتظار می‌رود یک :class:`bytearray` وجود داشته باشد؛ برای مثال، می‌توانید از ماژول :mod:`re` برای جستجو در یک پرونده نگاشت‌شده به حافظه استفاده کنید. همچنین می‌توانید یک بایت را با ``obj[index] = 97`` تغییر دهید، یا یک زیردنباله را با انتساب به یک اسلایس تغییر دهید: ``obj[i1:i2] = b'...'``. همچنین می‌توانید داده‌ها را از موقعیت فعلی پرونده بخوانید و بنویسید، و با :meth:`seek` در پرونده به موقعیت‌های مختلف حرکت کنید."
 
 msgid "A memory-mapped file is created by the :class:`~mmap.mmap` constructor, which is different on Unix and on Windows.  In either case you must provide a file descriptor for a file opened for update. If you wish to map an existing Python file object, use its :meth:`~io.IOBase.fileno` method to obtain the correct value for the *fileno* parameter.  Otherwise, you can open the file using the :func:`os.open` function, which returns a file descriptor directly (the file still needs to be closed when done)."
@@ -75,7 +77,9 @@ msgstr "**(نسخه‌ی یونیکس)** *length* بایت از پرونده م�
 msgid "*flags* specifies the nature of the mapping. :const:`MAP_PRIVATE` creates a private copy-on-write mapping, so changes to the contents of the mmap object will be private to this process, and :const:`MAP_SHARED` creates a mapping that's shared with all other processes mapping the same areas of the file.  The default value is :const:`MAP_SHARED`. Some systems have additional possible flags with the full list specified in :ref:`MAP_* constants <map-constants>`."
 msgstr "*flags* ماهیت نگاشت را مشخص می‌کند. :const:`MAP_PRIVATE` یک نگاشت خصوصی با کپی-در-نوشتن (copy-on-write) ایجاد می‌کند، بنابراین تغییرات در محتوای شیء mmap برای این فرایند خصوصی خواهد بود و :const:`MAP_SHARED` نگاشتی ایجاد می‌کند که با تمام فرایندهای دیگری که ناحیه‌های یکسانی از پرونده را نگاشت می‌کنند، به اشتراک گذاشته می‌شود. مقدار پیش‌فرض :const:`MAP_SHARED` است. برخی سیستم‌ها پرچم‌های ممکن بیشتری دارند که فهرست کامل آن‌ها در :ref:`MAP_* constants <map-constants>` مشخص شده است."
 
-msgid "*prot*, if specified, gives the desired memory protection; the two most useful values are :const:`PROT_READ` and :const:`PROT_WRITE`, to specify that the pages may be read or written.  *prot* defaults to :const:`PROT_READ \\| PROT_WRITE`."
+#, fuzzy
+#| msgid "*prot*, if specified, gives the desired memory protection; the two most useful values are :const:`PROT_READ` and :const:`PROT_WRITE`, to specify that the pages may be read or written.  *prot* defaults to :const:`PROT_READ \\| PROT_WRITE`."
+msgid "*prot*, if specified, gives the desired memory protection; the two most useful values are :const:`PROT_READ` and :const:`PROT_WRITE`, to specify that the pages may be read or written.  *prot* defaults to :const:`PROT_READ` \\| :const:`PROT_WRITE`."
 msgstr "*prot*، در صورت مشخص شدن، محافظت دلخواه از حافظه را تعیین می‌کند؛ دو مقدار از مفیدترین مقادیر عبارتند از :const:`PROT_READ` و :const:`PROT_WRITE`، برای مشخص کردن اینکه صفحه‌ها می‌توانند خوانده یا نوشته شوند. *prot* به‌طور پیش‌فرض :const:`PROT_READ \\| PROT_WRITE` است."
 
 msgid "*access* may be specified in lieu of *flags* and *prot* as an optional keyword parameter.  It is an error to specify both *flags*, *prot* and *access*.  See the description of *access* above for information on how to use this parameter."
@@ -292,7 +296,31 @@ msgstr "تعداد بایت‌های نوشته‌شده اکنون برگردا
 msgid "Write the integer *byte* into memory at the current position of the file pointer; the file position is advanced by ``1``. If the mmap was created with :const:`ACCESS_READ`, then writing to it will raise a :exc:`TypeError` exception."
 msgstr "عدد صحیح *byte* را در حافظه، در موقعیت فعلی اشاره‌گر پرونده می‌نویسد؛ موقعیت پرونده به اندازه ``1`` پیش می‌رود. اگر mmap با :const:`ACCESS_READ` ایجاد شده باشد، نوشتن در آن باعث پرتاب استثنای :exc:`TypeError` می‌شود."
 
-msgid "MADV_* Constants"
+#, fuzzy
+#| msgid "MS_* Constants"
+msgid "ACCESS_* constants"
+msgstr "ثابت‌های MS_*"
+
+msgid "These constants specify the access mode for a memory mapping. :const:`ACCESS_READ` provides read-only access, :const:`ACCESS_WRITE` provides write-through access, and :const:`ACCESS_COPY` provides copy-on-write access. :const:`ACCESS_DEFAULT` defers to the *prot* argument of :class:`mmap`."
+msgstr ""
+
+msgid "Page size constants"
+msgstr ""
+
+msgid ":const:`PAGESIZE` is the system memory page size in bytes. :const:`ALLOCATIONGRANULARITY` is the minimum alignment in bytes required for the *offset* argument of :class:`mmap`. On Unix, :const:`ALLOCATIONGRANULARITY` is equal to :const:`PAGESIZE`."
+msgstr ""
+
+#, fuzzy
+#| msgid "MAP_* Constants"
+msgid "PROT_* constants"
+msgstr "ثابت‌های MAP_*"
+
+msgid "Memory protection flags accepted by the *prot* argument of :class:`mmap`. :const:`PROT_READ` allows pages to be read, :const:`PROT_WRITE` allows pages to be written, and :const:`PROT_EXEC` allows pages to be executed. Values can be combined using the bitwise OR operator. Not every option is present on every system."
+msgstr ""
+
+#, fuzzy
+#| msgid "MADV_* Constants"
+msgid "MADV_* constants"
 msgstr "ثابت‌های MADV_*"
 
 msgid "These options can be passed to :meth:`mmap.madvise`.  Not every option will be present on every system."
@@ -301,7 +329,9 @@ msgstr "این گزینه‌ها را می‌توان به :meth:`mmap.madvise` 
 msgid "Availability: Systems with the madvise() system call."
 msgstr "دسترس‌پذیری: سیستم‌های دارای فراخوان سیستمی madvise()."
 
-msgid "MAP_* Constants"
+#, fuzzy
+#| msgid "MAP_* Constants"
+msgid "MAP_* constants"
 msgstr "ثابت‌های MAP_*"
 
 msgid "These are the various flags that can be passed to :meth:`mmap.mmap`.  :data:`MAP_ALIGNED_SUPER` is only available at FreeBSD and :data:`MAP_CONCEAL` is only available at OpenBSD.  Note that some options might not be present on some systems."
@@ -319,7 +349,9 @@ msgstr "ثابت‌های :data:`MAP_ALIGNED_SUPER` و :data:`MAP_CONCEAL` اف�
 msgid "Added :data:`MAP_32BIT`, :data:`MAP_HASSEMAPHORE`, :data:`MAP_JIT`, :data:`MAP_NOCACHE`, :data:`MAP_NOEXTEND`, :data:`MAP_NORESERVE`, :data:`MAP_RESILIENT_CODESIGN`, :data:`MAP_RESILIENT_MEDIA`, :data:`MAP_TPRO`, :data:`MAP_TRANSLATED_ALLOW_EXECUTE`, and :data:`MAP_UNIX03` constants."
 msgstr "ثابت‌های :data:`MAP_32BIT`، :data:`MAP_HASSEMAPHORE`، :data:`MAP_JIT`، :data:`MAP_NOCACHE`، :data:`MAP_NOEXTEND`، :data:`MAP_NORESERVE`، :data:`MAP_RESILIENT_CODESIGN`، :data:`MAP_RESILIENT_MEDIA`، :data:`MAP_TPRO`، :data:`MAP_TRANSLATED_ALLOW_EXECUTE` و :data:`MAP_UNIX03` افزوده شدند."
 
-msgid "MS_* Constants"
+#, fuzzy
+#| msgid "MS_* Constants"
+msgid "MS_* constants"
 msgstr "ثابت‌های MS_*"
 
 msgid "These flags control the synchronization behavior for :meth:`mmap.flush`:"
