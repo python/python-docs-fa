@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-10-22)
+(به‌روزرسانی: 2026-10-23)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -149,7 +149,6 @@
 | library/allos.po | 100.0% | 0.0% | 2 | 0 |
 | library/annotationlib.po | 100.0% | 0.0% | 158 | 0 |
 | library/archiving.po | 100.0% | 0.0% | 2 | 0 |
-| library/argparse.po | 100.0% | 0.0% | 421 | 0 |
 | library/array.po | 100.0% | 0.0% | 102 | 0 |
 | library/ast.po | 100.0% | 0.0% | 346 | 0 |
 | library/asynchat.po | 100.0% | 0.0% | 4 | 0 |
@@ -214,7 +213,6 @@
 | library/csv.po | 100.0% | 0.0% | 133 | 0 |
 | library/curses.ascii.po | 100.0% | 0.0% | 69 | 0 |
 | library/curses.panel.po | 100.0% | 0.0% | 25 | 0 |
-| library/curses.po | 100.0% | 0.0% | 510 | 0 |
 | library/custominterp.po | 100.0% | 0.0% | 3 | 0 |
 | library/dataclasses.po | 100.0% | 0.0% | 165 | 0 |
 | library/datatypes.po | 100.0% | 0.0% | 4 | 0 |
@@ -225,7 +223,6 @@
 | library/devmode.po | 100.0% | 0.0% | 58 | 0 |
 | library/dialog.po | 100.0% | 0.0% | 68 | 0 |
 | library/difflib.po | 100.0% | 0.0% | 152 | 0 |
-| library/dis.po | 100.0% | 0.0% | 413 | 0 |
 | library/distribution.po | 100.0% | 0.0% | 2 | 0 |
 | library/distutils.po | 100.0% | 0.0% | 3 | 0 |
 | library/doctest.po | 100.0% | 0.0% | 381 | 0 |
@@ -266,7 +263,6 @@
 | library/glob.po | 100.0% | 0.0% | 46 | 0 |
 | library/graphlib.po | 100.0% | 0.0% | 40 | 0 |
 | library/grp.po | 100.0% | 0.0% | 27 | 0 |
-| library/gzip.po | 100.0% | 0.0% | 72 | 0 |
 | library/hashlib.po | 100.0% | 0.0% | 172 | 0 |
 | library/heapq.po | 100.0% | 0.0% | 73 | 0 |
 | library/hmac.po | 100.0% | 0.0% | 27 | 0 |
@@ -393,7 +389,6 @@
 | library/sysconfig.po | 100.0% | 0.0% | 138 | 0 |
 | library/syslog.po | 100.0% | 0.0% | 31 | 0 |
 | library/tabnanny.po | 100.0% | 0.0% | 11 | 0 |
-| library/tarfile.po | 100.0% | 0.0% | 367 | 0 |
 | library/telnetlib.po | 100.0% | 0.0% | 4 | 0 |
 | library/tempfile.po | 100.0% | 0.0% | 90 | 0 |
 | library/termios.po | 100.0% | 0.0% | 25 | 0 |
@@ -456,7 +451,6 @@
 | library/zipfile.po | 100.0% | 0.0% | 216 | 0 |
 | library/zlib.po | 100.0% | 0.0% | 103 | 0 |
 | library/zoneinfo.po | 100.0% | 0.0% | 84 | 0 |
-| license.po | 100.0% | 0.0% | 139 | 0 |
 | reference/compound_stmts.po | 100.0% | 0.0% | 499 | 0 |
 | reference/executionmodel.po | 100.0% | 0.0% | 145 | 0 |
 | reference/expressions.po | 100.0% | 0.0% | 651 | 0 |
@@ -485,12 +479,9 @@
 | tutorial/stdlib2.po | 100.0% | 0.0% | 65 | 0 |
 | tutorial/venv.po | 100.0% | 0.0% | 43 | 0 |
 | tutorial/whatnow.po | 100.0% | 0.0% | 18 | 0 |
-| using/android.po | 100.0% | 0.0% | 27 | 0 |
 | using/cmdline.po | 100.0% | 0.0% | 284 | 0 |
 | using/editors.po | 100.0% | 0.0% | 6 | 0 |
 | using/index.po | 100.0% | 0.0% | 2 | 0 |
-| using/ios.po | 100.0% | 0.0% | 91 | 0 |
-| using/mac.po | 100.0% | 0.0% | 95 | 0 |
 | using/unix.po | 100.0% | 0.0% | 63 | 0 |
 | using/windows.po | 100.0% | 0.0% | 584 | 0 |
 | whatsnew/2.0.po | 100.0% | 0.0% | 207 | 0 |
@@ -519,20 +510,28 @@
 | whatsnew/3.9.po | 100.0% | 0.0% | 380 | 0 |
 | whatsnew/index.po | 100.0% | 0.0% | 3 | 0 |
 | reference/datamodel.po | 99.9% | 0.1% | 914 | 0 |
-| library/datetime.po | 99.9% | 0.0% | 698 | 1 |
 | c-api/init_config.po | 99.8% | 0.0% | 660 | 1 |
 | library/profiling.sampling.po | 99.8% | 0.2% | 465 | 0 |
 | library/inspect.po | 99.8% | 0.2% | 435 | 0 |
+| library/tarfile.po | 99.7% | 0.3% | 367 | 0 |
 | library/mailbox.po | 99.7% | 0.0% | 309 | 1 |
 | c-api/exceptions.po | 99.7% | 0.0% | 293 | 1 |
-| whatsnew/changelog.po | 99.5% | 0.2% | 15624 | 54 |
+| library/datetime.po | 99.6% | 0.0% | 690 | 3 |
 | using/configure.po | 99.4% | 0.4% | 494 | 1 |
+| whatsnew/changelog.po | 99.3% | 0.2% | 15624 | 77 |
+| library/argparse.po | 99.3% | 0.2% | 420 | 2 |
+| license.po | 99.3% | 0.7% | 138 | 0 |
+| library/dis.po | 99.3% | 0.5% | 411 | 1 |
 | c-api/dict.po | 99.2% | 0.0% | 123 | 1 |
 | library/calendar.po | 99.2% | 0.8% | 122 | 0 |
 | extending/newtypes.po | 99.2% | 0.8% | 117 | 0 |
+| library/curses.po | 99.0% | 0.8% | 505 | 1 |
+| using/mac.po | 99.0% | 0.0% | 95 | 1 |
+| using/ios.po | 98.9% | 1.1% | 90 | 0 |
 | c-api/code.po | 98.8% | 0.0% | 82 | 1 |
 | library/wave.po | 98.6% | 0.0% | 73 | 1 |
 | library/gc.po | 98.6% | 1.4% | 72 | 0 |
+| library/gzip.po | 98.6% | 1.4% | 71 | 0 |
 | c-api/long.po | 98.4% | 0.0% | 179 | 3 |
 | library/pathlib.po | 98.2% | 0.4% | 442 | 6 |
 | c-api/intro.po | 98.0% | 0.4% | 239 | 4 |
@@ -543,6 +542,7 @@
 | library/test.po | 97.1% | 1.2% | 335 | 6 |
 | c-api/structures.po | 96.8% | 0.5% | 211 | 6 |
 | c-api/monitoring.po | 96.5% | 1.8% | 55 | 1 |
+| using/android.po | 96.4% | 3.6% | 27 | 0 |
 | c-api/float.po | 96.4% | 3.6% | 53 | 0 |
 | c-api/synchronization.po | 95.6% | 0.0% | 65 | 3 |
 | c-api/conversion.po | 94.8% | 0.0% | 55 | 3 |
@@ -558,5 +558,5 @@
 | library/ctypes.po | 85.5% | 7.8% | 670 | 53 |
 | c-api/descriptor.po | 76.9% | 2.6% | 30 | 8 |
 | c-api/pyexpat.po | 0.0% | 0.0% | 0 | 14 |
-| **مجموع** | **99.6%** | **0.2%** | **90440** | **217** |
+| **مجموع** | **99.5%** | **0.2%** | **90421** | **247** |
 <!-- TRANSLATION_STATUS_END -->
