@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-22 04:16+0000\n"
+"POT-Creation-Date: 2026-10-23 04:16+0000\n"
 "PO-Revision-Date: 2026-08-28 10:52+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -34,10 +34,44 @@ msgstr "پایتون بعدی"
 msgid "*Release date: XXXX-XX-XX*"
 msgstr "*تاریخ انتشار: XXXX-XX-XX*"
 
+msgid "Security"
+msgstr "امنیت"
+
+msgid ":cve:`2026-114583`, :gh:`160097`: :func:`tarfile.tar_filter` now rejects link members whose path resolves to the destination directory itself, as :func:`tarfile.data_filter` already did."
+msgstr ""
+
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
 
+msgid ":gh:`160268`: Fix a crash in :mod:`tokenize` when a mismatched closing bracket follows the opening brace of an f-string or t-string replacement field, as in ``f'{]a'``. It now raises the same \"unmatched\" error as the parser."
+msgstr ""
+
+msgid ":gh:`106045`: Fix :mod:`venv` path discovery when the base executable resolves to a location outside the installation pointed to by the ``home`` key in ``pyvenv.cfg``. The standard library is now found from ``home``, and extension modules from the resolved executable's installation, instead of falling back to the compiled-in prefix."
+msgstr ""
+
+msgid ":gh:`160162`: Fix a crash on 32-bit platforms when left shifting an :class:`int` by a count close to ``sys.maxsize * sys.int_info.bits_per_digit``. :exc:`OverflowError` is now raised, as for other too large counts."
+msgstr ""
+
+msgid ":gh:`160179`: Fix :meth:`!bytearray.__init__` leaving uninitialized memory in the object when it fails on a :class:`list` or :class:`tuple` containing an integer not in ``range(256)``. The object is now empty after the failed call."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`150858`: Fix a data race while changing ``__qualname__`` of a type concurrently on free-threaded builds."
+msgid ":gh:`159739`: Fix a race in ``list.__sizeof__()`` when a list is concurrently resized on a free-threaded build."
+msgstr ":gh:`150858`: یک مشکل رقابت داده (data race) را هنگام تغییر هم‌زمان ``__qualname__`` یک نوع در ساخت‌های نخ‌آزاد (free-threaded builds) برطرف می‌کند."
+
+msgid ":gh:`159739`: Fix a reference leak when the value of a type alias is evaluated recursively or concurrently."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`145142`: Fix a crash in the free-threaded build when the dictionary argument to :meth:`str.maketrans` is concurrently modified."
+msgid ":gh:`159739`: Fix a crash in free-threaded builds when :func:`codecs.unregister` is called concurrently."
+msgstr ":gh:`145142`: رفع فروپاشی در ساخت نخ‌آزاد (free-threaded build) هنگامی که آرگومان دیکشنری به :meth:`str.maketrans` به شکل هم‌زمان تغییر می‌کند."
+
 msgid ":gh:`159739`: Fix reference leaks when free-threaded garbage collection aborts early because of an allocation error."
+msgstr ""
+
+msgid ":gh:`159739`: Prevent free-threaded builds from interning and immortalizing complex subclasses in code object constants."
 msgstr ""
 
 msgid ":gh:`159739`: Fix a reference leak in binary, ternary, and comparison operations on weak reference proxies when another operand is a dead proxy."
@@ -54,13 +88,51 @@ msgstr ""
 msgid ":gh:`159739`: Fix a crash in :func:`warnings.warn` when ``skip_file_prefixes`` is an empty tuple subclass. Propagate allocation errors when creating the fallback filename."
 msgstr ""
 
+msgid ":gh:`159431`: Fix an assertion failure, or an immortal object becoming mortal, on the :term:`free threaded <free threading>` build when an object passed to the internal delayed decref mechanism is immortal or becomes immortal before the delayed decref is processed by the garbage collector."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`141510`: Update specializer to support frozendict. Patch by Donghee Na."
+msgid ":gh:`159111`: Update mimalloc version from 2.1.2 to 2.5.2. Patch by Donghee Na."
+msgstr ":gh:`141510`: به‌روزرسانی متخصص‌ساز برای پشتیبانی از frozendict. وصله توسط دونگهی نا (Donghee Na)."
+
 #, fuzzy
 #| msgid ":gh:`156091`: Fix a crash when compiling deeply nested inlined list, set, or dict comprehensions. A :exc:`SyntaxError` is now raised when the nesting exceeds the compiler's static block limit."
 msgid ":gh:`154318`: Fix a crash when hashing a deeply nested :class:`tuple` or :class:`frozendict`. A :exc:`RecursionError` is now raised instead of overflowing the C stack."
 msgstr ":gh:`156091`: رفع خرابی هنگام کامپایل درک‌های فهرست، مجموعه یا دیکشنری تو در تو و عمیق. اگر میزان تو در تو بودن از حد بلوک ایستا‌ی کامپایلر فراتر رود، اکنون یک استثنای :exc:`SyntaxError` بالا آورده می‌شود."
 
+msgid ":gh:`151818`: Fix a double-free crash in ``list.append()`` (the specialized ``CALL_LIST_APPEND`` instruction) when growing the list fails with :exc:`MemoryError`."
+msgstr ""
+
 msgid "Library"
 msgstr "کتابخانه"
+
+#, fuzzy
+#| msgid ":gh:`151773`: Fix a crash in :func:`contextvars.ContextVar.set` when memory allocation fails."
+msgid ":gh:`159739`: Fix a crash when a :mod:`ctypes` structure subclass cannot be created due to an allocation failure."
+msgstr ":gh:`151773`: رفع فروپاشی در :func:`contextvars.ContextVar.set` هنگامی که تخصیص حافظه با شکست مواجه می‌شود."
+
+msgid ":gh:`159739`: Fix clearing a :class:`pickle.Unpickler` memo so that the unpickler can be reused for independent records."
+msgstr ""
+
+msgid ":gh:`159739`: Fix the ``truncate`` method on :class:`io.BytesIO` when converting its size argument closes the stream or exports its buffer."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`142829`: Fix a use-after-free crash in :class:`contextvars.Context` comparison when a custom ``__eq__`` method modifies the context via :meth:`~contextvars.ContextVar.set`."
+msgid ":gh:`159739`: Fix :class:`contextvars.ContextVar` returning a stale value after a reentrant finalizer changes it during :meth:`~contextvars.ContextVar.reset`."
+msgstr ":gh:`142829`: رفع فروپاشی از نوع use-after-free در مقایسه‌ی :class:`contextvars.Context` هنگامی که یک متد سفارشی ``__eq__`` زمینه را از طریق :meth:`~contextvars.ContextVar.set` تغییر می‌دهد."
+
+#, fuzzy
+#| msgid ":gh:`155781`: Fix a possible crash in free-threaded builds when the :mod:`sqlite3` converter registry is modified concurrently while a cursor builds its row cast map."
+msgid ":gh:`159739`: Fix a possible crash when a list of :mod:`sqlite3` parameters is modified concurrently on a free-threaded build."
+msgstr ":gh:`155781`: رفع یک فروپاشی احتمالی در ساخت‌های نخ‌آزاد هنگامی که رجیستری مبدل :mod:`sqlite3` به‌طور همزمان در حالی که یک نشانگر نگاشت قالب‌ریزی ردیف خود را می‌سازد، تغییر می‌کند."
+
+msgid ":gh:`159739`: Avoid a crash when a :class:`threading.local` subclass finalizer accesses attributes after construction fails."
+msgstr ""
+
+msgid ":gh:`159739`: Avoid a crash when a :class:`queue.SimpleQueue` subclass finalizer adds an item after construction fails."
+msgstr ""
 
 msgid ":gh:`100609`: ``str()`` of a :class:`zipfile.Path` whose underlying zipfile has no filename, such as one constructed from an :class:`io.BytesIO`, now renders that filename as ``:zipfile:`` instead of raising :exc:`TypeError`. The root of a zipfile is also no longer rendered with a trailing slash. Synchronized with :pypi:`zipp` 3.23.1."
 msgstr ""
@@ -68,7 +140,21 @@ msgstr ""
 msgid ":gh:`159690`: Fix :class:`logging.handlers.TimedRotatingFileHandler` permanently stopping rollover after a rollover failed or its backup file already existed, for example at a DST change."
 msgstr ""
 
+#, fuzzy
+#| msgid ":gh:`96735`: Fix undefined behaviour in :func:`struct.unpack`."
+msgid ":gh:`159739`: Avoid undefined behavior when :func:`struct.pack_into` copies a bytearray into overlapping output."
+msgstr ":gh:`96735`: رفع رفتار نامشخص در :func:`struct.unpack`."
+
+msgid ":gh:`159739`: Fix allocation error handling in the fallback implementation of ``getaddrinfo()``."
+msgstr ""
+
 msgid ":gh:`159739`: Fix a double free if remote unwinder initialization runs out of memory."
+msgstr ""
+
+msgid ":gh:`159739`: Fix :meth:`io.IOBase.readline` returning more bytes than requested when a stream supports :meth:`!peek` and returns short reads."
+msgstr ""
+
+msgid ":gh:`159739`: Fix multibyte encoders silently consuming a non-BMP character when looking up a two-character mapping."
 msgstr ""
 
 msgid ":gh:`159739`: Fix off-by-one output buffer checks in the fallback implementation of ``getnameinfo()``."
@@ -77,7 +163,19 @@ msgstr ""
 msgid ":gh:`159739`: Fix reference cycles involving the types of grapheme iterators and segments created by :func:`unicodedata.iter_graphemes`."
 msgstr ""
 
+msgid ":gh:`159706`: Fix the pure-Python :class:`zoneinfo.ZoneInfo` setting ``fold=0`` in :meth:`~datetime.tzinfo.fromutc` for times in the fold created by the only transition of a zone with a single transition."
+msgstr ""
+
 msgid ":gh:`159714`: Fix :class:`zoneinfo.ZoneInfo` interpreting the Julian day rule ``J59`` as February 29 in leap years instead of February 28."
+msgstr ""
+
+msgid ":gh:`158287`: Fix a bug in :mod:`asyncio` where stopping a child process (such as with ``SIGSTOP``) on macOS caused the event loop to block indefinitely."
+msgstr ""
+
+msgid ":gh:`158126`: Speed up :func:`pickle.dumps` and creating a :class:`pickle.Pickler` by avoiding the creation of an :exc:`AttributeError` when looking up the optional ``reducer_override`` and ``dispatch_table`` attributes."
+msgstr ""
+
+msgid ":gh:`157880`: Fix :class:`mailbox.Babyl` to write the visible headers of a :class:`mailbox.BabylMessage` to the mailbox file."
 msgstr ""
 
 #, fuzzy
@@ -93,6 +191,9 @@ msgstr ":gh:`155843`: :mod:`hmac`: اطمینان حاصل کنید که اشی�
 msgid ":gh:`155428`: Ensure that :func:`hmac.digest` and :meth:`hmac.HMAC.digest` output identical values when using a digest's block size smaller than 16. Patch by Bénédikt Tran."
 msgstr ""
 
+msgid ":gh:`149527`: :mod:`multiprocessing`: fix creation of temporary socket files following :gh:`137335` (`PR#148578 <https://github.com/python/cpython/pull/148578>`__ and corresponding backports). Patch by Bénédikt Tran."
+msgstr ""
+
 msgid "Build"
 msgstr "ساخت"
 
@@ -105,7 +206,16 @@ msgstr ""
 msgid ":gh:`144942`: Fix the macOS shared library and framework builds not linking the libraries required by built-in modules, such as the HACL* objects needed by ``_blake2`` when it is built in via :file:`Modules/Setup.local`."
 msgstr ""
 
+msgid ":gh:`159819`: Fix the shell version of :program:`python3-config` (used on all POSIX platforms except macOS) when the installation prefix contains spaces or other characters special to the shell or :program:`sed`: it printed an empty ``--prefix`` and wrong ``--includes``/``--ldflags`` paths while exiting successfully. The script now also exits with status 1 if it cannot determine its installation prefix."
+msgstr ""
+
 msgid ":gh:`155813`: On macOS, :option:`LIBFFI_CFLAGS` and :option:`LIBFFI_LIBS` are no longer ignored when the SDK provides ``libffi``, so :mod:`ctypes` can again be built against a different ``libffi``. Patch by Advit Arora."
+msgstr ""
+
+msgid "C API"
+msgstr "رابط C API"
+
+msgid ":gh:`159739`: Avoid a crash if a context watcher is cleared while other context watchers are being notified."
 msgstr ""
 
 #, fuzzy
@@ -117,9 +227,6 @@ msgstr "پایتون ۳.۵.۱ نهایی"
 #| msgid "*Release date: 2026-10-02*"
 msgid "*Release date: 2026-10-21*"
 msgstr "*تاریخ انتشار: ۲۰۲۶-۱۰-۰۲*"
-
-msgid "Security"
-msgstr "امنیت"
 
 #, fuzzy
 #| msgid ":gh:`155063`: Bump the version of pip bundled in ensurepip to version 26.2.1"
@@ -863,9 +970,6 @@ msgstr ":gh:`155207`: ابزار Argument Clinic اکنون از گزینه‌ه
 
 msgid ":gh:`64502`: Fix Argument Clinic support of parameters with a default value used together with optional groups. Such parameters were always required in the generated parsing code."
 msgstr ":gh:`64502`: رفع پشتیبانی Argument Clinic از پارامترهایی با یک مقدار پیش‌فرض که همراه با گروه‌های اختیاری استفاده می‌شوند. چنین پارامترهایی همیشه در کد تجزیه‌ی تولیدشده الزامی بودند."
-
-msgid "C API"
-msgstr "رابط C API"
 
 msgid ":gh:`159739`: Fix a crash in :c:func:`_PyTuple_Resize` when resizing a non-empty tuple to a negative or too large size. It now raises :exc:`SystemError` or :exc:`MemoryError` respectively."
 msgstr ""

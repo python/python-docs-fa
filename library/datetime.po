@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-21 04:17+0000\n"
+"POT-Creation-Date: 2026-10-23 04:16+0000\n"
 "PO-Revision-Date: 2026-09-13 14:43+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -157,29 +157,11 @@ msgstr "اشیای نوع :class:`date` همیشه ساده هستند."
 msgid "An object of type :class:`.time` or :class:`.datetime` may be aware or naive."
 msgstr "یک شیء از نوع :class:`.time` یا :class:`.datetime` ممکن است آگاه یا ساده باشد."
 
-msgid "A :class:`.datetime` object ``d`` is aware if both of the following hold:"
-msgstr "یک شیء :class:`.datetime` به نام ``d`` آگاه است اگر هر دو شرط زیر برقرار باشند:"
+msgid "A :class:`.datetime` object ``d`` is aware if :meth:`d.utcoffset() <datetime.utcoffset>` does not return ``None``. Otherwise, ``d`` is naive."
+msgstr ""
 
-msgid "``d.tzinfo`` is not ``None``"
-msgstr "``d.tzinfo`` برابر با ``None`` نیست"
-
-msgid "``d.tzinfo.utcoffset(d)`` does not return ``None``"
-msgstr "``d.tzinfo.utcoffset(d)`` مقدار ``None`` را برنمی‌گرداند"
-
-msgid "Otherwise, ``d`` is naive."
-msgstr "در غیر این صورت، ``d`` ساده است."
-
-msgid "A :class:`.time` object ``t`` is aware if both of the following hold:"
-msgstr "یک شیء ``t`` از کلاس :class:`.time` آگاه است اگر هر دو مورد زیر برقرار باشند:"
-
-msgid "``t.tzinfo`` is not ``None``"
-msgstr "``t.tzinfo`` برابر ``None`` نیست"
-
-msgid "``t.tzinfo.utcoffset(None)`` does not return ``None``."
-msgstr "``t.tzinfo.utcoffset(None)`` مقدار ``None`` را برنمی‌گرداند."
-
-msgid "Otherwise, ``t`` is naive."
-msgstr "در غیر این صورت، ``t`` ساده است."
+msgid "A :class:`.time` object ``t`` is aware if :meth:`t.utcoffset() <time.utcoffset>` does not return ``None``. Otherwise, ``t`` is naive."
+msgstr ""
 
 msgid "The distinction between aware and naive doesn't apply to :class:`timedelta` objects."
 msgstr "تمایز میان آگاه و ساده برای اشیای :class:`timedelta` صدق نمی‌کند."
@@ -3364,6 +3346,30 @@ msgstr "% (درصد)"
 
 msgid "datetime format"
 msgstr "قالب datetime"
+
+#~ msgid "A :class:`.datetime` object ``d`` is aware if both of the following hold:"
+#~ msgstr "یک شیء :class:`.datetime` به نام ``d`` آگاه است اگر هر دو شرط زیر برقرار باشند:"
+
+#~ msgid "``d.tzinfo`` is not ``None``"
+#~ msgstr "``d.tzinfo`` برابر با ``None`` نیست"
+
+#~ msgid "``d.tzinfo.utcoffset(d)`` does not return ``None``"
+#~ msgstr "``d.tzinfo.utcoffset(d)`` مقدار ``None`` را برنمی‌گرداند"
+
+#~ msgid "Otherwise, ``d`` is naive."
+#~ msgstr "در غیر این صورت، ``d`` ساده است."
+
+#~ msgid "A :class:`.time` object ``t`` is aware if both of the following hold:"
+#~ msgstr "یک شیء ``t`` از کلاس :class:`.time` آگاه است اگر هر دو مورد زیر برقرار باشند:"
+
+#~ msgid "``t.tzinfo`` is not ``None``"
+#~ msgstr "``t.tzinfo`` برابر ``None`` نیست"
+
+#~ msgid "``t.tzinfo.utcoffset(None)`` does not return ``None``."
+#~ msgstr "``t.tzinfo.utcoffset(None)`` مقدار ``None`` را برنمی‌گرداند."
+
+#~ msgid "Otherwise, ``t`` is naive."
+#~ msgstr "در غیر این صورت، ``t`` ساده است."
 
 #~ msgid "If *format* specifies a day of month without a year a :exc:`DeprecationWarning` is now emitted.  This is to avoid a quadrennial leap year bug in code seeking to parse only a month and day as the default year used in absence of one in the format is not a leap year. Such *format* values may raise an error as of Python 3.15.  The workaround is to always include a year in your *format*.  If parsing *date_string* values that do not have a year, explicitly add a year that is a leap year before parsing:"
 #~ msgstr "اگر *format* روزی از ماه را بدون سال تعیین کند، اکنون یک :exc:`DeprecationWarning` نشان داده می‌شود. این کار برای اجتناب از یک باگ سال کبیسه‌ای چهارساله در کدی است که می‌خواهد فقط ماه و روز را تجزیه کند، زیرا سال پیش‌فرضی که در نبود سال در قالب استفاده می‌شود، سال کبیسه نیست. چنین مقادیری برای *format* ممکن است از پایتون 3.15 به بعد خطایی پرتاب کنند. راه‌حل این است که همیشه یک سال در *format* خود بگنجانید. اگر مقادیر *date_string* بدون سال را تجزیه می‌کنید، پیش از تجزیه به‌صراحت یک سال کبیسه اضافه کنید:"

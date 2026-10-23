@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-23 04:16+0000\n"
 "PO-Revision-Date: 2026-09-21 13:27+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -964,6 +964,9 @@ msgstr ""
 ">>> parser.parse_args('--foo --bar'.split())\n"
 "Namespace(foo=True, bar=False, baz=True)"
 
+msgid "These defaults apply when the options are absent. They can be overridden by default_ or argument_default_."
+msgstr ""
+
 msgid "``'append'`` - This appends each argument value to a list. It is useful for allowing an option to be specified multiple times. If the default value is a non-empty list, the parsed value will start with the default list's elements and any values from the command line will be appended after those default values. Example usage::"
 msgstr "``'append'`` - این عمل هر مقدار آرگومان را به یک فهرست اضافه می‌کند. این برای اجازه دادن به اینکه یک گزینه چندین بار مشخص شود، مفید است. اگر مقدار پیش‌فرض یک فهرست غیرخالی باشد، مقدار تجزیه‌شده با عناصر فهرست پیش‌فرض آغاز می‌شود و هر مقداری از خط فرمان پس از آن مقادیر پیش‌فرض اضافه می‌شود. نمونه استفاده::"
 
@@ -1225,7 +1228,9 @@ msgstr "``const=None`` به‌طور پیش‌فرض، از جمله زمانی 
 msgid "default"
 msgstr "پیش‌فرض"
 
-msgid "All optional arguments and some positional arguments may be omitted at the command line.  The ``default`` keyword argument of :meth:`~ArgumentParser.add_argument`, whose value defaults to ``None``, specifies what value should be used if the command-line argument is not present. For optional arguments, the ``default`` value is used when the option string was not present at the command line::"
+#, fuzzy
+#| msgid "All optional arguments and some positional arguments may be omitted at the command line.  The ``default`` keyword argument of :meth:`~ArgumentParser.add_argument`, whose value defaults to ``None``, specifies what value should be used if the command-line argument is not present. For optional arguments, the ``default`` value is used when the option string was not present at the command line::"
+msgid "All optional arguments and some positional arguments may be omitted at the command line.  The ``default`` keyword argument of :meth:`~ArgumentParser.add_argument` specifies what value should be used if the command-line argument is not present. For example::"
 msgstr "می‌توان تمام آرگومان‌های اختیاری و برخی آرگومان‌های جایگاهی را در خط فرمان حذف کرد. آرگومان کلیدواژه‌ای ``default`` در :meth:`~ArgumentParser.add_argument`، که مقدار پیش‌فرض آن ``None`` است، مشخص می‌کند که اگر آرگومان خط فرمان وجود نداشته باشد، از چه مقداری باید استفاده شود. برای آرگومان‌های اختیاری، هرگاه رشته‌ی گزینه در خط فرمان وجود نداشته باشد، از مقدار ``default`` استفاده می‌شود::"
 
 msgid ""
@@ -1242,6 +1247,9 @@ msgstr ""
 "Namespace(foo='2')\n"
 ">>> parser.parse_args([])\n"
 "Namespace(foo=42)"
+
+msgid "If ``default`` is omitted, :meth:`~ArgumentParser.add_argument` uses a value previously set for the dest_ with :meth:`~ArgumentParser.set_defaults`, or otherwise a non-``None`` argument_default_. If neither is set, the action's own default is used."
+msgstr ""
 
 msgid "If the target namespace already has an attribute set, the action *default* will not overwrite it::"
 msgstr "اگر فضای نام هدف از قبل ویژگی تنظیم‌شده‌ای داشته باشد، *پیش‌فرضِ* اکشن آن را بازنویسی نمی‌کند::"

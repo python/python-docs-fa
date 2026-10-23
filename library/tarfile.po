@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-23 04:16+0000\n"
 "PO-Revision-Date: 2026-09-13 15:40+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -825,6 +825,11 @@ msgid "Normalize filenames (:attr:`TarInfo.name`) that contain ``..`` components
 msgstr "نام پرونده‌ها (:attr:`TarInfo.name`) که شامل کامپوننت‌های ``..`` هستند را با استفاده از :func:`os.path.normpath` نرمال کنید. توجه داشته باشید که این کار کامپوننت‌های داخلی ``..`` را حذف می‌کند، که ممکن است در صورت عبور از پیوندهای نمادین، معنای نام را تغییر دهد."
 
 msgid ":ref:`Refuse <tarfile-extraction-refuse>` to extract files whose absolute path (after following symlinks) would end up outside the destination. This raises :class:`~tarfile.OutsideDestinationError`."
+msgstr ":ref:`امتناع <tarfile-extraction-refuse>` از استخراج پرونده‌هایی که مسیر مطلق آن‌ها (پس از دنبال کردن پیوندهای نمادین) در نهایت خارج از مقصد قرار بگیرد. این باعث پرتاب :class:`~tarfile.OutsideDestinationError` می‌شود."
+
+#, fuzzy
+#| msgid ":ref:`Refuse <tarfile-extraction-refuse>` to extract files whose absolute path (after following symlinks) would end up outside the destination. This raises :class:`~tarfile.OutsideDestinationError`."
+msgid ":ref:`Refuse <tarfile-extraction-refuse>` to extract links (hard or soft) whose name refers to the destination directory itself. This raises :class:`~tarfile.OutsideDestinationError`. Note that such files are refused even on platforms that do not support symbolic links."
 msgstr ":ref:`امتناع <tarfile-extraction-refuse>` از استخراج پرونده‌هایی که مسیر مطلق آن‌ها (پس از دنبال کردن پیوندهای نمادین) در نهایت خارج از مقصد قرار بگیرد. این باعث پرتاب :class:`~tarfile.OutsideDestinationError` می‌شود."
 
 msgid "Clear high mode bits (setuid, setgid, sticky) and group/other write bits (:const:`~stat.S_IWGRP` | :const:`~stat.S_IWOTH`)."

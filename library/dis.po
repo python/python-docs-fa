@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-23 04:16+0000\n"
 "PO-Revision-Date: 2026-09-13 16:54+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -949,11 +949,18 @@ msgstr "``STACK[-1]`` یک :term:`پیمایش‌گر <iterator>` است.  مت�
 msgid "Up until 3.11 the iterator was popped when it was exhausted."
 msgstr "تا پیش از 3.11، پیمایش‌گر هنگامی که به پایان می‌رسید، از پشته برداشته می‌شد."
 
-msgid "Loads the global named ``co_names[namei>>1]`` onto the stack."
-msgstr "متغیر سراسری با نام ``co_names[namei>>1]`` را بر روی پشته بارگذاری می‌کند."
-
-msgid "If the low bit of ``namei`` is set, then a ``NULL`` is pushed to the stack before the global variable."
+#, fuzzy
+#| msgid "If the low bit of ``namei`` is set, then a ``NULL`` is pushed to the stack before the global variable."
+msgid "Loads the global named ``co_names[namei>>1]`` onto the stack. If the low bit of ``namei`` is set, a ``NULL`` is pushed onto the stack after the global variable."
 msgstr "اگر بیت کم‌ارزشِ ``namei`` تنظیم شده باشد، یک ``NULL`` پیش از متغیر سراسری روی پشته قرار می‌گیرد."
+
+#, fuzzy
+#| msgid "If the low bit of ``namei`` is set, then a ``NULL`` is pushed to the stack before the global variable."
+msgid "The low bit of ``namei`` indicates whether a ``NULL`` is pushed."
+msgstr "اگر بیت کم‌ارزشِ ``namei`` تنظیم شده باشد، یک ``NULL`` پیش از متغیر سراسری روی پشته قرار می‌گیرد."
+
+msgid "The ``NULL`` is pushed after the global variable, rather than before it."
+msgstr ""
 
 msgid "Pushes a reference to the local ``co_varnames[var_num]`` onto the stack."
 msgstr "ارجاعی به متغیر محلی ``co_varnames[var_num]`` را روی پشته می‌گذارد."
@@ -1458,6 +1465,9 @@ msgstr "تابع توکار"
 
 msgid "slice"
 msgstr "اسلایس"
+
+#~ msgid "Loads the global named ``co_names[namei>>1]`` onto the stack."
+#~ msgstr "متغیر سراسری با نام ``co_names[namei>>1]`` را بر روی پشته بارگذاری می‌کند."
 
 #~ msgid "Works as :opcode:`LOAD_CONST`, but is more efficient for immortal objects."
 #~ msgstr "مانند :opcode:`LOAD_CONST` عمل می‌کند، اما برای اشیاء نامیرا کارآمدتر است."

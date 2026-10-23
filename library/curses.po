@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-23 04:16+0000\n"
 "PO-Revision-Date: 2026-09-13 14:57+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -190,7 +190,9 @@ msgstr "اگر پایانه قابلیت‌های درج و حذف خط را د�
 msgid "Take a key value *ch*, and return ``True`` if the current terminal type recognizes a key with that value."
 msgstr "مقدار کلید *ch* را می‌گیرد و اگر نوع پایانه‌ی جاری کلیدی با آن مقدار را بشناسد، ``True`` را برمی‌گرداند."
 
-msgid "Used for half-delay mode, which is similar to cbreak mode in that characters typed by the user are immediately available to the program. However, after blocking for *tenths* tenths of seconds, raise an exception if nothing has been typed.  The value of *tenths* must be a number between ``1`` and ``255``.  Use :func:`nocbreak` to leave half-delay mode."
+#, fuzzy
+#| msgid "Used for half-delay mode, which is similar to cbreak mode in that characters typed by the user are immediately available to the program. However, after blocking for *tenths* tenths of seconds, raise an exception if nothing has been typed.  The value of *tenths* must be a number between ``1`` and ``255``.  Use :func:`nocbreak` to leave half-delay mode."
+msgid "Used for half-delay mode, which is similar to cbreak mode in that characters typed by the user are immediately available to the program. However, after blocking for *tenths* tenths of seconds, if nothing has been typed, :meth:`~window.getch` returns ``-1``, while :meth:`~window.getkey` and :meth:`~window.get_wch` raise :exc:`curses.error`. The value of *tenths* must be a number between ``1`` and ``255``. Use :func:`nocbreak` to leave half-delay mode."
 msgstr "برای حالت نیمه‌تأخیر (half-delay) استفاده می‌شود؛ این حالت شبیه حالت cbreak است، بدین معنا که نویسه‌های تایپ‌شده توسط کاربر بلافاصله در دسترس برنامه قرار می‌گیرند. با این حال، پس از مسدود شدن به مدت *tenths* دهم ثانیه، اگر چیزی تایپ نشده باشد، یک استثنا پرتاب می‌شود. مقدار *tenths* باید عددی بین ``1`` و ``255`` باشد. برای خروج از حالت نیمه‌تأخیر از :func:`nocbreak` استفاده کنید."
 
 msgid "Change the definition of a color, taking the number of the color to be changed followed by three RGB values (for the amounts of red, green, and blue components).  The value of *color_number* must be between ``0`` and ``COLORS - 1``.  Each of *r*, *g*, *b*, must be a value between ``0`` and ``1000``.  When :func:`init_color` is used, all occurrences of that color on the screen immediately change to the new definition.  This function is a no-op on most terminals; it is active only if :func:`can_change_color` returns ``True``."
@@ -343,8 +345,8 @@ msgstr ":func:`start_color` هشت رنگ پایه (سیاه، قرمز، سبز
 msgid "Return a logical OR of all video attributes supported by the terminal.  This information is useful when a curses program needs complete control over the appearance of the screen."
 msgstr "یک OR منطقی از تمام ویژگی‌های ویدیویی مورد پشتیبانی پایانه را برمی‌گرداند. این اطلاعات زمانی مفید است که یک برنامه curses به کنترل کامل بر ظاهر صفحه نیاز داشته باشد."
 
-msgid "Return the value of the environment variable :envvar:`TERM`, as a bytes object, truncated to 14 characters."
-msgstr "مقدار متغیر محیطی :envvar:`TERM` را به‌عنوان یک شیء بایتی برمی‌گرداند، که به ۱۴ نویسه کوتاه شده است."
+msgid "Return the name of the terminal in use, as a bytes object. This is the name passed to :func:`setupterm`, or the value of the :envvar:`TERM` environment variable if none was given. Some curses libraries truncate it to 14 characters."
+msgstr ""
 
 msgid "Return the value of the Boolean capability corresponding to the terminfo capability name *capname* as an integer.  Return the value ``-1`` if *capname* is not a Boolean capability, or ``0`` if it is canceled or absent from the terminal description."
 msgstr "مقدار قابلیت بولی متناظر با نام قابلیت *capname* در terminfo را به‌صورت یک عدد صحیح برمی‌گرداند. اگر *capname* یک قابلیت بولی نباشد، مقدار ``-1`` و اگر لغو شده یا در توضیح پایانه وجود نداشته باشد، مقدار ``0`` را برمی‌گرداند."
@@ -628,7 +630,9 @@ msgstr "اگر *flag* برابر ``True`` باشد، هر تغییری در تص
 msgid "Return the character at the given position in the window. The bottom 8 bits are the character proper and the upper bits are the attributes; extract them with the :data:`A_CHARTEXT` and :data:`A_ATTRIBUTES` bit-masks, and the color pair with :func:`pair_number`. The character byte is the locale-encoded byte of the cell's character, consistent with :meth:`instr`. On a wide-character build, a character that does not fit in a single byte in the current locale has a character byte of ``0``; use :meth:`instr` to read such characters."
 msgstr "نویسه را در موقعیت داده‌شده در پنجره برمی‌گرداند. ۸ بیت پایینی، خود نویسه است و بیت‌های بالایی، ویژگی‌ها هستند؛ آن‌ها را با نقاب‌های بیتی :data:`A_CHARTEXT` و :data:`A_ATTRIBUTES`، و جفت رنگ را با :func:`pair_number` استخراج کنید. بایت نویسه، بایت کدگذاری‌شده بر اساس تنظیمات locale برای نویسه‌ی سلول است و با :meth:`instr` سازگار است. در یک ساخت با نویسه‌های پهن (wide-character build)، نویسه‌ای که در تنظیمات locale فعلی در یک بایت جا نمی‌شود، بایت نویسه‌ی آن ``0`` است؛ برای خواندن چنین نویسه‌هایی از :meth:`instr` استفاده کنید."
 
-msgid "Insert character *ch* with attributes *attr* before the character under the cursor, or at ``(y, x)`` if specified.  All characters to the right of the cursor are shifted one position right, with the rightmost character on the line being lost.  The cursor position does not change."
+#, fuzzy
+#| msgid "Insert character *ch* with attributes *attr* before the character under the cursor, or at ``(y, x)`` if specified.  All characters to the right of the cursor are shifted one position right, with the rightmost character on the line being lost.  The cursor position does not change."
+msgid "Insert character *ch* with attributes *attr* before the character under the cursor, or at ``(y, x)`` if specified.  All characters to the right of the cursor are shifted one position right, with the rightmost character on the line being lost. The cursor position does not change (after moving to *y*, *x*, if specified)."
 msgstr "نویسه *ch* را با ویژگی‌های *attr* پیش از نویسه زیر مکان‌نما، یا در ``(y, x)`` در صورت مشخص بودن، درج می‌کند. تمام نویسه‌های سمت راست مکان‌نما یک موقعیت به راست جابه‌جا می‌شوند و راست‌ترین نویسه خط از بین می‌رود. موقعیت مکان‌نما تغییر نمی‌کند."
 
 msgid "Insert *nlines* lines into the specified window above the current line.  The *nlines* bottom lines are lost.  For negative *nlines*, delete *nlines* lines starting with the one under the cursor, and move the remaining lines up.  The bottom *nlines* lines are cleared.  The current cursor position remains the same."
@@ -637,7 +641,9 @@ msgstr "*nlines* خط را در پنجره‌ی مشخص‌شده، بالای �
 msgid "Insert a blank line under the cursor. All following lines are moved down by one line."
 msgstr "یک خط خالی زیر مکان‌نما درج می‌کند. همه‌ی سطرهای بعدی یک خط به پایین جابه‌جا می‌شوند."
 
-msgid "Insert a character string (as many characters as will fit on the line) before the character under the cursor, up to *n* characters.   If *n* is zero or negative, the entire string is inserted. All characters to the right of the cursor are shifted right, with the rightmost characters on the line being lost. The cursor position does not change (after moving to *y*, *x*, if specified)."
+#, fuzzy
+#| msgid "Insert a character string (as many characters as will fit on the line) before the character under the cursor, up to *n* characters.   If *n* is zero or negative, the entire string is inserted. All characters to the right of the cursor are shifted right, with the rightmost characters on the line being lost. The cursor position does not change (after moving to *y*, *x*, if specified)."
+msgid "Insert a character string (as many characters as will fit on the line) before the character under the cursor, up to *n* characters.   If *n* is negative, the entire string is inserted. All characters to the right of the cursor are shifted right, with the rightmost characters on the line being lost. The cursor position does not change (after moving to *y*, *x*, if specified)."
 msgstr "یک رشته از نویسه‌ها (هر تعداد نویسه که در خط جا شود) را پیش از نویسه‌ی زیر مکان‌نما، تا سقف *n* نویسه درج کنید. اگر *n* صفر یا منفی باشد، تمام رشته درج می‌شود. همه‌ی نویسه‌های سمت راست مکان‌نما به سمت راست جابه‌جا می‌شوند و راست‌ترین نویسه‌های خط از دست می‌روند. موقعیت مکان‌نما تغییر نمی‌کند (پس از حرکت به *y*، *x*، در صورت مشخص بودن)."
 
 msgid "Insert a character string (as many characters as will fit on the line) before the character under the cursor.  All characters to the right of the cursor are shifted right, with the rightmost characters on the line being lost.  The cursor position does not change (after moving to *y*, *x*, if specified)."
@@ -718,7 +724,9 @@ msgstr "این ۶ آرگومان فقط زمانی می‌توانند مشخص 
 msgid "Reallocate storage for a curses window to adjust its dimensions to the specified values.  If either dimension is larger than the current values, the window's data is filled with blanks that have the current background rendition (as set by :meth:`bkgdset`) merged into them."
 msgstr "فضای ذخیره‌سازی برای یک پنجره curses را دوباره تخصیص می‌دهد تا ابعاد آن با مقادیر مشخص‌شده تنظیم شود. اگر هر یک از ابعاد بزرگ‌تر از مقادیر فعلی باشد، داده‌های پنجره با نویسه‌های خالی پر می‌شوند که جلوه پس‌زمینه فعلی (که با :meth:`bkgdset` تنظیم شده است) در آن‌ها ادغام شده است."
 
-msgid "Scroll the screen or scrolling region.  Scroll upward by *lines* lines if *lines* is positive, or downward if it is negative.  Scrolling has no effect unless it has been enabled for the window with :meth:`scrollok`."
+#, fuzzy
+#| msgid "Scroll the screen or scrolling region.  Scroll upward by *lines* lines if *lines* is positive, or downward if it is negative.  Scrolling has no effect unless it has been enabled for the window with :meth:`scrollok`."
+msgid "Scroll the screen or scrolling region.  Scroll upward by *lines* lines if *lines* is positive, or downward if it is negative. Raise :exc:`curses.error` unless scrolling has been enabled for the window with :meth:`scrollok`."
 msgstr "صفحه یا ناحیه‌ی پیمایش را پیمایش می‌کند. اگر *lines* مثبت باشد، به اندازه‌ی *lines* خط به بالا پیمایش می‌شود و اگر منفی باشد، به پایین پیمایش می‌شود. پیمایش هیچ اثری ندارد مگر اینکه با :meth:`scrollok` برای پنجره فعال شده باشد."
 
 msgid "Control what happens when the cursor of a window is moved off the edge of the window or scrolling region, either as a result of a newline action on the bottom line, or typing the last character of the last line.  If *flag* is ``False``, the cursor is left on the bottom line.  If *flag* is ``True``, the window is scrolled up one line.  Note that in order to get the physical scrolling effect on the terminal, it is also necessary to call :meth:`idlok`."
@@ -1554,6 +1562,9 @@ msgstr "محتوای پنجره را به‌عنوان یک رشته برمی‌
 
 msgid "This attribute is a flag which controls the interpretation of blanks in the window.  When it is on, trailing blanks on each line are ignored; any cursor motion that would land the cursor on a trailing blank goes to the end of that line instead, and trailing blanks are stripped when the window contents are gathered."
 msgstr "این ویژگی یک پرچم است که تفسیر فاصله‌ها در پنجره را کنترل می‌کند. وقتی روشن است، فاصله‌های انتهایی هر خط نادیده گرفته می‌شوند؛ هر حرکت مکان‌نما که مکان‌نما را روی یک فاصله‌ی انتهایی قرار دهد، در عوض به انتهای آن خط می‌رود، و فاصله‌های انتهایی هنگام جمع‌آوری محتوای پنجره حذف می‌شوند."
+
+#~ msgid "Return the value of the environment variable :envvar:`TERM`, as a bytes object, truncated to 14 characters."
+#~ msgstr "مقدار متغیر محیطی :envvar:`TERM` را به‌عنوان یک شیء بایتی برمی‌گرداند، که به ۱۴ نویسه کوتاه شده است."
 
 #~ msgid "Get a character. Note that the integer returned does *not* have to be in ASCII range: function keys, keypad keys and so on are represented by numbers higher than 255.  In no-delay mode, return ``-1`` if there is no input, otherwise wait until a key is pressed."
 #~ msgstr "یک نویسه دریافت می‌کند. توجه داشته باشید که عدد صحیح برگردانده‌شده *لزوماً* در محدوده ASCII نیست: کلیدهای تابع، کلیدهای صفحه‌کلید عددی و غیره با اعدادی بزرگ‌تر از ۲۵۵ نمایش داده می‌شوند. در حالت بدون تأخیر، اگر ورودی وجود نداشته باشد ``-1`` را برمی‌گرداند، در غیر این صورت تا زمانی که یک کلید فشرده شود صبر می‌کند."
