@@ -1,0 +1,91 @@
+name: Merge translations back to older branch
+
+on:
+  schedule:
+    # After the 04:00 CPython sync and 05:00 maintenance runs, so the newest
+    # 3.15 translations are what get copied.
+    - cron: '30 5 * * *'
+  workflow_dispatch:
+    inputs:
+      dst_branch:
+        description: 'Branch that receives the translations'
+        required: false
+        default: '3.14'
+      dry_run:
+        description: 'Report only, do not commit or push'
+        type: boolean
+        default: false
+      overwrite:
+        description: 'On conflicts take the 3.15 translation instead of keeping the existing one'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+# Shared with sync-with-cpython.yml and maintenance.yml: they push to 3.15,
+# this one reads 3.15, so they must not overlap.
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
+
+env:
+  SRC_BRANCH: '3.15'
+  DST_BRANCH: ${{ github.event.inputs.dst_branch || '3.14' }}
+
+jobs:
+  merge-back:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # fetch-depth 0 brings every branch down as origin/*, which is how the
+      # script finds 3.14 (it creates the local branch itself).
+      - name: Checkout translation repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SRC_BRANCH }}
+          fetch-depth: 0
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Merge ${{ env.SRC_BRANCH }} translations into ${{ env.DST_BRANCH }}
+        env:
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          OVERWRITE: ${{ github.event.inputs.overwrite }}
+        run: |
+          args=(--src "$SRC_BRANCH" --dst "$DST_BRANCH" --fetch
+                --conflicts-file "$RUNNER_TEMP/conflicts.txt")
+          if [ "$DRY_RUN" = "true" ]; then
+            args+=(--dry-run)
+          else
+            args+=(--push)
+          fi
+          if [ "$OVERWRITE" = "true" ]; then
+            args+=(--overwrite)
+          fi
+          python3 scripts/po_merge_back.py "${args[@]}" | tee "$RUNNER_TEMP/report.txt"
+
+      # Conflicts (both branches translated, different text) are kept as-is on
+      # the destination; surface them so a human can decide.
+      - name: Publish report
+        if: always()
+        run: |
+          {
+            echo "### Merge ${SRC_BRANCH} → ${DST_BRANCH}"
+            if [ -f "$RUNNER_TEMP/report.txt" ]; then
+              echo '```'
+              tail -n 12 "$RUNNER_TEMP/report.txt"
+              echo '```'
+            fi
+            if [ -s "$RUNNER_TEMP/conflicts.txt" ]; then
+              echo "<details><summary>Conflicts (kept as ${DST_BRANCH})</summary>"
+              echo
+              echo '```'
+              head -c 200000 "$RUNNER_TEMP/conflicts.txt"
+              echo '```'
+              echo "</details>"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
