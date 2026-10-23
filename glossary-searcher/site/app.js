@@ -11,22 +11,44 @@
 
   const MAX_RESULTS = 100;
 
-  // Searches the real corpus for entries whose msgid contains the term
-  // (case-insensitive). Returns up to MAX_RESULTS matches.
-  function searchCorpus(term){
-    const needle = term.toLowerCase();
+  // Persian text contains Arabic-script letters; if the query has any, we
+  // search Persian -> English, otherwise English -> Persian.
+  function isPersian(term){ return /[\u0600-\u06FF]/.test(term); }
+
+  function escapeRegex(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+  // Builds a case-insensitive matcher. For Persian it tolerates the common
+  // variants: Arabic vs Persian ya/kaf, optional ZWNJ, optional diacritics.
+  function buildMatcher(term, fa){
+    if (!fa) return new RegExp(escapeRegex(term), 'i');
+    const optional = '[\\u200c\\u064B-\\u065F\\u0640]*';
+    const src = Array.from(term.replace(/[\u200c]/g, '')).map(ch => {
+      if (ch === 'ی' || ch === 'ي') return '[یي]';
+      if (ch === 'ک' || ch === 'ك') return '[کك]';
+      if (/\s/.test(ch)) return '[\\s\\u200c]+';
+      return escapeRegex(ch);
+    }).join(optional);
+    return new RegExp(src, 'i');
+  }
+
+  // Returns up to MAX_RESULTS corpus entries whose msgid (EN) or msgstr (FA)
+  // matches.
+  function searchCorpus(re, fa){
+    const field = fa ? 'msgstr' : 'msgid';
     const results = [];
     for (let i = 0; i < CORPUS.length && results.length < MAX_RESULTS; i++){
-      const entry = CORPUS[i];
-      if (entry.msgid.toLowerCase().includes(needle)){
-        results.push(entry);
-      }
+      if (re.test(CORPUS[i][field])) results.push(CORPUS[i]);
     }
     return results;
   }
 
   // ---------- Simple fuzzy matching for glossary lookup ----------
-  function normalize(s){ return s.toLowerCase().trim(); }
+  function normalize(s){
+    return s.toLowerCase()
+      .replace(/ي/g,'ی').replace(/ك/g,'ک')
+      .replace(/[\u200c\u064B-\u065F\u0640]/g,'')
+      .trim();
+  }
 
   function levenshtein(a, b){
     a = normalize(a); b = normalize(b);
@@ -57,16 +79,16 @@
     return 1 - dist / maxLen;
   }
 
-  function findGlossaryMatch(term){
+  function findGlossaryMatch(term, field){
     const norm = normalize(term);
     // exact match first (handles multi-variant "en" keys and comma lists)
     for (const entry of GLOSSARY){
-      if (normalize(entry.en) === norm) return { entry, score: 1 };
+      if (normalize(entry[field]) === norm) return { entry, score: 1 };
     }
     // substring / contains match
     let best = null;
     for (const entry of GLOSSARY){
-      const enNorm = normalize(entry.en);
+      const enNorm = normalize(entry[field]);
       if (enNorm.includes(norm) || norm.includes(enNorm)){
         const score = Math.min(norm.length, enNorm.length) / Math.max(norm.length, enNorm.length);
         if (!best || score > best.score) best = { entry, score };
@@ -76,7 +98,7 @@
     // fuzzy fallback (semantic-similarity stand-in)
     best = null;
     for (const entry of GLOSSARY){
-      const score = similarity(term, entry.en);
+      const score = similarity(term, entry[field]);
       if (score > 0.72 && (!best || score > best.score)) best = { entry, score };
     }
     return best;
@@ -90,25 +112,25 @@
   const PAGE_SIZE = 10;
   let currentPage = 1;
   let currentResults = [];
-  let currentTerm = '';
+  let currentMatcher = null;
+  let currentFa = false;
 
   function escapeHtml(s){
     return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
 
-  function highlight(text, term){
-    const escaped = escapeHtml(text);
-    if (!term) return escaped;
-    const idx = escaped.toLowerCase().indexOf(term.toLowerCase());
-    if (idx === -1) return escaped;
-    return escaped.slice(0, idx) + '<mark>' + escaped.slice(idx, idx+term.length) + '</mark>' + escaped.slice(idx+term.length);
+  function highlight(text, re){
+    const m = re && re.exec(text);
+    if (!m) return escapeHtml(text);
+    const i = m.index, j = i + m[0].length;
+    return escapeHtml(text.slice(0,i)) + '<mark>' + escapeHtml(text.slice(i,j)) + '</mark>' + escapeHtml(text.slice(j));
   }
 
   function githubContributingDocumentLink(kind, term){
     if (kind === 'report'){ // translation bugs
-      return "https://github.com/python/python-docs-fa/blob/3.15/CONTRIBUTING.md#%DA%AF%D8%B2%D8%A7%D8%B1%D8%B4-%D8%A7%D8%B4%DA%A9%D8%A7%D9%84-%D8%AF%D8%B1-%D8%AA%D8%B1%D8%AC%D9%85%D9%87";
+      return "https://github.com/python/python-docs-fa/blob/3.14/CONTRIBUTING.md#%DA%AF%D8%B2%D8%A7%D8%B1%D8%B4-%D8%A7%D8%B4%DA%A9%D8%A7%D9%84-%D8%AF%D8%B1-%D8%AA%D8%B1%D8%AC%D9%85%D9%87";
     } else {
-      return "https://github.com/python/python-docs-fa/blob/3.15/CONTRIBUTING.md#%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D9%88%D8%A7%DA%98%D9%87-%DB%8C%D8%A7-%D8%A7%D8%B5%D8%B7%D9%84%D8%A7%D8%AD-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A8%D9%87-%D9%88%D8%A7%DA%98%D9%87%E2%80%8C%D9%86%D8%A7%D9%85%D9%87";
+      return "https://github.com/python/python-docs-fa/blob/3.14/CONTRIBUTING.md#%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D9%88%D8%A7%DA%98%D9%87-%DB%8C%D8%A7-%D8%A7%D8%B5%D8%B7%D9%84%D8%A7%D8%AD-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A8%D9%87-%D9%88%D8%A7%DA%98%D9%87%E2%80%8C%D9%86%D8%A7%D9%85%D9%87";
     }
   }
 
@@ -152,10 +174,10 @@
     for (const r of pageItems){
       html += `<div class="result-row">
         <div>
-          <div class="result-en">${highlight(r.msgid, currentTerm)}</div>
+          <div class="result-en">${currentFa ? escapeHtml(r.msgid) : highlight(r.msgid, currentMatcher)}</div>
           <div class="result-source">${escapeHtml(r.file)}:${r.line}</div>
         </div>
-        <div class="result-fa">${escapeHtml(r.msgstr)}</div>
+        <div class="result-fa">${currentFa ? highlight(r.msgstr, currentMatcher) : escapeHtml(r.msgstr)}</div>
       </div>`;
     }
     html += '</div>';
@@ -178,14 +200,15 @@
   function doSearch(term){
     term = term.trim();
     if (!term) return;
-    currentTerm = term;
+    currentFa = isPersian(term);
+    currentMatcher = buildMatcher(term, currentFa);
     currentPage = 1;
 
     hero.classList.add('compact');
     resultsArea.classList.add('visible');
 
-    const match = findGlossaryMatch(term);
-    currentResults = searchCorpus(term);
+    const match = findGlossaryMatch(term, currentFa ? 'fa' : 'en');
+    currentResults = searchCorpus(currentMatcher, currentFa);
 
     let html = '';
 
@@ -193,9 +216,9 @@
       html += `<div class="glossary-card">
         <div class="glossary-card-label">واژه‌های مشابه درخواست شما که در واژه‌نامه یافت شدند:</div>
         <div class="glossary-card-term">
-          <span class="glossary-en">${escapeHtml(match.entry.en)}</span>
+          <span class="glossary-en">${escapeHtml(currentFa ? match.entry.fa : match.entry.en)}</span>
           <span class="glossary-arrow">→</span>
-          <span class="glossary-fa">${escapeHtml(match.entry.fa)}</span>
+          <span class="glossary-fa">${escapeHtml(currentFa ? match.entry.en : match.entry.fa)}</span>
         </div>
         ${match.score < 1 ? `<div class="glossary-match-score">مطابقت تقریبی (${Math.round(match.score*100)}٪)</div>` : ''}
       </div>`;
