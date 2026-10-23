@@ -34,10 +34,8 @@ msgstr "**کد منبع:** :source:`Lib/tokenize.py`"
 msgid "The :mod:`!tokenize` module provides a lexical scanner for Python source code, implemented in Python.  The scanner in this module returns comments as tokens as well, making it useful for implementing \"pretty-printers\", including colorizers for on-screen displays."
 msgstr "ماژول :mod:`!tokenize` یک پویشگر واژگانی برای کد منبع پایتون فراهم می‌کند که با پایتون پیاده‌سازی شده است. پویشگر این ماژول کامنت‌ها را نیز به‌صورت توکن برمی‌گرداند و به همین دلیل برای پیاده‌سازی «زیبانویس»ها، از جمله رنگ‌آمیزکننده‌های نمایش روی صفحه، مفید است."
 
-#, fuzzy
-#| msgid "To simplify token stream handling, all :ref:`operator <operators>` and :ref:`delimiter <delimiters>` tokens and :data:`Ellipsis` are returned using the generic :data:`~token.OP` token type.  The exact type can be determined by checking the ``exact_type`` property on the :term:`named tuple` returned from :func:`tokenize.tokenize`."
 msgid "To simplify token stream handling, all :ref:`operator <operators>` and :ref:`delimiter <delimiters>` tokens and :data:`Ellipsis` are returned using the generic :data:`~token.OP` token type. The :attr:`TokenInfo.exact_type` property gives the exact token type."
-msgstr "برای ساده‌سازی مدیریت جریان توکن، تمام توکن‌های :ref:`عملگر <operators>` و :ref:`جداکننده <delimiters>` و :data:`Ellipsis` با استفاده از نوع توکن عام :data:`~token.OP` برگردانده می‌شوند. نوع دقیق را می‌توان با بررسی ویژگی ``exact_type`` روی :term:`named tuple` برگشتی از :func:`tokenize.tokenize` تعیین کرد."
+msgstr "برای ساده‌سازی مدیریت جریان توکن‌ها، تمام توکن‌های :ref:`عملگر <operators>` و :ref:`جداکننده <delimiters>` و همچنین :data:`Ellipsis` با استفاده از نوع توکن عام :data:`~token.OP` بازگردانده می‌شوند. ویژگی :attr:`TokenInfo.exact_type` نوع دقیق توکن را می‌دهد."
 
 msgid "Note that the functions in this module are only designed to parse syntactically valid Python code (code that does not raise when parsed using :func:`ast.parse`).  The behavior of the functions in this module is **undefined** when providing invalid Python code and it can change at any point."
 msgstr "توجه داشته باشید که توابع این ماژول فقط برای تجزیه کد پایتون معتبر از نظر سینتکسی طراحی شده‌اند (کدی که هنگام تجزیه با استفاده از :func:`ast.parse` استثنایی پرتاب نمی‌کند). رفتار توابع این ماژول در صورت ارائه کد پایتون نامعتبر **تعریف‌نشده** است و ممکن است در هر زمانی تغییر کند."
@@ -52,10 +50,10 @@ msgid "The :func:`.tokenize` generator requires one argument, *readline*, which 
 msgstr "تولیدگر :func:`.tokenize` به یک آرگومان، *readline*، نیاز دارد که باید یک شیء فراخوانی‌پذیر باشد و همان رابط متد :meth:`io.IOBase.readline` اشیای پرونده را فراهم کند. هر فراخوانی این تابع باید یک سطر از ورودی را به‌صورت بایت برگرداند."
 
 msgid "The generator produces :class:`TokenInfo` objects."
-msgstr ""
+msgstr "این تولیدگر اشیای :class:`TokenInfo` را تولید می‌کند."
 
 msgid "Changed to yield :class:`TokenInfo` objects instead of plain tuples."
-msgstr ""
+msgstr "تغییر کرد تا به‌جای تاپل‌های ساده، اشیای :class:`TokenInfo` را بازگرداند (yield کند)."
 
 msgid ":func:`.tokenize` determines the source encoding of the file by looking for a UTF-8 BOM or encoding cookie, according to :pep:`263`."
 msgstr ":func:`.tokenize` کدگذاری منبع پرونده را با جست‌وجوی BOM UTF-8 یا کوکی کدگذاری، طبق :pep:`263` تعیین می‌کند."
@@ -66,43 +64,41 @@ msgstr "یک منبع را با خواندن رشته‌های یونیکد به
 msgid "Like :func:`.tokenize`, the *readline* argument is a callable returning a single line of input. However, :func:`generate_tokens` expects *readline* to return a str object rather than bytes."
 msgstr "مانند :func:`.tokenize`، آرگومان *readline* یک شیء فراخوانی‌پذیر است که یک سطر ورودی را برمی‌گرداند. با این حال، :func:`generate_tokens` انتظار دارد که *readline* به‌جای bytes یک شیء str برگرداند."
 
-#, fuzzy
-#| msgid "The result is an iterator yielding named tuples, exactly like :func:`.tokenize`. It does not yield an :data:`~token.ENCODING` token."
 msgid "The result is an iterator yielding :class:`TokenInfo` objects, exactly like :func:`.tokenize`. It does not yield an :data:`~token.ENCODING` token."
-msgstr "نتیجه یک پیمایش‌گر است که تاپل‌های نام‌دار تولید می‌کند، دقیقاً مانند :func:`.tokenize`. این پیمایش‌گر توکن :data:`~token.ENCODING` را تولید نمی‌کند."
+msgstr "نتیجه یک پیمایش‌گر است که اشیای :class:`TokenInfo` را تولید می‌کند، دقیقاً مانند :func:`.tokenize`. این تابع یک توکن :data:`~token.ENCODING` تولید نمی‌کند."
 
 msgid "A :term:`named tuple` describing a token. It has five fields and an additional :attr:`exact_type` property."
-msgstr ""
+msgstr "یک :term:`تاپل نام‌دار <named tuple>` که یک توکن را توصیف می‌کند. این شیء دارای پنج فیلد و یک ویژگی :attr:`exact_type` اضافی است."
 
 msgid "An integer identifying the token type, as defined by the constants in :mod:`token`, such as :data:`~token.NAME` and :data:`~token.STRING`. Operators and delimiters have type :data:`~token.OP`; use :attr:`exact_type` for their specific token type."
-msgstr ""
+msgstr "یک عدد صحیح که نوع توکن را مشخص می‌کند، همان‌طور که توسط ثابت‌های موجود در ماژول :mod:`token` مانند :data:`~token.NAME` و :data:`~token.STRING` تعریف شده است. عملگرها و جداکننده‌ها دارای نوع :data:`~token.OP` هستند؛ از :attr:`exact_type` برای نوع توکن خاص آن‌ها استفاده کنید."
 
 msgid "The token text as a :class:`str`. For :data:`~token.STRING` tokens, this includes the quotes, any prefix, and escape sequences, without evaluating them."
-msgstr ""
+msgstr "متن توکن به صورت :class:`str`. برای توکن‌های :data:`~token.STRING`، این شامل نقل‌قول‌ها، هر پیشوند و دنباله‌های گریز می‌شود، بدون اینکه آن‌ها را ارزیابی کند."
 
 msgid "For an :data:`~token.ENCODING` token, this is the encoding name. Tokens inserted without corresponding source text can have an empty string. In :data:`~token.FSTRING_MIDDLE` and :data:`~token.TSTRING_MIDDLE` tokens, doubled braces are replaced by single braces."
-msgstr ""
+msgstr "برای یک توکن :data:`~token.ENCODING`، این نام کدگذاری است. توکن‌هایی که بدون متن منبع متناظر درج می‌شوند می‌توانند یک رشته‌ی خالی داشته باشند. در توکن‌های :data:`~token.FSTRING_MIDDLE` و :data:`~token.TSTRING_MIDDLE`، آکولادهای دوتایی با آکولادهای تکی جایگزین می‌شوند."
 
 msgid "A 2-tuple ``(srow, scol)`` of ints specifying the inclusive start position of the token in the source. Rows are numbered from 1 and columns from 0. Columns count Unicode code points; a tab counts as one column, without expanding it to a tab stop."
-msgstr ""
+msgstr "یک ۲-تایی ``(srow, scol)`` از اعداد صحیح که موقعیت شروع فراگیر توکن را در منبع مشخص می‌کند. ردیف‌ها از ۱ و ستون‌ها از 0 شماره‌گذاری می‌شوند. ستون‌ها نقطه‌کدهای یونیکد را می‌شمارند؛ یک تب به عنوان یک ستون محسوب می‌شود، بدون اینکه آن را به یک توقف تب گسترش دهد."
 
 msgid "For an :data:`~token.ENCODING` token, this is ``(0, 0)``."
-msgstr ""
+msgstr "برای یک توکن :data:`~token.ENCODING`، این مقدار ``(0, 0)`` است."
 
 msgid "A 2-tuple ``(erow, ecol)`` of ints specifying the exclusive end position of the token. Rows are numbered from 1 and columns from 0. For a token spanning multiple lines, *erow* is the final row and *ecol* is the column on that row."
-msgstr ""
+msgstr "یک ۲-تاپل ``(erow, ecol)`` از اعداد صحیح که موقعیت پایانی انحصاری توکن را مشخص می‌کند. ردیف‌ها از ۱ و ستون‌ها از ۰ شماره‌گذاری می‌شوند. برای توکنی که چندین سطر را در بر می‌گیرد، *erow* ردیف نهایی و *ecol* ستون واقع در آن ردیف است."
 
 msgid "For example, the name ``spam`` at the beginning of the first line has :attr:`start` equal to ``(1, 0)`` and :attr:`end` equal to ``(1, 4)``."
-msgstr ""
+msgstr "برای مثال، نام ``spam`` در ابتدای سطر اول دارای :attr:`start` برابر با ``(1, 0)`` و :attr:`end` برابر با ``(1, 4)`` است."
 
 msgid "For an :data:`~token.ENCODING` token, this is ``(0, 0)``. A :data:`~token.NEWLINE` or :data:`~token.NL` token inserted at the end of input without a final newline can have an end column one beyond the source text."
-msgstr ""
+msgstr "برای یک توکن :data:`~token.ENCODING`، این مقدار برابر با ``(0, 0)`` است. یک توکن :data:`~token.NEWLINE` یا :data:`~token.NL` که در انتهای ورودی بدون نویسه‌ی جدید (newline) نهایی درج شده باشد، می‌تواند ستون پایانی را یک واحد فراتر از متن منبع داشته باشد."
 
 msgid "A :class:`str` containing the full source line on which the token was found, including surrounding text and the line terminator if present. For a token spanning multiple lines, this can contain several source lines. It is empty for :data:`~token.ENCODING` and :data:`~token.ENDMARKER` tokens."
-msgstr ""
+msgstr "یک :class:`str` حاوی سطر منبع کاملی که توکن در آن پیدا شده است، شامل متن پیرامون و پایان‌دهنده‌ی سطر (در صورت وجود). برای توکنی که چندین سطر را در بر می‌گیرد، این مورد می‌تواند شامل چندین سطر منبع باشد. این مقدار برای توکن‌های :data:`~token.ENCODING` و :data:`~token.ENDMARKER` خالی است."
 
 msgid "An integer identifying the specific operator type for :data:`~token.OP` tokens, as defined by the constants in :mod:`token`. For all other token types, this equals :attr:`type`. For example, a ``+`` token has :attr:`type` equal to :data:`~token.OP` and :attr:`exact_type` equal to :data:`~token.PLUS`."
-msgstr ""
+msgstr "یک عدد صحیح که نوع عملگر خاص را برای توکن‌های :data:`~token.OP`، همان‌طور که توسط ثابت‌های موجود در :mod:`token` تعریف شده است، شناسایی می‌کند. برای سایر انواع توکن‌ها، این مقدار برابر با :attr:`type` است. برای مثال، یک توکن ``+`` دارای :attr:`type` برابر با :data:`~token.OP` و :attr:`exact_type` برابر با :data:`~token.PLUS` است."
 
 msgid "All constants from the :mod:`token` module are also exported from :mod:`!tokenize`."
 msgstr "تمام ثابت‌های ماژول :mod:`token` نیز از :mod:`!tokenize` اکسپورت می‌شوند."
