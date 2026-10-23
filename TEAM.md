@@ -16,6 +16,6 @@
 | pangominn | translator | 2 |
 | mdflx | reviewer | 1 |
 | ashykng | translator | 1 |
-| arman mohebali | translator | 14517 |
+| arman mohebali | translator | 14945 |
 | mahdyaralipor | translator | 21 |
 | Farid Farahani | translator | 3 |
