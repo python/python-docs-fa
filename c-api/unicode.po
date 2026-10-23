@@ -37,7 +37,7 @@ msgid "UTF-8 representation is created on demand and cached in the Unicode objec
 msgstr "بازنمایی UTF-8 به‌هنگام نیاز ایجاد می‌شود و در نهانگاه شیء یونیکد ذخیره می‌شود."
 
 msgid "The internal buffer always includes an extra trailing null character for compatibility with null terminated C strings. This extra character is not counted in :c:func:`PyUnicode_GetLength` nor in the various *size* arguments of the functions below."
-msgstr ""
+msgstr "بافر داخلی همیشه شامل یک نویسه‌ی تهی پایانی اضافی برای سازگاری با رشته‌های C ختم‌شده با نویسه‌ی تهی است. این نویسه‌ی اضافی در :c:func:`PyUnicode_GetLength` و همچنین در آرگومان‌های *size* مختلف توابع زیر محاسبه نمی‌شود."
 
 msgid "The :c:type:`Py_UNICODE` representation has been removed since Python 3.12 with deprecated APIs. See :pep:`623` for more information."
 msgstr "نمایش :c:type:`Py_UNICODE` از پایتون 3.12 همراه با APIهای منسوخ حذف شده است. برای اطلاعات بیشتر به :pep:`623` مراجعه کنید."
@@ -105,13 +105,11 @@ msgstr "مقدار *kind* و اشاره‌گر *data* باید به ترتیب �
 msgid "The function performs no checks for any of its requirements, and is intended for usage in loops."
 msgstr "این تابع هیچ بررسی‌ای برای هیچ‌یک از نیازمندی‌های خود انجام نمی‌دهد و برای استفاده در حلقه‌ها در نظر گرفته شده است."
 
-#, fuzzy
-#| msgid "Read a code point from a canonical representation *data* (as obtained with :c:func:`PyUnicode_DATA`).  No checks or ready calls are performed."
 msgid "Read a code point from a canonical representation *data* (as obtained with :c:func:`PyUnicode_DATA`).  No checks are performed."
-msgstr "یک نقطه‌کد را از نمایش کانونیکال *data* (که با :c:func:`PyUnicode_DATA` به دست آمده است) می‌خواند.  هیچ بررسی یا فراخوانی ready انجام نمی‌شود."
+msgstr "یک نقطه‌کد را از داده‌های بازنمایی کانونی *data* بخوانید (همان‌طور که با :c:func:`PyUnicode_DATA` به دست می‌آید). هیچ بررسی انجام نمی‌شود."
 
 msgid "Accept reading the trailing null character at index :c:func:`PyUnicode_GetLength`."
-msgstr ""
+msgstr "خواندن نویسه‌ی تهی پایانی در اندیس :c:func:`PyUnicode_GetLength` را بپذیرید."
 
 msgid "Read a character from a Unicode object *unicode*, which must be in the \"canonical\" representation.  This is less efficient than :c:func:`PyUnicode_READ` if you do multiple consecutive reads."
 msgstr "یک نویسه از شیء یونیکد *unicode* می‌خواند که باید در نمایش «کانونیکال» باشد. اگر چندین خواندن متوالی انجام می‌دهید، این کارایی کمتری نسبت به :c:func:`PyUnicode_READ` دارد."
@@ -249,7 +247,7 @@ msgid "If necessary, the input *buffer* is copied and transformed into the canon
 msgstr "در صورت نیاز، *بافر* ورودی کپی شده و به نمایش کانونیکال تبدیل می‌شود. برای مثال، اگر *بافر* یک رشته‌ی UCS4 باشد (:c:macro:`PyUnicode_4BYTE_KIND`) و تنها شامل نقطه‌کدهایی در محدوده‌ی UCS1 باشد، به UCS1 تبدیل می‌شود (:c:macro:`PyUnicode_1BYTE_KIND`)."
 
 msgid "All characters must be in range [U+0000; U+10ffff]. If *kind* is :c:macro:`PyUnicode_4BYTE_KIND` and the string contains invalid characters, the behavior is undefined."
-msgstr ""
+msgstr "تمام نویسه‌ها باید در محدوده‌ی [U+0000; U+10ffff] باشند. اگر *kind* برابر با :c:macro:`PyUnicode_4BYTE_KIND` باشد و رشته شامل نویسه‌های نامعتبر باشد، رفتار نامعلوم است."
 
 msgid "Create a Unicode object from the char buffer *str*.  The bytes will be interpreted as being UTF-8 encoded.  The buffer is copied into the new object. The return value might be a shared object, i.e. modification of the data is not allowed."
 msgstr "یک شیء یونیکد از بافر نویسه *str* ایجاد می‌کند. بایت‌ها به‌عنوان کدگذاری‌شده با UTF-8 تفسیر می‌شوند. بافر در شیء جدید کپی می‌شود. مقدار بازگشتی ممکن است یک شیء مشترک باشد، یعنی تغییر داده‌ها مجاز نیست."
@@ -579,7 +577,7 @@ msgid "On error, set an exception and return ``-1``."
 msgstr "در صورت خطا، یک استثنا تنظیم شده و ``-1`` بازگردانده می‌شود."
 
 msgid "The length does not count the trailing null character."
-msgstr ""
+msgstr "طول، نویسه‌ی پایانی تهی را حساب نمی‌کند."
 
 msgid "Copy characters from one Unicode object into another.  This function performs character conversion when necessary and falls back to :c:func:`!memcpy` if possible.  Returns ``-1`` and sets an exception on error, otherwise returns the number of copied characters."
 msgstr "نویسه‌ها را از یک شیء یونیکد به شیء یونیکد دیگر کپی می‌کند.  این تابع در صورت نیاز تبدیل نویسه‌ها را انجام می‌دهد و در صورت امکان به :c:func:`!memcpy` روی می‌آورد.  در صورت خطا ``-1`` برمی‌گرداند و یک استثنا تنظیم می‌کند، در غیر این صورت تعداد نویسه‌های کپی‌شده را برمی‌گرداند."
@@ -621,7 +619,7 @@ msgid "Return character on success, ``-1`` on error with an exception set."
 msgstr "در صورت موفقیت نویسه و در صورت خطا ``-1`` را همراه با استثنای تنظیم‌شده برمی‌گرداند."
 
 msgid "Do not accept reading the trailing null character at index :c:func:`PyUnicode_GetLength`."
-msgstr ""
+msgstr "خواندن نویسه‌ی پایانی تهی در اندیس :c:func:`PyUnicode_GetLength` پذیرفته نمی‌شود."
 
 msgid "Return a substring of *unicode*, from character index *start* (included) to character index *end* (excluded).  Negative indices are not supported. On error, set an exception and return ``NULL``."
 msgstr "زیررشته‌ای از *unicode* را برمی‌گرداند که از اندیس نویسه‌ی *start* (شامل) تا اندیس نویسه‌ی *end* (بدون) است.  اندیس‌های منفی پشتیبانی نمی‌شوند. در صورت خطا، یک استثنا تنظیم کرده و ``NULL`` را برمی‌گرداند."
@@ -1173,7 +1171,7 @@ msgid "The instance must be destroyed by :c:func:`PyUnicodeWriter_Finish` on suc
 msgstr "نمونه باید در صورت موفقیت توسط :c:func:`PyUnicodeWriter_Finish` یا در صورت خطا توسط :c:func:`PyUnicodeWriter_Discard` نابود شود."
 
 msgid "The API is **not thread safe**. To share a writer with multiple threads, a critical section or a lock is needed."
-msgstr ""
+msgstr "این API **نخ‌امن (thread safe) نیست**. برای اشتراک‌گذاری یک نویسنده (writer) با چند نخ، به یک بخش بحرانی (critical section) یا قفل نیاز است."
 
 msgid "Create a Unicode writer instance."
 msgstr "یک نمونه از نویسنده یونیکد ایجاد کنید."
@@ -1226,16 +1224,14 @@ msgstr "رشته پهن *str* را در *writer* می‌نویسد."
 msgid "*size* is a number of wide characters. If *size* is equal to ``-1``, call ``wcslen(str)`` to get the string length."
 msgstr "*size* تعداد نویسه‌های پهن است. اگر *size* برابر با ``-1`` باشد، برای به‌دست آوردن طول رشته، ``wcslen(str)`` را فراخوانی کنید."
 
-#, fuzzy
-#| msgid "Writer the UCS4 string *str* into *writer*."
 msgid "Write the UCS4 string *str* into *writer*."
-msgstr "رشته UCS4 *str* را در *writer* می‌نویسد."
+msgstr "رشته‌ی UCS4 با نام *str* را در *writer* بنویسید."
 
 msgid "*size* is a number of UCS4 characters."
 msgstr "*size* تعداد نویسه‌های UCS4 است."
 
 msgid "All characters must be in range [U+0000; U+10ffff]. If the string contains invalid characters, the behavior is undefined."
-msgstr ""
+msgstr "تمام نویسه‌ها باید در محدوده‌ی [U+0000; U+10ffff] باشند. اگر رشته شامل نویسه‌های نامعتبر باشد، رفتار نامعلوم است."
 
 msgid "Call :c:func:`PyObject_Str` on *obj* and write the output into *writer*."
 msgstr ":c:func:`PyObject_Str` را روی *obj* فراخوانی می‌کند و خروجی را در *writer* می‌نویسد."

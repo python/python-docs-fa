@@ -235,10 +235,8 @@ msgstr "میزبان و پورت را برای تونل‌زنی HTTP Connect ت
 msgid "The *host* and *port* arguments specify the endpoint of the tunneled connection (i.e. the address included in the CONNECT request, *not* the address of the proxy server)."
 msgstr "آرگومان‌های *host* و *port* پایانه‌ی اتصال تونل‌شده را مشخص می‌کنند (یعنی نشانی گنجانده‌شده در درخواست CONNECT، *نه* نشانی سرور پراکسی)."
 
-#, fuzzy
-#| msgid "The *headers* argument should be a mapping of extra HTTP headers to send with the CONNECT request."
 msgid "The *headers* argument should be a mapping of extra HTTP headers to send with the CONNECT request. Non-string header values are converted to strings via :func:`str`."
-msgstr "آرگومان *headers* باید یک نگاشت از سرآیندهای HTTP اضافی برای ارسال به‌همراه درخواست CONNECT باشد."
+msgstr "آرگومان *headers* باید نگاشتی از سرآیند‌های اضافی HTTP برای ارسال با درخواست CONNECT باشد. مقادیر سرآیند غیررشته‌ای از طریق :func:`str` به رشته تبدیل می‌شوند."
 
 msgid "As HTTP/1.1 is used for HTTP CONNECT tunnelling request, `as per the RFC <https://datatracker.ietf.org/doc/html/rfc7231#section-4.3.6>`_, a HTTP ``Host:`` header must be provided, matching the authority-form of the request target provided as the destination for the CONNECT request. If a HTTP ``Host:`` header is not provided via the headers argument, one is generated and transmitted automatically."
 msgstr "از آن‌جا که برای درخواست تونل‌سازی HTTP CONNECT از HTTP/1.1 استفاده می‌شود، `طبق RFC <https://datatracker.ietf.org/doc/html/rfc7231#section-4.3.6>`_، باید یک سرآیند HTTP ``Host:`` ارائه شود که با قالب authority (authority-form) هدف درخواستی که به‌عنوان مقصد درخواست CONNECT ارائه شده است مطابقت داشته باشد. اگر سرآیند HTTP ``Host:`` از طریق آرگومان headers ارائه نشود، یک سرآیند به‌طور خودکار تولید و ارسال می‌شود."

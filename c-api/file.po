@@ -43,16 +43,16 @@ msgid "Equivalent to ``p.readline([n])``, this function reads one line from the 
 msgstr "این تابع معادل ``p.readline([n])`` است و یک سطر از شیء *p* می‌خواند. *p* می‌تواند یک شیء پرونده یا هر شیء دارای متد :meth:`~io.IOBase.readline` باشد. اگر *n* برابر ``0`` باشد، دقیقاً یک سطر خوانده می‌شود، بدون توجه به طول سطر. اگر *n* بزرگ‌تر از ``0`` باشد، بیش از *n* بایت از پرونده خوانده نمی‌شود؛ ممکن است سطر ناقصی برگردانده شود. در هر دو حالت، اگر بلافاصله به پایان پرونده برسیم، رشته‌ای خالی برگردانده می‌شود. اما اگر *n* کوچک‌تر از ``0`` باشد، یک سطر بدون توجه به طول خوانده می‌شود، ولی اگر بلافاصله به پایان پرونده برسیم، :exc:`EOFError` پرتاب می‌شود."
 
 msgid "Read a line from the C stream *stream* into the buffer *buf*, like the C standard library function :c:func:`!fgets`, but treating all of ``\\n``, ``\\r`` and ``\\r\\n`` as line endings (see :term:`universal newlines`). Any ``\\r`` or ``\\r\\n`` read from the stream is stored in *buf* as a single ``\\n``."
-msgstr ""
+msgstr "یک سطر را از جریان (stream) C با نام *stream* در بافر *buf* بخوانید، درست مانند تابع کتابخانه‌ی استاندارد C یعنی :c:func:`!fgets`، با این تفاوت که تمام موارد ``\\n``، ``\\r`` و ``\\r\\n`` را به عنوان پایان‌دهنده‌های سطر در نظر می‌گیرد (به :term:`سطرهای جدید همگانی <universal newlines>` مراجعه کنید). هر ``\\r`` یا ``\\r\\n`` خوانده‌شده از جریان، به عنوان یک ``\\n`` واحد در *buf* ذخیره می‌شود."
 
 msgid "At most ``n - 1`` characters are stored in *buf*; reading stops after a newline has been stored or when the end of the file is reached. The result is always null-terminated. *stream* should be opened in binary mode, so that the C library does not perform its own newline translation."
-msgstr ""
+msgstr "حداکثر ``n - 1`` نویسه در *buf* ذخیره می‌شود؛ خواندن پس از ذخیره‌شدن یک نویسه‌ی سطر جدید یا رسیدن به انتهای پرونده متوقف می‌شود. نتیجه همیشه دارای پایان‌دهنده‌ی تهی (null-terminated) است. *stream* باید در حالت دودویی باز شود تا کتابخانه‌ی C ترجمه‌ی سطر جدید خود را انجام ندهد."
 
 msgid "Return *buf* on success. Return ``NULL`` if no characters could be read, because *stream* is at end of file, a read error occurred, or *n* is less than 2. Like :c:func:`!fgets`, this function does not distinguish between end of file and a read error, and it does not set an exception."
-msgstr ""
+msgstr "در صورت موفقیت، *buf* را برگردانید. اگر هیچ نویسه‌ای قابل خواندن نباشد، به این دلیل که *stream* در انتهای پرونده است، خطای خواندنی رخ داده است، یا *n* کمتر از ۲ است، ``NULL`` را برگردانید. درست مانند :c:func:`!fgets`، این تابع بین انتهای پرونده و خطای خواندن تمایز قائل نمی‌شود و استثنایی را تنظیم نمی‌کند."
 
 msgid "*fobj* exists only for backward compatibility and must be ``NULL``."
-msgstr ""
+msgstr "مورد *fobj* صرفاً برای سازگاری عقبگرد وجود دارد و باید ``NULL`` باشد."
 
 msgid "Overrides the normal behavior of :func:`io.open_code` to pass its parameter through the provided handler."
 msgstr "رفتار عادی :func:`io.open_code` را بازتعریف می‌کند تا پارامتر خود را از هندلر ارائه‌شده عبور دهد."
@@ -115,7 +115,7 @@ msgid "Type of file-like objects used internally at Python startup when :py:mod:
 msgstr "نوع اشیای شبه‌پرونده‌ای که در زمان راه‌اندازی پایتون، هنگامی که :py:mod:`io` هنوز در دسترس نیست، به‌طور داخلی استفاده می‌شوند. به‌جای آن، برای ایجاد اشیای پرونده از :py:func:`open` پایتون یا :c:func:`PyFile_FromFd` استفاده کنید."
 
 msgid "The string literal ``\"b\"``, used to open files in binary mode. Exposed for backwards compatibility only."
-msgstr ""
+msgstr "رشته‌ی لفظی ``\"b\"``، که برای باز کردن پرونده‌ها در حالت دودویی استفاده می‌شود. صرفاً برای سازگاری عقبگرد آشکارسازی شده است."
 
 msgid "object"
 msgstr "شیء"

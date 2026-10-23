@@ -197,10 +197,8 @@ msgstr "کتابی از کنت بک درباره‌ی نوشتن آزمون‌ه
 msgid "Running tests using the command-line interface"
 msgstr "اجرای آزمون‌ها با استفاده از رابط خط فرمان"
 
-#, fuzzy
-#| msgid "The :mod:`!test` package can be run as a script to drive Python's regression test suite, thanks to the :option:`-m` option: :program:`python -m test`. Under the hood, it uses :mod:`!test.regrtest`; the call :program:`python -m test.regrtest` used in previous Python versions still works.  Running the script by itself automatically starts running all regression tests in the :mod:`!test` package. It does this by finding all modules in the package whose name starts with ``test_``, importing them, and executing the function :func:`test_main` if present or loading the tests via unittest.TestLoader.loadTestsFromModule if ``test_main`` does not exist.  The names of tests to execute may also be passed to the script. Specifying a single regression test (:program:`python -m test test_spam`) will minimize output and only print whether the test passed or failed."
 msgid "The :mod:`!test` package can be run as a script to drive Python's regression test suite, thanks to the :option:`-m` option: :program:`python -m test`. Under the hood, it uses :mod:`!test.regrtest`; the call :program:`python -m test.regrtest` used in previous Python versions still works.  Running the script by itself automatically starts running all regression tests in the :mod:`!test` package. It does this by finding modules and packages whose names start with ``test_``, importing each one, and loading its tests with :meth:`unittest.TestLoader.loadTestsFromModule`. See the :ref:`load_tests protocol <load_tests-protocol>` for how a module or package can customize what is loaded. Defining a module-level ``test_main()`` function is not supported and causes the test to fail. The names of tests to execute may also be passed to the script. Specifying a single regression test (:program:`python -m test test_spam`) will minimize output and only print whether the test passed or failed."
-msgstr "بسته‌ی :mod:`!test` را می‌توان به‌کمک گزینه‌ی :option:`-m` به‌صورت یک اسکریپت برای اجرای بدنه‌ی آزمون‌های رگرسیون پایتون اجرا کرد: :program:`python -m test`. در پشت صحنه، این بسته از :mod:`!test.regrtest` استفاده می‌کند؛ فراخوانی :program:`python -m test.regrtest` که در نسخه‌های پیشین پایتون استفاده می‌شد، همچنان کار می‌کند. اجرای اسکریپت به‌تنهایی به‌طور خودکار اجرای همه‌ی آزمون‌های رگرسیون موجود در بسته‌ی :mod:`!test` را آغاز می‌کند. این کار با یافتن همه‌ی ماژول‌های موجود در بسته که نامشان با ``test_`` شروع می‌شود، ایمپورت کردن آن‌ها، و اجرای تابع :func:`test_main` در صورت وجود، یا بارگذاری آزمون‌ها از طریق unittest.TestLoader.loadTestsFromModule در صورت نبود ``test_main`` انجام می‌شود. نام آزمون‌های مورد نظر برای اجرا نیز می‌تواند به اسکریپت داده شود. مشخص کردن یک آزمون رگرسیون به‌صورت تکی (:program:`python -m test test_spam`) خروجی را به حداقل می‌رساند و فقط چاپ می‌کند که آزمون موفقیت‌آمیز بوده یا شکست خورده است."
+msgstr "بسته‌ی :mod:`!test` می‌تواند به عنوان یک اسکریپت برای هدایت مجموعه‌ی آزمون رگرسیون پایتون اجرا شود، به لطف گزینه‌ی :option:`-m`: :program:`python -m test`. در پس‌زمینه، از :mod:`!test.regrtest` استفاده می‌کند؛ فراخوانی :program:`python -m test.regrtest` که در نسخه‌های قبلی پایتون استفاده می‌شد همچنان کار می‌کند. اجرای اسکریپت به تنهایی به طور خودکار شروع به اجرای تمام آزمون‌های رگرسیون در بسته‌ی :mod:`!test` می‌کند. این کار را با یافتن ماژول‌ها و بسته‌هایی که نامشان با ``test_`` شروع می‌شود، ایمپورت کردن هر کدام، و بارگذاری آزمون‌های آن با :meth:`unittest.TestLoader.loadTestsFromModule` انجام می‌دهد. برای نحوه‌ی سفارشی‌سازی آنچه بارگذاری می‌شود توسط یک ماژول یا بسته، به :ref:`پروتکل load_tests <load_tests-protocol>` نگاه کنید. تعریف یک تابع ``test_main()`` در سطح ماژول پشتیبانی نمی‌شود و باعث شکست آزمون می‌شود. نام آزمون‌هایی که باید اجرا شوند نیز ممکن است به اسکریپت پاس داده شود. مشخص کردن یک آزمون رگرسیون منفرد (:program:`python -m test test_spam`) خروجی را به حداقل می‌رساند و فقط چاپ می‌کند که آیا آزمون موفق بوده یا ناموفق."
 
 msgid "Running :mod:`!test` directly allows what resources are available for tests to use to be set. You do this by using the ``-u`` command-line option. Specifying ``all`` as the value for the ``-u`` option enables all possible resources: :program:`python -m test -uall`. If all but one resource is desired (a more common case), a comma-separated list of resources that are not desired may be listed after ``all``. The command :program:`python -m test -uall,-audio,-largefile` will run :mod:`!test` with all resources except the ``audio`` and ``largefile`` resources. For a list of all resources and more command-line options, run :program:`python -m test -h`."
 msgstr "اجرای مستقیم :mod:`!test` به شما امکان می‌دهد تعیین کنید چه منابعی برای استفاده در آزمون‌ها در دسترس باشند. این کار را با استفاده از گزینه ``-u`` خط فرمان انجام می‌دهید. مشخص کردن ``all`` به‌عنوان مقدار گزینه ``-u`` تمام منابع ممکن را فعال می‌کند: :program:`python -m test -uall`. اگر همه منابع به‌جز یک منبع مطلوب باشند (حالت رایج‌تر)، می‌توانید فهرستی جداشده با ویرگول از منابعی که مطلوب نیستند را پس از ``all`` ذکر کنید. فرمان :program:`python -m test -uall,-audio,-largefile`، :mod:`!test` را با همه منابع به‌جز منابع ``audio`` و ``largefile`` اجرا می‌کند. برای دریافت فهرستی از همه منابع و گزینه‌های بیشتر خط فرمان، :program:`python -m test -h` را اجرا کنید."
@@ -448,7 +446,7 @@ msgid "Return ``True`` if Python was not built with ``-O0`` or ``-Og``."
 msgstr "اگر پایتون با ``-O0`` یا ``-Og`` ساخته نشده باشد، ``True`` را برمی‌گرداند."
 
 msgid "Return ``True`` if Python was built with :ref:`pymalloc <pymalloc>` enabled and is not a :term:`free-threaded build`."
-msgstr ""
+msgstr "اگر پایتون با :ref:`pymalloc <pymalloc>` فعال ساخته شده باشد و یک :term:`ساخت نخ‌آزاد <free-threaded build>` نباشد، مقدار ``True`` را برمی‌گرداند."
 
 msgid "Raise :exc:`ResourceDenied` if *resource* is not available. *msg* is the argument to :exc:`ResourceDenied` if it is raised. Always returns ``True`` if called by a function whose ``__name__`` is ``'__main__'``. Used when tests are executed by :mod:`test.regrtest`."
 msgstr "اگر *resource* در دسترس نباشد، :exc:`ResourceDenied` را پرتاب می‌کند. اگر این استثنا پرتاب شود، *msg* آرگومان :exc:`ResourceDenied` خواهد بود. اگر توسط تابعی فراخوانی شود که ``__name__`` آن ``'__main__'`` است، همیشه ``True`` را برمی‌گرداند. هنگامی که آزمون‌ها توسط :mod:`test.regrtest` اجرا می‌شوند، استفاده می‌شود."
@@ -681,10 +679,8 @@ msgstr "آزمون خطاهای سینتکسی در *statement* با تلاش ب
 msgid "Open *url*.  If open fails, raises :exc:`TestFailed`."
 msgstr "*url* را باز می‌کند. اگر باز کردن ناموفق باشد، :exc:`TestFailed` را پرتاب می‌کند."
 
-#, fuzzy
-#| msgid "Use this at the end of ``test_main`` whenever sub-processes are started. This will help ensure that no extra children (zombies) stick around to hog resources and create problems when looking for refleaks."
 msgid "Call this from :meth:`~unittest.TestCase.setUp`, :meth:`~unittest.TestCase.tearDown`, or ``tearDownModule()`` in tests that start subprocesses. This will help ensure that no extra children (zombies) stick around to hog resources and create problems when looking for refleaks."
-msgstr "هر زمان که زیرفرایندها آغاز می‌شوند، از این در پایان ``test_main`` استفاده کنید. این کار کمک می‌کند تا اطمینان حاصل شود که هیچ‌کدام از فرزندان اضافی (زامبی‌ها) باقی نمی‌مانند که منابع را اشغال کنند و هنگام جست‌وجو برای نشت‌های مرجع (refleaks) مشکل ایجاد کنند."
+msgstr "این را از :meth:`~unittest.TestCase.setUp`، :meth:`~unittest.TestCase.tearDown`، یا ``tearDownModule()`` در آزمون‌هایی که زیرفرایندها را شروع می‌کنند، فراخوانی کنید. این کار کمک می‌کند اطمینان حاصل شود که هیچ فرزند اضافی (زامبی) باقی نمی‌ماند تا منابع را ببلعد و هنگام جستجوی نشتی‌های مرجع (refleaks) مشکل ایجاد کند."
 
 msgid "Get an attribute, raising :exc:`unittest.SkipTest` if :exc:`AttributeError` is raised."
 msgstr "یک ویژگی دریافت می‌کند؛ اگر :exc:`AttributeError` پرتاب شد، :exc:`unittest.SkipTest` را ایجاد میکند."
@@ -830,10 +826,8 @@ msgstr ""
 "        support.check__all__(self, bar, ('bar', '_bar'),\n"
 "                             extra=extra, not_exported=not_exported)"
 
-#, fuzzy
-#| msgid "Skip tests if the :mod:`multiprocessing.synchronize` module is missing, if there is no available semaphore implementation, or if creating a lock raises an :exc:`OSError`."
 msgid "Skip tests if the :mod:`!multiprocessing.synchronize` module is missing, if there is no available semaphore implementation, or if creating a lock raises an :exc:`OSError`."
-msgstr "در صورتی که ماژول :mod:`multiprocessing.synchronize` موجود نبود، هیچ پیاده‌سازی سمافور در دسترس نبود، یا ایجاد یک قفل باعث پرتاب :exc:`OSError` شد، از آزمون‌ها صرف‌نظر کنید."
+msgstr "اگر ماژول :mod:`!multiprocessing.synchronize` وجود نداشته باشد، هیچ پیاده‌سازی سمافوری در دسترسی نباشد، یا ایجاد یک قفل باعث بروز یک :exc:`OSError` شود، آزمون‌ها را رد کنید."
 
 msgid "Assert that type *tp* cannot be instantiated using *args* and *kwds*."
 msgstr "ادعا کنید که نوع *tp* نمی‌تواند با استفاده از *args* و *kwds* نمونه‌سازی شود."
@@ -916,10 +910,8 @@ msgstr "این برای استفاده با ``@unittest.skipIf()`` طراحی ش
 msgid "A normal build & test does not run into this situation but it can happen when trying to run the standard library test suite from an interpreter that doesn't have an obvious home with Python's current home finding logic."
 msgstr "یک ساخت و آزمون عادی با این موقعیت مواجه نمی‌شود، اما این حالت ممکن است هنگامی رخ دهد که تلاش می‌کنید بدنه‌ی آزمون‌های کتابخانه استاندارد را از مفسری اجرا کنید که با منطق فعلی پایتون در یافتن خانه (home)، خانه‌ی مشخصی ندارد."
 
-#, fuzzy
-#| msgid "Setting :envvar:`PYTHONHOME` is one way to get most of the testsuite to run in that situation.  :envvar:`PYTHONPATH` or :envvar:`PYTHONUSERSITE` are other common environment variables that might impact whether or not the interpreter can start."
 msgid "Setting :envvar:`PYTHONHOME` is one way to get most of the testsuite to run in that situation.  :envvar:`PYTHONPATH` or :envvar:`PYTHONNOUSERSITE` are other common environment variables that might impact whether or not the interpreter can start."
-msgstr "تنظیم :envvar:`PYTHONHOME` یکی از راه‌ها برای اجرای بیشتر مجموعه‌آزمون در آن شرایط است. :envvar:`PYTHONPATH` یا :envvar:`PYTHONUSERSITE` متغیرهای محیطی رایج دیگری هستند که ممکن است بر اینکه مفسر بتواند آغاز شود یا نه تأثیر بگذارند."
+msgstr "تنظیم :envvar:`PYTHONHOME` یکی از راه‌هایی است که باعث می‌شود بیشتر مجموعه آزمون در آن وضعیت اجرا شود. :envvar:`PYTHONPATH` یا :envvar:`PYTHONNOUSERSITE` دیگر متغیرهای محیطی رایجی هستند که ممکن است روی توانایی مفسر در شروع به کار تأثیر بگذارند."
 
 msgid "Set up the environment based on *env_vars* for running the interpreter in a subprocess.  The values can include ``__isolated``, ``__cleanenv``, ``__cwd``, and ``TERM``."
 msgstr "محیط را بر اساس *env_vars* برای اجرای مفسر در یک زیرفرایند تنظیم کنید. مقادیر می‌توانند شامل ``__isolated``، ``__cleanenv``، ``__cwd`` و ``TERM`` باشند."
@@ -1171,10 +1163,8 @@ msgstr "ماژول :mod:`!test.support.import_helper` پشتیبانی برای 
 msgid "Remove the module named *module_name* from ``sys.modules`` and delete any byte-compiled files of the module."
 msgstr "ماژول با نام *module_name* را از ``sys.modules`` حذف کنید و هرگونه پرونده کامپایل‌شده به بایت آن ماژول را پاک کنید."
 
-#, fuzzy
-#| msgid "This function imports and returns a fresh copy of the named Python module by removing the named module from ``sys.modules`` before doing the import. Note that unlike :func:`reload`, the original module is not affected by this operation."
 msgid "This function imports and returns a fresh copy of the named Python module by removing the named module from ``sys.modules`` before doing the import. Note that unlike :func:`importlib.reload`, the original module is not affected by this operation."
-msgstr "این تابع با حذف ماژول نام‌برده‌شده از ``sys.modules`` پیش از انجام ایمپورت، یک نسخه‌ی تازه از ماژول پایتون نام‌برده‌شده را ایمپورت می‌کند و برمی‌گرداند. توجه داشته باشید که برخلاف :func:`reload`، ماژول اصلی تحت تأثیر این عملیات قرار نمی‌گیرد."
+msgstr "این تابع با حذف کردن ماژول نام‌برده از ``sys.modules`` پیش از انجام عمل ایمپورت، یک نسخه‌ی تازه از آن ماژول نام‌برده را ایمپورت کرده و برمی‌گرداند. توجه داشته باشید که برخلاف :func:`importlib.reload`، ماژول اصلی تحت تأثیر این عملیات قرار نمی‌گیرد."
 
 msgid "*fresh* is an iterable of additional module names that are also removed from the ``sys.modules`` cache before doing the import."
 msgstr "*fresh* یک پیمایش‌پذیر از نام‌های ماژول اضافی است که همچنین پیش از انجام ایمپورت از نهانگاه ``sys.modules`` حذف می‌شوند."
@@ -1283,7 +1273,7 @@ msgid "In this case all warnings are caught and no errors are raised."
 msgstr "در این حالت، همه‌ی هشدارها گرفته می‌شوند و هیچ خطایی پرتاب نمی‌شود."
 
 msgid "On entry to the context manager, a :class:`WarningsRecorder` instance is returned. The recorded warnings are available via its :attr:`~WarningsRecorder.warnings` attribute, and its :meth:`~WarningsRecorder.reset` method discards previously recorded warnings."
-msgstr ""
+msgstr "هنگام ورود به مدیر زمینه، یک نمونه از :class:`WarningsRecorder` برگردانده می‌شود. هشدارهای ضبط‌شده از طریق ویژگی :attr:`~WarningsRecorder.warnings` آن در دسترس هستند و متد :attr:`~WarningsRecorder.reset` آن هشدارهای ضبط‌شده‌ی قبلی را دور می‌اندازد."
 
 msgid "The context manager is designed to be used like this::"
 msgstr "این مدیر زمینه به‌گونه‌ای طراحی شده است که به این شکل استفاده شود::"
@@ -1305,17 +1295,6 @@ msgstr "در این حالت، اگر هر یک از هشدارها پرتاب �
 msgid "When a test needs to look more deeply into the warnings, rather than just checking whether or not they occurred, code like this can be used::"
 msgstr "هنگامی که یک آزمون نیاز دارد به‌جای بررسی صرف اینکه هشدارها رخ داده‌اند یا خیر، آن‌ها را عمیق‌تر بررسی کند، می‌توان از کدی مانند این استفاده کرد::"
 
-#, fuzzy
-#| msgid ""
-#| "with check_warnings(quiet=True) as w:\n"
-#| "    warnings.warn(\"foo\")\n"
-#| "    assert str(w.args[0]) == \"foo\"\n"
-#| "    warnings.warn(\"bar\")\n"
-#| "    assert str(w.args[0]) == \"bar\"\n"
-#| "    assert str(w.warnings[0].args[0]) == \"foo\"\n"
-#| "    assert str(w.warnings[1].args[0]) == \"bar\"\n"
-#| "    w.reset()\n"
-#| "    assert len(w.warnings) == 0"
 msgid ""
 "with check_warnings(quiet=True) as w:\n"
 "    warnings.warn(\"foo\")\n"
@@ -1329,11 +1308,11 @@ msgid ""
 msgstr ""
 "with check_warnings(quiet=True) as w:\n"
 "    warnings.warn(\"foo\")\n"
-"    assert str(w.args[0]) == \"foo\"\n"
+"    assert str(w.message) == \"foo\"\n"
 "    warnings.warn(\"bar\")\n"
-"    assert str(w.args[0]) == \"bar\"\n"
-"    assert str(w.warnings[0].args[0]) == \"foo\"\n"
-"    assert str(w.warnings[1].args[0]) == \"bar\"\n"
+"    assert str(w.message) == \"bar\"\n"
+"    assert str(w.warnings[0].message) == \"foo\"\n"
+"    assert str(w.warnings[1].message) == \"bar\"\n"
 "    w.reset()\n"
 "    assert len(w.warnings) == 0"
 
@@ -1344,16 +1323,16 @@ msgid "New optional arguments *filters* and *quiet*."
 msgstr "آرگومان‌های اختیاری جدید *filters* و *quiet*."
 
 msgid "Class used to record warnings for unit tests. Wraps the warnings list returned by :func:`warnings.catch_warnings` when recording is enabled. :func:`check_warnings` returns an instance of this class."
-msgstr ""
+msgstr "کلاسی که برای ثبت هشدارها برای آزمون‌های واحد استفاده می‌شود. هنگامی که ثبت هشدار فعال است، فهرست هشدارهای برگردانده‌شده توسط :func:`warnings.catch_warnings` را دربرمی‌گیرد. تابع :func:`check_warnings` نمونه‌ای از این کلاس را برمی‌گرداند."
 
 msgid "As a convenience, the attributes of the object representing the most recent warning can also be accessed directly through the recorder object. If no warning has been raised since the recorder was created or last reset, these attributes return ``None``."
-msgstr ""
+msgstr "به عنوان یک امکان رفاهی، ویژگی‌های شیء نماینده‌ی جدیدترین هشدار را نیز می‌توان مستقیماً از طریق شیء ثبت‌کننده (recorder) دسترسی داشت. اگر از زمان ایجاد یا آخرین بازنشانی ثبت‌کننده هیچ هشداری صادر نشده باشد، این ویژگی‌ها مقدار ``None`` را برمی‌گردانند."
 
 msgid "A list of warnings recorded since the recorder was created or last reset."
-msgstr ""
+msgstr "فهرستی از هشدارهای ثبت‌شده از زمان ایجاد یا آخرین بازنشانی ثبت‌کننده."
 
 msgid "Discard previously recorded warnings from the recorder's view. The underlying warnings list is not modified."
-msgstr ""
+msgstr "هشدار‌های ضبط‌شده‌ی قبلی را از نمای (view) recorder حذف کنید. فهرست (list) هشدار‌های زیرین تغییر نمی‌کند."
 
 #~ msgid "Return :const:`_testcapi.WITH_PYMALLOC`."
 #~ msgstr ":const:`_testcapi.WITH_PYMALLOC` را برمی‌گرداند."

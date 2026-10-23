@@ -1176,7 +1176,7 @@ msgid "A typical use of this callback is to change the :class:`ssl.SSLSocket`'s 
 msgstr "یک کاربرد رایج این کال‌بک، تغییر ویژگی :attr:`SSLSocket.context` مربوط به :class:`ssl.SSLSocket` به شیء جدیدی از نوع :class:`SSLContext` است که نشان‌دهنده‌ی زنجیره‌ی گواهی‌ای است که با نام سرور مطابقت دارد."
 
 msgid "If the callback assigns a new context to :attr:`SSLSocket.context`, any further ClientHello message on the same connection (for example after a TLS 1.3 HelloRetryRequest) is dispatched to the new context's *sni_callback*, if it has one; the original callback is not called again for that connection."
-msgstr ""
+msgstr "اگر کال‌بک یک زمینه‌ی جدید به :attr:`SSLSocket.context` اختصاص دهد، هرگونه پیام ClientHello بعدی روی همان اتصال (برای مثال پس از یک TLS 1.3 HelloRetryRequest) به *sni_callback* زمینه‌ی جدید فرستاده می‌شود، اگر زمینه‌ی مذکور آن را داشته باشد؛ کال‌بک اصلی دیگر برای آن اتصال فراخوانی نمی‌شود."
 
 msgid "Due to the early negotiation phase of the TLS connection, only limited methods and attributes are usable like :meth:`SSLSocket.selected_alpn_protocol` and :attr:`SSLSocket.context`. The :meth:`SSLSocket.getpeercert`, :meth:`SSLSocket.get_verified_chain`, :meth:`SSLSocket.get_unverified_chain` :meth:`SSLSocket.cipher` and :meth:`SSLSocket.compression` methods require that the TLS connection has progressed beyond the TLS Client Hello and therefore will not return meaningful values nor can they be called safely."
 msgstr "به دلیل مرحله‌ی اولیه‌ی مذاکره‌ی اتصال TLS، تنها متدها و ویژگی‌های محدودی قابل استفاده هستند، مانند :meth:`SSLSocket.selected_alpn_protocol` و :attr:`SSLSocket.context`. متدهای :meth:`SSLSocket.getpeercert`، :meth:`SSLSocket.get_verified_chain`، :meth:`SSLSocket.get_unverified_chain`، :meth:`SSLSocket.cipher` و :meth:`SSLSocket.compression` نیاز دارند که اتصال TLS از TLS Client Hello فراتر رفته باشد؛ بنابراین نه مقادیر معناداری برمی‌گردانند و نه می‌توان آن‌ها را به‌طور امن فراخوانی کرد."
@@ -1191,7 +1191,7 @@ msgid "This method will raise :exc:`NotImplementedError` if the OpenSSL library 
 msgstr "اگر OPENSSL_NO_TLSEXT هنگام ساخت کتابخانه OpenSSL تعریف‌شده باشد، این متد :exc:`NotImplementedError` را پرتاب خواهد کرد."
 
 msgid "After the callback assigns a new :attr:`SSLSocket.context`, later ClientHello messages on the connection are dispatched to the new context's *sni_callback*."
-msgstr ""
+msgstr "پس از اینکه کال‌بک یک :attr:`SSLSocket.context` جدید اختصاص داد، پیام‌های ClientHello بعدی روی اتصال به *sni_callback* زمینه‌ی جدید فرستاده می‌شوند."
 
 msgid "This is a legacy API retained for backwards compatibility. When possible, you should use :attr:`sni_callback` instead. The given *server_name_callback* is similar to *sni_callback*, except that when the server hostname is an IDN-encoded internationalized domain name, the *server_name_callback* receives a decoded U-label (``\"pythön.org\"``)."
 msgstr "این یک API قدیمی است که برای سازگاری با نسخه‌های قبلی حفظ شده است. در صورت امکان، باید به‌جای آن از :attr:`sni_callback` استفاده کنید. *server_name_callback* داده‌شده مشابه *sni_callback* است، با این تفاوت که وقتی نام میزبان سرور یک IDN کدگذاری‌شده با IDN باشد، *server_name_callback* یک U-label کدگشایی‌شده را دریافت می‌کند (``\"pythön.org\"``)."
@@ -1260,13 +1260,13 @@ msgid "Wrap the BIO objects *incoming* and *outgoing* and return an instance of 
 msgstr "اشیای BIO *incoming* و *outgoing* را دربرمی‌گیرد و نمونه‌ای از :attr:`SSLContext.sslobject_class` (پیش‌فرض :class:`SSLObject`) برمی‌گرداند. روال‌های SSL داده‌های ورودی را از BIO ورودی می‌خوانند و داده‌ها را در BIO خروجی می‌نویسند."
 
 msgid "The *server_side*, *server_hostname* and *session* parameters have the same meaning as in :meth:`SSLContext.wrap_socket`, and are validated in the same way: in particular a :exc:`ValueError` is raised when :attr:`~SSLContext.check_hostname` is enabled but no *server_hostname* is given, since there would be no name to match the peer's certificate against."
-msgstr ""
+msgstr "پارامترهای *server_side*، *server_hostname* و *session* معنایی مشابه با :meth:`SSLContext.wrap_socket` دارند و به همان شکل اعتبارسنجی می‌شوند: به‌ویژه هنگامی که :attr:`~SSLContext.check_hostname` فعال است اما هیچ *server_hostname*\\ ی داده نشده است، یک :exc:`ValueError` بالا آورده می‌شود، زیرا هیچ نامی برای مطابقت دادن با گواهی همتا وجود نخواهد داشت."
 
 msgid "The method returns an instance of :attr:`SSLContext.sslobject_class` instead of hard-coded :class:`SSLObject`."
 msgstr "این متد به‌جای :class:`SSLObject` سخت‌کد، نمونه‌ای از :attr:`SSLContext.sslobject_class` را برمی‌گرداند."
 
 msgid "The *server_side*, *server_hostname* and *session* parameters are now validated as :meth:`SSLContext.wrap_socket` validates them. Previously a context with :attr:`~SSLContext.check_hostname` enabled and no *server_hostname* was accepted, and verified the certificate chain but never the peer's identity."
-msgstr ""
+msgstr "پارامترهای *server_side*، *server_hostname* و *session* اکنون مانند روشی که :meth:`SSLContext.wrap_socket` آن‌ها را اعتبارسنجی می‌کند، اعتبارسنجی می‌شوند. پیش‌تر، یک زمینه با :attr:`~SSLContext.check_hostname` فعال و بدون *server_hostname* پذیرفته می‌شد و زنجیره‌ی گواهی را تأیید می‌کرد اما هرگز هویت همتا را بررسی نمی‌کرد."
 
 msgid "The return type of :meth:`SSLContext.wrap_bio`, defaults to :class:`SSLObject`. The attribute can be overridden on instance of class in order to return a custom subclass of :class:`SSLObject`."
 msgstr "نوع بازگشتی :meth:`SSLContext.wrap_bio`، به‌طور پیش‌فرض :class:`SSLObject` است. می‌توان این ویژگی را در نمونه‌ای از کلاس بازنویسی کرد تا یک زیرکلاس سفارشی از :class:`SSLObject` بازگردانده شود."

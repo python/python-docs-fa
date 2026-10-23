@@ -187,16 +187,14 @@ msgstr "*forkserver*"
 msgid "When the program starts and selects the *forkserver* start method, a server process is spawned.  From then on, whenever a new process is needed, the parent process connects to the server and requests that it fork a new process.  The fork server process is single threaded unless system libraries or preloaded imports spawn threads as a side-effect so it is generally safe for it to use :func:`os.fork`. No unnecessary resources are inherited."
 msgstr "هنگامی که برنامه شروع می‌شود و متد شروع *forkserver* را انتخاب می‌کند، یک فرایند سرور ایجاد می‌شود. از آن پس، هر زمان که به یک فرایند جدید نیاز باشد، فرایند والد به سرور متصل می‌شود و از آن درخواست می‌کند که یک فرایند جدید را fork کند. فرایند سرور fork تک‌نخی است، مگر اینکه کتابخانه‌های سیستمی یا ایمپورت‌های از پیش بارگذاری‌شده به‌عنوان یک اثر جانبی نخ‌هایی را ایجاد کنند؛ بنابراین استفاده از :func:`os.fork` برای آن عموماً امن است. هیچ منبع غیرضروری به ارث برده نمی‌شود."
 
-#, fuzzy
-#| msgid "Available on POSIX platforms which support passing file descriptors over Unix pipes such as Linux.  The default on those."
 msgid "Available on POSIX platforms which support passing file descriptors over Unix pipes such as Linux.  The default on those, unless there is no writable temporary directory (see :func:`tempfile.gettempdir`), which the fork server requires; *spawn* is the default in that case."
-msgstr "در پلتفرم‌های POSIX مانند لینوکس که از انتقال توصیف‌گرهای پرونده از طریق پایپ یونیکس پشتیبانی می‌کنند، در دسترس است. پیش‌فرض در آن‌ها."
+msgstr "روی سکوهای POSIX که از ارسال توصیف‌گرهای پرونده روی پایپ‌های یونیکس مانند لینوکس پشتیبانی می‌کنند، در دسترس است. گزینه‌ی پیش‌فرض روی آن‌ها، مگر اینکه پوشه‌ی موقت قابل‌نوشتنی وجود نداشته باشد (نگاه کنید به :func:`tempfile.gettempdir`) که سرور انشعاب به آن نیاز دارد؛ *spawn* در آن صورت پیش‌فرض است."
 
 msgid "This became the default start method on POSIX platforms."
 msgstr "این به روش شروع پیش‌فرض در سکوهای POSIX تبدیل شد."
 
 msgid "*spawn* is now the default start method when there is no writable temporary directory, for example on a read-only file system. Previously *forkserver* remained the default there and starting a process failed with an :exc:`OSError`.  The default is determined when it is first needed rather than when :mod:`!multiprocessing` is imported.  See :gh:`155717`."
-msgstr ""
+msgstr "*spawn* اکنون روش شروع پیش‌فرض است زمانی که پوشه‌ی موقت قابل‌نوشتنی وجود ندارد، برای مثال روی یک سیستم پرونده‌ی فقط‌خواندنی. پیش‌تر *forkserver* در آنجا پیش‌فرض باقی می‌ماند و شروع یک فرایند با یک :exc:`OSError` با شکست مواجه می‌شد. مقدار پیش‌فرض زمانی تعیین می‌شود که برای اولین بار مورد نیاز باشد، نه زمانی که ماژول :mod:`!multiprocessing` ایمپورت می‌شود. نگاه کنید به :gh:`155717`."
 
 msgid "*spawn* added on all POSIX platforms, and *forkserver* added for some POSIX platforms. Child processes no longer inherit all of the parents inheritable handles on Windows."
 msgstr "*spawn* در همه‌ی پلتفرم‌های POSIX اضافه شد، و *forkserver* برای برخی پلتفرم‌های POSIX افزوده شد. فرآیندهای فرزند دیگر همه‌ی دسته‌های قابل ارث‌بری والد را در ویندوز به ارث نمی‌برند."
