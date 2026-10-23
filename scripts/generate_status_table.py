@@ -51,7 +51,7 @@ def build_table() -> str:
         translated_pct = (t / total * 100) if total else 100.0
         fuzzy_pct = (fz / total * 100) if total else 0.0
         rel = f.relative_to(REPO_ROOT)
-        rows.append((str(rel), translated_pct, fuzzy_pct, t, u, total))
+        rows.append((str(rel), translated_pct, fuzzy_pct, t, fz, u, total))
 
         totals["translated"] += t
         totals["fuzzy"] += fz
@@ -61,12 +61,12 @@ def build_table() -> str:
     rows.sort(key=lambda r: (-r[1], r[0]))
 
     lines = [
-        "| فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد ترجمه‌نشده |",
-        "|:-----|:-----------:|:-----------:|:-----------:|:-----------:|",
+        "| فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |",
+        "|:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|",
     ]
-    for name, t_pct, f_pct, t_count, u_count, _total in rows:
+    for name, t_pct, f_pct, t_count, f_count, u_count, _total in rows:
         lines.append(
-            f"| {name} | {t_pct:.1f}% | {f_pct:.1f}% | {t_count} | {u_count} |"
+            f"| {name} | {t_pct:.1f}% | {f_pct:.1f}% | {t_count} | {f_count} | {u_count} |"
         )
 
     grand_total = sum(totals.values())
@@ -74,7 +74,7 @@ def build_table() -> str:
         f"| **مجموع** | "
         f"**{(totals['translated'] / grand_total * 100) if grand_total else 100.0:.1f}%** | "
         f"**{(totals['fuzzy'] / grand_total * 100) if grand_total else 0.0:.1f}%** | "
-        f"**{totals['translated']}** | **{totals['untranslated']}** |"
+        f"**{totals['translated']}** | **{totals['fuzzy']}** | **{totals['untranslated']}** |"
     )
 
     return "\n".join(lines)
