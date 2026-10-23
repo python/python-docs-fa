@@ -397,10 +397,10 @@ msgid "This is the same as :c:func:`PyCFunction_GetSelf`, but without error or t
 msgstr "این همان :c:func:`PyCFunction_GetSelf` است، اما بدون بررسی خطا و نوع."
 
 msgid "Return a :term:`borrowed reference` to the defining class of *func* if its :c:member:`~PyMethodDef.ml_flags` includes :c:macro:`METH_METHOD`. Otherwise, return ``NULL`` without setting an exception."
-msgstr ""
+msgstr "اگر :c:member:`~PyMethodDef.ml_flags` تابع *func* شامل :c:macro:`METH_METHOD` باشد، یک :term:`ارجاع امانتی <borrowed reference>` به کلاس تعریف‌کننده‌ی آن برگردانید. در غیر این صورت، بدون تنظیم یک استثنا، ``NULL`` را برگردانید."
 
 msgid "*func* must be a C function object and must not be ``NULL``. This function does not perform error or type checking."
-msgstr ""
+msgstr "*func* باید یک شیء تابع C باشد و نباید ``NULL`` باشد. این تابع بررسی خطا یا بررسی نوع را انجام نمی‌دهد."
 
 msgid "Accessing attributes of extension types"
 msgstr "دسترسی به ویژگی‌های نوع‌های توسعه‌ای"
@@ -493,22 +493,20 @@ msgstr "هنگام ایجاد کلاس با استفاده از :c:member:`~PyTy
 msgid "The :c:macro:`!RESTRICTED`, :c:macro:`!READ_RESTRICTED` and :c:macro:`!WRITE_RESTRICTED` macros available with ``#include \"structmember.h\"`` are deprecated. :c:macro:`!READ_RESTRICTED` and :c:macro:`!RESTRICTED` are equivalent to :c:macro:`Py_AUDIT_READ`; :c:macro:`!WRITE_RESTRICTED` does nothing."
 msgstr "ماکروهای :c:macro:`!RESTRICTED`، :c:macro:`!READ_RESTRICTED` و :c:macro:`!WRITE_RESTRICTED` که با ``#include \"structmember.h\"`` در دسترس هستند، منسوخ شده‌اند. :c:macro:`!READ_RESTRICTED` و :c:macro:`!RESTRICTED` معادل :c:macro:`Py_AUDIT_READ` هستند؛ :c:macro:`!WRITE_RESTRICTED` هیچ کاری انجام نمی‌دهد."
 
-#, fuzzy
-#| msgid "The :c:macro:`!READONLY` macro was renamed to :c:macro:`Py_READONLY`. The :c:macro:`!PY_AUDIT_READ` macro was renamed with the ``Py_`` prefix. The new names are now always available. Previously, these required ``#include \"structmember.h\"``. The header is still available and it provides the old names."
 msgid "The :c:macro:`!READONLY` macro was renamed to :c:macro:`Py_READONLY`. The :c:macro:`PY_AUDIT_READ` macro was renamed with the ``Py_`` prefix. The new names are now always available. Previously, these required ``#include \"structmember.h\"``. The header is still available and it provides the old names."
-msgstr "ماکروی :c:macro:`!READONLY` به :c:macro:`Py_READONLY` تغییر نام یافت. ماکروی :c:macro:`!PY_AUDIT_READ` با پیشوند ``Py_`` تغییر نام یافت. نام‌های جدید اکنون همیشه در دسترس هستند. پیش‌تر، این موارد نیازمند ``#include \"structmember.h\"`` بودند. سرآیند هنوز در دسترس است و نام‌های قدیمی را فراهم می‌کند."
+msgstr "کلان‌دستور :c:macro:`!READONLY` به :c:macro:`Py_READONLY` تغییر نام یافت. کلان‌دستور :c:macro:`PY_AUDIT_READ` با پیشوند ``Py_`` تغییر نام یافت. نام‌های جدید اکنون همیشه در دسترس هستند. پیش از این، این موارد به ``#include \"structmember.h\"`` نیاز داشتند. سرآیند هنوز در دسترس است و نام‌های قدیمی را فراهم می‌کند."
 
 msgid "Soft-deprecated alias of :c:macro:`Py_AUDIT_READ` (note capitalization of the ``y``). Only available with  ``#include \"structmember.h\"``."
-msgstr ""
+msgstr "نام مستعار منسوخِ نرمِ :c:macro:`Py_AUDIT_READ` (به بزرگ بودن حرف ``y`` توجه کنید). تنها با ``#include \"structmember.h\"`` در دسترس است."
 
 msgid "Use :c:macro:`Py_AUDIT_READ` instead."
-msgstr ""
+msgstr "به‌جای آن از :c:macro:`Py_AUDIT_READ` استفاده کنید."
 
 msgid "A member flag that has no effect, retained solely for backwards compatibility. This is only available with ``#include \"structmember.h\"``."
-msgstr ""
+msgstr "یک پرچم عضو (member flag) که هیچ اثری ندارد و صرفاً برای سازگاری با نسخه‌های قبلی حفظ شده است. این مورد تنها با ``#include \"structmember.h\"`` در دسترس است."
 
 msgid "Omit this flag instead."
-msgstr ""
+msgstr "به‌جای آن این پرچم را حذف کنید."
 
 msgid "Member types"
 msgstr "نوع‌های عضو"

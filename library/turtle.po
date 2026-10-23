@@ -354,10 +354,10 @@ msgid "a boolean"
 msgstr "یک بولی"
 
 msgid "Teleport, or instantly move, the turtle to an absolute position. Unlike :func:`goto`, no line is drawn. If *x* or *y* is not given, that coordinate is kept as it is. The turtle's heading does not change."
-msgstr ""
+msgstr "لاک‌پشت (turtle) را به یک موقعیت مطلق منتقل کنید، یا فوراً حرکت دهید. برخلاف :func:`goto`، هیچ خطی رسم نمی‌شود. اگر *x* یا *y* داده نشود، آن مختصات به همان صورت حفظ می‌شود. سردرِ لاک‌پشت (turtle) تغییر نمی‌کند."
 
 msgid "If the turtle is filling a shape, the shape drawn so far is finished and filled before teleporting, and filling starts again at the new position. Pass ``fill_gap=True`` to keep filling one shape instead. The teleport then counts as an edge of the shape, as it would with :func:`goto`."
-msgstr ""
+msgstr "اگر لاک‌پشت (turtle) در حال پر کردن یک شکل باشد، شکل رسم‌شده تا این لحظه، قبل از انتقال کامل شده و پر می‌شود و پر کردن دوباره در موقعیت جدید آغاز می‌شود. برای ادامه‌ی پر کردن یک شکل، ``fill_gap=True`` را ارسال کنید. سپس انتقال مانند :func:`goto` به عنوان یک ضلع از شکل محاسبه می‌شود."
 
 msgid ""
 ">>> tp = turtle.pos()\n"
@@ -526,18 +526,14 @@ msgstr ""
 ">>> turtle.heading()\n"
 "180.0"
 
-#, fuzzy
-#| msgid "a nonnegative integer or ``None``"
 msgid "a positive integer or ``None``"
-msgstr "یک عدد صحیح نامنفی یا ``None``"
+msgstr "یک عدد صحیح (integer) مثبت یا ``None``"
 
 msgid "a colorstring or a numeric color tuple"
 msgstr "یک رشته‌ی رنگ یا یک تاپل عددی رنگ"
 
-#, fuzzy
-#| msgid "Draw a circular dot with diameter *size*, using *color*.  If *size* is not given, the maximum of ``pensize+4`` and ``2*pensize`` is used."
 msgid "Draw a circular dot with diameter *size*, using *color*. If *size* is not given, the larger of ``pensize + 4`` and ``2 * pensize`` is used. If *color* is not given, the current pencolor is used."
-msgstr "با استفاده از *color*، یک نقطه‌ی دایره‌ای به قطر *size* رسم کنید. اگر *size* داده نشود، از بیشینه‌ی ``pensize+4`` و ``2*pensize`` استفاده می‌شود."
+msgstr "با استفاده از *color*، یک نقطه‌ی دایره‌ای با قطر *size* رسم کنید. اگر *size* داده نشود، بزرگ‌ترین مقدار بین ``pensize + 4`` و ``2 * pensize`` استفاده می‌شود. اگر *color* داده نشود، رنگ قلم فعلی به کار می‌رود."
 
 msgid ""
 ">>> turtle.home()\n"
@@ -634,43 +630,29 @@ msgstr ""
 ">>> for i in range(8):\n"
 "...     turtle.undo()"
 
-#, fuzzy
-#| msgid "an integer or ``None``"
 msgid "an integer, a string or ``None``"
-msgstr "یک عدد صحیح یا ``None``"
+msgstr "یک عدد صحیح (integer)، یک رشته (string) یا ``None``"
 
 msgid "Return or set the turtle's speed. If *speed* is not given, return the current speed. Otherwise set the turtle's speed to an integer from 0 to 10. If *speed* is a number greater than 10 or smaller than 0.5, the speed is set to 0. You can also use these names instead of numbers:"
-msgstr ""
+msgstr "سرعت لاک‌پشت (turtle) را برگردانید یا تنظیم کنید. اگر *speed* داده نشود، سرعت فعلی برگردانده می‌شود. در غیر این صورت، سرعت لاک‌پشت (turtle) را روی یک عدد صحیح (integer) از 0 تا 10 تنظیم کنید. اگر *speed* عددی بزرگ‌تر از 10 یا کوچک‌تر از 0.5 باشد، سرعت روی 0 تنظیم می‌شود. همچنین می‌توانید به‌جای اعداد از این نام‌ها استفاده کنید:"
 
-#, fuzzy
-#| msgid "\"fastest\":  0"
 msgid "\"fastest\": 0"
-msgstr "\"fastest\":  0"
+msgstr "\"fastest\": 0"
 
-#, fuzzy
-#| msgid "\"fast\":  10"
 msgid "\"fast\": 10"
-msgstr "\"fast\":  10"
+msgstr "\"fast\": 10"
 
-#, fuzzy
-#| msgid "\"normal\":  6"
 msgid "\"normal\": 6"
-msgstr "\"normal\":  6"
+msgstr "\"normal\": 6"
 
-#, fuzzy
-#| msgid "\"slow\":  3"
 msgid "\"slow\": 3"
-msgstr "\"slow\":  3"
+msgstr "\"slow\": 3"
 
-#, fuzzy
-#| msgid "\"slowest\":  1"
 msgid "\"slowest\": 1"
-msgstr "\"slowest\":  1"
+msgstr "\"slowest\": 1"
 
-#, fuzzy
-#| msgid "Attention: *speed* = 0 means that *no* animation takes place. forward/back makes turtle jump and likewise left/right make the turtle turn instantly."
 msgid "Speeds from 1 to 10 give increasingly faster animation of line drawing and turtle turning. A speed of 0 means that no animation takes place: :func:`forward` and :func:`back` make the turtle jump, and likewise :func:`left` and :func:`right` make the turtle turn instantly."
-msgstr "توجه: *speed* = ۰ به این معناست که *هیچ* پویانمایی‌ای رخ نمی‌دهد. forward/back باعث پرش لاک‌پشت می‌شود و به همین ترتیب left/right باعث چرخش آنی لاک‌پشت می‌شود."
+msgstr "سرعت‌های بین 1 تا 10 پویانمایی سریع‌تری برای رسم خط و چرخش لاک‌پشت (turtle) فراهم می‌کنند. سرعت 0 به این معناست که هیچ پویانمایی‌ای انجام نمی‌شود: :func:`forward` و :func:`back` باعث پرش لاک‌پشت (turtle) می‌شوند و به همین ترتیب :func:`left` و :func:`right` باعث چرخش آنی لاک‌پشت (turtle) می‌شوند."
 
 msgid ""
 ">>> turtle.speed()\n"
@@ -859,22 +841,16 @@ msgid "Drawing state"
 msgstr "وضعیت ترسیم"
 
 msgid "Lower the pen. The turtle draws a line when it moves."
-msgstr ""
+msgstr "قلم را پایین بیاورید. لاک‌پشت (turtle) هنگام حرکت، یک خط رسم می‌کند."
 
-#, fuzzy
-#| msgid "Pull the pen up -- no drawing when moving."
 msgid "Lift the pen. The turtle does not draw when it moves."
-msgstr "قلم را بالا بکشید — هنگام حرکت، ترسیمی انجام نمی‌شود."
+msgstr "قلم را بالا ببرید. لاک‌پشت (turtle) هنگام حرکت چیزی رسم نمی‌کند."
 
-#, fuzzy
-#| msgid "a number or ``None``"
 msgid "a positive number or ``None``"
-msgstr "یک عدد یا ``None``"
+msgstr "یک عدد مثبت یا ``None``"
 
-#, fuzzy
-#| msgid "Set the line thickness to *width* or return it.  If resizemode is set to \"auto\" and turtleshape is a polygon, that polygon is drawn with the same line thickness.  If no argument is given, the current pensize is returned."
 msgid "Return or set the line thickness. If *width* is not given, return the current pensize. If resizemode is set to \"auto\" and the turtle shape is a polygon, that polygon is drawn with the same line thickness."
-msgstr "ضخامت خط را روی *width* تنظیم می‌کند یا آن را بازمی‌گرداند. اگر resizemode روی \"auto\" تنظیم شده باشد و turtleshape یک چندضلعی باشد، آن چندضلعی با همان ضخامت خط رسم می‌شود. اگر آرگومانی داده نشود، pensize فعلی بازگردانده می‌شود."
+msgstr "ضخامت خط را برگردانید یا تنظیم کنید. اگر *width* داده نشود، اندازه‌ی قلم فعلی برگردانده می‌شود. اگر resizemode روی «auto» تنظیم شده باشد و شکل لاک‌پشت (turtle) یک چندضلعی باشد، آن چندضلعی با همان ضخامت خط رسم می‌شود."
 
 msgid ""
 ">>> turtle.pensize()\n"
@@ -958,10 +934,8 @@ msgstr ""
 ">>> sorted(turtle.pen().items())[:3]\n"
 "[('fillcolor', 'green'), ('outline', 1), ('pencolor', 'red')]"
 
-#, fuzzy
-#| msgid "Return ``True`` if pen is down, ``False`` if it's up."
 msgid "Return ``True`` if the pen is down, ``False`` if it's up."
-msgstr "اگر قلم پایین باشد، ``True`` و اگر بالا باشد، ``False`` برمی‌گرداند."
+msgstr "اگر قلم پایین باشد ``True`` و اگر بالا باشد ``False`` را برگردانید."
 
 msgid ""
 ">>> turtle.penup()\n"
@@ -996,31 +970,23 @@ msgstr "رنگ قلم فعلی را به‌صورت رشته مشخصه رنگ �
 msgid "``pencolor(colorstring)``"
 msgstr "``pencolor(colorstring)``"
 
-#, fuzzy
-#| msgid "Set pencolor to *colorstring*, which is a Tk color specification string, such as ``\"red\"``, ``\"yellow\"``, or ``\"#33cc8c\"``."
 msgid "Set the pencolor to *colorstring*, which is a Tk color specification string, such as ``\"red\"``, ``\"yellow\"``, or ``\"#33cc8c\"``."
-msgstr "pencolor را به *colorstring* تنظیم می‌کند، که یک رشته‌ی مشخصه‌ی رنگ Tk است، مانند ``\"red\"``، ``\"yellow\"``، یا ``\"#33cc8c\"``."
+msgstr "رنگ قلم را روی *colorstring* تنظیم کنید؛ که یک رشته‌ی (string) مشخصات رنگ Tk است، مانند ``\"red\"``، ``\"yellow\"``، یا ``\"#33cc8c\"``."
 
 msgid "``pencolor((r, g, b))``"
 msgstr "``pencolor((r, g, b))``"
 
-#, fuzzy
-#| msgid "Set the background color to the RGB color represented by the tuple of *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be between 0 and colormode, where colormode is either 1.0 or 255 (see :func:`colormode`)."
 msgid "Set the pencolor to the RGB color represented by the tuple of *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be between 0 and colormode, where colormode is either 1.0 or 255 (see :func:`colormode`)."
-msgstr "رنگ پس‌زمینه را روی رنگ RGB بیان‌شده با تاپل *r*، *g* و *b* تنظیم کنید. هر یک از *r*، *g* و *b* باید بین ۰ و colormode باشند، که colormode می‌تواند ۱.۰ یا ۲۵۵ باشد (به :func:`colormode` مراجعه کنید)."
+msgstr "رنگ قلم را روی رنگ RGB نشان‌داده‌شده توسط تاپلِ *r*، *g* و *b* تنظیم کنید. هر یک از *r*، *g* و *b* باید بین 0 و colormode باشند، که در آن colormode برابر با 1.0 یا 255 است (به :func:`colormode` مراجعه کنید)."
 
 msgid "``pencolor(r, g, b)``"
 msgstr "``pencolor(r, g, b)``"
 
-#, fuzzy
-#| msgid "Set the background color to the RGB color represented by *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be between 0 and colormode."
 msgid "Set the pencolor to the RGB color represented by *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be between 0 and colormode."
-msgstr "رنگ پس‌زمینه را روی رنگ RGB نشان‌داده‌شده با *r*، *g* و *b* تنظیم کنید. هر یک از *r*، *g* و *b* باید بین ۰ و colormode باشد."
+msgstr "رنگ قلم را روی رنگ RGB مشخص‌شده توسط *r*، *g* و *b* تنظیم کنید. هر کدام از *r*، *g* و *b* باید بین ۰ و colormode باشند."
 
-#, fuzzy
-#| msgid "If turtleshape is a polygon, the outline of that polygon is drawn with the newly set pencolor."
 msgid "If the turtle shape is a polygon, the outline of that polygon is drawn with the newly set pencolor."
-msgstr "اگر turtleshape یک چندضلعی باشد، خط دور آن چندضلعی با pencolor تازه تنظیم‌شده رسم می‌شود."
+msgstr "اگر شکل لاک‌پشت (turtle) یک چندضلعی باشد، حاشیه‌ی آن چندضلعی با رنگ قلم تازه‌تنظیم‌شده رسم می‌شود."
 
 msgid ""
 ">>> colormode()\n"
@@ -1071,31 +1037,23 @@ msgstr "fillcolor فعلی را به‌عنوان رشته مشخصات رنگ �
 msgid "``fillcolor(colorstring)``"
 msgstr "``fillcolor(colorstring)``"
 
-#, fuzzy
-#| msgid "Set fillcolor to *colorstring*, which is a Tk color specification string, such as ``\"red\"``, ``\"yellow\"``, or ``\"#33cc8c\"``."
 msgid "Set the fillcolor to *colorstring*, which is a Tk color specification string, such as ``\"red\"``, ``\"yellow\"``, or ``\"#33cc8c\"``."
-msgstr "fillcolor را روی *colorstring* تنظیم کنید، که یک رشته مشخص‌کننده رنگ Tk است، مانند ``\"red\"``، ``\"yellow\"`` یا ``\"#33cc8c\"``."
+msgstr "رنگ پر کردن (fillcolor) را روی *colorstring* تنظیم کنید که یک رشته‌ی مشخصات رنگ Tk است، مانند ``\"red\"``، ``\"yellow\"``، یا ``\"#33cc8c\"``."
 
 msgid "``fillcolor((r, g, b))``"
 msgstr "``fillcolor((r, g, b))``"
 
-#, fuzzy
-#| msgid "Set the background color to the RGB color represented by the tuple of *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be between 0 and colormode, where colormode is either 1.0 or 255 (see :func:`colormode`)."
 msgid "Set the fillcolor to the RGB color represented by the tuple of *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be between 0 and colormode, where colormode is either 1.0 or 255 (see :func:`colormode`)."
-msgstr "رنگ پس‌زمینه را روی رنگ RGB بیان‌شده با تاپل *r*، *g* و *b* تنظیم کنید. هر یک از *r*، *g* و *b* باید بین ۰ و colormode باشند، که colormode می‌تواند ۱.۰ یا ۲۵۵ باشد (به :func:`colormode` مراجعه کنید)."
+msgstr "رنگ پر کردن را روی رنگ RGB مشخص‌شده توسط تاپل *r*، *g* و *b* تنظیم کنید. هر کدام از *r*، *g* و *b* باید بین ۰ و colormode باشند، که در آن colormode برابر با ۱.۰ یا ۲۵۵ است (نگاه کنید به :func:`colormode`)."
 
 msgid "``fillcolor(r, g, b)``"
 msgstr "``fillcolor(r, g, b)``"
 
-#, fuzzy
-#| msgid "Set the background color to the RGB color represented by *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be between 0 and colormode."
 msgid "Set the fillcolor to the RGB color represented by *r*, *g*, and *b*. Each of *r*, *g*, and *b* must be between 0 and colormode."
-msgstr "رنگ پس‌زمینه را روی رنگ RGB نشان‌داده‌شده با *r*، *g* و *b* تنظیم کنید. هر یک از *r*، *g* و *b* باید بین ۰ و colormode باشد."
+msgstr "رنگ پر کردن را روی رنگ RGB مشخص‌شده توسط *r*، *g* و *b* تنظیم کنید. هر کدام از *r*، *g* و *b* باید بین ۰ و colormode باشند."
 
-#, fuzzy
-#| msgid "If turtleshape is a polygon, the interior of that polygon is drawn with the newly set fillcolor."
 msgid "If the turtle shape is a polygon, the interior of that polygon is drawn with the newly set fillcolor."
-msgstr "اگر شکل لاک‌پشت یک چندضلعی باشد، فضای داخلی آن چندضلعی با fillcolor به‌تازگی تنظیم‌شده رسم می‌شود."
+msgstr "اگر شکل لاک‌پشت (turtle) یک چندضلعی باشد، درون آن چندضلعی با رنگ پر کردن تازه‌تنظیم‌شده رسم می‌شود."
 
 msgid ""
 ">>> turtle.fillcolor(\"violet\")\n"
@@ -1122,15 +1080,11 @@ msgstr ""
 ">>> turtle.fillcolor()\n"
 "(255.0, 255.0, 255.0)"
 
-#, fuzzy
-#| msgid "Return or set pencolor and fillcolor."
 msgid "Return or set the pencolor and fillcolor."
-msgstr "pencolor و fillcolor را برمی‌گرداند یا تنظیم می‌کند."
+msgstr "رنگ قلم و رنگ پر کردن را برگردانید یا تنظیم کنید."
 
-#, fuzzy
-#| msgid "Several input formats are allowed.  They use 0 to 3 arguments as follows:"
 msgid "Several input formats are allowed. They use 0 to 3 arguments as follows:"
-msgstr "چندین قالب ورودی مجاز است. آن‌ها از ۰ تا ۳ آرگومان به‌صورت زیر استفاده می‌کنند:"
+msgstr "چندین قالب ورودی مجاز است. آن‌ها از ۰ تا ۳ آرگومان به شرح زیر استفاده می‌کنند:"
 
 msgid "``color()``"
 msgstr "``color()``"
@@ -1141,10 +1095,8 @@ msgstr "رنگ قلم فعلی و رنگ پر کردن فعلی را به‌صو
 msgid "``color(colorstring)``, ``color((r,g,b))``, ``color(r,g,b)``"
 msgstr "``color(colorstring)``, ``color((r,g,b))``, ``color(r,g,b)``"
 
-#, fuzzy
-#| msgid "Inputs as in :func:`pencolor`, set both, fillcolor and pencolor, to the given value."
 msgid "Inputs as in :func:`pencolor`. Set both the pencolor and the fillcolor to the given value."
-msgstr "ورودی‌ها مانند :func:`pencolor`، هر دو، fillcolor و pencolor، به مقدار داده‌شده تنظیم می‌شوند."
+msgstr "ورودی‌ها مانند :func:`pencolor` هستند. هم رنگ قلم و هم رنگ پر کردن را روی مقدار داده‌شده تنظیم کنید."
 
 msgid "``color(colorstring1, colorstring2)``, ``color((r1,g1,b1), (r2,g2,b2))``"
 msgstr "``color(colorstring1, colorstring2)``, ``color((r1,g1,b1), (r2,g2,b2))``"
@@ -1152,10 +1104,8 @@ msgstr "``color(colorstring1, colorstring2)``, ``color((r1,g1,b1), (r2,g2,b2))``
 msgid "Equivalent to ``pencolor(colorstring1)`` and ``fillcolor(colorstring2)`` and analogously if the other input format is used."
 msgstr "معادل ``pencolor(colorstring1)`` و ``fillcolor(colorstring2)`` است و اگر از قالب ورودی دیگر استفاده شود، به‌طور مشابه عمل می‌کند."
 
-#, fuzzy
-#| msgid "If turtleshape is a polygon, outline and interior of that polygon is drawn with the newly set colors."
 msgid "If the turtle shape is a polygon, the outline and interior of that polygon are drawn with the newly set colors."
-msgstr "اگر turtleshape یک چندضلعی باشد، خط دور و داخل آن چندضلعی با رنگ‌های تازه‌تنظیم‌شده رسم می‌شود."
+msgstr "اگر شکل لاک‌پشت (turtle) یک چندضلعی باشد، حاشیه و درون آن چندضلعی با رنگ‌های تازه‌تنظیم‌شده رسم می‌شوند."
 
 msgid ""
 ">>> turtle.color(\"red\", \"green\")\n"
@@ -1178,10 +1128,8 @@ msgstr "همچنین ببینید: متد Screen به نام :func:`colormode`."
 msgid "Filling"
 msgstr "پر کردن"
 
-#, fuzzy
-#| msgid "Return ``True`` if the turtle is shown, ``False`` if it's hidden."
 msgid "Return ``True`` if the turtle is filling, ``False`` otherwise."
-msgstr "اگر turtle نمایش داده شده باشد، ``True`` و اگر پنهان باشد، ``False`` را برمی‌گرداند."
+msgstr "اگر لاک‌پشت (turtle) در حال پر کردن باشد، ``True`` را برگردانید، در غیر این صورت ``False`` را برگردانید."
 
 msgid ""
 ">>> turtle.begin_fill()\n"
@@ -1299,10 +1247,8 @@ msgstr "لاک‌پشت را نامرئی کنید. اگر قلم پایین ا�
 msgid "Make the turtle visible."
 msgstr "لاک‌پشت را نمایان کنید."
 
-#, fuzzy
-#| msgid "Return ``True`` if the turtle is shown, ``False`` if it's hidden."
 msgid "Return ``True`` if the turtle is visible, ``False`` if it's hidden."
-msgstr "اگر turtle نمایش داده شده باشد، ``True`` و اگر پنهان باشد، ``False`` را برمی‌گرداند."
+msgstr "اگر لاک‌پشت (turtle) مرئی باشد ``True`` و اگر پنهان باشد ``False`` را برگردانید."
 
 msgid ""
 ">>> turtle.hideturtle()\n"
@@ -1325,10 +1271,8 @@ msgstr "ظاهر"
 msgid "a string or ``None``"
 msgstr "یک رشته یا ``None``"
 
-#, fuzzy
-#| msgid "Set turtle shape to shape with given *name* or, if name is not given, return name of current shape.  Shape with *name* must exist in the TurtleScreen's shape dictionary.  Initially there are the following polygon shapes: \"arrow\", \"turtle\", \"circle\", \"square\", \"triangle\", \"classic\".  To learn about how to deal with shapes see Screen method :func:`register_shape`."
 msgid "Set the turtle shape to the named shape. If *name* is not given, return the name of the current shape. The shape must exist in the :class:`TurtleScreen`'s shape dictionary. Initially there are the following shapes: \"arrow\", \"turtle\", \"circle\", \"square\", \"triangle\" and \"classic\". To add shapes, see the :class:`Screen` method :func:`register_shape`."
-msgstr "شکل لاک‌پشت را به شکل با *name* داده‌شده تنظیم می‌کند یا اگر name داده نشده باشد، نام شکل جاری را برمی‌گرداند. شکل با *name* باید در دیکشنری شکل‌های TurtleScreen وجود داشته باشد. در ابتدا، شکل‌های چندضلعی زیر وجود دارند: \"arrow\"، \"turtle\"، \"circle\"، \"square\"، \"triangle\"، \"classic\". برای آشنایی با نحوه‌ی کار با شکل‌ها، متد :func:`register_shape` از Screen را ببینید."
+msgstr "شکل لاک‌پشت (turtle) را روی شکل نام‌گذاری‌شده تنظیم کنید. اگر *name* داده نشده باشد، نام شکل فعلی را برگردانید. شکل باید در دیکشنری (dictionary) شکل‌های :class:`TurtleScreen` وجود داشته باشد. در ابتدا شکل‌های زیر وجود دارند: \"arrow\"، \"turtle\"، \"circle\"، \"square\"، \"triangle\" و \"classic\". برای افزودن شکل‌ها، نگاه کنید به متد (method) :class:`Screen` یعنی :func:`register_shape`."
 
 msgid ""
 ">>> turtle.shape()\n"
@@ -1343,23 +1287,17 @@ msgstr ""
 ">>> turtle.shape()\n"
 "'turtle'"
 
-#, fuzzy
-#| msgid "Set resizemode to one of the values: \"auto\", \"user\", \"noresize\".  If *rmode* is not given, return current resizemode.  Different resizemodes have the following effects:"
 msgid "Set the resizemode to \"auto\", \"user\" or \"noresize\". If *rmode* is not given, return the current resizemode. The different resizemodes have the following effects:"
-msgstr "resizemode را روی یکی از مقادیر زیر تنظیم کنید: \"auto\"، \"user\"، \"noresize\". اگر *rmode* داده نشود، resizemode فعلی برگردانده می‌شود. حالت‌های مختلف resizemode پیامدهای زیر را دارند:"
+msgstr "حالت تغییر اندازه (resizemode) را روی \"auto\"، \"user\" یا \"noresize\" تنظیم کنید. اگر *rmode* داده نشده باشد، حالت تغییر اندازه‌ی فعلی را برگردانید. حالت‌های مختلف تغییر اندازه تأثیرات زیر را دارند:"
 
-#, fuzzy
-#| msgid "\"auto\": adapts the appearance of the turtle corresponding to the value of pensize."
 msgid "\"auto\": the turtle is resized according to the value of :func:`pensize`."
-msgstr "\"auto\": ظاهر لاک‌پشت را متناسب با مقدار pensize تطبیق می‌دهد."
+msgstr "\"auto\": اندازه‌ی لاک‌پشت (turtle) بر اساس مقدار :func:`pensize` تغییر می‌کند."
 
-#, fuzzy
-#| msgid "\"user\": adapts the appearance of the turtle according to the values of stretchfactor and outlinewidth (outline), which are set by :func:`shapesize`."
 msgid "\"user\": the turtle is resized according to the stretch factors and outline width, which are set by :func:`shapesize`."
-msgstr "\"user\": ظاهر لاک‌پشت را مطابق با مقادیر stretchfactor و outlinewidth (outline)، که توسط :func:`shapesize` تنظیم می‌شوند، تطبیق می‌دهد."
+msgstr "\"user\": اندازه‌ی لاک‌پشت (turtle) بر اساس عوامل کشش و عرض حاشیه که توسط :func:`shapesize` تنظیم شده‌اند، تغییر می‌کند."
 
 msgid "\"noresize\": the turtle is not resized."
-msgstr ""
+msgstr "\"noresize\": اندازه‌ی لاک‌پشت (turtle) تغییر نمی‌کند."
 
 msgid "``resizemode(\"user\")`` is called by :func:`shapesize` when used with arguments."
 msgstr "``resizemode(\"user\")`` توسط :func:`shapesize` در صورتی که با آرگومان‌ها استفاده شود، فراخوانی می‌شود."
@@ -1378,21 +1316,19 @@ msgstr ""
 "'auto'"
 
 msgid "Return or set the turtle's stretch factors and outline width. If no arguments are given, return the current values. Otherwise set resizemode to \"user\", so that the turtle is displayed stretched according to its stretch factors:"
-msgstr ""
+msgstr "عوامل کشش و عرض حاشیه‌ی لاک‌پشت (turtle) را برگردانید یا تنظیم کنید. اگر هیچ آرگومانی داده نشده باشد، مقادیر فعلی را برگردانید. در غیر این صورت، حالت تغییر اندازه را روی \"user\" تنظیم کنید تا لاک‌پشت بر اساس عوامل کشش خود به صورت کشیده نمایش داده شود:"
 
 msgid "*stretch_wid*: the stretch factor perpendicular to the turtle's heading"
-msgstr ""
+msgstr "*stretch_wid*: عامل کشش عمود بر جهت حرکت لاک‌پشت (turtle)"
 
-#, fuzzy
-#| msgid "Move the turtle forward by the specified *distance*, in the direction the turtle is headed."
 msgid "*stretch_len*: the stretch factor in the direction of the turtle's heading"
-msgstr "لاک‌پشت را به اندازه‌ی *distance* مشخص‌شده، در جهتی که لاک‌پشت رو به آن دارد، به جلو حرکت می‌دهد."
+msgstr "*stretch_len*: عامل کشش در راستای جهت حرکت لاک‌پشت (turtle)"
 
 msgid "*outline*: the width of the shape's outline"
-msgstr ""
+msgstr "*outline*: عرض حاشیه‌ی شکل"
 
 msgid "For example, ``shapesize(2, 1)`` makes the turtle twice as wide without changing its length. If only *stretch_wid* is given, *stretch_len* is set to the same value."
-msgstr ""
+msgstr "برای نمونه، ``shapesize(2, 1)`` لاک‌پشت را بدون تغییر طول، دو برابر پهن‌تر می‌کند. اگر تنها پارامتر *stretch_wid* داده شود، *stretch_len* روی همان مقدار تنظیم می‌شود."
 
 msgid ""
 ">>> turtle.shapesize()\n"
@@ -1632,29 +1568,21 @@ msgstr ""
 ">>> p = turtle.get_poly()\n"
 ">>> register_shape(\"myFavouriteShape\", p)"
 
-#, fuzzy
-#| msgid "Create and return a clone of the turtle with same position, heading and turtle properties."
 msgid "Create and return a clone of the turtle. The clone has the same position, heading and turtle properties."
-msgstr "یک رونوشت (clone) از لاک‌پشت با همان موقعیت، جهت و ویژگی‌های لاک‌پشت ایجاد کرده و بازمی‌گرداند."
+msgstr "یک رونوشت از لاک‌پشت ایجاد کرده و آن را برمی‌گرداند. رونوشت دارای همان موقعیت، جهت و ویژگی‌های لاک‌پشت است."
 
-#, fuzzy
-#| msgid ""
-#| ">>> mick = Turtle()\n"
-#| ">>> joe = mick.clone()"
 msgid ""
 ">>> leonel = Turtle()\n"
 ">>> marco = leonel.clone()"
 msgstr ""
-">>> mick = Turtle()\n"
-">>> joe = mick.clone()"
+">>> leonel = Turtle()\n"
+">>> marco = leonel.clone()"
 
-#, fuzzy
-#| msgid "Return the turtle's x coordinate."
 msgid "Return the Turtle object itself."
-msgstr "مختصات x لاک‌پشت را برمی‌گرداند."
+msgstr "خود شیء Turtle را برمی‌گرداند."
 
 msgid "Call ``getturtle()`` to get the turtle used by functions such as :func:`forward` and :func:`left`:"
-msgstr ""
+msgstr "برای دریافت لاک‌پشتِ مورد استفاده‌ی توابع مانند :func:`forward` و :func:`left`، تابع ``getturtle()`` را فراخوانی کنید:"
 
 msgid ""
 ">>> pet = getturtle()\n"
@@ -1681,18 +1609,14 @@ msgstr ""
 "<turtle._Screen object at 0x...>\n"
 ">>> ts.bgcolor(\"pink\")"
 
-#, fuzzy
-#| msgid "Set or disable undobuffer.  If *size* is an integer, an empty undobuffer of given size is installed.  *size* gives the maximum number of turtle actions that can be undone by the :func:`undo` method/function.  If *size* is ``None``, the undobuffer is disabled."
 msgid "Set or disable the undo buffer. If *size* is an integer, an empty undo buffer of the given size is installed. *size* is the maximum number of turtle actions that can be undone by :func:`undo`. If *size* is ``None``, the undo buffer is disabled."
-msgstr "بافر لغو (undobuffer) را تنظیم یا غیرفعال کنید. اگر *size* یک عدد صحیح باشد، یک بافر لغو (undobuffer) خالی با اندازه‌ی داده‌شده نصب می‌شود. *size* حداکثر تعداد کنش‌های لاک‌پشت را که می‌توان با متد/تابع :func:`undo` آن‌ها را واگرد کرد، مشخص می‌کند. اگر *size* برابر ``None`` باشد، بافر لغو (undobuffer) غیرفعال می‌شود."
+msgstr "بافر لغو را تنظیم یا غیرفعال کنید. اگر *size* یک عدد صحیح باشد، یک بافر لغو خالی با اندازه‌ی مشخص‌شده نصب می‌شود. *size* حداکثر تعداد کنش‌های لاک‌پشت است که می‌تواند توسط :func:`undo` لغو شود. اگر *size* مقدار ``None`` باشد، بافر لغو غیرفعال می‌شود."
 
 msgid ">>> turtle.setundobuffer(42)"
 msgstr ">>> turtle.setundobuffer(42)"
 
-#, fuzzy
-#| msgid "Return number of entries in the undobuffer."
 msgid "Return the number of entries in the undo buffer."
-msgstr "تعداد ورودی‌های موجود در بافر لغو (undobuffer) را برمی‌گرداند."
+msgstr "تعداد ورودی‌های موجود در بافر لغو را برمی‌گرداند."
 
 msgid ""
 ">>> while undobufferentries():\n"
@@ -2334,10 +2258,8 @@ msgstr "راهنماهای عملی"
 msgid "This section covers some typical turtle use-cases and approaches."
 msgstr "این بخش برخی از موارد استفاده و رویکردهای رایج turtle را پوشش می‌دهد."
 
-#, fuzzy
-#| msgid "Automatically begin and end filling"
 msgid "How to automatically begin and end filling"
-msgstr "آغاز و پایان پر کردن به‌صورت خودکار"
+msgstr "نحوه‌ی شروع و پایان خودکار پر کردن"
 
 msgid "Starting with Python 3.14, you can use the :func:`fill` :term:`context manager` instead of :func:`begin_fill` and :func:`end_fill` to automatically begin and end fill. Here is an example::"
 msgstr "از پایتون 3.14 به بعد، می‌توانید به‌جای :func:`begin_fill` و :func:`end_fill` از :func:`fill` به‌عنوان :term:`context manager` استفاده کنید تا شروع و پایان پر کردن به‌طور خودکار انجام شود. در اینجا مثالی آورده شده است::"
@@ -2377,18 +2299,14 @@ msgstr ""
 "\n"
 "forward(200)"
 
-#, fuzzy
-#| msgid "Compound shapes"
 msgid "How to use compound shapes"
-msgstr "شکل‌های ترکیبی"
+msgstr "نحوه‌ی استفاده از اشکال ترکیبی"
 
 msgid "To use compound turtle shapes, which consist of several polygons of different color, you must use the helper class :class:`Shape` explicitly as described below:"
 msgstr "برای استفاده از شکل‌های ترکیبی turtle، که از چندین چندضلعی با رنگ‌های متفاوت تشکیل شده‌اند، باید به‌صراحت از کلاس کمکی :class:`Shape` استفاده کنید، همان‌طور که در زیر توضیح داده شده است:"
 
-#, fuzzy
-#| msgid "Create an empty Shape object of type \"compound\"."
 msgid "Create an empty :class:`Shape` object of type \"compound\"."
-msgstr "یک شیء Shape خالی از نوع \"compound\" ایجاد کنید."
+msgstr "یک شیء :class:`Shape` خالی از نوع «compound» ایجاد کنید."
 
 msgid "Add as many components to this object as desired, using the :meth:`~Shape.addcomponent` method."
 msgstr "هر تعداد کامپوننت که بخواهید، با استفاده از متد :meth:`~Shape.addcomponent` به این شیء اضافه کنید."
@@ -2396,13 +2314,6 @@ msgstr "هر تعداد کامپوننت که بخواهید، با استفاد
 msgid "For example:"
 msgstr "برای مثال:"
 
-#, fuzzy
-#| msgid ""
-#| ">>> s = Shape(\"compound\")\n"
-#| ">>> poly1 = ((0,0),(10,-5),(0,10),(-10,-5))\n"
-#| ">>> s.addcomponent(poly1, \"red\", \"blue\")\n"
-#| ">>> poly2 = ((0,0),(10,-5),(-10,-5))\n"
-#| ">>> s.addcomponent(poly2, \"blue\", \"red\")"
 msgid ""
 ">>> s = Shape(\"compound\")\n"
 ">>> poly1 = ((0,0), (10,-5), (0,10), (-10,-5))\n"
@@ -2411,9 +2322,9 @@ msgid ""
 ">>> s.addcomponent(poly2, \"blue\", \"red\")"
 msgstr ""
 ">>> s = Shape(\"compound\")\n"
-">>> poly1 = ((0,0),(10,-5),(0,10),(-10,-5))\n"
+">>> poly1 = ((0,0), (10,-5), (0,10), (-10,-5))\n"
 ">>> s.addcomponent(poly1, \"red\", \"blue\")\n"
-">>> poly2 = ((0,0),(10,-5),(-10,-5))\n"
+">>> poly2 = ((0,0), (10,-5), (-10,-5))\n"
 ">>> s.addcomponent(poly2, \"blue\", \"red\")"
 
 msgid "Now add the Shape to the Screen's shapelist and use it:"
@@ -2426,10 +2337,8 @@ msgstr ""
 ">>> register_shape(\"myshape\", s)\n"
 ">>> shape(\"myshape\")"
 
-#, fuzzy
-#| msgid "Use the ``turtle`` module namespace"
 msgid "How to use the ``turtle`` module namespace"
-msgstr "از فضای نام ماژول ``turtle`` استفاده کنید"
+msgstr "نحوه‌ی استفاده از فضای نام ماژول ``turtle``"
 
 msgid "Using ``from turtle import *`` is convenient - but be warned that it imports a rather large collection of objects, and if you're doing anything but turtle graphics you run the risk of a name conflict (this becomes even more an issue if you're using turtle graphics in a script where other modules might be imported)."
 msgstr "استفاده از ``from turtle import *`` مناسب است، اما توجه داشته باشید که این دستور مجموعه‌ای نسبتاً بزرگ از شیء‌ها را ایمپورت می‌کند و اگر کاری به‌جز گرافیک turtle انجام می‌دهید، با خطر تعارض نام مواجه می‌شوید (این موضوع به‌ویژه زمانی مشکل‌سازتر می‌شود که از گرافیک turtle در اسکریپتی استفاده می‌کنید که ممکن است ماژول‌های دیگر نیز ایمپورت شوند)."
@@ -2437,10 +2346,8 @@ msgstr "استفاده از ``from turtle import *`` مناسب است، اما 
 msgid "The solution is to use ``import turtle`` - ``fd()`` becomes ``turtle.fd()``, ``width()`` becomes ``turtle.width()`` and so on. (If typing \"turtle\" over and over again becomes tedious, use for example ``import turtle as t`` instead.)"
 msgstr "راه‌حل استفاده از ``import turtle`` است - ``fd()`` به ``turtle.fd()`` تبدیل می‌شود، ``width()`` به ``turtle.width()`` تبدیل می‌شود و به همین ترتیب. (اگر تایپ کردن مکرر \"turtle\" خسته‌کننده شد، برای مثال به‌جای آن از ``import turtle as t`` استفاده کنید.)"
 
-#, fuzzy
-#| msgid "Use turtle graphics in a script"
 msgid "How to use turtle graphics in a script"
-msgstr "استفاده از گرافیک لاک‌پشتی (turtle graphics) در یک اسکریپت"
+msgstr "نحوه‌ی استفاده از گرافیک لاک‌پشت در یک اسکریپت"
 
 msgid "It's recommended to use the ``turtle`` module namespace as described immediately above, for example::"
 msgstr "توصیه می‌شود همان‌طور که بلافاصله در بالا توضیح داده شد، از فضای نام ماژول ``turtle`` استفاده کنید، برای مثال::"
@@ -2473,10 +2380,8 @@ msgstr "t.mainloop()"
 msgid "to the end of the script. The script will now wait to be dismissed and will not exit until it is terminated, for example by closing the turtle graphics window."
 msgstr "به انتهای اسکریپت. اسکریپت اکنون منتظر می‌ماند تا بسته شود و تا زمانی که پایان داده نشود، خارج نخواهد شد، برای مثال با بستن پنجره‌ی گرافیک turtle."
 
-#, fuzzy
-#| msgid "Use object-oriented turtle graphics"
 msgid "How to use object-oriented turtle graphics"
-msgstr "استفاده از گرافیک لاک‌پشتی شیءگرا"
+msgstr "نحوه‌ی استفاده از گرافیک شیءگرای لاک‌پشت"
 
 msgid ":ref:`Explanation of the object-oriented interface <turtle-explanation>`"
 msgstr ":ref:`توضیح رابط شیءگرا <turtle-explanation>`"
@@ -2528,10 +2433,8 @@ msgstr ""
 "t.screen.title('Object-oriented turtle demo')\n"
 "t.screen.bgcolor(\"orange\")"
 
-#, fuzzy
-#| msgid "How to use help"
 msgid "How to use :func:`!help`"
-msgstr "نحوه استفاده از help"
+msgstr "نحوه‌ی استفاده از :func:`!help`"
 
 msgid "The public methods of the Screen and Turtle classes are documented extensively via docstrings.  So these can be used as online-help via the Python help facilities:"
 msgstr "متدهای عمومی کلاس‌های Screen و Turtle به‌طور گسترده‌ای از طریق رشته‌مستندها  مستند شده‌اند. بنابراین می‌توان از آن‌ها به‌عنوان راهنمای برخط از طریق امکانات راهنمای پایتون استفاده کرد:"

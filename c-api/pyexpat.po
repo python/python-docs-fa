@@ -17,43 +17,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Expat C API"
-msgstr ""
+msgstr "Expat C API"
 
 msgid "The :mod:`xml.parsers.expat` module exposes selected Expat functions through its ``expat_CAPI`` capsule. This allows extension modules to use the same Expat library as Python. The interface is declared in :file:`pyexpat.h`, which must be included after Expat's :file:`expat.h` header."
-msgstr ""
+msgstr "ماژول :mod:`xml.parsers.expat` توابع منتخب Expat را از طریق کپسول ``expat_CAPI`` خود در معرض نمایش می‌گذارد. این امر به ماژول‌های توسعه‌ای اجازه می‌دهد تا از همان کتابخانه‌ی Expat پایتون استفاده کنند. این رابط در :file:`pyexpat.h` اعلان می‌شود که باید پس از سرآیند :file:`expat.h` مربوط به Expat گنجانده شود."
 
 msgid "The name of the capsule containing the Expat C API: ``\"pyexpat.expat_CAPI\"``. Pass this to :c:func:`PyCapsule_Import` to obtain a pointer to a :c:struct:`PyExpat_CAPI`."
-msgstr ""
+msgstr "نام کپسول حاوی Expat C API: ``\"pyexpat.expat_CAPI\"``. این مقدار را به :c:func:`PyCapsule_Import` ارسال کنید تا اشاره‌گری به یک :c:struct:`PyExpat_CAPI` به دست آورید."
 
 msgid "The string identifying the layout of :c:struct:`PyExpat_CAPI`. Before using the function pointers in the structure, check that its ``magic`` member compares equal to this string using ``strcmp()`` and  its ``size`` member is at least :c:expr:`sizeof(struct PyExpat_CAPI)`."
-msgstr ""
+msgstr "رشته‌ای که چیدمان :c:struct:`PyExpat_CAPI` را مشخص می‌کند. پیش از استفاده از اشاره‌گرهای تابع در ساختار، بررسی کنید که عضو ``magic`` آن با استفاده از ``strcmp()`` با این رشته برابر باشد و عضو ``size`` آن حداقل :c:expr:`sizeof(struct PyExpat_CAPI)` باشد."
 
 msgid "Table of function pointers exported by :mod:`xml.parsers.expat`. The capsule owns this structure: treat it as read-only and do not free it. Keep a strong reference to the capsule while using the table."
-msgstr ""
+msgstr "جدول اشاره‌گرهای تابع صادرشده توسط :mod:`xml.parsers.expat`. کپسول مالک این ساختار است: آن را به عنوان فقط‌خواندنی در نظر بگیرید و آزاد نکنید. در حالی که از جدول استفاده می‌کنید، یک ارجاع قوی به کپسول نگه دارید."
 
 msgid "Check the compatibility fields as described under :c:macro:`PyExpat_CAPI_MAGIC` before using the function pointers."
-msgstr ""
+msgstr "پیش از استفاده از اشاره‌گرهای تابع، فیلدهای سازگاری را همان‌طور که تحت :c:macro:`PyExpat_CAPI_MAGIC` توصیف شده است بررسی کنید."
 
 msgid "Interface identifier, set to :c:macro:`PyExpat_CAPI_MAGIC`."
-msgstr ""
+msgstr "شناسه‌ی رابط، روی :c:macro:`PyExpat_CAPI_MAGIC` تنظیم شده است."
 
 msgid "Size of the structure in bytes, set to ``sizeof(struct PyExpat_CAPI)`` by the :mod:`xml.parsers.expat` module that created the capsule."
-msgstr ""
+msgstr "اندازه‌ی ساختار بر حسب بایت، که توسط ماژول :mod:`xml.parsers.expat` که کپسول را ایجاد کرده است روی ``sizeof(struct PyExpat_CAPI)`` تنظیم شده است."
 
 msgid "Major, minor, and micro version numbers of the Expat library used by :mod:`xml.parsers.expat`."
-msgstr ""
+msgstr "شماره‌های نسخه‌ی اصلی، فرعی و ریز کتابخانه‌ی Expat که توسط :mod:`xml.parsers.expat` استفاده می‌شود."
 
 msgid "Pointer to `XML_SetUnknownEncodingHandler <https://libexpat.github.io/doc/api/latest/#XML_SetUnknownEncodingHandler>`_. The handler may set a Python exception on failure. The caller must check for a Python exception after parsing."
-msgstr ""
+msgstr "اشاره‌گر به `XML_SetUnknownEncodingHandler <https://libexpat.github.io/doc/api/latest/#XML_SetUnknownEncodingHandler>`_. هندلر ممکن است هنگام خطا یک استثنای پایتون تنظیم کند. فراخواننده باید پس از تجزیه، وجود استثنای پایتون را بررسی کند."
 
 msgid "Python's unknown-encoding handler for Expat, used with ``XML_SetUnknownEncodingHandler``. It uses Python's codec registry to fill *info*. The *encodingHandlerData* argument is unused. Calling this handler requires an :term:`attached thread state`."
-msgstr ""
+msgstr "هندلر کدگذاری نامشخص پایتون برای Expat، که با ``XML_SetUnknownEncodingHandler`` استفاده می‌شود. این هندلر از رجیستری کُدک پایتون برای پر کردن *info* استفاده می‌کند. آرگومان *encodingHandlerData* استفاده نمی‌شود. فراخوانی این هندلر نیازمند یک :term:`وضعیت نخ متصل <attached thread state>` است."
 
 msgid "Pointers to the corresponding Expat functions, or ``NULL`` if not available in the Expat version used by :mod:`xml.parsers.expat`, are listed below."
-msgstr ""
+msgstr "اشاره‌گرها به توابع متناظر Expat، یا ``NULL`` اگر در نسخه‌ی Expat مورد استفاده‌ی :mod:`xml.parsers.expat` موجود نباشند، در زیر فهرست شده‌اند."
 
 msgid "Member names omit the ``XML_`` prefix; for example, ``SetHashSalt`` exposes Expat's ``XML_SetHashSalt`` function. See the `Expat API reference <https://libexpat.github.io/doc/api/latest/>`_ for their behavior and the minimum Expat version they appear in."
-msgstr ""
+msgstr "نام اعضا پیشوند ``XML_`` را حذف می‌کند؛ برای مثال، ``SetHashSalt`` تابع ``XML_SetHashSalt`` متعلق به Expat را در معرض نمایش می‌گذارد. برای اطلاع از رفتار آن‌ها و حداقل نسخه‌ی Expat که در آن ظاهر می‌شوند، به `مرجع API اکس‌پت <https://libexpat.github.io/doc/api/latest/>`_ مراجعه کنید."
 
 msgid "See the `Expat API reference <https://libexpat.github.io/doc/api/latest/>`_."
-msgstr ""
+msgstr "به `مرجع API اکس‌پت <https://libexpat.github.io/doc/api/latest/>`_ مراجعه کنید."

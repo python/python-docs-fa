@@ -408,19 +408,19 @@ msgid "In normal usage, an embedding application will call this function *instea
 msgstr "در استفاده‌ی معمول، یک برنامه تعبیه‌کننده این تابع را *به‌جای* فراخوانی مستقیم :c:func:`Py_Initialize`، :c:func:`Py_InitializeEx` یا :c:func:`Py_InitializeFromConfig` فراخوانی می‌کند و تمام تنظیمات همان‌گونه که در جای دیگر این مستندات توضیح داده شده است، اعمال خواهند شد. اگر این تابع در عوض *پس از* یک فراخوانی قبلی از API مقداردهی اولیه‌ی ران‌تایم فراخوانی شود، دقیقاً اینکه کدام تنظیمات پیکربندی محیطی و خط فرمان به‌روزرسانی خواهند شد، وابسته به نسخه است (زیرا به این بستگی دارد که کدام تنظیمات به‌درستی از این پشتیبانی می‌کنند که پس از آن‌که یک‌بار در نخستین مقداردهی اولیه‌ی ران‌تایم تنظیم شده‌اند، تغییر کنند)."
 
 msgid "The main program for a \"frozen\" Python program (an executable that embeds the interpreter together with the bytecode of the program's modules, as produced by the :program:`freeze` utility; see :source:`Tools/freeze`)."
-msgstr ""
+msgstr "برنامه‌ی اصلی برای یک برنامه‌ی «فریزشده»ی پایتون (یک فایل اجرایی که مفسر را به همراه بایت‌کد ماژول‌های برنامه، آن‌طور که توسط ابزار :program:`freeze` تولید می‌شود، تعبیه می‌کند؛ رجوع کنید به :source:`Tools/freeze`)."
 
 msgid "This function initializes the interpreter, imports the frozen module named ``__main__``, and finalizes the interpreter. The frozen modules must have been registered in :c:var:`PyImport_FrozenModules` before calling this function; it is a fatal error if ``__main__`` is not among them."
-msgstr ""
+msgstr "این تابع مفسر را مقداردهی اولیه می‌کند، ماژول فریزشده‌ی با نام ``__main__`` را ایمپورت می‌کند، و مفسر را نهایی‌سازی می‌کند. ماژول‌های فریزشده باید قبل از فراخوانی این تابع در :c:var:`PyImport_FrozenModules` ثبت شده باشند؛ اگر ``__main__`` در میان آن‌ها نباشد، یک خطای مهلک رخ داده است."
 
 msgid "*argc* and *argv* are byte strings like the arguments of a C program's ``main`` function, and are passed to the interpreter with :c:func:`PyConfig_SetBytesArgv`. Unlike :c:func:`Py_Main`, the arguments are not parsed as Python command line options (:c:member:`PyConfig.parse_argv` is ``0``), so all of them are made available to the program in :data:`sys.argv`. Apart from that, the interpreter uses the :ref:`Python Configuration <init-python-config>`, so environment variables such as :envvar:`PYTHONPATH` are honored. Warnings about the path configuration (:c:member:`PyConfig.pathconfig_warnings`) are suppressed. If :envvar:`PYTHONINSPECT` is set and standard input is a terminal, an interactive prompt is run after ``__main__`` has finished, as with the :option:`-i` option."
-msgstr ""
+msgstr "*argc* و *argv* رشته‌های بایتی مشابه آرگومان‌های تابع ``main`` یک برنامه‌ی C هستند و با :c:func:`PyConfig_SetBytesArgv` به مفسر ارسال می‌شوند. برخلاف :c:func:`Py_Main`، آرگومان‌ها به عنوان گزینه‌های خط فرمان پایتون تجزیه نمی‌شوند (:c:member:`PyConfig.parse_argv` برابر با ``0`` است)، بنابراین همه آن‌ها در :data:`sys.argv` در اختیار برنامه قرار می‌گیرند. جدا از آن، مفسر از :ref:`تنظیمات پایتون <init-python-config>` استفاده می‌کند، بنابراین متغیرهای محیطی مانند :envvar:`PYTHONPATH` لحاظ می‌شوند. هشدارهای مربوط به تنظیمات مسیر (:c:member:`PyConfig.pathconfig_warnings`) سرکوب می‌شوند. اگر :envvar:`PYTHONINSPECT` تنظیم شده باشد و ورودی استاندارد یک پایانه باشد، پس از اتمام ``__main__``، یک اعلان تعاملی اجرا می‌شود، درست مانند گزینه‌ی :option:`-i`."
 
 msgid "Return ``0`` if ``__main__`` ran without an unhandled exception, ``1`` otherwise, and ``120`` if finalizing the interpreter failed (see :c:func:`Py_FinalizeEx`). An unhandled :exc:`SystemExit` terminates the process. If the interpreter cannot be initialized, the process exits via :c:func:`Py_ExitStatusException`."
-msgstr ""
+msgstr "اگر ``__main__`` بدون استثنای مدیریت‌نشده اجرا شود، ``0`` را برمی‌گرداند، در غیر این صورت ``1``، و اگر نهایی‌سازی مفسر با شکست مواجه شود ``120`` (رجوع کنید به :c:func:`Py_FinalizeEx`). یک :exc:`SystemExit` مدیریت‌نشده فرایند را خاتمه می‌دهد. اگر مفسر نتواند مقداردهی اولیه شود، فرایند از طریق :c:func:`Py_ExitStatusException` خارج می‌شود."
 
 msgid "On Windows, this function is not exported by the Python DLL. The :program:`freeze` utility compiles :file:`Python/frozenmain.c` into the frozen program instead, together with the Windows-specific hooks that the function requires."
-msgstr ""
+msgstr "در ویندوز، این تابع توسط DLL پایتون صادر نمی‌شود. در عوض، ابزار :program:`freeze` پرونده‌ی :file:`Python/frozenmain.c` را به همراه قلاب‌های مختص ویندوز که تابع به آن‌ها نیاز دارد، در برنامه‌ی فریزشده کامپایل می‌کند."
 
 msgid "Executes the main module in a fully configured CPython runtime."
 msgstr "ماژول اصلی را در یک ران‌تایم سی‌پایتون کاملاً پیکربندی‌شده اجرا می‌کند."
@@ -711,7 +711,7 @@ msgid "Py_FinalizeEx (C function)"
 msgstr "Py_FinalizeEx (تابع C)"
 
 msgid "freeze utility"
-msgstr ""
+msgstr "ابزار freeze"
 
 msgid "Py_Initialize()"
 msgstr "Py_Initialize()"

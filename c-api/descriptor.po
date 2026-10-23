@@ -60,21 +60,19 @@ msgid "The type object for method descriptor objects created from :c:type:`PyMet
 msgstr "شیء نوع برای اشیاء توصیف‌گر متد که از ساختارهای :c:type:`PyMethodDef` ایجاد شده‌اند. این توصیف‌گرها توابع C را به‌عنوان متدهایی روی یک نوع در دسترس قرار می‌دهند و معادل اشیاء :class:`types.MethodDescriptorType` در پایتون هستند."
 
 msgid "The type object for wrapper descriptor objects created by :c:func:`PyDescr_NewWrapper` and :c:func:`PyWrapper_New`."
-msgstr ""
+msgstr "شیء نوع داده برای اشیای توصیف‌گر پوششی ایجادشده توسط :c:func:`PyDescr_NewWrapper` و :c:func:`PyWrapper_New`."
 
-#, fuzzy
-#| msgid "Wrapper descriptors expose special methods implemented by type slots. This is the same kind of descriptor that CPython creates for slot-based special methods such as ``__repr__`` or ``__add__``, and it appears in Python as a :class:`types.WrapperDescriptorType` object."
 msgid "Wrapper descriptors are used internally to expose special methods such as ``__repr__`` or ``__add__``, which are implemented by type slots. The type is exposed in Python as  :class:`types.WrapperDescriptorType`."
-msgstr "توصیف‌گرهای پوششی، متدهای ویژه‌ای را که توسط جایگاه‌های نوع پیاده‌سازی شده‌اند، در دسترس قرار می‌دهند. این همان نوع توصیف‌گری است که سی‌پایتون برای متدهای ویژه‌ی مبتنی بر جایگاه مانند ``__repr__`` یا ``__add__`` ایجاد می‌کند و در پایتون به‌صورت یک شیء :class:`types.WrapperDescriptorType` ظاهر می‌شود."
+msgstr "توصیف‌گرهای پوششی به صورت داخلی برای نمایش متدهای ویژه‌ای مانند ``__repr__`` یا ``__add__`` استفاده می‌شوند که توسط جایگاه‌های نوع پیاده‌سازی شده‌اند. این نوع در پایتون به صورت :class:`types.WrapperDescriptorType` نمایش داده می‌شود."
 
 msgid "Create a new wrapper descriptor of type :c:var:`PyWrapperDescr_Type`."
-msgstr ""
+msgstr "یک توصیف‌گر پوششی جدید از نوع :c:var:`PyWrapperDescr_Type` ایجاد کنید."
 
 msgid "This function is meant for internal use only; it and related API (``struct wrapperbase`` and the ``PyWrapperFlag_KEYWORDS`` flag) are exposed publicly for backwards compatibility reasons."
-msgstr ""
+msgstr "این تابع فقط برای استفاده‌ی داخلی در نظر گرفته شده است؛ آن و APIهای مرتبط (``struct wrapperbase`` و پرچم ``PyWrapperFlag_KEYWORDS``) به دلایل سازگاری با نسخه‌های پیشین به صورت عمومی ارائه شده‌اند."
 
 msgid "See :c:func:`PyCMethod_New` for wrapping a C function."
-msgstr ""
+msgstr "برای بسته‌بندی یک تابع C به :c:func:`PyCMethod_New` مراجعه کنید."
 
 msgid "Create a new class method descriptor for extension type *type* from the :c:type:`PyMethodDef` structure *method*."
 msgstr "یک توصیف‌گر متد کلاس جدید برای نوع توسعه‌ای *type* از ساختار :c:type:`PyMethodDef` به نام *method* ایجاد می‌کند."
@@ -95,16 +93,16 @@ msgid "On success, return a :term:`strong reference` to the wrapper object. Retu
 msgstr "در صورت موفقیت، یک :term:`ارجاع قوی <strong reference>` به شیء پوششی برمی‌گرداند. در صورت شکل، ``NULL`` را همراه با یک استثنای تنظیم‌شده برمی‌گرداند."
 
 msgid "Return a :term:`borrowed reference` to the type that the descriptor *descr* belongs to. This is accessible as :attr:`~object.__objclass__` in Python."
-msgstr ""
+msgstr "یک :term:`ارجاع امانتی <borrowed reference>` به نوعی که توصیف‌گر *descr* به آن تعلق دارد، برگردانید. این مقدار در پایتون به عنوان :attr:`~object.__objclass__` قابل دسترسی است."
 
 msgid "*descr* must be a descriptor object created by one of the ``PyDescr_New*`` functions (an instance of :c:var:`PyMethodDescr_Type`, :c:var:`PyClassMethodDescr_Type`, :c:var:`PyMemberDescr_Type`, :c:var:`PyGetSetDescr_Type`, or :c:var:`PyWrapperDescr_Type`). If the passed descriptor is not an instance of one of these types, the behavior is undefined."
-msgstr ""
+msgstr "*descr* باید یک شیء توصیف‌گر باشد که توسط یکی از توابع ``PyDescr_New*`` ایجاد شده است (یک نمونه از :c:var:`PyMethodDescr_Type`، :c:var:`PyClassMethodDescr_Type`، :c:var:`PyMemberDescr_Type`، :c:var:`PyGetSetDescr_Type` یا :c:var:`PyWrapperDescr_Type`). اگر توصیف‌گر ارسال‌شده نمونه‌ای از یکی از این نوع‌ها نباشد، رفتار نامشخص خواهد بود."
 
 msgid "Return the name of the descriptor *descr* as a :term:`borrowed reference` to a :class:`str` object. This is available as :attr:`~definition.__name__` in Python."
-msgstr ""
+msgstr "نام توصیف‌گر *descr* را به عنوان یک :term:`ارجاع امانتی <borrowed reference>` به یک شیء :class:`str` برگردانید. این مقدار در پایتون به عنوان :attr:`~definition.__name__` در دسترس است."
 
 msgid "*descr* must be a descriptor object created by one of the ``PyDescr_New*`` functions. If not, the behavior is undefined."
-msgstr ""
+msgstr "*descr* باید یک شیء توصیف‌گر باشد که توسط یکی از توابع ``PyDescr_New*`` ایجاد شده است. در غیر این صورت، رفتار نامشخص خواهد بود."
 
 msgid "This is a macro including the common fields for a descriptor object."
 msgstr "این یک کلان‌دستور است که شامل فیلدهای مشترک برای یک شیء توصیف‌گر است."

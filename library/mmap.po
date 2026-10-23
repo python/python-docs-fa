@@ -33,10 +33,8 @@ msgstr "دسترس‌پذیری"
 msgid "This module does not work or is not available on WebAssembly. See :ref:`wasm-availability` for more information."
 msgstr "این ماژول روی WebAssembly کار نمی‌کند یا در دسترس نیست. برای اطلاعات بیشتر، :ref:`wasm-availability` را ببینید."
 
-#, fuzzy
-#| msgid "Memory-mapped file objects behave like both :class:`bytearray` and like :term:`file objects <file object>`.  You can use mmap objects in most places where :class:`bytearray` are expected; for example, you can use the :mod:`re` module to search through a memory-mapped file.  You can also change a single byte by doing ``obj[index] = 97``, or change a subsequence by assigning to a slice: ``obj[i1:i2] = b'...'``.  You can also read and write data starting at the current file position, and :meth:`seek` through the file to different positions."
 msgid "Memory-mapped file objects behave like both :class:`bytearray` and like :term:`file objects <file object>`.  You can use mmap objects in most places where :class:`bytearray` are expected; for example, you can use the :mod:`re` module to search through a memory-mapped file.  You can also change a single byte by doing ``obj[index] = 97``, or change a subsequence by assigning to a slice: ``obj[i1:i2] = b'...'``.  You can also read and write data starting at the current file position, and :meth:`~mmap.mmap.seek` through the file to different positions."
-msgstr "اشیای پرونده نگاشت‌شده به حافظه، هم مانند :class:`bytearray` و هم مانند :term:`اشیای پرونده <file object>` رفتار می‌کنند. شما می‌توانید از اشیای mmap در بیشتر مواردی استفاده کنید که انتظار می‌رود یک :class:`bytearray` وجود داشته باشد؛ برای مثال، می‌توانید از ماژول :mod:`re` برای جستجو در یک پرونده نگاشت‌شده به حافظه استفاده کنید. همچنین می‌توانید یک بایت را با ``obj[index] = 97`` تغییر دهید، یا یک زیردنباله را با انتساب به یک اسلایس تغییر دهید: ``obj[i1:i2] = b'...'``. همچنین می‌توانید داده‌ها را از موقعیت فعلی پرونده بخوانید و بنویسید، و با :meth:`seek` در پرونده به موقعیت‌های مختلف حرکت کنید."
+msgstr "اشیاء پرونده‌ی نگاشت‌شده در حافظه (Memory-mapped) هم مانند :class:`bytearray` و هم مانند :term:`اشیاء پرونده <file object>` رفتار می‌کنند. می‌توانید از اشیاء mmap در بیشتر مکان‌هایی که :class:`bytearray` انتظار می‌رود استفاده کنید؛ برای مثال، می‌توانید از ماژول :mod:`re` برای جستجو در یک پرونده‌ی نگاشت‌شده در حافظه استفاده کنید. همچنین می‌توانید با انجام کار ``obj[index] = 97`` یک بایت منفرد را تغییر دهید، یا با انتساب به یک اسلایس، زیردنباله را تغییر دهید: ``obj[i1:i2] = b'...'``. همچنین می‌توانید خواندن و نوشتن داده‌ها را از موقعیت فعلی پرونده شروع کنید، و با استفاده از :meth:`~mmap.mmap.seek` در پرونده به موقعیت‌های مختلف جابه‌جا شوید."
 
 msgid "A memory-mapped file is created by the :class:`~mmap.mmap` constructor, which is different on Unix and on Windows.  In either case you must provide a file descriptor for a file opened for update. If you wish to map an existing Python file object, use its :meth:`~io.IOBase.fileno` method to obtain the correct value for the *fileno* parameter.  Otherwise, you can open the file using the :func:`os.open` function, which returns a file descriptor directly (the file still needs to be closed when done)."
 msgstr "یک پرونده نگاشت‌شده به حافظه (memory-mapped file) توسط سازنده‌ی :class:`~mmap.mmap` ایجاد می‌شود، که در یونیکس و ویندوز متفاوت است. در هر دو حالت، باید توصیف‌گر پرونده‌ای را که برای به‌روزرسانی باز شده است، فراهم کنید. اگر می‌خواهید یک شیء پرونده پایتون موجود را نگاشت کنید، از متد :meth:`~io.IOBase.fileno` آن برای به دست آوردن مقدار صحیح پارامتر *fileno* استفاده کنید. در غیر این صورت، می‌توانید پرونده را با استفاده از تابع :func:`os.open` باز کنید، که توصیف‌گر پرونده را مستقیماً برمی‌گرداند (پرونده همچنان باید پس از اتمام کار بسته شود)."
@@ -77,10 +75,8 @@ msgstr "**(نسخه‌ی یونیکس)** *length* بایت از پرونده م�
 msgid "*flags* specifies the nature of the mapping. :const:`MAP_PRIVATE` creates a private copy-on-write mapping, so changes to the contents of the mmap object will be private to this process, and :const:`MAP_SHARED` creates a mapping that's shared with all other processes mapping the same areas of the file.  The default value is :const:`MAP_SHARED`. Some systems have additional possible flags with the full list specified in :ref:`MAP_* constants <map-constants>`."
 msgstr "*flags* ماهیت نگاشت را مشخص می‌کند. :const:`MAP_PRIVATE` یک نگاشت خصوصی با کپی-در-نوشتن (copy-on-write) ایجاد می‌کند، بنابراین تغییرات در محتوای شیء mmap برای این فرایند خصوصی خواهد بود و :const:`MAP_SHARED` نگاشتی ایجاد می‌کند که با تمام فرایندهای دیگری که ناحیه‌های یکسانی از پرونده را نگاشت می‌کنند، به اشتراک گذاشته می‌شود. مقدار پیش‌فرض :const:`MAP_SHARED` است. برخی سیستم‌ها پرچم‌های ممکن بیشتری دارند که فهرست کامل آن‌ها در :ref:`MAP_* constants <map-constants>` مشخص شده است."
 
-#, fuzzy
-#| msgid "*prot*, if specified, gives the desired memory protection; the two most useful values are :const:`PROT_READ` and :const:`PROT_WRITE`, to specify that the pages may be read or written.  *prot* defaults to :const:`PROT_READ \\| PROT_WRITE`."
 msgid "*prot*, if specified, gives the desired memory protection; the two most useful values are :const:`PROT_READ` and :const:`PROT_WRITE`, to specify that the pages may be read or written.  *prot* defaults to :const:`PROT_READ` \\| :const:`PROT_WRITE`."
-msgstr "*prot*، در صورت مشخص شدن، محافظت دلخواه از حافظه را تعیین می‌کند؛ دو مقدار از مفیدترین مقادیر عبارتند از :const:`PROT_READ` و :const:`PROT_WRITE`، برای مشخص کردن اینکه صفحه‌ها می‌توانند خوانده یا نوشته شوند. *prot* به‌طور پیش‌فرض :const:`PROT_READ \\| PROT_WRITE` است."
+msgstr "*prot*، اگر مشخص شده باشد، حفاظت مطلوب حافظه را ارائه می‌دهد؛ دو مقداری که بیشترین کاربرد را دارند :const:`PROT_READ` و :const:`PROT_WRITE` هستند، تا مشخص کنند که صفحات می‌توانند خوانده یا نوشته شوند. مقدار پیش‌فرض *prot* برابر با :const:`PROT_READ` \\| :const:`PROT_WRITE` است."
 
 msgid "*access* may be specified in lieu of *flags* and *prot* as an optional keyword parameter.  It is an error to specify both *flags*, *prot* and *access*.  See the description of *access* above for information on how to use this parameter."
 msgstr "می‌توان *access* را به‌جای *flags* و *prot* به‌عنوان یک پارامتر کلیدواژه‌ای اختیاری مشخص کرد. مشخص کردن همزمان *flags*، *prot* و *access* خطا است. برای آگاهی از چگونگی استفاده از این پارامتر، توضیح *access* در بالا را ببینید."
@@ -296,30 +292,24 @@ msgstr "تعداد بایت‌های نوشته‌شده اکنون برگردا
 msgid "Write the integer *byte* into memory at the current position of the file pointer; the file position is advanced by ``1``. If the mmap was created with :const:`ACCESS_READ`, then writing to it will raise a :exc:`TypeError` exception."
 msgstr "عدد صحیح *byte* را در حافظه، در موقعیت فعلی اشاره‌گر پرونده می‌نویسد؛ موقعیت پرونده به اندازه ``1`` پیش می‌رود. اگر mmap با :const:`ACCESS_READ` ایجاد شده باشد، نوشتن در آن باعث پرتاب استثنای :exc:`TypeError` می‌شود."
 
-#, fuzzy
-#| msgid "MS_* Constants"
 msgid "ACCESS_* constants"
-msgstr "ثابت‌های MS_*"
+msgstr "ثابت‌های ACCESS_*"
 
 msgid "These constants specify the access mode for a memory mapping. :const:`ACCESS_READ` provides read-only access, :const:`ACCESS_WRITE` provides write-through access, and :const:`ACCESS_COPY` provides copy-on-write access. :const:`ACCESS_DEFAULT` defers to the *prot* argument of :class:`mmap`."
-msgstr ""
+msgstr "این ثابت‌ها حالت دسترسی را برای یک نگاشت حافظه مشخص می‌کنند. :const:`ACCESS_READ` دسترسی فقط‌خواندنی، :const:`ACCESS_WRITE` دسترسی نوشتن‌همزمان (write-through)، و :const:`ACCESS_COPY` دسترسی کپی در هنگام نوشتن را فراهم می‌کند. :const:`ACCESS_DEFAULT` به آرگومان *prot* از :class:`mmap` ارجاع می‌دهد."
 
 msgid "Page size constants"
-msgstr ""
+msgstr "ثابت‌های اندازه‌ی صفحه"
 
 msgid ":const:`PAGESIZE` is the system memory page size in bytes. :const:`ALLOCATIONGRANULARITY` is the minimum alignment in bytes required for the *offset* argument of :class:`mmap`. On Unix, :const:`ALLOCATIONGRANULARITY` is equal to :const:`PAGESIZE`."
-msgstr ""
+msgstr ":const:`PAGESIZE` اندازه‌ی صفحه‌ی حافظه‌ی سیستم بر حسب بایت است. :const:`ALLOCATIONGRANULARITY` حداقل هم‌ترازی بر حسب بایت است که برای آرگومان *offset* از :class:`mmap` مورد نیاز است. در سیستم یونیکس، :const:`ALLOCATIONGRANULARITY` برابر با :const:`PAGESIZE` است."
 
-#, fuzzy
-#| msgid "MAP_* Constants"
 msgid "PROT_* constants"
-msgstr "ثابت‌های MAP_*"
+msgstr "ثابت‌های PROT_*"
 
 msgid "Memory protection flags accepted by the *prot* argument of :class:`mmap`. :const:`PROT_READ` allows pages to be read, :const:`PROT_WRITE` allows pages to be written, and :const:`PROT_EXEC` allows pages to be executed. Values can be combined using the bitwise OR operator. Not every option is present on every system."
-msgstr ""
+msgstr "پرچم‌های حفاظت حافظه که توسط آرگومان *prot* از :class:`mmap` پذیرفته می‌شوند. :const:`PROT_READ` اجازه می‌دهد صفحات خوانده شوند، :const:`PROT_WRITE` اجازه می‌دهد صفحات نوشته شوند، و :const:`PROT_EXEC` اجازه می‌دهد صفحات اجرا شوند. مقادیر را می‌توان با استفاده از عملگر بیتی OR ترکیب کرد. همه‌ی گزینه‌ها در هر سیستمی موجود نیستند."
 
-#, fuzzy
-#| msgid "MADV_* Constants"
 msgid "MADV_* constants"
 msgstr "ثابت‌های MADV_*"
 
@@ -329,8 +319,6 @@ msgstr "این گزینه‌ها را می‌توان به :meth:`mmap.madvise` 
 msgid "Availability: Systems with the madvise() system call."
 msgstr "دسترس‌پذیری: سیستم‌های دارای فراخوان سیستمی madvise()."
 
-#, fuzzy
-#| msgid "MAP_* Constants"
 msgid "MAP_* constants"
 msgstr "ثابت‌های MAP_*"
 
@@ -349,8 +337,6 @@ msgstr "ثابت‌های :data:`MAP_ALIGNED_SUPER` و :data:`MAP_CONCEAL` اف�
 msgid "Added :data:`MAP_32BIT`, :data:`MAP_HASSEMAPHORE`, :data:`MAP_JIT`, :data:`MAP_NOCACHE`, :data:`MAP_NOEXTEND`, :data:`MAP_NORESERVE`, :data:`MAP_RESILIENT_CODESIGN`, :data:`MAP_RESILIENT_MEDIA`, :data:`MAP_TPRO`, :data:`MAP_TRANSLATED_ALLOW_EXECUTE`, and :data:`MAP_UNIX03` constants."
 msgstr "ثابت‌های :data:`MAP_32BIT`، :data:`MAP_HASSEMAPHORE`، :data:`MAP_JIT`، :data:`MAP_NOCACHE`، :data:`MAP_NOEXTEND`، :data:`MAP_NORESERVE`، :data:`MAP_RESILIENT_CODESIGN`، :data:`MAP_RESILIENT_MEDIA`، :data:`MAP_TPRO`، :data:`MAP_TRANSLATED_ALLOW_EXECUTE` و :data:`MAP_UNIX03` افزوده شدند."
 
-#, fuzzy
-#| msgid "MS_* Constants"
 msgid "MS_* constants"
 msgstr "ثابت‌های MS_*"
 

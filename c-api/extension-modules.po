@@ -298,31 +298,23 @@ msgstr "در مقداردهی اولیه‌ی تک‌مرحله‌ای، :ref:`�
 msgid "Single-phase initialization differs from the :ref:`default <multi-phase-initialization>` in the following ways:"
 msgstr "مقداردهی اولیه تک‌فازی در موارد زیر با :ref:`پیش‌فرض <multi-phase-initialization>` تفاوت دارد:"
 
-#, fuzzy
-#| msgid "Single-phase modules are, or rather *contain*, “singletons”."
 msgid "Single-phase modules with :c:member:`PyModuleDef.m_size` set to -1 are, or rather *contain*, “singletons”."
-msgstr "ماژول‌های تک‌فاز (single-phase) «تک‌نمونه» هستند، یا به بیان دقیق‌تر، *حاوی* «تک‌نمونه» هستند."
+msgstr "ماژول‌های تک‌فازی که :c:member:`PyModuleDef.m_size` آن‌ها روی 1- تنظیم شده است، «تک‌نمونه» هستند یا بهتر است بگوییم آن‌ها را «در بر دارند»."
 
-#, fuzzy
-#| msgid "When the module is first initialized, Python saves the contents of the module's ``__dict__`` (that is, typically, the module's functions and types)."
 msgid "When such a module is first initialized, Python saves the contents of the module's ``__dict__`` (that is, typically, the module's functions and types)."
-msgstr "هنگامی که ماژول برای نخستین بار مقداردهی اولیه می‌شود، پایتون محتویات ``__dict__`` ماژول را ذخیره می‌کند (یعنی، به‌طور معمول، توابع و نوع‌های ماژول)."
+msgstr "هنگامی که چنین ماژولی برای اولین بار مقداردهی اولیه می‌شود، پایتون محتویات ``__dict__`` ماژول (یعنی معمولاً توابع و انواع ماژول) را ذخیره می‌کند."
 
-#, fuzzy
-#| msgid "For subsequent imports, Python does not call the initialization function again. Instead, it creates a new module object with a new ``__dict__``, and copies the saved contents to it. For example, given a single-phase module ``_testsinglephase`` [#testsinglephase]_ that defines a function ``sum`` and an exception class ``error``:"
 msgid "For subsequent imports, Python does not call the initialization function again. Instead, it creates a new module object with a new ``__dict__``, and copies the saved contents to it. Modules are matched to the saved contents by a (*module_name*, *file_name*) tuple where:"
-msgstr "برای ایمپورت‌های بعدی، پایتون تابع مقداردهی اولیه را دوباره فراخوانی نمی‌کند. در عوض، شیء ماژول جدیدی با ``__dict__`` جدید می‌سازد و محتویات ذخیره‌شده را در آن کپی می‌کند. برای مثال، با فرض یک ماژول تک‌فاز ``_testsinglephase`` [#testsinglephase]_ که تابعی به نام ``sum`` و کلاس استثنایی به نام ``error`` را تعریف می‌کند:"
+msgstr "برای ایمپورت‌های بعدی، پایتون دوباره تابع مقداردهی اولیه را فراخوانی نمی‌کند. در عوض، یک شیء ماژول جدید با یک ``__dict__`` جدید ایجاد می‌کند و محتویات ذخیره‌شده را در آن کپی می‌کند. ماژول‌ها با استفاده از یک تاپل (*module_name*, *file_name*) با محتویات ذخیره‌شده مطابقت داده می‌شوند که در آن:"
 
 msgid "*module_name* is the module's full dotted name, taken from :py:attr:`ModuleSpec.name <importlib.machinery.ModuleSpec.name>` (or the equivalent argument of the importing function). Note that names that the initialization function uses to create the module (for example, :c:member:`PyModuleDef.m_name`) are not taken into account."
-msgstr ""
+msgstr "*module_name* نام نقطه‌گذاری‌شده‌ی کامل ماژول است که از :py:attr:`ModuleSpec.name <importlib.machinery.ModuleSpec.name>` (یا آرگومان معادل تابع ایمپورت‌کننده) گرفته شده است. توجه داشته باشید که نام‌هایی که تابع مقداردهی اولیه برای ایجاد ماژول استفاده می‌کند (به عنوان مثال :c:member:`PyModuleDef.m_name`) در نظر گرفته نمی‌شوند."
 
 msgid "*file_name* is the extension's file name. It is unset for modules not loaded from a file, such as built-ins and modules added with :c:func:`PyImport_CreateModuleFromInitfunc` or :c:func:`PyImport_AppendInittab`."
-msgstr ""
+msgstr "*file_name* نام پرونده‌ی افزونه است. این مقدار برای ماژول‌هایی که از یک پرونده بارگذاری نمی‌شوند، مانند موارد توکار و ماژول‌هایی که با :c:func:`PyImport_CreateModuleFromInitfunc` یا :c:func:`PyImport_AppendInittab` اضافه شده‌اند، تنظیم نمی‌شود."
 
-#, fuzzy
-#| msgid "For subsequent imports, Python does not call the initialization function again. Instead, it creates a new module object with a new ``__dict__``, and copies the saved contents to it. For example, given a single-phase module ``_testsinglephase`` [#testsinglephase]_ that defines a function ``sum`` and an exception class ``error``:"
 msgid "As part of the first initialization, Python also adds the module to :data:`sys.modules` under its name. For example, given a single-phase module ``_testsinglephase`` [#testsinglephase]_ that defines a function ``sum`` and an exception class ``error``:"
-msgstr "برای ایمپورت‌های بعدی، پایتون تابع مقداردهی اولیه را دوباره فراخوانی نمی‌کند. در عوض، شیء ماژول جدیدی با ``__dict__`` جدید می‌سازد و محتویات ذخیره‌شده را در آن کپی می‌کند. برای مثال، با فرض یک ماژول تک‌فاز ``_testsinglephase`` [#testsinglephase]_ که تابعی به نام ``sum`` و کلاس استثنایی به نام ``error`` را تعریف می‌کند:"
+msgstr "به عنوان بخشی از مقداردهی اولیه‌ی اول، پایتون همچنین ماژول را با نام خودش به :data:`sys.modules` اضافه می‌کند. برای مثال، با فرض یک ماژول تک‌فازی ``_testsinglephase`` [#testsinglephase]_ که یک تابع ``sum`` و یک کلاس استثنای ``error`` را تعریف می‌کند:"
 
 msgid ""
 ">>> import sys\n"
@@ -355,15 +347,13 @@ msgid "The exact behavior should be considered a CPython implementation detail."
 msgstr "رفتار دقیق باید به‌عنوان جزئیات پیاده‌سازی سی‌پایتون در نظر گرفته شود."
 
 msgid "For single-phase modules with non-negative :c:member:`PyModuleDef.m_size`, Python may cache a pointer to the initialization function under the (*module_name*, *file_name*) key as for ``m_size == -1``."
-msgstr ""
+msgstr "برای ماژول‌های تک‌فازی با :c:member:`PyModuleDef.m_size` نامنفی، پایتون ممکن است یک اشاره‌گر به تابع مقداردهی اولیه را تحت کلید (*module_name*, *file_name*) درست مانند حالتی که ``m_size == -1`` است، نهانگاه کند."
 
 msgid "Subsequent imports that specify a different initialization function (for example, using :c:func:`PyImport_CreateModuleFromInitfunc`) may call either the cached function or the provided \"new\" one."
-msgstr ""
+msgstr "ایمپورت‌های بعدی که تابع مقداردهی اولیه‌ی متفاوتی را مشخص می‌کنند (برای مثال با استفاده از :c:func:`PyImport_CreateModuleFromInitfunc`) ممکن است یا تابع نهانگاه‌شده یا تابع «جدید» فراهم‌شده را فراخوانی کنند."
 
-#, fuzzy
-#| msgid "The exact behavior should be considered a CPython implementation detail."
 msgid "The exact behavior should again be considered a CPython implementation detail."
-msgstr "رفتار دقیق باید به‌عنوان جزئیات پیاده‌سازی سی‌پایتون در نظر گرفته شود."
+msgstr "رفتار دقیق را باید بار دیگر از جزئیات پیاده‌سازی سی‌پایتون دانست."
 
 msgid "To work around the fact that ``PyInit_modulename`` does not take a *spec* argument, some state of the import machinery is saved and applied to the first suitable module created during the ``PyInit_modulename`` call. Specifically, when a sub-module is imported, this mechanism prepends the parent package name to the name of the module."
 msgstr "برای دور زدن این واقعیت که ``PyInit_modulename`` آرگومان *مشخصات* نمی‌پذیرد، بخشی از وضعیت سازوکار ایمپورت ذخیره می‌شود و بر نخستین ماژول مناسب ایجاد‌شده در طول فراخوانی ``PyInit_modulename`` اعمال می‌شود. به‌طور خاص، هنگامی که یک زیرماژول ایمپورت می‌شود، این سازوکار نام بسته والد را به ابتدای نام ماژول می‌افزاید."

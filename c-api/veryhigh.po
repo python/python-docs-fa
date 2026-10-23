@@ -88,35 +88,31 @@ msgid "Can be set to point to a function with the prototype ``int func(void)``. 
 msgstr "می‌توان آن را طوری تنظیم کرد که به تابعی با پیش‌نمونه‌ی ``int func(void)`` اشاره کند. این تابع زمانی فراخوانی می‌شود که اعلان مفسر پایتون در شرف بی‌کار شدن و انتظار برای ورودی کاربر از پایانه باشد. مقدار بازگشتی نادیده گرفته می‌شود. از بازنویسی این قلاب می‌توان برای یکپارچه‌سازی اعلان مفسر با حلقه‌های رویداد دیگر استفاده کرد، همان‌گونه که در :file:`Modules/_tkinter.c` در کد منبع پایتون انجام شده است."
 
 msgid "The function is called without an :term:`attached thread state`."
-msgstr ""
+msgstr "این تابع بدون :term:`وضعیت نخ متصل <attached thread state>` فراخوانی می‌شود."
 
 msgid "This function is only called from the :ref:`main interpreter <sub-interpreter-support>`."
 msgstr "این تابع فقط از :ref:`مفسر اصلی <sub-interpreter-support>` فراخوانی می‌شود."
 
-#, fuzzy
-#| msgid "Can be set to point to a function with the prototype ``char *func(FILE *stdin, FILE *stdout, char *prompt)``, overriding the default function used to read a single line of input at the interpreter's prompt.  The function is expected to output the string *prompt* if it's not ``NULL``, and then read a line of input from the provided standard input file, returning the resulting string.  For example, The :mod:`readline` module sets this hook to provide line-editing and tab-completion features."
 msgid "Can be set to point to a function with the prototype ``char *func(FILE *stdin, FILE *stdout, const char *prompt)``, overriding the default function used to read a single line of input at the interpreter's prompt.  The function is expected to output the string *prompt* if it's not ``NULL``, and then read a line of input from the provided standard input file, returning the resulting string.  For example, the :mod:`readline` module sets this hook to provide line-editing and tab-completion features."
-msgstr "می‌تواند برای اشاره به تابعی با پیش‌نمونه‌ی ``char *func(FILE *stdin, FILE *stdout, char *prompt)`` تنظیم شود که تابع پیش‌فرضِ استفاده‌شده برای خواندن یک سطر ورودی در اعلان مفسر را بازنویسی می‌کند. انتظار می‌رود این تابع در صورت ``NULL`` نبودن *prompt*، رشته‌ی *prompt* را به خروجی بفرستد و سپس یک سطر ورودی از پرونده‌ی ورودی استانداردِ ارائه‌شده بخواند و رشته‌ی حاصل را برگرداند. برای مثال، ماژول :mod:`readline` این قلاب را برای فراهم کردن قابلیت‌های ویرایش سطر و تکمیل با کلید Tab تنظیم می‌کند."
+msgstr "می‌تواند روی تابعی با پیش‌نمونه‌ی ``char *func(FILE *stdin, FILE *stdout, const char *prompt)`` تنظیم شود که تابع پیش‌فرض استفاده‌شده برای خواندن یک سطر ورودی در اعلان مفسر را بازنویسی می‌کند. انتظار می‌رود این تابع رشته‌ی *prompt* را (در صورتی که ``NULL`` نباشد) خروجی دهد، و سپس یک سطر ورودی از پرونده‌ی ورودی استاندارد فراهم‌شده بخواند و رشته‌ی حاصل را برگرداند. برای مثال، ماژول :mod:`readline` این قلاب را تنظیم می‌کند تا ویژگی‌های ویرایش سطر و تکمیل با کلید تب (tab-completion) را فراهم کند."
 
 msgid "If this pointer is ``NULL``, :c:func:`PyOS_Readline` sets it to the default implementation, :c:func:`PyOS_Readline`, before reading input."
-msgstr ""
+msgstr "اگر این اشاره‌گر ``NULL`` باشد، :c:func:`PyOS_Readline` آن را قبل از خواندن ورودی روی پیاده‌سازی پیش‌فرض، یعنی :c:func:`PyOS_Readline`، تنظیم می‌کند."
 
 msgid "The returned string must be null-terminated and include the trailing newline, if one was read. Return an empty string if the end of the file is reached before any characters are read. Return ``NULL`` on failure or interruption; a Python exception may be set."
-msgstr ""
+msgstr "رشته‌ی بازگردانده‌شده باید با نویسه‌ی ته (null-terminated) ختم شود و در صورت خوانده شدن، شامل کاراکتر خط جدید پایانی باشد. اگر انتهای پرونده قبل از خواندن هر نویسی فرا برسد، یک رشته‌ی خالی برگردانید. در صورت بروز خطا یا وقفه، ``NULL`` را برگردانید؛ ممکن است یک استثنای پایتون تنظیم شود."
 
-#, fuzzy
-#| msgid "The result must be a string allocated by :c:func:`PyMem_RawMalloc` or :c:func:`PyMem_RawRealloc`, or ``NULL`` if an error occurred."
 msgid "A non-``NULL`` result must be a string allocated by :c:func:`PyMem_RawMalloc` or :c:func:`PyMem_RawRealloc`."
-msgstr "نتیجه باید رشته‌ای باشد که توسط :c:func:`PyMem_RawMalloc` یا :c:func:`PyMem_RawRealloc` تخصیص داده‌شده باشد، یا ``NULL`` در صورت وقوع خطا."
+msgstr "یک نتیجه‌ی غیر-``NULL`` باید رشته‌ای باشد که توسط :c:func:`PyMem_RawMalloc` یا :c:func:`PyMem_RawRealloc` تخصیص یافته است."
 
 msgid "The result must be allocated by :c:func:`PyMem_RawMalloc` or :c:func:`PyMem_RawRealloc`, instead of being allocated by :c:func:`PyMem_Malloc` or :c:func:`PyMem_Realloc`."
 msgstr "نتیجه باید توسط :c:func:`PyMem_RawMalloc` یا :c:func:`PyMem_RawRealloc` تخصیص داده شود، نه توسط :c:func:`PyMem_Malloc` یا :c:func:`PyMem_Realloc`."
 
 msgid "Display *prompt*, if it is not ``NULL``, and read a line from *sys_stdin*. If both streams are terminals and the call is made from the :ref:`main interpreter <sub-interpreter-support>`, use :c:var:`PyOS_ReadlineFunctionPointer`. Otherwise, use the default implementation, which flushes *sys_stdout* and writes *prompt* to the C standard error stream."
-msgstr ""
+msgstr "اعلان *prompt* را (اگر ``NULL`` نباشد) نمایش دهید و یک سطر از *sys_stdin* بخوانید. اگر هر دو جریان پایانه (terminal) باشند و فراخوانی از :ref:`مفسر اصلی <sub-interpreter-support>` انجام شود، از :c:var:`PyOS_ReadlineFunctionPointer` استفاده کنید. در غیر این صورت، از پیاده‌سازی پیش‌فرض استفاده کنید که *sys_stdout* را تخلیه (flush) کرده و *prompt* را در جریان خطای استاندارد C می‌نویسد."
 
 msgid "The returned string follows the contract of :c:var:`PyOS_ReadlineFunctionPointer`, but the caller must free it with :c:func:`PyMem_Free`. Return ``NULL`` on failure or interruption; a Python exception may be set."
-msgstr ""
+msgstr "رشته‌ی بازگردانده‌شده از قرارداد :c:var:`PyOS_ReadlineFunctionPointer` پیروی می‌کند، اما فراخواننده باید آن را با :c:func:`PyMem_Free` آزاد کند. در صورت بروز خطا یا وقفه، ``NULL`` را برگردانید؛ ممکن است یک استثنای پایتون تنظیم شود."
 
 msgid "This is a simplified interface to :c:func:`PyRun_StringFlags` below, leaving *flags* set to ``NULL``."
 msgstr "این یک رابط ساده‌شده برای :c:func:`PyRun_StringFlags` در ادامه است که در آن *flags* روی ``NULL`` تنظیم می‌شود."

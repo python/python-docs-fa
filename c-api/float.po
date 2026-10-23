@@ -149,10 +149,8 @@ msgstr "فرض بر این است که نوع :c:expr:`double` دارای فرم
 msgid "Pack functions"
 msgstr "توابع بسته‌بندی"
 
-#, fuzzy
-#| msgid "The pack routines write 2, 4 or 8 bytes, starting at *p*. *le* is an :c:expr:`int` argument, non-zero if you want the bytes string in little-endian format (exponent last, at ``p+1``, ``p+3``, or ``p+6`` and ``p+7``), zero if you want big-endian format (exponent first, at *p*). Use the :c:macro:`!PY_LITTLE_ENDIAN` constant to select the native endian: it is equal to ``0`` on big endian processor, or ``1`` on little endian processor."
 msgid "The pack routines write 2, 4 or 8 bytes, starting at *p*. *le* is an :c:expr:`int` argument, non-zero if you want the bytes string in little-endian format (exponent last, at ``p+1``, ``p+3``, or ``p+6`` and ``p+7``), zero if you want big-endian format (exponent first, at *p*). Use the :c:macro:`PY_LITTLE_ENDIAN` constant to select the native endian: it is equal to ``0`` on big endian processor, or ``1`` on little endian processor."
-msgstr "روال‌های pack تعداد ۲، ۴ یا ۸ بایت را از *p* به بعد می‌نویسند. پارامتر *le* یک آرگومان :c:expr:`int` است که اگر بخواهید رشته‌ی بایتی در فرمت کوچک‌اندیان (توان در انتها، در ``p+1``، ``p+3``، یا ``p+6`` و ``p+7``) باشد، غیرصفر است و اگر فرمت بزرگ‌اندیان (توان در ابتدا، در *p*) را بخواهید، صفر است. از ثابت :c:macro:`!PY_LITTLE_ENDIAN` برای انتخاب اندیان بومی استفاده کنید: این مقدار روی پردازنده‌ی بزرگ‌اندیان برابر با ``0`` و روی پردازنده‌ی کوچک‌اندیان برابر با ``1`` است."
+msgstr "روال‌های بسته‌بندی کردن ۲، ۴ یا ۸ بایت را از *p* به بعد می‌نویسند. *le* یک آرگومان :c:expr:`int` است، و اگر رشته‌ی بایت‌ها را در قالب کوچک‌اندیان (توان در انتها، در ``p+1``، ``p+3``، یا ``p+6`` و ``p+7``) بخواهید غیرصفر است، و اگر قالب بزرگ‌اندیان (توان در ابتدا، در *p*) را بخواهید صفر است. از ثابت :c:macro:`PY_LITTLE_ENDIAN` برای انتخاب اندیان بومی استفاده کنید: این ثابت روی پردازنده‌ی بزرگ‌اندیان برابر با ``0``، و روی پردازنده‌ی کوچک‌اندیان برابر با ``1`` است."
 
 msgid "Return value: ``0`` if all is OK, ``-1`` if error (and an exception is set, most likely :exc:`OverflowError`)."
 msgstr "مقدار بازگشتی: ``0`` در صورت موفقیت، ``-1`` در صورت خطا (و استثنا تنظیم‌شده است، به احتمال زیاد :exc:`OverflowError`)."
@@ -169,10 +167,8 @@ msgstr "یک double زبان C را به قالب دقت مضاعف binary64 ا�
 msgid "Unpack functions"
 msgstr "توابع واگشایی"
 
-#, fuzzy
-#| msgid "The unpack routines read 2, 4 or 8 bytes, starting at *p*.  *le* is an :c:expr:`int` argument, non-zero if the bytes string is in little-endian format (exponent last, at ``p+1``, ``p+3`` or ``p+6`` and ``p+7``), zero if big-endian (exponent first, at *p*). Use the :c:macro:`!PY_LITTLE_ENDIAN` constant to select the native endian: it is equal to ``0`` on big endian processor, or ``1`` on little endian processor."
 msgid "The unpack routines read 2, 4 or 8 bytes, starting at *p*.  *le* is an :c:expr:`int` argument, non-zero if the bytes string is in little-endian format (exponent last, at ``p+1``, ``p+3`` or ``p+6`` and ``p+7``), zero if big-endian (exponent first, at *p*). Use the :c:macro:`PY_LITTLE_ENDIAN` constant to select the native endian: it is equal to ``0`` on big endian processor, or ``1`` on little endian processor."
-msgstr "روال‌های unpack تعداد ۲، ۴ یا ۸ بایت را از *p* به بعد می‌خوانند. پارامتر *le* یک آرگومان :c:expr:`int` است که اگر رشته‌ی بایتی در فرمت کوچک‌اندیان (توان در انتها، در ``p+1``، ``p+3`` یا ``p+6`` و ``p+7``) باشد، غیرصفر است و اگر بزرگ‌اندیان باشد (توان در ابتدا، در *p*)، صفر است. از ثابت :c:macro:`!PY_LITTLE_ENDIAN` برای انتخاب اندیان بومی استفاده کنید: این مقدار روی پردازنده‌ی بزرگ‌اندیان برابر با ``0`` و روی پردازنده‌ی کوچک‌اندیان برابر با ``1`` است."
+msgstr "روال‌های بازکردن بسته ۲، ۴ یا ۸ بایت را با شروع از *p* می‌خوانند. آرگومان *le* یک آرگومان از نوع :c:expr:`int` است، و اگر رشته‌ی بایت‌ها در قالب کوچک‌اندیان باشد (توان در آخر، در ``p+1``، ``p+3`` یا ``p+6`` و ``p+7``) ناصفر، و اگر در قالب بزرگ‌اندیان باشد (توان در اول، در *p*) صفر است. از ثابت :c:macro:`PY_LITTLE_ENDIAN` برای انتخاب ترتیب بایت‌های بومی استفاده کنید: این ثابت روی پردازنده‌ی بزرگ‌اندیان برابر با ``0``، و روی پردازنده‌ی کوچک‌اندیان برابر با ``1`` است."
 
 msgid "Return value: The unpacked double.  On error, this is ``-1.0`` and :c:func:`PyErr_Occurred` is true (and an exception is set, most likely :exc:`OverflowError`)."
 msgstr "مقدار بازگشتی: ممیز شناور با دقت مضاعفِ واگشایی‌شده. در صورت خطا، این مقدار ``-1.0`` است و :c:func:`PyErr_Occurred` درست است (و استثنایی تنظیم‌شده است که به احتمال زیاد :exc:`OverflowError` است)."

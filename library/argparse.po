@@ -965,7 +965,7 @@ msgstr ""
 "Namespace(foo=True, bar=False, baz=True)"
 
 msgid "These defaults apply when the options are absent. They can be overridden by default_ or argument_default_."
-msgstr ""
+msgstr "این مقادیر پیش‌فرض زمانی اعمال می‌شوند که گزینه‌ها وجود نداشته باشند. آن‌ها را می‌توان توسط default_ یا argument_default_ بازنویسی کرد."
 
 msgid "``'append'`` - This appends each argument value to a list. It is useful for allowing an option to be specified multiple times. If the default value is a non-empty list, the parsed value will start with the default list's elements and any values from the command line will be appended after those default values. Example usage::"
 msgstr "``'append'`` - این عمل هر مقدار آرگومان را به یک فهرست اضافه می‌کند. این برای اجازه دادن به اینکه یک گزینه چندین بار مشخص شود، مفید است. اگر مقدار پیش‌فرض یک فهرست غیرخالی باشد، مقدار تجزیه‌شده با عناصر فهرست پیش‌فرض آغاز می‌شود و هر مقداری از خط فرمان پس از آن مقادیر پیش‌فرض اضافه می‌شود. نمونه استفاده::"
@@ -1228,10 +1228,8 @@ msgstr "``const=None`` به‌طور پیش‌فرض، از جمله زمانی 
 msgid "default"
 msgstr "پیش‌فرض"
 
-#, fuzzy
-#| msgid "All optional arguments and some positional arguments may be omitted at the command line.  The ``default`` keyword argument of :meth:`~ArgumentParser.add_argument`, whose value defaults to ``None``, specifies what value should be used if the command-line argument is not present. For optional arguments, the ``default`` value is used when the option string was not present at the command line::"
 msgid "All optional arguments and some positional arguments may be omitted at the command line.  The ``default`` keyword argument of :meth:`~ArgumentParser.add_argument` specifies what value should be used if the command-line argument is not present. For example::"
-msgstr "می‌توان تمام آرگومان‌های اختیاری و برخی آرگومان‌های جایگاهی را در خط فرمان حذف کرد. آرگومان کلیدواژه‌ای ``default`` در :meth:`~ArgumentParser.add_argument`، که مقدار پیش‌فرض آن ``None`` است، مشخص می‌کند که اگر آرگومان خط فرمان وجود نداشته باشد، از چه مقداری باید استفاده شود. برای آرگومان‌های اختیاری، هرگاه رشته‌ی گزینه در خط فرمان وجود نداشته باشد، از مقدار ``default`` استفاده می‌شود::"
+msgstr "تمام آرگومان‌های اختیاری و برخی آرگومان‌های جایگاهی را می‌توان در خط فرمان حذف کرد. آرگومان کلیدواژه‌ای ``default`` تابع :meth:`~ArgumentParser.add_argument` مشخص می‌کند که اگر آرگومان خط فرمان وجود نداشته باشد، چه مقداری باید استفاده شود. برای مثال::"
 
 msgid ""
 ">>> parser = argparse.ArgumentParser()\n"
@@ -1249,7 +1247,7 @@ msgstr ""
 "Namespace(foo=42)"
 
 msgid "If ``default`` is omitted, :meth:`~ArgumentParser.add_argument` uses a value previously set for the dest_ with :meth:`~ArgumentParser.set_defaults`, or otherwise a non-``None`` argument_default_. If neither is set, the action's own default is used."
-msgstr ""
+msgstr "اگر ``default`` حذف شود، :meth:`~ArgumentParser.add_argument` از مقداری که قبلاً برای dest_ با :meth:`~ArgumentParser.set_defaults` تنظیم شده است، یا در غیر این صورت از یک argument_default_ غیر-``None`` استفاده می‌کند. اگر هیچ‌کدام تنظیم نشده باشند، از پیش‌فرض خودِ اکشن استفاده می‌شود."
 
 msgid "If the target namespace already has an attribute set, the action *default* will not overwrite it::"
 msgstr "اگر فضای نام هدف از قبل ویژگی تنظیم‌شده‌ای داشته باشد، *پیش‌فرضِ* اکشن آن را بازنویسی نمی‌کند::"
