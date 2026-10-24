@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 04:18+0000\n"
+"POT-Creation-Date: 2026-10-24 04:15+0000\n"
 "PO-Revision-Date: 2026-09-24 07:55+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: none\n"
@@ -479,7 +479,9 @@ msgstr "*source* را به یک شیء کد یا AST کامپایل می‌کن�
 msgid "The *filename* argument should give the file from which the code was read; pass some recognizable value if it wasn't read from a file (``'<string>'`` is commonly used)."
 msgstr "آرگومان *filename* باید نام پرونده‌ای را مشخص کند که کد از آن خوانده شده است؛ اگر کد از پرونده خوانده نشده، مقدار قابل تشخیصی را ارسال کنید (معمولاً از ``'<string>'`` استفاده می‌شود)."
 
-msgid "The *mode* argument specifies what kind of code must be compiled; it can be ``'exec'`` if *source* consists of a sequence of statements, ``'eval'`` if it consists of a single expression, or ``'single'`` if it consists of a single interactive statement (in the latter case, expression statements that evaluate to something other than ``None`` will be printed)."
+#, fuzzy
+#| msgid "The *mode* argument specifies what kind of code must be compiled; it can be ``'exec'`` if *source* consists of a sequence of statements, ``'eval'`` if it consists of a single expression, or ``'single'`` if it consists of a single interactive statement (in the latter case, expression statements that evaluate to something other than ``None`` will be printed)."
+msgid "The *mode* argument specifies what kind of code must be compiled; it can be ``'exec'`` if *source* consists of a sequence of statements, ``'eval'`` if it consists of a single expression, or ``'single'`` if it consists of a single interactive statement (in the latter case, expression statements that evaluate to something other than ``None`` will be printed). It can also be ``'func_type'`` if *source* consists of a function type signature, for example ``(int) -> str``; see :func:`ast.parse` for more information. This mode requires passing :data:`ast.PyCF_ONLY_AST` in *flags*."
 msgstr "آرگومان *mode* مشخص می‌کند که چه نوع کدی باید کامپایل شود؛ اگر *source* شامل دنباله‌ای از دستورها باشد، می‌تواند ``'exec'`` باشد؛ اگر شامل تنها یک عبارت باشد، ``'eval'``؛ و اگر شامل تنها یک دستور تعاملی باشد، ``'single'`` (در حالت آخر، اگر عبارت مقداری غیر از ``None`` تولید کند، آن مقدار چاپ خواهد شد)."
 
 msgid "The optional arguments *flags* and *dont_inherit* control which :ref:`compiler options <ast-compiler-flags>` should be activated and which :ref:`future features <future>` should be allowed. If neither is present (or both are zero) the code is compiled with the same flags that affect the code that is calling :func:`compile`. If the *flags* argument is given and *dont_inherit* is not (or is zero) then the compiler options and the future statements specified by the *flags* argument are used in addition to those that would be used anyway. If *dont_inherit* is a non-zero integer then the *flags* argument is it -- the flags (future features and compiler options) in the surrounding code are ignored."
@@ -517,6 +519,9 @@ msgstr "پیش از این، هنگام برخورد با بایت‌های ته
 
 msgid "``ast.PyCF_ALLOW_TOP_LEVEL_AWAIT`` can now be passed in flags to enable support for top-level ``await``, ``async for``, and ``async with``."
 msgstr "اکنون می‌توان ``ast.PyCF_ALLOW_TOP_LEVEL_AWAIT`` را در پرچم‌ها ارسال کرد تا از ``await``، ``async for`` و ``async with`` در سطح بالای کد (top-level) پشتیبانی شود."
+
+msgid "Added support for ``mode='func_type'``."
+msgstr ""
 
 msgid ":exc:`SyntaxError` is raised instead of :exc:`ValueError` when null bytes are encountered in *source*."
 msgstr "هنگامی که بایت‌های تهی در *source* یافت شوند، :exc:`SyntaxError` به‌جای :exc:`ValueError` پرتاب می‌شود."

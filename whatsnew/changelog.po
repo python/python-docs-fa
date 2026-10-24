@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-23 04:16+0000\n"
+"POT-Creation-Date: 2026-10-24 04:15+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -43,6 +43,9 @@ msgstr ":cve:`2026-114583`, :gh:`160097`: تابع :func:`tarfile.tar_filter` ا
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
 
+msgid ":gh:`160491`: Fix the location reported for invalid escape sequences in f-strings and t-strings. The :exc:`SyntaxError` now points at the literal part that contains the escape, instead of at the closing quote."
+msgstr ""
+
 msgid ":gh:`160268`: Fix a crash in :mod:`tokenize` when a mismatched closing bracket follows the opening brace of an f-string or t-string replacement field, as in ``f'{]a'``. It now raises the same \"unmatched\" error as the parser."
 msgstr ":gh:`160268`: رفع یک فروپاشی در :mod:`tokenize` هنگامی که یک علامت بسته‌ی ناهمخوان پس از براکت بازکننده‌ی یک فیلد جایگزینی اف‌استرینگ یا تی‌استرینگ می‌آید، مانند ``f'{]a'``. این مورد اکنون همان خطای «ناهمخوان» (unmatched) را مانند پارسر ایجاد می‌کند."
 
@@ -54,6 +57,11 @@ msgstr ":gh:`160162`: رفع یک فروپاشی در پلتفرم‌های ۳۲
 
 msgid ":gh:`160179`: Fix :meth:`!bytearray.__init__` leaving uninitialized memory in the object when it fails on a :class:`list` or :class:`tuple` containing an integer not in ``range(256)``. The object is now empty after the failed call."
 msgstr ":gh:`160179`: رفع این مشکل که :meth:`!bytearray.__init__` هنگام شکست خوردن روی یک :class:`list` یا :class:`tuple` حاوی یک عدد صحیح که در ``range(256)`` نیست، حافظه‌ی مقداردهی‌نشده‌ای را در شیء باقی می‌گذارد. شیء اکنون پس از فراخوانی ناموفق خالی است."
+
+#, fuzzy
+#| msgid ":gh:`125017`: Fix crash on certain accesses to the ``__annotations__`` of :class:`staticmethod` and :class:`classmethod` objects."
+msgid ":gh:`159739`: Fix a possible crash when assigning metadata to :class:`classmethod` or :class:`staticmethod` objects."
+msgstr ":gh:`125017`: رفع فروپاشی در برخی دسترسی‌ها به ``__annotations__`` در اشیاء :class:`staticmethod` و :class:`classmethod`."
 
 msgid ":gh:`159739`: Fix a race in ``list.__sizeof__()`` when a list is concurrently resized on a free-threaded build."
 msgstr ":gh:`159739`: رفع یک رقابت در ``list.__sizeof__()`` هنگامی که یک فهرست به طور همزمان در یک ساخت نخ‌آزاد تغییر اندازه داده می‌شود."
@@ -85,6 +93,11 @@ msgstr ":gh:`159739`: رفع یک فروپاشی در :func:`warnings.warn` هن
 msgid ":gh:`159431`: Fix an assertion failure, or an immortal object becoming mortal, on the :term:`free threaded <free threading>` build when an object passed to the internal delayed decref mechanism is immortal or becomes immortal before the delayed decref is processed by the garbage collector."
 msgstr ":gh:`159431`: رفع یک خطای ادعا (assertion) یا تبدیل شدن یک شیء نامیرا به فانی در نسخه‌ی :term:`نخ‌بندی آزاد <free threading>`، هنگامی که شیء ارسال‌شده به مکانیسم داخلی کاهش‌دهنده‌ی شمارشگر ارجاع تأخیری (delayed decref)، نامیرا باشد یا پیش از پردازش این مکانیسم توسط جمع‌آوری‌کننده‌ی زباله، نامیرا شود."
 
+#, fuzzy
+#| msgid ":gh:`159285`: Fix a crash in a debug build when copying an empty :class:`dict` fails with :exc:`MemoryError`. Patch by Christian Aurich Zanettini Martins."
+msgid ":gh:`159294`: Fix a crash in a debug build when creating an :exc:`ExceptionGroup` or :exc:`BaseExceptionGroup` fails with :exc:`MemoryError`. Patch by Christian Aurich Zanettini Martins."
+msgstr ":gh:`159285`: رفع خرابی در بیلد دیباگ زمانی که کپی کردن یک :class:`dict` خالی با :exc:`MemoryError` مواجه می‌شود. وصله توسط Christian Aurich Zanettini Martins."
+
 msgid ":gh:`159111`: Update mimalloc version from 2.1.2 to 2.5.2. Patch by Donghee Na."
 msgstr ":gh:`159111`: به‌روزرسانی نسخه‌ی mimalloc از ۲.۱.۲ به ۲.۵.۲. وصل توسط Donghee Na."
 
@@ -97,17 +110,31 @@ msgstr ":gh:`151818`: رفع فروپاشی آزادسازی مضاعف (double-
 msgid "Library"
 msgstr "کتابخانه"
 
+msgid ":gh:`160326`: Raise :exc:`ValueError` for a NaN *timeout* in :meth:`threading.Condition.wait` and the blocking calls built on it, such as :meth:`threading.Event.wait`, :meth:`threading.Semaphore.acquire` and :meth:`queue.Queue.get`, instead of returning at once or looping without ever timing out."
+msgstr ""
+
+msgid ":gh:`160299`: Fix :meth:`symtable.Symbol.is_referenced` for local and nonlocal symbols in function scopes when their only uses are in inlined comprehensions."
+msgstr ""
+
 msgid ":gh:`159739`: Fix a crash when a :mod:`ctypes` structure subclass cannot be created due to an allocation failure."
 msgstr ":gh:`159739`: رفع فروپاشی هنگامی که یک زیرکلاس ساختار :mod:`ctypes` به دلیل خطای تخصیص حافظه قابل ایجاد نیست."
 
 msgid ":gh:`159739`: Fix clearing a :class:`pickle.Unpickler` memo so that the unpickler can be reused for independent records."
 msgstr ":gh:`159739`: رفع پاکسازی حافظه‌ی موقت (memo) در :class:`pickle.Unpickler` به طوری که unpickler بتواند برای رکوردهای مستقل دوباره استفاده شود."
 
+msgid ":gh:`160171`: On the server side, :meth:`ssl.SSLSocket.get_unverified_chain` now returns the client's certificate when the session was resumed from a session ticket, instead of an empty list, and returns an empty list instead of raising :exc:`AttributeError` when the client sent no certificate."
+msgstr ""
+
 msgid ":gh:`159739`: Fix the ``truncate`` method on :class:`io.BytesIO` when converting its size argument closes the stream or exports its buffer."
 msgstr ":gh:`159739`: رفع متد ``truncate`` در :class:`io.BytesIO` هنگامی که تبدیل آرگومان اندازه‌ی آن باعث بسته‌شدن جریان یا اکسپورت بافر آن می‌شود."
 
 msgid ":gh:`159739`: Fix :class:`contextvars.ContextVar` returning a stale value after a reentrant finalizer changes it during :meth:`~contextvars.ContextVar.reset`."
 msgstr ":gh:`159739`: رفع بازگرداندن مقدار کهنه توسط :class:`contextvars.ContextVar` پس از اینکه یک نهایی‌ساز بازورودپذیر آن را در طول متد :meth:`~contextvars.ContextVar.reset` تغییر می‌دهد."
+
+#, fuzzy
+#| msgid ":gh:`127870`: Detect recursive calls in ctypes ``_as_parameter_`` handling. Patch by Victor Stinner."
+msgid ":gh:`159739`: Detect recursive ``_as_parameter_`` chains for :mod:`ctypes` calls without argument types."
+msgstr ":gh:`127870`: تشخیص فراخوانی‌های بازкурسی (recursive) در مدیریت ``_as_parameter_`` در ctypes. وصله توسط Victor Stinner."
 
 msgid ":gh:`159739`: Fix a possible crash when a list of :mod:`sqlite3` parameters is modified concurrently on a free-threaded build."
 msgstr ":gh:`159739`: رفع فروپاشی احتمالی هنگامی که فهرستی از پارامترهای :mod:`sqlite3` به‌صورت همگام (concurrently) روی یک ساخت نخ‌آزاد تغییر می‌کند."
@@ -151,6 +178,9 @@ msgstr ":gh:`159706`: رفع مشکل تنظیم ``fold=0`` در :class:`zoneinf
 msgid ":gh:`159714`: Fix :class:`zoneinfo.ZoneInfo` interpreting the Julian day rule ``J59`` as February 29 in leap years instead of February 28."
 msgstr ":gh:`159714`: رفع مشکل تفسیر قانون روز ژولینی ``J59`` به‌عنوان ۲۹ فوریه در سال‌های کبیسه به جای ۲۸ فوریه توسط :class:`zoneinfo.ZoneInfo`."
 
+msgid ":gh:`159304`: Fix :exc:`AttributeError` in :meth:`email.message.EmailMessage.get_body` when a nested ``multipart`` part is malformed and its payload is a string."
+msgstr ""
+
 msgid ":gh:`158287`: Fix a bug in :mod:`asyncio` where stopping a child process (such as with ``SIGSTOP``) on macOS caused the event loop to block indefinitely."
 msgstr ":gh:`158287`: رفع باگی در :mod:`asyncio` که در آن متوقف کردن یک فرایند فرزند (مانند استفاده از ``SIGSTOP``) روی سیستم‌عامل macOS باعث مسدود شدن بی‌حساب حلقه‌ی رویداد می‌شد."
 
@@ -163,17 +193,32 @@ msgstr ":gh:`157880`: رفع مشکل :class:`mailbox.Babyl` برای نوشتن
 msgid ":gh:`156784`: :class:`asyncio.ProactorEventLoop` no longer silently ignores :exc:`ConnectionResetError` on UDP sockets, matching :class:`asyncio.SelectorEventLoop`."
 msgstr ":gh:`156784`: کلاس :class:`asyncio.ProactorEventLoop` دیگر خطاهای :exc:`ConnectionResetError` را روی سوکت‌های UDP به‌صورت بی‌صدا نادیده نمی‌گیرد، که با عملکرد :class:`asyncio.SelectorEventLoop` سازگار است."
 
+msgid ":gh:`156078`: :meth:`zipfile.ZipFile.mkdir` now raises :exc:`ValueError` when the archive is closed or when a writable member handle is open."
+msgstr ""
+
 msgid ":gh:`155833`: Ensure that MD5 and SHA* objects are properly GC-untracked before freeing their internal HACL* state. Patch by Bénédikt Tran."
 msgstr ":gh:`155833`: اطمینان حاصل کنید که اشیای MD5 و SHA* پیش از آزادسازی وضعیت داخلی HACL* خود به‌درستی توسط زباله‌روب (GC) ردیابی‌نشده می‌شوند. وصله‌ای از Bénédikt Tran."
 
 msgid ":gh:`155428`: Ensure that :func:`hmac.digest` and :meth:`hmac.HMAC.digest` output identical values when using a digest's block size smaller than 16. Patch by Bénédikt Tran."
 msgstr ":gh:`155428`: اطمینان حاصل کنید که :func:`hmac.digest` و :meth:`hmac.HMAC.digest` مقادیر یکسانی را هنگام استفاده از اندازه‌ی بلوک درهم‌سازی کوچک‌تر از ۱۶ خروجی می‌دهند. وصله‌ای از Bénédikt Tran."
 
+msgid ":gh:`127636`: Fix :meth:`tarfile.TarFile.extract` to accept archive member names with a trailing forward slash, including those returned by :meth:`tarfile.TarFile.getnames`. Contributed by Xiao Yuan."
+msgstr ""
+
 msgid ":gh:`149527`: :mod:`multiprocessing`: fix creation of temporary socket files following :gh:`137335` (`PR#148578 <https://github.com/python/cpython/pull/148578>`__ and corresponding backports). Patch by Bénédikt Tran."
 msgstr ":gh:`149527`: ماژول :mod:`multiprocessing`: رفع مشکل ایجاد پرونده‌های سوکت موقت به دنبال :gh:`137335` (پیوند `PR#148578 <https://github.com/python/cpython/pull/148578>`__ و بک‌پورت‌های مربوطه). وصله‌ای از Bénédikt Tran."
 
+msgid ":gh:`146169`: :mod:`xml.parsers.expat`: raise :exc:`RuntimeError` when an Expat handler calls :meth:`parser.Parse <xml.parsers.expat.xmlparser.Parse>` or :meth:`parser.ParseFile <xml.parsers.expat.xmlparser.ParseFile>` on the parser that called the handler. Patch by Bénédikt Tran."
+msgstr ""
+
+msgid ":gh:`140036`: Avoid hanging in floor division of pure Python :class:`decimal.Decimal` instances when the context precision is very large. Patch by Bénédikt Tran."
+msgstr ""
+
 msgid "Build"
 msgstr "ساخت"
+
+msgid ":gh:`128883`: Fix crashes with ``-X perf`` and ``-X perf_jit`` in BOLT builds. The ELF perf trampoline templates now use read-only data sections."
+msgstr ""
 
 msgid ":gh:`160004`: Fix the paths in the :pep:`739` ``build-details.json`` file generated by :file:`Tools/build/generate-build-details.py` with both ``--relative-paths`` and ``--config-file-path``. Previously, every path except ``base_prefix`` was wrong and depended on the directory the script was run from."
 msgstr ":gh:`160004`: رفع مسیرهای موجود در پرونده‌ی :pep:`739` به نام ``build-details.json`` که توسط :file:`Tools/build/generate-build-details.py` با هر دو سویچ ``--relative-paths`` و ``--config-file-path`` تولید شده است. پیش‌تر، تمام مسیرها به جز ``base_prefix`` اشتباه بودند و به پوشه‌ای که اسکریپت از آن اجرا شده بود وابستگی داشتند."

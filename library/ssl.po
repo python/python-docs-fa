@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-24 04:15+0000\n"
 "PO-Revision-Date: 2026-09-13 15:23+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -882,8 +882,14 @@ msgstr "رشته‌های نشانی IPv6 دیگر دارای خط جدید در
 msgid "Returns verified certificate chain provided by the other end of the SSL channel as a list of DER-encoded bytes. If certificate verification was disabled method acts the same as :meth:`~SSLSocket.get_unverified_chain`."
 msgstr "زنجیره‌ی گواهی تأییدشده‌ای که از سوی طرف مقابل کانال SSL ارائه شده است را به‌صورت فهرستی از بایت‌های کدگذاری‌شده با DER برمی‌گرداند. اگر تأیید گواهی غیرفعال شده باشد، این متد همانند :meth:`~SSLSocket.get_unverified_chain` عمل می‌کند."
 
+msgid "The verified chain is not stored with a session, so the list is empty when the session is resumed (see :attr:`~SSLSocket.session_reused`)."
+msgstr ""
+
 msgid "Returns raw certificate chain provided by the other end of the SSL channel as a list of DER-encoded bytes."
 msgstr "زنجیره‌ی گواهی خام ارائه‌شده توسط طرف مقابل کانال SSL را به‌صورت فهرستی از بایت‌های کدگذاری‌شده با DER بازمی‌گرداند."
+
+msgid "No certificates are exchanged when a session is resumed (see :attr:`~SSLSocket.session_reused`); the list then holds what was stored with the session, which for a session resumed from a ticket on the server side is the peer's own certificate only."
+msgstr ""
 
 msgid "Returns a three-value tuple containing the name of the cipher being used, the version of the SSL protocol that defines its use, and the number of secret bits being used.  If no connection has been established, returns ``None``."
 msgstr "یک تاپل سه‌مقداری شامل نام رمزنگار استفاده‌شده، نسخه پروتکل SSL که استفاده از آن را تعریف می‌کند، و تعداد بیت‌های محرمانه استفاده‌شده را برمی‌گرداند. اگر هیچ اتصالی برقرار نشده باشد، ``None`` را برمی‌گرداند."
@@ -1447,7 +1453,9 @@ msgstr "احراز هویت TLS-PSK (کلید از پیش اشتراک‌گذا�
 msgid "In general, certificate based authentication should be preferred over this method."
 msgstr "به‌طور کلی، احراز هویت مبتنی بر گواهی باید بر این روش ترجیح داده شود."
 
-msgid "The parameter ``callback`` is a callable object with the signature: ``def callback(hint: str | None) -> tuple[str | None, bytes]``. The ``hint`` parameter is an optional identity hint sent by the server. The return value is a tuple in the form (client-identity, psk). Client-identity is an optional string which may be used by the server to select a corresponding PSK for the client. The string must be less than or equal to ``256`` octets when UTF-8 encoded. PSK is a :term:`bytes-like object` representing the pre-shared key. Return a zero length PSK to reject the connection."
+#, fuzzy
+#| msgid "The parameter ``callback`` is a callable object with the signature: ``def callback(hint: str | None) -> tuple[str | None, bytes]``. The ``hint`` parameter is an optional identity hint sent by the server. The return value is a tuple in the form (client-identity, psk). Client-identity is an optional string which may be used by the server to select a corresponding PSK for the client. The string must be less than or equal to ``256`` octets when UTF-8 encoded. PSK is a :term:`bytes-like object` representing the pre-shared key. Return a zero length PSK to reject the connection."
+msgid "The parameter ``callback`` is a callable object with the signature: ``def callback(hint: str | None) -> tuple[str | None, bytes]``. The ``hint`` parameter is an optional identity hint sent by the server. The return value is a tuple in the form (client-identity, psk). Client-identity is an optional string which may be used by the server to select a corresponding PSK for the client. The string must be less than or equal to ``256`` octets when UTF-8 encoded. PSK is a :term:`bytes-like object` representing the pre-shared key. With TLS 1.2 and earlier, return a zero length PSK to reject the connection."
 msgstr "پارامتر ``callback`` یک شیء فراخوانی‌پذیر با امضای زیر است: ``def callback(hint: str | None) -> tuple[str | None, bytes]``. پارامتر ``hint`` یک راهنمای هویت اختیاری است که توسط سرور ارسال می‌شود. مقدار بازگشتی یک تاپل به‌شکل (client-identity, psk) است. client-identity یک رشته اختیاری است که ممکن است سرور از آن برای انتخاب یک PSK متناظر برای کلاینت استفاده کند. این رشته باید هنگام کدگذاری با UTF-8 کمتر یا مساوی ``256`` هشت‌بیتی باشد. PSK یک :term:`bytes-like object` است که کلید از پیش اشتراک‌گذاری‌شده را نشان می‌دهد. برای رد کردن اتصال، یک PSK با طول صفر برگردانید."
 
 msgid "Setting ``callback`` to :const:`None` removes any existing callback."
@@ -1462,13 +1470,40 @@ msgstr "پارامتر ``hint`` همیشه :const:`None` است."
 msgid "client-identity must be a non-empty string."
 msgstr "client-identity باید یک رشته غیرخالی باشد."
 
+msgid "the PSK is only offered to the server, which may decline it and authenticate with a certificate instead.  That certificate is checked according to :attr:`~SSLContext.verify_mode`, so a client relying on the PSK to authenticate the server should not set it to :const:`CERT_NONE`, or should check :attr:`SSLSocket.session_reused`, which is true if the PSK was used.  A PSK handshake does not need any CA certificates to be loaded when using :const:`CERT_REQUIRED`."
+msgstr ""
+
+msgid "a zero length PSK does not reject the connection, it only means that no PSK is offered.  An exception raised by the callback has the same effect."
+msgstr ""
+
+msgid "the PSK is used with the SHA-256 handshake digest, so a server can only accept it with a cipher suite that uses SHA-256."
+msgstr ""
+
 msgid "Example usage::"
 msgstr "نمونه استفاده::"
 
+#, fuzzy
+#| msgid ""
+#| "context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)\n"
+#| "context.check_hostname = False\n"
+#| "context.verify_mode = ssl.CERT_NONE\n"
+#| "context.maximum_version = ssl.TLSVersion.TLSv1_2\n"
+#| "context.set_ciphers('PSK')\n"
+#| "\n"
+#| "# A simple lambda:\n"
+#| "psk = bytes.fromhex('c0ffee')\n"
+#| "context.set_psk_client_callback(lambda hint: (None, psk))\n"
+#| "\n"
+#| "# A table using the hint from the server:\n"
+#| "psk_table = { 'ServerId_1': bytes.fromhex('c0ffee'),\n"
+#| "              'ServerId_2': bytes.fromhex('facade')\n"
+#| "}\n"
+#| "def callback(hint):\n"
+#| "    return 'ClientId_1', psk_table.get(hint, b'')\n"
+#| "context.set_psk_client_callback(callback)"
 msgid ""
 "context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)\n"
 "context.check_hostname = False\n"
-"context.verify_mode = ssl.CERT_NONE\n"
 "context.maximum_version = ssl.TLSVersion.TLSv1_2\n"
 "context.set_ciphers('PSK')\n"
 "\n"
@@ -1508,14 +1543,24 @@ msgstr "این متد در صورتی که :data:`HAS_PSK` برابر ``False`` 
 msgid "Enables TLS-PSK (pre-shared key) authentication on a server-side connection."
 msgstr "احراز هویت TLS-PSK (کلید از پیش اشتراک‌گذاشته‌شده) را در یک اتصال سمت سرور فعال می‌کند."
 
-msgid "The parameter ``callback`` is a callable object with the signature: ``def callback(identity: str | None) -> bytes``. The ``identity`` parameter is an optional identity sent by the client which can be used to select a corresponding PSK. The return value is a :term:`bytes-like object` representing the pre-shared key. Return a zero length PSK to reject the connection."
+#, fuzzy
+#| msgid "The parameter ``callback`` is a callable object with the signature: ``def callback(identity: str | None) -> bytes``. The ``identity`` parameter is an optional identity sent by the client which can be used to select a corresponding PSK. The return value is a :term:`bytes-like object` representing the pre-shared key. Return a zero length PSK to reject the connection."
+msgid "The parameter ``callback`` is a callable object with the signature: ``def callback(identity: str | None) -> bytes``. The ``identity`` parameter is an optional identity sent by the client which can be used to select a corresponding PSK. The return value is a :term:`bytes-like object` representing the pre-shared key. With TLS 1.2 and earlier, return a zero length PSK to reject the connection."
 msgstr "پارامتر ``callback`` یک شیء فراخوانی‌پذیر با امضای ``def callback(identity: str | None) -> bytes`` است. پارامتر ``identity`` یک هویت اختیاری ارسال‌شده از سوی کلاینت است که می‌توان از آن برای انتخاب یک PSK متناظر استفاده کرد. مقدار بازگشتی یک :term:`bytes-like object` است که کلید از پیش به اشتراک گذاشته‌شده را نشان می‌دهد. برای رد کردن اتصال، یک PSK با طول صفر برگردانید."
 
 msgid "The parameter ``identity_hint`` is an optional identity hint string sent to the client. The string must be less than or equal to ``256`` octets when UTF-8 encoded."
 msgstr "پارامتر ``identity_hint`` یک رشته‌ی راهنمای هویت اختیاری است که به کلاینت ارسال می‌شود. این رشته باید هنگام کدگذاری با UTF-8 کمتر یا مساوی ``256`` هشت‌بیتی باشد."
 
-msgid "When using TLS 1.3 the ``identity_hint`` parameter is not sent to the client."
+#, fuzzy
+#| msgid "When using TLS 1.3 the ``identity_hint`` parameter is not sent to the client."
+msgid "the ``identity_hint`` parameter is not sent to the client."
 msgstr "هنگام استفاده از TLS 1.3، پارامتر ``identity_hint`` به کلاینت ارسال نمی‌شود."
+
+msgid "a zero length PSK, or an exception raised by the callback, only declines the client's PSK.  If a certificate was loaded with :meth:`~SSLContext.load_cert_chain`, the handshake continues with certificate authentication instead of failing, so a server relying on the PSK to authenticate clients should not load one, or should check :attr:`SSLSocket.session_reused`, which is true if the PSK was used."
+msgstr ""
+
+msgid "the PSK can only be accepted with a cipher suite that uses SHA-256. When a certificate is loaded, OpenSSL's default TLS 1.3 cipher suite order selects a SHA-384 suite instead, so the PSK is declined even if it matches."
+msgstr ""
 
 msgid ""
 "context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)\n"

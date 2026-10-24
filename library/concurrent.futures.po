@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-24 04:15+0000\n"
 "PO-Revision-Date: 2026-09-13 19:48+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -116,7 +116,9 @@ msgstr ""
 "    e.submit(shutil.copy, 'src3.txt', 'dest3.txt')\n"
 "    e.submit(shutil.copy, 'src4.txt', 'dest4.txt')"
 
-msgid "Added *cancel_futures*."
+#, fuzzy
+#| msgid "Added *cancel_futures*."
+msgid "Added the *cancel_futures* parameter."
 msgstr "*cancel_futures* اضافه شد."
 
 msgid "ThreadPoolExecutor"
@@ -196,6 +198,12 @@ msgstr "پیش از آنکه مفسر بتواند خارج شود، همه نخ
 msgid "*initializer* is an optional callable that is called at the start of each worker thread; *initargs* is a tuple of arguments passed to the initializer.  Should *initializer* raise an exception, all currently pending jobs will raise a :exc:`~concurrent.futures.thread.BrokenThreadPool`, as well as any attempt to submit more jobs to the pool."
 msgstr "*initializer* یک شیء فراخوانی‌پذیر اختیاری است که در آغاز هر نخ‌کارگر فراخوانی می‌شود؛ *initargs* تاپلی از آرگومان‌ها است که به initializer ارسال می‌شوند. در صورتی که *initializer* استثنایی پرتاب کند، همه کارهایی که در حال حاضر در انتظار هستند، و همچنین هر تلاشی برای ارسال کارهای بیشتر به استخر، یک :exc:`~concurrent.futures.thread.BrokenThreadPool` پرتاب خواهند کرد."
 
+msgid "*ctxkwargs* is a mapping of additional keyword arguments passed to :meth:`prepare_context`, allowing customization of the worker execution context."
+msgstr ""
+
+msgid "Setting up the necessary context for creating worker instances in a pool-based executor (for example, in a concurrent environment like threads or interpreters)."
+msgstr ""
+
 msgid "If *max_workers* is ``None`` or not given, it will default to the number of processors on the machine, multiplied by ``5``, assuming that :class:`ThreadPoolExecutor` is often used to overlap I/O instead of CPU work and the number of workers should be higher than the number of workers for :class:`ProcessPoolExecutor`."
 msgstr "اگر *max_workers* ``None`` باشد یا ارائه نشود، به‌طور پیش‌فرض برابر با تعداد پردازنده‌های ماشین ضرب در ``5`` خواهد بود، با این فرض که :class:`ThreadPoolExecutor` اغلب برای هم‌پوشانی ورودی/خروجی به‌جای کار پردازنده استفاده می‌شود و تعداد کارگرها باید بیشتر از تعداد کارگرهای :class:`ProcessPoolExecutor` باشد."
 
@@ -213,6 +221,9 @@ msgstr "ThreadPoolExecutor اکنون پیش از راه‌اندازی *max_wor
 
 msgid "Default value of *max_workers* is changed to ``min(32, (os.process_cpu_count() or 1) + 4)``."
 msgstr "مقدار پیش‌فرض *max_workers* به ``min(32, (os.process_cpu_count() or 1) + 4)`` تغییر کرده است."
+
+msgid "Added *ctxkwargs* to pass additional arguments to :meth:`prepare_context` class method."
+msgstr ""
 
 msgid "ThreadPoolExecutor Example"
 msgstr "مثال ThreadPoolExecutor"

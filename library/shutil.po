@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-24 04:15+0000\n"
 "PO-Revision-Date: 2026-09-14 09:25+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -181,6 +181,9 @@ msgstr "پارامتر *dirs_exist_ok* افزوده شد."
 
 msgid "Delete an entire directory tree; *path* must point to a directory (but not a symbolic link to a directory).  If *ignore_errors* is true, errors resulting from failed removals will be ignored; if false or omitted, such errors are handled by calling a handler specified by *onexc* or *onerror* or, if both are omitted, exceptions are propagated to the caller."
 msgstr "حذف یک درخت پوشه‌ی کامل؛ *path* باید به یک پوشه اشاره کند (اما نه به یک پیوند نمادین به پوشه). اگر *ignore_errors* درست باشد، خطاهای ناشی از حذف‌های ناموفق نادیده گرفته می‌شوند؛ اگر نادرست یا مشخص‌نشده باشد، چنین خطاهایی با فراخوانی هندلری که توسط *onexc* یا *onerror* مشخص‌شده است رسیدگی می‌شوند یا اگر هر دو مشخص‌نشده باشند، استثناها به فراخواننده انتشار می‌یابند."
+
+msgid "If *path* is a symbolic link to a directory followed by a trailing path separator, such as ``'link/'``, the operating system resolves the link, so :func:`!rmtree` deletes the contents of the directory it points to and then fails to remove *path* itself.  :class:`pathlib.Path` strips trailing separators, so ``rmtree(Path('link/'))`` refuses the link as usual."
+msgstr ""
 
 msgid "This function can support :ref:`paths relative to directory descriptors <dir_fd>`."
 msgstr "این تابع می‌تواند از :ref:`مسیرهای نسبی نسبت به توصیف‌گرهای پوشه <dir_fd>` پشتیبانی کند."
