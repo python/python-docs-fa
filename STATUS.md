@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-10-23)
+(به‌روزرسانی: 2026-10-24)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -8,7 +8,6 @@
 | bugs.po | 100.0% | 0.0% | 31 | 0 | 0 |
 | builtins/constants.po | 100.0% | 0.0% | 22 | 0 | 0 |
 | builtins/exceptions.po | 100.0% | 0.0% | 207 | 0 | 0 |
-| builtins/functions.po | 100.0% | 0.0% | 540 | 0 | 0 |
 | builtins/index.po | 100.0% | 0.0% | 5 | 0 | 0 |
 | builtins/stdtypes.po | 100.0% | 0.0% | 1659 | 0 | 0 |
 | builtins/threadsafety.po | 100.0% | 0.0% | 118 | 0 | 0 |
@@ -24,7 +23,6 @@
 | c-api/call.po | 100.0% | 0.0% | 99 | 0 | 0 |
 | c-api/capsule.po | 100.0% | 0.0% | 36 | 0 | 0 |
 | c-api/cell.po | 100.0% | 0.0% | 11 | 0 | 0 |
-| c-api/code.po | 100.0% | 0.0% | 83 | 0 | 0 |
 | c-api/codec.po | 100.0% | 0.0% | 30 | 0 | 0 |
 | c-api/complex.po | 100.0% | 0.0% | 37 | 0 | 0 |
 | c-api/concrete.po | 100.0% | 0.0% | 16 | 0 | 0 |
@@ -35,7 +33,6 @@
 | c-api/datetime.po | 100.0% | 0.0% | 67 | 0 | 0 |
 | c-api/descriptor.po | 100.0% | 0.0% | 39 | 0 | 0 |
 | c-api/dict.po | 100.0% | 0.0% | 124 | 0 | 0 |
-| c-api/exceptions.po | 100.0% | 0.0% | 294 | 0 | 0 |
 | c-api/extension-modules.po | 100.0% | 0.0% | 80 | 0 | 0 |
 | c-api/file.po | 100.0% | 0.0% | 36 | 0 | 0 |
 | c-api/float.po | 100.0% | 0.0% | 55 | 0 | 0 |
@@ -51,7 +48,6 @@
 | c-api/interp-lifecycle.po | 100.0% | 0.0% | 223 | 0 | 0 |
 | c-api/intro.po | 100.0% | 0.0% | 244 | 0 | 0 |
 | c-api/iter.po | 100.0% | 0.0% | 12 | 0 | 0 |
-| c-api/iterator.po | 100.0% | 0.0% | 24 | 0 | 0 |
 | c-api/lifecycle.po | 100.0% | 0.0% | 45 | 0 | 0 |
 | c-api/list.po | 100.0% | 0.0% | 38 | 0 | 0 |
 | c-api/long.po | 100.0% | 0.0% | 182 | 0 | 0 |
@@ -213,7 +209,6 @@
 | library/cgitb.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/chunk.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/cmath.po | 100.0% | 0.0% | 124 | 0 | 0 |
-| library/cmd.po | 100.0% | 0.0% | 50 | 0 | 0 |
 | library/cmdline.po | 100.0% | 0.0% | 54 | 0 | 0 |
 | library/cmdlinelibs.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/code.po | 100.0% | 0.0% | 33 | 0 | 0 |
@@ -226,7 +221,6 @@
 | library/compression.po | 100.0% | 0.0% | 7 | 0 | 0 |
 | library/compression.zstd.po | 100.0% | 0.0% | 175 | 0 | 0 |
 | library/concurrency.po | 100.0% | 0.0% | 3 | 0 | 0 |
-| library/concurrent.futures.po | 100.0% | 0.0% | 121 | 0 | 0 |
 | library/concurrent.interpreters.po | 100.0% | 0.0% | 97 | 0 | 0 |
 | library/concurrent.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/configparser.po | 100.0% | 0.0% | 227 | 0 | 0 |
@@ -271,7 +265,6 @@
 | library/email.parser.po | 100.0% | 0.0% | 48 | 0 | 0 |
 | library/email.po | 100.0% | 0.0% | 23 | 0 | 0 |
 | library/email.policy.po | 100.0% | 0.0% | 110 | 0 | 0 |
-| library/email.utils.po | 100.0% | 0.0% | 36 | 0 | 0 |
 | library/ensurepip.po | 100.0% | 0.0% | 40 | 0 | 0 |
 | library/enum.po | 100.0% | 0.0% | 257 | 0 | 0 |
 | library/errno.po | 100.0% | 0.0% | 161 | 0 | 0 |
@@ -323,7 +316,6 @@
 | library/ipaddress.po | 100.0% | 0.0% | 168 | 0 | 0 |
 | library/ipc.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/itertools.po | 100.0% | 0.0% | 200 | 0 | 0 |
-| library/json.po | 100.0% | 0.0% | 183 | 0 | 0 |
 | library/keyword.po | 100.0% | 0.0% | 7 | 0 | 0 |
 | library/language.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/linecache.po | 100.0% | 0.0% | 17 | 0 | 0 |
@@ -399,7 +391,6 @@
 | library/selectors.po | 100.0% | 0.0% | 58 | 0 | 0 |
 | library/shelve.po | 100.0% | 0.0% | 52 | 0 | 0 |
 | library/shlex.po | 100.0% | 0.0% | 77 | 0 | 0 |
-| library/shutil.po | 100.0% | 0.0% | 195 | 0 | 0 |
 | library/signal.po | 100.0% | 0.0% | 145 | 0 | 0 |
 | library/site.po | 100.0% | 0.0% | 106 | 0 | 0 |
 | library/smtpd.po | 100.0% | 0.0% | 4 | 0 | 0 |
@@ -409,7 +400,6 @@
 | library/socketserver.po | 100.0% | 0.0% | 100 | 0 | 0 |
 | library/spwd.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/sqlite3.po | 100.0% | 0.0% | 481 | 0 | 0 |
-| library/ssl.po | 100.0% | 0.0% | 569 | 0 | 0 |
 | library/stat.po | 100.0% | 0.0% | 93 | 0 | 0 |
 | library/statistics.po | 100.0% | 0.0% | 248 | 0 | 0 |
 | library/string.po | 100.0% | 0.0% | 224 | 0 | 0 |
@@ -445,7 +435,6 @@
 | library/tkinter.scrolledtext.po | 100.0% | 0.0% | 7 | 0 | 0 |
 | library/tkinter.ttk.po | 100.0% | 0.0% | 476 | 0 | 0 |
 | library/token.po | 100.0% | 0.0% | 100 | 0 | 0 |
-| library/tokenize.po | 100.0% | 0.0% | 53 | 0 | 0 |
 | library/tomllib.po | 100.0% | 0.0% | 69 | 0 | 0 |
 | library/trace.po | 100.0% | 0.0% | 43 | 0 | 0 |
 | library/traceback.po | 100.0% | 0.0% | 117 | 0 | 0 |
@@ -529,9 +518,7 @@
 | using/editors.po | 100.0% | 0.0% | 6 | 0 | 0 |
 | using/index.po | 100.0% | 0.0% | 2 | 0 | 0 |
 | using/ios.po | 100.0% | 0.0% | 91 | 0 | 0 |
-| using/mac.po | 100.0% | 0.0% | 96 | 0 | 0 |
 | using/unix.po | 100.0% | 0.0% | 63 | 0 | 0 |
-| using/windows.po | 100.0% | 0.0% | 584 | 0 | 0 |
 | whatsnew/2.0.po | 100.0% | 0.0% | 207 | 0 | 0 |
 | whatsnew/2.1.po | 100.0% | 0.0% | 154 | 0 | 0 |
 | whatsnew/2.2.po | 100.0% | 0.0% | 216 | 0 | 0 |
@@ -556,7 +543,20 @@
 | whatsnew/3.7.po | 100.0% | 0.0% | 568 | 0 | 0 |
 | whatsnew/3.8.po | 100.0% | 0.0% | 513 | 0 | 0 |
 | whatsnew/3.9.po | 100.0% | 0.0% | 380 | 0 | 0 |
-| whatsnew/changelog.po | 100.0% | 0.0% | 15732 | 0 | 0 |
 | whatsnew/index.po | 100.0% | 0.0% | 3 | 0 | 0 |
-| **مجموع** | **100.0%** | **0.0%** | **90858** | **0** | **0** |
+| whatsnew/changelog.po | 99.9% | 0.0% | 15732 | 3 | 10 |
+| builtins/functions.po | 99.6% | 0.2% | 539 | 1 | 1 |
+| library/shutil.po | 99.5% | 0.0% | 195 | 0 | 1 |
+| using/mac.po | 99.0% | 1.0% | 95 | 1 | 0 |
+| library/json.po | 98.9% | 1.1% | 181 | 2 | 0 |
+| library/ssl.po | 98.1% | 0.7% | 565 | 4 | 7 |
+| library/cmd.po | 98.0% | 0.0% | 50 | 0 | 1 |
+| c-api/code.po | 97.6% | 2.4% | 81 | 2 | 0 |
+| c-api/exceptions.po | 97.4% | 0.0% | 294 | 0 | 8 |
+| library/concurrent.futures.po | 96.8% | 0.8% | 120 | 1 | 3 |
+| c-api/iterator.po | 96.0% | 0.0% | 24 | 0 | 1 |
+| using/windows.po | 92.7% | 6.3% | 548 | 37 | 6 |
+| library/tokenize.po | 75.8% | 3.2% | 47 | 2 | 13 |
+| library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
+| **مجموع** | **99.9%** | **0.1%** | **90791** | **67** | **51** |
 <!-- TRANSLATION_STATUS_END -->
