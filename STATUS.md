@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-10-25)
+(به‌روزرسانی: 2026-10-26)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -41,7 +41,6 @@
 | c-api/gcsupport.po | 100.0% | 0.0% | 107 | 0 | 0 |
 | c-api/gen.po | 100.0% | 0.0% | 18 | 0 | 0 |
 | c-api/hash.po | 100.0% | 0.0% | 43 | 0 | 0 |
-| c-api/import.po | 100.0% | 0.0% | 85 | 0 | 0 |
 | c-api/index.po | 100.0% | 0.0% | 2 | 0 | 0 |
 | c-api/init.po | 100.0% | 0.0% | 8 | 0 | 0 |
 | c-api/init_config.po | 100.0% | 0.0% | 661 | 0 | 0 |
@@ -238,7 +237,6 @@
 | library/dataclasses.po | 100.0% | 0.0% | 165 | 0 | 0 |
 | library/datatypes.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/datetime.po | 100.0% | 0.0% | 693 | 0 | 0 |
-| library/dbm.po | 100.0% | 0.0% | 115 | 0 | 0 |
 | library/debug.po | 100.0% | 0.0% | 2 | 0 | 0 |
 | library/decimal.po | 100.0% | 0.0% | 387 | 0 | 0 |
 | library/development.po | 100.0% | 0.0% | 3 | 0 | 0 |
@@ -249,7 +247,6 @@
 | library/distribution.po | 100.0% | 0.0% | 2 | 0 | 0 |
 | library/distutils.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/doctest.po | 100.0% | 0.0% | 381 | 0 | 0 |
-| library/email.charset.po | 100.0% | 0.0% | 44 | 0 | 0 |
 | library/email.compat32-message.po | 100.0% | 0.0% | 115 | 0 | 0 |
 | library/email.contentmanager.po | 100.0% | 0.0% | 42 | 0 | 0 |
 | library/email.encoders.po | 100.0% | 0.0% | 15 | 0 | 0 |
@@ -261,7 +258,6 @@
 | library/email.iterators.po | 100.0% | 0.0% | 12 | 0 | 0 |
 | library/email.message.po | 100.0% | 0.0% | 111 | 0 | 0 |
 | library/email.mime.po | 100.0% | 0.0% | 38 | 0 | 0 |
-| library/email.parser.po | 100.0% | 0.0% | 48 | 0 | 0 |
 | library/email.po | 100.0% | 0.0% | 23 | 0 | 0 |
 | library/email.policy.po | 100.0% | 0.0% | 110 | 0 | 0 |
 | library/ensurepip.po | 100.0% | 0.0% | 40 | 0 | 0 |
@@ -376,7 +372,6 @@
 | library/queue.po | 100.0% | 0.0% | 58 | 0 | 0 |
 | library/quopri.po | 100.0% | 0.0% | 13 | 0 | 0 |
 | library/random.po | 100.0% | 0.0% | 138 | 0 | 0 |
-| library/re.po | 100.0% | 0.0% | 457 | 0 | 0 |
 | library/readline.po | 100.0% | 0.0% | 60 | 0 | 0 |
 | library/removed.po | 100.0% | 0.0% | 2 | 0 | 0 |
 | library/reprlib.po | 100.0% | 0.0% | 39 | 0 | 0 |
@@ -410,7 +405,6 @@
 | library/superseded.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/symtable.po | 100.0% | 0.0% | 76 | 0 | 0 |
 | library/sys.monitoring.po | 100.0% | 0.0% | 122 | 0 | 0 |
-| library/sys.po | 100.0% | 0.0% | 513 | 0 | 0 |
 | library/sys_path_init.po | 100.0% | 0.0% | 27 | 0 | 0 |
 | library/sysconfig.po | 100.0% | 0.0% | 138 | 0 | 0 |
 | library/syslog.po | 100.0% | 0.0% | 31 | 0 | 0 |
@@ -486,7 +480,6 @@
 | reference/datamodel.po | 100.0% | 0.0% | 915 | 0 | 0 |
 | reference/executionmodel.po | 100.0% | 0.0% | 145 | 0 | 0 |
 | reference/expressions.po | 100.0% | 0.0% | 651 | 0 | 0 |
-| reference/grammar.po | 100.0% | 0.0% | 7 | 0 | 0 |
 | reference/import.po | 100.0% | 0.0% | 203 | 0 | 0 |
 | reference/index.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | reference/introduction.po | 100.0% | 0.0% | 56 | 0 | 0 |
@@ -542,21 +535,28 @@
 | whatsnew/3.8.po | 100.0% | 0.0% | 513 | 0 | 0 |
 | whatsnew/3.9.po | 100.0% | 0.0% | 380 | 0 | 0 |
 | whatsnew/index.po | 100.0% | 0.0% | 3 | 0 | 0 |
-| whatsnew/changelog.po | 99.9% | 0.0% | 15732 | 6 | 16 |
+| whatsnew/changelog.po | 99.8% | 0.0% | 15732 | 7 | 24 |
 | whatsnew/3.15.po | 99.6% | 0.0% | 819 | 0 | 3 |
 | builtins/functions.po | 99.6% | 0.2% | 539 | 1 | 1 |
+| library/sys.po | 99.6% | 0.2% | 513 | 1 | 1 |
 | c-api/intro.po | 99.6% | 0.4% | 243 | 1 | 0 |
 | library/shutil.po | 99.5% | 0.0% | 195 | 0 | 1 |
+| library/re.po | 99.1% | 0.7% | 457 | 3 | 1 |
 | using/mac.po | 99.0% | 1.0% | 95 | 1 | 0 |
 | library/json.po | 98.9% | 1.1% | 181 | 2 | 0 |
+| c-api/import.po | 98.8% | 1.2% | 85 | 1 | 0 |
 | library/ssl.po | 98.1% | 0.7% | 565 | 4 | 7 |
 | library/cmd.po | 98.0% | 0.0% | 50 | 0 | 1 |
+| library/email.charset.po | 97.7% | 2.3% | 43 | 1 | 0 |
 | c-api/code.po | 97.6% | 2.4% | 81 | 2 | 0 |
 | c-api/exceptions.po | 97.4% | 0.0% | 294 | 0 | 8 |
 | library/concurrent.futures.po | 96.8% | 0.8% | 120 | 1 | 3 |
 | c-api/iterator.po | 96.0% | 0.0% | 24 | 0 | 1 |
+| library/email.parser.po | 95.8% | 4.2% | 46 | 2 | 0 |
 | using/windows.po | 92.7% | 6.3% | 548 | 37 | 6 |
+| reference/grammar.po | 85.7% | 14.3% | 6 | 1 | 0 |
+| library/dbm.po | 85.6% | 1.5% | 113 | 2 | 17 |
 | library/tokenize.po | 75.8% | 3.2% | 47 | 2 | 13 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **99.9%** | **0.1%** | **90790** | **71** | **60** |
+| **مجموع** | **99.8%** | **0.1%** | **90784** | **83** | **87** |
 <!-- TRANSLATION_STATUS_END -->
