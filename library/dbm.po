@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-26 04:18+0000\n"
 "PO-Revision-Date: 2026-09-14 09:10+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -108,7 +108,9 @@ msgstr "*file* یک :term:`path-like object` را می‌پذیرد."
 msgid "The object returned by :func:`~dbm.open` supports the basic functionality of mutable :term:`mappings <mapping>`; keys and their corresponding values can be stored, retrieved, and deleted, and iteration, the :keyword:`in` operator and methods :meth:`!keys`, :meth:`!get`, :meth:`!setdefault` and :meth:`!clear` are available. The :meth:`!keys` method returns a list instead of a view object. The :meth:`!setdefault` method requires two arguments."
 msgstr "شیء برگردانده‌شده توسط :func:`~dbm.open`، از کارکرد پایه‌ی :term:`نگاشت‌های تغییرپذیر <mapping>` پشتیبانی می‌کند؛ کلیدها و مقدارهای متناظرشان می‌توانند ذخیره، بازیابی و حذف شوند و پیمایش، عملگر :keyword:`in` و متدهای :meth:`!keys`، :meth:`!get`، :meth:`!setdefault` و :meth:`!clear` در دسترس هستند. متد :meth:`!keys` به‌جای یک شیء نما، یک فهرست برمی‌گرداند. متد :meth:`!setdefault` به دو آرگومان نیاز دارد."
 
-msgid "Key and values are always stored as :class:`bytes`. This means that when strings are used they are implicitly converted to the default encoding before being stored."
+#, fuzzy
+#| msgid "Key and values are always stored as :class:`bytes`. This means that when strings are used they are implicitly converted to the default encoding before being stored."
+msgid "Key and values are always stored as :class:`bytes`. This means that when strings are used they are implicitly converted to the default encoding before being stored. For detailed information about accepted types, see :ref:`dbm-key-value-types`."
 msgstr "کلید و مقادیر همیشه به‌صورت :class:`bytes` ذخیره می‌شوند. این بدان معناست که وقتی از رشته‌ها استفاده می‌شود، آن‌ها پیش از ذخیره شدن به‌طور ضمنی به کدگذاری پیش‌فرض تبدیل می‌شوند."
 
 msgid "These objects also support being used in a :keyword:`with` statement, which will automatically close them when done."
@@ -126,9 +128,85 @@ msgstr "حذف یک کلید از پایگاه داده‌ی فقط‌خواند
 msgid ":meth:`!clear` methods are now available for all :mod:`!dbm` backends."
 msgstr "متدهای :meth:`!clear` اکنون برای تمام بک‌اندهای :mod:`!dbm` در دسترس هستند."
 
+msgid "Key and value types"
+msgstr ""
+
+msgid "The accepted types for keys and values vary by backend. Keys and values are handled the same way, except where noted below:"
+msgstr ""
+
+msgid "**Traditional backends:**"
+msgstr ""
+
+msgid ":mod:`dbm.gnu` and :mod:`dbm.ndbm`: Accept :class:`str` and :class:`bytes` objects."
+msgstr ""
+
+msgid ":mod:`dbm.dumb`: Accepts :class:`str` and :class:`bytes` objects; :class:`bytearray` is acceptable as a value, but not as a key."
+msgstr ""
+
+msgid "**SQLite backend** (:mod:`dbm.sqlite3`): Accepts :class:`str`, :class:`bytes`, :class:`int`, :class:`float`, :class:`bool`, :class:`bytearray`, :class:`memoryview`, and :class:`array.array` objects."
+msgstr ""
+
+msgid "**Storage format:**"
+msgstr ""
+
+msgid "All keys and values are stored as :class:`bytes` objects in the database. When retrieving, you'll always get bytes back, regardless of the original type stored."
+msgstr ""
+
+msgid "**Type conversion examples:**"
+msgstr ""
+
+msgid "``db['key'] = 'string'`` stored as ``b'string'``"
+msgstr ""
+
+msgid "``db['key'] = bytearray(b'data')`` stored as ``b'data'`` (:mod:`dbm.dumb` and :mod:`dbm.sqlite3` only)"
+msgstr ""
+
+msgid "``db['key'] = 42`` stored as ``b'42'`` (:mod:`dbm.sqlite3` only)"
+msgstr ""
+
+msgid "``db['key'] = 3.14`` stored as ``b'3.14'`` (:mod:`dbm.sqlite3` only)"
+msgstr ""
+
+msgid "``db['key'] = True`` stored as ``b'1'`` (:mod:`dbm.sqlite3` only)"
+msgstr ""
+
+msgid "``db['key'] = False`` stored as ``b'0'`` (:mod:`dbm.sqlite3` only)"
+msgstr ""
+
+msgid "``db['key'] = memoryview(b'data')`` stored as ``b'data'`` (:mod:`dbm.sqlite3` only)"
+msgstr ""
+
+msgid "``db['key'] = array.array('i', [1, 2, 3])`` stored as bytes (for example, on little-endian: ``b'\\x01\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x03\\x00\\x00\\x00'``) (:mod:`dbm.sqlite3` only)"
+msgstr ""
+
 msgid "The following example records some hostnames and a corresponding title,  and then prints out the contents of the database::"
 msgstr "مثال زیر چند نام میزبان و یک عنوان متناظر را ثبت می‌کند، و سپس محتویات پایگاه داده را چاپ می‌کند::"
 
+#, fuzzy
+#| msgid ""
+#| "import dbm\n"
+#| "\n"
+#| "# Open database, creating it if necessary.\n"
+#| "with dbm.open('cache', 'c') as db:\n"
+#| "\n"
+#| "    # Record some values\n"
+#| "    db[b'hello'] = b'there'\n"
+#| "    db['www.python.org'] = 'Python Website'\n"
+#| "    db['www.cnn.com'] = 'Cable News Network'\n"
+#| "\n"
+#| "    # Note that the keys are considered bytes now.\n"
+#| "    assert db[b'www.python.org'] == b'Python Website'\n"
+#| "    # Notice how the value is now in bytes.\n"
+#| "    assert db['www.cnn.com'] == b'Cable News Network'\n"
+#| "\n"
+#| "    # Often-used methods of the dict interface work too.\n"
+#| "    print(db.get('python.org', b'not present'))\n"
+#| "\n"
+#| "    # Storing a non-string key or value will raise an exception (most\n"
+#| "    # likely a TypeError).\n"
+#| "    db['www.yahoo.com'] = 4\n"
+#| "\n"
+#| "# db is automatically closed when leaving the with statement."
 msgid ""
 "import dbm\n"
 "\n"
@@ -148,8 +226,9 @@ msgid ""
 "    # Often-used methods of the dict interface work too.\n"
 "    print(db.get('python.org', b'not present'))\n"
 "\n"
-"    # Storing a non-string key or value will raise an exception (most\n"
-"    # likely a TypeError).\n"
+"    # Storing a non-string key or value behavior depends on the backend:\n"
+"    # - Traditional backends (ndbm, gnu, dumb) will raise a TypeError\n"
+"    # - The sqlite3 backend accepts it and converts to bytes\n"
 "    db['www.yahoo.com'] = 4\n"
 "\n"
 "# db is automatically closed when leaving the with statement."

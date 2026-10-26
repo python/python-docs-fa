@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-25 04:15+0000\n"
+"POT-Creation-Date: 2026-10-26 04:18+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -36,6 +36,9 @@ msgstr "*تاریخ انتشار: XXXX-XX-XX*"
 
 msgid "Security"
 msgstr "امنیت"
+
+msgid ":gh:`160300`: Fix :class:`http.cookiejar.DefaultCookiePolicy` accepting and returning cookies with a negative ``Version`` attribute without checking their domain against the request host. Such cookies are now ignored."
+msgstr ""
 
 msgid ":cve:`2026-114583`, :gh:`160097`: :func:`tarfile.tar_filter` now rejects link members whose path resolves to the destination directory itself, as :func:`tarfile.data_filter` already did."
 msgstr ":cve:`2026-114583`, :gh:`160097`: تابع :func:`tarfile.tar_filter` اکنون اعضای پیوندی را که مسیرشان به خود پوشه‌ی مقصد منتهی می‌شود، رد می‌کند، همان‌طور که :func:`tarfile.data_filter` قبلاً این کار را می‌کرد."
@@ -115,11 +118,23 @@ msgstr ":gh:`159111`: به‌روزرسانی نسخه‌ی mimalloc از ۲.۱.
 msgid ":gh:`154318`: Fix a crash when hashing a deeply nested :class:`tuple` or :class:`frozendict`. A :exc:`RecursionError` is now raised instead of overflowing the C stack."
 msgstr ":gh:`154318`: رفع فروپاشی هنگام هش کردن یک :class:`tuple` یا :class:`frozendict` بسیار تو در تو. اکنون به جای سرریز شدن پشته‌ی C، یک :exc:`RecursionError` بالا آورده می‌شود."
 
+msgid ":gh:`152631`: Fix :func:`ast.parse` ability to parse lazy imports with *feature_version* older than 3.15, now it properly raises :exc:`SyntaxError`."
+msgstr ""
+
 msgid ":gh:`151818`: Fix a double-free crash in ``list.append()`` (the specialized ``CALL_LIST_APPEND`` instruction) when growing the list fails with :exc:`MemoryError`."
 msgstr ":gh:`151818`: رفع فروپاشی آزادسازی مضاعف (double-free) در ``list.append()`` (دستور تخصصی ``CALL_LIST_APPEND``) هنگامی که بزرگ کردن فهرست با خطای :exc:`MemoryError` مواجه می‌شود."
 
 msgid "Library"
 msgstr "کتابخانه"
+
+msgid ":gh:`160549`: Fix a crash when a :class:`compression.zstd.ZstdCompressor` that uses worker threads and a :class:`~compression.zstd.ZstdDict` is deallocated, or the interpreter exits, while data passed to :meth:`~compression.zstd.ZstdCompressor.compress` is still being compressed."
+msgstr ""
+
+msgid ":gh:`160535`: Fix a crash in :mod:`compression.zstd` when the garbage collector frees a :class:`~compression.zstd.ZstdCompressor` that uses worker threads together with its :class:`~compression.zstd.ZstdDict` before the compression of already submitted data has finished."
+msgstr ""
+
+msgid ":gh:`160520`: Fix :mod:`asyncio` SSL transports not applying *ssl_shutdown_timeout* when the peer has sent EOF but does not read the data still queued for it. Closing such a connection could wait indefinitely; it is now aborted with :exc:`TimeoutError` once the timeout expires."
+msgstr ""
 
 msgid ":gh:`160326`: Raise :exc:`ValueError` for a NaN *timeout* in :meth:`threading.Condition.wait` and the blocking calls built on it, such as :meth:`threading.Event.wait`, :meth:`threading.Semaphore.acquire` and :meth:`queue.Queue.get`, instead of returning at once or looping without ever timing out."
 msgstr ""
@@ -133,6 +148,9 @@ msgid ":gh:`159739`: Fix crashes in :mod:`xml.parsers.expat` when a character da
 msgstr ""
 
 msgid ":gh:`160299`: Fix :meth:`symtable.Symbol.is_referenced` for local and nonlocal symbols in function scopes when their only uses are in inlined comprehensions."
+msgstr ""
+
+msgid ":gh:`160513`: Fix :meth:`asyncio.loop.start_tls` and :meth:`asyncio.StreamWriter.start_tls` not calling the protocol's :meth:`~asyncio.BaseProtocol.connection_lost` when the connection is lost, the handshake times out or the call is cancelled during the TLS handshake. :meth:`asyncio.StreamWriter.wait_closed` no longer waits forever after such a failure."
 msgstr ""
 
 msgid ":gh:`159739`: Fix a crash when a :mod:`ctypes` structure subclass cannot be created due to an allocation failure."
@@ -218,6 +236,11 @@ msgstr ":gh:`157880`: رفع مشکل :class:`mailbox.Babyl` برای نوشتن
 msgid ":gh:`156784`: :class:`asyncio.ProactorEventLoop` no longer silently ignores :exc:`ConnectionResetError` on UDP sockets, matching :class:`asyncio.SelectorEventLoop`."
 msgstr ":gh:`156784`: کلاس :class:`asyncio.ProactorEventLoop` دیگر خطاهای :exc:`ConnectionResetError` را روی سوکت‌های UDP به‌صورت بی‌صدا نادیده نمی‌گیرد، که با عملکرد :class:`asyncio.SelectorEventLoop` سازگار است."
 
+#, fuzzy
+#| msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when passing :class:`ctypes.Structure` or :class:`ctypes.Union` instances by value to ctypes foreign functions."
+msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when first using a Chinese, Japanese or Korean codec."
+msgstr ":gh:`151126`: رفع فروپاشی ناشی از تنظیم‌نشدن :exc:`MemoryError` هنگام شکست در تخصیص حافظه، در زمان ارسال نمونه‌های :class:`ctypes.Structure` یا :class:`ctypes.Union` به‌صورت مقدار (by value) به توابع خارجی ctypes."
+
 msgid ":gh:`156078`: :meth:`zipfile.ZipFile.mkdir` now raises :exc:`ValueError` when the archive is closed or when a writable member handle is open."
 msgstr ""
 
@@ -233,6 +256,9 @@ msgid ":gh:`155152`: Improve performance of some :mod:`zipimport` archives that 
 msgstr ":gh:`121267`: بهبود کارایی :mod:`tarfile` هنگام نوشتن پرونده‌ها، از طریق ذخیره‌سازی موقت (caching) نام‌های کاربری و نام‌های گروه."
 
 msgid ":gh:`153679`: :class:`zipimport.zipimporter` now raises :exc:`zipimport.ZipImportError` instead of :exc:`UnicodeDecodeError` for a UTF-8-flagged file name that is not valid UTF-8. Patch by tonghuaroot."
+msgstr ""
+
+msgid ":gh:`153319`: The :mod:`turtledemo` viewer now reads each demo script as UTF-8 instead of the locale encoding."
 msgstr ""
 
 msgid ":gh:`127636`: Fix :meth:`tarfile.TarFile.extract` to accept archive member names with a trailing forward slash, including those returned by :meth:`tarfile.TarFile.getnames`. Contributed by Xiao Yuan."
@@ -264,6 +290,9 @@ msgstr ":gh:`144942`: رفع مشکل کتابخانه‌ی مشترک و ساخ
 
 msgid ":gh:`159819`: Fix the shell version of :program:`python3-config` (used on all POSIX platforms except macOS) when the installation prefix contains spaces or other characters special to the shell or :program:`sed`: it printed an empty ``--prefix`` and wrong ``--includes``/``--ldflags`` paths while exiting successfully. The script now also exits with status 1 if it cannot determine its installation prefix."
 msgstr ":gh:`159819`: رفع نسخه‌ی پوسته‌ی :program:`python3-config` (استفاده‌شده در تمام پلتفرم‌های POSIX به جز macOS) زمانی که پیشوند نصب حاوی فاصله یا نویسه‌های خاص دیگر برای پوسته یا :program:`sed` باشد: این ابزار یک ``--prefix`` خالی و مسیرهای اشتباه ``--includes``/``--ldflags`` را چاپ می‌کرد در حالی که با موفقیت خارج می‌شد. این اسکریپت اکنون همچنین اگر نتواند پیشوند نصب خود را تعیین کند، با وضعیت ۱ خارج می‌شود."
+
+msgid ":gh:`157354`: Fix the :samp:`--with-{name}-sanitizer=no` and :samp:`--without-{name}-sanitizer` :program:`configure` options enabling the sanitizer instead of disabling it."
+msgstr ""
 
 msgid ":gh:`155813`: On macOS, :option:`LIBFFI_CFLAGS` and :option:`LIBFFI_LIBS` are no longer ignored when the SDK provides ``libffi``, so :mod:`ctypes` can again be built against a different ``libffi``. Patch by Advit Arora."
 msgstr ":gh:`155813`: در macOS، گزینه‌های :option:`LIBFFI_CFLAGS` و :option:`LIBFFI_LIBS` دیگر زمانی که SDK کتابخانه‌ی ``libffi`` را فراهم می‌کند نادیده گرفته نمی‌شوند، بنابراین :mod:`ctypes` می‌تواند بار دیگر در برابر نسخه‌ی متفاوتی از ``libffi`` ساخته شود. وصله‌ای از Advit Arora."

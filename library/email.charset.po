@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-26 04:18+0000\n"
 "PO-Revision-Date: 2026-09-15 12:24+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -134,7 +134,9 @@ msgstr "*charset* مجموعه نویسه‌های ورودی است و باید
 msgid "Optional *header_enc* and *body_enc* is either ``charset.QP`` for quoted-printable, ``charset.BASE64`` for base64 encoding, ``charset.SHORTEST`` for the shortest of quoted-printable or base64 encoding, or ``None`` for no encoding.  ``SHORTEST`` is only valid for *header_enc*. The default is ``None`` for no encoding."
 msgstr "*header_enc* و *body_enc* اختیاری می‌توانند یکی از مقادیر زیر باشند: ``charset.QP`` برای کدگذاری quoted-printable، ``charset.BASE64`` برای کدگذاری base64، ``charset.SHORTEST`` برای کوتاه‌ترین حالت از کدگذاری quoted-printable یا base64، یا ``None`` برای بدون کدگذاری. ``SHORTEST`` فقط برای *header_enc* معتبر است. مقدار پیش‌فرض ``None`` برای بدون کدگذاری است."
 
-msgid "Optional *output_charset* is the character set that the output should be in. Conversions will proceed from input charset, to Unicode, to the output charset when the method :meth:`Charset.convert` is called.  The default is to output in the same character set as the input."
+#, fuzzy
+#| msgid "Optional *output_charset* is the character set that the output should be in. Conversions will proceed from input charset, to Unicode, to the output charset when the method :meth:`Charset.convert` is called.  The default is to output in the same character set as the input."
+msgid "Optional *output_charset* is the character set that the output should be in. Conversions will proceed from input charset, to Unicode, to the output charset when the method :meth:`Charset.body_encode` is called.  The default is to output in the same character set as the input."
 msgstr "*output_charset* اختیاری، مجموعه نویسه‌ای است که خروجی باید با آن باشد. هنگامی که متد :meth:`Charset.convert` فراخوانی می‌شود، تبدیل‌ها از مجموعه نویسه ورودی، به یونیکد و سپس به مجموعه نویسه خروجی انجام می‌شوند. به‌طور پیش‌فرض، خروجی با همان مجموعه نویسه ورودی خواهد بود."
 
 msgid "Both *input_charset* and *output_charset* must have Unicode codec entries in the module's character set-to-codec mapping; use :func:`add_codec` to add codecs the module does not know about.  See the :mod:`codecs` module's documentation for more information."

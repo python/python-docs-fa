@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-26 04:18+0000\n"
 "PO-Revision-Date: 2026-09-11 17:11+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -44,7 +44,9 @@ msgstr "توجه داشته باشید که پارسر را می‌توان به
 msgid "FeedParser API"
 msgstr "API مربوط به FeedParser"
 
-msgid "The :class:`BytesFeedParser`, imported from the :mod:`email.feedparser` module, provides an API that is conducive to incremental parsing of email messages, such as would be necessary when reading the text of an email message from a source that can block (such as a socket).  The :class:`BytesFeedParser` can of course be used to parse an email message fully contained in a :term:`bytes-like object`, string, or file, but the :class:`BytesParser` API may be more convenient for such use cases.  The semantics and results of the two parser APIs are identical."
+#, fuzzy
+#| msgid "The :class:`BytesFeedParser`, imported from the :mod:`email.feedparser` module, provides an API that is conducive to incremental parsing of email messages, such as would be necessary when reading the text of an email message from a source that can block (such as a socket).  The :class:`BytesFeedParser` can of course be used to parse an email message fully contained in a :term:`bytes-like object`, string, or file, but the :class:`BytesParser` API may be more convenient for such use cases.  The semantics and results of the two parser APIs are identical."
+msgid "The :class:`BytesFeedParser`, imported from the :mod:`!email.feedparser` module, provides an API that is conducive to incremental parsing of email messages, such as would be necessary when reading the text of an email message from a source that can block (such as a socket).  The :class:`BytesFeedParser` can of course be used to parse an email message fully contained in a :term:`bytes-like object`, string, or file, but the :class:`BytesParser` API may be more convenient for such use cases.  The semantics and results of the two parser APIs are identical."
 msgstr ":class:`BytesFeedParser`، که از ماژول :mod:`email.feedparser` ایمپورت می‌شود، یک API فراهم می‌کند که برای تجزیه تدریجی پیام‌های ایمیل مناسب است، مانند حالتی که لازم باشد متن یک پیام ایمیل از منبعی که ممکن است مسدودکننده باشد (مانند سوکت) خوانده شود. البته می‌توان از :class:`BytesFeedParser` برای تجزیه پیام ایمیلی که به‌طور کامل در یک :term:`bytes-like object`، رشته یا پرونده قرار دارد استفاده کرد، اما ممکن است API :class:`BytesParser` برای چنین موارد استفاده‌ای مناسب‌تر باشد. معناشناسی و نتایج این دو API پارسر یکسان است."
 
 msgid "The :class:`BytesFeedParser`'s API is simple; you create an instance, feed it a bunch of bytes until there's no more to feed it, then close the parser to retrieve the root message object.  The :class:`BytesFeedParser` is extremely accurate when parsing standards-compliant messages, and it does a very good job of parsing non-compliant messages, providing information about how a message was deemed broken.  It will populate a message object's :attr:`~email.message.EmailMessage.defects` attribute with a list of any problems it found in a message.  See the :mod:`email.errors` module for the list of defects that it can find."
@@ -59,7 +61,9 @@ msgstr "نمونه‌ای از :class:`BytesFeedParser` ایجاد کنید. *_f
 msgid "If *policy* is specified use the rules it specifies to update the representation of the message.  If *policy* is not set, use the :class:`compat32 <email.policy.Compat32>` policy, which maintains backward compatibility with the Python 3.2 version of the email package and provides :class:`~email.message.Message` as the default factory.  All other policies provide :class:`~email.message.EmailMessage` as the default *_factory*. For more information on what else *policy* controls, see the :mod:`~email.policy` documentation."
 msgstr "اگر *policy* مشخص شده باشد، برای به‌روزرسانی بازنمایی پیام از قواعدی که مشخص می‌کند استفاده می‌شود. اگر *policy* تنظیم نشده باشد، از سیاست :class:`compat32 <email.policy.Compat32>` استفاده می‌شود، که سازگاری با نسخه‌ی Python 3.2 بسته‌ی email را حفظ می‌کند و :class:`~email.message.Message` را به‌عنوان کارخانه‌ی پیش‌فرض فراهم می‌کند. تمام سیاست‌های دیگر :class:`~email.message.EmailMessage` را به‌عنوان *_factory* پیش‌فرض فراهم می‌کنند. برای اطلاعات بیشتر درباره‌ی سایر مواردی که *policy* کنترل می‌کند، به مستندات :mod:`~email.policy` مراجعه کنید."
 
-msgid "Note: **The policy keyword should always be specified**; The default will change to :data:`email.policy.default` in a future version of Python."
+#, fuzzy
+#| msgid "Note: **The policy keyword should always be specified**; The default will change to :data:`email.policy.default` in a future version of Python."
+msgid "Note: **The policy keyword should always be specified**. The default will change to :data:`email.policy.default` in a future version of Python."
 msgstr "توجه: **کلیدواژه‌ی policy همیشه باید تعیین شود**؛ مقدار پیش‌فرض در نسخه‌ی آینده‌ی پایتون به :data:`email.policy.default` تغییر خواهد کرد."
 
 msgid "Added the *policy* keyword."
