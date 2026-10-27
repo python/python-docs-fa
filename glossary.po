@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-10-27 04:16+0000\n"
 "PO-Revision-Date: 2026-08-26 08:03+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -688,7 +688,9 @@ msgstr "سازوکاری که توسط مفسر :term:`CPython <CPython>` است
 msgid "However, some extension modules, either standard or third-party, are designed so as to release the GIL when doing computationally intensive tasks such as compression or hashing.  Also, the GIL is always released when doing I/O."
 msgstr "با این حال، برخی ماژول‌های توسعه‌ای، چه استاندارد و چه شخص ثالث، به‌گونه‌ای طراحی شده‌اند که هنگام انجام وظایف محاسباتی سنگین مانند فشرده‌سازی یا درهم‌سازی، GIL را آزاد کنند. همچنین، GIL همیشه هنگام انجام عملیات ورودی/خروجی آزاد می‌شود."
 
-msgid "As of Python 3.13, the GIL can be disabled using the :option:`--disable-gil` build configuration. After building Python with this option, code must be run with :option:`-X gil=0 <-X>` or after setting the :envvar:`PYTHON_GIL=0 <PYTHON_GIL>` environment variable. This feature enables improved performance for multi-threaded applications and makes it easier to use multi-core CPUs efficiently. For more details, see :pep:`703`."
+#, fuzzy
+#| msgid "As of Python 3.13, the GIL can be disabled using the :option:`--disable-gil` build configuration. After building Python with this option, code must be run with :option:`-X gil=0 <-X>` or after setting the :envvar:`PYTHON_GIL=0 <PYTHON_GIL>` environment variable. This feature enables improved performance for multi-threaded applications and makes it easier to use multi-core CPUs efficiently. For more details, see :pep:`703`."
+msgid "As of Python 3.13, the GIL can be disabled using the :option:`--disable-gil` build configuration. This feature enables improved performance for multi-threaded applications and makes it easier to use multi-core CPUs efficiently. For more details, see :pep:`703`."
 msgstr "از پایتون ۳.۱۳، می‌توان GIL را با استفاده از پیکربندی ساخت :option:`--disable-gil` غیرفعال کرد. پس از ساخت پایتون با این گزینه، کد باید با :option:`-X gil=0 <-X>` یا پس از تنظیم متغیر محیطی :envvar:`PYTHON_GIL=0 <PYTHON_GIL>` اجرا شود. این ویژگی عملکرد بهتر برای برنامه‌های چندنخی را فراهم می‌کند و استفاده‌ی مؤثرتر از CPUهای چندهسته‌ای را آسان‌تر می‌سازد. برای جزئیات بیشتر، :pep:`703` را ببینید."
 
 msgid "In prior versions of Python's C API, a function might declare that it requires the GIL to be held in order to use it. This refers to having an :term:`attached thread state`."

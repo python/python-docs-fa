@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-26 04:18+0000\n"
+"POT-Creation-Date: 2026-10-27 04:16+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -34,6 +34,33 @@ msgstr "پایتون بعدی"
 msgid "*Release date: XXXX-XX-XX*"
 msgstr "*تاریخ انتشار: XXXX-XX-XX*"
 
+msgid "Core and Builtins"
+msgstr "هسته و توکارها (Core and Builtins)"
+
+msgid ":gh:`152631`: Fix :func:`ast.parse` ability to parse lazy imports with *feature_version* older than 3.15, now it properly raises :exc:`SyntaxError`."
+msgstr ""
+
+msgid "Library"
+msgstr "کتابخانه"
+
+msgid ":gh:`160513`: Fix :meth:`asyncio.loop.start_tls` and :meth:`asyncio.StreamWriter.start_tls` not calling the protocol's :meth:`~asyncio.BaseProtocol.connection_lost` when the connection is lost, the handshake times out or the call is cancelled during the TLS handshake. :meth:`asyncio.StreamWriter.wait_closed` no longer waits forever after such a failure."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when passing :class:`ctypes.Structure` or :class:`ctypes.Union` instances by value to ctypes foreign functions."
+msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when first using a Chinese, Japanese or Korean codec."
+msgstr ":gh:`151126`: رفع فروپاشی ناشی از تنظیم‌نشدن :exc:`MemoryError` هنگام شکست در تخصیص حافظه، در زمان ارسال نمونه‌های :class:`ctypes.Structure` یا :class:`ctypes.Union` به‌صورت مقدار (by value) به توابع خارجی ctypes."
+
+#, fuzzy
+#| msgid "Python 3.5.2 final"
+msgid "Python 3.15.2 final"
+msgstr "پایتون ۳.۵.۲ نهایی"
+
+#, fuzzy
+#| msgid "*Release date: 2026-10-21*"
+msgid "*Release date: 2026-10-25*"
+msgstr "*تاریخ انتشار: ۲۰۲۶-۱۰-۲۱*"
+
 msgid "Security"
 msgstr "امنیت"
 
@@ -45,9 +72,6 @@ msgstr ":cve:`2026-114583`, :gh:`160097`: تابع :func:`tarfile.tar_filter` ا
 
 msgid ":cve:`2026-115557`, :gh:`160040`: :mod:`ssl` now rejects TLS certificate chains that contain any of a set of compromised eMudhra intermediate CA keys. This is an extraordinary measure and a last line of defense: removing trust is primarily the job of the platform root store, and the built-in denylist only blocks connections while that update has not yet reached the OS, a container image, or a bundled trust store in various Python packages.  Entries are added to the denylist only under a very high threshold. The denylist matches on the public key (the SHA-256 digest of the :rfc:`5280` ``SubjectPublicKeyInfo``), so it also covers the cross-signed certificates that reuse one of the distrusted keys."
 msgstr ""
-
-msgid "Core and Builtins"
-msgstr "هسته و توکارها (Core and Builtins)"
 
 msgid ":gh:`160491`: Fix the location reported for invalid escape sequences in f-strings and t-strings. The :exc:`SyntaxError` now points at the literal part that contains the escape, instead of at the closing quote."
 msgstr ""
@@ -118,14 +142,8 @@ msgstr ":gh:`159111`: به‌روزرسانی نسخه‌ی mimalloc از ۲.۱.
 msgid ":gh:`154318`: Fix a crash when hashing a deeply nested :class:`tuple` or :class:`frozendict`. A :exc:`RecursionError` is now raised instead of overflowing the C stack."
 msgstr ":gh:`154318`: رفع فروپاشی هنگام هش کردن یک :class:`tuple` یا :class:`frozendict` بسیار تو در تو. اکنون به جای سرریز شدن پشته‌ی C، یک :exc:`RecursionError` بالا آورده می‌شود."
 
-msgid ":gh:`152631`: Fix :func:`ast.parse` ability to parse lazy imports with *feature_version* older than 3.15, now it properly raises :exc:`SyntaxError`."
-msgstr ""
-
 msgid ":gh:`151818`: Fix a double-free crash in ``list.append()`` (the specialized ``CALL_LIST_APPEND`` instruction) when growing the list fails with :exc:`MemoryError`."
 msgstr ":gh:`151818`: رفع فروپاشی آزادسازی مضاعف (double-free) در ``list.append()`` (دستور تخصصی ``CALL_LIST_APPEND``) هنگامی که بزرگ کردن فهرست با خطای :exc:`MemoryError` مواجه می‌شود."
-
-msgid "Library"
-msgstr "کتابخانه"
 
 msgid ":gh:`160549`: Fix a crash when a :class:`compression.zstd.ZstdCompressor` that uses worker threads and a :class:`~compression.zstd.ZstdDict` is deallocated, or the interpreter exits, while data passed to :meth:`~compression.zstd.ZstdCompressor.compress` is still being compressed."
 msgstr ""
@@ -148,9 +166,6 @@ msgid ":gh:`159739`: Fix crashes in :mod:`xml.parsers.expat` when a character da
 msgstr ""
 
 msgid ":gh:`160299`: Fix :meth:`symtable.Symbol.is_referenced` for local and nonlocal symbols in function scopes when their only uses are in inlined comprehensions."
-msgstr ""
-
-msgid ":gh:`160513`: Fix :meth:`asyncio.loop.start_tls` and :meth:`asyncio.StreamWriter.start_tls` not calling the protocol's :meth:`~asyncio.BaseProtocol.connection_lost` when the connection is lost, the handshake times out or the call is cancelled during the TLS handshake. :meth:`asyncio.StreamWriter.wait_closed` no longer waits forever after such a failure."
 msgstr ""
 
 msgid ":gh:`159739`: Fix a crash when a :mod:`ctypes` structure subclass cannot be created due to an allocation failure."
@@ -235,11 +250,6 @@ msgstr ":gh:`157880`: رفع مشکل :class:`mailbox.Babyl` برای نوشتن
 
 msgid ":gh:`156784`: :class:`asyncio.ProactorEventLoop` no longer silently ignores :exc:`ConnectionResetError` on UDP sockets, matching :class:`asyncio.SelectorEventLoop`."
 msgstr ":gh:`156784`: کلاس :class:`asyncio.ProactorEventLoop` دیگر خطاهای :exc:`ConnectionResetError` را روی سوکت‌های UDP به‌صورت بی‌صدا نادیده نمی‌گیرد، که با عملکرد :class:`asyncio.SelectorEventLoop` سازگار است."
-
-#, fuzzy
-#| msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when passing :class:`ctypes.Structure` or :class:`ctypes.Union` instances by value to ctypes foreign functions."
-msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when first using a Chinese, Japanese or Korean codec."
-msgstr ":gh:`151126`: رفع فروپاشی ناشی از تنظیم‌نشدن :exc:`MemoryError` هنگام شکست در تخصیص حافظه، در زمان ارسال نمونه‌های :class:`ctypes.Structure` یا :class:`ctypes.Union` به‌صورت مقدار (by value) به توابع خارجی ctypes."
 
 msgid ":gh:`156078`: :meth:`zipfile.ZipFile.mkdir` now raises :exc:`ValueError` when the archive is closed or when a writable member handle is open."
 msgstr ""
@@ -6630,7 +6640,9 @@ msgstr ":gh:`133934`: بهبود پیام ``.help`` در رابط خط فرما�
 msgid ":gh:`135069`: Fix the \"Invalid error handling\" exception in :class:`!encodings.idna.IncrementalDecoder` to correctly replace the 'errors' parameter."
 msgstr ":gh:`135069`: رفع استثنای «Invalid error handling» در :class:`!encodings.idna.IncrementalDecoder` جهت جایگزینی صحیح پارامتر 'errors'."
 
-msgid ":gh:`130662`: +Accept leading zeros in precision and width fields for +:class:`~decimal.Decimal` formatting, for example ``format(Decimal(1.25), '.016f')``."
+#, fuzzy
+#| msgid ":gh:`130662`: +Accept leading zeros in precision and width fields for +:class:`~decimal.Decimal` formatting, for example ``format(Decimal(1.25), '.016f')``."
+msgid ":gh:`130662`: Accept leading zeros in precision and width fields for :class:`~decimal.Decimal` formatting, for example ``format(Decimal(1.25), '.016f')``."
 msgstr ":gh:`130662`: +پذیرش صفرهای پیش‌آهنگ در فیلدهای دقت و عرض برای قالب‌بندی :class:`~decimal.Decimal`؛ برای نمونه ``format(Decimal(1.25), '.016f')``."
 
 msgid ":gh:`130662`: Accept leading zeros in precision and width fields for :class:`~fractions.Fraction` formatting, for example ``format(Fraction(1, 3), '.016f')``."
