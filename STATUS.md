@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-10-27)
+(به‌روزرسانی: 2026-10-28)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -19,8 +19,6 @@
 | c-api/bool.po | 100.0% | 0.0% | 11 | 0 | 0 |
 | c-api/buffer.po | 100.0% | 0.0% | 119 | 0 | 0 |
 | c-api/bytearray.po | 100.0% | 0.0% | 24 | 0 | 0 |
-| c-api/bytes.po | 100.0% | 0.0% | 135 | 0 | 0 |
-| c-api/call.po | 100.0% | 0.0% | 99 | 0 | 0 |
 | c-api/capsule.po | 100.0% | 0.0% | 36 | 0 | 0 |
 | c-api/cell.po | 100.0% | 0.0% | 11 | 0 | 0 |
 | c-api/codec.po | 100.0% | 0.0% | 30 | 0 | 0 |
@@ -30,14 +28,12 @@
 | c-api/conversion.po | 100.0% | 0.0% | 58 | 0 | 0 |
 | c-api/coro.po | 100.0% | 0.0% | 6 | 0 | 0 |
 | c-api/curses.po | 100.0% | 0.0% | 28 | 0 | 0 |
-| c-api/datetime.po | 100.0% | 0.0% | 67 | 0 | 0 |
 | c-api/descriptor.po | 100.0% | 0.0% | 39 | 0 | 0 |
 | c-api/dict.po | 100.0% | 0.0% | 124 | 0 | 0 |
 | c-api/extension-modules.po | 100.0% | 0.0% | 80 | 0 | 0 |
 | c-api/file.po | 100.0% | 0.0% | 36 | 0 | 0 |
 | c-api/float.po | 100.0% | 0.0% | 55 | 0 | 0 |
 | c-api/frame.po | 100.0% | 0.0% | 60 | 0 | 0 |
-| c-api/function.po | 100.0% | 0.0% | 45 | 0 | 0 |
 | c-api/gcsupport.po | 100.0% | 0.0% | 107 | 0 | 0 |
 | c-api/gen.po | 100.0% | 0.0% | 18 | 0 | 0 |
 | c-api/hash.po | 100.0% | 0.0% | 43 | 0 | 0 |
@@ -90,11 +86,9 @@
 | deprecations/c-api-pending-removal-in-3.14.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | deprecations/c-api-pending-removal-in-3.15.po | 100.0% | 0.0% | 44 | 0 | 0 |
 | deprecations/c-api-pending-removal-in-3.16.po | 100.0% | 0.0% | 2 | 0 | 0 |
-| deprecations/c-api-pending-removal-in-3.18.po | 100.0% | 0.0% | 22 | 0 | 0 |
 | deprecations/c-api-pending-removal-in-3.19.po | 100.0% | 0.0% | 2 | 0 | 0 |
 | deprecations/c-api-pending-removal-in-3.20.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | deprecations/c-api-pending-removal-in-future.po | 100.0% | 0.0% | 20 | 0 | 0 |
-| deprecations/index.po | 100.0% | 0.0% | 275 | 0 | 0 |
 | deprecations/pending-removal-in-3.13.po | 100.0% | 0.0% | 33 | 0 | 0 |
 | deprecations/pending-removal-in-3.14.po | 100.0% | 0.0% | 33 | 0 | 0 |
 | deprecations/pending-removal-in-3.15.po | 100.0% | 0.0% | 30 | 0 | 0 |
@@ -135,7 +129,6 @@
 | howto/enum.po | 100.0% | 0.0% | 309 | 0 | 0 |
 | howto/free-threading-extensions.po | 100.0% | 0.0% | 112 | 0 | 0 |
 | howto/free-threading-python.po | 100.0% | 0.0% | 67 | 0 | 0 |
-| howto/functional.po | 100.0% | 0.0% | 248 | 0 | 0 |
 | howto/gdb_helpers.po | 100.0% | 0.0% | 86 | 0 | 0 |
 | howto/index.po | 100.0% | 0.0% | 31 | 0 | 0 |
 | howto/instrumentation.po | 100.0% | 0.0% | 96 | 0 | 0 |
@@ -143,7 +136,6 @@
 | howto/isolating-extensions.po | 100.0% | 0.0% | 134 | 0 | 0 |
 | howto/logging-cookbook.po | 100.0% | 0.0% | 433 | 0 | 0 |
 | howto/logging.po | 100.0% | 0.0% | 248 | 0 | 0 |
-| howto/mro.po | 100.0% | 0.0% | 120 | 0 | 0 |
 | howto/perf_profiling.po | 100.0% | 0.0% | 54 | 0 | 0 |
 | howto/pyporting.po | 100.0% | 0.0% | 11 | 0 | 0 |
 | howto/regex.po | 100.0% | 0.0% | 335 | 0 | 0 |
@@ -164,13 +156,11 @@
 | library/allos.po | 100.0% | 0.0% | 2 | 0 | 0 |
 | library/annotationlib.po | 100.0% | 0.0% | 158 | 0 | 0 |
 | library/archiving.po | 100.0% | 0.0% | 2 | 0 | 0 |
-| library/argparse.po | 100.0% | 0.0% | 423 | 0 | 0 |
 | library/array.po | 100.0% | 0.0% | 102 | 0 | 0 |
 | library/ast.po | 100.0% | 0.0% | 346 | 0 | 0 |
 | library/asynchat.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/asyncio-api-index.po | 100.0% | 0.0% | 100 | 0 | 0 |
 | library/asyncio-dev.po | 100.0% | 0.0% | 84 | 0 | 0 |
-| library/asyncio-eventloop.po | 100.0% | 0.0% | 427 | 0 | 0 |
 | library/asyncio-exceptions.po | 100.0% | 0.0% | 19 | 0 | 0 |
 | library/asyncio-extending.po | 100.0% | 0.0% | 27 | 0 | 0 |
 | library/asyncio-future.po | 100.0% | 0.0% | 66 | 0 | 0 |
@@ -235,7 +225,6 @@
 | library/datatypes.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/datetime.po | 100.0% | 0.0% | 693 | 0 | 0 |
 | library/debug.po | 100.0% | 0.0% | 2 | 0 | 0 |
-| library/decimal.po | 100.0% | 0.0% | 387 | 0 | 0 |
 | library/development.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/devmode.po | 100.0% | 0.0% | 58 | 0 | 0 |
 | library/dialog.po | 100.0% | 0.0% | 68 | 0 | 0 |
@@ -249,14 +238,11 @@
 | library/email.encoders.po | 100.0% | 0.0% | 15 | 0 | 0 |
 | library/email.errors.po | 100.0% | 0.0% | 26 | 0 | 0 |
 | library/email.examples.po | 100.0% | 0.0% | 20 | 0 | 0 |
-| library/email.generator.po | 100.0% | 0.0% | 41 | 0 | 0 |
 | library/email.header.po | 100.0% | 0.0% | 46 | 0 | 0 |
 | library/email.headerregistry.po | 100.0% | 0.0% | 112 | 0 | 0 |
 | library/email.iterators.po | 100.0% | 0.0% | 12 | 0 | 0 |
-| library/email.message.po | 100.0% | 0.0% | 111 | 0 | 0 |
 | library/email.mime.po | 100.0% | 0.0% | 38 | 0 | 0 |
 | library/email.po | 100.0% | 0.0% | 23 | 0 | 0 |
-| library/email.policy.po | 100.0% | 0.0% | 110 | 0 | 0 |
 | library/ensurepip.po | 100.0% | 0.0% | 40 | 0 | 0 |
 | library/enum.po | 100.0% | 0.0% | 257 | 0 | 0 |
 | library/errno.po | 100.0% | 0.0% | 161 | 0 | 0 |
@@ -267,9 +253,7 @@
 | library/fileinput.po | 100.0% | 0.0% | 46 | 0 | 0 |
 | library/filesys.po | 100.0% | 0.0% | 8 | 0 | 0 |
 | library/fnmatch.po | 100.0% | 0.0% | 38 | 0 | 0 |
-| library/fractions.po | 100.0% | 0.0% | 41 | 0 | 0 |
 | library/frameworks.po | 100.0% | 0.0% | 5 | 0 | 0 |
-| library/ftplib.po | 100.0% | 0.0% | 98 | 0 | 0 |
 | library/functional.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/functools.po | 100.0% | 0.0% | 128 | 0 | 0 |
 | library/gc.po | 100.0% | 0.0% | 73 | 0 | 0 |
@@ -316,7 +300,6 @@
 | library/logging.handlers.po | 100.0% | 0.0% | 276 | 0 | 0 |
 | library/logging.po | 100.0% | 0.0% | 375 | 0 | 0 |
 | library/lzma.po | 100.0% | 0.0% | 128 | 0 | 0 |
-| library/mailbox.po | 100.0% | 0.0% | 310 | 0 | 0 |
 | library/mailcap.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/markup.po | 100.0% | 0.0% | 2 | 0 | 0 |
 | library/marshal.po | 100.0% | 0.0% | 60 | 0 | 0 |
@@ -378,7 +361,6 @@
 | library/sched.po | 100.0% | 0.0% | 25 | 0 | 0 |
 | library/secrets.po | 100.0% | 0.0% | 39 | 0 | 0 |
 | library/security_warnings.po | 100.0% | 0.0% | 17 | 0 | 0 |
-| library/select.po | 100.0% | 0.0% | 212 | 0 | 0 |
 | library/selectors.po | 100.0% | 0.0% | 58 | 0 | 0 |
 | library/shelve.po | 100.0% | 0.0% | 52 | 0 | 0 |
 | library/shlex.po | 100.0% | 0.0% | 77 | 0 | 0 |
@@ -414,12 +396,10 @@
 | library/text.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/textwrap.po | 100.0% | 0.0% | 58 | 0 | 0 |
 | library/threading.po | 100.0% | 0.0% | 308 | 0 | 0 |
-| library/time.po | 100.0% | 0.0% | 282 | 0 | 0 |
 | library/timeit.po | 100.0% | 0.0% | 71 | 0 | 0 |
 | library/tk.po | 100.0% | 0.0% | 8 | 0 | 0 |
 | library/tkinter.colorchooser.po | 100.0% | 0.0% | 8 | 0 | 0 |
 | library/tkinter.dnd.po | 100.0% | 0.0% | 20 | 0 | 0 |
-| library/tkinter.font.po | 100.0% | 0.0% | 37 | 0 | 0 |
 | library/tkinter.messagebox.po | 100.0% | 0.0% | 43 | 0 | 0 |
 | library/tkinter.po | 100.0% | 0.0% | 1254 | 0 | 0 |
 | library/tkinter.scrolledtext.po | 100.0% | 0.0% | 7 | 0 | 0 |
@@ -436,7 +416,6 @@
 | library/unicodedata.po | 100.0% | 0.0% | 100 | 0 | 0 |
 | library/unittest.mock-examples.po | 100.0% | 0.0% | 182 | 0 | 0 |
 | library/unittest.mock.po | 100.0% | 0.0% | 448 | 0 | 0 |
-| library/unittest.po | 100.0% | 0.0% | 567 | 0 | 0 |
 | library/unix.po | 100.0% | 0.0% | 2 | 0 | 0 |
 | library/urllib.error.po | 100.0% | 0.0% | 15 | 0 | 0 |
 | library/urllib.parse.po | 100.0% | 0.0% | 176 | 0 | 0 |
@@ -458,7 +437,6 @@
 | library/xml.dom.minidom.po | 100.0% | 0.0% | 60 | 0 | 0 |
 | library/xml.dom.po | 100.0% | 0.0% | 302 | 0 | 0 |
 | library/xml.dom.pulldom.po | 100.0% | 0.0% | 31 | 0 | 0 |
-| library/xml.etree.elementtree.po | 100.0% | 0.0% | 278 | 0 | 0 |
 | library/xml.po | 100.0% | 0.0% | 32 | 0 | 0 |
 | library/xml.sax.handler.po | 100.0% | 0.0% | 114 | 0 | 0 |
 | library/xml.sax.po | 100.0% | 0.0% | 34 | 0 | 0 |
@@ -467,7 +445,6 @@
 | library/xmlrpc.client.po | 100.0% | 0.0% | 113 | 0 | 0 |
 | library/xmlrpc.po | 100.0% | 0.0% | 5 | 0 | 0 |
 | library/xmlrpc.server.po | 100.0% | 0.0% | 57 | 0 | 0 |
-| library/zipapp.po | 100.0% | 0.0% | 77 | 0 | 0 |
 | library/zipfile.po | 100.0% | 0.0% | 216 | 0 | 0 |
 | library/zipimport.po | 100.0% | 0.0% | 38 | 0 | 0 |
 | library/zlib.po | 100.0% | 0.0% | 103 | 0 | 0 |
@@ -489,7 +466,6 @@
 | tutorial/classes.po | 100.0% | 0.0% | 154 | 0 | 0 |
 | tutorial/controlflow.po | 100.0% | 0.0% | 226 | 0 | 0 |
 | tutorial/datastructures.po | 100.0% | 0.0% | 139 | 0 | 0 |
-| tutorial/errors.po | 100.0% | 0.0% | 96 | 0 | 0 |
 | tutorial/floatingpoint.po | 100.0% | 0.0% | 76 | 0 | 0 |
 | tutorial/index.po | 100.0% | 0.0% | 9 | 0 | 0 |
 | tutorial/inputoutput.po | 100.0% | 0.0% | 112 | 0 | 0 |
@@ -510,53 +486,77 @@
 | using/unix.po | 100.0% | 0.0% | 63 | 0 | 0 |
 | whatsnew/2.0.po | 100.0% | 0.0% | 207 | 0 | 0 |
 | whatsnew/2.1.po | 100.0% | 0.0% | 154 | 0 | 0 |
-| whatsnew/2.2.po | 100.0% | 0.0% | 216 | 0 | 0 |
 | whatsnew/2.3.po | 100.0% | 0.0% | 387 | 0 | 0 |
-| whatsnew/2.4.po | 100.0% | 0.0% | 319 | 0 | 0 |
 | whatsnew/2.5.po | 100.0% | 0.0% | 452 | 0 | 0 |
-| whatsnew/2.6.po | 100.0% | 0.0% | 626 | 0 | 0 |
 | whatsnew/2.7.po | 100.0% | 0.0% | 498 | 0 | 0 |
 | whatsnew/3.0.po | 100.0% | 0.0% | 212 | 0 | 0 |
 | whatsnew/3.1.po | 100.0% | 0.0% | 132 | 0 | 0 |
-| whatsnew/3.10.po | 100.0% | 0.0% | 550 | 0 | 0 |
-| whatsnew/3.11.po | 100.0% | 0.0% | 776 | 0 | 0 |
-| whatsnew/3.12.po | 100.0% | 0.0% | 914 | 0 | 0 |
-| whatsnew/3.13.po | 100.0% | 0.0% | 991 | 0 | 0 |
-| whatsnew/3.14.po | 100.0% | 0.0% | 1111 | 0 | 0 |
-| whatsnew/3.2.po | 100.0% | 0.0% | 576 | 0 | 0 |
 | whatsnew/3.3.po | 100.0% | 0.0% | 682 | 0 | 0 |
 | whatsnew/3.4.po | 100.0% | 0.0% | 517 | 0 | 0 |
 | whatsnew/3.5.po | 100.0% | 0.0% | 578 | 0 | 0 |
 | whatsnew/3.6.po | 100.0% | 0.0% | 544 | 0 | 0 |
 | whatsnew/3.7.po | 100.0% | 0.0% | 568 | 0 | 0 |
-| whatsnew/3.8.po | 100.0% | 0.0% | 513 | 0 | 0 |
 | whatsnew/3.9.po | 100.0% | 0.0% | 380 | 0 | 0 |
 | whatsnew/index.po | 100.0% | 0.0% | 3 | 0 | 0 |
+| whatsnew/2.6.po | 99.8% | 0.2% | 625 | 1 | 0 |
+| whatsnew/3.2.po | 99.8% | 0.2% | 575 | 1 | 0 |
+| library/unittest.po | 99.8% | 0.2% | 565 | 1 | 0 |
+| whatsnew/3.8.po | 99.8% | 0.2% | 512 | 1 | 0 |
 | glossary.po | 99.8% | 0.2% | 500 | 1 | 0 |
-| whatsnew/changelog.po | 99.8% | 0.1% | 15731 | 10 | 24 |
-| c-api/init_config.po | 99.7% | 0.3% | 659 | 2 | 0 |
+| library/asyncio-eventloop.po | 99.8% | 0.2% | 425 | 1 | 0 |
+| whatsnew/changelog.po | 99.7% | 0.1% | 15728 | 14 | 26 |
+| library/decimal.po | 99.7% | 0.3% | 386 | 1 | 0 |
+| whatsnew/3.14.po | 99.7% | 0.3% | 1108 | 3 | 0 |
+| whatsnew/3.13.po | 99.7% | 0.3% | 988 | 3 | 0 |
+| whatsnew/2.4.po | 99.7% | 0.3% | 317 | 1 | 0 |
+| library/mailbox.po | 99.7% | 0.3% | 309 | 1 | 0 |
+| library/time.po | 99.6% | 0.4% | 280 | 1 | 0 |
 | whatsnew/3.15.po | 99.6% | 0.0% | 819 | 0 | 3 |
 | builtins/functions.po | 99.6% | 0.2% | 539 | 1 | 1 |
 | library/sys.po | 99.6% | 0.2% | 513 | 1 | 1 |
+| howto/functional.po | 99.6% | 0.4% | 246 | 1 | 0 |
 | c-api/intro.po | 99.6% | 0.4% | 243 | 1 | 0 |
 | c-api/interp-lifecycle.po | 99.6% | 0.4% | 222 | 1 | 0 |
+| c-api/init_config.po | 99.5% | 0.5% | 658 | 3 | 0 |
+| whatsnew/2.2.po | 99.5% | 0.5% | 214 | 1 | 0 |
+| library/select.po | 99.5% | 0.5% | 211 | 1 | 0 |
 | library/shutil.po | 99.5% | 0.0% | 195 | 0 | 1 |
+| whatsnew/3.11.po | 99.5% | 0.5% | 772 | 4 | 0 |
+| whatsnew/3.12.po | 99.4% | 0.6% | 904 | 5 | 0 |
+| deprecations/index.po | 99.3% | 0.7% | 273 | 2 | 0 |
+| whatsnew/3.10.po | 99.3% | 0.7% | 546 | 4 | 0 |
+| howto/mro.po | 99.2% | 0.8% | 119 | 1 | 0 |
 | library/re.po | 99.1% | 0.7% | 457 | 3 | 1 |
+| library/email.message.po | 99.1% | 0.9% | 110 | 1 | 0 |
+| library/email.policy.po | 99.1% | 0.9% | 109 | 1 | 0 |
+| library/ftplib.po | 99.0% | 1.0% | 97 | 1 | 0 |
+| tutorial/errors.po | 99.0% | 1.0% | 95 | 1 | 0 |
 | using/mac.po | 99.0% | 1.0% | 95 | 1 | 0 |
 | library/json.po | 98.9% | 1.1% | 181 | 2 | 0 |
 | c-api/import.po | 98.8% | 1.2% | 85 | 1 | 0 |
+| library/zipapp.po | 98.7% | 1.3% | 76 | 1 | 0 |
+| library/xml.etree.elementtree.po | 98.6% | 1.4% | 272 | 4 | 0 |
+| c-api/datetime.po | 98.5% | 1.5% | 66 | 1 | 0 |
 | library/ssl.po | 98.1% | 0.7% | 565 | 4 | 7 |
 | library/cmd.po | 98.0% | 0.0% | 50 | 0 | 1 |
+| c-api/bytes.po | 97.8% | 2.2% | 132 | 3 | 0 |
+| c-api/function.po | 97.8% | 2.2% | 44 | 1 | 0 |
 | library/email.charset.po | 97.7% | 2.3% | 43 | 1 | 0 |
 | c-api/code.po | 97.6% | 2.4% | 81 | 2 | 0 |
+| library/fractions.po | 97.6% | 2.4% | 40 | 1 | 0 |
 | c-api/exceptions.po | 97.4% | 0.0% | 294 | 0 | 8 |
+| c-api/call.po | 96.9% | 3.1% | 93 | 3 | 0 |
 | library/concurrent.futures.po | 96.8% | 0.8% | 120 | 1 | 3 |
 | c-api/iterator.po | 96.0% | 0.0% | 24 | 0 | 1 |
 | library/email.parser.po | 95.8% | 4.2% | 46 | 2 | 0 |
+| library/argparse.po | 93.6% | 6.4% | 396 | 27 | 0 |
 | using/windows.po | 92.7% | 6.3% | 548 | 37 | 6 |
+| library/email.generator.po | 92.7% | 7.3% | 38 | 3 | 0 |
+| library/tkinter.font.po | 91.4% | 8.6% | 32 | 3 | 0 |
+| deprecations/c-api-pending-removal-in-3.18.po | 90.9% | 9.1% | 20 | 2 | 0 |
 | reference/grammar.po | 85.7% | 14.3% | 6 | 1 | 0 |
 | library/dbm.po | 85.6% | 1.5% | 113 | 2 | 17 |
 | library/tokenize.po | 75.8% | 3.2% | 47 | 2 | 13 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **99.8%** | **0.1%** | **90779** | **90** | **87** |
+| **مجموع** | **99.7%** | **0.2%** | **90670** | **182** | **89** |
 <!-- TRANSLATION_STATUS_END -->
