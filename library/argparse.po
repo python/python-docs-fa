@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-23 04:16+0000\n"
+"POT-Creation-Date: 2026-10-28 04:13+0000\n"
 "PO-Revision-Date: 2026-09-21 13:27+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -153,7 +153,9 @@ msgstr "مقدار پیش‌فرض *suggest_on_error* به ``True`` تغییر �
 msgid "The following sections describe how each of these are used."
 msgstr "بخش‌های زیر چگونگی استفاده از هر یک از این موارد را شرح می‌دهند."
 
-msgid "prog"
+#, fuzzy
+#| msgid "prog"
+msgid "``prog``"
 msgstr "prog"
 
 msgid "By default, :class:`ArgumentParser` calculates the name of the program to display in help messages depending on the way the Python interpreter was run:"
@@ -211,7 +213,9 @@ msgstr ""
 msgid "The default ``prog`` value now reflects how ``__main__`` was actually executed, rather than always being ``os.path.basename(sys.argv[0])``."
 msgstr "مقدار پیش‌فرض ``prog`` اکنون نشان می‌دهد که ``__main__`` واقعاً چگونه اجرا شده است، به‌جای آنکه همیشه ``os.path.basename(sys.argv[0])`` باشد."
 
-msgid "usage"
+#, fuzzy
+#| msgid "usage"
+msgid "``usage``"
 msgstr "استفاده"
 
 msgid "By default, :class:`ArgumentParser` calculates the usage message from the arguments it contains. The default message can be overridden with the ``usage=`` keyword argument::"
@@ -250,7 +254,9 @@ msgstr "مشخص‌کننده قالب ``%(prog)s`` برای جایگذاری ن
 msgid "When a custom usage message is specified for the main parser, you may also want to consider passing  the ``prog`` argument to :meth:`~ArgumentParser.add_subparsers` or the ``prog`` and the ``usage`` arguments to :meth:`~_SubParsersAction.add_parser`, to ensure consistent command prefixes and usage information across subparsers."
 msgstr "هنگامی که پیام کاربرد سفارشی برای پارسر اصلی تعیین می‌شود، ممکن است بخواهید برای اطمینان از سازگاری پیشوندهای فرمان و اطلاعات کاربرد در میان پارسرهای فرعی، ارسال آرگومان ``prog`` به :meth:`~ArgumentParser.add_subparsers` یا آرگومان‌های ``prog`` و ``usage`` به :meth:`~_SubParsersAction.add_parser` را نیز در نظر بگیرید."
 
-msgid "description"
+#, fuzzy
+#| msgid "description"
+msgid "``description``"
 msgstr "توضیحات"
 
 msgid "Most calls to the :class:`ArgumentParser` constructor will use the ``description=`` keyword argument.  This argument gives a brief description of what the program does and how it works.  In help messages, the description is displayed between the command-line usage string and the help messages for the various arguments."
@@ -259,7 +265,9 @@ msgstr "در بیشتر فراخوانی‌های سازنده‌ی :class:`Argu
 msgid "By default, the description will be line-wrapped so that it fits within the given space.  To change this behavior, see the formatter_class_ argument."
 msgstr "به‌طور پیش‌فرض، سطرهای شرح شکسته می‌شوند تا در فضای داده‌شده بگنجند. برای تغییر این رفتار، آرگومان formatter_class_ را ببینید."
 
-msgid "epilog"
+#, fuzzy
+#| msgid "epilog"
+msgid "``epilog``"
 msgstr "epilog"
 
 msgid "Some programs like to display additional description of the program after the description of the arguments.  Such text can be specified using the ``epilog=`` argument to :class:`ArgumentParser`::"
@@ -295,7 +303,9 @@ msgstr ""
 msgid "As with the description_ argument, the ``epilog=`` text is by default line-wrapped, but this behavior can be adjusted with the formatter_class_ argument to :class:`ArgumentParser`."
 msgstr "همانند آرگومان description_، متن ``epilog=`` به‌طور پیش‌فرض در عرض خط شکسته می‌شود، اما این رفتار را می‌توان با آرگومان formatter_class_ برای :class:`ArgumentParser` تنظیم کرد."
 
-msgid "parents"
+#, fuzzy
+#| msgid "parents"
+msgid "``parents``"
 msgstr "والدین"
 
 msgid "Sometimes, several parsers share a common set of arguments. Rather than repeating the definitions of these arguments, a single parser with all the shared arguments and passed to ``parents=`` argument to :class:`ArgumentParser` can be used.  The ``parents=`` argument takes a list of :class:`ArgumentParser` objects, collects all the positional and optional actions from them, and adds these actions to the :class:`ArgumentParser` object being constructed::"
@@ -334,7 +344,9 @@ msgstr "توجه داشته باشید که بیشتر پارسرهای والد
 msgid "You must fully initialize the parsers before passing them via ``parents=``. If you change the parent parsers after the child parser, those changes will not be reflected in the child."
 msgstr "شما باید پارسرها را پیش از انتقال آن‌ها از طریق ``parents=`` به‌طور کامل مقداردهی اولیه کنید. اگر پارسرهای والد را پس از پارسر فرزند تغییر دهید، آن تغییرات در فرزند بازتاب نخواهند یافت."
 
-msgid "formatter_class"
+#, fuzzy
+#| msgid "formatter_class"
+msgid "``formatter_class``"
 msgstr "formatter_class"
 
 msgid ":class:`ArgumentParser` objects allow the help formatting to be customized by specifying an alternate formatting class.  Currently, there are four such classes:"
@@ -503,7 +515,9 @@ msgstr ""
 "  -h, --help  show this help message and exit\n"
 "  --foo int"
 
-msgid "prefix_chars"
+#, fuzzy
+#| msgid "prefix_chars"
+msgid "``prefix_chars``"
 msgstr "prefix_chars"
 
 msgid "Most command-line options will use ``-`` as the prefix, e.g. ``-f/--foo``. Parsers that need to support different or additional prefix characters, e.g. for options like ``+f`` or ``/foo``, may specify them using the ``prefix_chars=`` argument to the :class:`ArgumentParser` constructor::"
@@ -525,7 +539,9 @@ msgstr ""
 msgid "The ``prefix_chars=`` argument defaults to ``'-'``. Supplying a set of characters that does not include ``-`` will cause ``-f/--foo`` options to be disallowed."
 msgstr "مقدار پیش‌فرض آرگومان ``prefix_chars=`` برابر ``'-'`` است. ارائه مجموعه‌ای از نویسه‌ها که شامل ``-`` نباشد، باعث غیرمجاز شدن گزینه‌های ``-f/--foo`` می‌شود."
 
-msgid "fromfile_prefix_chars"
+#, fuzzy
+#| msgid "fromfile_prefix_chars"
+msgid "``fromfile_prefix_chars``"
 msgstr "fromfile_prefix_chars"
 
 msgid "Sometimes, when dealing with a particularly long argument list, it may make sense to keep the list of arguments in a file rather than typing it out at the command line.  If the ``fromfile_prefix_chars=`` argument is given to the :class:`ArgumentParser` constructor, then arguments that start with any of the specified characters will be treated as files, and will be replaced by the arguments they contain.  For example::"
@@ -563,7 +579,9 @@ msgstr "مقدار پیش‌فرض آرگومان ``fromfile_prefix_chars=`` ب�
 msgid ":class:`ArgumentParser` changed encoding and errors to read arguments files from default (e.g. :func:`locale.getpreferredencoding(False) <locale.getpreferredencoding>` and ``\"strict\"``) to the :term:`filesystem encoding and error handler`. Arguments file should be encoded in UTF-8 instead of ANSI Codepage on Windows."
 msgstr ":class:`ArgumentParser` کدگذاری و خطاها را برای خواندن پرونده‌های آرگومان از پیش‌فرض (برای مثال :func:`locale.getpreferredencoding(False) <locale.getpreferredencoding>` و ``\"strict\"``) به :term:`کدگذاری و هندلر خطای سامانه فایل‌بندی <filesystem encoding and error handler>` تغییر داد. پرونده آرگومان‌ها باید در ویندوز به‌جای ANSI Codepage با UTF-8 کدگذاری شود."
 
-msgid "argument_default"
+#, fuzzy
+#| msgid "argument_default"
+msgid "``argument_default``"
 msgstr "argument_default"
 
 msgid "Generally, argument defaults are specified either by passing a default to :meth:`~ArgumentParser.add_argument` or by calling the :meth:`~ArgumentParser.set_defaults` methods with a specific set of name-value pairs.  Sometimes however, it may be useful to specify a single parser-wide default for arguments.  This can be accomplished by passing the ``argument_default=`` keyword argument to :class:`ArgumentParser`.  For example, to globally suppress attribute creation on :meth:`~ArgumentParser.parse_args` calls, we supply ``argument_default=SUPPRESS``::"
@@ -586,7 +604,9 @@ msgstr ""
 ">>> parser.parse_args([])\n"
 "Namespace()"
 
-msgid "allow_abbrev"
+#, fuzzy
+#| msgid "allow_abbrev"
+msgid "``allow_abbrev``"
 msgstr "allow_abbrev"
 
 msgid "Normally, when you pass an argument list to the :meth:`~ArgumentParser.parse_args` method of an :class:`ArgumentParser`, it :ref:`recognizes abbreviations <prefix-matching>` of long options."
@@ -610,7 +630,9 @@ msgstr ""
 "usage: PROG [-h] [--foobar] [--foonley]\n"
 "PROG: error: unrecognized arguments: --foon"
 
-msgid "conflict_handler"
+#, fuzzy
+#| msgid "conflict_handler"
+msgid "``conflict_handler``"
 msgstr "conflict_handler"
 
 msgid ":class:`ArgumentParser` objects do not allow two actions with the same option string.  By default, :class:`ArgumentParser` objects raise an exception if an attempt is made to create an argument with an option string that is already in use::"
@@ -660,7 +682,9 @@ msgstr ""
 msgid "Note that :class:`ArgumentParser` objects only remove an action if all of its option strings are overridden.  So, in the example above, the old ``-f/--foo`` action is retained as the ``-f`` action, because only the ``--foo`` option string was overridden."
 msgstr "توجه داشته باشید که اشیاء :class:`ArgumentParser` یک اکشنرا فقط در صورتی حذف می‌کنند که همه رشته‌های گزینه (option strings) آن بازنویسی‌شده باشند. بنابراین، در مثال بالا، اکشن قدیمی ``-f/--foo`` به‌عنوان اکشن ``-f`` حفظ می‌شود، زیرا فقط رشته گزینه ``--foo`` بازنویسی‌شده است."
 
-msgid "add_help"
+#, fuzzy
+#| msgid "add_help"
+msgid "``add_help``"
 msgstr "add_help"
 
 msgid "By default, :class:`ArgumentParser` objects add an option which simply displays the parser's help message. If ``-h`` or ``--help`` is supplied at the command line, the :class:`!ArgumentParser` help will be printed."
@@ -704,7 +728,9 @@ msgstr ""
 "options:\n"
 "  +h, ++help  show this help message and exit"
 
-msgid "exit_on_error"
+#, fuzzy
+#| msgid "exit_on_error"
+msgid "``exit_on_error``"
 msgstr "exit_on_error"
 
 msgid "Normally, when you pass an invalid argument list to the :meth:`~ArgumentParser.parse_args` method of an :class:`ArgumentParser`, it will print a *message* to :data:`sys.stderr` and exit with a status code of 2."
@@ -734,7 +760,9 @@ msgstr ""
 "...\n"
 "Catching an argumentError"
 
-msgid "suggest_on_error"
+#, fuzzy
+#| msgid "suggest_on_error"
+msgid "``suggest_on_error``"
 msgstr "suggest_on_error"
 
 msgid "By default, when a user passes an invalid argument choice or subparser name, :class:`ArgumentParser` will exit with error info and provide suggestions for mistyped arguments. The error message will list the permissible argument choices (if specified) or subparser names, along with a \"maybe you meant\" suggestion if a close match is found. Note that this only applies for arguments when the choices specified are strings::"
@@ -759,7 +787,9 @@ msgstr "می‌توانید با تنظیم ``suggest_on_error`` روی ``False`
 msgid "Changed default value of ``suggest_on_error`` from ``False`` to ``True``."
 msgstr "مقدار پیش‌فرض ``suggest_on_error`` از ``False`` به ``True`` تغییر یافت."
 
-msgid "color"
+#, fuzzy
+#| msgid "color"
+msgid "``color``"
 msgstr "رنگ"
 
 msgid "By default, the help message is printed in color using `ANSI escape sequences <https://en.wikipedia.org/wiki/ANSI_escape_code>`__. If you want plain text help messages, you can disable this :ref:`in your local environment <using-on-controlling-color>`, or in the argument parser itself by setting ``color`` to ``False``::"
@@ -853,7 +883,9 @@ msgstr "deprecated_ - اینکه استفاده از آرگومان منسوخ �
 msgid "The method returns an :class:`Action` object representing the argument."
 msgstr "این متد یک شیء :class:`Action` برمی‌گرداند که نمایانگر آرگومان است."
 
-msgid "name or flags"
+#, fuzzy
+#| msgid "name or flags"
+msgid "``name`` or ``flags``"
 msgstr "نام یا پرچم‌ها"
 
 msgid "The :meth:`~ArgumentParser.add_argument` method must know whether an optional argument, like ``-f`` or ``--foo``, or a positional argument, like a list of filenames, is expected.  The first arguments passed to :meth:`~ArgumentParser.add_argument` must therefore be either a series of flags, or a simple argument name."
@@ -923,7 +955,9 @@ msgstr ""
 " -h, --help  show this help message and exit\n"
 " --foo-bar FOO-BAR"
 
-msgid "action"
+#, fuzzy
+#| msgid "action"
+msgid "``action``"
 msgstr "action"
 
 msgid ":class:`ArgumentParser` objects associate command-line arguments with actions.  These actions can do just about anything with the command-line arguments associated with them, though most actions simply add an attribute to the object returned by :meth:`~ArgumentParser.parse_args`.  The ``action`` keyword argument specifies how the command-line arguments should be handled. The supplied actions are:"
@@ -1096,7 +1130,9 @@ msgstr ""
 msgid "For more details, see :class:`Action`."
 msgstr "برای جزئیات بیشتر، :class:`Action` را ببینید."
 
-msgid "nargs"
+#, fuzzy
+#| msgid "nargs"
+msgid "``nargs``"
 msgstr "nargs"
 
 msgid ":class:`ArgumentParser` objects usually associate a single command-line argument with a single action to be taken.  The ``nargs`` keyword argument associates a different number of command-line arguments with a single action. See also :ref:`specifying-ambiguous-arguments`. The supported values are:"
@@ -1210,7 +1246,9 @@ msgstr ""
 msgid "If the ``nargs`` keyword argument is not provided, the number of arguments consumed is determined by the action_.  Generally this means a single command-line argument will be consumed and a single item (not a list) will be produced. Actions that do not consume command-line arguments (e.g. ``'store_const'``) set ``nargs=0``."
 msgstr "اگر آرگومان کلیدواژه‌ای ``nargs`` ارائه نشده باشد، تعداد آرگومان‌های مصرف‌شده توسط action_ تعیین می‌شود. به‌طور معمول، این بدان معناست که یک آرگومان خط فرمان مصرف می‌شود و یک آیتم (نه یک فهرست) تولید می‌شود. کنش‌هایی که آرگومان‌های خط فرمان را مصرف نمی‌کنند (مانند ``'store_const'``)، ``nargs=0`` را تنظیم می‌کنند."
 
-msgid "const"
+#, fuzzy
+#| msgid "const"
+msgid "``const``"
 msgstr "const"
 
 msgid "The ``const`` argument of :meth:`~ArgumentParser.add_argument` is used to hold constant values that are not read from the command line but are required for the various :class:`ArgumentParser` actions.  The two most common uses of it are:"
@@ -1225,7 +1263,9 @@ msgstr "هنگامی که :meth:`~ArgumentParser.add_argument` با رشته‌�
 msgid "``const=None`` by default, including when ``action='append_const'`` or ``action='store_const'``."
 msgstr "``const=None`` به‌طور پیش‌فرض، از جمله زمانی که ``action='append_const'`` یا ``action='store_const'`` باشد."
 
-msgid "default"
+#, fuzzy
+#| msgid "default"
+msgid "``default``"
 msgstr "پیش‌فرض"
 
 msgid "All optional arguments and some positional arguments may be omitted at the command line.  The ``default`` keyword argument of :meth:`~ArgumentParser.add_argument` specifies what value should be used if the command-line argument is not present. For example::"
@@ -1321,7 +1361,9 @@ msgstr ""
 ">>> parser.parse_args(['--foo', '1'])\n"
 "Namespace(foo='1')"
 
-msgid "type"
+#, fuzzy
+#| msgid "type"
+msgid "``type``"
 msgstr "نوع"
 
 msgid "By default, the parser reads command-line arguments in as simple strings. However, quite often the command-line string should instead be interpreted as another type, such as a :class:`float` or :class:`int`.  The ``type`` keyword for :meth:`~ArgumentParser.add_argument` allows any necessary type-checking and type conversions to be performed."
@@ -1406,7 +1448,9 @@ msgstr "حتی :class:`~argparse.FileType` برای استفاده با کلید
 msgid "For type checkers that simply check against a fixed set of values, consider using the choices_ keyword instead."
 msgstr "برای ابزارهای بررسی نوع که صرفاً در برابر مجموعه ثابتی از مقادیر بررسی می‌کنند، استفاده از کلیدواژه choices_ را به‌جای آن در نظر بگیرید."
 
-msgid "choices"
+#, fuzzy
+#| msgid "choices"
+msgid "``choices``"
 msgstr "گزینه‌ها"
 
 msgid "Some command-line arguments should be selected from a restricted set of values. These can be handled by passing a sequence object as the *choices* keyword argument to :meth:`~ArgumentParser.add_argument`.  When the command line is parsed, argument values will be checked, and an error message will be displayed if the argument was not one of the acceptable values::"
@@ -1446,7 +1490,9 @@ msgstr "برای کاربرپسند نگه‌داشتن *choices*، پوششی �
 msgid "Formatted choices override the default *metavar* which is normally derived from *dest*.  This is usually what you want because the user never sees the *dest* parameter.  If this display isn't desirable (perhaps because there are many choices), just specify an explicit metavar_."
 msgstr "گزینه‌های قالب‌بندی‌شده به‌جای *metavar* پیش‌فرض، که معمولاً از *dest* مشتق می‌شود، استفاده می‌شوند. این معمولاً همان چیزی است که شما می‌خواهید، زیرا کاربر هرگز پارامتر *dest* را نمی‌بیند. اگر این نمایش مطلوب نیست (شاید به این دلیل که گزینه‌های زیادی وجود دارد)، کافی است یک metavar_ صریح مشخص کنید."
 
-msgid "required"
+#, fuzzy
+#| msgid "required"
+msgid "``required``"
 msgstr "الزامی"
 
 msgid "In general, the :mod:`!argparse` module assumes that flags like ``-f`` and ``--bar`` indicate *optional* arguments, which can always be omitted at the command line. To make an option *required*, ``True`` can be specified for the ``required=`` keyword argument to :meth:`~ArgumentParser.add_argument`::"
@@ -1475,7 +1521,9 @@ msgstr "همان‌طور که مثال نشان می‌دهد، اگر یک گ�
 msgid "Required options are generally considered bad form because users expect *options* to be *optional*, and thus they should be avoided when possible."
 msgstr "گزینه‌های الزامی عموماً نامناسب تلقی می‌شوند، زیرا کاربران انتظار دارند *گزینه‌ها* *اختیاری* باشند؛ بنابراین باید در صورت امکان از آن‌ها اجتناب شود."
 
-msgid "help"
+#, fuzzy
+#| msgid "help"
+msgid "``help``"
 msgstr "راهنما"
 
 msgid "The ``help`` value is a string containing a brief description of the argument. When a user requests help (usually by using ``-h`` or ``--help`` at the command line), these ``help`` descriptions will be displayed with each argument."
@@ -1532,7 +1580,9 @@ msgstr ""
 "options:\n"
 "  -h, --help  show this help message and exit"
 
-msgid "metavar"
+#, fuzzy
+#| msgid "metavar"
+msgid "``metavar``"
 msgstr "metavar"
 
 msgid "When :class:`ArgumentParser` generates help messages, it needs some way to refer to each expected argument.  By default, :class:`!ArgumentParser` objects use the dest_ value as the \"name\" of each object.  By default, for positional argument actions, the dest_ value is used directly, and for optional argument actions, the dest_ value is uppercased.  So, a single positional argument with ``dest='bar'`` will be referred to as ``bar``. A single optional argument ``--foo`` that should be followed by a single command-line argument will be referred to as ``FOO``.  An example::"
@@ -1632,7 +1682,9 @@ msgstr ""
 " -x X X\n"
 " --foo bar baz"
 
-msgid "dest"
+#, fuzzy
+#| msgid "dest"
+msgid "``dest``"
 msgstr "dest"
 
 msgid "Most :class:`ArgumentParser` actions add some value as an attribute of the object returned by :meth:`~ArgumentParser.parse_args`.  The name of this attribute is determined by the ``dest`` keyword argument of :meth:`~ArgumentParser.add_argument`.  For positional argument actions, ``dest`` is normally supplied as the first argument to :meth:`~ArgumentParser.add_argument`::"
@@ -1691,7 +1743,9 @@ msgstr "آرگومان‌های متعدد می‌توانند ``dest`` یکسا
 msgid "Single-dash long option now takes precedence over short options."
 msgstr "گزینه‌ی طولانی با یک خط تیره اکنون نسبت به گزینه‌های کوتاه اولویت دارد."
 
-msgid "deprecated"
+#, fuzzy
+#| msgid "deprecated"
+msgid "``deprecated``"
 msgstr "منسوخ"
 
 msgid "During a project's lifetime, some arguments may need to be removed from the command line. Before removing them, you should inform your users that the arguments are deprecated and will be removed. The ``deprecated`` keyword argument of :meth:`~ArgumentParser.add_argument`, which defaults to ``False``, specifies if the argument is deprecated and will be removed in the future. For arguments, if ``deprecated`` is ``True``, then a warning will be printed to :data:`sys.stderr` when the argument is used::"

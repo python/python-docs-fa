@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-27 04:16+0000\n"
+"POT-Creation-Date: 2026-10-28 04:13+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -34,14 +34,28 @@ msgstr "پایتون بعدی"
 msgid "*Release date: XXXX-XX-XX*"
 msgstr "*تاریخ انتشار: XXXX-XX-XX*"
 
+msgid "Security"
+msgstr "امنیت"
+
+msgid ":gh:`160420`: Fix :class:`zoneinfo.ZoneInfo` on Windows accepting keys in which a component after a ``/`` starts with a drive letter, such as ``America/C:\\file``.  Such a key could open a file outside the ``tzdata`` package; it now raises :exc:`ValueError`."
+msgstr ""
+
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
+
+msgid ":gh:`159652`: Fix a hang when an import fails with :exc:`RecursionError` because the C stack is nearly exhausted: releasing the import locks could itself fail and leave the global import lock or a module lock held forever, so that later imports in other threads blocked indefinitely. The import system now raises :exc:`RecursionError` before taking an import lock when there is not enough stack left to release it."
+msgstr ""
 
 msgid ":gh:`152631`: Fix :func:`ast.parse` ability to parse lazy imports with *feature_version* older than 3.15, now it properly raises :exc:`SyntaxError`."
 msgstr ""
 
 msgid "Library"
 msgstr "کتابخانه"
+
+#, fuzzy
+#| msgid ":gh:`107545`: Improve the error messages that may be raised by :meth:`~socket.socket.setsockopt`."
+msgid ":gh:`160596`: Fix the error message for invalid data passed to :meth:`!asyncio.proactor_events.sendto`."
+msgstr ":gh:`107545`: بهبود پیام‌های خطایی که ممکن است توسط :meth:`~socket.socket.setsockopt` بالا آورده شوند."
 
 msgid ":gh:`160513`: Fix :meth:`asyncio.loop.start_tls` and :meth:`asyncio.StreamWriter.start_tls` not calling the protocol's :meth:`~asyncio.BaseProtocol.connection_lost` when the connection is lost, the handshake times out or the call is cancelled during the TLS handshake. :meth:`asyncio.StreamWriter.wait_closed` no longer waits forever after such a failure."
 msgstr ""
@@ -60,9 +74,6 @@ msgstr "پایتون ۳.۵.۲ نهایی"
 #| msgid "*Release date: 2026-10-21*"
 msgid "*Release date: 2026-10-25*"
 msgstr "*تاریخ انتشار: ۲۰۲۶-۱۰-۲۱*"
-
-msgid "Security"
-msgstr "امنیت"
 
 msgid ":gh:`160300`: Fix :class:`http.cookiejar.DefaultCookiePolicy` accepting and returning cookies with a negative ``Version`` attribute without checking their domain against the request host. Such cookies are now ignored."
 msgstr ""
@@ -7554,7 +7565,9 @@ msgstr ":gh:`116738`: ماژول :mod:`json` را برای استفاده‌ی �
 msgid ":gh:`119494`: Exception text when trying to delete attributes of types was clarified."
 msgstr ":gh:`119494`: متن استثنا هنگام تلاش برای حذف ویژگی‌های انواع شفاف‌سازی شد."
 
-msgid ":gh:`139924`: Function watchers can now receive a PyFunction_PYFUNC_EVENT_MODIFY_QUALNAME event when a watched functions qualname is changed."
+#, fuzzy
+#| msgid ":gh:`139924`: Function watchers can now receive a PyFunction_PYFUNC_EVENT_MODIFY_QUALNAME event when a watched functions qualname is changed."
+msgid ":gh:`139924`: Function watchers can now receive a PyFunction_EVENT_MODIFY_QUALNAME event when a watched function's qualname is changed."
 msgstr ":gh:`139924`: ناظران تابع اکنون می‌توانند رویدادی از نوع PyFunction_PYFUNC_EVENT_MODIFY_QUALNAME دریافت کنند هنگامی که نام کامل (qualname) یک تابع تحت نظارت تغییر می‌کند."
 
 msgid ":gh:`111489`: Add :c:func:`PyTuple_FromArray` to create a :class:`tuple` from an array. Patch by Victor Stinner."
@@ -9105,10 +9118,14 @@ msgstr ":c:func:`!_PyUnicodeWriter_WriteStr`: عبارت ``_PyUnicodeWriter_Writ
 msgid ":c:func:`!_PyUnicodeWriter_WriteSubstring`: replace ``_PyUnicodeWriter_WriteSubstring(&writer, str, start, end)`` with :c:func:`PyUnicodeWriter_WriteSubstring(writer, str, start, end) <PyUnicodeWriter_WriteSubstring>`."
 msgstr ":c:func:`!_PyUnicodeWriter_WriteSubstring`: عبارت ``_PyUnicodeWriter_WriteSubstring(&writer, str, start, end)`` را با :c:func:`PyUnicodeWriter_WriteSubstring(writer, str, start, end) <PyUnicodeWriter_WriteSubstring>` جایگزین کنید."
 
-msgid ":c:func:`!_PyUnicodeWriter_WriteASCIIString`: replace ``_PyUnicodeWriter_WriteASCIIString(&writer, str)`` with :c:func:`PyUnicodeWriter_WriteUTF8(writer, str) <PyUnicodeWriter_WriteUTF8>`."
+#, fuzzy
+#| msgid ":c:func:`!_PyUnicodeWriter_WriteASCIIString`: replace ``_PyUnicodeWriter_WriteASCIIString(&writer, str)`` with :c:func:`PyUnicodeWriter_WriteUTF8(writer, str) <PyUnicodeWriter_WriteUTF8>`."
+msgid ":c:func:`!_PyUnicodeWriter_WriteASCIIString`: replace ``_PyUnicodeWriter_WriteASCIIString(&writer, str, size)`` with :c:func:`PyUnicodeWriter_WriteUTF8(writer, str, size) <PyUnicodeWriter_WriteUTF8>`."
 msgstr ":c:func:`!_PyUnicodeWriter_WriteASCIIString`: عبارت ``_PyUnicodeWriter_WriteASCIIString(&writer, str)`` را با :c:func:`PyUnicodeWriter_WriteUTF8(writer, str) <PyUnicodeWriter_WriteUTF8>` جایگزین کنید."
 
-msgid ":c:func:`!_PyUnicodeWriter_WriteLatin1String`: replace ``_PyUnicodeWriter_WriteLatin1String(&writer, str)`` with :c:func:`PyUnicodeWriter_WriteUTF8(writer, str) <PyUnicodeWriter_WriteUTF8>`."
+#, fuzzy
+#| msgid ":c:func:`!_PyUnicodeWriter_WriteLatin1String`: replace ``_PyUnicodeWriter_WriteLatin1String(&writer, str)`` with :c:func:`PyUnicodeWriter_WriteUTF8(writer, str) <PyUnicodeWriter_WriteUTF8>`."
+msgid ":c:func:`!_PyUnicodeWriter_WriteLatin1String`: replace ``_PyUnicodeWriter_WriteLatin1String(&writer, str, size)`` by decoding the string with :c:func:`PyUnicode_DecodeLatin1`, writing the result with :c:func:`PyUnicodeWriter_WriteStr`, and releasing the result with :c:func:`Py_DECREF`."
 msgstr ":c:func:`!_PyUnicodeWriter_WriteLatin1String`: عبارت ``_PyUnicodeWriter_WriteLatin1String(&writer, str)`` را با :c:func:`PyUnicodeWriter_WriteUTF8(writer, str) <PyUnicodeWriter_WriteUTF8>` جایگزین کنید."
 
 msgid ":c:func:`!_PyUnicodeWriter_Prepare`: (no replacement)."

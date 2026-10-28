@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-28 04:13+0000\n"
 "PO-Revision-Date: 2026-09-14 12:35+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -376,7 +376,9 @@ msgstr "یک پیام غیر ``multipart`` را به یک پیام ``multipart/r
 msgid "Convert a non-``multipart`` or a ``multipart/related`` into a ``multipart/alternative``, moving any existing :mailheader:`Content-` headers and payload into a (new) first part of the ``multipart``.  If *boundary* is specified, use it as the boundary string in the multipart, otherwise leave the boundary to be automatically created when it is needed (for example, when the message is serialized)."
 msgstr "یک پیام غیر ``multipart`` یا یک ``multipart/related`` را به ``multipart/alternative`` تبدیل می‌کند و تمام سرآیندهای :mailheader:`Content-` و بار موجود را به اولین بخش (جدید) از ``multipart`` منتقل می‌کند. اگر *boundary* مشخص شده باشد، از آن به‌عنوان رشته‌ی مرزی در multipart استفاده می‌کند، در غیر این صورت اجازه می‌دهد مرز به‌صورت خودکار در زمانی که به آن نیاز است (برای مثال، هنگامی که پیام سریال‌سازی می‌شود) ایجاد شود."
 
-msgid "Convert a non-``multipart``, a ``multipart/related``, or a ``multipart-alternative`` into a ``multipart/mixed``, moving any existing :mailheader:`Content-` headers and payload into a (new) first part of the ``multipart``.  If *boundary* is specified, use it as the boundary string in the multipart, otherwise leave the boundary to be automatically created when it is needed (for example, when the message is serialized)."
+#, fuzzy
+#| msgid "Convert a non-``multipart``, a ``multipart/related``, or a ``multipart-alternative`` into a ``multipart/mixed``, moving any existing :mailheader:`Content-` headers and payload into a (new) first part of the ``multipart``.  If *boundary* is specified, use it as the boundary string in the multipart, otherwise leave the boundary to be automatically created when it is needed (for example, when the message is serialized)."
+msgid "Convert a non-``multipart``, a ``multipart/related``, or a ``multipart/alternative`` into a ``multipart/mixed``, moving any existing :mailheader:`Content-` headers and payload into a (new) first part of the ``multipart``.  If *boundary* is specified, use it as the boundary string in the multipart, otherwise leave the boundary to be automatically created when it is needed (for example, when the message is serialized)."
 msgstr "یک پیام غیر ``multipart``، یک ``multipart/related``، یا یک ``multipart-alternative`` را به یک ``multipart/mixed`` تبدیل می‌کند و همه‌ی سرآیندهای :mailheader:`Content-` و بار موجود را به نخستین بخش (جدید) از ``multipart`` منتقل می‌کند. اگر *boundary* مشخص شده باشد، از آن به‌عنوان رشته‌ی مرز در multipart استفاده می‌شود، در غیر این صورت مرز به‌صورت خودکار در زمان نیاز (برای مثال، هنگامی که پیام سریال‌سازی می‌شود) ایجاد می‌شود."
 
 msgid "If the message is a ``multipart/related``, create a new message object, pass all of the arguments to its :meth:`set_content` method, and :meth:`~email.message.Message.attach` it to the ``multipart``.  If the message is a non-``multipart``, call :meth:`make_related` and then proceed as above.  If the message is any other type of ``multipart``, raise a :exc:`TypeError`. If *content_manager* is not specified, use the ``content_manager`` specified by the current :mod:`~email.policy`. If the added part has no :mailheader:`Content-Disposition` header, add one with the value ``inline``."

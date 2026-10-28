@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-28 04:13+0000\n"
 "PO-Revision-Date: 2026-09-15 13:19+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -72,22 +72,19 @@ msgstr "کلاس‌ها می‌توانند پروتکل vectorcall را با ف
 msgid "*callable* is the object being called."
 msgstr "*callable* شیءی است که فراخوانی می‌شود."
 
-msgid "*args* is a C array consisting of the positional arguments followed by the"
-msgstr "*args* یک آرایه‌ی C است که از آرگومان‌های جایگاهی تشکیل شده و به دنبال آن"
-
-msgid "values of the keyword arguments. This can be *NULL* if there are no arguments."
+#, fuzzy
+#| msgid "values of the keyword arguments. This can be *NULL* if there are no arguments."
+msgid "*args* is a C array consisting of the positional arguments followed by the values of the keyword arguments. This can be *NULL* if there are no arguments."
 msgstr "مقادیر آرگومان‌های کلیدواژه‌ای. در صورت نبود آرگومان، این می‌تواند *NULL* باشد."
 
-msgid "*nargsf* is the number of positional arguments plus possibly the"
-msgstr "*nargsf* تعداد آرگومان‌های جایگاهی است به‌علاوه احتمالاً"
-
-msgid ":c:macro:`PY_VECTORCALL_ARGUMENTS_OFFSET` flag. To get the actual number of positional arguments from *nargsf*, use :c:func:`PyVectorcall_NARGS`."
+#, fuzzy
+#| msgid ":c:macro:`PY_VECTORCALL_ARGUMENTS_OFFSET` flag. To get the actual number of positional arguments from *nargsf*, use :c:func:`PyVectorcall_NARGS`."
+msgid "*nargsf* is the number of positional arguments plus possibly the :c:macro:`PY_VECTORCALL_ARGUMENTS_OFFSET` flag. To get the actual number of positional arguments from *nargsf*, use :c:func:`PyVectorcall_NARGS`."
 msgstr "پرچم :c:macro:`PY_VECTORCALL_ARGUMENTS_OFFSET`. برای به‌دست‌آوردن تعداد واقعی آرگومان‌های جایگاهی از *nargsf*، از :c:func:`PyVectorcall_NARGS` استفاده کنید."
 
-msgid "*kwnames* is a tuple containing the names of the keyword arguments;"
-msgstr "*kwnames* تاپلی است که نام‌های آرگومان‌های کلیدواژه‌ای را در بر دارد؛"
-
-msgid "in other words, the keys of the kwargs dict. These names must be strings (instances of ``str`` or a subclass) and they must be unique. If there are no keyword arguments, then *kwnames* can instead be *NULL*."
+#, fuzzy
+#| msgid "in other words, the keys of the kwargs dict. These names must be strings (instances of ``str`` or a subclass) and they must be unique. If there are no keyword arguments, then *kwnames* can instead be *NULL*."
+msgid "*kwnames* is a tuple containing the names of the keyword arguments; in other words, the keys of the kwargs dict. These names must be strings (instances of ``str`` or a subclass) and they must be unique. If there are no keyword arguments, then *kwnames* can instead be *NULL*."
 msgstr "به عبارت دیگر، کلیدهای دیکشنری kwargs. این نام‌ها باید رشته باشند (نمونه‌هایی از ``str`` یا یک زیرکلاس) و باید یکتا باشند. اگر آرگومان کلیدواژه‌ای وجود نداشته باشد، *kwnames* می‌تواند به‌جای آن *NULL* باشد."
 
 msgid "If this flag is set in a vectorcall *nargsf* argument, the callee is allowed to temporarily change ``args[-1]``. In other words, *args* points to argument 1 (not 0) in the allocated vector. The callee must restore the value of ``args[-1]`` before returning."
@@ -320,3 +317,12 @@ msgstr "API پشتیبانی فراخوانی"
 
 msgid "Determine if the object *o* is callable.  Return ``1`` if the object is callable and ``0`` otherwise.  This function always succeeds."
 msgstr "تعیین می‌کند که آیا شیء *o* فراخوانی‌پذیر است یا خیر. اگر شیء فراخوانی‌پذیر باشد ``1`` و در غیر این صورت ``0`` را برمی‌گرداند. این تابع همیشه با موفقیت اجرا می‌شود."
+
+#~ msgid "*args* is a C array consisting of the positional arguments followed by the"
+#~ msgstr "*args* یک آرایه‌ی C است که از آرگومان‌های جایگاهی تشکیل شده و به دنبال آن"
+
+#~ msgid "*nargsf* is the number of positional arguments plus possibly the"
+#~ msgstr "*nargsf* تعداد آرگومان‌های جایگاهی است به‌علاوه احتمالاً"
+
+#~ msgid "*kwnames* is a tuple containing the names of the keyword arguments;"
+#~ msgstr "*kwnames* تاپلی است که نام‌های آرگومان‌های کلیدواژه‌ای را در بر دارد؛"

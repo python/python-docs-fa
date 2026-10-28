@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-28 04:13+0000\n"
 "PO-Revision-Date: 2026-09-15 08:00+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -47,7 +47,9 @@ msgstr "یک شیء :class:`BytesGenerator` برمی‌گرداند که هر پ
 msgid "If optional *mangle_from_* is ``True``, put a ``>`` character in front of any line in the body that starts with the exact string ``\"From \"``, that is ``From`` followed by a space at the beginning of a line.  *mangle_from_* defaults to the value of the :attr:`~email.policy.Policy.mangle_from_` setting of the *policy* (which is ``True`` for the :data:`~email.policy.compat32` policy and ``False`` for all others). *mangle_from_* is intended for use when messages are stored in Unix mbox format (see :mod:`mailbox` and `WHY THE CONTENT-LENGTH FORMAT IS BAD <https://www.jwz.org/doc/content-length.html>`_)."
 msgstr "اگر *mangle_from_* اختیاری ``True`` باشد، یک نویسه ``>`` در ابتدای هر خط از بدنه که با رشته دقیق ``\"From \"`` شروع می‌شود، قرار می‌گیرد، یعنی ``From`` و به‌دنبال آن یک فاصله در ابتدای خط. مقدار پیش‌فرض *mangle_from_* برابر با مقدار تنظیم :attr:`~email.policy.Policy.mangle_from_` در *policy* است (که برای سیاست :data:`~email.policy.compat32` برابر ``True`` و برای همه سیاست‌های دیگر ``False`` است). *mangle_from_* برای استفاده در مواردی در نظر گرفته شده است که پیام‌ها در قالب mbox یونیکس ذخیره می‌شوند (ببینید :mod:`mailbox` و `WHY THE CONTENT-LENGTH FORMAT IS BAD <https://www.jwz.org/doc/content-length.html>`_)."
 
-msgid "If *maxheaderlen* is not ``None``, refold any header lines that are longer than *maxheaderlen*, or if ``0``, do not rewrap any headers.  If *manheaderlen* is ``None`` (the default), wrap headers and other message lines according to the *policy* settings."
+#, fuzzy
+#| msgid "If *maxheaderlen* is not ``None``, refold any header lines that are longer than *maxheaderlen*, or if ``0``, do not rewrap any headers.  If *manheaderlen* is ``None`` (the default), wrap headers and other message lines according to the *policy* settings."
+msgid "If *maxheaderlen* is not ``None``, refold any header lines that are longer than *maxheaderlen*, or if ``0``, do not rewrap any headers.  If *maxheaderlen* is ``None`` (the default), wrap headers and other message lines according to the *policy* settings."
 msgstr "اگر *maxheaderlen* برابر ``None`` نباشد، هر خط سرآیند‌ای که طولانی‌تر از *maxheaderlen* باشد دوباره تا زده می‌شود، یا اگر ``0`` باشد، هیچ سرآیند‌ای دوباره پیچیده نمی‌شود. اگر *manheaderlen* برابر ``None`` باشد (پیش‌فرض)، سرآیند‌ها و سایر سطرهای پیام طبق تنظیمات *policy* پیچیده می‌شوند."
 
 msgid "If *policy* is specified, use that policy to control message generation.  If *policy* is ``None`` (the default), use the policy associated with the :class:`~email.message.Message` or :class:`~email.message.EmailMessage` object passed to ``flatten`` to control the message generation.  See :mod:`email.policy` for details on what *policy* controls."
@@ -80,7 +82,9 @@ msgstr "*s* را با کدک ``ASCII`` و هندلر خطای ``surrogateescape`
 msgid "As a convenience, :class:`~email.message.EmailMessage` provides the methods :meth:`~email.message.EmailMessage.as_bytes` and ``bytes(aMessage)`` (a.k.a. :meth:`~email.message.EmailMessage.__bytes__`), which simplify the generation of a serialized binary representation of a message object.  For more detail, see :mod:`email.message`."
 msgstr "برای سهولت، :class:`~email.message.EmailMessage` متدهای :meth:`~email.message.EmailMessage.as_bytes` و ``bytes(aMessage)`` (که به :meth:`~email.message.EmailMessage.__bytes__` نیز شناخته می‌شود) را فراهم می‌کند، که تولید یک نمایش دودویی سریال‌شده از یک شیء پیام را ساده می‌کنند. برای جزئیات بیشتر، :mod:`email.message` را ببینید."
 
-msgid "Because strings cannot represent binary data, the :class:`Generator` class must convert any binary data in any message it flattens to an ASCII compatible format, by converting them to an ASCII compatible :mailheader:`Content-Transfer_Encoding`.  Using the terminology of the email RFCs, you can think of this as :class:`Generator` serializing to an I/O stream that is not \"8 bit clean\".  In other words, most applications will want to be using :class:`BytesGenerator`, and not :class:`Generator`."
+#, fuzzy
+#| msgid "Because strings cannot represent binary data, the :class:`Generator` class must convert any binary data in any message it flattens to an ASCII compatible format, by converting them to an ASCII compatible :mailheader:`Content-Transfer_Encoding`.  Using the terminology of the email RFCs, you can think of this as :class:`Generator` serializing to an I/O stream that is not \"8 bit clean\".  In other words, most applications will want to be using :class:`BytesGenerator`, and not :class:`Generator`."
+msgid "Because strings cannot represent binary data, the :class:`Generator` class must convert any binary data in any message it flattens to an ASCII compatible format, by converting them to an ASCII compatible :mailheader:`Content-Transfer-Encoding`.  Using the terminology of the email RFCs, you can think of this as :class:`Generator` serializing to an I/O stream that is not \"8 bit clean\".  In other words, most applications will want to be using :class:`BytesGenerator`, and not :class:`Generator`."
 msgstr "از آن‌جا که رشته‌ها نمی‌توانند داده‌های دودویی را نشان دهند، کلاس :class:`Generator` باید هرگونه داده‌ی دودویی موجود در هر پیامی را که به‌صورت مسطح درمی‌آورد، با تبدیل آن به یک :mailheader:`Content-Transfer_Encoding` سازگار با ASCII، به قالبی سازگار با ASCII تبدیل کند. با استفاده از اصطلاحات RFCهای ایمیل، می‌توانید این‌طور تصور کنید که :class:`Generator` در حال سریال‌سازی به یک جریان ورودی/خروجی است که «8 bit clean» نیست. به بیان دیگر، بیشتر برنامه‌ها خواهند خواست از :class:`BytesGenerator` استفاده کنند، نه :class:`Generator`."
 
 msgid "Return a :class:`Generator` object that will write any message provided to the :meth:`flatten` method, or any text provided to the :meth:`write` method, to the :term:`file-like object` *outfp*.  *outfp* must support a ``write`` method that accepts string data."
@@ -137,7 +141,9 @@ msgstr "اگر *fmt* برابر ``None`` باشد، از *fmt* پیش‌فرض �
 msgid "\"[Non-text (%(type)s) part of message omitted, filename %(filename)s]\""
 msgstr "[بخش غیرمتنی (%(type)s) پیام حذف شد، نام پرونده %(filename)s]"
 
-msgid "Optional *_mangle_from_* and *maxheaderlen* are as with the :class:`Generator` base class."
+#, fuzzy
+#| msgid "Optional *_mangle_from_* and *maxheaderlen* are as with the :class:`Generator` base class."
+msgid "Optional *mangle_from_* and *maxheaderlen* are as with the :class:`Generator` base class."
 msgstr "آرگومان‌های اختیاری *_mangle_from_* و *maxheaderlen* همانند کلاس پایه‌ی :class:`Generator` هستند."
 
 msgid "Footnotes"

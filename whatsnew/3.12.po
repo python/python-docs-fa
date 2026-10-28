@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-28 04:13+0000\n"
 "PO-Revision-Date: 2026-09-13 12:45+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -2496,37 +2496,32 @@ msgstr "افزودن :c:func:`PyErr_DisplayException` که یک نمونه اس�
 msgid ":pep:`683`: Introduce *Immortal Objects*, which allows objects to bypass reference counts, and related changes to the C-API:"
 msgstr ":pep:`683`: معرفی *اشیاء نامیرا*، که به اشیاء اجازه می‌دهد شمارش ارجاع را دور بزنند، و تغییرات مرتبط با C-API:"
 
-msgid "``_Py_IMMORTAL_REFCNT``: The reference count that defines an object"
+#, fuzzy
+#| msgid "``_Py_IMMORTAL_REFCNT``: The reference count that defines an object"
+msgid "``_Py_IMMORTAL_REFCNT``: The reference count that defines an object as immortal."
 msgstr "``_Py_IMMORTAL_REFCNT``: شمارش ارجاعی که یک شیء را تعریف می‌کند"
-
-msgid "as immortal."
-msgstr "به‌عنوان نامیرا."
 
 msgid "``_Py_IsImmortal`` Checks if an object has the immortal reference count."
 msgstr "``_Py_IsImmortal`` بررسی می‌کند که آیا یک شیء دارای شمارش ارجاع نامیرا است یا خیر."
 
-msgid "``PyObject_HEAD_INIT`` This will now initialize reference count to"
+#, fuzzy
+#| msgid "``PyObject_HEAD_INIT`` This will now initialize reference count to"
+msgid "``PyObject_HEAD_INIT`` This will now initialize reference count to ``_Py_IMMORTAL_REFCNT`` when used with ``Py_BUILD_CORE``."
 msgstr "``PyObject_HEAD_INIT`` اکنون شمارش ارجاع را مقداردهی اولیه می‌کند به"
 
-msgid "``_Py_IMMORTAL_REFCNT`` when used with ``Py_BUILD_CORE``."
-msgstr "``_Py_IMMORTAL_REFCNT`` هنگامی که همراه با ``Py_BUILD_CORE`` استفاده شود."
-
-msgid "``SSTATE_INTERNED_IMMORTAL`` An identifier for interned unicode objects"
+#, fuzzy
+#| msgid "``SSTATE_INTERNED_IMMORTAL`` An identifier for interned unicode objects"
+msgid "``SSTATE_INTERNED_IMMORTAL`` An identifier for interned unicode objects that are immortal."
 msgstr "``SSTATE_INTERNED_IMMORTAL`` شناسه‌ای برای اشیاء یونیکد درونی‌سازی‌شده"
 
-msgid "that are immortal."
-msgstr "که نامیرا هستند."
+#, fuzzy
+#| msgid "``SSTATE_INTERNED_IMMORTAL`` An identifier for interned unicode objects"
+msgid "``SSTATE_INTERNED_IMMORTAL_STATIC`` An identifier for interned unicode objects that are immortal and static"
+msgstr "``SSTATE_INTERNED_IMMORTAL`` شناسه‌ای برای اشیاء یونیکد درونی‌سازی‌شده"
 
-msgid "``SSTATE_INTERNED_IMMORTAL_STATIC`` An identifier for interned unicode"
-msgstr "``SSTATE_INTERNED_IMMORTAL_STATIC`` شناسه‌ای برای یونیکد درونی‌سازی‌شده"
-
-msgid "objects that are immortal and static"
-msgstr "اشیایی که نامیرا و ایستا هستند"
-
-msgid "``sys.getunicodeinternedsize`` This returns the total number of unicode"
-msgstr "``sys.getunicodeinternedsize`` این تعداد کل یونیکد را برمی‌گرداند"
-
-msgid "objects that have been interned. This is now needed for :file:`refleak.py` to correctly track reference counts and allocated blocks"
+#, fuzzy
+#| msgid "objects that have been interned. This is now needed for :file:`refleak.py` to correctly track reference counts and allocated blocks"
+msgid "``sys.getunicodeinternedsize`` This returns the total number of unicode objects that have been interned. This is now needed for :file:`refleak.py` to correctly track reference counts and allocated blocks"
 msgstr "اشیایی که درون‌سازی (intern) شده‌اند. این امر اکنون لازم است تا :file:`refleak.py` بتواند شمارش ارجاع و بلوک‌های تخصیص‌یافته را به‌درستی پیگیری کند"
 
 msgid "(Contributed by Eddie Elizondo in :gh:`84436`.)"
@@ -2987,6 +2982,24 @@ msgstr ":c:func:`!PyUnicode_GET_DATA_SIZE`"
 
 msgid "Remove the ``PyUnicode_InternImmortal()`` function macro. (Contributed by Victor Stinner in :gh:`85858`.)"
 msgstr "ماکروی تابع ``PyUnicode_InternImmortal()`` حذف شد. (مشارکت‌شده توسط Victor Stinner در :gh:`85858`.)"
+
+#~ msgid "as immortal."
+#~ msgstr "به‌عنوان نامیرا."
+
+#~ msgid "``_Py_IMMORTAL_REFCNT`` when used with ``Py_BUILD_CORE``."
+#~ msgstr "``_Py_IMMORTAL_REFCNT`` هنگامی که همراه با ``Py_BUILD_CORE`` استفاده شود."
+
+#~ msgid "that are immortal."
+#~ msgstr "که نامیرا هستند."
+
+#~ msgid "``SSTATE_INTERNED_IMMORTAL_STATIC`` An identifier for interned unicode"
+#~ msgstr "``SSTATE_INTERNED_IMMORTAL_STATIC`` شناسه‌ای برای یونیکد درونی‌سازی‌شده"
+
+#~ msgid "objects that are immortal and static"
+#~ msgstr "اشیایی که نامیرا و ایستا هستند"
+
+#~ msgid "``sys.getunicodeinternedsize`` This returns the total number of unicode"
+#~ msgstr "``sys.getunicodeinternedsize`` این تعداد کل یونیکد را برمی‌گرداند"
 
 #~ msgid ":c:type:`Py_UNICODE` type and the :c:macro:`!Py_UNICODE_WIDE` macro: Use :c:type:`wchar_t` instead."
 #~ msgstr "نوع :c:type:`Py_UNICODE` و ماکروی :c:macro:`!Py_UNICODE_WIDE`: به‌جای آن‌ها از :c:type:`wchar_t` استفاده کنید."

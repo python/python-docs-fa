@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-10 04:18+0000\n"
+"POT-Creation-Date: 2026-10-28 04:13+0000\n"
 "PO-Revision-Date: 2026-09-13 16:38+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: none\n"
@@ -355,8 +355,20 @@ msgstr "رابط جدید نقاط اجرای امن را برای اتصال ک
 msgid "For convenience, this interface is implemented in the :func:`sys.remote_exec` function. For example:"
 msgstr "برای سهولت، این رابط در تابع :func:`sys.remote_exec` پیاده‌سازی شده است. برای مثال:"
 
+#, fuzzy
+#| msgid ""
+#| "import sys\n"
+#| "from tempfile import NamedTemporaryFile\n"
+#| "\n"
+#| "with NamedTemporaryFile(mode='w', suffix='.py', delete=False) as f:\n"
+#| "    script_path = f.name\n"
+#| "    f.write(f'import my_debugger; my_debugger.connect({os.getpid()})')\n"
+#| "\n"
+#| "# Execute in process with PID 1234\n"
+#| "print('Behold! An offering:')\n"
+#| "sys.remote_exec(1234, script_path)"
 msgid ""
-"import sys\n"
+"import os, sys\n"
 "from tempfile import NamedTemporaryFile\n"
 "\n"
 "with NamedTemporaryFile(mode='w', suffix='.py', delete=False) as f:\n"
@@ -3452,10 +3464,14 @@ msgstr ":c:func:`!_PyUnicodeWriter_WriteStr`: ``_PyUnicodeWriter_WriteStr(&write
 msgid ":c:func:`!_PyUnicodeWriter_WriteSubstring`: replace ``_PyUnicodeWriter_WriteSubstring(&writer, str, start, end)`` with :c:func:`PyUnicodeWriter_WriteSubstring(writer, str, start, end) <PyUnicodeWriter_WriteSubstring>`."
 msgstr ":c:func:`!_PyUnicodeWriter_WriteSubstring`: ``_PyUnicodeWriter_WriteSubstring(&writer, str, start, end)`` را با :c:func:`PyUnicodeWriter_WriteSubstring(writer, str, start, end) <PyUnicodeWriter_WriteSubstring>` جایگزین کنید."
 
-msgid ":c:func:`!_PyUnicodeWriter_WriteASCIIString`: replace ``_PyUnicodeWriter_WriteASCIIString(&writer, str)`` with :c:func:`PyUnicodeWriter_WriteASCII(writer, str) <PyUnicodeWriter_WriteASCII>`."
+#, fuzzy
+#| msgid ":c:func:`!_PyUnicodeWriter_WriteASCIIString`: replace ``_PyUnicodeWriter_WriteASCIIString(&writer, str)`` with :c:func:`PyUnicodeWriter_WriteASCII(writer, str) <PyUnicodeWriter_WriteASCII>`."
+msgid ":c:func:`!_PyUnicodeWriter_WriteASCIIString`: replace ``_PyUnicodeWriter_WriteASCIIString(&writer, str, size)`` with :c:func:`PyUnicodeWriter_WriteASCII(writer, str, size) <PyUnicodeWriter_WriteASCII>`."
 msgstr ":c:func:`!_PyUnicodeWriter_WriteASCIIString`: ``_PyUnicodeWriter_WriteASCIIString(&writer, str)`` را با :c:func:`PyUnicodeWriter_WriteASCII(writer, str) <PyUnicodeWriter_WriteASCII>` جایگزین کنید."
 
-msgid ":c:func:`!_PyUnicodeWriter_WriteLatin1String`: replace ``_PyUnicodeWriter_WriteLatin1String(&writer, str)`` with :c:func:`PyUnicodeWriter_WriteUTF8(writer, str) <PyUnicodeWriter_WriteUTF8>`."
+#, fuzzy
+#| msgid ":c:func:`!_PyUnicodeWriter_WriteLatin1String`: replace ``_PyUnicodeWriter_WriteLatin1String(&writer, str)`` with :c:func:`PyUnicodeWriter_WriteUTF8(writer, str) <PyUnicodeWriter_WriteUTF8>`."
+msgid ":c:func:`!_PyUnicodeWriter_WriteLatin1String`: replace ``_PyUnicodeWriter_WriteLatin1String(&writer, str, size)`` by decoding the string with :c:func:`PyUnicode_DecodeLatin1`, writing the result with :c:func:`PyUnicodeWriter_WriteStr`, and releasing the result with :c:func:`Py_DECREF`."
 msgstr ":c:func:`!_PyUnicodeWriter_WriteLatin1String`: ``_PyUnicodeWriter_WriteLatin1String(&writer, str)`` را با :c:func:`PyUnicodeWriter_WriteUTF8(writer, str) <PyUnicodeWriter_WriteUTF8>` جایگزین کنید."
 
 msgid ":c:func:`!_PyUnicodeWriter_Prepare`: (no replacement)."

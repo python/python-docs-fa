@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-28 04:13+0000\n"
 "PO-Revision-Date: 2026-09-13 07:20+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -1671,7 +1671,9 @@ msgstr "آرگومان‌های غیر عدد صحیح برای :func:`random.ra
 msgid "The various ``load_module()`` methods of :mod:`importlib` have been documented as deprecated since Python 3.6, but will now also trigger a :exc:`DeprecationWarning`. Use :meth:`~importlib.abc.Loader.exec_module` instead. (Contributed by Brett Cannon in :issue:`26131`.)"
 msgstr "متدهای گوناگون ``load_module()`` در :mod:`importlib` از پایتون 3.6 به‌عنوان منسوخ مستند شده‌اند، اما اکنون علاوه بر آن، یک :exc:`DeprecationWarning` نیز ایجاد خواهند کرد. به‌جای آن از :meth:`~importlib.abc.Loader.exec_module` استفاده کنید. (مشارکت‌شده توسط Brett Cannon در :issue:`26131`.)"
 
-msgid ":meth:`!zimport.zipimporter.load_module` has been deprecated in preference for :meth:`~zipimport.zipimporter.exec_module`. (Contributed by Brett Cannon in :issue:`26131`.)"
+#, fuzzy
+#| msgid ":meth:`!zimport.zipimporter.load_module` has been deprecated in preference for :meth:`~zipimport.zipimporter.exec_module`. (Contributed by Brett Cannon in :issue:`26131`.)"
+msgid ":meth:`!zipimport.zipimporter.load_module` has been deprecated in preference for :meth:`~zipimport.zipimporter.exec_module`. (Contributed by Brett Cannon in :issue:`26131`.)"
 msgstr ":meth:`!zimport.zipimporter.load_module` به نفع :meth:`~zipimport.zipimporter.exec_module` منسوخ شده است. (مشارکت‌شده توسط Brett Cannon در :issue:`26131`.)"
 
 msgid "The use of ``importlib.abc.Loader.load_module`` by the import system now triggers an :exc:`ImportWarning` as :meth:`~importlib.abc.Loader.exec_module` is preferred. (Contributed by Brett Cannon in :issue:`26131`.)"
@@ -1695,7 +1697,9 @@ msgstr "منسوخ‌شدگی‌های :mod:`!imp`، :func:`!importlib.find_load
 msgid "The import system now uses the ``__spec__`` attribute on modules before falling back on :meth:`!module_repr` for a module's ``__repr__()`` method. Removal of the use of ``module_repr()`` is scheduled for Python 3.12. (Contributed by Brett Cannon in :issue:`42137`.)"
 msgstr "سیستم ایمپورت اکنون پیش از بازگشت به :meth:`!module_repr` برای متد ``__repr__()`` یک ماژول، از ویژگی ``__spec__`` روی ماژول‌ها استفاده می‌کند. حذف استفاده از ``module_repr()`` برای پایتون 3.12 برنامه‌ریزی شده است. (مشارکت‌شده توسط Brett Cannon در :issue:`42137`.)"
 
-msgid ":meth:`!importlib.abc.Loader.module_repr`, :meth:`!importlib.machinery.FrozenLoader.module_repr`, and :meth:`!importlib.machinery.BuiltinLoader.module_repr` are deprecated and slated for removal in Python 3.12. (Contributed by Brett Cannon in :issue:`42136`.)"
+#, fuzzy
+#| msgid ":meth:`!importlib.abc.Loader.module_repr`, :meth:`!importlib.machinery.FrozenLoader.module_repr`, and :meth:`!importlib.machinery.BuiltinLoader.module_repr` are deprecated and slated for removal in Python 3.12. (Contributed by Brett Cannon in :issue:`42136`.)"
+msgid ":meth:`!importlib.abc.Loader.module_repr`, :meth:`!importlib.machinery.FrozenImporter.module_repr`, and :meth:`!importlib.machinery.BuiltinImporter.module_repr` are deprecated and slated for removal in Python 3.12. (Contributed by Brett Cannon in :issue:`42136`.)"
 msgstr ":meth:`!importlib.abc.Loader.module_repr`، :meth:`!importlib.machinery.FrozenLoader.module_repr` و :meth:`!importlib.machinery.BuiltinLoader.module_repr` منسوخ شده‌اند و قرار است در پایتون 3.12 حذف شوند. (مشارکت‌شده توسط Brett Cannon در :issue:`42136`.)"
 
 msgid "``sqlite3.OptimizedUnicode`` has been undocumented and obsolete since Python 3.3, when it was made an alias to :class:`str`.  It is now deprecated, scheduled for removal in Python 3.12. (Contributed by Erlend E. Aasland in :issue:`42264`.)"
@@ -1722,7 +1726,9 @@ msgstr "``threading.Event.isSet`` => :meth:`threading.Event.is_set`"
 msgid "``threading.Thread.setName`` => :attr:`threading.Thread.name`"
 msgstr "``threading.Thread.setName`` => :attr:`threading.Thread.name`"
 
-msgid "``threading.thread.getName`` => :attr:`threading.Thread.name`"
+#, fuzzy
+#| msgid "``threading.thread.getName`` => :attr:`threading.Thread.name`"
+msgid "``threading.Thread.getName`` => :attr:`threading.Thread.name`"
 msgstr "``threading.thread.getName`` => :attr:`threading.Thread.name`"
 
 msgid "``threading.Thread.isDaemon`` => :attr:`threading.Thread.daemon`"
@@ -1889,8 +1895,16 @@ msgstr "هیچ جایگزین مستقیمی برای ``PyParser_SimpleParseFile
 msgid "To compile a file given a ``char *`` filename, explicitly open the file, read it and compile the result. One way to do this is using the :py:mod:`io` module with :c:func:`PyImport_ImportModule`, :c:func:`PyObject_CallMethod`, :c:func:`PyBytes_AsString` and :c:func:`Py_CompileString`, as sketched below. (Declarations and error handling are omitted.) ::"
 msgstr "برای کامپایل پرونده‌ای که نام آن به‌صورت ``char *`` داده شده است، پرونده را به‌طور صریح باز کنید، آن را بخوانید و نتیجه را کامپایل کنید. یکی از راه‌های انجام این کار، استفاده از ماژول :py:mod:`io` به‌همراه :c:func:`PyImport_ImportModule`، :c:func:`PyObject_CallMethod`، :c:func:`PyBytes_AsString` و :c:func:`Py_CompileString` است، همان‌طور که در ادامه به‌صورت طرح‌وار نشان داده شده است. (اعلان‌ها و مدیریت خطا حذف شده‌اند.) ::"
 
+#, fuzzy
+#| msgid ""
+#| "io_module = Import_ImportModule(\"io\");\n"
+#| "fileobject = PyObject_CallMethod(io_module, \"open\", \"ss\", filename, \"rb\");\n"
+#| "source_bytes_object = PyObject_CallMethod(fileobject, \"read\", \"\");\n"
+#| "result = PyObject_CallMethod(fileobject, \"close\", \"\");\n"
+#| "source_buf = PyBytes_AsString(source_bytes_object);\n"
+#| "code = Py_CompileString(source_buf, filename, Py_file_input);"
 msgid ""
-"io_module = Import_ImportModule(\"io\");\n"
+"io_module = PyImport_ImportModule(\"io\");\n"
 "fileobject = PyObject_CallMethod(io_module, \"open\", \"ss\", filename, \"rb\");\n"
 "source_bytes_object = PyObject_CallMethod(fileobject, \"read\", \"\");\n"
 "result = PyObject_CallMethod(fileobject, \"close\", \"\");\n"
