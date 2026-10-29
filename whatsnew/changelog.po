@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-28 04:13+0000\n"
+"POT-Creation-Date: 2026-10-29 04:13+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -57,6 +57,9 @@ msgstr "کتابخانه"
 msgid ":gh:`160596`: Fix the error message for invalid data passed to :meth:`!asyncio.proactor_events.sendto`."
 msgstr ":gh:`107545`: بهبود پیام‌های خطایی که ممکن است توسط :meth:`~socket.socket.setsockopt` بالا آورده شوند."
 
+msgid ":gh:`160561`: Fix a descriptor leak in :func:`socket.fromfd` when the socket constructor rejects its arguments. The duplicated descriptor was never closed."
+msgstr ""
+
 msgid ":gh:`160513`: Fix :meth:`asyncio.loop.start_tls` and :meth:`asyncio.StreamWriter.start_tls` not calling the protocol's :meth:`~asyncio.BaseProtocol.connection_lost` when the connection is lost, the handshake times out or the call is cancelled during the TLS handshake. :meth:`asyncio.StreamWriter.wait_closed` no longer waits forever after such a failure."
 msgstr ""
 
@@ -64,6 +67,18 @@ msgstr ""
 #| msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when passing :class:`ctypes.Structure` or :class:`ctypes.Union` instances by value to ctypes foreign functions."
 msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when first using a Chinese, Japanese or Korean codec."
 msgstr ":gh:`151126`: رفع فروپاشی ناشی از تنظیم‌نشدن :exc:`MemoryError` هنگام شکست در تخصیص حافظه، در زمان ارسال نمونه‌های :class:`ctypes.Structure` یا :class:`ctypes.Union` به‌صورت مقدار (by value) به توابع خارجی ctypes."
+
+msgid "Tests"
+msgstr "آزمون‌ها"
+
+msgid ":gh:`158975`: Replace fixed sleeps used for synchronization in multiprocessing tests with bounded waits to avoid failures on slow or overloaded systems."
+msgstr ""
+
+msgid "Build"
+msgstr "ساخت"
+
+msgid ":gh:`160704`: Fix C11-C17 builds with old C library headers that do not define ``static_assert``, including glibc versions older than 2.16."
+msgstr ""
 
 #, fuzzy
 #| msgid "Python 3.5.2 final"
@@ -293,9 +308,6 @@ msgstr ""
 
 msgid ":gh:`140036`: Avoid hanging in floor division of pure Python :class:`decimal.Decimal` instances when the context precision is very large. Patch by Bénédikt Tran."
 msgstr ""
-
-msgid "Build"
-msgstr "ساخت"
 
 msgid ":gh:`128883`: Fix crashes with ``-X perf`` and ``-X perf_jit`` in BOLT builds. The ELF perf trampoline templates now use read-only data sections."
 msgstr ""
@@ -875,9 +887,6 @@ msgstr ":gh:`142083`: کد نوع ``'w'`` در رشته‌مستند :class:`arr
 
 msgid ":gh:`107689`: Added docstrings to abstract ctypes."
 msgstr ":gh:`107689`: اضافه کردن رشته‌های مستند (docstrings) به ctypes انتزاعی."
-
-msgid "Tests"
-msgstr "آزمون‌ها"
 
 msgid ":gh:`159293`: Restore the recursion limit after the free-threading recursion-limit race test to avoid failures in subsequent tests run in the same process."
 msgstr ":gh:`159293`: حد بازگشتی پس از آزمون رقابت حد بازگشتی نخ‌بندی آزاد بازیابی می‌شود تا از بروز خطا در آزمون‌های بعدی که در همان فرایند اجرا می‌شوند، جلوگیری شود."

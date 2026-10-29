@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-29 04:13+0000\n"
 "PO-Revision-Date: 2021-06-28 00:48+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -176,7 +176,9 @@ msgstr "پیمایش"
 msgid "The :c:member:`~PyTypeObject.tp_traverse` handler must have the following type:"
 msgstr "هندلر :c:member:`~PyTypeObject.tp_traverse` باید از نوع زیر باشد:"
 
-msgid "Traversal function for a garbage-collected object, used by the garbage collector to detect reference cycles. Implementations must call the *visit* function for each object directly contained by *self*, with the parameters to *visit* being the contained object and the *arg* value passed to the handler.  The *visit* function must not be called with a ``NULL`` object argument.  If *visit* returns a non-zero value, that value should be returned immediately."
+#, fuzzy
+#| msgid "Traversal function for a garbage-collected object, used by the garbage collector to detect reference cycles. Implementations must call the *visit* function for each object directly contained by *self*, with the parameters to *visit* being the contained object and the *arg* value passed to the handler.  The *visit* function must not be called with a ``NULL`` object argument.  If *visit* returns a non-zero value, that value should be returned immediately."
+msgid "Traversal function for a garbage-collected object, used by the garbage collector to detect reference cycles. Implementations must call the *visit* function for each object directly contained by *self*, with the parameters to *visit* being the contained object and the *arg* value passed to the handler.  The *visit* function must not be called with a ``NULL`` object argument.  If *visit* returns a non-zero value, that value should be returned immediately. Otherwise, return zero."
 msgstr "تابع پیمایش برای یک شیء جمع‌آوری‌شده در زباله‌جمع‌کن، که توسط زباله‌جمع‌کن برای تشخیص چرخه‌های ارجاع استفاده می‌شود. پیاده‌سازی‌ها باید تابع *visit* را برای هر شیء که مستقیماً توسط *self* دربرگرفته شده است فراخوانی کنند، به طوری که پارامترهای ارسالی به *visit* شامل شیء محصورشده و مقدار *arg* ارسال‌شده به هندلر باشند. تابع *visit* نباید با یک آرگومان شیء ``NULL`` فراخوانی شود. اگر *visit* یک مقدار غیرصفر برگرداند، آن مقدار باید بلافاصله بازگردانده شود."
 
 msgid "A typical :c:member:`!tp_traverse` function calls the :c:func:`Py_VISIT` convenience macro on each of the instance's members that are Python objects that the instance owns. For example, this is a (slightly outdated) traversal function for the :py:class:`threading.local` class::"
@@ -246,6 +248,9 @@ msgstr "این یعنی *بیشتر* توابع C API پایتون ممکن اس
 msgid "For a list of safe functions, see a :ref:`separate section <duringgc-functions>` below."
 msgstr "برای فهرستی از توابع امن، به :ref:`بخش جداگانه <duringgc-functions>` در ادامه مراجعه کنید."
 
+msgid "If an error occurs during traversal, ignore it and return 0. If ``tp_traverse`` fails to visit some strong references, garbage reference cycles involving the skipped references will not be reliably broken, but correctness won't be affected. For example, if traversal requires a lock that cannot be acquired promptly, skip the traversal. The garbage collector will visit your object again in a future pass."
+msgstr ""
+
 msgid "The :c:func:`Py_VISIT` call may be skipped for those members that provably cannot participate in reference cycles. In the ``local_traverse`` example above, there is also a ``self->key`` member, but it can only be ``NULL`` or a Python string and therefore cannot be part of a reference cycle."
 msgstr "فراخوانی :c:func:`Py_VISIT` را می‌توان برای آن دسته از اعضایی که ثابت شده نمی‌توانند در چرخه‌های ارجاع شرکت کنند، رد کرد. در نمونه‌ی ``local_traverse`` در بالا، یک عضو ``self->key`` نیز وجود دارد، اما این عضو فقط می‌تواند ``NULL`` یا یک رشته‌ی پایتون باشد و بنابراین نمی‌تواند بخشی از یک چرخه ارجاع باشد."
 
@@ -270,9 +275,18 @@ msgstr "اگر عبارت :c:expr:`PyObject *` *o* برابر با ``NULL`` نی
 msgid "This corresponds roughly to::"
 msgstr "این مورد تقریباً با این معادل است::"
 
+#, fuzzy
+#| msgid ""
+#| "#define Py_VISIT(o)                             \\\n"
+#| "   if (op) {                                    \\\n"
+#| "      int visit_result = visit(o, arg);         \\\n"
+#| "      if (visit_result != 0) {                  \\\n"
+#| "         return visit_result;                   \\\n"
+#| "      }                                         \\\n"
+#| "   }"
 msgid ""
 "#define Py_VISIT(o)                             \\\n"
-"   if (op) {                                    \\\n"
+"   if (o) {                                    \\\n"
 "      int visit_result = visit(o, arg);         \\\n"
 "      if (visit_result != 0) {                  \\\n"
 "         return visit_result;                   \\\n"

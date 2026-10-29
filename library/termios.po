@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-29 04:13+0000\n"
 "PO-Revision-Date: 2026-09-15 07:59+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -45,6 +45,9 @@ msgstr "این ماژول توابع زیر را تعریف می‌کند:"
 msgid "Return a list containing the tty attributes for file descriptor *fd*, as follows: ``[iflag, oflag, cflag, lflag, ispeed, ospeed, cc]`` where *cc* is a list of the tty special characters (each a string of length 1, except the items with indices :const:`VMIN` and :const:`VTIME`, which are integers when these fields are defined).  The interpretation of the flags and the speeds as well as the indexing in the *cc* array must be done using the symbolic constants defined in the :mod:`!termios` module."
 msgstr "فهرستی حاوی ویژگی‌های tty برای توصیف‌گر فایل *fd* برمی‌گرداند، به این صورت: ``[iflag, oflag, cflag, lflag, ispeed, ospeed, cc]`` که در آن *cc* فهرستی از نویسه‌های ویژه tty است (هرکدام رشته‌ای به طول ۱، به‌جز آیتم‌های دارای اندیس‌های :const:`VMIN` و :const:`VTIME`، که وقتی این فیلدها تعریف شده باشند، عدد صحیح هستند). تفسیر پرچم‌ها و سرعت‌ها و همچنین اندیس‌دهی در آرایه‌ی *cc* باید با استفاده از ثابت‌های نمادین تعریف‌شده در ماژول :mod:`!termios` انجام شود."
 
+msgid "Indices into the *cc* array controlling a non-canonical read: the minimum number of characters to read and the timeout in tenths of a second, respectively."
+msgstr ""
+
 msgid "Set the tty attributes for file descriptor *fd* from the *attributes*, which is a list like the one returned by :func:`tcgetattr`.  The *when* argument determines when the attributes are changed:"
 msgstr "ویژگی‌های tty را برای توصیف‌گر فایل *fd* با استفاده از *attributes* تنظیم کنید، که فهرستی مانند فهرست بازگردانده‌شده توسط :func:`tcgetattr` است. آرگومان *when* تعیین می‌کند که ویژگی‌ها چه زمانی تغییر کنند:"
 
@@ -66,14 +69,26 @@ msgstr "صبر کنید تا تمام خروجی نوشته‌شده در توص
 msgid "Discard queued data on file descriptor *fd*.  The *queue* selector specifies which queue: :const:`TCIFLUSH` for the input queue, :const:`TCOFLUSH` for the output queue, or :const:`TCIOFLUSH` for both queues."
 msgstr "داده‌های در صف روی توصیف‌گر فایل *fd* را دور بریزید. انتخاب‌گر *queue* مشخص می‌کند کدام صف: :const:`TCIFLUSH` برای صف ورودی، :const:`TCOFLUSH` برای صف خروجی، یا :const:`TCIOFLUSH` برای هر دو صف."
 
+msgid "Values for the *queue* selector: the input queue, the output queue, or both queues, respectively."
+msgstr ""
+
 msgid "Suspend or resume input or output on file descriptor *fd*.  The *action* argument can be :const:`TCOOFF` to suspend output, :const:`TCOON` to restart output, :const:`TCIOFF` to suspend input, or :const:`TCION` to restart input."
 msgstr "تعلیق یا ازسرگیری ورودی یا خروجی روی توصیف‌گر فایل *fd*. آرگومان *action* می‌تواند برای تعلیق خروجی :const:`TCOOFF`، برای ازسرگیری خروجی :const:`TCOON`، برای تعلیق ورودی :const:`TCIOFF`، یا برای ازسرگیری ورودی :const:`TCION` باشد."
+
+msgid "Values for the *action* argument: suspend output, restart output, suspend input, or restart input, respectively."
+msgstr ""
 
 msgid "Return a tuple ``(ws_row, ws_col)`` containing the tty window size for file descriptor *fd*. Requires :const:`termios.TIOCGWINSZ` or :const:`termios.TIOCGSIZE`."
 msgstr "یک تاپل ``(ws_row, ws_col)`` بازمی‌گرداند که حاوی اندازه‌ی پنجره‌ی tty برای توصیف‌گر فایل *fd* است. نیازمند :const:`termios.TIOCGWINSZ` یا :const:`termios.TIOCGSIZE` است."
 
+msgid "``ioctl()`` requests for querying the tty window size.  Not defined on all platforms; :func:`tcgetwinsize` requires at least one of them."
+msgstr ""
+
 msgid "Set the tty window size for file descriptor *fd* from *winsize*, which is a two-item tuple ``(ws_row, ws_col)`` like the one returned by :func:`tcgetwinsize`. Requires at least one of the pairs (:const:`termios.TIOCGWINSZ`, :const:`termios.TIOCSWINSZ`); (:const:`termios.TIOCGSIZE`, :const:`termios.TIOCSSIZE`) to be defined."
 msgstr "اندازه‌ی پنجره‌ی tty برای توصیف‌گر فایل *fd* را از *winsize* تنظیم می‌کند، که یک تاپل دو آیتمی ``(ws_row, ws_col)`` مانند آنچه توسط :func:`tcgetwinsize` برگردانده می‌شود، است. نیاز است حداقل یکی از جفت‌های (:const:`termios.TIOCGWINSZ`، :const:`termios.TIOCSWINSZ`)؛ (:const:`termios.TIOCGSIZE`، :const:`termios.TIOCSSIZE`) تعریف شده باشد."
+
+msgid "``ioctl()`` requests for setting the tty window size.  Not defined on all platforms; see :func:`tcsetwinsize` for the required pairs."
+msgstr ""
 
 msgid "Module :mod:`tty`"
 msgstr "ماژول :mod:`tty`"
