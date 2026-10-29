@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-10-28)
+(به‌روزرسانی: 2026-10-29)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -17,7 +17,6 @@
 | c-api/apiabiversion.po | 100.0% | 0.0% | 62 | 0 | 0 |
 | c-api/arg.po | 100.0% | 0.0% | 208 | 0 | 0 |
 | c-api/bool.po | 100.0% | 0.0% | 11 | 0 | 0 |
-| c-api/buffer.po | 100.0% | 0.0% | 119 | 0 | 0 |
 | c-api/bytearray.po | 100.0% | 0.0% | 24 | 0 | 0 |
 | c-api/capsule.po | 100.0% | 0.0% | 36 | 0 | 0 |
 | c-api/cell.po | 100.0% | 0.0% | 11 | 0 | 0 |
@@ -34,7 +33,6 @@
 | c-api/file.po | 100.0% | 0.0% | 36 | 0 | 0 |
 | c-api/float.po | 100.0% | 0.0% | 55 | 0 | 0 |
 | c-api/frame.po | 100.0% | 0.0% | 60 | 0 | 0 |
-| c-api/gcsupport.po | 100.0% | 0.0% | 107 | 0 | 0 |
 | c-api/gen.po | 100.0% | 0.0% | 18 | 0 | 0 |
 | c-api/hash.po | 100.0% | 0.0% | 43 | 0 | 0 |
 | c-api/index.po | 100.0% | 0.0% | 2 | 0 | 0 |
@@ -42,7 +40,6 @@
 | c-api/iter.po | 100.0% | 0.0% | 12 | 0 | 0 |
 | c-api/lifecycle.po | 100.0% | 0.0% | 45 | 0 | 0 |
 | c-api/list.po | 100.0% | 0.0% | 38 | 0 | 0 |
-| c-api/long.po | 100.0% | 0.0% | 182 | 0 | 0 |
 | c-api/mapping.po | 100.0% | 0.0% | 23 | 0 | 0 |
 | c-api/marshal.po | 100.0% | 0.0% | 19 | 0 | 0 |
 | c-api/memory.po | 100.0% | 0.0% | 219 | 0 | 0 |
@@ -66,7 +63,6 @@
 | c-api/slice.po | 100.0% | 0.0% | 26 | 0 | 0 |
 | c-api/slots.po | 100.0% | 0.0% | 45 | 0 | 0 |
 | c-api/stable.po | 100.0% | 0.0% | 97 | 0 | 0 |
-| c-api/structures.po | 100.0% | 0.0% | 218 | 0 | 0 |
 | c-api/subinterpreters.po | 100.0% | 0.0% | 90 | 0 | 0 |
 | c-api/synchronization.po | 100.0% | 0.0% | 68 | 0 | 0 |
 | c-api/sys.po | 100.0% | 0.0% | 95 | 0 | 0 |
@@ -391,7 +387,6 @@
 | library/tarfile.po | 100.0% | 0.0% | 368 | 0 | 0 |
 | library/telnetlib.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/tempfile.po | 100.0% | 0.0% | 90 | 0 | 0 |
-| library/termios.po | 100.0% | 0.0% | 25 | 0 | 0 |
 | library/test.po | 100.0% | 0.0% | 345 | 0 | 0 |
 | library/text.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/textwrap.po | 100.0% | 0.0% | 58 | 0 | 0 |
@@ -420,7 +415,6 @@
 | library/urllib.error.po | 100.0% | 0.0% | 15 | 0 | 0 |
 | library/urllib.parse.po | 100.0% | 0.0% | 176 | 0 | 0 |
 | library/urllib.po | 100.0% | 0.0% | 7 | 0 | 0 |
-| library/urllib.request.po | 100.0% | 0.0% | 298 | 0 | 0 |
 | library/urllib.robotparser.po | 100.0% | 0.0% | 19 | 0 | 0 |
 | library/uu.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/uuid.po | 100.0% | 0.0% | 79 | 0 | 0 |
@@ -504,12 +498,13 @@
 | whatsnew/3.8.po | 99.8% | 0.2% | 512 | 1 | 0 |
 | glossary.po | 99.8% | 0.2% | 500 | 1 | 0 |
 | library/asyncio-eventloop.po | 99.8% | 0.2% | 425 | 1 | 0 |
-| whatsnew/changelog.po | 99.7% | 0.1% | 15728 | 14 | 26 |
 | library/decimal.po | 99.7% | 0.3% | 386 | 1 | 0 |
 | whatsnew/3.14.po | 99.7% | 0.3% | 1108 | 3 | 0 |
+| whatsnew/changelog.po | 99.7% | 0.1% | 15728 | 14 | 29 |
 | whatsnew/3.13.po | 99.7% | 0.3% | 988 | 3 | 0 |
 | whatsnew/2.4.po | 99.7% | 0.3% | 317 | 1 | 0 |
 | library/mailbox.po | 99.7% | 0.3% | 309 | 1 | 0 |
+| library/urllib.request.po | 99.7% | 0.0% | 298 | 0 | 1 |
 | library/time.po | 99.6% | 0.4% | 280 | 1 | 0 |
 | whatsnew/3.15.po | 99.6% | 0.0% | 819 | 0 | 3 |
 | builtins/functions.po | 99.6% | 0.2% | 539 | 1 | 1 |
@@ -518,13 +513,16 @@
 | c-api/intro.po | 99.6% | 0.4% | 243 | 1 | 0 |
 | c-api/interp-lifecycle.po | 99.6% | 0.4% | 222 | 1 | 0 |
 | c-api/init_config.po | 99.5% | 0.5% | 658 | 3 | 0 |
+| c-api/structures.po | 99.5% | 0.0% | 218 | 0 | 1 |
 | whatsnew/2.2.po | 99.5% | 0.5% | 214 | 1 | 0 |
 | library/select.po | 99.5% | 0.5% | 211 | 1 | 0 |
 | library/shutil.po | 99.5% | 0.0% | 195 | 0 | 1 |
 | whatsnew/3.11.po | 99.5% | 0.5% | 772 | 4 | 0 |
+| c-api/long.po | 99.5% | 0.0% | 182 | 0 | 1 |
 | whatsnew/3.12.po | 99.4% | 0.6% | 904 | 5 | 0 |
 | deprecations/index.po | 99.3% | 0.7% | 273 | 2 | 0 |
 | whatsnew/3.10.po | 99.3% | 0.7% | 546 | 4 | 0 |
+| c-api/buffer.po | 99.2% | 0.0% | 119 | 0 | 1 |
 | howto/mro.po | 99.2% | 0.8% | 119 | 1 | 0 |
 | library/re.po | 99.1% | 0.7% | 457 | 3 | 1 |
 | library/email.message.po | 99.1% | 0.9% | 110 | 1 | 0 |
@@ -545,6 +543,7 @@
 | c-api/code.po | 97.6% | 2.4% | 81 | 2 | 0 |
 | library/fractions.po | 97.6% | 2.4% | 40 | 1 | 0 |
 | c-api/exceptions.po | 97.4% | 0.0% | 294 | 0 | 8 |
+| c-api/gcsupport.po | 97.2% | 1.9% | 105 | 2 | 1 |
 | c-api/call.po | 96.9% | 3.1% | 93 | 3 | 0 |
 | library/concurrent.futures.po | 96.8% | 0.8% | 120 | 1 | 3 |
 | c-api/iterator.po | 96.0% | 0.0% | 24 | 0 | 1 |
@@ -556,7 +555,8 @@
 | deprecations/c-api-pending-removal-in-3.18.po | 90.9% | 9.1% | 20 | 2 | 0 |
 | reference/grammar.po | 85.7% | 14.3% | 6 | 1 | 0 |
 | library/dbm.po | 85.6% | 1.5% | 113 | 2 | 17 |
+| library/termios.po | 83.3% | 0.0% | 25 | 0 | 5 |
 | library/tokenize.po | 75.8% | 3.2% | 47 | 2 | 13 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **99.7%** | **0.2%** | **90670** | **182** | **89** |
+| **مجموع** | **99.7%** | **0.2%** | **90668** | **184** | **102** |
 <!-- TRANSLATION_STATUS_END -->
