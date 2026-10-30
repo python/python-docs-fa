@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-30 04:13+0000\n"
 "PO-Revision-Date: 2026-09-13 14:15+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -361,7 +361,9 @@ msgstr "رفتار راه‌اندازی مجدد فراخوانی سیستم ر
 msgid "See the man page :manpage:`siginterrupt(3)` for further information."
 msgstr "برای اطلاعات بیشتر، صفحه راهنمای :manpage:`siginterrupt(3)` را ببینید."
 
-msgid "Note that installing a signal handler with :func:`signal` will reset the restart behaviour to interruptible by implicitly calling :c:func:`!siginterrupt` with a true *flag* value for the given signal."
+#, fuzzy
+#| msgid "Note that installing a signal handler with :func:`signal` will reset the restart behaviour to interruptible by implicitly calling :c:func:`!siginterrupt` with a true *flag* value for the given signal."
+msgid "Note that installing a signal handler with :func:`~signal.signal` will reset the restart behaviour to interruptible by implicitly calling :c:func:`!siginterrupt` with a true *flag* value for the given signal."
 msgstr "توجه داشته باشید که نصب یک هندلر سیگنال با :func:`signal`، رفتار شروع مجدد را از طریق فراخوانی ضمنی :c:func:`!siginterrupt` با مقدار درست برای *flag* مربوط به سیگنال مورد نظر، به حالت قابل‌قطع بازنشانی می‌کند."
 
 msgid "Set the handler for signal *signalnum* to the function *handler*.  *handler* can be a callable Python object taking two arguments (see below), or one of the special values :const:`signal.SIG_IGN` or :const:`signal.SIG_DFL`.  The previous signal handler will be returned (see the description of :func:`getsignal` above).  (See the Unix man page :manpage:`signal(2)` for further information.)"
@@ -370,7 +372,9 @@ msgstr "هندلر سیگنال *signalnum* را روی تابع *handler* تن�
 msgid "The *handler* is called with two arguments: the signal number and the current stack frame (``None`` or a frame object; for a description of frame objects, see the :ref:`description in the type hierarchy <frame-objects>` or see the attribute descriptions in the :mod:`inspect` module)."
 msgstr "*هندلر* با دو آرگومان فراخوانی می‌شود: شماره‌ی سیگنال و فریم پشته‌ی جاری (``None`` یا یک شیء فریم؛ برای توضیح اشیای فریم، :ref:`توضیح در سلسله‌مراتب نوع <frame-objects>` یا توضیحات ویژگی‌ها در ماژول :mod:`inspect` را ببینید)."
 
-msgid "On Windows, :func:`signal` can only be called with :const:`SIGABRT`, :const:`SIGFPE`, :const:`SIGILL`, :const:`SIGINT`, :const:`SIGSEGV`, :const:`SIGTERM`, or :const:`SIGBREAK`. A :exc:`ValueError` will be raised in any other case. Note that not all systems define the same set of signal names; an :exc:`AttributeError` will be raised if a signal name is not defined as ``SIG*`` module level constant."
+#, fuzzy
+#| msgid "On Windows, :func:`signal` can only be called with :const:`SIGABRT`, :const:`SIGFPE`, :const:`SIGILL`, :const:`SIGINT`, :const:`SIGSEGV`, :const:`SIGTERM`, or :const:`SIGBREAK`. A :exc:`ValueError` will be raised in any other case. Note that not all systems define the same set of signal names; an :exc:`AttributeError` will be raised if a signal name is not defined as ``SIG*`` module level constant."
+msgid "On Windows, :func:`~signal.signal` can only be called with :const:`SIGABRT`, :const:`SIGFPE`, :const:`SIGILL`, :const:`SIGINT`, :const:`SIGSEGV`, :const:`SIGTERM`, or :const:`SIGBREAK`. A :exc:`ValueError` will be raised in any other case. Note that not all systems define the same set of signal names; an :exc:`AttributeError` will be raised if a signal name is not defined as ``SIG*`` module level constant."
 msgstr "در ویندوز، :func:`signal` را فقط می‌توان با :const:`SIGABRT`، :const:`SIGFPE`، :const:`SIGILL`، :const:`SIGINT`، :const:`SIGSEGV`، :const:`SIGTERM` یا :const:`SIGBREAK` فراخوانی کرد. در هر حالت دیگر، یک :exc:`ValueError` پرتاب خواهد شد. توجه داشته باشید که همه‌ی سیستم‌ها مجموعه‌ی یکسانی از نام‌های سیگنال را تعریف نمی‌کنند؛ اگر یک نام سیگنال به‌عنوان ثابت سطح ماژول ``SIG*`` تعریف نشده باشد، یک :exc:`AttributeError` پرتاب خواهد شد."
 
 msgid "Examine the set of signals that are pending for delivery to the calling thread (i.e., the signals which have been raised while blocked).  Return the set of the pending signals."

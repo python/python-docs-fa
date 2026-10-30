@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-28 04:13+0000\n"
+"POT-Creation-Date: 2026-10-30 04:13+0000\n"
 "PO-Revision-Date: 2026-09-15 07:57+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -2548,7 +2548,9 @@ msgstr "توابع :func:`~warnings.formatwarning` و :func:`~warnings.showwarni
 msgid "A new function, :func:`~warnings.catch_warnings`, is a context manager intended for testing purposes that lets you temporarily modify the warning filters and then restore their original values (:issue:`3781`)."
 msgstr "تابع جدیدی، :func:`~warnings.catch_warnings`، مدیر زمینه‌ای است که برای اهداف آزمون در نظر گرفته شده و به شما اجازه می‌دهد فیلترهای هشدار را به‌طور موقت تغییر دهید و سپس مقادیر اصلی‌شان را بازگردانید (:issue:`3781`)."
 
-msgid "The XML-RPC :class:`SimpleXMLRPCServer <xmlrpc.server>` and :class:`DocXMLRPCServer <xmlrpc.server>` classes can now be prevented from immediately opening and binding to their socket by passing ``False`` as the *bind_and_activate* constructor parameter.  This can be used to modify the instance's :attr:`~socketserver.BaseServer.allow_reuse_address` attribute before calling the :meth:`~socketserver.BaseServer.server_bind` and :meth:`~socketserver.BaseServer.server_activate` methods to open the socket and begin listening for connections. (Contributed by Peter Parente; :issue:`1599845`.)"
+#, fuzzy
+#| msgid "The XML-RPC :class:`SimpleXMLRPCServer <xmlrpc.server>` and :class:`DocXMLRPCServer <xmlrpc.server>` classes can now be prevented from immediately opening and binding to their socket by passing ``False`` as the *bind_and_activate* constructor parameter.  This can be used to modify the instance's :attr:`~socketserver.BaseServer.allow_reuse_address` attribute before calling the :meth:`~socketserver.BaseServer.server_bind` and :meth:`~socketserver.BaseServer.server_activate` methods to open the socket and begin listening for connections. (Contributed by Peter Parente; :issue:`1599845`.)"
+msgid "The XML-RPC :class:`~xmlrpc.server.SimpleXMLRPCServer` and :class:`~xmlrpc.server.DocXMLRPCServer` classes can now be prevented from immediately opening and binding to their socket by passing ``False`` as the *bind_and_activate* constructor parameter.  This can be used to modify the instance's :attr:`~socketserver.BaseServer.allow_reuse_address` attribute before calling the :meth:`~socketserver.BaseServer.server_bind` and :meth:`~socketserver.BaseServer.server_activate` methods to open the socket and begin listening for connections. (Contributed by Peter Parente; :issue:`1599845`.)"
 msgstr "اکنون می‌توان با ارسال ``False`` به‌عنوان پارامتر سازنده‌ی *bind_and_activate*، مانع از آن شد که کلاس‌های :class:`SimpleXMLRPCServer <xmlrpc.server>` و :class:`DocXMLRPCServer <xmlrpc.server>` در XML-RPC بلافاصله سوکتشان را باز کنند و به آن مقید شوند. از این امکان می‌توان برای تغییر ویژگی :attr:`~socketserver.BaseServer.allow_reuse_address` نمونه، پیش از فراخوانی متدهای :meth:`~socketserver.BaseServer.server_bind` و :meth:`~socketserver.BaseServer.server_activate` به‌منظور باز کردن سوکت و آغاز گوش دادن به اتصال‌ها استفاده کرد. (مشارکت‌کرده: Peter Parente؛ :issue:`1599845`.)"
 
 msgid ":class:`~xmlrpc.server.SimpleXMLRPCServer` also has a :attr:`!_send_traceback_header` attribute; if true, the exception and formatted traceback are returned as HTTP headers \"X-Exception\" and \"X-Traceback\".  This feature is for debugging purposes only and should not be used on production servers because the tracebacks might reveal passwords or other sensitive information.  (Contributed by Alan McIntyre as part of his project for Google's Summer of Code 2007.)"

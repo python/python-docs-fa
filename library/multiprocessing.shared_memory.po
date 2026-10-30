@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-30 04:13+0000\n"
 "PO-Revision-Date: 2026-09-14 15:50+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -216,19 +216,27 @@ msgstr ""
 msgid "A subclass of :class:`multiprocessing.managers.BaseManager` which can be used for the management of shared memory blocks across processes."
 msgstr "یک کلاس فرعی از :class:`multiprocessing.managers.BaseManager` که می‌توان از آن برای مدیریت بلوک‌های حافظه مشترک بین فرایندها استفاده کرد."
 
-msgid "A call to :meth:`~multiprocessing.managers.BaseManager.start` on a :class:`!SharedMemoryManager` instance causes a new process to be started. This new process's sole purpose is to manage the life cycle of all shared memory blocks created through it.  To trigger the release of all shared memory blocks managed by that process, call :meth:`~multiprocessing.managers.BaseManager.shutdown` on the instance. This triggers a :meth:`~multiprocessing.shared_memory.SharedMemory.unlink` call on all of the :class:`SharedMemory` objects managed by that process and then stops the process itself.  By creating :class:`!SharedMemory` instances through a :class:`!SharedMemoryManager`, we avoid the need to manually track and trigger the freeing of shared memory resources."
+#, fuzzy
+#| msgid "A call to :meth:`~multiprocessing.managers.BaseManager.start` on a :class:`!SharedMemoryManager` instance causes a new process to be started. This new process's sole purpose is to manage the life cycle of all shared memory blocks created through it.  To trigger the release of all shared memory blocks managed by that process, call :meth:`~multiprocessing.managers.BaseManager.shutdown` on the instance. This triggers a :meth:`~multiprocessing.shared_memory.SharedMemory.unlink` call on all of the :class:`SharedMemory` objects managed by that process and then stops the process itself.  By creating :class:`!SharedMemory` instances through a :class:`!SharedMemoryManager`, we avoid the need to manually track and trigger the freeing of shared memory resources."
+msgid "A call to :meth:`~multiprocessing.managers.BaseManager.start` on a :class:`!SharedMemoryManager` instance causes a new process to be started. This new process's sole purpose is to manage the life cycle of all shared memory blocks created through it.  To trigger the release of all shared memory blocks managed by that process, call :meth:`~multiprocessing.managers.BaseManager.shutdown` on the instance. This triggers a :meth:`~multiprocessing.shared_memory.SharedMemory.unlink` call on all of the :class:`~multiprocessing.shared_memory.SharedMemory` objects managed by that process and then stops the process itself. By creating :class:`!SharedMemory` instances through a :class:`!SharedMemoryManager`, we avoid the need to manually track and trigger the freeing of shared memory resources."
 msgstr "فراخوانی :meth:`~multiprocessing.managers.BaseManager.start` روی یک نمونه :class:`!SharedMemoryManager` باعث شروع یک فرایند جدید می‌شود. تنها هدف این فرایند جدید، مدیریت چرخه عمر تمام بلوک‌های حافظه مشترک ایجادشده از طریق آن است. برای آزادسازی تمام بلوک‌های حافظه مشترک مدیریت‌شده توسط آن فرایند، :meth:`~multiprocessing.managers.BaseManager.shutdown` را روی این نمونه فراخوانی کنید. این کار باعث فراخوانی :meth:`~multiprocessing.shared_memory.SharedMemory.unlink` روی تمام اشیاء :class:`SharedMemory` مدیریت‌شده توسط آن فرایند می‌شود و سپس خود فرایند را متوقف می‌کند. با ایجاد نمونه‌های :class:`!SharedMemory` از طریق یک :class:`!SharedMemoryManager`، از نیاز به پیگیری دستی و آزادسازی منابع حافظه مشترک بی‌نیاز می‌شویم."
 
-msgid "This class provides methods for creating and returning :class:`SharedMemory` instances and for creating a list-like object (:class:`ShareableList`) backed by shared memory."
+#, fuzzy
+#| msgid "This class provides methods for creating and returning :class:`SharedMemory` instances and for creating a list-like object (:class:`ShareableList`) backed by shared memory."
+msgid "This class provides methods for creating and returning :class:`~multiprocessing.shared_memory.SharedMemory` instances and for creating a list-like object (:class:`~multiprocessing.shared_memory.ShareableList`) backed by shared memory."
 msgstr "این کلاس متدهایی را برای ایجاد و برگرداندن نمونه‌های :class:`SharedMemory` و برای ایجاد یک شیء فهرست‌مانند (:class:`ShareableList`) مبتنی بر حافظه مشترک فراهم می‌کند."
 
 msgid "Refer to :class:`~multiprocessing.managers.BaseManager` for a description of the inherited *address* and *authkey* optional input arguments and how they may be used to connect to an existing :class:`!SharedMemoryManager` service from other processes."
 msgstr "برای توضیح آرگومان‌های ورودی اختیاری *address* و *authkey* به‌ارث‌رسیده و نحوه‌ی استفاده از آن‌ها برای اتصال به یک سرویس :class:`!SharedMemoryManager` موجود از فرایندهای دیگر، به :class:`~multiprocessing.managers.BaseManager` مراجعه کنید."
 
-msgid "Create and return a new :class:`SharedMemory` object with the specified *size* in bytes."
+#, fuzzy
+#| msgid "Create and return a new :class:`SharedMemory` object with the specified *size* in bytes."
+msgid "Create and return a new :class:`~multiprocessing.shared_memory.SharedMemory` object with the specified *size* in bytes."
 msgstr "یک شیء :class:`SharedMemory` جدید با *size* مشخص‌شده بر حسب بایت ایجاد می‌کند و بازمی‌گرداند."
 
-msgid "Create and return a new :class:`ShareableList` object, initialized by the values from the input *sequence*."
+#, fuzzy
+#| msgid "Create and return a new :class:`ShareableList` object, initialized by the values from the input *sequence*."
+msgid "Create and return a new :class:`~multiprocessing.shared_memory.ShareableList` object, initialized by the values from the input *sequence*."
 msgstr "یک شیء جدید :class:`ShareableList` را ایجاد و برمی‌گرداند که با مقادیر *sequence* ورودی مقداردهی اولیه شده است."
 
 msgid "The following example demonstrates the basic mechanisms of a :class:`~multiprocessing.managers.SharedMemoryManager`:"

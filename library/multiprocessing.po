@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-13 04:22+0000\n"
+"POT-Creation-Date: 2026-10-30 04:13+0000\n"
 "PO-Revision-Date: 2026-09-13 15:53+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -2240,7 +2240,9 @@ msgstr "از *context* می‌توان برای مشخص کردن زمینه‌�
 msgid "Note that the methods of the pool object should only be called by the process which created the pool."
 msgstr "توجه داشته باشید که متدهای شیء استخر را فقط باید فرایندی فراخوانی کند که آن را ایجاد کرده است."
 
-msgid ":class:`multiprocessing.pool` objects have internal resources that need to be properly managed (like any other resource) by using the pool as a context manager or by calling :meth:`close` and :meth:`terminate` manually. Failure to do this can lead to the process hanging on finalization."
+#, fuzzy
+#| msgid ":class:`multiprocessing.pool` objects have internal resources that need to be properly managed (like any other resource) by using the pool as a context manager or by calling :meth:`close` and :meth:`terminate` manually. Failure to do this can lead to the process hanging on finalization."
+msgid ":class:`~multiprocessing.pool.Pool` objects have internal resources that need to be properly managed (like any other resource) by using the pool as a context manager or by calling :meth:`close` and :meth:`terminate` manually. Failure to do this can lead to the process hanging on finalization."
 msgstr "اشیای :class:`multiprocessing.pool` منابع داخلی دارند که باید (مانند هر منبع دیگری) با استفاده از استخر به‌عنوان یک مدیر زمینه یا با فراخوانی دستی :meth:`close` و :meth:`terminate` به‌درستی مدیریت شوند. عدم انجام این کار می‌تواند منجر به آویزان ماندن فرایند در هنگام نهایی‌سازی شود."
 
 msgid "Note that it is **not correct** to rely on the garbage collector to destroy the pool as CPython does not assure that the finalizer of the pool will be called (see :meth:`object.__del__` for more information)."

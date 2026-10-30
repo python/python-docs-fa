@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-10-30 04:13+0000\n"
 "PO-Revision-Date: 2026-09-14 10:08+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -148,7 +148,9 @@ msgstr "اگر یک دنباله *weights* مشخص شده باشد، انتخا
 msgid "If neither *weights* nor *cum_weights* are specified, selections are made with equal probability.  If a weights sequence is supplied, it must be the same length as the *population* sequence.  It is a :exc:`TypeError` to specify both *weights* and *cum_weights*."
 msgstr "اگر هیچ‌کدام از *weights* یا *cum_weights* تعیین نشده باشد، انتخاب‌ها با احتمال برابر انجام می‌شوند. اگر دنباله‌ای از وزن‌ها ارائه شود، باید هم‌طول با دنباله‌ی *population* باشد. تعیین همزمان *weights* و *cum_weights* باعث :exc:`TypeError` می‌شود."
 
-msgid "The *weights* or *cum_weights* can use any numeric type that interoperates with the :class:`float` values returned by :func:`random` (that includes integers, floats, and fractions but excludes decimals).  Weights are assumed to be non-negative and finite.  A :exc:`ValueError` is raised if all weights are zero."
+#, fuzzy
+#| msgid "The *weights* or *cum_weights* can use any numeric type that interoperates with the :class:`float` values returned by :func:`random` (that includes integers, floats, and fractions but excludes decimals).  Weights are assumed to be non-negative and finite.  A :exc:`ValueError` is raised if all weights are zero."
+msgid "The *weights* or *cum_weights* can use any numeric type that interoperates with the :class:`float` values returned by :func:`~random.random` (that includes integers, floats, and fractions but excludes decimals).  Weights are assumed to be non-negative and finite.  A :exc:`ValueError` is raised if all weights are zero."
 msgstr "برای *weights* یا *cum_weights* می‌توان از هر نوع عددی استفاده کرد که با مقادیر :class:`float` برگردانده‌شده توسط :func:`random` قابل تعامل باشد (این شامل اعداد صحیح، شناورها و کسرها می‌شود، اما اعداد اعشاری (decimals) را شامل نمی‌شود). فرض می‌شود وزن‌ها نامنفی و متناهی باشند. اگر همه وزن‌ها صفر باشند، یک :exc:`ValueError` پرتاب می‌شود."
 
 msgid "For a given seed, the :func:`choices` function with equal weighting typically produces a different sequence than repeated calls to :func:`choice`.  The algorithm used by :func:`choices` uses floating-point arithmetic for internal consistency and speed.  The algorithm used by :func:`choice` defaults to integer arithmetic with repeated selections to avoid small biases from round-off error."

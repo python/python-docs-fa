@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-28 04:13+0000\n"
+"POT-Creation-Date: 2026-10-30 04:13+0000\n"
 "PO-Revision-Date: 2021-06-28 00:48+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -31,6 +31,9 @@ msgstr "چند تابع وجود دارند که مختص توابع پایتو�
 
 msgid "The C structure used for functions."
 msgstr "ساختار C استفاده‌شده برای توابع."
+
+msgid "In the free-threaded build, direct access to mutable fields requires synchronization if another thread may modify the function. See :ref:`freethreading-extensions-howto`."
+msgstr ""
 
 msgid "This is an instance of :c:type:`PyTypeObject` and represents the Python function type.  It is exposed to Python programmers as ``types.FunctionType``."
 msgstr "این نمونه‌ای از :c:type:`PyTypeObject` است و نوع تابع پایتون را نمایندگی می‌کند. این نوع به برنامه‌نویسان پایتون به صورت ``types.FunctionType`` در دسترس قرار گرفته است."
@@ -58,6 +61,9 @@ msgstr "یک :term:`ارجاع امانتی <borrowed reference>` به ویژگ�
 
 msgid "This is normally a :class:`string <str>` containing the module name, but can be set to any other object by Python code."
 msgstr "این به‌طور معمول یک :class:`رشته <str>` حاوی نام ماژول است، اما می‌تواند توسط کد پایتون به هر شیء دیگری تنظیم شود."
+
+msgid "In the free-threaded build, if the attribute may be modified concurrently, convert the borrowed reference to a strong reference with :c:func:`Py_XNewRef` immediately, before calling any other Python API. The same applies to :c:func:`PyFunction_GET_MODULE`."
+msgstr ""
 
 msgid "Return the argument default values of the function object *op*. This can be a tuple of arguments or ``NULL``."
 msgstr "مقادیر پیش‌فرض آرگومان‌های شیء تابع *op* را برمی‌گرداند. این می‌تواند یک تاپل از آرگومان‌ها یا ``NULL`` باشد."

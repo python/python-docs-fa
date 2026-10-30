@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-10-30 04:13+0000\n"
 "PO-Revision-Date: 2026-09-15 08:07+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -42,19 +42,27 @@ msgstr "این ماژول توابع زیر را تعریف می‌کند:"
 msgid "Send the string *message* to the system logger.  A trailing newline is added if necessary.  Each message is tagged with a priority composed of a *facility* and a *level*.  The optional *priority* argument, which defaults to :const:`LOG_INFO`, determines the message priority.  If the facility is not encoded in *priority* using logical-or (``LOG_INFO | LOG_USER``), the value given in the :func:`openlog` call is used."
 msgstr "رشته‌ی *message* را به گزارش‌گیر سیستم ارسال کنید. در صورت لزوم، یک خط جدید به انتها اضافه می‌شود. هر پیام با اولویتی متشکل از امکانات (*facility*) و سطح (*level*) برچسب‌گذاری می‌شود. آرگومان اختیاری *priority*، که پیش‌فرض آن :const:`LOG_INFO` است، اولویت پیام را تعیین می‌کند. اگر امکانات با استفاده از یا منطقی (``LOG_INFO | LOG_USER``) در *priority* کدگذاری نشده باشد، از مقدار داده‌شده در فراخوانی :func:`openlog` استفاده می‌شود."
 
-msgid "If :func:`openlog` has not been called prior to the call to :func:`syslog`, :func:`openlog` will be called with no arguments."
+#, fuzzy
+#| msgid "If :func:`openlog` has not been called prior to the call to :func:`syslog`, :func:`openlog` will be called with no arguments."
+msgid "If :func:`openlog` has not been called prior to the call to :func:`~syslog.syslog`, :func:`openlog` will be called with no arguments."
 msgstr "اگر :func:`openlog` پیش از فراخوانی :func:`syslog` فراخوانی نشده باشد، :func:`openlog` بدون آرگومان فراخوانی خواهد شد."
 
 msgid "Raises an :ref:`auditing event <auditing>` ``syslog.syslog`` with arguments ``priority``, ``message``."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``syslog.syslog`` را با آرگومان‌های ``priority`` و ``message`` پرتاب می‌کند."
 
-msgid "In previous versions, :func:`openlog` would not be called automatically if it wasn't called prior to the call to :func:`syslog`, deferring to the syslog implementation to call ``openlog()``."
+#, fuzzy
+#| msgid "In previous versions, :func:`openlog` would not be called automatically if it wasn't called prior to the call to :func:`syslog`, deferring to the syslog implementation to call ``openlog()``."
+msgid "In previous versions, :func:`openlog` would not be called automatically if it wasn't called prior to the call to :func:`~syslog.syslog`, deferring to the syslog implementation to call ``openlog()``."
 msgstr "در نسخه‌های پیشین، اگر :func:`openlog` پیش از فراخوانی :func:`syslog` فراخوانی نشده بود، به‌صورت خودکار فراخوانی نمی‌شد و فراخوانی ``openlog()`` به پیاده‌سازی syslog واگذار می‌شد."
 
-msgid "This function is restricted in subinterpreters. (Only code that runs in multiple interpreters is affected and the restriction is not relevant for most users.) :func:`openlog` must be called in the main interpreter before :func:`syslog` may be used in a subinterpreter.  Otherwise it will raise :exc:`RuntimeError`."
+#, fuzzy
+#| msgid "This function is restricted in subinterpreters. (Only code that runs in multiple interpreters is affected and the restriction is not relevant for most users.) :func:`openlog` must be called in the main interpreter before :func:`syslog` may be used in a subinterpreter.  Otherwise it will raise :exc:`RuntimeError`."
+msgid "This function is restricted in subinterpreters. (Only code that runs in multiple interpreters is affected and the restriction is not relevant for most users.) :func:`openlog` must be called in the main interpreter before :func:`~syslog.syslog` may be used in a subinterpreter.  Otherwise it will raise :exc:`RuntimeError`."
 msgstr "این تابع در زیرمفسرها محدود است. (تنها کدی که در چندین مفسر اجرا می‌شود تحت تأثیر قرار می‌گیرد و این محدودیت برای بیشتر کاربران مرتبط نیست.) :func:`openlog` باید در مفسر اصلی فراخوانی شود، پیش از آنکه بتوان از :func:`syslog` در یک زیرمفسر استفاده کرد. در غیر این صورت، :exc:`RuntimeError` پرتاب خواهد شد."
 
-msgid "Logging options of subsequent :func:`syslog` calls can be set by calling :func:`openlog`.  :func:`syslog` will call :func:`openlog` with no arguments if the log is not currently open."
+#, fuzzy
+#| msgid "Logging options of subsequent :func:`syslog` calls can be set by calling :func:`openlog`.  :func:`syslog` will call :func:`openlog` with no arguments if the log is not currently open."
+msgid "Logging options of subsequent :func:`~syslog.syslog` calls can be set by calling :func:`openlog`.  :func:`~syslog.syslog` will call :func:`openlog` with no arguments if the log is not currently open."
 msgstr "گزینه‌های گزارش‌گیری برای فراخوانی‌های بعدی :func:`syslog` را می‌توان با فراخوانی :func:`openlog` تنظیم کرد. اگر گزارش در حال حاضر باز نباشد، :func:`syslog`، :func:`openlog` را بدون آرگومان فراخوانی می‌کند."
 
 msgid "The optional *ident* keyword argument is a string which is prepended to every message, and defaults to ``sys.argv[0]`` with leading path components stripped.  The optional *logoption* keyword argument (default is 0) is a bit field -- see below for possible values to combine.  The optional *facility* keyword argument (default is :const:`LOG_USER`) sets the default facility for messages which do not have a facility explicitly encoded."
@@ -72,13 +80,17 @@ msgstr "این تابع در زیرمفسرها محدود شده است. (فق�
 msgid "Reset the syslog module values and call the system library ``closelog()``."
 msgstr "مقادیر ماژول syslog را بازنشانی می‌کند و ``closelog()`` کتابخانه‌ی سیستم را فراخوانی می‌کند."
 
-msgid "This causes the module to behave as it does when initially imported.  For example, :func:`openlog` will be called on the first :func:`syslog` call (if :func:`openlog` hasn't already been called), and *ident* and other :func:`openlog` parameters are reset to defaults."
+#, fuzzy
+#| msgid "This causes the module to behave as it does when initially imported.  For example, :func:`openlog` will be called on the first :func:`syslog` call (if :func:`openlog` hasn't already been called), and *ident* and other :func:`openlog` parameters are reset to defaults."
+msgid "This causes the module to behave as it does when initially imported.  For example, :func:`openlog` will be called on the first :func:`~syslog.syslog` call (if :func:`openlog` hasn't already been called), and *ident* and other :func:`openlog` parameters are reset to defaults."
 msgstr "این باعث می‌شود ماژول همان رفتاری را داشته باشد که هنگام ایمپورت اولیه دارد. برای مثال، :func:`openlog` در اولین فراخوانی :func:`syslog` فراخوانی خواهد شد (اگر :func:`openlog` از قبل فراخوانی نشده باشد)، و *ident* و سایر پارامترهای :func:`openlog` به مقادیر پیش‌فرض بازنشانی می‌شوند."
 
 msgid "Raises an :ref:`auditing event <auditing>` ``syslog.closelog`` with no arguments."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``syslog.closelog`` را بدون آرگومان پرتاب می‌کند."
 
-msgid "Set the priority mask to *maskpri* and return the previous mask value.  Calls to :func:`syslog` with a priority level not set in *maskpri* are ignored. The default is to log all priorities.  The function ``LOG_MASK(pri)`` calculates the mask for the individual priority *pri*.  The function ``LOG_UPTO(pri)`` calculates the mask for all priorities up to and including *pri*."
+#, fuzzy
+#| msgid "Set the priority mask to *maskpri* and return the previous mask value.  Calls to :func:`syslog` with a priority level not set in *maskpri* are ignored. The default is to log all priorities.  The function ``LOG_MASK(pri)`` calculates the mask for the individual priority *pri*.  The function ``LOG_UPTO(pri)`` calculates the mask for all priorities up to and including *pri*."
+msgid "Set the priority mask to *maskpri* and return the previous mask value.  Calls to :func:`~syslog.syslog` with a priority level not set in *maskpri* are ignored. The default is to log all priorities.  The function ``LOG_MASK(pri)`` calculates the mask for the individual priority *pri*.  The function ``LOG_UPTO(pri)`` calculates the mask for all priorities up to and including *pri*."
 msgstr "نقاب اولویت را روی *maskpri* تنظیم می‌کند و مقدار نقاب پیشین را برمی‌گرداند. فراخوانی‌های :func:`syslog` با سطح اولویتی که در *maskpri* تنظیم نشده باشد نادیده گرفته می‌شوند. پیش‌فرض این است که همه اولویت‌ها ثبت شوند. تابع ``LOG_MASK(pri)`` نقاب اولویت منفرد *pri* را محاسبه می‌کند. تابع ``LOG_UPTO(pri)`` نقاب همه اولویت‌ها تا *pri* و شامل خود آن را محاسبه می‌کند."
 
 msgid "Raises an :ref:`auditing event <auditing>` ``syslog.setlogmask`` with argument ``maskpri``."

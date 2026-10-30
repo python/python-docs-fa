@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-26 04:18+0000\n"
+"POT-Creation-Date: 2026-10-30 04:13+0000\n"
 "PO-Revision-Date: 2026-09-12 18:39+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -329,7 +329,9 @@ msgstr "یک استثنای :exc:`SystemExit` را پرتاب می‌کند، ک
 msgid "The optional argument *arg* can be an integer giving the exit status (defaulting to zero), or another type of object.  If it is an integer, zero is considered \"successful termination\" and any nonzero value is considered \"abnormal termination\" by shells and the like.  Most systems require it to be in the range 0--127, and produce undefined results otherwise.  Some systems have a convention for assigning specific meanings to specific exit codes, but these are generally underdeveloped; Unix programs generally use 2 for command line syntax errors and 1 for all other kinds of errors.  If another type of object is passed, ``None`` is equivalent to passing zero, and any other object is printed to :data:`stderr` and results in an exit code of 1.  In particular, ``sys.exit(\"some error message\")`` is a quick way to exit a program when an error occurs."
 msgstr "آرگومان اختیاری *arg* می‌تواند یک عدد صحیح باشد که وضعیت خروج را مشخص می‌کند (پیش‌فرض آن صفر است)، یا شیءای از نوع دیگر. اگر عدد صحیح باشد، صفر از سوی پوسته‌ها و امثال آن «خاتمه‌ی موفق» و هر مقدار ناصفر «خاتمه‌ی غیرعادی» تلقی می‌شود. در بیشتر سیستم‌ها، این مقدار باید در محدوده‌ی ۰ تا ۱۲۷ باشد؛ در غیر این صورت نتایج تعریف‌نشده‌ای تولید می‌شود. برخی سیستم‌ها برای اختصاص معانی خاص به کدهای خروج خاص قراردادی دارند، اما این قراردادها عموماً چندان توسعه‌یافته نیستند؛ برنامه‌های یونیکس معمولاً از ۲ برای خطاهای سینتکس خط فرمان و از ۱ برای تمام انواع دیگر خطاها استفاده می‌کنند. اگر شیءای از نوع دیگر ارسال شود، ``None`` معادل ارسال صفر است و هر شیء دیگری در :data:`stderr` چاپ می‌شود و به کد خروج ۱ منجر می‌شود. به‌ویژه، ``sys.exit(\"some error message\")`` راهی سریع برای خروج از برنامه هنگام وقوع خطا است."
 
-msgid "Since :func:`exit` ultimately \"only\" raises an exception, it will only exit the process when called from the main thread, and the exception is not intercepted. Cleanup actions specified by :keyword:`finally` clauses of :keyword:`try` statements are honored, and it is possible to intercept the exit attempt at an outer level."
+#, fuzzy
+#| msgid "Since :func:`exit` ultimately \"only\" raises an exception, it will only exit the process when called from the main thread, and the exception is not intercepted. Cleanup actions specified by :keyword:`finally` clauses of :keyword:`try` statements are honored, and it is possible to intercept the exit attempt at an outer level."
+msgid "Since :func:`~sys.exit` ultimately \"only\" raises an exception, it will only exit the process when called from the main thread, and the exception is not intercepted. Cleanup actions specified by :keyword:`finally` clauses of :keyword:`try` statements are honored, and it is possible to intercept the exit attempt at an outer level."
 msgstr "از آنجا که :func:`exit` در نهایت «فقط» یک استثنا ایجاد می‌کند، فرایند را تنها زمانی متوقف می‌کند که از نخ اصلی فراخوانی شود و استثنا رهگیری نشود. کنش‌های پاکسازی مشخص‌شده توسط بندهای :keyword:`finally` از دستورات :keyword:`try` محترم شمرده می‌شوند و امکان رهگیری تلاش برای خروج در سطح بیرونی‌تر وجود دارد."
 
 msgid "If an error occurs in the cleanup after the Python interpreter has caught :exc:`SystemExit` (such as an error flushing buffered data in the standard streams), the exit status is changed to 120."

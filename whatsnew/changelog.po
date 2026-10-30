@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-29 04:13+0000\n"
+"POT-Creation-Date: 2026-10-30 04:13+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -37,13 +37,22 @@ msgstr "*تاریخ انتشار: XXXX-XX-XX*"
 msgid "Security"
 msgstr "امنیت"
 
+msgid ":gh:`160499`: Fix unbounded memory growth in :mod:`asyncio` TLS connections when a peer stops reading but keeps sending records that make OpenSSL generate its own replies (such as TLS 1.2 renegotiation alerts).  Reading from the peer is now paused when this output accumulates, instead of only when application data does."
+msgstr ""
+
 msgid ":gh:`160420`: Fix :class:`zoneinfo.ZoneInfo` on Windows accepting keys in which a component after a ``/`` starts with a drive letter, such as ``America/C:\\file``.  Such a key could open a file outside the ``tzdata`` package; it now raises :exc:`ValueError`."
 msgstr ""
 
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
 
+msgid ":gh:`160773`: Fix a crash in :func:`str` of an :exc:`OSError` when formatting one of its attributes modifies the others."
+msgstr ""
+
 msgid ":gh:`159652`: Fix a hang when an import fails with :exc:`RecursionError` because the C stack is nearly exhausted: releasing the import locks could itself fail and leave the global import lock or a module lock held forever, so that later imports in other threads blocked indefinitely. The import system now raises :exc:`RecursionError` before taking an import lock when there is not enough stack left to release it."
+msgstr ""
+
+msgid ":gh:`159136`: Setting ``__name__``, ``__qualname__``, ``__doc__`` or ``__module__`` on a function no longer stops all threads in the free-threaded build. This fixes a large slowdown in multi-threaded code using :func:`functools.wraps` since 3.14.7."
 msgstr ""
 
 msgid ":gh:`152631`: Fix :func:`ast.parse` ability to parse lazy imports with *feature_version* older than 3.15, now it properly raises :exc:`SyntaxError`."
@@ -51,6 +60,28 @@ msgstr ""
 
 msgid "Library"
 msgstr "کتابخانه"
+
+msgid ":gh:`109564`: Fix a race in :mod:`asyncio` where closing a server after it accepted a connection, but before the connection's transport was created, reported an :exc:`AssertionError` to the exception handler. Such connections are now closed quietly."
+msgstr ""
+
+msgid ":gh:`53852`: :class:`urllib.request.ProxyDigestAuthHandler` now raises :exc:`~urllib.error.HTTPError` with status code 407 (Proxy Authentication Required) instead of 401 when proxy authentication fails."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`89157`: Make the pure Python implementation of :func:`datetime.date.fromisoformat`, only accept ASCII strings for consistency with the C implementation."
+msgid ":gh:`160806`: Fix the pure-Python implementation of :class:`datetime.timedelta` losing sub-second precision with large float arguments. It now gives the same results as the C implementation."
+msgstr ":gh:`89157`: پیاده‌سازی پایتون خالص :func:`datetime.date.fromisoformat` را به گونه‌ای تغییر دهید که برای سازگاری با پیاده‌سازی C، فقط رشته‌های ASCII را بپذیرد."
+
+msgid ":gh:`160781`: Fix :class:`io.BytesIO` implementation of :meth:`io.IOBase.truncate` rejecting sizes larger than ``2**31 - 1`` on Windows."
+msgstr ""
+
+msgid ":gh:`160781`: Fix :class:`io.StringIO` implementation of :meth:`io.IOBase.truncate` rejecting sizes larger than ``2**31 - 1`` on Windows."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`153037`: Fix :class:`~compression.zstd.ZstdFile` raising :exc:`AttributeError` instead of :exc:`io.UnsupportedOperation` when iterating over a file that is not open for reading."
+msgid ":gh:`160781`: Fix :class:`io.BytesIO` raising :exc:`SystemError` instead of :exc:`OverflowError` when writing at a position close to :data:`sys.maxsize`."
+msgstr ":gh:`153037`: رفع مشکلی که در آن :class:`~compression.zstd.ZstdFile` هنگام پیمایش روی پرونده‌ای که برای خواندن باز نشده است، به جای :exc:`io.UnsupportedOperation` خطای :exc:`AttributeError` ایجاد می‌کند."
 
 #, fuzzy
 #| msgid ":gh:`107545`: Improve the error messages that may be raised by :meth:`~socket.socket.setsockopt`."
@@ -60,7 +91,16 @@ msgstr ":gh:`107545`: بهبود پیام‌های خطایی که ممکن اس
 msgid ":gh:`160561`: Fix a descriptor leak in :func:`socket.fromfd` when the socket constructor rejects its arguments. The duplicated descriptor was never closed."
 msgstr ""
 
+msgid ":gh:`60299`: Fix :class:`urllib.request.ProxyDigestAuthHandler` failing to authenticate. It looked up credentials using the target request URL instead of the proxy's authority, so passwords registered via ``add_password()`` against the proxy never matched. Patch by Senthil Kumaran."
+msgstr ""
+
 msgid ":gh:`160513`: Fix :meth:`asyncio.loop.start_tls` and :meth:`asyncio.StreamWriter.start_tls` not calling the protocol's :meth:`~asyncio.BaseProtocol.connection_lost` when the connection is lost, the handshake times out or the call is cancelled during the TLS handshake. :meth:`asyncio.StreamWriter.wait_closed` no longer waits forever after such a failure."
+msgstr ""
+
+msgid ":gh:`157928`: Correctly detect and handle OSC sequences in PyREPL."
+msgstr ""
+
+msgid ":gh:`157856`: Fix :func:`asyncio.as_completed` raising :exc:`RuntimeError` (\"no running event loop\") when the iterator is created outside of a running event loop and driven with :meth:`loop.run_until_complete() <asyncio.loop.run_until_complete>`."
 msgstr ""
 
 #, fuzzy
