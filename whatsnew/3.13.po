@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-28 04:13+0000\n"
+"POT-Creation-Date: 2026-10-31 04:10+0000\n"
 "PO-Revision-Date: 2026-09-13 07:23+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -1362,7 +1362,9 @@ msgstr "متد آزمون‌نشده و بدون مستندات :meth:`!TestProg
 msgid "urllib"
 msgstr "urllib"
 
-msgid "Remove the *cafile*, *capath*, and *cadefault* parameters of the :func:`urllib.request.urlopen` function, deprecated in Python 3.6. Use the *context* parameter instead with an :class:`~ssl.SSLContext` instance. The :meth:`ssl.SSLContext.load_cert_chain` function can be used to load specific certificates, or let :func:`ssl.create_default_context` select the operating system's trusted certificate authority (CA) certificates. (Contributed by Victor Stinner in :gh:`105382`.)"
+#, fuzzy
+#| msgid "Remove the *cafile*, *capath*, and *cadefault* parameters of the :func:`urllib.request.urlopen` function, deprecated in Python 3.6. Use the *context* parameter instead with an :class:`~ssl.SSLContext` instance. The :meth:`ssl.SSLContext.load_cert_chain` function can be used to load specific certificates, or let :func:`ssl.create_default_context` select the operating system's trusted certificate authority (CA) certificates. (Contributed by Victor Stinner in :gh:`105382`.)"
+msgid "Remove the *cafile*, *capath*, and *cadefault* parameters of the :func:`urllib.request.urlopen` function, deprecated in Python 3.6. Use the *context* parameter instead with an :class:`~ssl.SSLContext` instance. The :meth:`ssl.SSLContext.load_verify_locations` method can be used to load specific CA certificates, or let :func:`ssl.create_default_context` select the operating system's trusted certificate authority (CA) certificates. (Contributed by Victor Stinner in :gh:`105382`.)"
 msgstr "پارامترهای *cafile*، *capath* و *cadefault* تابع :func:`urllib.request.urlopen` که در پایتون 3.6 منسوخ شده بودند، حذف شدند. به‌جای آن‌ها از پارامتر *context* همراه با یک نمونه‌ی :class:`~ssl.SSLContext` استفاده کنید. می‌توان از تابع :meth:`ssl.SSLContext.load_cert_chain` برای بارگذاری گواهی‌های خاص استفاده کرد، یا اجازه دهید :func:`ssl.create_default_context` گواهی‌های مرجع صدور گواهی (CA) مورد اعتماد سیستم‌عامل را انتخاب کند. (با مشارکت Victor Stinner در :gh:`105382`.)"
 
 msgid "webbrowser"
@@ -2570,7 +2572,9 @@ msgstr ":c:func:`!PySys_AddWarnOption`: به جای آن از :c:member:`PyConfi
 msgid ":c:func:`!PySys_AddXOption`: Use :c:member:`PyConfig.xoptions` instead."
 msgstr ":c:func:`!PySys_AddXOption`: به‌جای آن از :c:member:`PyConfig.xoptions` استفاده کنید."
 
-msgid ":c:func:`!PySys_HasWarnOptions`: Use :c:member:`PyConfig.xoptions` instead."
+#, fuzzy
+#| msgid ":c:func:`!PySys_HasWarnOptions`: Use :c:member:`PyConfig.xoptions` instead."
+msgid ":c:func:`!PySys_HasWarnOptions`: Use :c:member:`PyConfig.warnoptions` instead."
 msgstr ":c:func:`!PySys_HasWarnOptions`: به‌جای آن از :c:member:`PyConfig.xoptions` استفاده کنید."
 
 msgid ":c:func:`!PySys_SetPath`: Set :c:member:`PyConfig.module_search_paths` instead."
@@ -2594,7 +2598,9 @@ msgstr "توابع :c:func:`!PyEval_AcquireLock` و :c:func:`!PyEval_ReleaseLock
 msgid ":c:func:`PyEval_SaveThread` and :c:func:`PyEval_RestoreThread`;"
 msgstr ":c:func:`PyEval_SaveThread` و :c:func:`PyEval_RestoreThread`؛"
 
-msgid "low-level :c:func:`PyEval_AcquireThread` and :c:func:`PyEval_RestoreThread`;"
+#, fuzzy
+#| msgid "low-level :c:func:`PyEval_AcquireThread` and :c:func:`PyEval_RestoreThread`;"
+msgid "low-level :c:func:`PyEval_AcquireThread` and :c:func:`PyEval_ReleaseThread`;"
 msgstr "سطح پایین :c:func:`PyEval_AcquireThread` و :c:func:`PyEval_RestoreThread`؛"
 
 msgid "or :c:func:`PyGILState_Ensure` and :c:func:`PyGILState_Release`."
@@ -3087,7 +3093,9 @@ msgstr ":ref:`PEP 667 <whatsnew313-locals-semantics>` چندین تغییر در
 msgid "The effects of mutating the dictionary returned from :c:func:`PyEval_GetLocals` in an :term:`optimized scope` have changed. New dict entries added this way will now *only* be visible to subsequent :c:func:`PyEval_GetLocals` calls in that frame, as :c:func:`PyFrame_GetLocals`, :func:`locals`, and :attr:`FrameType.f_locals <frame.f_locals>` no longer access the same underlying cached dictionary. Changes made to entries for actual variable names and names added via the write-through proxy interfaces will be overwritten on subsequent calls to :c:func:`PyEval_GetLocals` in that frame. The recommended code update depends on how the function was being used, so refer to the deprecation notice on the function for details."
 msgstr "اثرات تغییر دادن دیکشنری بازگردانده‌شده از :c:func:`PyEval_GetLocals` در یک :term:`محدوده بهینه‌شده <optimized scope>` تغییر کرده‌اند. مدخل‌های جدید دیکشنری که به این روش اضافه می‌شوند، اکنون *تنها* برای فراخوانی‌های بعدی :c:func:`PyEval_GetLocals` در آن فریم قابل مشاهده خواهند بود، زیرا :c:func:`PyFrame_GetLocals`، :func:`locals` و :attr:`FrameType.f_locals <frame.f_locals>` دیگر به همان دیکشنری نهانگاه‌شده‌ی زیرین دسترسی ندارند. تغییراتی که در مدخل‌های مربوط به نام‌های متغیرهای واقعی و نام‌های افزوده‌شده از طریق رابط‌های پراکسی نوشتن‌همزمان اعمال می‌شوند، در فراخوانی‌های بعدی :c:func:`PyEval_GetLocals` در آن فریم بازنویسی خواهند شد. به‌روزرسانی توصیه‌شده‌ی کد به نحوه‌ی استفاده از تابع بستگی دارد، بنابراین برای جزئیات به اطلاعیه‌ی منسوخ‌شدن تابع مراجعه کنید."
 
-msgid "Calling :c:func:`PyFrame_GetLocals` in an :term:`optimized scope` now returns a write-through proxy rather than a snapshot that gets updated at ill-specified times. If a snapshot is desired, it must be created explicitly (e.g. with :c:func:`PyDict_Copy`), or by calling the new :c:func:`PyEval_GetFrameLocals` API."
+#, fuzzy
+#| msgid "Calling :c:func:`PyFrame_GetLocals` in an :term:`optimized scope` now returns a write-through proxy rather than a snapshot that gets updated at ill-specified times. If a snapshot is desired, it must be created explicitly (e.g. with :c:func:`PyDict_Copy`), or by calling the new :c:func:`PyEval_GetFrameLocals` API."
+msgid "Calling :c:func:`PyFrame_GetLocals` in an :term:`optimized scope` now returns a write-through proxy rather than a snapshot that gets updated at ill-specified times. If a snapshot is desired, it must be created explicitly, or by calling the new :c:func:`PyEval_GetFrameLocals` API."
 msgstr "فراخوانی :c:func:`PyFrame_GetLocals` در :term:`محدوده بهینه‌شده <optimized scope>` اکنون به‌جای یک تصویر لحظه‌ای که در زمان‌های نامشخص به‌روزرسانی می‌شود، یک پراکسی نوشتن‌همزمان برمی‌گرداند. اگر تصویر لحظه‌ای مورد نیاز است، باید به‌طور صریح ایجاد شود (مثلاً با :c:func:`PyDict_Copy`)، یا با فراخوانی API جدید :c:func:`PyEval_GetFrameLocals`."
 
 msgid ":c:func:`!PyFrame_FastToLocals` and :c:func:`!PyFrame_FastToLocalsWithError` no longer have any effect. Calling these functions has been redundant since Python 3.11, when :c:func:`PyFrame_GetLocals` was first introduced."

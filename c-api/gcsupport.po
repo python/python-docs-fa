@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-29 04:13+0000\n"
+"POT-Creation-Date: 2026-10-31 04:10+0000\n"
 "PO-Revision-Date: 2021-06-28 00:48+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -104,7 +104,9 @@ msgstr "حافظه‌ی تخصیص‌یافته توسط این تابع بای�
 msgid "The function is marked as unstable because the final mechanism for reserving extra data after an instance is not yet decided. For allocating a variable number of fields, prefer using :c:type:`PyVarObject` and :c:member:`~PyTypeObject.tp_itemsize` instead."
 msgstr "این تابع به‌عنوان ناپاید علامت‌گذاری شده است زیرا سازوکار نهایی برای رزرو داده‌های اضافی پس از یک نمونه هنوز تصمیم‌گیری نشده است. برای تخصیص تعداد متغیری از فیلدها، بهتر است به‌جای آن از :c:type:`PyVarObject` و :c:member:`~PyTypeObject.tp_itemsize` استفاده کنید."
 
-msgid "Resize an object allocated by :c:macro:`PyObject_NewVar`. Returns the resized object of type ``TYPE*`` (refers to any C type) or ``NULL`` on failure."
+#, fuzzy
+#| msgid "Resize an object allocated by :c:macro:`PyObject_NewVar`. Returns the resized object of type ``TYPE*`` (refers to any C type) or ``NULL`` on failure."
+msgid "Resize an object allocated by :c:macro:`PyObject_GC_NewVar`. Returns the resized object of type ``TYPE*`` (refers to any C type) or ``NULL`` on failure."
 msgstr "تغییر اندازه‌ی شیء‌ای که توسط :c:macro:`PyObject_NewVar` تخصیص‌یافته است. شیء تغییراندازه‌یافته از نوع ``TYPE*`` (منظور هر نوع C است) را برمی‌گرداند یا در صورت شکست ``NULL``."
 
 msgid "*op* must be of type :c:expr:`PyVarObject *` and must not be tracked by the collector yet. *newsize* must be of type :c:type:`Py_ssize_t`."

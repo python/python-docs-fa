@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-30 04:13+0000\n"
+"POT-Creation-Date: 2026-10-31 04:10+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -61,6 +61,11 @@ msgstr ""
 msgid "Library"
 msgstr "کتابخانه"
 
+#, fuzzy
+#| msgid ":gh:`103791`: :class:`contextlib.suppress` now supports suppressing exceptions raised as part of a :exc:`BaseExceptionGroup`, in addition to the recent support for :exc:`ExceptionGroup`."
+msgid ":gh:`137549`: :func:`asyncio.timeout` now inserts :exc:`TimeoutError` into the context chain of sub-exceptions of a :exc:`BaseExceptionGroup`, as it already did for :exc:`ExceptionGroup`."
+msgstr ":gh:`103791`: :class:`contextlib.suppress` اکنون علاوه بر پشتیبانی اخیر از :exc:`ExceptionGroup`، از سرکوب استثناوهایی که به عنوان بخشی از یک :exc:`BaseExceptionGroup` بالا می‌آیند نیز پشتیبانی می‌کند."
+
 msgid ":gh:`109564`: Fix a race in :mod:`asyncio` where closing a server after it accepted a connection, but before the connection's transport was created, reported an :exc:`AssertionError` to the exception handler. Such connections are now closed quietly."
 msgstr ""
 
@@ -97,6 +102,9 @@ msgstr ""
 msgid ":gh:`160513`: Fix :meth:`asyncio.loop.start_tls` and :meth:`asyncio.StreamWriter.start_tls` not calling the protocol's :meth:`~asyncio.BaseProtocol.connection_lost` when the connection is lost, the handshake times out or the call is cancelled during the TLS handshake. :meth:`asyncio.StreamWriter.wait_closed` no longer waits forever after such a failure."
 msgstr ""
 
+msgid ":gh:`159398`: Fix the sampling profiler crashing when a string read from the target process contains code points above ``U+10FFFF``."
+msgstr ""
+
 msgid ":gh:`157928`: Correctly detect and handle OSC sequences in PyREPL."
 msgstr ""
 
@@ -107,6 +115,11 @@ msgstr ""
 #| msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when passing :class:`ctypes.Structure` or :class:`ctypes.Union` instances by value to ctypes foreign functions."
 msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when first using a Chinese, Japanese or Korean codec."
 msgstr ":gh:`151126`: رفع فروپاشی ناشی از تنظیم‌نشدن :exc:`MemoryError` هنگام شکست در تخصیص حافظه، در زمان ارسال نمونه‌های :class:`ctypes.Structure` یا :class:`ctypes.Union` به‌صورت مقدار (by value) به توابع خارجی ctypes."
+
+#, fuzzy
+#| msgid ":gh:`133934`: Improve :mod:`sqlite3` CLI's ``.help`` message."
+msgid ":gh:`139105`: Correct the EOF key shown in the :mod:`sqlite3` CLI ``.help`` text on Windows."
+msgstr ":gh:`133934`: بهبود پیام ``.help`` در رابط خط فرمان، CLI ماژول :mod:`sqlite3`."
 
 msgid "Tests"
 msgstr "آزمون‌ها"
