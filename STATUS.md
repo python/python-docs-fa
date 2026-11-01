@@ -1,13 +1,12 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-10-31)
+(به‌روزرسانی: 2026-11-01)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
 | about.po | 100.0% | 0.0% | 10 | 0 | 0 |
 | bugs.po | 100.0% | 0.0% | 31 | 0 | 0 |
 | builtins/constants.po | 100.0% | 0.0% | 22 | 0 | 0 |
-| builtins/exceptions.po | 100.0% | 0.0% | 207 | 0 | 0 |
 | builtins/index.po | 100.0% | 0.0% | 5 | 0 | 0 |
 | builtins/threadsafety.po | 100.0% | 0.0% | 118 | 0 | 0 |
 | builtins/time-complexity.po | 100.0% | 0.0% | 121 | 0 | 0 |
@@ -289,7 +288,6 @@
 | library/netdata.po | 100.0% | 0.0% | 2 | 0 | 0 |
 | library/nis.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/nntplib.po | 100.0% | 0.0% | 3 | 0 | 0 |
-| library/numbers.po | 100.0% | 0.0% | 34 | 0 | 0 |
 | library/numeric.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/operator.po | 100.0% | 0.0% | 189 | 0 | 0 |
 | library/os.path.po | 100.0% | 0.0% | 113 | 0 | 0 |
@@ -454,7 +452,6 @@
 | whatsnew/3.7.po | 100.0% | 0.0% | 568 | 0 | 0 |
 | whatsnew/3.9.po | 100.0% | 0.0% | 380 | 0 | 0 |
 | whatsnew/index.po | 100.0% | 0.0% | 3 | 0 | 0 |
-| builtins/stdtypes.po | 99.9% | 0.1% | 1657 | 2 | 0 |
 | library/datetime.po | 99.9% | 0.1% | 692 | 1 | 0 |
 | library/multiprocessing.po | 99.8% | 0.2% | 622 | 1 | 0 |
 | library/os.po | 99.8% | 0.2% | 1134 | 2 | 0 |
@@ -463,6 +460,7 @@
 | whatsnew/3.4.po | 99.8% | 0.2% | 516 | 1 | 0 |
 | whatsnew/3.8.po | 99.8% | 0.2% | 512 | 1 | 0 |
 | glossary.po | 99.8% | 0.2% | 500 | 1 | 0 |
+| builtins/stdtypes.po | 99.8% | 0.2% | 1655 | 4 | 0 |
 | library/dis.po | 99.8% | 0.2% | 413 | 1 | 0 |
 | library/decimal.po | 99.7% | 0.3% | 386 | 1 | 0 |
 | whatsnew/2.3.po | 99.7% | 0.3% | 386 | 1 | 0 |
@@ -474,9 +472,9 @@
 | whatsnew/3.2.po | 99.7% | 0.3% | 574 | 2 | 0 |
 | library/time.po | 99.6% | 0.4% | 280 | 1 | 0 |
 | whatsnew/3.15.po | 99.6% | 0.0% | 819 | 0 | 3 |
-| whatsnew/changelog.po | 99.6% | 0.1% | 15728 | 18 | 40 |
 | reference/compound_stmts.po | 99.6% | 0.4% | 497 | 2 | 0 |
 | howto/functional.po | 99.6% | 0.4% | 246 | 1 | 0 |
+| whatsnew/changelog.po | 99.6% | 0.1% | 15728 | 19 | 45 |
 | c-api/intro.po | 99.6% | 0.4% | 243 | 1 | 0 |
 | c-api/interp-lifecycle.po | 99.6% | 0.4% | 222 | 1 | 0 |
 | c-api/init_config.po | 99.5% | 0.5% | 658 | 3 | 0 |
@@ -488,7 +486,6 @@
 | whatsnew/3.11.po | 99.5% | 0.5% | 772 | 4 | 0 |
 | c-api/long.po | 99.5% | 0.0% | 182 | 0 | 1 |
 | whatsnew/3.12.po | 99.4% | 0.6% | 904 | 5 | 0 |
-| builtins/functions.po | 99.4% | 0.4% | 538 | 2 | 1 |
 | extending/newtypes_tutorial.po | 99.4% | 0.6% | 179 | 1 | 0 |
 | library/sys.po | 99.4% | 0.4% | 512 | 2 | 1 |
 | library/locale.po | 99.4% | 0.6% | 165 | 1 | 0 |
@@ -505,11 +502,13 @@
 | library/re.po | 99.1% | 0.7% | 457 | 3 | 1 |
 | library/email.message.po | 99.1% | 0.9% | 110 | 1 | 0 |
 | library/email.policy.po | 99.1% | 0.9% | 109 | 1 | 0 |
+| builtins/exceptions.po | 99.0% | 1.0% | 204 | 2 | 0 |
 | library/unicodedata.po | 99.0% | 1.0% | 99 | 1 | 0 |
 | library/ftplib.po | 99.0% | 1.0% | 97 | 1 | 0 |
 | tutorial/errors.po | 99.0% | 1.0% | 95 | 1 | 0 |
 | using/mac.po | 99.0% | 1.0% | 95 | 1 | 0 |
 | library/json.po | 98.9% | 1.1% | 181 | 2 | 0 |
+| builtins/functions.po | 98.9% | 0.9% | 535 | 5 | 1 |
 | c-api/import.po | 98.8% | 1.2% | 85 | 1 | 0 |
 | c-api/extension-modules.po | 98.8% | 1.2% | 79 | 1 | 0 |
 | library/tracemalloc.po | 98.7% | 1.3% | 154 | 2 | 0 |
@@ -551,6 +550,7 @@
 | library/tkinter.font.po | 91.4% | 8.6% | 32 | 3 | 0 |
 | deprecations/c-api-pending-removal-in-3.18.po | 90.9% | 9.1% | 20 | 2 | 0 |
 | library/asyncio-extending.po | 88.9% | 11.1% | 24 | 3 | 0 |
+| library/numbers.po | 85.7% | 11.4% | 30 | 4 | 1 |
 | reference/grammar.po | 85.7% | 0.0% | 6 | 0 | 1 |
 | library/dbm.po | 85.6% | 1.5% | 113 | 2 | 17 |
 | library/termios.po | 83.3% | 0.0% | 25 | 0 | 5 |
@@ -558,5 +558,5 @@
 | library/syslog.po | 80.6% | 19.4% | 25 | 6 | 0 |
 | library/tokenize.po | 75.8% | 3.2% | 47 | 2 | 13 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **99.6%** | **0.3%** | **90592** | **262** | **120** |
+| **مجموع** | **99.6%** | **0.3%** | **90580** | **274** | **126** |
 <!-- TRANSLATION_STATUS_END -->
