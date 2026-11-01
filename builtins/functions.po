@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-31 04:10+0000\n"
+"POT-Creation-Date: 2026-11-01 04:11+0000\n"
 "PO-Revision-Date: 2026-09-24 07:55+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: none\n"
@@ -724,7 +724,9 @@ msgstr "وقتی ``exec`` دو شیء جداگانه را به‌عنوان *glo
 msgid "If the *globals* dictionary does not contain a value for the key ``__builtins__``, a reference to the dictionary of the built-in module :mod:`builtins` is inserted under that key. Overriding ``__builtins__`` can be used to restrict or change the available names, but this is **not** a security mechanism: the executed code can still access all builtins."
 msgstr "اگر دیکشنری *globals* مقداری برای کلید ``__builtins__`` نداشته باشد، ارجاعی به دیکشنری ماژول توکار :mod:`builtins` با همان کلید در آن درج می‌شود. بازنویسی ``__builtins__`` می‌تواند برای محدود کردن یا تغییر نام‌های در دسترس استفاده شود، اما این **یک سازوکار امنیتی نیست**؛ زیرا کدی که اجرا می‌شود همچنان می‌تواند به تمام اشیای توکار دسترسی داشته باشد."
 
-msgid "The *closure* argument specifies a closure--a tuple of cellvars. It's only valid when the *object* is a code object containing :term:`free (closure) variables <closure variable>`. The length of the tuple must exactly match the length of the code object's :attr:`~codeobject.co_freevars` attribute."
+#, fuzzy
+#| msgid "The *closure* argument specifies a closure--a tuple of cellvars. It's only valid when the *object* is a code object containing :term:`free (closure) variables <closure variable>`. The length of the tuple must exactly match the length of the code object's :attr:`~codeobject.co_freevars` attribute."
+msgid "The *closure* argument specifies a closure--a tuple of cellvars. It's only valid when *source* is a code object containing :term:`free (closure) variables <closure variable>`. The length of the tuple must exactly match the length of the code object's :attr:`~codeobject.co_freevars` attribute."
 msgstr "آرگومان *بستار* یک بستار را مشخص می‌کند؛ یعنی یک تاپل از cellvarها. این آرگومان تنها زمانی معتبر است که *object* یک شیء کد باشد که شامل :term:`متغیرهای آزاد (بستار) <closure variable>` باشد. طول این تاپل باید دقیقاً با طول ویژگی :attr:`~codeobject.co_freevars` شیء کد برابر باشد."
 
 msgid "The built-in functions :func:`globals` and :func:`locals` return the current global and local namespace, respectively, which may be useful to pass around for use as the second and third argument to :func:`exec`."
@@ -1672,7 +1674,9 @@ msgstr "ویژگی :attr:`~type.__mro__` کلاس متناظر با *object_or_t
 msgid "If the second argument is omitted, the super object returned is unbound.  If the second argument is an object, ``isinstance(obj, type)`` must be true.  If the second argument is a type, ``issubclass(type2, type)`` must be true (this is useful for classmethods)."
 msgstr "اگر آرگومان دوم حذف شود، شیء super بازگردانده‌شده بدون اتصال (unbound) خواهد بود. اگر آرگومان دوم یک شیء باشد، باید ``isinstance(obj, type)`` برقرار باشد. اگر آرگومان دوم یک نوع باشد، باید ``issubclass(type2, type)`` برقرار باشد (این مورد برای متدهای کلاس مفید است)."
 
-msgid "When called directly within an ordinary method of a class, both arguments may be omitted (\"zero-argument :func:`!super`\"). In this case, *type* will be the enclosing class, and *obj* will be the first argument of the immediately enclosing function (typically ``self``). (This means that zero-argument :func:`!super` will not work as expected within nested functions, including generator expressions, which implicitly create nested functions.)"
+#, fuzzy
+#| msgid "When called directly within an ordinary method of a class, both arguments may be omitted (\"zero-argument :func:`!super`\"). In this case, *type* will be the enclosing class, and *obj* will be the first argument of the immediately enclosing function (typically ``self``). (This means that zero-argument :func:`!super` will not work as expected within nested functions, including generator expressions, which implicitly create nested functions.)"
+msgid "When called directly within an ordinary method of a class, both arguments may be omitted (\"zero-argument :func:`!super`\"). In this case, *type* will be the enclosing class, and *object_or_type* will be the first argument of the immediately enclosing function (typically ``self``). Zero-argument :func:`!super` will not work as expected within nested functions, including generator expressions, which implicitly create nested functions."
 msgstr "هنگامی که این تابع مستقیماً درون یک متد معمولیِ یک کلاس فراخوانی شود، هر دو آرگومان را می‌توان حذف کرد («:func:`!super` بدون آرگومان»). در این حالت، *type* همان کلاسِ محصورکننده خواهد بود و *obj* اولین آرگومانِ تابعِ بلافاصله محصورکننده (معمولاً ``self``) خواهد بود. (این بدان معناست که :func:`!super` بدون آرگومان در توابع تودرتو، از جمله عبارت‌های تولیدگر که به‌طور ضمنی توابع تودرتو ایجاد می‌کنند، مطابق انتظار عمل نخواهد کرد.)"
 
 msgid "There are two typical use cases for *super*.  In a class hierarchy with single inheritance, *super* can be used to refer to parent classes without naming them explicitly, thus making the code more maintainable.  This use closely parallels the use of *super* in other programming languages."
@@ -1864,7 +1868,9 @@ msgstr "این تابع توسط دستور :keyword:`import` فراخوانی �
 msgid "The function imports the module *name*, potentially using the given *globals* and *locals* to determine how to interpret the name in a package context. The *fromlist* gives the names of objects or submodules that should be imported from the module given by *name*.  The standard implementation does not use its *locals* argument at all and uses its *globals* only to determine the package context of the :keyword:`import` statement."
 msgstr "این تابع ماژول *name* را ایمپورت می‌کند و در صورت نیاز از *globals* و *locals* داده‌شده برای تعیین نحوه‌ی تفسیر نام در زمینه‌ی یک بسته استفاده می‌کند. آرگومان *fromlist* نام اشیا یا زیرماژول‌هایی را مشخص می‌کند که باید از ماژول مشخص‌شده توسط *name* وارد شوند. پیاده‌سازی استاندارد اصلاً از آرگومان *locals* استفاده نمی‌کند و از *globals* تنها برای تعیین زمینه‌ی بسته در دستور :keyword:`import` بهره می‌برد."
 
-msgid "*level* specifies whether to use absolute or relative imports. ``0`` (the default) means only perform absolute imports.  Positive values for *level* indicate the number of parent directories to search relative to the directory of the module calling :func:`__import__` (see :pep:`328` for the details)."
+#, fuzzy
+#| msgid "*level* specifies whether to use absolute or relative imports. ``0`` (the default) means only perform absolute imports.  Positive values for *level* indicate the number of parent directories to search relative to the directory of the module calling :func:`__import__` (see :pep:`328` for the details)."
+msgid "*level* specifies whether to use absolute or relative imports. ``0`` (the default) means only perform absolute imports.  For relative imports, ``1`` refers to the current package, ``2`` to its parent package, and so on (see :pep:`328` for details)."
 msgstr "*level* مشخص می‌کند که از ایمپورت مطلق استفاده شود یا نسبی. مقدار ``0`` (که مقدار پیش‌فرض است) به این معناست که فقط ایمپورت مطلق انجام شود. مقادیر مثبت برای *level* تعداد پوشه‌های والد را مشخص می‌کنند که باید نسبت به پوشه‌ی ماژولی که :func:`__import__` را فراخوانی کرده است جست‌وجو شوند (برای جزئیات، :pep:`328` را ببینید)."
 
 msgid "When the *name* variable is of the form ``package.module``, normally, the top-level package (the name up till the first dot) is returned, *not* the module named by *name*.  However, when a non-empty *fromlist* argument is given, the module named by *name* is returned."

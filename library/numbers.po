@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-16 12:56+0000\n"
+"POT-Creation-Date: 2026-11-01 04:11+0000\n"
 "PO-Revision-Date: 2026-09-15 12:27+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -79,7 +79,9 @@ msgstr "نکاتی برای پیاده‌سازان نوع"
 msgid "Implementers should be careful to make equal numbers equal and hash them to the same values. This may be subtle if there are two different extensions of the real numbers. See also :ref:`numeric-hash`."
 msgstr "پیاده‌سازان باید دقت کنند که اعداد برابر، برابر باشند و برای آن‌ها مقادیر هش یکسانی تولید کنند. اگر دو گسترش متفاوت از اعداد حقیقی وجود داشته باشد، این موضوع ممکن است ظریف باشد. همچنین :ref:`numeric-hash` را ببینید."
 
-msgid "Adding More Numeric ABCs"
+#, fuzzy
+#| msgid "Adding More Numeric ABCs"
+msgid "Adding more numeric ABCs"
 msgstr "افزودن کلاس‌های پایه انتزاعی عددی بیشتر"
 
 msgid "There are, of course, more possible ABCs for numbers, and this would be a poor hierarchy if it precluded the possibility of adding those. You can add ``MyFoo`` between :class:`Complex` and :class:`Real` with::"
@@ -147,8 +149,13 @@ msgstr ""
 "        else:\n"
 "            return NotImplemented"
 
-msgid "There are 5 different cases for a mixed-type operation on subclasses of :class:`Complex`. I'll refer to all of the above code that doesn't refer to ``MyIntegral`` and ``OtherTypeIKnowAbout`` as \"boilerplate\". ``a`` will be an instance of ``A``, which is a subtype of :class:`Complex` (``a : A <: Complex``), and ``b : B <: Complex``. I'll consider ``a + b``:"
+#, fuzzy
+#| msgid "There are 5 different cases for a mixed-type operation on subclasses of :class:`Complex`. I'll refer to all of the above code that doesn't refer to ``MyIntegral`` and ``OtherTypeIKnowAbout`` as \"boilerplate\". ``a`` will be an instance of ``A``, which is a subtype of :class:`Complex` (``a : A <: Complex``), and ``b : B <: Complex``. I'll consider ``a + b``:"
+msgid "There are 5 different cases for a mixed-type operation on subclasses of :class:`Complex`. All of the above code that doesn't refer to ``MyIntegral`` and ``OtherTypeIKnowAbout`` is referred to as \"boilerplate\"."
 msgstr "برای یک عملیات با نوع مختلط روی زیرکلاس‌های :class:`Complex`، ۵ حالت مختلف وجود دارد. تمام کد بالا را که به ``MyIntegral`` و ``OtherTypeIKnowAbout`` ارجاع نمی‌دهد، «کد پیش‌ساخته (boilerplate)» می‌نامم. ``a`` نمونه‌ای از ``A`` خواهد بود که زیرنوعی از :class:`Complex` است (``a : A <: Complex``)، و ``b : B <: Complex``. ``a + b`` را در نظر می‌گیرم:"
+
+msgid "In this description, ``a`` is an instance of ``A`` and ``b`` is an instance of ``B``, where ``A`` and ``B`` are both subtypes of :class:`Complex`. Consider ``a + b``:"
+msgstr ""
 
 msgid "If ``A`` defines an :meth:`~object.__add__` which accepts ``b``, all is well."
 msgstr "اگر ``A`` متد :meth:`~object.__add__` را تعریف کند که ``b`` را بپذیرد، همه‌چیز درست است."
@@ -162,10 +169,14 @@ msgstr "سپس نوبت به :meth:`~object.__radd__` متعلق به ``B`` می
 msgid "If it falls back to the boilerplate, there are no more possible methods to try, so this is where the default implementation should live."
 msgstr "اگر به کد پیش‌ساخته (boilerplate) بازگردد، دیگر هیچ متد ممکنی برای امتحان باقی نمانده است، بنابراین این جایی است که پیاده‌سازی پیش‌فرض باید در آن قرار داشته باشد."
 
-msgid "If ``B <: A``, Python tries ``B.__radd__`` before ``A.__add__``. This is ok, because it was implemented with knowledge of ``A``, so it can handle those instances before delegating to :class:`Complex`."
+#, fuzzy
+#| msgid "If ``B <: A``, Python tries ``B.__radd__`` before ``A.__add__``. This is ok, because it was implemented with knowledge of ``A``, so it can handle those instances before delegating to :class:`Complex`."
+msgid "If ``B`` is a subtype of ``A``, Python tries ``B.__radd__`` before ``A.__add__``. This is ok, because it was implemented with knowledge of ``A``, so it can handle those instances before delegating to :class:`Complex`."
 msgstr "اگر ``B <: A`` باشد، پایتون ``B.__radd__`` را پیش از ``A.__add__`` امتحان می‌کند. این مورد مشکلی ندارد، زیرا با آگاهی از ``A`` پیاده‌سازی شده است، بنابراین می‌تواند آن نمونه‌ها را پیش از واگذاری به :class:`Complex` مدیریت کند."
 
-msgid "If ``A <: Complex`` and ``B <: Real`` without sharing any other knowledge, then the appropriate shared operation is the one involving the built in :class:`complex`, and both :meth:`~object.__radd__` s land there, so ``a+b == b+a``."
+#, fuzzy
+#| msgid "If ``A <: Complex`` and ``B <: Real`` without sharing any other knowledge, then the appropriate shared operation is the one involving the built in :class:`complex`, and both :meth:`~object.__radd__` s land there, so ``a+b == b+a``."
+msgid "If ``A`` is a subtype of :class:`Complex` and ``B`` is a subtype of :class:`Real` without sharing any other knowledge, then the appropriate shared operation is the one involving the built in :class:`complex`, and both :meth:`~object.__radd__` s land there, so ``a+b == b+a``."
 msgstr "اگر ``A <: Complex`` و ``B <: Real`` باشد و هیچ دانش دیگری بین آن‌ها مشترک نباشد، عملیات مشترک مناسب همان عملیاتی است که شامل :class:`complex` توکار می‌شود، و هر دو :meth:`~object.__radd__` به آن می‌رسند؛ بنابراین ``a+b == b+a``."
 
 msgid "Because most of the operations on any given type will be very similar, it can be useful to define a helper function which generates the forward and reverse instances of any given operator. For example, :class:`fractions.Fraction` uses::"

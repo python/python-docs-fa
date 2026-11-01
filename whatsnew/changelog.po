@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-31 04:10+0000\n"
+"POT-Creation-Date: 2026-11-01 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -38,6 +38,9 @@ msgid "Security"
 msgstr "امنیت"
 
 msgid ":gh:`160499`: Fix unbounded memory growth in :mod:`asyncio` TLS connections when a peer stops reading but keeps sending records that make OpenSSL generate its own replies (such as TLS 1.2 renegotiation alerts).  Reading from the peer is now paused when this output accumulates, instead of only when application data does."
+msgstr ""
+
+msgid ":gh:`160506`: Fix :func:`os.path.realpath` on Windows returning the wrong path for a broken relative symbolic link reached through a symbolic link to a directory. This allowed :mod:`tarfile` extraction with the ``'data'`` or ``'tar'`` filter to create a file outside the destination directory."
 msgstr ""
 
 msgid ":gh:`160420`: Fix :class:`zoneinfo.ZoneInfo` on Windows accepting keys in which a component after a ``/`` starts with a drive letter, such as ``America/C:\\file``.  Such a key could open a file outside the ``tzdata`` package; it now raises :exc:`ValueError`."
@@ -65,6 +68,9 @@ msgstr "کتابخانه"
 #| msgid ":gh:`103791`: :class:`contextlib.suppress` now supports suppressing exceptions raised as part of a :exc:`BaseExceptionGroup`, in addition to the recent support for :exc:`ExceptionGroup`."
 msgid ":gh:`137549`: :func:`asyncio.timeout` now inserts :exc:`TimeoutError` into the context chain of sub-exceptions of a :exc:`BaseExceptionGroup`, as it already did for :exc:`ExceptionGroup`."
 msgstr ":gh:`103791`: :class:`contextlib.suppress` اکنون علاوه بر پشتیبانی اخیر از :exc:`ExceptionGroup`، از سرکوب استثناوهایی که به عنوان بخشی از یک :exc:`BaseExceptionGroup` بالا می‌آیند نیز پشتیبانی می‌کند."
+
+msgid ":gh:`53089`: :class:`urllib.request.HTTPDigestAuthHandler` now sends ``uri=\"/\"`` in the Digest ``Authorization`` header for URLs with an empty path, such as ``http://example.com``, matching the request-target sent by :mod:`http.client`. Previously it sent ``uri=\"\"``, which servers could reject. Patch by Senthil Kumaran."
+msgstr ""
 
 msgid ":gh:`109564`: Fix a race in :mod:`asyncio` where closing a server after it accepted a connection, but before the connection's transport was created, reported an :exc:`AssertionError` to the exception handler. Such connections are now closed quietly."
 msgstr ""
@@ -99,11 +105,25 @@ msgstr ""
 msgid ":gh:`60299`: Fix :class:`urllib.request.ProxyDigestAuthHandler` failing to authenticate. It looked up credentials using the target request URL instead of the proxy's authority, so passwords registered via ``add_password()`` against the proxy never matched. Patch by Senthil Kumaran."
 msgstr ""
 
+msgid ":gh:`160314`: Raise an error in :class:`lzma.LZMAFile`, :func:`lzma.decompress`, :class:`bz2.BZ2File` and :func:`bz2.decompress` for a damaged ``.xz`` or bzip2 stream that follows another stream, instead of silently ignoring it and everything after it as trailing data."
+msgstr ""
+
+msgid ":gh:`160310`: Fix quadratic time complexity of :func:`gzip.decompress`, :func:`bz2.decompress`, :func:`lzma.decompress` and :func:`compression.zstd.decompress` on data consisting of many concatenated members."
+msgstr ""
+
+msgid ":gh:`160522`: Fix the incremental encoders and stream writers of the stateful CJK codecs (``iso2022_*`` and ``hz``) keeping a changed shift state after an :meth:`!encode` or :meth:`!write` call failed.  The next call could omit the escape sequence, writing multibyte characters in ASCII mode."
+msgstr ""
+
 msgid ":gh:`160513`: Fix :meth:`asyncio.loop.start_tls` and :meth:`asyncio.StreamWriter.start_tls` not calling the protocol's :meth:`~asyncio.BaseProtocol.connection_lost` when the connection is lost, the handshake times out or the call is cancelled during the TLS handshake. :meth:`asyncio.StreamWriter.wait_closed` no longer waits forever after such a failure."
 msgstr ""
 
 msgid ":gh:`159398`: Fix the sampling profiler crashing when a string read from the target process contains code points above ``U+10FFFF``."
 msgstr ""
+
+#, fuzzy
+#| msgid ":issue:`18108`: :func:`shutil.chown` now supports *dir_fd* and *follow_symlinks* keyword arguments."
+msgid ":gh:`158998`: Fix :func:`os.statx` ignoring the *follow_symlinks* argument."
+msgstr ":issue:`18108`: تابع :func:`shutil.chown` اکنون از آرگومان‌های کلیدواژه‌ای *dir_fd* و *follow_symlinks* پشتیبانی می‌کند."
 
 msgid ":gh:`157928`: Correctly detect and handle OSC sequences in PyREPL."
 msgstr ""
