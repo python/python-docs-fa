@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 04:11+0000\n"
+"POT-Creation-Date: 2026-11-02 04:12+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -59,6 +59,9 @@ msgid ":gh:`159136`: Setting ``__name__``, ``__qualname__``, ``__doc__`` or ``__
 msgstr ""
 
 msgid ":gh:`152631`: Fix :func:`ast.parse` ability to parse lazy imports with *feature_version* older than 3.15, now it properly raises :exc:`SyntaxError`."
+msgstr ""
+
+msgid ":gh:`151060`: Fix a crash or memory corruption in :func:`sum` when summing a :class:`float` subclass instance into a complex running total."
 msgstr ""
 
 msgid "Library"
@@ -108,13 +111,58 @@ msgstr ""
 msgid ":gh:`160314`: Raise an error in :class:`lzma.LZMAFile`, :func:`lzma.decompress`, :class:`bz2.BZ2File` and :func:`bz2.decompress` for a damaged ``.xz`` or bzip2 stream that follows another stream, instead of silently ignoring it and everything after it as trailing data."
 msgstr ""
 
+msgid ":gh:`159739`: Fix the ``hz`` codec sometimes encoding ``~`` as a single ``~`` in text that mixes ASCII and Chinese characters, and the incremental ``iso2022_*`` codecs mishandling an escape sequence split across calls or keeping the previous character set after :meth:`!reset`.  Also fix possible crashes in the CJK incremental and stream codecs when their ``errors`` attribute or their class's ``codec`` attribute is replaced while they are in use."
+msgstr ""
+
+msgid ":gh:`159739`: Fix crashes in :class:`io.TextIOWrapper` and :class:`io.IncrementalNewlineDecoder` when a callback changes the active codec or decoded buffer. :class:`io.StringIO` now raises :exc:`ValueError` if converting the size passed to ``truncate()`` closes the stream."
+msgstr ""
+
 msgid ":gh:`160310`: Fix quadratic time complexity of :func:`gzip.decompress`, :func:`bz2.decompress`, :func:`lzma.decompress` and :func:`compression.zstd.decompress` on data consisting of many concatenated members."
 msgstr ""
 
 msgid ":gh:`160522`: Fix the incremental encoders and stream writers of the stateful CJK codecs (``iso2022_*`` and ``hz``) keeping a changed shift state after an :meth:`!encode` or :meth:`!write` call failed.  The next call could omit the escape sequence, writing multibyte characters in ASCII mode."
 msgstr ""
 
+msgid ":gh:`160316`: Fix :meth:`re.Pattern.match`, :meth:`re.Pattern.prefixmatch`, :meth:`re.Pattern.fullmatch` and the ``match()`` and ``prefixmatch()`` methods of scanner objects returning an empty match, or reading past the end of the string, when *pos* is greater than *endpos*.  They now return ``None``, as documented."
+msgstr ""
+
 msgid ":gh:`160513`: Fix :meth:`asyncio.loop.start_tls` and :meth:`asyncio.StreamWriter.start_tls` not calling the protocol's :meth:`~asyncio.BaseProtocol.connection_lost` when the connection is lost, the handshake times out or the call is cancelled during the TLS handshake. :meth:`asyncio.StreamWriter.wait_closed` no longer waits forever after such a failure."
+msgstr ""
+
+msgid ":gh:`160297`: Fix :meth:`tarfile.TarFile.extractall` and :meth:`tarfile.TarFile.extract` changing the mode, modification time and owner of a file outside the destination directory when a hard link member is extracted as a copy of a symbolic link member, for example with the ``'tar'`` filter."
+msgstr ""
+
+msgid ":gh:`161086`: Fix the :mod:`gzip` command-line interface ignoring :option:`gzip --fast` and :option:`gzip --best` when compressing files given as arguments."
+msgstr ""
+
+msgid ":gh:`161112`: Fix :func:`shutil.make_archive` adding the zip archive being created to itself when it is written inside the directory being archived or a symbolic link in that directory refers to it."
+msgstr ""
+
+msgid ":gh:`161094`: Fix :func:`zipfile.is_zipfile` raising :exc:`ValueError` instead of returning ``False`` for a file-like object, such as :class:`io.BytesIO`, whose end of central directory record places the central directory before the start of the file."
+msgstr ""
+
+msgid ":gh:`161096`: Fix :meth:`zoneinfo.ZoneInfo.from_file` accepting TZif data with a negative or oversized abbreviation block, which could use hundreds of times the file size in memory; it now raises :exc:`ValueError`. Abbreviation indexes above 127 now also give the correct time zone abbreviation."
+msgstr ""
+
+msgid ":gh:`161106`: Fix :func:`plistlib.dump` and :func:`plistlib.dumps` with :data:`~plistlib.FMT_BINARY` holding on to memory proportional to the size of large arrays and dictionaries after the call returns."
+msgstr ""
+
+msgid ":gh:`161098`: Fix :class:`multiprocessing.shared_memory.ShareableList` leaving its newly created shared memory block behind when a value cannot be stored, such as an integer outside the signed 64-bit range."
+msgstr ""
+
+msgid ":gh:`161108`: Fix quadratic time complexity of :meth:`!clear` and :meth:`!popitem` on :class:`configparser.ConfigParser` objects and their section proxies. Clearing a section no longer fails part way with :exc:`~configparser.InterpolationError` on a value it removes."
+msgstr ""
+
+msgid ":gh:`161100`: Fix :attr:`!ipaddress.IPv6Interface.is_unspecified` returning ``False`` for the IPv4-mapped address ``::ffff:0.0.0.0``.  It now gives the same result as :attr:`ipaddress.IPv6Address.is_unspecified`."
+msgstr ""
+
+msgid ":gh:`161102`: Fix the incremental decoder of the :mod:`idna <encodings.idna>` codec decoding some dots twice when its input starts with empty labels, for example ``b\".example.com\"``.  Reading a run of dots through :class:`io.TextIOWrapper` no longer produces quadratically more text than the input holds."
+msgstr ""
+
+msgid ":gh:`160187`: Fix the ISO-2022 decoders (``iso2022_jp``, ``iso2022_kr`` and related) accepting escape sequences that designate a character set to the wrong code element (G0, G1 or G2).  Such sequences now raise :exc:`UnicodeDecodeError` instead of producing wrong text or :exc:`RuntimeError`."
+msgstr ""
+
+msgid ":gh:`160185`: Fix :meth:`codecs.StreamWriter.reset` of the stateful CJK codecs (``hz`` and the ``iso2022_*`` family) not writing the sequence that returns the output to ASCII.  ``seek(0)`` of :class:`codecs.StreamWriter`, :class:`codecs.StreamReaderWriter` and :class:`codecs.StreamRecoder` now resets the writer before moving the stream position."
 msgstr ""
 
 msgid ":gh:`159398`: Fix the sampling profiler crashing when a string read from the target process contains code points above ``U+10FFFF``."
@@ -140,6 +188,11 @@ msgstr ":gh:`151126`: رفع فروپاشی ناشی از تنظیم‌نشدن 
 #| msgid ":gh:`133934`: Improve :mod:`sqlite3` CLI's ``.help`` message."
 msgid ":gh:`139105`: Correct the EOF key shown in the :mod:`sqlite3` CLI ``.help`` text on Windows."
 msgstr ":gh:`133934`: بهبود پیام ``.help`` در رابط خط فرمان، CLI ماژول :mod:`sqlite3`."
+
+#, fuzzy
+#| msgid ":issue:`41497`: Fix potential UnicodeDecodeError in dis module."
+msgid ":issue:`44170`: Fix UnicodeDecodeError with multibyte utf8 characters in ShareableList."
+msgstr ":issue:`41497`: رفع خطای احتمالی UnicodeDecodeError در ماژول dis."
 
 msgid "Tests"
 msgstr "آزمون‌ها"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-11-02 04:12+0000\n"
 "PO-Revision-Date: 2021-06-28 00:50+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -476,7 +476,9 @@ msgstr "پرچم ``Py_TPFLAGS_HEAPTYPE`` تنظیم نشده است، :c:func:`P
 msgid "This slot may not be used with :c:func:`PyType_GetSlot`. Use :c:func:`PyType_GetFlags` instead."
 msgstr "این جایگاه را نمی‌توان با :c:func:`PyType_GetSlot` استفاده کرد. به‌جای آن از :c:func:`PyType_GetFlags` استفاده کنید."
 
-msgid ":c:member:`Slot ID <PySlot.sl_id>` for type flags, used to set :c:member:`PyTypeObject.tp_bases`."
+#, fuzzy
+#| msgid ":c:member:`Slot ID <PySlot.sl_id>` for type flags, used to set :c:member:`PyTypeObject.tp_bases`."
+msgid ":c:member:`Slot ID <PySlot.sl_id>` for base types, used to set :c:member:`PyTypeObject.tp_bases`."
 msgstr ":c:member:`Slot ID <PySlot.sl_id>` برای پرچم‌های نوع، که برای تنظیم :c:member:`PyTypeObject.tp_bases` استفاده می‌شود."
 
 msgid "The slot can be set to a tuple of type objects which the newly created type should inherit from, like the \"positional arguments\" of a Python :ref:`class definition <class>`."
@@ -573,7 +575,9 @@ msgstr "یک :ref:`نوع هیپ <heap-types>` از *spec* بسازید و با�
 msgid "A non-``NULL`` *metaclass* argument corresponds to the :c:macro:`Py_tp_metaclass` slot."
 msgstr "یک آرگومان *metaclass* غیر-``NULL`` با جایگاه :c:macro:`Py_tp_metaclass` مطابقت دارد."
 
-msgid "A non-``NULL`` *bases* argument corresponds to the :c:data:`Py_tp_bases` slot, and takes precedence over :c:data:`Py_tp_bases` and :c:data:`Py_tp_bases` slots."
+#, fuzzy
+#| msgid "A non-``NULL`` *bases* argument corresponds to the :c:data:`Py_tp_bases` slot, and takes precedence over :c:data:`Py_tp_bases` and :c:data:`Py_tp_bases` slots."
+msgid "A non-``NULL`` *bases* argument corresponds to the :c:data:`Py_tp_bases` slot, and takes precedence over :c:data:`Py_tp_base` and :c:data:`Py_tp_bases` slots."
 msgstr "یک آرگومان *bases* غیر-``NULL`` با جایگاه :c:data:`Py_tp_bases` مطابقت دارد و بر جایگاه‌های :c:data:`Py_tp_bases` و :c:data:`Py_tp_bases` اولویت دارد."
 
 msgid "A non-``NULL`` *module* argument corresponds to the :c:macro:`Py_tp_module` slot."
@@ -648,11 +652,18 @@ msgstr "توجه داشته باشید که ممکن است یک آرایه‌ی
 msgid "Each :c:type:`!PyType_Slot` structure ``tpslot`` is interpreted as the following :c:type:`PySlot` structure::"
 msgstr "هر ساختار :c:type:`!PyType_Slot` به نام ``tpslot`` به عنوان ساختار :c:type:`PySlot` زیر تفسیر می‌شود::"
 
+#, fuzzy
+#| msgid ""
+#| "(PySlot){\n"
+#| "   .sl_id=tpslot.slot,\n"
+#| "   .sl_flags=PySlot_INTPTR | sub_static,\n"
+#| "   .sl_ptr=tpslot.func\n"
+#| "}"
 msgid ""
 "(PySlot){\n"
 "   .sl_id=tpslot.slot,\n"
 "   .sl_flags=PySlot_INTPTR | sub_static,\n"
-"   .sl_ptr=tpslot.func\n"
+"   .sl_ptr=tpslot.pfunc\n"
 "}"
 msgstr ""
 "(PySlot){\n"

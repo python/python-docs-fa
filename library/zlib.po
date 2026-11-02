@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-11-02 04:12+0000\n"
 "PO-Revision-Date: 2026-09-15 08:11+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -194,7 +194,9 @@ msgstr "یک بولی که نشان می‌دهد آیا به پایان جری�
 msgid "This makes it possible to distinguish between a properly formed compressed stream, and an incomplete or truncated one."
 msgstr "این امر امکان تمایز میان یک جریان فشرده‌ی به‌درستی تشکیل‌شده و یک جریان ناقص یا بریده‌شده را فراهم می‌کند."
 
-msgid "Decompress *data*, returning a bytes object containing the uncompressed data corresponding to at least part of the data in *string*.  This data should be concatenated to the output produced by any preceding calls to the :meth:`decompress` method.  Some of the input data may be preserved in internal buffers for later processing."
+#, fuzzy
+#| msgid "Decompress *data*, returning a bytes object containing the uncompressed data corresponding to at least part of the data in *string*.  This data should be concatenated to the output produced by any preceding calls to the :meth:`decompress` method.  Some of the input data may be preserved in internal buffers for later processing."
+msgid "Decompress *data*, returning a bytes object containing the uncompressed data corresponding to at least part of *data*.  This data should be concatenated to the output produced by any preceding calls to the :meth:`decompress` method.  Some of the input data may be preserved in internal buffers for later processing."
 msgstr "*data* را از حالت فشرده خارج می‌کند و یک شیء bytes حاوی داده‌ی غیرفشرده‌ی متناظر با حداقل بخشی از داده‌های موجود در *string* برمی‌گرداند. این داده باید به خروجی حاصل از هر فراخوانی پیشین متد :meth:`decompress` الحاق شود. ممکن است بخشی از داده‌ی ورودی برای پردازش بعدی در بافرهای داخلی نگه‌داری شود."
 
 msgid "If the optional parameter *max_length* is non-zero then the return value will be no longer than *max_length*. This may mean that not all of the compressed input can be processed; and unconsumed data will be stored in the attribute :attr:`unconsumed_tail`. This bytestring must be passed to a subsequent call to :meth:`decompress` if decompression is to continue.  If *max_length* is zero then the whole input is decompressed, and :attr:`unconsumed_tail` is empty. For example, the full content could be read like::"
