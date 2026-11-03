@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-02 04:12+0000\n"
+"POT-Creation-Date: 2026-11-03 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -67,6 +67,12 @@ msgstr ""
 msgid "Library"
 msgstr "کتابخانه"
 
+msgid ":gh:`161179`: Fix the function names in the error messages of :func:`os.spawnve`, :func:`os.preadv` and :meth:`tkinter.Wm.wm_attributes`."
+msgstr ""
+
+msgid ":gh:`161039`: Fix the :mod:`pydoc` pager not detecting ``less`` 706 and newer."
+msgstr ""
+
 #, fuzzy
 #| msgid ":gh:`103791`: :class:`contextlib.suppress` now supports suppressing exceptions raised as part of a :exc:`BaseExceptionGroup`, in addition to the recent support for :exc:`ExceptionGroup`."
 msgid ":gh:`137549`: :func:`asyncio.timeout` now inserts :exc:`TimeoutError` into the context chain of sub-exceptions of a :exc:`BaseExceptionGroup`, as it already did for :exc:`ExceptionGroup`."
@@ -77,6 +83,11 @@ msgstr ""
 
 msgid ":gh:`109564`: Fix a race in :mod:`asyncio` where closing a server after it accepted a connection, but before the connection's transport was created, reported an :exc:`AssertionError` to the exception handler. Such connections are now closed quietly."
 msgstr ""
+
+#, fuzzy
+#| msgid ":issue:`39503`: :class:`~urllib.request.AbstractBasicAuthHandler` of :mod:`urllib.request` now parses all WWW-Authenticate HTTP headers and accepts multiple challenges per header: use the realm of the first Basic challenge."
+msgid ":gh:`59515`: :class:`urllib.request.HTTPDigestAuthHandler` and :class:`urllib.request.ProxyDigestAuthHandler` now parse all ``WWW-Authenticate`` (or ``Proxy-Authenticate``) headers and accept multiple challenges per header: the first Digest challenge is used."
+msgstr ":issue:`39503`: کلاس :class:`~urllib.request.AbstractBasicAuthHandler` در ماژول :mod:`urllib.request` اکنون تمام سرآیندهای HTTP مربوط به WWW-Authenticate را تجزیه کرده و چندین چالش را به ازای هر سرآیند می‌پذیرد: از قلمرو نخستین چالش Basic استفاده کنید."
 
 msgid ":gh:`53852`: :class:`urllib.request.ProxyDigestAuthHandler` now raises :exc:`~urllib.error.HTTPError` with status code 407 (Proxy Authentication Required) instead of 401 when proxy authentication fails."
 msgstr ""
@@ -165,8 +176,16 @@ msgstr ""
 msgid ":gh:`160185`: Fix :meth:`codecs.StreamWriter.reset` of the stateful CJK codecs (``hz`` and the ``iso2022_*`` family) not writing the sequence that returns the output to ASCII.  ``seek(0)`` of :class:`codecs.StreamWriter`, :class:`codecs.StreamReaderWriter` and :class:`codecs.StreamRecoder` now resets the writer before moving the stream position."
 msgstr ""
 
+msgid ":gh:`159875`: Fix :exc:`AttributeError` from the methods of an :mod:`asyncio` SSL transport, such as :meth:`~asyncio.WriteTransport.write` and :meth:`~asyncio.BaseTransport.set_protocol`, when the transport is closed after its connection was lost. This also affected the fallback of :meth:`loop.sendfile() <asyncio.loop.sendfile>` over SSL when the peer went away mid-transfer. The SSL context is still released once the connection is lost."
+msgstr ""
+
 msgid ":gh:`159398`: Fix the sampling profiler crashing when a string read from the target process contains code points above ``U+10FFFF``."
 msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`159620`: Fix ``python -m asyncio ps``, ``pstree`` and async-aware :mod:`profiling.sampling` stacks stopping at asynchronous generators. Patch by Timofei Ivankov."
+msgid ":gh:`159168`: Fix :exc:`RecursionError` in ``python -m asyncio pstree`` on a deep chain of awaiting tasks. Patch by Timofei Ivankov."
+msgstr ":gh:`159620`: رفع دستورات ``python -m asyncio ps``، ``pstree`` و پشته‌های :mod:`profiling.sampling` آگاه از ناهمگامی که در تولیدگرهای ناهمگام متوقف می‌شوند. پچ توسط Timofei Ivankov."
 
 #, fuzzy
 #| msgid ":issue:`18108`: :func:`shutil.chown` now supports *dir_fd* and *follow_symlinks* keyword arguments."
@@ -193,6 +212,12 @@ msgstr ":gh:`133934`: بهبود پیام ``.help`` در رابط خط فرما�
 #| msgid ":issue:`41497`: Fix potential UnicodeDecodeError in dis module."
 msgid ":issue:`44170`: Fix UnicodeDecodeError with multibyte utf8 characters in ShareableList."
 msgstr ":issue:`41497`: رفع خطای احتمالی UnicodeDecodeError در ماژول dis."
+
+msgid "Documentation"
+msgstr "مستندات"
+
+msgid ":gh:`138277`: Rearranged documentation search results to emphasize built-in types and functions.  Patch by Adam Hartz."
+msgstr ""
 
 msgid "Tests"
 msgstr "آزمون‌ها"
@@ -1004,9 +1029,6 @@ msgstr ":gh:`83869`: رفع مشکل خواندن بایگانی توسط :mod:`
 
 msgid ":gh:`61366`: :class:`http.cookiejar.MozillaCookieJar` now reads session cookies written by curl and Wget, which use ``0`` in the expiration time field. Contributed by Jérémie Detrey."
 msgstr ":gh:`61366`: کلاس :class:`http.cookiejar.MozillaCookieJar` اکنون کوکی‌های نشستی نوشته‌شده توسط curl و Wget را که از ``0`` در فیلد زمان انقضا استفاده می‌کنند، می‌خواند. مشارکت‌کننده Jérémie Detrey."
-
-msgid "Documentation"
-msgstr "مستندات"
 
 msgid ":gh:`142083`: Document the ``'w'`` type code in the :class:`array.array` docstring, so that it lists the same type codes as :data:`array.typecodes` and the :mod:`array` module documentation."
 msgstr ":gh:`142083`: کد نوع ``'w'`` در رشته‌مستند :class:`array.array` مستندسازی شد، به‌طوری‌که همان کدهای نوع را مانند :data:`array.typecodes` و مستندات ماژول :mod:`array` فهرست می‌کند."
@@ -7022,7 +7044,9 @@ msgstr ":gh:`133656`: حذف متد منسوخ :meth:`!zipimport.zipimporter.loa
 msgid ":gh:`133722`: Added a *color* option to :func:`difflib.unified_diff` that colors output similar to :program:`git diff`."
 msgstr ":gh:`133722`: افزودن گزینه‌ی *color* به :func:`difflib.unified_diff` که خروجی را مشابه :program:`git diff` رنگی می‌کند."
 
-msgid ":gh:`133489`: :func:`random.getrandbits` can now generate more that 2\\ :sup:`31` bits. :func:`random.randbytes` can now generate more that 256 MiB."
+#, fuzzy
+#| msgid ":gh:`133489`: :func:`random.getrandbits` can now generate more that 2\\ :sup:`31` bits. :func:`random.randbytes` can now generate more that 256 MiB."
+msgid ":gh:`133489`: :func:`random.getrandbits` can now generate more that 2 :sup:`31` bits. :func:`random.randbytes` can now generate more that 256 MiB."
 msgstr ":gh:`133489`: تابع :func:`random.getrandbits` اکنون می‌تواند بیش از ۲\\ :sup:`31` بیت تولید کند. تابع :func:`random.randbytes` اکنون می‌تواند بیش از ۲۵۶ مگابایت تولید کند."
 
 msgid ":gh:`133595`: Clean up :class:`sqlite3.Connection` APIs. All parameters of :func:`sqlite3.connect` except *database* are now keyword-only. The first three parameters of methods :meth:`~sqlite3.Connection.create_function` and :meth:`~sqlite3.Connection.create_aggregate` are now positional-only. The first parameter of methods :meth:`~sqlite3.Connection.set_authorizer`, :meth:`~sqlite3.Connection.set_progress_handler` and :meth:`~sqlite3.Connection.set_trace_callback` is now positional-only."
@@ -29730,7 +29754,9 @@ msgstr ":issue:`1635741`: انتقال ماژول :mod:`mmap` به مقدارد�
 msgid ":issue:`1635741`: Port :mod:`!_lzma` to multiphase initialization."
 msgstr ":issue:`1635741`: انتقال ماژول :mod:`!_lzma` به مقداردهی اولیه چندمرحله‌ای."
 
-msgid ":issue:`37999`: Builtin and extension functions that take integer arguments no longer accept :class:`~decimal.Decimal`\\ s, :class:`~fractions.Fraction`\\ s and other objects that can be converted to integers only with a loss (e.g. that have the :meth:`~object.__int__` method but do not have the :meth:`~object.__index__` method)."
+#, fuzzy
+#| msgid ":issue:`37999`: Builtin and extension functions that take integer arguments no longer accept :class:`~decimal.Decimal`\\ s, :class:`~fractions.Fraction`\\ s and other objects that can be converted to integers only with a loss (e.g. that have the :meth:`~object.__int__` method but do not have the :meth:`~object.__index__` method)."
+msgid ":issue:`37999`: Builtin and extension functions that take integer arguments no longer accept :class:`~decimal.Decimal`\\ s, :class:`~fractions.Fraction` s and other objects that can be converted to integers only with a loss (e.g. that have the :meth:`~object.__int__` method but do not have the :meth:`~object.__index__` method)."
 msgstr ":issue:`37999`: توابع توکار (Builtin) و افزونه‌ای که آرگومان‌های عدد صحیح می‌پذیرند، دیگر اشیاء :class:`~decimal.Decimal`\\ ، :class:`~fractions.Fraction`\\ و سایر اشیایی را که تبدیل آن‌ها به اعداد صحیح همراه با از دست رفتن داده است (مثلاً متد :meth:`~object.__int__` را دارند اما متد :meth:`~object.__index__` را ندارند) نمی‌پذیرند."
 
 msgid ":issue:`29882`: Add :meth:`int.bit_count`, counting the number of ones in the binary representation of an integer. Patch by Niklas Fiekas."
