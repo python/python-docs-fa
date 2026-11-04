@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-02 04:12+0000\n"
+"POT-Creation-Date: 2026-11-04 04:11+0000\n"
 "PO-Revision-Date: 2026-10-06 19:55+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -199,8 +199,8 @@ msgstr "در صورت خطا، خطا را در *config* تنظیم کرده و 
 msgid "Get a string configuration option as a null-terminated UTF-8 encoded string."
 msgstr "یک گزینه پیکربندی رشته‌ای را به‌صورت رشته‌ای کدگذاری‌شده با UTF-8 و پایان‌یافته با تهی دریافت می‌کند."
 
-msgid "*\\*value* can be set to ``NULL`` if the option is an optional string and the option is unset."
-msgstr "اگر گزینه یک رشته‌ی اختیاری باشد و تنظیم نشده باشد، می‌توان *\\*value* را برابر ``NULL`` قرار داد."
+msgid "*\\*value* can be set to ``NULL`` if the option is unset or if the option is an optional string. Optional strings are documented with the type ``str | None`` in the :ref:`Configuration Options <pyinitconfig-opts>` table."
+msgstr ""
 
 msgid "On success, the string must be released with ``free(value)`` if it's not ``NULL``."
 msgstr "در صورت موفقیت، اگر رشته ``NULL`` نباشد، باید با ``free(value)`` آزاد شود."
@@ -233,6 +233,9 @@ msgstr "در صورت موفقیت ``0`` را برمی‌گرداند."
 
 msgid "Set a string configuration option from a null-terminated UTF-8 encoded string. The string is copied."
 msgstr "یک گزینه پیکربندی رشته‌ای را از یک رشته‌ی کدگذاری‌شده با UTF-8 و خاتمه‌یافته با نویسه تهی تنظیم می‌کند. رشته کپی می‌شود."
+
+msgid "Options documented with the type ``str | None`` in the :ref:`Configuration Options <pyinitconfig-opts>` table can be set to ``NULL``."
+msgstr ""
 
 msgid "Set a string list configuration option from an array of null-terminated UTF-8 encoded strings. The string list is copied."
 msgstr "یک گزینه پیکربندی فهرست رشته‌ای را از آرایه‌ای از رشته‌های کدگذاری‌شده با UTF-8 و پایان‌یافته با نویسه تهی تنظیم می‌کند. فهرست رشته‌ها کپی می‌شود."
@@ -309,7 +312,9 @@ msgstr "``\"base_exec_prefix\"``"
 msgid ":c:member:`base_exec_prefix <PyConfig.base_exec_prefix>`"
 msgstr ":c:member:`base_exec_prefix <PyConfig.base_exec_prefix>`"
 
-msgid "``str``"
+#, fuzzy
+#| msgid "``str``"
+msgid "``str | None``"
 msgstr "``str``"
 
 msgid "``\"base_executable\"``"
@@ -344,6 +349,9 @@ msgstr "``\"check_hash_pycs_mode\"``"
 
 msgid ":c:member:`check_hash_pycs_mode <PyConfig.check_hash_pycs_mode>`"
 msgstr ":c:member:`check_hash_pycs_mode <PyConfig.check_hash_pycs_mode>`"
+
+msgid "``str``"
+msgstr "``str``"
 
 msgid "``\"code_debug_ranges\"``"
 msgstr "``\"code_debug_ranges\"``"
@@ -476,6 +484,16 @@ msgstr "``\"isolated\"``"
 
 msgid ":c:member:`isolated <PyConfig.isolated>`"
 msgstr ":c:member:`isolated <PyConfig.isolated>`"
+
+#, fuzzy
+#| msgid "``\"site_import\"``"
+msgid "``\"lazy_imports\"``"
+msgstr "``\"site_import\"``"
+
+#, fuzzy
+#| msgid ":c:member:`site_import <PyConfig.site_import>`"
+msgid ":c:member:`lazy_imports <PyConfig.lazy_imports>`"
+msgstr ":c:member:`site_import <PyConfig.site_import>`"
 
 msgid "``\"legacy_windows_fs_encoding\"``"
 msgstr "``\"legacy_windows_fs_encoding\"``"
@@ -715,6 +733,9 @@ msgstr "``\"_pystats\"``"
 
 msgid ":c:member:`_pystats <PyConfig._pystats>`"
 msgstr ":c:member:`_pystats <PyConfig._pystats>`"
+
+msgid "The type ``str | None`` means that the option is an optional string which can be set to ``NULL``."
+msgstr ""
 
 msgid "Visibility:"
 msgstr "پدیداری:"
@@ -1643,6 +1664,17 @@ msgstr "با گزینه‌ی خط فرمان :option:`-I` روی ``1`` تنظی�
 msgid "See also the :ref:`Isolated Configuration <init-isolated-conf>` and :c:member:`PyPreConfig.isolated`."
 msgstr "همچنین :ref:`پیکربندی ایزوله <init-isolated-conf>` و :c:member:`PyPreConfig.isolated` را ببینید."
 
+msgid "Control :ref:`lazy imports <lazy-imports>`."
+msgstr ""
+
+msgid "A value of ``-1`` keeps the default behaviour, where only imports marked with the ``lazy`` keyword are lazy. A value of ``1`` makes every import lazy. ``0`` is rejected."
+msgstr ""
+
+#, fuzzy
+#| msgid "Configured by the :option:`-X int_max_str_digits <-X>` command line flag or the :envvar:`PYTHONINTMAXSTRDIGITS` environment variable."
+msgid "Configured by the :option:`-X lazy_imports <-X>` command line option or the :envvar:`PYTHON_LAZY_IMPORTS` environment variable."
+msgstr "با پرچم خط فرمان :option:`-X int_max_str_digits <-X>` یا متغیر محیطی :envvar:`PYTHONINTMAXSTRDIGITS` پیکربندی می‌شود."
+
 msgid "If non-zero, use :class:`io.FileIO` instead of :class:`!io._WindowsConsoleIO` for :data:`sys.stdin`, :data:`sys.stdout` and :data:`sys.stderr`."
 msgstr "اگر غیر صفر باشد، به‌جای :class:`!io._WindowsConsoleIO` از :class:`io.FileIO` برای :data:`sys.stdin`، :data:`sys.stdout` و :data:`sys.stderr` استفاده می‌شود."
 
@@ -2456,6 +2488,9 @@ msgstr "main()"
 
 msgid "argv (in module sys)"
 msgstr "argv (در ماژول sys)"
+
+#~ msgid "*\\*value* can be set to ``NULL`` if the option is an optional string and the option is unset."
+#~ msgstr "اگر گزینه یک رشته‌ی اختیاری باشد و تنظیم نشده باشد، می‌توان *\\*value* را برابر ``NULL`` قرار داد."
 
 #~ msgid "Set to ``0`` by the :option:`-E` environment variable."
 #~ msgstr "توسط متغیر محیطی :option:`-E` روی ``0`` تنظیم می‌شود."

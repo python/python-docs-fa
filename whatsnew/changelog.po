@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-03 04:11+0000\n"
+"POT-Creation-Date: 2026-11-04 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -36,6 +36,11 @@ msgstr "*تاریخ انتشار: XXXX-XX-XX*"
 
 msgid "Security"
 msgstr "امنیت"
+
+#, fuzzy
+#| msgid ":gh:`149698`: Update bundled `libexpat <https://libexpat.github.io/>`_ to version 2.8.1 for the fix for :cve:`2026-45186`."
+msgid ":gh:`161192`: Update bundled `libexpat <https://libexpat.github.io/>`_ to version 2.10.0 for the fixes to :cve:`2026-113351`, :cve:`2026-115506`, :cve:`2026-117610` and :cve:`2026-118370`."
+msgstr ":gh:`149698`: به‌روزرسانی `libexpat <https://libexpat.github.io/>`_ بسته‌بندی‌شده به نسخه‌ی ۲.۸.۱ برای رفع آسیب‌پذیری :cve:`2026-45186`."
 
 msgid ":gh:`160499`: Fix unbounded memory growth in :mod:`asyncio` TLS connections when a peer stops reading but keeps sending records that make OpenSSL generate its own replies (such as TLS 1.2 renegotiation alerts).  Reading from the peer is now paused when this output accumulates, instead of only when application data does."
 msgstr ""
@@ -66,6 +71,14 @@ msgstr ""
 
 msgid "Library"
 msgstr "کتابخانه"
+
+msgid ":gh:`161233`: Fix unraisable :exc:`TypeError` when ``None`` was passed as a *timer* to :class:`cProfile.Profile <profile.Profile>`."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`159894`: Bump the version of :pypi:`pip` bundled in :mod:`ensurepip` to version 26.2.2."
+msgid ":gh:`161212`: Bump the version of :pypi:`pip` bundled in :mod:`ensurepip` to version 26.3."
+msgstr ":gh:`159894`: ارتقای نسخه‌ی :pypi:`pip` بسته‌بندی‌شده در :mod:`ensurepip` به نسخه‌ی 26.2.2."
 
 msgid ":gh:`161179`: Fix the function names in the error messages of :func:`os.spawnve`, :func:`os.preadv` and :meth:`tkinter.Wm.wm_attributes`."
 msgstr ""
@@ -192,6 +205,11 @@ msgstr ":gh:`159620`: رفع دستورات ``python -m asyncio ps``، ``pstree`
 msgid ":gh:`158998`: Fix :func:`os.statx` ignoring the *follow_symlinks* argument."
 msgstr ":issue:`18108`: تابع :func:`shutil.chown` اکنون از آرگومان‌های کلیدواژه‌ای *dir_fd* و *follow_symlinks* پشتیبانی می‌کند."
 
+#, fuzzy
+#| msgid ":gh:`120244`: Fix memory leak in :func:`re.sub` when the replacement string contains backreferences."
+msgid ":gh:`158095`: Fix a memory leak in :func:`re.finditer` and regular expression scanners when their input participates in a reference cycle."
+msgstr ":gh:`120244`: رفع نشت حافظه در :func:`re.sub` هنگامی که رشته‌ی جایگزین حاوی بازارجاعات است."
+
 msgid ":gh:`157928`: Correctly detect and handle OSC sequences in PyREPL."
 msgstr ""
 
@@ -230,6 +248,20 @@ msgstr "ساخت"
 
 msgid ":gh:`160704`: Fix C11-C17 builds with old C library headers that do not define ``static_assert``, including glibc versions older than 2.16."
 msgstr ""
+
+msgid "Windows"
+msgstr "Windows"
+
+msgid ":gh:`159118`: Fix a crash (``RPC_NT_INTERNAL_ERROR``) and intermittent window class failures in :mod:`!_wmi` under high concurrency and load by initializing COM as multi-threaded (MTA) instead of apartment-threaded (STA)."
+msgstr ""
+
+msgid "C API"
+msgstr "رابط C API"
+
+#, fuzzy
+#| msgid ":gh:`156939`: Fix :c:func:`PyBytesWriter_Format` error handling: restore the writer to its previous state on error. Patch by Victor Stinner."
+msgid ":gh:`160962`: Fix :c:func:`PyInitConfig_SetStr` when setting an optional string option to ``NULL``. Previously, the function crashed. Patch by Victor Stinner."
+msgstr ":gh:`156939`: رفع نحوه‌ی مدیریت خطای تابع :c:func:`PyBytesWriter_Format`: بازگرداندن نویسنده (writer) به وضعیت قبلی خود در صورت بروز خطا. وصله توسط Victor Stinner."
 
 #, fuzzy
 #| msgid "Python 3.5.2 final"
@@ -480,9 +512,6 @@ msgstr ""
 
 msgid ":gh:`155813`: On macOS, :option:`LIBFFI_CFLAGS` and :option:`LIBFFI_LIBS` are no longer ignored when the SDK provides ``libffi``, so :mod:`ctypes` can again be built against a different ``libffi``. Patch by Advit Arora."
 msgstr ":gh:`155813`: در macOS، گزینه‌های :option:`LIBFFI_CFLAGS` و :option:`LIBFFI_LIBS` دیگر زمانی که SDK کتابخانه‌ی ``libffi`` را فراهم می‌کند نادیده گرفته نمی‌شوند، بنابراین :mod:`ctypes` می‌تواند بار دیگر در برابر نسخه‌ی متفاوتی از ``libffi`` ساخته شود. وصله‌ای از Advit Arora."
-
-msgid "C API"
-msgstr "رابط C API"
 
 msgid ":gh:`159739`: Avoid a crash if a context watcher is cleared while other context watchers are being notified."
 msgstr ":gh:`159739`: جلوگیری از فروپاشی در صورتی که یک پایشگر زمینه در حالی پاک‌سازی شود که دیگر پایشگرهای زمینه در حال مطلع شدن هستند."
@@ -1077,9 +1106,6 @@ msgstr ":gh:`157142`: رفع پیوند ``Programs/_freeze_module`` هنگامی
 
 msgid ":gh:`155911`: Fix curses detection when a curses library is already in ``LIBS``. Patch by Shamil Abdulaev."
 msgstr ":gh:`155911`: رفع تشخیص curses هنگامی که یک کتابخانه‌ی curses از پیش در ``LIBS`` وجود دارد. وصله توسط Shamil Abdulaev."
-
-msgid "Windows"
-msgstr "Windows"
 
 msgid ":gh:`159880`: Fix a key handle leak in :func:`winreg.CreateKey`, :func:`winreg.CreateKeyEx` and :func:`winreg.OpenKey` when the ``winreg.OpenKey/result`` audit hook fails."
 msgstr ":gh:`159880`: رفع نشتی دسته‌ی کلید (key handle) در :func:`winreg.CreateKey`، :func:`winreg.CreateKeyEx` و :func:`winreg.OpenKey` هنگامی که قلاب حسابرسی (audit hook) ``winreg.OpenKey/result`` با خطا مواجه می‌شود."

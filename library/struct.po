@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-11-04 04:11+0000\n"
 "PO-Revision-Date: 2026-09-13 19:44+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -74,7 +74,9 @@ msgstr "اندازه‌ی ساختار (و بنابراین اندازه‌ی ش
 msgid "Format Strings"
 msgstr "رشته‌های قالب"
 
-msgid "Format strings describe the data layout when packing and unpacking data.  They are built up from :ref:`format characters<format-characters>`, which specify the type of data being packed/unpacked.  In addition, special characters control the :ref:`byte order, size and alignment<struct-alignment>`. Each format string consists of an optional prefix character which describes the overall properties of the data and one or more format characters which describe the actual data values and padding."
+#, fuzzy
+#| msgid "Format strings describe the data layout when packing and unpacking data.  They are built up from :ref:`format characters<format-characters>`, which specify the type of data being packed/unpacked.  In addition, special characters control the :ref:`byte order, size and alignment<struct-alignment>`. Each format string consists of an optional prefix character which describes the overall properties of the data and one or more format characters which describe the actual data values and padding."
+msgid "Format strings describe the data layout when packing and unpacking data.  They are built up from :ref:`type codes <type-codes>`, which specify the type of data being packed/unpacked.  In addition, special characters control the :ref:`byte order, size and alignment<struct-alignment>`. Each format string consists of an optional prefix character which describes the overall properties of the data and one or more format characters which describe the actual data values and padding."
 msgstr "رشته‌های قالب، چیدمان داده‌ها را هنگام بسته‌بندی و واگشایی داده توصیف می‌کنند. آن‌ها از :ref:`نویسه‌های قالب <format-characters>` تشکیل شده‌اند که نوع داده‌هایی را که بسته‌بندی/واگشایی می‌شوند مشخص می‌کنند. افزون بر این، نویسه‌های ویژه :ref:`ترتیب بایت، اندازه و ترازبندی <struct-alignment>` را کنترل می‌کنند. هر رشته‌ی قالب شامل یک نویسه‌ی پیشوندی اختیاری است که ویژگی‌های کلی داده‌ها را توصیف می‌کند و یک یا چند نویسه‌ی قالب که مقادیر واقعی داده و فضای پرکننده را توصیف می‌کنند."
 
 msgid "Byte Order, Size, and Alignment"
@@ -152,7 +154,9 @@ msgstr "ترتیب بایت بومی، بسته به سیستم میزبان، �
 msgid "Native size and alignment are determined using the C compiler's ``sizeof`` expression.  This is always combined with native byte order."
 msgstr "اندازه و هم‌ترازی بومی با استفاده از عبارت ``sizeof`` کامپایلر C تعیین می‌شود. این همیشه با ترتیب بایت بومی ترکیب می‌شود."
 
-msgid "Standard size depends only on the format character;  see the table in the :ref:`format-characters` section."
+#, fuzzy
+#| msgid "Standard size depends only on the format character;  see the table in the :ref:`format-characters` section."
+msgid "Standard size depends only on the type code;  see the table in the :ref:`type-codes` section."
 msgstr "اندازه‌ی استاندارد فقط به نویسه‌ی قالب بستگی دارد؛ جدول موجود در بخش :ref:`format-characters` را ببینید."
 
 msgid "Note the difference between ``'@'`` and ``'='``: both use native byte order, but the size and alignment of the latter is standardized."
@@ -176,10 +180,12 @@ msgstr "هنگام استفاده از اندازه و ترازبندی غیرب
 msgid "To align the end of a structure to the alignment requirement of a particular type, end the format with the code for that type with a repeat count of zero.  See :ref:`struct-examples`."
 msgstr "برای هم‌تراز کردن انتهای یک ساختار با الزام هم‌ترازی یک نوع خاص، قالب را با کد آن نوع و تعداد تکرار صفر به پایان ببرید. :ref:`struct-examples` را ببینید."
 
-msgid "Format Characters"
-msgstr "نویسه‌های قالب‌بندی"
+msgid "Type Codes"
+msgstr ""
 
-msgid "Format characters have the following meaning; the conversion between C and Python values should be obvious given their types.  The 'Standard size' column refers to the size of the packed value in bytes when using standard size; that is, when the format string starts with one of ``'<'``, ``'>'``, ``'!'`` or ``'='``.  When using native size, the size of the packed value is platform-dependent."
+#, fuzzy
+#| msgid "Format characters have the following meaning; the conversion between C and Python values should be obvious given their types.  The 'Standard size' column refers to the size of the packed value in bytes when using standard size; that is, when the format string starts with one of ``'<'``, ``'>'``, ``'!'`` or ``'='``.  When using native size, the size of the packed value is platform-dependent."
+msgid "Type codes (or format codes) have the following meaning; the conversion between C and Python values should be obvious given their types.  The 'Standard size' column refers to the size of the packed value in bytes when using standard size; that is, when the format string starts with one of ``'<'``, ``'>'``, ``'!'`` or ``'='``.  When using native size, the size of the packed value is platform-dependent."
 msgstr "نویسه‌های قالب معنای زیر را دارند؛ با توجه به نوع آن‌ها، تبدیل بین مقادیر C و پایتون باید بدیهی باشد. ستون «اندازه استاندارد» به اندازه‌ی مقدار بسته‌بندی‌شده بر حسب بایت هنگام استفاده از اندازه استاندارد اشاره دارد؛ یعنی زمانی که رشته‌ی قالب با یکی از ``'<'``، ``'>'``، ``'!'`` یا ``'='`` شروع شود. هنگام استفاده از اندازه بومی، اندازه‌ی مقدار بسته‌بندی‌شده وابسته به سکو است."
 
 msgid "Format"
@@ -428,7 +434,9 @@ msgstr "کدهای تبدیل ``'n'`` و ``'N'`` فقط برای اندازه ب
 msgid "For the ``'f'``, ``'d'`` and ``'e'`` conversion codes, the packed representation uses the IEEE 754 binary32, binary64 or binary16 format (for ``'f'``, ``'d'`` or ``'e'`` respectively), regardless of the floating-point format used by the platform."
 msgstr "برای کدهای تبدیل ``'f'``، ``'d'`` و ``'e'``، بازنمایی فشرده از قالب binary32، binary64 یا binary16 IEEE 754 (به‌ترتیب برای ``'f'``، ``'d'`` یا ``'e'``) استفاده می‌کند، صرف‌نظر از قالب ممیز شناور استفاده‌شده توسط سکو."
 
-msgid "The ``'P'`` format character is only available for the native byte ordering (selected as the default or with the ``'@'`` byte order character). The byte order character ``'='`` chooses to use little- or big-endian ordering based on the host system. The struct module does not interpret this as native ordering, so the ``'P'`` format is not available."
+#, fuzzy
+#| msgid "The ``'P'`` format character is only available for the native byte ordering (selected as the default or with the ``'@'`` byte order character). The byte order character ``'='`` chooses to use little- or big-endian ordering based on the host system. The struct module does not interpret this as native ordering, so the ``'P'`` format is not available."
+msgid "The ``'P'`` type code is only available for the native byte ordering (selected as the default or with the ``'@'`` byte order character). The byte order character ``'='`` chooses to use little- or big-endian ordering based on the host system. The struct module does not interpret this as native ordering, so the ``'P'`` format is not available."
 msgstr "نویسه‌ی قالب ``'P'`` فقط برای ترتیب بایت بومی در دسترس است (که به‌عنوان پیش‌فرض یا با نویسه‌ی ترتیب بایت ``'@'`` انتخاب می‌شود). نویسه‌ی ترتیب بایت ``'='`` استفاده از ترتیب کوچک‌اندیان (little-endian) یا بزرگ‌اندیان (big-endian) را بر اساس سیستم میزبان انتخاب می‌کند. ماژول struct این را به‌عنوان ترتیب بومی تفسیر نمی‌کند، بنابراین قالب ``'P'`` در دسترس نیست."
 
 msgid "The IEEE 754 binary16 \"half precision\" type was introduced in the 2008 revision of the `IEEE 754 standard <ieee 754 standard_>`_. It has a sign bit, a 5-bit exponent and 11-bit precision (with 10 bits explicitly stored), and can represent numbers between approximately ``6.1e-05`` and ``6.5e+04`` at full precision. This type is not widely supported by C compilers: it's available as :c:expr:`_Float16` type, if the compiler supports the Annex H of the C23 standard.  On a typical machine, an unsigned short can be used for storage, but not for math operations. See the Wikipedia page on the `half-precision floating-point format <half precision format_>`_ for more information."
@@ -437,16 +445,22 @@ msgstr "نوع binary16 «دقت نصفه» (half precision) در IEEE 754، د�
 msgid "When packing, ``'x'`` inserts one NUL byte."
 msgstr "هنگام بسته‌بندی، ``'x'`` یک بایت NUL درج می‌کند."
 
-msgid "The ``'p'`` format character encodes a \"Pascal string\", meaning a short variable-length string stored in a *fixed number of bytes*, given by the count. The first byte stored is the length of the string, or 255, whichever is smaller.  The bytes of the string follow.  If the byte string passed in to :func:`pack` is too long (longer than the count minus 1), only the leading ``count-1`` bytes of the string are stored.  If the byte string is shorter than ``count-1``, it is padded with null bytes so that exactly count bytes in all are used.  Note that for :func:`unpack`, the ``'p'`` format character consumes ``count`` bytes, but that the :class:`!bytes` object returned can never contain more than 255 bytes. When packing, arguments of types :class:`bytes` and :class:`bytearray` are accepted."
+#, fuzzy
+#| msgid "The ``'p'`` format character encodes a \"Pascal string\", meaning a short variable-length string stored in a *fixed number of bytes*, given by the count. The first byte stored is the length of the string, or 255, whichever is smaller.  The bytes of the string follow.  If the byte string passed in to :func:`pack` is too long (longer than the count minus 1), only the leading ``count-1`` bytes of the string are stored.  If the byte string is shorter than ``count-1``, it is padded with null bytes so that exactly count bytes in all are used.  Note that for :func:`unpack`, the ``'p'`` format character consumes ``count`` bytes, but that the :class:`!bytes` object returned can never contain more than 255 bytes. When packing, arguments of types :class:`bytes` and :class:`bytearray` are accepted."
+msgid "The ``'p'`` type code encodes a \"Pascal string\", meaning a short variable-length string stored in a *fixed number of bytes*, given by the count. The first byte stored is the length of the string, or 255, whichever is smaller.  The bytes of the string follow.  If the byte string passed in to :func:`pack` is too long (longer than the count minus 1), only the leading ``count-1`` bytes of the string are stored.  If the byte string is shorter than ``count-1``, it is padded with null bytes so that exactly count bytes in all are used.  Note that for :func:`unpack`, the ``'p'`` type code consumes ``count`` bytes, but that the :class:`!bytes` object returned can never contain more than 255 bytes. When packing, arguments of types :class:`bytes` and :class:`bytearray` are accepted."
 msgstr "نویسه قالب ``'p'`` یک «رشته پاسکالی» را کدگذاری می‌کند، یعنی رشته‌ای کوتاه با طول متغیر که در *تعداد ثابتی از بایت‌ها* ذخیره می‌شود و با تعداد (count) مشخص می‌گردد. نخستین بایت ذخیره‌شده، طول رشته یا ۲۵۵ است، هرکدام که کوچک‌تر باشد. بایت‌های رشته در ادامه می‌آیند. اگر رشته بایت داده‌شده به :func:`pack` بیش از حد طولانی باشد (طولانی‌تر از count منهای ۱)، تنها ``count-1`` بایت ابتدایی رشته ذخیره می‌شود. اگر رشته بایت کوتاه‌تر از ``count-1`` باشد، با بایت‌های null پر می‌شود تا دقیقاً در مجموع count بایت استفاده شود. توجه داشته باشید که برای :func:`unpack`، نویسه قالب ``'p'`` ``count`` بایت مصرف می‌کند، اما شیء :class:`!bytes` برگشتی هرگز نمی‌تواند بیش از ۲۵۵ بایت داشته باشد. هنگام pack کردن، آرگومان‌هایی از انواع :class:`bytes` و :class:`bytearray` پذیرفته می‌شوند."
 
-msgid "For the ``'s'`` format character, the count is interpreted as the length of the byte string, not a repeat count like for the other format characters; for example, ``'10s'`` means a single 10-byte string mapping to or from a single Python byte string, while ``'10c'`` means 10 separate one byte character elements (e.g., ``cccccccccc``) mapping to or from ten different Python byte objects. (See :ref:`struct-examples` for a concrete demonstration of the difference.) If a count is not given, it defaults to 1.  For packing, the byte string is truncated or padded with null bytes as appropriate to make it fit. For unpacking, the resulting :class:`!bytes` object always has exactly the specified number of bytes.  As a special case, ``'0s'`` means a single, empty byte string (while ``'0c'`` means 0 characters). When packing, arguments of types :class:`bytes` and :class:`bytearray` are accepted."
+#, fuzzy
+#| msgid "For the ``'s'`` format character, the count is interpreted as the length of the byte string, not a repeat count like for the other format characters; for example, ``'10s'`` means a single 10-byte string mapping to or from a single Python byte string, while ``'10c'`` means 10 separate one byte character elements (e.g., ``cccccccccc``) mapping to or from ten different Python byte objects. (See :ref:`struct-examples` for a concrete demonstration of the difference.) If a count is not given, it defaults to 1.  For packing, the byte string is truncated or padded with null bytes as appropriate to make it fit. For unpacking, the resulting :class:`!bytes` object always has exactly the specified number of bytes.  As a special case, ``'0s'`` means a single, empty byte string (while ``'0c'`` means 0 characters). When packing, arguments of types :class:`bytes` and :class:`bytearray` are accepted."
+msgid "For the ``'s'`` type code, the count is interpreted as the length of the byte string, not a repeat count like for the other type codes; for example, ``'10s'`` means a single 10-byte string mapping to or from a single Python byte string, while ``'10c'`` means 10 separate one byte character elements (e.g., ``cccccccccc``) mapping to or from ten different Python byte objects. (See :ref:`struct-examples` for a concrete demonstration of the difference.) If a count is not given, it defaults to 1.  For packing, the byte string is truncated or padded with null bytes as appropriate to make it fit. For unpacking, the resulting :class:`!bytes` object always has exactly the specified number of bytes.  As a special case, ``'0s'`` means a single, empty byte string (while ``'0c'`` means 0 characters). When packing, arguments of types :class:`bytes` and :class:`bytearray` are accepted."
 msgstr "برای نویسه‌ی قالب ``'s'``، تعداد به‌عنوان طول رشته‌ی بایتی تفسیر می‌شود، نه به‌عنوان تعداد تکرار مانند دیگر نویسه‌های قالب؛ برای مثال، ``'10s'`` به‌معنای یک رشته‌ی ۱۰ بایتی واحد است که به یک رشته‌ی بایتی پایتون یا از آن نگاشت می‌شود، در حالی که ``'10c'`` به‌معنای ۱۰ المان نویسه‌ای یک‌بایتی جداگانه (مانند ``cccccccccc``) است که به ۱۰ شیء بایتی متفاوت پایتون یا از آن‌ها نگاشت می‌شوند. (برای نمایش ملموس این تفاوت، :ref:`struct-examples` را ببینید.) اگر تعدادی داده نشود، مقدار پیش‌فرض ۱ است. در بسته‌بندی، رشته‌ی بایتی در صورت لزوم بریده می‌شود یا با بایت‌های تهی پر می‌شود تا در قالب جای گیرد. در واگشایی، شیء :class:`!bytes` حاصل همیشه دقیقاً دارای تعداد بایت مشخص‌شده است. به‌عنوان یک حالت خاص، ``'0s'`` به‌معنای یک رشته‌ی بایتی خالی واحد است (در حالی که ``'0c'`` به‌معنای ۰ نویسه است). هنگام بسته‌بندی، آرگومان‌هایی از انواع :class:`bytes` و :class:`bytearray` پذیرفته می‌شوند."
 
 msgid "For the ``'Zf'`` and ``'Zd'`` type codes, the packed representation uses the IEEE 754 binary32 and binary64 format for components of the complex number, regardless of the floating-point format used by the platform. Note that complex types are available unconditionally, despite complex types being an optional feature in C. As specified in the C11 standard, each complex type is represented by a two-element C array containing, respectively, the real and imaginary parts. The ``'F'`` and ``'D'`` (for ``'Zf'`` and ``'Zd'``, respectively) format characters are supported for compatibility."
 msgstr "برای کدهای نوع ``'Zf'`` و ``'Zd'``، بازنمایی بسته‌بندی‌شده از قالب‌های باینری ۳۲ و باینری ۶۴ استاندارد IEEE 754 برای اجزای عدد مختلط استفاده می‌کند، صرف‌نظر از قالب ممیز شناوری که پلتفرم به کار می‌برد. توجه داشته باشید که انواع مختلط به‌طور پیش‌فرض و بدون قید و شرط در دسترس هستند، با وجود اینکه انواع مختلط در زبان C یک ویژگی اختیاری محسوب می‌شوند. همان‌طور که در استاندارد C11 مشخص شده است، هر نوع مختلط با یک آرایه‌ی دو عنصری C نمایش داده می‌شود که به‌ترتیب حاوی قسمت‌های حقیقی و موهمی است. نویسه‌های قالب ``'F'`` و ``'D'`` (به‌ترتیب برای ``'Zf'`` و ``'Zd'``) برای سازگاری پشتیبانی می‌شوند."
 
-msgid "A format character may be preceded by an integral repeat count.  For example, the format string ``'4h'`` means exactly the same as ``'hhhh'``."
+#, fuzzy
+#| msgid "A format character may be preceded by an integral repeat count.  For example, the format string ``'4h'`` means exactly the same as ``'hhhh'``."
+msgid "A type code may be preceded by an integral repeat count.  For example, the format string ``'4h'`` means exactly the same as ``'hhhh'``."
 msgstr "می‌توان پیش از یک نویسه قالب، یک تعداد تکرار صحیح قرار داد. برای مثال، رشته قالب ``'4h'`` دقیقاً همان معنای ``'hhhh'`` را دارد."
 
 msgid "Whitespace characters between formats are ignored; a count and its format must not contain whitespace though."
@@ -458,7 +472,9 @@ msgstr "هنگام بسته‌بندی (packing) یک مقدار ``x`` با اس
 msgid "Previously, some of the integer formats wrapped out-of-range values and raised :exc:`DeprecationWarning` instead of :exc:`struct.error`."
 msgstr "پیش‌تر، برخی از قالب‌های عدد صحیح مقادیر خارج از محدوده را دور می‌زدند و به‌جای :exc:`struct.error`، :exc:`DeprecationWarning` ایجاد می‌کردند."
 
-msgid "For the ``'?'`` format character, the return value is either :const:`True` or :const:`False`. When packing, the truth value of the argument object is used. Either 0 or 1 in the native or standard bool representation will be packed, and any non-zero value will be ``True`` when unpacking."
+#, fuzzy
+#| msgid "For the ``'?'`` format character, the return value is either :const:`True` or :const:`False`. When packing, the truth value of the argument object is used. Either 0 or 1 in the native or standard bool representation will be packed, and any non-zero value will be ``True`` when unpacking."
+msgid "For the ``'?'`` type code, the return value is either :const:`True` or :const:`False`. When packing, the truth value of the argument object is used. Either 0 or 1 in the native or standard bool representation will be packed, and any non-zero value will be ``True`` when unpacking."
 msgstr "برای نویسه‌ی قالب ``'?'``، مقدار بازگشتی یا :const:`True` است یا :const:`False`. هنگام بسته‌بندی، از مقدار درستی شیء آرگومان استفاده می‌شود. یکی از مقادیر ۰ یا ۱ در نمایش بولی بومی یا استاندارد بسته‌بندی می‌شود، و هر مقدار غیرصفر هنگام واگشایی ``True`` خواهد بود."
 
 msgid "Examples"
@@ -535,7 +551,9 @@ msgstr ""
 ">>> Student._make(unpack('<10sHHb', record))\n"
 "Student(name=b'raymond   ', serialnum=4658, school=264, gradelevel=8)"
 
-msgid "The ordering of format characters may have an impact on size in native mode since padding is implicit. In standard mode, the user is responsible for inserting any desired padding. Note in the first ``pack`` call below that three NUL bytes were added after the packed ``'#'`` to align the following integer on a four-byte boundary. In this example, the output was produced on a little endian machine::"
+#, fuzzy
+#| msgid "The ordering of format characters may have an impact on size in native mode since padding is implicit. In standard mode, the user is responsible for inserting any desired padding. Note in the first ``pack`` call below that three NUL bytes were added after the packed ``'#'`` to align the following integer on a four-byte boundary. In this example, the output was produced on a little endian machine::"
+msgid "The ordering of type codes may have an impact on size in native mode since padding is implicit. In standard mode, the user is responsible for inserting any desired padding. Note in the first ``pack`` call below that three NUL bytes were added after the packed ``'#'`` to align the following integer on a four-byte boundary. In this example, the output was produced on a little endian machine::"
 msgstr "ترتیب نویسه‌های قالب ممکن است در حالت بومی بر اندازه تأثیر بگذارد، زیرا پرکننده (padding) ضمنی است. در حالت استاندارد، کاربر مسئول درج هرگونه پرکننده دلخواه است. توجه داشته باشید که در اولین فراخوانی ``pack`` در زیر، ۳ بایت NUL پس از ``'#'`` بسته‌بندی‌شده اضافه شدند تا عدد صحیح بعدی روی مرز ۴ بایتی تراز شود. در این مثال، خروجی روی یک ماشین با ترتیب بایت کم‌ارزش در ابتدا (little endian) تولید شده است::"
 
 msgid ""
@@ -594,7 +612,9 @@ msgstr "دو کاربرد اصلی برای ماژول :mod:`!struct` وجود �
 msgid "Native Formats"
 msgstr "قالب‌های بومی"
 
-msgid "When constructing format strings which mimic native layouts, the compiler and machine architecture determine byte ordering and padding. In such cases, the ``@`` format character should be used to specify native byte ordering and data sizes.  Internal pad bytes are normally inserted automatically.  It is possible that a zero-repeat format code will be needed at the end of a format string to round up to the correct byte boundary for proper alignment of consecutive chunks of data."
+#, fuzzy
+#| msgid "When constructing format strings which mimic native layouts, the compiler and machine architecture determine byte ordering and padding. In such cases, the ``@`` format character should be used to specify native byte ordering and data sizes.  Internal pad bytes are normally inserted automatically.  It is possible that a zero-repeat format code will be needed at the end of a format string to round up to the correct byte boundary for proper alignment of consecutive chunks of data."
+msgid "When constructing format strings which mimic native layouts, the compiler and machine architecture determine byte ordering and padding. In such cases, the ``@`` format character should be used to specify native byte ordering and data sizes.  Internal pad bytes are normally inserted automatically.  It is possible that a zero-repeat type code will be needed at the end of a format string to round up to the correct byte boundary for proper alignment of consecutive chunks of data."
 msgstr "هنگام ساخت رشته‌های قالب که چیدمان‌های بومی را تقلید می‌کنند، کامپایلر و معماری ماشین ترتیب بایت‌ها و پرکننده‌گذاری را تعیین می‌کنند. در چنین مواردی، باید از نویسه‌ی قالب ``@`` برای مشخص کردن ترتیب بایت بومی و اندازه‌های داده استفاده شود. بایت‌های پرکننده داخلی معمولاً به‌طور خودکار درج می‌شوند. ممکن است در انتهای یک رشته قالب به یک کد پیش‌ساخته با تکرار صفر نیاز باشد تا به مرز بایت صحیح گرد شود و تراز مناسب تکه‌های متوالی داده فراهم گردد."
 
 msgid "Consider these two simple examples (on a 64-bit, little-endian machine)::"
@@ -621,7 +641,9 @@ msgstr ""
 ">>> calcsize('@llh0l')\n"
 "24"
 
-msgid "The ``'x'`` format code can be used to specify the repeat, but for native formats it is better to use a zero-repeat format like ``'0l'``."
+#, fuzzy
+#| msgid "The ``'x'`` format code can be used to specify the repeat, but for native formats it is better to use a zero-repeat format like ``'0l'``."
+msgid "The ``'x'`` type code can be used to specify the repeat, but for native formats it is better to use a zero-repeat format like ``'0l'``."
 msgstr "می‌توانید از کد قالب ``'x'`` برای مشخص کردن تعداد تکرار استفاده کنید، اما برای قالب‌های بومی بهتر است از یک قالب با تکرار صفر مانند ``'0l'`` استفاده کنید."
 
 msgid "By default, native byte ordering and alignment is used, but it is better to be explicit and use the ``'@'`` prefix character."
@@ -759,6 +781,9 @@ msgstr "! (علامت تعجب)"
 
 msgid "? (question mark)"
 msgstr "? (علامت سؤال)"
+
+#~ msgid "Format Characters"
+#~ msgstr "نویسه‌های قالب‌بندی"
 
 #~ msgid "``F``"
 #~ msgstr "``F``"

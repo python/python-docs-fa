@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-02 04:12+0000\n"
+"POT-Creation-Date: 2026-11-04 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -2912,13 +2912,17 @@ msgstr "هنگامی که ویژگی ``value`` از یک نمونه ctypes با�
 msgid "Each subclass has a class attribute:"
 msgstr "هر زیرکلاس دارای یک ویژگی کلاس است:"
 
-msgid "Class attribute that contains an internal type code, as a single-character string. See :ref:`ctypes-fundamental-data-types` for a summary."
+#, fuzzy
+#| msgid "Class attribute that contains an internal type code, as a single-character string. See :ref:`ctypes-fundamental-data-types` for a summary."
+msgid "Class attribute that contains an internal type code, as a string. See :ref:`ctypes-fundamental-data-types` for a summary."
 msgstr "ویژگی کلاس که حاوی یک کد نوع داخلی به‌صورت یک رشته تک‌نویسه‌ای است. برای یک خلاصه، به :ref:`ctypes-fundamental-data-types` مراجعه کنید."
 
 msgid "Types marked \\* in the summary may be (or always are) aliases of a different :class:`_SimpleCData` subclass, and will not necessarily use the listed type code. For example, if the platform's :c:expr:`long`, :c:expr:`long long` and :c:expr:`time_t` C types are the same, then :class:`c_long`, :class:`c_longlong` and :class:`c_time_t` all refer to a single class, :class:`c_long`, whose :attr:`_type_` code is ``'l'``. The ``'L'`` code will be unused."
 msgstr "انواعی که در خلاصه با \\* علامت‌گذاری شده‌اند ممکن است (یا همواره) نام‌های مستعار یک زیرکلاس دیگر از :class:`_SimpleCData` باشند و لزوماً از کد نوع فهرست‌شده استفاده نخواهند کرد. برای مثال، اگر انواع Cِ :c:expr:`long`، :c:expr:`long long` و :c:expr:`time_t` در سکو یکسان باشند، آنگاه :class:`c_long`، :class:`c_longlong` و :class:`c_time_t` همگی به یک کلاس واحد، یعنی :class:`c_long`، ارجاع می‌دهند که کد :attr:`_type_` آن ``'l'`` است. کد ``'L'`` استفاده نخواهد شد."
 
-msgid "The :mod:`array` and :ref:`struct <format-characters>` modules, as well as third-party modules like `numpy <https://numpy.org/doc/stable/reference/arrays.interface.html#object.__array_interface__>`__, use similar -- but slightly different -- type codes."
+#, fuzzy
+#| msgid "The :mod:`array` and :ref:`struct <format-characters>` modules, as well as third-party modules like `numpy <https://numpy.org/doc/stable/reference/arrays.interface.html#object.__array_interface__>`__, use similar -- but slightly different -- type codes."
+msgid "The :mod:`array` and :ref:`struct <type-codes>` modules, as well as third-party modules like `numpy <https://numpy.org/doc/stable/reference/arrays.interface.html#object.__array_interface__>`__, use similar -- but slightly different -- type codes."
 msgstr "ماژول‌های :mod:`array` و :ref:`struct <format-characters>`، و همچنین ماژول‌های شخص ثالثی مانند `numpy <https://numpy.org/doc/stable/reference/arrays.interface.html#object.__array_interface__>`__، از کدهای نوع مشابه — اما اندکی متفاوت — استفاده می‌کنند."
 
 msgid "Fundamental data types, when returned as foreign function call results, or, for example, by retrieving structure field members or array items, are transparently converted to native Python types.  In other words, if a foreign function has a :attr:`~_CFuncPtr.restype` of :class:`c_char_p`, you will always receive a Python bytes object, *not* a :class:`c_char_p` instance."
