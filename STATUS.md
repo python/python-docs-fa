@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-04)
+(به‌روزرسانی: 2026-11-05)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -276,7 +276,6 @@
 | library/os.path.po | 100.0% | 0.0% | 113 | 0 | 0 |
 | library/ossaudiodev.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/pathlib.po | 100.0% | 0.0% | 450 | 0 | 0 |
-| library/pdb.po | 100.0% | 0.0% | 179 | 0 | 0 |
 | library/persistence.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/pickle.po | 100.0% | 0.0% | 251 | 0 | 0 |
 | library/pickletools.po | 100.0% | 0.0% | 20 | 0 | 0 |
@@ -333,7 +332,6 @@
 | library/sys_path_init.po | 100.0% | 0.0% | 27 | 0 | 0 |
 | library/sysconfig.po | 100.0% | 0.0% | 138 | 0 | 0 |
 | library/tabnanny.po | 100.0% | 0.0% | 11 | 0 | 0 |
-| library/tarfile.po | 100.0% | 0.0% | 368 | 0 | 0 |
 | library/telnetlib.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/tempfile.po | 100.0% | 0.0% | 90 | 0 | 0 |
 | library/test.po | 100.0% | 0.0% | 345 | 0 | 0 |
@@ -443,10 +441,8 @@
 | whatsnew/2.4.po | 99.7% | 0.3% | 317 | 1 | 0 |
 | library/urllib.request.po | 99.7% | 0.0% | 298 | 0 | 1 |
 | library/logging.handlers.po | 99.6% | 0.0% | 276 | 0 | 1 |
-| builtins/stdtypes.po | 99.6% | 0.4% | 1653 | 6 | 0 |
 | whatsnew/3.15.po | 99.6% | 0.0% | 819 | 0 | 3 |
 | library/optparse.po | 99.6% | 0.4% | 530 | 2 | 0 |
-| library/ctypes.po | 99.6% | 0.4% | 781 | 3 | 0 |
 | library/enum.po | 99.6% | 0.0% | 257 | 0 | 1 |
 | whatsnew/3.8.po | 99.6% | 0.4% | 511 | 2 | 0 |
 | reference/compound_stmts.po | 99.6% | 0.4% | 497 | 2 | 0 |
@@ -458,6 +454,7 @@
 | library/zipfile.po | 99.5% | 0.5% | 215 | 1 | 0 |
 | library/select.po | 99.5% | 0.5% | 211 | 1 | 0 |
 | whatsnew/2.6.po | 99.5% | 0.5% | 623 | 3 | 0 |
+| builtins/stdtypes.po | 99.5% | 0.4% | 1652 | 7 | 1 |
 | library/shutil.po | 99.5% | 0.0% | 195 | 0 | 1 |
 | whatsnew/3.11.po | 99.5% | 0.5% | 772 | 4 | 0 |
 | whatsnew/3.2.po | 99.5% | 0.5% | 573 | 3 | 0 |
@@ -465,10 +462,11 @@
 | library/unittest.mock-examples.po | 99.5% | 0.5% | 181 | 1 | 0 |
 | whatsnew/3.12.po | 99.4% | 0.6% | 904 | 5 | 0 |
 | extending/newtypes_tutorial.po | 99.4% | 0.6% | 179 | 1 | 0 |
+| library/pdb.po | 99.4% | 0.6% | 178 | 1 | 0 |
 | library/logging.config.po | 99.4% | 0.0% | 171 | 0 | 1 |
-| whatsnew/changelog.po | 99.4% | 0.2% | 15726 | 28 | 67 |
 | library/locale.po | 99.4% | 0.6% | 165 | 1 | 0 |
 | library/http.cookiejar.po | 99.4% | 0.6% | 158 | 1 | 0 |
+| whatsnew/changelog.po | 99.4% | 0.2% | 15726 | 28 | 74 |
 | library/mailbox.po | 99.4% | 0.6% | 308 | 2 | 0 |
 | library/asyncio-eventloop.po | 99.3% | 0.2% | 425 | 1 | 2 |
 | whatsnew/3.13.po | 99.3% | 0.7% | 984 | 7 | 0 |
@@ -495,6 +493,7 @@
 | howto/instrumentation.po | 99.0% | 1.0% | 95 | 1 | 0 |
 | tutorial/errors.po | 99.0% | 1.0% | 95 | 1 | 0 |
 | using/mac.po | 99.0% | 1.0% | 95 | 1 | 0 |
+| library/tarfile.po | 98.9% | 0.5% | 366 | 2 | 2 |
 | c-api/long.po | 98.9% | 0.5% | 181 | 1 | 1 |
 | library/json.po | 98.9% | 1.1% | 181 | 2 | 0 |
 | builtins/functions.po | 98.9% | 0.9% | 535 | 5 | 1 |
@@ -521,6 +520,7 @@
 | c-api/slots.po | 97.8% | 2.2% | 44 | 1 | 0 |
 | library/ssl.po | 97.7% | 1.0% | 563 | 6 | 7 |
 | library/email.charset.po | 97.7% | 2.3% | 43 | 1 | 0 |
+| library/ctypes.po | 97.6% | 2.0% | 763 | 16 | 3 |
 | library/fractions.po | 97.6% | 2.4% | 40 | 1 | 0 |
 | library/fnmatch.po | 97.4% | 2.6% | 37 | 1 | 0 |
 | c-api/exceptions.po | 97.4% | 0.0% | 294 | 0 | 8 |
@@ -558,5 +558,5 @@
 | library/syslog.po | 80.6% | 19.4% | 25 | 6 | 0 |
 | library/tokenize.po | 75.8% | 3.2% | 47 | 2 | 13 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **99.4%** | **0.4%** | **90503** | **364** | **169** |
+| **مجموع** | **99.4%** | **0.4%** | **90481** | **381** | **182** |
 <!-- TRANSLATION_STATUS_END -->
