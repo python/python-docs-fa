@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-23 04:16+0000\n"
+"POT-Creation-Date: 2026-11-05 04:11+0000\n"
 "PO-Revision-Date: 2026-09-13 15:40+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -818,11 +818,13 @@ msgstr "فیلتر ``'tar'`` را پیاده‌سازی می‌کند."
 msgid "Strip leading slashes (``/`` and :data:`os.sep`) from filenames."
 msgstr "اسلش‌های ابتدایی (``/`` و :data:`os.sep`) را از نام پرونده‌ها حذف کنید."
 
-msgid ":ref:`Refuse <tarfile-extraction-refuse>` to extract files with absolute paths (in case the name is absolute even after stripping slashes, e.g. ``C:/foo`` on Windows). This raises :class:`~tarfile.AbsolutePathError`."
-msgstr ":ref:`امتناع <tarfile-extraction-refuse>` از استخراج پرونده‌هایی با مسیرهای مطلق (در صورتی که نام حتی پس از حذف اسلش‌ها مطلق باشد، مثلاً ``C:/foo`` در ویندوز). این کار باعث پرتاب :class:`~tarfile.AbsolutePathError` می‌شود."
-
 msgid "Normalize filenames (:attr:`TarInfo.name`) that contain ``..`` components using :func:`os.path.normpath`. Note that this removes internal ``..`` components, which may change the meaning of the name if it traverses symbolic links."
 msgstr "نام پرونده‌ها (:attr:`TarInfo.name`) که شامل کامپوننت‌های ``..`` هستند را با استفاده از :func:`os.path.normpath` نرمال کنید. توجه داشته باشید که این کار کامپوننت‌های داخلی ``..`` را حذف می‌کند، که ممکن است در صورت عبور از پیوندهای نمادین، معنای نام را تغییر دهد."
+
+#, fuzzy
+#| msgid ":ref:`Refuse <tarfile-extraction-refuse>` to extract files with absolute paths (in case the name is absolute even after stripping slashes, e.g. ``C:/foo`` on Windows). This raises :class:`~tarfile.AbsolutePathError`."
+msgid ":ref:`Refuse <tarfile-extraction-refuse>` to extract files with absolute paths (in case the name is absolute even after stripping slashes, e.g. ``C:/foo`` on Windows) or with a drive (e.g. ``C:foo`` on Windows). This raises :class:`~tarfile.AbsolutePathError`."
+msgstr ":ref:`امتناع <tarfile-extraction-refuse>` از استخراج پرونده‌هایی با مسیرهای مطلق (در صورتی که نام حتی پس از حذف اسلش‌ها مطلق باشد، مثلاً ``C:/foo`` در ویندوز). این کار باعث پرتاب :class:`~tarfile.AbsolutePathError` می‌شود."
 
 msgid ":ref:`Refuse <tarfile-extraction-refuse>` to extract files whose absolute path (after following symlinks) would end up outside the destination. This raises :class:`~tarfile.OutsideDestinationError`."
 msgstr ":ref:`امتناع <tarfile-extraction-refuse>` از استخراج پرونده‌هایی که مسیر مطلق آن‌ها (پس از دنبال کردن پیوندهای نمادین) در نهایت خارج از مقصد قرار بگیرد. این باعث پرتاب :class:`~tarfile.OutsideDestinationError` می‌شود."
@@ -839,13 +841,18 @@ msgstr "عضو ``TarInfo`` تغییریافته را برمی‌گرداند."
 msgid "Filenames containing ``..`` components are now normalized."
 msgstr "نام پرونده‌های حاوی کامپوننت‌های ``..`` اکنون نرمال شده‌اند."
 
+msgid "Filenames with a drive that are not absolute are now refused."
+msgstr ""
+
 msgid "Implements the ``'data'`` filter. In addition to what ``tar_filter`` does:"
 msgstr "فیلتر ``'data'`` را پیاده‌سازی می‌کند. علاوه بر آنچه ``tar_filter`` انجام می‌دهد:"
 
 msgid "Normalize link targets (:attr:`TarInfo.linkname`) using :func:`os.path.normpath`. Note that this removes internal ``..`` components, which may change the meaning of the link if the path in :attr:`!TarInfo.linkname` traverses symbolic links."
 msgstr "اهداف پیوند (:attr:`TarInfo.linkname`) را با استفاده از :func:`os.path.normpath` عادی‌سازی کنید. توجه داشته باشید که این کار کامپوننت‌های ``..`` داخلی را حذف می‌کند، که ممکن است در صورتی معنای پیوند را تغییر دهد که مسیر موجود در :attr:`!TarInfo.linkname` از پیوندهای نمادین عبور کند."
 
-msgid ":ref:`Refuse <tarfile-extraction-refuse>` to extract links (hard or soft) that link to absolute paths, or ones that link outside the destination."
+#, fuzzy
+#| msgid ":ref:`Refuse <tarfile-extraction-refuse>` to extract links (hard or soft) that link to absolute paths, or ones that link outside the destination."
+msgid ":ref:`Refuse <tarfile-extraction-refuse>` to extract links (hard or soft) that link to absolute paths or to paths with a drive, or ones that link outside the destination."
 msgstr ":ref:`امتناع <tarfile-extraction-refuse>` از استخراج پیوندهایی (سخت یا نرم) که به مسیرهای مطلق اشاره می‌کنند، یا پیوندهایی که به خارج از مقصد اشاره می‌کنند."
 
 msgid "This raises :class:`~tarfile.AbsoluteLinkError` or :class:`~tarfile.LinkOutsideDestinationError`."
@@ -877,6 +884,9 @@ msgstr "توجه داشته باشید که این فیلتر *همه* قابل�
 
 msgid "Link targets are now normalized."
 msgstr "مقاصد پیوند اکنون نرمال‌سازی شده‌اند."
+
+msgid "Link targets with a drive that are not absolute are now refused."
+msgstr ""
 
 msgid "Filter errors"
 msgstr "خطاهای فیلتر"

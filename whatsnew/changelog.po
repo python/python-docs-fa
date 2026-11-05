@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-04 04:11+0000\n"
+"POT-Creation-Date: 2026-11-05 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -48,11 +48,20 @@ msgstr ""
 msgid ":gh:`160506`: Fix :func:`os.path.realpath` on Windows returning the wrong path for a broken relative symbolic link reached through a symbolic link to a directory. This allowed :mod:`tarfile` extraction with the ``'data'`` or ``'tar'`` filter to create a file outside the destination directory."
 msgstr ""
 
+msgid ":gh:`161323`: On Windows, the ``'tar'`` and ``'data'`` :mod:`tarfile` extraction filters now refuse member names and link targets that have a drive but are not absolute, such as ``C:foo``, with :exc:`~tarfile.AbsolutePathError` or :exc:`~tarfile.AbsoluteLinkError`. Such members could be extracted outside the destination directory.  Fixes :cve:`2026-107784`."
+msgstr ""
+
 msgid ":gh:`160420`: Fix :class:`zoneinfo.ZoneInfo` on Windows accepting keys in which a component after a ``/`` starts with a drive letter, such as ``America/C:\\file``.  Such a key could open a file outside the ``tzdata`` package; it now raises :exc:`ValueError`."
 msgstr ""
 
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
+
+msgid ":gh:`161288`: Fix a crash in the perf trampoline (:option:`-X perf <-X>`) on builds with clang's ``-fsanitize=function``, which ``-fsanitize=undefined`` enables since clang 17."
+msgstr ""
+
+msgid ":gh:`161229`: :func:`!__lazy_import__` now treats ``None`` for *globals* and *locals* the same as omitting them, matching its signature."
+msgstr ""
 
 msgid ":gh:`160773`: Fix a crash in :func:`str` of an :exc:`OSError` when formatting one of its attributes modifies the others."
 msgstr ""
@@ -71,6 +80,12 @@ msgstr ""
 
 msgid "Library"
 msgstr "کتابخانه"
+
+msgid ":gh:`93821`: Fix :class:`asyncio.ProactorEventLoop` servers that stopped accepting new connections on Windows when a client reset its connection before it was accepted (``WinError 64``, ``ERROR_NETNAME_DELETED``).  The listening socket is now kept open and the server continues to accept connections."
+msgstr ""
+
+msgid ":gh:`161076`: Fix :mod:`asyncio` leaving a half-created transport registered with the event loop and the server when setting ``TCP_NODELAY`` on a socket fails. Such a failure could make :meth:`asyncio.Server.wait_closed` hang and prevent new connections from being served.  Errors from ``setsockopt(TCP_NODELAY)`` are now ignored."
+msgstr ""
 
 msgid ":gh:`161233`: Fix unraisable :exc:`TypeError` when ``None`` was passed as a *timer* to :class:`cProfile.Profile <profile.Profile>`."
 msgstr ""
@@ -246,6 +261,9 @@ msgstr ""
 msgid "Build"
 msgstr "ساخت"
 
+msgid ":gh:`75929`: Fix a ``configure`` probe that could omit functions such as :func:`os.fchdir` from builds using ``-Wall -Werror``."
+msgstr ""
+
 msgid ":gh:`160704`: Fix C11-C17 builds with old C library headers that do not define ``static_assert``, including glibc versions older than 2.16."
 msgstr ""
 
@@ -262,6 +280,9 @@ msgstr "رابط C API"
 #| msgid ":gh:`156939`: Fix :c:func:`PyBytesWriter_Format` error handling: restore the writer to its previous state on error. Patch by Victor Stinner."
 msgid ":gh:`160962`: Fix :c:func:`PyInitConfig_SetStr` when setting an optional string option to ``NULL``. Previously, the function crashed. Patch by Victor Stinner."
 msgstr ":gh:`156939`: رفع نحوه‌ی مدیریت خطای تابع :c:func:`PyBytesWriter_Format`: بازگرداندن نویسنده (writer) به وضعیت قبلی خود در صورت بروز خطا. وصله توسط Victor Stinner."
+
+msgid ":gh:`161185`: Fix a strict aliasing issue in the :c:func:`!memcpy` implementation of :c:macro:`Py_SETREF`, :c:macro:`Py_XSETREF` and :c:macro:`Py_CLEAR` macros. Patch by Nathan Goldbaum and Victor Stinner."
+msgstr ""
 
 #, fuzzy
 #| msgid "Python 3.5.2 final"
