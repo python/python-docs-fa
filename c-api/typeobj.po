@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-03 04:11+0000\n"
+"POT-Creation-Date: 2026-11-06 04:12+0000\n"
 "PO-Revision-Date: 2026-09-15 08:25+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -2297,7 +2297,9 @@ msgstr "مانند هر تابع vectorcall، اگر ``tp_vectorcall`` براب�
 msgid "The :ref:`vectorcall protocol <vectorcall>` requires that the vectorcall function has the same behavior as the corresponding ``tp_call``. This means that ``type->tp_vectorcall`` must match the behavior of ``Py_TYPE(type)->tp_call``."
 msgstr ":ref:`پروتکل vectorcall <vectorcall>` ایجاب می‌کند که تابع vectorcall همان رفتار ``tp_call`` متناظر را داشته باشد. این بدان معناست که ``type->tp_vectorcall`` باید با رفتار ``Py_TYPE(type)->tp_call`` مطابقت داشته باشد."
 
-msgid "Specifically, if *type* uses the default metaclass, ``type->tp_vectorcall`` must behave the same as :c:expr:`PyType_Type->tp_call`, which:"
+#, fuzzy
+#| msgid "Specifically, if *type* uses the default metaclass, ``type->tp_vectorcall`` must behave the same as :c:expr:`PyType_Type->tp_call`, which:"
+msgid "Specifically, if *type* uses the default metaclass, ``type->tp_vectorcall`` must behave the same as ``Py_TYPE(type)->tp_call``, which:"
 msgstr "به‌طور خاص، اگر *نوع* از فراکلاس پیش‌فرض استفاده کند، ``type->tp_vectorcall`` باید همانند :c:expr:`PyType_Type->tp_call` رفتار کند، که:"
 
 msgid "calls ``type->tp_new``,"

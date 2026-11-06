@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-31 04:10+0000\n"
+"POT-Creation-Date: 2026-11-06 04:12+0000\n"
 "PO-Revision-Date: 2021-06-28 00:48+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -56,7 +56,9 @@ msgstr "پیش از آنکه فیلد‌هایی که به ظرف‌های دی�
 msgid "The object's memory must be deallocated using :c:func:`PyObject_GC_Del`."
 msgstr "حافظه‌ی شیء باید با استفاده از :c:func:`PyObject_GC_Del` آزاد شود."
 
-msgid "If a type adds the Py_TPFLAGS_HAVE_GC, then it *must* implement at least a :c:member:`~PyTypeObject.tp_traverse` handler or explicitly use one from its subclass or subclasses."
+#, fuzzy
+#| msgid "If a type adds the Py_TPFLAGS_HAVE_GC, then it *must* implement at least a :c:member:`~PyTypeObject.tp_traverse` handler or explicitly use one from its subclass or subclasses."
+msgid "If a type adds the Py_TPFLAGS_HAVE_GC, then it *must* implement at least a :c:member:`~PyTypeObject.tp_traverse` handler or explicitly use one from a base class."
 msgstr "اگر نوعی Py_TPFLAGS_HAVE_GC را اضافه کند، آن‌گاه *باید* حداقل یک هندلر :c:member:`~PyTypeObject.tp_traverse` را پیاده‌سازی کند یا صریحاً از هندلری در زیرکلاس یا زیرکلاس‌های خود استفاده کند."
 
 msgid "When calling :c:func:`PyType_Ready` or some of the APIs that indirectly call it like :c:func:`PyType_FromSpecWithBases` or :c:func:`PyType_FromSpec` the interpreter will automatically populate the :c:member:`~PyTypeObject.tp_flags`, :c:member:`~PyTypeObject.tp_traverse` and :c:member:`~PyTypeObject.tp_clear` fields if the type inherits from a class that implements the garbage collector protocol and the child class does *not* include the :c:macro:`Py_TPFLAGS_HAVE_GC` flag."

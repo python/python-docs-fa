@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-05 04:11+0000\n"
+"POT-Creation-Date: 2026-11-06 04:12+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -54,11 +54,21 @@ msgstr ""
 msgid ":gh:`160420`: Fix :class:`zoneinfo.ZoneInfo` on Windows accepting keys in which a component after a ``/`` starts with a drive letter, such as ``America/C:\\file``.  Such a key could open a file outside the ``tzdata`` package; it now raises :exc:`ValueError`."
 msgstr ""
 
+#, fuzzy
+#| msgid ":gh:`143008`: Fix race conditions when re-initializing a :class:`io.TextIOWrapper` object."
+msgid ":gh:`158928`: Fix a buffer overflow when initializing a :class:`bytearray` from an iterator."
+msgstr ":gh:`143008`: اصلاح شرایط رقابت هنگام مقداردهی اولیه‌ی مجدد یک شیء :class:`io.TextIOWrapper`."
+
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
 
 msgid ":gh:`161288`: Fix a crash in the perf trampoline (:option:`-X perf <-X>`) on builds with clang's ``-fsanitize=function``, which ``-fsanitize=undefined`` enables since clang 17."
 msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`126312`: Fix crash during garbage collection on an object frozen by :func:`gc.freeze` on the free-threaded build."
+msgid ":gh:`159184`: Fix a leak of NaN constants in code objects created by :func:`marshal.loads` on the free-threaded build."
+msgstr ":gh:`126312`: رفع فروپاشی حین زباله‌روبی روی شیء فریزشده توسط :func:`gc.freeze` در ساخت نخ‌آزاد."
 
 msgid ":gh:`161229`: :func:`!__lazy_import__` now treats ``None`` for *globals* and *locals* the same as omitting them, matching its signature."
 msgstr ""
@@ -67,6 +77,9 @@ msgid ":gh:`160773`: Fix a crash in :func:`str` of an :exc:`OSError` when format
 msgstr ""
 
 msgid ":gh:`159652`: Fix a hang when an import fails with :exc:`RecursionError` because the C stack is nearly exhausted: releasing the import locks could itself fail and leave the global import lock or a module lock held forever, so that later imports in other threads blocked indefinitely. The import system now raises :exc:`RecursionError` before taking an import lock when there is not enough stack left to release it."
+msgstr ""
+
+msgid ":gh:`159449`: Fix a free-threaded asyncio race leading to segfaults."
 msgstr ""
 
 msgid ":gh:`159136`: Setting ``__name__``, ``__qualname__``, ``__doc__`` or ``__module__`` on a function no longer stops all threads in the free-threaded build. This fixes a large slowdown in multi-threaded code using :func:`functools.wraps` since 3.14.7."
@@ -80,6 +93,12 @@ msgstr ""
 
 msgid "Library"
 msgstr "کتابخانه"
+
+msgid ":gh:`161414`: Remove the backquote from the symbols listed by :func:`help`, asking for help on it reported that no documentation was found."
+msgstr ""
+
+msgid ":gh:`161389`: Fixes a crash in :class:`decimal.Context` when passing invalid signaling dicts as *flags* and *traps*."
+msgstr ""
 
 msgid ":gh:`93821`: Fix :class:`asyncio.ProactorEventLoop` servers that stopped accepting new connections on Windows when a client reset its connection before it was accepted (``WinError 64``, ``ERROR_NETNAME_DELETED``).  The listening socket is now kept open and the server continues to accept connections."
 msgstr ""
@@ -105,6 +124,9 @@ msgstr ""
 #| msgid ":gh:`103791`: :class:`contextlib.suppress` now supports suppressing exceptions raised as part of a :exc:`BaseExceptionGroup`, in addition to the recent support for :exc:`ExceptionGroup`."
 msgid ":gh:`137549`: :func:`asyncio.timeout` now inserts :exc:`TimeoutError` into the context chain of sub-exceptions of a :exc:`BaseExceptionGroup`, as it already did for :exc:`ExceptionGroup`."
 msgstr ":gh:`103791`: :class:`contextlib.suppress` اکنون علاوه بر پشتیبانی اخیر از :exc:`ExceptionGroup`، از سرکوب استثناوهایی که به عنوان بخشی از یک :exc:`BaseExceptionGroup` بالا می‌آیند نیز پشتیبانی می‌کند."
+
+msgid ":gh:`160429`: Fix :class:`asyncio.ProactorEventLoop` socket transports leaving the socket open, and :meth:`asyncio.Server.wait_closed` hanging, when the peer resets the connection while the transport is being closed."
+msgstr ""
 
 msgid ":gh:`53089`: :class:`urllib.request.HTTPDigestAuthHandler` now sends ``uri=\"/\"`` in the Digest ``Authorization`` header for URLs with an empty path, such as ``http://example.com``, matching the request-target sent by :mod:`http.client`. Previously it sent ``uri=\"\"``, which servers could reject. Patch by Senthil Kumaran."
 msgstr ""
@@ -135,6 +157,9 @@ msgstr ""
 #| msgid ":gh:`153037`: Fix :class:`~compression.zstd.ZstdFile` raising :exc:`AttributeError` instead of :exc:`io.UnsupportedOperation` when iterating over a file that is not open for reading."
 msgid ":gh:`160781`: Fix :class:`io.BytesIO` raising :exc:`SystemError` instead of :exc:`OverflowError` when writing at a position close to :data:`sys.maxsize`."
 msgstr ":gh:`153037`: رفع مشکلی که در آن :class:`~compression.zstd.ZstdFile` هنگام پیمایش روی پرونده‌ای که برای خواندن باز نشده است، به جای :exc:`io.UnsupportedOperation` خطای :exc:`AttributeError` ایجاد می‌کند."
+
+msgid ":gh:`160427`: Fix :attr:`~io.TextIOBase.buffer` of a detached :class:`io.TextIOWrapper` raising :exc:`ValueError` instead of returning ``None``."
+msgstr ""
 
 #, fuzzy
 #| msgid ":gh:`107545`: Improve the error messages that may be raised by :meth:`~socket.socket.setsockopt`."
@@ -219,6 +244,9 @@ msgstr ":gh:`159620`: رفع دستورات ``python -m asyncio ps``، ``pstree`
 #| msgid ":issue:`18108`: :func:`shutil.chown` now supports *dir_fd* and *follow_symlinks* keyword arguments."
 msgid ":gh:`158998`: Fix :func:`os.statx` ignoring the *follow_symlinks* argument."
 msgstr ":issue:`18108`: تابع :func:`shutil.chown` اکنون از آرگومان‌های کلیدواژه‌ای *dir_fd* و *follow_symlinks* پشتیبانی می‌کند."
+
+msgid ":gh:`155233`: Fix :meth:`asyncio.Barrier.wait` returning duplicate indices when a waiting task is cancelled before the barrier is released.```"
+msgstr ""
 
 #, fuzzy
 #| msgid ":gh:`120244`: Fix memory leak in :func:`re.sub` when the replacement string contains backreferences."

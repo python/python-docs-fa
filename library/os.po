@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-31 04:10+0000\n"
+"POT-Creation-Date: 2026-11-06 04:12+0000\n"
 "PO-Revision-Date: 2026-10-17 07:54+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -2970,7 +2970,9 @@ msgstr "توجه داشته باشید که کد C شخص ثالثی که :c:fun
 msgid "There is no way to unregister a function."
 msgstr "هیچ راهی برای لغو ثبت یک تابع وجود ندارد."
 
-msgid "Execute the program *path* in a new process."
+#, fuzzy
+#| msgid "Execute the program *path* in a new process."
+msgid "Execute the program *file* in a new process."
 msgstr "برنامه‌ی *path* را در یک فرایند جدید اجرا کنید."
 
 msgid "(Note that the :mod:`subprocess` module provides more powerful facilities for spawning new processes and retrieving their results; using that module is preferable to using these functions.  Check especially the :ref:`subprocess-replacements` section.)"
@@ -2985,7 +2987,9 @@ msgstr "توجه داشته باشید که در VxWorks، این تابع هن�
 msgid "The \"l\" and \"v\" variants of the :func:`spawn\\* <spawnl>` functions differ in how command-line arguments are passed.  The \"l\" variants are perhaps the easiest to work with if the number of parameters is fixed when the code is written; the individual parameters simply become additional parameters to the :func:`!spawnl\\*` functions.  The \"v\" variants are good when the number of parameters is variable, with the arguments being passed in a list or tuple as the *args* parameter.  In either case, the arguments to the child process must start with the name of the command being run."
 msgstr "انواع «l» و «v» توابع :func:`spawn\\* <spawnl>` در چگونگی ارسال آرگومان‌های خط فرمان تفاوت دارند. اگر تعداد پارامترها هنگام نوشتن کد ثابت باشد، شاید کار با انواع «l» آسان‌ترین باشد؛ پارامترهای جداگانه صرفاً به پارامترهای اضافی برای توابع :func:`!spawnl\\*` تبدیل می‌شوند. انواع «v» زمانی مناسب هستند که تعداد پارامترها متغیر باشد و آرگومان‌ها در قالب یک فهرست یا تاپلبه‌عنوان پارامتر *args* ارسال می‌شوند. در هر دو حالت، آرگومان‌های فرایند فرزند باید با نام فرمانی که اجرا می‌شود شروع شوند."
 
-msgid "The variants which include a second \"p\" near the end (:func:`spawnlp`, :func:`spawnlpe`, :func:`spawnvp`, and :func:`spawnvpe`) will use the :envvar:`PATH` environment variable to locate the program *file*.  When the environment is being replaced (using one of the :func:`spawn\\*e <spawnl>` variants, discussed in the next paragraph), the new environment is used as the source of the :envvar:`PATH` variable.  The other variants, :func:`spawnl`, :func:`spawnle`, :func:`spawnv`, and :func:`spawnve`, will not use the :envvar:`PATH` variable to locate the executable; *path* must contain an appropriate absolute or relative path."
+#, fuzzy
+#| msgid "The variants which include a second \"p\" near the end (:func:`spawnlp`, :func:`spawnlpe`, :func:`spawnvp`, and :func:`spawnvpe`) will use the :envvar:`PATH` environment variable to locate the program *file*.  When the environment is being replaced (using one of the :func:`spawn\\*e <spawnl>` variants, discussed in the next paragraph), the new environment is used as the source of the :envvar:`PATH` variable.  The other variants, :func:`spawnl`, :func:`spawnle`, :func:`spawnv`, and :func:`spawnve`, will not use the :envvar:`PATH` variable to locate the executable; *path* must contain an appropriate absolute or relative path."
+msgid "The variants which include a second \"p\" near the end (:func:`spawnlp`, :func:`spawnlpe`, :func:`spawnvp`, and :func:`spawnvpe`) will use the :envvar:`PATH` environment variable to locate the program *file*.  When the environment is being replaced (using one of the :func:`spawn\\*e <spawnl>` variants, discussed in the next paragraph), the new environment is used as the source of the :envvar:`PATH` variable.  The other variants, :func:`spawnl`, :func:`spawnle`, :func:`spawnv`, and :func:`spawnve`, will not use the :envvar:`PATH` variable to locate the executable; *file* must contain an appropriate absolute or relative path."
 msgstr "گونه‌هایی که یک «p» دوم نزدیک به انتها دارند (:func:`spawnlp`، :func:`spawnlpe`، :func:`spawnvp` و :func:`spawnvpe`)، از متغیر محیطی :envvar:`PATH` برای یافتن پرونده برنامه‌ی *file* استفاده می‌کنند. هنگامی که محیط جایگزین می‌شود (با استفاده از یکی از گونه‌های :func:`spawn\\*e <spawnl>`، که در پاراگراف بعدی توضیح داده شده است)، محیط جدید به‌عنوان منبع متغیر :envvar:`PATH` استفاده می‌شود. سایر گونه‌ها، :func:`spawnl`، :func:`spawnle`، :func:`spawnv` و :func:`spawnve`، از متغیر :envvar:`PATH` برای یافتن پرونده اجرایی استفاده نمی‌کنند؛ *path* باید حاوی مسیر مطلق یا نسبی مناسب باشد."
 
 msgid "For :func:`spawnle`, :func:`spawnlpe`, :func:`spawnve`, and :func:`spawnvpe` (note that these all end in \"e\"), the *env* parameter must be a mapping which is used to define the environment variables for the new process (they are used instead of the current process' environment); the functions :func:`spawnl`, :func:`spawnlp`, :func:`spawnv`, and :func:`spawnvp` all cause the new process to inherit the environment of the current process.  Note that keys and values in the *env* dictionary must be strings; invalid keys or values will cause the function to fail, with a return value of ``127``."
@@ -3007,7 +3011,9 @@ msgstr ""
 "L = ['cp', 'index.html', '/dev/null']\n"
 "os.spawnvpe(os.P_WAIT, 'cp', L, os.environ)"
 
-msgid "Raises an :ref:`auditing event <auditing>` ``os.spawn`` with arguments ``mode``, ``path``, ``args``, ``env``."
+#, fuzzy
+#| msgid "Raises an :ref:`auditing event <auditing>` ``os.spawn`` with arguments ``mode``, ``path``, ``args``, ``env``."
+msgid "Raises an :ref:`auditing event <auditing>` ``os.spawn`` with arguments ``mode``, ``file``, ``args``, ``env``."
 msgstr "یک :ref:`رویداد حسابرسی <auditing>` ``os.spawn`` را با آرگومان‌های ``mode``، ``path``، ``args`` و ``env`` پرتاب می‌کند."
 
 msgid ":func:`spawnlp`, :func:`spawnlpe`, :func:`spawnvp` and :func:`spawnvpe` are not available on Windows.  :func:`spawnle` and :func:`spawnve` are not thread-safe on Windows; we advise you to use the :mod:`subprocess` module instead."

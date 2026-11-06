@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-11-06 04:12+0000\n"
 "PO-Revision-Date: 2026-09-14 16:26+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -299,7 +299,9 @@ msgstr "اگر کلاس *derived* با کلاس *cls* یکسان باشد یا �
 msgid "If *cls* is a tuple, the check will be done against every entry in *cls*. The result will be ``1`` when at least one of the checks returns ``1``, otherwise it will be ``0``."
 msgstr "اگر *cls* یک تاپل باشد، بررسی نسبت به هر یک از ورودی‌های *cls* انجام می‌شود. نتیجه ``1`` خواهد بود اگر حداقل یکی از بررسی‌ها ``1`` برگرداند، در غیر این صورت ``0`` خواهد بود."
 
-msgid "If *cls* has a :meth:`~type.__subclasscheck__` method, it will be called to determine the subclass status as described in :pep:`3119`.  Otherwise, *derived* is a subclass of *cls* if it is a direct or indirect subclass, i.e. contained in :attr:`cls.__mro__ <type.__mro__>`."
+#, fuzzy
+#| msgid "If *cls* has a :meth:`~type.__subclasscheck__` method, it will be called to determine the subclass status as described in :pep:`3119`.  Otherwise, *derived* is a subclass of *cls* if it is a direct or indirect subclass, i.e. contained in :attr:`cls.__mro__ <type.__mro__>`."
+msgid "If *cls* has a :meth:`~type.__subclasscheck__` method, it will be called to determine the subclass status as described in :pep:`3119`.  Otherwise, *derived* is a subclass of *cls* if it is a direct or indirect subclass, i.e. if *cls* is contained in :attr:`derived.__mro__ <type.__mro__>`."
 msgstr "اگر *cls* دارای متد :meth:`~type.__subclasscheck__` باشد، این متد برای تعیین وضعیت زیرکلاس بودن، همان‌گونه که در :pep:`3119` توصیف شده است، فراخوانی می‌شود. در غیر این صورت، *derived* در صورتی زیرکلاس *cls* است که زیرکلاس مستقیم یا غیرمستقیم آن باشد؛ یعنی در :attr:`cls.__mro__ <type.__mro__>` قرار داشته باشد."
 
 msgid "Normally only class objects, i.e. instances of :class:`type` or a derived class, are considered classes.  However, objects can override this by having a :attr:`~type.__bases__` attribute (which must be a tuple of base classes)."
