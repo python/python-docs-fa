@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-05)
+(به‌روزرسانی: 2026-11-06)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -27,8 +27,7 @@
 | c-api/dict.po | 100.0% | 0.0% | 124 | 0 | 0 |
 | c-api/file.po | 100.0% | 0.0% | 36 | 0 | 0 |
 | c-api/float.po | 100.0% | 0.0% | 55 | 0 | 0 |
-| c-api/frame.po | 100.0% | 0.0% | 60 | 0 | 0 |
-| c-api/gen.po | 100.0% | 0.0% | 18 | 0 | 0 |
+| c-api/frame.po | 100.0% | 0.0% | 59 | 0 | 0 |
 | c-api/hash.po | 100.0% | 0.0% | 43 | 0 | 0 |
 | c-api/index.po | 100.0% | 0.0% | 2 | 0 | 0 |
 | c-api/init.po | 100.0% | 0.0% | 8 | 0 | 0 |
@@ -43,7 +42,6 @@
 | c-api/monitoring.po | 100.0% | 0.0% | 57 | 0 | 0 |
 | c-api/none.po | 100.0% | 0.0% | 7 | 0 | 0 |
 | c-api/number.po | 100.0% | 0.0% | 48 | 0 | 0 |
-| c-api/object.po | 100.0% | 0.0% | 161 | 0 | 0 |
 | c-api/objimpl.po | 100.0% | 0.0% | 2 | 0 | 0 |
 | c-api/perfmaps.po | 100.0% | 0.0% | 24 | 0 | 0 |
 | c-api/picklebuffer.po | 100.0% | 0.0% | 16 | 0 | 0 |
@@ -105,20 +103,15 @@
 | howto/clinic.po | 100.0% | 0.0% | 2 | 0 | 0 |
 | howto/cporting.po | 100.0% | 0.0% | 5 | 0 | 0 |
 | howto/curses.po | 100.0% | 0.0% | 118 | 0 | 0 |
-| howto/descriptor.po | 100.0% | 0.0% | 226 | 0 | 0 |
-| howto/enum.po | 100.0% | 0.0% | 309 | 0 | 0 |
 | howto/free-threading-extensions.po | 100.0% | 0.0% | 112 | 0 | 0 |
 | howto/free-threading-python.po | 100.0% | 0.0% | 67 | 0 | 0 |
 | howto/gdb_helpers.po | 100.0% | 0.0% | 86 | 0 | 0 |
 | howto/index.po | 100.0% | 0.0% | 31 | 0 | 0 |
 | howto/ipaddress.po | 100.0% | 0.0% | 62 | 0 | 0 |
-| howto/isolating-extensions.po | 100.0% | 0.0% | 134 | 0 | 0 |
 | howto/logging-cookbook.po | 100.0% | 0.0% | 433 | 0 | 0 |
 | howto/logging.po | 100.0% | 0.0% | 248 | 0 | 0 |
-| howto/perf_profiling.po | 100.0% | 0.0% | 54 | 0 | 0 |
 | howto/pyporting.po | 100.0% | 0.0% | 11 | 0 | 0 |
 | howto/regex.po | 100.0% | 0.0% | 335 | 0 | 0 |
-| howto/remote_debugging.po | 100.0% | 0.0% | 154 | 0 | 0 |
 | howto/sockets.po | 100.0% | 0.0% | 61 | 0 | 0 |
 | howto/sorting.po | 100.0% | 0.0% | 90 | 0 | 0 |
 | howto/timerfd.po | 100.0% | 0.0% | 12 | 0 | 0 |
@@ -163,7 +156,6 @@
 | library/binascii.po | 100.0% | 0.0% | 89 | 0 | 0 |
 | library/bisect.po | 100.0% | 0.0% | 36 | 0 | 0 |
 | library/builtins.po | 100.0% | 0.0% | 9 | 0 | 0 |
-| library/bz2.po | 100.0% | 0.0% | 75 | 0 | 0 |
 | library/cgi.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/cgitb.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/chunk.po | 100.0% | 0.0% | 3 | 0 | 0 |
@@ -336,7 +328,6 @@
 | library/tempfile.po | 100.0% | 0.0% | 90 | 0 | 0 |
 | library/test.po | 100.0% | 0.0% | 345 | 0 | 0 |
 | library/text.po | 100.0% | 0.0% | 3 | 0 | 0 |
-| library/textwrap.po | 100.0% | 0.0% | 58 | 0 | 0 |
 | library/threading.po | 100.0% | 0.0% | 308 | 0 | 0 |
 | library/timeit.po | 100.0% | 0.0% | 71 | 0 | 0 |
 | library/tk.po | 100.0% | 0.0% | 8 | 0 | 0 |
@@ -422,23 +413,21 @@
 | whatsnew/3.6.po | 100.0% | 0.0% | 544 | 0 | 0 |
 | whatsnew/3.9.po | 100.0% | 0.0% | 380 | 0 | 0 |
 | whatsnew/index.po | 100.0% | 0.0% | 3 | 0 | 0 |
-| c-api/typeobj.po | 99.9% | 0.1% | 753 | 1 | 0 |
 | library/datetime.po | 99.9% | 0.1% | 692 | 1 | 0 |
 | library/multiprocessing.po | 99.8% | 0.2% | 622 | 1 | 0 |
 | library/turtle.po | 99.8% | 0.2% | 573 | 1 | 0 |
-| library/os.po | 99.8% | 0.2% | 1134 | 2 | 0 |
 | whatsnew/3.7.po | 99.8% | 0.2% | 567 | 1 | 0 |
 | whatsnew/3.4.po | 99.8% | 0.2% | 516 | 1 | 0 |
 | glossary.po | 99.8% | 0.2% | 500 | 1 | 0 |
 | using/configure.po | 99.8% | 0.2% | 496 | 1 | 0 |
 | library/tkinter.ttk.po | 99.8% | 0.2% | 475 | 1 | 0 |
-| library/dis.po | 99.8% | 0.2% | 413 | 1 | 0 |
 | library/decimal.po | 99.7% | 0.3% | 386 | 1 | 0 |
 | whatsnew/2.3.po | 99.7% | 0.3% | 386 | 1 | 0 |
+| c-api/typeobj.po | 99.7% | 0.3% | 752 | 2 | 0 |
 | library/logging.po | 99.7% | 0.0% | 375 | 0 | 1 |
 | whatsnew/3.14.po | 99.7% | 0.3% | 1108 | 3 | 0 |
-| reference/expressions.po | 99.7% | 0.3% | 649 | 2 | 0 |
 | whatsnew/2.4.po | 99.7% | 0.3% | 317 | 1 | 0 |
+| howto/enum.po | 99.7% | 0.3% | 308 | 1 | 0 |
 | library/urllib.request.po | 99.7% | 0.0% | 298 | 0 | 1 |
 | library/logging.handlers.po | 99.6% | 0.0% | 276 | 0 | 1 |
 | whatsnew/3.15.po | 99.6% | 0.0% | 819 | 0 | 3 |
@@ -448,26 +437,31 @@
 | reference/compound_stmts.po | 99.6% | 0.4% | 497 | 2 | 0 |
 | howto/functional.po | 99.6% | 0.4% | 246 | 1 | 0 |
 | c-api/intro.po | 99.6% | 0.4% | 243 | 1 | 0 |
+| library/os.po | 99.6% | 0.4% | 1131 | 5 | 0 |
 | library/configparser.po | 99.6% | 0.4% | 226 | 1 | 0 |
+| howto/descriptor.po | 99.6% | 0.4% | 225 | 1 | 0 |
 | c-api/module.po | 99.6% | 0.4% | 224 | 1 | 0 |
 | c-api/structures.po | 99.5% | 0.0% | 218 | 0 | 1 |
 | library/zipfile.po | 99.5% | 0.5% | 215 | 1 | 0 |
 | library/select.po | 99.5% | 0.5% | 211 | 1 | 0 |
 | whatsnew/2.6.po | 99.5% | 0.5% | 623 | 3 | 0 |
-| builtins/stdtypes.po | 99.5% | 0.4% | 1652 | 7 | 1 |
+| library/dis.po | 99.5% | 0.5% | 412 | 2 | 0 |
 | library/shutil.po | 99.5% | 0.0% | 195 | 0 | 1 |
 | whatsnew/3.11.po | 99.5% | 0.5% | 772 | 4 | 0 |
 | whatsnew/3.2.po | 99.5% | 0.5% | 573 | 3 | 0 |
 | library/unittest.po | 99.5% | 0.5% | 563 | 3 | 0 |
+| builtins/stdtypes.po | 99.5% | 0.5% | 1651 | 8 | 1 |
 | library/unittest.mock-examples.po | 99.5% | 0.5% | 181 | 1 | 0 |
 | whatsnew/3.12.po | 99.4% | 0.6% | 904 | 5 | 0 |
 | extending/newtypes_tutorial.po | 99.4% | 0.6% | 179 | 1 | 0 |
 | library/pdb.po | 99.4% | 0.6% | 178 | 1 | 0 |
 | library/logging.config.po | 99.4% | 0.0% | 171 | 0 | 1 |
 | library/locale.po | 99.4% | 0.6% | 165 | 1 | 0 |
+| c-api/object.po | 99.4% | 0.6% | 160 | 1 | 0 |
 | library/http.cookiejar.po | 99.4% | 0.6% | 158 | 1 | 0 |
-| whatsnew/changelog.po | 99.4% | 0.2% | 15726 | 28 | 74 |
 | library/mailbox.po | 99.4% | 0.6% | 308 | 2 | 0 |
+| howto/remote_debugging.po | 99.4% | 0.6% | 153 | 1 | 0 |
+| whatsnew/changelog.po | 99.3% | 0.2% | 15726 | 30 | 80 |
 | library/asyncio-eventloop.po | 99.3% | 0.2% | 425 | 1 | 2 |
 | whatsnew/3.13.po | 99.3% | 0.7% | 984 | 7 | 0 |
 | library/time.po | 99.3% | 0.7% | 279 | 2 | 0 |
@@ -475,7 +469,8 @@
 | library/random.po | 99.3% | 0.7% | 137 | 1 | 0 |
 | deprecations/index.po | 99.3% | 0.7% | 273 | 2 | 0 |
 | whatsnew/3.10.po | 99.3% | 0.7% | 546 | 4 | 0 |
-| library/sys.po | 99.2% | 0.6% | 511 | 3 | 1 |
+| howto/isolating-extensions.po | 99.3% | 0.7% | 133 | 1 | 0 |
+| reference/expressions.po | 99.2% | 0.8% | 646 | 5 | 0 |
 | library/calendar.po | 99.2% | 0.8% | 122 | 1 | 0 |
 | c-api/buffer.po | 99.2% | 0.0% | 119 | 0 | 1 |
 | howto/mro.po | 99.2% | 0.8% | 119 | 1 | 0 |
@@ -486,6 +481,7 @@
 | library/email.policy.po | 99.1% | 0.9% | 109 | 1 | 0 |
 | whatsnew/2.2.po | 99.1% | 0.9% | 213 | 2 | 0 |
 | builtins/exceptions.po | 99.0% | 1.0% | 204 | 2 | 0 |
+| library/sys.po | 99.0% | 0.8% | 510 | 4 | 1 |
 | library/zlib.po | 99.0% | 1.0% | 102 | 1 | 0 |
 | library/unicodedata.po | 99.0% | 1.0% | 99 | 1 | 0 |
 | howto/urllib2.po | 99.0% | 0.0% | 98 | 0 | 1 |
@@ -502,6 +498,7 @@
 | library/tracemalloc.po | 98.7% | 1.3% | 154 | 2 | 0 |
 | library/shlex.po | 98.7% | 1.3% | 76 | 1 | 0 |
 | library/zipapp.po | 98.7% | 1.3% | 76 | 1 | 0 |
+| library/bz2.po | 98.7% | 1.3% | 74 | 1 | 0 |
 | library/signal.po | 98.6% | 1.4% | 143 | 2 | 0 |
 | library/tomllib.po | 98.6% | 1.4% | 68 | 1 | 0 |
 | c-api/type.po | 98.5% | 1.5% | 200 | 3 | 0 |
@@ -510,9 +507,11 @@
 | library/gettext.po | 98.4% | 1.6% | 127 | 2 | 0 |
 | using/unix.po | 98.4% | 1.6% | 62 | 1 | 0 |
 | library/marshal.po | 98.3% | 1.7% | 59 | 1 | 0 |
+| library/textwrap.po | 98.3% | 1.7% | 57 | 1 | 0 |
 | sphinx.po | 98.3% | 1.0% | 964 | 10 | 7 |
 | extending/extending.po | 98.2% | 1.2% | 163 | 2 | 1 |
 | library/xml.etree.elementtree.po | 98.2% | 1.8% | 271 | 5 | 0 |
+| howto/perf_profiling.po | 98.1% | 1.9% | 53 | 1 | 0 |
 | library/array.po | 98.0% | 2.0% | 100 | 2 | 0 |
 | extending/first-extension-module.po | 97.9% | 2.1% | 143 | 3 | 0 |
 | library/msvcrt.po | 97.9% | 2.1% | 47 | 1 | 0 |
@@ -531,12 +530,13 @@
 | c-api/codec.po | 96.7% | 3.3% | 29 | 1 | 0 |
 | library/mmap.po | 96.4% | 3.6% | 81 | 3 | 0 |
 | c-api/code.po | 96.4% | 3.6% | 80 | 3 | 0 |
-| c-api/gcsupport.po | 96.3% | 2.8% | 104 | 3 | 1 |
 | library/cmd.po | 96.1% | 2.0% | 49 | 1 | 1 |
 | c-api/iterator.po | 96.0% | 0.0% | 24 | 0 | 1 |
 | library/email.parser.po | 95.8% | 4.2% | 46 | 2 | 0 |
 | library/glob.po | 95.7% | 4.3% | 44 | 2 | 0 |
+| c-api/gcsupport.po | 95.4% | 3.7% | 103 | 4 | 1 |
 | library/netrc.po | 94.7% | 5.3% | 18 | 1 | 0 |
+| c-api/gen.po | 94.4% | 5.6% | 17 | 1 | 0 |
 | c-api/reflection.po | 94.4% | 0.0% | 17 | 0 | 1 |
 | howto/abi3t-migration.po | 94.4% | 5.0% | 169 | 9 | 1 |
 | howto/annotations.po | 94.2% | 1.9% | 49 | 1 | 2 |
@@ -558,5 +558,5 @@
 | library/syslog.po | 80.6% | 19.4% | 25 | 6 | 0 |
 | library/tokenize.po | 75.8% | 3.2% | 47 | 2 | 13 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **99.4%** | **0.4%** | **90481** | **381** | **182** |
+| **مجموع** | **99.4%** | **0.4%** | **90460** | **403** | **188** |
 <!-- TRANSLATION_STATUS_END -->
