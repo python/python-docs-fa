@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-06 04:12+0000\n"
+"POT-Creation-Date: 2026-11-07 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -42,6 +42,9 @@ msgstr "امنیت"
 msgid ":gh:`161192`: Update bundled `libexpat <https://libexpat.github.io/>`_ to version 2.10.0 for the fixes to :cve:`2026-113351`, :cve:`2026-115506`, :cve:`2026-117610` and :cve:`2026-118370`."
 msgstr ":gh:`149698`: به‌روزرسانی `libexpat <https://libexpat.github.io/>`_ بسته‌بندی‌شده به نسخه‌ی ۲.۸.۱ برای رفع آسیب‌پذیری :cve:`2026-45186`."
 
+msgid ":cve:`2026-116566`, :gh:`160898`: :func:`socket.getaddrinfo` now rejects null bytes within *host* and *port* parameters as this previously caused the values to be silently truncated."
+msgstr ""
+
 msgid ":gh:`160499`: Fix unbounded memory growth in :mod:`asyncio` TLS connections when a peer stops reading but keeps sending records that make OpenSSL generate its own replies (such as TLS 1.2 renegotiation alerts).  Reading from the peer is now paused when this output accumulates, instead of only when application data does."
 msgstr ""
 
@@ -61,6 +64,11 @@ msgstr ":gh:`143008`: اصلاح شرایط رقابت هنگام مقدارده
 
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
+
+#, fuzzy
+#| msgid ":gh:`145615`: Fixed a memory leak in the :term:`free-threaded build` where mimalloc pages could become permanently unreclaimable until the owning thread exited."
+msgid ":gh:`161419`: Fix a crash in the :term:`free-threaded build` where a weak reference could revive an object whose finalizer had already run during deallocation, causing it to be deallocated twice."
+msgstr ":gh:`145615`: رفع یک نشتی حافظه در :term:`ساخت نخ‌آزاد <free-threaded build>` که در آن صفحات mimalloc ممکن بود تا زمان خروج نخ مالک، به طور دائم غیرقابل بازیابی بمانند."
 
 msgid ":gh:`161288`: Fix a crash in the perf trampoline (:option:`-X perf <-X>`) on builds with clang's ``-fsanitize=function``, which ``-fsanitize=undefined`` enables since clang 17."
 msgstr ""
@@ -94,11 +102,19 @@ msgstr ""
 msgid "Library"
 msgstr "کتابخانه"
 
+msgid ":gh:`142782`: Fix a use-after-free in :class:`zoneinfo.ZoneInfo` when a key's ``__eq__`` clears the cache during a lookup. Strong cache keys are now compared by string contents."
+msgstr ""
+
 msgid ":gh:`161414`: Remove the backquote from the symbols listed by :func:`help`, asking for help on it reported that no documentation was found."
 msgstr ""
 
 msgid ":gh:`161389`: Fixes a crash in :class:`decimal.Context` when passing invalid signaling dicts as *flags* and *traps*."
 msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`132002`: Fix crash when deallocating :class:`contextvars.ContextVar` with weird unahashable string names."
+msgid ":gh:`161387`: Fix a crash in :mod:`decimal` when the internal ``decimal_context`` :class:`contextvars.ContextVar` holds a value that is not a context."
+msgstr ":gh:`132002`: رفع فروپاشی هنگام آزاد کردن حافظه :class:`contextvars.ContextVar` با نام‌های رشته‌ای عجیب و غیرقابل هش."
 
 msgid ":gh:`93821`: Fix :class:`asyncio.ProactorEventLoop` servers that stopped accepting new connections on Windows when a client reset its connection before it was accepted (``WinError 64``, ``ERROR_NETNAME_DELETED``).  The listening socket is now kept open and the server continues to accept connections."
 msgstr ""
@@ -232,6 +248,9 @@ msgstr ""
 msgid ":gh:`159875`: Fix :exc:`AttributeError` from the methods of an :mod:`asyncio` SSL transport, such as :meth:`~asyncio.WriteTransport.write` and :meth:`~asyncio.BaseTransport.set_protocol`, when the transport is closed after its connection was lost. This also affected the fallback of :meth:`loop.sendfile() <asyncio.loop.sendfile>` over SSL when the peer went away mid-transfer. The SSL context is still released once the connection is lost."
 msgstr ""
 
+msgid ":gh:`159387`: Fix :mod:`ssl` reporting TLS 1.0, 1.1, and 1.2 as unavailable when built with OpenSSL 4.0, despite support for these protocol versions."
+msgstr ""
+
 msgid ":gh:`159398`: Fix the sampling profiler crashing when a string read from the target process contains code points above ``U+10FFFF``."
 msgstr ""
 
@@ -282,6 +301,9 @@ msgstr ""
 
 msgid "Tests"
 msgstr "آزمون‌ها"
+
+msgid ":gh:`161517`: Fix test_gdb when Python is built out-of-tree and Python is run from a virtual environment. Previously, test_gdb was just skipped. Patch by Victor Stinner."
+msgstr ""
 
 msgid ":gh:`158975`: Replace fixed sleeps used for synchronization in multiprocessing tests with bounded waits to avoid failures on slow or overloaded systems."
 msgstr ""

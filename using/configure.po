@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-02 04:12+0000\n"
+"POT-Creation-Date: 2026-11-07 04:11+0000\n"
 "PO-Revision-Date: 2026-10-15 19:39+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -28,7 +28,9 @@ msgstr ""
 msgid "Configure Python"
 msgstr "پیکربندی پایتون"
 
-msgid "Build Requirements"
+#, fuzzy
+#| msgid "Build Requirements"
+msgid "Build requirements"
 msgstr "نیازمندی‌های ساخت"
 
 msgid "To build CPython, you will need:"
@@ -232,18 +234,28 @@ msgstr "پرونده‌های تولیدشده"
 msgid "To reduce build dependencies, Python source code contains multiple generated files. Commands to regenerate all generated files::"
 msgstr "برای کاهش وابستگی‌های ساخت، کد منبع پایتون شامل چندین پرونده‌ی تولیدشده است. دستورهایی برای بازتولید همه‌ی پرونده‌های تولیدشده::"
 
+#, fuzzy
+#| msgid ""
+#| "make regen-all\n"
+#| "make regen-stdlib-module-names\n"
+#| "make regen-limited-abi\n"
+#| "make regen-configure"
 msgid ""
 "make regen-all\n"
 "make regen-stdlib-module-names\n"
 "make regen-limited-abi\n"
-"make regen-configure"
+"make regen-configure\n"
+"make regen-sbom\n"
+"make regen-unicodedata"
 msgstr ""
 "make regen-all\n"
 "make regen-stdlib-module-names\n"
 "make regen-limited-abi\n"
 "make regen-configure"
 
-msgid "The ``Makefile.pre.in`` file documents generated files, their inputs, and tools used to regenerate them. Search for ``regen-*`` make targets."
+#, fuzzy
+#| msgid "The ``Makefile.pre.in`` file documents generated files, their inputs, and tools used to regenerate them. Search for ``regen-*`` make targets."
+msgid "The :source:`Makefile.pre.in` file documents generated files, their inputs, and tools used to regenerate them. Search for ``regen-*`` make targets."
 msgstr "پرونده ``Makefile.pre.in`` پرونده‌های تولیدشده، ورودی‌های آن‌ها و ابزارهای مورد استفاده برای بازتولید آن‌ها را مستندسازی می‌کند. اهداف ``regen-*`` در make را جست‌وجو کنید."
 
 msgid "configure script"
@@ -267,7 +279,9 @@ msgstr "Autoconf 2.71 و aclocal 1.16.5 اکنون برای بازتولید :fi
 msgid "Autoconf 2.72 is now used to regenerate :file:`configure`."
 msgstr "اکنون از Autoconf 2.72 برای بازتولید :file:`configure` استفاده می‌شود."
 
-msgid "Configure Options"
+#, fuzzy
+#| msgid "Configure Options"
+msgid "Configure options"
 msgstr "گزینه‌های پیکربندی"
 
 msgid "List all :file:`configure` script options using::"
@@ -279,7 +293,9 @@ msgstr "./configure --help"
 msgid "See also the :file:`Misc/SpecialBuilds.txt` in the Python source distribution."
 msgstr "همچنین :file:`Misc/SpecialBuilds.txt` را در توزیع کد منبع پایتون ببینید."
 
-msgid "General Options"
+#, fuzzy
+#| msgid "General Options"
+msgid "General options"
 msgstr "گزینه‌های عمومی"
 
 msgid "Support loadable extensions in the :mod:`!_sqlite` extension module (default is no) of the :mod:`sqlite3` module."
@@ -637,7 +653,9 @@ msgstr "پرچم‌های کامپایلر C و پیونددهنده برای TC
 msgid "C compiler and linker flags for ``libzlib``, used by :mod:`gzip` module, overriding ``pkg-config``."
 msgstr "پرچم‌های کامپایلر C و پیونددهنده برای ``libzlib``، که توسط ماژول :mod:`gzip` استفاده می‌شود و ``pkg-config`` را بازنویسی می‌کند."
 
-msgid "WebAssembly Options"
+#, fuzzy
+#| msgid "WebAssembly Options"
+msgid "WebAssembly options"
 msgstr "گزینه‌های WebAssembly"
 
 msgid "Turn on dynamic linking support for WASM."
@@ -649,7 +667,9 @@ msgstr "پیوندسازی پویا ``dlopen`` را ممکن می‌سازد. ح
 msgid "Turn on pthreads support for WASM."
 msgstr "فعال کردن پشتیبانی از pthreads برای WASM."
 
-msgid "Install Options"
+#, fuzzy
+#| msgid "Install Options"
+msgid "Install options"
 msgstr "گزینه‌های نصب"
 
 msgid "Install architecture-independent files in PREFIX. On Unix, it defaults to :file:`/usr/local`."
@@ -829,7 +849,9 @@ msgstr "این ماکرو به‌طور پیش‌فرض تعریف شده است
 msgid "Note that even if the macro is defined, remote debugging may not be available (for example, on an incompatible platform)."
 msgstr "توجه داشته باشید که حتی اگر ماکرو تعریف شده باشد، ممکن است اشکال‌زدایی از راه دور دسترس‌پذیر نباشد (برای مثال، روی پلتفرمی نا‌سازگار)."
 
-msgid "Python Debug Build"
+#, fuzzy
+#| msgid "Python Debug Build"
+msgid "Python debug build"
 msgstr "ساخت‌ اشکال‌زدایی پایتون"
 
 msgid "A debug build is Python built with the :option:`--with-pydebug` configure option."
@@ -1026,7 +1048,9 @@ msgstr "``auto``: تشخیص خودکار rpath از :option:`--with-openssl` و
 msgid "*DIR*: set an explicit rpath."
 msgstr "*DIR*: تعیین صریح مسیر زمان اجرا (rpath)."
 
-msgid "Security Options"
+#, fuzzy
+#| msgid "Security Options"
+msgid "Security options"
 msgstr "گزینه‌های امنیتی"
 
 msgid "Select hash algorithm for use in ``Python/pyhash.c``:"
@@ -1104,7 +1128,9 @@ msgstr "گزینه‌های کامپایلر زیر با :option:`!--enable-slow
 msgid "`-D_FORTIFY_SOURCE=3`_: Fortify sources with compile- and run-time checks for unsafe libc usage and buffer overflows."
 msgstr "`-D_FORTIFY_SOURCE=3`_: کدهای منبع را با بررسی‌های زمان کامپایل و زمان اجرا برای استفاده ناامن از libc و سرریز بافر تقویت می‌کند."
 
-msgid "macOS Options"
+#, fuzzy
+#| msgid "macOS Options"
+msgid "macOS options"
 msgstr "گزینه‌های macOS"
 
 msgid "See :source:`Mac/README.rst`."
@@ -1155,7 +1181,9 @@ msgstr "نام چارچوب پایتون در macOS را مشخص می‌کند�
 msgid "The Python standard library contains strings that are known to trigger automated inspection tool errors when submitted for distribution by the macOS and iOS App Stores. If enabled, this option will apply the list of patches that are known to correct app store compliance. A custom patch file can also be specified. This option is disabled by default."
 msgstr "کتابخانه استاندارد پایتون شامل رشته‌هایی است که شناخته شده است هنگام ارسال برای توزیع از طریق App Store‌های macOS و iOS، خطاهای ابزار بازرسی خودکار را ایجاد می‌کنند. در صورت فعال بودن، این گزینه فهرست وصل‌هایی را اعمال می‌کند که شناخته شده است سازگاری با فروشگاه برنامه را اصلاح می‌کنند. همچنین می‌توان یک پرونده وصل سفارشی مشخص کرد. این گزینه به‌طور پیش‌فرض غیرفعال است."
 
-msgid "iOS Options"
+#, fuzzy
+#| msgid "iOS Options"
+msgid "iOS options"
 msgstr "گزینه‌های iOS"
 
 msgid "See :source:`Platforms/Apple/iOS/README.md`."
@@ -1167,7 +1195,9 @@ msgstr "ایجاد یک Python.framework. برخلاف macOS، آرگومان *I
 msgid "Specify the name for the framework (default: ``Python``)."
 msgstr "نام چارچوب را مشخص کنید (پیش‌فرض: ``Python``)."
 
-msgid "Cross Compiling Options"
+#, fuzzy
+#| msgid "Cross Compiling Options"
+msgid "Cross compiling options"
 msgstr "گزینه‌های کامپایل متقاطع"
 
 msgid "Cross compiling, also known as cross building, can be used to build Python for another CPU architecture or platform. Cross compiling requires a Python interpreter for the build platform. The version of the build Python must match the version of the cross compiled host Python."
@@ -1216,7 +1246,9 @@ msgstr ""
 "    --host=aarch64-unknown-linux-gnu \\\n"
 "    --with-build-python=../x86_64/python"
 
-msgid "Python Build System"
+#, fuzzy
+#| msgid "Python Build System"
+msgid "Python build system"
 msgstr "سیستم ساخت پایتون"
 
 msgid "Main files of the build system"
@@ -1252,56 +1284,53 @@ msgstr "توسعه‌های C توسط Makefile ساخته می‌شوند (به
 msgid "Main Makefile targets"
 msgstr "اهداف اصلی Makefile"
 
-msgid "make"
-msgstr "make"
-
-msgid "For the most part, when rebuilding after editing some code or refreshing your checkout from upstream, all you need to do is execute ``make``, which (per Make's semantics) builds the default target, the first one defined in the Makefile.  By tradition (including in the CPython project) this is usually the ``all`` target. The ``configure`` script expands an ``autoconf`` variable, ``@DEF_MAKE_ALL_RULE@`` to describe precisely which targets ``make all`` will build. The three choices are:"
+#, fuzzy
+#| msgid "For the most part, when rebuilding after editing some code or refreshing your checkout from upstream, all you need to do is execute ``make``, which (per Make's semantics) builds the default target, the first one defined in the Makefile.  By tradition (including in the CPython project) this is usually the ``all`` target. The ``configure`` script expands an ``autoconf`` variable, ``@DEF_MAKE_ALL_RULE@`` to describe precisely which targets ``make all`` will build. The three choices are:"
+msgid "For the most part, when rebuilding after editing some code or refreshing your checkout from upstream, all you need to do is execute ``make``, which (per Make's semantics) builds the default target, the first one defined in the Makefile.  By tradition (including in the CPython project) this is usually the ``all`` target. The ``configure`` script expands an ``autoconf`` variable, ``@DEF_MAKE_ALL_RULE@`` to describe precisely which targets ``make all`` will build. The choices are:"
 msgstr "در بیشتر موارد، هنگام بازساخت پس از ویرایش مقداری کد یا به‌روزرسانی چک‌اوت (checkout) خود از مخزن بالادستی، کافی است ``make`` را اجرا کنید که (طبق معناشناسی Make) هدف پیش‌فرض، یعنی نخستین هدف تعریف‌شده در Makefile، را می‌سازد. طبق سنت (از جمله در پروژه‌ی سی‌پایتون)، این معمولاً هدف ``all`` است. اسکریپت ``configure`` یک متغیر ``autoconf`` به نام ``@DEF_MAKE_ALL_RULE@`` را بسط می‌دهد تا دقیقاً توصیف کند که ``make all`` چه هدف‌هایی را خواهد ساخت. سه گزینه عبارت‌اند از:"
 
 msgid "``profile-opt`` (configured with ``--enable-optimizations``)"
 msgstr "``profile-opt`` (پیکربندی‌شده با ``--enable-optimizations``)"
 
-msgid "``build_wasm`` (chosen if the host platform matches ``wasm32-wasi*`` or ``wasm32-emscripten``)"
+#, fuzzy
+#| msgid "``profile-opt`` (configured with ``--enable-optimizations``)"
+msgid "``bolt-opt`` (configured with ``--enable-bolt``)"
+msgstr "``profile-opt`` (پیکربندی‌شده با ``--enable-optimizations``)"
+
+#, fuzzy
+#| msgid "``build_wasm`` (chosen if the host platform matches ``wasm32-wasi*`` or ``wasm32-emscripten``)"
+msgid "``build_emscripten`` (chosen if the host platform matches ``wasm32-emscripten``)"
 msgstr "``build_wasm`` (در صورتی که پلتفرم میزبان با ``wasm32-wasi*`` یا ``wasm32-emscripten`` مطابقت داشته باشد، انتخاب می‌شود)"
 
-msgid "``build_all`` (configured without explicitly using either of the others)"
+#, fuzzy
+#| msgid "``build_wasm`` (chosen if the host platform matches ``wasm32-wasi*`` or ``wasm32-emscripten``)"
+msgid "``build_wasm`` (chosen if the host platform matches ``wasm32-wasi*``)"
+msgstr "``build_wasm`` (در صورتی که پلتفرم میزبان با ``wasm32-wasi*`` یا ``wasm32-emscripten`` مطابقت داشته باشد، انتخاب می‌شود)"
+
+#, fuzzy
+#| msgid "``build_all`` (configured without explicitly using either of the others)"
+msgid "``build_all`` (configured without explicitly using any of the others)"
 msgstr "``build_all`` (پیکربندی‌شده بدون استفاده‌ی صریح از هیچ‌یک از دو مورد دیگر)"
 
 msgid "Depending on the most recent source file changes, Make will rebuild any targets (object files and executables) deemed out-of-date, including running ``configure`` again if necessary. Source/target dependencies are many and maintained manually however, so Make sometimes doesn't have all the information necessary to correctly detect all targets which need to be rebuilt.  Depending on which targets aren't rebuilt, you might experience a number of problems. If you have build or test problems which you can't otherwise explain, ``make clean && make`` should work around most dependency problems, at the expense of longer build times."
 msgstr "بسته به جدیدترین تغییرات پرونده‌های منبع، Make هر هدفی (پرونده‌های شیء و پرونده‌های اجرایی) را که قدیمی تشخیص داده شود، بازسازی می‌کند، از جمله در صورت لزوم ``configure`` را دوباره اجرا می‌کند. با این حال، وابستگی‌های منبع/هدف بسیار زیادند و به‌صورت دستی نگهداری می‌شوند، بنابراین گاهی Make تمام اطلاعات لازم برای تشخیص صحیح همه هدف‌هایی را که باید بازسازی شوند ندارد. بسته به اینکه کدام هدف‌ها بازسازی نشوند، ممکن است با تعدادی مشکل مواجه شوید. اگر با مشکلات ساخت یا آزمون مواجه شدید که نتوانید توضیح دیگری برایشان بیابید، ``make clean && make`` بیشتر مشکلات وابستگی را دور می‌زند، هرچند به بهای زمان ساخت طولانی‌تر."
 
-msgid "make platform"
-msgstr "make platform"
-
-msgid "Build the ``python`` program, but don't build the standard library extension modules. This generates a file named ``platform`` which contains a single line describing the details of the build platform, e.g., ``macosx-14.3-arm64-3.12`` or ``linux-x86_64-3.13``."
+#, fuzzy
+#| msgid "Build the ``python`` program, but don't build the standard library extension modules. This generates a file named ``platform`` which contains a single line describing the details of the build platform, e.g., ``macosx-14.3-arm64-3.12`` or ``linux-x86_64-3.13``."
+msgid "Build the ``python`` program, but don't build the standard library extension modules. This generates a file named ``platform`` which contains a single line describing the details of the build platform, for example, ``macosx-14.3-arm64-3.12`` or ``linux-x86_64-3.13``."
 msgstr "برنامه ``python`` را بسازید، اما ماژول‌های توسعه‌ای کتابخانه استاندارد را نسازید. این کار پرونده‌ای با نام ``platform`` تولید می‌کند که شامل یک سطر توصیف‌کننده‌ی جزئیات پلتفرم ساخت است؛ برای مثال ``macosx-14.3-arm64-3.12`` یا ``linux-x86_64-3.13``."
-
-msgid "make profile-opt"
-msgstr "make profile-opt"
 
 msgid "Build Python using profile-guided optimization (PGO).  You can use the configure :option:`--enable-optimizations` option to make this the default target of the ``make`` command (``make all`` or just ``make``)."
 msgstr "پایتون را با استفاده از بهینه‌سازی هدایت‌شده با پروفایل (PGO) بسازید. می‌توانید از گزینه‌ی :option:`--enable-optimizations` در configure استفاده کنید تا این کار به هدف پیش‌فرض دستور ``make`` تبدیل شود (``make all`` یا فقط ``make``)."
 
-msgid "make clean"
-msgstr "make clean"
-
 msgid "Remove built files."
 msgstr "پرونده‌های ساخته‌شده را حذف کنید."
-
-msgid "make distclean"
-msgstr "make distclean"
 
 msgid "In addition to the work done by ``make clean``, remove files created by the configure script.  ``configure`` will have to be run before building again. [#]_"
 msgstr "علاوه بر کاری که ``make clean`` انجام می‌دهد، پرونده‌هایی را که اسکریپت configure ایجاد کرده است حذف می‌کند. ``configure`` باید پیش از ساخت مجدد اجرا شود. [#]_"
 
-msgid "make install"
-msgstr "make install"
-
 msgid "Build the ``all`` target and install Python."
 msgstr "هدف ``all`` را بسازید و پایتون را نصب کنید."
-
-msgid "make test"
-msgstr "make test"
 
 msgid "Build the ``all`` target and run the Python test suite with the ``--fast-ci`` option without GUI tests. Variables:"
 msgstr "هدف ``all`` را بسازید و بدنه‌ی آزمون‌های پایتون را با گزینه‌ی ``--fast-ci`` و بدون آزمون‌های رابط گرافیکی (GUI) اجرا کنید. متغیرها:"
@@ -1315,22 +1344,15 @@ msgstr "``TESTPYTHONOPTS``: گزینه‌های اضافی خط فرمان پا�
 msgid "``TESTTIMEOUT``: timeout in seconds (default: 10 minutes)."
 msgstr "``TESTTIMEOUT``: مهلت زمانی بر حسب ثانیه (پیش‌فرض: ۱۰ دقیقه)."
 
-msgid "make ci"
-msgstr "make ci"
-
 msgid "This is similar to ``make test``, but uses the ``-ugui`` to also run GUI tests."
 msgstr "این شبیه به ``make test`` است، اما از ``-ugui`` استفاده می‌کند تا آزمون‌های GUI را نیز اجرا کند."
-
-msgid "make buildbottest"
-msgstr "make buildbottest"
 
 msgid "This is similar to ``make test``, but uses the ``--slow-ci`` option and default timeout of 20 minutes, instead of ``--fast-ci`` option."
 msgstr "این مشابه ``make test`` است، اما به‌جای گزینه‌ی ``--fast-ci``، از گزینه‌ی ``--slow-ci`` و مهلت زمانی پیش‌فرض ۲۰ دقیقه استفاده می‌کند."
 
-msgid "make regen-all"
-msgstr "make regen-all"
-
-msgid "Regenerate (almost) all generated files. These include (but are not limited to) bytecode cases, and parser generator file. ``make regen-stdlib-module-names`` and ``autoconf`` must be run separately for the remaining `generated files <#generated-files>`_."
+#, fuzzy
+#| msgid "Regenerate (almost) all generated files. These include (but are not limited to) bytecode cases, and parser generator file. ``make regen-stdlib-module-names`` and ``autoconf`` must be run separately for the remaining `generated files <#generated-files>`_."
+msgid "Regenerate (almost) all generated files. These include (but are not limited to) bytecode cases, and parser generator files. See :ref:`generated-files` for the targets that must be run separately."
 msgstr "بازتولید (تقریباً) همه‌ی پرونده‌های تولیدشده. این پرونده‌ها شامل (اما نه محدود به) حالت‌های بایت‌کد، و پرونده‌ی تولیدگر پارسر هستند. ``make regen-stdlib-module-names`` و ``autoconf`` باید برای بقیه‌ی `پرونده‌های تولیدشده <#generated-files>`_ جداگانه اجرا شوند."
 
 msgid "C extensions"
@@ -1356,15 +1378,24 @@ msgstr ""
 "  File \"<stdin>\", line 1, in <module>\n"
 "AttributeError: module 'sys' has no attribute '__file__'"
 
-msgid "Other C extensions are built as dynamic libraries, like the ``_asyncio`` module. They are built with the ``Py_BUILD_CORE_MODULE`` macro defined. Example on Linux x86-64:"
+#, fuzzy
+#| msgid "Other C extensions are built as dynamic libraries, like the ``_asyncio`` module. They are built with the ``Py_BUILD_CORE_MODULE`` macro defined. Example on Linux x86-64:"
+msgid "Other C extensions are built as dynamic libraries, like the ``_zoneinfo`` module. They are built with the ``Py_BUILD_CORE_MODULE`` macro defined. For example on Linux x86-64:"
 msgstr "سایر ماژول‌های توسعه‌ای C به‌صورت کتابخانه‌های پویا ساخته می‌شوند، مانند ماژول ``_asyncio``. آن‌ها با تعریف ماکرو ``Py_BUILD_CORE_MODULE`` ساخته می‌شوند. مثال در لینوکس x86-64:"
 
+#, fuzzy
+#| msgid ""
+#| ">>> import _asyncio\n"
+#| ">>> _asyncio\n"
+#| "<module '_asyncio' from '/usr/lib64/python3.9/lib-dynload/_asyncio.cpython-39-x86_64-linux-gnu.so'>\n"
+#| ">>> _asyncio.__file__\n"
+#| "'/usr/lib64/python3.9/lib-dynload/_asyncio.cpython-39-x86_64-linux-gnu.so'"
 msgid ""
-">>> import _asyncio\n"
-">>> _asyncio\n"
-"<module '_asyncio' from '/usr/lib64/python3.9/lib-dynload/_asyncio.cpython-39-x86_64-linux-gnu.so'>\n"
-">>> _asyncio.__file__\n"
-"'/usr/lib64/python3.9/lib-dynload/_asyncio.cpython-39-x86_64-linux-gnu.so'"
+">>> import _zoneinfo\n"
+">>> _zoneinfo\n"
+"<module '_zoneinfo' from '/.../lib.linux-x86_64-3.16/_zoneinfo.cpython-316d-x86_64-linux-gnu.so'>\n"
+">>> _zoneinfo.__file__\n"
+"'/.../lib.linux-x86_64-3.16/_zoneinfo.cpython-316d-x86_64-linux-gnu.so'"
 msgstr ""
 ">>> import _asyncio\n"
 ">>> _asyncio\n"
@@ -1375,7 +1406,9 @@ msgstr ""
 msgid ":file:`Modules/Setup` is used to generate Makefile targets to build C extensions. At the beginning of the files, C extensions are built as built-in modules. Extensions defined after the ``*shared*`` marker are built as dynamic libraries."
 msgstr ":file:`Modules/Setup` برای تولید هدف‌های Makefile به‌منظور ساخت توسعه‌های C استفاده می‌شود. در ابتدای پرونده‌ها، توسعه‌های C به‌صورت ماژول‌های توکار ساخته می‌شوند. توسعه‌هایی که پس از نشانه‌ی ``*shared*`` تعریف می‌شوند، به‌صورت کتابخانه‌های پویا ساخته می‌شوند."
 
-msgid "The :c:macro:`!PyAPI_FUNC()`, :c:macro:`!PyAPI_DATA()` and :c:macro:`PyMODINIT_FUNC` macros of :file:`Include/exports.h` are defined differently depending if the ``Py_BUILD_CORE_MODULE`` macro is defined:"
+#, fuzzy
+#| msgid "The :c:macro:`!PyAPI_FUNC()`, :c:macro:`!PyAPI_DATA()` and :c:macro:`PyMODINIT_FUNC` macros of :file:`Include/exports.h` are defined differently depending if the ``Py_BUILD_CORE_MODULE`` macro is defined:"
+msgid "The :c:macro:`PyAPI_FUNC()`, :c:macro:`PyAPI_DATA()` and :c:macro:`PyMODINIT_FUNC` macros of :file:`Include/exports.h` are defined differently depending if the ``Py_BUILD_CORE_MODULE`` macro is defined:"
 msgstr "ماکروهای :c:macro:`!PyAPI_FUNC()`، :c:macro:`!PyAPI_DATA()` و :c:macro:`PyMODINIT_FUNC` در :file:`Include/exports.h` بسته به اینکه ماکرو ``Py_BUILD_CORE_MODULE`` تعریف شده باشد یا نه، به‌طور متفاوتی تعریف می‌شوند:"
 
 msgid "Use ``Py_EXPORTED_SYMBOL`` if the ``Py_BUILD_CORE_MODULE`` is defined"
@@ -1575,6 +1608,36 @@ msgstr "پانوشت‌ها"
 
 msgid "``git clean -fdx`` is an even more extreme way to \"clean\" your checkout. It removes all files not known to Git. When bug hunting using ``git bisect``, this is `recommended between probes <https://github.com/python/cpython/issues/114505#issuecomment-1907021718>`_ to guarantee a completely clean build. **Use with care**, as it will delete all files not checked into Git, including your new, uncommitted work."
 msgstr "``git clean -fdx`` راهی باز هم افراطی‌تر برای «تمیز کردن» چک‌اوت (checkout) شماست. این دستور تمام پرونده‌هایی را که Git آن‌ها را نمی‌شناسد حذف می‌کند. هنگام جست‌وجوی اشکال با استفاده از ``git bisect``، انجام این کار `بین کاوش‌ها توصیه می‌شود <https://github.com/python/cpython/issues/114505#issuecomment-1907021718>`_ تا یک ساخت کاملاً تمیز تضمین شود. **با احتیاط استفاده کنید**، زیرا تمام پرونده‌هایی را که در Git ثبت نشده‌اند حذف خواهد کرد، از جمله کارهای جدید و کامیت‌نشده‌ی شما."
+
+#~ msgid "make"
+#~ msgstr "make"
+
+#~ msgid "make platform"
+#~ msgstr "make platform"
+
+#~ msgid "make profile-opt"
+#~ msgstr "make profile-opt"
+
+#~ msgid "make clean"
+#~ msgstr "make clean"
+
+#~ msgid "make distclean"
+#~ msgstr "make distclean"
+
+#~ msgid "make install"
+#~ msgstr "make install"
+
+#~ msgid "make test"
+#~ msgstr "make test"
+
+#~ msgid "make ci"
+#~ msgstr "make ci"
+
+#~ msgid "make buildbottest"
+#~ msgstr "make buildbottest"
+
+#~ msgid "make regen-all"
+#~ msgstr "make regen-all"
 
 #~ msgid "3.0.18 recommended"
 #~ msgstr "3.0.18 توصیه‌شده"
