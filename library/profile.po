@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-11-08 04:10+0000\n"
 "PO-Revision-Date: 2026-10-06 20:42+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -101,7 +101,9 @@ msgstr "و آمارهای پروفایل‌گیری را همان‌طور که 
 msgid "This class is normally only used if more precise control over profiling is needed than what the :func:`profiling.tracing.run` function provides."
 msgstr "این کلاس معمولاً فقط زمانی استفاده می‌شود که به کنترل دقیق‌تری روی پروفایل‌گیری نیاز باشد، فراتر از آنچه تابع :func:`profiling.tracing.run` فراهم می‌کند."
 
-msgid "A custom timer can be supplied for measuring how long code takes to run via the *timer* argument. This must be a function that returns a single number representing the current time. If the number is an integer, the *timeunit* specifies a multiplier that specifies the duration of each unit of time. For example, if the timer returns times measured in thousands of seconds, the time unit would be ``.001``."
+#, fuzzy
+#| msgid "A custom timer can be supplied for measuring how long code takes to run via the *timer* argument. This must be a function that returns a single number representing the current time. If the number is an integer, the *timeunit* specifies a multiplier that specifies the duration of each unit of time. For example, if the timer returns times measured in thousands of seconds, the time unit would be ``.001``."
+msgid "A custom timer can be supplied for measuring how long code takes to run via the *timer* argument. This must be a function that returns a single number representing the current time. If the number is an integer, the *timeunit* specifies a multiplier that specifies the duration of each unit of time. For example, if the timer returns times measured in thousandths of seconds, the time unit would be ``.001``."
 msgstr "می‌توان از طریق آرگومان *timer*، یک زمان‌سنج سفارشی برای اندازه‌گیری مدت‌زمان اجرای کد فراهم کرد. این باید تابعی باشد که یک عدد واحد را برمی‌گرداند و نشان‌دهنده‌ی زمان جاری است. اگر این عدد یک عدد صحیح باشد، *timeunit* ضریبی را مشخص می‌کند که مدت‌زمان هر واحد زمان را تعیین می‌کند. برای مثال، اگر زمان‌سنج زمان‌هایی را برگرداند که بر حسب هزاران ثانیه اندازه‌گیری شده‌اند، واحد زمان ``.001`` خواهد بود."
 
 msgid "Directly using the :class:`Profile` class allows formatting profile results without writing the profile data to a file::"
@@ -312,7 +314,9 @@ msgstr "توجه داشته باشید که باید کلاس پروفایل‌�
 msgid ":class:`profiling.tracing.Profile`"
 msgstr ":class:`profiling.tracing.Profile`"
 
-msgid "``your_time_func`` should return a single number.  If it returns integers, you can also invoke the class constructor with a second argument specifying the real duration of one unit of time.  For example, if ``your_integer_time_func`` returns times measured in thousands of seconds, you would construct the :class:`Profile` instance as follows::"
+#, fuzzy
+#| msgid "``your_time_func`` should return a single number.  If it returns integers, you can also invoke the class constructor with a second argument specifying the real duration of one unit of time.  For example, if ``your_integer_time_func`` returns times measured in thousands of seconds, you would construct the :class:`Profile` instance as follows::"
+msgid "``your_time_func`` should return a single number.  If it returns integers, you can also invoke the class constructor with a second argument specifying the real duration of one unit of time.  For example, if ``your_integer_time_func`` returns times measured in thousandths of seconds, you would construct the :class:`Profile` instance as follows::"
 msgstr "``your_time_func`` باید یک عدد واحد برگرداند. اگر این تابع اعداد صحیح برگرداند، همچنین می‌توانید سازنده‌ی کلاس را با یک آرگومان دوم برای مشخص کردن مدت‌زمان واقعی یک واحد زمان فراخوانی کنید. برای مثال، اگر ``your_integer_time_func`` مقادیر زمانی را برگرداند که بر حسب هزاران ثانیه اندازه‌گیری شده‌اند، باید نمونه‌ی :class:`Profile` را به‌صورت زیر بسازید::"
 
 msgid "pr = profiling.tracing.Profile(your_integer_time_func, 0.001)"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-07 04:11+0000\n"
+"POT-Creation-Date: 2026-11-08 04:10+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -36,6 +36,9 @@ msgstr "*تاریخ انتشار: XXXX-XX-XX*"
 
 msgid "Security"
 msgstr "امنیت"
+
+msgid ":cve:`2026-124249`, :gh:`161569`: Fix :class:`http.cookiejar.CookieJar` deleting a stored cookie when a response from an unrelated host sets an already expired cookie with a ``Domain`` or ``Path`` attribute pointing at that cookie. The cookie policy is now consulted before an expired cookie is allowed to delete an existing one."
+msgstr ""
 
 #, fuzzy
 #| msgid ":gh:`149698`: Update bundled `libexpat <https://libexpat.github.io/>`_ to version 2.8.1 for the fix for :cve:`2026-45186`."
@@ -65,6 +68,9 @@ msgstr ":gh:`143008`: اصلاح شرایط رقابت هنگام مقدارده
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
 
+msgid ":gh:`161420`: Restore ``mimalloc``'s previous behavior of processing delayed frees from other threads on every generic malloc call, reverting the change introduced in v2.2.2."
+msgstr ""
+
 #, fuzzy
 #| msgid ":gh:`145615`: Fixed a memory leak in the :term:`free-threaded build` where mimalloc pages could become permanently unreclaimable until the owning thread exited."
 msgid ":gh:`161419`: Fix a crash in the :term:`free-threaded build` where a weak reference could revive an object whose finalizer had already run during deallocation, causing it to be deallocated twice."
@@ -84,10 +90,16 @@ msgstr ""
 msgid ":gh:`160773`: Fix a crash in :func:`str` of an :exc:`OSError` when formatting one of its attributes modifies the others."
 msgstr ""
 
+msgid ":gh:`158195`: Fix a deadlock in the free-threaded build between a thread that stops the world while running Python code under the type lock (for example a custom metaclass ``mro()`` or the ``__eq__`` of a :class:`str` subclass used as a class ``__dict__`` key) and a thread that assigns to a special method or to ``__bases__`` of a class.  The type lock is no longer held while waiting for a stop-the-world; the prepared slot, MRO and bases updates are validated with the world stopped and recomputed if they went stale."
+msgstr ""
+
 msgid ":gh:`159652`: Fix a hang when an import fails with :exc:`RecursionError` because the C stack is nearly exhausted: releasing the import locks could itself fail and leave the global import lock or a module lock held forever, so that later imports in other threads blocked indefinitely. The import system now raises :exc:`RecursionError` before taking an import lock when there is not enough stack left to release it."
 msgstr ""
 
 msgid ":gh:`159449`: Fix a free-threaded asyncio race leading to segfaults."
+msgstr ""
+
+msgid ":gh:`159434`: Fix reading a function's :attr:`~function.__annotations__` using borrowed references to :attr:`~function.__annotate__` and the internal annotations tuple while running code that can replace them.  If ``__annotations__`` is set while ``__annotate__`` runs, the newly set value is now kept."
 msgstr ""
 
 msgid ":gh:`159136`: Setting ``__name__``, ``__qualname__``, ``__doc__`` or ``__module__`` on a function no longer stops all threads in the free-threaded build. This fixes a large slowdown in multi-threaded code using :func:`functools.wraps` since 3.14.7."
@@ -99,10 +111,21 @@ msgstr ""
 msgid ":gh:`151060`: Fix a crash or memory corruption in :func:`sum` when summing a :class:`float` subclass instance into a complex running total."
 msgstr ""
 
+#, fuzzy
+#| msgid ":gh:`151773`: Fix a crash in :func:`contextvars.ContextVar.set` when memory allocation fails."
+msgid ":gh:`148891`: Fix a crash in :func:`contextvars.Context.run` where a GC invocation could free the current HAMT during traverse."
+msgstr ":gh:`151773`: رفع فروپاشی در :func:`contextvars.ContextVar.set` هنگامی که تخصیص حافظه با شکست مواجه می‌شود."
+
 msgid "Library"
 msgstr "کتابخانه"
 
+msgid ":gh:`161475`: Fix :mod:`ctypes` structures containing arrays of floating-point type returned by value on 64-bit Linux SPARC."
+msgstr ""
+
 msgid ":gh:`142782`: Fix a use-after-free in :class:`zoneinfo.ZoneInfo` when a key's ``__eq__`` clears the cache during a lookup. Strong cache keys are now compared by string contents."
+msgstr ""
+
+msgid ":gh:`161415`: Remove ``FILES`` and ``unicode`` from the related help topics listed by :func:`help` for the ``TYPES`` and ``UNICODE`` topics. Neither exists in Python 3, so asking for help on them failed."
 msgstr ""
 
 msgid ":gh:`161414`: Remove the backquote from the symbols listed by :func:`help`, asking for help on it reported that no documentation was found."
@@ -321,6 +344,12 @@ msgid "Windows"
 msgstr "Windows"
 
 msgid ":gh:`159118`: Fix a crash (``RPC_NT_INTERNAL_ERROR``) and intermittent window class failures in :mod:`!_wmi` under high concurrency and load by initializing COM as multi-threaded (MTA) instead of apartment-threaded (STA)."
+msgstr ""
+
+msgid "IDLE"
+msgstr "IDLE"
+
+msgid ":gh:`161477`: Fix ``repr()`` of ``idlelib.redirector.WidgetRedirector`` and ``idlelib.redirector.OriginalCommand``, which displayed a spurious one-element tuple."
 msgstr ""
 
 msgid "C API"
@@ -1201,9 +1230,6 @@ msgstr "مک‌اواس"
 
 msgid ":gh:`159739`: Propagate errors that occur while converting macOS system proxy settings."
 msgstr ":gh:`159739`: انتقال دادن (propagate) خطاهایی که هنگام تبدیل تنظیمات پراکسی (proxy) سیستم macOS رخ می‌دهند."
-
-msgid "IDLE"
-msgstr "IDLE"
 
 msgid ":gh:`159517`: Fix the completion list and the call tip grabbing the focus on macOS with Tcl/Tk 9.1."
 msgstr ":gh:`159517`: رفع مشکل فهرست (list) تکمیل و راهنمای فراخوانی که تمرکز (focus) را در macOS با Tcl/Tk 9.1 می‌دزدند."

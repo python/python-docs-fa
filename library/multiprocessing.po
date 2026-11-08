@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-30 04:13+0000\n"
+"POT-Creation-Date: 2026-11-08 04:10+0000\n"
 "PO-Revision-Date: 2026-09-13 15:53+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -2423,7 +2423,9 @@ msgstr "*address* نشانی‌ای است که توسط سوکت مقیدشده
 msgid "If an address of '0.0.0.0' is used, the address will not be a connectable end point on Windows. If you require a connectable end-point, you should use '127.0.0.1'."
 msgstr "اگر از نشانی '0.0.0.0' استفاده شود، این نشانی در ویندوز یک پایانه قابل‌اتصال نخواهد بود. اگر به یک پایانه قابل‌اتصال نیاز دارید، باید از '127.0.0.1' استفاده کنید."
 
-msgid "*family* is the type of socket (or named pipe) to use.  This can be one of the strings ``'AF_INET'`` (for a TCP socket), ``'AF_UNIX'`` (for a Unix domain socket) or ``'AF_PIPE'`` (for a Windows named pipe).  Of these only the first is guaranteed to be available.  If *family* is ``None`` then the family is inferred from the format of *address*.  If *address* is also ``None`` then a default is chosen.  This default is the family which is assumed to be the fastest available.  See :ref:`multiprocessing-address-formats`.  Note that if *family* is ``'AF_UNIX'`` and address is ``None`` then the socket will be created in a private temporary directory created using :func:`tempfile.mkstemp`."
+#, fuzzy
+#| msgid "*family* is the type of socket (or named pipe) to use.  This can be one of the strings ``'AF_INET'`` (for a TCP socket), ``'AF_UNIX'`` (for a Unix domain socket) or ``'AF_PIPE'`` (for a Windows named pipe).  Of these only the first is guaranteed to be available.  If *family* is ``None`` then the family is inferred from the format of *address*.  If *address* is also ``None`` then a default is chosen.  This default is the family which is assumed to be the fastest available.  See :ref:`multiprocessing-address-formats`.  Note that if *family* is ``'AF_UNIX'`` and address is ``None`` then the socket will be created in a private temporary directory created using :func:`tempfile.mkstemp`."
+msgid "*family* is the type of socket (or named pipe) to use.  This can be one of the strings ``'AF_INET'`` (for a TCP socket), ``'AF_UNIX'`` (for a Unix domain socket) or ``'AF_PIPE'`` (for a Windows named pipe).  Of these only the first is guaranteed to be available.  If *family* is ``None`` then the family is inferred from the format of *address*.  If *address* is also ``None`` then a default is chosen.  This default is the family which is assumed to be the fastest available.  See :ref:`multiprocessing-address-formats`.  Note that if *family* is ``'AF_UNIX'`` and address is ``None`` then the socket will be created in a private temporary directory created using :func:`tempfile.mkdtemp`."
 msgstr "*family* نوع سوکت (یا پایپ نام‌دار) مورد استفاده است. این مقدار می‌تواند یکی از رشته‌های ``'AF_INET'`` (برای سوکت TCP)، ``'AF_UNIX'`` (برای سوکت دامنه‌ی یونیکس) یا ``'AF_PIPE'`` (برای پایپ نام‌دار ویندوز) باشد. از میان این موارد، تنها مورد اول تضمین‌شده در دسترس است. اگر *family* برابر ``None`` باشد، خانواده از قالب *address* استنتاج می‌شود. اگر *address* نیز ``None`` باشد، یک مقدار پیش‌فرض انتخاب می‌شود. این مقدار پیش‌فرض، خانواده‌ای است که فرض می‌شود سریع‌ترین گزینه‌ی در دسترس است. به :ref:`multiprocessing-address-formats` مراجعه کنید. توجه داشته باشید که اگر *family* برابر ``'AF_UNIX'`` و address برابر ``None`` باشد، سوکت در یک پوشه‌ی موقت خصوصی ایجاد می‌شود که با استفاده از :func:`tempfile.mkstemp` ایجاد شده است."
 
 msgid "If the listener object uses a socket then *backlog* (1 by default) is passed to the :meth:`~socket.socket.listen` method of the socket once it has been bound."

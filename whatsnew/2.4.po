@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-28 04:13+0000\n"
+"POT-Creation-Date: 2026-11-08 04:10+0000\n"
 "PO-Revision-Date: 2021-06-28 01:51+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -1173,7 +1173,9 @@ msgstr "ماژول :mod:`curses` اکنون از افزونه‌ی ncurses با 
 msgid "The :mod:`difflib` module now includes an :class:`~difflib.HtmlDiff` class that creates an HTML table showing a side by side comparison of two versions of a text. (Contributed by Dan Gass.)"
 msgstr "ماژول :mod:`difflib` اکنون شامل کلاس :class:`~difflib.HtmlDiff` است که جدولی HTML ایجاد می‌کند که مقایسه‌ی دو نسخه از یک متن را به‌صورت کنار‌به‌کنار نشان می‌دهد. (مشارکت Dan Gass.)"
 
-msgid "The :mod:`email` package was updated to version 3.0,  which dropped various deprecated APIs and removes support for Python versions earlier than 2.3.  The 3.0 version of the package uses a new incremental parser for MIME messages, available in the :mod:`!email.FeedParser` module.  The new parser doesn't require reading the entire message into memory, and doesn't raise exceptions if a message is malformed; instead it records any problems in the :attr:`!defect` attribute of the message.  (Developed by Anthony Baxter, Barry Warsaw, Thomas Wouters, and others.)"
+#, fuzzy
+#| msgid "The :mod:`email` package was updated to version 3.0,  which dropped various deprecated APIs and removes support for Python versions earlier than 2.3.  The 3.0 version of the package uses a new incremental parser for MIME messages, available in the :mod:`!email.FeedParser` module.  The new parser doesn't require reading the entire message into memory, and doesn't raise exceptions if a message is malformed; instead it records any problems in the :attr:`!defect` attribute of the message.  (Developed by Anthony Baxter, Barry Warsaw, Thomas Wouters, and others.)"
+msgid "The :mod:`email` package was updated to version 3.0,  which dropped various deprecated APIs and removes support for Python versions earlier than 2.3.  The 3.0 version of the package uses a new incremental parser for MIME messages, available in the :mod:`!email.FeedParser` module.  The new parser doesn't require reading the entire message into memory, and doesn't raise exceptions if a message is malformed; instead it records any problems in the :attr:`!defects` attribute of the message.  (Developed by Anthony Baxter, Barry Warsaw, Thomas Wouters, and others.)"
 msgstr "بسته‌ی :mod:`email` به نسخه 3.0 به‌روزرسانی شد که در آن APIهای منسوخ‌شده‌ی مختلف حذف شدند و پشتیبانی از نسخه‌های پایتون پیش از 2.3 برداشته شد. نسخه 3.0 این بسته از یک پارسر افزایشی جدید برای پیام‌های MIME استفاده می‌کند که در ماژول :mod:`!email.FeedParser` در دسترس است. پارسر جدید نیازی به خواندن کل پیام در حافظه ندارد و اگر پیامی بدشکل باشد، استثنا ایجاد نمی‌کند؛ در عوض، هرگونه مشکل را در ویژگی :attr:`!defect` پیام ثبت می‌کند. (توسعه‌یافته توسط آنتونی باکستر، بری ورشو، توماس ووترز و دیگران.)"
 
 msgid "The :mod:`heapq` module has been converted to C.  The resulting tenfold improvement in speed makes the module suitable for handling high volumes of data.  In addition, the module has two new functions :func:`~heapq.nlargest` and :func:`~heapq.nsmallest` that use heaps to find the N largest or smallest values in a dataset without the expense of a full sort.  (Contributed by Raymond Hettinger.)"
@@ -1292,11 +1294,17 @@ msgstr "تعدادی تابع به ماژول :mod:`locale` اضافه شد، م
 msgid "Some keyword arguments were added to the :mod:`logging` package's :func:`~logging.basicConfig` function to simplify log configuration.  The default behavior is to log messages to standard error, but various keyword arguments can be specified to log to a particular file, change the logging format, or set the logging level. For example::"
 msgstr "برای ساده‌سازی پیکربندی گزارش‌گیری، چند آرگومان کلیدواژه‌ای به تابع :func:`~logging.basicConfig` بسته‌ی :mod:`logging` افزوده شد. رفتار پیش‌فرض، ثبت پیام‌ها در خطای استاندارد است، اما می‌توان آرگومان‌های کلیدواژه‌ای گوناگونی را مشخص کرد تا گزارش‌ها در یک پرونده‌ی خاص ثبت شوند، قالب گزارش‌گیری تغییر کند یا سطح گزارش‌گیری تنظیم شود. برای مثال::"
 
+#, fuzzy
+#| msgid ""
+#| "import logging\n"
+#| "logging.basicConfig(filename='/var/log/application.log',\n"
+#| "    level=0,  # Log all messages\n"
+#| "    format='%(levelname):%(process):%(thread):%(message)')"
 msgid ""
 "import logging\n"
 "logging.basicConfig(filename='/var/log/application.log',\n"
 "    level=0,  # Log all messages\n"
-"    format='%(levelname):%(process):%(thread):%(message)')"
+"    format='%(levelname)s:%(process)d:%(thread)d:%(message)s')"
 msgstr ""
 "import logging\n"
 "logging.basicConfig(filename='/var/log/application.log',\n"

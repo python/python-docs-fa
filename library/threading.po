@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-11-08 04:10+0000\n"
 "PO-Revision-Date: 2026-10-06 19:52+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -714,13 +714,17 @@ msgstr "اشیای RLock"
 msgid "A reentrant lock is a synchronization primitive that may be acquired multiple times by the same thread.  Internally, it uses the concepts of \"owning thread\" and \"recursion level\" in addition to the locked/unlocked state used by primitive locks.  In the locked state, some thread owns the lock; in the unlocked state, no thread owns it."
 msgstr "قفل بازورودپذیر (reentrant lock) یک سازوکار اولیه‌ی همگام‌سازی است که یک نخ یکسان می‌تواند آن را چندین بار کسب کند. از نظر داخلی، این قفل علاوه بر وضعیت قفل‌شده/قفل‌نشده‌ی استفاده‌شده در قفل‌های اولیه، از مفاهیم «نخ مالک» و «سطح بازگشت» استفاده می‌کند. در وضعیت قفل‌شده، نخی مالک قفل است؛ در وضعیت قفل‌نشده، هیچ نخی مالک آن نیست."
 
-msgid "Threads call a lock's :meth:`~RLock.acquire` method to lock it, and its :meth:`~Lock.release` method to unlock it."
+#, fuzzy
+#| msgid "Threads call a lock's :meth:`~RLock.acquire` method to lock it, and its :meth:`~Lock.release` method to unlock it."
+msgid "Threads call a lock's :meth:`~RLock.acquire` method to lock it, and its :meth:`~RLock.release` method to unlock it."
 msgstr "نخ‌ها برای قفل کردن یک قفل، متد :meth:`~RLock.acquire` آن و برای باز کردن قفل آن، متد :meth:`~Lock.release` آن را فراخوانی می‌کنند."
 
 msgid "Reentrant locks support the :ref:`context management protocol <with-locks>`, so it is recommended to use :keyword:`with` instead of manually calling :meth:`~RLock.acquire` and :meth:`~RLock.release` to handle acquiring and releasing the lock for a block of code."
 msgstr "قفل‌های بازورودپذیر از :ref:`پروتکل مدیریت زمینه <with-locks>` پشتیبانی می‌کنند، بنابراین توصیه می‌شود به‌جای فراخوانی دستی :meth:`~RLock.acquire` و :meth:`~RLock.release` برای مدیریت کسب و آزادسازی قفل در یک بلوک کد، از :keyword:`with` استفاده کنید."
 
-msgid "RLock's :meth:`~RLock.acquire`/:meth:`~RLock.release` call pairs may be nested, unlike Lock's :meth:`~Lock.acquire`/:meth:`~Lock.release`. Only the final :meth:`~RLock.release` (the :meth:`~Lock.release` of the outermost pair) resets the lock to an unlocked state and allows another thread blocked in :meth:`~RLock.acquire` to proceed."
+#, fuzzy
+#| msgid "RLock's :meth:`~RLock.acquire`/:meth:`~RLock.release` call pairs may be nested, unlike Lock's :meth:`~Lock.acquire`/:meth:`~Lock.release`. Only the final :meth:`~RLock.release` (the :meth:`~Lock.release` of the outermost pair) resets the lock to an unlocked state and allows another thread blocked in :meth:`~RLock.acquire` to proceed."
+msgid "RLock's :meth:`~RLock.acquire`/:meth:`~RLock.release` call pairs may be nested, unlike Lock's :meth:`~Lock.acquire`/:meth:`~Lock.release`. Only the final :meth:`~RLock.release` (the :meth:`~RLock.release` of the outermost pair) resets the lock to an unlocked state and allows another thread blocked in :meth:`~RLock.acquire` to proceed."
 msgstr "جفت‌های فراخوانی :meth:`~RLock.acquire`/:meth:`~RLock.release` در RLock می‌توانند تودرتو باشند، برخلاف :meth:`~Lock.acquire`/:meth:`~Lock.release` در Lock. تنها آخرین :meth:`~RLock.release` (یعنی :meth:`~Lock.release` از بیرونی‌ترین جفت) قفل را به وضعیت قفل‌نشده بازنشانی می‌کند و به نخ دیگری که در :meth:`~RLock.acquire` مسدود شده است اجازه می‌دهد ادامه دهد."
 
 msgid ":meth:`~RLock.acquire`/:meth:`~RLock.release` must be used in pairs: each acquire must have a release in the thread that has acquired the lock. Failing to call release as many times the lock has been acquired can lead to deadlock."

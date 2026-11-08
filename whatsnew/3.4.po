@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-30 04:13+0000\n"
+"POT-Creation-Date: 2026-11-08 04:10+0000\n"
 "PO-Revision-Date: 2026-09-14 13:44+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -1583,7 +1583,9 @@ msgstr "کلاس‌های پایه انتزاعی تعریف‌شده در :mod:
 msgid "The module type now initializes the :attr:`~module.__package__` and :attr:`~module.__loader__` attributes to ``None`` by default. To determine if these attributes were set in a backwards-compatible fashion, use e.g. ``getattr(module, '__loader__', None) is not None``.  (:issue:`17115`.)"
 msgstr "نوع ماژول اکنون ویژگی‌های :attr:`~module.__package__` و :attr:`~module.__loader__` را به‌طور پیش‌فرض با ``None`` مقداردهی اولیه می‌کند. برای تعیین اینکه آیا این ویژگی‌ها به شکلی سازگار با نسخه‌های پیشین تنظیم شده‌اند، مثلاً از ``getattr(module, '__loader__', None) is not None`` استفاده کنید.  (:issue:`17115`.)"
 
-msgid ":meth:`!importlib.util.module_for_loader` now sets ``__loader__`` and ``__package__`` unconditionally to properly support reloading. If this is not desired then you will need to set these attributes manually. You can use :func:`!importlib.util.module_to_load` for module management."
+#, fuzzy
+#| msgid ":meth:`!importlib.util.module_for_loader` now sets ``__loader__`` and ``__package__`` unconditionally to properly support reloading. If this is not desired then you will need to set these attributes manually. You can use :func:`!importlib.util.module_to_load` for module management."
+msgid ":meth:`!importlib.util.module_for_loader` now sets ``__loader__`` and ``__package__`` unconditionally to properly support reloading. If this is not desired then you will need to set these attributes manually. You can use :func:`!importlib.util._module_to_load` for module management."
 msgstr ":meth:`!importlib.util.module_for_loader` اکنون ``__loader__`` و ``__package__`` را بدون قید و شرط تنظیم می‌کند تا از بارگذاری مجدد به‌درستی پشتیبانی کند. اگر این مورد مطلوب نیست، باید این ویژگی‌ها را به‌صورت دستی تنظیم کنید. برای مدیریت ماژول می‌توانید از :func:`!importlib.util.module_to_load` استفاده کنید."
 
 msgid "Import now resets relevant attributes (e.g. ``__name__``, ``__loader__``, ``__package__``, ``__file__``, ``__cached__``) unconditionally when reloading. Note that this restores a pre-3.3 behavior in that it means a module is re-found when re-loaded (:issue:`19413`)."
@@ -1592,7 +1594,9 @@ msgstr "ایمپورت اکنون هنگام بارگذاری مجدد، ویژ�
 msgid "Frozen packages no longer set ``__path__`` to a list containing the package name, they now set it to an empty list.  The previous behavior could cause the import system to do the wrong thing on submodule imports if there was also a directory with the same name as the frozen package.  The correct way to determine if a module is a package or not is to use ``hasattr(module, '__path__')`` (:issue:`18065`)."
 msgstr "بسته‌های فریزشده دیگر ``__path__`` را به فهرستی شامل نام بسته تنظیم نمی‌کنند، بلکه اکنون آن را به یک فهرست خالی تنظیم می‌کنند. رفتار قبلی می‌توانست در صورت وجود پوشه‌ای با همان نام بسته‌ی فریزشده، باعث شود سیستم ایمپورت هنگام ایمپورت زیرماژول‌ها کار اشتباهی انجام دهد. روش درست برای تعیین اینکه یک ماژول بسته است یا خیر، استفاده از ``hasattr(module, '__path__')`` است (:issue:`18065`)."
 
-msgid "Frozen modules no longer define a ``__file__`` attribute. It's semantically incorrect for frozen modules to set the attribute as they are not loaded from any explicit location. If you must know that a module comes from frozen code then you can see if the module's ``__spec__.location`` is set to ``'frozen'``, check if the loader is a subclass of :class:`importlib.machinery.FrozenImporter`, or if Python 2 compatibility is necessary you can use :func:`!imp.is_frozen`."
+#, fuzzy
+#| msgid "Frozen modules no longer define a ``__file__`` attribute. It's semantically incorrect for frozen modules to set the attribute as they are not loaded from any explicit location. If you must know that a module comes from frozen code then you can see if the module's ``__spec__.location`` is set to ``'frozen'``, check if the loader is a subclass of :class:`importlib.machinery.FrozenImporter`, or if Python 2 compatibility is necessary you can use :func:`!imp.is_frozen`."
+msgid "Frozen modules no longer define a ``__file__`` attribute. It's semantically incorrect for frozen modules to set the attribute as they are not loaded from any explicit location. If you must know that a module comes from frozen code then you can see if the module's ``__spec__.origin`` is set to ``'frozen'``, check if the loader is a subclass of :class:`importlib.machinery.FrozenImporter`, or if Python 2 compatibility is necessary you can use :func:`!imp.is_frozen`."
 msgstr "ماژول‌های فریزشده دیگر ویژگی ``__file__`` را تعریف نمی‌کنند. تنظیم این ویژگی توسط ماژول‌های فریزشده از نظر معنایی نادرست است، زیرا این ماژول‌ها از هیچ مکان صریحی بارگذاری نمی‌شوند. اگر لازم است بدانید که یک ماژول از کد فریزشده می‌آید، می‌توانید ببینید که آیا ``__spec__.location`` ماژول روی ``'frozen'`` تنظیم شده است، بررسی کنید که آیا بارگذار زیرکلاسی از :class:`importlib.machinery.FrozenImporter` است، یا اگر سازگاری با Python 2 ضروری است، می‌توانید از :func:`!imp.is_frozen` استفاده کنید."
 
 msgid ":func:`py_compile.compile` now raises :exc:`FileExistsError` if the file path it would write to is a symlink or a non-regular file. This is to act as a warning that import will overwrite those files with a regular file regardless of what type of file path they were originally."

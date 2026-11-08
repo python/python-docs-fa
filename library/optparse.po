@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-02 04:12+0000\n"
+"POT-Creation-Date: 2026-11-08 04:10+0000\n"
 "PO-Revision-Date: 2026-09-13 08:55+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -2115,7 +2115,9 @@ msgstr "یک دیکشنری که نام انواع را به توابع بررس
 msgid "def check_mytype(option, opt, value)"
 msgstr "def check_mytype(option, opt, value)"
 
-msgid "where ``option`` is an :class:`Option` instance, ``opt`` is an option string (e.g., ``-f``), and ``value`` is the string from the command line that must be checked and converted to your desired type.  ``check_mytype()`` should return an object of the hypothetical type ``mytype``.  The value returned by a type-checking function will wind up in the OptionValues instance returned by :meth:`OptionParser.parse_args`, or be passed to a callback as the ``value`` parameter."
+#, fuzzy
+#| msgid "where ``option`` is an :class:`Option` instance, ``opt`` is an option string (e.g., ``-f``), and ``value`` is the string from the command line that must be checked and converted to your desired type.  ``check_mytype()`` should return an object of the hypothetical type ``mytype``.  The value returned by a type-checking function will wind up in the OptionValues instance returned by :meth:`OptionParser.parse_args`, or be passed to a callback as the ``value`` parameter."
+msgid "where ``option`` is an :class:`Option` instance, ``opt`` is an option string (e.g., ``-f``), and ``value`` is the string from the command line that must be checked and converted to your desired type.  ``check_mytype()`` should return an object of the hypothetical type ``mytype``.  The value returned by a type-checking function will wind up in the Values instance returned by :meth:`OptionParser.parse_args`, or be passed to a callback as the ``value`` parameter."
 msgstr "که در آن ``option`` یک نمونه از :class:`Option`، ``opt`` یک رشته‌ی گزینه (برای مثال ``-f``) و ``value`` رشته‌ای از خط فرمان است که باید بررسی و به نوع دلخواه شما تبدیل شود. ``check_mytype()`` باید شیءای از نوع فرضی ``mytype`` را برگرداند. مقداری که یک تابع بررسی نوع بازمی‌گرداند، در نهایت در نمونه‌ی OptionValues بازگشتی از :meth:`OptionParser.parse_args` قرار خواهد گرفت، یا به‌عنوان پارامتر ``value`` به یک کال‌بک ارسال می‌شود."
 
 msgid "Your type-checking function should raise :exc:`OptionValueError` if it encounters any problems.  :exc:`OptionValueError` takes a single string argument, which is passed as-is to :class:`OptionParser`'s :meth:`error` method, which in turn prepends the program name and the string ``\"error:\"`` and prints everything to stderr before terminating the process."
@@ -2200,7 +2202,9 @@ msgstr "افزودن کنش‌های جدید کمی پیچیده‌تر است�
 msgid "\"store\" actions"
 msgstr "کنش‌های \"store\""
 
-msgid "actions that result in :mod:`!optparse` storing a value to an attribute of the current OptionValues instance; these options require a :attr:`~Option.dest` attribute to be supplied to the Option constructor."
+#, fuzzy
+#| msgid "actions that result in :mod:`!optparse` storing a value to an attribute of the current OptionValues instance; these options require a :attr:`~Option.dest` attribute to be supplied to the Option constructor."
+msgid "actions that result in :mod:`!optparse` storing a value to an attribute of the current Values instance; these options require a :attr:`~Option.dest` attribute to be supplied to the Option constructor."
 msgstr "کنش‌هایی که باعث می‌شوند :mod:`!optparse` یک مقدار را در یک ویژگی از نمونه‌ی فعلی OptionValues ذخیره کند؛ این گزینه‌ها نیاز دارند که یک ویژگی :attr:`~Option.dest` به سازنده‌ی Option ارائه شود."
 
 msgid "\"typed\" actions"
@@ -2288,13 +2292,17 @@ msgstr "برای اطمینان از اینکه :mod:`!optparse` نوع پیش�
 msgid ":meth:`MyOption.take_action` implements just this one new action, and passes control back to :meth:`Option.take_action` for the standard :mod:`!optparse` actions."
 msgstr ":meth:`MyOption.take_action` فقط همین یک کنش جدید را پیاده‌سازی می‌کند و کنترل را برای کنش‌های استاندارد :mod:`!optparse` به :meth:`Option.take_action` بازمی‌گرداند."
 
-msgid "``values`` is an instance of the optparse_parser.Values class, which provides the very useful :meth:`ensure_value` method. :meth:`ensure_value` is essentially :func:`getattr` with a safety valve; it is called as ::"
+#, fuzzy
+#| msgid "``values`` is an instance of the optparse_parser.Values class, which provides the very useful :meth:`ensure_value` method. :meth:`ensure_value` is essentially :func:`getattr` with a safety valve; it is called as ::"
+msgid "``values`` is an instance of the optparse.Values class, which provides the very useful :meth:`!ensure_value` method. :meth:`!ensure_value` is essentially :func:`getattr` with a safety valve; it is called as ::"
 msgstr "``values`` نمونه‌ای از کلاس optparse_parser.Values است که متد بسیار مفید :meth:`ensure_value` را فراهم می‌کند. :meth:`ensure_value` در اصل همان :func:`getattr` با یک سوپاپ اطمینان است؛ این متد به این صورت فراخوانی می‌شود ::"
 
 msgid "values.ensure_value(attr, value)"
 msgstr "values.ensure_value(attr, value)"
 
-msgid "If the ``attr`` attribute of ``values`` doesn't exist or is ``None``, then ensure_value() first sets it to ``value``, and then returns ``value``. This is very handy for actions like ``\"extend\"``, ``\"append\"``, and ``\"count\"``, all of which accumulate data in a variable and expect that variable to be of a certain type (a list for the first two, an integer for the latter).  Using :meth:`ensure_value` means that scripts using your action don't have to worry about setting a default value for the option destinations in question; they can just leave the default as ``None`` and :meth:`ensure_value` will take care of getting it right when it's needed."
+#, fuzzy
+#| msgid "If the ``attr`` attribute of ``values`` doesn't exist or is ``None``, then ensure_value() first sets it to ``value``, and then returns ``value``. This is very handy for actions like ``\"extend\"``, ``\"append\"``, and ``\"count\"``, all of which accumulate data in a variable and expect that variable to be of a certain type (a list for the first two, an integer for the latter).  Using :meth:`ensure_value` means that scripts using your action don't have to worry about setting a default value for the option destinations in question; they can just leave the default as ``None`` and :meth:`ensure_value` will take care of getting it right when it's needed."
+msgid "If the ``attr`` attribute of ``values`` doesn't exist or is ``None``, then ensure_value() first sets it to ``value``, and then returns ``value``. This is very handy for actions like ``\"extend\"``, ``\"append\"``, and ``\"count\"``, all of which accumulate data in a variable and expect that variable to be of a certain type (a list for the first two, an integer for the latter).  Using :meth:`!ensure_value` means that scripts using your action don't have to worry about setting a default value for the option destinations in question; they can just leave the default as ``None`` and :meth:`!ensure_value` will take care of getting it right when it's needed."
 msgstr "اگر ویژگی ``attr`` در ``values`` وجود نداشته باشد یا ``None`` باشد، ensure_value() ابتدا آن را روی ``value`` تنظیم می‌کند و سپس ``value`` را برمی‌گرداند. این برای کنش‌هایی مانند ``\"extend\"``، ``\"append\"`` و ``\"count\"`` بسیار کاربردی است؛ همه‌ی این‌ها داده را در یک متغیر انباشته می‌کنند و انتظار دارند آن متغیر از نوع خاصی باشد (برای دو مورد اول یک فهرست، برای مورد آخر یک عدد صحیح). استفاده از :meth:`ensure_value` به این معناست که اسکریپت‌هایی که از کنش شما استفاده می‌کنند، نیازی به نگرانی درباره‌ی تنظیم مقدار پیش‌فرض برای مقصدهای گزینه‌های مورد بحث ندارند؛ آن‌ها می‌توانند فقط مقدار پیش‌فرض را ``None`` باقی بگذارند و :meth:`ensure_value` هنگام نیاز، آن را به‌درستی تنظیم می‌کند."
 
 msgid "Exceptions"

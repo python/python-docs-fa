@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-30 04:13+0000\n"
+"POT-Creation-Date: 2026-11-08 04:10+0000\n"
 "PO-Revision-Date: 2026-09-15 11:32+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -1395,7 +1395,9 @@ msgstr "ماژول :mod:`itertools` شامل تعدادی تابع مفید بر
 msgid "Two new functions in the :mod:`math` module, ``degrees(rads)`` and ``radians(degs)``, convert between radians and degrees.  Other functions in the :mod:`math` module such as :func:`math.sin` and :func:`math.cos` have always required input values measured in radians.  Also, an optional *base* argument was added to :func:`math.log` to make it easier to compute logarithms for bases other than ``e`` and ``10``.  (Contributed by Raymond Hettinger.)"
 msgstr "دو تابع جدید در ماژول :mod:`math`، ``degrees(rads)`` و ``radians(degs)``، تبدیل بین رادیان و درجه را انجام می‌دهند.  سایر توابع در ماژول :mod:`math` مانند :func:`math.sin` و :func:`math.cos` همیشه به مقادیر ورودی‌ای نیاز داشته‌اند که بر حسب رادیان اندازه‌گیری شده باشند.  همچنین، یک آرگومان اختیاری *base* به :func:`math.log` اضافه شد تا محاسبه لگاریتم‌ها برای مبناهایی غیر از ``e`` و ``10`` آسان‌تر شود.  (مشارکت: Raymond Hettinger.)"
 
-msgid "Several new POSIX functions (:func:`!getpgid`, :func:`!killpg`, :func:`!lchown`, :func:`!loadavg`, :func:`!major`, :func:`!makedev`, :func:`!minor`, and :func:`!mknod`) were added to the :mod:`posix` module that underlies the :mod:`os` module. (Contributed by Gustavo Niemeyer, Geert Jansen, and Denis S. Otkidach.)"
+#, fuzzy
+#| msgid "Several new POSIX functions (:func:`!getpgid`, :func:`!killpg`, :func:`!lchown`, :func:`!loadavg`, :func:`!major`, :func:`!makedev`, :func:`!minor`, and :func:`!mknod`) were added to the :mod:`posix` module that underlies the :mod:`os` module. (Contributed by Gustavo Niemeyer, Geert Jansen, and Denis S. Otkidach.)"
+msgid "Several new POSIX functions (:func:`!getpgid`, :func:`!killpg`, :func:`!lchown`, :func:`!getloadavg`, :func:`!major`, :func:`!makedev`, :func:`!minor`, and :func:`!mknod`) were added to the :mod:`posix` module that underlies the :mod:`os` module. (Contributed by Gustavo Niemeyer, Geert Jansen, and Denis S. Otkidach.)"
 msgstr "چندین تابع جدید POSIX (:func:`!getpgid`، :func:`!killpg`، :func:`!lchown`، :func:`!loadavg`، :func:`!major`، :func:`!makedev`، :func:`!minor` و :func:`!mknod`) به ماژول :mod:`posix` که در زیربنای ماژول :mod:`os` قرار دارد، افزوده شدند. (مشارکت‌شده توسط Gustavo Niemeyer، Geert Jansen و Denis S. Otkidach.)"
 
 msgid "In the :mod:`os` module, the :func:`!\\*stat` family of functions can now report fractions of a second in a timestamp.  Such time stamps are represented as floats, similar to the value returned by :func:`time.time`."
@@ -1718,8 +1720,12 @@ msgstr "ماژول جدید :mod:`!DocXMLRPCServer` امکان نوشتن سرو
 msgid "Support for internationalized domain names (RFCs 3454, 3490, 3491, and 3492) has been added. The \"idna\" encoding can be used to convert between a Unicode domain name and the ASCII-compatible encoding (ACE) of that name. ::"
 msgstr "پشتیبانی از دامنه‌های اینترنتی بین‌المللی (RFCهای 3454، 3490، 3491 و 3492) اضافه شده است. از کدگذاری \"idna\" می‌توان برای تبدیل بین نام دامنه‌ی یونیکدی و کدگذاری سازگار با اسکی (ACE) همان نام استفاده کرد. ::"
 
+#, fuzzy
+#| msgid ""
+#| ">{}>{}> u\"www.Alliancefrançaise.nu\".encode(\"idna\")\n"
+#| "'www.xn--alliancefranaise-npb.nu'"
 msgid ""
-">{}>{}> u\"www.Alliancefrançaise.nu\".encode(\"idna\")\n"
+">>> u\"www.Alliancefrançaise.nu\".encode(\"idna\")\n"
 "'www.xn--alliancefranaise-npb.nu'"
 msgstr ""
 ">{}>{}> u\"www.Alliancefrançaise.nu\".encode(\"idna\")\n"
