@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-08)
+(به‌روزرسانی: 2026-11-09)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -87,15 +87,14 @@
 | extending/building.po | 100.0% | 0.0% | 6 | 0 | 0 |
 | extending/index.po | 100.0% | 0.0% | 22 | 0 | 0 |
 | extending/windows.po | 100.0% | 0.0% | 28 | 0 | 0 |
-| faq/design.po | 100.0% | 0.0% | 174 | 0 | 0 |
-| faq/extending.po | 100.0% | 0.0% | 64 | 0 | 0 |
-| faq/general.po | 100.0% | 0.0% | 98 | 0 | 0 |
-| faq/gui.po | 100.0% | 0.0% | 16 | 0 | 0 |
+| faq/design.po | 100.0% | 0.0% | 173 | 0 | 0 |
+| faq/extending.po | 100.0% | 0.0% | 63 | 0 | 0 |
+| faq/general.po | 100.0% | 0.0% | 97 | 0 | 0 |
+| faq/gui.po | 100.0% | 0.0% | 15 | 0 | 0 |
 | faq/index.po | 100.0% | 0.0% | 1 | 0 | 0 |
 | faq/installed.po | 100.0% | 0.0% | 15 | 0 | 0 |
-| faq/library.po | 100.0% | 0.0% | 153 | 0 | 0 |
-| faq/programming.po | 100.0% | 0.0% | 506 | 0 | 0 |
-| faq/windows.po | 100.0% | 0.0% | 58 | 0 | 0 |
+| faq/programming.po | 100.0% | 0.0% | 505 | 0 | 0 |
+| faq/windows.po | 100.0% | 0.0% | 57 | 0 | 0 |
 | howto/a-conceptual-overview-of-asyncio.po | 100.0% | 0.0% | 95 | 0 | 0 |
 | howto/argparse-optparse.po | 100.0% | 0.0% | 20 | 0 | 0 |
 | howto/argparse.po | 100.0% | 0.0% | 143 | 0 | 0 |
@@ -291,7 +290,6 @@
 | library/shelve.po | 100.0% | 0.0% | 52 | 0 | 0 |
 | library/site.po | 100.0% | 0.0% | 106 | 0 | 0 |
 | library/smtpd.po | 100.0% | 0.0% | 4 | 0 | 0 |
-| library/smtplib.po | 100.0% | 0.0% | 131 | 0 | 0 |
 | library/sndhdr.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/socketserver.po | 100.0% | 0.0% | 100 | 0 | 0 |
 | library/spwd.po | 100.0% | 0.0% | 4 | 0 | 0 |
@@ -317,7 +315,6 @@
 | library/tkinter.colorchooser.po | 100.0% | 0.0% | 8 | 0 | 0 |
 | library/tkinter.dnd.po | 100.0% | 0.0% | 20 | 0 | 0 |
 | library/tkinter.messagebox.po | 100.0% | 0.0% | 43 | 0 | 0 |
-| library/tkinter.po | 100.0% | 0.0% | 1254 | 0 | 0 |
 | library/tkinter.scrolledtext.po | 100.0% | 0.0% | 7 | 0 | 0 |
 | library/token.po | 100.0% | 0.0% | 100 | 0 | 0 |
 | library/trace.po | 100.0% | 0.0% | 43 | 0 | 0 |
@@ -391,6 +388,7 @@
 | whatsnew/3.5.po | 100.0% | 0.0% | 578 | 0 | 0 |
 | whatsnew/index.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/datetime.po | 99.9% | 0.1% | 692 | 1 | 0 |
+| library/tkinter.po | 99.8% | 0.2% | 1252 | 2 | 0 |
 | library/codecs.po | 99.8% | 0.2% | 568 | 1 | 0 |
 | whatsnew/3.6.po | 99.8% | 0.2% | 543 | 1 | 0 |
 | glossary.po | 99.8% | 0.2% | 500 | 1 | 0 |
@@ -451,7 +449,7 @@
 | reference/expressions.po | 99.2% | 0.8% | 646 | 5 | 0 |
 | whatsnew/3.11.po | 99.2% | 0.8% | 770 | 6 | 0 |
 | whatsnew/2.3.po | 99.2% | 0.8% | 384 | 3 | 0 |
-| whatsnew/changelog.po | 99.2% | 0.2% | 15726 | 33 | 91 |
+| whatsnew/changelog.po | 99.2% | 0.2% | 15726 | 34 | 95 |
 | c-api/buffer.po | 99.2% | 0.0% | 119 | 0 | 1 |
 | howto/mro.po | 99.2% | 0.8% | 119 | 1 | 0 |
 | library/http.client.po | 99.2% | 0.8% | 119 | 1 | 0 |
@@ -475,12 +473,12 @@
 | using/mac.po | 99.0% | 1.0% | 95 | 1 | 0 |
 | c-api/long.po | 98.9% | 0.5% | 181 | 1 | 1 |
 | library/json.po | 98.9% | 1.1% | 181 | 2 | 0 |
-| builtins/functions.po | 98.9% | 0.9% | 535 | 5 | 1 |
 | library/pdb.po | 98.9% | 1.1% | 177 | 2 | 0 |
 | library/binascii.po | 98.9% | 1.1% | 88 | 1 | 0 |
 | library/optparse.po | 98.9% | 1.1% | 526 | 6 | 0 |
 | c-api/import.po | 98.8% | 1.2% | 85 | 1 | 0 |
 | c-api/extension-modules.po | 98.8% | 1.2% | 79 | 1 | 0 |
+| builtins/functions.po | 98.7% | 1.1% | 534 | 6 | 1 |
 | library/shlex.po | 98.7% | 1.3% | 76 | 1 | 0 |
 | library/zipapp.po | 98.7% | 1.3% | 76 | 1 | 0 |
 | library/bz2.po | 98.7% | 1.3% | 74 | 1 | 0 |
@@ -490,6 +488,7 @@
 | c-api/type.po | 98.5% | 1.5% | 200 | 3 | 0 |
 | c-api/datetime.po | 98.5% | 1.5% | 66 | 1 | 0 |
 | howto/isolating-extensions.po | 98.5% | 1.5% | 132 | 2 | 0 |
+| library/smtplib.po | 98.5% | 1.5% | 129 | 2 | 0 |
 | library/asyncio-protocol.po | 98.5% | 1.5% | 191 | 3 | 0 |
 | library/gettext.po | 98.4% | 1.6% | 127 | 2 | 0 |
 | using/unix.po | 98.4% | 1.6% | 62 | 1 | 0 |
@@ -507,6 +506,7 @@
 | extending/first-extension-module.po | 97.9% | 2.1% | 143 | 3 | 0 |
 | library/msvcrt.po | 97.9% | 2.1% | 47 | 1 | 0 |
 | c-api/init_config.po | 97.9% | 1.3% | 655 | 9 | 5 |
+| faq/library.po | 97.9% | 1.4% | 140 | 2 | 1 |
 | library/collections.abc.po | 97.9% | 1.4% | 140 | 2 | 1 |
 | c-api/slots.po | 97.8% | 2.2% | 44 | 1 | 0 |
 | library/email.charset.po | 97.7% | 2.3% | 43 | 1 | 0 |
@@ -558,5 +558,5 @@
 | library/cgi.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/cgitb.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **99.2%** | **0.6%** | **90305** | **533** | **216** |
+| **مجموع** | **99.2%** | **0.6%** | **90281** | **541** | **221** |
 <!-- TRANSLATION_STATUS_END -->
