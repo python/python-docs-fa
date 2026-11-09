@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 04:10+0000\n"
+"POT-Creation-Date: 2026-11-09 04:12+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -229,6 +229,9 @@ msgstr ""
 msgid ":gh:`160316`: Fix :meth:`re.Pattern.match`, :meth:`re.Pattern.prefixmatch`, :meth:`re.Pattern.fullmatch` and the ``match()`` and ``prefixmatch()`` methods of scanner objects returning an empty match, or reading past the end of the string, when *pos* is greater than *endpos*.  They now return ``None``, as documented."
 msgstr ""
 
+msgid ":gh:`160324`: Fix a crash or garbage data when an :class:`io.StringIO` object is used again after one of its methods failed with :exc:`MemoryError`. The object now keeps its contents."
+msgstr ""
+
 msgid ":gh:`160513`: Fix :meth:`asyncio.loop.start_tls` and :meth:`asyncio.StreamWriter.start_tls` not calling the protocol's :meth:`~asyncio.BaseProtocol.connection_lost` when the connection is lost, the handshake times out or the call is cancelled during the TLS handshake. :meth:`asyncio.StreamWriter.wait_closed` no longer waits forever after such a failure."
 msgstr ""
 
@@ -268,6 +271,9 @@ msgstr ""
 msgid ":gh:`160185`: Fix :meth:`codecs.StreamWriter.reset` of the stateful CJK codecs (``hz`` and the ``iso2022_*`` family) not writing the sequence that returns the output to ASCII.  ``seek(0)`` of :class:`codecs.StreamWriter`, :class:`codecs.StreamReaderWriter` and :class:`codecs.StreamRecoder` now resets the writer before moving the stream position."
 msgstr ""
 
+msgid ":gh:`160176`: Fix a crash in :mod:`tkinter` when a deeply nested or recursive list or tuple is passed to Tcl, or a deeply nested Tcl list is converted to Python. These now raise :exc:`ValueError` (beyond 1000 levels) and :exc:`RecursionError` respectively."
+msgstr ""
+
 msgid ":gh:`159875`: Fix :exc:`AttributeError` from the methods of an :mod:`asyncio` SSL transport, such as :meth:`~asyncio.WriteTransport.write` and :meth:`~asyncio.BaseTransport.set_protocol`, when the transport is closed after its connection was lost. This also affected the fallback of :meth:`loop.sendfile() <asyncio.loop.sendfile>` over SSL when the peer went away mid-transfer. The SSL context is still released once the connection is lost."
 msgstr ""
 
@@ -281,6 +287,9 @@ msgstr ""
 #| msgid ":gh:`159620`: Fix ``python -m asyncio ps``, ``pstree`` and async-aware :mod:`profiling.sampling` stacks stopping at asynchronous generators. Patch by Timofei Ivankov."
 msgid ":gh:`159168`: Fix :exc:`RecursionError` in ``python -m asyncio pstree`` on a deep chain of awaiting tasks. Patch by Timofei Ivankov."
 msgstr ":gh:`159620`: رفع دستورات ``python -m asyncio ps``، ``pstree`` و پشته‌های :mod:`profiling.sampling` آگاه از ناهمگامی که در تولیدگرهای ناهمگام متوقف می‌شوند. پچ توسط Timofei Ivankov."
+
+msgid ":gh:`88037`: :func:`urllib.parse.urlsplit` and :func:`urllib.parse.urlparse` now raise :exc:`ValueError` for an invalid port when the URL is parsed, instead of when the :attr:`!port` attribute is read. Patch by Miguel Brito and Senthil Kumaran."
+msgstr ""
 
 #, fuzzy
 #| msgid ":issue:`18108`: :func:`shutil.chown` now supports *dir_fd* and *follow_symlinks* keyword arguments."
@@ -328,6 +337,11 @@ msgstr "آزمون‌ها"
 msgid ":gh:`161517`: Fix test_gdb when Python is built out-of-tree and Python is run from a virtual environment. Previously, test_gdb was just skipped. Patch by Victor Stinner."
 msgstr ""
 
+#, fuzzy
+#| msgid ":gh:`127906`: Test the limited C API in test_cppext. Patch by Victor Stinner."
+msgid ":gh:`161430`: No longer list tests expected to be skipped in the final report. Patch by Victor Stinner."
+msgstr ":gh:`127906`: آزمون رابط برنامه‌نویسی کاربردی (API) محدود C در test_cppext. وصله توسط Victor Stinner."
+
 msgid ":gh:`158975`: Replace fixed sleeps used for synchronization in multiprocessing tests with bounded waits to avoid failures on slow or overloaded systems."
 msgstr ""
 
@@ -338,6 +352,9 @@ msgid ":gh:`75929`: Fix a ``configure`` probe that could omit functions such as 
 msgstr ""
 
 msgid ":gh:`160704`: Fix C11-C17 builds with old C library headers that do not define ``static_assert``, including glibc versions older than 2.16."
+msgstr ""
+
+msgid ":gh:`153285`: Fix incorrect executable linking on macOS with ``--with-lto`` caused by premature expansion of Make's ``$@`` target variable."
 msgstr ""
 
 msgid "Windows"

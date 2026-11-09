@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-11-09 04:12+0000\n"
 "PO-Revision-Date: 2026-09-14 16:22+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -43,7 +43,9 @@ msgstr "این ماژول روی WebAssembly کار نمی‌کند یا در د
 msgid "An :class:`SMTP` instance encapsulates an SMTP connection.  It has methods that support a full repertoire of SMTP and ESMTP operations."
 msgstr "یک نمونه‌ی :class:`SMTP` کپسوله‌کننده‌ی یک اتصال SMTP است. این نمونه متدهایی دارد که از مجموعه کاملی از عملیات‌های SMTP و ESMTP پشتیبانی می‌کنند."
 
-msgid "If the host parameter is set to a truthy value, :meth:`SMTP.connect` is called with host and port automatically when the object is created; otherwise, :meth:`!connect` must be called manually."
+#, fuzzy
+#| msgid "If the host parameter is set to a truthy value, :meth:`SMTP.connect` is called with host and port automatically when the object is created; otherwise, :meth:`!connect` must be called manually."
+msgid "If the host parameter is set to a true value, :meth:`SMTP.connect` is called with host and port automatically when the object is created; otherwise, :meth:`!connect` must be called manually."
 msgstr "اگر پارامتر host روی یک مقادیر درستی (truthy) تنظیم شود، :meth:`SMTP.connect` به طور خودکار هنگام ایجاد شیء با host و port فراخوانی می‌شود؛ در غیر این صورت، :meth:`!connect` باید به صورت دستی فراخوانی شود."
 
 msgid "If specified, *local_hostname* is used as the FQDN of the local host in the HELO/EHLO command.  Otherwise, the local hostname is found using :func:`socket.getfqdn`.  If the :meth:`connect` call returns anything other than a success code, an :exc:`SMTPConnectError` is raised. The optional *timeout* parameter specifies a timeout in seconds for blocking operations like the connection attempt (if not specified, the global default timeout setting will be used).  If the timeout expires, :exc:`TimeoutError` is raised.  The optional *source_address* parameter allows binding to some specific source address in a machine with multiple network interfaces, and/or to some specific source TCP port. It takes a 2-tuple ``(host, port)``, for the socket to bind to as its source address before connecting. If omitted (or if *host* or *port* are ``''`` and/or ``0`` respectively) the OS default behavior will be used."
@@ -91,7 +93,9 @@ msgstr "اگر پارامتر *timeout* روی صفر تنظیم شود، یک :
 msgid "An :class:`SMTP_SSL` instance behaves exactly the same as instances of :class:`SMTP`. :class:`SMTP_SSL` should be used for situations where SSL is required from the beginning of the connection and using :meth:`SMTP.starttls` is not appropriate."
 msgstr "یک نمونه‌ی :class:`SMTP_SSL` دقیقاً مانند نمونه‌های :class:`SMTP` رفتار می‌کند. :class:`SMTP_SSL` باید برای موقعیت‌هایی استفاده شود که SSL از آغاز اتصال مورد نیاز است و استفاده از :meth:`SMTP.starttls` مناسب نیست."
 
-msgid "If the host parameter is set to a truthy value, :meth:`SMTP.connect` is called with host and port automatically when the object is created; otherwise, :meth:`!SMTP.connect` must be called manually."
+#, fuzzy
+#| msgid "If the host parameter is set to a truthy value, :meth:`SMTP.connect` is called with host and port automatically when the object is created; otherwise, :meth:`!SMTP.connect` must be called manually."
+msgid "If the host parameter is set to a true value, :meth:`SMTP.connect` is called with host and port automatically when the object is created; otherwise, :meth:`!SMTP.connect` must be called manually."
 msgstr "اگر پارامتر host روی یک مقادیر درستی (truthy) تنظیم شود، :meth:`SMTP.connect` به طور خودکار هنگام ایجاد شیء با host و port فراخوانی می‌شود؛ در غیر این صورت، :meth:`!SMTP.connect` باید به صورت دستی فراخوانی شود."
 
 msgid "The optional arguments *local_hostname*, *timeout* and *source_address* have the same meaning as they do in the :class:`SMTP` class.  *context*, also optional, can contain a :class:`~ssl.SSLContext` and allows configuring various aspects of the secure connection.  Please read :ref:`ssl-security` for best practices."
