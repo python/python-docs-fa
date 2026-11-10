@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-09 04:12+0000\n"
+"POT-Creation-Date: 2026-11-10 04:11+0000\n"
 "PO-Revision-Date: 2026-09-24 07:55+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: none\n"
@@ -712,7 +712,9 @@ msgstr "معنای فضای نام پیش‌فرض *locals* مطابق توضی�
 msgid "*globals* can now be a :class:`frozendict`."
 msgstr "اکنون *globals* می‌تواند یک :class:`frozendict` باشد."
 
-msgid "This function supports dynamic execution of Python code. *source* must be either a string or a code object.  If it is a string, the string is parsed as a suite of Python statements which is then executed (unless a syntax error occurs). [#]_ If it is a code object, it is simply executed.  In all cases, the code that's executed is expected to be valid as file input (see the section :ref:`file-input` in the Reference Manual). Be aware that the :keyword:`nonlocal`, :keyword:`yield`,  and :keyword:`return` statements may not be used outside of function definitions even within the context of code passed to the :func:`exec` function. The return value is ``None``."
+#, fuzzy
+#| msgid "This function supports dynamic execution of Python code. *source* must be either a string or a code object.  If it is a string, the string is parsed as a suite of Python statements which is then executed (unless a syntax error occurs). [#]_ If it is a code object, it is simply executed.  In all cases, the code that's executed is expected to be valid as file input (see the section :ref:`file-input` in the Reference Manual). Be aware that the :keyword:`nonlocal`, :keyword:`yield`,  and :keyword:`return` statements may not be used outside of function definitions even within the context of code passed to the :func:`exec` function. The return value is ``None``."
+msgid "This function supports dynamic execution of Python code. *source* must be either a string or a code object.  If it is a string, the string is parsed as a suite of Python statements which is then executed (unless a syntax error occurs). If it is a code object, it is simply executed.  In all cases, the code that's executed is expected to be valid as file input (see the section :ref:`file-input` in the Reference Manual). Be aware that the :keyword:`nonlocal`, :keyword:`yield`,  and :keyword:`return` statements may not be used outside of function definitions even within the context of code passed to the :func:`exec` function. The return value is ``None``."
 msgstr "این تابع از اجرای پویای کد پایتون پشتیبانی می‌کند. *source* باید یا یک رشته باشد یا یک شیء کد. اگر رشته باشد، به‌عنوان مجموعه‌ای از دستورهای پایتون تجزیه و سپس اجرا می‌شود (مگر اینکه خطای نحوی رخ دهد). [#]_ اگر یک شیء کد باشد، مستقیماً اجرا می‌شود. در همه‌ی موارد، انتظار می‌رود کد اجراشده به‌عنوان ورودی پرونده معتبر باشد (به بخش :ref:`file-input` در راهنمای مرجع مراجعه کنید). توجه داشته باشید که دستورهای :keyword:`nonlocal`، :keyword:`yield` و :keyword:`return` حتی در کدی که از طریق :func:`exec` اجرا می‌شود نیز خارج از تعریف تابع قابل استفاده نیستند. مقدار بازگشتی ``None`` است."
 
 msgid "In all cases, if the optional parts are omitted, the code is executed in the current scope.  If only *globals* is provided, it must be a dictionary (and not a subclass of dictionary), which will be used for both the global and the local variables.  If *globals* and *locals* are given, they are used for the global and local variables, respectively.  If provided, *locals* can be any mapping object.  Remember that at the module level, globals and locals are the same dictionary."
@@ -1917,12 +1919,6 @@ msgstr "مقادیر منفی برای *level* دیگر پشتیبانی نمی�
 msgid "When the command line options :option:`-E` or :option:`-I` are being used, the environment variable :envvar:`PYTHONCASEOK` is now ignored."
 msgstr "هنگامی که گزینه‌های خط فرمان :option:`-E` یا :option:`-I` استفاده شوند، متغیر محیطی :envvar:`PYTHONCASEOK` نادیده گرفته می‌شود."
 
-msgid "Footnotes"
-msgstr "پانویس‌ها"
-
-msgid "Note that the parser only accepts the Unix-style end of line convention. If you are reading the code from a file, make sure to use newline conversion mode to convert Windows or Mac-style newlines."
-msgstr "توجه داشته باشید که پارسر فقط قرارداد پایان خط به سبک یونیکس را می‌پذیرد. اگر کد را از یک پرونده می‌خوانید، مطمئن شوید که از حالت تبدیل نویسه‌ی پایان خط برای تبدیل پایان سطرهای ویندوز یا مک استفاده می‌کنید."
-
 msgid "Boolean"
 msgstr "بولی"
 
@@ -2003,6 +1999,12 @@ msgstr "ایمپورت"
 
 msgid "builtins"
 msgstr "توکارها"
+
+#~ msgid "Footnotes"
+#~ msgstr "پانویس‌ها"
+
+#~ msgid "Note that the parser only accepts the Unix-style end of line convention. If you are reading the code from a file, make sure to use newline conversion mode to convert Windows or Mac-style newlines."
+#~ msgstr "توجه داشته باشید که پارسر فقط قرارداد پایان خط به سبک یونیکس را می‌پذیرد. اگر کد را از یک پرونده می‌خوانید، مطمئن شوید که از حالت تبدیل نویسه‌ی پایان خط برای تبدیل پایان سطرهای ویندوز یا مک استفاده می‌کنید."
 
 #~ msgid "This function raises :exc:`SyntaxError` or :exc:`ValueError` if the compiled source is invalid."
 #~ msgstr "اگر کد منبع کامپایل‌شده نامعتبر باشد، این تابع استثنای :exc:`SyntaxError` یا :exc:`ValueError` پرتاب می‌کند."

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-06 04:12+0000\n"
+"POT-Creation-Date: 2026-11-10 04:11+0000\n"
 "PO-Revision-Date: 2026-10-17 07:55+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: none\n"
@@ -1077,7 +1077,9 @@ msgstr "با این حال، به منظور سازگاری با نسخه‌ها
 msgid "Returns an awaitable that when run will throw a :exc:`GeneratorExit` into the underlying asynchronous generator function at the point where it is currently suspended (equivalent to calling ``athrow(GeneratorExit)``)."
 msgstr "یک شیء انتظارپذیر (awaitable) برمی‌گرداند که هنگام اجرا، یک استثنای :exc:`GeneratorExit` را به درون تابع تولیدگر ناهمگام زیرین در نقطه‌ای که در حال حاضر معلق است پرتاب می‌کند (معادل فراخوانی ``athrow(GeneratorExit)``)."
 
-msgid "If the asynchronous generator function then exits gracefully, is already closed, or raises :exc:`GeneratorExit` (by not catching the exception), then the returned awaitable will raise a :exc:`StopIteration` exception. Any further awaitables returned by subsequent calls to the asynchronous generator will raise a :exc:`StopAsyncIteration` exception."
+#, fuzzy
+#| msgid "If the asynchronous generator function then exits gracefully, is already closed, or raises :exc:`GeneratorExit` (by not catching the exception), then the returned awaitable will raise a :exc:`StopIteration` exception. Any further awaitables returned by subsequent calls to the asynchronous generator will raise a :exc:`StopAsyncIteration` exception."
+msgid "If the asynchronous generator function then exits gracefully, is already closed, or raises :exc:`GeneratorExit` (by not catching the exception), then the returned awaitable will raise a :exc:`StopIteration` exception. Awaitables returned by subsequent calls to :meth:`~agen.__anext__` or :meth:`~agen.asend` will raise a :exc:`StopAsyncIteration` exception."
 msgstr "اگر تابع تولیدگر ناهمگام در این صورت به زیبایی خارج شود، از قبل بسته شده باشد، یا :exc:`GeneratorExit` را ایجاد کند (با جذب نکردن استثنا)، آنگاه شیء انتظارپذیرِ برگردانده‌شده یک استثنای :exc:`StopIteration` ایجاد خواهد کرد. هر شیء انتظارپذیرِ دیگری که با فراخوانی‌های بعدی به تولیدگر ناهمگام برگردانده شود، استثنای :exc:`StopAsyncIteration` را ایجاد خواهد کرد."
 
 msgid "If the asynchronous generator yields a value, a :exc:`RuntimeError` is raised by the awaitable. If the asynchronous generator raises any other exception, that exception is propagated to the caller of the awaitable."
@@ -2150,16 +2152,26 @@ msgstr ""
 ">>> 'Py' in 'Python'\n"
 "True"
 
-msgid "Perform a string formatting operation.  The string on which this method is called can contain literal text or replacement fields delimited by braces ``{}``.  Each replacement field contains either the numeric index of a positional argument, or the name of a keyword argument.  Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument. For example:"
+#, fuzzy
+#| msgid "Perform a string formatting operation.  The string on which this method is called can contain literal text or replacement fields delimited by braces ``{}``.  Each replacement field contains either the numeric index of a positional argument, or the name of a keyword argument.  Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument. For example:"
+msgid "Perform a string formatting operation.  The string on which this method is called can contain literal text or replacement fields delimited by braces ``{}``.  Each replacement field refers to a positional argument (numbered explicitly or automatically) or a keyword argument.  Returns a copy of the string where each replacement field is replaced with the string value of the corresponding argument. For example:"
 msgstr "عملیات قالب‌بندی رشته را انجام می‌دهد. رشته‌ای که این متد روی آن فراخوانی می‌شود می‌تواند شامل متن لفظی یا فیلدهای جایگزینی باشد که با آکولادها ``{}`` محصور شده‌اند. هر فیلد جایگزینی یا شامل اندیس عددی یک آرگومان جایگاهی است، یا نام یک آرگومان کلیدواژه‌ای. نسخه‌ای از رشته را بازمی‌گرداند که در آن هر فیلد جایگزینی با مقدار رشته‌ای آرگومان متناظر جایگزین شده است. برای مثال:"
 
+#, fuzzy
+#| msgid ""
+#| ">>> \"The sum of 1 + 2 is {0}\".format(1+2)\n"
+#| "'The sum of 1 + 2 is 3'\n"
+#| ">>> \"The sum of {a} + {b} is {answer}\".format(answer=1+2, a=1, b=2)\n"
+#| "'The sum of 1 + 2 is 3'\n"
+#| ">>> \"{1} expects the {0} Inquisition!\".format(\"Spanish\", \"Nobody\")\n"
+#| "'Nobody expects the Spanish Inquisition!'"
 msgid ""
-">>> \"The sum of 1 + 2 is {0}\".format(1+2)\n"
-"'The sum of 1 + 2 is 3'\n"
-">>> \"The sum of {a} + {b} is {answer}\".format(answer=1+2, a=1, b=2)\n"
+">>> \"The sum of {} + {} is {}\".format(1, 2, 1+2)\n"
 "'The sum of 1 + 2 is 3'\n"
 ">>> \"{1} expects the {0} Inquisition!\".format(\"Spanish\", \"Nobody\")\n"
-"'Nobody expects the Spanish Inquisition!'"
+"'Nobody expects the Spanish Inquisition!'\n"
+">>> \"The sum of {a} + {b} is {answer}\".format(answer=1+2, a=1, b=2)\n"
+"'The sum of 1 + 2 is 3'"
 msgstr ""
 ">>> \"The sum of 1 + 2 is {0}\".format(1+2)\n"
 "'The sum of 1 + 2 is 3'\n"
@@ -3045,7 +3057,9 @@ msgstr ""
 msgid "See also the :mod:`codecs` module for a more flexible approach to custom character mappings."
 msgstr "برای رویکردی انعطاف‌پذیرتر به نگاشت‌های سفارشی نویسه‌ها، ماژول :mod:`codecs` را نیز ببینید."
 
-msgid "Return a copy of the string with all the cased characters [4]_ converted to uppercase.  Note that ``s.upper().isupper()`` might be ``False`` if ``s`` contains uncased characters or if the Unicode category of the resulting character(s) is not \"Lu\" (Letter, uppercase), but e.g. \"Lt\" (Letter, titlecase)."
+#, fuzzy
+#| msgid "Return a copy of the string with all the cased characters [4]_ converted to uppercase.  Note that ``s.upper().isupper()`` might be ``False`` if ``s`` contains uncased characters or if the Unicode category of the resulting character(s) is not \"Lu\" (Letter, uppercase), but e.g. \"Lt\" (Letter, titlecase)."
+msgid "Return a copy of the string with all the cased characters [4]_ converted to uppercase.  Note that ``s.upper().isupper()`` might be ``False`` if ``s`` contains no cased characters or if the Unicode category of the resulting character(s) is not \"Lu\" (Letter, uppercase), but e.g. \"Lt\" (Letter, titlecase)."
 msgstr "یک کپی از رشته را برمی‌گرداند که در آن تمام نویسه‌های دارای حالت [4]_ به حروف بزرگ تبدیل شده‌اند. توجه داشته باشید که ``s.upper().isupper()`` ممکن است ``False`` باشد اگر ``s`` حاوی نویسه‌های بدون حالت باشد یا اگر دسته یونیکد نویسه‌های حاصل \"Lu\" (حرف، بزرگ) نباشد، بلکه برای مثال \"Lt\" (حرف، حالت عنوان) باشد."
 
 msgid "The uppercasing algorithm used is `described in section 3.13.2 'Default Case Conversion' of the Unicode Standard <https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-3/#G34078>`__."
@@ -3430,7 +3444,9 @@ msgstr "``'%'``"
 msgid "No argument is converted, results in a ``'%'`` character in the result."
 msgstr "هیچ آرگومانی تبدیل نمی‌شود و یک نویسه ``'%'`` در نتیجه ایجاد می‌شود."
 
-msgid "For floating-point formats, the result should be correctly rounded to a given precision ``p`` of digits after the decimal point.  The rounding mode matches that of the :func:`round` builtin."
+#, fuzzy
+#| msgid "For floating-point formats, the result should be correctly rounded to a given precision ``p`` of digits after the decimal point.  The rounding mode matches that of the :func:`round` builtin."
+msgid "For floating-point formats, the result should be correctly rounded to the specified precision.  The rounding mode matches that of the :func:`round` builtin."
 msgstr "برای قالب‌های ممیز شناور، نتیجه باید به‌درستی تا دقت ``p`` رقم پس از نقطه اعشار گرد شود. حالت گرد کردن مطابق با تابع توکار :func:`round` است."
 
 msgid "The alternate form causes a leading octal specifier (``'0o'``) to be inserted before the first digit."
@@ -5254,7 +5270,9 @@ msgstr ""
 msgid "Dictionaries are now reversible."
 msgstr "دیکشنری‌ها اکنون برگشت‌پذیر هستند."
 
-msgid ":class:`frozendict` and :class:`types.MappingProxyType` can be used to create a read-only view of a :class:`dict`."
+#, fuzzy
+#| msgid ":class:`frozendict` and :class:`types.MappingProxyType` can be used to create a read-only view of a :class:`dict`."
+msgid ":class:`types.MappingProxyType` can be used to create a read-only view of a :class:`dict`.  :class:`frozendict` is an immutable version of :class:`dict`."
 msgstr "از :class:`frozendict` و :class:`types.MappingProxyType` می‌توان برای ایجاد یک نمای فقط‌خواندنی از یک :class:`dict` استفاده کرد."
 
 msgid "For detailed information on thread-safety guarantees for :class:`dict` objects, see :ref:`thread-safety-dict`."
@@ -5424,7 +5442,9 @@ msgstr ":class:`!frozendict` زیرکلاسی از :class:`!dict` نیست، ب�
 msgid "Like dictionaries, frozendicts are :ref:`generic <generics>` over two types, signifying (respectively) the types of the frozendict's keys and values."
 msgstr "دیکشنری‌های فریزشده نیز مانند دیکشنری‌ها، :ref:`generic <generics>` روی دو نوع هستند و به ترتیب انواع کلیدها و مقادیر دیکشنری فریزشده را مشخص می‌کنند."
 
-msgid "Similar to :meth:`dict.fromkeys`, but call again the type constructor with an initialized :class:`frozendict` if the type is a :class:`frozendict` subclass or if the constructor returned a :class:`frozendict`."
+#, fuzzy
+#| msgid "Similar to :meth:`dict.fromkeys`, but call again the type constructor with an initialized :class:`frozendict` if the type is a :class:`frozendict` subclass or if the constructor returned a :class:`frozendict`."
+msgid "Similar to :meth:`dict.fromkeys`, but call again the type constructor with an initialized :class:`frozendict` if the type is a :class:`frozendict` subclass."
 msgstr "مشابه :meth:`dict.fromkeys`، اما اگر نوع داده زیرکلاسی از :class:`frozendict` باشد یا سازنده یک :class:`frozendict` برگرداند، سازنده‌ی نوع داده را دوباره با یک :class:`frozendict` مقداردهی‌شده فراخوانی کنید."
 
 msgid "Context Manager Types"
@@ -5968,7 +5988,9 @@ msgstr ""
 "  File \"<stdin>\", line 1, in <module>\n"
 "TypeError: cannot create 'typing.Union' instances"
 
-msgid "The :meth:`!__or__` method for type objects was added to support the syntax ``X | Y``.  If a metaclass implements :meth:`!__or__`, the Union may override it:"
+#, fuzzy
+#| msgid "The :meth:`!__or__` method for type objects was added to support the syntax ``X | Y``.  If a metaclass implements :meth:`!__or__`, the Union may override it:"
+msgid "The :meth:`!__or__` method for type objects was added to support the syntax ``X | Y``.  If a metaclass implements :meth:`!__or__`, it may override the default behavior of creating a union:"
 msgstr "متد :meth:`!__or__` برای اشیای نوع افزوده شد تا از سینتکس ``X | Y`` پشتیبانی کند. اگر یک فراکلاس :meth:`!__or__` را پیاده‌سازی کند، ممکن است Union آن را بازنویسی کند:"
 
 msgid ""

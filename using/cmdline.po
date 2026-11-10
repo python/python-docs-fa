@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-15 04:16+0000\n"
+"POT-Creation-Date: 2026-11-10 04:11+0000\n"
 "PO-Revision-Date: 2026-10-06 20:26+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -263,7 +263,9 @@ msgstr "این می‌تواند برای بازرسی متغیرهای سراس
 msgid "Run Python in isolated mode. This also implies :option:`-E`, :option:`-P` and :option:`-s` options."
 msgstr "پایتون را در حالت ایزوله اجرا می‌کند. این کار همچنین شامل گزینه‌های :option:`-E`، :option:`-P` و :option:`-s` است."
 
-msgid "In isolated mode :data:`sys.path` contains neither the script's directory nor the user's site-packages directory. All ``PYTHON*`` environment variables are ignored, too. Further restrictions may be imposed to prevent the user from injecting malicious code."
+#, fuzzy
+#| msgid "In isolated mode :data:`sys.path` contains neither the script's directory nor the user's site-packages directory. All ``PYTHON*`` environment variables are ignored, too. Further restrictions may be imposed to prevent the user from injecting malicious code."
+msgid "In isolated mode, Python does not prepend the potentially unsafe path :data:`sys._path0` to :data:`sys.path`, and ignores all ``PYTHON*`` environment variables, e.g.  :envvar:`PYTHONPATH` and :envvar:`PYTHONHOME`, that might be set. Further restrictions may be imposed to prevent the user from injecting malicious code."
 msgstr "در حالت ایزوله، :data:`sys.path` نه پوشه‌ی اسکریپت را در بر می‌گیرد و نه پوشه‌ی site-packages کاربر را. همچنین تمام متغیرهای محیطی ``PYTHON*`` نادیده گرفته می‌شوند. ممکن است محدودیت‌های بیشتری برای جلوگیری از تزریق کد مخرب توسط کاربر اعمال شود."
 
 msgid "Remove assert statements and any code conditional on the value of :const:`__debug__`.  Augment the filename for compiled (:term:`bytecode`) files by adding ``.opt-1`` before the ``.pyc`` extension (see :pep:`488`).  See also :envvar:`PYTHONOPTIMIZE`."
@@ -275,17 +277,10 @@ msgstr "نام پرونده‌های ``.pyc`` را مطابق :pep:`488` تغی�
 msgid "Do :option:`-O` and also discard docstrings.  Augment the filename for compiled (:term:`bytecode`) files by adding ``.opt-2`` before the ``.pyc`` extension (see :pep:`488`)."
 msgstr "همان کار :option:`-O` را انجام می‌دهد و همچنین رشته‌های مستند را دور می‌ریزد. نام پرونده‌های کامپایل‌شده (:term:`بایت‌کد <bytecode>`) را با افزودن ``.opt-2`` پیش از پسوند ``.pyc`` تغییر می‌دهد (ببینید :pep:`488`)."
 
-msgid "Don't prepend a potentially unsafe path to :data:`sys.path`:"
+#, fuzzy
+#| msgid "Don't prepend a potentially unsafe path to :data:`sys.path`:"
+msgid "Don't prepend the potentially unsafe path :data:`sys._path0` to :data:`sys.path`."
 msgstr "مسیر بالقوه ناامنی را به ابتدای :data:`sys.path` اضافه نکنید:"
-
-msgid "``python -m module`` command line: Don't prepend the current working directory."
-msgstr "خط فرمان ``python -m module``: پوشه‌ی کاری جاری را به ابتدا اضافه نکنید."
-
-msgid "``python script.py`` command line: Don't prepend the script's directory. If it's a symbolic link, resolve symbolic links."
-msgstr "خط فرمان ``python script.py``: پوشه‌ی اسکریپت به ابتدا افزوده نشود. اگر اسکریپت پیوند نمادین باشد، پیوندهای نمادین حل شوند."
-
-msgid "``python -c code`` and ``python`` (REPL) command lines: Don't prepend an empty string, which means the current working directory."
-msgstr "سطرهای فرمان ``python -c code`` و ``python`` (REPL): رشته‌ی خالی را که به معنای پوشه کاری جاری است، در ابتدا قرار ندهید."
 
 msgid "See also the :envvar:`PYTHONSAFEPATH` environment variable, and :option:`-E` and :option:`-I` (isolated) options."
 msgstr "همچنین متغیر محیطی :envvar:`PYTHONSAFEPATH` و گزینه‌های :option:`-E` و :option:`-I` (ایزوله) را ببینید."
@@ -556,8 +551,15 @@ msgstr "مسیر جستجوی پیش‌فرض وابسته به نصب است، 
 msgid "An additional directory will be inserted in the search path in front of :envvar:`PYTHONPATH` as described above under :ref:`using-on-interface-options`. The search path can be manipulated from within a Python program as the variable :data:`sys.path`."
 msgstr "همان‌طور که در بالا در بخش :ref:`using-on-interface-options` توضیح داده شد، یک پوشه‌ی اضافی در مسیر جستجو، پیش از :envvar:`PYTHONPATH` درج خواهد شد. مسیر جستجو را می‌توان از درون یک برنامه‌ی پایتون، به‌صورت متغیر :data:`sys.path`، دستکاری کرد."
 
-msgid "If this is set to a non-empty string, don't prepend a potentially unsafe path to :data:`sys.path`: see the :option:`-P` option for details."
+#, fuzzy
+#| msgid "If this is set to a non-empty string, don't prepend a potentially unsafe path to :data:`sys.path`: see the :option:`-P` option for details."
+msgid "If this is set to a non-empty string, don't prepend a potentially unsafe path :data:`sys._path0` to :data:`sys.path`."
 msgstr "اگر این مقدار به یک رشته‌ی غیرخالی تنظیم شده باشد، مسیری که به‌طور بالقوه ناامن است به ابتدای :data:`sys.path` اضافه نمی‌شود: برای جزئیات به گزینه‌ی :option:`-P` مراجعه کنید."
+
+#, fuzzy
+#| msgid "See also the :option:`-X tlbc <-X>` command-line option."
+msgid "See also the :option:`-P` option."
+msgstr "همچنین گزینه‌ی خط فرمان :option:`-X tlbc <-X>` را ببینید."
 
 msgid "If this is set to a non-empty string, it overrides the :data:`sys.platlibdir` value."
 msgstr "اگر این روی یک رشته‌ی غیرخالی تنظیم شده باشد، مقدار :data:`sys.platlibdir` را بازنویسی می‌کند."
@@ -911,6 +913,15 @@ msgstr "همچنین گزینه‌ی خط فرمان :option:`-X presite <-X>` �
 
 msgid "Needs Python configured with the :option:`--with-pydebug` build option."
 msgstr "نیازمند پایتونی است که با گزینه‌ی ساخت :option:`--with-pydebug` پیکربندی‌شده باشد."
+
+#~ msgid "``python -m module`` command line: Don't prepend the current working directory."
+#~ msgstr "خط فرمان ``python -m module``: پوشه‌ی کاری جاری را به ابتدا اضافه نکنید."
+
+#~ msgid "``python script.py`` command line: Don't prepend the script's directory. If it's a symbolic link, resolve symbolic links."
+#~ msgstr "خط فرمان ``python script.py``: پوشه‌ی اسکریپت به ابتدا افزوده نشود. اگر اسکریپت پیوند نمادین باشد، پیوندهای نمادین حل شوند."
+
+#~ msgid "``python -c code`` and ``python`` (REPL) command lines: Don't prepend an empty string, which means the current working directory."
+#~ msgstr "سطرهای فرمان ``python -c code`` و ``python`` (REPL): رشته‌ی خالی را که به معنای پوشه کاری جاری است، در ابتدا قرار ندهید."
 
 #~ msgid "The *message* field must match the whole warning message; this match is case-insensitive."
 #~ msgstr "فیلد *message* باید با تمام پیام هشدار تطبیق داشته باشد؛ این تطبیق بدون حساسیت به بزرگی و کوچکی حروف است."
