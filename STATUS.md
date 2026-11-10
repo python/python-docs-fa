@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-09)
+(به‌روزرسانی: 2026-11-10)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -377,7 +377,6 @@
 | tutorial/venv.po | 100.0% | 0.0% | 43 | 0 | 0 |
 | tutorial/whatnow.po | 100.0% | 0.0% | 18 | 0 | 0 |
 | using/android.po | 100.0% | 0.0% | 28 | 0 | 0 |
-| using/cmdline.po | 100.0% | 0.0% | 284 | 0 | 0 |
 | using/editors.po | 100.0% | 0.0% | 6 | 0 | 0 |
 | using/index.po | 100.0% | 0.0% | 2 | 0 | 0 |
 | using/ios.po | 100.0% | 0.0% | 91 | 0 | 0 |
@@ -424,7 +423,6 @@
 | whatsnew/3.7.po | 99.5% | 0.5% | 565 | 3 | 0 |
 | library/unittest.po | 99.5% | 0.5% | 563 | 3 | 0 |
 | library/logging.po | 99.5% | 0.3% | 374 | 1 | 1 |
-| builtins/stdtypes.po | 99.5% | 0.5% | 1651 | 8 | 1 |
 | library/unittest.mock-examples.po | 99.5% | 0.5% | 181 | 1 | 0 |
 | extending/newtypes_tutorial.po | 99.4% | 0.6% | 179 | 1 | 0 |
 | whatsnew/3.4.po | 99.4% | 0.6% | 514 | 3 | 0 |
@@ -449,11 +447,11 @@
 | reference/expressions.po | 99.2% | 0.8% | 646 | 5 | 0 |
 | whatsnew/3.11.po | 99.2% | 0.8% | 770 | 6 | 0 |
 | whatsnew/2.3.po | 99.2% | 0.8% | 384 | 3 | 0 |
-| whatsnew/changelog.po | 99.2% | 0.2% | 15726 | 34 | 95 |
 | c-api/buffer.po | 99.2% | 0.0% | 119 | 0 | 1 |
 | howto/mro.po | 99.2% | 0.8% | 119 | 1 | 0 |
 | library/http.client.po | 99.2% | 0.8% | 119 | 1 | 0 |
 | extending/newtypes.po | 99.2% | 0.8% | 117 | 1 | 0 |
+| whatsnew/changelog.po | 99.1% | 0.2% | 15726 | 34 | 103 |
 | library/re.po | 99.1% | 0.7% | 457 | 3 | 1 |
 | whatsnew/3.12.po | 99.1% | 0.9% | 901 | 8 | 0 |
 | howto/descriptor.po | 99.1% | 0.9% | 224 | 2 | 0 |
@@ -465,10 +463,10 @@
 | library/asyncio-eventloop.po | 99.1% | 0.5% | 424 | 2 | 2 |
 | whatsnew/2.4.po | 99.1% | 0.9% | 315 | 3 | 0 |
 | builtins/exceptions.po | 99.0% | 1.0% | 204 | 2 | 0 |
-| library/sys.po | 99.0% | 0.8% | 510 | 4 | 1 |
 | library/zlib.po | 99.0% | 1.0% | 102 | 1 | 0 |
 | library/unicodedata.po | 99.0% | 1.0% | 99 | 1 | 0 |
 | howto/urllib2.po | 99.0% | 0.0% | 98 | 0 | 1 |
+| builtins/stdtypes.po | 99.0% | 1.0% | 1643 | 16 | 1 |
 | tutorial/errors.po | 99.0% | 1.0% | 95 | 1 | 0 |
 | using/mac.po | 99.0% | 1.0% | 95 | 1 | 0 |
 | c-api/long.po | 98.9% | 0.5% | 181 | 1 | 1 |
@@ -478,14 +476,15 @@
 | library/optparse.po | 98.9% | 1.1% | 526 | 6 | 0 |
 | c-api/import.po | 98.8% | 1.2% | 85 | 1 | 0 |
 | c-api/extension-modules.po | 98.8% | 1.2% | 79 | 1 | 0 |
-| builtins/functions.po | 98.7% | 1.1% | 534 | 6 | 1 |
 | library/shlex.po | 98.7% | 1.3% | 76 | 1 | 0 |
 | library/zipapp.po | 98.7% | 1.3% | 76 | 1 | 0 |
 | library/bz2.po | 98.7% | 1.3% | 74 | 1 | 0 |
 | library/signal.po | 98.6% | 1.4% | 143 | 2 | 0 |
 | library/timeit.po | 98.6% | 1.4% | 70 | 1 | 0 |
+| using/cmdline.po | 98.6% | 1.4% | 278 | 4 | 0 |
 | library/tomllib.po | 98.6% | 1.4% | 68 | 1 | 0 |
 | c-api/type.po | 98.5% | 1.5% | 200 | 3 | 0 |
+| builtins/functions.po | 98.5% | 1.3% | 531 | 7 | 1 |
 | c-api/datetime.po | 98.5% | 1.5% | 66 | 1 | 0 |
 | howto/isolating-extensions.po | 98.5% | 1.5% | 132 | 2 | 0 |
 | library/smtplib.po | 98.5% | 1.5% | 129 | 2 | 0 |
@@ -500,15 +499,16 @@
 | library/xml.etree.elementtree.po | 98.2% | 1.8% | 271 | 5 | 0 |
 | howto/perf_profiling.po | 98.1% | 1.9% | 53 | 1 | 0 |
 | library/http.cookies.po | 98.1% | 1.9% | 53 | 1 | 0 |
+| library/sys.po | 98.1% | 0.8% | 510 | 4 | 6 |
 | library/tracemalloc.po | 98.1% | 1.9% | 153 | 3 | 0 |
 | library/array.po | 98.0% | 2.0% | 100 | 2 | 0 |
 | library/ftplib.po | 98.0% | 2.0% | 96 | 2 | 0 |
 | extending/first-extension-module.po | 97.9% | 2.1% | 143 | 3 | 0 |
 | library/msvcrt.po | 97.9% | 2.1% | 47 | 1 | 0 |
-| c-api/init_config.po | 97.9% | 1.3% | 655 | 9 | 5 |
 | faq/library.po | 97.9% | 1.4% | 140 | 2 | 1 |
 | library/collections.abc.po | 97.9% | 1.4% | 140 | 2 | 1 |
 | c-api/slots.po | 97.8% | 2.2% | 44 | 1 | 0 |
+| c-api/init_config.po | 97.8% | 1.5% | 654 | 10 | 5 |
 | library/email.charset.po | 97.7% | 2.3% | 43 | 1 | 0 |
 | extending/extending.po | 97.6% | 1.8% | 162 | 3 | 1 |
 | library/ctypes.po | 97.6% | 2.0% | 763 | 16 | 3 |
@@ -558,5 +558,5 @@
 | library/cgi.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/cgitb.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **99.2%** | **0.6%** | **90281** | **541** | **221** |
+| **مجموع** | **99.1%** | **0.6%** | **90263** | **555** | **234** |
 <!-- TRANSLATION_STATUS_END -->
