@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-10 04:11+0000\n"
+"POT-Creation-Date: 2026-11-11 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -74,6 +74,9 @@ msgstr "هسته و توکارها (Core and Builtins)"
 msgid ":gh:`160267`: Fix a crash when :mod:`profiling.sampling` profiles a process that creates and destroys threads or subinterpreters quickly. Memory of deleted thread and interpreter states is now reused for new states instead of being freed until the runtime is finalized."
 msgstr ""
 
+msgid ":gh:`161693`: Fix a crash in :meth:`dict.setdefault` when called on an instance dictionary with a :class:`str` subclass key equal to an attribute name that is not set on that instance."
+msgstr ""
+
 msgid ":gh:`161420`: Restore ``mimalloc``'s previous behavior of processing delayed frees from other threads on every generic malloc call, reverting the change introduced in v2.2.2."
 msgstr ""
 
@@ -111,8 +114,16 @@ msgstr ""
 msgid ":gh:`159136`: Setting ``__name__``, ``__qualname__``, ``__doc__`` or ``__module__`` on a function no longer stops all threads in the free-threaded build. This fixes a large slowdown in multi-threaded code using :func:`functools.wraps` since 3.14.7."
 msgstr ""
 
+msgid ":gh:`159054`: Fixed a crash when an allocation failure occurred while compiling code containing cold blocks."
+msgstr ""
+
 msgid ":gh:`158529`: Fixed crash on Android x86_64, API levels 27-28, caused by mimalloc calling system calls directly."
 msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`145615`: Fixed a memory leak in the :term:`free-threaded build` where mimalloc pages could become permanently unreclaimable until the owning thread exited."
+msgid ":gh:`152125`: Fix a crash in the :term:`free-threaded build` where :c:func:`PyList_New` could leave a newly allocated list's item buffer pointer uninitialized when the backing array allocation failed under low memory, leading to an invalid free."
+msgstr ":gh:`145615`: رفع یک نشتی حافظه در :term:`ساخت نخ‌آزاد <free-threaded build>` که در آن صفحات mimalloc ممکن بود تا زمان خروج نخ مالک، به طور دائم غیرقابل بازیابی بمانند."
 
 msgid ":gh:`152631`: Fix :func:`ast.parse` ability to parse lazy imports with *feature_version* older than 3.15, now it properly raises :exc:`SyntaxError`."
 msgstr ""
@@ -209,6 +220,9 @@ msgstr ""
 msgid ":gh:`160781`: Fix :class:`io.BytesIO` raising :exc:`SystemError` instead of :exc:`OverflowError` when writing at a position close to :data:`sys.maxsize`."
 msgstr ":gh:`153037`: رفع مشکلی که در آن :class:`~compression.zstd.ZstdFile` هنگام پیمایش روی پرونده‌ای که برای خواندن باز نشده است، به جای :exc:`io.UnsupportedOperation` خطای :exc:`AttributeError` ایجاد می‌کند."
 
+msgid ":gh:`158500`: :meth:`datetime.date.fromisoformat` now rejects strings with trailing characters after a basic-format date, such as ``'2020010112'``. The pure-Python :meth:`datetime.datetime.fromisoformat` now rejects a date followed by a bare separator, such as ``'2020-01-01T'``, matching the C implementation."
+msgstr ""
+
 msgid ":gh:`160427`: Fix :attr:`~io.TextIOBase.buffer` of a detached :class:`io.TextIOWrapper` raising :exc:`ValueError` instead of returning ``None``."
 msgstr ""
 
@@ -287,6 +301,9 @@ msgid ":gh:`160176`: Fix a crash in :mod:`tkinter` when a deeply nested or recur
 msgstr ""
 
 msgid ":gh:`159875`: Fix :exc:`AttributeError` from the methods of an :mod:`asyncio` SSL transport, such as :meth:`~asyncio.WriteTransport.write` and :meth:`~asyncio.BaseTransport.set_protocol`, when the transport is closed after its connection was lost. This also affected the fallback of :meth:`loop.sendfile() <asyncio.loop.sendfile>` over SSL when the peer went away mid-transfer. The SSL context is still released once the connection is lost."
+msgstr ""
+
+msgid ":gh:`159643`: Fix :exc:`EOFError` raised by :mod:`tarfile` in stream mode with bz2, xz or zstd compression when reading past the end of the compressed data, for example with *ignore_zeros* or an archive without end-of-archive blocks."
 msgstr ""
 
 msgid ":gh:`159387`: Fix :mod:`ssl` reporting TLS 1.0, 1.1, and 1.2 as unavailable when built with OpenSSL 4.0, despite support for these protocol versions."
