@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-11)
+(به‌روزرسانی: 2026-11-12)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -309,7 +309,6 @@
 | library/tabnanny.po | 100.0% | 0.0% | 11 | 0 | 0 |
 | library/telnetlib.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/tempfile.po | 100.0% | 0.0% | 90 | 0 | 0 |
-| library/test.po | 100.0% | 0.0% | 345 | 0 | 0 |
 | library/text.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/tk.po | 100.0% | 0.0% | 8 | 0 | 0 |
 | library/tkinter.colorchooser.po | 100.0% | 0.0% | 8 | 0 | 0 |
@@ -401,7 +400,6 @@
 | library/multiprocessing.po | 99.7% | 0.3% | 621 | 2 | 0 |
 | howto/enum.po | 99.7% | 0.3% | 308 | 1 | 0 |
 | library/xml.dom.po | 99.7% | 0.3% | 301 | 1 | 0 |
-| library/urllib.request.po | 99.7% | 0.0% | 298 | 0 | 1 |
 | library/io.po | 99.7% | 0.3% | 286 | 1 | 0 |
 | library/logging.handlers.po | 99.6% | 0.0% | 276 | 0 | 1 |
 | library/enum.po | 99.6% | 0.0% | 257 | 0 | 1 |
@@ -455,11 +453,11 @@
 | whatsnew/3.12.po | 99.1% | 0.9% | 901 | 8 | 0 |
 | howto/descriptor.po | 99.1% | 0.9% | 224 | 2 | 0 |
 | c-api/module.po | 99.1% | 0.9% | 223 | 2 | 0 |
-| whatsnew/changelog.po | 99.1% | 0.2% | 15726 | 35 | 107 |
 | c-api/interp-lifecycle.po | 99.1% | 0.9% | 221 | 2 | 0 |
 | library/email.message.po | 99.1% | 0.9% | 110 | 1 | 0 |
 | library/email.policy.po | 99.1% | 0.9% | 109 | 1 | 0 |
 | whatsnew/2.2.po | 99.1% | 0.9% | 213 | 2 | 0 |
+| whatsnew/changelog.po | 99.1% | 0.2% | 15726 | 36 | 112 |
 | library/asyncio-eventloop.po | 99.1% | 0.5% | 424 | 2 | 2 |
 | whatsnew/2.4.po | 99.1% | 0.9% | 315 | 3 | 0 |
 | builtins/exceptions.po | 99.0% | 1.0% | 204 | 2 | 0 |
@@ -492,6 +490,7 @@
 | library/gettext.po | 98.4% | 1.6% | 127 | 2 | 0 |
 | using/unix.po | 98.4% | 1.6% | 62 | 1 | 0 |
 | library/tarfile.po | 98.4% | 1.1% | 364 | 4 | 2 |
+| library/urllib.request.po | 98.3% | 0.0% | 298 | 0 | 5 |
 | library/marshal.po | 98.3% | 1.7% | 59 | 1 | 0 |
 | extending/embedding.po | 98.3% | 1.7% | 58 | 1 | 0 |
 | library/textwrap.po | 98.3% | 1.7% | 57 | 1 | 0 |
@@ -515,10 +514,10 @@
 | library/calendar.po | 97.6% | 2.4% | 120 | 3 | 0 |
 | library/fractions.po | 97.6% | 2.4% | 40 | 1 | 0 |
 | library/profile.po | 97.4% | 2.6% | 76 | 2 | 0 |
-| library/ssl.po | 97.4% | 1.4% | 561 | 8 | 7 |
 | library/fnmatch.po | 97.4% | 2.6% | 37 | 1 | 0 |
 | c-api/exceptions.po | 97.4% | 0.0% | 294 | 0 | 8 |
 | library/getopt.po | 97.3% | 2.7% | 36 | 1 | 0 |
+| library/ssl.po | 97.0% | 1.7% | 559 | 10 | 7 |
 | c-api/bytes.po | 97.0% | 3.0% | 131 | 4 | 0 |
 | c-api/call.po | 96.9% | 3.1% | 93 | 3 | 0 |
 | howto/instrumentation.po | 96.9% | 3.1% | 93 | 3 | 0 |
@@ -547,6 +546,7 @@
 | library/tkinter.font.po | 91.4% | 8.6% | 32 | 3 | 0 |
 | library/turtle.po | 91.2% | 6.5% | 517 | 37 | 13 |
 | deprecations/c-api-pending-removal-in-3.18.po | 90.9% | 9.1% | 20 | 2 | 0 |
+| library/test.po | 89.1% | 2.9% | 335 | 11 | 30 |
 | library/asyncio-extending.po | 88.9% | 11.1% | 24 | 3 | 0 |
 | library/numbers.po | 85.7% | 11.4% | 30 | 4 | 1 |
 | reference/grammar.po | 85.7% | 0.0% | 6 | 0 | 1 |
@@ -558,5 +558,5 @@
 | library/cgi.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/cgitb.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **99.1%** | **0.6%** | **90262** | **557** | **240** |
+| **مجموع** | **99.1%** | **0.6%** | **90250** | **571** | **279** |
 <!-- TRANSLATION_STATUS_END -->
