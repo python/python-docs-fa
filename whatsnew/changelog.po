@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-11 04:11+0000\n"
+"POT-Creation-Date: 2026-11-12 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -99,6 +99,9 @@ msgstr ""
 msgid ":gh:`160773`: Fix a crash in :func:`str` of an :exc:`OSError` when formatting one of its attributes modifies the others."
 msgstr ""
 
+msgid ":gh:`160303`: Fix :class:`bytearray` reading and writing memory outside of its buffer after ``del b[:n]`` or ``b[:n] = shorter`` failed with :exc:`MemoryError`. The bytes are now removed even if shrinking the memory block fails; :exc:`MemoryError` is still raised.  Also fix the missing null byte after the data when shrinking fails for a slice which is not at the front."
+msgstr ""
+
 msgid ":gh:`158195`: Fix a deadlock in the free-threaded build between a thread that stops the world while running Python code under the type lock (for example a custom metaclass ``mro()`` or the ``__eq__`` of a :class:`str` subclass used as a class ``__dict__`` key) and a thread that assigns to a special method or to ``__bases__`` of a class.  The type lock is no longer held while waiting for a stop-the-world; the prepared slot, MRO and bases updates are validated with the world stopped and recomputed if they went stale."
 msgstr ""
 
@@ -139,6 +142,9 @@ msgstr ":gh:`151773`: رفع فروپاشی در :func:`contextvars.ContextVar.s
 msgid "Library"
 msgstr "کتابخانه"
 
+msgid ":gh:`161712`: Fix :meth:`threading.Thread.join` with a timeout blocking forever when the deadline passed between the two reads of the clock used to compute the time left."
+msgstr ""
+
 msgid ":gh:`161475`: Fix :mod:`ctypes` structures containing arrays of floating-point type returned by value on 64-bit Linux SPARC."
 msgstr ""
 
@@ -174,6 +180,14 @@ msgid ":gh:`161212`: Bump the version of :pypi:`pip` bundled in :mod:`ensurepip`
 msgstr ":gh:`159894`: ارتقای نسخه‌ی :pypi:`pip` بسته‌بندی‌شده در :mod:`ensurepip` به نسخه‌ی 26.2.2."
 
 msgid ":gh:`161179`: Fix the function names in the error messages of :func:`os.spawnve`, :func:`os.preadv` and :meth:`tkinter.Wm.wm_attributes`."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`97725`: Fix :meth:`asyncio.Task.print_stack` description for ``file=None``. Patch by Oleg Iarygin."
+msgid ":gh:`161166`: Fix :meth:`asyncio.Task.print_stack` displaying an incorrect exception line after a ``finally`` block. Patch by Timofei Ivankov."
+msgstr ":gh:`97725`: رفع توضیحات :meth:`asyncio.Task.print_stack` برای ``file=None``. وصله توسط Oleg Iarygin."
+
+msgid ":gh:`161060`: Fix a crash in :mod:`xml.parsers.expat` when a handler raises an exception, or the :meth:`~xml.parsers.expat.xmlparser.DefaultHandler` or :meth:`~xml.parsers.expat.xmlparser.DefaultHandlerExpand` handler is unset, while a token longer than 1024 bytes, such as a comment, is being reported to the default handler from a document that is not encoded in UTF-8."
 msgstr ""
 
 msgid ":gh:`161039`: Fix the :mod:`pydoc` pager not detecting ``less`` 706 and newer."
@@ -221,6 +235,9 @@ msgid ":gh:`160781`: Fix :class:`io.BytesIO` raising :exc:`SystemError` instead 
 msgstr ":gh:`153037`: رفع مشکلی که در آن :class:`~compression.zstd.ZstdFile` هنگام پیمایش روی پرونده‌ای که برای خواندن باز نشده است، به جای :exc:`io.UnsupportedOperation` خطای :exc:`AttributeError` ایجاد می‌کند."
 
 msgid ":gh:`158500`: :meth:`datetime.date.fromisoformat` now rejects strings with trailing characters after a basic-format date, such as ``'2020010112'``. The pure-Python :meth:`datetime.datetime.fromisoformat` now rejects a date followed by a bare separator, such as ``'2020-01-01T'``, matching the C implementation."
+msgstr ""
+
+msgid ":gh:`160708`: Fix out-of-bounds memory access in :func:`bool` on :mod:`ctypes` simple objects enlarged by :func:`ctypes.resize`, and when passing such objects to a foreign function."
 msgstr ""
 
 msgid ":gh:`160427`: Fix :attr:`~io.TextIOBase.buffer` of a detached :class:`io.TextIOWrapper` raising :exc:`ValueError` instead of returning ``None``."
@@ -343,6 +360,9 @@ msgstr ""
 #| msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when passing :class:`ctypes.Structure` or :class:`ctypes.Union` instances by value to ctypes foreign functions."
 msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when first using a Chinese, Japanese or Korean codec."
 msgstr ":gh:`151126`: رفع فروپاشی ناشی از تنظیم‌نشدن :exc:`MemoryError` هنگام شکست در تخصیص حافظه، در زمان ارسال نمونه‌های :class:`ctypes.Structure` یا :class:`ctypes.Union` به‌صورت مقدار (by value) به توابع خارجی ctypes."
+
+msgid ":gh:`155003`: Fix :class:`multiprocessing.shared_memory.SharedMemory` leaking its file descriptor and printing an ignored :exc:`BufferError` when garbage collected while its :attr:`~multiprocessing.shared_memory.SharedMemory.buf` was still in use, for example by a NumPy array. :attr:`!buf` now also stays usable after the :class:`!SharedMemory` object is garbage collected."
+msgstr ""
 
 #, fuzzy
 #| msgid ":gh:`133934`: Improve :mod:`sqlite3` CLI's ``.help`` message."

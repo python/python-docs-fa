@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-22 04:16+0000\n"
+"POT-Creation-Date: 2026-11-12 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -1181,19 +1181,108 @@ msgstr ":mod:`!test.support.import_helper` --- ابزارهای کمکی برا�
 msgid "The :mod:`!test.support.import_helper` module provides support for import tests."
 msgstr "ماژول :mod:`!test.support.import_helper` پشتیبانی برای آزمون‌های ایمپورت را فراهم می‌کند."
 
-msgid "Remove the module named *module_name* from ``sys.modules`` and delete any byte-compiled files of the module."
+msgid "Creating module objects"
+msgstr ""
+
+msgid "Create a new, empty :term:`module` or :term:`package` and return it."
+msgstr ""
+
+msgid "*name*, *loader* and *ispkg* (as ``is_package``) are passed to :class:`importlib.machinery.ModuleSpec`."
+msgstr ""
+
+msgid "Create a :term:`module` from a name or spec and add it to :data:`sys.modules`."
+msgstr ""
+
+msgid "If *parents* is ``True``, create any missing parent modules."
+msgstr ""
+
+msgid "Return the new module."
+msgstr ""
+
+msgid "Create a :term:`package` from a name or spec and add it to :data:`sys.modules`."
+msgstr ""
+
+msgid "Return the new package."
+msgstr ""
+
+msgid "Manipulating sys.modules"
+msgstr ""
+
+#, fuzzy
+#| msgid "Delete *name* from ``sys.modules``."
+msgid "Remove the module named *name* from :data:`sys.modules`."
+msgstr "*name* را از ``sys.modules`` حذف می‌کند."
+
+#, fuzzy
+#| msgid "Remove the module named *module_name* from ``sys.modules`` and delete any byte-compiled files of the module."
+msgid "Remove the module named *modname* from :data:`sys.modules` and delete any byte-compiled files of the module."
 msgstr "ماژول با نام *module_name* را از ``sys.modules`` حذف کنید و هرگونه پرونده کامپایل‌شده به بایت آن ماژول را پاک کنید."
 
-msgid "This function imports and returns a fresh copy of the named Python module by removing the named module from ``sys.modules`` before doing the import. Note that unlike :func:`importlib.reload`, the original module is not affected by this operation."
+#, fuzzy
+#| msgid "Return a copy of :data:`sys.modules`."
+msgid "Return a tuple containing a copy of :data:`sys.modules`."
+msgstr "یک کپی از :data:`sys.modules` برمی‌گرداند."
+
+#, fuzzy
+#| msgid "Remove modules except for *oldmodules* and ``encodings`` in order to preserve internal cache."
+msgid "Remove modules except for *oldmodules* and ``encodings`` from :data:`sys.modules` in order to preserve the internal cache."
+msgstr "ماژول‌ها را به جز *oldmodules* و ``encodings`` حذف کنید تا نهانگاه داخلی حفظ شود."
+
+msgid "A context manager that makes a copy of :data:`sys.modules` on entry and restores it on exit."
+msgstr ""
+
+#, fuzzy
+#| msgid "A context manager to force import to return a new module reference.  This is useful for testing module-level behaviors, such as the emission of a :exc:`DeprecationWarning` on import.  Example usage::"
+msgid "A context manager to force imports to return new module references.  This is useful for testing module-level behaviors, such as the emission of a :exc:`DeprecationWarning` on import."
+msgstr "یک مدیریت‌کننده زمینه برای وادار کردن ایمپورت به بازگرداندن مرجع جدیدی از ماژول. این برای آزمایش رفتارهای سطح ماژول، مانند صدور یک :exc:`DeprecationWarning` هنگام ایمپورت، مفید است. نمونه کاربرد::"
+
+msgid "When created, this makes a copy of :data:`sys.modules` and removes names from *module_names* from the original. On exit, the original module references are restored."
+msgstr ""
+
+msgid "If *usefrozen* is False (the default) then the frozen importer is disabled (except for essential modules like ``importlib._bootstrap``)."
+msgstr ""
+
+#, fuzzy
+#| msgid "Example use::"
+msgid "Example usage::"
+msgstr "نمونه استفاده::"
+
+#, fuzzy
+#| msgid ""
+#| "with CleanImport('foo'):\n"
+#| "    importlib.import_module('foo')  # New reference."
+msgid ""
+"with CleanImport('foo'):\n"
+"      importlib.import_module('foo')  # New reference."
+msgstr ""
+"with CleanImport('foo'):\n"
+"    importlib.import_module('foo')  # New reference."
+
+msgid "Importing modules"
+msgstr ""
+
+msgid "This function imports and returns the named module. Unlike a normal import, this function raises :exc:`unittest.SkipTest` if the module cannot be imported."
+msgstr "این تابع، ماژول نام‌برده‌شده را ایمپورت کرده و برمی‌گرداند. برخلاف ایمپورت معمولی، این تابع در صورتی که ماژول نتواند ایمپورت شود، :exc:`unittest.SkipTest` را پرتاب می‌کند."
+
+msgid "Module and package deprecation messages are suppressed during this import if *deprecated* is ``True``.  If a module is required on a platform but optional for others, set *required_on* to an iterable of platform prefixes which will be compared against :data:`sys.platform`."
+msgstr "در صورتی که *deprecated* برابر ``True`` باشد، پیام‌های منسوخ‌شدگی ماژول و بسته در جریان این ایمپورت سرکوب می‌شوند. اگر ماژولی در یک پلتفرم ضروری باشد اما در پلتفرم‌های دیگر اختیاری باشد، *required_on* را روی یک پیمایش‌پذیر از پیشوندهای پلتفرم تنظیم کنید که با :data:`sys.platform` مقایسه می‌شوند."
+
+#, fuzzy
+#| msgid "This function imports and returns a fresh copy of the named Python module by removing the named module from ``sys.modules`` before doing the import. Note that unlike :func:`importlib.reload`, the original module is not affected by this operation."
+msgid "This function imports and returns a fresh copy of the named Python module by removing the named module from :data:`sys.modules` before doing the import. Note that unlike :func:`reload <importlib.reload>`, the original module is not affected by this operation."
 msgstr "این تابع با حذف کردن ماژول نام‌برده از ``sys.modules`` پیش از انجام عمل ایمپورت، یک نسخه‌ی تازه از آن ماژول نام‌برده را ایمپورت کرده و برمی‌گرداند. توجه داشته باشید که برخلاف :func:`importlib.reload`، ماژول اصلی تحت تأثیر این عملیات قرار نمی‌گیرد."
 
-msgid "*fresh* is an iterable of additional module names that are also removed from the ``sys.modules`` cache before doing the import."
+#, fuzzy
+#| msgid "*fresh* is an iterable of additional module names that are also removed from the ``sys.modules`` cache before doing the import."
+msgid "*fresh* is an iterable of additional module names that are also removed from the :data:`sys.modules` cache before doing the import."
 msgstr "*fresh* یک پیمایش‌پذیر از نام‌های ماژول اضافی است که همچنین پیش از انجام ایمپورت از نهانگاه ``sys.modules`` حذف می‌شوند."
 
 msgid "*blocked* is an iterable of module names that are replaced with ``None`` in the module cache during the import to ensure that attempts to import them raise :exc:`ImportError`."
 msgstr "*blocked* یک پیمایش‌پذیر از نام‌های ماژول است که در حین ایمپورت، در نهانگاه ماژول با ``None`` جایگزین می‌شوند تا اطمینان حاصل شود که تلاش‌ها برای ایمپورت آن‌ها باعث پرتاب :exc:`ImportError` می‌شوند."
 
-msgid "The named module and any modules named in the *fresh* and *blocked* parameters are saved before starting the import and then reinserted into ``sys.modules`` when the fresh import is complete."
+#, fuzzy
+#| msgid "The named module and any modules named in the *fresh* and *blocked* parameters are saved before starting the import and then reinserted into ``sys.modules`` when the fresh import is complete."
+msgid "The named module and any modules named in the *fresh* and *blocked* parameters are saved before starting the import and then reinserted into :data:`sys.modules` when the fresh import is complete."
 msgstr "ماژول نام‌برده‌شده و هر ماژولی که در پارامترهای *fresh* و *blocked* نام‌برده‌شده باشد، پیش از آغاز ایمپورت ذخیره می‌شوند و سپس هنگامی که ایمپورت تازه کامل می‌شود، دوباره در ``sys.modules`` درج می‌شوند."
 
 msgid "Module and package deprecation messages are suppressed during this import if *deprecated* is ``True``."
@@ -1217,33 +1306,17 @@ msgstr ""
 "py_warnings = import_fresh_module('warnings', blocked=['_warnings'])\n"
 "c_warnings = import_fresh_module('warnings', fresh=['_warnings'])"
 
-msgid "This function imports and returns the named module. Unlike a normal import, this function raises :exc:`unittest.SkipTest` if the module cannot be imported."
-msgstr "این تابع، ماژول نام‌برده‌شده را ایمپورت کرده و برمی‌گرداند. برخلاف ایمپورت معمولی، این تابع در صورتی که ماژول نتواند ایمپورت شود، :exc:`unittest.SkipTest` را پرتاب می‌کند."
-
-msgid "Module and package deprecation messages are suppressed during this import if *deprecated* is ``True``.  If a module is required on a platform but optional for others, set *required_on* to an iterable of platform prefixes which will be compared against :data:`sys.platform`."
-msgstr "در صورتی که *deprecated* برابر ``True`` باشد، پیام‌های منسوخ‌شدگی ماژول و بسته در جریان این ایمپورت سرکوب می‌شوند. اگر ماژولی در یک پلتفرم ضروری باشد اما در پلتفرم‌های دیگر اختیاری باشد، *required_on* را روی یک پیمایش‌پذیر از پیشوندهای پلتفرم تنظیم کنید که با :data:`sys.platform` مقایسه می‌شوند."
-
-msgid "Return a copy of :data:`sys.modules`."
-msgstr "یک کپی از :data:`sys.modules` برمی‌گرداند."
-
-msgid "Remove modules except for *oldmodules* and ``encodings`` in order to preserve internal cache."
-msgstr "ماژول‌ها را به جز *oldmodules* و ``encodings`` حذف کنید تا نهانگاه داخلی حفظ شود."
-
-msgid "Delete *name* from ``sys.modules``."
-msgstr "*name* را از ``sys.modules`` حذف می‌کند."
-
-msgid "Move a :pep:`3147`/:pep:`488` pyc file to its legacy pyc location and return the file system path to the legacy pyc file.  The *source* value is the file system path to the source file.  It does not need to exist, however the PEP 3147/488 pyc file must exist."
-msgstr "یک پرونده pyc مربوط به :pep:`3147`/:pep:`488` را به محل pyc قدیمی آن منتقل می‌کند و مسیر سامانه فایل‌بندی‌ای برای پرونده pyc قدیمی را برمی‌گرداند. مقدار *source*، مسیر سامانه فایل‌بندی‌ای برای پرونده منبع است. لازم نیست پرونده منبع وجود داشته باشد، اما پرونده pyc مربوط به PEP 3147/488 باید وجود داشته باشد."
-
-msgid "A context manager to force import to return a new module reference.  This is useful for testing module-level behaviors, such as the emission of a :exc:`DeprecationWarning` on import.  Example usage::"
-msgstr "یک مدیریت‌کننده زمینه برای وادار کردن ایمپورت به بازگرداندن مرجع جدیدی از ماژول. این برای آزمایش رفتارهای سطح ماژول، مانند صدور یک :exc:`DeprecationWarning` هنگام ایمپورت، مفید است. نمونه کاربرد::"
-
-msgid ""
-"with CleanImport('foo'):\n"
-"    importlib.import_module('foo')  # New reference."
+msgid "Import and return the named module."
 msgstr ""
-"with CleanImport('foo'):\n"
-"    importlib.import_module('foo')  # New reference."
+
+msgid "If the module is already imported, this is returned. Otherwise, import the module and return it. If the module is not found a new, empty module will be created."
+msgstr ""
+
+msgid "If *clearnone* is ``True``, this will first remove any ``None`` values that would block the import."
+msgstr ""
+
+msgid "Manipulating sys.path"
+msgstr ""
 
 msgid "A context manager to temporarily add directories to :data:`sys.path`."
 msgstr "یک مدیریت‌کننده‌ی زمینه برای افزودن موقت پوشه‌ها به :data:`sys.path`."
@@ -1253,6 +1326,50 @@ msgstr "این یک رونوشت از :data:`sys.path` می‌سازد، هر پ
 
 msgid "Note that *all* :data:`sys.path` modifications in the body of the context manager, including replacement of the object, will be reverted at the end of the block."
 msgstr "توجه داشته باشید که *تمام* تغییرات :data:`sys.path` در بدنه مدیر زمینه، از جمله جایگزینی شیء، در پایان بلوک به حالت پیشین بازگردانده خواهند شد."
+
+msgid "A context manager that will create a new Python module *name* with *source* source code in a temporary directory and inserts this directory at the start of :data:`sys.path`. The context manager yields a tuple with the name and the path to the script in the temporary directory."
+msgstr ""
+
+msgid "If the name matches an existing module, this will be cleared from :data:`sys.modules` on entry and restored on exit."
+msgstr ""
+
+msgid "If no name is given, the module will be named \"spam\"."
+msgstr ""
+
+msgid "Manipulating internals"
+msgstr ""
+
+#, fuzzy
+#| msgid "Move a :pep:`3147`/:pep:`488` pyc file to its legacy pyc location and return the file system path to the legacy pyc file.  The *source* value is the file system path to the source file.  It does not need to exist, however the PEP 3147/488 pyc file must exist."
+msgid "Move a :pep:`3147`/:pep:`488` pyc file to its legacy pyc location and return the file system path to the legacy pyc file.  The *source* value is the file system path to the source file.  It does not need to exist, however the PEP 3147/488 pyc file must exist or *allow_compile* must be set."
+msgstr "یک پرونده pyc مربوط به :pep:`3147`/:pep:`488` را به محل pyc قدیمی آن منتقل می‌کند و مسیر سامانه فایل‌بندی‌ای برای پرونده pyc قدیمی را برمی‌گرداند. مقدار *source*، مسیر سامانه فایل‌بندی‌ای برای پرونده منبع است. لازم نیست پرونده منبع وجود داشته باشد، اما پرونده pyc مربوط به PEP 3147/488 باید وجود داشته باشد."
+
+msgid "If *allow_compile* is ``True`` this will create a .pyc file if it does not exist."
+msgstr ""
+
+msgid "A context manager that forces frozen modules to be used or excluded."
+msgstr ""
+
+msgid "If *enabled* is ``True`` frozen modules are used, otherwise they are excluded."
+msgstr ""
+
+msgid "This only applies to modules that have not yet been imported. Some essential modules will always be imported frozen."
+msgstr ""
+
+msgid "A context manager that forces (if *enabled* is ``True``) or prevents legacy (single-phase init) modules from being allowed in subinterpreters."
+msgstr ""
+
+msgid "This only applies to modules that haven't been imported yet. It overrides the :c:member:`PyInterpreterConfig.check_multi_interp_extensions` setting."
+msgstr ""
+
+msgid "Lazy imports"
+msgstr ""
+
+msgid "Test that when *imported_module* is imported, none of the modules named in *modules_to_block* are imported as a side effect."
+msgstr ""
+
+msgid "*additional_code* if given should be additional Python source code to execute before checking that the blocked modules still haven't been imported."
+msgstr ""
 
 msgid ":mod:`!test.support.warnings_helper` --- Utilities for warnings tests"
 msgstr ":mod:`!test.support.warnings_helper` --- ابزارهایی برای آزمون‌های هشدارها"
