@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-12)
+(به‌روزرسانی: 2026-11-13)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -87,13 +87,10 @@
 | extending/building.po | 100.0% | 0.0% | 6 | 0 | 0 |
 | extending/index.po | 100.0% | 0.0% | 22 | 0 | 0 |
 | extending/windows.po | 100.0% | 0.0% | 28 | 0 | 0 |
-| faq/design.po | 100.0% | 0.0% | 173 | 0 | 0 |
-| faq/extending.po | 100.0% | 0.0% | 63 | 0 | 0 |
 | faq/general.po | 100.0% | 0.0% | 97 | 0 | 0 |
 | faq/gui.po | 100.0% | 0.0% | 15 | 0 | 0 |
 | faq/index.po | 100.0% | 0.0% | 1 | 0 | 0 |
 | faq/installed.po | 100.0% | 0.0% | 15 | 0 | 0 |
-| faq/programming.po | 100.0% | 0.0% | 505 | 0 | 0 |
 | faq/windows.po | 100.0% | 0.0% | 57 | 0 | 0 |
 | howto/a-conceptual-overview-of-asyncio.po | 100.0% | 0.0% | 95 | 0 | 0 |
 | howto/argparse-optparse.po | 100.0% | 0.0% | 20 | 0 | 0 |
@@ -317,7 +314,6 @@
 | library/tkinter.scrolledtext.po | 100.0% | 0.0% | 7 | 0 | 0 |
 | library/token.po | 100.0% | 0.0% | 100 | 0 | 0 |
 | library/trace.po | 100.0% | 0.0% | 43 | 0 | 0 |
-| library/traceback.po | 100.0% | 0.0% | 117 | 0 | 0 |
 | library/tty.po | 100.0% | 0.0% | 17 | 0 | 0 |
 | library/types.po | 100.0% | 0.0% | 110 | 0 | 0 |
 | library/typing.po | 100.0% | 0.0% | 861 | 0 | 0 |
@@ -422,9 +418,11 @@
 | library/logging.po | 99.5% | 0.3% | 374 | 1 | 1 |
 | library/unittest.mock-examples.po | 99.5% | 0.5% | 181 | 1 | 0 |
 | extending/newtypes_tutorial.po | 99.4% | 0.6% | 179 | 1 | 0 |
+| faq/design.po | 99.4% | 0.6% | 172 | 1 | 0 |
 | whatsnew/3.4.po | 99.4% | 0.6% | 514 | 3 | 0 |
 | library/logging.config.po | 99.4% | 0.0% | 171 | 0 | 1 |
 | whatsnew/3.8.po | 99.4% | 0.6% | 510 | 3 | 0 |
+| faq/programming.po | 99.4% | 0.4% | 500 | 2 | 1 |
 | library/locale.po | 99.4% | 0.6% | 165 | 1 | 0 |
 | whatsnew/3.15.po | 99.4% | 0.1% | 818 | 1 | 4 |
 | library/os.po | 99.4% | 0.6% | 1129 | 7 | 0 |
@@ -457,11 +455,11 @@
 | library/email.message.po | 99.1% | 0.9% | 110 | 1 | 0 |
 | library/email.policy.po | 99.1% | 0.9% | 109 | 1 | 0 |
 | whatsnew/2.2.po | 99.1% | 0.9% | 213 | 2 | 0 |
-| whatsnew/changelog.po | 99.1% | 0.2% | 15726 | 36 | 112 |
 | library/asyncio-eventloop.po | 99.1% | 0.5% | 424 | 2 | 2 |
 | whatsnew/2.4.po | 99.1% | 0.9% | 315 | 3 | 0 |
 | builtins/exceptions.po | 99.0% | 1.0% | 204 | 2 | 0 |
 | library/zlib.po | 99.0% | 1.0% | 102 | 1 | 0 |
+| whatsnew/changelog.po | 99.0% | 0.2% | 15726 | 39 | 118 |
 | library/unicodedata.po | 99.0% | 1.0% | 99 | 1 | 0 |
 | howto/urllib2.po | 99.0% | 0.0% | 98 | 0 | 1 |
 | builtins/stdtypes.po | 99.0% | 1.0% | 1643 | 16 | 1 |
@@ -514,6 +512,7 @@
 | library/calendar.po | 97.6% | 2.4% | 120 | 3 | 0 |
 | library/fractions.po | 97.6% | 2.4% | 40 | 1 | 0 |
 | library/profile.po | 97.4% | 2.6% | 76 | 2 | 0 |
+| library/traceback.po | 97.4% | 2.6% | 114 | 3 | 0 |
 | library/fnmatch.po | 97.4% | 2.6% | 37 | 1 | 0 |
 | c-api/exceptions.po | 97.4% | 0.0% | 294 | 0 | 8 |
 | library/getopt.po | 97.3% | 2.7% | 36 | 1 | 0 |
@@ -531,6 +530,7 @@
 | library/glob.po | 95.7% | 4.3% | 44 | 2 | 0 |
 | c-api/gcsupport.po | 95.4% | 3.7% | 103 | 4 | 1 |
 | using/configure.po | 95.1% | 4.9% | 465 | 24 | 0 |
+| faq/extending.po | 95.1% | 1.6% | 58 | 1 | 2 |
 | library/netrc.po | 94.7% | 5.3% | 18 | 1 | 0 |
 | c-api/gen.po | 94.4% | 5.6% | 17 | 1 | 0 |
 | c-api/reflection.po | 94.4% | 0.0% | 17 | 0 | 1 |
@@ -538,13 +538,13 @@
 | howto/annotations.po | 94.2% | 1.9% | 49 | 1 | 2 |
 | library/struct.po | 94.2% | 5.3% | 194 | 11 | 1 |
 | c-api/function.po | 93.6% | 2.1% | 44 | 1 | 2 |
-| library/argparse.po | 93.1% | 6.9% | 394 | 29 | 0 |
 | library/multiprocessing.shared_memory.po | 92.9% | 7.1% | 52 | 4 | 0 |
 | library/email.generator.po | 92.7% | 7.3% | 38 | 3 | 0 |
 | using/windows.po | 92.4% | 6.6% | 546 | 39 | 6 |
 | library/getpass.po | 92.0% | 8.0% | 23 | 2 | 0 |
 | library/tkinter.font.po | 91.4% | 8.6% | 32 | 3 | 0 |
 | library/turtle.po | 91.2% | 6.5% | 517 | 37 | 13 |
+| library/argparse.po | 91.0% | 7.9% | 393 | 34 | 5 |
 | deprecations/c-api-pending-removal-in-3.18.po | 90.9% | 9.1% | 20 | 2 | 0 |
 | library/test.po | 89.1% | 2.9% | 335 | 11 | 30 |
 | library/asyncio-extending.po | 88.9% | 11.1% | 24 | 3 | 0 |
@@ -558,5 +558,5 @@
 | library/cgi.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/cgitb.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **99.1%** | **0.6%** | **90250** | **571** | **279** |
+| **مجموع** | **99.0%** | **0.6%** | **90235** | **586** | **293** |
 <!-- TRANSLATION_STATUS_END -->
