@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-09 04:12+0000\n"
+"POT-Creation-Date: 2026-11-13 04:11+0000\n"
 "PO-Revision-Date: 2026-09-14 13:33+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -363,7 +363,9 @@ msgstr "چرا هنگام خروج CPython، تمام حافظه آزاد نمی
 msgid "Objects referenced from the global namespaces of Python modules are not always deallocated when Python exits.  This may happen if there are circular references.  There are also certain bits of memory that are allocated by the C library that are impossible to free (e.g. a tool like Purify will complain about these).  Python is, however, aggressive about cleaning up memory on exit and does try to destroy every single object."
 msgstr "اشیایی که از فضای نام های سراسری ماژول‌های پایتون به آن‌ها ارجاع داده شده‌اند، همیشه هنگام خروج پایتون آزاد نمی‌شوند. ممکن است این اتفاق در صورت وجود ارجاع‌های چرخه‌ای رخ دهد. همچنین بخش‌هایی از حافظه وجود دارند که توسط کتابخانه C تخصیص داده شده‌اند و آزاد کردن آن‌ها غیرممکن است (برای مثال، ابزاری مانند Purify درباره‌ی این موارد شکایت خواهد کرد). با این حال، پایتون در پاک‌سازی حافظه هنگام خروج بسیار جدی است و واقعاً تلاش می‌کند تک‌تک اشیاء را نابود کند."
 
-msgid "If you want to force Python to delete certain things on deallocation use the :mod:`atexit` module to run a function that will force those deletions."
+#, fuzzy
+#| msgid "If you want to force Python to delete certain things on deallocation use the :mod:`atexit` module to run a function that will force those deletions."
+msgid "If you want to force Python to delete certain things when Python exits, use the :mod:`atexit` module to run a function that will force those deletions."
 msgstr "اگر می‌خواهید پایتون را وادار به حذف موارد مشخصی در زمان آزادسازی حافظه کنید، از ماژول :mod:`atexit` برای اجرای تابعی استفاده کنید که آن حذف‌ها را اجباری خواهد کرد."
 
 msgid "Why are there separate tuple and list data types?"

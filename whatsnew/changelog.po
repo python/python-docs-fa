@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-12 04:11+0000\n"
+"POT-Creation-Date: 2026-11-13 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -71,6 +71,9 @@ msgstr ":gh:`143008`: اصلاح شرایط رقابت هنگام مقدارده
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
 
+msgid ":gh:`161827`: Keep ``_PyEval_EvalFrameDefault`` as a separate frame in the C call stack when Python is built with the tail-calling interpreter (:option:`--with-tail-call-interp`), so that stack unwinders, profilers and other tools that walk the stack can find the interpreter loop."
+msgstr ""
+
 msgid ":gh:`160267`: Fix a crash when :mod:`profiling.sampling` profiles a process that creates and destroys threads or subinterpreters quickly. Memory of deleted thread and interpreter states is now reused for new states instead of being freed until the runtime is finalized."
 msgstr ""
 
@@ -99,6 +102,9 @@ msgstr ""
 msgid ":gh:`160773`: Fix a crash in :func:`str` of an :exc:`OSError` when formatting one of its attributes modifies the others."
 msgstr ""
 
+msgid ":gh:`112564`: Fix a crash in the garbage collector when :data:`gc.DEBUG_COLLECTABLE` or :data:`gc.DEBUG_UNCOLLECTABLE` is set and writing the debug output to :data:`sys.stderr` frees one of the objects being reported. Object addresses in this output now use the same ``0x``-prefixed lowercase format on all platforms, including Windows."
+msgstr ""
+
 msgid ":gh:`160303`: Fix :class:`bytearray` reading and writing memory outside of its buffer after ``del b[:n]`` or ``b[:n] = shorter`` failed with :exc:`MemoryError`. The bytes are now removed even if shrinking the memory block fails; :exc:`MemoryError` is still raised.  Also fix the missing null byte after the data when shrinking fails for a slice which is not at the front."
 msgstr ""
 
@@ -122,6 +128,11 @@ msgstr ""
 
 msgid ":gh:`158529`: Fixed crash on Android x86_64, API levels 27-28, caused by mimalloc calling system calls directly."
 msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`151126`: Fix crash on unset :exc:`MemoryError` on allocation failure in :func:`ctypes.get_errno`."
+msgid ":gh:`151126`: Fix a crash when allocation failure occurs during :ref:`interp-object-sharing`."
+msgstr ":gh:`151126`: رفع فروپاشی در اثر تنظیم‌نشدن :exc:`MemoryError` هنگام شکست تخصیص حافظه در :func:`ctypes.get_errno`."
 
 #, fuzzy
 #| msgid ":gh:`145615`: Fixed a memory leak in the :term:`free-threaded build` where mimalloc pages could become permanently unreclaimable until the owning thread exited."
@@ -287,6 +298,9 @@ msgstr ""
 msgid ":gh:`161112`: Fix :func:`shutil.make_archive` adding the zip archive being created to itself when it is written inside the directory being archived or a symbolic link in that directory refers to it."
 msgstr ""
 
+msgid ":gh:`161104`: Fix :meth:`http.client.HTTPConnection.set_tunnel` accepting a tunnel host containing a non-ASCII character that IDNA encoding maps to a space, such as U+00A0 NO-BREAK SPACE. Connecting now raises :exc:`ValueError`, as it already does for an ASCII space."
+msgstr ""
+
 msgid ":gh:`161094`: Fix :func:`zipfile.is_zipfile` raising :exc:`ValueError` instead of returning ``False`` for a file-like object, such as :class:`io.BytesIO`, whose end of central directory record places the central directory before the start of the file."
 msgstr ""
 
@@ -350,6 +364,11 @@ msgstr ""
 msgid ":gh:`158095`: Fix a memory leak in :func:`re.finditer` and regular expression scanners when their input participates in a reference cycle."
 msgstr ":gh:`120244`: رفع نشت حافظه در :func:`re.sub` هنگامی که رشته‌ی جایگزین حاوی بازارجاعات است."
 
+#, fuzzy
+#| msgid ":gh:`149571`: Fix the C implementation of :meth:`xml.etree.ElementTree.Element.itertext`: it no longer emits text for comments and processing instructions."
+msgid ":gh:`158032`: Fix a crash in :meth:`xml.etree.ElementTree.Element.iter` when a tag's equality comparison replaces that tag."
+msgstr ":gh:`149571`: رفع پیاده‌سازی C برای متد :meth:`xml.etree.ElementTree.Element.itertext`: این متد دیگر برای کامنت‌ها و دستورالعمل‌های پردازش، متنی تولید نمی‌کند."
+
 msgid ":gh:`157928`: Correctly detect and handle OSC sequences in PyREPL."
 msgstr ""
 
@@ -397,6 +416,9 @@ msgstr ":gh:`127906`: آزمون رابط برنامه‌نویسی کاربرد
 msgid ":gh:`158975`: Replace fixed sleeps used for synchronization in multiprocessing tests with bounded waits to avoid failures on slow or overloaded systems."
 msgstr ""
 
+msgid ":gh:`126253`: Fix ``test_os.test_attributes()`` on Windows NTFS: ignore unknown file attributes."
+msgstr ""
+
 msgid "Build"
 msgstr "ساخت"
 
@@ -418,7 +440,15 @@ msgstr ""
 msgid "Windows"
 msgstr "Windows"
 
+#, fuzzy
+#| msgid ":gh:`151159`: Updated bundled version of OpenSSL to 3.5.7."
+msgid ":gh:`161735`: Updated bundled version of ``zlib-ng`` to v2.2.5."
+msgstr ":gh:`151159`: به‌روزرسانی نسخه‌ی بسته‌بندی‌شده‌ی OpenSSL به ۳.۵.۷."
+
 msgid ":gh:`159118`: Fix a crash (``RPC_NT_INTERNAL_ERROR``) and intermittent window class failures in :mod:`!_wmi` under high concurrency and load by initializing COM as multi-threaded (MTA) instead of apartment-threaded (STA)."
+msgstr ""
+
+msgid ":gh:`140774`: Fix :func:`os.chmod` with ``follow_symlinks=True``, :func:`os.fchmod` and :meth:`pathlib.Path.chmod` on Windows: clearing the read-only attribute of a file which has no other attribute set is no longer silently ignored."
 msgstr ""
 
 msgid "IDLE"
@@ -439,6 +469,9 @@ msgid ":gh:`160962`: Fix :c:func:`PyInitConfig_SetStr` when setting an optional 
 msgstr ":gh:`156939`: رفع نحوه‌ی مدیریت خطای تابع :c:func:`PyBytesWriter_Format`: بازگرداندن نویسنده (writer) به وضعیت قبلی خود در صورت بروز خطا. وصله توسط Victor Stinner."
 
 msgid ":gh:`161185`: Fix a strict aliasing issue in the :c:func:`!memcpy` implementation of :c:macro:`Py_SETREF`, :c:macro:`Py_XSETREF` and :c:macro:`Py_CLEAR` macros. Patch by Nathan Goldbaum and Victor Stinner."
+msgstr ""
+
+msgid ":gh:`154643`: In ``pyport.h`` and ``pyatomic.h`` don't use ``_Py_STDC_VERSION`` when it is not defined, fixing build errors for C or C++ code built with ``-Werror=undef``."
 msgstr ""
 
 #, fuzzy

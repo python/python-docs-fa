@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-09 04:12+0000\n"
+"POT-Creation-Date: 2026-11-13 04:11+0000\n"
 "PO-Revision-Date: 2021-06-28 00:52+0000\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -220,32 +220,20 @@ msgstr "Setup باید با یک خط جدید پایان یابد؛ اگر خط
 msgid "How do I debug an extension?"
 msgstr "چگونه یک افزونه را اشکال‌زدایی کنم؟"
 
-msgid "When using GDB with dynamically loaded extensions, you can't set a breakpoint in your extension until your extension is loaded."
+#, fuzzy
+#| msgid "When using GDB with dynamically loaded extensions, you can't set a breakpoint in your extension until your extension is loaded."
+msgid "When using GDB with dynamically loaded extensions, enable pending breakpoints to set a breakpoint before the extension is loaded.  For example, to stop in a function named ``myfunction``:"
 msgstr "هنگام استفاده از GDB با افزونه‌های بارگذاری‌شده به‌صورت پویا، تا زمانی که افزونه‌ی شما بارگذاری نشود، نمی‌توانید نقطه توقفی در افزونه‌ی خود تنظیم کنید."
-
-msgid "In your ``.gdbinit`` file (or interactively), add the command:"
-msgstr "در پرونده ``.gdbinit`` خود (یا به‌صورت تعاملی)، این دستور را اضافه کنید:"
-
-msgid "br _PyImport_LoadDynamicModule"
-msgstr "br _PyImport_LoadDynamicModule"
-
-msgid "Then, when you run GDB:"
-msgstr "سپس، هنگامی که GDB را اجرا می‌کنید:"
 
 msgid ""
 "$ gdb /local/bin/python\n"
-"gdb) run myscript.py\n"
-"gdb) continue # repeat until your extension is loaded\n"
-"gdb) finish   # so that your extension is loaded\n"
-"gdb) br myfunction.c:50\n"
-"gdb) continue"
+"(gdb) set breakpoint pending on\n"
+"(gdb) break myfunction\n"
+"(gdb) run myscript.py"
 msgstr ""
-"$ gdb /local/bin/python\n"
-"gdb) run myscript.py\n"
-"gdb) continue # repeat until your extension is loaded\n"
-"gdb) finish   # so that your extension is loaded\n"
-"gdb) br myfunction.c:50\n"
-"gdb) continue"
+
+msgid "GDB resolves the breakpoint when the extension is loaded and stops when the function is called.  You can also set a pending breakpoint directly in your extension's source code, for example with ``break myfunction.c:50``."
+msgstr ""
 
 msgid "I want to compile a Python module on my Linux system, but some files are missing. Why?"
 msgstr "می‌خواهم یک ماژول پایتون را روی سیستم لینوکسی خود کامپایل کنم، اما برخی پرونده‌ها وجود ندارند. چرا؟"
@@ -285,6 +273,30 @@ msgstr "بله، شما می‌توانید از کلاس‌های توکار م
 
 msgid "The Boost Python Library (BPL, https://www.boost.org/libs/python/doc/index.html) provides a way of doing this from C++ (i.e. you can inherit from an extension class written in C++ using the BPL)."
 msgstr "کتابخانه Boost Python (BPL، https://www.boost.org/libs/python/doc/index.html) راهی برای انجام این کار از C++ فراهم می‌کند (یعنی می‌توانید با استفاده از BPL از یک کلاس توسعه نوشته‌شده به C++ ارث‌بری کنید)."
+
+#~ msgid "In your ``.gdbinit`` file (or interactively), add the command:"
+#~ msgstr "در پرونده ``.gdbinit`` خود (یا به‌صورت تعاملی)، این دستور را اضافه کنید:"
+
+#~ msgid "br _PyImport_LoadDynamicModule"
+#~ msgstr "br _PyImport_LoadDynamicModule"
+
+#~ msgid "Then, when you run GDB:"
+#~ msgstr "سپس، هنگامی که GDB را اجرا می‌کنید:"
+
+#~ msgid ""
+#~ "$ gdb /local/bin/python\n"
+#~ "gdb) run myscript.py\n"
+#~ "gdb) continue # repeat until your extension is loaded\n"
+#~ "gdb) finish   # so that your extension is loaded\n"
+#~ "gdb) br myfunction.c:50\n"
+#~ "gdb) continue"
+#~ msgstr ""
+#~ "$ gdb /local/bin/python\n"
+#~ "gdb) run myscript.py\n"
+#~ "gdb) continue # repeat until your extension is loaded\n"
+#~ "gdb) finish   # so that your extension is loaded\n"
+#~ "gdb) br myfunction.c:50\n"
+#~ "gdb) continue"
 
 #~ msgid "Contents"
 #~ msgstr "محتویات"

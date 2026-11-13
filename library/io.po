@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 04:10+0000\n"
+"POT-Creation-Date: 2026-11-13 04:11+0000\n"
 "PO-Revision-Date: 2026-09-14 12:03+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -430,6 +430,57 @@ msgstr ":term:`bytes-like object` داده‌شده، *b*، را در جریان
 msgid "This function does not ensure all bytes are written or an exception is thrown. Callers may implement that behavior by checking the return value and, if it is less than the length of *b*, looping with additional write calls until all unwritten bytes are written. High-level I/O objects like :ref:`binary-io` and :ref:`text-io` implement retry behavior."
 msgstr "این تابع تضمین نمی‌کند که همه‌ی بایت‌ها نوشته شوند یا استثنایی پرتاب شود. فراخوانندگان می‌توانند آن رفتار را با بررسی مقدار بازگشتی پیاده‌سازی کنند و اگر این مقدار کمتر از طول *b* باشد، با حلقه‌ای از فراخوانی‌های write بیشتر، همه‌ی بایت‌های نوشته‌نشده را بنویسند. اشیای سطح بالای I/O مانند :ref:`binary-io` و :ref:`text-io` رفتار تلاش مجدد را پیاده‌سازی می‌کنند."
 
+msgid "Raw file I/O"
+msgstr "ورودی/خروجی خام پرونده"
+
+msgid "A raw binary stream representing an OS-level file containing bytes data.  It inherits from :class:`RawIOBase` and implements its low-level access design. This means :meth:`~RawIOBase.write` does not guarantee all bytes are written and :meth:`~RawIOBase.read` may read less bytes than requested even when more bytes may be present in the underlying file. To get \"write all\" and \"read at least\" behavior, use :ref:`binary-io`."
+msgstr "یک جریان دودویی خام که نشان‌دهنده‌ی پرونده‌ای در سطح سیستم‌عامل حاوی داده‌های بایتی است. این جریان از :class:`RawIOBase` ارث می‌برد و طراحی دسترسی سطح پایین آن را پیاده‌سازی می‌کند. این بدان معناست که :meth:`~RawIOBase.write` تضمین نمی‌کند که همه‌ی بایت‌ها نوشته شوند و :meth:`~RawIOBase.read` ممکن است بایت‌های کمتری نسبت به تعداد درخواست‌شده بخواند، حتی اگر بایت‌های بیشتری در پرونده زیرین موجود باشد. برای داشتن رفتار «نوشتن همه» و «حداقل خواندن»، از :ref:`binary-io` استفاده کنید."
+
+msgid "The *name* can be one of two things:"
+msgstr "*name* می‌تواند یکی از دو مورد باشد:"
+
+msgid "a character string or :class:`bytes` object representing the path to the file which will be opened. In this case closefd must be ``True`` (the default) otherwise an error will be raised."
+msgstr "یک رشته نویسه‌ای یا شیء :class:`bytes` که مسیر پرونده‌ای را که باز خواهد شد نشان می‌دهد. در این حالت closefd باید ``True`` باشد (پیش‌فرض)؛ در غیر این صورت یک خطا پرتاب خواهد شد."
+
+msgid "an integer representing the number of an existing OS-level file descriptor to which the resulting :class:`FileIO` object will give access. When the FileIO object is closed this fd will be closed as well, unless *closefd* is set to ``False``."
+msgstr "عدد صحیحی که شماره‌ی یک توصیف‌گر پرونده موجود در سطح سیستم‌عامل را نشان می‌دهد و شیء :class:`FileIO` حاصل، دسترسی به آن را فراهم خواهد کرد. هنگامی که شیء FileIO بسته شود، این توصیف‌گر پرونده نیز بسته خواهد شد، مگر آنکه *closefd* روی ``False`` تنظیم شده باشد."
+
+msgid "The *mode* can be ``'r'``, ``'w'``, ``'x'`` or ``'a'`` for reading (default), writing, exclusive creation or appending. The file will be created if it doesn't exist when opened for writing or appending; it will be truncated when opened for writing. :exc:`FileExistsError` will be raised if it already exists when opened for creating. Opening a file for creating implies writing, so this mode behaves in a similar way to ``'w'``. Add a ``'+'`` to the mode to allow simultaneous reading and writing."
+msgstr "*mode* می‌تواند ``'r'``، ``'w'``، ``'x'`` یا ``'a'`` برای خواندن (پیش‌فرض)، نوشتن، ایجاد انحصاری یا الحاق باشد. اگر پرونده در زمان باز شدن برای نوشتن یا الحاق وجود نداشته باشد، ایجاد می‌شود؛ این پرونده در زمان باز شدن برای نوشتن کوتاه می‌شود. اگر پرونده در زمان باز شدن برای ایجاد از قبل وجود داشته باشد، :exc:`FileExistsError` پرتاب می‌شود. باز کردن پرونده برای ایجاد، مستلزم نوشتن است، بنابراین این حالت رفتاری مشابه ``'w'`` دارد. برای امکان‌پذیر شدن خواندن و نوشتن همزمان، ``'+'`` را به حالت اضافه کنید."
+
+msgid "A custom opener can be used by passing a callable as *opener*. The underlying file descriptor for the file object is then obtained by calling *opener* with (*name*, *flags*). *opener* must return an open file descriptor (passing :mod:`os.open` as *opener* results in functionality similar to passing ``None``)."
+msgstr "می‌توانید با گذراندن یک شیء فراخوانی‌پذیر به‌عنوان *opener* از یک بازکننده سفارشی استفاده کنید. سپس توصیف‌گر پرونده زیربنایی برای شیء پرونده با فراخوانی *opener* با (*name*, *flags*) به دست می‌آید. *opener* باید یک توصیف‌گر پرونده باز را برگرداند (گذراندن :mod:`os.open` به‌عنوان *opener* منجر به عملکردی مشابه گذراندن ``None`` می‌شود)."
+
+msgid "The newly created file is :ref:`non-inheritable <fd_inheritance>`."
+msgstr "پرونده تازه ایجادشده :ref:`غیرقابل ارث‌بردن <fd_inheritance>` است."
+
+msgid "See the :func:`open` built-in function for examples on using the *opener* parameter."
+msgstr "برای مثال‌هایی درباره‌ی استفاده از پارامتر *opener*، تابع توکار :func:`open` را ببینید."
+
+msgid ":class:`FileIO` is a low-level I/O object and members, such as :meth:`~RawIOBase.read` and :meth:`~RawIOBase.write`, need to have their return values checked explicitly in a retry loop to implement \"write all\" and \"read at least\" behavior. High-level I/O objects :ref:`binary-io` and :ref:`text-io` implement retry behavior."
+msgstr ":class:`FileIO` یک شیء ورودی/خروجی سطح پایین است و برای اعضایی مانند :meth:`~RawIOBase.read` و :meth:`~RawIOBase.write`، باید مقادیر بازگشتی آن‌ها به‌صورت صریح در یک حلقه‌ی تلاش مجدد بررسی شوند تا رفتار «نوشتن همه» و «حداقل خواندن» پیاده‌سازی شود. اشیاء ورودی/خروجی سطح بالا :ref:`binary-io` و :ref:`text-io` رفتار تلاش مجدد را پیاده‌سازی می‌کنند."
+
+msgid "The *opener* parameter was added. The ``'x'`` mode was added."
+msgstr "پارامتر *opener* افزوده شد. حالت ``'x'`` افزوده شد."
+
+msgid "The file is now non-inheritable."
+msgstr "این پرونده اکنون غیرقابل ارث‌بردن است."
+
+msgid ":class:`FileIO` provides these data attributes in addition to those from :class:`RawIOBase` and :class:`IOBase`:"
+msgstr ":class:`FileIO` این ویژگی‌های داده‌ای را علاوه بر ویژگی‌های :class:`RawIOBase` و :class:`IOBase` ارائه می‌دهد:"
+
+msgid "The mode as given in the constructor."
+msgstr "حالت، همان‌طور که در سازنده داده شده است."
+
+msgid "The file name.  This is the file descriptor of the file when no name is given in the constructor."
+msgstr "نام پرونده. هنگامی که در سازنده نامی داده نشده باشد، این مقدار توصیف‌گر پرونده است."
+
+msgid "Buffered streams"
+msgstr "جریان‌های با میان‌گیر"
+
+msgid "Buffered I/O streams provide a higher-level interface to an I/O device than raw I/O does."
+msgstr "جریان‌های ورودی/خروجی بافرشده، نسبت به ورودی/خروجی خام، رابط سطح بالاتری را برای یک دستگاه ورودی/خروجی فراهم می‌کنند."
+
 msgid "Base class for binary streams that support some kind of buffering. It inherits from :class:`IOBase`."
 msgstr "کلاس پایه برای جریان‌های دودویی که از نوعی بافرینگ (buffering) پشتیبانی می‌کنند. این کلاس از :class:`IOBase` ارث می‌برد."
 
@@ -495,57 +546,6 @@ msgstr "در حالت غیرمسدودکننده، اگر داده‌ای نیا
 
 msgid "The caller may release or mutate *b* after this method returns, so the implementation should only access *b* during the method call."
 msgstr "فراخواننده ممکن است *b* را پس از بازگشت این متد آزاد کند یا تغییر دهد، بنابراین پیاده‌سازی باید فقط در حین فراخوانی متد به *b* دسترسی داشته باشد."
-
-msgid "Raw file I/O"
-msgstr "ورودی/خروجی خام پرونده"
-
-msgid "A raw binary stream representing an OS-level file containing bytes data.  It inherits from :class:`RawIOBase` and implements its low-level access design. This means :meth:`~RawIOBase.write` does not guarantee all bytes are written and :meth:`~RawIOBase.read` may read less bytes than requested even when more bytes may be present in the underlying file. To get \"write all\" and \"read at least\" behavior, use :ref:`binary-io`."
-msgstr "یک جریان دودویی خام که نشان‌دهنده‌ی پرونده‌ای در سطح سیستم‌عامل حاوی داده‌های بایتی است. این جریان از :class:`RawIOBase` ارث می‌برد و طراحی دسترسی سطح پایین آن را پیاده‌سازی می‌کند. این بدان معناست که :meth:`~RawIOBase.write` تضمین نمی‌کند که همه‌ی بایت‌ها نوشته شوند و :meth:`~RawIOBase.read` ممکن است بایت‌های کمتری نسبت به تعداد درخواست‌شده بخواند، حتی اگر بایت‌های بیشتری در پرونده زیرین موجود باشد. برای داشتن رفتار «نوشتن همه» و «حداقل خواندن»، از :ref:`binary-io` استفاده کنید."
-
-msgid "The *name* can be one of two things:"
-msgstr "*name* می‌تواند یکی از دو مورد باشد:"
-
-msgid "a character string or :class:`bytes` object representing the path to the file which will be opened. In this case closefd must be ``True`` (the default) otherwise an error will be raised."
-msgstr "یک رشته نویسه‌ای یا شیء :class:`bytes` که مسیر پرونده‌ای را که باز خواهد شد نشان می‌دهد. در این حالت closefd باید ``True`` باشد (پیش‌فرض)؛ در غیر این صورت یک خطا پرتاب خواهد شد."
-
-msgid "an integer representing the number of an existing OS-level file descriptor to which the resulting :class:`FileIO` object will give access. When the FileIO object is closed this fd will be closed as well, unless *closefd* is set to ``False``."
-msgstr "عدد صحیحی که شماره‌ی یک توصیف‌گر پرونده موجود در سطح سیستم‌عامل را نشان می‌دهد و شیء :class:`FileIO` حاصل، دسترسی به آن را فراهم خواهد کرد. هنگامی که شیء FileIO بسته شود، این توصیف‌گر پرونده نیز بسته خواهد شد، مگر آنکه *closefd* روی ``False`` تنظیم شده باشد."
-
-msgid "The *mode* can be ``'r'``, ``'w'``, ``'x'`` or ``'a'`` for reading (default), writing, exclusive creation or appending. The file will be created if it doesn't exist when opened for writing or appending; it will be truncated when opened for writing. :exc:`FileExistsError` will be raised if it already exists when opened for creating. Opening a file for creating implies writing, so this mode behaves in a similar way to ``'w'``. Add a ``'+'`` to the mode to allow simultaneous reading and writing."
-msgstr "*mode* می‌تواند ``'r'``، ``'w'``، ``'x'`` یا ``'a'`` برای خواندن (پیش‌فرض)، نوشتن، ایجاد انحصاری یا الحاق باشد. اگر پرونده در زمان باز شدن برای نوشتن یا الحاق وجود نداشته باشد، ایجاد می‌شود؛ این پرونده در زمان باز شدن برای نوشتن کوتاه می‌شود. اگر پرونده در زمان باز شدن برای ایجاد از قبل وجود داشته باشد، :exc:`FileExistsError` پرتاب می‌شود. باز کردن پرونده برای ایجاد، مستلزم نوشتن است، بنابراین این حالت رفتاری مشابه ``'w'`` دارد. برای امکان‌پذیر شدن خواندن و نوشتن همزمان، ``'+'`` را به حالت اضافه کنید."
-
-msgid "A custom opener can be used by passing a callable as *opener*. The underlying file descriptor for the file object is then obtained by calling *opener* with (*name*, *flags*). *opener* must return an open file descriptor (passing :mod:`os.open` as *opener* results in functionality similar to passing ``None``)."
-msgstr "می‌توانید با گذراندن یک شیء فراخوانی‌پذیر به‌عنوان *opener* از یک بازکننده سفارشی استفاده کنید. سپس توصیف‌گر پرونده زیربنایی برای شیء پرونده با فراخوانی *opener* با (*name*, *flags*) به دست می‌آید. *opener* باید یک توصیف‌گر پرونده باز را برگرداند (گذراندن :mod:`os.open` به‌عنوان *opener* منجر به عملکردی مشابه گذراندن ``None`` می‌شود)."
-
-msgid "The newly created file is :ref:`non-inheritable <fd_inheritance>`."
-msgstr "پرونده تازه ایجادشده :ref:`غیرقابل ارث‌بردن <fd_inheritance>` است."
-
-msgid "See the :func:`open` built-in function for examples on using the *opener* parameter."
-msgstr "برای مثال‌هایی درباره‌ی استفاده از پارامتر *opener*، تابع توکار :func:`open` را ببینید."
-
-msgid ":class:`FileIO` is a low-level I/O object and members, such as :meth:`~RawIOBase.read` and :meth:`~RawIOBase.write`, need to have their return values checked explicitly in a retry loop to implement \"write all\" and \"read at least\" behavior. High-level I/O objects :ref:`binary-io` and :ref:`text-io` implement retry behavior."
-msgstr ":class:`FileIO` یک شیء ورودی/خروجی سطح پایین است و برای اعضایی مانند :meth:`~RawIOBase.read` و :meth:`~RawIOBase.write`، باید مقادیر بازگشتی آن‌ها به‌صورت صریح در یک حلقه‌ی تلاش مجدد بررسی شوند تا رفتار «نوشتن همه» و «حداقل خواندن» پیاده‌سازی شود. اشیاء ورودی/خروجی سطح بالا :ref:`binary-io` و :ref:`text-io` رفتار تلاش مجدد را پیاده‌سازی می‌کنند."
-
-msgid "The *opener* parameter was added. The ``'x'`` mode was added."
-msgstr "پارامتر *opener* افزوده شد. حالت ``'x'`` افزوده شد."
-
-msgid "The file is now non-inheritable."
-msgstr "این پرونده اکنون غیرقابل ارث‌بردن است."
-
-msgid ":class:`FileIO` provides these data attributes in addition to those from :class:`RawIOBase` and :class:`IOBase`:"
-msgstr ":class:`FileIO` این ویژگی‌های داده‌ای را علاوه بر ویژگی‌های :class:`RawIOBase` و :class:`IOBase` ارائه می‌دهد:"
-
-msgid "The mode as given in the constructor."
-msgstr "حالت، همان‌طور که در سازنده داده شده است."
-
-msgid "The file name.  This is the file descriptor of the file when no name is given in the constructor."
-msgstr "نام پرونده. هنگامی که در سازنده نامی داده نشده باشد، این مقدار توصیف‌گر پرونده است."
-
-msgid "Buffered streams"
-msgstr "جریان‌های با میان‌گیر"
-
-msgid "Buffered I/O streams provide a higher-level interface to an I/O device than raw I/O does."
-msgstr "جریان‌های ورودی/خروجی بافرشده، نسبت به ورودی/خروجی خام، رابط سطح بالاتری را برای یک دستگاه ورودی/خروجی فراهم می‌کنند."
 
 msgid "A binary stream using an in-memory bytes buffer.  It inherits from :class:`BufferedIOBase`.  The buffer is discarded when the :meth:`~IOBase.close` method is called."
 msgstr "یک جریان دودویی که از یک بافر بایت در حافظه استفاده می‌کند. این کلاس از :class:`BufferedIOBase` ارث می‌برد. هنگامی که متد :meth:`~IOBase.close` فراخوانی شود، بافر دور انداخته می‌شود."

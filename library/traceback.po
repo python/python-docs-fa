@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-19 04:17+0000\n"
+"POT-Creation-Date: 2026-11-13 04:11+0000\n"
 "PO-Revision-Date: 2026-09-15 13:06+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -107,10 +107,14 @@ msgstr "یک شیء :class:`StackSummary` بازمی‌گرداند که نشا�
 msgid "Extract the raw traceback from the current :ref:`stack frame <frame-objects>`.  The return value has the same format as for :func:`extract_tb`.  The optional *f* and *limit* arguments have the same meaning as for :func:`print_stack`."
 msgstr "ردگیری پشته‌ی خام را از :ref:`فریم پشته <frame-objects>` فعلی استخراج کنید. مقدار بازگشتی همان قالب :func:`extract_tb` را دارد. آرگومان‌های اختیاری *f* و *limit* همان معنایی را دارند که در :func:`print_stack` دارند."
 
-msgid "Print the list of tuples as returned by :func:`extract_tb` or :func:`extract_stack` as a formatted stack trace to the given file. If *file* is ``None``, the output is written to :data:`sys.stderr`."
+#, fuzzy
+#| msgid "Print the list of tuples as returned by :func:`extract_tb` or :func:`extract_stack` as a formatted stack trace to the given file. If *file* is ``None``, the output is written to :data:`sys.stderr`."
+msgid "Print a list of :class:`FrameSummary` objects as returned by :func:`extract_tb` or :func:`extract_stack`, or a list of old-style tuples (see :meth:`StackSummary.from_list`), as a formatted stack trace to the given file. If *file* is ``None``, the output is written to :data:`sys.stderr`."
 msgstr "فهرستی از تاپل‌ها را که توسط :func:`extract_tb` یا :func:`extract_stack` برگردانده شده است، به‌صورت یک ردگیری پشته قالب‌بندی‌شده در پرونده داده‌شده چاپ می‌کند. اگر *file* برابر ``None`` باشد، خروجی در :data:`sys.stderr` نوشته می‌شود."
 
-msgid "Given a list of tuples or :class:`FrameSummary` objects as returned by :func:`extract_tb` or :func:`extract_stack`, return a list of strings ready for printing.  Each string in the resulting list corresponds to the item with the same index in the argument list.  Each string ends in a newline; the strings may contain internal newlines as well, for those items whose source text line is not ``None``."
+#, fuzzy
+#| msgid "Given a list of tuples or :class:`FrameSummary` objects as returned by :func:`extract_tb` or :func:`extract_stack`, return a list of strings ready for printing.  Each string in the resulting list corresponds to the item with the same index in the argument list.  Each string ends in a newline; the strings may contain internal newlines as well, for those items whose source text line is not ``None``."
+msgid "Given a list of :class:`FrameSummary` objects as returned by :func:`extract_tb` or :func:`extract_stack`, or a list of old-style tuples (see :meth:`StackSummary.from_list`), return a list of strings ready for printing.  Each string in the resulting list corresponds to the item with the same index in the argument list.  Each string ends in a newline; the strings may contain internal newlines as well, for those items whose source text line is not ``None``."
 msgstr "با دریافت فهرستی از تاپل‌ها یا اشیای :class:`FrameSummary` که توسط :func:`extract_tb` یا :func:`extract_stack` بازگردانده شده است، فهرستی از رشته‌ها را که برای چاپ آماده هستند، برمی‌گرداند. هر رشته در فهرست حاصل، با آیتم دارای همان اندیس در فهرست آرگومان متناظر است. هر رشته با یک خط جدید پایان می‌یابد؛ برای آن آیتم‌هایی که خط متن منبع آن‌ها ``None`` نیست، رشته‌ها ممکن است حاوی سطرهای جدید داخلی نیز باشند."
 
 msgid "Format the exception part of a traceback using an exception value such as given by :data:`sys.last_exc`.  The return value is a list of strings, each ending in a newline.  The list contains the exception's message, which is normally a single string; however, for :exc:`SyntaxError` exceptions, it contains several lines that (when printed) display detailed information about where the syntax error occurred. Following the message, the list contains the exception's :attr:`notes <BaseException.__notes__>`."
@@ -305,7 +309,9 @@ msgstr "شماره‌ی خط کد منبع برای این فریم ."
 msgid "Equivalent to accessing :attr:`f.f_code.co_name <codeobject.co_name>` on a :ref:`frame object <frame-objects>` *f*."
 msgstr "معادل با دسترسی به :attr:`f.f_code.co_name <codeobject.co_name>` روی یک :ref:`شیء فریم <frame-objects>` *f*."
 
-msgid "A string representing the source code for this frame, with leading and trailing whitespace stripped. If the source is not available, it is ``None``."
+#, fuzzy
+#| msgid "A string representing the source code for this frame, with leading and trailing whitespace stripped. If the source is not available, it is ``None``."
+msgid "The source line at :attr:`~FrameSummary.lineno`, with leading and trailing whitespace stripped. If the source is not available, it is ``None``."
 msgstr "رشته‌ای که کد منبع این فریم را نشان می‌دهد، که فضای سفید ابتدا و انتهای آن حذف شده است. اگر کد منبع در دسترس نباشد، مقدار آن ``None`` است."
 
 msgid "The last line number of the source code for this frame. By default, it is set to ``lineno`` and indexation starts from 1."
