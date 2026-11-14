@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 04:11+0000\n"
+"POT-Creation-Date: 2026-11-14 04:10+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -153,6 +153,9 @@ msgstr ":gh:`151773`: رفع فروپاشی در :func:`contextvars.ContextVar.s
 msgid "Library"
 msgstr "کتابخانه"
 
+msgid ":gh:`152845`: Fix :mod:`zipfile` dropping the UTF-8 (EFS) flag for existing entries when rewriting an archive in append mode, and honor an explicitly set flag on new entries. Patch by Kasra Ghodsi."
+msgstr ""
+
 msgid ":gh:`161712`: Fix :meth:`threading.Thread.join` with a timeout blocking forever when the deadline passed between the two reads of the clock used to compute the time left."
 msgstr ""
 
@@ -160,6 +163,9 @@ msgid ":gh:`161475`: Fix :mod:`ctypes` structures containing arrays of floating-
 msgstr ""
 
 msgid ":gh:`142782`: Fix a use-after-free in :class:`zoneinfo.ZoneInfo` when a key's ``__eq__`` clears the cache during a lookup. Strong cache keys are now compared by string contents."
+msgstr ""
+
+msgid ":gh:`161452`: Fix the :mod:`random` :ref:`command-line interface <random-cli>` printing a random float for a zero or negative integer input instead of failing like ``--integer`` does."
 msgstr ""
 
 msgid ":gh:`161415`: Remove ``FILES`` and ``unicode`` from the related help topics listed by :func:`help` for the ``TYPES`` and ``UNICODE`` topics. Neither exists in Python 3, so asking for help on them failed."
@@ -402,6 +408,9 @@ msgstr ""
 msgid "Tests"
 msgstr "آزمون‌ها"
 
+msgid ":gh:`161739`: ``test_hashlibtest_pbkdf2_hmac_c`` from ``test_haslib`` no longer fails with ``ValueError: [Provider routines] invalid salt length`` with FIPS enabled."
+msgstr ""
+
 msgid ":gh:`160334`: Fix the sampling profiler integration test for special frames without file and line information."
 msgstr ""
 
@@ -412,6 +421,9 @@ msgstr ""
 #| msgid ":gh:`127906`: Test the limited C API in test_cppext. Patch by Victor Stinner."
 msgid ":gh:`161430`: No longer list tests expected to be skipped in the final report. Patch by Victor Stinner."
 msgstr ":gh:`127906`: آزمون رابط برنامه‌نویسی کاربردی (API) محدود C در test_cppext. وصله توسط Victor Stinner."
+
+msgid ":gh:`161263`: Skip tests which use MD5 algorithm for WWW-Authenticate challenges when libssl is in FIPS mode."
+msgstr ""
 
 msgid ":gh:`158975`: Replace fixed sleeps used for synchronization in multiprocessing tests with bounded waits to avoid failures on slow or overloaded systems."
 msgstr ""
