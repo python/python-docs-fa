@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-06 04:12+0000\n"
+"POT-Creation-Date: 2026-11-15 04:10+0000\n"
 "PO-Revision-Date: 2026-09-13 16:54+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -407,8 +407,13 @@ msgstr "کد بدون عمل. توسط بهینه‌ساز بایت‌کد به�
 msgid "Do nothing code. Used by the interpreter to record :monitoring-event:`BRANCH_LEFT` and :monitoring-event:`BRANCH_RIGHT` events for :mod:`sys.monitoring`."
 msgstr "کد بدون عمل. توسط مفسر برای ثبت رویدادهای :monitoring-event:`BRANCH_LEFT` و :monitoring-event:`BRANCH_RIGHT` برای :mod:`sys.monitoring` استفاده می‌شود."
 
-msgid "Removes the iterator from the top of the stack."
+#, fuzzy
+#| msgid "Removes the iterator from the top of the stack."
+msgid "Removes the iterator and the value pushed with it by :opcode:`GET_ITER` from the top of the stack."
 msgstr "پیمایش‌گر را از بالای پشته حذف می‌کند."
+
+msgid "Two values are now removed."
+msgstr ""
 
 msgid "Removes the top-of-stack item::"
 msgstr "آیتم بالای پشته را حذف می‌کند::"
@@ -419,8 +424,13 @@ msgstr "STACK.pop()"
 msgid "Removes the top-of-stack item. Equivalent to ``POP_TOP``. Used to clean up at the end of loops, hence the name."
 msgstr "آیتم بالای پشته را حذف می‌کند. معادل ``POP_TOP`` است. برای پاک‌سازی در پایان حلقه‌ها استفاده می‌شود، به همین دلیل این نام را دارد."
 
-msgid "Implements ``del STACK[-2]``. Used to clean up when a generator exits."
+#, fuzzy
+#| msgid "Implements ``del STACK[-2]``. Used to clean up when a generator exits."
+msgid "Implements ``del STACK[-3:-1]``. Used to clean up when a generator exits."
 msgstr "``del STACK[-2]`` را پیاده‌سازی می‌کند. برای پاک‌سازی هنگام خروج یک تولیدگر استفاده می‌شود."
+
+msgid "The receiver and the value pushed with it by :opcode:`GET_ITER` are removed, instead of only the receiver."
+msgstr ""
 
 msgid "Push the i-th item to the top of the stack without removing it from its original location::"
 msgstr "آیتم iاُم را بدون حذف آن از محل اصلی‌اش، در بالای پشته قرار می‌دهد::"
@@ -465,11 +475,17 @@ msgstr "این دستور اکنون به عملوندی دقیقاً از نو�
 msgid "Implements ``STACK[-1] = ~STACK[-1]``."
 msgstr "``STACK[-1] = ~STACK[-1]`` را پیاده‌سازی می‌کند."
 
-msgid "Implements ``STACK[-1] = iter(STACK[-1])``."
-msgstr "``STACK[-1] = iter(STACK[-1])`` را پیاده‌سازی می‌کند."
+msgid "Replaces ``STACK[-1]`` with an iterator for it and pushes a second value, which is used by :opcode:`FOR_ITER`, :opcode:`SEND` and :opcode:`POP_ITER`."
+msgstr ""
 
-msgid "If ``STACK[-1]`` is a :term:`generator iterator` or :term:`coroutine` object it is left as is.  Otherwise, implements ``STACK[-1] = iter(STACK[-1])``."
-msgstr "اگر ``STACK[-1]`` یک شیء :term:`generator iterator` یا :term:`هم‌روال <coroutine>` باشد، به همان صورت باقی می‌ماند. در غیر این صورت، ``STACK[-1] = iter(STACK[-1])`` را پیاده‌سازی می‌کند."
+msgid "For some built-in sequence types, such as :class:`list` and :class:`tuple`, the object itself is left on the stack as a \"virtual iterator\" and the index to start iterating from is pushed.  Otherwise, implements ``STACK[-1] = iter(STACK[-1])`` and pushes ``NULL``."
+msgstr ""
+
+msgid "If *yield_from* is non-zero, the instruction is used for ``yield from``: a :term:`coroutine` object is left as is, unless the current code is a regular generator, in which case :exc:`TypeError` is raised."
+msgstr ""
+
+msgid "A second value is now pushed after the iterator.  The *yield_from* argument was added, replacing the ``GET_YIELD_FROM_ITER`` instruction."
+msgstr ""
 
 msgid "Implements ``STACK[-1] = bool(STACK[-1])``."
 msgstr "``STACK[-1] = bool(STACK[-1])`` را پیاده‌سازی می‌کند."
@@ -947,11 +963,16 @@ msgstr "اگر ``STACK[-1]`` برابر ``None`` نباشد، شمارنده ب�
 msgid "If ``STACK[-1]`` is ``None``, increments the bytecode counter by *delta*. ``STACK[-1]`` is popped."
 msgstr "اگر ``STACK[-1]`` برابر ``None`` باشد، شمارنده بایت‌کد را به اندازه *delta* افزایش می‌دهد. ``STACK[-1]`` برداشته می‌شود."
 
-msgid "``STACK[-1]`` is an :term:`iterator`.  Call its :meth:`~iterator.__next__` method. If this yields a new value, push it on the stack (leaving the iterator below it).  If the iterator indicates it is :term:`exhausted` then the byte code counter is incremented by *delta*."
+#, fuzzy
+#| msgid "``STACK[-1]`` is an :term:`iterator`.  Call its :meth:`~iterator.__next__` method. If this yields a new value, push it on the stack (leaving the iterator below it).  If the iterator indicates it is :term:`exhausted` then the byte code counter is incremented by *delta*."
+msgid "``STACK[-2]`` is an :term:`iterator` (or a virtual iterator, see :opcode:`GET_ITER`) and ``STACK[-1]`` is the value pushed with it by :opcode:`GET_ITER`.  Get the next item, calling the iterator's :meth:`~iterator.__next__` method if needed. If this yields a new value, push it on the stack (leaving the iterator below it).  If the iterator indicates it is :term:`exhausted` then the byte code counter is incremented by *delta*."
 msgstr "``STACK[-1]`` یک :term:`پیمایش‌گر <iterator>` است.  متد :meth:`~iterator.__next__` آن را فراخوانی کنید. اگر این یک مقدار جدید تولید کرد، آن را در پشته قرار دهید (و پیمایش‌گر زیر آن باقی می‌ماند).  اگر پیمایش‌گر نشان دهد که :term:`اتمام‌یافته <exhausted>` شده است، شمارنده بایت‌کد به اندازه *delta* افزایش می‌یابد."
 
 msgid "Up until 3.11 the iterator was popped when it was exhausted."
 msgstr "تا پیش از 3.11، پیمایش‌گر هنگامی که به پایان می‌رسید، از پشته برداشته می‌شد."
+
+msgid "The iterator is now followed on the stack by the value pushed with it by :opcode:`GET_ITER`."
+msgstr ""
 
 msgid "Loads the global named ``co_names[namei>>1]`` onto the stack. If the low bit of ``namei`` is set, a ``NULL`` is pushed onto the stack after the global variable."
 msgstr "متغیر سراسری نام‌گذاری‌شده‌ی ``co_names[namei>>1]`` را روی پشته بارگذاری می‌کند. اگر بیت کم‌ارزش ``namei`` تنظیم شده باشد، یک ``NULL`` پس از متغیر سراسری روی پشته قرار می‌گیرد."
@@ -1221,11 +1242,14 @@ msgstr "مقدار oparg تغییر کرد تا شامل اطلاعاتی درب
 msgid "Create a generator, coroutine, or async generator from the current frame. Used as first opcode of in code object for the above mentioned callables. Clear the current frame and return the newly created generator."
 msgstr "یک تولیدگر، هم‌روال یا تولیدگر ناهمگام از فریم جاری ایجاد می‌کند. به‌عنوان نخستین کد عملیات (opcode) در شیء کد برای موارد فراخوانی‌پذیر ذکرشده در بالا استفاده می‌شود. فریم جاری را پاک می‌کند و تولیدگر تازه‌ساخته را برمی‌گرداند."
 
-msgid "Equivalent to ``STACK[-1] = STACK[-2].send(STACK[-1])``. Used in ``yield from`` and ``await`` statements."
-msgstr "معادل ``STACK[-1] = STACK[-2].send(STACK[-1])`` است. در دستورات ``yield from`` و ``await`` استفاده می‌شود."
+msgid "Equivalent to ``STACK[-1] = STACK[-3].send(STACK[-1])``. Used in ``yield from`` and ``await`` statements.  ``STACK[-2]`` is the value pushed with the receiver by :opcode:`GET_ITER`; if the receiver is a virtual iterator, it is advanced as by :opcode:`FOR_ITER`."
+msgstr ""
 
 msgid "If the call raises :exc:`StopIteration`, pop the top value from the stack, push the exception's ``value`` attribute, and increment the bytecode counter by *delta*."
 msgstr "اگر فراخوانی :exc:`StopIteration` را پرتاب کند، مقدار سر پشته را بردارید، ویژگی ``value`` استثنا را بر پشته بگذارید و شمارنده بایت‌کد را به اندازه‌ی *delta* افزایش دهید."
+
+msgid "The receiver is now at ``STACK[-3]``, followed by the value pushed with it by :opcode:`GET_ITER`."
+msgstr ""
 
 msgid "This is not really an opcode.  It identifies the dividing line between opcodes in the range [0,255] which don't use their argument and those that do (``< HAVE_ARGUMENT`` and ``>= HAVE_ARGUMENT``, respectively)."
 msgstr "این واقعاً یک آپ‌کد (opcode) نیست. این خط جداکننده‌ی میان آپ‌کدها در بازه‌ی [۰،۲۵۵] را مشخص می‌کند: میان کدهایی که از آرگومان خود استفاده نمی‌کنند و کدهایی که استفاده می‌کنند (به‌ترتیب ``< HAVE_ARGUMENT`` و ``>= HAVE_ARGUMENT``)."
@@ -1465,6 +1489,15 @@ msgstr "تابع توکار"
 
 msgid "slice"
 msgstr "اسلایس"
+
+#~ msgid "Implements ``STACK[-1] = iter(STACK[-1])``."
+#~ msgstr "``STACK[-1] = iter(STACK[-1])`` را پیاده‌سازی می‌کند."
+
+#~ msgid "If ``STACK[-1]`` is a :term:`generator iterator` or :term:`coroutine` object it is left as is.  Otherwise, implements ``STACK[-1] = iter(STACK[-1])``."
+#~ msgstr "اگر ``STACK[-1]`` یک شیء :term:`generator iterator` یا :term:`هم‌روال <coroutine>` باشد، به همان صورت باقی می‌ماند. در غیر این صورت، ``STACK[-1] = iter(STACK[-1])`` را پیاده‌سازی می‌کند."
+
+#~ msgid "Equivalent to ``STACK[-1] = STACK[-2].send(STACK[-1])``. Used in ``yield from`` and ``await`` statements."
+#~ msgstr "معادل ``STACK[-1] = STACK[-2].send(STACK[-1])`` است. در دستورات ``yield from`` و ``await`` استفاده می‌شود."
 
 #~ msgid "Loads the global named ``co_names[namei>>1]`` onto the stack."
 #~ msgstr "متغیر سراسری با نام ``co_names[namei>>1]`` را بر روی پشته بارگذاری می‌کند."

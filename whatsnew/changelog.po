@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-14 04:10+0000\n"
+"POT-Creation-Date: 2026-11-15 04:10+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -70,6 +70,9 @@ msgstr ":gh:`143008`: اصلاح شرایط رقابت هنگام مقدارده
 
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
+
+msgid ":gh:`161968`: Fix ``x *= seq`` raising :exc:`TypeError` when ``x`` is an instance of an :class:`int` subclass or of a class defining :meth:`~object.__index__`."
+msgstr ""
 
 msgid ":gh:`161827`: Keep ``_PyEval_EvalFrameDefault`` as a separate frame in the C call stack when Python is built with the tail-calling interpreter (:option:`--with-tail-call-interp`), so that stack unwinders, profilers and other tools that walk the stack can find the interpreter loop."
 msgstr ""
@@ -154,6 +157,9 @@ msgid "Library"
 msgstr "کتابخانه"
 
 msgid ":gh:`152845`: Fix :mod:`zipfile` dropping the UTF-8 (EFS) flag for existing entries when rewriting an archive in append mode, and honor an explicitly set flag on new entries. Patch by Kasra Ghodsi."
+msgstr ""
+
+msgid ":gh:`135893`: Fix a regression where importing :mod:`ctypes` could leave an extra file descriptor open on some Linux systems, or hang in x86-64 macOS applications signed with the hardened runtime."
 msgstr ""
 
 msgid ":gh:`161712`: Fix :meth:`threading.Thread.join` with a timeout blocking forever when the deadline passed between the two reads of the clock used to compute the time left."
@@ -354,15 +360,15 @@ msgstr ""
 msgid ":gh:`159168`: Fix :exc:`RecursionError` in ``python -m asyncio pstree`` on a deep chain of awaiting tasks. Patch by Timofei Ivankov."
 msgstr ":gh:`159620`: رفع دستورات ``python -m asyncio ps``، ``pstree`` و پشته‌های :mod:`profiling.sampling` آگاه از ناهمگامی که در تولیدگرهای ناهمگام متوقف می‌شوند. پچ توسط Timofei Ivankov."
 
-msgid ":gh:`88037`: :func:`urllib.parse.urlsplit` and :func:`urllib.parse.urlparse` now raise :exc:`ValueError` for an invalid port when the URL is parsed, instead of when the :attr:`!port` attribute is read. Patch by Miguel Brito and Senthil Kumaran."
-msgstr ""
-
 #, fuzzy
 #| msgid ":issue:`18108`: :func:`shutil.chown` now supports *dir_fd* and *follow_symlinks* keyword arguments."
 msgid ":gh:`158998`: Fix :func:`os.statx` ignoring the *follow_symlinks* argument."
 msgstr ":issue:`18108`: تابع :func:`shutil.chown` اکنون از آرگومان‌های کلیدواژه‌ای *dir_fd* و *follow_symlinks* پشتیبانی می‌کند."
 
 msgid ":gh:`155233`: Fix :meth:`asyncio.Barrier.wait` returning duplicate indices when a waiting task is cancelled before the barrier is released.```"
+msgstr ""
+
+msgid ":gh:`158166`: Fix the type of the ``msg`` attribute of :exc:`xml.etree.ElementTree.ParseError` in the pure Python implementation: it is now a string, as in the C implementation."
 msgstr ""
 
 #, fuzzy

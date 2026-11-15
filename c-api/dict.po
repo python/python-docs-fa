@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-22 04:16+0000\n"
+"POT-Creation-Date: 2026-11-15 04:10+0000\n"
 "PO-Revision-Date: 2026-10-06 20:44+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -269,8 +269,14 @@ msgstr "بر روی شیء نگاشت *b* پیمایش می‌کند و جفت�
 msgid "In the :term:`free-threaded build`, when *b* is a :class:`dict` (with the standard iterator), both *a* and *b* are locked for the duration of the operation. When *b* is a non-dict mapping, only *a* is locked; *b* may be concurrently modified by another thread."
 msgstr "در :term:`free-threaded build`، وقتی *b* یک :class:`dict` (با پیمایش‌گر استاندارد) باشد، هر دو *a* و *b* در طول عملیات قفل می‌شوند. وقتی *b* یک نگاشت غیردیکشنری باشد، فقط *a* قفل می‌شود؛ *b* ممکن است توسط نخ دیگری به‌طور هم‌زمان تغییر یابد."
 
-msgid "This is the same as ``PyDict_Merge(a, b, 1)`` in C, and is similar to ``a.update(b)`` in Python except that :c:func:`PyDict_Update` doesn't fall back to the iterating over a sequence of key value pairs if the second argument has no \"keys\" attribute.  Return ``0`` on success or ``-1`` if an exception was raised."
-msgstr "این همان ``PyDict_Merge(a, b, 1)`` در C است و مشابه ``a.update(b)`` در پایتون است، با این تفاوت که :c:func:`PyDict_Update` در صورتی که آرگومان دوم ویژگی «keys» نداشته باشد، به پیمایش دنباله‌ای از جفت‌های کلید-مقدار بازنمی‌گردد. در صورت موفقیت ``0`` و در صورت بروز استثنا ``-1`` را برمی‌گرداند."
+msgid "This is the same as ``PyDict_Merge(a, b, 1)`` in C."
+msgstr ""
+
+msgid "Similar to ``a.update(b)`` in Python, except that this function does not fall back to the iterating over a sequence of key-value pairs if *b* is not a mapping. Use :c:func:`PyDict_MergeFromSeq2` for this case."
+msgstr ""
+
+msgid "Return ``0`` on success or ``-1`` if an exception was raised."
+msgstr ""
 
 msgid "Update or merge into dictionary *a*, from the key-value pairs in *seq2*. *seq2* must be an iterable object producing iterable objects of length 2, viewed as key-value pairs.  In case of duplicate keys, the last wins if *override* is true, else the first wins. Return ``0`` on success or ``-1`` if an exception was raised. Equivalent Python (except for the return value)::"
 msgstr "به‌روزرسانی یا ادغام در دیکشنری *a*، از جفت‌های کلید-مقدار در *seq2*. *seq2* باید یک شیء پیمایش‌پذیر باشد که اشیاء پیمایش‌پذیر با طول ۲ تولید می‌کند که به‌عنوان جفت‌های کلید-مقدار در نظر گرفته می‌شوند. در صورت وجود کلیدهای تکراری، اگر *override* درست باشد آخری برنده می‌شود، در غیر این صورت اولی برنده می‌شود. در صورت موفقیت ``0`` و در صورت پرتاب استثنا ``-1`` برمی‌گرداند. معادل پایتونی (به‌جز مقدار بازگشتی)::"
@@ -462,3 +468,6 @@ msgstr "تابع توکار"
 
 msgid "len"
 msgstr "len"
+
+#~ msgid "This is the same as ``PyDict_Merge(a, b, 1)`` in C, and is similar to ``a.update(b)`` in Python except that :c:func:`PyDict_Update` doesn't fall back to the iterating over a sequence of key value pairs if the second argument has no \"keys\" attribute.  Return ``0`` on success or ``-1`` if an exception was raised."
+#~ msgstr "این همان ``PyDict_Merge(a, b, 1)`` در C است و مشابه ``a.update(b)`` در پایتون است، با این تفاوت که :c:func:`PyDict_Update` در صورتی که آرگومان دوم ویژگی «keys» نداشته باشد، به پیمایش دنباله‌ای از جفت‌های کلید-مقدار بازنمی‌گردد. در صورت موفقیت ``0`` و در صورت بروز استثنا ``-1`` را برمی‌گرداند."
