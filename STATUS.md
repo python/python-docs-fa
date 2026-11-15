@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-14)
+(به‌روزرسانی: 2026-11-15)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -24,7 +24,6 @@
 | c-api/coro.po | 100.0% | 0.0% | 6 | 0 | 0 |
 | c-api/curses.po | 100.0% | 0.0% | 28 | 0 | 0 |
 | c-api/descriptor.po | 100.0% | 0.0% | 39 | 0 | 0 |
-| c-api/dict.po | 100.0% | 0.0% | 124 | 0 | 0 |
 | c-api/file.po | 100.0% | 0.0% | 36 | 0 | 0 |
 | c-api/float.po | 100.0% | 0.0% | 55 | 0 | 0 |
 | c-api/frame.po | 100.0% | 0.0% | 59 | 0 | 0 |
@@ -410,7 +409,6 @@
 | library/zipfile.po | 99.5% | 0.5% | 215 | 1 | 0 |
 | library/select.po | 99.5% | 0.5% | 211 | 1 | 0 |
 | whatsnew/2.6.po | 99.5% | 0.5% | 623 | 3 | 0 |
-| library/dis.po | 99.5% | 0.5% | 412 | 2 | 0 |
 | library/shutil.po | 99.5% | 0.0% | 195 | 0 | 1 |
 | whatsnew/3.2.po | 99.5% | 0.5% | 573 | 3 | 0 |
 | whatsnew/3.7.po | 99.5% | 0.5% | 565 | 3 | 0 |
@@ -461,8 +459,8 @@
 | library/zlib.po | 99.0% | 1.0% | 102 | 1 | 0 |
 | library/unicodedata.po | 99.0% | 1.0% | 99 | 1 | 0 |
 | howto/urllib2.po | 99.0% | 0.0% | 98 | 0 | 1 |
-| whatsnew/changelog.po | 99.0% | 0.2% | 15726 | 39 | 122 |
 | builtins/stdtypes.po | 99.0% | 1.0% | 1643 | 16 | 1 |
+| whatsnew/changelog.po | 99.0% | 0.2% | 15726 | 39 | 124 |
 | tutorial/errors.po | 99.0% | 1.0% | 95 | 1 | 0 |
 | using/mac.po | 99.0% | 1.0% | 95 | 1 | 0 |
 | c-api/long.po | 98.9% | 0.5% | 181 | 1 | 1 |
@@ -507,6 +505,7 @@
 | c-api/slots.po | 97.8% | 2.2% | 44 | 1 | 0 |
 | c-api/init_config.po | 97.8% | 1.5% | 654 | 10 | 5 |
 | library/email.charset.po | 97.7% | 2.3% | 43 | 1 | 0 |
+| c-api/dict.po | 97.6% | 0.0% | 123 | 0 | 3 |
 | extending/extending.po | 97.6% | 1.8% | 162 | 3 | 1 |
 | library/ctypes.po | 97.6% | 2.0% | 763 | 16 | 3 |
 | library/calendar.po | 97.6% | 2.4% | 120 | 3 | 0 |
@@ -522,6 +521,7 @@
 | howto/instrumentation.po | 96.9% | 3.1% | 93 | 3 | 0 |
 | library/concurrent.futures.po | 96.8% | 0.8% | 120 | 1 | 3 |
 | c-api/codec.po | 96.7% | 3.3% | 29 | 1 | 0 |
+| library/dis.po | 96.7% | 1.2% | 406 | 5 | 9 |
 | library/mmap.po | 96.4% | 3.6% | 81 | 3 | 0 |
 | c-api/code.po | 96.4% | 3.6% | 80 | 3 | 0 |
 | library/cmd.po | 96.1% | 2.0% | 49 | 1 | 1 |
@@ -558,5 +558,5 @@
 | library/cgi.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/cgitb.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **99.0%** | **0.6%** | **90235** | **586** | **297** |
+| **مجموع** | **99.0%** | **0.6%** | **90228** | **589** | **311** |
 <!-- TRANSLATION_STATUS_END -->
