@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-15 04:10+0000\n"
+"POT-Creation-Date: 2026-11-16 04:12+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -71,6 +71,9 @@ msgstr ":gh:`143008`: اصلاح شرایط رقابت هنگام مقدارده
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
 
+msgid ":gh:`161849`: Fix a crash and a :exc:`SystemError` when compiling a class whose body binds ``__classdict__`` (for example ``__classdict__ = 1`` or ``global __classdict__``) and also contains an annotated function, a generic class or function, or a generic type alias."
+msgstr ""
+
 msgid ":gh:`161968`: Fix ``x *= seq`` raising :exc:`TypeError` when ``x`` is an instance of an :class:`int` subclass or of a class defining :meth:`~object.__index__`."
 msgstr ""
 
@@ -84,6 +87,9 @@ msgid ":gh:`161693`: Fix a crash in :meth:`dict.setdefault` when called on an in
 msgstr ""
 
 msgid ":gh:`161420`: Restore ``mimalloc``'s previous behavior of processing delayed frees from other threads on every generic malloc call, reverting the change introduced in v2.2.2."
+msgstr ""
+
+msgid ":gh:`161366`: Fix a deadlock in the garbage collector of the :term:`free-threaded build` when :data:`gc.DEBUG_COLLECTABLE` is set and another thread is writing to :data:`sys.stderr`. The debug output is now written after the other threads are resumed."
 msgstr ""
 
 #, fuzzy
@@ -104,6 +110,11 @@ msgstr ""
 
 msgid ":gh:`160773`: Fix a crash in :func:`str` of an :exc:`OSError` when formatting one of its attributes modifies the others."
 msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`145615`: Fixed a memory leak in the :term:`free-threaded build` where mimalloc pages could become permanently unreclaimable until the owning thread exited."
+msgid ":gh:`160682`: Fix a bug in the :term:`free-threaded build` where garbage collection could prematurely collect the function object of a running method."
+msgstr ":gh:`145615`: رفع یک نشتی حافظه در :term:`ساخت نخ‌آزاد <free-threaded build>` که در آن صفحات mimalloc ممکن بود تا زمان خروج نخ مالک، به طور دائم غیرقابل بازیابی بمانند."
 
 msgid ":gh:`112564`: Fix a crash in the garbage collector when :data:`gc.DEBUG_COLLECTABLE` or :data:`gc.DEBUG_UNCOLLECTABLE` is set and writing the debug output to :data:`sys.stderr` frees one of the objects being reported. Object addresses in this output now use the same ``0x``-prefixed lowercase format on all platforms, including Windows."
 msgstr ""
@@ -132,6 +143,9 @@ msgstr ""
 msgid ":gh:`158529`: Fixed crash on Android x86_64, API levels 27-28, caused by mimalloc calling system calls directly."
 msgstr ""
 
+msgid ":gh:`156310`: Fix memory safety issues in the :func:`iter` fallback for objects that implement :meth:`~object.__getitem__` without :meth:`~object.__iter__` (``PySeqIter_Type``).  Sharing an iterator between threads in the free-threaded build could use the underlying sequence after it was freed, and re-entrant exhaustion in the default build could decrement the sequence's reference count twice.  Concurrent iteration may still see duplicate or missing items, but it no longer corrupts the interpreter state."
+msgstr ""
+
 #, fuzzy
 #| msgid ":gh:`151126`: Fix crash on unset :exc:`MemoryError` on allocation failure in :func:`ctypes.get_errno`."
 msgid ":gh:`151126`: Fix a crash when allocation failure occurs during :ref:`interp-object-sharing`."
@@ -143,6 +157,9 @@ msgid ":gh:`152125`: Fix a crash in the :term:`free-threaded build` where :c:fun
 msgstr ":gh:`145615`: رفع یک نشتی حافظه در :term:`ساخت نخ‌آزاد <free-threaded build>` که در آن صفحات mimalloc ممکن بود تا زمان خروج نخ مالک، به طور دائم غیرقابل بازیابی بمانند."
 
 msgid ":gh:`152631`: Fix :func:`ast.parse` ability to parse lazy imports with *feature_version* older than 3.15, now it properly raises :exc:`SyntaxError`."
+msgstr ""
+
+msgid ":gh:`152254`: Fix a crash during the clean up of managed dict objects under a memory pressure in :c:func:`PyObject_ClearManagedDict`."
 msgstr ""
 
 msgid ":gh:`151060`: Fix a crash or memory corruption in :func:`sum` when summing a :class:`float` subclass instance into a complex running total."
@@ -208,6 +225,11 @@ msgstr ""
 #, fuzzy
 #| msgid ":gh:`97725`: Fix :meth:`asyncio.Task.print_stack` description for ``file=None``. Patch by Oleg Iarygin."
 msgid ":gh:`161166`: Fix :meth:`asyncio.Task.print_stack` displaying an incorrect exception line after a ``finally`` block. Patch by Timofei Ivankov."
+msgstr ":gh:`97725`: رفع توضیحات :meth:`asyncio.Task.print_stack` برای ``file=None``. وصله توسط Oleg Iarygin."
+
+#, fuzzy
+#| msgid ":gh:`97725`: Fix :meth:`asyncio.Task.print_stack` description for ``file=None``. Patch by Oleg Iarygin."
+msgid ":gh:`161124`: Fix :func:`asyncio.print_call_graph` reporting event loop frames when *depth* exceeds the task stack. Patch by Timofei Ivankov."
 msgstr ":gh:`97725`: رفع توضیحات :meth:`asyncio.Task.print_stack` برای ``file=None``. وصله توسط Oleg Iarygin."
 
 msgid ":gh:`161060`: Fix a crash in :mod:`xml.parsers.expat` when a handler raises an exception, or the :meth:`~xml.parsers.expat.xmlparser.DefaultHandler` or :meth:`~xml.parsers.expat.xmlparser.DefaultHandlerExpand` handler is unset, while a token longer than 1024 bytes, such as a comment, is being reported to the default handler from a document that is not encoded in UTF-8."
@@ -371,6 +393,9 @@ msgstr ""
 msgid ":gh:`158166`: Fix the type of the ``msg`` attribute of :exc:`xml.etree.ElementTree.ParseError` in the pure Python implementation: it is now a string, as in the C implementation."
 msgstr ""
 
+msgid ":gh:`158159`: Fix a use-after-free in :meth:`asyncio.Task.get_name` when formatting the default task name triggers a garbage collection whose finalizers call :meth:`~asyncio.Task.get_name` on the same task."
+msgstr ""
+
 #, fuzzy
 #| msgid ":gh:`120244`: Fix memory leak in :func:`re.sub` when the replacement string contains backreferences."
 msgid ":gh:`158095`: Fix a memory leak in :func:`re.finditer` and regular expression scanners when their input participates in a reference cycle."
@@ -464,6 +489,9 @@ msgid ":gh:`161735`: Updated bundled version of ``zlib-ng`` to v2.2.5."
 msgstr ":gh:`151159`: به‌روزرسانی نسخه‌ی بسته‌بندی‌شده‌ی OpenSSL به ۳.۵.۷."
 
 msgid ":gh:`159118`: Fix a crash (``RPC_NT_INTERNAL_ERROR``) and intermittent window class failures in :mod:`!_wmi` under high concurrency and load by initializing COM as multi-threaded (MTA) instead of apartment-threaded (STA)."
+msgstr ""
+
+msgid ":gh:`157917`: Fix :attr:`sys.prefix`, :attr:`sys.exec_prefix` and :attr:`sys.executable` retaining the ``\\\\?\\`` extended-length path prefix in a virtual environment when the interpreter is invoked through such a path on Windows.  The venv launcher reports its own path through ``GetModuleFileNameW``, which preserves the prefix, and that value was used verbatim.  Windows does not resolve relative path components in extended-length paths, so the leaked prefix made tools that join ``..`` components onto :mod:`sysconfig` paths fail with ``OSError: [Errno 22]``. The prefix is now stripped again, except for paths that are still too long to be used without it."
 msgstr ""
 
 msgid ":gh:`140774`: Fix :func:`os.chmod` with ``follow_symlinks=True``, :func:`os.fchmod` and :meth:`pathlib.Path.chmod` on Windows: clearing the read-only attribute of a file which has no other attribute set is no longer silently ignored."
