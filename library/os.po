@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 04:10+0000\n"
+"POT-Creation-Date: 2026-11-18 04:10+0000\n"
 "PO-Revision-Date: 2026-10-17 07:54+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -3488,7 +3488,12 @@ msgstr "این تابع بایت‌های تصادفی را از یک منبع �
 msgid "On Linux, if the ``getrandom()`` syscall is available, it is used in blocking mode: block until the system urandom entropy pool is initialized (128 bits of entropy are collected by the kernel). See the :pep:`524` for the rationale. On Linux, the :func:`getrandom` function can be used to get random bytes in non-blocking mode (using the :data:`GRND_NONBLOCK` flag) or to poll until the system urandom entropy pool is initialized."
 msgstr "در لینوکس، اگر فراخوانی سیستمی ``getrandom()`` در دسترس باشد، در حالت مسدودکننده استفاده می‌شود: تا زمانی مسدود می‌ماند که استخر آنتروپی urandom سیستم مقداردهی اولیه شده باشد (۱۲۸ بیت آنتروپی توسط کرنل جمع‌آوری شده باشد). برای دیدن دلایل، :pep:`524` را ببینید. در لینوکس، می‌توان از تابع :func:`getrandom` برای دریافت بایت‌های تصادفی در حالت غیرمسدودکننده (با استفاده از پرچم :data:`GRND_NONBLOCK`) یا برای پایش تا زمان مقداردهی اولیه‌ی استخر آنتروپی urandom سیستم استفاده کرد."
 
-msgid "On a Unix-like system, random bytes are read from the ``/dev/urandom`` device. If the ``/dev/urandom`` device is not available or not readable, the :exc:`NotImplementedError` exception is raised."
+msgid "On other Unix-like systems, the C ``getrandom()`` function is used if it is available, otherwise the C ``getentropy()`` function."
+msgstr ""
+
+#, fuzzy
+#| msgid "On a Unix-like system, random bytes are read from the ``/dev/urandom`` device. If the ``/dev/urandom`` device is not available or not readable, the :exc:`NotImplementedError` exception is raised."
+msgid "If none of these functions can be used, random bytes are read from the ``/dev/urandom`` device. If the ``/dev/urandom`` device is not available or not readable, the :exc:`NotImplementedError` exception is raised."
 msgstr "در سیستم‌های شبه‌یونیکس، بایت‌های تصادفی از دستگاه ``/dev/urandom`` خوانده می‌شوند. اگر دستگاه ``/dev/urandom`` در دسترس نباشد یا قابل خواندن نباشد، استثنای :exc:`NotImplementedError` پرتاب می‌شود."
 
 msgid "On Windows, it will use ``BCryptGenRandom()``."

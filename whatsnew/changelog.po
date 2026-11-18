@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-17 04:11+0000\n"
+"POT-Creation-Date: 2026-11-18 04:10+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -450,6 +450,9 @@ msgstr ""
 msgid "Tests"
 msgstr "آزمون‌ها"
 
+msgid ":gh:`162144`: Skip ``@support.nomemtest`` tests when using a thread sanitizer (TSan). ``set_nomemory()`` and ``call_with_nomemory()`` functions of the :mod:`!_testcapi` extension are not thread safe. Patch by Victor Stinner."
+msgstr ""
+
 #, fuzzy
 #| msgid ":gh:`141442`: The iOS testbed now correctly handles test arguments that contain spaces."
 msgid ":gh:`162034`: The Apple testbed projects now build when the path of the project contains a space."
@@ -481,6 +484,9 @@ msgstr ""
 msgid "Build"
 msgstr "ساخت"
 
+msgid ":gh:`162170`: ``make install`` now depends on the ``all`` target, so running it directly after ``./configure --enable-optimizations`` installs the PGO-optimized interpreter rather than an unoptimized build."
+msgstr ""
+
 msgid ":gh:`160924`: Fix cross-compilation failures with ``--enable-shared`` caused by the build Python loading the target's ``libpython`` through the shared-library search path (such as musl from glibc)."
 msgstr ""
 
@@ -505,6 +511,9 @@ msgid ":gh:`161735`: Updated bundled version of ``zlib-ng`` to v2.2.5."
 msgstr ":gh:`151159`: به‌روزرسانی نسخه‌ی بسته‌بندی‌شده‌ی OpenSSL به ۳.۵.۷."
 
 msgid ":gh:`159118`: Fix a crash (``RPC_NT_INTERNAL_ERROR``) and intermittent window class failures in :mod:`!_wmi` under high concurrency and load by initializing COM as multi-threaded (MTA) instead of apartment-threaded (STA)."
+msgstr ""
+
+msgid ":gh:`158414`: Fix a hang when writing an incomplete UTF-8 sequence to the Windows console."
 msgstr ""
 
 msgid ":gh:`157917`: Fix :attr:`sys.prefix`, :attr:`sys.exec_prefix` and :attr:`sys.executable` retaining the ``\\\\?\\`` extended-length path prefix in a virtual environment when the interpreter is invoked through such a path on Windows.  The venv launcher reports its own path through ``GetModuleFileNameW``, which preserves the prefix, and that value was used verbatim.  Windows does not resolve relative path components in extended-length paths, so the leaked prefix made tools that join ``..`` components onto :mod:`sysconfig` paths fail with ``OSError: [Errno 22]``. The prefix is now stripped again, except for paths that are still too long to be used without it."
