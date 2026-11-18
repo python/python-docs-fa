@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-17)
+(به‌روزرسانی: 2026-11-18)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -421,7 +421,6 @@
 | whatsnew/3.8.po | 99.4% | 0.6% | 510 | 3 | 0 |
 | faq/programming.po | 99.4% | 0.4% | 500 | 2 | 1 |
 | library/locale.po | 99.4% | 0.6% | 165 | 1 | 0 |
-| library/os.po | 99.4% | 0.6% | 1129 | 7 | 0 |
 | c-api/object.po | 99.4% | 0.6% | 160 | 1 | 0 |
 | library/http.cookiejar.po | 99.4% | 0.6% | 158 | 1 | 0 |
 | library/annotationlib.po | 99.4% | 0.6% | 157 | 1 | 0 |
@@ -438,6 +437,7 @@
 | reference/expressions.po | 99.2% | 0.8% | 646 | 5 | 0 |
 | whatsnew/3.11.po | 99.2% | 0.8% | 770 | 6 | 0 |
 | whatsnew/2.3.po | 99.2% | 0.8% | 384 | 3 | 0 |
+| library/os.po | 99.2% | 0.7% | 1128 | 8 | 1 |
 | glossary.po | 99.2% | 0.4% | 499 | 2 | 2 |
 | c-api/buffer.po | 99.2% | 0.0% | 119 | 0 | 1 |
 | howto/mro.po | 99.2% | 0.8% | 119 | 1 | 0 |
@@ -463,8 +463,8 @@
 | c-api/long.po | 98.9% | 0.5% | 181 | 1 | 1 |
 | library/json.po | 98.9% | 1.1% | 181 | 2 | 0 |
 | using/ios.po | 98.9% | 1.1% | 90 | 1 | 0 |
-| whatsnew/changelog.po | 98.9% | 0.3% | 15726 | 43 | 132 |
 | library/pdb.po | 98.9% | 1.1% | 177 | 2 | 0 |
+| whatsnew/changelog.po | 98.9% | 0.3% | 15726 | 43 | 135 |
 | library/binascii.po | 98.9% | 1.1% | 88 | 1 | 0 |
 | library/optparse.po | 98.9% | 1.1% | 526 | 6 | 0 |
 | c-api/import.po | 98.8% | 1.2% | 85 | 1 | 0 |
@@ -540,7 +540,6 @@
 | c-api/function.po | 93.6% | 2.1% | 44 | 1 | 2 |
 | library/multiprocessing.shared_memory.po | 92.9% | 7.1% | 52 | 4 | 0 |
 | library/email.generator.po | 92.7% | 7.3% | 38 | 3 | 0 |
-| using/windows.po | 92.4% | 6.6% | 546 | 39 | 6 |
 | library/getpass.po | 92.0% | 8.0% | 23 | 2 | 0 |
 | library/tkinter.font.po | 91.4% | 8.6% | 32 | 3 | 0 |
 | library/turtle.po | 91.2% | 6.5% | 517 | 37 | 13 |
@@ -548,6 +547,7 @@
 | deprecations/c-api-pending-removal-in-3.18.po | 90.9% | 9.1% | 20 | 2 | 0 |
 | library/test.po | 89.1% | 2.9% | 335 | 11 | 30 |
 | library/asyncio-extending.po | 88.9% | 11.1% | 24 | 3 | 0 |
+| using/windows.po | 87.8% | 6.4% | 545 | 40 | 36 |
 | library/numbers.po | 85.7% | 11.4% | 30 | 4 | 1 |
 | reference/grammar.po | 85.7% | 0.0% | 6 | 0 | 1 |
 | library/dbm.po | 85.6% | 1.5% | 113 | 2 | 17 |
@@ -558,5 +558,5 @@
 | library/cgi.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/cgitb.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **99.0%** | **0.7%** | **90227** | **601** | **320** |
+| **مجموع** | **99.0%** | **0.7%** | **90225** | **603** | **354** |
 <!-- TRANSLATION_STATUS_END -->
