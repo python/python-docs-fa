@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-18 04:10+0000\n"
+"POT-Creation-Date: 2026-11-19 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -175,6 +175,9 @@ msgstr ":gh:`151773`: رفع فروپاشی در :func:`contextvars.ContextVar.s
 
 msgid "Library"
 msgstr "کتابخانه"
+
+msgid ":gh:`149584`: Read stack chunks directly in :mod:`profiling.sampling`, without the page cache. This removes a redundant retry on macOS that can read a replacement chunk after the target process reuses the same address."
+msgstr ""
 
 msgid ":gh:`162028`: Fix the position reported by the pure Python :mod:`json` decoder for an invalid escape. It now points to the backslash, like the C decoder."
 msgstr ""
@@ -393,6 +396,14 @@ msgstr ""
 msgid ":gh:`159168`: Fix :exc:`RecursionError` in ``python -m asyncio pstree`` on a deep chain of awaiting tasks. Patch by Timofei Ivankov."
 msgstr ":gh:`159620`: رفع دستورات ``python -m asyncio ps``، ``pstree`` و پشته‌های :mod:`profiling.sampling` آگاه از ناهمگامی که در تولیدگرهای ناهمگام متوقف می‌شوند. پچ توسط Timofei Ivankov."
 
+msgid ":gh:`150751`: :mod:`http.client` now ignores optional whitespace around the ``Content-Length`` header value when validating it, as required by :rfc:`9112`. Previously a value with trailing whitespace (for example ``Content-Length: 5`` followed by a space) was treated as missing and the response body was read until the connection was closed."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`151378`: Fix a bug in the binary collector in Tachyon that caused unbounded memory growth while profiling a thread that stayed asleep. Patch by Maurycy Pawłowski-Wieroński."
+msgid ":gh:`149584`: Improve the performance of the Tachyon profiler by avoiding unnecessary remote reads of the base frame sentinel. Patch by Maurycy Pawłowski-Wieroński."
+msgstr ":gh:`151378`: رفع یک باگ در جمع‌آوری‌کننده‌ی دودویی در Tachyon که هنگام پروفایل‌گیری از نخی که در حالت خواب باقی مانده بود، باعث رشد کنترل‌نشده‌ی حافظه می‌شد. وصله از Maurycy Pawłowski-Wieroński."
+
 #, fuzzy
 #| msgid ":issue:`18108`: :func:`shutil.chown` now supports *dir_fd* and *follow_symlinks* keyword arguments."
 msgid ":gh:`158998`: Fix :func:`os.statx` ignoring the *follow_symlinks* argument."
@@ -431,6 +442,9 @@ msgstr ":gh:`151126`: رفع فروپاشی ناشی از تنظیم‌نشدن 
 msgid ":gh:`155003`: Fix :class:`multiprocessing.shared_memory.SharedMemory` leaking its file descriptor and printing an ignored :exc:`BufferError` when garbage collected while its :attr:`~multiprocessing.shared_memory.SharedMemory.buf` was still in use, for example by a NumPy array. :attr:`!buf` now also stays usable after the :class:`!SharedMemory` object is garbage collected."
 msgstr ""
 
+msgid ":gh:`150751`: :mod:`http.client` now validates the ``Content-Length`` header and the chunked ``chunk-size`` against the RFC 9112 grammar (``1*DIGIT`` and ``1*HEXDIG``) before parsing them, rejecting values such as ``+5``, ``5_0`` or a ``0x``-prefixed or negative chunk size that :func:`int` would otherwise accept. This avoids framing a response differently from a strict peer."
+msgstr ""
+
 #, fuzzy
 #| msgid ":gh:`133934`: Improve :mod:`sqlite3` CLI's ``.help`` message."
 msgid ":gh:`139105`: Correct the EOF key shown in the :mod:`sqlite3` CLI ``.help`` text on Windows."
@@ -451,6 +465,9 @@ msgid "Tests"
 msgstr "آزمون‌ها"
 
 msgid ":gh:`162144`: Skip ``@support.nomemtest`` tests when using a thread sanitizer (TSan). ``set_nomemory()`` and ``call_with_nomemory()`` functions of the :mod:`!_testcapi` extension are not thread safe. Patch by Victor Stinner."
+msgstr ""
+
+msgid ":gh:`162034`: Fix the Apple testbed's extension module processing for an XCframework or package path with a space, or a build path with brackets or a backslash."
 msgstr ""
 
 #, fuzzy
@@ -485,6 +502,9 @@ msgid "Build"
 msgstr "ساخت"
 
 msgid ":gh:`162170`: ``make install`` now depends on the ``all`` target, so running it directly after ``./configure --enable-optimizations`` installs the PGO-optimized interpreter rather than an unoptimized build."
+msgstr ""
+
+msgid ":gh:`136267`: ``build-details.json`` now describes the interpreter being built rather than the interpreter running :program:`generate-build-details.py`: ``abi.flags``, ``suffixes.extensions``, ``abi.stable_abi_suffix`` and ``implementation.supports_isolated_interpreters`` are derived from the target's configuration, which fixes cross builds and builds that use :option:`--with-build-python`. ``abi.extension_suffix`` and ``abi.stable_abi_suffix`` are now also present when libpython is only built as a static library."
 msgstr ""
 
 msgid ":gh:`160924`: Fix cross-compilation failures with ``--enable-shared`` caused by the build Python loading the target's ``libpython`` through the shared-library search path (such as musl from glibc)."
