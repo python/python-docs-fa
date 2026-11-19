@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-18)
+(به‌روزرسانی: 2026-11-19)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -314,7 +314,6 @@
 | library/token.po | 100.0% | 0.0% | 100 | 0 | 0 |
 | library/trace.po | 100.0% | 0.0% | 43 | 0 | 0 |
 | library/tty.po | 100.0% | 0.0% | 17 | 0 | 0 |
-| library/types.po | 100.0% | 0.0% | 110 | 0 | 0 |
 | library/typing.po | 100.0% | 0.0% | 861 | 0 | 0 |
 | library/unittest.mock.po | 100.0% | 0.0% | 448 | 0 | 0 |
 | library/unix.po | 100.0% | 0.0% | 2 | 0 | 0 |
@@ -464,9 +463,9 @@
 | library/json.po | 98.9% | 1.1% | 181 | 2 | 0 |
 | using/ios.po | 98.9% | 1.1% | 90 | 1 | 0 |
 | library/pdb.po | 98.9% | 1.1% | 177 | 2 | 0 |
-| whatsnew/changelog.po | 98.9% | 0.3% | 15726 | 43 | 135 |
 | library/binascii.po | 98.9% | 1.1% | 88 | 1 | 0 |
 | library/optparse.po | 98.9% | 1.1% | 526 | 6 | 0 |
+| whatsnew/changelog.po | 98.8% | 0.3% | 15726 | 44 | 140 |
 | c-api/import.po | 98.8% | 1.2% | 85 | 1 | 0 |
 | c-api/extension-modules.po | 98.8% | 1.2% | 79 | 1 | 0 |
 | library/shlex.po | 98.7% | 1.3% | 76 | 1 | 0 |
@@ -492,6 +491,7 @@
 | library/textwrap.po | 98.3% | 1.7% | 57 | 1 | 0 |
 | sphinx.po | 98.3% | 1.0% | 964 | 10 | 7 |
 | library/xml.etree.elementtree.po | 98.2% | 1.8% | 271 | 5 | 0 |
+| library/types.po | 98.2% | 1.8% | 108 | 2 | 0 |
 | howto/perf_profiling.po | 98.1% | 1.9% | 53 | 1 | 0 |
 | library/http.cookies.po | 98.1% | 1.9% | 53 | 1 | 0 |
 | library/sys.po | 98.1% | 0.8% | 510 | 4 | 6 |
@@ -515,10 +515,10 @@
 | library/fnmatch.po | 97.4% | 2.6% | 37 | 1 | 0 |
 | c-api/exceptions.po | 97.4% | 0.0% | 294 | 0 | 8 |
 | library/getopt.po | 97.3% | 2.7% | 36 | 1 | 0 |
-| library/ssl.po | 97.0% | 1.7% | 559 | 10 | 7 |
 | c-api/bytes.po | 97.0% | 3.0% | 131 | 4 | 0 |
 | c-api/call.po | 96.9% | 3.1% | 93 | 3 | 0 |
 | howto/instrumentation.po | 96.9% | 3.1% | 93 | 3 | 0 |
+| library/ssl.po | 96.9% | 1.9% | 558 | 11 | 7 |
 | library/concurrent.futures.po | 96.8% | 0.8% | 120 | 1 | 3 |
 | c-api/codec.po | 96.7% | 3.3% | 29 | 1 | 0 |
 | library/dis.po | 96.7% | 1.2% | 406 | 5 | 9 |
@@ -558,5 +558,5 @@
 | library/cgi.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/cgitb.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **99.0%** | **0.7%** | **90225** | **603** | **354** |
+| **مجموع** | **98.9%** | **0.7%** | **90222** | **607** | **359** |
 <!-- TRANSLATION_STATUS_END -->
