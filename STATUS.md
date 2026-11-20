@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-19)
+(به‌روزرسانی: 2026-11-20)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -465,8 +465,8 @@
 | library/pdb.po | 98.9% | 1.1% | 177 | 2 | 0 |
 | library/binascii.po | 98.9% | 1.1% | 88 | 1 | 0 |
 | library/optparse.po | 98.9% | 1.1% | 526 | 6 | 0 |
-| whatsnew/changelog.po | 98.8% | 0.3% | 15726 | 44 | 140 |
 | c-api/import.po | 98.8% | 1.2% | 85 | 1 | 0 |
+| whatsnew/changelog.po | 98.8% | 0.3% | 15726 | 45 | 141 |
 | c-api/extension-modules.po | 98.8% | 1.2% | 79 | 1 | 0 |
 | library/shlex.po | 98.7% | 1.3% | 76 | 1 | 0 |
 | library/zipapp.po | 98.7% | 1.3% | 76 | 1 | 0 |
@@ -511,7 +511,6 @@
 | library/calendar.po | 97.6% | 2.4% | 120 | 3 | 0 |
 | library/fractions.po | 97.6% | 2.4% | 40 | 1 | 0 |
 | library/profile.po | 97.4% | 2.6% | 76 | 2 | 0 |
-| library/traceback.po | 97.4% | 2.6% | 114 | 3 | 0 |
 | library/fnmatch.po | 97.4% | 2.6% | 37 | 1 | 0 |
 | c-api/exceptions.po | 97.4% | 0.0% | 294 | 0 | 8 |
 | library/getopt.po | 97.3% | 2.7% | 36 | 1 | 0 |
@@ -522,6 +521,7 @@
 | library/concurrent.futures.po | 96.8% | 0.8% | 120 | 1 | 3 |
 | c-api/codec.po | 96.7% | 3.3% | 29 | 1 | 0 |
 | library/dis.po | 96.7% | 1.2% | 406 | 5 | 9 |
+| library/traceback.po | 96.6% | 3.4% | 113 | 4 | 0 |
 | library/mmap.po | 96.4% | 3.6% | 81 | 3 | 0 |
 | c-api/code.po | 96.4% | 3.6% | 80 | 3 | 0 |
 | library/cmd.po | 96.1% | 2.0% | 49 | 1 | 1 |
@@ -558,5 +558,5 @@
 | library/cgi.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/cgitb.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **98.9%** | **0.7%** | **90222** | **607** | **359** |
+| **مجموع** | **98.9%** | **0.7%** | **90221** | **609** | **360** |
 <!-- TRANSLATION_STATUS_END -->
