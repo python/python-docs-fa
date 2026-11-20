@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-19 04:11+0000\n"
+"POT-Creation-Date: 2026-11-20 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -73,6 +73,11 @@ msgstr ":gh:`143008`: اصلاح شرایط رقابت هنگام مقدارده
 
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
+
+#, fuzzy
+#| msgid ":gh:`159111`: Update mimalloc version from 2.1.2 to 2.5.2. Patch by Donghee Na."
+msgid ":gh:`161751`: Fix race in mimalloc abandoned segment visit in free-threaded GC. Patch by Donghee Na."
+msgstr ":gh:`159111`: به‌روزرسانی نسخه‌ی mimalloc از ۲.۱.۲ به ۲.۵.۲. وصل توسط Donghee Na."
 
 msgid ":gh:`161849`: Fix a crash and a :exc:`SystemError` when compiling a class whose body binds ``__classdict__`` (for example ``__classdict__ = 1`` or ``global __classdict__``) and also contains an annotated function, a generic class or function, or a generic type alias."
 msgstr ""
@@ -502,6 +507,9 @@ msgid "Build"
 msgstr "ساخت"
 
 msgid ":gh:`162170`: ``make install`` now depends on the ``all`` target, so running it directly after ``./configure --enable-optimizations`` installs the PGO-optimized interpreter rather than an unoptimized build."
+msgstr ""
+
+msgid ":gh:`136267`: ``build-details.json`` now takes ``language.version_info``, ``implementation.version`` and ``implementation.hexversion`` from :file:`Include/patchlevel.h` instead of the interpreter running the generator, which can be a different patch release under :option:`--with-build-python`."
 msgstr ""
 
 msgid ":gh:`136267`: ``build-details.json`` now describes the interpreter being built rather than the interpreter running :program:`generate-build-details.py`: ``abi.flags``, ``suffixes.extensions``, ``abi.stable_abi_suffix`` and ``implementation.supports_isolated_interpreters`` are derived from the target's configuration, which fixes cross builds and builds that use :option:`--with-build-python`. ``abi.extension_suffix`` and ``abi.stable_abi_suffix`` are now also present when libpython is only built as a static library."
