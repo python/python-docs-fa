@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-11-21 04:11+0000\n"
 "PO-Revision-Date: 2026-09-14 10:26+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -175,9 +175,6 @@ msgstr ""
 "logger.info('So should this')\n"
 "logger.warning('And this, too')\n"
 "logger.error('And non-ASCII stuff, too, like Øresund and Malmö')"
-
-msgid "The *encoding* argument was added. In earlier Python versions, or if not specified, the encoding used is the default value used by :func:`open`. While not shown in the above example, an *errors* argument can also now be passed, which determines how encoding errors are handled. For available values and the default, see the documentation for :func:`open`."
-msgstr "آرگومان *encoding* افزوده شد. در نسخه‌های پیشین پایتون، یا اگر مشخص نشده باشد، کدگذاری استفاده‌شده مقدار پیش‌فرضی است که توسط :func:`open` استفاده می‌شود. اگرچه در مثال بالا نشان داده نشده است، اکنون می‌توان آرگومان *errors* را نیز ارسال کرد که تعیین می‌کند خطاهای کدگذاری چگونه مدیریت شوند. برای مقادیر موجود و مقدار پیش‌فرض، مستندات :func:`open` را ببینید."
 
 msgid "And now if we open the file and look at what we have, we should find the log messages:"
 msgstr "و اکنون اگر پرونده را باز کنیم و به آنچه داریم نگاه کنیم، باید پیام‌های گزارش را پیدا کنیم:"
@@ -434,7 +431,9 @@ msgstr "نیازی نیست همیشه این متدها را روی هر گزا
 msgid "With the logger object configured, the following methods create log messages:"
 msgstr "با پیکربندی شیء logger، متدهای زیر پیام‌های گزارش ایجاد می‌کنند:"
 
-msgid ":meth:`Logger.debug`, :meth:`Logger.info`, :meth:`Logger.warning`, :meth:`Logger.error`, and :meth:`Logger.critical` all create log records with a message and a level that corresponds to their respective method names. The message is actually a format string, which may contain the standard string substitution syntax of ``%s``, ``%d``, ``%f``, and so on.  The rest of their arguments is a list of objects that correspond with the substitution fields in the message.  With regard to ``**kwargs``, the logging methods care only about a keyword of ``exc_info`` and use it to determine whether to log exception information."
+#, fuzzy
+#| msgid ":meth:`Logger.debug`, :meth:`Logger.info`, :meth:`Logger.warning`, :meth:`Logger.error`, and :meth:`Logger.critical` all create log records with a message and a level that corresponds to their respective method names. The message is actually a format string, which may contain the standard string substitution syntax of ``%s``, ``%d``, ``%f``, and so on.  The rest of their arguments is a list of objects that correspond with the substitution fields in the message.  With regard to ``**kwargs``, the logging methods care only about a keyword of ``exc_info`` and use it to determine whether to log exception information."
+msgid ":meth:`Logger.debug`, :meth:`Logger.info`, :meth:`Logger.warning`, :meth:`Logger.error`, and :meth:`Logger.critical` all create log records with a message and a level that corresponds to their respective method names. The message is actually a format string, which may contain the standard string substitution syntax of ``%s``, ``%d``, ``%f``, and so on.  The remaining positional arguments correspond to the substitution fields in the message. These methods also accept the keyword arguments *exc_info*, *extra*, *stack_info*, and *stacklevel*, described in :meth:`Logger.debug`."
 msgstr ":meth:`Logger.debug`، :meth:`Logger.info`، :meth:`Logger.warning`، :meth:`Logger.error` و :meth:`Logger.critical` همگی رکوردهای گزارش را ایجاد می‌کنند که دارای یک پیام و یک سطح هستند و سطح آن‌ها با نام متدهای مربوطه مطابقت دارد. پیام در واقع یک رشته‌ی قالب است که ممکن است حاوی سینتکس استاندارد جایگذاری رشته مانند ``%s``، ``%d``، ``%f`` و غیره باشد. سایر آرگومان‌های آن‌ها فهرستی از شیء‌ها است که با فیلدهای جایگذاری در پیام مطابقت دارند. در مورد ``**kwargs``، متدهای گزارش تنها به کلیدواژه‌ای با نام ``exc_info`` توجه می‌کنند و از آن برای تعیین اینکه آیا اطلاعات استثنا در گزارش ثبت شود یا خیر استفاده می‌کنند."
 
 msgid ":meth:`Logger.exception` creates a log message similar to :meth:`Logger.error`.  The difference is that :meth:`Logger.exception` dumps a stack trace along with it.  Call this method only from an exception handler."
@@ -927,7 +926,9 @@ msgstr "کلاس‌های :class:`NullHandler`، :class:`StreamHandler` و :clas
 msgid "Logged messages are formatted for presentation through instances of the :class:`Formatter` class. They are initialized with a format string suitable for use with the % operator and a dictionary."
 msgstr "پیام‌های ثبت‌شده برای نمایش از طریق نمونه‌هایی از کلاس :class:`Formatter` قالب‌بندی می‌شوند. آن‌ها با یک رشته قالب مناسب برای استفاده با عملگر % و یک دیکشنری مقداردهی اولیه می‌شوند."
 
-msgid "For formatting multiple messages in a batch, instances of :class:`BufferingFormatter` can be used. In addition to the format string (which is applied to each message in the batch), there is provision for header and trailer format strings."
+#, fuzzy
+#| msgid "For formatting multiple messages in a batch, instances of :class:`BufferingFormatter` can be used. In addition to the format string (which is applied to each message in the batch), there is provision for header and trailer format strings."
+msgid "For formatting multiple messages in a batch, instances of :class:`BufferingFormatter` can be used. A line formatter formats each record in the batch. To add a header or footer, override :meth:`~BufferingFormatter.formatHeader` or :meth:`~BufferingFormatter.formatFooter`."
 msgstr "برای قالب‌بندی چندین پیام در یک دسته، می‌توان از نمونه‌های :class:`BufferingFormatter` استفاده کرد. علاوه بر رشته‌ی قالب (که به هر پیام در دسته اعمال می‌شود)، امکانی برای رشته‌های قالب سرآیند و پایانی وجود دارد."
 
 msgid "When filtering based on logger level and/or handler level is not enough, instances of :class:`Filter` can be added to both :class:`Logger` and :class:`Handler` instances (through their :meth:`~Handler.addFilter` method). Before deciding to process a message further, both loggers and handlers consult all their filters for permission. If any filter returns a false value, the message is not processed further."
@@ -954,7 +955,9 @@ msgstr "مقدار پیش‌فرض :data:`raiseExceptions` برابر ``True`` �
 msgid "Using arbitrary objects as messages"
 msgstr "استفاده از اشیاء دلخواه به‌عنوان پیام"
 
-msgid "In the preceding sections and examples, it has been assumed that the message passed when logging the event is a string. However, this is not the only possibility. You can pass an arbitrary object as a message, and its :meth:`~object.__str__` method will be called when the logging system needs to convert it to a string representation. In fact, if you want to, you can avoid computing a string representation altogether - for example, the :class:`~handlers.SocketHandler` emits an event by pickling it and sending it over the wire."
+#, fuzzy
+#| msgid "In the preceding sections and examples, it has been assumed that the message passed when logging the event is a string. However, this is not the only possibility. You can pass an arbitrary object as a message, and its :meth:`~object.__str__` method will be called when the logging system needs to convert it to a string representation. In fact, if you want to, you can avoid computing a string representation altogether - for example, the :class:`~handlers.SocketHandler` emits an event by pickling it and sending it over the wire."
+msgid "In the preceding sections and examples, it has been assumed that the message passed when logging the event is a string. However, this is not the only possibility. You can pass an arbitrary object as a message, and its :meth:`~object.__str__` method will be called when the logging system needs to convert it to a string representation."
 msgstr "در بخش‌ها و مثال‌های پیشین، فرض بر این بوده است که پیامی که هنگام ثبت رویداد ارسال می‌شود، یک رشته است. با این حال، این تنها حالت ممکن نیست. شما می‌توانید یک شیء دلخواه را به‌عنوان پیام ارسال کنید، و هنگامی که سیستم ثبت رویداد نیاز داشته باشد آن را به یک بازنمایی رشته‌ای تبدیل کند، متد :meth:`~object.__str__` آن فراخوانی خواهد شد. در واقع، اگر بخواهید، می‌توانید به‌طور کامل از محاسبه‌ی بازنمایی رشته‌ای اجتناب کنید — برای مثال، :class:`~handlers.SocketHandler` یک رویداد را با پیکل‌کردن آن و ارسال آن از طریق شبکه منتشر می‌کند."
 
 msgid "Optimization"
@@ -1043,6 +1046,9 @@ msgstr "هندلرهای مفید موجود در ماژول logging."
 
 msgid ":ref:`A logging cookbook <logging-cookbook>`"
 msgstr ":ref:`کتابچه آشپزی ثبت رویداد <logging-cookbook>`"
+
+#~ msgid "The *encoding* argument was added. In earlier Python versions, or if not specified, the encoding used is the default value used by :func:`open`. While not shown in the above example, an *errors* argument can also now be passed, which determines how encoding errors are handled. For available values and the default, see the documentation for :func:`open`."
+#~ msgstr "آرگومان *encoding* افزوده شد. در نسخه‌های پیشین پایتون، یا اگر مشخص نشده باشد، کدگذاری استفاده‌شده مقدار پیش‌فرضی است که توسط :func:`open` استفاده می‌شود. اگرچه در مثال بالا نشان داده نشده است، اکنون می‌توان آرگومان *errors* را نیز ارسال کرد که تعیین می‌کند خطاهای کدگذاری چگونه مدیریت شوند. برای مقادیر موجود و مقدار پیش‌فرض، مستندات :func:`open` را ببینید."
 
 #~ msgid "Author"
 #~ msgstr "نویسنده"

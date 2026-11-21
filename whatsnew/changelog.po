@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-20 04:11+0000\n"
+"POT-Creation-Date: 2026-11-21 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -73,6 +73,9 @@ msgstr ":gh:`143008`: اصلاح شرایط رقابت هنگام مقدارده
 
 msgid "Core and Builtins"
 msgstr "هسته و توکارها (Core and Builtins)"
+
+msgid ":gh:`152276`: For the :term:`free-threaded build`, avoid an assertion failure when an object becomes immortal while queued for biased reference counting (BRC) merging."
+msgstr ""
 
 #, fuzzy
 #| msgid ":gh:`159111`: Update mimalloc version from 2.1.2 to 2.5.2. Patch by Donghee Na."
@@ -181,6 +184,9 @@ msgstr ":gh:`151773`: رفع فروپاشی در :func:`contextvars.ContextVar.s
 msgid "Library"
 msgstr "کتابخانه"
 
+msgid ":gh:`162217`: Fix :exc:`asyncio.InvalidStateError` being logged when the standard input of an :mod:`asyncio` subprocess is closed after a task waiting in :meth:`proc.stdin.wait_closed() <asyncio.StreamWriter.wait_closed>` was cancelled."
+msgstr ""
+
 msgid ":gh:`149584`: Read stack chunks directly in :mod:`profiling.sampling`, without the page cache. This removes a redundant retry on macOS that can read a replacement chunk after the target process reuses the same address."
 msgstr ""
 
@@ -199,6 +205,14 @@ msgid ":gh:`135893`: Fix a regression where importing :mod:`ctypes` could leave 
 msgstr ""
 
 msgid ":gh:`161712`: Fix :meth:`threading.Thread.join` with a timeout blocking forever when the deadline passed between the two reads of the clock used to compute the time left."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`159620`: Fix ``python -m asyncio ps``, ``pstree`` and async-aware :mod:`profiling.sampling` stacks stopping at asynchronous generators. Patch by Timofei Ivankov."
+msgid ":gh:`161502`: Fix missing tasks in ``python -m asyncio pstree`` output when tasks are connected through an intermediate :class:`asyncio.Future`. Patch by Timofei Ivankov"
+msgstr ":gh:`159620`: رفع دستورات ``python -m asyncio ps``، ``pstree`` و پشته‌های :mod:`profiling.sampling` آگاه از ناهمگامی که در تولیدگرهای ناهمگام متوقف می‌شوند. پچ توسط Timofei Ivankov."
+
+msgid ":gh:`160978`: Fix :mod:`ctypes` handing out distinct array types for the same item type and length when the array type is created concurrently from several threads."
 msgstr ""
 
 msgid ":gh:`161475`: Fix :mod:`ctypes` structures containing arrays of floating-point type returned by value on 64-bit Linux SPARC."
@@ -250,6 +264,9 @@ msgstr ":gh:`97725`: رفع توضیحات :meth:`asyncio.Task.print_stack` بر
 #| msgid ":gh:`97725`: Fix :meth:`asyncio.Task.print_stack` description for ``file=None``. Patch by Oleg Iarygin."
 msgid ":gh:`161124`: Fix :func:`asyncio.print_call_graph` reporting event loop frames when *depth* exceeds the task stack. Patch by Timofei Ivankov."
 msgstr ":gh:`97725`: رفع توضیحات :meth:`asyncio.Task.print_stack` برای ``file=None``. وصله توسط Oleg Iarygin."
+
+msgid ":gh:`161083`: Fix stale task nodes left by :func:`asyncio.gather` when argument validation fails. Patch by Timofei Ivankov"
+msgstr ""
 
 msgid ":gh:`161060`: Fix a crash in :mod:`xml.parsers.expat` when a handler raises an exception, or the :meth:`~xml.parsers.expat.xmlparser.DefaultHandler` or :meth:`~xml.parsers.expat.xmlparser.DefaultHandlerExpand` handler is unset, while a token longer than 1024 bytes, such as a comment, is being reported to the default handler from a document that is not encoded in UTF-8."
 msgstr ""
@@ -440,9 +457,17 @@ msgid ":gh:`157856`: Fix :func:`asyncio.as_completed` raising :exc:`RuntimeError
 msgstr ""
 
 #, fuzzy
+#| msgid ":gh:`158522`: Fix :mod:`profiling.sampling` showing a single frame for a task whose coroutine recurses. Patch by Timofei Ivankov."
+msgid ":gh:`157605`: Fix :mod:`profiling.sampling` failing when a native thread has an empty Python stack."
+msgstr ":gh:`158522`: رفع نمایش یک فریم واحد برای وظیفه‌ای که هم‌روال آن بازگشتی (recursive) است توسط :mod:`profiling.sampling`. وصله توسط Timofei Ivankov."
+
+#, fuzzy
 #| msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when passing :class:`ctypes.Structure` or :class:`ctypes.Union` instances by value to ctypes foreign functions."
 msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when first using a Chinese, Japanese or Korean codec."
 msgstr ":gh:`151126`: رفع فروپاشی ناشی از تنظیم‌نشدن :exc:`MemoryError` هنگام شکست در تخصیص حافظه، در زمان ارسال نمونه‌های :class:`ctypes.Structure` یا :class:`ctypes.Union` به‌صورت مقدار (by value) به توابع خارجی ctypes."
+
+msgid ":gh:`155935`: Fix :meth:`!importlib.machinery.FileFinder.discover` looping forever when the underlying directory scan keeps failing with :exc:`OSError`. A failing scan now ends the listing instead of being retried."
+msgstr ""
 
 msgid ":gh:`155003`: Fix :class:`multiprocessing.shared_memory.SharedMemory` leaking its file descriptor and printing an ignored :exc:`BufferError` when garbage collected while its :attr:`~multiprocessing.shared_memory.SharedMemory.buf` was still in use, for example by a NumPy array. :attr:`!buf` now also stays usable after the :class:`!SharedMemory` object is garbage collected."
 msgstr ""
