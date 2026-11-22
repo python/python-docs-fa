@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-21 04:11+0000\n"
+"POT-Creation-Date: 2026-11-22 04:10+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -127,6 +127,9 @@ msgstr ""
 msgid ":gh:`160682`: Fix a bug in the :term:`free-threaded build` where garbage collection could prematurely collect the function object of a running method."
 msgstr ":gh:`145615`: رفع یک نشتی حافظه در :term:`ساخت نخ‌آزاد <free-threaded build>` که در آن صفحات mimalloc ممکن بود تا زمان خروج نخ مالک، به طور دائم غیرقابل بازیابی بمانند."
 
+msgid ":gh:`160697`: Fix crashes and hangs in the :term:`free-threaded build` when a destructor ran in the middle of a :class:`dict` resize, a :class:`list` resize or a type cache update. The thread's queue of delayed frees is now processed only from the eval breaker, instead of synchronously when the queue fills up."
+msgstr ""
+
 msgid ":gh:`112564`: Fix a crash in the garbage collector when :data:`gc.DEBUG_COLLECTABLE` or :data:`gc.DEBUG_UNCOLLECTABLE` is set and writing the debug output to :data:`sys.stderr` frees one of the objects being reported. Object addresses in this output now use the same ``0x``-prefixed lowercase format on all platforms, including Windows."
 msgstr ""
 
@@ -187,7 +190,13 @@ msgstr "کتابخانه"
 msgid ":gh:`162217`: Fix :exc:`asyncio.InvalidStateError` being logged when the standard input of an :mod:`asyncio` subprocess is closed after a task waiting in :meth:`proc.stdin.wait_closed() <asyncio.StreamWriter.wait_closed>` was cancelled."
 msgstr ""
 
+msgid ":gh:`162246`: Fix :class:`io.BufferedRWPair` losing buffered writes on deallocation when the reader and writer share a raw stream."
+msgstr ""
+
 msgid ":gh:`149584`: Read stack chunks directly in :mod:`profiling.sampling`, without the page cache. This removes a redundant retry on macOS that can read a replacement chunk after the target process reuses the same address."
+msgstr ""
+
+msgid ":gh:`162016`: Fix :meth:`subprocess.Popen.communicate` hanging or blocking past its *timeout* while writing to the child's stdin on macOS and FreeBSD.  This works around a kernel bug most likely seen on loaded hosts with many pipes in active use at once."
 msgstr ""
 
 msgid ":gh:`162028`: Fix the position reported by the pure Python :mod:`json` decoder for an invalid escape. It now points to the backslash, like the C decoder."
@@ -472,6 +481,9 @@ msgstr ""
 msgid ":gh:`155003`: Fix :class:`multiprocessing.shared_memory.SharedMemory` leaking its file descriptor and printing an ignored :exc:`BufferError` when garbage collected while its :attr:`~multiprocessing.shared_memory.SharedMemory.buf` was still in use, for example by a NumPy array. :attr:`!buf` now also stays usable after the :class:`!SharedMemory` object is garbage collected."
 msgstr ""
 
+msgid ":gh:`155031`: Propagate to user any permission errors from subprocess attach commands in Tachyon"
+msgstr ""
+
 msgid ":gh:`150751`: :mod:`http.client` now validates the ``Content-Length`` header and the chunked ``chunk-size`` against the RFC 9112 grammar (``1*DIGIT`` and ``1*HEXDIG``) before parsing them, rejecting values such as ``+5``, ``5_0`` or a ``0x``-prefixed or negative chunk size that :func:`int` would otherwise accept. This avoids framing a response differently from a strict peer."
 msgstr ""
 
@@ -530,6 +542,9 @@ msgstr ""
 
 msgid "Build"
 msgstr "ساخت"
+
+msgid ":gh:`153668`: Disable ``unicodectype.c`` optimization in regular Windows ARM64 Release builds due to a compiler bug in MSVC 14.50, 14.51, and 14.52. PGO builds are not affected."
+msgstr ""
 
 msgid ":gh:`162170`: ``make install`` now depends on the ``all`` target, so running it directly after ``./configure --enable-optimizations`` installs the PGO-optimized interpreter rather than an unoptimized build."
 msgstr ""
