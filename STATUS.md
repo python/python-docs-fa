@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-22)
+(به‌روزرسانی: 2026-11-23)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -268,7 +268,6 @@
 | library/py_compile.po | 100.0% | 0.0% | 30 | 0 | 0 |
 | library/pyclbr.po | 100.0% | 0.0% | 26 | 0 | 0 |
 | library/pydoc.po | 100.0% | 0.0% | 25 | 0 | 0 |
-| library/pyexpat.po | 100.0% | 0.0% | 178 | 0 | 0 |
 | library/python.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/queue.po | 100.0% | 0.0% | 58 | 0 | 0 |
 | library/quopri.po | 100.0% | 0.0% | 13 | 0 | 0 |
@@ -322,7 +321,6 @@
 | library/urllib.robotparser.po | 100.0% | 0.0% | 19 | 0 | 0 |
 | library/uu.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/uuid.po | 100.0% | 0.0% | 79 | 0 | 0 |
-| library/warnings.po | 100.0% | 0.0% | 165 | 0 | 0 |
 | library/wave.po | 100.0% | 0.0% | 74 | 0 | 0 |
 | library/weakref.po | 100.0% | 0.0% | 96 | 0 | 0 |
 | library/webbrowser.po | 100.0% | 0.0% | 93 | 0 | 0 |
@@ -412,12 +410,14 @@
 | library/logging.po | 99.5% | 0.3% | 374 | 1 | 1 |
 | library/unittest.mock-examples.po | 99.5% | 0.5% | 181 | 1 | 0 |
 | extending/newtypes_tutorial.po | 99.4% | 0.6% | 179 | 1 | 0 |
+| library/pyexpat.po | 99.4% | 0.6% | 177 | 1 | 0 |
 | faq/design.po | 99.4% | 0.6% | 172 | 1 | 0 |
 | whatsnew/3.4.po | 99.4% | 0.6% | 514 | 3 | 0 |
 | library/logging.config.po | 99.4% | 0.0% | 171 | 0 | 1 |
 | whatsnew/3.8.po | 99.4% | 0.6% | 510 | 3 | 0 |
 | faq/programming.po | 99.4% | 0.4% | 500 | 2 | 1 |
 | library/locale.po | 99.4% | 0.6% | 165 | 1 | 0 |
+| library/warnings.po | 99.4% | 0.0% | 165 | 0 | 1 |
 | c-api/object.po | 99.4% | 0.6% | 160 | 1 | 0 |
 | library/http.cookiejar.po | 99.4% | 0.6% | 158 | 1 | 0 |
 | library/annotationlib.po | 99.4% | 0.6% | 157 | 1 | 0 |
@@ -465,8 +465,8 @@
 | library/optparse.po | 98.9% | 1.1% | 526 | 6 | 0 |
 | c-api/import.po | 98.8% | 1.2% | 85 | 1 | 0 |
 | howto/logging.po | 98.8% | 1.2% | 244 | 3 | 0 |
-| whatsnew/changelog.po | 98.8% | 0.3% | 15726 | 47 | 151 |
 | c-api/extension-modules.po | 98.8% | 1.2% | 79 | 1 | 0 |
+| whatsnew/changelog.po | 98.7% | 0.3% | 15726 | 47 | 156 |
 | library/shlex.po | 98.7% | 1.3% | 76 | 1 | 0 |
 | library/zipapp.po | 98.7% | 1.3% | 76 | 1 | 0 |
 | library/bz2.po | 98.7% | 1.3% | 74 | 1 | 0 |
@@ -534,15 +534,14 @@
 | library/netrc.po | 94.7% | 5.3% | 18 | 1 | 0 |
 | c-api/gen.po | 94.4% | 5.6% | 17 | 1 | 0 |
 | c-api/reflection.po | 94.4% | 0.0% | 17 | 0 | 1 |
-| howto/abi3t-migration.po | 94.4% | 5.0% | 169 | 9 | 1 |
 | howto/annotations.po | 94.2% | 1.9% | 49 | 1 | 2 |
 | library/struct.po | 94.2% | 5.3% | 194 | 11 | 1 |
+| howto/abi3t-migration.po | 93.9% | 5.6% | 168 | 10 | 1 |
 | c-api/function.po | 93.6% | 2.1% | 44 | 1 | 2 |
 | library/multiprocessing.shared_memory.po | 92.9% | 7.1% | 52 | 4 | 0 |
 | library/email.generator.po | 92.7% | 7.3% | 38 | 3 | 0 |
 | library/getpass.po | 92.0% | 8.0% | 23 | 2 | 0 |
 | library/tkinter.font.po | 91.4% | 8.6% | 32 | 3 | 0 |
-| library/turtle.po | 91.2% | 6.5% | 517 | 37 | 13 |
 | library/argparse.po | 91.0% | 7.9% | 393 | 34 | 5 |
 | deprecations/c-api-pending-removal-in-3.18.po | 90.9% | 9.1% | 20 | 2 | 0 |
 | library/test.po | 89.1% | 2.9% | 335 | 11 | 30 |
@@ -551,6 +550,7 @@
 | library/numbers.po | 85.7% | 11.4% | 30 | 4 | 1 |
 | reference/grammar.po | 85.7% | 0.0% | 6 | 0 | 1 |
 | library/dbm.po | 85.6% | 1.5% | 113 | 2 | 17 |
+| library/turtle.po | 83.6% | 13.2% | 469 | 74 | 18 |
 | library/termios.po | 83.3% | 0.0% | 25 | 0 | 5 |
 | c-api/bool.po | 81.8% | 18.2% | 9 | 2 | 0 |
 | library/syslog.po | 80.6% | 19.4% | 25 | 6 | 0 |
@@ -558,5 +558,5 @@
 | library/cgi.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/cgitb.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **98.9%** | **0.7%** | **90205** | **621** | **371** |
+| **مجموع** | **98.9%** | **0.7%** | **90155** | **660** | **382** |
 <!-- TRANSLATION_STATUS_END -->
