@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-22 04:10+0000\n"
+"POT-Creation-Date: 2026-11-23 04:12+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -187,10 +187,22 @@ msgstr ":gh:`151773`: رفع فروپاشی در :func:`contextvars.ContextVar.s
 msgid "Library"
 msgstr "کتابخانه"
 
+msgid ":gh:`162282`: Fix quadratic-time cost in :mod:`urllib.robotparser` when many groups share a ``User-agent:``, and when a group with many user agents is checked for a user agent that is not listed explicitly."
+msgstr ""
+
+msgid ":gh:`162061`: Fix the asyncio call graph to show which task awaits :func:`asyncio.gather`. Patch by Timofei Ivankov."
+msgstr ""
+
+msgid ":gh:`162246`: Fix a reference leak in :class:`io.BufferedRWPair` when :meth:`~object.__init__` is called more than once: the previous reader and writer are now released."
+msgstr ""
+
 msgid ":gh:`162217`: Fix :exc:`asyncio.InvalidStateError` being logged when the standard input of an :mod:`asyncio` subprocess is closed after a task waiting in :meth:`proc.stdin.wait_closed() <asyncio.StreamWriter.wait_closed>` was cancelled."
 msgstr ""
 
 msgid ":gh:`162246`: Fix :class:`io.BufferedRWPair` losing buffered writes on deallocation when the reader and writer share a raw stream."
+msgstr ""
+
+msgid ":gh:`162282`: Fix quadratic-time cost in :meth:`urllib.robotparser.RobotFileParser.parse` when a single group contains many identical ``User-agent:`` lines."
 msgstr ""
 
 msgid ":gh:`149584`: Read stack chunks directly in :mod:`profiling.sampling`, without the page cache. This removes a redundant retry on macOS that can read a replacement chunk after the target process reuses the same address."
@@ -208,6 +220,9 @@ msgid ":gh:`161996`: Fix a crash in :meth:`concurrent.interpreters.Interpreter.e
 msgstr ":gh:`112729`: رفع فروپاشی هنگام فراخوانی :func:`concurrent.interpreters.create` در صورتی که فرایند با کمبود حافظه مواجه شود."
 
 msgid ":gh:`152845`: Fix :mod:`zipfile` dropping the UTF-8 (EFS) flag for existing entries when rewriting an archive in append mode, and honor an explicitly set flag on new entries. Patch by Kasra Ghodsi."
+msgstr ""
+
+msgid ":gh:`161840`: Propagate exceptions raised while getting the length of the assigned value in :mod:`ctypes` array slice assignment instead of replacing them with a :exc:`ValueError`."
 msgstr ""
 
 msgid ":gh:`135893`: Fix a regression where importing :mod:`ctypes` could leave an extra file descriptor open on some Linux systems, or hang in x86-64 macOS applications signed with the hardened runtime."
