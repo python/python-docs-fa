@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-12 04:11+0000\n"
+"POT-Creation-Date: 2026-11-24 04:12+0000\n"
 "PO-Revision-Date: 2026-09-13 16:13+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -271,7 +271,9 @@ msgstr "پایگاه داده‌ای از نگاشت‌های ``(realm, uri) -> 
 msgid "A variant of :class:`HTTPPasswordMgrWithDefaultRealm` that also has a database of ``uri -> is_authenticated`` mappings.  Can be used by a BasicAuth handler to determine when to send authentication credentials immediately instead of waiting for a ``401`` response first."
 msgstr "گونه‌ای از :class:`HTTPPasswordMgrWithDefaultRealm` که همچنین پایگاه داده‌ای از نگاشت‌های ``uri -> is_authenticated`` دارد. یک هندلری BasicAuth  می‌تواند از آن برای تعیین زمان ارسال فوری اعتبارنامه‌های احراز هویت، به‌جای اینکه ابتدا منتظر پاسخ ``401`` بماند، استفاده کند."
 
-msgid "This is a mixin class that helps with HTTP authentication, both to the remote host and to a proxy. *password_mgr*, if given, should be something that is compatible with :class:`HTTPPasswordMgr`; refer to section :ref:`http-password-mgr` for information on the interface that must be supported.  If *passwd_mgr* also provides ``is_authenticated`` and ``update_authenticated`` methods (see :ref:`http-password-mgr-with-prior-auth`), then the handler will use the ``is_authenticated`` result for a given URI to determine whether or not to send authentication credentials with the request.  If ``is_authenticated`` returns ``True`` for the URI, credentials are sent.  If ``is_authenticated`` is ``False``, credentials are not sent, and then if a ``401`` response is received the request is re-sent with the authentication credentials.  If authentication succeeds, ``update_authenticated`` is called to set ``is_authenticated`` ``True`` for the URI, so that subsequent requests to the URI or any of its super-URIs will automatically include the authentication credentials."
+#, fuzzy
+#| msgid "This is a mixin class that helps with HTTP authentication, both to the remote host and to a proxy. *password_mgr*, if given, should be something that is compatible with :class:`HTTPPasswordMgr`; refer to section :ref:`http-password-mgr` for information on the interface that must be supported.  If *passwd_mgr* also provides ``is_authenticated`` and ``update_authenticated`` methods (see :ref:`http-password-mgr-with-prior-auth`), then the handler will use the ``is_authenticated`` result for a given URI to determine whether or not to send authentication credentials with the request.  If ``is_authenticated`` returns ``True`` for the URI, credentials are sent.  If ``is_authenticated`` is ``False``, credentials are not sent, and then if a ``401`` response is received the request is re-sent with the authentication credentials.  If authentication succeeds, ``update_authenticated`` is called to set ``is_authenticated`` ``True`` for the URI, so that subsequent requests to the URI or any of its super-URIs will automatically include the authentication credentials."
+msgid "This is a mixin class that helps with HTTP authentication, both to the remote host and to a proxy. *password_mgr*, if given, should be something that is compatible with :class:`HTTPPasswordMgr`; refer to section :ref:`http-password-mgr` for information on the interface that must be supported.  If *passwd_mgr* also provides ``is_authenticated`` and ``update_authenticated`` methods (see :ref:`http-password-mgr-with-prior-auth`), then the handler will use the ``is_authenticated`` result for a given URI to determine whether or not to send authentication credentials with the request.  If ``is_authenticated`` returns ``True`` for the URI, credentials are sent.  If ``is_authenticated`` is ``False``, credentials are not sent, and then if a ``401`` response is received the request is re-sent with the authentication credentials.  If authentication succeeds, ``update_authenticated`` is called to set ``is_authenticated`` ``True`` for the URI, so that subsequent requests to the URI itself or any path below it will automatically include the authentication credentials."
 msgstr "این یک کلاس میکس‌این است که به احراز هویت HTTP کمک می‌کند، هم برای میزبان راه‌دور و هم برای پراکسی. *password_mgr*، در صورت ارائه، باید با :class:`HTTPPasswordMgr` سازگار باشد؛ برای اطلاعات درباره‌ی رابطی که باید پشتیبانی شود، به بخش :ref:`http-password-mgr` مراجعه کنید. اگر *passwd_mgr* همچنین متدهای ``is_authenticated`` و ``update_authenticated`` را فراهم کند (به :ref:`http-password-mgr-with-prior-auth` مراجعه کنید)، آنگاه هندلر  از نتیجه‌ی ``is_authenticated`` برای یک URI مشخص استفاده می‌کند تا تعیین کند که آیا اعتبارنامه‌های احراز هویت همراه با درخواست ارسال شوند یا خیر. اگر ``is_authenticated`` برای آن URI مقدار ``True`` را برگرداند، اعتبارنامه‌ها ارسال می‌شوند. اگر ``is_authenticated`` برابر ``False`` باشد، اعتبارنامه‌ها ارسال نمی‌شوند، و سپس اگر پاسخ ``401`` دریافت شود، درخواست دوباره با اعتبارنامه‌های احراز هویت ارسال می‌شود. اگر احراز هویت موفق شود، ``update_authenticated`` فراخوانی می‌شود تا ``is_authenticated`` را برای آن URI روی ``True`` تنظیم کند، به‌طوری‌که درخواست‌های بعدی به آن URI یا هر یک از ابر-URIهای آن (super-URIs) به‌طور خودکار شامل اعتبارنامه‌های احراز هویت شوند."
 
 msgid "Added ``is_authenticated`` support."
@@ -517,7 +519,9 @@ msgstr "یک شیء :class:`Request`،"
 msgid "a file-like object with the HTTP error body,"
 msgstr "یک شیء شبه‌پرونده حاوی بدنه‌ی خطای HTTP،"
 
-msgid "the three-digit code of the error, as a string,"
+#, fuzzy
+#| msgid "the three-digit code of the error, as a string,"
+msgid "the three-digit code of the error, as an integer,"
 msgstr "کد سه‌رقمی خطا، به‌صورت یک رشته،"
 
 msgid "the user-visible explanation of the code, as a string, and"
@@ -601,7 +605,9 @@ msgstr "اشیاء HTTPPasswordMgr"
 msgid "These methods are available on :class:`HTTPPasswordMgr` and :class:`HTTPPasswordMgrWithDefaultRealm` objects."
 msgstr "این متدها بر روی اشیاء :class:`HTTPPasswordMgr` و :class:`HTTPPasswordMgrWithDefaultRealm` در دسترس هستند."
 
-msgid "*uri* can be either a single URI, or a sequence of URIs. *realm*, *user* and *passwd* must be strings. This causes ``(user, passwd)`` to be used as authentication tokens when authentication for *realm* and a super-URI of any of the given URIs is given. If a URI includes a scheme, its credentials only match authentication URIs with the same scheme or no scheme. A URI without a scheme matches authentication URIs with any scheme."
+#, fuzzy
+#| msgid "*uri* can be either a single URI, or a sequence of URIs. *realm*, *user* and *passwd* must be strings. This causes ``(user, passwd)`` to be used as authentication tokens when authentication for *realm* and a super-URI of any of the given URIs is given. If a URI includes a scheme, its credentials only match authentication URIs with the same scheme or no scheme. A URI without a scheme matches authentication URIs with any scheme."
+msgid "*uri* can be either a single URI, or a sequence of URIs. *realm*, *user* and *passwd* must be strings. The credentials for *realm* apply to any registered URI and to paths below it. If a URI includes a scheme, its credentials only match authentication URIs with the same scheme or no scheme. A URI without a scheme matches authentication URIs with any scheme."
 msgstr "*uri* می‌تواند یک URI تکی یا یک دنباله از URI‌ها باشد. *realm*، *user* و *passwd* باید رشته‌ها باشند. این کار باعث می‌شود ``(user, passwd)`` به عنوان توکن‌های احراز هویت به کار روند، وقتی که احراز هویت برای *realm* و یک super-URI از هر‌یک از URIهای داده‌شده ارائه شده باشد. اگر یک URI طرح‌واره داشته باشد، اعتبارهای آن تنها با URIهای احراز هویت که طرح‌واره مشابهی دارند یا طرح‌واره ندارند هم‌خوانی دارند. یک URI بدون طرح‌واره با URIهای احراز هویت با هر طرح‌واره‌ای هم‌خوانی دارد."
 
 msgid "Authentication credentials for URIs with a scheme are now scoped by that scheme."
@@ -697,8 +703,8 @@ msgstr "یک URL داده (data URL) را بخوانید. این نوع URL شا
 msgid "FTPHandler Objects"
 msgstr "اشیای FTPHandler"
 
-msgid "Open the FTP file indicated by *req*. The login is always done with empty username and password."
-msgstr "پرونده FTP مشخص‌شده توسط *req* را باز کنید. ورود همیشه با نام کاربری خالی و گذرواژه خالی انجام می‌شود."
+msgid "Open the FTP file indicated by *req*. The username and password are taken from the URL, with missing values defaulting to empty strings. See :meth:`ftplib.FTP.login` for the login defaults."
+msgstr ""
 
 msgid "CacheFTPHandler Objects"
 msgstr "اشیای CacheFTPHandler"
@@ -721,10 +727,14 @@ msgstr "یک استثنا :exc:`~urllib.error.URLError` پرتاب می‌کند
 msgid "HTTPErrorProcessor Objects"
 msgstr "اشیاء HTTPErrorProcessor"
 
-msgid "For 200 error codes, the response object is returned immediately."
+#, fuzzy
+#| msgid "For 200 error codes, the response object is returned immediately."
+msgid "For 2xx status codes, the response object is returned immediately."
 msgstr "برای کدهای خطای ۲۰۰، شیء پاسخ بلافاصله بازگردانده می‌شود."
 
-msgid "For non-200 error codes, this simply passes the job on to the :meth:`!http_error_\\<type\\>` handler methods, via :meth:`OpenerDirector.error`. Eventually, :class:`HTTPDefaultErrorHandler` will raise an :exc:`~urllib.error.HTTPError` if no other handler handles the error."
+#, fuzzy
+#| msgid "For non-200 error codes, this simply passes the job on to the :meth:`!http_error_\\<type\\>` handler methods, via :meth:`OpenerDirector.error`. Eventually, :class:`HTTPDefaultErrorHandler` will raise an :exc:`~urllib.error.HTTPError` if no other handler handles the error."
+msgid "For other status codes, this simply passes the job on to the :meth:`!http_error_\\<type\\>` handler methods, via :meth:`OpenerDirector.error`. Eventually, :class:`HTTPDefaultErrorHandler` will raise an :exc:`~urllib.error.HTTPError` if no other handler handles the error."
 msgstr "برای کدهای خطای غیر ۲۰۰، این به‌سادگی کار را از طریق :meth:`OpenerDirector.error` به متدهای هندلر :meth:`!http_error_\\<type\\>` می‌سپارد. در نهایت، اگر هیچ هندلر دیگری خطا را مدیریت نکند، :class:`HTTPDefaultErrorHandler` یک :exc:`~urllib.error.HTTPError` پرتاب خواهد کرد."
 
 msgid "Process HTTPS error responses."
@@ -763,7 +773,9 @@ msgstr ""
 "...         data = gzip.decompress(data)\n"
 "...     print(data[:300].decode('utf-8', errors='replace'))"
 
-msgid "Note that urlopen returns a bytes object.  This is because there is no way for urlopen to automatically determine the encoding of the byte stream it receives from the HTTP server. In general, a program will decode the returned bytes object to string once it determines or guesses the appropriate encoding."
+#, fuzzy
+#| msgid "Note that urlopen returns a bytes object.  This is because there is no way for urlopen to automatically determine the encoding of the byte stream it receives from the HTTP server. In general, a program will decode the returned bytes object to string once it determines or guesses the appropriate encoding."
+msgid "Note that calling ``read()`` on the response returned by :func:`urlopen` returns a :class:`bytes` object.  This is because there is no way for :func:`urlopen` to automatically determine the encoding of the byte stream it receives from the HTTP server. In general, a program will decode the returned bytes object to a string once it determines or guesses the appropriate encoding."
 msgstr "توجه داشته باشید که urlopen یک شیء بایتی برمی‌گرداند. این به این دلیل است که urlopen هیچ راهی ندارد تا کدگذاری جریان بایتی را که از سرور HTTP دریافت می‌کند، به‌طور خودکار تعیین کند. به‌طور معمول، یک برنامه پس از تعیین یا حدس زدن کدگذاری مناسب، شیء بایتی برگردانده‌شده را به رشته کدگشایی می‌کند."
 
 msgid "The following HTML spec document, https://html.spec.whatwg.org/#charset, lists the various ways in which an HTML or an XML document could have specified its encoding information."
@@ -1059,9 +1071,17 @@ msgstr ""
 msgid "The following example uses an explicitly specified HTTP proxy, overriding environment settings::"
 msgstr "مثال زیر از یک پراکسی HTTP به‌صراحت مشخص‌شده استفاده می‌کند و تنظیمات محیطی را نادیده می‌گیرد::"
 
+#, fuzzy
+#| msgid ""
+#| ">>> import urllib.request\n"
+#| ">>> proxies = {'http': 'http://proxy.example.com:8080/'}\n"
+#| ">>> opener = urllib.request.build_opener(urllib.request.ProxyHandler(proxies))\n"
+#| ">>> with opener.open(\"https://www.python.org\") as f:\n"
+#| "...     f.read().decode('utf-8')\n"
+#| "..."
 msgid ""
 ">>> import urllib.request\n"
-">>> proxies = {'http': 'http://proxy.example.com:8080/'}\n"
+">>> proxies = {'https': 'http://proxy.example.com:8080/'}\n"
 ">>> opener = urllib.request.build_opener(urllib.request.ProxyHandler(proxies))\n"
 ">>> with opener.open(\"https://www.python.org\") as f:\n"
 "...     f.read().decode('utf-8')\n"
@@ -1170,7 +1190,9 @@ msgstr "ماژول :mod:`!urllib.response` توابع و کلاس‌هایی ر�
 msgid "URL of the resource retrieved, commonly used to determine if a redirect was followed."
 msgstr "URL منبع بازیابی‌شده، که معمولاً برای تشخیص اینکه آیا یک تغییر مسیر دنبال شده است استفاده می‌شود."
 
-msgid "Returns the headers of the response in the form of an :class:`~email.message.EmailMessage` instance."
+#, fuzzy
+#| msgid "Returns the headers of the response in the form of an :class:`~email.message.EmailMessage` instance."
+msgid "Returns the headers of the response in the form of an :class:`~email.message.Message` instance."
 msgstr "سرآیندهای پاسخ را در قالب یک نمونه از :class:`~email.message.EmailMessage` بازمی‌گرداند."
 
 msgid "Status code returned by server."
@@ -1196,3 +1218,6 @@ msgstr "FTP"
 
 msgid "HTML"
 msgstr "HTML"
+
+#~ msgid "Open the FTP file indicated by *req*. The login is always done with empty username and password."
+#~ msgstr "پرونده FTP مشخص‌شده توسط *req* را باز کنید. ورود همیشه با نام کاربری خالی و گذرواژه خالی انجام می‌شود."
