@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-23)
+(به‌روزرسانی: 2026-11-24)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -315,7 +315,7 @@
 | library/typing.po | 100.0% | 0.0% | 861 | 0 | 0 |
 | library/unittest.mock.po | 100.0% | 0.0% | 448 | 0 | 0 |
 | library/unix.po | 100.0% | 0.0% | 2 | 0 | 0 |
-| library/urllib.error.po | 100.0% | 0.0% | 15 | 0 | 0 |
+| library/urllib.error.po | 100.0% | 0.0% | 14 | 0 | 0 |
 | library/urllib.parse.po | 100.0% | 0.0% | 176 | 0 | 0 |
 | library/urllib.po | 100.0% | 0.0% | 7 | 0 | 0 |
 | library/urllib.robotparser.po | 100.0% | 0.0% | 19 | 0 | 0 |
@@ -466,7 +466,7 @@
 | c-api/import.po | 98.8% | 1.2% | 85 | 1 | 0 |
 | howto/logging.po | 98.8% | 1.2% | 244 | 3 | 0 |
 | c-api/extension-modules.po | 98.8% | 1.2% | 79 | 1 | 0 |
-| whatsnew/changelog.po | 98.7% | 0.3% | 15726 | 47 | 156 |
+| whatsnew/changelog.po | 98.7% | 0.3% | 15726 | 48 | 156 |
 | library/shlex.po | 98.7% | 1.3% | 76 | 1 | 0 |
 | library/zipapp.po | 98.7% | 1.3% | 76 | 1 | 0 |
 | library/bz2.po | 98.7% | 1.3% | 74 | 1 | 0 |
@@ -484,7 +484,6 @@
 | whatsnew/3.15.po | 98.4% | 1.0% | 818 | 8 | 5 |
 | using/unix.po | 98.4% | 1.6% | 62 | 1 | 0 |
 | library/tarfile.po | 98.4% | 1.1% | 364 | 4 | 2 |
-| library/urllib.request.po | 98.3% | 0.0% | 298 | 0 | 5 |
 | library/marshal.po | 98.3% | 1.7% | 59 | 1 | 0 |
 | extending/embedding.po | 98.3% | 1.7% | 58 | 1 | 0 |
 | library/textwrap.po | 98.3% | 1.7% | 57 | 1 | 0 |
@@ -528,6 +527,7 @@
 | c-api/iterator.po | 96.0% | 0.0% | 24 | 0 | 1 |
 | library/email.parser.po | 95.8% | 4.2% | 46 | 2 | 0 |
 | library/glob.po | 95.7% | 4.3% | 44 | 2 | 0 |
+| library/urllib.request.po | 95.4% | 2.6% | 289 | 8 | 6 |
 | c-api/gcsupport.po | 95.4% | 3.7% | 103 | 4 | 1 |
 | using/configure.po | 95.1% | 4.9% | 465 | 24 | 0 |
 | faq/extending.po | 95.1% | 1.6% | 58 | 1 | 2 |
@@ -558,5 +558,5 @@
 | library/cgi.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/cgitb.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **98.9%** | **0.7%** | **90155** | **660** | **382** |
+| **مجموع** | **98.8%** | **0.7%** | **90145** | **669** | **383** |
 <!-- TRANSLATION_STATUS_END -->
