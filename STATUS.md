@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-24)
+(به‌روزرسانی: 2026-11-25)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -255,7 +255,6 @@
 | library/pickletools.po | 100.0% | 0.0% | 20 | 0 | 0 |
 | library/pipes.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/pkgutil.po | 100.0% | 0.0% | 53 | 0 | 0 |
-| library/platform.po | 100.0% | 0.0% | 85 | 0 | 0 |
 | library/plistlib.po | 100.0% | 0.0% | 51 | 0 | 0 |
 | library/poplib.po | 100.0% | 0.0% | 53 | 0 | 0 |
 | library/posix.po | 100.0% | 0.0% | 21 | 0 | 0 |
@@ -293,7 +292,6 @@
 | library/string.po | 100.0% | 0.0% | 224 | 0 | 0 |
 | library/string.templatelib.po | 100.0% | 0.0% | 56 | 0 | 0 |
 | library/stringprep.po | 100.0% | 0.0% | 25 | 0 | 0 |
-| library/subprocess.po | 100.0% | 0.0% | 320 | 0 | 0 |
 | library/sunau.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/superseded.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/symtable.po | 100.0% | 0.0% | 76 | 0 | 0 |
@@ -386,6 +384,7 @@
 | library/doctest.po | 99.7% | 0.3% | 380 | 1 | 0 |
 | whatsnew/3.9.po | 99.7% | 0.3% | 379 | 1 | 0 |
 | whatsnew/3.14.po | 99.7% | 0.3% | 1108 | 3 | 0 |
+| library/subprocess.po | 99.7% | 0.3% | 319 | 1 | 0 |
 | library/multiprocessing.po | 99.7% | 0.3% | 621 | 2 | 0 |
 | howto/enum.po | 99.7% | 0.3% | 308 | 1 | 0 |
 | library/xml.dom.po | 99.7% | 0.3% | 301 | 1 | 0 |
@@ -464,13 +463,14 @@
 | library/binascii.po | 98.9% | 1.1% | 88 | 1 | 0 |
 | library/optparse.po | 98.9% | 1.1% | 526 | 6 | 0 |
 | c-api/import.po | 98.8% | 1.2% | 85 | 1 | 0 |
+| library/platform.po | 98.8% | 1.2% | 84 | 1 | 0 |
 | howto/logging.po | 98.8% | 1.2% | 244 | 3 | 0 |
 | c-api/extension-modules.po | 98.8% | 1.2% | 79 | 1 | 0 |
-| whatsnew/changelog.po | 98.7% | 0.3% | 15726 | 48 | 156 |
 | library/shlex.po | 98.7% | 1.3% | 76 | 1 | 0 |
 | library/zipapp.po | 98.7% | 1.3% | 76 | 1 | 0 |
 | library/bz2.po | 98.7% | 1.3% | 74 | 1 | 0 |
 | library/signal.po | 98.6% | 1.4% | 143 | 2 | 0 |
+| whatsnew/changelog.po | 98.6% | 0.3% | 15726 | 54 | 168 |
 | library/timeit.po | 98.6% | 1.4% | 70 | 1 | 0 |
 | using/cmdline.po | 98.6% | 1.4% | 278 | 4 | 0 |
 | library/tomllib.po | 98.6% | 1.4% | 68 | 1 | 0 |
@@ -492,7 +492,6 @@
 | library/types.po | 98.2% | 1.8% | 108 | 2 | 0 |
 | howto/perf_profiling.po | 98.1% | 1.9% | 53 | 1 | 0 |
 | library/http.cookies.po | 98.1% | 1.9% | 53 | 1 | 0 |
-| library/sys.po | 98.1% | 0.8% | 510 | 4 | 6 |
 | library/tracemalloc.po | 98.1% | 1.9% | 153 | 3 | 0 |
 | library/array.po | 98.0% | 2.0% | 100 | 2 | 0 |
 | library/ftplib.po | 98.0% | 2.0% | 96 | 2 | 0 |
@@ -501,6 +500,7 @@
 | library/msvcrt.po | 97.9% | 2.1% | 47 | 1 | 0 |
 | faq/library.po | 97.9% | 1.4% | 140 | 2 | 1 |
 | library/collections.abc.po | 97.9% | 1.4% | 140 | 2 | 1 |
+| library/sys.po | 97.9% | 1.0% | 509 | 5 | 6 |
 | c-api/slots.po | 97.8% | 2.2% | 44 | 1 | 0 |
 | c-api/init_config.po | 97.8% | 1.5% | 654 | 10 | 5 |
 | library/email.charset.po | 97.7% | 2.3% | 43 | 1 | 0 |
@@ -544,12 +544,12 @@
 | library/tkinter.font.po | 91.4% | 8.6% | 32 | 3 | 0 |
 | library/argparse.po | 91.0% | 7.9% | 393 | 34 | 5 |
 | deprecations/c-api-pending-removal-in-3.18.po | 90.9% | 9.1% | 20 | 2 | 0 |
-| library/test.po | 89.1% | 2.9% | 335 | 11 | 30 |
 | library/asyncio-extending.po | 88.9% | 11.1% | 24 | 3 | 0 |
 | using/windows.po | 87.8% | 6.4% | 545 | 40 | 36 |
 | library/numbers.po | 85.7% | 11.4% | 30 | 4 | 1 |
 | reference/grammar.po | 85.7% | 0.0% | 6 | 0 | 1 |
 | library/dbm.po | 85.6% | 1.5% | 113 | 2 | 17 |
+| library/test.po | 84.9% | 4.9% | 327 | 19 | 39 |
 | library/turtle.po | 83.6% | 13.2% | 469 | 74 | 18 |
 | library/termios.po | 83.3% | 0.0% | 25 | 0 | 5 |
 | c-api/bool.po | 81.8% | 18.2% | 9 | 2 | 0 |
@@ -558,5 +558,5 @@
 | library/cgi.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/cgitb.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **98.8%** | **0.7%** | **90145** | **669** | **383** |
+| **مجموع** | **98.8%** | **0.8%** | **90134** | **686** | **404** |
 <!-- TRANSLATION_STATUS_END -->
