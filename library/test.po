@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-12 04:11+0000\n"
+"POT-Creation-Date: 2026-11-25 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -452,6 +452,9 @@ msgstr "اگر پایتون با :ref:`pymalloc <pymalloc>` فعال ساخته 
 msgid "Raise :exc:`ResourceDenied` if *resource* is not available. *msg* is the argument to :exc:`ResourceDenied` if it is raised. Always returns ``True`` if called by a function whose ``__name__`` is ``'__main__'``. Used when tests are executed by :mod:`test.regrtest`."
 msgstr "اگر *resource* در دسترس نباشد، :exc:`ResourceDenied` را پرتاب می‌کند. اگر این استثنا پرتاب شود، *msg* آرگومان :exc:`ResourceDenied` خواهد بود. اگر توسط تابعی فراخوانی شود که ``__name__`` آن ``'__main__'`` است، همیشه ``True`` را برمی‌گرداند. هنگامی که آزمون‌ها توسط :mod:`test.regrtest` اجرا می‌شوند، استفاده می‌شود."
 
+msgid "If called at the top level, sets label \"requires\\_\\ *resource*\" on the module."
+msgstr ""
+
 msgid "Return a repr of *dict* with keys sorted."
 msgstr "یک بازنمایی (repr) از *dict* با کلیدهای مرتب‌شده برمی‌گرداند."
 
@@ -460,6 +463,24 @@ msgstr "مسیر پرونده‌ای با نام *filename* را برمی‌گر
 
 msgid "Setting *subdir* indicates a relative path to use to find the file rather than looking directly in the path directories."
 msgstr "تنظیم *subdir* یک مسیر نسبی را برای استفاده در یافتن پرونده مشخص می‌کند، به‌جای جست‌وجوی مستقیم در پوشه‌های مسیر."
+
+msgid "Add a label to a test.  Use ``@mark('label')`` as a decorator of a test method or class."
+msgstr ""
+
+msgid "The optional *value* (``True`` by default) is matched on the command line by ``--label label=value``, whereas ``--label label`` matches any value."
+msgstr ""
+
+msgid "Many :mod:`test.support` decorators like :func:`requires_resource`, :func:`~test.support.cpython_only` or :func:`bigmemtest` add labels automatically."
+msgstr ""
+
+msgid "Add a label to every test of a module.  Call it at the module level::"
+msgstr ""
+
+msgid "test.support.mark_module('pickletest')"
+msgstr ""
+
+msgid "The module is the caller, unless its :func:`globals` dict is passed as the *globals* argument."
+msgstr ""
 
 msgid "Get size of a page in bytes."
 msgstr "دریافت اندازه‌ی یک صفحه بر حسب بایت."
@@ -623,19 +644,29 @@ msgstr "دکوراتور برای رد کردن آزمون‌ها در ساخت 
 msgid "Decorator for skipping tests on non-IEEE 754 platforms."
 msgstr "دکوراتور برای رد کردن آزمون‌ها روی سکوهای غیر IEEE 754."
 
-msgid "Decorator for skipping tests if :mod:`zlib` doesn't exist."
+#, fuzzy
+#| msgid "Decorator for skipping tests if :mod:`zlib` doesn't exist."
+msgid "Decorator for skipping tests if :mod:`zlib` doesn't exist. Adds label \"requires_zlib\"."
 msgstr "دکوراتوری برای رد کردن آزمون‌ها در صورتی که :mod:`zlib` وجود نداشته باشد."
 
-msgid "Decorator for skipping tests if :mod:`gzip` doesn't exist."
+#, fuzzy
+#| msgid "Decorator for skipping tests if :mod:`gzip` doesn't exist."
+msgid "Decorator for skipping tests if :mod:`gzip` doesn't exist. Adds label \"requires_gzip\"."
 msgstr "دکوراتوری برای پرش از آزمون‌ها در صورتی که :mod:`gzip` وجود نداشته باشد."
 
-msgid "Decorator for skipping tests if :mod:`bz2` doesn't exist."
+#, fuzzy
+#| msgid "Decorator for skipping tests if :mod:`bz2` doesn't exist."
+msgid "Decorator for skipping tests if :mod:`bz2` doesn't exist. Adds label \"requires_bz2\"."
 msgstr "دکوراتوری برای رد کردن آزمون‌ها در صورتی که :mod:`bz2` وجود نداشته باشد."
 
-msgid "Decorator for skipping tests if :mod:`lzma` doesn't exist."
+#, fuzzy
+#| msgid "Decorator for skipping tests if :mod:`lzma` doesn't exist."
+msgid "Decorator for skipping tests if :mod:`lzma` doesn't exist. Adds label \"requires_lzma\"."
 msgstr "دکوراتوری برای پرش از آزمون‌ها در صورتی که :mod:`lzma` وجود نداشته باشد."
 
-msgid "Decorator for skipping tests if *resource* is not available."
+#, fuzzy
+#| msgid "Decorator for skipping tests if *resource* is not available."
+msgid "Decorator for skipping tests if *resource* is not available. Adds label \"requires\\_\\ *resource*\"."
 msgstr "دکوراتوری برای رد کردن آزمون‌ها در صورتی که *resource* در دسترس نباشد."
 
 msgid "Decorator for only running the test if :data:`HAVE_DOCSTRINGS`."
@@ -644,10 +675,14 @@ msgstr "دکوراتوری برای اجرای آزمون فقط در صورت :
 msgid "Decorator for only running the test if :ref:`Limited C API <limited-c-api>` is available."
 msgstr "دکوراتوری برای اجرای آزمون تنها در صورتی که :ref:`Limited C API <limited-c-api>` در دسترس باشد."
 
-msgid "Decorator for tests only applicable to CPython."
+#, fuzzy
+#| msgid "Decorator for tests only applicable to CPython."
+msgid "Decorator for tests only applicable to CPython. Adds label \"impl_detail_cpython\"."
 msgstr "دکوراتور برای آزمون‌هایی که فقط در CPython کاربرد دارند."
 
-msgid "Decorator for invoking :func:`check_impl_detail` on *guards*.  If that returns ``False``, then uses *msg* as the reason for skipping the test."
+#, fuzzy
+#| msgid "Decorator for invoking :func:`check_impl_detail` on *guards*.  If that returns ``False``, then uses *msg* as the reason for skipping the test."
+msgid "Decorator for invoking :func:`check_impl_detail` on *guards*.  If that returns ``False``, then uses *msg* as the reason for skipping the test. For every keyword argument *name* adds a label \"impl_detail\\_\\ *name*\" if its value is true or \"impl_detail_no\\_\\ *name*\" otherwise."
 msgstr "دکوراتوری برای فراخوانی :func:`check_impl_detail` روی *guards*. اگر آن ``False`` برگرداند، از *msg* به‌عنوان دلیل پرش از آزمون استفاده می‌کند."
 
 msgid "Decorator for marking tests as thread-unsafe.  This test always runs in one thread even when invoked with ``--parallel-threads``."
@@ -668,7 +703,12 @@ msgstr "*size* اندازه‌ی درخواستی برای آزمون است (د
 msgid "The *size* argument is normally passed to the decorated test method as an extra argument.  If *dry_run* is ``True``, the value passed to the test method may be less than the requested value.  If *dry_run* is ``False``, it means the test doesn't support dummy runs when ``-M`` is not specified."
 msgstr "آرگومان *size* معمولاً به‌عنوان یک آرگومان اضافی به متد آزمون دکوریت‌شده ارسال می‌شود. اگر *dry_run* برابر ``True`` باشد، مقدار ارسال‌شده به متد آزمون ممکن است کمتر از مقدار درخواستی باشد. اگر *dry_run* برابر ``False`` باشد، به این معناست که آزمون وقتی ``-M`` مشخص نشده باشد از اجراهای ساختگی پشتیبانی نمی‌کند."
 
-msgid "Decorator for tests that fill the address space."
+msgid "Adds label \"bigmemtest\"."
+msgstr ""
+
+#, fuzzy
+#| msgid "Decorator for tests that fill the address space."
+msgid "Decorator for tests that fill the address space. Adds label \"bigaddrspacetest\"."
 msgstr "دکوراتوری برای آزمون‌هایی که فضای آدرس را پر می‌کنند."
 
 msgid "Return ``False`` if there is no evidence the interpreter was compiled with ``musl``, otherwise return a version triple, either ``(0, 0, 0)`` if the version is unknown, or the actual version if it is known.  Intended for use in ``skip`` decorators.  ``emscripten`` and ``wasi`` are assumed to be compiled with ``musl``; otherwise ``platform.libc_ver`` is checked."
@@ -1266,6 +1306,9 @@ msgstr "این تابع، ماژول نام‌برده‌شده را ایمپو�
 
 msgid "Module and package deprecation messages are suppressed during this import if *deprecated* is ``True``.  If a module is required on a platform but optional for others, set *required_on* to an iterable of platform prefixes which will be compared against :data:`sys.platform`."
 msgstr "در صورتی که *deprecated* برابر ``True`` باشد، پیام‌های منسوخ‌شدگی ماژول و بسته در جریان این ایمپورت سرکوب می‌شوند. اگر ماژولی در یک پلتفرم ضروری باشد اما در پلتفرم‌های دیگر اختیاری باشد، *required_on* را روی یک پیمایش‌پذیر از پیشوندهای پلتفرم تنظیم کنید که با :data:`sys.platform` مقایسه می‌شوند."
+
+msgid "If called at the top level, sets label \"requires\\_\\ *name*\" on the module."
+msgstr ""
 
 #, fuzzy
 #| msgid "This function imports and returns a fresh copy of the named Python module by removing the named module from ``sys.modules`` before doing the import. Note that unlike :func:`importlib.reload`, the original module is not affected by this operation."

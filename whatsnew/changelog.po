@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-24 04:12+0000\n"
+"POT-Creation-Date: 2026-11-25 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -36,6 +36,11 @@ msgstr "*تاریخ انتشار: XXXX-XX-XX*"
 
 msgid "Security"
 msgstr "امنیت"
+
+#, fuzzy
+#| msgid ":gh:`149698`: Update bundled `libexpat <https://libexpat.github.io/>`_ to version 2.8.1 for the fix for :cve:`2026-45186`."
+msgid ":gh:`162493`: Update bundled `libexpat <https://libexpat.github.io/>`_ to version 2.11.0 for the fixes to :cve:`2026-124317`, :cve:`2026-128241`, and :cve:`2026-134703`."
+msgstr ":gh:`149698`: به‌روزرسانی `libexpat <https://libexpat.github.io/>`_ بسته‌بندی‌شده به نسخه‌ی ۲.۸.۱ برای رفع آسیب‌پذیری :cve:`2026-45186`."
 
 msgid ":cve:`2026-115791`, :gh:`161705`: Remove ``sys.path[0]`` in :mod:`gzip`, :mod:`tarfile` and :mod:`zipfile` command line interface to prevent shadowing standard library modules from extracted files. Issue reported by Jelle Zijlstra, patch by Gregory P. Smith and Victor Stinner."
 msgstr ""
@@ -136,6 +141,11 @@ msgstr ""
 msgid ":gh:`160303`: Fix :class:`bytearray` reading and writing memory outside of its buffer after ``del b[:n]`` or ``b[:n] = shorter`` failed with :exc:`MemoryError`. The bytes are now removed even if shrinking the memory block fails; :exc:`MemoryError` is still raised.  Also fix the missing null byte after the data when shrinking fails for a slice which is not at the front."
 msgstr ""
 
+#, fuzzy
+#| msgid ":gh:`104955`: Fix signature for the new :meth:`~object.__release_buffer__` slot. Patch by Jelle Zijlstra."
+msgid ":gh:`159101`: Fix use-after-free when :meth:`~object.__del__` changes the base class. Patch by Sergey Miryanov."
+msgstr ":gh:`104955`: اصلاح امضا برای جایگاه جدید :meth:`~object.__release_buffer__`. وصله‌ای از Jelle Zijlstra."
+
 msgid ":gh:`158195`: Fix a deadlock in the free-threaded build between a thread that stops the world while running Python code under the type lock (for example a custom metaclass ``mro()`` or the ``__eq__`` of a :class:`str` subclass used as a class ``__dict__`` key) and a thread that assigns to a special method or to ``__bases__`` of a class.  The type lock is no longer held while waiting for a stop-the-world; the prepared slot, MRO and bases updates are validated with the world stopped and recomputed if they went stale."
 msgstr ""
 
@@ -187,7 +197,18 @@ msgstr ":gh:`151773`: رفع فروپاشی در :func:`contextvars.ContextVar.s
 msgid "Library"
 msgstr "کتابخانه"
 
+msgid ":gh:`84256`: Fix a crash in :mod:`tkinter` on Windows when a Tk event handler, such as a ``<Configure>`` binding, is called while another event loop is running, for example when the window is resized while a native dialog is shown."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`158522`: Fix :mod:`profiling.sampling` showing a single frame for a task whose coroutine recurses. Patch by Timofei Ivankov."
+msgid ":gh:`159865`: Fix :mod:`profiling.sampling` dropping exception-mode samples when a thread blocks inside an exception handler."
+msgstr ":gh:`158522`: رفع نمایش یک فریم واحد برای وظیفه‌ای که هم‌روال آن بازگشتی (recursive) است توسط :mod:`profiling.sampling`. وصله توسط Timofei Ivankov."
+
 msgid ":gh:`162282`: Fix quadratic-time cost in :mod:`urllib.robotparser` when many groups share a ``User-agent:``, and when a group with many user agents is checked for a user agent that is not listed explicitly."
+msgstr ""
+
+msgid ":gh:`162395`: Fix the asyncio call graph to show which task awaits the future returned by :func:`asyncio.shield`. Patch by Timofei Ivankov."
 msgstr ""
 
 msgid ":gh:`162061`: Fix the asyncio call graph to show which task awaits :func:`asyncio.gather`. Patch by Timofei Ivankov."
@@ -234,6 +255,9 @@ msgid ":gh:`135893`: Fix a regression where importing :mod:`ctypes` could leave 
 msgstr ""
 
 msgid ":gh:`161712`: Fix :meth:`threading.Thread.join` with a timeout blocking forever when the deadline passed between the two reads of the clock used to compute the time left."
+msgstr ""
+
+msgid ":gh:`161571`: Fix a crash in :func:`curses.tparm` for capabilities with parameters that they format as strings, such as ``Ms`` of xterm. Non-zero integers for these parameters now raise :exc:`TypeError`."
 msgstr ""
 
 #, fuzzy
@@ -303,6 +327,9 @@ msgstr ""
 msgid ":gh:`161039`: Fix the :mod:`pydoc` pager not detecting ``less`` 706 and newer."
 msgstr ""
 
+msgid ":gh:`160976`: Fix the Gecko reporter (``--gecko``) in :mod:`profiling.sampling` to record full source file paths."
+msgstr ""
+
 #, fuzzy
 #| msgid ":gh:`103791`: :class:`contextlib.suppress` now supports suppressing exceptions raised as part of a :exc:`BaseExceptionGroup`, in addition to the recent support for :exc:`ExceptionGroup`."
 msgid ":gh:`137549`: :func:`asyncio.timeout` now inserts :exc:`TimeoutError` into the context chain of sub-exceptions of a :exc:`BaseExceptionGroup`, as it already did for :exc:`ExceptionGroup`."
@@ -347,6 +374,9 @@ msgstr ":gh:`153037`: رفع مشکلی که در آن :class:`~compression.zstd
 msgid ":gh:`158500`: :meth:`datetime.date.fromisoformat` now rejects strings with trailing characters after a basic-format date, such as ``'2020010112'``. The pure-Python :meth:`datetime.datetime.fromisoformat` now rejects a date followed by a bare separator, such as ``'2020-01-01T'``, matching the C implementation."
 msgstr ""
 
+msgid ":gh:`160735`: Fix Tachyon's Gecko export closing open markers too early when replaying a binary profile whose thread samples arrive out of time order."
+msgstr ""
+
 msgid ":gh:`160708`: Fix out-of-bounds memory access in :func:`bool` on :mod:`ctypes` simple objects enlarged by :func:`ctypes.resize`, and when passing such objects to a foreign function."
 msgstr ""
 
@@ -357,6 +387,11 @@ msgstr ""
 #| msgid ":gh:`107545`: Improve the error messages that may be raised by :meth:`~socket.socket.setsockopt`."
 msgid ":gh:`160596`: Fix the error message for invalid data passed to :meth:`!asyncio.proactor_events.sendto`."
 msgstr ":gh:`107545`: بهبود پیام‌های خطایی که ممکن است توسط :meth:`~socket.socket.setsockopt` بالا آورده شوند."
+
+#, fuzzy
+#| msgid ":gh:`156810`: Fix a :exc:`UnicodeEncodeError` crash in the sampling profiler's collapsed-stack export (``--collapsed``) when a sampled frame's function or file name contains non-ASCII or surrogate-escaped characters. The output file is now written as UTF-8."
+msgid ":gh:`160601`: Fix a :exc:`UnicodeEncodeError` in :mod:`profiling.sampling` binary mode when a sampled filename or function name contains surrogate characters. These characters are now written as backslash escapes in the binary file."
+msgstr ":gh:`156810`: رفع یک فروپاشی با خطای :exc:`UnicodeEncodeError` در صادرات پشته‌ی فشرده‌شده‌ی پروفایل‌گیر نمونه‌برداری (``--collapsed``) هنگامی که نام تابع یا نام پرونده‌ی یک فریم نمونه‌برداری‌شده حاوی کاراکترهای غیر اسکی (non-ASCII) یا نویسه‌های جایگزین‌گریز (surrogate-escaped) باشد. پرونده‌ی خروجی اکنون به صورت UTF-8 نوشته می‌شود."
 
 msgid ":gh:`160561`: Fix a descriptor leak in :func:`socket.fromfd` when the socket constructor rejects its arguments. The duplicated descriptor was never closed."
 msgstr ""
@@ -433,6 +468,11 @@ msgstr ""
 msgid ":gh:`159875`: Fix :exc:`AttributeError` from the methods of an :mod:`asyncio` SSL transport, such as :meth:`~asyncio.WriteTransport.write` and :meth:`~asyncio.BaseTransport.set_protocol`, when the transport is closed after its connection was lost. This also affected the fallback of :meth:`loop.sendfile() <asyncio.loop.sendfile>` over SSL when the peer went away mid-transfer. The SSL context is still released once the connection is lost."
 msgstr ""
 
+#, fuzzy
+#| msgid ":gh:`158522`: Fix :mod:`profiling.sampling` showing a single frame for a task whose coroutine recurses. Patch by Timofei Ivankov."
+msgid ":gh:`159645`: Fix :mod:`profiling.sampling` ``--async-aware`` profiles showing event loop frames under tasks. Patch by Timofei Ivankov."
+msgstr ":gh:`158522`: رفع نمایش یک فریم واحد برای وظیفه‌ای که هم‌روال آن بازگشتی (recursive) است توسط :mod:`profiling.sampling`. وصله توسط Timofei Ivankov."
+
 msgid ":gh:`159643`: Fix :exc:`EOFError` raised by :mod:`tarfile` in stream mode with bz2, xz or zstd compression when reading past the end of the compressed data, for example with *ignore_zeros* or an archive without end-of-archive blocks."
 msgstr ""
 
@@ -450,6 +490,9 @@ msgstr ":gh:`159620`: رفع دستورات ``python -m asyncio ps``، ``pstree`
 msgid ":gh:`150751`: :mod:`http.client` now ignores optional whitespace around the ``Content-Length`` header value when validating it, as required by :rfc:`9112`. Previously a value with trailing whitespace (for example ``Content-Length: 5`` followed by a space) was treated as missing and the response body was read until the connection was closed."
 msgstr ""
 
+msgid ":gh:`159130`: Fix :mod:`!_remote_debugging` returning a different thread when the selected thread does not match the profiling mode with ``only_active_thread=True``."
+msgstr ""
+
 #, fuzzy
 #| msgid ":gh:`151378`: Fix a bug in the binary collector in Tachyon that caused unbounded memory growth while profiling a thread that stayed asleep. Patch by Maurycy Pawłowski-Wieroński."
 msgid ":gh:`149584`: Improve the performance of the Tachyon profiler by avoiding unnecessary remote reads of the base frame sentinel. Patch by Maurycy Pawłowski-Wieroński."
@@ -459,6 +502,9 @@ msgstr ":gh:`151378`: رفع یک باگ در جمع‌آوری‌کننده‌�
 #| msgid ":issue:`18108`: :func:`shutil.chown` now supports *dir_fd* and *follow_symlinks* keyword arguments."
 msgid ":gh:`158998`: Fix :func:`os.statx` ignoring the *follow_symlinks* argument."
 msgstr ":issue:`18108`: تابع :func:`shutil.chown` اکنون از آرگومان‌های کلیدواژه‌ای *dir_fd* و *follow_symlinks* پشتیبانی می‌کند."
+
+msgid ":gh:`158986`: Fix :mod:`profiling.sampling` reporting modules in a ``site-packages`` directory located inside the standard library directory as standard library modules. The heatmap now lists them under \"Site Packages\" and flamegraph labels no longer start with ``site-packages.``."
+msgstr ""
 
 msgid ":gh:`155233`: Fix :meth:`asyncio.Barrier.wait` returning duplicate indices when a waiting task is cancelled before the barrier is released.```"
 msgstr ""
@@ -503,6 +549,17 @@ msgstr ""
 
 msgid ":gh:`155031`: Propagate to user any permission errors from subprocess attach commands in Tachyon"
 msgstr ""
+
+msgid ":gh:`127172`: Creating a virtual environment with :mod:`venv` now writes the activation scripts using permissions derived from the process umask (and any default ACL), consistent with the other files it creates, instead of a fixed mode copied from the packaged templates. Patch by tonghuaroot."
+msgstr ""
+
+msgid ":gh:`154874`: Fix :func:`curses.termattrs` returning a negative value on a terminal that supports :const:`curses.A_ITALIC`, which left its result unusable as an attribute mask."
+msgstr ""
+
+#, fuzzy
+#| msgid ":gh:`153838`: Skip non-regular files in the ``profiling.sampling`` heatmap exporter instead of reading them unconditionally.  Patch by tonghuaroot."
+msgid ":gh:`153840`: Escape special characters in ``profiling.sampling`` flamegraph function names to prevent markup injection in the generated HTML report. Patch by tonghuaroot."
+msgstr ":gh:`153838`: پرش از پرونده‌های غیرعادی در صادرکننده‌ی نقشه‌ی حرارتی ``profiling.sampling`` به‌جای خواندن آن‌ها بدون قید و شرط. وصله توسط tonghuaroot."
 
 msgid ":gh:`150751`: :mod:`http.client` now validates the ``Content-Length`` header and the chunked ``chunk-size`` against the RFC 9112 grammar (``1*DIGIT`` and ``1*HEXDIG``) before parsing them, rejecting values such as ``+5``, ``5_0`` or a ``0x``-prefixed or negative chunk size that :func:`int` would otherwise accept. This avoids framing a response differently from a strict peer."
 msgstr ""
@@ -560,8 +617,14 @@ msgstr ""
 msgid ":gh:`126253`: Fix ``test_os.test_attributes()`` on Windows NTFS: ignore unknown file attributes."
 msgstr ""
 
+msgid ":gh:`108828`: Add support of labels in tests. The ``@test.support.mark('label')`` decorator adds a label to a test method or class. ``test.support.mark_module('label')`` adds a label to the whole module. Many :mod:`test.support` decorators like :func:`~test.support.requires_resource`, :func:`~test.support.cpython_only` or :func:`~test.support.bigmemtest` add labels automatically.  A label can have a value (``True`` by default). Tests which have or have not the specified label can be filtered by options ``--label`` and ``--no-label``; ``--label name=value`` matches a specific value, while ``--label name`` matches any value."
+msgstr ""
+
 msgid "Build"
 msgstr "ساخت"
+
+msgid ":gh:`162308`: Use the newly built interpreter to check extension modules in native builds configured with :option:`--with-build-python`. This also applies when generating missing standard library module information. Cross builds continue to use the build interpreter without importing target extension modules."
+msgstr ""
 
 msgid ":gh:`153668`: Disable ``unicodectype.c`` optimization in regular Windows ARM64 Release builds due to a compiler bug in MSVC 14.50, 14.51, and 14.52. PGO builds are not affected."
 msgstr ""
@@ -573,6 +636,9 @@ msgid ":gh:`136267`: ``build-details.json`` now takes ``language.version_info``,
 msgstr ""
 
 msgid ":gh:`136267`: ``build-details.json`` now describes the interpreter being built rather than the interpreter running :program:`generate-build-details.py`: ``abi.flags``, ``suffixes.extensions``, ``abi.stable_abi_suffix`` and ``implementation.supports_isolated_interpreters`` are derived from the target's configuration, which fixes cross builds and builds that use :option:`--with-build-python`. ``abi.extension_suffix`` and ``abi.stable_abi_suffix`` are now also present when libpython is only built as a static library."
+msgstr ""
+
+msgid ":gh:`140266`: Fix ``\"platform\": \"\"`` in ``build-details.json`` for native builds configured with :option:`--with-build-python`: :envvar:`!_PYTHON_HOST_PLATFORM` is now only passed to the build interpreter when cross compiling."
 msgstr ""
 
 msgid ":gh:`160924`: Fix cross-compilation failures with ``--enable-shared`` caused by the build Python loading the target's ``libpython`` through the shared-library search path (such as musl from glibc)."
