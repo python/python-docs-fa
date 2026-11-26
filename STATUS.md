@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-25)
+(به‌روزرسانی: 2026-11-26)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -211,7 +211,6 @@
 | library/html.entities.po | 100.0% | 0.0% | 9 | 0 | 0 |
 | library/html.parser.po | 100.0% | 0.0% | 64 | 0 | 0 |
 | library/html.po | 100.0% | 0.0% | 8 | 0 | 0 |
-| library/http.po | 100.0% | 0.0% | 247 | 0 | 0 |
 | library/http.server.po | 100.0% | 0.0% | 135 | 0 | 0 |
 | library/i18n.po | 100.0% | 0.0% | 3 | 0 | 0 |
 | library/idle.po | 100.0% | 0.0% | 297 | 0 | 0 |
@@ -394,6 +393,7 @@
 | c-api/typeobj.po | 99.6% | 0.4% | 751 | 3 | 0 |
 | reference/compound_stmts.po | 99.6% | 0.4% | 497 | 2 | 0 |
 | howto/functional.po | 99.6% | 0.4% | 246 | 1 | 0 |
+| library/http.po | 99.6% | 0.4% | 246 | 1 | 0 |
 | c-api/intro.po | 99.6% | 0.4% | 243 | 1 | 0 |
 | library/profiling.sampling.po | 99.6% | 0.2% | 465 | 1 | 1 |
 | library/configparser.po | 99.6% | 0.4% | 226 | 1 | 0 |
@@ -470,9 +470,9 @@
 | library/zipapp.po | 98.7% | 1.3% | 76 | 1 | 0 |
 | library/bz2.po | 98.7% | 1.3% | 74 | 1 | 0 |
 | library/signal.po | 98.6% | 1.4% | 143 | 2 | 0 |
-| whatsnew/changelog.po | 98.6% | 0.3% | 15726 | 54 | 168 |
 | library/timeit.po | 98.6% | 1.4% | 70 | 1 | 0 |
 | using/cmdline.po | 98.6% | 1.4% | 278 | 4 | 0 |
+| whatsnew/changelog.po | 98.6% | 0.3% | 15726 | 55 | 172 |
 | library/tomllib.po | 98.6% | 1.4% | 68 | 1 | 0 |
 | c-api/type.po | 98.5% | 1.5% | 200 | 3 | 0 |
 | builtins/functions.po | 98.5% | 1.3% | 531 | 7 | 1 |
@@ -558,5 +558,5 @@
 | library/cgi.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/cgitb.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **98.8%** | **0.8%** | **90134** | **686** | **404** |
+| **مجموع** | **98.8%** | **0.8%** | **90133** | **688** | **408** |
 <!-- TRANSLATION_STATUS_END -->
