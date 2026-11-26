@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-25 04:11+0000\n"
+"POT-Creation-Date: 2026-11-26 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -36,6 +36,9 @@ msgstr "*تاریخ انتشار: XXXX-XX-XX*"
 
 msgid "Security"
 msgstr "امنیت"
+
+msgid ":gh:`162577`: Update ``zstd`` to v1.6.0 in Android, iOS, and Windows builds to address :cve:`2026-124851`."
+msgstr ""
 
 #, fuzzy
 #| msgid ":gh:`149698`: Update bundled `libexpat <https://libexpat.github.io/>`_ to version 2.8.1 for the fix for :cve:`2026-45186`."
@@ -196,6 +199,15 @@ msgstr ":gh:`151773`: رفع فروپاشی در :func:`contextvars.ContextVar.s
 
 msgid "Library"
 msgstr "کتابخانه"
+
+msgid ":gh:`162622`: Preserve literal braces in f-string and t-string format specifiers when using :func:`ast.unparse`."
+msgstr ""
+
+msgid ":gh:`153020`: Fix a crash in :mod:`tkinter` at the interactive prompt if the first Tcl interpreter was created in a thread which has since exited.  The event hook which runs Tcl events while waiting for input is also no longer removed when an interpreter is deleted in other thread while other interpreters still exist, and its state no longer has data races in the :term:`free-threaded build`."
+msgstr ""
+
+msgid ":gh:`140488`: The :mod:`tkinter` event loop running at the interactive prompt no longer polls on Unix if Tcl is threaded.  It now waits for events or input, so the process does not wake up every few milliseconds while idle."
+msgstr ""
 
 msgid ":gh:`84256`: Fix a crash in :mod:`tkinter` on Windows when a Tk event handler, such as a ``<Configure>`` binding, is called while another event loop is running, for example when the window is resized while a native dialog is shown."
 msgstr ""
@@ -535,6 +547,11 @@ msgstr ""
 #| msgid ":gh:`158522`: Fix :mod:`profiling.sampling` showing a single frame for a task whose coroutine recurses. Patch by Timofei Ivankov."
 msgid ":gh:`157605`: Fix :mod:`profiling.sampling` failing when a native thread has an empty Python stack."
 msgstr ":gh:`158522`: رفع نمایش یک فریم واحد برای وظیفه‌ای که هم‌روال آن بازگشتی (recursive) است توسط :mod:`profiling.sampling`. وصله توسط Timofei Ivankov."
+
+#, fuzzy
+#| msgid ":gh:`154937`: Fix a data race on thread handle identifiers when ``_thread._shutdown()`` runs concurrently with the startup of non-daemon threads in the :term:`free-threaded build`."
+msgid ":gh:`154923`: Fix a crash when creating Tcl interpreters concurrently in different threads in the :term:`free-threaded build`."
+msgstr ":gh:`154937`: رفع رقابت داده روی شناسه‌های دسته‌ی نخ‌ها هنگامی که ``_thread._shutdown()`` به‌طور همزمان با راه‌اندازی نخ‌های غیردیمن در :term:`ساخت نخ‌آزاد <free-threaded build>` اجرا می‌شود."
 
 #, fuzzy
 #| msgid ":gh:`151126`: Fix a crash caused by failing to set :exc:`MemoryError` on allocation failure when passing :class:`ctypes.Structure` or :class:`ctypes.Union` instances by value to ctypes foreign functions."
