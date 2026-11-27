@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-26 04:11+0000\n"
+"POT-Creation-Date: 2026-11-27 04:11+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -178,6 +178,9 @@ msgstr ""
 msgid ":gh:`151126`: Fix a crash when allocation failure occurs during :ref:`interp-object-sharing`."
 msgstr ":gh:`151126`: رفع فروپاشی در اثر تنظیم‌نشدن :exc:`MemoryError` هنگام شکست تخصیص حافظه در :func:`ctypes.get_errno`."
 
+msgid ":gh:`155247`: Fix importing an extension module whose path contains characters unencodable in UTF-8, e.g. undecodable bytes of a file name. Previously it failed with :exc:`UnicodeEncodeError`, which made it impossible to build or run Python in a directory with such name."
+msgstr ""
+
 #, fuzzy
 #| msgid ":gh:`145615`: Fixed a memory leak in the :term:`free-threaded build` where mimalloc pages could become permanently unreclaimable until the owning thread exited."
 msgid ":gh:`152125`: Fix a crash in the :term:`free-threaded build` where :c:func:`PyList_New` could leave a newly allocated list's item buffer pointer uninitialized when the backing array allocation failed under low memory, leading to an invalid free."
@@ -199,6 +202,12 @@ msgstr ":gh:`151773`: رفع فروپاشی در :func:`contextvars.ContextVar.s
 
 msgid "Library"
 msgstr "کتابخانه"
+
+msgid ":gh:`162650`: Fix :mod:`tkinter` calls from other threads failing with :exc:`RuntimeError` after a nested :meth:`!mainloop` exited, for example after :meth:`!SimpleDialog.go` returned."
+msgstr ""
+
+msgid ":gh:`162647`: Fix :mod:`tkinter` when Tcl interpreters run :meth:`!mainloop` in different threads.  :meth:`!quit` no longer stops the main loop of other interpreter, and stops the main loop even if it waits for events. An exception raised in a callback is no longer raised by the main loop in other thread."
+msgstr ""
 
 msgid ":gh:`162622`: Preserve literal braces in f-string and t-string format specifiers when using :func:`ast.unparse`."
 msgstr ""
@@ -261,6 +270,9 @@ msgid ":gh:`152845`: Fix :mod:`zipfile` dropping the UTF-8 (EFS) flag for existi
 msgstr ""
 
 msgid ":gh:`161840`: Propagate exceptions raised while getting the length of the assigned value in :mod:`ctypes` array slice assignment instead of replacing them with a :exc:`ValueError`."
+msgstr ""
+
+msgid ":gh:`156812`: Serializing a document type declaration, a comment or a processing instruction in :mod:`xml.dom.minidom` now checks the structural rules of XML. A system literal is now quoted with the quote which it does not contain, and :exc:`ValueError` is raised for an invalid public identifier, for a literal containing both quotes, for a public identifier without a system identifier, for a comment ending with ``-``, and for a processing instruction containing ``?>`` in the data or using the reserved target ``xml``. The characters are still not checked."
 msgstr ""
 
 msgid ":gh:`135893`: Fix a regression where importing :mod:`ctypes` could leave an extra file descriptor open on some Linux systems, or hang in x86-64 macOS applications signed with the hardened runtime."
@@ -480,6 +492,9 @@ msgstr ""
 msgid ":gh:`159875`: Fix :exc:`AttributeError` from the methods of an :mod:`asyncio` SSL transport, such as :meth:`~asyncio.WriteTransport.write` and :meth:`~asyncio.BaseTransport.set_protocol`, when the transport is closed after its connection was lost. This also affected the fallback of :meth:`loop.sendfile() <asyncio.loop.sendfile>` over SSL when the peer went away mid-transfer. The SSL context is still released once the connection is lost."
 msgstr ""
 
+msgid ":gh:`159973`: Fix soft keyword highlighting after blank lines, comment-only lines, and dedents in the :ref:`interactive shell <tut-interactive>`. Patch by Bartosz Sławecki."
+msgstr ""
+
 #, fuzzy
 #| msgid ":gh:`158522`: Fix :mod:`profiling.sampling` showing a single frame for a task whose coroutine recurses. Patch by Timofei Ivankov."
 msgid ":gh:`159645`: Fix :mod:`profiling.sampling` ``--async-aware`` profiles showing event loop frames under tasks. Patch by Timofei Ivankov."
@@ -516,6 +531,9 @@ msgid ":gh:`158998`: Fix :func:`os.statx` ignoring the *follow_symlinks* argumen
 msgstr ":issue:`18108`: تابع :func:`shutil.chown` اکنون از آرگومان‌های کلیدواژه‌ای *dir_fd* و *follow_symlinks* پشتیبانی می‌کند."
 
 msgid ":gh:`158986`: Fix :mod:`profiling.sampling` reporting modules in a ``site-packages`` directory located inside the standard library directory as standard library modules. The heatmap now lists them under \"Site Packages\" and flamegraph labels no longer start with ``site-packages.``."
+msgstr ""
+
+msgid ":gh:`158955`: Fixed PyREPL rendering on WSL by avoiding the unnecessary INS terminal sequence when appending a character at the end of a line. INS remains used for true mid-line insertions, with regression coverage added."
 msgstr ""
 
 msgid ":gh:`155233`: Fix :meth:`asyncio.Barrier.wait` returning duplicate indices when a waiting task is cancelled before the barrier is released.```"

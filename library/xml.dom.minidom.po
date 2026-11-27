@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-21 11:59+0000\n"
+"POT-Creation-Date: 2026-11-27 04:11+0000\n"
 "PO-Revision-Date: 2026-08-28 11:22+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -143,6 +143,9 @@ msgstr "برای گره :class:`Document`، می‌توان از یک آرگوم
 
 msgid "Similarly, explicitly stating the *standalone* argument causes the standalone document declarations to be added to the prologue of the XML document. If the value is set to ``True``, ``standalone=\"yes\"`` is added, otherwise it is set to ``\"no\"``. Not stating the argument will omit the declaration from the document."
 msgstr "به‌طور مشابه، ذکر صریح آرگومان *standalone* باعث می‌شود اعلامیه‌های مستقل سند به پیش‌درآمد سند XML افزوده شوند. اگر مقدار به ``True`` تنظیم شود، ``standalone=\"yes\"`` افزوده می‌شود، در غیر این صورت مقدار به ``\"no\"`` تنظیم می‌شود. ذکر نکردن آرگومان، اعلامیه را از سند حذف می‌کند."
+
+msgid ":exc:`ValueError` is raised if the content of the node cannot be represented in XML, for example if a comment contains ``\"--\"`` or a CDATA section contains ``\"]]>\"``. The characters are not checked: the text, the attribute values and the content of comments, processing instructions and CDATA sections are written as is. If they can contain characters which are not allowed in XML, check them with :func:`xml.is_valid_text` before serialization."
+msgstr ""
 
 msgid "The :meth:`writexml` method now preserves the attribute order specified by the user."
 msgstr "متد :meth:`writexml` اکنون ترتیب صفت‌هایی را که کاربر تعیین کرده است حفظ می‌کند."
