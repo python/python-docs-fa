@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-26)
+(به‌روزرسانی: 2026-11-27)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -326,7 +326,6 @@
 | library/winsound.po | 100.0% | 0.0% | 43 | 0 | 0 |
 | library/wsgiref.po | 100.0% | 0.0% | 135 | 0 | 0 |
 | library/xdrlib.po | 100.0% | 0.0% | 3 | 0 | 0 |
-| library/xml.dom.minidom.po | 100.0% | 0.0% | 60 | 0 | 0 |
 | library/xml.dom.pulldom.po | 100.0% | 0.0% | 31 | 0 | 0 |
 | library/xml.po | 100.0% | 0.0% | 32 | 0 | 0 |
 | library/xml.sax.handler.po | 100.0% | 0.0% | 114 | 0 | 0 |
@@ -379,7 +378,6 @@
 | whatsnew/2.7.po | 99.8% | 0.2% | 497 | 1 | 0 |
 | library/tkinter.ttk.po | 99.8% | 0.2% | 475 | 1 | 0 |
 | library/socket.po | 99.7% | 0.0% | 391 | 0 | 1 |
-| library/decimal.po | 99.7% | 0.3% | 386 | 1 | 0 |
 | library/doctest.po | 99.7% | 0.3% | 380 | 1 | 0 |
 | whatsnew/3.9.po | 99.7% | 0.3% | 379 | 1 | 0 |
 | whatsnew/3.14.po | 99.7% | 0.3% | 1108 | 3 | 0 |
@@ -403,6 +401,7 @@
 | library/select.po | 99.5% | 0.5% | 211 | 1 | 0 |
 | whatsnew/2.6.po | 99.5% | 0.5% | 623 | 3 | 0 |
 | library/shutil.po | 99.5% | 0.0% | 195 | 0 | 1 |
+| library/decimal.po | 99.5% | 0.5% | 385 | 2 | 0 |
 | whatsnew/3.2.po | 99.5% | 0.5% | 573 | 3 | 0 |
 | whatsnew/3.7.po | 99.5% | 0.5% | 565 | 3 | 0 |
 | library/unittest.po | 99.5% | 0.5% | 563 | 3 | 0 |
@@ -430,7 +429,6 @@
 | deprecations/index.po | 99.3% | 0.7% | 273 | 2 | 0 |
 | whatsnew/3.10.po | 99.3% | 0.7% | 546 | 4 | 0 |
 | whatsnew/3.1.po | 99.2% | 0.8% | 131 | 1 | 0 |
-| reference/expressions.po | 99.2% | 0.8% | 646 | 5 | 0 |
 | whatsnew/3.11.po | 99.2% | 0.8% | 770 | 6 | 0 |
 | whatsnew/2.3.po | 99.2% | 0.8% | 384 | 3 | 0 |
 | library/os.po | 99.2% | 0.7% | 1124 | 8 | 1 |
@@ -446,6 +444,7 @@
 | c-api/interp-lifecycle.po | 99.1% | 0.9% | 221 | 2 | 0 |
 | library/email.message.po | 99.1% | 0.9% | 110 | 1 | 0 |
 | library/email.policy.po | 99.1% | 0.9% | 109 | 1 | 0 |
+| reference/expressions.po | 99.1% | 0.9% | 645 | 6 | 0 |
 | whatsnew/2.2.po | 99.1% | 0.9% | 213 | 2 | 0 |
 | library/asyncio-eventloop.po | 99.1% | 0.5% | 424 | 2 | 2 |
 | whatsnew/2.4.po | 99.1% | 0.9% | 315 | 3 | 0 |
@@ -472,8 +471,8 @@
 | library/signal.po | 98.6% | 1.4% | 143 | 2 | 0 |
 | library/timeit.po | 98.6% | 1.4% | 70 | 1 | 0 |
 | using/cmdline.po | 98.6% | 1.4% | 278 | 4 | 0 |
-| whatsnew/changelog.po | 98.6% | 0.3% | 15726 | 55 | 172 |
 | library/tomllib.po | 98.6% | 1.4% | 68 | 1 | 0 |
+| whatsnew/changelog.po | 98.5% | 0.3% | 15726 | 55 | 178 |
 | c-api/type.po | 98.5% | 1.5% | 200 | 3 | 0 |
 | builtins/functions.po | 98.5% | 1.3% | 531 | 7 | 1 |
 | c-api/datetime.po | 98.5% | 1.5% | 66 | 1 | 0 |
@@ -484,6 +483,7 @@
 | whatsnew/3.15.po | 98.4% | 1.0% | 818 | 8 | 5 |
 | using/unix.po | 98.4% | 1.6% | 62 | 1 | 0 |
 | library/tarfile.po | 98.4% | 1.1% | 364 | 4 | 2 |
+| library/xml.dom.minidom.po | 98.4% | 0.0% | 60 | 0 | 1 |
 | library/marshal.po | 98.3% | 1.7% | 59 | 1 | 0 |
 | extending/embedding.po | 98.3% | 1.7% | 58 | 1 | 0 |
 | library/textwrap.po | 98.3% | 1.7% | 57 | 1 | 0 |
@@ -558,5 +558,5 @@
 | library/cgi.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/cgitb.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **98.8%** | **0.8%** | **90133** | **688** | **408** |
+| **مجموع** | **98.8%** | **0.8%** | **90131** | **690** | **415** |
 <!-- TRANSLATION_STATUS_END -->
