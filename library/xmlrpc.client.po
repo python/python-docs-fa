@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 14:41+0330\n"
+"POT-Creation-Date: 2026-11-28 04:10+0000\n"
 "PO-Revision-Date: 2026-09-14 10:09+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -45,7 +45,9 @@ msgstr "دسترس‌پذیری"
 msgid "This module does not work or is not available on WebAssembly. See :ref:`wasm-availability` for more information."
 msgstr "این ماژول در WebAssembly کار نمی‌کند یا در دسترس نیست. برای اطلاعات بیشتر، :ref:`wasm-availability` را ببینید."
 
-msgid "A :class:`ServerProxy` instance is an object that manages communication with a remote XML-RPC server.  The required first argument is a URI (Uniform Resource Indicator), and will normally be the URL of the server.  The optional second argument is a transport factory instance; by default it is an internal :class:`SafeTransport` instance for https: URLs and an internal HTTP :class:`Transport` instance otherwise.  The optional third argument is an encoding, by default UTF-8. The optional fourth argument is a debugging flag."
+#, fuzzy
+#| msgid "A :class:`ServerProxy` instance is an object that manages communication with a remote XML-RPC server.  The required first argument is a URI (Uniform Resource Indicator), and will normally be the URL of the server.  The optional second argument is a transport factory instance; by default it is an internal :class:`SafeTransport` instance for https: URLs and an internal HTTP :class:`Transport` instance otherwise.  The optional third argument is an encoding, by default UTF-8. The optional fourth argument is a debugging flag."
+msgid "A :class:`ServerProxy` instance is an object that manages communication with a remote XML-RPC server.  The required first argument is a URI (Uniform Resource Indicator), and will normally be the URL of the server.  The optional second argument is a transport factory instance; by default it is an internal :class:`!SafeTransport` instance for https: URLs and an internal HTTP :class:`!Transport` instance otherwise.  The optional third argument is an encoding, by default UTF-8. The optional fourth argument is a debugging flag."
 msgstr "نمونه‌ای از :class:`ServerProxy` شیءای است که ارتباط با یک سرور XML-RPC دوردست را مدیریت می‌کند. اولین آرگومان ضروری یک URI (Uniform Resource Indicator) است و معمولاً URL سرور خواهد بود. دومین آرگومان اختیاری نمونه‌ای از کارخانه‌ی انتقال (transport factory) است؛ به‌طور پیش‌فرض، برای URLهای https: نمونه‌ای درونی از :class:`SafeTransport` و در غیر این صورت نمونه‌ای درونی از :class:`Transport` برای HTTP است. سومین آرگومان اختیاری یک کدگذاری است که به‌طور پیش‌فرض UTF-8 است. چهارمین آرگومان اختیاری یک پرچم اشکال‌زدایی است."
 
 msgid "The following parameters govern the use of the returned proxy instance. If *allow_none* is true,  the Python constant ``None`` will be translated into XML; the default behaviour is for ``None`` to raise a :exc:`TypeError`. This is a commonly used extension to the XML-RPC specification, but isn't supported by all clients and servers; see `http://ontosys.com/xml-rpc/extensions.php <https://web.archive.org/web/20130120074804/http://ontosys.com/xml-rpc/extensions.php>`_ for a description. The *use_builtin_types* flag can be used to cause date/time values to be presented as :class:`datetime.datetime` objects and binary data to be presented as :class:`bytes` objects; this flag is false by default. :class:`datetime.datetime`, :class:`bytes` and :class:`bytearray` objects may be passed to calls. The *headers* parameter is an optional sequence of HTTP headers to send with each request, expressed as a sequence of 2-tuples representing the header name and value. (e.g. ``[('Header-Name', 'value')]``). If an HTTPS URL is provided, *context* may be :class:`ssl.SSLContext` and configures the SSL settings of the underlying HTTPS connection. The obsolete *use_datetime* flag is similar to *use_builtin_types* but it applies only to date/time values."
@@ -138,7 +140,9 @@ msgstr "این مجموعه‌ی کاملی از انواع داده است که
 msgid "When passing strings, characters special to XML such as ``<``, ``>``, and ``&`` will be automatically escaped.  However, it's the caller's responsibility to ensure that the string is free of characters that aren't allowed in XML, such as the control characters with ASCII values between 0 and 31 (except, of course, tab, newline and carriage return); failing to do this will result in an XML-RPC request that isn't well-formed XML.  If you have to pass arbitrary bytes via XML-RPC, use :class:`bytes` or :class:`bytearray` classes or the :class:`Binary` wrapper class described below."
 msgstr "هنگام ارسال رشته‌ها، نویسه‌های ویژه‌ی XML مانند ``<``، ``>`` و ``&`` به‌طور خودکار خنثی می‌شوند. با این حال، بر عهده‌ی فراخواننده است که اطمینان حاصل کند رشته عاری از نویسه‌هایی است که در XML مجاز نیستند، مانند نویسه‌های کنترلی با مقادیر ASCII بین ۰ تا ۳۱ (البته به‌جز تب، خط جدید و بازگشت به ابتدای سطر)؛ عدم انجام این کار باعث می‌شود درخواست XML-RPC حاصل، XML خوش‌ساخت نباشد. اگر نیاز به ارسال بایت‌های دلخواه از طریق XML-RPC دارید، از کلاس‌های :class:`bytes` یا :class:`bytearray` یا کلاس پوششی :class:`Binary` که در ادامه توضیح داده شده است استفاده کنید."
 
-msgid ":class:`Server` is retained as an alias for :class:`ServerProxy` for backwards compatibility.  New code should use :class:`ServerProxy`."
+#, fuzzy
+#| msgid ":class:`Server` is retained as an alias for :class:`ServerProxy` for backwards compatibility.  New code should use :class:`ServerProxy`."
+msgid ":class:`!Server` is retained as an alias for :class:`ServerProxy` for backwards compatibility.  New code should use :class:`ServerProxy`."
 msgstr ":class:`Server` برای سازگاری با نسخه‌های قبلی، به‌عنوان نام مستعاری برای :class:`ServerProxy` نگه داشته شده است. کدهای جدید باید از :class:`ServerProxy` استفاده کنند."
 
 msgid "Added the *context* argument."
@@ -171,7 +175,9 @@ msgstr "اشیای ServerProxy"
 msgid "A :class:`ServerProxy` instance has a method corresponding to each remote procedure call accepted by the XML-RPC server.  Calling the method performs an RPC, dispatched by both name and argument signature (e.g. the same method name can be overloaded with multiple argument signatures).  The RPC finishes either by returning data in a conformant type or by raising a :class:`Fault` or :class:`ProtocolError` exception indicating an error."
 msgstr "یک نمونه از :class:`ServerProxy` دارای متدی متناظر با هر فراخوانی روش راه دور (RPC) پذیرفته‌شده توسط سرور XML-RPC است. فراخوانی این متد یک RPC را اجرا می‌کند که هم بر اساس نام و هم بر اساس امضای آرگومان‌ها دیسپچ می‌شود (مثلاً یک نام متد واحد را می‌توان با چند امضای آرگومان سربارگذاری‌کرد). اجرای RPC یا با بازگرداندن داده در یک نوع سازگار و یا با بالا آوردن یک استثنای :class:`Fault` یا :class:`ProtocolError` که نشان‌دهنده‌ی یک خطا است، به پایان می‌رسد."
 
-msgid "Servers that support the XML introspection API support some common methods grouped under the reserved :attr:`~ServerProxy.system` attribute:"
+#, fuzzy
+#| msgid "Servers that support the XML introspection API support some common methods grouped under the reserved :attr:`~ServerProxy.system` attribute:"
+msgid "Servers that support the XML introspection API support some common methods grouped under the reserved :attr:`!system` attribute:"
 msgstr "سرورهایی که از API درون‌نگری XML پشتیبانی می‌کنند، از برخی متدهای رایج پشتیبانی می‌کنند که زیر ویژگی محفوظ :attr:`~ServerProxy.system` گروه‌بندی شده‌اند:"
 
 msgid "This method returns a list of strings, one for each (non-system) method supported by the XML-RPC server."
@@ -367,6 +373,17 @@ msgstr ""
 "proxy = xmlrpc.client.ServerProxy(\"http://localhost:8000/\")\n"
 "with open(\"fetched_python_logo.jpg\", \"wb\") as handle:\n"
 "    handle.write(proxy.python_logo().data)"
+
+#, fuzzy
+#| msgid "ProtocolError Objects"
+msgid "Error objects"
+msgstr "اشیای ProtocolError"
+
+msgid "Base class of the :exc:`Fault`, :exc:`ProtocolError` and :exc:`ResponseError` exceptions."
+msgstr ""
+
+msgid "Raised when an XML-RPC response is malformed and cannot be unmarshalled, for example when it contains an unsupported type tag."
+msgstr ""
 
 msgid "Fault Objects"
 msgstr "اشیای Fault"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-27 04:11+0000\n"
+"POT-Creation-Date: 2026-11-28 04:10+0000\n"
 "PO-Revision-Date: 2026-10-23 17:18+0330\n"
 "Last-Translator: Sepehr Rasouli <sepehrrasouli06@gmail.com>, 2026\n"
 "Language-Team: Persian (https://github.com/python/python-docs-fa/)\n"
@@ -225,6 +225,9 @@ msgstr ""
 #| msgid ":gh:`158522`: Fix :mod:`profiling.sampling` showing a single frame for a task whose coroutine recurses. Patch by Timofei Ivankov."
 msgid ":gh:`159865`: Fix :mod:`profiling.sampling` dropping exception-mode samples when a thread blocks inside an exception handler."
 msgstr ":gh:`158522`: رفع نمایش یک فریم واحد برای وظیفه‌ای که هم‌روال آن بازگشتی (recursive) است توسط :mod:`profiling.sampling`. وصله توسط Timofei Ivankov."
+
+msgid ":gh:`162525`: Fix the C :mod:`json` encoder writing the :meth:`~object.__str__` result of :class:`str` subclasses used as *separators*, which produced invalid JSON. It now writes their characters, like the pure Python encoder."
+msgstr ""
 
 msgid ":gh:`162282`: Fix quadratic-time cost in :mod:`urllib.robotparser` when many groups share a ``User-agent:``, and when a group with many user agents is checked for a user agent that is not listed explicitly."
 msgstr ""
@@ -719,6 +722,9 @@ msgstr ""
 
 msgid "C API"
 msgstr "رابط C API"
+
+msgid ":gh:`158401`: :c:func:`Py_INCREF`, :c:func:`Py_XINCREF`, :c:func:`Py_DECREF` and :c:func:`Py_XDECREF` are now implemented as function calls on all limited C API versions.  Previously, they were only implemented as function calls on the limited C API version 3.12 or newer. Patch by Victor Stinner:"
+msgstr ""
 
 msgid ":gh:`161407`: Fix a crash at exit when an audit hook was added with :c:func:`PySys_AddAuditHook` before :c:func:`Py_Initialize` and the raw memory allocator changed during startup, for example with ``PYTHONMALLOC=mimalloc`` or in the :ref:`Python Development Mode <devmode>`."
 msgstr ""
