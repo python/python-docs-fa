@@ -1,6 +1,6 @@
 <!-- TRANSLATION_STATUS_START -->
 ### وضعیت ترجمه فایل‌ها
-(به‌روزرسانی: 2026-11-27)
+(به‌روزرسانی: 2026-11-28)
 
 | فایل | ترجمه‌شده | مبهم | تعداد ترجمه‌شده | تعداد مبهم | تعداد ترجمه‌نشده |
 |:-----|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -51,7 +51,6 @@
 | c-api/sequence.po | 100.0% | 0.0% | 32 | 0 | 0 |
 | c-api/set.po | 100.0% | 0.0% | 35 | 0 | 0 |
 | c-api/slice.po | 100.0% | 0.0% | 26 | 0 | 0 |
-| c-api/stable.po | 100.0% | 0.0% | 97 | 0 | 0 |
 | c-api/subinterpreters.po | 100.0% | 0.0% | 90 | 0 | 0 |
 | c-api/synchronization.po | 100.0% | 0.0% | 68 | 0 | 0 |
 | c-api/sys.po | 100.0% | 0.0% | 95 | 0 | 0 |
@@ -287,7 +286,6 @@
 | library/spwd.po | 100.0% | 0.0% | 4 | 0 | 0 |
 | library/sqlite3.po | 100.0% | 0.0% | 481 | 0 | 0 |
 | library/stat.po | 100.0% | 0.0% | 93 | 0 | 0 |
-| library/statistics.po | 100.0% | 0.0% | 248 | 0 | 0 |
 | library/string.po | 100.0% | 0.0% | 224 | 0 | 0 |
 | library/string.templatelib.po | 100.0% | 0.0% | 56 | 0 | 0 |
 | library/stringprep.po | 100.0% | 0.0% | 25 | 0 | 0 |
@@ -332,7 +330,6 @@
 | library/xml.sax.po | 100.0% | 0.0% | 34 | 0 | 0 |
 | library/xml.sax.reader.po | 100.0% | 0.0% | 76 | 0 | 0 |
 | library/xml.sax.utils.po | 100.0% | 0.0% | 17 | 0 | 0 |
-| library/xmlrpc.client.po | 100.0% | 0.0% | 113 | 0 | 0 |
 | library/xmlrpc.po | 100.0% | 0.0% | 5 | 0 | 0 |
 | library/xmlrpc.server.po | 100.0% | 0.0% | 57 | 0 | 0 |
 | library/zipimport.po | 100.0% | 0.0% | 38 | 0 | 0 |
@@ -390,6 +387,7 @@
 | library/enum.po | 99.6% | 0.0% | 257 | 0 | 1 |
 | c-api/typeobj.po | 99.6% | 0.4% | 751 | 3 | 0 |
 | reference/compound_stmts.po | 99.6% | 0.4% | 497 | 2 | 0 |
+| library/statistics.po | 99.6% | 0.4% | 247 | 1 | 0 |
 | howto/functional.po | 99.6% | 0.4% | 246 | 1 | 0 |
 | library/http.po | 99.6% | 0.4% | 246 | 1 | 0 |
 | c-api/intro.po | 99.6% | 0.4% | 243 | 1 | 0 |
@@ -444,7 +442,6 @@
 | c-api/interp-lifecycle.po | 99.1% | 0.9% | 221 | 2 | 0 |
 | library/email.message.po | 99.1% | 0.9% | 110 | 1 | 0 |
 | library/email.policy.po | 99.1% | 0.9% | 109 | 1 | 0 |
-| reference/expressions.po | 99.1% | 0.9% | 645 | 6 | 0 |
 | whatsnew/2.2.po | 99.1% | 0.9% | 213 | 2 | 0 |
 | library/asyncio-eventloop.po | 99.1% | 0.5% | 424 | 2 | 2 |
 | whatsnew/2.4.po | 99.1% | 0.9% | 315 | 3 | 0 |
@@ -453,6 +450,7 @@
 | library/unicodedata.po | 99.0% | 1.0% | 99 | 1 | 0 |
 | howto/urllib2.po | 99.0% | 0.0% | 98 | 0 | 1 |
 | builtins/stdtypes.po | 99.0% | 1.0% | 1643 | 16 | 1 |
+| c-api/stable.po | 99.0% | 1.0% | 96 | 1 | 0 |
 | tutorial/errors.po | 99.0% | 1.0% | 95 | 1 | 0 |
 | using/mac.po | 99.0% | 1.0% | 95 | 1 | 0 |
 | c-api/long.po | 98.9% | 0.5% | 181 | 1 | 1 |
@@ -464,6 +462,7 @@
 | c-api/import.po | 98.8% | 1.2% | 85 | 1 | 0 |
 | library/platform.po | 98.8% | 1.2% | 84 | 1 | 0 |
 | howto/logging.po | 98.8% | 1.2% | 244 | 3 | 0 |
+| reference/expressions.po | 98.8% | 0.9% | 645 | 6 | 2 |
 | c-api/extension-modules.po | 98.8% | 1.2% | 79 | 1 | 0 |
 | library/shlex.po | 98.7% | 1.3% | 76 | 1 | 0 |
 | library/zipapp.po | 98.7% | 1.3% | 76 | 1 | 0 |
@@ -472,7 +471,7 @@
 | library/timeit.po | 98.6% | 1.4% | 70 | 1 | 0 |
 | using/cmdline.po | 98.6% | 1.4% | 278 | 4 | 0 |
 | library/tomllib.po | 98.6% | 1.4% | 68 | 1 | 0 |
-| whatsnew/changelog.po | 98.5% | 0.3% | 15726 | 55 | 178 |
+| whatsnew/changelog.po | 98.5% | 0.3% | 15726 | 55 | 180 |
 | c-api/type.po | 98.5% | 1.5% | 200 | 3 | 0 |
 | builtins/functions.po | 98.5% | 1.3% | 531 | 7 | 1 |
 | c-api/datetime.po | 98.5% | 1.5% | 66 | 1 | 0 |
@@ -480,14 +479,13 @@
 | library/smtplib.po | 98.5% | 1.5% | 129 | 2 | 0 |
 | library/asyncio-protocol.po | 98.5% | 1.5% | 191 | 3 | 0 |
 | library/gettext.po | 98.4% | 1.6% | 127 | 2 | 0 |
-| whatsnew/3.15.po | 98.4% | 1.0% | 818 | 8 | 5 |
 | using/unix.po | 98.4% | 1.6% | 62 | 1 | 0 |
 | library/tarfile.po | 98.4% | 1.1% | 364 | 4 | 2 |
 | library/xml.dom.minidom.po | 98.4% | 0.0% | 60 | 0 | 1 |
 | library/marshal.po | 98.3% | 1.7% | 59 | 1 | 0 |
-| extending/embedding.po | 98.3% | 1.7% | 58 | 1 | 0 |
 | library/textwrap.po | 98.3% | 1.7% | 57 | 1 | 0 |
 | sphinx.po | 98.3% | 1.0% | 964 | 10 | 7 |
+| whatsnew/3.15.po | 98.2% | 1.0% | 818 | 8 | 7 |
 | library/xml.etree.elementtree.po | 98.2% | 1.8% | 271 | 5 | 0 |
 | library/types.po | 98.2% | 1.8% | 108 | 2 | 0 |
 | howto/perf_profiling.po | 98.1% | 1.9% | 53 | 1 | 0 |
@@ -531,6 +529,7 @@
 | c-api/gcsupport.po | 95.4% | 3.7% | 103 | 4 | 1 |
 | using/configure.po | 95.1% | 4.9% | 465 | 24 | 0 |
 | faq/extending.po | 95.1% | 1.6% | 58 | 1 | 2 |
+| library/xmlrpc.client.po | 94.8% | 3.4% | 110 | 4 | 2 |
 | library/netrc.po | 94.7% | 5.3% | 18 | 1 | 0 |
 | c-api/gen.po | 94.4% | 5.6% | 17 | 1 | 0 |
 | c-api/reflection.po | 94.4% | 0.0% | 17 | 0 | 1 |
@@ -557,6 +556,7 @@
 | library/tokenize.po | 75.8% | 3.2% | 47 | 2 | 13 |
 | library/cgi.po | 75.0% | 25.0% | 3 | 1 | 0 |
 | library/cgitb.po | 75.0% | 25.0% | 3 | 1 | 0 |
+| extending/embedding.po | 70.7% | 1.2% | 58 | 1 | 23 |
 | library/email.utils.po | 61.1% | 38.9% | 22 | 14 | 0 |
-| **مجموع** | **98.8%** | **0.8%** | **90131** | **690** | **415** |
+| **مجموع** | **98.7%** | **0.8%** | **90126** | **696** | **446** |
 <!-- TRANSLATION_STATUS_END -->
